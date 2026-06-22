@@ -5,14 +5,25 @@ MatCreator is a **skill-based, agentic platform** for computational material sci
 
 ## Quick start
 ### Installation
+
+The following setup targets Linux and requires Python 3.12 or newer:
+
 ```bash
-# Create and activate an environment with uv (optional but recommended)
+# Install uv if it is not already available
+pipx install uv
 
-pip install uv
+# Create and activate the project environment
 uv venv .venv --python 3.12
-
 source .venv/bin/activate
+
+# Install MatCreator in editable mode and install the test runner
 uv pip install -e .
+uv pip install pytest
+
+# Install frontend dependencies
+cd web/vite-frontend
+npm install
+cd ../..
 ```
 
 ### Configuration
@@ -135,6 +146,7 @@ If you prefer different LLM models for sub-agents, you can override the default 
 A modern web UI with graph visualization, artifact upload/download, structure visualization, and scientific plotting. Start all three services (ADK API server, FastAPI middle layer, and Vite frontend) with a single script:
 
 ```bash
+# Run from the repository root after activating .venv
 bash script/start_matcreator.sh
 ```
 
@@ -144,6 +156,14 @@ This starts:
 - **Vite frontend** on `http://localhost:5173`
 
 Logs are written to `logs/{api-server,web-main,vite}.log`. Press `Ctrl+C` to stop all services.
+
+To inspect a service that failed to start:
+
+```bash
+tail -f logs/api-server.log
+tail -f logs/web-main.log
+tail -f logs/vite.log
+```
 
 > No frontend build step is needed — the Vite dev server runs directly with hot-reload.
 
@@ -177,11 +197,48 @@ Each run creates a session directory under `<workspace>/sessions/<session-id>/` 
 #### Default adk web server (old style)
 
 ```bash
-matcreator run web
+matcreator web
 ```
 This would set up the MatCreator agent network through the default `adk web` server. You can tune the LLM model and communication settings for the agents.
 
 The default agent workspace is located at `agents/MatCreator/.workspace`, where skills, memory, etc., are stored.
+
+### Automated tests
+
+Activate the environment and run commands from the repository root:
+
+```bash
+source .venv/bin/activate
+```
+
+Run the same import-completeness test used by GitHub Actions:
+
+```bash
+python -m pytest tests/test_matcreator_agent.py -v
+```
+
+Run the Know-Do Graph memory and review tests:
+
+```bash
+python -m pytest \
+  tests/test_kdg_memory.py \
+  tests/test_kdg_extractor.py \
+  tests/test_kdg_review_pipeline.py \
+  tests/test_kdg_auto_review.py \
+  -v
+```
+
+Run the complete local test suite:
+
+```bash
+python -m pytest tests -v
+```
+
+`tests/test_structure_builder.py` currently targets the removed
+`matcreator.tools.structure_builder` module and must be restored or removed
+before the complete suite can pass. The GitHub Actions workflow in
+`.github/workflows/test.yml` currently runs only `tests/test_matcreator_agent.py`
+on pushes and pull requests.
 
 ## Skills
 MatCreator follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/MatCreator/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.
