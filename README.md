@@ -4,23 +4,23 @@
 MatCreator is a **skill-based, agentic platform** for computational material science tasks, with a focus on Machine Learning Force Field (MLFF) generation and application. It would evolve with users by experience accumulation and creation of new skills. 
 
 ## Quick start
-### Installation
+### Linux 安装
 
-The following setup targets Linux and requires Python 3.12 or newer:
+以下安装流程适用于 Linux，并要求 Python 3.12 或更高版本：
 
 ```bash
-# Install uv if it is not already available
+# 如果尚未安装 uv，请先安装
 pipx install uv
 
-# Create and activate the project environment
+# 创建并激活项目虚拟环境
 uv venv .venv --python 3.12
 source .venv/bin/activate
 
-# Install MatCreator in editable mode and install the test runner
+# 以可编辑模式安装 MatCreator，并安装测试工具
 uv pip install -e .
 uv pip install pytest
 
-# Install frontend dependencies
+# 安装前端依赖
 cd web/vite-frontend
 npm install
 cd ../..
@@ -142,22 +142,24 @@ BOHRIUM_VASP_MACHINE=""
 
 If you prefer different LLM models for sub-agents, you can override the default setting at the `.env` file within sub-agents directories. 
 
-#### Web UI (Recommended)
-A modern web UI with graph visualization, artifact upload/download, structure visualization, and scientific plotting. Start all three services (ADK API server, FastAPI middle layer, and Vite frontend) with a single script:
+#### 启动 Web UI（推荐）
+
+Web UI 提供执行图可视化、产物上传与下载、材料结构显示和科学绘图功能。使用以下脚本可以同时启动 ADK API Server、FastAPI 中间层和 Vite 前端：
 
 ```bash
-# Run from the repository root after activating .venv
+# 激活 .venv 后，在仓库根目录执行
 bash script/start_matcreator.sh
 ```
 
-This starts:
-- **ADK API server** on `http://localhost:8000`
-- **FastAPI middle layer** on `http://localhost:8001`
-- **Vite frontend** on `http://localhost:5173`
+该脚本会启动：
 
-Logs are written to `logs/{api-server,web-main,vite}.log`. Press `Ctrl+C` to stop all services.
+- **ADK API Server**：`http://localhost:8000`
+- **FastAPI 中间层**：`http://localhost:8001`
+- **Vite 前端**：`http://localhost:5173`
 
-To inspect a service that failed to start:
+日志写入 `logs/{api-server,web-main,vite}.log`。按 `Ctrl+C` 可以停止全部服务。
+
+如果服务启动失败，可以通过以下命令查看对应日志：
 
 ```bash
 tail -f logs/api-server.log
@@ -165,7 +167,7 @@ tail -f logs/web-main.log
 tail -f logs/vite.log
 ```
 
-> No frontend build step is needed — the Vite dev server runs directly with hot-reload.
+> 开发模式不需要预先构建前端；Vite 开发服务器会直接运行并提供热更新。
 
 ![The web UI for MatCreator](docs/images/agent_plot.png)
 
@@ -203,21 +205,21 @@ This would set up the MatCreator agent network through the default `adk web` ser
 
 The default agent workspace is located at `agents/MatCreator/.workspace`, where skills, memory, etc., are stored.
 
-### Automated tests
+### 自动化测试
 
-Activate the environment and run commands from the repository root:
+激活虚拟环境，并在仓库根目录执行后续命令：
 
 ```bash
 source .venv/bin/activate
 ```
 
-Run the same import-completeness test used by GitHub Actions:
+运行与 GitHub Actions 相同的模块导入完整性测试：
 
 ```bash
 python -m pytest tests/test_matcreator_agent.py -v
 ```
 
-Run the Know-Do Graph memory and review tests:
+运行 Know-Do Graph 的记忆、提取和审核流程测试：
 
 ```bash
 python -m pytest \
@@ -228,17 +230,16 @@ python -m pytest \
   -v
 ```
 
-Run the complete local test suite:
+运行全部本地测试：
 
 ```bash
 python -m pytest tests -v
 ```
 
-`tests/test_structure_builder.py` currently targets the removed
-`matcreator.tools.structure_builder` module and must be restored or removed
-before the complete suite can pass. The GitHub Actions workflow in
-`.github/workflows/test.yml` currently runs only `tests/test_matcreator_agent.py`
-on pushes and pull requests.
+`tests/test_structure_builder.py` 目前依赖已经不存在的
+`matcreator.tools.structure_builder` 模块。因此，在恢复该模块或删除此测试前，
+完整测试套件无法全部通过。当前 `.github/workflows/test.yml` 中的 GitHub
+Actions 仅在推送和拉取请求时运行 `tests/test_matcreator_agent.py`。
 
 ## Skills
 MatCreator follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/MatCreator/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.
