@@ -50,24 +50,24 @@ if str(_WEB_DIR) not in sys.path:
 
 import users_db  # noqa: E402
 
-from agents.MatCreator.workspace import get_session_workdir, get_workspace_root, workspace_skills_dir  # noqa: E402
-from agents.MatCreator.agents.cancellation import (  # noqa: E402
+from agents.Agent.workspace import get_session_workdir, get_workspace_root, workspace_skills_dir  # noqa: E402
+from agents.Agent.agents.cancellation import (  # noqa: E402
     request_cancellation,
     is_cancellation_requested,
     get_cancellation_reason,
     clear_cancellation,
     request_step_cancellation,
 )
-from agents.MatCreator.agents.graph_logger import AgentGraphLogger  # noqa: E402
-from agents.MatCreator.skill import ALL_SKILLS, PLANNING_SKILL_NAMES, refresh_skills, get_default_skill_names  # noqa: E402
-from agents.MatCreator.config import load_config, save_config, get_disabled_skills  # noqa: E402
-from agents.MatCreator.constants import GRAPH_AGENT_MODEL  # noqa: E402
-from agents.MatCreator.knowledge.query import _get_kg  # noqa: E402
-from agents.MatCreator.knowledge.review import run_review_pipeline  # noqa: E402
+from agents.Agent.agents.graph_logger import AgentGraphLogger  # noqa: E402
+from agents.Agent.skill import ALL_SKILLS, PLANNING_SKILL_NAMES, refresh_skills, get_default_skill_names  # noqa: E402
+from agents.Agent.config import load_config, save_config, get_disabled_skills  # noqa: E402
+from agents.Agent.constants import GRAPH_AGENT_MODEL  # noqa: E402
+from agents.Agent.knowledge.query import _get_kg  # noqa: E402
+from agents.Agent.knowledge.review import run_review_pipeline  # noqa: E402
 
-app = FastAPI(title="MatCreator Graph API", version="1.0.0")
-APP_NAME = "MatCreator"
-SESSION_DB_PATH = ROOT / "agents" / "MatCreator" / ".adk" / "session.db"
+app = FastAPI(title="Agent Graph API", version="1.0.0")
+APP_NAME = "Agent"
+SESSION_DB_PATH = ROOT / "agents" / "Agent" / ".adk" / "session.db"
 DEFAULT_ADMIN_USERS = {"admin"}
 
 app.add_middleware(
@@ -77,7 +77,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ENV_PATH = ROOT / "agents" / "MatCreator" / ".env"
+ENV_PATH = ROOT / "agents" / "Agent" / ".env"
 _SENSITIVE_FIELDS = frozenset({"LLM_API_KEY", "BOHRIUM_PASSWORD"})
 _ENV_FIELDS = [
     "LLM_MODEL", "LLM_API_KEY", "LLM_BASE_URL", "EMBEDDING_MODEL",
@@ -121,7 +121,7 @@ def _kill_port(port: int) -> None:
 
 
 def _admin_users() -> set[str]:
-    raw_value = os.environ.get("MATCREATOR_ADMIN_USERS")
+    raw_value = os.environ.get("AGENT_ADMIN_USERS")
     if raw_value is None:
         return DEFAULT_ADMIN_USERS.copy()
 
@@ -276,7 +276,7 @@ async def _run_knowledge_review(session_id: str) -> None:
         if not api_key:
             raise RuntimeError(
                 "No review API key configured. Set LLM_API_KEY in Settings or "
-                "MINIMAX_API_KEY in agents/MatCreator/.env."
+                "MINIMAX_API_KEY in agents/Agent/.env."
             )
         if not model:
             raise RuntimeError("No REVIEW_AGENT_MODEL or GRAPH_AGENT_MODEL configured.")
@@ -289,7 +289,7 @@ async def _run_knowledge_review(session_id: str) -> None:
                 api_key=api_key,
                 base_url=base_url,
                 batch_size=20,
-                strategy=os.environ.get("MATCREATOR_REVIEW_STRATEGY", "auto"),
+                strategy=os.environ.get("AGENT_REVIEW_STRATEGY", "auto"),
                 on_status=lambda phase, status: _set_knowledge_review_state(
                     **status,
                     phase=phase,
@@ -723,7 +723,7 @@ async def cancel_individual_step(
 @app.get("/api/skills")
 async def list_skills() -> JSONResponse:
     """Return all loaded skills with their planning_enabled status and parent skill (if any)."""
-    from agents.MatCreator.skill import _MODULE_SKILLS_ROOT, _discover_skill_dirs  # noqa: PLC0415
+    from agents.Agent.skill import _MODULE_SKILLS_ROOT, _discover_skill_dirs  # noqa: PLC0415
 
     parent_map: dict[str, str] = {}
     for root in [_MODULE_SKILLS_ROOT, workspace_skills_dir()]:
@@ -947,13 +947,13 @@ async def restart_backend() -> JSONResponse:
 
     try:
         _adk_process = subprocess.Popen(
-            ["matcreator", "api-server"],
+            ["agent", "api-server"],
             cwd=str(ROOT),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
     except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="'matcreator' command not found in PATH")
+        raise HTTPException(status_code=500, detail="'agent' command not found in PATH")
     except OSError as exc:
         raise HTTPException(status_code=500, detail=f"Failed to start backend: {exc}")
 

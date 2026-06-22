@@ -141,7 +141,7 @@
 - Issues the project root solving logic
   ([`1e3d3f1`](https://github.com/nlz25/PFD_Agent/commit/1e3d3f1f9c0871b1f9f3364b4528353f9107aaf0))
 
-- Update src/matcreator/scripts/start_agent.py
+- Update src/agent/scripts/start_agent.py
   ([`4cf235b`](https://github.com/nlz25/PFD_Agent/commit/4cf235b22ddae94da085daecb241e634cc066d67))
 
 
@@ -264,7 +264,7 @@
 
 ### Bug Fixes
 
-- Add quick start script for matcreator
+- Add quick start script for agent
   ([`4f84de5`](https://github.com/nlz25/PFD_Agent/commit/4f84de53d92990f2677de1efce2a00701202bd6d))
 
 - Add tavily skill for web-search

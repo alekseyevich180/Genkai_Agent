@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Benchmark wrapper for MatCreator.
+# Benchmark wrapper for Agent.
 #
 # Contract: ./run_benchmark.sh <workspace_dir> <prompt_file> <output_file>
 #
@@ -20,7 +20,7 @@ OUTPUT_FILE="$3"
 
 PROMPT=$(cat "$PROMPT_FILE")
 
-# Use the matcreator CLI in non-interactive mode, output JSON
+# Use the agent CLI in non-interactive mode, output JSON
 python3 "$SCRIPT_DIR/start_agent.py" run \
     --workspace "$WORKSPACE" \
     -p "$PROMPT" \

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from know_do_graph import EntryType, VerificationStatus
 
-from agents.MatCreator.knowledge import query
+from agents.Agent.knowledge import query
 
 
 class _RecordingGraph:
@@ -17,12 +17,12 @@ class _RecordingGraph:
         return []
 
 
-def test_auto_review_uses_matcreator_policy(monkeypatch) -> None:
+def test_auto_review_uses_agent_policy(monkeypatch) -> None:
     graph = _RecordingGraph()
-    monkeypatch.setenv("MATCREATOR_AUTO_REVIEW", "1")
-    monkeypatch.setenv("MATCREATOR_REVIEW_TRIGGER_THRESHOLD", "12")
-    monkeypatch.setenv("MATCREATOR_REVIEW_BATCH_SIZE", "7")
-    monkeypatch.setenv("MATCREATOR_REVIEW_STRATEGY", "seed")
+    monkeypatch.setenv("AGENT_AUTO_REVIEW", "1")
+    monkeypatch.setenv("AGENT_REVIEW_TRIGGER_THRESHOLD", "12")
+    monkeypatch.setenv("AGENT_REVIEW_BATCH_SIZE", "7")
+    monkeypatch.setenv("AGENT_REVIEW_STRATEGY", "seed")
     monkeypatch.setenv("REVIEW_AGENT_MODEL", "review-model")
     monkeypatch.setenv("LLM_API_KEY", "test-key")
     monkeypatch.setenv("LLM_BASE_URL", "https://example.invalid/v1")
@@ -58,7 +58,7 @@ def test_auto_review_uses_matcreator_policy(monkeypatch) -> None:
 
 def test_auto_review_can_be_disabled(monkeypatch) -> None:
     graph = _RecordingGraph()
-    monkeypatch.setenv("MATCREATOR_AUTO_REVIEW", "false")
+    monkeypatch.setenv("AGENT_AUTO_REVIEW", "false")
 
     query._configure_auto_review(graph)
 

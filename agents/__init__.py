@@ -1,4 +1,4 @@
-"""Agent packages provided by MatCreator and installed dependencies."""
+"""Agent packages provided by Agent and installed dependencies."""
 
 from pkgutil import extend_path
 

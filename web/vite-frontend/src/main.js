@@ -7,7 +7,7 @@ import "./style.css";
 // State
 // ---------------------------------------------------------------------------
 
-const APP_NAME = "MatCreator";
+const APP_NAME = "Agent";
 
 const AGENT_MODE_KEY = "mat_agentMode";
 

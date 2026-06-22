@@ -1,5 +1,5 @@
 [project]
-name = "matcreator"
+name = "agent"
 version = "1.0.0"
 description = "A multi-agent framework for complex computational material tasks."
 readme = "README.md"
@@ -34,7 +34,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project.scripts]
-matcreator = "matcreator.scripts.start_agent:main"
+agent = "agent.scripts.start_agent:main"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]

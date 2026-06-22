@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from types import SimpleNamespace
 
-from agents.MatCreator.knowledge import extractor
+from agents.Agent.knowledge import extractor
 
 
 class _MemoryStore:

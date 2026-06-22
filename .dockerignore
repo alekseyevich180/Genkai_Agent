@@ -19,5 +19,5 @@ build
 docs
 tests
 database/domain_datasets.tar.gz
-agents/MatCreator/.adk
-agents/MatCreator/.workspace
+agents/Agent/.adk
+agents/Agent/.workspace

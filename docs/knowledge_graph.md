@@ -1,17 +1,17 @@
 # Know-Do Graph Migration Guide
 
-MatCreator now uses the unified Know-Do Graph data model. Durable knowledge and
+Agent now uses the unified Know-Do Graph data model. Durable knowledge and
 working memory are stored together in:
 
 ```text
-agents/MatCreator/.adk/know_do_graph.db
+agents/Agent/.adk/know_do_graph.db
 ```
 
 Working memories are normal `EntryType.memory` rows in the shared `entries`
 table. Memory relationships, skill links, and promotion links are normal rows
 in the shared `edges` table. New memory is not stored as JSON.
 
-Run all commands in this guide from the MatCreator project root.
+Run all commands in this guide from the Agent project root.
 
 ## What Is Migrated
 
@@ -23,7 +23,7 @@ Run all commands in this guide from the MatCreator project root.
 | `.adk/memory/*.json` | Imported once as native memory nodes |
 | `MEMORY.md` | Each usable line becomes a native memory node |
 
-Legacy files are read-only migration sources. MatCreator does not delete them.
+Legacy files are read-only migration sources. Agent does not delete them.
 Migration is idempotent, so running it again does not duplicate previously
 imported records.
 
@@ -36,7 +36,7 @@ uv sync
 ```
 
 For a development checkout, install the current Know-Do Graph source into the
-MatCreator environment:
+Agent environment:
 
 ```bash
 uv pip install --python .venv/bin/python \
@@ -52,7 +52,7 @@ Confirm that `KnowDoGraph.memory()` uses database-backed memory:
 
 ## 2. Stop Running Services
 
-Stop the MatCreator agent, API server, and any process writing to the old graph.
+Stop Agent, the API server, and any process writing to the old graph.
 This prevents writes during backup and migration.
 
 ## 3. Back Up Existing Data
@@ -63,11 +63,11 @@ Create a timestamped backup before migrating:
 backup_dir="backup/knowledge-$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$backup_dir/legacy-adk" "$backup_dir/current-data"
 
-cp -a agents/MatCreator/.adk/skill_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
-cp -a agents/MatCreator/.adk/memory_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
-cp -a agents/MatCreator/.adk/know_do_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
-cp -a agents/MatCreator/.adk/memory "$backup_dir/legacy-adk/" 2>/dev/null || true
-cp -a agents/MatCreator/.adk/know_do_graph.db "$backup_dir/current-data/" 2>/dev/null || true
+cp -a agents/Agent/.adk/skill_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
+cp -a agents/Agent/.adk/memory_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
+cp -a agents/Agent/.adk/know_do_graph.db "$backup_dir/legacy-adk/" 2>/dev/null || true
+cp -a agents/Agent/.adk/memory "$backup_dir/legacy-adk/" 2>/dev/null || true
+cp -a agents/Agent/.adk/know_do_graph.db "$backup_dir/current-data/" 2>/dev/null || true
 ```
 
 Back up a workspace `MEMORY.md` separately if one exists.
@@ -77,23 +77,23 @@ Back up a workspace `MEMORY.md` separately if one exists.
 Migrate all detected legacy databases:
 
 ```bash
-matcreator knowledge migrate
+agent knowledge migrate
 ```
 
 To also import a specific `MEMORY.md`:
 
 ```bash
-matcreator knowledge migrate --memory-md /absolute/path/to/MEMORY.md
+agent knowledge migrate --memory-md /absolute/path/to/MEMORY.md
 ```
 
-Migration also runs automatically the first time MatCreator opens the unified
+Migration also runs automatically the first time Agent opens the unified
 graph. The explicit command is recommended because it prints the number of
 durable entries, memory nodes, and edges imported.
 
 After migration, seed the current skills and guides:
 
 ```bash
-matcreator knowledge seed
+agent knowledge seed
 ```
 
 Seeding is also idempotent. Existing usage counts and relationships are
@@ -101,10 +101,10 @@ preserved.
 
 ## 5. Verify The Result
 
-Check MatCreator's combined statistics:
+Check Agent's combined statistics:
 
 ```bash
-matcreator knowledge stats
+agent knowledge stats
 ```
 
 Check the same database through the Know-Do Graph CLI:
@@ -113,17 +113,17 @@ Check the same database through the Know-Do Graph CLI:
 know-do-graph graph stats
 ```
 
-Both commands should use the same `KDG_DB_PATH`. By default MatCreator points
-that at `agents/MatCreator/.adk/know_do_graph.db`, so the CLI and agent share
+Both commands should use the same `KDG_DB_PATH`. By default Agent points
+that at `agents/Agent/.adk/know_do_graph.db`, so the CLI and agent share
 the same database.
 
 Inspect native SQLite counts:
 
 ```bash
-sqlite3 agents/MatCreator/.adk/know_do_graph.db \
+sqlite3 agents/Agent/.adk/know_do_graph.db \
   "SELECT entry_type, COUNT(*) FROM entries GROUP BY entry_type ORDER BY entry_type;"
 
-sqlite3 agents/MatCreator/.adk/know_do_graph.db \
+sqlite3 agents/Agent/.adk/know_do_graph.db \
   "SELECT relation, COUNT(*) FROM edges GROUP BY relation ORDER BY relation;"
 ```
 
@@ -143,7 +143,7 @@ files may remain as migration backups, but new writes must increase the
 Agent observations remain memory nodes until repeated evidence is promoted:
 
 ```bash
-matcreator knowledge distill --min-evidence 3
+agent knowledge distill --min-evidence 3
 ```
 
 Distillation:
@@ -158,7 +158,7 @@ Distillation:
 Use a different threshold when needed:
 
 ```bash
-matcreator knowledge distill --min-evidence 5 --stale-days 60
+agent knowledge distill --min-evidence 5 --stale-days 60
 ```
 
 ## Rollback
@@ -169,14 +169,14 @@ Restore the backed-up unified database:
 
 ```bash
 cp backup/knowledge-TIMESTAMP/current-data/know_do_graph.db \
-  agents/MatCreator/.adk/know_do_graph.db
+  agents/Agent/.adk/know_do_graph.db
 ```
 
 If no unified database existed before migration, move the new database aside:
 
 ```bash
-mv agents/MatCreator/.adk/know_do_graph.db \
-  agents/MatCreator/.adk/know_do_graph.db.migrated
+mv agents/Agent/.adk/know_do_graph.db \
+  agents/Agent/.adk/know_do_graph.db.migrated
 ```
 
 The original `.adk/skill_graph.db`, `.adk/memory_graph.db`, `.adk/memory/`,
@@ -186,13 +186,13 @@ and `MEMORY.md` sources remain untouched and can be used to repeat migration.
 
 ### `know-do-graph graph stats` reports zero nodes
 
-Run the command with the same `KDG_DB_PATH` MatCreator uses. By default that is
-the database in the MatCreator ADK directory:
+Run the command with the same `KDG_DB_PATH` Agent uses. By default that is
+the database in the Agent ADK directory:
 
 ```bash
 pwd
 echo "$KDG_DB_PATH"
-ls -l agents/MatCreator/.adk/know_do_graph.db
+ls -l agents/Agent/.adk/know_do_graph.db
 know-do-graph graph stats
 ```
 

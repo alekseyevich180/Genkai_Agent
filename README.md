@@ -1,7 +1,7 @@
 
-# MatCreator
+# Agent
 
-MatCreator is a **skill-based, agentic platform** for computational material science tasks, with a focus on Machine Learning Force Field (MLFF) generation and application. It would evolve with users by experience accumulation and creation of new skills. 
+Agent is a **skill-based, agentic platform** for computational material science tasks, with a focus on Machine Learning Force Field (MLFF) generation and application. It would evolve with users by experience accumulation and creation of new skills.
 
 ## Quick start
 ### Linux 安装
@@ -16,7 +16,7 @@ pipx install uv
 uv venv .venv --python 3.12
 source .venv/bin/activate
 
-# 以可编辑模式安装 MatCreator，并安装测试工具
+# 以可编辑模式安装 Agent，并安装测试工具
 uv pip install -e .
 uv pip install pytest
 
@@ -32,15 +32,15 @@ After installation, tell the CLI where the project root lives:
 
 ```bash
 # Run from the repo directory
-matcreator init .
+agent init .
 
 # Or specify an absolute path
-matcreator init /path/to/PFD-Agent
+agent init /path/to/PFD-Agent
 ```
 
-This writes `~/.matcreator/config.yaml` with the `project_root` path, so the
+This writes `~/.agent/config.yaml` with the `project_root` path, so the
 CLI can locate the `agents/` directory even when installed into site-packages.
-You can also set the `MATCREATOR` environment variable instead.
+You can also set the `AGENT` environment variable instead.
 
 ## Vite Frontend Requirements
 
@@ -105,10 +105,10 @@ pipx install uv
 
 ### Running agent networks
 #### Setting environments
-Before the first run, create the `agents/MatCreator/.env` file and configure your model API credentials (additional environment variables may be required for some functionalities).
+Before the first run, create the `agents/Agent/.env` file and configure your model API credentials (additional environment variables may be required for some functionalities).
 
 ```bash
-touch agents/MatCreator/.env
+touch agents/Agent/.env
 ```
 
 An example content of `.env`:
@@ -119,12 +119,12 @@ GRAPH_AGENT_MODEL="MODEL_TYPE"             # optional; defaults to LLM_MODEL
 REVIEW_AGENT_MODEL="MODEL_TYPE"            # optional; defaults to GRAPH_AGENT_MODEL
 LLM_API_KEY="API_KEYS"
 LLM_BASE_URL="BASE_URL"
-KDG_DB_PATH="agents/MatCreator/.adk/know_do_graph.db"
+KDG_DB_PATH="agents/Agent/.adk/know_do_graph.db"
 EMBEDDING_MODEL="EMBEDDING_MODEL_TYPE"
-MATCREATOR_AUTO_REVIEW=1
-MATCREATOR_REVIEW_TRIGGER_THRESHOLD=20
-MATCREATOR_REVIEW_BATCH_SIZE=5
-MATCREATOR_REVIEW_STRATEGY=auto             # auto, seed, or global
+AGENT_AUTO_REVIEW=1
+AGENT_REVIEW_TRIGGER_THRESHOLD=20
+AGENT_REVIEW_BATCH_SIZE=5
+AGENT_REVIEW_STRATEGY=auto             # auto, seed, or global
 
 # SKILL_RELATED_ENV
 CGCNN_ROOT=user/cgcnn                         # CGCNN project directory
@@ -148,7 +148,7 @@ Web UI 提供执行图可视化、产物上传与下载、材料结构显示和�
 
 ```bash
 # 激活 .venv 后，在仓库根目录执行
-bash script/start_matcreator.sh
+bash script/start_agent.sh
 ```
 
 该脚本会启动：
@@ -169,7 +169,7 @@ tail -f logs/vite.log
 
 > 开发模式不需要预先构建前端；Vite 开发服务器会直接运行并提供热更新。
 
-![The web UI for MatCreator](docs/images/agent_plot.png)
+![The web UI for Agent](docs/images/agent_plot.png)
 
 #### Non-interactive CLI mode
 
@@ -177,21 +177,21 @@ Run the agent on a single prompt without starting any server:
 
 ```bash
 # Inline prompt
-matcreator run -p "Build a silicon FCC structure"
+agent run -p "Build a silicon FCC structure"
 
 # Prompt from a file
-matcreator run -f prompt.txt
+agent run -f prompt.txt
 
 # Save the answer to a file
-matcreator run -p "Build a silicon FCC structure" -o result.txt
+agent run -p "Build a silicon FCC structure" -o result.txt
 
 # Full structured JSON output (includes turn count, duration, etc.)
-matcreator run -p "Build a silicon FCC structure" --output-format json -o result.json
+agent run -p "Build a silicon FCC structure" --output-format json -o result.json
 
 # Override the workspace directory
-matcreator run --workspace /data/my_workspace -p "Build a silicon FCC structure"
+agent run --workspace /data/my_workspace -p "Build a silicon FCC structure"
 # or via environment variable
-MATCLAW_WORKSPACE=/data/my_workspace matcreator run -p "Build a silicon FCC structure"
+MATCLAW_WORKSPACE=/data/my_workspace agent run -p "Build a silicon FCC structure"
 ```
 
 Each run creates a session directory under `<workspace>/sessions/<session-id>/` where any files produced by the agent are saved.
@@ -199,11 +199,11 @@ Each run creates a session directory under `<workspace>/sessions/<session-id>/` 
 #### Default adk web server (old style)
 
 ```bash
-matcreator web
+agent web
 ```
-This would set up the MatCreator agent network through the default `adk web` server. You can tune the LLM model and communication settings for the agents.
+This sets up the Agent network through the default `adk web` server. You can tune the LLM model and communication settings for the agents.
 
-The default agent workspace is located at `agents/MatCreator/.workspace`, where skills, memory, etc., are stored.
+The default agent workspace is located at `agents/Agent/.workspace`, where skills, memory, etc., are stored.
 
 ### 自动化测试
 
@@ -216,7 +216,7 @@ source .venv/bin/activate
 运行与 GitHub Actions 相同的模块导入完整性测试：
 
 ```bash
-python -m pytest tests/test_matcreator_agent.py -v
+python -m pytest tests/test_agent.py -v
 ```
 
 运行 Know-Do Graph 的记忆、提取和审核流程测试：
@@ -237,19 +237,19 @@ python -m pytest tests -v
 ```
 
 `tests/test_structure_builder.py` 目前依赖已经不存在的
-`matcreator.tools.structure_builder` 模块。因此，在恢复该模块或删除此测试前，
+`agent.tools.structure_builder` 模块。因此，在恢复该模块或删除此测试前，
 完整测试套件无法全部通过。当前 `.github/workflows/test.yml` 中的 GitHub
-Actions 仅在推送和拉取请求时运行 `tests/test_matcreator_agent.py`。
+Actions 仅在推送和拉取请求时运行 `tests/test_agent.py`。
 
 ## Skills
-MatCreator follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/MatCreator/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.
+Agent follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/Agent/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.
 
 > The default domain-based computational materials datasets is located at `database/domain_datasets.tar.gz`, which should be extracted for database skill usage. (See `tools/database/README.md`)
 
 > Check the `README.md` in `skills/$SKILL` if you really wanna use them. 
 
 
-> **Note — transitioning from MCP servers to skills:** MatCreator is progressively moving tool logic out of dedicated MCP servers and into self-contained skills. A skill bundles its own workflow instructions, helper scripts, and configuration alongside the `.md` file, so it can be run with only a general-purpose shell/Python tool rather than a running server process. If a capability you previously used via an MCP server is no longer listed under `tools/`, check `agents/MatCreator/knowledge/skills/` — it may have been migrated to a skill. MCP servers are retained only for tools that genuinely require a persistent service (e.g. a remote job scheduler or a database backend).
+> **Note — transitioning from MCP servers to skills:** Agent is progressively moving tool logic out of dedicated MCP servers and into self-contained skills. A skill bundles its own workflow instructions, helper scripts, and configuration alongside the `.md` file, so it can be run with only a general-purpose shell/Python tool rather than a running server process. If a capability you previously used via an MCP server is no longer listed under `tools/`, check `agents/Agent/skills/` — it may have been migrated to a skill. MCP servers are retained only for tools that genuinely require a persistent service (e.g. a remote job scheduler or a database backend).
 
 
 ###  Server setup (Optional)
@@ -265,9 +265,9 @@ uv run server.py --port 50001
 
 ### Customize skills
 
-Skills are Markdown files with a YAML frontmatter block (declaring `name`, `description`, `tools`, and `dependent_skills`) followed by a plain-text instruction body. The active loader discovers any workspace directory that contains a `SKILL.md` file, including nested directories such as `skills/mattergen/mattergen_generation/SKILL.md`. MatCreator loads skills from two locations in order:
+Skills are Markdown files with a YAML frontmatter block (declaring `name`, `description`, `tools`, and `dependent_skills`) followed by a plain-text instruction body. The active loader discovers any workspace directory that contains a `SKILL.md` file, including nested directories such as `skills/mattergen/mattergen_generation/SKILL.md`. Agent loads skills from two locations in order:
 
-1. **Built-in skills** — shipped with the package under `agents/MatCreator/knowledge/skills/`. Skills can be placed as flat `<name>.md` files or in a subdirectory `<name>/<name>.md`; the subdirectory form takes precedence.
+1. **Built-in skills** — shipped with the package under `agents/Agent/skills/`. Each skill lives in a directory containing a `SKILL.md` file.
 2. **Workspace overlay** — your personal skills under `$MATCLAW_WORKSPACE/skills/` (defaults to `.workspace/` in the project root). Any skill here with the same name overrides the built-in version.
 
 To customize a skill manually, copy its skill directory into your workspace `skills/` directory and edit the contained `SKILL.md`. To add a new skill, create a new `skills/<name>/SKILL.md` file following the same frontmatter format.
@@ -276,10 +276,10 @@ The agent can also create and update skills on its own. During a session, the th
 
 ## Know-Do Graph
 
-MatCreator uses `know-do-graph` for both durable knowledge and working memory:
+Agent uses `know-do-graph` for both durable knowledge and working memory:
 
 - **Know-Do Graph** stores curated capabilities, procedures, workflows, and
-  distilled heuristics in `agents/MatCreator/.adk/know_do_graph.db` by default.
+  distilled heuristics in `agents/Agent/.adk/know_do_graph.db` by default.
 - **MemGraph** stores frequently updated agent observations as
   `EntryType.memory` nodes and normal graph edges in the same SQLite database.
 

@@ -11,11 +11,11 @@ def _load_helpers():
     module_path = (
         Path(__file__).resolve().parents[1]
         / "agents"
-        / "MatCreator"
+        / "Agent"
         / "knowledge"
         / "kdg_memory.py"
     )
-    spec = importlib.util.spec_from_file_location("matcreator_kdg_helpers_test", module_path)
+    spec = importlib.util.spec_from_file_location("agent_kdg_helpers_test", module_path)
     assert spec and spec.loader
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -66,8 +66,8 @@ def test_durable_upsert_preserves_usage(tmp_path: Path) -> None:
         title="VASP relaxation",
         content="Relax structures with VASP.",
         entry_type=EntryType.capability,
-        tags=["matcreator-skill"],
-        metadata=EntryMetadata(custom={"managed_by": "matcreator"}),
+        tags=["agent-skill"],
+        metadata=EntryMetadata(custom={"managed_by": "agent"}),
     )
     helpers.increment_usage(graph, first)
     second, created_again = helpers.upsert_entry(
@@ -83,8 +83,8 @@ def test_durable_upsert_preserves_usage(tmp_path: Path) -> None:
     assert created_again is False
     assert second.id == first.id
     assert second.metadata.usage_count == 1
-    assert set(second.tags) == {"matcreator-skill", "managed"}
-    assert second.metadata.custom == {"managed_by": "matcreator", "kind": "skill"}
+    assert set(second.tags) == {"agent-skill", "managed"}
+    assert second.metadata.custom == {"managed_by": "agent", "kind": "skill"}
     graph.close()
 
 
@@ -190,7 +190,7 @@ def test_unified_store_and_memgraph_migration(tmp_path: Path) -> None:
 
 
 def test_synthesizer_distills_repeated_success(tmp_path: Path, monkeypatch) -> None:
-    from agents.MatCreator.knowledge import synthesizer
+    from agents.Agent.knowledge import synthesizer
 
     graph = KnowDoGraph(tmp_path / "know-do.db", memory_dir=tmp_path / "memory")
     for index in range(3):

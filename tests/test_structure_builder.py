@@ -3,7 +3,7 @@ import unittest
 
 from ase.io import read
 
-from matcreator.tools.structure_builder.structure_builder import build_bulk_crystal
+from agent.tools.structure_builder.structure_builder import build_bulk_crystal
 
 
 class TestBuildBulkCrystal(unittest.TestCase):

@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 from know_do_graph import EntryType, VerificationStatus
 
-from agents.MatCreator.knowledge.review import run_review_pipeline
+from agents.Agent.knowledge.review import run_review_pipeline
 
 
 def _entry(entry_type, *, reviewed=0, status=VerificationStatus.unverified, memory=None):
