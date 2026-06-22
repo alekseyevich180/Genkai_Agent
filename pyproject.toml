@@ -1,0 +1,48 @@
+[project]
+name = "matcreator"
+version = "1.12.0"
+description = "A multi-agent framework for complex computational material tasks."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ase>=3.26.0",
+    "fastmcp>=2.12.3",
+    "google-adk>=1.28.0",
+    "google-cloud-storage",
+    "lbg>=1.2.29",
+    "litellm>=1.77.4",
+    "periodictable>=2.0.2",
+    "pyyaml>=6.0.2",
+    "scipy>=1.16.2",
+    "python-dotenv",
+    "sqlalchemy",
+    "networkx>=3.0",
+    "python-multipart>=0.0.9",
+    "requests>=2.31.0",
+    "py3dmol>=2.0.0",
+    "a2a-sdk==0.3.25",
+    "tavily-cli",
+    "pymatgen-analysis-diffusion",
+    "mp-api",
+    "bcrypt>=4.0.0",
+    "matcraft-kit",
+    "know-do-graph>=0.1.6"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+matcreator = "matcreator.scripts.start_agent:main"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+branch = "main"
+upload_to_pypi = false
+upload_to_release = true
+commit_message = "chore(release): {version} [skip ci]"
+tag_format = "v{version}"
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MatCreator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="dot"></div>
+          <div>
+            <div class="brand-title">MatCreator</div>
+            <div class="brand-sub">Plan · Execute · Review</div>
+          </div>
+        </div>
+        <button class="knowledge-review-banner status-idle" id="knowledge-review-banner" type="button" aria-live="polite" title="Click to review memory and graph nodes">
+          <span class="knowledge-review-spinner hidden" id="knowledge-review-spinner"></span>
+          <span id="knowledge-review-text">Review Know-Do Graph</span>
+        </button>
+        <div class="session-chips">
+          <span class="chip">User: <span id="user-display">—</span>
+            <button class="ghost" id="edit-user" style="padding:0 6px;font-size:11px" title="Switch user">✎</button>
+            <button class="ghost" id="logout-btn" style="padding:0 6px;font-size:11px" title="Log out">⏏</button>
+          </span>
+          <span class="chip">Session: <span id="session-id">-</span></span>
+          <span class="chip agent-mode-chip hidden" id="agent-mode-chip"></span>
+          <button class="ghost" id="reset-session">New Session</button>
+          <button class="ghost" id="settings-btn" title="Settings">⚙</button>
+          <button class="ghost files-col-toggle" id="files-col-toggle" title="Toggle session files panel" style="padding:0 10px;font-size:13px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7a2 2 0 0 1 2-2h3.17a2 2 0 0 1 1.42.59l.82.82A2 2 0 0 0 11.83 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-grid">
+
+        <!-- Left: Agent execution graph + node detail -->
+        <div class="graph-column" id="graph-column">
+          <section class="card graph-card">
+            <div class="card-header">
+              <div>
+                <div class="eyebrow">Live</div>
+                <h2>Agent Graph</h2>
+              </div>
+              <span class="graph-status" id="graph-status">idle</span>
+            </div>
+            <div class="graph-viewport" id="graph-viewport">
+              <div class="graph-surface" id="graph-surface">
+                <div id="agent-graph" class="graph-canvas"></div>
+              </div>
+            </div>
+          </section>
+          <div
+            class="panel-resizer"
+            id="graph-resizer"
+            data-target="graph-viewport"
+            tabindex="0"
+            role="separator"
+            aria-orientation="horizontal"
+            aria-label="Resize agent graph height"
+          ></div>
+          <div class="graph-detail hidden" id="graph-detail">
+            <div class="detail-header">
+              <span id="detail-label">Node</span>
+              <span class="badge" id="detail-status">—</span>
+            </div>
+            <div class="detail-body">
+              <div class="detail-row" id="detail-summary-row">
+                <span class="detail-key">Summary</span>
+                <span class="detail-val" id="detail-summary">—</span>
+              </div>
+              <div class="detail-row" id="detail-timing-row">
+                <span class="detail-key">Time</span>
+                <span class="detail-val" id="detail-timing">—</span>
+              </div>
+              <div id="detail-actions-row" style="display:none; padding: 6px 0;">
+                <button id="detail-stop-step-btn" class="stop-step-btn">Stop step</button>
+              </div>
+              <div class="detail-row" id="detail-artifacts-row">
+                <span class="detail-key">Artifacts</span>
+                <ul class="detail-artifacts" id="detail-artifacts"></ul>
+              </div>
+              <div class="detail-section" id="detail-input-row">
+                <details>
+                  <summary class="detail-key">Input</summary>
+                  <pre class="json-block" id="detail-input"></pre>
+                </details>
+              </div>
+              <div class="detail-section" id="detail-toolcalls-row">
+                <details>
+                  <summary class="detail-key">Tool Calls (<span id="detail-toolcalls-count">0</span>)</summary>
+                  <div id="detail-toolcalls"></div>
+                </details>
+              </div>
+              <div class="detail-section" id="detail-conversation-row">
+                <details>
+                  <summary class="detail-key">Conversation Transcript</summary>
+                  <div id="detail-conversation"></div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div
+            class="panel-resizer hidden"
+            id="detail-resizer"
+            data-target="graph-detail"
+            tabindex="0"
+            role="separator"
+            aria-orientation="horizontal"
+            aria-label="Resize sub-agent context height"
+          ></div>
+
+          <div class="structure-viewer hidden" id="structure-viewer">
+            <div class="structure-viewer-header">
+              <div>
+                <div class="eyebrow">Structure</div>
+                <div id="sv-meta"></div>
+              </div>
+              <button class="ghost" id="sv-close" style="font-size:11px;padding:4px 8px">✕</button>
+            </div>
+            <div id="sv-canvas" class="sv-canvas"></div>
+          </div>
+          <div
+            class="panel-resizer hidden"
+            id="structure-resizer"
+            data-target="structure-viewer"
+            tabindex="0"
+            role="separator"
+            aria-orientation="horizontal"
+            aria-label="Resize structure viewer height"
+          ></div>
+        </div>
+
+        <div class="col-resizer" id="col-resizer-graph" tabindex="0"
+             role="separator" aria-orientation="vertical"
+             aria-label="Resize agent graph column width"></div>
+
+        <!-- Centre: Chat -->
+        <section class="card chat-card">
+          <div class="card-header">
+            <div>
+              <div class="eyebrow">Conversation</div>
+              <h2>Orchestration Chat</h2>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button class="ghost" id="plan-graph-toggle" title="Toggle execution plan graph" style="font-size:11px;padding:4px 8px;">Plan Graph</button>
+              <div id="avatar-upload-btn" class="message-avatar user-avatar avatar-upload-btn" title="Upload your avatar" style="cursor:pointer;"></div>
+              <input type="file" id="avatar-upload-input" accept="image/*" style="display:none">
+            </div>
+          </div>
+          <div class="chat-area" id="chat-area">
+            <div class="message agent-message">
+              <div class="message-avatar agent-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="rgba(125,211,252,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="8" width="18" height="11" rx="2"/>
+                  <path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+                  <circle cx="9" cy="14" r="1" fill="rgba(125,211,252,0.9)" stroke="none"/>
+                  <circle cx="15" cy="14" r="1" fill="rgba(125,211,252,0.9)" stroke="none"/>
+                  <path d="M7 19v2M17 19v2"/>
+                </svg>
+              </div>
+              <div class="message-bubble">
+                <div class="markdown-content">
+                  Welcome to MatCreator! Ask for a plan, request execution, or review results. Messages stream from the backend.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input-area">
+            <div class="upload-status" id="upload-status" aria-live="polite"></div>
+            <div class="input-container">
+              <button class="tool-btn" id="file-upload-btn" title="Upload file">+</button>
+              <input type="file" id="file-upload-input" multiple style="display:none">
+              <textarea class="text-input" id="text-input" placeholder="Ask for a plan, run, or assessment…" rows="1"></textarea>
+              <button class="send-btn" id="send-btn" title="Send">➜</button>
+            </div>
+          </div>
+
+          <!-- Floating execution plan graph popup -->
+          <div class="plan-graph-popup hidden" id="plan-graph-popup">
+            <div class="plan-graph-popup-header">
+              <span class="plan-graph-popup-title">Execution Plan</span>
+              <span class="graph-status status-idle" id="plan-graph-status">idle</span>
+              <button class="ghost plan-graph-close-btn" id="plan-graph-close" title="Close">✕</button>
+            </div>
+            <div id="plan-graph-canvas" class="plan-graph-canvas"></div>
+          </div>
+        </section>
+
+        <div class="col-resizer" id="col-resizer-side" tabindex="0"
+             role="separator" aria-orientation="vertical"
+             aria-label="Resize side panel width"></div>
+
+        <!-- Right: Controls + Sessions + Artifacts -->
+        <aside class="card side-panel" id="side-panel">
+          <div class="panel-block">
+            <div class="block-header">Workflow Controls</div>
+            <div class="actions">
+              <button class="pill" data-quick="yes">Approve Plan</button>
+              <button class="pill" data-quick="replan">Request Replan</button>
+              <button class="pill" data-quick="continue">Continue</button>
+            </div>
+            <div class="agent-mode-row">
+              <div class="agent-mode-label">Agent Mode</div>
+              <div class="mode-selector" id="mode-selector" role="group" aria-label="Agent mode">
+                <button class="mode-btn" data-mode="flash" title="Conversational with direct execution; no DAG required">Flash</button>
+                <button class="mode-btn" data-mode="normal" title="Plan first, then confirm before execution">Standard</button>
+                <button class="mode-btn" data-mode="bench" title="Plan first, then auto-confirm without waiting">Bench</button>
+              </div>
+            </div>
+          </div>
+
+          <details class="panel-block" open>
+            <summary class="block-header">Sessions
+              <button class="ghost" id="refresh-sessions" style="font-size:11px" title="Refresh session list">↺</button>
+            </summary>
+            <div class="panel-block-body">
+              <ul class="artifact-list" id="session-list">
+                <li class="empty">Sign in to see sessions</li>
+              </ul>
+            </div>
+          </details>
+        </aside>
+
+        <div class="col-resizer hidden" id="col-resizer-files" tabindex="0"
+             role="separator" aria-orientation="vertical"
+             aria-label="Resize file explorer width"></div>
+
+        <aside class="card file-explorer-col" id="file-explorer-col">
+          <div class="file-explorer-header">
+            <div>
+              <div class="eyebrow">Files</div>
+              <h2>Session Files</h2>
+            </div>
+            <button class="ghost" id="refresh-files" style="font-size:11px" title="Refresh files">↺</button>
+          </div>
+          <div class="file-explorer-body">
+            <ul class="artifact-list" id="session-files-tree">
+              <li class="empty">No files yet</li>
+            </ul>
+          </div>
+        </aside>
+
+      </main>
+    </div>
+
+    <!-- Login overlay -->
+    <div id="login-modal" class="login-overlay">
+      <div class="login-card">
+        <div class="brand-title" style="font-size:1.4rem">MatCreator</div>
+        <!-- Login view -->
+        <div id="login-view">
+          <p style="color:var(--muted);margin:0 0 8px;font-size:0.875rem">Sign in to continue</p>
+          <input id="login-input" class="text-input" placeholder="Username" style="width:100%;box-sizing:border-box" autocomplete="username" />
+          <input id="login-password" type="password" class="text-input" placeholder="Password" style="width:100%;box-sizing:border-box;margin-top:8px" autocomplete="current-password" />
+          <p id="login-error" style="color:#f87171;font-size:0.8rem;margin:4px 0 0;min-height:1.2em"></p>
+          <p id="login-uuid-display" style="color:var(--muted);font-size:0.75rem;font-family:monospace;margin:2px 0 0;min-height:1.1em;word-break:break-all"></p>
+          <button id="login-submit" class="send-btn" style="width:100%;justify-content:center;margin-top:4px">Sign in →</button>
+          <p style="text-align:center;margin:10px 0 0;font-size:0.8rem;color:var(--muted)">
+            No account? <button id="switch-to-register" class="ghost" style="padding:0;font-size:0.8rem;color:var(--accent)">Register</button>
+          </p>
+        </div>
+        <!-- Register view -->
+        <div id="register-view" class="hidden">
+          <p style="color:var(--muted);margin:0 0 8px;font-size:0.875rem">Create a new account</p>
+          <input id="reg-input" class="text-input" placeholder="Username" style="width:100%;box-sizing:border-box" autocomplete="username" />
+          <input id="reg-password" type="password" class="text-input" placeholder="Password" style="width:100%;box-sizing:border-box;margin-top:8px" autocomplete="new-password" />
+          <input id="reg-confirm" type="password" class="text-input" placeholder="Confirm password" style="width:100%;box-sizing:border-box;margin-top:8px" autocomplete="new-password" />
+          <p id="reg-error" style="color:#f87171;font-size:0.8rem;margin:4px 0 0;min-height:1.2em"></p>
+          <button id="reg-submit" class="send-btn" style="width:100%;justify-content:center;margin-top:4px">Register →</button>
+          <p style="text-align:center;margin:10px 0 0;font-size:0.8rem;color:var(--muted)">
+            Have an account? <button id="switch-to-login" class="ghost" style="padding:0;font-size:0.8rem;color:var(--accent)">Sign in</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings modal -->
+    <div id="settings-modal" class="settings-overlay hidden">
+      <div class="settings-card">
+        <div class="settings-header">
+          <span class="brand-title" style="font-size:1.1rem">Settings</span>
+          <button class="ghost" id="settings-close" style="padding:4px 10px;font-size:13px">✕</button>
+        </div>
+        <div class="settings-tabs">
+          <button class="settings-tab active" data-tab="profile">Profile</button>
+          <button class="settings-tab" data-tab="skills">Skills</button>
+          <button class="settings-tab" data-tab="llm">LLM Settings</button>
+          <button class="settings-tab" data-tab="bohr">Bohr Credentials</button>
+        </div>
+        <div class="settings-body">
+          <div class="settings-pane" id="tab-profile">
+            <label class="settings-label">Username</label>
+            <input id="settings-username" class="text-input" placeholder="your username" style="width:100%;box-sizing:border-box" />
+            <label class="settings-label" style="margin-top:12px">User ID (UUID)</label>
+            <input id="settings-uuid" class="text-input" readonly style="width:100%;box-sizing:border-box;font-family:monospace;font-size:0.8rem;opacity:0.7;cursor:text" />
+            <div style="margin-top:20px;border-top:1px solid #ffffff18;padding-top:16px">
+              <label class="settings-label">Change Password</label>
+              <input type="password" id="settings-current-password" class="text-input" aria-label="Current password" placeholder="Current password (leave blank if none)" style="width:100%;box-sizing:border-box;margin-top:6px" />
+              <input type="password" id="settings-new-password" class="text-input" aria-label="New password" placeholder="New password" style="width:100%;box-sizing:border-box;margin-top:6px" />
+              <input type="password" id="settings-confirm-password" class="text-input" aria-label="Confirm new password" placeholder="Confirm new password" style="width:100%;box-sizing:border-box;margin-top:6px" />
+              <button id="settings-save-password-btn" class="ghost" style="margin-top:8px;width:100%;justify-content:center">Save Password</button>
+              <span id="settings-password-msg" role="status" style="display:block;margin-top:6px;font-size:0.8rem;min-height:1.2em"></span>
+            </div>
+            <button id="settings-logout-btn" class="ghost" style="margin-top:16px;width:100%;justify-content:center;color:#f87171;border:1px solid #f8717144">Log out</button>
+          </div>
+          <div class="settings-pane hidden" id="tab-skills">
+            <p class="settings-hint">
+              <strong>Enabled</strong> — skill is visible to the agent's graph search.<br>
+              <strong>Planning</strong> — full SKILL.md is available to the planning agent (in addition to the built-in <code>concepts</code> and <code>guides</code> categories).
+            </p>
+            <div id="skills-checklist" class="skills-checklist"></div>
+          </div>
+          <div class="settings-pane hidden" id="tab-llm">
+            <p class="settings-hint env-restart-notice">Changes take effect after restarting the backend.</p>
+            <label class="settings-label">LLM Model</label>
+            <input id="settings-llm-model" class="text-input settings-env-input" placeholder="e.g. openai/gpt-4o" />
+            <label class="settings-label">API Key</label>
+            <input id="settings-llm-apikey" type="password" class="text-input settings-env-input" placeholder="sk-..." autocomplete="new-password" />
+            <label class="settings-label">Base URL</label>
+            <input id="settings-llm-baseurl" class="text-input settings-env-input" placeholder="https://api.openai.com/v1" />
+            <label class="settings-label">Embedding Model</label>
+            <input id="settings-llm-embed" class="text-input settings-env-input" placeholder="e.g. openai/text-embedding-v3" />
+          </div>
+          <div class="settings-pane hidden" id="tab-bohr">
+            <p class="settings-hint env-restart-notice">Changes take effect after restarting the backend.</p>
+            <label class="settings-label">Email</label>
+            <input id="settings-bohr-email" class="text-input settings-env-input" placeholder="user@example.com" />
+            <label class="settings-label">Password</label>
+            <input id="settings-bohr-password" type="password" class="text-input settings-env-input" placeholder="password" autocomplete="new-password" />
+            <label class="settings-label">Project ID</label>
+            <input id="settings-bohr-project" class="text-input settings-env-input" placeholder="12345" />
+            <div class="settings-section-divider">Job Configuration</div>
+            <label class="settings-label">VASP Image</label>
+            <input id="settings-bohr-vasp-image" class="text-input settings-env-input" placeholder="registry.dp.tech/...vasp:5.4.4" />
+            <label class="settings-label">VASP Machine</label>
+            <input id="settings-bohr-vasp-machine" class="text-input settings-env-input" placeholder="c16_m32_cpu" />
+            <label class="settings-label">DeepMD Image</label>
+            <input id="settings-bohr-deepmd-image" class="text-input settings-env-input" placeholder="registry.dp.tech/...deepmd-kit:3.1.0" />
+            <label class="settings-label">DeepMD Machine</label>
+            <input id="settings-bohr-deepmd-machine" class="text-input settings-env-input" placeholder="1 * NVIDIA V100_32g" />
+            <label class="settings-label">DeepMD Model Path</label>
+            <input id="settings-bohr-deepmd-model" class="text-input settings-env-input" placeholder="DPA2_medium_28_10M_rc0.pt" />
+          </div>
+        </div>
+        <div class="settings-footer">
+          <span id="settings-status" class="settings-status"></span>
+          <button class="ghost" id="settings-restart-btn" title="Restart the ADK backend to apply credential changes">↺ Restart Backend</button>
+          <button class="send-btn" id="settings-save" style="justify-content:center">Save</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

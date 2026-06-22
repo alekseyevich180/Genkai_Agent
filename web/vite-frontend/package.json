@@ -1,0 +1,20 @@
+{
+  "name": "matcreator-vite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "3dmol": "^2.5.4",
+    "marked": "^11.1.1",
+    "vis-data": "^7.1.9",
+    "vis-network": "^9.1.9"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}

@@ -1,0 +1,38 @@
+name: Sync pkg branch (no LFS)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-pkg-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main without LFS
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          lfs: false
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Strip LFS-tracked files and update .gitattributes
+        run: |
+          # Remove the database archive from git index (leaves no trace on the pkg branch)
+          git rm --cached database/domain_datasets.tar.gz 2>/dev/null || true
+          # Remove the LFS rule so cloning this branch never contacts LFS
+          sed -i '/filter=lfs/d' .gitattributes
+
+      - name: Commit and force-push to pkg branch
+        run: |
+          git add .gitattributes
+          git commit -m "chore: strip LFS assets for pkg branch [skip ci]" || echo "Nothing to commit"
+          git push origin HEAD:pkg --force

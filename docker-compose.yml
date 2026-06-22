@@ -1,0 +1,21 @@
+services:
+  matcreator:
+    build: .
+    image: matcreator:latest
+    container_name: matcreator
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "5173:5173"
+    volumes:
+      - ./agents/MatCreator/.workspace:/app/agents/MatCreator/.workspace
+      - ./agents/MatCreator/.adk:/app/agents/MatCreator/.adk
+      - ./logs:/app/logs
+    env_file:
+      - agents/MatCreator/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,0 +1,5 @@
+agents:
+  - name: example_agent
+    description: example agent for demonstration purposes
+    agent_card_url: http://example/.well-known/agent-card.json
+    enabled: false
