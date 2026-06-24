@@ -3,6 +3,8 @@
 
 Agent is a **skill-based, agentic platform** for computational material science tasks, with a focus on Machine Learning Force Field (MLFF) generation and application. It would evolve with users by experience accumulation and creation of new skills.
 
+This workspace now includes a surface-oriented modeling skill at `agents/Agent/skills/surface-modeling/`. It covers oxide surface vacancy landscapes, adsorbate coverage landscapes, and metal nanocluster placement on surfaces, with fast mock-calculator checks and optional UMA/FAIRChem workflows for production relaxation.
+
 ## Quick start
 ### Linux 安装
 

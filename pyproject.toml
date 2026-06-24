@@ -6,6 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ase>=3.26.0",
+    "matplotlib>=3.8.0",
+    "optuna>=3.6.0",
+    "pandas>=2.2.0",
     "fastmcp>=2.12.3",
     "google-adk>=1.28.0",
     "google-cloud-storage",
