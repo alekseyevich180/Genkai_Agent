@@ -171,7 +171,7 @@ tail -f logs/vite.log
 
 > 开发模式不需要预先构建前端；Vite 开发服务器会直接运行并提供热更新。
 
-![The web UI for Agent](docs/images/agent_plot.png)
+![The web UI for Agent]()
 
 #### Non-interactive CLI mode
 
