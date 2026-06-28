@@ -1,0 +1,13 @@
+# Compatibility requirements for vendored ReactionSeek and NERRE code.
+# Intentionally excludes conflicting upstream pins for openai and pandas.
+ChemDataExtractor==1.3.0
+DAWG2==0.13.3
+jellyfish==0.9.0
+scikit-learn
+appdirs
+beautifulsoup4
+cssselect
+nltk
+pdfminer.six
+python-crfsuite
+soupsieve

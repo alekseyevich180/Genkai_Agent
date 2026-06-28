@@ -1,0 +1,4 @@
+python==3.12
+openai==1.76
+pubchempy==1.0.4
+pandas==2.1

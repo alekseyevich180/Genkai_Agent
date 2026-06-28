@@ -124,6 +124,26 @@ def main():
     """Agent CLI — manage and run the Agent platform."""
 
 
+@main.command("init")
+@click.argument(
+    "project_root",
+    type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=Path),
+)
+def init(project_root: Path):
+    """Persist the Agent project root for later CLI invocations."""
+    root = project_root.expanduser().resolve()
+    agents_dir = root / "agents"
+    if not agents_dir.is_dir():
+        raise click.ClickException(f"Project root does not contain an agents/ directory: {root}")
+
+    _CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(_CONFIG_PATH, "w") as fh:
+        yaml.safe_dump({"project_root": str(root)}, fh, sort_keys=False)
+
+    click.echo(f"Wrote {_CONFIG_PATH}")
+    click.echo(f"project_root: {root}")
+
+
 @main.command("web")
 @add_shared_options
 @click.option("--reload-agents", is_flag=True, default=False,

@@ -56,7 +56,27 @@ npm -v
 
 ## 3. 初始化项目路径
 
-安装后，需要告诉命令行工具项目根目录在哪里。README 中给出的方式是：
+安装后，需要告诉命令行工具项目根目录在哪里。先确认已经激活项目虚拟环境：
+
+```bash
+cd /home/pj24001724/ku40000345/wu/Genkai_Agent
+source .venv/bin/activate
+```
+
+激活后确认 `agent` 命令可用：
+
+```bash
+which agent
+agent --help
+```
+
+正常情况下，`which agent` 应指向当前仓库下的 `.venv/bin/agent`，例如：
+
+```text
+/home/pj24001724/ku40000345/wu/Genkai_Agent/.venv/bin/agent
+```
+
+然后执行初始化：
 
 ```bash
 agent init .
@@ -65,21 +85,39 @@ agent init .
 也可以指定绝对路径：
 
 ```bash
-agent init /path/to/Genkai_Agent
+agent init /home/pj24001724/ku40000345/wu/Genkai_Agent
 ```
 
 该命令会写入 `~/.agent/config.yaml`，保存 `project_root` 路径，使 Agent 即使被安装到 Python 环境中，也能正确找到 `agents/` 目录。
 
-注意：如果当前安装版本没有提供 `agent init` 子命令，可以直接使用 `AGENT` 环境变量指定项目根目录：
+如果尚未激活虚拟环境，直接运行 `agent init ...` 可能出现：
+
+```text
+bash: agent: コマンドが見つかりません
+```
+
+这表示当前 shell 的 `PATH` 中找不到 `agent` 可执行文件，不代表仓库没有安装。先执行：
 
 ```bash
-export AGENT=/path/to/Genkai_Agent
+source .venv/bin/activate
+```
+
+或直接使用完整路径：
+
+```bash
+.venv/bin/agent init /home/pj24001724/ku40000345/wu/Genkai_Agent
+```
+
+注意：如果某个旧版本没有提供 `agent init` 子命令，可以直接使用 `AGENT` 环境变量指定项目根目录：
+
+```bash
+export AGENT=/home/pj24001724/ku40000345/wu/Genkai_Agent
 ```
 
 也可以手动创建配置文件：
 
 ```yaml
-project_root: /path/to/Genkai_Agent
+project_root: /home/pj24001724/ku40000345/wu/Genkai_Agent
 ```
 
 配置文件路径为：
@@ -354,23 +392,39 @@ python -m pytest tests -v
 
 ## 11. 常见问题排查
 
-如果 `agent` 命令不可用，先确认虚拟环境已激活，并重新执行：
+如果 `agent` 命令不可用，先确认虚拟环境已激活：
 
 ```bash
 source .venv/bin/activate
+which agent
+agent --help
+```
+
+如果仍然找不到命令，重新安装当前仓库到虚拟环境：
+
+```bash
 uv pip install -e .
 ```
+
+也可以不依赖 shell 的 `PATH`，直接调用虚拟环境里的可执行文件：
+
+```bash
+.venv/bin/agent --help
+.venv/bin/agent init /home/pj24001724/ku40000345/wu/Genkai_Agent
+```
+
+如果看到 `Error: No such command 'init'.`，说明当前安装的代码还没有 `init` 子命令，需要更新到包含 `src/agent/scripts/start_agent.py` 中 `init` 命令的版本，或重新执行 `uv pip install -e .`。
 
 如果 Agent 找不到项目目录，优先检查 `AGENT` 环境变量：
 
 ```bash
-export AGENT=/path/to/Genkai_Agent
+export AGENT=/home/pj24001724/ku40000345/wu/Genkai_Agent
 ```
 
 如果当前安装版本支持 `agent init`，也可以重新初始化：
 
 ```bash
-agent init .
+agent init /home/pj24001724/ku40000345/wu/Genkai_Agent
 ```
 
 如果 Web UI 无法打开，检查三个服务是否都已启动，并查看日志：

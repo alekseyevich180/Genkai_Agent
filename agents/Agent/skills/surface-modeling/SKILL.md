@@ -1,6 +1,6 @@
 ---
 name: surface-modeling
-description: Build realistic oxide-surface candidates: oxygen-vacancy landscapes, adsorbate coverage landscapes, and metal-cluster-on-surface starting structures using ASE, Optuna, and optional UMA/FAIRChem calculators.
+description: "Build realistic oxide-surface candidates: oxygen-vacancy landscapes, adsorbate coverage landscapes, and metal-cluster-on-surface starting structures using ASE, Optuna, and optional UMA/FAIRChem calculators."
 metadata:
   tools:
     - run_python_file
