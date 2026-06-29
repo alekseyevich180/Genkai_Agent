@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v2.0.0 (2026-06-29)
+
+### Features
+
+- Add paper reading and information extraction workflow under `paperread/`
+- Integrate `ReactionSeek` and `NERRE` with shared Agent API configuration
+- Add `paperread/surface/` pipeline for PDF ingestion, surface/material extraction, reaction parameter extraction, and summary generation
+
 ## v1.0.0 (2026-06-22)
 
 - Initial Release

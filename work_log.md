@@ -773,3 +773,45 @@ python -m unittest tests.test_paperread_surface -v
 ## 日志约定
 
 - 从现在开始，这个项目的工作日志默认统一写入 `work_log.md`。
+
+## 本轮补充：版本升级到 2.0.0
+
+更新时间：2026-06-29
+
+本轮处理内容：
+
+- 将项目版本号从 `1.0.0` 升级到 `2.0.0`。
+- 原因是当前项目已经新增论文读取与信息提取能力，功能范围明显扩展，不再只是初始版本能力。
+
+本轮修改文件：
+
+- `pyproject.toml`
+  - `project.version = "2.0.0"`
+- `CHANGELOG.md`
+  - 新增 `v2.0.0 (2026-06-29)` 条目
+  - 记录以下新增能力：
+    - `paperread/` 论文读取与信息提取工作流
+    - `ReactionSeek` 与 `NERRE` 接入
+    - `paperread/surface/` 的 PDF 读取、表面材料抽取、反应参数抽取与摘要输出
+
+## 本轮补充：同步 API 元数据版本
+
+更新时间：2026-06-29
+
+本轮处理内容：
+
+- 检查了前端、文档和服务端代码中的硬编码版本号。
+- 确认真正需要同步的是后端 API 元数据中的版本号，而不是前端依赖或模型文件名。
+
+本轮修改文件：
+
+- `web/main.py`
+  - 将 `FastAPI(title="Agent Graph API", version="1.0.0")`
+  - 更新为 `FastAPI(title="Agent Graph API", version="2.0.0")`
+
+检查结论：
+
+- `pyproject.toml` 已是 `2.0.0`
+- `CHANGELOG.md` 已新增 `v2.0.0`
+- `web/main.py` 现已同步到 `2.0.0`
+- `web/vite-frontend/package.json` 中的 `0.1.0` 是前端包自身版本，当前不作为主项目版本处理
