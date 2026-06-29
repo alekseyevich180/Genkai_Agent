@@ -68,7 +68,7 @@ def extract_relations(input_path: str, output_jsonl: str, model: str | None = No
                 "text": joined_text,
                 "extraction": payload,
             }
-            handle.write(json.dumps(output, ensure_ascii=False) + "\n")
+            handle.write(json.dumps(output, ensure_ascii=False, indent=2) + "\n")
     return output_jsonl
 
 

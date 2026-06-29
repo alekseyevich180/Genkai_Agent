@@ -1,0 +1,16 @@
+这次抽到的关键信息包括：
+
+在 test_api_table.csv 里：
+
+- Sn SAs/G 在 Ar 气氛下 400 °C、3 h Annealing
+- 2.93 wt% Sn
+- 543 m²/g
+- 电化学测试 1 mA cm⁻²、200 cycles
+- 电化学测试 4 mA cm⁻²、600 h
+
+在 test_api_surface_relations.jsonl 里：
+
+- 材料：Graphene oxide、Sn single atoms、Sn SAs/G、Na3V2(PO4)3
+- 材料参数：2.93 wt% Sn、543 m2 g-1、+4、atomically dispersed、2D support
+- 反应参数：400 C、3 h、1 mA cm-2、1 mAh cm-2、600 h、4 mA cm-2、20 C
+- 性能：99.8%、40 mV、67 mAh g-1、91% after 500 cycles

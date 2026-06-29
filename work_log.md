@@ -671,3 +671,105 @@ python -m unittest tests.test_paperread_surface -v
 - 现在已经具备“从 PDF 入口开始”的逻辑能力。
 - 但 PDF 质量仍依赖 `pdftotext` 对版面的解析效果。
 - 双栏排版、复杂表格、图注、参考文献噪声、扫描版 PDF 仍可能影响抽取质量。
+
+## 本轮补充：`tests/test2.pdf` 实测与摘要格式调整
+
+更新时间：2026-06-29
+
+本轮处理内容：
+
+- 对 `tests/test2.pdf` 进行了新一轮抽取实验。
+- 由于整篇 PDF 直接送入模型时触发上下文限制，因此先对论文关键内容做压缩整理，再送入 `surface` 抽取链路。
+- 输出文件继续统一放在 `tests/` 下。
+
+本轮产出文件：
+
+- `tests/test2_api_table.csv`
+- `tests/test2_api_time.csv`
+- `tests/test2_api_surface_relations.jsonl`
+- `tests/test2_api_summary.txt`
+
+本轮关键调整：
+
+- 修改 `paperread/surface/summarize_surface_outputs.py`
+- 将关系抽取结果中的以下部分改为竖排输出：
+  - `材料`
+  - `材料参数`
+  - `反应参数`
+  - `性能`
+
+当前摘要文件格式已确认：
+
+```text
+- 材料：
+  - item1
+  - item2
+- 材料参数：
+  - item1
+  - item2
+- 反应参数：
+  - item1
+  - item2
+- 性能：
+  - item1
+  - item2
+```
+
+当前结论：
+
+- `surface` 子项目已经支持：
+  - 从 PDF 提取文本
+  - 分流条件抽取与关系抽取输入
+  - 输出条件表、时间标准化结果、表面关系结果、人工可读摘要
+- 最新摘要输出格式已经更适合后续人工浏览和整理化学反应相关信息。
+
+## 本轮补充：关系文件改为竖排输出
+
+更新时间：2026-06-29
+
+本轮主要工作：
+
+- 继续完善 `paperread/surface/` 子项目，用于表面材料与化学反应信息抽取。
+- 以 `tests/test2.pdf` 为测试论文，重新执行表面关系抽取与摘要生成。
+- 将 `test2_api_surface_relations.jsonl` 的输出格式调整为竖排、多行、可直接阅读的 JSON。
+- 保持摘要文件 `test2_api_summary.txt` 中的材料、材料参数、反应参数、性能部分为竖排列表。
+
+本轮关键修改：
+
+- 修改 `paperread/surface/extract_surface_relations.py`
+  - 原先输出为单行 JSONL。
+  - 现在改为带缩进的多行 JSON，便于直接查看关系抽取结果。
+- 修改 `paperread/surface/summarize_surface_outputs.py`
+  - 兼容读取旧的一行 JSONL。
+  - 兼容读取新的多行竖排 JSON。
+- 修改 `tests/test_paperread_surface.py`
+  - 调整断言，适配新的关系文件格式。
+
+本轮生成与确认的输出：
+
+- `tests/test2_api_surface_relations.jsonl`
+  - 现在为竖排 JSON 输出。
+- `tests/test2_api_summary.txt`
+  - 摘要中的反应相关部分已按竖排输出。
+
+验证结果：
+
+```bash
+python -m unittest tests.test_paperread_surface -v
+```
+
+- 7 个测试全部通过。
+
+当前状态：
+
+- `surface` 子项目已经支持从 PDF 相关内容中抽取：
+  - 材料
+  - 材料参数
+  - 反应参数
+  - 性能
+  - 关系链接
+- 输出格式已经更适合人工审阅和后续整理。
+
+## 日志约定
+
+- 从现在开始，这个项目的工作日志默认统一写入 `work_log.md`。

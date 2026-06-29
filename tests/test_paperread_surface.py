@@ -154,7 +154,8 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("summary_txt", outputs)
             self.assertTrue(Path(outputs["relations_jsonl"]).is_file())
             content = Path(outputs["relations_jsonl"]).read_text(encoding="utf-8")
-            self.assertIn('"materials": ["Pt/CeO2"]', content)
+            self.assertIn('"materials": [', content)
+            self.assertIn('"Pt/CeO2"', content)
             summary = Path(outputs["summary_txt"]).read_text(encoding="utf-8")
             self.assertIn("这次抽到的关键信息包括", summary)
 

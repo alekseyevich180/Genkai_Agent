@@ -15,9 +15,32 @@ def _clean(value: object) -> str:
 
 
 def _read_relations(jsonl_path: str) -> dict[str, object]:
-    with open(jsonl_path, "r", encoding="utf-8") as handle:
-        line = handle.readline().strip()
-    return json.loads(line)["extraction"] if line else {}
+    content = Path(jsonl_path).read_text(encoding="utf-8").strip()
+    if not content:
+        return {}
+
+    try:
+        payload = json.loads(content)
+        if isinstance(payload, list):
+            return payload[0].get("extraction", {}) if payload else {}
+        if isinstance(payload, dict):
+            return payload.get("extraction", {})
+    except json.JSONDecodeError:
+        pass
+
+    decoder = json.JSONDecoder()
+    idx = 0
+    length = len(content)
+    while idx < length:
+        while idx < length and content[idx].isspace():
+            idx += 1
+        if idx >= length:
+            break
+        payload, next_idx = decoder.raw_decode(content, idx)
+        if isinstance(payload, dict):
+            return payload.get("extraction", {})
+        idx = next_idx
+    return {}
 
 
 def _collect_condition_lines(df: pd.DataFrame) -> list[str]:
@@ -98,11 +121,30 @@ def build_summary_text(table_csv: str, relations_jsonl: str) -> str:
         "",
         f"在 {relations_name} 里：",
         "",
-        f"- 材料：{'、'.join(materials) if materials else '未提取'}",
-        f"- 材料参数：{'、'.join(material_parameters) if material_parameters else '未提取'}",
-        f"- 反应参数：{'、'.join(reaction_parameters) if reaction_parameters else '未提取'}",
-        f"- 性能：{'、'.join(properties) if properties else '未提取'}",
+        "- 材料：",
     ])
+    if materials:
+        lines.extend([f"  - {item}" for item in materials])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 材料参数：")
+    if material_parameters:
+        lines.extend([f"  - {item}" for item in material_parameters])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 反应参数：")
+    if reaction_parameters:
+        lines.extend([f"  - {item}" for item in reaction_parameters])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 性能：")
+    if properties:
+        lines.extend([f"  - {item}" for item in properties])
+    else:
+        lines.append("  - 未提取")
     return "\n".join(lines) + "\n"
 
 
@@ -126,4 +168,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
