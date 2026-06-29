@@ -30,14 +30,17 @@ python -m paperread.surface.run_surface_pipeline \
 
 Outputs:
 
-- `*_text.txt`: raw text extracted from PDF when the input is a PDF
-- `*_sections.json`: section split result when the input is a PDF
-- `*_conditions_input.json`: condition-extraction input generated from PDF
-- `*_relations_input.json`: relation-extraction input generated from PDF
-- `*_raw.csv`: raw LLM responses for condition extraction
 - `*_table.csv`: structured condition table
 - `*_time.csv`: standardized time table
 - `*_surface_relations.jsonl`: structured material/reaction relation output
+- `*_summary.txt`: human-readable summary aligned with the extracted results
+
+Optional outputs:
+
+- `*_text.txt`, `*_sections.json`, `*_conditions_input.json`, `*_relations_input.json`
+  - only when `--keep-intermediate` is enabled
+- `*_raw.csv`
+  - only when `--save-raw` is enabled
 
 ## Scripts
 
@@ -49,6 +52,7 @@ Outputs:
 - `run_surface_pipeline.py`
   - Unified entrypoint for surface-material reaction processing
   - Runs PDF ingestion when needed, then condition extraction, time standardization, and relation extraction
+  - By default keeps only final outputs to avoid duplicate files
 
 - `extract_surface_conditions.py`
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
@@ -79,6 +83,7 @@ Outputs:
 ```bash
 python -m paperread.surface.run_surface_pipeline paper.json --output-dir paperread/surface/output
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output
+python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --keep-intermediate --save-raw
 python -m paperread.surface.extract_surface_conditions samples.json
 python -m paperread.surface.standardize_surface_time input.csv output.csv
 python -m paperread.surface.extract_surface_relations samples.json
@@ -93,6 +98,8 @@ For papers focused on surface-material reactions:
 3. Read `*_surface_relations.jsonl` for structured entities and links.
 4. Use `standardize_surface_time.py` separately only if you already have a
    condition table and want to normalize time values again.
+5. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
+   or generated JSON inputs for debugging.
 
 For PDF input, the workflow is:
 

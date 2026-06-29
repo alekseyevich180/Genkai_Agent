@@ -6,13 +6,15 @@ from pathlib import Path
 try:
     from .extract_surface_conditions import extract_conditions
     from .extract_surface_relations import extract_relations
-    from .ingest_pdf import ingest_pdf
+    from .ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
     from .standardize_surface_time import standardize_time
+    from .summarize_surface_outputs import write_summary
 except ImportError:  # pragma: no cover - direct script execution
     from extract_surface_conditions import extract_conditions
     from extract_surface_relations import extract_relations
-    from ingest_pdf import ingest_pdf
+    from ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
     from standardize_surface_time import standardize_time
+    from summarize_surface_outputs import write_summary
 
 
 def run_pipeline(
@@ -23,6 +25,7 @@ def run_pipeline(
     skip_relations: bool = False,
     conditions_input_json: str | None = None,
     relations_input_json: str | None = None,
+    save_raw: bool = False,
 ) -> dict[str, str]:
     outdir = Path(output_dir)
     outdir.mkdir(parents=True, exist_ok=True)
@@ -34,10 +37,16 @@ def run_pipeline(
 
     if not skip_conditions:
         prefix = str(outdir / stem)
-        raw_path, table_path = extract_conditions(conditions_source, prefix, model=model)
+        raw_path, table_path = extract_conditions(
+            conditions_source,
+            prefix,
+            model=model,
+            save_raw=save_raw,
+        )
         time_path = str(outdir / f"{stem}_time.csv")
         standardize_time(table_path, time_path, time_column="Time", model=model)
-        results["raw_csv"] = raw_path
+        if raw_path:
+            results["raw_csv"] = raw_path
         results["conditions_csv"] = table_path
         results["time_csv"] = time_path
 
@@ -45,6 +54,11 @@ def run_pipeline(
         relations_path = str(outdir / f"{stem}_surface_relations.jsonl")
         extract_relations(relations_source, relations_path, model=model)
         results["relations_jsonl"] = relations_path
+
+    if "conditions_csv" in results and "relations_jsonl" in results:
+        summary_path = str(outdir / f"{stem}_summary.txt")
+        write_summary(results["conditions_csv"], results["relations_jsonl"], summary_path)
+        results["summary_txt"] = summary_path
 
     return results
 
@@ -55,18 +69,41 @@ def run_pipeline_from_pdf(
     model: str | None = None,
     skip_conditions: bool = False,
     skip_relations: bool = False,
+    keep_intermediate: bool = False,
+    save_raw: bool = False,
 ) -> dict[str, str]:
-    ingestion_outputs = ingest_pdf(input_pdf, output_dir)
-    pipeline_outputs = run_pipeline(
-        ingestion_outputs["conditions_input_json"],
-        output_dir,
-        model=model,
-        skip_conditions=skip_conditions,
-        skip_relations=skip_relations,
-        conditions_input_json=ingestion_outputs["conditions_input_json"],
-        relations_input_json=ingestion_outputs["relations_input_json"],
+    if keep_intermediate:
+        ingestion_outputs = ingest_pdf(input_pdf, output_dir)
+        pipeline_outputs = run_pipeline(
+            ingestion_outputs["conditions_input_json"],
+            output_dir,
+            model=model,
+            skip_conditions=skip_conditions,
+            skip_relations=skip_relations,
+            conditions_input_json=ingestion_outputs["conditions_input_json"],
+            relations_input_json=ingestion_outputs["relations_input_json"],
+            save_raw=save_raw,
+        )
+        return {**ingestion_outputs, **pipeline_outputs}
+
+    payloads = ingest_pdf_payloads(input_pdf)
+    tempdir, conditions_path, relations_path = write_temp_surface_inputs(
+        payloads["conditions_payload"],
+        payloads["relations_payload"],
     )
-    return {**ingestion_outputs, **pipeline_outputs}
+    try:
+        return run_pipeline(
+            conditions_path,
+            output_dir,
+            model=model,
+            skip_conditions=skip_conditions,
+            skip_relations=skip_relations,
+            conditions_input_json=conditions_path,
+            relations_input_json=relations_path,
+            save_raw=save_raw,
+        )
+    finally:
+        tempdir.cleanup()
 
 
 def main() -> None:
@@ -96,6 +133,16 @@ def main() -> None:
         default="auto",
         help="Interpret input source as JSON or PDF. Default: auto.",
     )
+    parser.add_argument(
+        "--keep-intermediate",
+        action="store_true",
+        help="Keep PDF text, section splits, and generated JSON inputs on disk.",
+    )
+    parser.add_argument(
+        "--save-raw",
+        action="store_true",
+        help="Also save raw LLM responses from condition extraction.",
+    )
     args = parser.parse_args()
 
     source_path = Path(args.input_source)
@@ -110,6 +157,8 @@ def main() -> None:
             model=args.model,
             skip_conditions=args.skip_conditions,
             skip_relations=args.skip_relations,
+            keep_intermediate=args.keep_intermediate,
+            save_raw=args.save_raw,
         )
     else:
         outputs = run_pipeline(
@@ -118,6 +167,7 @@ def main() -> None:
             model=args.model,
             skip_conditions=args.skip_conditions,
             skip_relations=args.skip_relations,
+            save_raw=args.save_raw,
         )
     for _, path in outputs.items():
         print(path)

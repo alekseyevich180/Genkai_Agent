@@ -69,7 +69,12 @@ Passage:
 """.strip()
 
 
-def extract_conditions(input_path: str, output_prefix: str, model: str | None = None) -> tuple[str, str]:
+def extract_conditions(
+    input_path: str,
+    output_prefix: str,
+    model: str | None = None,
+    save_raw: bool = False,
+) -> tuple[str | None, str]:
     records = load_records(input_path)
     raw_rows: list[dict[str, str]] = []
     table_rows: list[dict[str, str]] = []
@@ -90,9 +95,11 @@ def extract_conditions(input_path: str, output_prefix: str, model: str | None = 
                 parsed_row["Index"] = row_id
                 table_rows.append(parsed_row)
 
-    raw_path = f"{output_prefix}_raw.csv"
     table_path = f"{output_prefix}_table.csv"
-    pd.DataFrame(raw_rows).to_csv(raw_path, index=False)
+    raw_path = None
+    if save_raw:
+        raw_path = f"{output_prefix}_raw.csv"
+        pd.DataFrame(raw_rows).to_csv(raw_path, index=False)
     pd.DataFrame(table_rows, columns=["Index"] + COLUMNS).to_csv(table_path, index=False)
     return raw_path, table_path
 
@@ -108,11 +115,22 @@ def main() -> None:
         help="Prefix for output CSV files. Defaults to the input path without suffix.",
     )
     parser.add_argument("--model", default=None, help="Optional model override.")
+    parser.add_argument(
+        "--save-raw",
+        action="store_true",
+        help="Also save raw LLM responses as <prefix>_raw.csv.",
+    )
     args = parser.parse_args()
 
     output_prefix = args.output_prefix or str(Path(args.input_json).with_suffix(""))
-    raw_path, table_path = extract_conditions(args.input_json, output_prefix, args.model)
-    print(raw_path)
+    raw_path, table_path = extract_conditions(
+        args.input_json,
+        output_prefix,
+        args.model,
+        save_raw=args.save_raw,
+    )
+    if raw_path:
+        print(raw_path)
     print(table_path)
 
 

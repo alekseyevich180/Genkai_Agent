@@ -4,6 +4,7 @@ import argparse
 import json
 import re
 import subprocess
+import tempfile
 from pathlib import Path
 
 
@@ -113,6 +114,21 @@ def build_surface_inputs_from_sections(
     return conditions_payload, relations_payload
 
 
+def ingest_pdf_payloads(pdf_path: str) -> dict[str, object]:
+    raw_text = extract_pdf_text(pdf_path)
+    normalized = normalize_text(raw_text)
+    title = infer_title(normalized, extract_pdf_title(pdf_path))
+    sections = split_sections(normalized)
+    conditions_payload, relations_payload = build_surface_inputs_from_sections(title, sections)
+    return {
+        "title": title,
+        "text": normalized,
+        "sections": sections,
+        "conditions_payload": conditions_payload,
+        "relations_payload": relations_payload,
+    }
+
+
 def ingest_pdf(
     pdf_path: str,
     output_dir: str,
@@ -120,11 +136,12 @@ def ingest_pdf(
     outdir = Path(output_dir)
     outdir.mkdir(parents=True, exist_ok=True)
 
-    raw_text = extract_pdf_text(pdf_path)
-    normalized = normalize_text(raw_text)
-    title = infer_title(normalized, extract_pdf_title(pdf_path))
-    sections = split_sections(normalized)
-    conditions_payload, relations_payload = build_surface_inputs_from_sections(title, sections)
+    payloads = ingest_pdf_payloads(pdf_path)
+    normalized = str(payloads["text"])
+    title = str(payloads["title"])
+    sections = payloads["sections"]
+    conditions_payload = payloads["conditions_payload"]
+    relations_payload = payloads["relations_payload"]
 
     stem = Path(pdf_path).stem
     text_path = outdir / f"{stem}_text.txt"
@@ -145,6 +162,19 @@ def ingest_pdf(
     }
 
 
+def write_temp_surface_inputs(
+    conditions_payload: dict[str, dict[str, str]],
+    relations_payload: dict[str, dict[str, str]],
+) -> tuple[tempfile.TemporaryDirectory, str, str]:
+    tempdir = tempfile.TemporaryDirectory()
+    temp_path = Path(tempdir.name)
+    conditions_path = temp_path / "surface_conditions_input.json"
+    relations_path = temp_path / "surface_relations_input.json"
+    conditions_path.write_text(json.dumps(conditions_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    relations_path.write_text(json.dumps(relations_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return tempdir, str(conditions_path), str(relations_path)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Extract surface-oriented text sections from a PDF file."
@@ -163,4 +193,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

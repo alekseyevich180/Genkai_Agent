@@ -1,0 +1,5 @@
+Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles
+surface_case_1,Annealing,Sn SAs/G,2.93 wt% Sn,N/A,N/A,543 m²/g,Graphene oxide,N/A,Sn single atoms,N/A,N/A,N/A,N/A,Ar,N/A,N/A,N/A,N/A,400 °C,3 h,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_case_1,Electrochemical Testing,Sn SAs/G,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NaPF6/diglyme,1 m,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,1 mA cm⁻²,N/A,N/A,N/A,N/A,N/A,200 cycles
+surface_case_1,Electrochemical Testing,Sn SAs/G,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,4 mA cm⁻²,N/A,N/A,N/A,N/A,N/A,600 h
+surface_case_1,DFT Calculation,Sn SAs/G,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A

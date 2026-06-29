@@ -12,6 +12,7 @@ from paperread.surface.extract_surface_relations import extract_relations
 from paperread.surface.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
 from paperread.surface.run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
 from paperread.surface.standardize_surface_time import standardize_time
+from paperread.surface.summarize_surface_outputs import write_summary
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -101,7 +102,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
                 time_path = str(Path(tmpdir) / "surface_time.csv")
                 standardize_time(table_path, time_path, model=None)
 
-            self.assertTrue(Path(raw_path).is_file())
+            self.assertIsNone(raw_path)
             self.assertTrue(Path(table_path).is_file())
             self.assertTrue(Path(time_path).is_file())
             table_df = pd.read_csv(table_path)
@@ -150,9 +151,12 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("conditions_csv", outputs)
             self.assertIn("time_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
+            self.assertIn("summary_txt", outputs)
             self.assertTrue(Path(outputs["relations_jsonl"]).is_file())
             content = Path(outputs["relations_jsonl"]).read_text(encoding="utf-8")
             self.assertIn('"materials": ["Pt/CeO2"]', content)
+            summary = Path(outputs["summary_txt"]).read_text(encoding="utf-8")
+            self.assertIn("这次抽到的关键信息包括", summary)
 
     def test_pdf_section_routing_helpers(self):
         pdf_text = """
@@ -204,23 +208,52 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             "| CO oxidation | Pt/CeO2 | N/A | fluorite | nanoparticles | N/A | CeO2 | (111) | Pt site | oxygen vacancy | N/A | CO, O2 | 1% CO, 10% O2 | N2 | N/A | N/A | N/A | N/A | 150 C | 2 h | 1 wt% | N/A | N/A | CO2 | 95% | 100% | N/A | N/A | N/A |\n"
         )
         time_table = "| Index | Time |\n|---|---|\n| surface_conditions_1 | 120 minutes |\n"
-        ingestion_outputs = {
-            "text_path": "/tmp/mock_text.txt",
-            "sections_path": "/tmp/mock_sections.json",
-            "conditions_input_json": str(SAMPLE_INPUT),
-            "relations_input_json": str(SAMPLE_INPUT),
+        ingestion_payloads = {
+            "title": "Dummy PDF",
+            "text": "dummy text",
+            "sections": {"full_text": "dummy text"},
+            "conditions_payload": {
+                "surface_conditions": {
+                    "Title": "Dummy PDF",
+                    "Text": "dummy conditions",
+                }
+            },
+            "relations_payload": {
+                "surface_relations": {
+                    "Title": "Dummy PDF",
+                    "Text": "dummy relations",
+                }
+            },
         }
         with tempfile.TemporaryDirectory() as tmpdir:
-            with patch("paperread.surface.run_surface_pipeline.ingest_pdf", return_value=ingestion_outputs), \
+            with patch("paperread.surface.run_surface_pipeline.ingest_pdf_payloads", return_value=ingestion_payloads), \
                  patch("paperread.surface.extract_surface_conditions.chat_completion", return_value=condition_table), \
                  patch("paperread.surface.standardize_surface_time.chat_completion", return_value=time_table), \
                  patch("paperread.surface.extract_surface_relations.chat_completion", return_value=relation_json):
                 outputs = run_pipeline_from_pdf("dummy.pdf", tmpdir, model=None)
 
-            self.assertIn("conditions_input_json", outputs)
-            self.assertIn("relations_input_json", outputs)
             self.assertIn("conditions_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
+            self.assertIn("summary_txt", outputs)
+
+    def test_summary_writer(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            table_path = Path(tmpdir) / "sample_table.csv"
+            relations_path = Path(tmpdir) / "sample_relations.jsonl"
+            summary_path = Path(tmpdir) / "sample_summary.txt"
+            table_path.write_text(
+                "Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles\n"
+                "x1,Annealing,Sn SAs/G,2.93 wt% Sn,N/A,N/A,543 m2 g-1,Graphene oxide,N/A,Sn single atoms,N/A,N/A,N/A,N/A,Ar,N/A,N/A,N/A,N/A,400 C,3 h,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A\n",
+                encoding="utf-8",
+            )
+            relations_path.write_text(
+                '{"id":"x1","title":"t","text":"t","extraction":{"materials":["Sn SAs/G"],"material_parameters":[{"composition":"2.93 wt% Sn"}],"reaction_parameters":[{"temperature":"400 C"}],"properties":[{"Coulombic_efficiency":"99.8%"}]}}' + "\n",
+                encoding="utf-8",
+            )
+            write_summary(str(table_path), str(relations_path), str(summary_path))
+            summary = summary_path.read_text(encoding="utf-8")
+            self.assertIn("在 sample_table.csv 里", summary)
+            self.assertIn("2.93 wt% Sn", summary)
 
 
 if __name__ == "__main__":
