@@ -1,4 +1,0 @@
-Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles
-surface_conditions_1,Annealing,Sn SAs/G,N/A,N/A,N/A,N/A,Graphene oxide,N/A,N/A,N/A,N/A,N/A,N/A,Ar,N/A,N/A,N/A,N/A,400 C,3 h,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-surface_conditions_1,Electrodeposition,Sn SAs/G-Na,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,16 h,N/A,0.5 mA cm-2,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-surface_conditions_1,Electrochemical Testing,Sn SAs/G,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,1 m,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,1 mA cm-2,N/A,N/A,N/A,N/A,N/A,200 cycles
