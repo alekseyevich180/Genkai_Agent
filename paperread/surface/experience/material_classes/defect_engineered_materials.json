@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "material_class": "defect_engineered_materials",
+  "updated_at": "2026-06-30T06:51:57.276472+00:00",
+  "summary": {
+    "terms": 1,
+    "known_useful": 1,
+    "unknown": 0,
+    "sources": [
+      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "oxygen vacancy",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ni-O-G SACs"
+      ],
+      "count": 1
+    }
+  ]
+}

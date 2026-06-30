@@ -34,6 +34,8 @@ Outputs:
 - `*_time.csv`: standardized time table
 - `*_surface_relations.jsonl`: structured material/reaction relation output
 - `*_summary.txt`: human-readable summary aligned with the extracted results
+- `material_classes/*.json`: material-class experience records when
+  `--collect-experience` is enabled
 
 Optional outputs:
 
@@ -53,6 +55,7 @@ Optional outputs:
   - Unified entrypoint for surface-material reaction processing
   - Runs PDF ingestion when needed, then condition extraction, time standardization, and relation extraction
   - By default keeps only final outputs to avoid duplicate files
+  - Can also collect paperread experience with `--collect-experience`
 
 - `extract_surface_conditions.py`
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
@@ -65,7 +68,11 @@ Optional outputs:
       gas flow, solvent, pH, temperature, time, potential/bias, current density,
       conversion, selectivity, yield, rate/activity, stability/cycles
     - Material parameters: composition, phase, morphology/size, surface area,
-      surface/support, facet, active site, defect, dopant/modifier, loading
+      surface/support, facet, surface termination, active site, defect,
+      dopant/modifier, loading
+    - Modeling-oriented keywords: surface/slab, adsorbate, adsorption site,
+      coverage, oxygen vacancy, defect, cluster, single atom, modifier, and
+      related phrases that can drive downstream structure generation
 
 - `standardize_surface_time.py`
   - Input: CSV with `Index` and `Time`
@@ -76,7 +83,78 @@ Optional outputs:
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
   - Output: JSONL
   - Use case: extract materials, surfaces, facets, dopants, defects, adsorbates,
-    properties, reaction parameters, material parameters, and their links from abstracts or discussion text.
+    properties, reaction parameters, material parameters, modeling keywords, and
+    their links from abstracts or discussion text.
+  - Additional modeling fields include:
+    - `surface_terminations`
+    - `slab_models`
+    - `vacancy_models`
+    - `adsorption_sites`
+    - `coverage`
+    - `clusters`
+    - `single_atoms`
+    - `modifiers`
+    - `modeling_keywords`
+    - `recommended_modeling_tasks`
+
+Supported `recommended_modeling_tasks` values currently align with the Agent
+surface-modeling direction:
+
+- `vacancy_landscape`
+- `adsorbate_landscape`
+- `surface_cluster_builder`
+- `single_atom_site`
+- `doped_surface`
+- `surface_functionalization`
+- `slab_generation`
+
+- `collect_experience.py`
+  - Input: `*_surface_relations.jsonl` and/or `*_table.csv`
+  - Output:
+    - `material_classes/<material_class>.json`: default cumulative experience
+      store grouped by inorganic material type
+    - `<stem>.json`: optional per-run aggregate only when `--write-run-file`
+      is passed
+    - `<stem>.md`: optional human-readable review report only when
+      `--write-markdown` is passed
+  - Use case: collect known useful information and unknown/unmapped extraction
+    information by surface-research category so prompts, schema, planner rules,
+    or Agent skills can be improved later without a bloated item-by-item log.
+  - Research categories follow a NERRE/ReactionSeek-style target schema rather
+    than extracting every text item:
+    - `surface_materials`
+    - `surface_structure`
+    - `defects_active_sites`
+    - `adsorption_reaction`
+    - `clusters_single_atoms`
+    - `modeling_tasks`
+    - `unknown_information`
+  - The default long-term experience store is organized by inorganic material
+    type rather than by paper.
+  - Current inorganic material classes include:
+    - `single_atom_catalysts`
+    - `supported_catalysts`
+    - `metals_alloys`
+    - `oxides`
+    - `hydroxides_oxyhydroxides`
+    - `sulfides`
+    - `selenides_tellurides`
+    - `nitrides`
+    - `carbides_mxenes`
+    - `phosphides_phosphates`
+    - `halides`
+    - `carbon_materials`
+    - `perovskites_spinels`
+    - `zeolites_silicates`
+    - `mofs_coordination_polymers`
+    - `borides`
+    - `defect_engineered_materials`
+    - `surface_functionalized_materials`
+    - `battery_electrode_materials`
+    - `other_inorganic_materials`
+  - Generic performance metrics, reaction parameters, and applications are not
+    collected as experience unless they are already represented by the target
+    surface/material/modeling fields.
 
 ## Example usage
 
@@ -84,9 +162,13 @@ Optional outputs:
 python -m paperread.surface.run_surface_pipeline paper.json --output-dir paperread/surface/output
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --keep-intermediate --save-raw
+python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --collect-experience
 python -m paperread.surface.extract_surface_conditions samples.json
 python -m paperread.surface.standardize_surface_time input.csv output.csv
 python -m paperread.surface.extract_surface_relations samples.json
+python -m paperread.surface.collect_experience --relations paper_surface_relations.jsonl --table paper_table.csv
+python -m paperread.surface.collect_experience --relations paper_surface_relations.jsonl --table paper_table.csv --write-run-file --write-markdown
+python -m paperread.surface.collect_experience --init-material-classes --output-dir paperread/surface/experience
 ```
 
 ## Recommended usage pattern
@@ -96,9 +178,13 @@ For papers focused on surface-material reactions:
 1. Use `run_surface_pipeline.py` as the default entrypoint.
 2. Read `*_table.csv` for reaction and material parameters.
 3. Read `*_surface_relations.jsonl` for structured entities and links.
-4. Use `standardize_surface_time.py` separately only if you already have a
+4. Read the modeling keyword sections in `*_summary.txt` to decide which
+   surface-modeling workflow should be prepared.
+5. Enable `--collect-experience` when you want to preserve useful and unknown
+   extraction information for later prompt/schema/planner improvements.
+6. Use `standardize_surface_time.py` separately only if you already have a
    condition table and want to normalize time values again.
-5. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
+7. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
    or generated JSON inputs for debugging.
 
 For PDF input, the workflow is:

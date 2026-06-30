@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "material_class": "battery_electrode_materials",
+  "updated_at": "2026-06-30T06:51:57.178558+00:00",
+  "summary": {
+    "terms": 2,
+    "known_useful": 0,
+    "unknown": 2,
+    "sources": [
+      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
+      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "sodium metal batteries",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    },
+    {
+      "term": "sodium metal battery",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Sn SAs/G-Na"
+      ],
+      "count": 1
+    }
+  ]
+}

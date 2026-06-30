@@ -57,6 +57,12 @@ def _collect_condition_lines(df: pd.DataFrame) -> list[str]:
         surface_area = _clean(row.get("Surface Area"))
         current_density = _clean(row.get("Current Density"))
         cycles = _clean(row.get("Stability/Cycles"))
+        facet = _clean(row.get("Facet"))
+        adsorbate = _clean(row.get("Adsorbate/Reactant"))
+        adsorption_site = _clean(row.get("Adsorption Site"))
+        coverage = _clean(row.get("Coverage"))
+        cluster = _clean(row.get("Cluster/Single Atom"))
+        modeling_keywords = _clean(row.get("Modeling Keywords"))
 
         if material and atmosphere and temperature and time:
             line = f"- {material} 在 {atmosphere} 气氛下 {temperature}、{time} {reaction_type or '处理'}"
@@ -75,6 +81,28 @@ def _collect_condition_lines(df: pd.DataFrame) -> list[str]:
                 lines.append(line)
         if reaction_type == "Electrochemical Testing" and current_density and cycles:
             line = f"- 电化学测试 {current_density}、{cycles}"
+            if line not in seen:
+                seen.add(line)
+                lines.append(line)
+        if material and facet:
+            line = f"- {material} 暴露/涉及晶面 {facet}"
+            if line not in seen:
+                seen.add(line)
+                lines.append(line)
+        if adsorbate:
+            site_part = f"，吸附位点 {adsorption_site}" if adsorption_site else ""
+            coverage_part = f"，覆盖度 {coverage}" if coverage else ""
+            line = f"- 吸附物/反应物：{adsorbate}{site_part}{coverage_part}"
+            if line not in seen:
+                seen.add(line)
+                lines.append(line)
+        if cluster:
+            line = f"- 团簇/单原子建模线索：{cluster}"
+            if line not in seen:
+                seen.add(line)
+                lines.append(line)
+        if modeling_keywords:
+            line = f"- 建模关键词：{modeling_keywords}"
             if line not in seen:
                 seen.add(line)
                 lines.append(line)
@@ -109,6 +137,19 @@ def build_summary_text(table_csv: str, relations_jsonl: str) -> str:
     material_parameters = _flatten_param_items(relations.get("material_parameters", []))
     reaction_parameters = _flatten_param_items(relations.get("reaction_parameters", []))
     properties = _flatten_param_items(relations.get("properties", []))
+    surfaces = _flatten_param_items(relations.get("surfaces", []))
+    facets = _flatten_param_items(relations.get("facets", []))
+    surface_terminations = _flatten_param_items(relations.get("surface_terminations", []))
+    defects = _flatten_param_items(relations.get("defects", []))
+    vacancy_models = _flatten_param_items(relations.get("vacancy_models", []))
+    active_sites = _flatten_param_items(relations.get("active_sites", []))
+    adsorbates = _flatten_param_items(relations.get("adsorbates", []))
+    adsorption_sites = _flatten_param_items(relations.get("adsorption_sites", []))
+    coverage = _flatten_param_items(relations.get("coverage", []))
+    clusters = _flatten_param_items(relations.get("clusters", []))
+    single_atoms = _flatten_param_items(relations.get("single_atoms", []))
+    modeling_keywords = _flatten_param_items(relations.get("modeling_keywords", []))
+    recommended_tasks = _flatten_param_items(relations.get("recommended_modeling_tasks", []))
 
     lines = [
         "这次抽到的关键信息包括：",
@@ -143,6 +184,46 @@ def build_summary_text(table_csv: str, relations_jsonl: str) -> str:
     lines.append("- 性能：")
     if properties:
         lines.extend([f"  - {item}" for item in properties])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 表面/晶面：")
+    surface_items = surfaces + facets + surface_terminations
+    if surface_items:
+        lines.extend([f"  - {item}" for item in surface_items])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 缺陷/活性位点：")
+    defect_items = defects + vacancy_models + active_sites
+    if defect_items:
+        lines.extend([f"  - {item}" for item in defect_items])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 吸附/覆盖度：")
+    adsorption_items = adsorbates + adsorption_sites + coverage
+    if adsorption_items:
+        lines.extend([f"  - {item}" for item in adsorption_items])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 团簇/单原子：")
+    cluster_items = clusters + single_atoms
+    if cluster_items:
+        lines.extend([f"  - {item}" for item in cluster_items])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 建模关键词：")
+    if modeling_keywords:
+        lines.extend([f"  - {item}" for item in modeling_keywords])
+    else:
+        lines.append("  - 未提取")
+
+    lines.append("- 推荐建模任务：")
+    if recommended_tasks:
+        lines.extend([f"  - {item}" for item in recommended_tasks])
     else:
         lines.append("  - 未提取")
     return "\n".join(lines) + "\n"

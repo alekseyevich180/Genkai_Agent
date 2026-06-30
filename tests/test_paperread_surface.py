@@ -9,6 +9,7 @@ import pandas as pd
 
 from paperread.surface.extract_surface_conditions import extract_conditions
 from paperread.surface.extract_surface_relations import extract_relations
+from paperread.surface.collect_experience import collect_experience
 from paperread.surface.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
 from paperread.surface.run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
 from paperread.surface.standardize_surface_time import standardize_time
@@ -35,6 +36,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread.surface.extract_surface_conditions",
             "paperread.surface.standardize_surface_time",
             "paperread.surface.extract_surface_relations",
+            "paperread.surface.collect_experience",
             "paperread.surface.ingest_pdf",
             "paperread.surface.run_surface_pipeline",
         ]
@@ -48,6 +50,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread/surface/extract_surface_conditions.py",
             "paperread/surface/standardize_surface_time.py",
             "paperread/surface/extract_surface_relations.py",
+            "paperread/surface/collect_experience.py",
             "paperread/surface/ingest_pdf.py",
             "paperread/surface/run_surface_pipeline.py",
         ]
@@ -66,10 +69,14 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "Surface Area",
             "Surface/Support",
             "Facet",
+            "Surface Termination",
             "Active Site",
             "Defect",
             "Dopant/Modifier",
             "Adsorbate/Reactant",
+            "Adsorption Site",
+            "Coverage",
+            "Cluster/Single Atom",
             "Feed/Concentration",
             "Atmosphere",
             "Pressure",
@@ -87,6 +94,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "Yield",
             "Rate/Activity",
             "Stability/Cycles",
+            "Modeling Keywords",
         ]
         condition_table = (
             "| " + " | ".join(columns) + " |\n"
@@ -119,15 +127,25 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
   "materials": ["Pt/CeO2"],
   "material_parameters": ["1 wt% Pt loading", "CeO2(111) support"],
   "surfaces": ["CeO2"],
+  "surface_terminations": ["reduced CeO2 surface"],
+  "slab_models": ["CeO2(111) slab"],
   "facets": ["(111)"],
   "dopants": [],
   "defects": ["oxygen vacancy"],
+  "vacancy_models": ["surface oxygen vacancy"],
   "active_sites": ["Pt site"],
   "adsorbates": ["CO", "O2"],
+  "adsorption_sites": ["Pt site"],
+  "coverage": ["CO coverage"],
   "intermediates": ["methoxy"],
   "products": ["CO2"],
+  "clusters": ["Pt cluster"],
+  "single_atoms": [],
+  "modifiers": [],
   "properties": ["95% conversion", "100% selectivity"],
   "reaction_parameters": ["150 C", "2 h", "H2 reduction"],
+  "modeling_keywords": ["surface", "adsorbate", "oxygen vacancy", "Pt cluster"],
+  "recommended_modeling_tasks": ["vacancy_landscape", "adsorbate_landscape", "surface_cluster_builder"],
   "applications": ["CO oxidation"],
   "links": [
     {"source": "Pt/CeO2", "relation": "has_facet", "target": "(111)"},
@@ -137,27 +155,36 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
 ```
 """
         condition_table = (
-            "| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles |\n"
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
-            "| CO oxidation | Pt/CeO2 | N/A | fluorite | nanoparticles | N/A | CeO2 | (111) | Pt site | oxygen vacancy | N/A | CO, O2 | 1% CO, 10% O2 | N2 | N/A | N/A | N/A | N/A | 150 C | 2 h | 1 wt% | N/A | N/A | CO2 | 95% | 100% | N/A | N/A | N/A |\n"
+            "| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Surface Termination | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Adsorption Site | Coverage | Cluster/Single Atom | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles | Modeling Keywords |\n"
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
+            "| CO oxidation | Pt/CeO2 | N/A | fluorite | nanoparticles | N/A | CeO2 | (111) | reduced surface | Pt site | oxygen vacancy | N/A | CO, O2 | Pt site | CO coverage | Pt cluster | 1% CO, 10% O2 | N2 | N/A | N/A | N/A | N/A | 150 C | 2 h | 1 wt% | N/A | N/A | CO2 | 95% | 100% | N/A | N/A | N/A | surface, adsorbate, oxygen vacancy |\n"
         )
         time_table = "| Index | Time |\n|---|---|\n| doc1_1 | 120 minutes |\n| doc2_1 | N/A |\n"
         with tempfile.TemporaryDirectory() as tmpdir:
             with patch("paperread.surface.extract_surface_conditions.chat_completion", return_value=condition_table), \
                  patch("paperread.surface.standardize_surface_time.chat_completion", return_value=time_table), \
                  patch("paperread.surface.extract_surface_relations.chat_completion", return_value=relation_json):
-                outputs = run_pipeline(str(SAMPLE_INPUT), tmpdir, model=None)
+                outputs = run_pipeline(
+                    str(SAMPLE_INPUT),
+                    tmpdir,
+                    model=None,
+                    collect_experience_output=True,
+                )
 
             self.assertIn("conditions_csv", outputs)
             self.assertIn("time_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
             self.assertIn("summary_txt", outputs)
+            self.assertIn("experience_material_classes_dir", outputs)
             self.assertTrue(Path(outputs["relations_jsonl"]).is_file())
+            self.assertTrue(Path(outputs["experience_material_classes_dir"]).is_dir())
             content = Path(outputs["relations_jsonl"]).read_text(encoding="utf-8")
             self.assertIn('"materials": [', content)
             self.assertIn('"Pt/CeO2"', content)
             summary = Path(outputs["summary_txt"]).read_text(encoding="utf-8")
             self.assertIn("这次抽到的关键信息包括", summary)
+            self.assertIn("建模关键词", summary)
+            self.assertIn("vacancy_landscape", summary)
 
     def test_pdf_section_routing_helpers(self):
         pdf_text = """
@@ -189,24 +216,34 @@ Oxygen vacancies acted as active sites and methoxy was identified.
   "materials": ["Pt/CeO2"],
   "material_parameters": ["1 wt% Pt loading"],
   "surfaces": ["CeO2"],
+  "surface_terminations": [],
+  "slab_models": [],
   "facets": ["(111)"],
   "dopants": [],
   "defects": ["oxygen vacancy"],
+  "vacancy_models": ["surface oxygen vacancy"],
   "active_sites": ["Pt site"],
   "adsorbates": ["CO", "O2"],
+  "adsorption_sites": ["Pt site"],
+  "coverage": [],
   "intermediates": [],
   "products": ["CO2"],
+  "clusters": [],
+  "single_atoms": [],
+  "modifiers": [],
   "properties": ["95% conversion"],
   "reaction_parameters": ["150 C"],
+  "modeling_keywords": ["surface", "adsorbate", "oxygen vacancy"],
+  "recommended_modeling_tasks": ["vacancy_landscape", "adsorbate_landscape"],
   "applications": ["CO oxidation"],
   "links": []
 }
 ```
 """
         condition_table = (
-            "| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles |\n"
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
-            "| CO oxidation | Pt/CeO2 | N/A | fluorite | nanoparticles | N/A | CeO2 | (111) | Pt site | oxygen vacancy | N/A | CO, O2 | 1% CO, 10% O2 | N2 | N/A | N/A | N/A | N/A | 150 C | 2 h | 1 wt% | N/A | N/A | CO2 | 95% | 100% | N/A | N/A | N/A |\n"
+            "| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Surface Termination | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Adsorption Site | Coverage | Cluster/Single Atom | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles | Modeling Keywords |\n"
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n"
+            "| CO oxidation | Pt/CeO2 | N/A | fluorite | nanoparticles | N/A | CeO2 | (111) | reduced surface | Pt site | oxygen vacancy | N/A | CO, O2 | Pt site | N/A | N/A | 1% CO, 10% O2 | N2 | N/A | N/A | N/A | N/A | 150 C | 2 h | 1 wt% | N/A | N/A | CO2 | 95% | 100% | N/A | N/A | N/A | surface, adsorbate, oxygen vacancy |\n"
         )
         time_table = "| Index | Time |\n|---|---|\n| surface_conditions_1 | 120 minutes |\n"
         ingestion_payloads = {
@@ -243,8 +280,8 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             relations_path = Path(tmpdir) / "sample_relations.jsonl"
             summary_path = Path(tmpdir) / "sample_summary.txt"
             table_path.write_text(
-                "Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles\n"
-                "x1,Annealing,Sn SAs/G,2.93 wt% Sn,N/A,N/A,543 m2 g-1,Graphene oxide,N/A,Sn single atoms,N/A,N/A,N/A,N/A,Ar,N/A,N/A,N/A,N/A,400 C,3 h,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A\n",
+                "Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Surface Termination,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Adsorption Site,Coverage,Cluster/Single Atom,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles,Modeling Keywords\n"
+                "x1,Annealing,Sn SAs/G,2.93 wt% Sn,N/A,N/A,543 m2 g-1,Graphene oxide,N/A,N/A,Sn single atoms,N/A,N/A,N/A,N/A,N/A,Sn single atom,N/A,Ar,N/A,N/A,N/A,N/A,400 C,3 h,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,single atom surface\n",
                 encoding="utf-8",
             )
             relations_path.write_text(
@@ -255,6 +292,57 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             summary = summary_path.read_text(encoding="utf-8")
             self.assertIn("在 sample_table.csv 里", summary)
             self.assertIn("2.93 wt% Sn", summary)
+
+    def test_collect_experience_outputs_known_and_unknown_items(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            table_path = Path(tmpdir) / "sample_table.csv"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "title": "Exsolved Pt on CeO2",
+                        "extraction": {
+                            "materials": ["Pt/CeO2"],
+                            "surfaces": ["CeO2 surface"],
+                            "adsorbates": ["CO"],
+                            "modifiers": ["exsolved nanoparticle"],
+                            "recommended_modeling_tasks": [
+                                "adsorbate_landscape",
+                                "exsolution_workflow",
+                            ],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            table_path.write_text(
+                "Material,Reaction Type,Modeling Keywords,Cluster/Single Atom\n"
+                "Pt/CeO2,CO oxidation,surface,exsolved nanoparticle\n",
+                encoding="utf-8",
+            )
+
+            result = collect_experience(
+                str(relations_path),
+                str(table_path),
+                tmpdir,
+                stem="sample_experience",
+            )
+
+            self.assertEqual(result["json_path"], "")
+            self.assertEqual(result["markdown_path"], "")
+            material_files = result["material_class_files"]
+            self.assertIn("supported_catalysts", material_files)
+            content = Path(material_files["supported_catalysts"]).read_text(encoding="utf-8")
+            self.assertIn("known_useful", content)
+            self.assertIn("Pt/CeO2", content)
+
+
+def json_dumps_for_test(payload: dict) -> str:
+    import json
+
+    return json.dumps(payload, ensure_ascii=False)
 
 
 if __name__ == "__main__":

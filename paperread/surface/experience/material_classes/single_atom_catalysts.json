@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "material_class": "single_atom_catalysts",
+  "updated_at": "2026-06-30T06:51:57.279865+00:00",
+  "summary": {
+    "terms": 5,
+    "known_useful": 3,
+    "unknown": 2,
+    "sources": [
+      "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
+      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv",
+      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
+      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "Single Atom",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_table.csv",
+        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Sn SAs/G-Na",
+        "Ni-O-G SACs"
+      ],
+      "count": 3
+    },
+    {
+      "term": "Ni-O-G SACs",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
+        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "Ni-O-G SACs"
+      ],
+      "count": 2
+    },
+    {
+      "term": "nickel single atoms",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites",
+        "single_atoms"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Sn SAs/G",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn SAs/G-Na",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Sn SAs/G-Na"
+      ],
+      "count": 1
+    }
+  ]
+}

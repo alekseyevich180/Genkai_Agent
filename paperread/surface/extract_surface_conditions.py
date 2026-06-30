@@ -20,10 +20,14 @@ COLUMNS = [
     "Surface Area",
     "Surface/Support",
     "Facet",
+    "Surface Termination",
     "Active Site",
     "Defect",
     "Dopant/Modifier",
     "Adsorbate/Reactant",
+    "Adsorption Site",
+    "Coverage",
+    "Cluster/Single Atom",
     "Feed/Concentration",
     "Atmosphere",
     "Pressure",
@@ -41,6 +45,7 @@ COLUMNS = [
     "Yield",
     "Rate/Activity",
     "Stability/Cycles",
+    "Modeling Keywords",
 ]
 
 
@@ -53,13 +58,16 @@ Rules:
 - Focus on surface reactions, catalyst preparation, adsorption tests, annealing, calcination,
   reduction, oxidation, deposition, electrochemical electrode preparation, and related workflows.
 - Capture both reaction-related parameters and material-related parameters when present.
+- Capture modeling-oriented keywords that can drive later surface model generation, including
+  surface/slab, facet, termination, support, active site, oxygen vacancy, defect, dopant,
+  adsorbate, adsorption site, coverage, metal cluster, single atom, nanoparticle, and modifier.
 - Use "N/A" when information is absent or uncertain.
 - If multiple independent procedures are present, use multiple rows.
 - Keep multiple values in one cell separated by commas.
 - Do not invent missing values.
 
 Output exactly one markdown table with these columns:
-| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles |
+| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Surface Termination | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Adsorption Site | Coverage | Cluster/Single Atom | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles | Modeling Keywords |
 
 Title:
 {title}

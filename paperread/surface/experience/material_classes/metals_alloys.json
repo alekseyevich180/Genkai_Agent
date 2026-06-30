@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "material_class": "metals_alloys",
+  "updated_at": "2026-06-30T06:51:57.278143+00:00",
+  "summary": {
+    "terms": 8,
+    "known_useful": 2,
+    "unknown": 6,
+    "sources": [
+      "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
+      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv",
+      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
+      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "Ni-O-G SACs",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
+        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "Ni-O-G SACs"
+      ],
+      "count": 2
+    },
+    {
+      "term": "nickel single atoms",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites",
+        "single_atoms"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Ni atom",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ni-O-G SACs"
+      ],
+      "count": 1
+    },
+    {
+      "term": "nickel",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "single_atoms"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn SAs/G",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn SAs/G-Na",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Sn SAs/G-Na"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Tin",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    }
+  ]
+}

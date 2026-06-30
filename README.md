@@ -5,6 +5,10 @@ Agent is a **skill-based, agentic platform** for computational material science 
 
 This workspace now includes a surface-oriented modeling skill at `agents/Agent/skills/surface-modeling/`. It covers oxide surface vacancy landscapes, adsorbate coverage landscapes, and metal nanocluster placement on surfaces, with fast mock-calculator checks and optional UMA/FAIRChem workflows for production relaxation.
 
+This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
+
+Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.
+
 ## Quick start
 ### Linux 安装
 
