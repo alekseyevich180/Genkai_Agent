@@ -65,7 +65,7 @@ from agents.Agent.constants import GRAPH_AGENT_MODEL  # noqa: E402
 from agents.Agent.knowledge.query import _get_kg  # noqa: E402
 from agents.Agent.knowledge.review import run_review_pipeline  # noqa: E402
 
-app = FastAPI(title="Agent Graph API", version="2.0.0")
+app = FastAPI(title="Genkai Graph API", version="2.0.0")
 APP_NAME = "Agent"
 SESSION_DB_PATH = ROOT / "agents" / "Agent" / ".adk" / "session.db"
 DEFAULT_ADMIN_USERS = {"admin"}
@@ -226,6 +226,10 @@ async def health_check():
 async def _on_startup() -> None:
     users_db.init_db()
     users_db.migrate_legacy_adk_sessions(SESSION_DB_PATH, APP_NAME)
+    try:
+        refresh_skills()
+    except Exception as exc:
+        logger.warning("Failed to refresh skills during web startup: %s", exc)
 
 
 class LoginBody(BaseModel):

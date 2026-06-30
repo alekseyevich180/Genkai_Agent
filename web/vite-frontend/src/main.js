@@ -8,6 +8,8 @@ import "./style.css";
 // ---------------------------------------------------------------------------
 
 const APP_NAME = "Agent";
+const APP_DISPLAY_NAME = "Genkai";
+document.title = APP_DISPLAY_NAME;
 
 const AGENT_MODE_KEY = "mat_agentMode";
 
