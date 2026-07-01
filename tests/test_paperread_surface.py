@@ -218,6 +218,24 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertIn("reduced under H2", conditions_payload["surface_conditions"]["Text"])
         self.assertIn("Methanol adsorption", relations_payload["surface_relations"]["Text"])
 
+    def test_pdf_section_fallback_uses_relevant_snippets_instead_of_full_text(self):
+        title = "Long PDF"
+        long_prefix = ("Background filler without useful section markers. " * 300).strip()
+        sections = {
+            "full_text": (
+                f"{long_prefix}\n\n"
+                "Preparation: Ni catalyst was freeze-dried, annealed at 700 C for 2 h under Ar, and washed.\n\n"
+                "The oxygen evolution reaction showed 224 mV overpotential at 10 mA cm-2 with single Ni atoms.\n\n"
+                f"{long_prefix}"
+            )
+        }
+
+        conditions_payload, relations_payload = build_surface_inputs_from_sections(title, sections)
+        self.assertIn("annealed at 700 C", conditions_payload["surface_conditions"]["Text"])
+        self.assertIn("oxygen evolution reaction", relations_payload["surface_relations"]["Text"])
+        self.assertLess(len(conditions_payload["surface_conditions"]["Text"]), len(sections["full_text"]))
+        self.assertLess(len(relations_payload["surface_relations"]["Text"]), len(sections["full_text"]))
+
     def test_offline_pdf_pipeline_flow(self):
         relation_json = """
 ```json
@@ -353,6 +371,36 @@ Oxygen vacancies acted as active sites and methoxy was identified.
                 summary_txt=str(summary_path),
             )
             self.assertTrue(Path(outputs["ptomodel_json"]).is_file())
+
+    def test_ptomodel_prefers_application_reaction_over_generic_table_step(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            table_path = Path(tmpdir) / "sample_table.csv"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "title": "Ni single atom OER",
+                        "extraction": {
+                            "materials": ["Ni-O-G SACs"],
+                            "surfaces": ["graphene-like carbon"],
+                            "single_atoms": ["single Ni atoms"],
+                            "applications": ["oxygen evolution reaction"],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            table_path.write_text(
+                "Index,Reaction Type,Material,Surface/Support,Cluster/Single Atom\n"
+                "doc1,Catalyst Preparation,Ni-O-G SACs,graphene-like carbon,Single Atom\n",
+                encoding="utf-8",
+            )
+
+            payload = build_ptomodel_payload(str(relations_path), table_csv=str(table_path))
+            doc_payload = payload["documents"][0]
+            self.assertEqual(doc_payload["normalized_mapping"]["reaction_family"], ["OER"])
 
     def test_summary_writer(self):
         with tempfile.TemporaryDirectory() as tmpdir:

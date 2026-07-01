@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "/tmp/ptomodel_test2_fixed/test2_conditions_input_surface_relations.jsonl",
+    "table_csv": "/tmp/ptomodel_test2_fixed/test2_conditions_input_table.csv",
+    "summary_txt": "/tmp/ptomodel_test2_fixed/test2_conditions_input_summary.txt",
+    "time_csv": "/tmp/ptomodel_test2_fixed/test2_conditions_input_time.csv"
+  },
+  "summary_excerpt": [
+    "这次抽到的关键信息包括：",
+    "在 test2_conditions_input_table.csv 里：",
+    "- Ni, O",
+    "- 吸附物/反应物：Water",
+    "- 团簇/单原子建模线索：Single Atom",
+    "- 建模关键词：Ni, O, single atom, metal-oxygen bonding",
+    "在 test2_conditions_input_surface_relations.jsonl 里：",
+    "- 材料：",
+    "- nickel",
+    "- graphene-like carbon",
+    "- 材料参数：",
+    "- 3D porous framework"
+  ],
+  "documents": [
+    {
+      "id": "surface_relations",
+      "title": "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+      "selected_information": {
+        "materials": [
+          "nickel",
+          "graphene-like carbon"
+        ],
+        "material_classes": [
+          "single_atom_catalysts",
+          "metals_alloys",
+          "carbon_materials"
+        ],
+        "supports_or_surfaces": [
+          "Ni-O-G SACs"
+        ],
+        "surface_facets": [
+          {
+            "raw": "primarily exposed facet",
+            "normalized": "primarily exposed facet"
+          },
+          {
+            "raw": "edge sites",
+            "normalized": "edge sites"
+          }
+        ],
+        "surface_terminations": [],
+        "loaded_nanoparticles_or_clusters": [],
+        "single_atom_species": [
+          {
+            "raw": "single nickel",
+            "normalized_species": "Ni"
+          }
+        ],
+        "reaction_types": [
+          {
+            "raw": "Electrocatalytic OER",
+            "normalized": "Electrocatalytic OER"
+          }
+        ],
+        "adsorbates": [
+          "Water"
+        ],
+        "adsorption_sites": [],
+        "coverage": [],
+        "defects": [],
+        "active_sites": [
+          "single Ni atoms",
+          "metal–oxygen bonding"
+        ],
+        "modeling_keywords": [
+          "electrocatalytic activity",
+          "OER",
+          "SACs"
+        ]
+      },
+      "normalized_mapping": {
+        "primary_material": "nickel",
+        "material_classes": [
+          "single_atom_catalysts",
+          "metals_alloys",
+          "carbon_materials"
+        ],
+        "primary_surface_or_support": "Ni-O-G SACs",
+        "facet_set": [
+          "primarily exposed facet",
+          "edge sites"
+        ],
+        "loaded_species": [],
+        "reaction_family": [
+          "Electrocatalytic OER"
+        ]
+      },
+      "recommended_modeling_tasks": [
+        "single_atom_site",
+        "adsorbate_landscape",
+        "doped_surface",
+        "slab_generation"
+      ],
+      "executable_tasks": [
+        "adsorbate_landscape"
+      ],
+      "deferred_tasks": [
+        "single_atom_site",
+        "doped_surface",
+        "slab_generation"
+      ],
+      "task_inputs": {
+        "adsorbate_landscape": {
+          "material": "nickel",
+          "surfaces": [
+            "Ni-O-G SACs"
+          ],
+          "facets": [
+            "primarily exposed facet",
+            "edge sites"
+          ],
+          "active_sites": [
+            "single Ni atoms",
+            "metal–oxygen bonding"
+          ],
+          "reaction_type": "Electrocatalytic OER",
+          "adsorbates": [
+            "Water"
+          ],
+          "adsorption_sites": [],
+          "coverage": []
+        }
+      }
+    }
+  ],
+  "global_recommended_tasks": [
+    "single_atom_site",
+    "adsorbate_landscape",
+    "doped_surface",
+    "slab_generation"
+  ],
+  "global_executable_tasks": [
+    "adsorbate_landscape"
+  ],
+  "global_deferred_tasks": [
+    "single_atom_site",
+    "doped_surface",
+    "slab_generation"
+  ]
+}

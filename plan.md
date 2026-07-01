@@ -1,6 +1,6 @@
 # Paperread Surface Modeling Plan
 
-更新时间：2026-06-30
+更新时间：2026-07-01
 
 ## 目标
 
@@ -9,19 +9,19 @@
 ```text
 论文 PDF/文本
 -> paperread/surface 抽取关键词、参数、关系
--> modeling_planner 生成可审查的建模计划
+-> ptomodel 将论文信息转成 Agent-ready bridge JSON
 -> Agent surface-modeling skill 执行结构生成或计算准备
 -> 经验抽取机制记录陌生术语和失败/有效经验
--> 反向更新 prompt、schema、planner 和 skill
+-> 反向更新 prompt、schema、ptomodel 和 skill
 ```
 
 核心原则：
 
 - `paperread` 负责抽取，不直接运行建模。
-- `modeling_planner` 负责把论文关键词转成建模意图。
+- `ptomodel` 负责把论文关键词、材料语义和任务意图转成结构化桥接 JSON。
 - `surface-modeling` 负责真正的结构生成和后续计算准备。
 - `paperread/surface/collect_experience.py` 负责在 paperread 侧沉淀已知有用信息和未知信息。
-- `paperread-surface-learning` 负责在 Agent skill 侧沉淀需要进入 skill/planner 的陌生经验。
+- `paperread-surface-learning` 负责在 Agent skill 侧沉淀需要进入 skill/ptomodel 的陌生经验。
 
 ## 已有基础
 
@@ -32,6 +32,7 @@
 - 时间标准化
 - 表面材料关系抽取
 - 人工可读摘要生成
+- `*_ptomodel.json` 桥接输出
 - 本地经验收集：`collect_experience.py`
 
 当前 `agents/Agent/skills/surface-modeling` 已支持：
@@ -225,12 +226,12 @@ python -m paperread.surface.collect_experience ... --write-run-file --write-mark
 
 其余任务先进入 planner 输出和经验记录，不直接执行。
 
-## Modeling Planner
+## PToModel 桥接层
 
-建议新增：
+当前桥接模块：
 
 ```text
-paperread/surface/modeling_planner.py
+paperread/surface/ptomodel.py
 ```
 
 输入：
@@ -245,57 +246,62 @@ paperread/surface/modeling_planner.py
 输出：
 
 ```text
-*_modeling_plan.json
-*_modeling_tasks.md
+*_ptomodel.json
 ```
 
-### 计划文件格式
+### 桥接文件格式
 
 ```json
 {
-  "source": "paperread output path",
-  "material": "CeO2",
-  "surface": {
-    "facet": "111",
-    "support": null,
-    "termination": "reduced surface"
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "paperread output path",
+    "table_csv": "paperread output path",
+    "summary_txt": "paperread output path"
   },
-  "modifications": [
+  "documents": [
     {
-      "type": "oxygen_vacancy",
-      "count_range": [1, 3],
-      "region": "surface"
+      "id": "doc1",
+      "selected_information": {
+        "materials": ["CeO2", "Pt/CeO2"],
+        "surface_facets": [{"raw": "(1 1 1)", "normalized": "(111)"}],
+        "loaded_nanoparticles_or_clusters": [{"raw": "Pt13 cluster", "normalized_species": "Pt"}],
+        "reaction_types": [{"raw": "CO oxidation", "normalized": "CO oxidation"}]
+      },
+      "normalized_mapping": {
+        "primary_material": "Pt/CeO2",
+        "primary_surface_or_support": "CeO2",
+        "facet_set": ["(111)"],
+        "loaded_species": ["Pt"],
+        "reaction_family": ["CO oxidation"]
+      },
+      "recommended_modeling_tasks": [
+        "vacancy_landscape",
+        "adsorbate_landscape",
+        "surface_cluster_builder"
+      ],
+      "executable_tasks": [
+        "vacancy_landscape",
+        "adsorbate_landscape",
+        "surface_cluster_builder"
+      ],
+      "deferred_tasks": [
+        "single_atom_site"
+      ],
+      "task_inputs": {
+        "adsorbate_landscape": {
+          "material": "Pt/CeO2",
+          "surfaces": ["CeO2"],
+          "facets": ["(111)"],
+          "adsorbates": ["CO", "O2"]
+        }
+      }
     }
-  ],
-  "adsorbates": [
-    {
-      "name": "H2O",
-      "sites": ["Ce site"],
-      "coverage_counts": [1, 2, 3, 4]
-    }
-  ],
-  "clusters": [
-    {
-      "element": "Pt",
-      "atoms": 13,
-      "motifs": ["fcc", "hcp"]
-    }
-  ],
-  "recommended_workflows": [
-    "vacancy_landscape",
-    "adsorbate_landscape",
-    "surface_cluster_builder"
-  ],
-  "missing_inputs": [
-    "bulk_or_slab_structure_file"
-  ],
-  "unmapped_terms": [
-    "exsolved nanoparticle"
   ]
 }
 ```
 
-### Planner 规则
+### PToModel 规则
 
 - 出现 `oxygen vacancy`、`Vo`、`vacancy-rich`：
   - 推荐 `vacancy_landscape`
@@ -310,8 +316,33 @@ paperread/surface/modeling_planner.py
 - 出现 `hydroxylated`、`sulfurized`、`nitrided`：
   - 记录为 `surface_functionalization`，第一阶段不自动执行
 - 缺少 CIF/POSCAR/XYZ 等结构文件：
-  - 只输出 `missing_inputs`
+  - 保留在 `deferred_tasks` 或等待后续 `surface-modeling` 提供结构模板
   - 不强行建模
+
+### 当前关键不足
+
+`ptomodel` 已能完成：
+
+- facet / cluster species / reaction type 的基础归一化
+- `recommended_modeling_tasks` 到 `executable_tasks` / `deferred_tasks` 的拆分
+- `task_inputs` 的基础组织
+
+但对复杂材料体系仍然不够，尤其是：
+
+- 单原子催化剂
+- 碳载体单原子位点
+- M-Nx / M-Ox / M-Sx 配位环境
+- 缺陷锚定位点和局部活性位构型
+
+例如真实论文中的 `Ni-O-G SACs` 不能只被压缩成 `primary_material = nickel`。对下游建模更有意义的表达应接近：
+
+- `active_metal_species = Ni`
+- `site_type = single_atom_site`
+- `host_or_support = graphene-like carbon`
+- `coordination_environment = O-coordinated`
+- `anchor_or_local_motif = Ni-O_x on carbon support`
+
+后续计划需要围绕这类“材料种类 + 位点/配位环境”的表达能力持续扩充。
 
 ## 经验抽取机制
 
@@ -386,7 +417,7 @@ paperread 本地经验分类：
 
 每个类别内部按规范化术语聚合，记录出现次数、来源文件、来源字段、上下文和建议动作。这样经验库保存的是“研究类别下的去重知识”，不是逐项证据流水账。
 
-经验收集必须参考 NERRE 和 ReactionSeek 的处理方式：先定义目标 schema，再只从目标字段中收集信息。不要把文本中所有材料名、性能指标、反应条件、应用描述都作为经验保存。经验库只保留会影响后续表面模型构建、planner 映射、prompt/schema 修正的内容。
+经验收集必须参考 NERRE 和 ReactionSeek 的处理方式：先定义目标 schema，再只从目标字段中收集信息。不要把文本中所有材料名、性能指标、反应条件、应用描述都作为经验保存。经验库只保留会影响后续表面模型构建、`ptomodel` 映射、prompt/schema 修正的内容。
 
 经验库需要以 `material_classes` 作为主索引，使经验能按无机材料种类累积，而不是按论文保存。比如两个 PDF 都属于 `carbon_materials` 和 `single_atom_catalysts`，其经验应合并进：
 
@@ -465,7 +496,7 @@ paperread 经验文件的作用：
 paperread/surface extraction
 -> collect_experience.py
 -> grouped useful information / unknown_information
--> modeling_planner 规则更新
+-> ptomodel 规则更新
 -> paperread prompt/schema 更新
 -> Agent skill 更新
 ```
@@ -509,7 +540,7 @@ agents/Agent/skills/paperread-surface-learning/experience/unrecognized_surface_t
 
 - 单次出现：只记录，不改 planner。
 - 多篇论文重复出现：加入 `paperread/surface` prompt 或 schema。
-- 与已有建模脚本可对应：加入 `modeling_planner.py` 映射。
+- 与已有建模脚本可对应：加入 `ptomodel.py` 映射。
 - 与已有脚本无法对应但研究价值高：新增或扩展 `surface-modeling` workflow。
 
 ## Agent 工作方式
@@ -566,37 +597,67 @@ python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperrea
 - 主要材料、表面、吸附物、缺陷、团簇/单原子能稳定出现在输出中。
 - 陌生术语能进入经验记录，而不是丢失。
 
-### 第二阶段：实现 Modeling Planner MVP
+### 第二阶段：稳固 PToModel 桥接层
 
 目标：
 
-- 将 paperread 输出转成可审查的建模计划。
+- 将 paperread 输出转成稳定、可消费的 `*_ptomodel.json`。
 
 任务：
 
-1. 新增 `paperread/surface/modeling_planner.py`。
+1. 持续维护 `paperread/surface/ptomodel.py`。
 2. 支持输入：
    - `*_surface_relations.jsonl`
    - `*_table.csv`
+   - `*_summary.txt`
 3. 输出：
-   - `*_modeling_plan.json`
-   - `*_modeling_tasks.md`
-4. 第一版只自动规划：
+   - `*_ptomodel.json`
+4. 第一版只自动转化：
    - `vacancy_landscape`
    - `adsorbate_landscape`
    - `surface_cluster_builder`
-5. 缺少结构文件时只写 `missing_inputs`。
+5. 其余任务进入 `deferred_tasks`，不强行执行。
 
 验收标准：
 
-- 给定 paperread 输出，可以生成稳定的 JSON 计划。
+- 给定 paperread 输出，可以生成稳定的桥接 JSON。
 - 不会在输入不完整时直接运行建模。
 
-### 第三阶段：新增调度 Skill
+### 第三阶段：扩展材料种类与局部结构语义
 
 目标：
 
-- 将 planner 与 Agent 建模能力连接。
+- 通过真实论文经验收集，扩展 `paperread` 对材料种类、位点和配位环境的表达能力，使 `ptomodel` 能做更细的一一对应。
+
+任务：
+
+1. 持续收集真实论文中的材料种类经验，重点覆盖：
+   - `single_atom_catalysts`
+   - `supported_catalysts`
+   - `carbon_materials`
+   - `oxides`
+   - `defect_engineered_materials`
+   - `surface_functionalized_materials`
+2. 对复杂体系建立更细的表达槽位，例如：
+   - `host_or_support`
+   - `active_metal_species`
+   - `site_type`
+   - `coordination_environment`
+   - `defect_anchor`
+   - `local_motif`
+3. 重点解决类似 `Ni` on graphene-like carbon with `O` coordination 的案例，避免桥接层只留下元素名而丢失建模关键约束。
+4. 将重复出现的材料表述沉淀回 `paperread` prompt/schema 和 `ptomodel` 归一化规则。
+
+验收标准：
+
+- `ptomodel` 不再只输出粗粒度 `primary_material`，还能稳定表达载体、位点类型和配位环境。
+- 同类论文中的近义材料描述能归并到一致的桥接字段。
+
+### 第四阶段：新增调度 Skill
+
+目标：
+
+- 将 `ptomodel` 与 Agent 建模能力连接。
 
 建议新增：
 
@@ -608,7 +669,7 @@ agents/Agent/skills/paperread-surface-modeling/SKILL.md
 
 ```text
 paperread output
--> modeling_plan.json
+-> ptomodel.json
 -> surface-modeling command
 ```
 
@@ -616,10 +677,10 @@ paperread output
 
 验收标准：
 
-- Agent 能从 `modeling_plan.json` 判断应该调用哪个建模脚本。
-- Agent 能在缺少结构文件时明确向用户要 CIF/POSCAR/XYZ。
+- Agent 能从 `*_ptomodel.json` 判断应该调用哪个建模脚本。
+- Agent 能在缺少结构文件时明确向用户要 CIF/POSCAR/XYZ，或降级到可行的模板任务。
 
-### 第四阶段：经验闭环
+### 第五阶段：经验闭环
 
 目标：
 
@@ -629,11 +690,11 @@ paperread output
 
 ```text
 paperread keywords
--> modeling_plan.json
+-> ptomodel.json
 -> generated structures / energy tables
 -> modeling_summary.json
 -> knowledge graph
--> prompt/schema/planner/skill 更新
+-> prompt/schema/ptomodel/skill 更新
 ```
 
 验收标准：
@@ -646,5 +707,6 @@ paperread keywords
 
 1. 用真实表面论文重新跑 `run_surface_pipeline.py`。
 2. 用 `paperread-surface-learning` 记录陌生术语。
-3. 实现 `paperread/surface/modeling_planner.py` MVP。
-4. 根据 MVP 结果再新增 `paperread-surface-modeling` skill。
+3. 持续扩展 `paperread` 的材料种类、位点和配位环境经验覆盖。
+4. 让 `ptomodel` 对复杂体系输出更细的 `host/support + site_type + coordination` 映射。
+5. 根据 `ptomodel` 稳定度再新增 `paperread-surface-modeling` skill。

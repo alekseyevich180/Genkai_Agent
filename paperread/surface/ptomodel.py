@@ -51,6 +51,20 @@ REACTION_KEYWORDS = [
     ("ammonia synthesis", "ammonia synthesis"),
 ]
 
+GENERIC_REACTION_TYPES = {
+    "catalyst preparation",
+    "annealing",
+    "electrochemical test",
+    "electrochemical measurements",
+    "electrochemical measurement",
+    "electrochemical characterization",
+    "characterization",
+    "calcination",
+    "reduction",
+    "pretreatment",
+    "synthesis",
+}
+
 
 def _clean_scalar(value: Any) -> str | None:
     if value is None:
@@ -143,6 +157,14 @@ def _normalize_reaction(raw: str) -> str:
     if "adsorption" in lowered:
         return "adsorption"
     return raw.strip()
+
+
+def _pick_reaction_type(extraction: dict[str, Any], table_row: dict[str, str] | None) -> str | None:
+    table_reaction = _clean_scalar((table_row or {}).get("Reaction Type"))
+    application_reaction = _first_nonempty(*_flatten_strings(extraction.get("applications")))
+    if application_reaction and table_reaction and table_reaction.strip().lower() in GENERIC_REACTION_TYPES:
+        return application_reaction
+    return _first_nonempty(table_reaction, application_reaction)
 
 
 def _infer_material_classes(values: list[str]) -> list[str]:
@@ -321,10 +343,7 @@ def build_ptomodel_payload(
             for species in [_normalize_species(item)]
             if species
         ]
-        reaction_type = _first_nonempty(
-            (table_row or {}).get("Reaction Type"),
-            _first_nonempty(*_flatten_strings(extraction.get("applications"))),
-        )
+        reaction_type = _pick_reaction_type(extraction, table_row)
         tasks = _infer_tasks(extraction, table_row)
         executable_tasks = [task for task in tasks if task in EXECUTABLE_TASKS]
         deferred_tasks = [task for task in tasks if task not in EXECUTABLE_TASKS]

@@ -1,0 +1,44 @@
+这次抽到的关键信息包括：
+
+在 test2_conditions_input_table.csv 里：
+
+- Ni, O
+- 吸附物/反应物：Water
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：Ni, O, single atom, metal-oxygen bonding
+
+在 test2_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - nickel
+  - graphene-like carbon
+- 材料参数：
+  - 3D porous framework
+  - ultrathin graphene sheets
+- 反应参数：
+  - current density of 10 mA cm−2
+  - Tafel slope of 42 mV dec−1
+  - oxygen production turn over frequency of 1.44 S−1 at 300 mV
+  - current of 115 mA cm−1
+- 性能：
+  - high activity
+  - stability
+  - low overpotential
+  - long-term durability
+- 表面/晶面：
+  - Ni-O-G SACs
+  - primarily exposed facet
+  - edge sites
+- 缺陷/活性位点：
+  - single Ni atoms
+  - metal–oxygen bonding
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - single nickel
+- 建模关键词：
+  - electrocatalytic activity
+  - OER
+  - SACs
+- 推荐建模任务：
+  - single_atom_site

@@ -23,6 +23,42 @@ SECTION_ALIASES = {
     "conclusions": "conclusion",
 }
 
+METHOD_KEYWORDS = (
+    "synth",
+    "prepare",
+    "anneal",
+    "calc",
+    "reduc",
+    "electro",
+    "electrolyte",
+    "loading",
+    "wt%",
+    "temperature",
+    "atmosphere",
+    "freeze",
+    "wash",
+    "support electrode",
+)
+
+RELATION_KEYWORDS = (
+    "reaction",
+    "activity",
+    "selectivity",
+    "conversion",
+    "adsorp",
+    "surface",
+    "facet",
+    "vacanc",
+    "single-atom",
+    "single atom",
+    "cluster",
+    "intermediate",
+    "oer",
+    "orr",
+    "her",
+    "co oxidation",
+)
+
 
 def _run_command(args: list[str]) -> str:
     result = subprocess.run(args, capture_output=True, text=True, check=True)
@@ -48,6 +84,43 @@ def normalize_text(text: str) -> str:
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+def _paragraphs(text: str) -> list[str]:
+    return [part.strip() for part in re.split(r"\n\s*\n", normalize_text(text)) if part.strip()]
+
+
+def _select_relevant_passages(text: str, keywords: tuple[str, ...], max_chars: int = 5000) -> str:
+    paragraphs = _paragraphs(text)
+    if not paragraphs:
+        return normalize_text(text)[:max_chars]
+
+    selected: list[str] = []
+    seen: set[str] = set()
+    total = 0
+
+    for paragraph in paragraphs:
+        lowered = paragraph.lower()
+        if not any(keyword in lowered for keyword in keywords):
+            continue
+        if paragraph in seen:
+            continue
+        projected = total + len(paragraph) + (2 if selected else 0)
+        if projected > max_chars and selected:
+            break
+        seen.add(paragraph)
+        selected.append(paragraph)
+        total = projected
+
+    if not selected:
+        for paragraph in paragraphs:
+            projected = total + len(paragraph) + (2 if selected else 0)
+            if projected > max_chars and selected:
+                break
+            selected.append(paragraph)
+            total = projected
+
+    return "\n\n".join(selected)[:max_chars]
 
 
 def infer_title(text: str, metadata_title: str = "") -> str:
@@ -86,7 +159,9 @@ def build_surface_inputs_from_sections(
             sections.get("results", ""),
         )
         if part
-    ) or sections.get("full_text", "")
+    )
+    if not methods_text:
+        methods_text = _select_relevant_passages(sections.get("full_text", ""), METHOD_KEYWORDS)
 
     relations_text = "\n\n".join(
         part for part in (
@@ -97,7 +172,9 @@ def build_surface_inputs_from_sections(
             sections.get("conclusion", ""),
         )
         if part
-    ) or sections.get("full_text", "")
+    )
+    if not relations_text:
+        relations_text = _select_relevant_passages(sections.get("full_text", ""), RELATION_KEYWORDS)
 
     conditions_payload = {
         "surface_conditions": {
