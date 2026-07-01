@@ -1,5 +1,8 @@
 
-# Agent
+# Genkai: An agent for materials, chemistry, and simulation.
+
+
+## Agent
 
 Agent is a **skill-based, agentic platform** for computational material science tasks, with a focus on Machine Learning Force Field (MLFF) generation and application. It would evolve with users by experience accumulation and creation of new skills.
 
