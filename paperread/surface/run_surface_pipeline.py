@@ -8,6 +8,7 @@ try:
     from .extract_surface_conditions import extract_conditions
     from .extract_surface_relations import extract_relations
     from .ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
+    from .ptomodel import generate_ptomodel_output
     from .standardize_surface_time import standardize_time
     from .summarize_surface_outputs import write_summary
 except ImportError:  # pragma: no cover - direct script execution
@@ -15,6 +16,7 @@ except ImportError:  # pragma: no cover - direct script execution
     from extract_surface_conditions import extract_conditions
     from extract_surface_relations import extract_relations
     from ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
+    from ptomodel import generate_ptomodel_output
     from standardize_surface_time import standardize_time
     from summarize_surface_outputs import write_summary
 
@@ -62,6 +64,16 @@ def run_pipeline(
         summary_path = str(outdir / f"{stem}_summary.txt")
         write_summary(results["conditions_csv"], results["relations_jsonl"], summary_path)
         results["summary_txt"] = summary_path
+        results.update(
+            generate_ptomodel_output(
+                relations_jsonl=results["relations_jsonl"],
+                table_csv=results["conditions_csv"],
+                summary_txt=results["summary_txt"],
+                time_csv=results.get("time_csv"),
+                output_dir=str(outdir),
+                stem=stem,
+            )
+        )
 
     if collect_experience_output:
         experience_result = collect_experience(
@@ -125,7 +137,7 @@ def run_pipeline_from_pdf(
         tempdir.cleanup()
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Run the unified surface-material reaction extraction pipeline."
     )
@@ -167,7 +179,7 @@ def main() -> None:
         action="store_true",
         help="Also collect useful and unknown extraction experience into aggregated JSON output.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     source_path = Path(args.input_source)
     input_format = args.input_format
@@ -197,7 +209,8 @@ def main() -> None:
         )
     for _, path in outputs.items():
         print(path)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -34,6 +34,7 @@ Outputs:
 - `*_time.csv`: standardized time table
 - `*_surface_relations.jsonl`: structured material/reaction relation output
 - `*_summary.txt`: human-readable summary aligned with the extracted results
+- `*_ptomodel.json`: filtered and normalized Agent-oriented bridge from paper key information to modeling inputs
 - `material_classes/*.json`: material-class experience records when
   `--collect-experience` is enabled
 
@@ -54,8 +55,21 @@ Optional outputs:
 - `run_surface_pipeline.py`
   - Unified entrypoint for surface-material reaction processing
   - Runs PDF ingestion when needed, then condition extraction, time standardization, and relation extraction
+  - Automatically generates `*_ptomodel.json` after the extraction stage
   - By default keeps only final outputs to avoid duplicate files
   - Can also collect paperread experience with `--collect-experience`
+
+- `ptomodel.py`
+  - Input:
+    - `*_surface_relations.jsonl`
+    - optional `*_table.csv`
+    - optional `*_summary.txt`
+    - optional `*_time.csv`
+  - Output:
+    - `*_ptomodel.json`
+  - Use case: filter useful information and normalize equivalents such as facet
+    indices, nanoparticle species, material classes, and reaction types so the
+    Agent can use them as modeling inputs.
 
 - `extract_surface_conditions.py`
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
@@ -163,6 +177,7 @@ python -m paperread.surface.run_surface_pipeline paper.json --output-dir paperre
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --keep-intermediate --save-raw
 python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --collect-experience
+python -m paperread.surface.ptomodel --relations paper_surface_relations.jsonl --table paper_table.csv --summary paper_summary.txt --output-dir paperread/surface/output
 python -m paperread.surface.extract_surface_conditions samples.json
 python -m paperread.surface.standardize_surface_time input.csv output.csv
 python -m paperread.surface.extract_surface_relations samples.json
@@ -178,13 +193,15 @@ For papers focused on surface-material reactions:
 1. Use `run_surface_pipeline.py` as the default entrypoint.
 2. Read `*_table.csv` for reaction and material parameters.
 3. Read `*_surface_relations.jsonl` for structured entities and links.
-4. Read the modeling keyword sections in `*_summary.txt` to decide which
-   surface-modeling workflow should be prepared.
-5. Enable `--collect-experience` when you want to preserve useful and unknown
+4. Read `*_ptomodel.json` when the next step is Agent-side surface modeling
+   rather than manual inspection.
+5. Read the modeling keyword sections in `*_summary.txt` when you want a short
+   human summary before opening the full plan.
+6. Enable `--collect-experience` when you want to preserve useful and unknown
    extraction information for later prompt/schema/planner improvements.
-6. Use `standardize_surface_time.py` separately only if you already have a
+7. Use `standardize_surface_time.py` separately only if you already have a
    condition table and want to normalize time values again.
-7. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
+8. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
    or generated JSON inputs for debugging.
 
 For PDF input, the workflow is:

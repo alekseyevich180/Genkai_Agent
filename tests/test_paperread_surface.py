@@ -11,6 +11,7 @@ from paperread.surface.extract_surface_conditions import extract_conditions
 from paperread.surface.extract_surface_relations import extract_relations
 from paperread.surface.collect_experience import collect_experience
 from paperread.surface.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
+from paperread.surface.ptomodel import build_ptomodel_payload, generate_ptomodel_output
 from paperread.surface.run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
 from paperread.surface.standardize_surface_time import standardize_time
 from paperread.surface.summarize_surface_outputs import write_summary
@@ -39,6 +40,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread.surface.collect_experience",
             "paperread.surface.ingest_pdf",
             "paperread.surface.run_surface_pipeline",
+            "paperread.surface.ptomodel",
         ]
         for module in modules:
             with self.subTest(module=module):
@@ -53,6 +55,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread/surface/collect_experience.py",
             "paperread/surface/ingest_pdf.py",
             "paperread/surface/run_surface_pipeline.py",
+            "paperread/surface/ptomodel.py",
         ]
         for script in scripts:
             with self.subTest(script=script):
@@ -175,8 +178,10 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("time_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
             self.assertIn("summary_txt", outputs)
+            self.assertIn("ptomodel_json", outputs)
             self.assertIn("experience_material_classes_dir", outputs)
             self.assertTrue(Path(outputs["relations_jsonl"]).is_file())
+            self.assertTrue(Path(outputs["ptomodel_json"]).is_file())
             self.assertTrue(Path(outputs["experience_material_classes_dir"]).is_dir())
             content = Path(outputs["relations_jsonl"]).read_text(encoding="utf-8")
             self.assertIn('"materials": [', content)
@@ -185,6 +190,10 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("这次抽到的关键信息包括", summary)
             self.assertIn("建模关键词", summary)
             self.assertIn("vacancy_landscape", summary)
+            ptomodel_json = Path(outputs["ptomodel_json"]).read_text(encoding="utf-8")
+            self.assertIn('"global_executable_tasks"', ptomodel_json)
+            self.assertIn('"adsorbate_landscape"', ptomodel_json)
+            self.assertIn('"surface_facets"', ptomodel_json)
 
     def test_pdf_section_routing_helpers(self):
         pdf_text = """
@@ -273,6 +282,77 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertIn("conditions_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
             self.assertIn("summary_txt", outputs)
+            self.assertIn("ptomodel_json", outputs)
+
+    def test_ptomodel_filters_key_information_and_normalizes_equivalents(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            table_path = Path(tmpdir) / "sample_table.csv"
+            summary_path = Path(tmpdir) / "sample_summary.txt"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "title": "Pt cluster on CeO2(111)",
+                        "extraction": {
+                            "materials": ["Pt/CeO2"],
+                            "surfaces": ["CeO2"],
+                            "surface_terminations": ["reduced surface"],
+                            "slab_models": ["CeO2(111) slab"],
+                            "facets": ["(111)"],
+                            "defects": ["oxygen vacancy"],
+                            "vacancy_models": ["surface oxygen vacancy"],
+                            "active_sites": ["Pt site"],
+                            "adsorbates": ["CO", "O2"],
+                            "adsorption_sites": ["Pt site"],
+                            "coverage": ["0.25 ML CO"],
+                            "clusters": ["Pt13 cluster"],
+                            "modeling_keywords": ["surface", "adsorbate", "oxygen vacancy", "Pt cluster"],
+                            "recommended_modeling_tasks": [
+                                "vacancy_landscape",
+                                "adsorbate_landscape",
+                                "surface_cluster_builder",
+                                "single_atom_site",
+                            ],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            table_path.write_text(
+                "Index,Reaction Type,Material,Surface/Support,Facet,Surface Termination,Active Site,Defect,Adsorbate/Reactant,Adsorption Site,Coverage,Cluster/Single Atom,Temperature,Time,Atmosphere,Product,Modeling Keywords\n"
+                "doc1,CO oxidation,Pt/CeO2,CeO2,(1 1 1),reduced surface,Pt site,oxygen vacancy,\"CO, O2\",Pt site,0.25 ML CO,Pt13 cluster,150 C,2 h,N2,CO2,\"surface, adsorbate, oxygen vacancy, Pt cluster\"\n",
+                encoding="utf-8",
+            )
+            summary_path.write_text("这次抽到的关键信息包括：CeO2(111)、氧空位、CO 吸附、Pt 团簇。", encoding="utf-8")
+
+            payload = build_ptomodel_payload(
+                str(relations_path),
+                table_csv=str(table_path),
+                summary_txt=str(summary_path),
+            )
+
+            self.assertEqual(payload["global_executable_tasks"], ["vacancy_landscape", "adsorbate_landscape", "surface_cluster_builder"])
+            self.assertEqual(payload["global_deferred_tasks"], ["single_atom_site", "surface_functionalization", "slab_generation"])
+            doc_payload = payload["documents"][0]
+            self.assertEqual(doc_payload["normalized_mapping"]["primary_material"], "Pt/CeO2")
+            self.assertEqual(doc_payload["normalized_mapping"]["facet_set"], ["(111)"])
+            self.assertEqual(doc_payload["normalized_mapping"]["loaded_species"], ["Pt"])
+            self.assertEqual(doc_payload["normalized_mapping"]["reaction_family"], ["CO oxidation"])
+            self.assertIn("supported_catalysts", doc_payload["selected_information"]["material_classes"])
+            self.assertIn("oxides", doc_payload["selected_information"]["material_classes"])
+            self.assertIn("vacancy_landscape", doc_payload["task_inputs"])
+            self.assertEqual(doc_payload["task_inputs"]["adsorbate_landscape"]["coverage"], ["0.25 ML CO"])
+
+            outputs = generate_ptomodel_output(
+                str(relations_path),
+                output_dir=tmpdir,
+                stem="sample",
+                table_csv=str(table_path),
+                summary_txt=str(summary_path),
+            )
+            self.assertTrue(Path(outputs["ptomodel_json"]).is_file())
 
     def test_summary_writer(self):
         with tempfile.TemporaryDirectory() as tmpdir:

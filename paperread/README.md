@@ -27,6 +27,7 @@ the reusable parts of `ReactionSeek` and `NERRE`.
 - `extract_surface_conditions.py`: table-oriented extraction for methods and procedures
 - `standardize_surface_time.py`: time normalization for surface workflows
 - `extract_surface_relations.py`: JSON relation extraction for abstracts and discussion text
+- `ptomodel.py`: filter and normalize extracted paper information into Agent-ready modeling inputs
 
 ## Dependency Notes
 

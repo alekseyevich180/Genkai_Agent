@@ -91,7 +91,7 @@ python scripts/export_surface_experience.py add-term \
 - Treat every exported term as a candidate, not ground truth.
 - Keep the original source path and context whenever possible.
 - Do not immediately add a new modeling rule from one occurrence.
-- Promote a term into `paperread/surface` prompt/schema or `surface-modeling`
+- Promote a term into `paperread/surface` prompt/schema, `ptomodel`, or `surface-modeling`
   only after it appears in multiple papers or is important to the current project.
 
 ## Current Supported Modeling Task Names

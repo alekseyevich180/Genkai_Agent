@@ -1,0 +1,480 @@
+from __future__ import annotations
+
+import argparse
+import csv
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+try:
+    from .collect_experience import MATERIAL_CLASS_RULES, SUPPORTED_MODELING_TASKS
+except ImportError:  # pragma: no cover - direct script execution
+    from collect_experience import MATERIAL_CLASS_RULES, SUPPORTED_MODELING_TASKS
+
+
+EXECUTABLE_TASKS = {
+    "vacancy_landscape",
+    "adsorbate_landscape",
+    "surface_cluster_builder",
+}
+
+ELEMENT_NAME_TO_SYMBOL = {
+    "platinum": "Pt",
+    "nickel": "Ni",
+    "tin": "Sn",
+    "cobalt": "Co",
+    "iron": "Fe",
+    "copper": "Cu",
+    "ruthenium": "Ru",
+    "rhodium": "Rh",
+    "iridium": "Ir",
+    "gold": "Au",
+    "silver": "Ag",
+    "palladium": "Pd",
+    "zinc": "Zn",
+    "manganese": "Mn",
+    "cerium": "Ce",
+    "titanium": "Ti",
+}
+
+REACTION_KEYWORDS = [
+    ("oxygen evolution reaction", "OER"),
+    ("hydrogen evolution reaction", "HER"),
+    ("oxygen reduction reaction", "ORR"),
+    ("co2 reduction", "CO2RR"),
+    ("carbon dioxide reduction", "CO2RR"),
+    ("co oxidation", "CO oxidation"),
+    ("methanol oxidation", "methanol oxidation"),
+    ("water splitting", "water splitting"),
+    ("nitrogen reduction", "NRR"),
+    ("ammonia synthesis", "ammonia synthesis"),
+]
+
+
+def _clean_scalar(value: Any) -> str | None:
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text or text.lower() in {"n/a", "na", "none", "null", "nan", "-"}:
+        return None
+    return text
+
+
+def _to_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        items = value
+    elif isinstance(value, dict):
+        items = []
+        for item in value.values():
+            items.extend(_to_list(item))
+    else:
+        items = [part.strip() for part in str(value).split(",")]
+
+    cleaned: list[str] = []
+    seen: set[str] = set()
+    for item in items:
+        text = _clean_scalar(item)
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        cleaned.append(text)
+    return cleaned
+
+
+def _flatten_strings(value: Any) -> list[str]:
+    if isinstance(value, list):
+        flattened: list[str] = []
+        for item in value:
+            flattened.extend(_flatten_strings(item))
+        return flattened
+    if isinstance(value, dict):
+        flattened = []
+        for item in value.values():
+            flattened.extend(_flatten_strings(item))
+        return flattened
+    text = _clean_scalar(value)
+    return [text] if text else []
+
+
+def _first_nonempty(*values: Any) -> str | None:
+    for value in values:
+        text = _clean_scalar(value)
+        if text:
+            return text
+    return None
+
+
+def _normalize_facet(raw: str) -> str:
+    text = raw.strip()
+    if not text:
+        return text
+    inner = re.sub(r"[\s,]+", "", text.strip("()[]{}"))
+    if re.fullmatch(r"-?\d{3,4}", inner):
+        return f"({inner})"
+    return text
+
+
+def _normalize_species(raw: str) -> str | None:
+    text = raw.strip()
+    if not text:
+        return None
+    match = re.search(r"\b([A-Z][a-z]?)(?:\d+)?\b", text)
+    if match:
+        return match.group(1)
+    lowered = text.lower()
+    for name, symbol in ELEMENT_NAME_TO_SYMBOL.items():
+        if name in lowered:
+            return symbol
+    return None
+
+
+def _normalize_reaction(raw: str) -> str:
+    lowered = raw.strip().lower()
+    for keyword, normalized in REACTION_KEYWORDS:
+        if keyword in lowered:
+            return normalized
+    if "oxidation" in lowered:
+        return "oxidation"
+    if "reduction" in lowered:
+        return "reduction"
+    if "adsorption" in lowered:
+        return "adsorption"
+    return raw.strip()
+
+
+def _infer_material_classes(values: list[str]) -> list[str]:
+    joined = " ".join(values).lower()
+    matches = [name for name, rules in MATERIAL_CLASS_RULES if any(rule in joined for rule in rules)]
+    if not matches:
+        return ["other_inorganic_materials"]
+    return matches
+
+
+def _load_relations(relations_jsonl: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    content = Path(relations_jsonl).read_text(encoding="utf-8").strip()
+    if not content:
+        return rows
+
+    decoder = json.JSONDecoder()
+    index = 0
+    length = len(content)
+    while index < length:
+        while index < length and content[index].isspace():
+            index += 1
+        if index >= length:
+            break
+        payload, index = decoder.raw_decode(content, index)
+        if not isinstance(payload, dict):
+            continue
+        extraction = payload.get("extraction", payload)
+        rows.append(
+            {
+                "id": payload.get("id"),
+                "title": payload.get("title") or payload.get("Title"),
+                "text": payload.get("text") or payload.get("Text"),
+                "extraction": extraction,
+            }
+        )
+    return rows
+
+
+def _load_table(table_csv: str | None) -> list[dict[str, str]]:
+    if not table_csv:
+        return []
+    with open(table_csv, "r", encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def _index_table_rows(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
+    indexed: dict[str, dict[str, str]] = {}
+    for row in rows:
+        key = _first_nonempty(row.get("Index"), row.get("id"), row.get("ID"))
+        if key:
+            indexed[key] = row
+    return indexed
+
+
+def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -> list[str]:
+    tasks = []
+    recommended = [
+        task
+        for task in _flatten_strings(extraction.get("recommended_modeling_tasks"))
+        if task in SUPPORTED_MODELING_TASKS
+    ]
+    tasks.extend(recommended)
+
+    defects = " ".join(
+        _flatten_strings(extraction.get("defects"))
+        + _flatten_strings(extraction.get("vacancy_models"))
+        + _flatten_strings((table_row or {}).get("Defect"))
+    ).lower()
+    if "vacan" in defects and "vacancy_landscape" not in tasks:
+        tasks.append("vacancy_landscape")
+
+    adsorption = (
+        _flatten_strings(extraction.get("adsorbates"))
+        + _flatten_strings(extraction.get("adsorption_sites"))
+        + _flatten_strings(extraction.get("coverage"))
+        + _flatten_strings((table_row or {}).get("Adsorbate/Reactant"))
+        + _flatten_strings((table_row or {}).get("Adsorption Site"))
+        + _flatten_strings((table_row or {}).get("Coverage"))
+    )
+    if adsorption and "adsorbate_landscape" not in tasks:
+        tasks.append("adsorbate_landscape")
+
+    clusters = (
+        _flatten_strings(extraction.get("clusters"))
+        + _flatten_strings((table_row or {}).get("Cluster/Single Atom"))
+    )
+    cluster_text = " ".join(clusters).lower()
+    if any(word in cluster_text for word in {"cluster", "nanocluster", "nanoparticle"}) and "surface_cluster_builder" not in tasks:
+        tasks.append("surface_cluster_builder")
+
+    singles = (
+        _flatten_strings(extraction.get("single_atoms"))
+        + _flatten_strings((table_row or {}).get("Cluster/Single Atom"))
+        + _flatten_strings((table_row or {}).get("Active Site"))
+    )
+    single_text = " ".join(singles).lower()
+    if "single atom" in single_text and "single_atom_site" not in tasks:
+        tasks.append("single_atom_site")
+
+    dopants = _flatten_strings(extraction.get("dopants")) + _flatten_strings((table_row or {}).get("Dopant/Modifier"))
+    if dopants and "doped_surface" not in tasks:
+        tasks.append("doped_surface")
+
+    terminations = _flatten_strings(extraction.get("surface_terminations")) + _flatten_strings((table_row or {}).get("Surface Termination"))
+    if terminations and "surface_functionalization" not in tasks:
+        tasks.append("surface_functionalization")
+
+    surfaces = (
+        _flatten_strings(extraction.get("surfaces"))
+        + _flatten_strings(extraction.get("slab_models"))
+        + _flatten_strings(extraction.get("facets"))
+        + _flatten_strings((table_row or {}).get("Surface/Support"))
+        + _flatten_strings((table_row or {}).get("Facet"))
+    )
+    if surfaces and "slab_generation" not in tasks:
+        tasks.append("slab_generation")
+
+    return tasks
+
+
+def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: dict[str, str] | None) -> dict[str, Any]:
+    payload = {
+        "material": _first_nonempty(
+            _first_nonempty(*_flatten_strings(extraction.get("materials"))),
+            (table_row or {}).get("Material"),
+        ),
+        "surfaces": _to_list(extraction.get("surfaces")) or _to_list((table_row or {}).get("Surface/Support")),
+        "facets": [_normalize_facet(item) for item in (_to_list(extraction.get("facets")) or _to_list((table_row or {}).get("Facet")))],
+        "active_sites": _to_list(extraction.get("active_sites")) or _to_list((table_row or {}).get("Active Site")),
+        "reaction_type": _first_nonempty((table_row or {}).get("Reaction Type")),
+    }
+    if task_name == "vacancy_landscape":
+        payload["defects"] = _to_list(extraction.get("defects")) or _to_list((table_row or {}).get("Defect"))
+        payload["vacancy_models"] = _to_list(extraction.get("vacancy_models"))
+    elif task_name == "adsorbate_landscape":
+        payload["adsorbates"] = _to_list(extraction.get("adsorbates")) or _to_list((table_row or {}).get("Adsorbate/Reactant"))
+        payload["adsorption_sites"] = _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site"))
+        payload["coverage"] = _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage"))
+    elif task_name == "surface_cluster_builder":
+        payload["clusters"] = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
+        payload["cluster_species"] = [
+            species
+            for species in (_normalize_species(item) for item in payload["clusters"])
+            if species
+        ]
+    return payload
+
+
+def build_ptomodel_payload(
+    relations_jsonl: str,
+    table_csv: str | None = None,
+    summary_txt: str | None = None,
+    time_csv: str | None = None,
+) -> dict[str, Any]:
+    relation_rows = _load_relations(relations_jsonl)
+    table_rows = _load_table(table_csv)
+    table_index = _index_table_rows(table_rows)
+    documents: list[dict[str, Any]] = []
+
+    for idx, relation_row in enumerate(relation_rows, start=1):
+        extraction = relation_row["extraction"]
+        relation_id = _first_nonempty(relation_row.get("id")) or f"doc_{idx}"
+        table_row = table_index.get(relation_id)
+        if table_row is None and idx <= len(table_rows):
+            table_row = table_rows[idx - 1]
+
+        materials = _to_list(extraction.get("materials")) or _to_list((table_row or {}).get("Material"))
+        supports = _to_list(extraction.get("surfaces")) or _to_list((table_row or {}).get("Surface/Support"))
+        raw_facets = _to_list(extraction.get("facets")) or _to_list((table_row or {}).get("Facet"))
+        normalized_facets = [_normalize_facet(item) for item in raw_facets]
+        cluster_entries = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
+        cluster_species = [
+            {"raw": item, "normalized_species": species}
+            for item in cluster_entries
+            for species in [_normalize_species(item)]
+            if species
+        ]
+        reaction_type = _first_nonempty(
+            (table_row or {}).get("Reaction Type"),
+            _first_nonempty(*_flatten_strings(extraction.get("applications"))),
+        )
+        tasks = _infer_tasks(extraction, table_row)
+        executable_tasks = [task for task in tasks if task in EXECUTABLE_TASKS]
+        deferred_tasks = [task for task in tasks if task not in EXECUTABLE_TASKS]
+        modeling_keywords = _to_list(extraction.get("modeling_keywords")) or _to_list((table_row or {}).get("Modeling Keywords"))
+        material_classes = _infer_material_classes(
+            materials
+            + supports
+            + cluster_entries
+            + _to_list(extraction.get("single_atoms"))
+            + _to_list(extraction.get("surface_terminations"))
+            + _to_list(extraction.get("defects"))
+        )
+
+        documents.append(
+            {
+                "id": relation_id,
+                "title": relation_row.get("title"),
+                "selected_information": {
+                    "materials": materials,
+                    "material_classes": material_classes,
+                    "supports_or_surfaces": supports,
+                    "surface_facets": [
+                        {"raw": raw, "normalized": normalized}
+                        for raw, normalized in zip(raw_facets, normalized_facets)
+                    ],
+                    "surface_terminations": _to_list(extraction.get("surface_terminations")) or _to_list((table_row or {}).get("Surface Termination")),
+                    "loaded_nanoparticles_or_clusters": cluster_species,
+                    "single_atom_species": [
+                        {"raw": item, "normalized_species": species}
+                        for item in (_to_list(extraction.get("single_atoms")) or _to_list((table_row or {}).get("Cluster/Single Atom")))
+                        for species in [_normalize_species(item)]
+                        if species
+                    ],
+                    "reaction_types": (
+                        [{"raw": reaction_type, "normalized": _normalize_reaction(reaction_type)}]
+                        if reaction_type
+                        else []
+                    ),
+                    "adsorbates": _to_list(extraction.get("adsorbates")) or _to_list((table_row or {}).get("Adsorbate/Reactant")),
+                    "adsorption_sites": _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site")),
+                    "coverage": _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage")),
+                    "defects": _to_list(extraction.get("defects")) or _to_list((table_row or {}).get("Defect")),
+                    "active_sites": _to_list(extraction.get("active_sites")) or _to_list((table_row or {}).get("Active Site")),
+                    "modeling_keywords": modeling_keywords,
+                },
+                "normalized_mapping": {
+                    "primary_material": _first_nonempty(*materials),
+                    "material_classes": material_classes,
+                    "primary_surface_or_support": _first_nonempty(*supports),
+                    "facet_set": normalized_facets,
+                    "loaded_species": [item["normalized_species"] for item in cluster_species],
+                    "reaction_family": (
+                        [_normalize_reaction(reaction_type)]
+                        if reaction_type
+                        else []
+                    ),
+                },
+                "recommended_modeling_tasks": tasks,
+                "executable_tasks": executable_tasks,
+                "deferred_tasks": deferred_tasks,
+                "task_inputs": {
+                    task_name: _build_task_inputs(task_name, extraction, table_row)
+                    for task_name in executable_tasks
+                },
+            }
+        )
+
+    summary_excerpt: list[str] = []
+    if summary_txt and Path(summary_txt).exists():
+        summary_excerpt = [
+            line.strip()
+            for line in Path(summary_txt).read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ][:12]
+
+    recommended_tasks: list[str] = []
+    for doc in documents:
+        for task in doc["recommended_modeling_tasks"]:
+            if task not in recommended_tasks:
+                recommended_tasks.append(task)
+
+    return {
+        "schema_version": "1.0",
+        "sources": {
+            "relations_jsonl": relations_jsonl,
+            "table_csv": table_csv,
+            "summary_txt": summary_txt,
+            "time_csv": time_csv,
+        },
+        "summary_excerpt": summary_excerpt,
+        "documents": documents,
+        "global_recommended_tasks": recommended_tasks,
+        "global_executable_tasks": [task for task in recommended_tasks if task in EXECUTABLE_TASKS],
+        "global_deferred_tasks": [task for task in recommended_tasks if task not in EXECUTABLE_TASKS],
+    }
+
+
+def generate_ptomodel_output(
+    relations_jsonl: str,
+    output_dir: str,
+    stem: str,
+    table_csv: str | None = None,
+    summary_txt: str | None = None,
+    time_csv: str | None = None,
+) -> dict[str, str]:
+    payload = build_ptomodel_payload(
+        relations_jsonl=relations_jsonl,
+        table_csv=table_csv,
+        summary_txt=summary_txt,
+        time_csv=time_csv,
+    )
+    outdir = Path(output_dir)
+    outdir.mkdir(parents=True, exist_ok=True)
+    json_path = outdir / f"{stem}_ptomodel.json"
+    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return {"ptomodel_json": str(json_path)}
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Filter and normalize paperread surface outputs into Agent-ready ptomodel JSON."
+    )
+    parser.add_argument("--relations", required=True, help="Path to *_surface_relations.jsonl")
+    parser.add_argument("--table", default=None, help="Path to *_table.csv")
+    parser.add_argument("--summary", default=None, help="Path to *_summary.txt")
+    parser.add_argument("--time", default=None, help="Path to *_time.csv")
+    parser.add_argument(
+        "--output-dir",
+        default="paperread/surface/output",
+        help="Directory for ptomodel outputs.",
+    )
+    parser.add_argument(
+        "--stem",
+        default=None,
+        help="Output filename stem. Defaults to the relations filename stem without _surface_relations.",
+    )
+    args = parser.parse_args(argv)
+
+    stem = args.stem or Path(args.relations).stem.removesuffix("_surface_relations")
+    outputs = generate_ptomodel_output(
+        relations_jsonl=args.relations,
+        table_csv=args.table,
+        summary_txt=args.summary,
+        time_csv=args.time,
+        output_dir=args.output_dir,
+        stem=stem,
+    )
+    print(json.dumps(outputs, ensure_ascii=False, indent=2))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -283,7 +283,7 @@ def _action_for(field: str, value: str, known: bool) -> str:
     if field == "recommended_modeling_tasks" and value not in SUPPORTED_MODELING_TASKS:
         return "Review whether this should become a supported modeling task."
     if known:
-        return "Use as candidate input for modeling_planner or downstream surface-modeling workflows."
+        return "Use as candidate input for ptomodel or downstream surface-modeling workflows."
     return "Review as unknown information; consider adding prompt/schema/planner mapping if repeated."
 
 
@@ -694,7 +694,7 @@ def collect_experience(
     )
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Collect useful and unknown experience from paperread surface extraction outputs."
     )
@@ -730,12 +730,12 @@ def main() -> None:
         action="store_true",
         help="Do not update experience/material_classes/*.json.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.init_material_classes:
         result = init_material_class_store(args.output_dir)
         print(json.dumps(result, ensure_ascii=False, indent=2))
-        return
+        return 0
 
     if not args.relations and not args.table:
         parser.error("At least one of --relations or --table is required.")
@@ -750,7 +750,8 @@ def main() -> None:
         write_run_file=args.write_run_file or args.write_markdown,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -1,5 +1,5 @@
 [project]
-name = "agent"
+name = "Genkai"
 version = "2.1.0"
 description = "A multi-agent framework for complex computational material tasks."
 readme = "README.md"

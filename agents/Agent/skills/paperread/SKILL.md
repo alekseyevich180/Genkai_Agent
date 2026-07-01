@@ -6,7 +6,7 @@ metadata:
     - run_skill_script
   dependent_skills:
     - paperread-surface-learning
-    - surface-modeling
+    - ptomodel
   tags:
     - paperread
     - pdf
@@ -25,9 +25,9 @@ This skill is the entrypoint for the local `paperread/surface` pipeline:
 ```text
 paper PDF or JSON text
 -> paperread extraction
--> table / time / relations / summary
+-> table / time / relations / summary / ptomodel json
 -> optional experience collection
--> downstream surface-modeling or later skill updates
+-> downstream ptomodel / surface-modeling or later skill updates
 ```
 
 ## Script
@@ -72,6 +72,7 @@ Main outputs:
 - `*_time.csv`
 - `*_surface_relations.jsonl`
 - `*_summary.txt`
+- `*_ptomodel.json`
 
 Optional intermediate outputs:
 
@@ -83,6 +84,9 @@ Optional intermediate outputs:
 
 Use `--keep-intermediate` when debugging extraction quality.
 Use `--save-raw` when raw condition rows are needed.
+
+The pipeline now also writes `*_ptomodel.json`, but the preferred downstream
+entrypoint for this bridge step is the separate `ptomodel` skill.
 
 ### Collect Experience From Existing Outputs
 
@@ -111,6 +115,8 @@ python scripts/paperread_tools.py init-material-classes \
 - Read `*_surface_relations.jsonl` when the task needs structured entities,
   surfaces, facets, adsorbates, defects, single atoms, clusters, or suggested
   modeling tasks.
+- Read `*_ptomodel.json` when the task should directly continue into
+  `surface-modeling` rather than stopping at literature extraction.
 - Read `*_table.csv` when the task needs preparation or reaction conditions.
 - If paperread extracts unfamiliar terms or unsupported modeling cues, follow
   with the `paperread-surface-learning` skill.
