@@ -205,3 +205,183 @@ This is a production MLIP entry point. Unlike the vacancy and adsorbate landscap
 - For adsorption, choose `--site-symbols` from exposed surface cations or active atoms and inspect `adsorption_sites.csv`.
 - Keep MLIP-ranked structures and DFT-ready VASP inputs in separate directories so downstream labeling remains traceable.
 - Use `structure-conversion` when a downstream tool needs a different structure format.
+
+## Parameter Experience JSON
+
+Use the following JSON-style parameter schemas when another agent needs to map
+`ptomodel` outputs to script arguments without re-reading Python sources.
+These records are intentionally value-free: they define parameter names,
+expected types, required-ness, grouping, and constraints.
+
+### Oxygen-Vacancy Landscape
+
+```json
+{
+  "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
+  "task_key": "vacancy_landscape",
+  "ptomodel_mapping_role": "oxide surface vacancy modeling input",
+  "parameters": {
+    "input": { "type": "path", "required": true },
+    "output_dir": { "type": "path", "required": false },
+    "structure_prefix": { "type": "string", "required": false },
+    "vacancy_counts": { "type": "comma_separated_ints", "required": false },
+    "samples_per_count": { "type": "int", "required": false },
+    "mu_o": { "type": "float", "required": false },
+    "z_frac_min": { "type": "float", "required": false },
+    "z_frac_max": { "type": "float", "required": false },
+    "calculator": { "type": "enum", "required": false, "choices": ["uma", "none"] },
+    "smoke_test": { "type": "bool", "required": false },
+    "uma_model": { "type": "string", "required": false },
+    "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
+    "task_name": { "type": "string", "required": false },
+    "include_d3": { "type": "bool", "required": false },
+    "fmax": { "type": "float", "required": false },
+    "max_steps": { "type": "int", "required": false },
+    "seed": { "type": "int", "required": false },
+    "write_all_structures": { "type": "bool", "required": false }
+  },
+  "constraints": [
+    "samples_per_count >= 1",
+    "0 <= z_frac_min <= z_frac_max <= 1",
+    "calculator in ['uma', 'none']",
+    "calculator='uma' 时才真正需要 uma_model 和 device"
+  ]
+}
+```
+
+### Adsorbate Coverage Landscape
+
+```json
+{
+  "script": "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py",
+  "task_key": "adsorbate_landscape",
+  "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
+  "parameters": {
+    "surface": { "type": "path", "required": true },
+    "molecule": { "type": "path", "required": true },
+    "output_dir": { "type": "path", "required": false },
+    "structure_prefix": { "type": "string", "required": false },
+    "site_symbols": { "type": "string", "required": false },
+    "site_z_tolerance": { "type": "float", "required": false },
+    "max_sites": { "type": "int", "required": false },
+    "site_group_size": { "type": "int", "required": false },
+    "n_trials_single": { "type": "int", "required": false },
+    "site_radius": { "type": "float", "required": false },
+    "z_gap_min": { "type": "float", "required": false },
+    "z_gap_max": { "type": "float", "required": false },
+    "coverage_counts": { "type": "comma_separated_ints", "required": false },
+    "patterns": { "type": "comma_separated_strings", "required": false },
+    "random_repeats": { "type": "int", "required": false },
+    "seed": { "type": "int", "required": false },
+    "calculator": { "type": "enum", "required": false, "choices": ["uma", "none"] },
+    "uma_model": { "type": "string", "required": false },
+    "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
+    "task_name": { "type": "string", "required": false },
+    "include_d3": { "type": "bool", "required": false },
+    "fmax": { "type": "float", "required": false },
+    "max_steps": { "type": "int", "required": false },
+    "smoke_test": { "type": "bool", "required": false }
+  },
+  "constraints": [
+    "site_group_size >= 1",
+    "coverage_counts 中每个值必须在 1 到 max_adsorbates 之间",
+    "patterns 由 uniform, clustered, stripe, island, random 组成",
+    "calculator in ['uma', 'none']"
+  ]
+}
+```
+
+### Metal Cluster Or Cluster-On-Surface Builder
+
+```json
+{
+  "script": "agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py",
+  "task_key": "surface_cluster_builder",
+  "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
+  "parameters": {
+    "surface": { "type": "path", "required": false },
+    "cluster_element": { "type": "string", "required": false },
+    "cluster_bulk_file": { "type": "path", "required": false },
+    "cluster_structures": {
+      "type": "string_list",
+      "required": false,
+      "choices": ["fcc", "hcp", "bcc"]
+    },
+    "cluster_atoms": { "type": "int", "required": false },
+    "cluster_layers": { "type": "int", "required": false },
+    "cluster_radius": { "type": "float", "required": false },
+    "stack_layers": { "type": "int", "required": false },
+    "bcc_rows": { "type": "int", "required": false },
+    "bcc_max_row_atoms": { "type": "int", "required": false },
+    "cluster_a": { "type": "float", "required": false },
+    "cluster_c": { "type": "float", "required": false },
+    "fcc_rows": { "type": "comma_separated_ints", "required": false },
+    "fcc_row_profile": {
+      "type": "enum",
+      "required": false,
+      "choices": ["auto", "custom", "triangle", "hexagon", "trapezoid", "rectangle"]
+    },
+    "fcc_max_row_atoms": { "type": "int", "required": false },
+    "fcc_row_count": { "type": "int", "required": false },
+    "fcc_stacking_mode": { "type": "enum", "required": false, "choices": ["ABC", "AB"] },
+    "fcc_layers": { "type": "int", "required": false },
+    "hcp_rows": { "type": "comma_separated_ints", "required": false },
+    "hcp_layers": { "type": "int", "required": false },
+    "x_frac": { "type": "float", "required": false },
+    "y_frac": { "type": "float", "required": false },
+    "z_height": { "type": "float", "required": false },
+    "phi": { "type": "float", "required": false },
+    "theta": { "type": "float", "required": false },
+    "psi": { "type": "float", "required": false },
+    "output_dir": { "type": "path", "required": false }
+  },
+  "constraints": [
+    "cluster_element 和 cluster_bulk_file 至少应能解析出一种金属元素来源",
+    "普通模式下 cluster_atoms / cluster_layers / cluster_radius 三选一",
+    "bcc bridge 模式需要同时提供 bcc_rows, bcc_max_row_atoms, stack_layers",
+    "fcc row 模式需要 fcc_layers，并提供 fcc_rows 或可推导 row_profile 参数",
+    "hcp row 模式需要 hcp_rows"
+  ]
+}
+```
+
+### Surface-Cluster MLIP Search
+
+```json
+{
+  "script": "agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py",
+  "task_key": "surface_cluster_mlip_search",
+  "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
+  "parameters": {
+    "surface": { "type": "path", "required": true },
+    "cluster": { "type": "path", "required": true },
+    "output_dir": { "type": "path", "required": false },
+    "n_trials": { "type": "int", "required": false },
+    "fmax": { "type": "float", "required": false },
+    "uma_model": { "type": "string", "required": false },
+    "checkpoint": { "type": "path_or_null", "required": false },
+    "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
+    "placement_mode": { "type": "enum", "required": false, "choices": ["cell", "active"] },
+    "active_symbols": { "type": "string_list", "required": false },
+    "site_radius": { "type": "float", "required": false },
+    "z_min": { "type": "float", "required": false },
+    "z_max": { "type": "float", "required": false },
+    "detach_cutoff": { "type": "float", "required": false },
+    "penalty_energy": { "type": "float", "required": false },
+    "max_steps": { "type": "int", "required": false },
+    "include_d3": { "type": "bool", "required": false },
+    "candidate_pool_size": { "type": "int", "required": false },
+    "selection_count": { "type": "int", "required": false },
+    "top_pool_size": { "type": "int", "required": false },
+    "top_pick_count": { "type": "int", "required": false },
+    "tail_bin_size": { "type": "int", "required": false },
+    "tail_pick_per_bin": { "type": "int", "required": false },
+    "selection_random_seed": { "type": "int", "required": false }
+  },
+  "constraints": [
+    "placement_mode in ['cell', 'active']",
+    "placement_mode='active' 时必须提供 active_symbols",
+    "该脚本默认依赖 fairchem-core, torch 和 UMA 模型，不提供 calculator='none' 的假跑模式"
+  ]
+}
+```
