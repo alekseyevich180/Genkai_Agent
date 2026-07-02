@@ -19,6 +19,11 @@ EXECUTABLE_TASKS = {
     "surface_cluster_builder",
 }
 
+SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json"
+)
+
 ELEMENT_NAME_TO_SYMBOL = {
     "platinum": "Pt",
     "nickel": "Ni",
@@ -286,6 +291,21 @@ def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -
     return tasks
 
 
+def _load_surface_modeling_parameter_schema() -> dict[str, Any]:
+    if not SURFACE_MODELING_PARAMETER_SCHEMA_PATH.exists():
+        return {
+            "schema_path": str(SURFACE_MODELING_PARAMETER_SCHEMA_PATH),
+            "schema_version": None,
+            "tasks": {},
+        }
+    payload = json.loads(SURFACE_MODELING_PARAMETER_SCHEMA_PATH.read_text(encoding="utf-8"))
+    return {
+        "schema_path": str(SURFACE_MODELING_PARAMETER_SCHEMA_PATH),
+        "schema_version": payload.get("schema_version"),
+        "tasks": payload.get("tasks", {}),
+    }
+
+
 def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: dict[str, str] | None) -> dict[str, Any]:
     payload = {
         "material": _first_nonempty(
@@ -320,6 +340,7 @@ def build_ptomodel_payload(
     summary_txt: str | None = None,
     time_csv: str | None = None,
 ) -> dict[str, Any]:
+    parameter_schema_registry = _load_surface_modeling_parameter_schema()
     relation_rows = _load_relations(relations_jsonl)
     table_rows = _load_table(table_csv)
     table_index = _index_table_rows(table_rows)
@@ -408,6 +429,14 @@ def build_ptomodel_payload(
                     task_name: _build_task_inputs(task_name, extraction, table_row)
                     for task_name in executable_tasks
                 },
+                "task_parameter_schema_refs": {
+                    task_name: {
+                        "schema_path": parameter_schema_registry["schema_path"],
+                        "task_key": task_name,
+                    }
+                    for task_name in executable_tasks
+                    if task_name in parameter_schema_registry["tasks"]
+                },
             }
         )
 
@@ -433,6 +462,7 @@ def build_ptomodel_payload(
             "summary_txt": summary_txt,
             "time_csv": time_csv,
         },
+        "surface_modeling_parameter_schema": parameter_schema_registry,
         "summary_excerpt": summary_excerpt,
         "documents": documents,
         "global_recommended_tasks": recommended_tasks,

@@ -83,6 +83,36 @@ The JSON should prioritize:
 Other inferred tasks can stay in `deferred_tasks` for later human or skill
 extension.
 
+## Call Relationship To Surface-Modeling Config
+
+The current call relationship is:
+
+```text
+paperread outputs
+-> ptomodel selects executable task names
+-> ptomodel builds task_inputs from extracted paper fields
+-> ptomodel loads surface-modeling parameter schema JSON
+-> ptomodel writes task_parameter_schema_refs into *_ptomodel.json
+-> downstream agent fills concrete argument values against that schema
+-> surface-modeling script executes
+```
+
+The surface-modeling parameter schema file is:
+
+- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+
+In `*_ptomodel.json`:
+
+- top-level `surface_modeling_parameter_schema` contains the shared task schema registry
+- each document's `task_inputs` contains paper-derived modeling context
+- each document's `task_parameter_schema_refs` links an executable task to the matching schema entry by `task_key`
+
+So `ptomodel` is not supposed to invent final CLI values by itself. Its job is to:
+
+- decide which supported task applies
+- provide normalized paper evidence as `task_inputs`
+- point downstream execution to the exact parameter schema that must be filled
+
 ## Usage Policy
 
 - Prefer `paperread` first; use `ptomodel` on `paperread` outputs rather than on

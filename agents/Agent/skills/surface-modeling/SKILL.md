@@ -213,6 +213,10 @@ Use the following JSON-style parameter schemas when another agent needs to map
 These records are intentionally value-free: they define parameter names,
 expected types, required-ness, grouping, and constraints.
 
+The machine-readable copy used by `ptomodel` is stored at:
+
+- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+
 ### Oxygen-Vacancy Landscape
 
 ```json
