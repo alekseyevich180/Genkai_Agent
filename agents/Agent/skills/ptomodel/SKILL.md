@@ -126,5 +126,55 @@ So `ptomodel` is not supposed to invent final CLI values by itself. Its job is t
 - Treat `normalized_mapping` as the downstream Agent input contract.
 - When `global_executable_tasks` is non-empty, the next step can continue into
   `surface-modeling`.
-- When important terms are still unmapped, follow with
-  `paperread-surface-learning`.
+- When important terms are still unmapped, send them back to `paperread`
+  experience collection with `export-unknown-terms` or `add-term`.
+
+## Knowledge Loop Policy
+
+This skill is the bridge between literature evidence and executable modeling.
+It must make mappings explicit enough that later sessions can reuse or improve
+them through the knowledge graph.
+
+The intended loop is:
+
+```text
+paperread relations / tables / summary
+-> ptomodel selected evidence
+-> normalized mapping
+-> task argument template
+-> surface-modeling execution
+-> mapping successes, gaps, and warnings
+-> experience registry and durable knowledge
+```
+
+Before building a model JSON:
+
+- Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
+  for known surface, material, adsorbate, dopant, active-site, and reaction
+  vocabulary.
+- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+  for executable task names and required argument slots.
+- Prefer known material classes and task names from `paperread/surface/surface_ontology.py`
+  instead of inventing local names.
+
+During normalization, record both the mapped value and the reason it was safe:
+
+- Facet equivalence, such as `(1 1 1)` to `(111)`.
+- Loaded species simplification, such as `Pt13 cluster` to `Pt` plus
+  `cluster_atoms = 13` when explicit.
+- Single-atom center and coordination, such as `Fe-N4`, `Co-O4`, or `Ni-S`.
+- Material class inference, such as supported catalyst, carbon material,
+  metal alloy, oxide, perovskite, or spinel.
+- Reaction normalization, such as OER, HER, ORR, CO oxidation, CO2RR, and NRR.
+- Missing required arguments that must be filled by structure generation or
+  user choice.
+
+After building `*_ptomodel.json`:
+
+- Send unmapped terms, uncertain task choices, and missing parameter patterns
+  to the `paperread` experience store.
+- Treat successful paper-to-task mappings as reusable memory candidates.
+- Use `agent knowledge distill --min-evidence 3` after the same mapping works
+  across several papers or sessions.
+- Use `agent knowledge seed` after updating this skill, the surface-modeling
+  schema, or the paperread registry.

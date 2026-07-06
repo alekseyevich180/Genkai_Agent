@@ -206,6 +206,56 @@ This is a production MLIP entry point. Unlike the vacancy and adsorbate landscap
 - Keep MLIP-ranked structures and DFT-ready VASP inputs in separate directories so downstream labeling remains traceable.
 - Use `structure-conversion` when a downstream tool needs a different structure format.
 
+## Knowledge Loop Policy
+
+This skill consumes paper-derived parameters and should feed successful
+modeling choices back into the Agent knowledge loop.
+
+The intended loop is:
+
+```text
+paperread / ptomodel evidence
+-> surface-modeling task schema
+-> generated candidate structures
+-> validation or calculation result
+-> reusable parameter choice / warning
+-> paperread experience registry and durable graph knowledge
+```
+
+Before running a modeling script:
+
+- Prefer a `*_ptomodel.json` task argument template when the task comes from a
+  paper.
+- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+  for required arguments and constraints.
+- Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
+  for known material class, facet, active-site, adsorbate, dopant, coverage,
+  cluster, and reaction keywords.
+- Run `--smoke-test` or `--calculator none` first when a workflow supports it.
+
+During modeling, preserve evidence that can be reused:
+
+- Input structure path, material formula, material class, facet, termination,
+  and surface region selection.
+- Vacancy count, vacancy concentration, dopant identity, active-site symbols,
+  adsorbate identity, coverage count, cluster element, cluster atom count, and
+  placement mode.
+- Calculator choice, model name, device, convergence limits, and selection
+  criteria.
+- Output directories, ranked CSV files, best structures, failed trials, and
+  any warning that affects later reuse.
+
+After modeling:
+
+- Feed successful parameter choices and recurring failures back to the
+  `paperread` experience store as candidate experience.
+- If a paper-derived task cannot be represented by the current schema, record
+  the missing task or parameter rather than forcing it into the closest script.
+- Use `agent knowledge distill --min-evidence 3` when the same modeling
+  parameter choice or failure pattern appears repeatedly.
+- Use `agent knowledge seed` after updating this skill or the task parameter
+  schema so the graph can retrieve the new capability.
+
 ## Parameter Experience JSON
 
 Use the following JSON-style parameter schemas when another agent needs to map

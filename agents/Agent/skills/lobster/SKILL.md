@@ -259,6 +259,55 @@ python lobster_tools.py collect_results \
   --dirs ./lobster/job_001 ./lobster/job_002
 ```
 
+## Knowledge Loop Policy
+
+This skill should also use the Agent knowledge loop. LOBSTER runs often expose
+reusable project-specific choices, especially basis functions, upstream SCF
+requirements, bonding descriptors, and failure modes.
+
+The intended loop is:
+
+```text
+completed VASP / CP2K / QE calculation
+-> LOBSTER staging
+-> lobsterin, basis, manifest, and output summary
+-> bonding-analysis result or failure warning
+-> reusable workflow memory
+-> durable skill knowledge after repeated evidence
+```
+
+Before staging a LOBSTER job:
+
+- Search existing skill knowledge for the target code path, element basis
+  functions, SCF file requirements, and prior LOBSTER warnings.
+- Reuse known basis-function mappings for the same element and pseudopotential
+  family when they are available.
+- Confirm upstream SCF outputs include the files required by the selected code
+  path before generating `lobsterin`.
+
+During staging and result reading, preserve compact structured evidence:
+
+- Upstream code, source directory, species list, basis functions, basis set,
+  task type, and generated `lobsterin` options.
+- Required upstream files that were present or missing.
+- `charge_spilling_percent`, `total_spilling_percent`, `bond_count`, and
+  `most_bonding_pair` from `read_results`.
+- Strong ICOHP/COHP/COBI/COOP patterns that are relevant to the material or
+  reaction being studied.
+- Failure mode, such as missing wavefunction, incompatible projection data,
+  high spilling, wrong species order, or incomplete `ICOHPLIST.lobster`.
+
+After result collection:
+
+- Treat a successful element/basis/workflow combination as a reusable memory
+  candidate.
+- Treat repeated high spilling or missing-file errors as warnings that should
+  be promoted after enough evidence.
+- Use `agent knowledge distill --min-evidence 3` when the same basis mapping,
+  SCF prerequisite, or failure warning appears across several jobs.
+- Use `agent knowledge seed` after updating this skill or any LOBSTER reference
+  guide so the graph can retrieve the new workflow knowledge.
+
 ## Other codes
 
 - CP2K executable workflow details are in `references/cp2k.md`

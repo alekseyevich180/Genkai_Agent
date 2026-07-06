@@ -6,64 +6,24 @@ import json
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
 from typing import Any, Iterable
+
+REPO_ROOT = Path(__file__).resolve().parents[5]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+try:
+    from paperread.surface.surface_ontology import (
+        KNOWN_MODELING_TOKENS,
+        SUPPORTED_MODELING_TASKS,
+    )
+except ImportError:  # pragma: no cover - direct script execution
+    from surface_ontology import KNOWN_MODELING_TOKENS, SUPPORTED_MODELING_TASKS
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_EXPERIENCE_DIR = SKILL_DIR / "experience"
-
-SUPPORTED_TASKS = {
-    "vacancy_landscape",
-    "adsorbate_landscape",
-    "surface_cluster_builder",
-    "single_atom_site",
-    "doped_surface",
-    "surface_functionalization",
-    "slab_generation",
-}
-
-KNOWN_MODELING_TOKENS = {
-    "surface",
-    "slab",
-    "support",
-    "interface",
-    "facet",
-    "termination",
-    "terminated",
-    "adsorbate",
-    "adsorption",
-    "coverage",
-    "site",
-    "vacancy",
-    "defect",
-    "dopant",
-    "doped",
-    "modifier",
-    "promoter",
-    "cluster",
-    "nanocluster",
-    "nanoparticle",
-    "single atom",
-    "isolated",
-    "oxygen vacancy",
-    "anion vacancy",
-    "cation vacancy",
-    "hydroxylated",
-    "sulfurized",
-    "nitrided",
-    "reduced",
-    "oxidized",
-    "reconstructed",
-    "top site",
-    "bridge site",
-    "hollow site",
-    "monodentate",
-    "bidentate",
-    "coadsorption",
-    "monolayer",
-    "metal-support",
-    "anchoring",
-}
 
 FIELDS_TO_SCAN = {
     "surface_terminations",
@@ -163,7 +123,7 @@ def _flatten(value: object) -> list[str]:
 
 def _is_known_term(term: str) -> bool:
     lower = term.lower()
-    if lower in SUPPORTED_TASKS:
+    if lower in SUPPORTED_MODELING_TASKS:
         return True
     return any(token in lower for token in KNOWN_MODELING_TOKENS)
 
@@ -210,7 +170,7 @@ def collect_from_relations(relations_path: Path) -> list[ExperienceRecord]:
                     term = value.replace("relation:", "").strip()
                 if not term:
                     continue
-                if field == "recommended_modeling_tasks" and term in SUPPORTED_TASKS:
+                if field == "recommended_modeling_tasks" and term in SUPPORTED_MODELING_TASKS:
                     continue
                 if _is_known_term(term):
                     continue

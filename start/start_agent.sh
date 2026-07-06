@@ -33,7 +33,7 @@ ensure_running() {
 cd "$PROJ_ROOT"
 
 echo "Starting ADK API server (port 8000)..."
-agent api-server >"$LOG_DIR/api-server.log" 2>&1 &
+python -m agent.init.start_agent api-server >"$LOG_DIR/api-server.log" 2>&1 &
 PID_API=$!
 sleep 1
 ensure_running "$PID_API" "ADK API server" "$LOG_DIR/api-server.log"

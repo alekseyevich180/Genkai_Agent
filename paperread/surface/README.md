@@ -37,7 +37,7 @@ Outputs:
 - `*_ptomodel.json`: filtered and normalized Agent-oriented bridge from paper key information to modeling inputs
 - `material_classes/*.json`: material-class experience records when
   `--collect-experience` is enabled
-- `agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.json`:
+- `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`:
   reusable parameter vocabulary regenerated from the canonical material-class
   experience store
 
@@ -49,6 +49,10 @@ Optional outputs:
   - only when `--save-raw` is enabled
 
 ## Scripts
+
+- `surface_ontology.py`
+  - Shared task names, material-class rules, keyword buckets, and
+    normalization vocabulary used by the surface pipeline and learning tools.
 
 - `ingest_pdf.py`
   - Extracts PDF text with `pdftotext`
@@ -209,15 +213,15 @@ For papers focused on surface-material reactions:
    human summary before opening the full plan.
 6. Enable `--collect-experience` when you want to preserve useful and unknown
    extraction information for later prompt/schema/planner improvements.
-9. Rebuild or inspect the reusable registry when you want later paperread runs
+7. Rebuild or inspect the reusable registry when you want later paperread runs
    to reuse learned parameter vocabulary:
 
 ```bash
-python agents/Agent/skills/paperread-surface-learning/scripts/build_surface_parameter_registry.py
+python agents/Agent/skills/paperread/scripts/paperread_tools.py build-parameter-registry
 ```
-7. Use `standardize_surface_time.py` separately only if you already have a
+8. Use `standardize_surface_time.py` separately only if you already have a
    condition table and want to normalize time values again.
-8. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
+9. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,
    or generated JSON inputs for debugging.
 
 For PDF input, the workflow is:

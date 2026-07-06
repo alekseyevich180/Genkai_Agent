@@ -21,7 +21,7 @@ OUTPUT_FILE="$3"
 PROMPT=$(cat "$PROMPT_FILE")
 
 # Use the agent CLI in non-interactive mode, output JSON
-python3 "$SCRIPT_DIR/start_agent.py" run \
+python -m agent.init.start_agent run \
     --workspace "$WORKSPACE" \
     -p "$PROMPT" \
     --output-format json \

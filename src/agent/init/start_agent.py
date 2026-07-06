@@ -55,7 +55,7 @@ def _resolve_project_root() -> tuple[Path, bool]:
         if cfg_val:
             return Path(cfg_val).expanduser().resolve(), True
 
-    # 3. Fallback: __file__-based (src/agent/scripts/start_agent.py → repo root)
+    # 3. Fallback: __file__-based (src/agent/init/start_agent.py → repo root)
     return Path(__file__).resolve().parent.parent.parent.parent, False
 
 PROJECT_ROOT, _project_root_explicit = _resolve_project_root()

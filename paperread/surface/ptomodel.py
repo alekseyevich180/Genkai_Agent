@@ -8,16 +8,21 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from .collect_experience import MATERIAL_CLASS_RULES, SUPPORTED_MODELING_TASKS
+    from .surface_ontology import (
+        EXECUTABLE_TASKS,
+        GENERIC_REACTION_TYPES,
+        MATERIAL_CLASS_RULES,
+        REACTION_KEYWORDS,
+        SUPPORTED_MODELING_TASKS,
+    )
 except ImportError:  # pragma: no cover - direct script execution
-    from collect_experience import MATERIAL_CLASS_RULES, SUPPORTED_MODELING_TASKS
-
-
-EXECUTABLE_TASKS = {
-    "vacancy_landscape",
-    "adsorbate_landscape",
-    "surface_cluster_builder",
-}
+    from surface_ontology import (
+        EXECUTABLE_TASKS,
+        GENERIC_REACTION_TYPES,
+        MATERIAL_CLASS_RULES,
+        REACTION_KEYWORDS,
+        SUPPORTED_MODELING_TASKS,
+    )
 
 SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
     Path(__file__).resolve().parents[2]
@@ -41,33 +46,6 @@ ELEMENT_NAME_TO_SYMBOL = {
     "manganese": "Mn",
     "cerium": "Ce",
     "titanium": "Ti",
-}
-
-REACTION_KEYWORDS = [
-    ("oxygen evolution reaction", "OER"),
-    ("hydrogen evolution reaction", "HER"),
-    ("oxygen reduction reaction", "ORR"),
-    ("co2 reduction", "CO2RR"),
-    ("carbon dioxide reduction", "CO2RR"),
-    ("co oxidation", "CO oxidation"),
-    ("methanol oxidation", "methanol oxidation"),
-    ("water splitting", "water splitting"),
-    ("nitrogen reduction", "NRR"),
-    ("ammonia synthesis", "ammonia synthesis"),
-]
-
-GENERIC_REACTION_TYPES = {
-    "catalyst preparation",
-    "annealing",
-    "electrochemical test",
-    "electrochemical measurements",
-    "electrochemical measurement",
-    "electrochemical characterization",
-    "characterization",
-    "calcination",
-    "reduction",
-    "pretreatment",
-    "synthesis",
 }
 
 

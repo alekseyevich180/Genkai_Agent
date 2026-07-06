@@ -1,712 +1,184 @@
-# Paperread Surface Modeling Plan
+# 项目计划
 
-更新时间：2026-07-01
+更新时间：2026-07-06
 
 ## 目标
 
-将 `paperread/surface` 从“论文信息抽取工具”扩展为“表面研究建模入口”：
+把 Genkai Agent 维护成一个稳定的材料科研工作台，核心方向是：
+
+1. `paperread/surface` 负责论文抽取和经验沉淀。
+2. `surface-modeling` 负责结构生成和建模入口。
+3. `Agent` 负责规划、执行、技能加载和知识图谱管理。
+
+## 当前重点
+
+### 1. Surface 规则统一
+
+- 把材料分类、任务名、关键词桶、反应归一化收敛成单一规则源。
+- 让 `collect_experience`、`parameter_registry`、`ptomodel`、经验导出脚本共用同一套定义。
+- 保持经验库可复用，而不是按论文堆积。
+
+### 2. 经验闭环
+
+- 从论文里提取材料、表面、缺陷、吸附物、覆盖度、团簇、单原子、修饰和反应关键词。
+- 汇总到 `material_classes/*.json`。
+- 由 registry 再反哺后续抽取提示。
+
+### 3. 框架整理
+
+- 精简入口脚本数量，保留一个主 CLI。
+- 拆分过大的 web 服务文件。
+- 减少 import-time 状态冻结。
+
+### 4. Agent 知识闭环处理方法
+
+整体闭环：
 
 ```text
-论文 PDF/文本
--> paperread/surface 抽取关键词、参数、关系
--> ptomodel 将论文信息转成 Agent-ready bridge JSON
--> Agent surface-modeling skill 执行结构生成或计算准备
--> 经验抽取机制记录陌生术语和失败/有效经验
--> 反向更新 prompt、schema、ptomodel 和 skill
+会话运行 -> 收集轨迹 -> 抽取知识 -> 写入图谱 -> 检索复用 -> 反复提炼 -> skills/guides 作为框架骨架
 ```
 
-核心原则：
-
-- `paperread` 负责抽取，不直接运行建模。
-- `ptomodel` 负责把论文关键词、材料语义和任务意图转成结构化桥接 JSON。
-- `surface-modeling` 负责真正的结构生成和后续计算准备。
-- `paperread/surface/collect_experience.py` 负责在 paperread 侧沉淀已知有用信息和未知信息。
-- `paperread-surface-learning` 负责在 Agent skill 侧沉淀需要进入 skill/ptomodel 的陌生经验。
-
-## 已有基础
-
-当前 `paperread/surface` 已支持：
-
-- PDF 文本抽取与章节分流
-- 条件表抽取
-- 时间标准化
-- 表面材料关系抽取
-- 人工可读摘要生成
-- `*_ptomodel.json` 桥接输出
-- 本地经验收集：`collect_experience.py`
-
-当前 `agents/Agent/skills/surface-modeling` 已支持：
-
-- 氧空位 landscape：`vacancy_landscape.py`
-- 吸附物 coverage landscape：`adsorbate_landscape.py`
-- 金属团簇/表面结构：`surface_cluster_builder.py`
-- 表面团簇 MLIP 搜索：`ads_nanocluster.py`
-
-当前新增的经验沉淀 skill：
-
-```text
-agents/Agent/skills/paperread-surface-learning/
-  SKILL.md
-  scripts/export_surface_experience.py
-  experience/
-```
-
-paperread 本地经验输出：
-
-```text
-paperread/surface/experience/
-material_classes/
-  carbon_materials.json
-  single_atom_catalysts.json
-  ...
-```
-
-Per-run JSON and Markdown review reports are optional and should be generated only when a human
-needs to inspect one extraction run:
-
-```bash
-python -m paperread.surface.collect_experience ... --write-run-file --write-markdown
-```
-
-## Paperread 抽取字段
-
-### 条件表字段
-
-`paperread/surface/extract_surface_conditions.py` 需要持续覆盖两类字段。
-
-反应与实验参数：
-
-- `Reaction Type`
-- `Feed/Concentration`
-- `Atmosphere`
-- `Pressure`
-- `Gas Flow`
-- `Solvent`
-- `pH`
-- `Temperature`
-- `Time`
-- `Potential/Bias`
-- `Current Density`
-- `Product`
-- `Conversion`
-- `Selectivity`
-- `Yield`
-- `Rate/Activity`
-- `Stability/Cycles`
-
-材料与建模参数：
-
-- `Material`
-- `Composition`
-- `Phase`
-- `Morphology/Size`
-- `Surface Area`
-- `Surface/Support`
-- `Facet`
-- `Surface Termination`
-- `Active Site`
-- `Defect`
-- `Dopant/Modifier`
-- `Adsorbate/Reactant`
-- `Adsorption Site`
-- `Coverage`
-- `Cluster/Single Atom`
-- `Loading`
-- `Modeling Keywords`
-
-### 关系抽取字段
-
-`paperread/surface/extract_surface_relations.py` 的 schema 应持续覆盖：
-
-- `materials`
-- `material_parameters`
-- `surfaces`
-- `surface_terminations`
-- `slab_models`
-- `facets`
-- `dopants`
-- `defects`
-- `vacancy_models`
-- `active_sites`
-- `adsorbates`
-- `adsorption_sites`
-- `coverage`
-- `intermediates`
-- `products`
-- `clusters`
-- `single_atoms`
-- `modifiers`
-- `properties`
-- `reaction_parameters`
-- `modeling_keywords`
-- `recommended_modeling_tasks`
-- `applications`
-- `links`
-
-## 关键词体系
-
-### 表面与 slab
-
-- `surface`
-- `slab`
-- `support`
-- `interface`
-- `facet`
-- `(111)`、`(110)` 等晶面
-- `surface termination`
-- `O-terminated`
-- `metal-terminated`
-- `hydroxylated`
-- `sulfurized`
-- `reduced surface`
-- `oxidized surface`
-- `reconstructed surface`
-
-### 缺陷与空位
-
-- `oxygen vacancy`
-- `Vo`
-- `vacancy-rich`
-- `anion vacancy`
-- `cation vacancy`
-- `defect-rich`
-- `surface vacancy`
-- `subsurface oxygen`
-
-### 吸附与覆盖度
-
-- `adsorbate`
-- `adsorption site`
-- `coverage`
-- `monolayer`
-- `coadsorption`
-- `top site`
-- `bridge site`
-- `hollow site`
-- `monodentate`
-- `bidentate`
-- `*OH`
-- `*CO`
-- `*OOH`
-- `*CHO`
-- `*COOH`
-
-### 团簇、单原子和修饰
-
-- `metal cluster`
-- `nanocluster`
-- `nanoparticle`
-- `Pt13`
-- `single atom`
-- `isolated metal site`
-- `modifier`
-- `promoter`
-- `dopant`
-- `anchoring`
-- `metal-support interaction`
-- `exsolved nanoparticle`
-
-## 推荐建模任务
-
-`recommended_modeling_tasks` 当前允许使用：
-
-- `vacancy_landscape`
-- `adsorbate_landscape`
-- `surface_cluster_builder`
-- `single_atom_site`
-- `doped_surface`
-- `surface_functionalization`
-- `slab_generation`
-
-第一阶段只自动转化前三个稳定任务：
-
-- `vacancy_landscape`
-- `adsorbate_landscape`
-- `surface_cluster_builder`
-
-其余任务先进入 planner 输出和经验记录，不直接执行。
-
-## PToModel 桥接层
-
-当前桥接模块：
-
-```text
-paperread/surface/ptomodel.py
-```
-
-输入：
-
-```text
-*_surface_relations.jsonl
-*_summary.txt
-*_table.csv
-*_time.csv
-```
-
-输出：
-
-```text
-*_ptomodel.json
-```
-
-### 桥接文件格式
-
-```json
-{
-  "schema_version": "1.0",
-  "sources": {
-    "relations_jsonl": "paperread output path",
-    "table_csv": "paperread output path",
-    "summary_txt": "paperread output path"
-  },
-  "documents": [
-    {
-      "id": "doc1",
-      "selected_information": {
-        "materials": ["CeO2", "Pt/CeO2"],
-        "surface_facets": [{"raw": "(1 1 1)", "normalized": "(111)"}],
-        "loaded_nanoparticles_or_clusters": [{"raw": "Pt13 cluster", "normalized_species": "Pt"}],
-        "reaction_types": [{"raw": "CO oxidation", "normalized": "CO oxidation"}]
-      },
-      "normalized_mapping": {
-        "primary_material": "Pt/CeO2",
-        "primary_surface_or_support": "CeO2",
-        "facet_set": ["(111)"],
-        "loaded_species": ["Pt"],
-        "reaction_family": ["CO oxidation"]
-      },
-      "recommended_modeling_tasks": [
-        "vacancy_landscape",
-        "adsorbate_landscape",
-        "surface_cluster_builder"
-      ],
-      "executable_tasks": [
-        "vacancy_landscape",
-        "adsorbate_landscape",
-        "surface_cluster_builder"
-      ],
-      "deferred_tasks": [
-        "single_atom_site"
-      ],
-      "task_inputs": {
-        "adsorbate_landscape": {
-          "material": "Pt/CeO2",
-          "surfaces": ["CeO2"],
-          "facets": ["(111)"],
-          "adsorbates": ["CO", "O2"]
-        }
-      }
-    }
-  ]
-}
-```
-
-### PToModel 规则
-
-- 出现 `oxygen vacancy`、`Vo`、`vacancy-rich`：
-  - 推荐 `vacancy_landscape`
-- 出现 `adsorbate`、`adsorption`、`coverage`、`*OH`、`*CO` 等：
-  - 推荐 `adsorbate_landscape`
-- 出现 `Pt13`、`metal cluster`、`nanocluster`、`nanoparticle`：
-  - 推荐 `surface_cluster_builder`
-- 出现 `single atom`、`isolated metal site`：
-  - 记录为 `single_atom_site`，第一阶段不自动执行
-- 出现 `doped`、`dopant`：
-  - 记录为 `doped_surface`，第一阶段不自动执行
-- 出现 `hydroxylated`、`sulfurized`、`nitrided`：
-  - 记录为 `surface_functionalization`，第一阶段不自动执行
-- 缺少 CIF/POSCAR/XYZ 等结构文件：
-  - 保留在 `deferred_tasks` 或等待后续 `surface-modeling` 提供结构模板
-  - 不强行建模
-
-### 当前关键不足
-
-`ptomodel` 已能完成：
-
-- facet / cluster species / reaction type 的基础归一化
-- `recommended_modeling_tasks` 到 `executable_tasks` / `deferred_tasks` 的拆分
-- `task_inputs` 的基础组织
-
-但对复杂材料体系仍然不够，尤其是：
-
-- 单原子催化剂
-- 碳载体单原子位点
-- M-Nx / M-Ox / M-Sx 配位环境
-- 缺陷锚定位点和局部活性位构型
-
-例如真实论文中的 `Ni-O-G SACs` 不能只被压缩成 `primary_material = nickel`。对下游建模更有意义的表达应接近：
-
-- `active_metal_species = Ni`
-- `site_type = single_atom_site`
-- `host_or_support = graphene-like carbon`
-- `coordination_environment = O-coordinated`
-- `anchor_or_local_motif = Ni-O_x on carbon support`
-
-后续计划需要围绕这类“材料种类 + 位点/配位环境”的表达能力持续扩充。
-
-## 经验抽取机制
-
-经验处理分为三类。
-
-### 固定经验：Skill
-
-稳定、可复用的计算模拟经验放入 `agents/Agent/skills/`：
-
-- 建模流程说明
-- 脚本路径
-- 输入输出格式
-- 常用命令
-- 注意事项
-- 依赖关系
-
-这类经验由 Agent 在规划和执行时通过 `search_skills`、`load_skill` 和 `run_skill_script` 使用。
-
-### 运行经验：Knowledge Graph
-
-Agent 执行计算模拟任务后，会将轨迹中的结果、失败、产物和总结抽取到知识图谱。
-
-流程：
-
-```text
-thinking_agent 规划
--> execution_agent 执行 DAG
--> step_executor 加载 skill 并运行命令
--> 每步提交 key_results / artifacts / concise_summary
--> trajectory 记录执行结果
--> knowledge.extractor 抽取经验
--> MemGraph/Know-Do Graph 保存经验
--> knowledge.synthesizer 将重复成功经验提升为稳定知识
-```
-
-这类经验适合沉淀：
-
-- 某个 workflow 的有效参数
-- 某个脚本的失败原因
-- 某类结构输入格式的限制
-- 某个计算环境中的依赖问题
-- 某类材料体系的建模注意事项
-
-### 陌生经验：paperread-surface-learning
-
-paperread 侧先通过 `collect_experience.py` 收集经验：
-
-```bash
-python -m paperread.surface.collect_experience \
-  --relations tests/test2_api_surface_relations.jsonl \
-  --table tests/test2_api_table.csv \
-  --output-dir paperread/surface/experience
-```
-
-或者在 pipeline 中直接启用：
-
-```bash
-python -m paperread.surface.run_surface_pipeline paper.pdf \
-  --output-dir paperread/surface/output \
-  --collect-experience
-```
-
-paperread 本地经验分类：
-
-- `surface_materials`
-- `surface_structure`
-- `defects_active_sites`
-- `adsorption_reaction`
-- `clusters_single_atoms`
-- `modeling_tasks`
-- `unknown_information`
-
-每个类别内部按规范化术语聚合，记录出现次数、来源文件、来源字段、上下文和建议动作。这样经验库保存的是“研究类别下的去重知识”，不是逐项证据流水账。
-
-经验收集必须参考 NERRE 和 ReactionSeek 的处理方式：先定义目标 schema，再只从目标字段中收集信息。不要把文本中所有材料名、性能指标、反应条件、应用描述都作为经验保存。经验库只保留会影响后续表面模型构建、`ptomodel` 映射、prompt/schema 修正的内容。
-
-经验库需要以 `material_classes` 作为主索引，使经验能按无机材料种类累积，而不是按论文保存。比如两个 PDF 都属于 `carbon_materials` 和 `single_atom_catalysts`，其经验应合并进：
-
-```text
-paperread/surface/experience/material_classes/carbon_materials.json
-paperread/surface/experience/material_classes/single_atom_catalysts.json
-```
-
-当前无机材料种类包括：
-
-- `single_atom_catalysts`
-- `supported_catalysts`
-- `metals_alloys`
-- `oxides`
-- `hydroxides_oxyhydroxides`
-- `sulfides`
-- `selenides_tellurides`
-- `nitrides`
-- `carbides_mxenes`
-- `phosphides_phosphates`
-- `halides`
-- `carbon_materials`
-- `perovskites_spinels`
-- `zeolites_silicates`
-- `mofs_coordination_polymers`
-- `borides`
-- `defect_engineered_materials`
-- `surface_functionalized_materials`
-- `battery_electrode_materials`
-- `other_inorganic_materials`
-
-所有材料种类文件应预先初始化，保证后续抽取可以直接合并写入：
-
-```bash
-python -m paperread.surface.collect_experience \
-  --init-material-classes \
-  --output-dir paperread/surface/experience
-```
-
-初始化后应存在：
-
-```text
-paperread/surface/experience/material_classes/single_atom_catalysts.json
-paperread/surface/experience/material_classes/supported_catalysts.json
-paperread/surface/experience/material_classes/metals_alloys.json
-paperread/surface/experience/material_classes/oxides.json
-paperread/surface/experience/material_classes/hydroxides_oxyhydroxides.json
-paperread/surface/experience/material_classes/sulfides.json
-paperread/surface/experience/material_classes/selenides_tellurides.json
-paperread/surface/experience/material_classes/nitrides.json
-paperread/surface/experience/material_classes/carbides_mxenes.json
-paperread/surface/experience/material_classes/phosphides_phosphates.json
-paperread/surface/experience/material_classes/halides.json
-paperread/surface/experience/material_classes/carbon_materials.json
-paperread/surface/experience/material_classes/perovskites_spinels.json
-paperread/surface/experience/material_classes/zeolites_silicates.json
-paperread/surface/experience/material_classes/mofs_coordination_polymers.json
-paperread/surface/experience/material_classes/borides.json
-paperread/surface/experience/material_classes/defect_engineered_materials.json
-paperread/surface/experience/material_classes/surface_functionalized_materials.json
-paperread/surface/experience/material_classes/battery_electrode_materials.json
-paperread/surface/experience/material_classes/other_inorganic_materials.json
-```
-
-维护规则：
-
-- 长期经验只写入 `material_classes/<class>.json`。
-- 不按 PDF 生成长期经验文件。
-- per-run JSON/Markdown 只作为人工审阅临时报告，必须显式使用 `--write-run-file` 或 `--write-markdown`。
-- 同一术语重复出现时，应在对应材料类文件中合并 `count`、`sources`、`fields` 和 `contexts`。
-- 如果一个材料同时属于多个类别，例如 carbon material 和 single atom catalyst，相关经验应同时写入多个材料类文件。
-
-paperread 经验文件的作用：
-
-```text
-paperread/surface extraction
--> collect_experience.py
--> grouped useful information / unknown_information
--> ptomodel 规则更新
--> paperread prompt/schema 更新
--> Agent skill 更新
-```
-
-Agent 侧再通过 `paperread-surface-learning` 把需要长期复用或需要进入 skill 的陌生经验沉淀下来。
-
-论文中出现但当前 schema 或 planner 无法识别的术语，进入：
-
-```text
-agents/Agent/skills/paperread-surface-learning/
-```
-
-导出命令：
-
-```bash
-python agents/Agent/skills/paperread-surface-learning/scripts/export_surface_experience.py export \
-  --relations tests/test2_api_surface_relations.jsonl \
-  --table tests/test2_api_table.csv
-```
-
-手动加入术语：
-
-```bash
-python agents/Agent/skills/paperread-surface-learning/scripts/export_surface_experience.py add-term \
-  --term "exsolved nanoparticle" \
-  --category "surface modifier" \
-  --context "Appears in a catalyst paper but is not mapped to a workflow yet." \
-  --suggested-action "Decide whether this maps to cluster generation or a new exsolution workflow."
-```
-
-默认输出：
-
-```text
-agents/Agent/skills/paperread-surface-learning/experience/unrecognized_surface_terms.jsonl
-agents/Agent/skills/paperread-surface-learning/experience/unrecognized_surface_terms.md
-```
-
-这些记录是候选经验，不是立即生效的规则。
-
-审查策略：
-
-- 单次出现：只记录，不改 planner。
-- 多篇论文重复出现：加入 `paperread/surface` prompt 或 schema。
-- 与已有建模脚本可对应：加入 `ptomodel.py` 映射。
-- 与已有脚本无法对应但研究价值高：新增或扩展 `surface-modeling` workflow。
-
-## Agent 工作方式
-
-正常模式：
-
-```text
-用户提出目标
--> thinking_agent 理解目标并搜索相关 skill
--> thinking_agent 生成执行图
--> 用户确认
--> execution_agent 调度 DAG 节点
--> step_executor 加载 skill
--> run_python / run_bash / run_skill_script 执行
--> 产物写入 artifacts
--> trajectory 与 knowledge graph 记录经验
-```
-
-简单任务或 flash 模式：
-
-```text
-用户提出直接任务
--> run_flash_step
--> step_executor 加载 skill 并执行
--> 保存关键发现
-```
-
-## 分阶段计划
-
-### 第一阶段：抽取质量验证
-
-目标：
-
-- 用真实表面研究论文验证新增关键词能否稳定抽出。
-
-任务：
-
-1. 选择 3-5 篇表面催化、吸附、电催化或表面改性论文。
-2. 运行：
-
-```bash
-python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output
-```
-
-3. 检查：
-   - `*_table.csv`
-   - `*_surface_relations.jsonl`
-   - `*_summary.txt`
-4. 记录漏抽、误抽和陌生术语。
-5. 用 `paperread-surface-learning` 导出陌生经验。
-
-验收标准：
-
-- 主要材料、表面、吸附物、缺陷、团簇/单原子能稳定出现在输出中。
-- 陌生术语能进入经验记录，而不是丢失。
-
-### 第二阶段：稳固 PToModel 桥接层
-
-目标：
-
-- 将 paperread 输出转成稳定、可消费的 `*_ptomodel.json`。
-
-任务：
-
-1. 持续维护 `paperread/surface/ptomodel.py`。
-2. 支持输入：
-   - `*_surface_relations.jsonl`
-   - `*_table.csv`
-   - `*_summary.txt`
-3. 输出：
-   - `*_ptomodel.json`
-4. 第一版只自动转化：
-   - `vacancy_landscape`
-   - `adsorbate_landscape`
-   - `surface_cluster_builder`
-5. 其余任务进入 `deferred_tasks`，不强行执行。
-
-验收标准：
-
-- 给定 paperread 输出，可以生成稳定的桥接 JSON。
-- 不会在输入不完整时直接运行建模。
-
-### 第三阶段：扩展材料种类与局部结构语义
-
-目标：
-
-- 通过真实论文经验收集，扩展 `paperread` 对材料种类、位点和配位环境的表达能力，使 `ptomodel` 能做更细的一一对应。
-
-任务：
-
-1. 持续收集真实论文中的材料种类经验，重点覆盖：
-   - `single_atom_catalysts`
-   - `supported_catalysts`
-   - `carbon_materials`
-   - `oxides`
-   - `defect_engineered_materials`
-   - `surface_functionalized_materials`
-2. 对复杂体系建立更细的表达槽位，例如：
-   - `host_or_support`
-   - `active_metal_species`
-   - `site_type`
-   - `coordination_environment`
-   - `defect_anchor`
-   - `local_motif`
-3. 重点解决类似 `Ni` on graphene-like carbon with `O` coordination 的案例，避免桥接层只留下元素名而丢失建模关键约束。
-4. 将重复出现的材料表述沉淀回 `paperread` prompt/schema 和 `ptomodel` 归一化规则。
-
-验收标准：
-
-- `ptomodel` 不再只输出粗粒度 `primary_material`，还能稳定表达载体、位点类型和配位环境。
-- 同类论文中的近义材料描述能归并到一致的桥接字段。
-
-### 第四阶段：新增调度 Skill
-
-目标：
-
-- 将 `ptomodel` 与 Agent 建模能力连接。
-
-建议新增：
-
-```text
-agents/Agent/skills/paperread-surface-modeling/SKILL.md
-```
-
-职责：
-
-```text
-paperread output
--> ptomodel.json
--> surface-modeling command
-```
-
-它不替代 `surface-modeling`，只作为上游调度器。
-
-验收标准：
-
-- Agent 能从 `*_ptomodel.json` 判断应该调用哪个建模脚本。
-- Agent 能在缺少结构文件时明确向用户要 CIF/POSCAR/XYZ，或降级到可行的模板任务。
-
-### 第五阶段：经验闭环
-
-目标：
-
-- 让论文阅读、建模执行和经验沉淀形成闭环。
-
-闭环：
-
-```text
-paperread keywords
--> ptomodel.json
--> generated structures / energy tables
--> modeling_summary.json
--> knowledge graph
--> prompt/schema/ptomodel/skill 更新
-```
-
-验收标准：
-
-- 陌生术语可追踪。
-- 重复出现的术语能被提升为规则。
-- 成功或失败的建模经验能被后续 Agent 查询和复用。
-
-## 下一步
-
-1. 用真实表面论文重新跑 `run_surface_pipeline.py`。
-2. 用 `paperread-surface-learning` 记录陌生术语。
-3. 持续扩展 `paperread` 的材料种类、位点和配位环境经验覆盖。
-4. 让 `ptomodel` 对复杂体系输出更细的 `host/support + site_type + coordination` 映射。
-5. 根据 `ptomodel` 稳定度再新增 `paperread-surface-modeling` skill。
+#### 4.1 知识收集
+
+- 项目里的主要知识收集入口不是手工写文档，而是会话结束后的自动抽取。
+- `agents/Agent/agents/orchestrator/agent.py` 在一次执行完成后调用 `run_knowledge_extractor(ctx.session.id)`。
+- `agents/Agent/knowledge/extractor.py` 读取 `trajectories/<session>.jsonl` 和 `trajectories/<session>_summary.json`。
+- 抽取器让 LLM 生成 JSON 条目，重点是经验、警告、规律和结果，不是保存原始对话。
+- 抽出的内容先作为 `EntryType.memory` 写入图谱，后续再判断是否提升为长期知识。
+
+#### 4.2 知识迁移
+
+- 迁移目标是把旧的、分散的存储统一到 `know_do_graph.db`。
+- 迁移逻辑由 `agents/Agent/knowledge/kdg_memory.py` 负责。
+- 历史来源包括旧的 `skill_graph.db`、`memory_graph.db`、`memory/*.json` 和 `MEMORY.md`。
+- `agent knowledge migrate` 触发迁移链，把历史数据转成统一图谱里的 entry 和 edge。
+- `agent knowledge seed` 把当前仓库里的 skills 和 guides 重新写入图谱，作为可检索的 durable knowledge。
+
+#### 4.3 知识检索
+
+- 检索统一走知识图谱，主要入口在 `agents/Agent/knowledge/query.py`。
+- `query_knowledge_graph()` 查询 durable knowledge 和 working memory。
+- `search_skills()` 只查技能、流程、工作流和工具这类 durable capability。
+- `get_related_skills()` 沿图谱关系边查找相关技能，不只是简单文本搜索。
+- `search_skills()` 只返回带 `agent-skill` 标签的节点，并过滤配置中禁用的技能。
+- 检索的对象不是单个文件，而是图谱里的节点和边。
+
+#### 4.4 知识提炼
+
+- 提炼逻辑在 `agents/Agent/knowledge/synthesizer.py`。
+- 它先取未 promoted 的 memory，再按内容相似度聚类。
+- 聚类至少要达到 `min_insights_for_workflow`，手动命令可用 `agent knowledge distill --min-evidence 3`。
+- 除了数量阈值，还需要足够的成功证据，通常要求多个 session 或多个成功样本。
+- 满足条件后，把 canonical memory promote 成 durable entry。
+- 提炼时建立 `related_memory`、`heuristic_for`、`refinement_of` 等关系边。
+- 提炼过程也会清理长期没有成功证据、未被提炼的 stale memory。
+- 核心原则是把多次重复出现的工作记忆升级成可长期复用的规则或经验。
+
+#### 4.5 知识利用
+
+- 自动线：orchestrator 在每次执行后自动运行 extractor，累计到一定程度后再运行 synthesizer。
+- 手动线：使用 `agent knowledge stats` 查看图谱状态。
+- 手动线：使用 `agent knowledge distill` 强制触发提炼。
+- 手动线：使用 `agent knowledge seed` 把当前 skills 和 guides 重新入图。
+- 对后续任务来说，运行过的任务会留下可检索经验，重复出现的规律会变成长期知识。
+- 后续任务应优先检索和复用这些知识，而不是重新从零推理。
+
+#### 4.6 Skills 构建知识框架
+
+- skill 不只是脚本目录，而是知识框架的骨架。
+- `agents/Agent/skill.py` 扫描 `agents/Agent/skills/**/SKILL.md`。
+- skill 系统加载默认技能和 workspace 自定义技能。
+- skills 和 guides 会作为 durable entry seed 到知识图谱。
+- `dependent_skills` 会变成图谱里的依赖边。
+- 规划阶段通过 `search_skills()` 和 `load_skill()` 找到合适技能，并把说明加载给模型。
+- `AgentSkillToolset` 暴露 `run_skill_script`，让模型可以直接调用技能脚本。
+- skill 的三层作用是可执行工具、规划时可检索的知识节点、知识图谱里的技能依赖结构。
+
+#### 4.7 总结原则
+
+- 这个项目的知识体系是图谱化的。
+- 运行中收集 memory，迁移历史数据进统一数据库。
+- 检索时查图谱节点和关系边。
+- 提炼时把重复 memory 升级为 durable knowledge。
+- skills 和 guides 负责把能做什么、怎么做、依赖什么固化成知识框架。
+- 当前必须接入这套方法的重点 skill 是 `lobster`、`paperread`、
+  `surface-modeling` 和 `ptomodel`。
+- 这些 skill 都应遵循运行前检索已有经验、运行中保留结构化证据、
+  运行后沉淀 memory、重复证据再提炼为 durable knowledge 的流程。
+
+### 5. Surface 经验处理方法
+
+- 经验收集目标不是保留大量论文来源，而是统计并复用论文中常见的材料描述关键词。
+- 经验库重点保留材料本体、组成、状态、修饰、参与反应和建模关键词，不把单篇论文的长来源列表作为核心。
+- 抽取时优先统计这些维度：
+  - `materials`
+  - `material_parameters`
+  - `surfaces`
+  - `surface_terminations`
+  - `slab_models`
+  - `facets`
+  - `dopants`
+  - `defects`
+  - `vacancy_models`
+  - `active_sites`
+  - `adsorbates`
+  - `adsorption_sites`
+  - `coverage`
+  - `clusters`
+  - `single_atoms`
+  - `modifiers`
+  - `modeling_keywords`
+  - `recommended_modeling_tasks`
+- 材料类型按论文中常见类别聚合，不按单篇论文堆叠：
+  - `supported_catalysts`
+  - `carbon_materials`
+  - `single_atom_catalysts`
+  - `metals_alloys`
+  - `oxides`
+  - `hydroxides_oxyhydroxides`
+  - `sulfides`
+  - `selenides_tellurides`
+  - `nitrides`
+  - `carbides_mxenes`
+  - `phosphides_phosphates`
+  - `halides`
+  - `perovskites_spinels`
+  - `zeolites_silicates`
+  - `mofs_coordination_polymers`
+  - `borides`
+  - `defect_engineered_materials`
+  - `surface_functionalized_materials`
+  - `battery_electrode_materials`
+  - `other_inorganic_materials`
+- 对不同材料类，提炼不同的建模关键词：
+  - `supported_catalysts`：组成元素、support、负载组分、含量、暴露表面
+  - `carbon_materials`：二维碳材料、掺杂结构、N/O/S 配位、单原子中心
+  - `metals_alloys`：合金元素、高熵组成、元素含量、暴露晶面
+  - `oxides`：氧化物种类、空间群、表面终止、缺陷和晶面
+  - `perovskites_spinels`：A/B 位点、结构类型、空间群、暴露面
+- `collect_experience` 的职责是把抽取结果归档成可统计的经验，不是把每篇论文写成长日志。
+- `material_classes/*.json` 作为长期经验库，记录词频、分类、上下文和少量示例，而不是完整论文复述。
+- `surface_parameter_registry` 从 material class 经验中重建，供后续抽取提示、参数补全和建模映射复用。
+- `surface_ontology.py` 作为共享词表和规则源，统一材料类别、关键词桶、任务名、反应归一化规则。
+- `ptomodel` 负责把论文语义映射成 Agent 可执行或可延迟处理的建模桥接 JSON。
+- `paperread` 同时负责论文抽取和未知词、未映射术语、新关键词的 skill 侧经验沉淀。
+- 后续若出现新关键词，先进入 experience / registry，再更新 prompt、schema、planner 或 skill，而不是直接把单篇论文写死进逻辑。
+
+### 6. 这套方法的长期目标
+
+- 让 surface 相关论文的材料描述可以被统一统计、统一归类、统一复用。
+- 让同类材料在不同论文中共享同一套参数解释方式。
+- 让后续建模脚本可以通过关键词和经验库快速补全材料参数，而不是每次重新手工分析。
+- 让 skill、registry、ptomodel 和 surface-modeling 最终形成一个可回收、可扩展、可迭代的闭环。
+
+## 执行优先级
+
+1. 先完成 `paperread/surface` 的公共 ontology 和 registry 收敛。
+2. 再整理 `manual.md`、`plan.md` 和根目录说明文件。
+3. 最后拆分 web 层和 CLI 封装，减少重复入口。
+4. 持续维护知识图谱闭环，让经验沉淀能反哺后续抽取和建模。
+
+## 备注
+
+- `tests/` 目录继续只作为验证和样例输入，不作为主文档源。
+- `data/` 目录继续只作为数据输入，不纳入文档整理范围。

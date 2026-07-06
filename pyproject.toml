@@ -37,7 +37,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project.scripts]
-agent = "agent.scripts.start_agent:main"
+agent = "agent.init.start_agent:main"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]

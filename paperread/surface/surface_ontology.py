@@ -1,0 +1,342 @@
+from __future__ import annotations
+
+SUPPORTED_MODELING_TASKS = {
+    "vacancy_landscape",
+    "adsorbate_landscape",
+    "surface_cluster_builder",
+    "single_atom_site",
+    "doped_surface",
+    "surface_functionalization",
+    "slab_generation",
+}
+
+EXECUTABLE_TASKS = {
+    "vacancy_landscape",
+    "adsorbate_landscape",
+    "surface_cluster_builder",
+}
+
+KNOWN_SURFACE_TERMS = {
+    "surface",
+    "slab",
+    "support",
+    "interface",
+    "facet",
+    "termination",
+    "terminated",
+    "o-terminated",
+    "metal-terminated",
+    "oxygen vacancy",
+    "vacancy",
+    "defect",
+    "dopant",
+    "adsorbate",
+    "adsorption",
+    "adsorption site",
+    "coverage",
+    "cluster",
+    "nanocluster",
+    "nanoparticle",
+    "single atom",
+    "single atoms",
+    "single metal atoms",
+    "sac",
+    "sacs",
+    "active site",
+    "top site",
+    "bridge site",
+    "hollow site",
+    "monodentate",
+    "bidentate",
+    "coadsorption",
+    "monolayer",
+    "hydroxylated",
+    "sulfurized",
+    "nitrided",
+    "reduced",
+    "oxidized",
+    "reconstructed",
+    "metal-support",
+    "anchoring",
+}
+
+KNOWN_MODELING_TOKENS = {
+    "surface",
+    "slab",
+    "support",
+    "interface",
+    "facet",
+    "termination",
+    "terminated",
+    "adsorbate",
+    "adsorption",
+    "coverage",
+    "site",
+    "vacancy",
+    "defect",
+    "dopant",
+    "doped",
+    "modifier",
+    "promoter",
+    "cluster",
+    "nanocluster",
+    "nanoparticle",
+    "single atom",
+    "isolated",
+    "oxygen vacancy",
+    "anion vacancy",
+    "cation vacancy",
+    "hydroxylated",
+    "sulfurized",
+    "nitrided",
+    "reduced",
+    "oxidized",
+    "reconstructed",
+    "top site",
+    "bridge site",
+    "hollow site",
+    "monodentate",
+    "bidentate",
+    "coadsorption",
+    "monolayer",
+    "metal-support",
+    "anchoring",
+}
+
+RELATION_FIELDS = [
+    "applications",
+    "materials",
+    "material_parameters",
+    "surfaces",
+    "surface_terminations",
+    "slab_models",
+    "facets",
+    "dopants",
+    "defects",
+    "vacancy_models",
+    "active_sites",
+    "adsorbates",
+    "adsorption_sites",
+    "coverage",
+    "intermediates",
+    "products",
+    "clusters",
+    "single_atoms",
+    "modifiers",
+    "modeling_keywords",
+    "recommended_modeling_tasks",
+]
+
+TABLE_FIELDS = [
+    "Reaction Type",
+    "Material",
+    "Composition",
+    "Surface/Support",
+    "Facet",
+    "Surface Termination",
+    "Active Site",
+    "Defect",
+    "Dopant/Modifier",
+    "Adsorbate/Reactant",
+    "Adsorption Site",
+    "Coverage",
+    "Cluster/Single Atom",
+    "Loading",
+    "Product",
+    "Modeling Keywords",
+]
+
+HIGH_VALUE_FIELDS = {
+    "material_parameters",
+    "materials",
+    "surfaces",
+    "facets",
+    "defects",
+    "vacancy_models",
+    "active_sites",
+    "adsorbates",
+    "adsorption_sites",
+    "coverage",
+    "clusters",
+    "single_atoms",
+    "modeling_keywords",
+    "recommended_modeling_tasks",
+    "Material",
+    "Composition",
+    "Surface/Support",
+    "Facet",
+    "Defect",
+    "Adsorbate/Reactant",
+    "Adsorption Site",
+    "Coverage",
+    "Cluster/Single Atom",
+    "Loading",
+    "Modeling Keywords",
+}
+
+CATEGORY_RULES = {
+    "surface_materials": {
+        "materials",
+        "surfaces",
+        "slab_models",
+        "Material",
+        "Surface/Support",
+    },
+    "surface_structure": {
+        "facets",
+        "surface_terminations",
+        "Facet",
+        "Surface Termination",
+    },
+    "defects_active_sites": {
+        "defects",
+        "vacancy_models",
+        "active_sites",
+        "dopants",
+        "Defect",
+        "Active Site",
+        "Dopant/Modifier",
+    },
+    "adsorption_reaction": {
+        "applications",
+        "Reaction Type",
+        "adsorbates",
+        "adsorption_sites",
+        "coverage",
+        "intermediates",
+        "products",
+        "Adsorbate/Reactant",
+        "Adsorption Site",
+        "Coverage",
+        "Product",
+    },
+    "clusters_single_atoms": {
+        "clusters",
+        "single_atoms",
+        "modifiers",
+        "Cluster/Single Atom",
+    },
+    "modeling_tasks": {
+        "modeling_keywords",
+        "recommended_modeling_tasks",
+        "Modeling Keywords",
+    },
+}
+
+KEYWORD_BUCKET_RULES = {
+    "materials": {"materials", "Material"},
+    "compositions": {"material_parameters", "Composition", "Loading"},
+    "supports_surfaces": {"surfaces", "Surface/Support", "slab_models"},
+    "facets": {"facets", "Facet"},
+    "surface_states": {
+        "surface_terminations",
+        "Surface Termination",
+        "defects",
+        "vacancy_models",
+        "Defect",
+    },
+    "dopants_modifiers": {"dopants", "Dopant/Modifier", "modifiers"},
+    "active_sites": {"active_sites", "Active Site"},
+    "adsorbates_reactants": {"adsorbates", "Adsorbate/Reactant", "intermediates", "products", "Product"},
+    "adsorption_sites": {"adsorption_sites", "Adsorption Site"},
+    "coverage": {"coverage", "Coverage"},
+    "clusters_single_atoms": {"clusters", "single_atoms", "Cluster/Single Atom"},
+    "reactions": {"applications", "Reaction Type"},
+    "modeling_keywords": {"modeling_keywords", "Modeling Keywords", "recommended_modeling_tasks"},
+}
+
+PERIODIC_SYMBOLS = {
+    "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar",
+    "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se",
+    "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
+    "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy",
+    "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb",
+    "Bi", "Po", "At", "Rn",
+}
+
+MATERIAL_KIND_TOKENS = {
+    "supported_catalyst": ("supported", "support", "/", "anchored", "metal-support"),
+    "single_atom_catalyst": ("single atom", "single atoms", "sac", "sacs"),
+    "nanoparticle": ("nanoparticle", "nanoparticles", "np", "nps"),
+    "cluster": ("cluster", "nanocluster"),
+    "nanosheet": ("nanosheet", "nanosheets"),
+    "oxide": ("oxide", "o2", "ceo2", "tio2", "co3o4", "nio", "ruo2", "mno"),
+    "hydroxide_oxyhydroxide": ("hydroxide", "oxyhydroxide", "ldh", "niooh", "feooh", "coooh"),
+    "sulfide": ("sulfide", "mos2", "ws2", "fes", "nis", "cos"),
+    "nitride": ("nitride", "nitrided", "mon"),
+    "carbon_material": ("graphene", "carbon", "graphite", "cnt", "g-c3n4", "c3n4"),
+    "surface": ("surface", "facet", "interface", "slab"),
+}
+
+TRANSITION_OR_SUPPORT_TOKENS = (
+    "Pt", "Pd", "Ni", "Co", "Fe", "Cu", "Ru", "Rh", "Ir", "Au", "Ag", "Sn", "Zn", "Mn", "Cr", "V", "Mo", "W"
+)
+
+MATERIAL_CLASS_RULES: list[tuple[str, tuple[str, ...]]] = [
+    ("single_atom_catalysts", ("single atom", "single atoms", "single metal atoms", "sac", "sacs", "sa/", "sas/")),
+    ("supported_catalysts", ("/", "supported", "support", "anchored", "anchoring", "metal-support")),
+    ("metals_alloys", ("alloy", "pt", "pd", "ni", "co", "fe", "cu", "ru", "rh", "ir", "au", "ag", "sn", "zn", "nickel", "tin")),
+    ("oxides", ("oxide", "o2", "ceo2", "tio2", "zro2", "al2o3", "sio2", "feo", "fe2o3", "co3o4", "mno2", "nio")),
+    ("hydroxides_oxyhydroxides", ("hydroxide", "oxyhydroxide", "ldh", "layered double hydroxide", "niooh", "feooh", "coooh")),
+    ("sulfides", ("sulfide", "sulfur", "mos2", "cos", "nis", "fes", "ws2")),
+    ("selenides_tellurides", ("selenide", "telluride", "mose2", "wse2", "nise", "cose")),
+    ("nitrides", ("nitride", "nitrided", "titanium nitride", "ti nitride", "ti-n", "gan", "bn", "vn", "mon")),
+    ("carbides_mxenes", ("carbide", "mxene", "tic", "sic", "wc", "mo2c", "ti3c2")),
+    ("phosphides_phosphates", ("phosphide", "phosphate", "nip", "cop", "fep", "po4")),
+    ("halides", ("halide", "chloride", "fluoride", "bromide", "iodide", "perovskite halide")),
+    ("carbon_materials", ("graphene", "carbon", "graphite", "cnt", "nanotube", "carbon nitride", "g-c3n4", "c3n4")),
+    ("perovskites_spinels", ("perovskite", "spinel", "abo3", "ab2o4")),
+    ("zeolites_silicates", ("zeolite", "silicate", "aluminosilicate", "mfi", "zsm-5", "sapo")),
+    ("mofs_coordination_polymers", ("mof", "metal-organic framework", "coordination polymer", "zif")),
+    ("borides", ("boride", "boron", "mbene")),
+    ("defect_engineered_materials", ("vacancy", "defect", "doped", "dopant", "defect-rich", "vacancy-rich")),
+    ("surface_functionalized_materials", ("terminated", "o-terminated", "hydroxylated", "sulfurized", "nitrided", "oxidized", "reduced")),
+    ("battery_electrode_materials", ("battery", "anode", "cathode", "sodium metal", "lithium", "na metal")),
+]
+
+MATERIAL_CLASSES = [name for name, _ in MATERIAL_CLASS_RULES] + ["other_inorganic_materials"]
+
+REACTION_KEYWORDS = [
+    ("oxygen evolution reaction", "OER"),
+    ("hydrogen evolution reaction", "HER"),
+    ("oxygen reduction reaction", "ORR"),
+    ("co2 reduction", "CO2RR"),
+    ("carbon dioxide reduction", "CO2RR"),
+    ("co oxidation", "CO oxidation"),
+    ("methanol oxidation", "methanol oxidation"),
+    ("water splitting", "water splitting"),
+    ("nitrogen reduction", "NRR"),
+    ("ammonia synthesis", "ammonia synthesis"),
+]
+
+GENERIC_REACTION_TYPES = {
+    "catalyst preparation",
+    "annealing",
+    "electrochemical test",
+    "electrochemical measurements",
+    "electrochemical measurement",
+    "electrochemical characterization",
+    "characterization",
+    "calcination",
+    "reduction",
+    "pretreatment",
+    "synthesis",
+}
+
+
+def is_supported_modeling_task(value: str) -> bool:
+    return value in SUPPORTED_MODELING_TASKS
+
+
+def is_known_surface_term(value: str) -> bool:
+    lower = value.lower()
+    if lower in SUPPORTED_MODELING_TASKS:
+        return True
+    return any(term in lower for term in KNOWN_SURFACE_TERMS)
+
+
+def is_known_modeling_term(value: str) -> bool:
+    lower = value.lower()
+    if lower in SUPPORTED_MODELING_TASKS:
+        return True
+    return any(token in lower for token in KNOWN_MODELING_TOKENS)

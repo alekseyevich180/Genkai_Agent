@@ -10,11 +10,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MATERIAL_CLASS_DIR = REPO_ROOT / "paperread" / "surface" / "experience" / "material_classes"
 DEFAULT_REGISTRY_PATH = (
     REPO_ROOT
-    / "agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.json"
+    / "agents/Agent/skills/paperread/experience/surface_parameter_registry.json"
 )
 DEFAULT_REGISTRY_MARKDOWN_PATH = (
     REPO_ROOT
-    / "agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.md"
+    / "agents/Agent/skills/paperread/experience/surface_parameter_registry.md"
 )
 
 

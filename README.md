@@ -157,7 +157,7 @@ Web UI 提供执行图可视化、产物上传与下载、材料结构显示和�
 
 ```bash
 # 激活 .venv 后，在仓库根目录执行
-bash script/start_agent.sh
+bash start/start_agent.sh
 ```
 
 该脚本会启动：
@@ -296,7 +296,7 @@ Skills and guides are seeded as durable entries. Agent writes first land in
 MemGraph; repeated successful observations are later distilled into validated
 Know-Do heuristics and linked to the capabilities they improve. Existing
 `skill_graph.db`, `memory_graph.db`, old JSON traces, and `MEMORY.md` data can be migrated
-idempotently. See [docs/knowledge_graph.md](docs/knowledge_graph.md).
+idempotently. See [manual.md](manual.md).
 
 ## Graph-Based Planning
 

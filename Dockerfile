@@ -19,4 +19,4 @@ COPY . .
 
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000 8001 5173
-CMD ["bash", "script/start_agent.sh"]
+CMD ["bash", "start/start_agent.sh"]

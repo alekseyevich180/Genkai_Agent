@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -20,6 +21,11 @@ from paperread.surface.parameter_registry import (
     build_surface_parameter_registry,
 )
 from paperread.surface.run_surface_pipeline import main as run_surface_pipeline_main
+
+from export_surface_experience import (
+    cmd_add_term as export_add_term,
+    cmd_export as export_unknown_terms,
+)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -105,6 +111,35 @@ def _build_parser() -> argparse.ArgumentParser:
         default=str(DEFAULT_REGISTRY_MARKDOWN_PATH),
         help="Output Markdown registry path.",
     )
+
+    export_terms = subparsers.add_parser(
+        "export-unknown-terms",
+        help="Export unfamiliar or unmapped terms from paperread outputs.",
+    )
+    export_terms.add_argument("--relations", required=True, help="Path to *_surface_relations.jsonl")
+    export_terms.add_argument("--table", default=None, help="Optional path to *_table.csv")
+    export_terms.add_argument(
+        "--output-dir",
+        default="agents/Agent/skills/paperread/experience",
+        help="Experience output directory. Defaults to agents/Agent/skills/paperread/experience",
+    )
+    export_terms.add_argument("--dry-run", action="store_true", help="Print records without writing files.")
+
+    add_term = subparsers.add_parser(
+        "add-term",
+        help="Add one manually observed unfamiliar surface-paper term.",
+    )
+    add_term.add_argument("--term", required=True, help="Unfamiliar term.")
+    add_term.add_argument("--category", default="manual", help="Term category.")
+    add_term.add_argument("--context", default="", help="Short source/context note.")
+    add_term.add_argument("--source", default="manual", help="Source path, DOI, or manual.")
+    add_term.add_argument("--suggested-action", default="", help="Suggested follow-up action.")
+    add_term.add_argument(
+        "--output-dir",
+        default="agents/Agent/skills/paperread/experience",
+        help="Experience output directory. Defaults to agents/Agent/skills/paperread/experience",
+    )
+    add_term.add_argument("--dry-run", action="store_true", help="Print record without writing files.")
     return parser
 
 
@@ -150,6 +185,16 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(args.output_json)
         print(args.output_md)
+        return 0
+
+    if args.command == "export-unknown-terms":
+        result = export_unknown_terms(args)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "add-term":
+        result = export_add_term(args)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
 
     parser.error(f"Unsupported command: {args.command}")
