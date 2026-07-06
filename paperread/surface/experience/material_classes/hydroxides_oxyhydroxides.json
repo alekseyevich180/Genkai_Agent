@@ -1,12 +1,646 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-06-30T06:54:23.049510+00:00",
+  "updated_at": "2026-07-06T07:30:22.265796+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "terms": 20,
+    "known_useful": 3,
+    "unknown": 17
   },
-  "entries": []
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "NiCoOOH",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Fe atoms in NiFe oxyhydroxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "NiCoOOH*",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "materials": [
+      {
+        "term": "β-CoOOH",
+        "count": 4,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CoOOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydroxides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "layered double hydroxide (LDH)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiCo Layer Double Hydroxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiCo LDH/CC",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiFe layered double hydroxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "sAu/NiFe LDH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "β-CoOOH",
+        "count": 4,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiFe oxyhydroxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "β-CoOOH(0112̅)",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Au/NiFe LDH surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiCo LDH surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiFe LDH surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "β-CoOOH(0001)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "β-CoOOH(101̅4)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Co",
+        "count": 17
+      },
+      {
+        "term": "Ni",
+        "count": 13
+      },
+      {
+        "term": "H",
+        "count": 12
+      },
+      {
+        "term": "O",
+        "count": 12
+      },
+      {
+        "term": "Fe",
+        "count": 9
+      },
+      {
+        "term": "Cr",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "C",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "hydroxide_oxyhydroxide",
+        "count": 26
+      },
+      {
+        "term": "oxide",
+        "count": 8
+      },
+      {
+        "term": "surface",
+        "count": 7
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 3
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "β-CoOOH",
+        "count": 4
+      },
+      {
+        "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 2
+      },
+      {
+        "term": "NiCoOOH",
+        "count": 2
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 2
+      },
+      {
+        "term": "NiFe LDH surface",
+        "count": 2
+      },
+      {
+        "term": "β-CoOOH(0112̅",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "CC",
+        "count": 1
+      },
+      {
+        "term": "CoOOH",
+        "count": 1
+      },
+      {
+        "term": "Fe atoms in NiFe oxyhydroxide",
+        "count": 1
+      },
+      {
+        "term": "hydroxides",
+        "count": 1
+      },
+      {
+        "term": "layered double hydroxide (LDH",
+        "count": 1
+      },
+      {
+        "term": "NiCo Layer Double Hydroxide",
+        "count": 1
+      },
+      {
+        "term": "NiCo LDH",
+        "count": 1
+      },
+      {
+        "term": "NiCo LDH surface",
+        "count": 1
+      },
+      {
+        "term": "NiCoOOH*",
+        "count": 1
+      },
+      {
+        "term": "NiFe layered double hydroxide",
+        "count": 1
+      },
+      {
+        "term": "NiFe oxyhydroxide",
+        "count": 1
+      },
+      {
+        "term": "β-CoOOH(0001",
+        "count": 1
+      },
+      {
+        "term": "β-CoOOH(101̅4",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Co, H, O}",
+        "count": 9
+      },
+      {
+        "term": "{Fe, Ni}",
+        "count": 6
+      },
+      {
+        "term": "{Co, H, Ni, O}",
+        "count": 3
+      },
+      {
+        "term": "{Co, Cr, Fe}",
+        "count": 2
+      },
+      {
+        "term": "{Co, Ni}",
+        "count": 2
+      },
+      {
+        "term": "{Au, Fe, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{C, Co, Ni}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "Co",
+        "count": 17
+      },
+      {
+        "term": "Ni",
+        "count": 13
+      },
+      {
+        "term": "H",
+        "count": 12
+      },
+      {
+        "term": "O",
+        "count": 12
+      },
+      {
+        "term": "Fe",
+        "count": 9
+      },
+      {
+        "term": "Cr",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "C",
+        "count": 1
+      }
+    ],
+    "components": [
+      {
+        "term": "β-CoOOH",
+        "count": 4
+      },
+      {
+        "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 2
+      },
+      {
+        "term": "CoOOH",
+        "count": 1
+      },
+      {
+        "term": "hydroxides",
+        "count": 1
+      },
+      {
+        "term": "layered double hydroxide (LDH)",
+        "count": 1
+      },
+      {
+        "term": "NiCo Layer Double Hydroxide",
+        "count": 1
+      },
+      {
+        "term": "NiCo LDH/CC",
+        "count": 1
+      },
+      {
+        "term": "NiFe layered double hydroxide",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 1
+      },
+      {
+        "term": "sAu/NiFe LDH",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "β-CoOOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Modeling Keywords",
+        "Material"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "jp306303y 1..6",
+        "Co3O4",
+        "β-CoOOH"
+      ]
+    },
+    {
+      "term": "Co–Fe–Cr (oxy)Hydroxides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "NiCoOOH",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "β-CoOOH(0112̅)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "jp306303y 1..6",
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "Au/NiFe LDH surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "CoOOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "Fe atoms in NiFe oxyhydroxide",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "hydroxides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "layered double hydroxide (LDH)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "NiCo Layer Double Hydroxide",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiCo LDH surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiCo LDH/CC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "NiCoOOH*",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "intermediates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiFe layered double hydroxide",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiFe LDH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiFe LDH"
+      ]
+    },
+    {
+      "term": "NiFe LDH surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiFe oxyhydroxide",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiFe LDH"
+      ]
+    },
+    {
+      "term": "sAu/NiFe LDH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "sAu/NiFe LDH"
+      ]
+    },
+    {
+      "term": "β-CoOOH(0001)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "β-CoOOH(101̅4)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    }
+  ]
 }

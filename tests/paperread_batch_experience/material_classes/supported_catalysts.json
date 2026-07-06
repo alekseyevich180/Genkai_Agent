@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0",
+  "material_class": "supported_catalysts",
+  "updated_at": "2026-07-06T06:19:29.595077+00:00",
+  "summary": {
+    "terms": 27,
+    "known_useful": 9,
+    "unknown": 18,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/test_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "Ag/g-C3N4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ag/g-C3N4"
+      ],
+      "count": 3
+    },
+    {
+      "term": "Hg/HgO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Hg/HgO"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Mo–N/C@MoS2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Pt10Pb/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ],
+      "count": 2
+    },
+    {
+      "term": "1/3−2/3 monolayer",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Au(111)"
+      ],
+      "count": 1
+    },
+    {
+      "term": "1/3−2/3 monolayer OH*",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Ag/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ag/TiO2"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Au/NiFe LDH surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Au/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Au/TiO2"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Au–Ag/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Au–Ag/TiO2"
+      ],
+      "count": 1
+    },
+    {
+      "term": "BP/Au surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "carbon supported Ir",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "cs3003098 1..8"
+      ],
+      "count": 1
+    },
+    {
+      "term": "carbon supported Pt",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "cs3003098 1..8"
+      ],
+      "count": 1
+    },
+    {
+      "term": "carbon supported Ru",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "cs3003098 1..8"
+      ],
+      "count": 1
+    },
+    {
+      "term": "CoO/Co",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "CoO/Co"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Hg/HgO electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "High OH or mixed OH/O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Au(100)"
+      ],
+      "count": 1
+    },
+    {
+      "term": "high OH or mixed OH/O coverage",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "NiCo LDH/CC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "NiCo LDH/CC"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Pt/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Pt10Ni/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ],
+      "count": 1
+    },
+    {
+      "term": "PtxRu1-x/Ru(0001)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Rh–Rh2O3-NPs/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ],
+      "count": 1
+    },
+    {
+      "term": "sAu/NiFe LDH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "sAu/NiFe LDH"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn SAs/G",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sn SAs/G-Na",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/test_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Sn SAs/G-Na"
+      ],
+      "count": 1
+    },
+    {
+      "term": "water/platinum interface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ],
+      "count": 1
+    }
+  ]
+}

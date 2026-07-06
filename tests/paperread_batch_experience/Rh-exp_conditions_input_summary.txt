@@ -1,0 +1,49 @@
+这次抽到的关键信息包括：
+
+在 Rh-exp_conditions_input_table.csv 里：
+
+- Rh, Rh2O3, N-doped C
+- 吸附物/反应物：H2O，吸附位点 Rh2O3, Rh
+- 建模关键词：Rh2O3, Hads, OHads, Habs
+- 吸附物/反应物：H2
+- 吸附物/反应物：OH⁻，吸附位点 Rh2O3 sites
+- 吸附物/反应物：O2
+
+在 Rh-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Rh
+  - Rh2O3
+  - nitrogen-doped carbon
+- 材料参数：
+  - nanoparticles
+  - composite
+- 反应参数：
+  - pH
+  - current density
+  - overpotential
+- 性能：
+  - HER activity
+  - HOR activity
+  - current density
+  - overpotential
+  - Tafel slope
+- 表面/晶面：
+  - Rh2O3 surface
+- 缺陷/活性位点：
+  - Rh2O3 sites
+  - Rh sites
+- 吸附/覆盖度：
+  - Hads
+  - OHads
+  - Rh2O3 sites
+  - neighboring Rh sites
+- 团簇/单原子：
+  - Rh–Rh2O3-NPs
+- 建模关键词：
+  - electrocatalysis
+  - hydrogen evolution
+  - hydrogen oxidation
+- 推荐建模任务：
+  - adsorbate_landscape
+  - single_atom_site

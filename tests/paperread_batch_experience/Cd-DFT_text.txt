@@ -1,0 +1,566 @@
+Applied Surface Science 610 (2023) 155580
+
+ Contents lists available at ScienceDirect
+
+ Applied Surface Science
+ journal homepage: www.elsevier.com/locate/apsusc
+
+Full length article
+
+CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and
+ORR: A density functional theory study
+Luya Jin a, 1, Chao Liu a, b, *, 1, Daomiao Wang a, Meiling Liu a, Tae Gwan Lee c, **, Shaik
+Gouse Peera c, **, Xiaopeng Qi a, **
+a
+ Faculty of Materials Metallurgy and Chemistry, Jiangxi University of Science and Technology, Ganzhou 341000, China
+b
+ State Key Laboratory of Metastable Materials Science and Technology, Yanshan University, Qinhuangdao 066004, China
+c
+ Department of Environmental Science and Engineering, Keimyung University, Daegu 42601, Republic of Korea
+
+A R T I C L E I N F O A B S T R A C T
+
+Keywords: Development of a highly efficient trifunctional electrocatalyst for hydrogen evolution reaction (HER), oxygen
+Trifunctional electrocatalyst evolution reaction (OER) and oxygen reduction reaction (ORR) is essential in a variety of energy conversion
+Acidic conditions technologies, such as H2-O2 fuel cell and overall water splitting. However, state-of-the-art electrocatalysts (Pt, Ir,
+Water splitting
+ Ru) for these electrochemical reactions suffer from high cost. Therefore, search for novel and cost-effective
+H2-O2 fuel cell
+Density functional theory
+ metal-based catalysts have gained tremendous attention. In this work, we investigated a novel Cd based elec­
+ trocatalysts as efficient trifunctional electrocatalysts by density functional theory analysis. An in-depth reaction
+ mechanism of CdN4C0-gra and CdN0C4-gra structure in acidic conditions had been investigated. After a detailed
+ and systematic analysis by partial densities of states (PDOS) and Gibbs free energy (ΔG) of various modeled
+ catalytic systems, the catalysts system composed of CdN4C0-gra showed excellent electrocatalytic properties with
+ an overpotential of (ƞHER = 0.05 V, ƞOER = 0.48 V, and ƞORR = 0.75 V).
+
+1. Introduction found to be slow and sluggish [5–8], therefore it is associated with the
+ large over potential even on the state-of-the-art catalyst Pt/C. Efforts are
+ In today’s rapidly advancing world, energy crisis and environmental also undergone to improve the ORR activity of the Pt by alloying with
+pollution are urgent problems for a scientific community to solve. transition and inner transition metals. Scientists have tremendously
+Currently, nonrenewable fossil fuels are the major source of the energy improved the ORR kinetics to a greater extent by alloying. However, the
+for almost all the developed and developing countries around the world. improved ORR kinetics comes with the limitation of high price. There­
+However, the use of fossil fuels comes with an expense of environmental fore, studies undergoing to discover the efficient electrocatalysts at the
+damage and pollution by the way of increasing greenhouse gas emis­ same time be cost effective. Various earth abundant and cheap catalysts
+sions. Therefore, the search for alternative energy sources has become have been identified especially with transition metals in combination
+the major challenge of the 21st century [1]. In this regard, hydrogen with N doped carbons, which together forms potential Mx-Ny-C (M =
+energy is considered as an important source of clean energy that can transition metals) active sites [9,10].
+fulfill the energy needs of the future, because of its advantages of no On the other hand, production of industrial H2 is one of the major
+toxicity, no greenhouse gas emissions associate with it, high calorific obstacles for the commercialization of the fuel cells. The current, in­
+value, and high utilization rate [2,3]. Therefore, it has been considered dustrial hydrogen production methods (ex. steam reforming) are not
+and, proven to be a promising alternative energy technology that can environmentally friendly or pure (contain carbon monoxide impurities).
+alleviate energy crisis and environmental pollution. H2 has been used as In this regards, production of green hydrogen by electrolysis of water is
+fuel in the fuel cells. The fuel cell operates with cathodic ORR and anodic an effective way to solve these problems [11–14]. Further, the elec­
+HOR are the major reactions [4]. Among the two reactions, the ORR is trolysis of water can be performed by using renewable energy, such as
+
+ * Corresponding author at: Faculty of Materials Metallurgy and Chemistry, Jiangxi University of Science and Technology, Ganzhou 341000, China.
+ ** Corresponding authors.
+ E-mail addresses: liuchao198967@126.com (C. Liu), wateree@kmu.ac.kr (T.G. Lee), gouse@kmu.ac.kr (S.G. Peera), qxpai@163.com (X. Qi).
+ 1
+ These authors contributed equally to this work.
+
+https://doi.org/10.1016/j.apsusc.2022.155580
+Received 31 August 2022; Received in revised form 26 October 2022; Accepted 2 November 2022
+Available online 8 November 2022
+0169-4332/© 2022 Elsevier B.V. All rights reserved.
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+wind, solar and so on. The route to produce green hydrogen is by elec­ the stability of the CdN4C0-gra structure. Further, the thermodynamic
+trolysis of water, in which HER of cathode and OER of anode occur in an formation energy and binding energy are calculated and compared with
+electrolytic cell [15]. The water electrolysis efficiency depends on the the cohesive energy of Cd metal to judge whether the structure is stable.
+kinetics of HER and OER reactions [16–20]. Due to their slow and Various adsorption models of reactants, intermediates and products
+sluggish reaction kinetics they are usually associated with high over were constructed and optimized. Then the best structural model is
+potential (η) which forces to use noble metals such as Pt for HER and Ir/ selected by using the overpotential and ΔG. Based on the analysis of
+Ru(oxides) for OER reactions [21–24]. PDOS, charge and d-band center, the origin of the activity differences of
+ However, use of precious metals and their scarcity and expensiveness different configurations was revealed.
+limits the electrolysis production for hydrogen and therefore are not be
+suitable for large-scale industrial application. Therefore, it is very much 2. Computational details
+convincible that, discovery of single electrocatalysts that can efficiently
+catalyze ORR, HER and OER could not only reduce the cost of the system 2.1. Methods
+and make the overall system simple [25–28].
+ Carbon-based catalysts, such as graphene, is widely used in the field All the spin unrestricted DFT calculations in this paper were mainly
+of electrocatalysis, because of its high surface area, low cost, good based on Dmol3 code, and the qualities were all fine according to the
+structural stability, and excellent electronic conductivity [29–33]. In literatures [51–54]. The Perdew, Burke, and Ernzerhof functional was
+recent years, graphene supported monatomic/single atom catalysts have used for exchange and correlation in the generalized gradient approxi­
+been extensively studied [34–36]. Loading transition metal elements on mation. DFT semi-core pseudopotentials method was used to introduce
+graphene vacancies, not only increases the stability, but also can pro­ the corresponding correction to the Cd atom, and the DNP basis was
+mote the enhanced reaction kinetics. Further doping of N along with chosen in this paper. The global orbital cutoff quality was selected to be
+transition metal atoms endows them with unique structural, electronic, fine and the orbital smear value was set at 0.002 Ha, in order to accel­
+bonding environments that can promote high activity, had attracted erate the convergence of energy [55]. The Mulliken charge filling and
+widespread attention [37–39]. The characteristic covalent chemical Monkhorst-Pack methods were used to represent the charge transfer.
+bond between carbon and N-dopant together with metal atoms (Mx-Ny- The Grimm’s approach was chosen to explore the interaction between
+C) ensures operational stability [40,41]. catalyst substrate and gas molecules, which has great Van der Waals
+ The synthesis of carbon-based catalysts based on metal-organic correction accuracy. During the geometric optimization process, the
+frameworks (MOF) induction is a classic method for the preparation of convergence tolerances of displacement, energy and maximum force
+monatomic catalysts [42,43]. MOFs has the advantages of high porosity, were 0.005 Å, 1 × 10− 5 Ha and 0.002 Ha Å− 1 successively. Gnid pa­
+low density, large specific surface area, regular pores, adjustable pore rameters in Monkhorst-Pack gnid was set be 5 × 5 × 1 k-points, which
+size, diversity and tailoring of topological structure [44,45]. It is a was used for electronic structure computations. Molecular dynamics
+common method to chelate the target metal (ex. transition metals) with (MD) simulations were set as the NVT ensemble, and the temperature is
+low boiling point Zn atoms, to create MOFs, zeolitic imidazolate 298.15 K with a 5.0 fs time step.
+framework (ZIF-8) and (ZIF-67) to form a precursor, and the single
+atomic Mx-Ny-C can be obtained by high temperature pyrolysis [46].
+ 2.2. Models
+Various Mx-Ny-C catalysts have been synthesized and employed for ORR,
+OER and HER reactions. Most of the Mx-Ny-C catalysts are composed of
+ Firstly, a single layer of graphene supercell with a periodicity of 5 ×
+Fe, Co, Mn and Ni. In this study, we chosen an un explored metal, the
+ 5 × 1 was constructed and separated by a vacuum layer of 30 Å to avoid
+cadmium (Cd). Cd has been extensively used in rechargeable nick­
+ periodic interactions. Cd–N–C-doped graphene system formed by Cd
+el‑cadmium batterie, electroplating industries and in nuclear reactors as
+ atom introduced to replace two carbon atoms. The strong electronega­
+control rods. In addition, the Cd resources are many in earth’s crust.
+ tive N atoms anchor Cd by replacing C atoms. The two homogeneous
+However, the use of Cd in electrochemical reactions have been reported
+ structures used in this study are: CdN4C0-gra and CdN0C4-gra, as shown
+so far. Therefore, in this work we attempted to investigate the Cd-N-C as
+ in Fig. 1. Four nitrogen-atoms around the center Cd metal atom form the
+potential trifunctional catalysts for ORR, OER and HER reactions. To the
+ CdN4C0-gra system, and four carbon atoms, without nitrogen-atom
+best of our knowledge this is the first theoretical report on Cd-N-C
+ around the center Cd atom form the CdN0C4-gra system.
+catalyst for ORR, OER and HER reactions.
+ Gao [47] reported that at PH = 0, the overpotentials in ORR of the
+Mn-N3-Gra, Co-N3-Gra, and Ni-N3-Gra are 0.560 V, 0.849 V, and 0.381 2.3. Computational contents
+V, respectively. However, Fe-N3-Gra and Cu-N3-Gra are not suitable
+ORR catalysts. Xiao et al. [48] revealed that the corresponding over­ (1) Formation energy (Ef) and binding energy (Eb). The Ef and Eb
+potential of ORR is 0.75 V, 0.79 V, 0.56 V, and 0.32 V for M-N4-Gra (M of Cd-N-C-gra structures can be calculated by eq. (1) and eq. (2)
+= Mn, Fe, Co, and Ir), and the overpotential of OER is 1.00 V, 0.74 V, respectively as follows:
+0.74 V and 0.52 V, respectively. Wang et al. [49] demonstrated that
+ Ef = ECdNx C(4− x) − + (2 + x)EC − Egra − ECd − xEN (x = 0, 4) (1)
+overpotential of ORR and OER are 1.02 V and 0.79 V in Fe-N4-Gra. Zhou gra
+
+[50] studied the OER and HER of xN-TM (x = 1–4, TM = Fe, Co, Ni, Cu,
+ Eb = EDG + ECd − EDG− (2)
+and Pd) catalyst, found overpotential of OER for 4 N–Co is 0.38 V, and 3 Cd
+
+N–Co presents a better HER performance, overpotential of HER is 0.01 Where ECdNxC(4− x)− gra and Egra are the total energies of the optimized
+V. In these literatures, M-N-gra is only suitable for single or double structure of Cd–N–C-gra and (5 × 5 × 1) graphene supercell, respec­
+functions of OER and ORR. We need to find better catalysts to realize tively. And EDG and EDG− Cd represent the total energy of N–C-gra and
+trifunctional of ORR, OER and HER. Cd–N–C-gra, respectively. EC, ECd and EN are the chemical potential of C,
+ In this paper, single transition metal Cd doped double vacancy N Cd and N atom, respectively. EC is equal to the energy of each carbon
+coordinated graphene catalysts (Cd-N-C) were studied by density func­ atom in 5 × 5 × 1 graphene supercell. EN is the half energy of isolated N2
+tional theory (DFT) calculations. The CdN4C0-gra and CdN0C4-gra con­ molecule and ECd is the energy of an isolated Cd atom, The bonding
+figurations are mainly studied. CdN4C0-gra is a structure that replace strength of Cd atom to the substrates is determined by the negative Ef
+four C atoms around the Cd atom with four N atoms. CdN0C4-gra value and the positive Eb value.
+structure is just a Cd atom doped in double vacancy graphene without N (2) Adsorption energy (ΔEads). The ΔEads of intermediates can be
+atoms. Firstly, calculation of thermodynamic formation energy proved calculated according to the eq. (3):
+
+ 2
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+ Fig. 1. Optimized geometries of the (a) CdN4C0-gra and (b) CdN0C4-gra structures.
+
+ΔEads = E*IM − E* − EIM (3) by eq. (10)–(13):
+ ( )
+ Where IM is the intermediates of ORR, OER and HER. E*IM, E* and ΔG1 = (GH2 O⸱OH* + GH+ + Ge− ) − 2GH2 O(l) + G* (14)
+EIM are the total energies of adsorbates binding on Cd–N–C-gra, Cd–N–C-
+gra and the intermediates, respectively. ΔG2 = (G2OH* + GH+ + Ge− ) − GH2 O⸱OH* (15)
+ (3) The variation of Gibbs free energy (ΔG). The ΔG of each re­
+action step can be calculated by eq. (4): ΔG3 = (GOOH* + GH+ + Ge− ) − G2OH* (16)
+
+ΔG = ΔE + ΔZPE − TΔS + ΔGU + ΔGpH (4) ( )
+ ΔG4 = GO2 (g) + G* + GH+ + Ge− − GOOH* (17)
+ Here, ΔE,ΔZPE and ΔS represent the variation of reaction energy,
+ Where GH2O⸱OH*, G2OH*, GOOH* and GH+ are the total Gibbs free energies
+zero-point energy (ZPE) and entropy, respectively. T is 298.15 K, rep­
+ of H2O⸱OH, 2OH and OOH adsorbate binding on substrate, respectively.
+resenting indoor temperature. ΔGU = − neU, where n is the number of
+ ORR and OER are reciprocal reactions, their four electron reaction steps
+electrons transferred and U is electrode potential. ΔGU are the free en­
+ and the corresponding ΔG are completely opposite.
+ergy contributions related to the applied electrode potential U. ΔGpH =
+ The ƞOER and ƞORR were calculated according to eq. (18) and eq. (19)
+KBT × ln 10 × pH, where KB is the Boltzmann constant, in this work the
+ as follows:
+value of pH was defined to be 0 for acidic conditions.
+ /
+ (4) Adsorption free energy (ΔGads). The ΔGads of intermediates can ƞOER = [ΔG1 , ΔG2 , ΔG3 , ΔG4 ]max e–1.23 V (18)
+be calculated according to the eq. (5)–(8):
+ /
+ ( ) ƞORR = [ΔG1 , ΔG2 , ΔG3 , ΔG4 ]max e + 1.23 V (19)
+ 3
+ΔGads (OOH* ) = GOOH* − G* − 2GH2 O − GH2 (5)
+ 2 The reaction steps of the HER following two electron HER mecha­
+ nisms in acidic conditions via eq. (20) and eq. (21), and the ΔG of HER
+ΔGads (O* ) = GO* − G* − (GH2 O − GH2 ) (6) reactions can be calculated by eq. (22) and eq. (23) as follows:
+ ( ) H+ +* →H* (20)
+ 1
+ΔGads (OH* ) = GOH* − G* − GH2 O − GH2 (7)
+ 2
+ H+ + H* →H2 (g) + *
+ (21)
+ 1
+ *
+ΔGads (H ) = GH* − G* − GH2 (8) ΔG1 = GH* − (GH+ + G* ) (22)
+ 2
+ ( )
+where GOOH*, GO*, GOH* and GH* are the total energies of adsorbates binding on ΔG2 = GH2 (g) + G* − (GH+ + GH* ) (23)
+ and GH2 is the total energy of single isolated H2O
+substrate, respectively. GH2O
+and H2 molecules, respectively. G* is the energy of Cd–N–C-gra. 3. Results and discussion
+ (5) The reaction process and related calculation formulas.
+ The overall reaction of OER can be show as the eq. (9) as the 3.1. Stability of Cd-N-C-gra
+following:
+
+2H2 O(l)→O2 (g) + 4(H+ + e− ) (9) The above eq. (1) and (2) are used to study the stability of the
+ structure, the value of Ef and Eb is used as the evaluation criteria of
+ The reaction steps of the OER following four electron OER mecha­ stability. The obtained Ef and Eb values are shown in Table S1. The Ef
+nisms under acidic conditions via eq. (10)–(13): value of CdN4C0-gra is 1.02 eV, but the Ef value of CdN0C4-gra is 6.27 eV.
+ The smaller the value of Ef, the more stable the structure is. So according
+2H2 O(l) + * →H2 O⸱OH* + (H+ + e− ) (10)
+ to the data comparison of the two structures, CdN4C0-gra would be a
+ right choice as a catalyst substrate. Under normal circumstances, good
+H2 O⸱OH* →2OH* + (H+ + e− ) (11)
+ adsorption energy is generally indicated by a negative value. In order to
+ further prove the stability of the structure, we calculated the value of Eb.
+2OH* →OOH* + (H+ + e− ) (12)
+ The Eb value of CdN4C0-gra is 2.66 eV, and the cohesion energy value of
+ Cd is − 0.77 eV [56], so the binding energy is greater than the metal
+OOH* →O2 (g) + * + (H+ + e− ) (13)
+ cohesion energy of cadmium. Cd atoms do not readily aggregate
+ Where * represents an adsorption site on the catalyst substrate. together to form clusters. Therefore, the substrate can effectively anchor
+OOH*, 2OH* and H2O⸱OH* are the oxygen-containing intermediates Cd atom. In addition, the CdN4C0-gra structure was observed in an
+during the reaction. (g) and (l) indicate two states: gas and liquid. experiment [57]. In terms of geometry, the Cd atom on the CdN4C0-gra
+ From eq. (14)–(17), the ΔG of four OER reactions can be calculated structure slightly protrude above the plane, and the Cd atom in the
+
+ 3
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+center, bonds with the four surrounding N atoms. Defective graphene
+structure remains on the same plane without an obvious distortion and
+bulge in geometry [58], which indicates that the CdN4C0-gra structure
+has high stability. And the geometric configuration of CdN0C4-gra is also
+stable without deformation. Therefore, the prominent Cd atom from the
+graphene plane is instrumental in capturing reactants. The PDOS of
+CdN4C0-gra and CdN0C4-gra structures, including the central part con­
+nected with Cd are shown in Fig. 2. The dotted line at zero represents the
+Fermi level. It can be seen from the analysis that the PDOS of all con­
+figurations cross the Fermi level, so the models are said to be conductive.
+Their good electrical conductivity enables them to be applied in elec­
+trocatalysis. Further, the s, p and d orbitals in the figure are hybridized,
+indicating that there is bond to bond interaction between atoms of this
+structure. Especially when considering only the PDOS of the metal atom
+and the atoms around it, the orbital overlap among the Cd atom and the
+surrounding N or C atoms is obvious. The energies of d-band center in
+CdN4C0 and CdN0C4 are − 8.35 eV and − 9.04 eV, separately. Lu et al. Fig. 3. ΔGads (OOH*, O*, OH* and H*) in CdN4C0 and CdN0C4.
+[59] calculated the d band center of Cd@Sb is − 8.16 eV, which is closer
+to CdN4C0. The closer the d band is to the Fermi level and the higher the metallic atoms are named, as shown in Fig. S1. The amount of charge on
+center value of the d-band is, the higher the energy of the d orbital the metal and the non-metal bonded around the metal were analyzed by
+electron is, the stronger its ability to participate in capturing the reaction Mulliken charge. It is clearly visible that there is an obvious charge
+intermediates and forming bonds, and the better its catalytic activity is. transfer between Cd, N and C atoms. Detailed charge transfer energy is
+The larger the d-band of Cd is, the smaller ΔG is, which means that the shown in Table S2. In the four-coordination Cd–N–C-gra models, the
+adsorption energy of substrate to the intermediate is larger [60]. The main negative charges are concentrated on the N atoms. Compared with
+adsorption free energy of CdN4C0 is stronger than that of CdN0C4. The the CdN0C4-gra structure, there is less positive charge on the metal atom.
+adsorption free energy of OOH*, O*, OH* and H* in CdN4C0 and CdN0C4 For N, C and Cd atoms, the electronegativity of N atoms is the largest,
+is shown in Fig. 3. and the electrons on the surrounding atoms prefer to gather on N atoms.
+ In order to better study the electronic distribution of catalyst struc­ Therefore, the doping of four N atoms strengthens the bounding between
+ture, the central Cd metal atom on the catalyst and the surrounding non- Cd atom and non-metallic C atom. MD of first principles analysis showed
+
+Fig. 2. Partial densities of states (PDOS) of the (a) CdN4C0-gra and (b) CdN0C4-gra structures, (c) and (d) are the PDOS of the active center structures corresponding
+to the (a) and (b) structures, respectively.
+
+ 4
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+the CdN4C0-gra substrate structure is stable. We can see the structures because the N and C atoms on the substrate are similar in electronega­
+have no deformation and is stable in Fig. S2. In addition, all charge tivity to the O atom. The adsorption energies for O2 are − 0.92 eV and −
+distributions on the substrate were studied, what is shown in Fig. 4. The 0.20 eV in CdN4C0-gra and CdN4C0-gra substrates, respectively. Ji [61]
+average value was taken, if the difference in charge number does not reported that the chemisorption of O2 from − 0.5 eV to − 2.0 eV was
+exceed 0.002 e. It can be shown that the middle metal atom and its beneficial to the reaction, so CdN4C0-gra substrate is better. OH* is
+surrounding atoms are the main electronic region, and the charge dis­ special, one substrate can be adsorbed two OH at the same time. Because
+tribution of the whole substrate is symmetrical. The charge difference in the second step of ORR, OOH* adsorbs another H, OOH* can be O* +
+between Cd of CdN4C0-gra and four surrounding nonmetallic atoms is H2O or 2OH*. When H attacks the O attached to H on OOH*, the O and
+larger than that of CdN0C4-gra. This has to do with the electronegativity OH combine to form H2O, leaving one O*. When H attacks another O on
+of Cd, N and C, because N is more electronegative than C, so N is more OOH*, the O and H combine to become OH*, so 2OH* is formed. Liang
+able to grab electrons from Cd than C is to grab electrons from Cd. et al. [55] showed the possible reaction pathways of ORR on Ni-N-C-gra,
+ including the active site can adsorb two OH*. OH* is also can be affected
+3.2. Adsorption properties of the intermediates and catalytic activity by water in acidic aqueous solution. So 2OH* and H2O⸱OH* were also be
+ studied. The adsorption energy of the CdN4C0-gra structure for most
+ The adsorption capacity of catalyst to intermediates plays a key role intermediates is greater than that of CdN0C4-gra structure. It further
+in the whole reaction process. Excellent catalysts have moderate shows that all N coordination conditions has a great influence on the
+adsorption energy for reactants, intermediates, and products. Too high adsorption energy of the catalyst and more conducive to the adsorption
+adsorption energy will make the product difficult to remove, which will of intermediates on the substrate. The value of ΔGads in different con­
+affect the further development of catalytic reaction. Too low adsorption figurations are shown in Table S4.
+energy is not conducive to the combination of catalyst substrate and In order to better understand the adsorption capacity of reaction
+reaction, and the catalytic reaction may not start. In this paper, different intermediates, PDOS of Cd in O2*, OOH*, O* and OH* is shown in Fig. 5.
+adsorption models in acidic conditions are constructed, and a series of In the CdN4C0-gra structure, the energy at the center of the d-band of
+stable adsorption configurations are obtained after further optimization. O2*, OOH*, O* and OH* are − 7.84 eV, − 7.45 eV, − 6.84 eV and − 7.40
+H* is a key intermediate in HER. Various adsorption configurations were eV, respectively. And in the CdN0C4-gra structure, the energy at the
+developed before optimization of H-H*, and are shown in Table S3. center of the d-band of O2*, OOH*, O* and OH* are − 8.87 eV, − 8.30 eV,
+ This paper considers the acidic conditions, so there are many large − 7.50 eV and − 7.76 eV, respectively. The d-band center of the adsorbed
+number of hydrogen ions and water molecules in the aqueous solution. intermediate in CdN4C0-gra is higher than that in CdN4C0-gra. In addi­
+Firstly, the adsorption configurations of three intermediates (O*, OOH*, tion, by comparing the d-band centers of O2* and OOH*, O* and OH*,
+and OH*) were studied. By constructing a large number and different we found that with the addition of hydrogen in the protonation process,
+adsorption models and optimizing the structure, according to the prin­ the d-band centers of the system tended to become higher. This also
+ciple that lower the adsorption energy more stable the structure is, and indicates that the capture of H will weaken the adsorption ability of O to
+the structure with the lowest energy is selected for each adsorption in­ the base Cd atom.
+termediate. There are two kinds of adsorption modes of intermediates The relationship between ΔEads (O2*, OOH*, O* and OH*, H2O*) and
+called end-on and side-on. The end-on and side-on adsorption O2 modes d-band center in CdN4C0-gra and CdN4C0-gra structure is shown in
+in CdN4C0-gra and CdN4C0-gra are shown in (a) and (b) of Fig. S3. After Table S5. For a clearly understanding, the d-band center of the sub­
+the optimization, side-on and end-on all turned to abnormal “side-on”, stance and the corresponding adsorption energy of the next adsorption
+which is shown in (c) of Fig. S3. The end-on structure becomes bent after reaction are listed in the same column in Table S5. It is obvious that
+optimization, because Cd is less electronegative and O2 is more elec­ CdN4C0-gra system has a higher d-band center than CdN0C4-gra
+tronegative, so Cd is easy to bond with O2. After optimization, one of the regardless of which reaction intermediates adsorbed or bare substrates.
+oxygen atoms in the side-on structure breaks the bond with the Cd, The study on the d-band center of OOH, OH, O adsorption state
+ configuration of O2 and oxygen-involved reaction intermediates found
+ that the addition of proton and hydrogen would cause the high-energy of
+ the d-band center, which played an activation role in the adsorption of
+ intermediate configuration, and then promoted the subsequent proton­
+ ation reaction. In addition, for both CdN0C4-gra and CdN4C0-gra, if the
+ center of d band is higher, the adsorption capacity of subsequent pro­
+ tonated intermediates is stronger.
+
+ 3.3. Reaction mechanism of ORR, OER and HER in CdN4C0-gra and
+ CdN0C4-gra systems
+
+ ORR and OER are all four electronic steps, as shown in eq. (6)–(9).
+ ORR is exothermic reaction and OER is endothermic reaction. Therefore,
+ the reaction step with the least heat release is the rate determining step
+ of ORR, on the contrary, the reaction step with the most heat absorption
+ is the rate determining step of OER. The reaction can be divided into four
+ routes, and the reaction pathways of OER and ORR affected by H2O on
+ Cd–N–C-doped graphene system is shown in Fig. 6, the others are shown
+ in Fig. S4. The substrate under the action of two water molecules be­
+ comes after the first step reaction removes a hydrogen atom OH* with
+ one water molecule. In another case, after adsorbing a water molecule,
+ the substrate loses a hydrogen atom and finally becomes a structure of
+ OH*. Both generated structures may become O* or 2OH*, and then all
+ can become OOH*. The last step is to remove a hydrogen atom and turn
+Fig. 4. Mulliken charge distribution of (a) CdN4C0-gra and (b) CdN0C4- it into an oxygen molecule and substrate. So, each reaction step of OER
+gra structures. can be simplified as follows:
+
+ 5
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+ Fig. 5. PDOS of Cd in O2*, OOH*, O* and OH*, (a) CdN4C0-gra and (b) CdN0C4-gra.
+
+ Fig. 6. Two possible reaction pathways of the OER (a) and ORR (b) affected by H2O on Cd–N–C-doped graphene system.
+
+ Passway1: 2H2O + * → H2O⸱OH* + H+; OH* → O* + H+;
+ H2O⸱OH* → 2OH* + H+; H2O + O* → OOH* + H+;
+ 2OH* → OOH* + H+; OOH* → O2 + H+ + *.
+ OOH* → * + O2 + H+. ORR and OER are the opposite, the reaction pathways of the ORR are
+ Passway2: H2O + * → OH* + H+; completely reversible, so each reaction step of ORR can be simplified as
+ OH* + H2O → 2OH* + H+; follows:
+ 2OH* → OOH* + H+; Passway1: * + O2 + H+ → OOH*;
+ OOH* → O2 + * + H+. OOH* + H+ → 2OH*;
+ Passway3: 2H2O + * → H2O⸱OH* + H+; 2OH* + H+ → H2O⸱OH*;
+ H2O⸱OH* → H2O + O* + H+; H2O⸱OH* + H+ → 2H2O + *.
+ H2O + O* → OOH* + H+; Passway2: * + O2 + H+ → OOH*;
+ OOH* → O2 + H+ + *. OOH* + H+ → 2OH*;
+ Passway4: H2O + * → OH* + H+; 2OH* + H+ → OH* + H2O;
+
+ 6
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+ OH* + H+ → H2O + *.
+ Passway3: * + O2 + H+ → OOH*;
+ OOH* + H+ → H2O + O*;
+ H2O + O* + H+ → H2O⸱OH*;
+ H2O⸱OH* + H+ → 2H2O + *.
+ Passway4: * + O2 + H+ → OOH*;
+ OOH* + H+ → H2O + O*;
+ O* + H+ → OH*;
+ OH* + H+ → H2O + *.
+ In addition to ORR/OER, the side effects of producing hydrogen
+peroxide were also considered. However, the geometric adsorption
+model of hydrogen peroxide on the substrate is found to be unstable,
+therefore hydrogen peroxide molecular bond adsorbed on the base will
+break without chemical bond with the substrate. Therefore, this reaction
+path to produce hydrogen peroxide is excluded. Fig. 8. The deformation electron density of (a) 2OH* and (b) O* in CdN0C4-
+ To explore the ORR / OER catalytic performance of CdN4C0-gra and gra structure.
+CdN0C4-gra structures, the ΔG diagrams were showed. The change of ΔG
+affected by H2O in CdN4C0-gra structure can be clearly and intuitively carbon base. So CdN0C4-gra structure is not suitable as a catalyst for OER
+felt in Fig. 7. And others are shown in Fig. S5. The OER rate determining and ORR.
+step of optimal path of catalytic performance is 2OH* to OOH*, and it is To explore the catalytic performance for HER of CdN4C0-gra and
+1.71 eV. The optimal η obtained is 0.48 eV. In the process of reverse CdN0C4-gra structures, the change of ΔG can be clearly and intuitively
+reaction, the ORR rate determining step of optimal path of catalytic felt in Fig. 9. It can be seen the CdN0C4-gra structure is not suitable to be
+performance is H2O⸱OH* to removing two water molecules from the used as a HER catalyst, ηHER is 1.14 V. The specific value is shown in
+base, and it is 0.48 eV. So, the η of ORR is 0.75 eV. The value of ΔG is Table S8. But the ηHER of the CdN4C0-gra is only 0.05 V, it is several folds
+based on the adsorption strength of the structures. The calculation lower than the CdN0C4-gra structure. Therefore, the CdN4C0-gra could
+shows that the η of CdN4C0-gra structure is lower, which is more be a potential and high performance HER catalysts. In addition, several
+conducive to be used as the catalyst structure of ORR and OER. In­
+termediates with high ΔG will always be adsorbed on the substrate,
+limiting the catalytic activity of the substrate and increasing the diffi­
+culty of subsequent further reaction. But the low ΔG is also bad for the
+reaction. In the structure of CdN0C4-gra, the energy absorbed or released
+in the intermediate step of the reaction is too large, so the structure is not
+suitable for the catalyst. And Table S6 and Table S7 list the ΔG of each
+reaction and η of the ORR and OER, respectively.
+ In CdN0C4-gra structure, the rupture of Cd–C bond occurred in the
+third step of ORR and OER reaction. Optimized models and charge
+distribution of 2OH* and O* in CdN0C4-gra structure are shown in
+Fig. S7. The charge of Cd-2OH is − 0.006 e, so there is a negligible
+charge transfer between Cd-2OH and the carbon base. Hence the
+interaction between the Cd atom in the Cd-2OH group and the carbon
+atom in the catalyst substrate is negligible. When O*, there are only two
+Cd–C bonds exist. The charge of Cd–O is − 0.276 e. The deformation
+electron density of 2OH* and O* in CdN4C0-gra structure shows the
+transfer of charge between atoms in Fig. 8. Yellow and blue indicate the
+consumption and accumulation of electron density, respectively. Iso­
+ Fig. 9. Gibbs free energy (ΔG) diagram of the HER of the CdN4C0-gra and
+value is +/− 0.07. During the reaction, OH and O have strong attraction
+ CdN0C4-gra structures.
+to Cd, and CdN0C4-gra structure is unstable, Cd will detach from the
+
+ Fig. 7. Gibbs free energy (ΔG) diagram of ORR/OER affected by H2O in CdN4C0-gra structure.
+
+ 7
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+typical transition metal single atomic catalysts were compared. As [3] S. Wang, A. Lu, C.-J. Zhong, Hydrogen production from water electrolysis: role of
+ catalysts, Nano Converg. 8 (2021) 4.
+shown in Table S9, the proposed Cd single atomic catalyst CdN4C0-gra
+ [4] H.-S. Park, J. Yang, M.K. Cho, Y. Lee, S. Cho, S.-D. Yim, B.-S. Kim, J.H. Jang, H.-
+has excellent trifunctional catalysis. K. Song, RuO2 nanocluster as a 4-in-1 electrocatalyst for hydrogen and oxygen
+ electrochemistry, Nano Energy 55 (2019) 49–58.
+ [5] Y. Wang, R. Hu, Y. Li, F. Wang, J. Shang, J. Shui, High-throughput screening of
+4. Conclusions carbon-supported single metal atom catalysts for oxygen reduction reaction, Nano
+ Res. 15 (2022) 1054–1060.
+ In this work, an emerging Cd–N–C-doped graphene system has been [6] S. Zhao, L. Yan, H. Luo, W. Mustain, H. Xu, Recent progress and perspectives of
+ bifunctional oxygen reduction/evolution catalyst development for regenerative
+explored as an ORR, OER and HER trifunctional catalyst by DFT. It is anion exchange membrane fuel cells, Nano Energy 47 (2018) 172–198.
+calculated that the CdN4C0-gra structure is stable and has good inter­ [7] X. Zhu, J. Yan, M. Gu, T. Liu, Y. Dai, Y. Gu, Y. Li, Activity origin and design
+mediate adsorption capacity. However, the CdN0C4-gra structure is principles for oxygen reduction on dual-metal-site catalysts: a combined density
+ functional theory and machine learning study, J. Phys. Chem. Lett. 10 (2019)
+unstable during the adsorption reaction, Cd will detach from the base. In
+ 7760–7766.
+addition, compared with the CdN4C0-gra, the CdN0C4-gra has a lower d- [8] H. Wang, X. Zhang, F. Yin, W. Chu, B. Chen, Coordinately unsaturated
+band center, which weakens the adsorption capacity of oxygen-related metal–organic framework as an unpyrolyzed bifunctional electrocatalyst for
+intermediates and further restrains its catalytic activity. In calculation oxygen reduction and evolution reactions, J. Mater. Chem. A 8 (2020)
+ 22111–22123.
+ΔG, the influence of water molecules on the adsorption reaction is taken [9] C.-Y. Su, H. Cheng, W. Li, Z.-Q. Liu, N. Li, Z. Hou, F.-Q. Bai, H.-X. Zhang, T.-Y. Ma,
+into account. The calculations showed that the co-ordination of N and C Atomic modulation of FeCo-nitrogen-carbon bifunctional oxygen electrodes for
+with Cd greatly improves the activity of trifunctional catalyst. Therefore, rechargeable and flexible all-solid-state zinc-air battery, Adv. Mater. 7 (2017)
+ 1602420.
+the calculated over potentials of CdN4C0-gra for OER, ORR and HER in [10] T. Sun, J. Wang, C. Qiu, X. Ling, B. Tian, W. Chen, C. Su, B, N codoped and defect-
+acidic conditions, ƞHER = 0.05 V, ƞOER = 0.48 V, and ƞORR = 0.75 V. The rich nanocarbon material as a metal-free bifunctional electrocatalyst for oxygen
+catalytic performance of CdN4C0-gra is better than several reported reduction and evolution reactions, Adv. Sci. 5 (2018) 1800036.
+ [11] Y. Wei, R.A. Soomro, X.Q. Xie, B. Xu, Design of efficient electrocatalysts for
+typical transition metal single atomic catalysts. CdN4C0-gra system hydrogen evolution reaction based on 2D MXenes, J. Energy Chem. 55 (2021)
+possess potential to be used as an electrocatalyst for H2 generation and 244–255.
+utilization for H2-O2 fuel cell. [12] J. Qiao, L. Kong, S. Xu, K. Lin, W. He, M. Ni, Q. Ruan, P. Zhang, Y. Liu, W. Zhang,
+ L. Pan, Z. Sun, Research progress of MXene-based catalysts for electrochemical
+ water-splitting and metal-air batteries, Energy Storage Mater. 43 (2021) 509–530.
+CRediT authorship contribution statement [13] M. Yi, N. Li, B. Lu, L. Li, Z. Zhu, J. Zhang, Single-atom Pt decorated in heteroatom
+ (N, B, and F)-doped ReS2 grown on Mo2CTx for efficient pH-universal hydrogen
+ evolution reaction and flexible Zn–air batteries, Energy Storage Mater. 42 (2021)
+ Luya Jin: Investigation, Writing – original draft. Chao Liu: Inves­ 418–429.
+tigation, Formal analysis, Writing – review & editing, Funding acquisi­ [14] Y. Yang, J. Liu, F. Liu, Z. Wang, D. Wu, FeS2-anchored transition metal single atoms
+tion. Daomiao Wang: Investigation, Formal analysis. Meiling Liu: for highly efficient overall water splitting: a DFT computational screening study,
+ J. Mater. Chem. A 9 (2021) 2438–2447.
+Methodology, Conceptualization. Tae Gwan Lee: Resources, Concep­ [15] J. Song, C. Wei, Z.-F. Huang, C. Liu, L. Zeng, X. Wang, Z.J. Xu, A review on
+tualization, Supervision. Shaik Gouse Peera: Validation, Funding fundamentals for designing oxygen evolution electrocatalysts, Chem. Soc. Rev. 49
+acquisition, Writing – review & editing. Xiaopeng Qi: Funding acqui­ (2020) 2196–2214.
+ [16] J. Zhu, L. Hu, P. Zhao, L.Y.S. Lee, K.-Y. Wong, Recent advances in electrocatalytic
+sition, Software, Conceptualization, Supervision.
+ hydrogen evolution using nanoparticles, Chem. Rev. 120 (2020) 851–918.
+ [17] Y. Li, Y. Liu, Q. Qian, G. Wang, G. Zhang, Supramolecular assisted one-pot
+ synthesis of donut-shaped CoP@PNC hybrid nanostructures as multifunctional
+Declaration of Competing Interest electrocatalysts for rechargeable Zn-air batteries and self-powered hydrogen
+ production, Energy Storage Mater. 28 (2020) 27–36.
+ [18] H. Yang, S. Gao, D. Rao, X. Yan, Designing superior bifunctional electrocatalyst
+ The authors declare no competing financial interest.
+ with high-purity pyrrole-type CoN4 and adjacent metallic cobalt sites for
+ rechargeable Zn-air batteries, Energy Storage Mater. 46 (2022) 553–562.
+Data availability [19] S.S. Siwal, W. Yang, Q. Zhang, Recent progress of precious-metal-free
+ electrocatalysts for efficient water oxidation in acidic media, J. Energy Chem. 51
+ (2020) 113–133.
+ Data will be made available on request. [20] G. Yasin, S. Ibraheem, S. Ali, M. Arif, S. Ibrahim, R. Iqbal, A. Kumar, M. Tabish, M.
+ A. Mushtaq, A. Saad, H. Xu, W. Zhao, Defects-engineered tailoring of tri-doped
+ interlinked metal-free bifunctional catalyst with lower gibbs free energy of OER/
+Acknowledgements HER intermediates for overall water splitting, Mater Today Chem. 23 (2022),
+ 100634.
+ This work was supported by the National Natural Science Foundation [21] Z. Ma, Y. Zhang, S. Liu, W. Xu, L. Wu, Y.-C. Hsieh, P. Liu, Y. Zhu, K. Sasaki, J.
+ N. Renner, K.E. Ayers, R.R. Adzic, J.X. Wang, Reaction mechanism for oxygen
+of China (Grant no. 22065015), the Natural Science Foundation of
+ evolution on RuO2, IrO2, and RuO2@IrO2 core-shell nanocatalysts, J. Electroanal.
+Jiangxi Province (Grant no. 20212BCJL23053 and 20212BAB203015), Chem. 819 (2018) 296–305.
+the Research Foundation of the Education Department of Jiangxi [22] N. Ma, N. Li, Y. Zhang, T. Wang, J. Zhao, J. Fan, Strain adjustment Pt-doped Ti2CO2
+ as an efficient bifunctional catalyst for oxygen reduction reactions and oxygen
+Province (Grant no. GJJ200808), the Program of Qingjiang Excellent
+ evolution reactions by first-principles calculations, Appl. Surf. Sci. 590 (2022),
+Young Talents (JXUSTQJYX2020002), Jiangxi University of Science and 153149.
+Technology. The authors thank the National Research Foundation of [23] N. Ma, Y. Wang, Y. Zhang, B. Liang, J. Zhao, J. Fan, First-principles screening of Pt
+Korea funded by the Korean government, Ministry of Science and ICT doped Ti2CNL (N = O, S and Se, L = F, Cl, Br and I) as high-performance catalysts
+ for ORR/OER, Appl. Surf. Sci. 596 (2022), 153574.
+(No. 2021R1F1A1046648), Republic of Korea. [24] Z. Zhou, A. Chen, X. Fan, A. Kong, Y. Shan, Hierarchical porous N-P-coupled
+ carbons as metal-free bifunctional electro-catalysts for oxygen conversion, Appl.
+ Surf. Sci. 464 (2019) 380–387.
+Appendix A. Supplementary data
+ [25] S. Lu, H.L. Huynh, F. Lou, K. Guo, Z. Yu, Single transition metal atom embedded
+ antimonene monolayers as efficient trifunctional electrocatalysts for the HER, OER
+ Supplementary data to this article can be found online at https://doi. and ORR: a density functional theory study, Nanoscale 13 (2021) 12885–12895.
+ [26] D.C. Nguyen, T.L. Luyen Doan, S. Prabhakaran, D.T. Tran, D.H. Kim, J.H. Lee, N.
+org/10.1016/j.apsusc.2022.155580.
+ H. Kim, Hierarchical Co and Nb dual-doped MoS2 nanosheets shelled micro-TiO2
+ hollow spheres as effective multifunctional electrocatalysts for HER, OER, and
+References ORR, Nano Energy 82 (2021), 105750.
+ [27] M. Guo, M. Ji, W. Cui, Theoretical investigation of HER/OER/ORR catalytic
+ activity of single atom-decorated graphyne by DFT and comparative DOS analyses,
+ [1] S. Lin, H. Xu, Y. Wang, X.C. Zeng, Z. Chen, Directly predicting limiting potentials
+ Appl. Surf. Sci. 592 (2022), 153237.
+ from easily obtainable physical properties of graphene-supported single-atom
+ [28] Z. Liu, M. Wang, X. Luo, S. Li, S. Li, Q. Zhou, W. Xu, R. Wu, N-, P-, and O-doped
+ electrocatalysts by machine learning, J. Mater. Chem. A 8 (2020) 5663–5670.
+ porous carbon: a trifunctional metal-free electrocatalyst, Appl. Surf. Sci. 544
+ [2] L. Zhang, Z. Shi, Y. Lin, F. Chong, Y. Qi, Design strategies for large current density
+ (2021), 148912.
+ hydrogen evolution reaction, Front Chem. 10 (2022), 866415.
+
+ 8
+L. Jin et al. Applied Surface Science 610 (2023) 155580
+
+[29] J. Zhang, L. Qu, G. Shi, J. Liu, J. Chen, L. Dai, N,P-codoped carbon networks as [45] H.-F. Wang, L. Chen, H. Pang, S. Kaskel, Q. Xu, MOF-derived electrocatalysts for
+ efficient metal-free bifunctional catalysts for oxygen reduction and hydrogen oxygen reduction, oxygen evolution and hydrogen evolution reactions, Chem. Soc.
+ evolution reactions, Angew. Chem. 55 (2016) 2230–2234. Rev. 49 (2020) 1414–1448.
+[30] W. Wang, Y. Liu, J. Li, J. Luo, L. Fu, S. Chen, NiFe LDH nanodots anchored on 3D [46] S. Liu, Z. Wang, S. Zhou, F. Yu, M. Yu, C.-Y. Chiang, W. Zhou, J. Zhao, J. Qiu,
+ macro/mesoporous carbon as a high-performance ORR/OER bifunctional Metal–organic-framework-derived hybrid carbon nanocages as a bifunctional
+ electrocatalyst, J. Mater. Chem. A 6 (2018) 14299–14306. electrocatalyst for oxygen reduction and evolution, Adv. Mater. 29 (2017)
+[31] N. Yang, D. Wang, Defect makes perfect: metal-free electrocatalyst for oxygen 1700874.
+ reduction in acid, Chem 4 (2018) 2262–2264. [47] Q. Gao, A DFT study of the ORR on M–N3 (M = Mn, Fe, Co, Ni, or Cu) co-doped
+[32] K.R.D. Kasibhatta, I. Madakannu, I. Prasanthi, Hetero atom doped graphene graphene with moiety-patched defects, Ionics 26 (2020) 2453–2465.
+ nanoarchitectonics as electrocatalysts towards the oxygen reduction and evolution [48] Y. Xiao, W. Zhang, High-throughput calculation investigations on the
+ reactions in acidic medium, J. Inorg. Organomet. P. 31 (2021) 1859–1876. electrocatalytic activity of codoped single metal–nitrogen embedded in graphene
+[33] H. Cui, Z. Zhou, D. Jia, Heteroatom-doped graphene as electrocatalysts for air for ORR mechanism, Electrocatalysis 11 (2020) 393–404.
+ cathodes, Mater. Horiz. 4 (2017) 7–19. [49] Y. Wang, Y. Zhang, H. Huang, J. Qiao, Advantageous configurative heteroatoms-
+[34] L. Cui, L. Cui, Z. Li, J. Zhang, H. Wang, S. Lu, Y. Xiang, A copper single-atom doped carbon foams design and application for ultrahigh-powered Zn–air batteries,
+ catalyst towards efficient and durable oxygen reduction for fuel cells, J. Mater. ACS Sustain. Chem. Eng. 8 (2019) 731–738.
+ Chem. A 7 (2019) 16690–16695. [50] Y. Zhou, G. Gao, Y. Li, W. Chu, L.W. Wang, Transition-metal single atoms in
+[35] L. Li, R. Huang, X. Cao, Y. Wen, Computational screening of efficient graphene- nitrogen-doped graphenes as efficient active centers for water splitting: a
+ supported transition metal single atom catalysts toward the oxygen reduction theoretical study, Phys. Chem. Chem. Phys. 21 (2019) 3024–3032.
+ reaction, J. Mater. Chem. A 8 (2020) 19319–19327. [51] X. Chen, R. Hu, DFT-based study of single transition metal atom doped g-C3N4 as
+[36] Q. Deng, J. Zhao, T. Wu, G. Chen, H.A. Hansen, T. Vegge, 2D transition alternative oxygen reduction reaction catalysts, Int. J. Hydrog. Energy 44 (2019)
+ metal–TCNQ sheets as bifunctional single-atom catalysts for oxygen reduction and 15409–15416.
+ evolution reaction (ORR/OER), J. Catal. 370 (2019) 378–384. [52] M. Reda, H.A. Hansen, T. Vegge, DFT study of stabilization effects on N-doped
+[37] M. Zhang, H. Li, J. Chen, L. Yi, P. Shao, C.-Y. Xu, Z. Wen, Nitrogen-doped graphite graphene for ORR catalysis, Catal. Today 312 (2018) 118–125.
+ encapsulating RuCo nanoparticles toward high-activity catalysis of water oxidation [53] Q. Gao, A DFT study of the ORR on M–N3 (M = Mn, Fe, Co, Ni, or Cu) co-doped
+ and reduction, Chem. Eng. J. 422 (2021), 130077. graphene with moiety-patched defects, Ionics 26 (2020) 2453–2465.
+[38] J. Balamurugan, T.T. Nguyen, N.H. Kim, D.H. Kim, J.H. Lee, Novel core-shell [54] L.M. Azofra, D.R. MacFarlane, C. Sun, A DFT study of planar vs. corrugated
+ CuMo-oxynitride@N-doped graphene nanohybrid as multifunctional catalysts for graphene-like carbon nitride (g-C3N4) and its role in the catalytic performance of
+ rechargeable zinc-air batteries and water splitting, Nano Energy 85 (2021), CO2 conversion, Phys. Chem. Chem. Phys. 18 (2016) 18507–18514.
+ 105987. [55] Z. Liang, M. Luo, M. Chen, X. Qi, J. Liu, C. Liu, S.G. Peera, T. Liang, Exploring the
+[39] X. Zhu, D. Zhang, C.-J. Chen, Q. Zhang, R.-S. Liu, Z. Xia, L. Dai, R. Amal, X. Lu, oxygen electrode bi-functional activity of Ni–N–C-doped graphene systems with N,
+ Harnessing the interplay of Fe–Ni atom pairs embedded in nitrogen-doped carbon C co-ordination and OH ligand effects, J. Mater. Chem. A 8 (2020) 20453–20462.
+ for bifunctional oxygen electrocatalysis, Nano Energy 71 (2020), 104597. [56] U. Wedig, M. Jansen, B. Paulus, K. Rosciszewski, P. Sony, Structural and electronic
+[40] T. Li, H. Deng, J. Liu, C. Jin, Y. Song, F. Wang, First-row transition metals and properties of Mg, Zn, and Cd from Hartree-Fock and density functional calculations
+ nitrogen co-doped carbon nanotubes: the exact origin of the enhanced activity for including hybrid functionals, Phys. Rev. B 75 (2007), 205123.
+ oxygen reduction reaction, Carbon 143 (2019) 859–868. [57] S. Wang, P. Zhou, L. Zhou, F. Lv, Y. Sun, Q. Zhang, L. Gu, H. Yang, S. Guo, A unique
+[41] X. Zhang, Z. Yang, Z. Lu, W. Wang, Bifunctional CoNx embedded graphene gas-migration, trapping, and emitting strategy for high-loading single atomic Cd
+ electrocatalysts for OER and ORR: a theoretical evaluation, Carbon 130 (2018) sites for carbon dioxide electroreduction, Nano Lett. 21 (2021) 4262–4269.
+ 112–119. [58] X. Mao, L. Zhang, G. Kour, S. Zhou, S. Wang, C. Yan, Z. Zhu, A. Du, Defective
+[42] F. Li, Y. Tian, S. Su, C. Wang, D.-S. Li, D. Cai, S. Zhang, Theoretical and graphene on the transition-metal surface: formation of efficient bifunctional
+ experimental exploration of tri-metallic organic frameworks (t-MOFs) for efficient catalysts for oxygen evolution/reduction reactions in alkaline media, ACS Appl.
+ electrocatalytic oxygen evolution reaction, Appl. Catal. B-Environ. 299 (2021), Mater. Interfaces 11 (2019) 17410–17415.
+ 120665. [59] S. Lu, H.L. Huynh, F. Lou, K. Guo, Z. Yu, Single transition metal atom embedded
+[43] M. Khalid, A.M.B. Honorato, H. Varela, L. Dai, Multifunctional electrocatalysts antimonene monolayers as efficient trifunctional electrocatalysts for the HER, OER
+ derived from conducting polymer and metal organic framework complexes, Nano and ORR: a density functional theory study, Nanoscale 13 (2021) 12885–12895.
+ Energy 45 (2018) 127–135. [60] Y.-L. Li, Q. Zhao, S.-J. Liu, G. Ma, Y. Liu, R.-H. Liu, H.-Y. Mu, X. Li, F.-T. Li, Tuning
+[44] A. Macedo Andrade, Z. Liu, S. Grewal, A.J. Nelson, Z. Nasef, G. Diaz, M.H. Lee, electronic structure via CoS clusters for visual photocatalytic H2 production and
+ MOF-derived Co/Cu-embedded N-doped carbon for trifunctional ORR/OER/HER mechanism insight, Chem. Eng. J. 446 (2022), 137399.
+ catalysis in alkaline media, Dalton T. 50 (2021) 5473–5482. [61] Y. Ji, H. Dong, C. Liu, Y. Li, The progress of metal-free catalysts for the oxygen
+ reduction reaction based on theoretical simulations, J. Mater. Chem. A 6 (2018)
+ 13489–13508.
+
+ 9

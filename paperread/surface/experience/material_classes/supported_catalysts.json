@@ -1,17 +1,864 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-06-30T06:51:57.183950+00:00",
+  "updated_at": "2026-07-06T07:30:22.314265+00:00",
   "summary": {
-    "terms": 2,
-    "known_useful": 0,
-    "unknown": 2,
-    "sources": [
-      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    "terms": 27,
+    "known_useful": 9,
+    "unknown": 18
+  },
+  "keyword_inventory": {
+    "coverage": [
+      {
+        "term": "1/3−2/3 monolayer",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "1/3−2/3 monolayer OH*",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "High OH or mixed OH/O",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "high OH or mixed OH/O coverage",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "materials": [
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hg/HgO",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Mo–N/C@MoS2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Pt10Pb/C",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Sn SAs/G-Na",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ag/TiO2",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Au/TiO2",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Au–Ag/TiO2",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CoO/Co",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NiCo LDH/CC",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Pt/C",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Pt10Ni/C",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PtxRu1-x/Ru(0001)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Rh–Rh2O3-NPs/C",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "sAu/NiFe LDH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hg/HgO",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "Sn SAs/G",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Au/NiFe LDH surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "BP/Au surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Hg/HgO electrode",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "water/platinum interface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
     ]
   },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 11
+      },
+      {
+        "term": "C",
+        "count": 10
+      },
+      {
+        "term": "S",
+        "count": 6
+      },
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 4
+      },
+      {
+        "term": "As",
+        "count": 4
+      },
+      {
+        "term": "Au",
+        "count": 4
+      },
+      {
+        "term": "N",
+        "count": 4
+      },
+      {
+        "term": "Ni",
+        "count": 4
+      },
+      {
+        "term": "Sn",
+        "count": 4
+      },
+      {
+        "term": "H",
+        "count": 3
+      },
+      {
+        "term": "Hg",
+        "count": 3
+      },
+      {
+        "term": "Ti",
+        "count": 3
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "Mo",
+        "count": 2
+      },
+      {
+        "term": "Na",
+        "count": 2
+      },
+      {
+        "term": "Pb",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "B",
+        "count": 1
+      },
+      {
+        "term": "Ir",
+        "count": 1
+      },
+      {
+        "term": "P",
+        "count": 1
+      },
+      {
+        "term": "Rh",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "supported_catalyst",
+        "count": 33
+      },
+      {
+        "term": "surface",
+        "count": 9
+      },
+      {
+        "term": "carbon_material",
+        "count": 5
+      },
+      {
+        "term": "hydroxide_oxyhydroxide",
+        "count": 3
+      },
+      {
+        "term": "oxide",
+        "count": 3
+      },
+      {
+        "term": "nitride",
+        "count": 2
+      },
+      {
+        "term": "sulfide",
+        "count": 2
+      },
+      {
+        "term": "nanoparticle",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "C",
+        "count": 7
+      },
+      {
+        "term": "Sn SAs",
+        "count": 4
+      },
+      {
+        "term": "Ag",
+        "count": 3
+      },
+      {
+        "term": "Hg",
+        "count": 3
+      },
+      {
+        "term": "TiO2",
+        "count": 3
+      },
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "g-C3N4",
+        "count": 2
+      },
+      {
+        "term": "G-Na",
+        "count": 2
+      },
+      {
+        "term": "HgO",
+        "count": 2
+      },
+      {
+        "term": "High OH or mixed OH",
+        "count": 2
+      },
+      {
+        "term": "MoS2",
+        "count": 2
+      },
+      {
+        "term": "Mo–N",
+        "count": 2
+      },
+      {
+        "term": "Pt10Pb",
+        "count": 2
+      },
+      {
+        "term": "3 monolayer OH*",
+        "count": 1
+      },
+      {
+        "term": "Au surface",
+        "count": 1
+      },
+      {
+        "term": "Au–Ag",
+        "count": 1
+      },
+      {
+        "term": "BP",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1
+      },
+      {
+        "term": "CC",
+        "count": 1
+      },
+      {
+        "term": "Co",
+        "count": 1
+      },
+      {
+        "term": "CoO",
+        "count": 1
+      },
+      {
+        "term": "HgO electrode",
+        "count": 1
+      },
+      {
+        "term": "NiCo LDH",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH surface",
+        "count": 1
+      },
+      {
+        "term": "O",
+        "count": 1
+      },
+      {
+        "term": "O coverage",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Pt10Ni",
+        "count": 1
+      },
+      {
+        "term": "Rh–Rh2O3-NPs",
+        "count": 1
+      },
+      {
+        "term": "Ru(0001",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{H, O}",
+        "count": 3
+      },
+      {
+        "term": "{Hg, O}",
+        "count": 3
+      },
+      {
+        "term": "{Ag, C, N}",
+        "count": 2
+      },
+      {
+        "term": "{As, Na, S, Sn}",
+        "count": 2
+      },
+      {
+        "term": "{As, S, Sn}",
+        "count": 2
+      },
+      {
+        "term": "{C, Mo, N, S}",
+        "count": 2
+      },
+      {
+        "term": "{C, Pb, Pt}",
+        "count": 2
+      },
+      {
+        "term": "{Ru}",
+        "count": 2
+      },
+      {
+        "term": "{Ag, Au, O, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{Ag, O, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{Au, B, P}",
+        "count": 1
+      },
+      {
+        "term": "{Au, Fe, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{Au, O, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{C, Co, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{C, Ni, Pt}",
+        "count": 1
+      },
+      {
+        "term": "{C, O, Rh}",
+        "count": 1
+      },
+      {
+        "term": "{C, Pt}",
+        "count": 1
+      },
+      {
+        "term": "{Co, O}",
+        "count": 1
+      },
+      {
+        "term": "{Fe, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{Ir}",
+        "count": 1
+      },
+      {
+        "term": "{Pt}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "supported_catalyst_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 11
+      },
+      {
+        "term": "C",
+        "count": 10
+      },
+      {
+        "term": "S",
+        "count": 6
+      },
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 4
+      },
+      {
+        "term": "As",
+        "count": 4
+      },
+      {
+        "term": "Au",
+        "count": 4
+      },
+      {
+        "term": "N",
+        "count": 4
+      },
+      {
+        "term": "Ni",
+        "count": 4
+      },
+      {
+        "term": "Sn",
+        "count": 4
+      },
+      {
+        "term": "H",
+        "count": 3
+      },
+      {
+        "term": "Hg",
+        "count": 3
+      },
+      {
+        "term": "Ti",
+        "count": 3
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "Mo",
+        "count": 2
+      },
+      {
+        "term": "Na",
+        "count": 2
+      },
+      {
+        "term": "Pb",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "B",
+        "count": 1
+      },
+      {
+        "term": "Ir",
+        "count": 1
+      },
+      {
+        "term": "P",
+        "count": 1
+      },
+      {
+        "term": "Rh",
+        "count": 1
+      }
+    ],
+    "material_kind": [
+      {
+        "term": "supported_catalyst",
+        "count": 27
+      }
+    ],
+    "support_components": [
+      {
+        "term": "MoS2",
+        "count": 2
+      },
+      {
+        "term": "MoS2",
+        "count": 2
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1
+      },
+      {
+        "term": "NiCo LDH",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH surface",
+        "count": 1
+      },
+      {
+        "term": "NiFe LDH surface",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      }
+    ],
+    "loaded_components": [
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 2
+      },
+      {
+        "term": "G",
+        "count": 2
+      },
+      {
+        "term": "g-C3N4",
+        "count": 2
+      },
+      {
+        "term": "G-Na",
+        "count": 2
+      },
+      {
+        "term": "Hg",
+        "count": 2
+      },
+      {
+        "term": "HgO",
+        "count": 2
+      },
+      {
+        "term": "Mo–N",
+        "count": 2
+      },
+      {
+        "term": "Mo–N/C@MoS2",
+        "count": 2
+      },
+      {
+        "term": "Pt10Pb",
+        "count": 2
+      },
+      {
+        "term": "Pt10Pb/C",
+        "count": 2
+      },
+      {
+        "term": "Sn SAs",
+        "count": 2
+      },
+      {
+        "term": "Sn SAs",
+        "count": 2
+      },
+      {
+        "term": "Sn SAs/G-Na",
+        "count": 2
+      },
+      {
+        "term": "Ag",
+        "count": 1
+      },
+      {
+        "term": "Ag/TiO2",
+        "count": 1
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "Au",
+        "count": 1
+      }
+    ],
+    "exposed_surfaces": [
+      {
+        "term": "Au/NiFe LDH surface",
+        "count": 1
+      },
+      {
+        "term": "BP/Au surface",
+        "count": 1
+      }
+    ],
+    "approx_loadings": [],
+    "reaction_families": []
+  },
   "entries": [
+    {
+      "term": "Ag/g-C3N4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "Hg/HgO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Hg/HgO"
+      ]
+    },
+    {
+      "term": "Mo–N/C@MoS2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Pt10Pb/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ]
+    },
     {
       "term": "Sn SAs/G",
       "kind": "unknown_high_value",
@@ -19,13 +866,10 @@
       "fields": [
         "surfaces"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ],
-      "count": 1
+      ]
     },
     {
       "term": "Sn SAs/G-Na",
@@ -34,13 +878,262 @@
       "fields": [
         "Material"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "1/3−2/3 monolayer",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
       ],
-      "count": 1
+      "count": 1,
+      "example_contexts": [
+        "Au(111)"
+      ]
+    },
+    {
+      "term": "1/3−2/3 monolayer OH*",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ]
+    },
+    {
+      "term": "Ag/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ag/TiO2"
+      ]
+    },
+    {
+      "term": "Au/NiFe LDH surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Au/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Au–Ag/TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au–Ag/TiO2"
+      ]
+    },
+    {
+      "term": "BP/Au surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "carbon supported Ir",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "carbon supported Pt",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "carbon supported Ru",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "CoO/Co",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CoO/Co"
+      ]
+    },
+    {
+      "term": "Hg/HgO electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "High OH or mixed OH/O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au(100)"
+      ]
+    },
+    {
+      "term": "high OH or mixed OH/O coverage",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ]
+    },
+    {
+      "term": "NiCo LDH/CC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "Pt/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "Pt10Ni/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "PtxRu1-x/Ru(0001)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Rh–Rh2O3-NPs/C",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "sAu/NiFe LDH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "sAu/NiFe LDH"
+      ]
+    },
+    {
+      "term": "water/platinum interface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
     }
   ]
 }

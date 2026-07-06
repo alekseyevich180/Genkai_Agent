@@ -1,14 +1,171 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "defect_engineered_materials",
-  "updated_at": "2026-06-30T06:51:57.276472+00:00",
+  "updated_at": "2026-07-06T07:30:22.261514+00:00",
   "summary": {
-    "terms": 1,
-    "known_useful": 1,
-    "unknown": 0,
-    "sources": [
-      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+    "terms": 11,
+    "known_useful": 10,
+    "unknown": 1
+  },
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "oxygen vacancy",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "vacancy_landscape",
+        "count": 12,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "doped_surface",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "defect",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "dopant",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "surface defects",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "oxygen vacancy",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "point defects",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Sb vacancy",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Defective",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "defective structure",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
     ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Sb",
+        "count": 2
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "surface",
+        "count": 9
+      },
+      {
+        "term": "carbon_material",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "doped_surface",
+        "count": 8
+      },
+      {
+        "term": "Sb vacancy",
+        "count": 2
+      },
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1
+      },
+      {
+        "term": "surface defects",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Sb}",
+        "count": 2
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "Sb",
+        "count": 2
+      }
+    ],
+    "components": [
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "oxygen vacancy",
+        "count": 13
+      },
+      {
+        "term": "point defects",
+        "count": 2
+      },
+      {
+        "term": "Sb vacancy",
+        "count": 2
+      },
+      {
+        "term": "Defective",
+        "count": 1
+      },
+      {
+        "term": "defective structure",
+        "count": 1
+      }
+    ],
+    "reaction_families": []
   },
   "entries": [
     {
@@ -16,15 +173,145 @@
       "kind": "known_useful",
       "research_category": "modeling_tasks",
       "fields": [
+        "Modeling Keywords",
+        "defects",
+        "vacancy_models",
+        "Defect"
+      ],
+      "count": 13,
+      "example_contexts": [
+        "Ni-O-G SACs",
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "vacancy_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 12,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ]
+    },
+    {
+      "term": "doped_surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "point defects",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2"
+      ]
+    },
+    {
+      "term": "Sb vacancy",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "defect",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
         "Modeling Keywords"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
+      "count": 1,
+      "example_contexts": [
+        "CoO/Co"
+      ]
+    },
+    {
+      "term": "Defective",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Defect"
       ],
-      "contexts": [
-        "Ni-O-G SACs"
+      "count": 1,
+      "example_contexts": [
+        "CoO/Co"
+      ]
+    },
+    {
+      "term": "defective structure",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects"
       ],
-      "count": 1
+      "count": 1,
+      "example_contexts": [
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
+      ]
+    },
+    {
+      "term": "dopant",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ZnO"
+      ]
+    },
+    {
+      "term": "nitrogen-doped carbon",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
+      ]
+    },
+    {
+      "term": "surface defects",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "RuO2"
+      ]
     }
   ]
 }

@@ -1,0 +1,31 @@
+这次抽到的关键信息包括：
+
+在 Fe_Co_Cr_oxide_conditions_input_table.csv 里：
+
+- Co, Fe, Cr
+- 吸附物/反应物：O2
+- 建模关键词：Co site, active site, OER, Cr, Co2+, Co3+, Co4+, octahedral sites
+- Co, Fe, W
+
+在 Fe_Co_Cr_oxide_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Co–Fe–Cr (oxy)Hydroxides
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - 未提取
+- 性能：
+  - 未提取
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - 未提取
+- 推荐建模任务：
+  - 未提取

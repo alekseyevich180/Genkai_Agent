@@ -1,0 +1,35 @@
+{
+  "id": "surface_relations",
+  "title": "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
+  "text": "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution\nReaction Catalysts\nJunsheng Chen, Hao Li, Shuangming Chen, Jingyuan Fei, Chang Liu, Zixun Yu,\nKihyun Shin, Zongwen Liu, Li Song, Graeme Henkelman, Li Wei,* and Yuan Chen*",
+  "extraction": {
+    "materials": [
+      "Co–Fe–Cr (oxy)Hydroxides"
+    ],
+    "material_parameters": [],
+    "surfaces": [],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [],
+    "reaction_parameters": [],
+    "modeling_keywords": [],
+    "recommended_modeling_tasks": [],
+    "applications": [
+      "Oxygen Evolution Reaction"
+    ],
+    "links": []
+  }
+}

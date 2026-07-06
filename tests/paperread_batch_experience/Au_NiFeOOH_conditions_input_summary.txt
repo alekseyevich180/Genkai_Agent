@@ -1,0 +1,38 @@
+这次抽到的关键信息包括：
+
+在 Au_NiFeOOH_conditions_input_table.csv 里：
+
+- 吸附物/反应物：O2
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：Active site, single atom, interfacial interactions, charge redistribution, NiFe oxyhydroxide
+- 0.4 wt % sAu
+
+在 Au_NiFeOOH_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - NiFe layered double hydroxide
+  - Au
+- 材料参数：
+  - 0.4 wt % Au loading
+- 反应参数：
+  - overpotential
+  - 0.21 V
+- 性能：
+  - OER activity
+  - overpotential of 0.21 V
+- 表面/晶面：
+  - NiFe LDH surface
+  - Au/NiFe LDH surface
+- 缺陷/活性位点：
+  - Fe atoms in NiFe oxyhydroxide
+- 吸附/覆盖度：
+  - CO32−
+  - H2O
+- 团簇/单原子：
+  - single-atom Au
+- 建模关键词：
+  - density functional theory
+  - Hubbard-U approach
+  - dispersion interactions
+- 推荐建模任务：
+  - single_atom_site

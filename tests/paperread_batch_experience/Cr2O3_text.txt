@@ -1,0 +1,638 @@
+Research Article
+
+ Cite This: ACS Catal. 2018, 8, 5415−5424 pubs.acs.org/acscatalysis
+
+ Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by
+ Cr2O3: A DFT Study
+ Jiamin Jin,† Ningling Sun,† Wende Hu,† Haiyang Yuan,† Haifeng Wang,*,† and Peijun Hu*,†,‡
+ †
+ Key Laboratories for advanced Materials, Centre for Computational Chemistry and Research Institute of Industrial Catalysis, School
+ of Chemistry and Molecular Engineering, East China University of Science and Technology, Shanghai 200237, People’s Republic of
+ China
+ ‡
+ School of Chemistry and Chemical Engineering, Queen’s University Belfast, Belfast BT9 5AZ, U.K.
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Cr-based catalysts have drawn attention as
+ promising room-temperature NO oxidation catalysts. However,
+ Downloaded via UNIV OF TOKYO on January 15, 2026 at 07:24:44 (UTC).
+
+ the intrinsic active component and reaction mechanism at the
+ atomic level remain unclear. Here, taking the Cr2O3, one of the
+ most stable chromium oxides, as an object, we systematically
+ investigated NO oxidation processes on Cr2O3(001) and -(012)
+ surfaces by virtue of DFT+U calculations, aiming to uncover the
+ activity-limiting factors and basic structure−activity relationship of
+ the Cr2O3 catalyst. It was revealed that NO oxidation could not
+ proceed via a Mars−van Krevelen mechanism involving the lattice
+ oxygen on both surfaces. For the Cr2O3(001) surface exposing the
+ isolated three-coordinated Cr3c, the reactions are inclined to occur
+ through the Eley−Rideal route, in which the NO couples directly
+ with the molecular O2* or atomic O* adsorbed at the Cr3c site to form two key intermediate species (ONOO* and NO2*)
+ following a barrierless process. Nevertheless, the overall activity is limited by the irreversible adsorption of NO2 species on the
+ highly unsaturated Cr3c. In contrast, on the (012) termination, which exposes the ﬁve-coordinated Cr5c, the NO2* can be easily
+ released, but the reactant O2 cannot be eﬃciently adsorbed and also results in a limited overall activity at room temperature. To
+ achieve a higher activity, a thermodynamically favored interface model of monochain CrO3 supported on Cr2O3(012) was
+ proposed, which shows an improved O2 adsorption energy of −0.99 eV and thus an enhanced activity of Cr2O3(012), possibly
+ accounting for the experimentally high activity of Cr-based catalysts usually involving the Cr3+/Cr6+ redox. This study
+ demonstrated the catalytic ability of Cr2O3 for NO oxidation at room temperature, and the presented systematic picture may
+ facilitate the further design of more active Cr-based catalysts.
+ KEYWORDS: density functional theory, chromium oxides, NO oxidation, room temperature, catalytic mechanism, monochain CrO3
+
+ 1. INTRODUCTION because of the irreversible adsorption of NO2. Thus, exploring
+ NO oxidation to NO2 is a key process in a number of NOx nonprecious and low-temperature catalysts for NO oxidation
+ remediation technologies,1 including selective catalytic reduc- and understanding the catalytic mechanism are of great
+ tion (SCR)2−4 and NOx storage and reduction (NSR).5,6 importance.
+ Platinum-based catalysts7−10 have been widely used for NO Recently, there has been great interest in the development of
+ oxidation; however, their high cost restrict their applications. Cr-based catalysts17−24 for the eﬀective removal of NOx from
+ Transition-metal oxides (TMOs) have recently attracted great stationary sources. Smirniotis et al.17,25 found that Cr oxides
+ attention as promising catalysts for NO oxidation, and previous supported on Hombikat TiO2 showed superior performance in
+ studies have made much progress in ﬁnding highly eﬃcient the low-temperature selective catalytic reduction (SCR) of NO
+ TMO catalysts. Perovskites such as La 1−x Sr x CoO 3 , with NH3 and pointed out the existence of a Cr2O3 crystal
+ La1−xSrxMnO3, and Mn-mullite (Sm,Gd)Mn2O5 are expected phase. Shiba et al.26 reported earlier that a TiO2-supported
+ to be viable alternatives to precious-metal catalysts.11−14 These chromium component had a high ability for the oxidation of
+ observations/suggestions are particularly noteworthy because NO to NO2. Cai et al.27 studied the eﬀect of Cr on the NO
+ these catalysts are much less expensive than catalysts based on oxidation over ceria−zirconia solid solutions, proposing that
+ Pt-group metals. However, they are still not satisfactory for NO the synergistic mixture of the well-dispersed CrOx and
+ oxidation at room temperature. It has been reported that the
+ activated carbon, especially modiﬁed carbon15 and activated Received: January 8, 2018
+ carbon ﬁbers,16 are active for catalytic NO oxidation at room Revised: April 6, 2018
+ temperature, but the catalytic activity diminished quickly Published: May 3, 2018
+
+ © 2018 American Chemical Society 5415 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+Figure 1. Hexagonal unit cell of Cr2O3 (a) together with the rhombohedral primitive cell (b). Red spheres stand for O atoms; blue spheres represent
+Cr atoms. The Cr atoms denoting with ↑↓ stand for the spin arrangements. (c, d) Top views of the optimized surface conﬁguration of the
+Cr2O3(001) and -(012) surfaces, respectively. This notation is used throughout the paper.
+
+Ce0.5Zr0.5O2 exhibited higher catalytic activity in comparison to 2. CALCULATION METHOD AND MODEL
+separate species. More recently, Liu et al.22 found that All of the spin-polarized calculations in this work were
+chromium oxides prepared by an ammonia precipitation performed within the framework of density functional theory
+method showed higher NO to NO2 conversions at ambient (DFT) using the Vienna ab initio simulation package
+temperature and suggested that the amorphous-phase structure (VASP).38,39 A generalized gradient approximation (GGA)
+(neither Cr2O3 nor CrO3) of the prepared chromic oxide with Perdew−Burke−Ernzerhof (PBE)40 functional was
+catalysts is critical for obtaining high performance and long- employed to describe the exchange and correlation energy.
+term stability for NO conversion. These attractive ﬁndings Electron−ion interactions were treated within the projected
+represent much progress, because Cr-based oxides are augmented wave (PAW) method.41 The valence electronic
+signiﬁcantly less expensive and more abundant and, more states were expanded in plane wave basis sets with a cutoﬀ
+importantly, they were demonstrated to possess excellent energy of 450 eV. The Cr[3d54s1], Cr[3p63d54s1], O[2s22p4],
+performance in the complete oxidation of NO at room and N[2s22p3] states were treated as valence states for
+temperature.22−24 However, several important issues on Cr- describing Cr3+ in Cr2O3, Cr6+ in CrO3, and O and N
+based catalysts remain to be addressed. First, as chromium is a elements, respectively. We used a Monkhorst−Pack k-mesh of
+metal oxide with multivalence, the real active component for 8 × 8 × 3 for the bulk of Cr2O3. For both the Cr2O3(001) and
+NO oxidation is still controversial, despite the fact that a Cr6+ -(012) surfaces, a p(2 × 2) supercell with four Cr2O3-unit layers
+species with high dispersion was suggested very recently to be was used, and the vacuum between slabs was 12 Å, in which a 2
+more favorable than Cr2O3 to oxidize NO.28−30 Second, the × 2 × 1 k-point mesh was used. During structural optimization,
+favorable reaction path behind the room-temperature NO the bottom two layers of the slab were ﬁxed at bulk truncated
+oxidation is not yet clear. Third, as the most common positions and the top two layers and the adsorbates were fully
+chromium oxide, what role Cr2O3 might play in NO conversion relaxed. All of the adsorption geometries were optimized until
+remains elusive. In particular, one may ask the following the forces on all atoms were below 0.05 eV/Å, and the
+questions. (i) How easily can the involved molecules (O2, NO, transition states were located with a constrained minimization
+NO2, etc.) in NO oxidation chemisorb and convert on Cr2O3? technique.42−45 The DFT-D3(BJ) method was used to describe
+(ii) Is the catalytic activity surface sensitive or insensitive to the dispersion eﬀects in the system.46
+Cr2O3? (iii) What are the advantages and shortcomings of Bulk Cr2O3 is an antiferromagnetic (AFM) semiconductor,
+Cr2O3 for catalyzing room-temperature NO oxidation? Could which crystallizes in the hexagonal corundum structure (space
+Cr2O3 cooperate with CrO3 to avoid the shortcomings and group R3̅c; see Figure 1a). Three diﬀerent AFM conﬁgurations:
+obtain an enhanced activity? Inspired by these questions, + + − −, + − − + , and + − + −, could exist for the Cr cations
+therefore, it is highly desirable to investigate the nature of in the rhombohedral primitive cell (see Figure 1b), where +
+Cr2O3 for NO oxidation theoretically. and − denote spin up and spin down, respectively. The tests
+ With the aim of revealing the aforementioned issues, in this showed that the equilibrium magnetic order of this material in
+work a molecular-level investigation of catalytic oxidation of the its pure state is the AFM + − + − conﬁguration (shown in
+nitric oxide on Cr2O3 and at the Cr2O3/CrO3 interface is Figure 1), which is consistent with previous studies.47 In
+studied: two typically exposed surfaces of Cr2O3, (001) and addition, to correctly describe the strong correlation of Cr2O3
+(012) surfaces, are examined to address (i) the catalytic materials, the DFT+U method, proved to have a signiﬁcantly
+mechanism, (ii) the activity-limiting factor of Cr2O3, (iii) the improved description of the structure and magnetic and
+basic structure−activity relationship of Cr2O3 on NO oxidation, electronic properties of materials,48−50 has been adopted. To
+and (iv) the possible Cr2O3/CrO3 interface model with obtain a proper U term for the Cr 3d orbital, the electronic
+improved activity. It was noted that ﬁrst-principles studies structure (the magnetic moment of Cr3+ and the band gap of
+have been used extensively to understand NO catalytic Cr2O3 bulk) and the chemical properties such as the formation
+oxidation on metal,10,31,32 metal oxides,33−35 and other energy of Cr2O3 (referring to 1/2Cr2O3 + 1/4O2 → CrO2) and
+systems.36,37 However, to the best of our knowledge, this is NO adsorption energy on the Cr2O3(001) surface, which
+the ﬁrst computational study focusing on room-temperature reﬂect the Cr−O bond strength and the adsorption ability of
+NO oxidation catalyzed by chromium oxides. the Cr3+ site, respectively, were calculated under diﬀerent U
+ 5416 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+Table 1. Formation Energies of Cr2O3 with Respect to the Reaction 1/2Cr2O3 + 1/4O2 → CrO2 (ΔH in eV)a
+ U
+ 0 1 2 3 4 5 exptl
+ ΔH/eV −1.10 −0.87 −0.62 −0.38 −0.14 0.05 −0.29
+ Ead/eV −1.79 −1.34 −0.99 −0.79 −0.56 −0.44 −0.80
+ mag moment/μB 2.62 2.74 2.82 2.88 2.94 2.98 2.76
+ band gap/eV 1.59 2.03 2.46 2.84 3.13 3.32 3.30
+a
+ The adsorption energies (Ead/eV) of NO on the Cr2O3 (001) surface, the magnetic moment of Cr3+, and band gap of Cr2O3 on a series of U values
+are also listed. For a comparison, the experimental values are also given.
+
+Figure 2. Optimized adsorption structures of NO (a, b), molecular O2 (c, d), dissociated O2 (e), and NO2 (f−j) on the Cr2O3(001) surface. The
+value at the top right of each conﬁguration is the corresponding adsorption energy. All energies are in eV.
+
+values. As shown in Table 1, in comparison with the 3. RESULTS AND DISCUSSION
+experimental value for each term, a proper value of Ueff = 3.0 3.1. NO Oxidation on Cr2O 3(001) Surface. The
+eV can be obtained on comprehensive consideration, which optimized surface structure of Cr2O3(001) is shown in Figure
+basically gives a minor error for all of the terms, especially the 1c, from which one can see that the surface is terminated by
+two chemical properties. For example, the calculated formation three-coordinated Cr3c cations and three-coordinated lattice
+energy of Cr2O3 and the NO adsorption energy on the oxygens (O3c), and the distance of the adjacent Cr3c−Cr3c on
+Cr2O3(001) surface are −0.38 and −0.79 eV at Ueff = 3.0 eV, the (001) surface is very long (5.051 Å), implying that the Cr3c
+respectively, being close to the respective experimental values site is basically isolated. Notably, the coordinatively unsaturated
+of −0.29 and −0.80 eV. In addition, the identiﬁed Ueff value Cr3c cations are generally considered to be vital for the catalytic
+ activity, providing basic adsorption sites for NO and O2.
+here is close to the ﬁndings of Shi et al.50 and Mosey et al.51
+ As a start, the adsorption energetics and geometries of NO
+Therefore, the parameter of Ueff = 3.0 eV for Cr2O3 is utilized on the Cr2O3(001) surface were explored. As shown in Figure
+hereinafter. 2a,b, NO on Cr2O3(001) prefers to adsorb via its N atom on
+ The adsorption energy, Ead, of an adsorbate on the surface is the Cr3c in a bending conﬁguration, corresponding to an
+calculated as Ead = Esurf/adsorbate − Esurf − Eadsorbate, where adsorption energy of −0.79 eV. First, we considered whether
+Esurf/adsorbate and Esurf are the total energies of the surface slab the adsorbed NO (NO*) could react with the lattice oxygen
+with and without the adsorbate, respectively, and Eadsorbate is the (the Mars−van Krevelen path). It was found that the reaction
+energy of the NO or other small molecules under vacuum. On NO* + O3c → NO2* requires a barrier as high as 1.81 eV, and
+the basis of the above deﬁnition, a negative Ead indicates the desorption energy of NO2 is very high (1.96 eV), which is
+ too high for the occurrence of the reaction at room
+favorable (exothermic) adsorption. Notably, the Gibbs free
+ temperature, indicating that NO oxidation cannot proceed via
+energy change (ΔG) of each elementary step was estimated the MvK path on the Cr2O3(001) surface.
+according to ΔG = ΔH − TΔS; the reaction enthalpy ΔH is Second, we resorted to the coadsorption and reaction of NO
+approximated with the total energy diﬀerence (ΔE) including and O2 on Cr2O3(001) via the Langmuir−Hinshelwood
+the zero-point energy correction (ΔZPE) and neglecting the mechanism (LH), in which an important issue is to determine
+small heat capacity correction and Δ(pV) term. Regarding the the adsorption manner of O2 and to identify whether the
+entropy eﬀect term (TΔS), it is usually trivial for the surface adsorbed O2 could dissociate into O atoms that then oxidize
+reactions with no adsorption/desorption involved, due to the NO. As illustrated in Figure 2c,d, O2 can molecularly adsorb on
+entropies of the surface species typically being small and also the unsaturated Cr3c with the O−O bond parallel to the surface
+ (Figure 2d, π-Cr3c-adsorption) or alternatively in a tilted
+largely canceling between the initial state and the transition
+ manner (Figure 2c, σ-Cr3c-adsorption), giving adsorption
+state or the ﬁnal state. For the adsorption/desorption energies of −0.90 and −0.95 eV, respectively, which show
+processes, the large entropy contributions of gaseous molecules that O2 can bind more strongly than an NO molecule on the
+(TΔS), including the vibrational, rotational, and translational Cr2O3(001) surface. Moreover, the reactant O2 is typically
+entropies, have to be considered to estimate ΔG at a given richer than NO under the practical condition of NO oxidation,
+temperature.52−55 and therefore it can be expected that O2 could occupy the Cr3c
+ 5417 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+site preferentially. It should be noted that the O2 dissociation is surface comprise six consecutive elementary steps: (i) the
+diﬃcult from both of the two adsorption conﬁgurations, with coadsorption of NO and O2, NO + O2* → NO* + O2*, (ii)
+the dissociation barriers being above 1.53 eV in which the the reaction between the adsorbed NO* and O2*, NO* + O2*
+distance of the O−O bond is activated to 1.90 Å at the TS, → NO2* + O*, (iii) the release of the ﬁrst NO2, NO2* + O*
+implying the infeasibility of obtaining O atoms via oxygen → NO2 + O*, (iv) the coadsorption of O atom with another
+dissociation at room temperature. In other words, the reactant NO, NO + O* → NO* + O*, (v) the formation of the second
+O2 has to participate in the subsequent reactions in the NO2, NO* + O* → NO2* + *, and (vi) the desorption of the
+molecular state. second NO2, NO2* → NO2 + *, completing the catalytic cycle.
+ As depicted in Scheme 1, the proposed reaction paths for It was worth noting that, with respect to the initial coadsorption
+NO oxidation via NO and O2 coadsorption on the Cr2O3(001) of NO and O2 molecules, they could adsorb at two adjacent
+ Cr3c sites or alternatively at the same single-atom Cr3c site,
+Scheme 1. Elementary Steps of NO Oxidation Based on the owing to the high unsaturation of three-coordinated Cr3c.
+Langmuir−Hinshelwood Path (Blue for LH-1, Coadsorption These two adsorption conﬁgurations lead to two diﬀerent
+of NO and O2 at Adjacent Reaction Sites, and Green for LH- reaction routes, named LH-1 and LH-2, respectively, and
+2, Cobinding at the Single Cr Atom) and the Eley−Rideal Figure 3 illustrates their energy proﬁles (blue and green curves,
+Path on the Cr2O3(001) Surface (Red) respectively).
+ For the LH-1 path, the adsorption energy of NO at Cr3c with
+ O2* sitting at the nearest-neighboring Cr3c is −0.78 eV (see IS1
+ in Figure 3), and the as-formed coadsorption species can
+ overcome a low barrier of 0.34 eV to form NO2* and atomic
+ O* (see FS1 in Figure 3), which is exothermic by −2.21 eV.
+ The optimized transition state structure (TS1) is shown in
+ Figure 3, and one can see that the forming N−O bond is 2.287
+ Å and the O−O bond is elongated to 1.338 Å from 1.305 Å.
+ Afterward, NO2* could desorb from Cr3c but is limited by a
+ large energy requirement, as high as 1.30 eV. By comparison,
+ the LH-2 path starting with the NO and O2 coadsorption at a
+ single Cr3c atom seems more favorable. First, as NO coadsorbs
+ with O2* at the same Cr3c, they would spontaneously transform
+ to a four-membered-ring ON*OO* species (see IS2 in Figure
+ 3) without an apparent barrier; more importantly, this process
+ is strongly exothermic by −1.19 eV, indicating the greater
+ stability of IS2 in comparison with IS1 (see Figure 3). Second,
+ the ON*OO* intermediate can readily break its O−O bond,
+ resulting in the coadsorbed NO2* and O*, which is slightly
+ exothermic by −0.08 eV and has a low barrier of 0.39 eV (see
+ TS2 in Figure 3 for the transition state, showing an elongated
+ O−O bond of 1.825 Å). Moreover, the release of NO2*
+
+Figure 3. Energy proﬁles of NO oxidation on Cr2O3(001) from three pathways: LH-1 (blue), LH-2 (green), and ER route (red). The solid and
+dashed lines represent the total energy proﬁles including the ZPE corrections and the Gibbs free energy proﬁles (including mainly the entropy
+contribution of gaseous molecules) at 300 K, respectively. The optimized structures of some important intermediates and transition states of each
+path are illustrated, and the key structural parameters are labeled. All length values are given in Å.
+
+ 5418 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+becomes easier at an energy release of 0.42 eV owing to the conversion (IS3 → FS3 versus IS2 → FS2). Moreover, another
+competing eﬀect of atomic O* (see FS2 in Figure 3), in merit of the ER pathway at this stage is that NO2 can be
+comparison to the strongly endothermic progress via the LH-1 directly released to the gas phase instead of the indirect energy-
+path (1.30 eV). consuming NO2* desorption process in the LH-2 path. In
+ By comparing the energy proﬁles of such two LH pathways other words, we can speculate that the ER path could be a
+for NO oxidation (NO* + O2* → NO2 + O*; see Figure 3), preferable route for the stage (NO + O2 + * → NO2 + O*, i.e.
+one can clearly see that LH-2 is more favorable energetically. the formation process of the ﬁrst NO2) in NO oxidation. In
+However, neither LH path can remove the left O* through addition, it was found that the gaseous NO can follow the ER
+reacting with NO. On one hand, O* cannot react with another route to readily couple with the left atomic O* from the above
+NO* via the LH-1 path as a result of the long distance between process, forming the second NO2* (a monodentate-ONO
+the adjacent Cr cations; on the other hand, it is not plausible conﬁguration; see Figure 2i) exothermically by −1.11 eV.
+that NO cobinds with O* at the same Cr3c to follow the LH-2 Similar to the case of the surface O2* with ER path, this is also a
+path owning to the strong binding of O* (−1.56 eV). barrierless process, which is conﬁrmed by scanning the
+Therefore, an alternative pathway in which NO directly couples potential energy proﬁle of NO2* formation (see red line in
+with the surface O*, as well as the O2*, from the gas phase Figure 4). Furthermore, a natural population analysis has also
+(Eley−Rideal, ER path) is examined below. been performed using the Periodic NBO software56 (see details
+ As illustrated in Scheme 1 (see the red line), the gaseous NO in Tables S1 and S2) to understand these two barrierless
+can spontaneously couple with the surface-adsorbed O2* to processes of NO coupling with O* or O2*. It was found that
+form a new monodentate cis-ONOO* conﬁguration (see IS3 in either the surface O* or O2* on Cr2O3(001) carries an
+Figure 3) when the NO molecule is arbitrarily put around the unpaired electron, being the radical-like species, which could
+O2* at a distance of ∼3.0 Å or longer; the whole process is readily couple with the open-shell NO molecule. In other
+exothermic by −1.29 eV. To conﬁrm this barrierless process, words, it could be the radical-like chemistry that accounts for
+we examined the energy proﬁle of ONOO* formation by the origin of two such barrierless processes.
+putting the gaseous NO at a series of heights from the adsorbed To better understand the overall reaction behavior at a
+O2*. As depicted in Figure 4 (blue line), one can see that the realistic temperature (T = 300 K), the entropy eﬀects of the
+ reactant NO/O2/NO2 molecule (TΔSNO, TΔSO2, and TΔSNO2
+ are 0.66, 0.64, and 0.75 eV, respectively) have been taken into
+ consideration to estimate the free energy proﬁle (see details in
+ Calculation Method and Model). From the obtained free
+ energy proﬁles (see dashed line in Figure 3), one can see that
+ the whole free energy is downhill for the formation of the ﬁrst
+ gaseous NO2 and the second NO2* intermediate in the ER
+ path, indicating that it is an easy process on the Cr2O3(001)
+ surface. However, the adsorbed monodentate NO2* is strongly
+ bound to the Cr3c site (−1.56 eV), resulting in its diﬃcult
+ removal and eventually limiting the overall activity of
+ Cr2O3(001) toward NO oxidation at room temperature.
+ According to the above discussions, an optimal pathway of
+ NO oxidation on Cr2O3(001) can be summarized as follows.
+ First, the NO reacts with the surface-adsorbed O2* from the
+ gas phase (ER path), leading to the formation of cis-ONOO*
+ species without an evident barrier. Second, the cleavage of the
+Figure 4. Illustration of NO chemisorption processes on molecular
+ cis-ONO−O* bond results in O* formation and the ﬁrst NO2
+(blue) and atomic (red) oxygen adsorbed on Cr2O3(001). The zero desorbing into the gas phase, with a dissociation barrier of 0.08
+point (dashed) is aligned to the system energy when the NO molecule eV. Third, NO couples with the adsorbed atomic O* at the
+is in the gas phase. isolated Cr3c site spontaneously, resulting in the formation of
+ the second NO2*. Finally, the NO2* desorbs, completing the
+ catalytic cycle. The Cr2O3(001) surface can eﬃciently catalyze
+energy monotonously declines as the ON···OO bond distance the ﬁrst three steps, but the adsorbed NO2* binds with the
+decreases, implying that there is indeed no total energy barrier. highly unsaturated Cr3c sites so strongly that it becomes a
+Then, the intermediate cis-ONOO* can readily break its poisoning species and limits the overall activity of Cr2O3(001)
+ONO−O bond and release the NO2 into the gas phase, with a for NO oxidation at room temperature.
+rather low barrier of 0.08 eV and a reaction energy change of 3.2. NO Oxidation on the Cr 2 O 3(012) Surface.
+−0.40 eV. The corresponding transition state (TS3) is shown Considering that the (012) facet is another typically exposed
+in Figure 3, in which the ONO−O bond increases to 1.711 Å surface,57 we further investigated the NO oxidation on the
+from the original 1.442 Å. These results demonstrate that the Cr2O3(012) surface to explore the structural eﬀect on the
+ER path could exist in the system. Speciﬁcally, comparing the activity of Cr2O3. As depicted in Figure 1d, Cr2O3(012)
+ER path with the LH-2 path from the energy proﬁles in Figure exposes the three-coordinated lattice O3c and ﬁve-coordinated
+3, one can see that the identiﬁed cis-ONOO* species (IS3) is Cr5c, which constitute basic active sites; the adjacent Cr5c−Cr5c
+0.10 eV more stable than the four-membered-ring species (IS2) distance on Cr2O3(012) is 3.559 Å, being relatively shorter than
+in the LH-2 path, and the cleavage barrier of the ONO−O that of Cr3c−Cr3c (5.051 Å) on Cr2O3(001). By viewing the
+bond in cis-ONOO* is lower than the latter barrier (0.08 eV vs coordination environment of the surface Cr site, one could
+0.39 eV), which results in a smaller eﬀective barrier for ONOO infer that the NO2 adsorption could decrease at Cr5c, possibly
+ 5419 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+Figure 5. Optimized adsorption structures of NO (a), molecular O2 (b, e, f), dissociated O2 (g), and NO2 (c, d, h) on the Cr2O3(012) surface. The
+value at the top right of each conﬁguration is the corresponding adsorption energy. All of the energies are given in eV.
+
+Figure 6. Reaction proﬁle of NO oxidation by O2 on the Cr2O3(012) surface, following the Langmiur−Hinshelwood mechanism. The solid and
+dashed lines represent the total energy proﬁles including the ZPE corrections and the Gibbs free energy proﬁles (including mainly the entropy
+contribution of gaseous molecules) at 300 K, respectively. The optimized structures of some key intermediates and transition states of each path are
+illustrated, with the important bond length information. All of the values are given in Å.
+
+giving rise to an improved activity for NO oxidation in revealing that the NO oxidation also cannot proceed via the
+comparison with Cr2O3(001). MvK route on the (012) surface. With respect to the
+ As shown in Figure 5, Cr2O3(012) indeed has a weaker adsorption of an O2 molecule, it is found that O2 would
+adsorption ability on NO2 as expected, due to the increased preferably adsorb with a double σ-bond on Cr2O3(012) (Figure
+coordination number of the surface Cr5c site. The most stable 5f) at an adsorption energy of −0.65 eV, in comparison with
+conﬁguration of NO2* on the (012) surface is μ(N,O) nitrito the other two adsorption conﬁgurations, the single σ-bond
+(Figure 5h) with an adsorption energy of −1.07 eV, which is (Figure 5b, −0.41 eV) and π-bond (Figure 5e, −0.31 eV), on
+much weaker than that on the (001) surface (−1.56 eV). the (001) surface. In addition, the dissociation of a double σ-
+Especially, for the monodentate-ONO, which is the most stable bond adsorbed O2 into O atoms is exothermic (−0.58 eV) but
+case on the (001) surface, the corresponding binding energy on gives a barrier as high as 1.31 eV, which implies that the
+the (012) surface is only −0.77 eV (Figure 5d). Thus, it is dissociation is diﬃcult at ambient temperature. In light of the
+reasonable to suggest that NO2 adsorption might not be the fact that the NO binding energy at one Cr5c site is better than
+limiting factor on the (012) surface. the energy of O2 occupying two Cr5c sites (−0.75 vs −0.65 eV),
+ To evaluate the overall activity of Cr2O3(012), the it is worth noting that in reality O2 could exist in minority and
+adsorption of reactants NO and O2 and their possible prefer to be with the single σ-bond conﬁguration to participate
+interactions on Cr2O3(012) was investigated. It is found that in the catalytic oxidation, owing to the competitive adsorption
+NO tends to adsorb at Cr5c at the N-end with an adsorption eﬀects between NO* and O2*.
+energy of −0.75 eV (vs −0.32 eV with the O-end; see Figure At the adjacent Cr5c site around NO*, O2 can weakly
+5a). Then we explored the MvK path, and the formation of coadsorb with an adsorption energy of −0.41 eV, named the
+ONO3c was identiﬁed to be endothermic by 0.98 eV. Moreover, IS1 state (see Figure 6); IS1 can quickly transform into a more
+the desorption of ONO3c requires an energy as high as 2.47 eV, stable ON*OO* species (IS1′) without an apparent barrier.
+ 5420 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+Subsequently, the formed ON*OO* can break its O−O bond
+by overcoming a barrier of 0.69 eV, yielding the intermediates
+ON*O and O*, which corresponds to a reaction enthalpy of
+−0.59 eV. The ON*O can readily desorb at an energy cost of
+0.54 eV and form the ﬁrst NO2 molecule. With respect to the
+remaining O* atom, it can readily react with another NO*
+adsorbed nearby to form the μ-(N,O)-nitrito NO2* (see Figure
+5h) because of the short Cr−Cr distance on the (012) surface.
+This progress is almost spontaneous; the barrier is rather low
+(0.10 eV, the forming O−N bond is 2.069 Å at the TS2), and
+the reaction is greatly exothermic by −0.76 eV. Finally, the
+second NO2 desorbs into the gas phase, completing the
+catalytic cycle.
+ The free energy proﬁle in Figure 6 reveals that the successive
+conversion from the coadsorbed NO* and O2* into two NO2
+molecules can proceed smoothly without high barriers.
+However, O2 adsorption is very weak (+0.23 eV for the
+adsorption free energy (ΔGads) including the entropy eﬀect at
+room temperature), especially due to the competitive eﬀect Figure 7. Projected density of states (DOS) for the Cr 3d electrons on
+resulting from the stronger adsorption of NO (ΔGads= −0.09 the Cr2O3(001) (blue) and Cr2O3(012) surfaces (red) with respect to
+ the Fermi levels.
+eV) to repel O2* occupation on Cr2O3(012). Accordingly, a
+low coverage of O2* can be expected, which would lead to a
+ surface. It is worth noting that, under realistic conditions of NO
+limitation of the overall activity of Cr2O3(012). From the free
+ oxidation, the presence of the excess oxygen could potentially
+energy proﬁle (see dashed lines in Figure 6), one could further
+ oxidize Cr2O3 into CrO3 species thermodynamically. In
+ascertain that the O2 activation would be the rate-determining
+ addition, some evidence that the Cr6+ species could promote
+step in the whole progress of NO oxidation on the Cr2O3(012)
+ or even dominate the overall activity of Cr2O3 catalysts has
+surface. been given.22,23,28−30 Here, we computationally explore the
+ In addition, it is worth mentioning that, due to the fact that possible synergetic mechanism between Cr2O3(012) and CrO3,
+only a small amount of O2 could adsorb on the Cr2O3(012) aiming to enhance the O2 adsorption on Cr2O3(012) and thus
+surface, the subsequent Eley−Rideal process through the improve the whole catalytic performance.
+gaseous NO random collision with the surface O2* can hardly In order to obtain a quantitative estimation of the presence
+be expected to occur. In addition, on the (012) surface, it is of CrO3, a simple phase diagram was calculated by considering
+unlikely that NO and O2 coadsorb at a single Cr5c atom, which the thermodynamic equilibrium between the two states, Cr2O3
+rules out the possibility of the LH-2 process as occurs on the and CrO3. The crystal structure of CrO3 is illustrated in Figure
+(001) surface. 8a, which is a stacked conﬁguration of one-dimensional CrO3
+ Now, we are in a position to comparatively discuss the NO
+oxidation activities on the (001) and (012) surfaces. In brief,
+the (001) surface exposing the isolated Cr3c site can eﬃciently
+adsorb and activate the reactant O2, and NO can favorably
+attack O2* and trigger subsequent reactions through the ER
+path. However, the overall reaction would be depressed by the
+strongly adsorbed NO2* species on Cr3c. In contrast, as a result
+of the surface exposed Cr5c site, the (012) surface has a weaker
+adsorption ability, which could guarantee the eﬃcient
+desorption of the formed NO2 species; however, in the LH
+path the reactant O2 binds too weakly at Cr5c and thus results in
+ Figure 8. (a) Bulk structure of CrO3 oxide, which shows a chain-
+a low coverage, limiting the overall conversion rate of NO stacked conﬁguration. (b) Proposed model structure of monochain-
+oxidation. Therefore, it is the structural coordination feature of CrO3/Cr2O3. (c) O2 adsorption on the interface site of Cr6+/Cr3+.
+Cr3c versus Cr5c that determines their diﬀerent activity Green, blue, and red (pink) indicate Cr6+, Cr3+, and O, respectively,
+constraints. In addition, the diﬀerent adsorption abilities of while yellow denotes the adsorbed O2.
+Cr3c and Cr5c sites can be rationalized from their energy levels
+of 3d electrons. As the projected density of states shows in chains through weak van der Waals interactions.58,59 At a given
+Figure 7, the Cr 3d electrons dominate the valence electron temperature and O2 partial pressure, the Gibbs free energy
+maximum (VBM) for both the (001) and (012) surfaces, and change from the Cr2O3 to CrO3 can be written as
+the 3d electrons of Cr3c on (001) are more localized near the
+ bulk 1 bulk
+Fermi level (and thus a higher reactivity) in comparison with ΔG(T , pO ) = GCrO (T , pO ) − GCr O (T , pO2 )
+ 3
+that of Cr5c on (012), veriﬁed by higher d-band centers of 2 2 2 2 3
+−1.23 and −2.20 eV for the 3d majority electrons, respectively. 3
+ − μO (T , pO )
+ 3.3. Synergetic Mechanism between Cr2O3 and CrO3. 4 2 2 (1)
+On the basis of the above results, to boost the catalytic activity
+ where Gbulk bulk
+ CrO3(T, pO2) and GCr2O3(T, pO2) are the Gibbs free
+of Cr2O3 for low-temperature NO oxidation, one possible
+strategy is to increase the surface O2 coverage on Cr2O3(012) energies for CrO3 and Cr2O3, respectively. μO2(T, pO2) is the
+or to weaken the binding strength of NO2 on the Cr2O3(001) chemical potential of gas-phase O2 at the given temperature T
+ 5421 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+and partial pressure pO2. The chemical potential μO2(T, pO2) was 8c), which may provide an alternative pathway to supply O2
+calculated on the basis of the thermodynamic equation species on Cr2O3(012). In addition, at this interface site, the
+ product NO2 would adsorb moderately with an adsorption
+ pO
+ μO (T , pO ) = μO (T , p°) + RT ln 2 energy of −1.09 eV, implying the relatively easy desorption
+ 2 2 2 p° once generated: i.e., no evident poisoning eﬀect. Therefore, an
+ pO enhanced activity for low-temperature NO oxidation catalyzed
+ = μO (0 K, p°) − TSO2(T , p°) + RT ln 2 by Cr2O3(012) could be expected at the mc-CrO3/Cr2O3(012)
+ 2 p° interface. On the other hand, our model could also provide a
+ (2) possible explanation for the experimental XPS observation that
+where μO2(0 K, p°) was calculated from DFT including the Cr6+ could exist and improve the catalytic activity of Cr2O3.
+ Additionally, such a supported monochain CrO3 itself may also
+zero-point energy and the entropies were taken from the
+ facilitate the NO oxidation process as an individual site, a study
+experimental data.60 When ΔG(T, pO2) < 0, the oxidation
+ of which is under way in our follow-up work.
+formation is favored. Therefore, we can obtain the phase
+diagram of Cr2O3/CrO3, illustrated in Figure 9 (the black solid
+ 4. CONCLUSION
+line). We can see that under the typical experimental condition
+(T = 300 K, pO2/p° = 0.2), the Cr2O3 species are not inclined to In summary, the reaction mechanism of NO oxidation
+form CrO3 thermodynamically. catalyzed by two common Cr2O3 facets, i.e. (001) and (012),
+ at room temperature has been studied, aiming at shedding light
+ on the catalytic ability of Cr2O3 and the inherent activity-
+ limiting factors. It was found that the (001) termination with
+ the highly unsaturated Cr3c exposed exhibits strong adsorption
+ ability and the overall activity would be limited by the strong
+ adsorption of NO2 species (poisoning eﬀect); the whole
+ reaction tends to follow the Eley−Rideal mechanism. In
+ contrast, on the (012) termination which exposes the ﬁve-
+ coordinated Cr5c, the reactant O2 cannot be eﬃciently adsorbed
+ and activated, implying the limited catalytic performance for
+ NO oxidation, which is in good accordance with the
+ experimental ﬁndings. To boost the catalytic activity of Cr2O3
+ catalyst, we proposed an interface structure by depositing a
+ monochain CrO3 on Cr2O3(012), which could be self-evolved
+ on Cr2O3(012) thermodynamically under the typical reaction
+ conditions. Signiﬁcantly, it has been found that the interface
+ Cr6+@Cr3+ sites could show a much improved adsorption
+ ability of O2 and can enhance the activity of Cr2O3(012). This
+Figure 9. Phase diagram of Cr oxides against partial pressures of O2 study presents a systematic picture on the catalytic activities of
+(pO2) and temperatures T. The black line represents thermodynamic Cr2O3 on NO oxidation at room temperature, and the provided
+boundaries between Cr2O3 and CrO3, and the red line indicates that insight could facilitate the design of more eﬃcient Cr-based
+between Cr2O3 and mc-CrO3/Cr2O3. The dashed lines show the catalysts.
+
+ ■
+typical experimental conditions.
+ ASSOCIATED CONTENT
+ Nevertheless, owing to the weakly stacked conﬁguration of *
+ S Supporting Information
+CrO3, we further examined the possibility of a CrO3 monochain The Supporting Information is available free of charge on the
+(maintaining the local structure of CrO359 without destroying ACS Publications website at DOI: 10.1021/acscatal.8b00081.
+the evident chemical bond) supported by Cr2O3(012) Natural population analysis of the NO coupling with O*
+(denoted as mc-CrO3/Cr2O3(012)), which could be regarded
+ or O2* on Cr2O3001) surface and summary table of the
+as the initially evolved CrO3 species on Cr2O3. The optimized
+mc-CrO3/Cr2O3(012) interface structure is shown in Figure optimized structures along with their total energy and the
+8b. Thermodynamically, it is interestingly found that such an imaginary frequency for each TS (PDF)
+
+ ■
+interface structure can be favorably formed under the practical
+O2-rich conditions (Cr2O3 + O2 → mc-CrO3/Cr2O3(012)), as AUTHOR INFORMATION
+shown by the phase diagram in Figure 9, implying that mc-
+CrO3/Cr2O3(012) could be thermodynamically self-produced Corresponding Authors
+on Cr2O3(012). *H.W.: e-mail, hfwang@ecust.edu.cn; tel, +86-21-64253453.
+ At the mc-CrO3/Cr2O3(012) interface, our calculations show *P.H.: e-mail, p.hu@qub.ac.uk.
+that the reactant NO can readily couple with the terminal ORCID
+oxygen of CrO3 and leave a vacant Cr6+ site, which can, Haifeng Wang: 0000-0002-6138-5800
+together with the original Cr5c on Cr2O3(012), constitute a new
+active site Cr6+@Cr3+. Signiﬁcantly, this interface Cr6+@Cr3+
+ Peijun Hu: 0000-0002-6318-1051
+site can adsorb an O2 molecule with an improved adsorption Notes
+energy of −0.99 eV (see the adsorption conﬁguration in Figure The authors declare no competing ﬁnancial interest.
+ 5422 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+■ ACKNOWLEDGMENTS
+This project was supported by the National Natural Science
+ (19) Liu, H.; Wei, L.; Yue, R.; Chen, Y. CrOx−CeO2 Binary Oxide as
+ a Superior Catalyst for NO Reduction with NH3 at Low Temperature
+ in Presence of CO. Catal. Commun. 2010, 11, 829−833.
+Foundation of China (21333003, 21622305), the Young Elite (20) Cai, W.; Zhong, Q.; Zhang, S.; Zhao, W. Fractional-hydrolysis-
+Scientist Sponsorship Program by CAST (YESS20150131), the driven formation of nonuniform dopant concentration catalyst
+Shanghai Shuguang scholar program (17SG30), and the nanoparticles of Cr/CexZr1−xO2 and their catalysis in oxidation of
+Fundamental Research Funds for the Central Universities NO. Chem. Eng. J. 2014, 236, 223−232.
+(WJ1616007). (21) Cai, W.; Zhong, Q.; Zhao, W. Solvent Effects on Formation of
+
+■ REFERENCES
+ (1) Roy, S.; Hegde, M. S.; Madras, G. Catalysis for NOx Abatement.
+ Cr-Doped Ce0.2Zr0.8O2 Synthesized with Cinnamic Acid and Their
+ Catalysis in Oxidation of NO. Chem. Eng. J. 2014, 246, 328−336.
+ (22) Liu, S.; Zhang, M.; Huang, Y.; Zhao, K.; Gao, Z.; Wu, M.; Dong,
+ Y.; Wang, T.; Shi, J.; He, D. A Novel Chromic Oxide Catalyst for NO
+Appl. Energy 2009, 86, 2283−2297.
+ Oxidation at Ambient Temperature. RSC Adv. 2014, 4, 29180−29186.
+ (2) Amiridis, M. D.; Zhang, T.; Farrauto, R. J. Selective Catalytic
+ (23) Zhong, L.; Cai, W.; Yu, Y.; Zhong, Q. Insights into Synergistic
+Reduction of Nitric Oxide by Hydrocarbons. Appl. Catal., B 1996, 10,
+ Effect of Chromium Oxides and Ceria Supported on Ti-PILC for NO
+203−227.
+ Oxidation and Their Surface Species Study. Appl. Surf. Sci. 2015, 325,
+ (3) Ciardelli, C.; Nova, I.; Tronconi, E.; Chatterjee, D.; Bandl-
+Konrad, B. A ″Nitrate Route″ for the Low Temperature ″Fast SCR″ 52−63.
+ (24) Zhong, L.; Cai, W.; Zhong, Q. Evaluation of Cerium
+Reaction Over a V2O5-WO3/TiO2 Commercial Catalyst. Chem.
+Commun. 2004, 0, 2718−2719. Modification over Cr/Ti-PILC for NO Catalytic Oxidation and
+ (4) Mao, Y.; Wang, Z.; Wang, H.-F.; Hu, P. Understanding Catalytic Their Mechanism Study. RSC Adv. 2014, 4, 43529−43537.
+Reactions over Zeolites: A Density Functional Theory Study of (25) Peña, D. A.; Uphade, B. S.; Smirniotis, P. G. TiO2-supported
+Selective Catalytic Reduction of NOx by NH3 over Cu-SAPO-34. ACS metal oxide catalysts for low-temperature selective catalytic reduction
+Catal. 2016, 6, 7882−7891. of NO with NH3I. Evaluation and characterization of first row
+ (5) Fridell, E.; Skoglundh, M.; Westerberg, B.; Johansson, S.; transition metals. J. Catal. 2004, 221, 421−431.
+Smedler, G. NOx Storage in Barium-Containing Catalysts. J. Catal. (26) Shiba, K.; Hinode, H.; Wakihara, M. Catalytic Oxidation of NO
+1999, 183, 196−209. to NO2 Over Cr/TiO2 and Cu/TiO2 Under Oxidizing Atmosphere.
+ (6) Sakamoto, Y.; Okumura, K.; Kizaki, Y.; Matsunaga, S.; Takahashi, React. Kinet. Catal. Lett. 1996, 58, 133−137.
+N.; Shinjoh, H. Adsorption and Desorption Analysis of NOx and SOx (27) Cai, W.; Zhong, Q.; Zhang, S.; Zhang, J. Effects of Cr on the
+on a Pt/Ba Thin Film Model Catalyst. J. Catal. 2006, 238, 361−368. NO Oxidation over the Ceria−Zirconia Solid Solution. RSC Adv.
+ (7) Després, J.; Elsener, M.; Koebel, M.; Kröcher, O.; Schnyder, B.; 2013, 3, 7009−7015.
+Wokaun, A. Catalytic Oxidation of Nitrogen Monoxide over Pt/SiO2. (28) Zhong, L.; Yu, Y.; Cai, W.; Geng, X.; Zhong, Q. Structure-
+Appl. Catal., B 2004, 50, 73−82. Activity Relationship of Cr/Ti-PILC Catalysts Using a Pre-
+ (8) Bhatia, D.; McCabe, R. W.; Harold, M. P.; Balakotaiah, V. Modification Method for NO Oxidation and Their Surface Species
+Experimental and Kinetic Study of NO Oxidation on Model Pt Study. Phys. Chem. Chem. Phys. 2015, 17, 15036−45.
+Catalysts. J. Catal. 2009, 266, 106−119. (29) Wang, A.; Guo, Y.; Gao, F.; Peden, C. H. F. Ambient-
+ (9) Wu, C.; Schmidt, D. J.; Wolverton, C.; Schneider, W. F. Accurate temperature NO oxidation over amorphous CrOx-ZrO2 mixed oxide
+Coverage-Dependence Incorporated into First-Principles Kinetic catalysts: Significant promoting effect of ZrO2. Appl. Catal., B 2017,
+Models: Catalytic NO Oxidation on Pt (111). J. Catal. 2012, 286, 202, 706−714.
+88−94. (30) Wang, A.; Lin, B.; Zhang, H.; Engelhard, M. H.; Guo, Y.; Lu, G.;
+ (10) Bray, J. M.; Schneider, W. F. First-Principles Analysis of Peden, C. H. F.; Gao, F. Ambient temperature NO oxidation over Cr-
+Structure Sensitivity in NO Oxidation on Pt. ACS Catal. 2015, 5, based amorphous mixed oxide catalysts: effects from the second oxide
+1087−1099. components. Catal. Sci. Technol. 2017, 7, 2362−2370.
+ (11) Kim, C. H.; Qi, G.; Dahlberg, K.; Li, W. Strontium-Doped (31) Bhattacharjee, D.; Mishra, B. K.; Chakrabartty, A. K.; Deka, R.
+Perovskites Rival Platinum Catalysts for Treating NOx in Simulated C. Catalytic Activity of Anionic Au−Ag Dimer for Nitric Oxide
+Diesel Exhaust. Science 2010, 327, 1624−1627. Oxidation: A DFT Study. New J. Chem. 2015, 39, 2209−2216.
+ (12) Parks, J. E. Less Costly Catalysts for Controlling Engine (32) Wang, H.; Guo, Y.; Lu, G.; Hu, P. An understanding and
+Emissions. Science 2010, 327, 1584−1585. implications of the coverage of surface free sites in heterogeneous
+ (13) Wang, W.; McCool, G.; Kapur, N.; Yuan, G.; Shan, B.; Nguyen, catalysis. J. Chem. Phys. 2009, 130, 224701.
+M.; Graham, U. M.; Davis, B. H.; Jacobs, G.; Cho, K.; Hao, X. Mixed- (33) Wang, H.-F.; Guo, Y.-L.; Lu, G.; Hu, P. NO Oxidation on
+phase oxide catalyst based on Mn-mullite (Sm, Gd)Mn2O5 for NO Platinum Group Metals Oxides: First Principles Calculations
+oxidation in diesel exhaust. Science 2012, 337, 832−5. Combined with Microkinetic Analysis. J. Phys. Chem. C 2009, 113,
+ (14) Choi, S. O.; Penninger, M.; Kim, C. H.; Schneider, W. F.; 18746−18752.
+Thompson, L. T. Experimental and Computational Investigation of (34) Sun, B.-Z.; Xu, X.-L.; Chen, W.-K.; Dong, L.-H. Theoretical
+Effect of Sr on NO Oxidation and Oxygen Exchange for La1−xSrxCoO3 Insights into the Reaction Mechanisms of NO Oxidation Catalyzed by
+Perovskite Catalysts. ACS Catal. 2013, 3, 2719−2728. Cu2O(111). Appl. Surf. Sci. 2014, 316, 416−423.
+ (15) Sousa, J. P. S.; Pereira, M. F. R.; Figueiredo, J. L. Catalytic (35) Xu, G.; Zhang, L.; He, C.; Ma, D.; Lu, Z. Adsorption and
+Oxidation of NO to NO2 on N-doped Activated Carbons. Catal. Oxidation of NO on Various SnO2(110) Surfaces: A Density
+Today 2011, 176, 383−387. Functional Theory Study. Sens. Actuators, B 2015, 221, 717−722.
+ (16) Zhang, Z.; Atkinson, J. D.; Jiang, B.; Rood, M. J.; Yan, Z. Nitric (36) Hou, M.; Cen, W.; Zhang, H.; Liu, J.; Yin, H.; Wei, F.
+Oxide Oxidation Catalyzed by Microporous Activated Carbon Fiber Adsorption and Oxidation of NO on Graphene Oxides: A Dispersion
+Cloth: An Updated Reaction Mechanism. Appl. Catal., B 2014, 148− Corrected Density Functional Theory Investigation. Appl. Surf. Sci.
+149, 573−581. 2015, 339, 55−61.
+ (17) Thirupathi, B.; Smirniotis, P. G. Co-doping a Metal (Cr, Fe, Co, (37) Verma, A. A.; Bates, S. A.; Anggara, T.; Paolucci, C.; Parekh, A.
+Ni, Cu, Zn, Ce, and Zr) on Mn/TiO2 Catalyst and Its Effect on the A.; Kamasamudram, K.; Yezerets, A.; Miller, J. T.; Delgass, W. N.;
+Selective Reduction of NO with NH3 at Low-temperatures. Appl. Schneider, W. F.; Ribeiro, F. H. NO oxidation: A probe reaction on
+Catal., B 2011, 110, 195−206. Cu-SSZ-13. J. Catal. 2014, 312, 179−190.
+ (18) Chen, Z.; Yang, Q.; Li, H.; Li, X.; Wang, L.; Chi Tsang, S. Cr− (38) Kresse, G.; Furthmüller, J. Efficient Iterative Schemes for Ab
+MnOx Mixed-oxide Catalysts for Selective Catalytic Reduction of NOx Initio Total-energy Calculations Using a Plane-wave Basis Set. Phys.
+with NH3 at Low Temperature. J. Catal. 2010, 276, 56−65. Rev. B: Condens. Matter Mater. Phys. 1996, 54, 11169−11186.
+
+ 5423 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424
+ACS Catalysis Research Article
+
+ (39) Kresse, G.; Furthmüller, J. Efficiency of Ab-initio Total Energy (60) Haynes, W. M. CRC Handbook of Chemistry and Physics, 93rd
+Calculations for Metals and Semiconductors Using a Plane-wave Basis ed.; CRC Press: Boca Raton, FL, 2012.
+Set. Comput. Mater. Sci. 1996, 6, 15−50.
+ (40) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868.
+ (41) Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the
+Projector Augmented-wave Method. Phys. Rev. B: Condens. Matter
+Mater. Phys. 1999, 59, 1758−1775.
+ (42) Wang, H.-F.; Kavanagh, R.; Guo, Y.-L.; Guo, Y.; Lu, G.-Z.; Hu,
+P. Structural Origin: Water Deactivates Metal Oxides to CO Oxidation
+and Promotes Low-Temperature CO Oxidation with Metals. Angew.
+Chem., Int. Ed. 2012, 51, 6657−6661.
+ (43) Wang, H.-F.; Kavanagh, R.; Guo, Y.-L.; Guo, Y.; Lu, G.; Hu, P.
+Origin of extraordinarily high catalytic activity of Co3O4 and its
+morphological chemistry for CO oxidation at low temperature. J.
+Catal. 2012, 296, 110−119.
+ (44) Xia, Q.; Chen, Z.; Shao, Y.; Gong, X.; Wang, H.; Liu, X.; Parker,
+S. F.; Han, X.; Yang, S.; Wang, Y. Direct hydrodeoxygenation of raw
+woody biomass into liquid alkanes. Nat. Commun. 2016, 7, 11162.
+ (45) Wang, H.-F.; Wang, D.; Liu, X.; Guo, Y.-L.; Lu, G.-Z.; Hu, P.
+Unexpected C−C Bond Cleavage Mechanism in Ethylene Combus-
+tion at Low Temperature: Origin and Implications. ACS Catal. 2016,
+6, 5393−5398.
+ (46) Grimme, S.; Ehrlich, S.; Goerigk, L. Effect of the Damping
+Function in Dispersion Corrected Density Functional Theory. J.
+Comput. Chem. 2011, 32, 1456−1465.
+ (47) Maldonado, F.; Novillo, C.; Stashans, A. Ab Initio Calculation of
+Chromium Oxide Containing Ti Dopant. Chem. Phys. 2012, 393,
+148−152.
+ (48) Lebreau, F.; Islam, M. M.; Diawara, B.; Marcus, P. Structural,
+Magnetic, Electronic, Defect, and Diffusion Properties of Cr2O3: A
+DFT+U Study. J. Phys. Chem. C 2014, 118, 18133−18145.
+ (49) Rohrbach, A.; Hafner, J.; Kresse, G. Ab Initio Study of the
+(0001) Surfaces of Hematite and Chromia: Influence of Strong
+Electronic Correlations. Phys. Rev. B: Condens. Matter Mater. Phys.
+2004, 70, 125426.
+ (50) Shi, S.; Wysocki, A.; Belashchenko, K. Magnetism of Chromia
+from First-principles Calculations. Phys. Rev. B: Condens. Matter Mater.
+Phys. 2009, 79, 104404.
+ (51) Mosey, N. J.; Liao, P.; Carter, E. A. Rotationally Invariant Ab
+Initio Evaluation of Coulomb and Exchange Parameters for DFT+U
+Calculations. J. Chem. Phys. 2008, 129, 014103−1−13.
+ (52) Hu, W.; Lan, J.; Guo, Y.; Cao, X.-M.; Hu, P. Origin of Efficient
+Catalytic Combustion of Methane over Co3O4(110): Active Low-
+Coordination Lattice Oxygen and Cooperation of Multiple Active
+Sites. ACS Catal. 2016, 6, 5508−5519.
+ (53) Wang, D.; Jiang, J.; Wang, H. F.; Hu, P. Revealing the volcano-
+Shaped Acitivity Trend of Triiodide Reduction Reaction: A DFT
+Study Coupled with Microkinetic Analysis. ACS Catal. 2016, 6, 733−
+741.
+ (54) Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Kitchin, J. R.; Chen,
+J. G.; Pandelov, S.; Stimming, U. Trends in the Exchange Current for
+Hydrogen Evolution. J. Electrochem. Soc. 2005, 152, J23−J26.
+ (55) Peng, C.; Wang, H. F.; Hu, P. Theoretical Insights into How the
+First C-C Bond Forms in the Methanol-to-Olefin Process Catalysed by
+HSAPO-34. Phys. Chem. Chem. Phys. 2016, 18, 14495−14502.
+ (56) Dunnington, B. D.; Schmidt, J. R. Generalization of Natural
+Bond Orbital Analysis to Periodic Systems: Applications to Solids and
+Surfaces via Plane-Wave Density Functional Theory. J. Chem. Theory
+Comput. 2012, 8, 1902−1911.
+ (57) York, S. C.; Abee, M. W.; Cox, D. F. α-Cr2O3(101̅2): Surface
+Characterization and Oxygen Adsorption. Surf. Sci. 1999, 437, 386−
+396.
+ (58) Wooster, W. A.; Wooster, N. Crystal Structure of Chromium
+Trioxide. Nature 1931, 127, 782−782.
+ (59) Stephens, J. S.; Cruickshank, D. W. J. The Crystal Structure of
+(CrO3)∞. Acta Crystallogr., Sect. B: Struct. Crystallogr. Cryst. Chem.
+1970, 26, 222−226.
+
+ 5424 DOI: 10.1021/acscatal.8b00081
+ ACS Catal. 2018, 8, 5415−5424

@@ -1,0 +1,39 @@
+这次抽到的关键信息包括：
+
+在 Au-exp_conditions_input_table.csv 里：
+
+- BP, Au Nanoparticles
+- 吸附物/反应物：O2
+- 团簇/单原子建模线索：Au Nanoparticles
+- 建模关键词：active site, black phosphorus, Au nanoparticles, electrocatalytic OER
+
+在 Au-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - black phosphorus
+  - gold nanoparticles
+- 材料参数：
+  - 2D material
+  - semiconductor phase
+  - metal phase
+  - carrier mobility 1000 cm2 V−1 s−1 at ten-layer thickness
+- 反应参数：
+  - 未提取
+- 性能：
+  - high conductivity
+  - high activity
+  - excellent electrocatalytic performance
+  - ultra-low onset potential 1.36 V
+  - Tafel slope 68.1 mV dec−1
+- 表面/晶面：
+  - BP/Au surface
+- 缺陷/活性位点：
+  - catalytic active site
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - first-principles calculation
+- 推荐建模任务：
+  - surface_functionalization

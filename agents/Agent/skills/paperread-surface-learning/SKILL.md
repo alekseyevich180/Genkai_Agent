@@ -41,6 +41,12 @@ Script:
 scripts/export_surface_experience.py
 ```
 
+Additional script:
+
+```text
+scripts/build_surface_parameter_registry.py
+```
+
 Run it with `run_skill_script`:
 
 ```text
@@ -108,3 +114,26 @@ The learning script recognizes these task names as already supported or planned:
 
 Terms that suggest something outside these tasks should be exported as
 experience for later review.
+
+## Reuse Loop
+
+This skill also supports a reuse loop for `paperread/surface`:
+
+```text
+paperread outputs
+-> material_classes experience
+-> surface_parameter_registry.json
+-> extract prompts read the registry
+-> later papers yield richer parameter capture
+```
+
+Build the registry manually when needed:
+
+```bash
+python scripts/build_surface_parameter_registry.py
+```
+
+By default the registry is written to:
+
+- `agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.json`
+- `agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.md`

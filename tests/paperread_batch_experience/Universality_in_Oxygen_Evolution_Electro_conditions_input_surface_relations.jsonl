@@ -1,0 +1,46 @@
+{
+  "id": "surface_relations",
+  "title": "DOI: 10.1002/cctc.201000397",
+  "text": "Universality in Oxygen Evolution Electrocatalysis on Oxide\nSurfaces\nIsabela C. Man,[a] Hai-Yan Su,[a] Federico Calle-Vallejo,[a] Heine A. Hansen,[b] Jos\u0002 I. Mart\u0003nez,[c]\nNilay G. Inoglu,[d] John Kitchin,[d] Thomas F. Jaramillo,[e] Jens K. Nørskov,[f] and\nJan Rossmeisl*[a]\n\nTrends in electrocatalytic activity of the oxygen evolution reac- the adsorption energies of HOO* vs HO*, it is possible to ana-\ntion (OER) are investigated on the basis of a large database of lyze the reaction free energy diagrams of all the oxides in a\nHO* and HOO* adsorption energies on oxide surfaces. The the- general way. This gave rise to an activity volcano that was the\noretical overpotential was calculated by applying standard same for a wide variety of oxide catalyst materials and a uni-\ndensity functional theory in combination with the computa- versal descriptor for the oxygen evolution activity, which sug-\ntional standard hydrogen electrode (SHE) model. We showed gests a fundamental limitation on the maximum oxygen evolu-\nthat by the discovery of a universal scaling relation between tion activity of planar oxide catalysts.",
+  "extraction": {
+    "materials": [
+      "oxide catalysts"
+    ],
+    "material_parameters": [],
+    "surfaces": [
+      "oxide surfaces"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [
+      "HOO*",
+      "HO*"
+    ],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "electrocatalytic activity",
+      "oxygen evolution activity"
+    ],
+    "reaction_parameters": [],
+    "modeling_keywords": [
+      "density functional theory",
+      "computational standard hydrogen electrode"
+    ],
+    "recommended_modeling_tasks": [],
+    "applications": [
+      "oxygen evolution reaction"
+    ],
+    "links": []
+  }
+}

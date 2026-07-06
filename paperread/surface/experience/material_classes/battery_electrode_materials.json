@@ -1,15 +1,41 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "battery_electrode_materials",
-  "updated_at": "2026-06-30T06:51:57.178558+00:00",
+  "updated_at": "2026-07-06T07:30:22.249747+00:00",
   "summary": {
-    "terms": 2,
+    "terms": 3,
     "known_useful": 0,
-    "unknown": 2,
-    "sources": [
-      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    "unknown": 3
+  },
+  "keyword_inventory": {
+    "modeling_keywords": [
+      {
+        "term": "sodium metal batteries",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "photoanode",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "sodium metal battery",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
     ]
+  },
+  "material_descriptors": {},
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [],
+    "components": [],
+    "surface_states": [],
+    "reaction_families": []
   },
   "entries": [
     {
@@ -19,13 +45,22 @@
       "fields": [
         "modeling_keywords"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
+    },
+    {
+      "term": "photoanode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
       ],
-      "count": 1
+      "count": 1,
+      "example_contexts": [
+        "Ag/g-C3N4"
+      ]
     },
     {
       "term": "sodium metal battery",
@@ -34,13 +69,10 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 1,
+      "example_contexts": [
         "Sn SAs/G-Na"
-      ],
-      "count": 1
+      ]
     }
   ]
 }

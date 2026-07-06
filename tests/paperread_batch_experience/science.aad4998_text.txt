@@ -1,0 +1,889 @@
+R ES E A RC H
+
+ ◥ ticularly those that involve water, hydrogen,
+ REVIEW SUMMARY and oxygen. The combination of theoretical
+ and experimental studies working in concert has
+ proven to be a successful strategy in this
+ELECTROCHEMISTRY
+ respect, yielding a framework to understand
+ catalytic trends that can ultimately provide
+Combining theory and experiment rational guidance toward the development
+ of improved catalysts. Catalyst design strat-
+
+in electrocatalysis: Insights into egies that aim to increase the number of active
+ sites and/or increase the intrinsic activity of each
+ active site have been successfully developed.
+materials design The field of hydrogen evolution, for example, has
+ seen important breakthroughs over the years in
+Zhi Wei Seh, Jakob Kibsgaard, Colin F. Dickens, Ib Chorkendorff, ◥
+ the development of highly
+ ON OUR WEBSITE active non–precious metal
+Jens K. Nørskov, Thomas F. Jaramillo*
+ Read the full article catalysts in acid. Notable
+ at http://dx.doi. advancements have also
+BACKGROUND: With a rising global popula- ates, and ammonia) by coupling to renewable org/10.1126/ been made in the design of
+ science.aad4998
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+tion, increasing energy demands, and impend- energy. Electrocatalysts play a key role in these oxygen reduction and evo-
+ ..................................................
+ing climate change, major concerns have been energy conversion technologies because they lution catalysts, although
+raised over the security of our energy future. increase the rate, efficiency, and selectivity of there remains substantial room for improve-
+Developing sustainable, fossil-free pathways to the chemical transformations involved. Today’s ment. The combination of theory and exper-
+produce fuels and chemicals of global impor- electrocatalysts, however, are inadequate. The iment elucidates the remaining challenges in
+tance could play a major role in reducing carbon grand challenge is to develop advanced elec- developing further improved catalysts, often
+dioxide emissions while providing the feed- trocatalysts with the enhanced performance involving scaling relations among reactive inter-
+stocks needed to make the products we use on needed to enable widespread penetration of mediates. This understanding serves as an ini-
+a daily basis. One prospective goal is to develop clean energy technologies. tial platform to design strategies to circumvent
+electrochemical conversion processes that can technical obstacles, opening up opportunities
+convert molecules in the atmosphere (e.g., water, ADVANCES: Over the past decade, substantial and approaches to develop higher-performance
+carbon dioxide, and nitrogen) into higher-value progress has been made in understanding sev- electrocatalysts for a wide range of reactions.
+products (e.g., hydrogen, hydrocarbons, oxygen- eral key electrochemical transformations, par-
+ OUTLOOK: A systematic framework of com-
+ bining theory and experiment in electrocatalysis
+ helps to uncover broader governing principles
+ that can be used to understand a wide variety of
+ electrochemical transformations. These principles
+ can be applied to other emerging and promising
+ clean energy reactions, including hydrogen perox-
+ ide production, carbon dioxide reduction, and
+ nitrogen reduction, among others. Although
+ current paradigms for catalyst development have
+ been helpful to date, a number of challenges
+ need to be successfully addressed in order to
+ achieve major breakthroughs. One important
+ frontier, for example, is the development of
+ both experimental and computational meth-
+ ods that can rapidly elucidate reaction mech-
+ anisms on broad classes of materials and in a
+ wide range of operating conditions (e.g., pH,
+ solvent, electrolyte). Such efforts would build
+ on current frameworks for understanding ca-
+ talysis to provide the deeper insights needed
+ to fine-tune catalyst properties in an optimal
+ manner. The long-term goal is to continue im-
+ proving the activity and selectivity of these
+ catalysts in order to realize the prospects of
+ using renewable energy to provide the fuels
+ and chemicals that we need for a sustainable
+Electrochemical energy conversion. Schematic showing electrochemical conversion of water,
+carbon dioxide, and nitrogen into value-added products (e.g., hydrogen, hydrocarbons, oxygenates,
+ energy future.
+ ▪
+and ammonia), using energy from renewable sources. The combination of theoretical and exper-
+imental studies working in concert provides us with insight into these electrochemical transfor- The list of author affiliations is available in the full article online.
+ *Corresponding author. Email: jaramillo@stanford.edu
+mations and guides the development of the high-performance electrocatalysts needed to enable Cite this article as Z. W. Seh et al., Science 355, eaad4998
+these technologies. (2017). DOI: 10.1126/science.aad4998
+
+Seh et al., Science 355, 146 (2017) 13 January 2017 1 of 1
+R ES E A RC H
+
+ ◥ where electrification is much more challenging
+ REVIEW (5). Projections indicate that energy demand for
+ light-duty transportation will likely remain rela-
+ tively flat in the coming decades; however, energy
+ELECTROCHEMISTRY use for commercial transportation is projected to
+ grow by approximately two-thirds between 2010
+
+Combining theory and experiment and 2040, from 1.9 to 3.2 TW (5). Because chem-
+ ical fuels are a more natural fit for this sector,
+ there is strong interest in the development of
+in electrocatalysis: Insights into sustainable pathways to such fuels.
+ Similarly, the current energy demand for the
+
+materials design production of industrial chemicals in 2010 was
+ 8% (1.5 TW) of global energy, almost all of which
+ was derived from fossil fuels (5). To meet world-
+Zhi Wei Seh,1,2,3 Jakob Kibsgaard,1,2,4 Colin F. Dickens,1,2 Ib Chorkendorff,4 wide demand for products such as plastics and
+Jens K. Nørskov,1,2 Thomas F. Jaramillo1,2* fertilizers, energy use in the chemical industry is
+ also expected to rise by about two-thirds between
+Electrocatalysis plays a central role in clean energy conversion, enabling a number of 2010 and 2040, to 2.5 TW (5). A sustainable, fossil
+sustainable processes for future technologies. This review discusses design strategies fuel–free path to producing industrial chemicals
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+for state-of-the-art heterogeneous electrocatalysts and associated materials for several of global importance, such as hydrogen (50 Mt
+different electrochemical transformations involving water, hydrogen, and oxygen, using theory year−1), hydrogen peroxide (2.2 Mt year−1), ethyl-
+as a means to rationalize catalyst performance. By examining the common principles that ene (115 Mt year−1), propylene (73 Mt year−1),
+govern catalysis for different electrochemical reactions, we describe a systematic framework methanol (40 Mt year−1), and ammonia (175 Mt
+that clarifies trends in catalyzing these reactions, serving as a guide to new catalyst year−1), could play a substantial role in reducing
+development while highlighting key gaps that need to be addressed. We conclude by extending carbon dioxide emissions while providing the
+this framework to emerging clean energy reactions such as hydrogen peroxide production, chemicals needed to make the products used
+carbon dioxide reduction, and nitrogen reduction, where the development of improved catalysts globally on a daily basis (6–8).
+could allow for the sustainable production of a broad range of fuels and chemicals. Figure 1 shows possible sustainable pathways
+ for the production of important fuels and chem-
+
+C
+ icals, including hydrogen, hydrocarbons, oxy-
+ reating a global-scale sustainable energy the chemical industry. In 2010, transportation genates, and ammonia, by either replacing or
+ system for the future while preserving our accounted for 19% (3.3 TW) of global energy (5). working in concert with conventional energy
+ environment is one of the most crucial chal- Although approximately 43% (1.4 TW) of transpor- production. Earth’s atmosphere provides a uni-
+ lenges facing humanity today (1–3). Ac- tation energy demand involved light-duty vehicles, versal feedstock of water, carbon dioxide, and
+ cording to the International Energy Agency, where electrification is already playing a role to nitrogen, which can potentially be converted
+global energy demand reached 18 TW in 2013, help decarbonize the system, the remaining 57% into the aforementioned products via electro-
+the vast majority (~80%) of which was derived (1.9 TW) was used for commercial transportation— chemical processes coupled to renewable energy
+from fossil resources (coal, oil, and gas) (4). With marine, aviation, rail, and heavy-duty road vehicles— if electrocatalysts with the required properties can
+a growing world population and expanding in-
+dustrialization, global energy demand is projected
+to further increase from 18 TW in 2013 to 24 or
+26 TW in 2040 under the “new policies” or “cur-
+rent policies” scenarios, respectively, with a cor-
+responding rise in carbon dioxide emissions from
+32 Gt year−1 in 2013 to 37 or 44 Gt year−1 in 2040
+(4). As a result, major concerns have been raised
+over the energy supply, particularly in regard
+to climate change associated with the use of fos-
+sil fuels. Thus, a serious impetus exists to diver-
+sify our energy sources, reducing our reliance on
+fossil fuels by turning to renewable energy such
+as solar, wind, and hydroelectric power.
+ Greater penetration of renewable electricity
+is important, as overall the electricity sector ac-
+counts for approximately 12% of global energy
+demand (2.1 out of 17.6 TW in 2010) (5). Other
+key energy sectors requiring the development of
+sustainable pathways include transportation and
+1
+ SUNCAT Center for Interface Science and Catalysis,
+Department of Chemical Engineering, Stanford University,
+Stanford, CA 94305, USA. 2SUNCAT Center for Interface
+Science and Catalysis, SLAC National Accelerator Laboratory,
+Menlo Park, CA 94025, USA. 3Institute of Materials Research
+and Engineering, Agency for Science, Technology and
+Research (A*STAR), Innovis, 138634 Singapore. 4Department
+of Physics, Technical University of Denmark, DK-2800
+Kongens Lyngby, Denmark.
+*Corresponding author. Email: jaramillo@stanford.edu Fig. 1. Sustainable energy future. Schematic of a sustainable energy landscape based on electrocatalysis.
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 1 of 12
+R ES E A RC H | R E V IE W
+
+be developed. For instance, the water-splitting We begin by presenting theoretical results with binding energies of reactive intermediates on a
+reaction, which consists of the hydrogen and oxy- a focus on understanding catalytic trends using a surface is the key to designing materials with
+gen evolution half-reactions, has attracted great at- descriptor-based approach: a framework that aims improved performance. The volcano shown in
+tention as a sustainable source of hydrogen (9, 10). to establish a select few, key properties of a cat- Fig. 3A is the first of several described in this
+Hydrogen is an attractive energy carrier that can alyst surface that are necessary but possibly not work, each representing a different electrochem-
+be used to produce clean electricity in fuel cells, sufficient for high activity. We describe how this ical reaction, and represents a broader frame-
+where the hydrogen oxidation and oxygen reduc- relatively fast, simple, and straightforward ap- work by which catalysts across a wide range of
+tion reactions convert chemical energy into elec- proach has been implemented successfully in chemical reactions can be viewed.
+trical energy (11, 12). Hydrogen peroxide, an essential recent years to develop advanced catalysts. The Although these volcanoes provide insight into
+chemical in the pulp- and paper-bleaching and next major step would be to extend the modeling the optimum catalyst for a given class of catalyst
+water treatment industries, can potentially be capabilities to capture greater complexities re- materials, there are additional factors not pres-
+derived from the oxygen reduction reaction (ORR) garding the catalyst and the electrode-electrolyte ent in the simple descriptor-based model that are
+as well (13). Carbon dioxide captured from the interface in a manner that does not require ex- needed to quantitatively determine absolute re-
+atmosphere or directly from point sources could cessive time and resources. Developing modeling action rates—for instance, variations in the size
+become a feedstock for fuels, commodity chem- approaches that use minimal resources to rapidly of kinetic barriers from one class of materials
+icals, fine chemicals, and precursors to polymers and accurately predict reaction mechanisms and to the next. This is why MoS2 is observed to have
+and plastics via preliminary electroreduction rate data across a broad range of catalyst mate- lower exchange current densities than the pre-
+(14). Likewise, the electroreduction of nitrogen rials and reaction conditions represents an impor- cious metals shown in Fig. 3A, even though it has
+to ammonia would allow for the production of tant aim for future work. The same holds true for a DGH value near the optimum. Kinetic barriers
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+fertilizers sustainably and locally at the point of the development of more advanced experimental can also change as a function of pH for a given
+application and at the required concentration, methods that are capable of providing atomic- potential versus the reversible hydrogen electrode
+eliminating distribution costs stemming from and molecular-scale depictions of the electrode- (RHE), which results in an observed pH depend-
+the inflexibly large-scale, centralized Haber-Bosch electrolyte interface under operating conditions. ence of current density (21). Despite possible
+process (15). Crucial to enabling this vision is the At this point, we can provide a description of variations in the processes involved (e.g., re-
+development of improved electrocatalysts with current theoretical approaches to further these garding pH or kinetic barriers), we note that
+the appropriate efficiency and selectivity for the types of insights (e.g., on reaction rates and mecha- the activity volcano does not shift left or right,
+chemical transformations involved. nisms) with more detailed calculations performed but rather only up and down, meaning that the
+ There are generally two strategies to improve using microkinetic models. The combination of descriptor still serves its purpose of identifying
+the activity (or reaction rate) of an electrocatalyst the descriptor-based approach to cover a broad set the binding characteristics of optimal HER cat-
+system: (i) increasing the number of active sites of systems coupled to detailed studies of single alysts (22). However, for a full quantitative un-
+on a given electrode (e.g., through increased load- systems has proven fruitful. Future efforts to derstanding of these effects, more detailed and
+ing or improved catalyst structuring to expose advance both theory and experiment will allow efficient methods of calculating electrochemical
+more active sites per gram) or (ii) increasing the for a more detailed picture of catalysis on surfaces. barriers are required for proton transfer reactions
+intrinsic activity of each active site (10). These involving both hydroxide and hydronium ions
+strategies (Fig. 2) are not mutually exclusive and Hydrogen evolution/oxidation reactions (20, 23–28), an important goal for future mod-
+can ideally be addressed simultaneously, leading Active catalysts are required to minimize the eling efforts.
+to the greatest improvements in activity. At the overpotential necessary to drive the hydrogen Platinum sits very near the top of the hydro-
+same time, there are physical limits to how much evolution reaction (HER; 2H+ + 2e− → H2) (9, 10). gen volcano, with an almost thermo-neutral DGH,
+catalyst material can be loaded onto an electrode The HER is a classic example of a two-electron and is well known as the best-performing catalyst
+without affecting other important processes, such transfer reaction with one catalytic intermediate, for the HER, requiring negligible overpotentials
+as charge and mass transport (10). For this reason, H* (where * denotes a site on the electrode sur- to achieve high reaction rates in acidic solutions
+Fig. 2 shows a plateau effect observed in practice face), and may occur through either the Volmer- (Fig. 3, B and C) (10). However, the scarcity and
+at high catalyst loadings. On the other hand, in- Heyrovsky or the Volmer-Tafel mechanism (9, 10): high cost of Pt could limit its widespread tech-
+creasing intrinsic activity leads to direct increases nological use. This has sparked a search for
+in electrode activity in a manner that mitigates Volmer step: H+ + e– + * → H* (1) Earth-abundant catalysts that potentially could
+transport issues arising from high catalyst load- replace Pt—a search where the development of
+ings; with improved intrinsic activity, the catalyst Heyrovsky step: H* + H+ + e– → H2 + * (2) MoS2-based HER catalysts serves as an excellent
+loading can be decreased, which also saves on example of theory-guided discovery and design
+catalyst costs. Moreover, catalyst activity is mea- Tafel step: 2H* → H2 + 2* (3) of new electrocatalysts (10).
+sured across many orders of magnitude; the differ- For decades, MoS2 was believed to be inactive
+ence in intrinsic activity between a good catalyst The rate of the overall reaction is largely deter- for the HER (29). However, inspired by hydrogen-
+and a poor catalyst can be more than 10 orders of mined by the hydrogen adsorption free energy, producing enzymes such as hydrogenases and
+magnitude, whereas the difference between a DGH (16, 17). If hydrogen binds to the surface too nitrogenases in nature, DFT calculations were
+high-loading and a low-loading catalyst might weakly, the adsorption (Volmer) step will limit performed on the Mo(1010) edge of MoS2, re-
+only be one to three orders of magnitude (10). the overall reaction rate, whereas if the binding vealing that at 50% hydrogen coverage, it pos-
+ The field of electrocatalysis has seen much is too strong, the desorption (Heyrovsky/Tafel) sesses a DGH of 0.08 eV, near the optimal value
+progress in recent years, as evidenced by the rap- step will limit the rate. Thus, a necessary but in- of 0 eV (Fig. 3A) (30). In stark contrast, the basal
+idly increasing number of publications on this sufficient condition for an active HER catalyst is plane exhibits a DGH of 1.92 eV, which explains
+subject. This review focuses on several quintes- DGH ≈ 0 (16, 17). In plotting experimentally mea- the poor activity of bulk MoS2 crystals (31). These
+sential case studies of electrocatalysis for different sured exchange current densities for a wide range calculations led to the synthesis of MoS2 on a
+energy conversion reactions, surveying state-of- of catalyst materials against DGH at the appropri- carbon black support to expose the edge sites
+the-art catalyst materials and using theory as a ate coverage calculated from density functional and its subsequent examination in a membrane
+means to rationalize trends in performance. By theory (DFT), a volcano relationship emerges—a electrode assembly setup (30). A geometric area–
+examining multiple reactions involving water, quantitative illustration of the so-called Sabatier normalized current density of 10 mA cm−2geo was
+hydrogen, and oxygen, we describe a framework principle (Fig. 3A) (18–20). An active catalyst achieved at ~175 mV overpotential, which at the
+that reveals broader trends in electrocatalysis for binds reaction intermediate(s) neither too strong- time was the most active non–precious metal
+clean energy conversion. ly nor too weakly. Understanding how to control HER catalyst reported in acid.
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 2 of 12
+R ES E A RC H | R E V IE W
+
+ Soon after, it was confirmed experimentally alyst activity (Figs. 2 and 3D). It was suggested all electrode activity is still limited, as generally
+that the edges of MoS2 are indeed the catalytic that the enhanced activity of 1T-MoS2 over sim- only a small fraction of sites (edge sites) contrib-
+active sites for the HER (32). Upon depositing ilarly prepared 2H-MoS2 was due to an increase ute to the reaction rate (Fig. 3, B to D) (10, 32).
+a single monolayer of MoS2 nanoparticles on in the number of active edge sites, as well as a This has led to the design of molecular clusters
+a Au(111) surface, the nanoparticle areas and decrease in the charge transfer resistance (38). with undercoordinated sulfur at the surface that
+edge lengths were measured using scanning Another study further proposed that the edges of resemble the edges of MoS2, such as [Mo3S4]4+
+tunneling microscopy, and the HER activity was 1T-MoS2 were not the main active sites and that cubanes (46, 47), MoIV-disulfide (48), and thiomo-
+found to scale linearly with MoS2 perimeter the basal plane could be catalytically active lybdate [Mo3S13]2– complexes (49) (Fig. 3D). Fur-
+length and not with MoS2 surface area (Fig. 3, instead (39). Most recently, it was shown that ther loading of catalyst material is another
+B and D). The combination of theoretical and vacancies in the MoS2 basal plane also exhibit means of increasing the number of active sites,
+experimental studies provided the key insight high activity that can be tuned by straining the but such an approach would eventually result
+that only the MoS2 edges are active, thereby mo- MoS2 sheets (41). in limitations from mass and/or charge trans-
+tivating the development of MoS2 catalysts with Amorphous molybdenum sulfide has also been port (Fig. 2). This has spurred the development
+a substantial fraction of exposed edge sites. shown to possess high HER activity, primarily of other catalysts with higher intrinsic activity,
+ One promising approach to achieving this ex- due to its high surface area (Fig. 3D). Amorphous leveraging the theoretical framework of a de-
+posure is by nanostructuring the MoS2 catalysts molybdenum sulfides can be prepared using scriptor based on DGH ≈ 0. These include tran-
+(Fig. 2). To this end, a three-dimensional meso- electrodeposition (42) or wet chemical synthe- sition metal phosphides (50–59), selenides (60),
+porous MoS2 nanostructure with a double-gyroid sis (43) without any thermal treatment, which borides (61), carbides (61, 62), and nitrides (63),
+morphology was explored (Fig. 3D) (33). The nano- makes them attractive for certain applications some of which exhibit HER activities closer to
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+scale curvature of the double-gyroid structure min- where avoiding high-temperature sulfidation that of Pt in terms of the overpotential to reach
+imizes the formation of extended basal planes, is desired—for example, in the fabrication of 10 mA cm−2geo. However, because of high catalyst
+exposing a high density of active edge sites. As photoelectrochemical devices. The composition loadings and large surface areas, the non–precious
+a result, the turnover frequency averaged across of the as-synthesized amorphous molybdenum metal systems are still orders of magnitude behind
+all surface sites (TOFavg) of double-gyroid MoS2 sulfide materials was determined to be close to Pt in terms of TOFavg under acidic conditions
+exceeded that of MoO3-MoS2 nanowires prepared MoS3, but upon applying reducing potentials in (Fig. 3, B to D). In alkaline media, state-of-the-
+using a similar sulfidation technique by a factor an electrochemical cell, the surface transformed art non–precious metal catalysts have also been
+of 2 to 4 (Fig. 3D) (33, 34). A shortcoming of the to MoS2, as evidenced by in situ studies (43, 44). developed, some of which (e.g., Ni-Mo systems)
+double-gyroid structure, however, was the long Amorphous molybdenum sulfides can be fur- exhibit low overpotentials to reach 10 mA cm−2geo
+electron transport distance from the active site to ther doped with transition metals such as Fe, (64–66). However, such systems also exhibit TOFavg
+the conductive substrate, which led to increased Co, and Ni, improving their activity substan- values that are substantially lower than that of Pt,
+resistive loss because the electron mobility per- tially (45). Under acidic conditions, the improve- values that are similar to those of non–precious
+pendicular to MoS2 basal planes is lower than ment was largely due to an increase in surface metal systems in acid, hence leaving much room
+the in-plane electron mobility by about three area, whereas TOFavg was improved in neutral for improvement (64–66). Homogeneous cata-
+orders of magnitude (10). In an attempt to al- conditions. lysts with high TOFavg have also been developed,
+leviate this problem, vertically aligned MoS2 The extensive engineering of MoS2-based cat- although they typically require large overpoten-
+nanostructures were synthesized, which not only alysts over the years to increase the number of tials to reach appreciable current densities (Fig.
+exposed a large number of edge sites at the sur- active sites has been remarkable, but their over- 3B) (67–69).
+face but also enabled facile elec-
+tron transport to the conductive
+substrate (Fig. 3D) (35, 36).
+ Another attractive approach in
+catalyst development is to dis-
+perse nanoparticles on supports
+with high surface area (Fig. 2).
+For instance, MoS2 nanoparticles
+were prepared on reduced graphene
+oxide (RGO) nanosheets (37). Rel-
+ative to the RGO-free synthesis,
+use of the RGO support led to
+better dispersion and reduced ag-
+gregation of MoS2 nanoparticles,
+resulting in superior activity due
+to an increased number of edge
+sites and enhanced charge trans-
+port (Fig. 3B).
+ Intercalation of lithium ions
+into the van der Waals gap of
+MoS2 has also been investigated
+as a means to increase the HER
+activity by tuning the electron-
+ic properties of MoS2 (Fig. 2)
+(38–40). Lithium intercalation
+leads to chemical exfoliation of
+MoS2 and a phase transition from
+the 2H semiconducting polymorph
+to the 1T metallic polymorph, Fig. 2. Catalyst development strategies. Schematic of various catalyst development strategies, which aim to increase
+another means to engineer cat- the number of active sites and/or increase the intrinsic activity of each active site.
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 3 of 12
+R ES E A RC H | R E V IE W
+
+ Developing non–precious metal analogs to Pt As a result, the search continues toward Earth- The free energies of all the above intermediates
+for the HER in both acid and base remains an im- abundant materials with metallic conductivity have been calculated on a variety of close-packed
+portant challenge. In addition to catalyst activity, and almost-invariant DGH that can open up new metal surfaces, and a volcano plot was con-
+long-term stability is an equally important metric opportunities in the design of high-performance structed relating the theoretical ORR activity
+and should be reported in conjunction with activity. electrocatalysts for both the HER and the HOR. and DEO, with Pt near the top (Fig. 4A) (71). For
+Helpful approaches to assessing catalyst durability metals that bind oxygen too strongly, the ac-
+include accelerated cyclic voltammetry tests, long- Oxygen reduction/evolution reactions tivity is limited by proton-electron transfer to
+term stability studies that quantify the amount of The four-electron ORR (O2 + 4H+ + 4e– → 2H2O) O* or OH*. On the other hand, for metals that
+catalyst leached into the electrolyte, and the use requires improved electrocatalysts to increase its bind oxygen too weakly, the activity is limited
+of thin-film catalyst morphologies (10, 66). rate and efficiency (11, 12). Generally, the ORR by proton-electron transfer to O2* (associative
+ The hydrogen oxidation reaction (HOR), which involves either four proton-electron transfers to mechanism) or splitting of the O-O bond in O2
+involves the same reaction steps as the HER ex- reduce oxygen to water, desirable for fuel cells, (dissociative mechanism), depending on the ap-
+cept in reverse, has received much less attention or a two–proton-electron pathway, attractive for plied potential (71).
+in the context of non–precious metal catalyst the production of hydrogen peroxide (see below) Although the volcano framework presented
+development (21, 70). According to theory, an (13). The four-electron pathway can proceed via in Fig. 4A is similar to that discussed above for
+optimal HOR catalyst should also exhibit DGH ≈ 0 several mechanisms. A direct four-electron mech- the HER/HOR in Fig. 3A, there is a substantial
+and reside at the top of the same volcano in Fig. 3A. anism can either be dissociative or associative difference. Unlike in the case of the HER/HOR
+As such, we would expect Pt to be the best pure in nature, depending on the oxygen dissociation with one reaction intermediate, the four-electron
+metal catalyst for both the HER and HOR in acid, barrier on the catalyst surface (71). An indirect ORR involves multiple intermediates (OOH*,
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+which is in fact observed experimentally (21, 70). four-electron mechanism involves first the two- OH*, O*), the binding energies of which are
+However, this is not true for MoS2 catalysts, which electron pathway to hydrogen peroxide, followed strongly correlated and cannot be decoupled
+show much poorer HOR activity relative to the by further reduction to water (71): easily because of scaling relations (71). In fact,
+HER (32). Understanding the differences between the scaling relation DGOOH = DGOH + 3.2 ± 0.2 eV
+precious metal and non–precious metal catalysts Dissociative: O2 + 2* → 2O* (4) was found to apply universally to both close-
+for the HOR remains a frontier in research. One packed (111) and open-packed (100) facets of
+distinction involves coverage effects in catalysis: 2O* + 2H+ + 2e– → 2OH* (5) face-centered cubic (fcc) metals and their alloys
+The DGH of metallic Pt has little dependence on (Fig. 4B) (72, 73). As a result of this nonideal
+hydrogen coverage, whereas that of MoS2 shows 2OH* + 2H+ + 2e– → 2H2O + 2* (6) scaling between OOH* and OH*, even a catalyst
+substantial variation (31). Surface oxidation can calculated to be at the top of the ORR volcano
+also play a role for some catalyst systems; for ex- Associative: O2 + * → O2* (7) plot with optimal DEO will have a nonzero the-
+ample, with non–precious metals and metal alloys, oretical overpotential of 0.3 to 0.4 V (71–73).
+the metallic surface expected during HER con- O2* + H+ + e– → OOH* (8) This is the origin of the observed overpotential
+ditions is quite different from the metal oxide/ among even the very best ORR catalysts, in-
+hydroxide surface that can form during HOR OOH* + H+ + e– → O* + H2O (9) cluding the extensively studied Pt-based sys-
+conditions (20). Accurately modeling expected tems (Fig. 4C) (74).
+surface structures and stoichiometries of the cat- O* + H+ + e– → OH* (10) In the development of Pt-based catalysts, con-
+alyst material during different operating condi- siderable effort has been devoted to shape-controlled
+tions represents a broader challenge in catalysis. OH* + H+ + e– → H2O + * (11) synthesis to tailor the ORR activities (Fig. 2). In
+
+Fig. 3. The hydrogen evolution reaction. (A) HER volcano plot for metals and MoS2. [Reproduced with permission from (20, 32)] (B) TOFavg plots with
+linear sweep voltammograms of various HER catalysts. Data obtained from (10, 32, 37, 51, 52, 59). State-of-the-art Ni-based homogeneous catalysts are
+also included for comparison (67–69). (C) Chronological trend in overpotential of MoS2-based and phosphide HER catalysts. Data obtained from (10, 50–59)
+and references therein. (D) Representative microscopy images of HER catalysts. [Reproduced with permission from (10, 32–34, 36, 39, 42, 49, 50)]
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 4 of 12
+R ES E A RC H | R E V IE W
+
+nonadsorbing electrolytes such as perchloric acid, catalyst was enhanced by a factor of 1.5 to 1.8 reported to further enhance their ORR activities
+the ORR activity of low-index facets in single- and that of the Pt3Y catalyst by a factor of 6 to (Fig. 4D) (104). In particular, doping with Mo led
+crystalline Pt is known to follow the order (110) > 10 (97). This scheme has been expanded to in- to improvement in specific activity and mass ac-
+(111) > (100) facets (75). When adsorbing electro- clude alkaline earth metals and the lanthanide tivity by factors of 81 and 73, respectively, relative
+lytes such as sulfuric acid are used, the (100) facets series (98). To leverage the effects of nano- to commercial Pt/C catalysts. Computational re-
+exhibit higher activity than their (111) counter- structuring, size-selected PtxY nanoparticles 4 sults indicate that Mo preferentially occupies
+parts instead, as sulfate anions strongly adsorb to 9 nm in diameter were also prepared, the surface vertex and edge sites in the presence of
+onto the (111) facets, blocking sites (76). These best of which exhibited a mass activity exceed- adsorbed oxygen, where it forms relatively strong
+trends have inspired the development of Pt-based ing that of Pt nanoparticles by a factor of 3 (99). Mo-Pt and Mo-Ni bonds to stabilize both Pt and
+catalysts with different morphologies and exposed The activity of the catalysts was found to in- Ni atoms against dissolution (104). Despite the
+facets, including nanocubes (77), nanotubes (78), crease with decreasing average Pt-Pt distances, notable improvement in activity, the Mo-doped
+nanowires (79), nanodendrites (80), and nano- indicating that compressive strain exerted on the Pt3Ni system still requires ~280 mV overpoten-
+cages (81) (Fig. 4D). surface Pt atoms by the alloy core led to im- tial to reach 2 mA cm−2Pt, which is far from the
+ Support effects can also play a role in catalyst proved catalytic activity, which is supported by equilibrium potential for the ORR, leaving sub-
+activity and stability (Fig. 2). Currently, carbon further studies on mass-selected PtxGd nano- stantial opportunity for catalyst improvement
+black is the most common support for Pt-based particles (99–101). (Fig. 4C).
+catalysts (82–92). However, the instability of car- Another alloy found to outperform pure Pt is As discussed above, Pt is the best pure metal
+bon black under high potentials related to weak Pt3Ni (95, 96). Extended single-crystal surfaces of catalyst for both the HER and HOR in acid,
+Pt-C interactions has prompted the search for Pt3Ni(111), with a Pt-rich outermost layer caused essentially as a result of microscopic reversibil-
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+more stable supports that can anchor Pt catalysts by thermal annealing and restructuring in the ity: Both reactions involve the same steps, ex-
+firmly, including Ti0.7Mo0.3O2 (93) and tin-doped near-surface region, were prepared (102). These cept in opposite directions. According to the
+indium oxide (94), which have been shown to so-called Pt-skin structures showed a specific same reasoning, one might expect Pt, which is
+enhance catalytic activities as well. activity 10 times that of Pt(111) and 90 times the best pure metal ORR catalyst, to perform as
+ Alloying is another extensively used strategy to that of state-of-the-art Pt/C catalysts. Subse- well for the oxygen evolution reaction (OER);
+enhance the ORR performance of Pt-based cat- quently, three-dimensional Pt3Ni nanoframes however, this is not the case observed experi-
+alysts (Fig. 2). Alloying can decrease the oxygen were synthesized from structural evolution of mentally (105). One reason is that microscopic
+adsorption energy of the top Pt layer of Pt3M PtNi3 polyhedra in solution (Fig. 4D) (103). These reversibility only holds for a process taking place
+alloys (M = Ni, Fe, Co, Ti) (95, 96). Pt3Sc and nanoframes with large, highly accessible surface close to equilibrium. When large overpotentials
+Pt3Y were predicted theoretically to be promis- areas exhibited improvement in specific activity are needed to drive the reaction in the two
+ing and stable Pt-based alloys for the ORR (97). and mass activity by factors of 22 and 36, respec- directions, the requirements for catalysis in each
+This was confirmed experimentally using bulk tively, relative to state-of-the-art Pt/C catalysts, direction could be substantially different (106).
+polycrystalline Pt3Sc and Pt3Y catalysts; rela- even after 10,000 potential cycles. Recently, dop- In addition, at the high positive potentials re-
+tive to pure Pt, the specific activity of the Pt3Sc ing Pt3Ni octahedra with transition metals was quired for the OER, metals including Pt generally
+
+Fig. 4. The oxygen reduction reaction. (A) ORR volcano plot for metals. [Reproduced with permission from (71)] (B) ORR theoretical limiting potential
+plot for fcc (111) and (100) facets of metals and alloys. [Reproduced with permission from (73)] (C) Chronological trend in overpotential of Pt-based ORR
+catalysts. Data obtained from (74, 82–92, 98, 104) and references therein. (D) Representative microscopy images of ORR catalysts. [Reproduced with
+permission from (79, 82, 83, 103, 104)]
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 5 of 12
+R ES E A RC H | R E V IE W
+
+undergo oxidation, which presents a different
+type of surface than that pertaining under ORR
+conditions (107, 108). Again, an important fron-
+tier in catalysis research is the development of
+improved methods, both experimental and the-
+oretical, that can rapidly and accurately ascer-
+tain the surface structure and stoichiometry of
+the catalyst material during different operating
+conditions. Such information is essential to gain
+a full understanding of the reaction kinetics and
+would put the community in a position to develop
+the best possible catalyst materials.
+ Because catalyst materials for the OER are
+generally metal oxides, volcano plots for the OER
+have been constructed for a wide variety of metal
+oxide surfaces (including rutile, perovskite, spinel,
+rock salt, and bixbyite oxides) using DGO – DGOH Fig. 5. The oxygen evolution reaction. (A) OER volcano plot for metal oxides. Experimental and theo-
+as the descriptor (109). Experimental overpoten- retical data were respectively obtained from (118) and (126) for CoOx-(a), NiCoOx, and CoFeOx; (118) and
+tials at 1 mA cm−2cat are seen to overlay well on (123) for NiOx and NiFeOx; (129) and (130) for LaMO3 perovskites (applied +0.21 eV reverse solvation correction
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+the theoretical overpotential volcano when plotted to DGO – DGOH for consistency with other data); (113) and (117) for IrO2(110); (113) and (119) for IrO2(100); (107)
+against this simple descriptor (Fig. 5A). A more and (109) for PtO2 [calculation assumes beta-(CaCl2) phase, which is more stable than the rutile phase
+complete model would incorporate, among other according to (108)]; (119) for IrOx/SrIrO3 (calculation assumes IrO3/SrIrO3 active site); and (131) for FeCoW
+things, more precise depictions of the catalytically (calculation assumes FeW-doped CoOOH as active site). Current densities (extrapolated at constant
+active surfaces involved; for instance, it has been Tafel slope where necessary) were normalized to surface area by capacitance in (118) and by Brunauer-
+observed that some of the perovskites (of chemical Emmett-Teller measurements and scanning electron microscopy in (129, 131). IrO2 and IrOx/SrIrO3 films
+formula ABO3) in Fig. 5A undergo leaching of were found to be flat by atomic force microscopy. PtO2 (10−9 mol cm−2 loading) was assumed to be flat.
+either A or B metal cations and surface amor- The volcano itself corresponds to DGOOH = DGOH + 3.2 eV (109). (B) Chronological trend in overpotential of
+phization under OER conditions (110–112). In various OER catalysts in acid and alkali. Data obtained from (65, 105, 114–116, 118, 119, 122, 131) and
+the absence of fully elucidated surface structures references therein. Data points marked with asterisks are normalized to oxide surface area.
+for the resulting catalytically active surfaces, binding
+energies from the ideal, stoichiometric terminations
+were used in the construction of Fig. 5A. All surfaces surface area were prepared (Fig. 5B), exhibiting OER catalysts that possess both high activity and
+studied among these broad classes of metal oxide low overpotential (191 mV at 10 mA cm−2geo) for stability in acidic media (e.g., for proton exchange
+materials were found to obey a scaling relation the OER in alkaline electrolyte (131). When normal- membrane fuel cells and electrolyzers) remains a
+between OOH* and OH* that is not ideal (DGOOH = ized to the catalyst surface area, many non–precious serious challenge (135). To achieve progress in this
+DGOH + 3.2 ± 0.2 eV), similar to the case of metals metal oxide catalysts for the OER are at least as direction, a deeper understanding of the working
+investigated for the ORR, again hindering the active as precious metal–based systems in alkali state of these catalysts and the nature of their
+development of a catalyst with zero theoretical (65, 118). Some of these catalysts show bifunctional active sites is needed so as to control and tailor
+overpotential (109). For OER catalysis in acid, activity for both the ORR and OER in alkaline their properties in the appropriate manner. A
+IrO2 is a reasonably active metal oxide catalyst, media as well. By studying a series of perovskites, a combination of theory, computational studies,
+as has been theoretically explained on the basis volcano-type relationship was established between and sophisticated in situ/in operando character-
+of reasonable binding energies to reaction inter- ORR/OER activity and the filling of eg orbitals in ization techniques will help to address these
+mediates (113–117). Although this catalyst has in- the surface metal cations, which can serve as critical issues.
+deed been shown experimentally to be among the another descriptor of activity (128, 129). Optimal Although the thermodynamic limiting poten-
+better OER catalysts today, based on activity and activity was found in the case of eg occupancy tial volcanoes as in Fig. 4A have been helpful in
+stability under reaction conditions, it is far from close to unity, with high covalency of the tran- elucidating trends in ORR/OER catalysis, it is
+an ideal OER catalyst in terms of activity and is sition metal–oxygen bond. desirable to move toward volcanoes derived from
+not completely stable under high oxidative po- Metal-free catalysts have also recently emerged microkinetic modeling. In addition to the reac-
+tentials (65, 105, 118). Recently, thin films of as a promising class of ORR/OER catalysts under tion energies of the elementary steps used in con-
+IrOx/SrIrO3 were reported to show extremely high alkaline conditions (e.g., heteroatom-doped car- structing the thermodynamic volcano, such a model
+OER activity in acid (270 mV at 10 mA cm−2oxide, bons) (132–134). By doping carbon with more requires information about the size of kinetic
+normalized to oxide surface area) along with electronegative atoms such as nitrogen, a net barriers for each elementary step. Whereas the cal-
+promising stability (119). The associated geomet- positive charge is created on adjacent carbon culation of kinetic barriers for non-electrochemical
+ric area–normalized activity is also exceptional atoms (C+), which facilitates oxygen adsorption steps is well understood, the calculation of elec-
+(Fig. 5B) despite the low surface area of the films; and charge transfer, resulting in enhanced trochemical kinetic barriers (including their po-
+leveraging the excellent intrinsic activity with ORR/OER activity (132). This strategy has also tential dependence) is much more difficult with
+formulations that provide higher surface area been extended to dopant atoms that are less current techniques (20, 23–28). In large part, this
+(Fig. 2) could lead to further improvements in electronegative than carbon (such as boron), difficulty arises from the inherent restriction of
+overall electrode activity. which create similar charge sites (such as B+) to DFT to calculations at constant charge rather than
+ Owing to the high cost and scarcity of precious facilitate the catalytic process (133). To exploit constant potential, which results in a changing
+metals such as Pt, Ru, and Ir, non–precious metal synergistic effects of different dopant atoms, co- potential across the reaction coordinate. One
+oxide catalysts such as nickel oxides (120–124), doping of carbon catalysts has been demonstra- scheme to circumvent this limitation involves
+cobalt oxides (125, 126), manganese oxides (127), ted with success as well (134). extrapolation to the limit of an infinite unit
+and multication perovskites (128–130) have also A typical shortcoming of non–precious metal cell, where a single charge transfer has negli-
+been vigorously studied, although they are stable oxide and metal-free catalysts, however, is their gible impact on the simulated potential and thus
+only under alkaline conditions. Recently, elec- poor stability in an acidic environment (65, 118). the reaction energy and barrier are obtainable at
+trodes of ternary FeCoW oxyhydroxides with high Overall, the development of Earth-abundant ORR/ constant potential. By performing calculations
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 6 of 12
+R ES E A RC H | R E V IE W
+
+with progressively larger unit cells, it has been relations among reactive intermediates involved (7, 13). The electrochemical reduction of oxygen
+possible to extrapolate to the infinite cell size in the ORR/OER. Overcoming this particular lim- to hydrogen peroxide has generally been explored
+limit, where a kinetic barrier of 0.26 eV was itation requires decoupling the binding energies in acidic environments because hydrogen perox-
+found at zero driving force and a charge trans- of different intermediates—for instance, by sta- ide decomposes under alkaline conditions (7, 13).
+fer coefficient of 0.5 for the reduction of OH* to bilizing OOH* with respect to OH* (109, 143). Overall, the production of hydrogen peroxide
+H2O on Pt(111) (25). Although the volcano framework has helped to from oxygen involves two coupled electron-proton
+ Further studies have incorporated these kinetic elucidate this key concept, its implementation will transfers and one reaction intermediate (OOH*),
+parameters for all four coupled proton-electron require substantial effort. A deeper understanding making it similar in complexity to the HER (13):
+transfer steps of the ORR into a steady-state of the electrode-electrolyte interface and the
+microkinetic model to study Pt(111) (136). Addi- associated kinetics would allow for more detailed O2 + * + H+ + e– → OOH* (12)
+tionally, the reaction energies and barriers used strategies to design ORR/OER catalysts with truly
+in the model were calculated in the presence of low overpotential. Developing a means to engi- OOH* + H+ + e– → H2O2 + * (13)
+an explicit solvation bilayer of water and at the neer a catalyst material around known scaling
+most stable coverage that has been found both relations is just the first step in opening up oppor- As such, it is possible to find a catalyst with zero
+experimentally
+ pﬃﬃﬃ pﬃﬃﬃ and theoretically: a honeycomb tunities to create near-ideal ORR/OER catalyst theoretical overpotential that has an optimal
+ð 3  3ÞR30 pattern with 2/3 monolayer H2O systems that would substantially increase the DGOOH, binding OOH* neither too strongly nor
+and 1/3 monolayer OH (137–140). The formation efficiency of a wide range of energy conversion weakly (13). Although several catalysts, such as
+of the two-electron product H2O2 was also con- devices. Pt (144), Ag (145), Au (146), Au-Pd alloys (146),
+sidered, as shown in the free energy diagram nitrogen-doped carbon (147), and hierarchically
+ Emerging reactions of interest
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+(Fig. 6A). Figure 6B compares the experimental porous carbon (148), have been explored, they
+(black/gray) and simulated (pink/blue) polariza- Beyond the aforementioned reactions involving were found to exhibit only modest performance
+tion curves (141, 142). With the additional con- the HER, HOR, ORR, and OER, there are a multi- in the production of hydrogen peroxide. Suitable
+sideration of diffusion steps (pink), remarkable tude of other emerging energy conversion re- electrocatalysts would need to possess high se-
+agreement is achieved between experiment and actions that are relatively less explored. Several lectivity toward the two-electron as opposed to
+theory for both onset potential and saturation of them could potentially be game-changing if the four-electron pathway.
+current density. Finally, the scaling relationships electrocatalysts with the right properties could DFT calculations have established a volcano
+were used to generalize the model over a binding be developed. Although these reactions may in- framework that relates the theoretical overpoten-
+energy descriptor space and thus create a theoret- volve a different set of reaction intermediates, tial to DGOOH for the two-electron reduction of
+ical volcano derived from microkinetic modeling mechanisms, and number of electrons trans- oxygen to hydrogen peroxide (13), and experi-
+(Fig. 6C). This study demonstrates progress in ferred, the concepts of descriptors and volcanoes mental overpotentials at 1 mA cm−2 are over-
+the modeling of multistep electrochemical re- to assess activity and selectivity also represent a laid on this plot (149) (Fig. 7A). For metals that
+actions at the complicated electrode-electrolyte first important step in gaining the understand- bind OOH* strongly, the four-electron ORR will
+interface, but the path forward requires even ing needed to accelerate catalyst development dominate over the two-electron pathway. On the
+more detailed and efficient methods of deter- in these areas. other hand, in the case of weak OOH* binding,
+mining electrochemical barriers, an important the two- and four-electron volcano plots overlap
+frontier ahead. Hydrogen peroxide production each other, which indicates a compromise in ac-
+ Despite extensive research over the years to The development of an electrochemical process tivity for hydrogen peroxide selectivity with weak-
+develop ORR/OER catalysts in both acids and to directly reduce oxygen to hydrogen peroxide er OOH* binding (13, 149). As a result, the most
+bases, most state-of-the-art catalysts still require (O2 + 2H+ + 2e– → H2O2) would be advantageous promising catalyst with both high activity and
+far-from-ideal overpotentials of 0.25 to 0.4 V to because it could replace the conventional, energy- selectivity toward hydrogen peroxide would be
+reach current densities of interest (Figs. 4C and intensive anthraquinone process with a protocol found at the apex of the two-electron volcano plot.
+5B) (74, 105). The theoretical framework presented directly coupled to renewable electricity for safer Theoretically predicted Pt-Hg, Pd-Hg, and Ag-Hg
+above shows that this is largely due to scaling deployment in a modular, decentralized fashion alloys showed not only impressive mass activity but
+
+Fig. 6. Microkinetic modeling for the oxygen reduction reaction. (A) Free curves on Pt(111) at room temperature in 0.1 M HClO4 at a rotation speed of
+energy diagrams for O2 reduction to H2O and H2O2 on Pt(111) at 0.9 V versus 1600 rpm are shown for comparison (141, 142).The inset shows a Tafel plot with
+RHE, showing the pathway for reduction to H2O2 and the dominating pathway to a slope of 59 mV/decade indicated. [Reproduced with permission from (136)]
+H2O proceeding through electrochemical reduction of OOH*A. [Reproduced with (C) Simulated kinetic volcano at 0.9 V versus RHE compared to the limiting po-
+permission from (136)] (B) Simulated polarization curve and kinetic current tential volcano and experiments on (111) facets, with experimental labels for
+density on Pt(111) at a rotation speed of 1600 rpm. Experimental polarization Cu/Pt(111), Pt(111), Pt3Ni(111), and Pd(111). [Reproduced with permission from (136)]
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 7 of 12
+R ES E A RC H | R E V IE W
+
+also high selectivity (>95%) in the synthesis of broadly classified according to their selectivity to- cies, promoters, and hydrogen bond donors or
+hydrogen peroxide (13, 149). The rational design ward their major product of reaction: (i) carbon acceptors (153, 157).
+approach in this work has uncovered impor- monoxide (e.g., Au, Ag), (ii) formate (e.g., Pb, Sn), The formation of C2+ species is yet more com-
+tant concepts to begin screening and identify- (iii) hydrocarbons (e.g., Cu), and (iv) hydrogen plex, as C-C bond formation is another reaction
+ing more attractive catalyst candidates for this (e.g., Pt, Ni). On the basis of the combined theo- step to consider. Two pathways have been iden-
+reaction, in particular to bypass the toxicity of retical and experimental framework described tified. In one pathway, carbon monoxide is first
+Hg. Building on the thermodynamic-based frame- above, an initial volcano plot was constructed to hydrogenated, which makes the formation of the
+work and extending it to understand kinetic understand catalytic trends in carbon dioxide C-C bond more facile (158). In the other path-
+barriers and interfacial processes in greater de- reduction. Figure 7B consists of DFT calculations way, adsorbed carbon monoxide dimerizes first
+tail, across a broader range of materials and re- that relate the theoretical limiting potential to (159–161). For ethanol formation, acetaldehyde
+action conditions, would help to provide further DFT-calculated DECO (154), and overlaid are ex- was recently identified as an important intermed-
+insights for the development of scalable catalysts perimental onset potentials for the formation of iate (162). Given the complexity of the carbon di-
+that are selective to hydrogen peroxide while methane and/or methanol, the earliest potentials oxide reduction reaction, more computational
+operating at low overpotentials. at which either product is detected (155). In the and experimental work is needed to elucidate
+ case of metals that bind CO* too strongly, the the underlying reaction mechanisms and inter-
+Carbon dioxide reduction reaction overpotential is dictated by the protonation of mediates. Further insight can also be gained by
+Another important energy conversion reaction CO* to CHO*, whereas for metals that bind CO* studying the related carbon monoxide reduction
+involves the electroreduction of carbon dioxide to too weakly, the overpotential is dictated by the reaction, which is similar to carbon dioxide re-
+value-added products using renewable energy as protonation of CO(g) to CHO*, where CO desorp- duction but avoids potential catalyst-poisoning
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+an input (14). Like the ORR, this is a multielectron tion is the competing reaction (154). For the for- effects from the formation of formate (161–163).
+reduction reaction involving a number of different mation of methane/methanol, Cu was found to
+surface-bound reaction intermediates (150–153). reside near the top of the volcano plot with op- Nitrogen reduction reaction
+However, unlike the ORR (which has only two timal DECO, albeit with a substantial theoretical Inspiration for the electroreduction of nitrogen
+major end products, water or hydrogen perox- overpotential of ~0.8 V due to limitations from (N2 + 6H+ + 6e– → 2NH3) can be drawn from
+ide), there are a vast number of possible carbon scaling relations (154, 155). This is unsurprising, the nitrogenase enzymes in bacteria that per-
+dioxide reduction products, including carbon mon- given the many reaction steps and intermedi- form nitrogen fixation at room temperature and
+oxide, formate, formaldehyde, methane, metha- ates involved for each product; several of the atmospheric pressure (15). Early studies demon-
+nol, and C2+ hydrocarbons and oxygenates; many intermediates are C1 species that likely bind to strated the feasibility of this process in a synthet-
+of these products require a large number of the metal in a similar manner (e.g., between the ic context (164, 165), helping to motivate the
+protons and electrons transferred, and possibly carbon atom and the metal surface) (156). Again, development of catalysts including Pt (166), Rh
+proceed through different intermediates as well this points to the imperative of breaking the (167), and Ru (167, 168). As with carbon dioxide
+(150–153). Thus, steering catalyst selectivity among scaling relations among the various reaction reduction, the nitrogen reduction reaction in-
+the many carbon-based products is a major chal- intermediates—a necessary although perhaps volves multiple intermediates, and the HER is
+lenge, compounded by the fact that the equilib- insufficient condition for a carbon dioxide reduc- a major competing reaction, making selectivity
+rium potentials for most of the carbon dioxide tion catalyst that produces methane/methanol a great challenge (15). Experimental results so far
+reduction half-reactions are close to 0 V versus with increased activity by many orders of magni- show extremely poor performance (high overpo-
+RHE, making the HER an additional competing tude. Theoretical guidance suggests that strength- tentials, low current densities, and low selectiv-
+reaction beyond those toward unwanted carbon- ening the binding energy of CHO* (or, more ity); there is much room for improvement (15).
+based by-products (150–153). Therefore, for carbon precisely, the transition state energy for the To provide theoretical guidance, a volcano
+dioxide reduction to be commercially viable, elec- coupled proton-electron transfer to adsorbed CO) plot was constructed using DFT calculations to
+trocatalysts would need to possess both high ac- relative to that of CO* would enable the proto- relate the theoretical limiting potential to DEN
+tivity and high selectivity toward the particular nation of CO* to CHO* at a less negative poten- on a variety of metal surfaces (Fig. 7C) (169, 170).
+product of interest. tial and lead to substantially lower overpotential This framework again provides a means to un-
+ In the 1980s, carbon dioxide reduction was (153). This can potentially be achieved through a derstand some of the key points to consider
+investigated on a wide variety of heterogeneous number of strategies, including alloying, electro- involving elemental metal catalysts for this reac-
+elemental surfaces (150). The catalysts studied were lyte additives, ionic liquids, tethering surface spe- tion: Metals that bind nitrogen too weakly are
+
+Fig. 7. Emerging reactions of interest. (A) Volcano plot for hydrogen peroxide production on metals and alloys. [Reproduced with permission from (149)]
+(B) Volcano plot for carbon dioxide reduction on metals. [Reproduced with permission from (154, 155)] (C) Volcano plot for nitrogen reduction (NRR) on
+metals, with that of HER overlaid for comparison. [Reproduced with permission from (170)]
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 8 of 12
+R ES E A RC H | R E V IE W
+
+limited by the adsorption of N2 as N2H* in the tween energies of different adsorbed intermedi- 12. H. A. Gasteiger, N. M. Marković, Just a dream—or
+first step of the reaction, whereas strong-binding ates. One of the main conclusions is that a new future reality? Science 324, 48–49 (2009).
+ doi: 10.1126/science.1172083; pmid: 19342578
+metals are limited by either the protonation of paradigm for catalyst design is needed to circum- 13. S. Siahrostami et al., Enabling direct H2O2 production
+NH* to form NH2* (flat surfaces) or the removal vent these constraints (73), specifically focused through rational electrocatalyst design. Nat. Mater. 12,
+of NH2* as NH3 (stepped surfaces). Metals such on tuning the stabilization of one intermediate 1137–1143 (2013). doi: 10.1038/nmat3795; pmid: 24240242
+as Ru, Rh, Mo, and Fe were calculated to lie near relative to another. 14. D. T. Whipple, P. J. A. Kenis, Prospects of CO2 utilization via
+ direct heterogeneous electrochemical reduction. J. Phys.
+the top of the volcano plot, binding nitrogen One strategy would be to construct three- Chem. Lett. 1, 3451–3458 (2010). doi: 10.1021/jz1012627
+neither too strongly nor too weakly (169). Un- dimensional catalytically active sites that bind 15. C. J. M. van der Ham, M. T. M. Koper, D. G. H. Hetterscheid,
+fortunately, even those metals that are found different reaction intermediates (and transition Challenges in reduction of dinitrogen by proton and
+near the top of the volcano exhibit large theo- states) in different ways. Examples could include electron transfer. Chem. Soc. Rev. 43, 5183–5191 (2014).
+ doi: 10.1039/C4CS00085D; pmid: 24802308
+retical overpotentials of at least 0.5 V because alloying, doping (173, 174), or the introduction of
+ 16. R. Parsons, The rate of electrolytic hydrogen evolution and
+of nonideal scaling relations between the inter- defects. Alternatively, scaling might be circum- the heat of adsorption of hydrogen. Trans. Faraday Soc. 54,
+mediates. Modeling to this point suggests that vented by selectively stabilizing the intermediates 1053–1063 (1958). doi: 10.1039/tf9585401053
+a necessary, although perhaps not sufficient, through some external mechanism. For instance, 17. J. K. Nørskov et al., Trends in the exchange current for
+ hydrogen evolution. J. Electrochem. Soc. 152, J23–J26
+condition for improved nitrogen reduction activ- differences in size could be distinguished through
+ (2005). doi: 10.1149/1.1856988
+ity may be achieved by stabilizing N2H* relative catalyst structures that bind larger intermediates 18. J. Greeley, M. Mavrikakis, Alloy catalysts designed
+to NH2* or NH* (170). through multiple sites [e.g., confinement (143)]; from first principles. Nat. Mater. 3, 810–815 (2004).
+ For catalysts near the top of the volcano, the differences in chemical functionalization (e.g., hy- doi: 10.1038/nmat1223; pmid: 15502837
+HER was also found to be a competing reaction, drogen bonds) or physical properties (e.g., dipole 19. J. Greeley, T. F. Jaramillo, J. Bonde, I. B. Chorkendorff,
+ J. K. Nørskov, Computational high-throughput screening
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+both theoretically and experimentally, thus com- strength) could be exploited through the addition of electrocatalytic materials for hydrogen evolution.
+promising the faradaic efficiency for nitrogen of molecules to the electrolyte or promoters/ligands Nat. Mater. 5, 909–913 (2006). doi: 10.1038/nmat1752;
+reduction (Fig. 7C) (167–170). It was proposed to the surface (153), as illustrated in Fig. 2. pmid: 17041585
+that flat surfaces of Re, Sc, Y, Ti, and Zr are Further efforts are also needed to elucidate 20. E. Skúlason et al., Modeling the electrochemical
+ hydrogen oxidation and evolution reactions on the basis
+capable of performing nitrogen reduction at –1 to many details of the electrode-electrolyte interface of density functional theory calculations. J. Phys. Chem. C
+–1.5 V versus RHE with substantial suppression that remain poorly understood to date. Current 114, 18182–18197 (2010). doi: 10.1021/jp1048887
+of the HER attributable to their stronger binding challenges include atomistic- and molecular-level 21. D. Strmcnik et al., Improving the hydrogen oxidation
+of nitrogen relative to hydrogen, but the conclu- depictions of the solvent, cations, and anions near reaction rate by promotion of hydroxyl adsorption.
+ Nat. Chem. 5, 300–306 (2013). doi: 10.1038/nchem.1574;
+sion was that mechanisms to suppress HER are the interface, as well as the kinetics and reaction pmid: 23511418
+needed to obtain reasonable performance (169). barriers of key elementary steps involving proton/ 22. N. Danilovic, R. Subbaraman, D. Strmcnik, V. R. Stamenkovic,
+In general, the difference between the theoretical electron transfers, all under relevant reaction N. M. Markovic, Electrocatalysis of the HER in acid and
+limiting potential volcanoes for nitrogen reduc- conditions. Therein lies the frontier of electroca- alkaline media. J. Serb. Chem. Soc. 78, 2007–2015 (2013).
+ doi: 10.2298/JSC131118136D
+tion and for the HER is smallest for flat, strong talysis research; with faster, more efficient methods 23. Y. Huang, R. J. Nielsen, W. A. Goddard 3rd, M. P. Soriaga,
+binding surfaces (170). Further DFT studies also to capture this understanding with more advanced The reaction mechanism with free energy barriers for
+suggested transition metal nitrides, such as VN methods both in theory and in experiment, addi- electrochemical dihydrogen evolution on MoS2. J. Am. Chem.
+and ZrN, to be highly active for nitrogen reduc- tional information will come to light that can Soc. 137, 6692–6698 (2015). doi: 10.1021/jacs.5b03329;
+ pmid: 25941943
+tion at low onset potentials while suppressing further guide the community toward catalysts 24. Y.-H. Fang, Z.-P. Liu, Surface phase diagram and oxygen
+the HER (171). The materials design strategies that can operate with near-ideal efficiency and coupling kinetics on flat and stepped Pt surfaces under
+emerging from initial theoretical insights repre- selectivity. electrochemical potentials. J. Phys. Chem. C 113, 9765–9772
+sent a first and important step toward developing (2009). doi: 10.1021/jp901091a
+ 25. V. Tripković, E. Skúlason, S. Siahrostami, J. K. Nørskov,
+improved catalysts. Further work is needed to RE FERENCES AND NOTES J. Rossmeisl, The oxygen reduction reaction mechanism on
+elucidate atomic-scale processes at the electrode- 1. J. A. Turner, Sustainable hydrogen production. Science 305, Pt(111) from density functional theory calculations. Electrochim.
+electrolyte interface, including the roles of sol- 972–974 (2004). doi: 10.1126/science.1103197; Acta 55, 7975–7981 (2010). doi: 10.1016/j.electacta.2010.02.056
+vents, cations, and anions as well as the kinetics pmid: 15310892 26. Y.-H. Fang, Z.-P. Liu, Mechanism and Tafel lines of
+ 2. S. Chu, A. Majumdar, Opportunities and challenges for a electro-oxidation of water to oxygen on RuO2(110). J. Am.
+of proton-electron transfer and N-N scission. A Chem. Soc. 132, 18214–18222 (2010). doi: 10.1021/ja1069272;
+ sustainable energy future. Nature 488, 294–303 (2012).
+greater understanding of the mechanistic details doi: 10.1038/nature11475; pmid: 22895334 pmid: 21133410
+at the interface would provide the guidance needed 3. N. S. Lewis, D. G. Nocera, Powering the planet: Chemical 27. K. Chan, J. K. Nørskov, Electrochemical barriers made
+to implement more targeted strategies for the challenges in solar energy utilization. Proc. Natl. simple. J. Phys. Chem. Lett. 6, 2663–2668 (2015).
+ Acad. Sci. U.S.A. 103, 15729–15735 (2006). doi: 10.1021/acs.jpclett.5b01043; pmid: 26266844
+development of advanced electrocatalysts for
+ doi: 10.1073/pnas.0603395103; pmid: 17043226 28. K. Chan, J. K. Nørskov, Potential dependence of electrochemical
+this promising, yet largely underexplored, re- 4. “World Energy Outlook 2015” (International Energy Agency, 2015). barriers from ab initio calculations. J. Phys. Chem. Lett. 7,
+action (172). 5. “The Outlook for Energy: A View to 2040” (Exxon Mobil 1686–1690 (2016). doi: 10.1021/acs.jpclett.6b00382;
+ Corporation, 2015). pmid: 27088442
+Outlook 6. G. A. Olah, A. Goeppert, G. K. S. Prakash, Beyond Oil and Gas: 29. H. Tributsch, J. C. Bennett, Electrochemistry and
+ The Methanol Economy (Wiley-VCH, 2009). photochemistry of MoS2 layer crystals. 1. J. Electroanal. Chem.
+Recent years have witnessed a blossoming inter- 7. J. M. Campos-Martin, G. Blanco-Brieva, J. L. G. Fierro, 81, 97–111 (1977). doi: 10.1016/S0022-0728(77)80363-X
+est in the development of advanced electro- Hydrogen peroxide synthesis: An outlook beyond the 30. B. Hinnemann et al., Biomimetic hydrogen evolution: MoS2
+catalysts for clean energy conversion. We have anthraquinone process. Angew. Chem. Int. Ed. 45, nanoparticles as catalyst for hydrogen evolution. J. Am.
+highlighted the utility of an initial approach that 6962–6984 (2006). doi: 10.1002/anie.200503779; Chem. Soc. 127, 5308–5309 (2005). doi: 10.1021/ja0504690;
+ pmid: 17039551 pmid: 15826154
+examines the elementary steps of each reaction 8. “Mineral Commodity Summaries” (U.S. Geological Survey, 2015). 31. C. Tsai, K. R. Chan, J. K. Nørskov, F. Abild-Pedersen,
+to identify the key intermediates involved, their 9. Y. Jiao, Y. Zheng, M. Jaroniec, S. Z. Qiao, Design of Theoretical insights into the hydrogen evolution activity of
+bonding to surfaces, and the energetics of each electrocatalysts for oxygen- and hydrogen-involving energy layered transition metal dichalcogenides. Surf. Sci. 640,
+step. For each reaction, we illustrated how this conversion reactions. Chem. Soc. Rev. 44, 2060–2086 (2015). 133–140 (2015). doi: 10.1016/j.susc.2015.01.019
+ doi: 10.1039/C4CS00470A; pmid: 25672249 32. T. F. Jaramillo et al., Identification of active edge sites for
+approach has helped to clarify key limitations 10. J. D. Benck, T. R. Hellstern, J. Kibsgaard, P. Chakthranont, electrochemical H2 evolution from MoS2 nanocatalysts.
+among known catalysts systems and how that T. F. Jaramillo, Catalyzing the hydrogen evolution reaction Science 317, 100–102 (2007). doi: 10.1126/science.1141483;
+knowledge has led to successful strategies to (HER) with molybdenum sulfide nanomaterials. ACS Catal. 4, pmid: 17615351
+develop improved electrocatalysts. In most of the 3957–3971 (2014). doi: 10.1021/cs500923c 33. J. Kibsgaard, Z. Chen, B. N. Reinecke, T. F. Jaramillo,
+ 11. H. A. Gasteiger, S. S. Kocha, B. Sompalli, F. T. Wagner, Engineering the surface structure of MoS2 to
+reactions, the limited success so far with the cat- Activity benchmarks and requirements for Pt, Pt-alloy, and preferentially expose active edge sites for electrocatalysis.
+alysts known to date can be traced back to the non-Pt oxygen reduction catalysts for PEMFCs. Appl. Catal. B Nat. Mater. 11, 963–969 (2012). doi: 10.1038/nmat3439;
+limitations set by scaling relations that exist be- 56, 9–35 (2005). doi: 10.1016/j.apcatb.2004.06.021 pmid: 23042413
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 9 of 12
+R ES E A RC H | R E V IE W
+
+34. Z. Chen et al., Core-shell MoO3-MoS2 nanowires for hydrogen 54. J. Tian, Q. Liu, A. M. Asiri, X. Sun, Self-supported nanoporous oxidation in the presence of CO. Electrochim. Acta 179,
+ evolution: A functional design for electrocatalytic materials. cobalt phosphide nanowire arrays: An efficient 3D 647–657 (2015). doi: 10.1016/j.electacta.2015.03.176
+ Nano Lett. 11, 4168–4175 (2011). doi: 10.1021/nl2020476; hydrogen-evolving cathode over the wide range of 75. N. M. Marković, R. R. Adzic, B. D. Cahan, E. B. Yeager,
+ pmid: 21894935 pH 0-14. J. Am. Chem. Soc. 136, 7587–7590 (2014). Structural effects in electrocatalysis—Oxygen reduction on
+35. D. Kong et al., Synthesis of MoS2 and MoSe2 films with doi: 10.1021/ja503372r; pmid: 24830333 platinum low-index single-crystal surfaces in perchloric-acid
+ vertically aligned layers. Nano Lett. 13, 1341–1347 (2013). 55. J. Hao, W. Yang, Z. Zhang, J. Tang, Metal-organic frameworks solutions. J. Electroanal. Chem. 377, 249–259 (1994).
+ doi: 10.1021/nl400258t; pmid: 23387444 derived CoxFe1-xP nanocubes for electrochemical doi: 10.1016/0022-0728(94)03467-2
+36. H. Wang et al., Electrochemical tuning of vertically aligned hydrogen evolution. Nanoscale 7, 11055–11062 (2015). 76. M. E. Gamboa-Aldeco, E. Herrero, P. S. Zelenay,
+ MoS2 nanofilms and its application in improving hydrogen doi: 10.1039/C5NR01955A; pmid: 26052656 A. Wieckowski, Adsorption of bisulfate anion on a Pt(100)
+ evolution reaction. Proc. Natl. Acad. Sci. U.S.A. 110, 56. E. J. Popczun et al., Nanostructured nickel phosphide as an electrode—A comparison with Pt(111) and Pt(Poly).
+ 19701–19706 (2013). doi: 10.1073/pnas.1316792110; electrocatalyst for the hydrogen evolution reaction. J. Am. J. Electroanal. Chem. 348, 451–457 (1993).
+ pmid: 24248362 Chem. Soc. 135, 9267–9270 (2013). doi: 10.1021/ja403440e; doi: 10.1016/0022-0728(93)80151-7
+37. Y. Li et al., MoS2 nanoparticles grown on graphene: An pmid: 23763295 77. C. Wang, H. Daimon, Y. Lee, J. Kim, S. Sun, Synthesis of
+ advanced catalyst for the hydrogen evolution reaction. J. Am. 57. J. M. McEnaney et al., Amorphous molybdenum phosphide monodisperse Pt nanocubes and their enhanced catalysis for
+ Chem. Soc. 133, 7296–7299 (2011). doi: 10.1021/ja201269b; nanoparticles for electrocatalytic hydrogen evolution. Chem. oxygen reduction. J. Am. Chem. Soc. 129, 6974–6975
+ pmid: 21510646 Mater. 26, 4826–4831 (2014). doi: 10.1021/cm502035s (2007). doi: 10.1021/ja070440r; pmid: 17500520
+38. M. A. Lukowski et al., Enhanced hydrogen evolution 58. J. F. Callejas et al., Electrocatalytic and photocatalytic 78. Z. Chen, M. Waje, W. Li, Y. Yan, Supportless Pt and PtPd
+ catalysis from chemically exfoliated metallic MoS2 hydrogen production from acidic and neutral-pH aqueous nanotubes as electrocatalysts for oxygen-reduction
+ nanosheets. J. Am. Chem. Soc. 135, 10274–10277 (2013). solutions using iron phosphide nanoparticles. ACS Nano 8, reactions. Angew. Chem. Int. Ed. 46, 4060–4063 (2007).
+ doi: 10.1021/ja404523s; pmid: 23790049 11101–11107 (2014). doi: 10.1021/nn5048553; pmid: 25250976 doi: 10.1002/anie.200700894; pmid: 17476642
+39. D. Voiry et al., Conducting MoS2 nanosheets as catalysts 59. J. Kibsgaard et al., Designing an improved transition metal 79. S. Guo et al., FePt and CoPt nanowires as efficient catalysts
+ for hydrogen evolution reaction. Nano Lett. 13, 6222–6227 phosphide catalyst for hydrogen evolution using experimental for the oxygen reduction reaction. Angew. Chem. Int. Ed.
+ (2013). doi: 10.1021/nl403661s; pmid: 24251828 and theoretical trends. Energy Environ. Sci. 8, 3022–3029 52, 3465–3468 (2013). doi: 10.1002/anie.201209871;
+40. D. Voiry et al., Enhanced catalytic activity in strained (2015). doi: 10.1039/C5EE02179K pmid: 23420804
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+ chemically exfoliated WS2 nanosheets for hydrogen evolution. 60. F. H. Saadi et al., Operand synthesis of macroporous 80. B. Lim et al., Pd-Pt bimetallic nanodendrites with high activity
+ Nat. Mater. 12, 850–855 (2013). doi: 10.1038/nmat3700; molybdenum diselenide films for electrocatalysis of the for oxygen reduction. Science 324, 1302–1305 (2009).
+ pmid: 23832127 hydrogen-evolution reaction. ACS Catal. 4, 2866–2873 doi: 10.1126/science.1170377; pmid: 19443738
+41. H. Li et al., Activating and optimizing MoS2 basal planes (2014). doi: 10.1021/cs500412u 81. L. Zhang et al., Platinum-based nanocages with
+ for hydrogen evolution through the formation of strained 61. H. Vrubel, X. Hu, Molybdenum boride and carbide catalyze subnanometer-thick walls and well-defined,
+ sulphur vacancies. Nat. Mater. 15, 48–53 (2016). hydrogen evolution in both acidic and basic solutions. controllable facets. Science 349, 412–416 (2015).
+ doi: 10.1038/nmat4465; pmid: 26552057 Angew. Chem. Int. Ed. 51, 12703–12706 (2012). doi: 10.1126/science.aab0801; pmid: 26206931
+42. D. Merki, S. Fierro, H. Vrubel, X. L. Hu, Amorphous doi: 10.1002/anie.201207111; pmid: 23143996 82. Z. Peng, H. Yang, Synthesis and oxygen reduction
+ molybdenum sulfide films as catalysts for electrochemical 62. Z. W. Seh et al., Two-dimensional molybdenum carbide electrocatalytic property of Pt-on-Pd bimetallic
+ hydrogen production in water. Chem. Sci. 2, 1262–1267 (MXene) as an efficient electrocatalyst for hydrogen heteronanostructures. J. Am. Chem. Soc. 131, 7542–7543
+ (2011). doi: 10.1039/C1SC00117E evolution. ACS Energy Lett. 1, 589–594 (2016). (2009). doi: 10.1021/ja902256a; pmid: 19438286
+43. J. D. Benck, Z. B. Chen, L. Y. Kuritzky, A. J. Forman, doi: 10.1021/acsenergylett.6b00247 83. C. Wang et al., Design and synthesis of bimetallic
+ T. F. Jaramillo, Amorphous molybdenum sulfide catalysts for 63. W. F. Chen et al., Hydrogen-evolution catalysts based electrocatalyst with multilayered Pt-skin surfaces. J. Am.
+ electrochemical hydrogen production: Insights into the origin on non-noble metal nickel-molybdenum nitride nanosheets. Chem. Soc. 133, 14396–14403 (2011). doi: 10.1021/ja2047655;
+ of their catalytic activity. ACS Catal. 2, 1916–1923 (2012). Angew. Chem. Int. Ed. 51, 6131–6135 (2012). pmid: 21770417
+ doi: 10.1021/cs300451q doi: 10.1002/anie.201200699; pmid: 22565496 84. S. Chen et al., Enhanced activity for oxygen reduction
+44. H. G. S. Casalongue et al., Operando characterization of an 64. J. R. McKone, B. F. Sadtler, C. A. Werlang, N. S. Lewis, reaction on “Pt3Co” nanoparticles: Direct evidence
+ amorphous molybdenum sulfide nanoparticle catalyst during H. B. Gray, Ni-Mo nanopowders for efficient electrochemical of percolated and sandwich-segregation structures.
+ the hydrogen evolution reaction. J. Phys. Chem. C 118, hydrogen evolution. ACS Catal. 3, 166–169 (2013). J. Am. Chem. Soc. 130, 13818–13819 (2008). doi: 10.1021/
+ 29252–29259 (2014). doi: 10.1021/jp505394e doi: 10.1021/cs300691m ja802513y; pmid: 18811156
+45. D. Merki, H. Vrubel, L. Rovelli, S. Fierro, X. L. Hu, Fe, Co, 65. C. C. L. McCrory et al., Benchmarking hydrogen evolving 85. M. H. Shao, K. Sasaki, P. Liu, R. R. Adzic, Pd3Fe and Pt
+ and Ni ions promote the catalytic activity of amorphous reaction and oxygen evolving reaction electrocatalysts for monolayer-modified Pd3Fe electrocatalysts for oxygen
+ molybdenum sulfide films for hydrogen evolution. Chem. Sci. solar water splitting devices. J. Am. Chem. Soc. 137, reduction. Z. Phys. Chem. 221, 1175–1190 (2007).
+ 3, 2515–2525 (2012). doi: 10.1039/c2sc20539d 4347–4357 (2015). doi: 10.1021/ja510442p; pmid: 25668483 doi: 10.1524/zpch.2007.221.9-10.1175
+46. J. Kristensen, J. Zhang, I. Chorkendorff, J. Ulstrup, B. L. Ooi, 66. T. R. Hellstern, J. D. Benck, J. Kibsgaard, C. Hahn, 86. K. Sasaki, L. Zhang, R. R. Adzic, Niobium oxide-supported
+ Assembled monolayers of Mo3S44+ clusters on well-defined T. F. Jaramillo, Engineering cobalt phosphide (CoP) thin platinum ultra-low amount electrocatalysts for oxygen
+ surfaces. Dalton Trans. 2006, 3985–3990 (2006). film catalysts for enhanced hydrogen evolution activity reduction. Phys. Chem. Chem. Phys. 10, 159–167 (2008).
+ doi: 10.1039/b608949f; pmid: 17028707 on silicon photocathodes. Adv. Energy Mater. 6, 1501758 doi: 10.1039/B709893F; pmid: 18075695
+47. T. F. Jaramillo et al., Hydrogen evolution on supported (2016). doi: 10.1002/aenm.201501758 87. C. Cui, L. Gan, M. Heggen, S. Rudi, P. Strasser, Compositional
+ incomplete cubane-type [Mo3S4]4+ electrocatalysts. 67. W. A. Hoffert, J. A. S. Roberts, R. M. Bullock, M. L. Helm, segregation in shaped Pt alloy nanoparticles and their
+ J. Phys. Chem. C 112, 17492–17498 (2008). doi: 10.1021/ Production of H2 at fast rates using a nickel electrocatalyst in structural behaviour during electrocatalysis. Nat. Mater. 12,
+ jp802695e water-acetonitrile solutions. Chem. Commun. 49, 7767–7769 765–771 (2013). doi: 10.1038/nmat3668; pmid: 23770725
+48. H. I. Karunadasa et al., A molecular MoS2 edge site mimic (2013). doi: 10.1039/c3cc43203c; pmid: 23743801 88. C. Cui et al., Octahedral PtNi nanoparticle catalysts:
+ for catalytic hydrogen generation. Science 335, 698–702 68. J. Hou et al., Electrocatalytic H2 production with a turnover Exceptional oxygen reduction activity by tuning the alloy
+ (2012). doi: 10.1126/science.1215868; pmid: 22323816 frequency >107 s-1: The medium provides an increase in rate particle surface composition. Nano Lett. 12, 5885–5889
+49. J. Kibsgaard, T. F. Jaramillo, F. Besenbacher, Building an but not overpotential. Energy Environ. Sci. 7, 4013–4017 (2012). doi: 10.1021/nl3032795; pmid: 23062102
+ appropriate active-site motif into a hydrogen-evolution (2014). doi: 10.1039/C4EE01899K 89. P. Mani, R. Srivastava, P. Strasser, Dealloyed Pt-Cu core-shell
+ catalyst with thiomolybdate [Mo3S13]2- clusters. Nat. Chem. 69. H. J. S. Brown, S. Wiese, J. A. S. Roberts, R. M. Bullock, nanoparticle electrocatalysts for use in PEM fuel cell
+ 6, 248–253 (2014). doi: 10.1038/nchem.1853; M. L. Helm, Electrocatalytic hydrogen production by cathodes. J. Phys. Chem. C 112, 2770–2778 (2008).
+ pmid: 24557141 [Ni(7PPh2NH)2]2+: Removing the distinction between doi: 10.1021/jp0776412
+50. E. J. Popczun, C. G. Read, C. W. Roske, N. S. Lewis, endo- and exo-protonation sites. ACS Catal. 5, 2116–2123 90. S. Koh, M. F. Toney, P. Strasser, Activity-stability
+ R. E. Schaak, Highly active electrocatalysis of the hydrogen (2015). doi: 10.1021/cs502132y relationships of ordered and disordered alloy phases of
+ evolution reaction by cobalt phosphide nanoparticles. 70. W. C. Sheng, H. A. Gasteiger, Y. Shao-Horn, Hydrogen Pt3Co electrocatalysts for the oxygen reduction reaction
+ Angew. Chem. Int. Ed. 53, 5427–5430 (2014). oxidation and evolution reaction kinetics on platinum: Acid vs (ORR). Electrochim. Acta 52, 2765–2774 (2007).
+ doi: 10.1002/anie.201402646; pmid: 24729482 alkaline electrolytes. J. Electrochem. Soc. 157, B1529–B1536 doi: 10.1016/j.electacta.2006.08.039
+51. J. Kibsgaard, T. F. Jaramillo, Molybdenum phosphosulfide: (2010). doi: 10.1149/1.3483106 91. R. Srivastava, P. Mani, N. Hahn, P. Strasser, Efficient oxygen
+ An active, acid-stable, earth-abundant catalyst for the 71. J. K. Nørskov et al., Origin of the overpotential for oxygen reduction fuel cell electrocatalysis on voltammetrically
+ hydrogen evolution reaction. Angew. Chem. Int. Ed. 53, reduction at a fuel-cell cathode. J. Phys. Chem. B 108, dealloyed Pt-Cu-Co nanoparticles. Angew. Chem. Int. Ed.
+ 14433–14437 (2014). doi: 10.1002/anie.201408222; 17886–17892 (2004). doi: 10.1021/jp047349j 46, 8988–8991 (2007). doi: 10.1002/anie.200703331;
+ pmid: 25359678 72. V. Viswanathan, H. A. Hansen, J. Rossmeisl, J. K. Nørskov, pmid: 17893897
+52. A. B. Laursen et al., Nanocrystalline Ni5P4: A hydrogen Universality in oxygen reduction electrocatalysis on 92. D. Wang et al., Tuning oxygen reduction reaction activity via
+ evolution electrocatalyst of exceptional efficiency in both metal surfaces. ACS Catal. 2, 1654–1660 (2012). controllable dealloying: A model study of ordered Cu3Pt/C
+ alkaline and acidic media. Energy Environ. Sci. 8, 1027–1034 doi: 10.1021/cs300227s intermetallic nanocatalysts. Nano Lett. 12, 5230–5238
+ (2015). doi: 10.1039/C4EE02940B 73. A. Vojvodic, J. K. Nørskov, New design paradigm for (2012). doi: 10.1021/nl302404g; pmid: 22954373
+53. Q. Liu et al., Carbon nanotubes decorated with CoP heterogeneous catalysts. Natl. Sci. Rev. 2, 140–149 (2015). 93. V. T. Ho, C.-J. Pan, J. Rick, W.-N. Su, B.-J. Hwang,
+ nanocrystals: A highly active non-noble-metal nanohybrid doi: 10.1093/nsr/nwv023 Nanostructured Ti0.7Mo0.3O2 support enhances electron
+ electrocatalyst for hydrogen evolution. Angew. Chem. Int. Ed. 74. C. M. Pedersen et al., Benchmarking Pt-based transfer to Pt: High-performance catalyst for oxygen
+ 53, 6710–6714 (2014). doi: 10.1002/anie.201404161; electrocatalysts for low temperature fuel cell reactions with reduction reaction. J. Am. Chem. Soc. 133, 11716–11724
+ pmid: 24845625 the rotating disk electrode: Oxygen reduction and hydrogen (2011). doi: 10.1021/ja2039562; pmid: 21707063
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 10 of 12
+R ES E A RC H | R E V IE W
+
+94. Y. Liu, W. E. Mustain, High stability, high activity Pt/ITO oxygen 116. H. N. Nong et al., Oxide-supported IrNiOx core-shell particles 136. H. A. Hansen, V. Viswanathan, J. K. Nørskov, Unifying kinetic
+ reduction electrocatalysts. J. Am. Chem. Soc. 135, 530–533 as efficient, cost-effective, and stable catalysts for and thermodynamic analysis of 2e– and 4e– reduction of
+ (2013). doi: 10.1021/ja307635r; pmid: 23270418 electrochemical water splitting. Angew. Chem. Int. Ed. oxygen on metal surfaces. J. Phys. Chem. C 118, 6706–6718
+95. V. Stamenkovic et al., Changing the activity of 54, 2975–2979 (2015). doi: 10.1002/anie.201411072 (2014). doi: 10.1021/jp4100608
+ electrocatalysts for oxygen reduction by tuning the 117. M. García-Melchor, L. Vilella, N. López, A. Vojvodic, 137. A. Michaelides, P. Hu, A density functional theory study
+ surface electronic structure. Angew. Chem. Int. Ed. 45, Computationally probing the performance of hybrid, of hydroxyl and the intermediate in the water formation
+ 2897–2901 (2006). doi: 10.1002/anie.200504386; heterogeneous, and homogeneous iridium-based catalysts reaction on Pt. J. Chem. Phys. 114, 513–519 (2001).
+ pmid: 16596688 for water oxidation. ChemCatChem 8, 1792–1798 (2016). doi: 10.1063/1.1328746
+96. V. R. Stamenkovic et al., Trends in electrocatalysis on doi: 10.1002/cctc.201600007 138. H. Ogasawara et al., Structure and bonding of water
+ extended and nanoscale Pt-bimetallic alloy surfaces. 118. C. C. L. McCrory, S. Jung, J. C. Peters, T. F. Jaramillo, on Pt(111). Phys. Rev. Lett. 89, 276102 (2002).
+ Nat. Mater. 6, 241–247 (2007). doi: 10.1038/nmat1840; Benchmarking heterogeneous electrocatalysts for the oxygen doi: 10.1103/PhysRevLett.89.276102; pmid: 12513221
+ pmid: 17310139 evolution reaction. J. Am. Chem. Soc. 135, 16977–16987 139. T. Schiros et al., Structure and bonding of the water-hydroxyl
+97. J. Greeley et al., Alloys of platinum and early transition (2013). doi: 10.1021/ja407115p; pmid: 24171402 mixed phase on Pt(111). J. Phys. Chem. C 111, 15003–15012
+ metals as oxygen reduction electrocatalysts. Nat. Chem. 1, 119. L. C. Seitz et al., A highly active and stable IrOx/SrIrO3 (2007). doi: 10.1021/jp073405f
+ 552–556 (2009). doi: 10.1038/nchem.367; pmid: 21378936 catalyst for the oxygen evolution reaction. Science 140. H. A. Hansen, J. Rossmeisl, J. K. Nørskov, Surface Pourbaix
+98. M. Escudero-Escribano et al., Tuning the activity of Pt alloy 353, 1011–1014 (2016). doi: 10.1126/science.aaf5050; diagrams and oxygen reduction activity of Pt, Ag and Ni(111)
+ electrocatalysts by means of the lanthanide contraction. pmid: 27701108 surfaces studied by DFT. Phys. Chem. Chem. Phys. 10,
+ Science 352, 73–76 (2016). doi: 10.1126/science.aad8892; 120. J. Landon et al., Spectroscopic characterization of mixed 3722–3730 (2008). doi: 10.1039/b803956a; pmid: 18563233
+ pmid: 27034369 Fe-Ni oxide electrocatalysts for the oxygen evolution reaction 141. D. Strmcnik et al., Enhanced electrocatalysis of the oxygen
+99. P. Hernandez-Fernandez et al., Mass-selected nanoparticles in alkaline electrolytes. ACS Catal. 2, 1793–1801 (2012). reduction reaction based on patterning of platinum
+ of PtxY as model catalysts for oxygen electroreduction. doi: 10.1021/cs3002644 surfaces with cyanide. Nat. Chem. 2, 880–885 (2010).
+ Nat. Chem. 6, 732–738 (2014). pmid: 25054945 121. L. Trotochaud, J. K. Ranney, K. N. Williams, S. W. Boettcher, doi: 10.1038/nchem.771; pmid: 20861905
+100. M. Escudero-Escribano et al., Pt5Gd as a highly active and Solution-cast metal oxide thin film electrocatalysts for 142. A. M. Gómez-Marín, J. M. Feliu, New insights into the oxygen
+ stable catalyst for oxygen electroreduction. J. Am. Chem. oxygen evolution. J. Am. Chem. Soc. 134, 17253–17261 reduction reaction mechanism on Pt(111): A detailed
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+ Soc. 134, 16476–16479 (2012). doi: 10.1021/ja306348d; (2012). doi: 10.1021/ja307507a; pmid: 22991896 electrochemical study. ChemSusChem 6, 1091–1100 (2013).
+ pmid: 22998588 122. B. M. Hunter et al., Highly active mixed-metal nanosheet doi: 10.1002/cssc.201200847; pmid: 23640868
+101. A. Velázquez-Palenzuela et al., The enhanced activity of mass- water oxidation catalysts made by pulsed-laser ablation in 143. A. D. Doyle, J. H. Montoya, A. Vojvodic, Improving oxygen
+ selected PtxGd nanoparticles for oxygen electroreduction. liquids. J. Am. Chem. Soc. 136, 13118–13121 (2014). electrochemistry through nanoscopic confinement. ChemCatChem
+ J. Catal. 328, 297–307 (2015). doi: 10.1016/j.jcat.2014.12.012 doi: 10.1021/ja506087h; pmid: 25197774 7, 738–742 (2015). doi: 10.1002/cctc.201402864
+102. V. R. Stamenkovic et al., Improved oxygen reduction 123. D. Friebel et al., Identification of highly active Fe sites in 144. A. Verdaguer-Casadevall, P. Hernandez-Fernandez,
+ activity on Pt3Ni(111) via increased surface site availability. (Ni,Fe)OOH for electrocatalytic water splitting. J. Am. Chem. I. E. L. Stephens, I. Chorkendorff, S. Dahl, The effect of
+ Science 315, 493–497 (2007). doi: 10.1126/science.1135941; Soc. 137, 1305–1313 (2015). doi: 10.1021/ja511559d; ammonia upon the electrocatalysis of hydrogen oxidation
+ pmid: 17218494 pmid: 25562406 and oxygen reduction on polycrystalline platinum. J. Power
+103. C. Chen et al., Highly crystalline multimetallic nanoframes 124. J. W. D. Ng et al., Gold-supported cerium-doped NiOx Sources 220, 205–210 (2012). doi: 10.1016/j.
+ with three-dimensional electrocatalytic surfaces. Science catalysts for water oxidation. Nat. Energy 1, 16053 (2016). jpowsour.2012.07.141
+ 343, 1339–1343 (2014). doi: 10.1126/science.1249061; doi: 10.1038/nenergy.2016.53 145. B. B. Blizanac, P. N. Ross, N. M. Markovic, Oxygen
+ pmid: 24578531 125. Y. Liang et al., Co3O4 nanocrystals on graphene as a electroreduction on Ag(111): The pH effect. Electrochim. Acta
+104. X. Huang et al., High-performance transition metal-doped synergistic catalyst for oxygen reduction reaction. 52, 2264–2271 (2007). doi: 10.1016/j.electacta.2006.06.047
+ Pt3Ni octahedra for oxygen reduction reaction. Science Nat. Mater. 10, 780–786 (2011). doi: 10.1038/nmat3087; 146. J. S. Jirkovský et al., Single atom hot-spots at Au-Pd
+ 348, 1230–1234 (2015). doi: 10.1126/science.aaa8765; pmid: 21822263 nanoalloys for electrocatalytic H2O2 production. J. Am. Chem.
+ pmid: 26068847 126. M. Bajdich, M. García-Mota, A. Vojvodic, J. K. Nørskov, Soc. 133, 19432–19441 (2011). doi: 10.1021/ja206477z;
+105. R. Frydendal et al., Benchmarking the stability of oxygen A. T. Bell, Theoretical investigation of the activity of pmid: 22023652
+ evolution reaction catalysts: The importance of monitoring cobalt oxides for the electrochemical oxidation of water. 147. T. P. Fellinger, F. Hasché, P. Strasser, M. Antonietti,
+ mass losses. Chemelectrochem 1, 2075–2081 (2014). J. Am. Chem. Soc. 135, 13521–13530 (2013). Mesoporous nitrogen-doped carbon for the electrocatalytic
+ doi: 10.1002/celc.201402262 doi: 10.1021/ja405997s; pmid: 23944254 synthesis of hydrogen peroxide. J. Am. Chem. Soc. 134,
+106. J. Rossmeisl, Z. W. Qu, H. Zhu, G. J. Kroes, J. K. Nørskov, 127. Y. Gorlin, T. F. Jaramillo, A bifunctional nonprecious 4072–4075 (2012). doi: 10.1021/ja300038p; pmid: 22339713
+ Electrolysis of water on oxide surfaces. J. Electroanal. Chem. metal catalyst for oxygen reduction and water oxidation. 148. Y. Liu, X. Quan, X. Fan, H. Wang, S. Chen, High-yield
+ 607, 83–89 (2007). doi: 10.1016/j.jelechem.2006.11.008 J. Am. Chem. Soc. 132, 13612–13614 (2010). electrosynthesis of hydrogen peroxide from oxygen reduction
+107. C. Iwakura, K. Fukuda, H. Tamura, The anodic evolution doi: 10.1021/ja104587v; pmid: 20839797 by hierarchically porous carbon. Angew. Chem. Int. Ed. 54,
+ of oxygen on platinum oxide electrode in alkaline 128. J. Suntivich et al., Design principles for oxygen-reduction 6837–6841 (2015). doi: 10.1002/anie.201502396;
+ solutions. Electrochim. Acta 21, 501–508 (1976). activity on perovskite oxide catalysts for fuel cells and pmid: 25892325
+ doi: 10.1016/0013-4686(76)85139-0 metal-air batteries. Nat. Chem. 3, 546–550 (2011). 149. A. Verdaguer-Casadevall et al., Trends in the electrochemical
+108. S. Zhuo, K. Sohlberg, Platinum dioxide phases: Relative doi: 10.1038/nchem.1069; pmid: 21697876 synthesis of H2O2: Enhancing activity and selectivity by
+ thermodynamic stability and kinetics of inter-conversion 129. J. Suntivich, K. J. May, H. A. Gasteiger, J. B. Goodenough, electrocatalytic site engineering. Nano Lett. 14, 1603–1608
+ from first-principles. Physica B 381, 12–19 (2006). Y. Shao-Horn, A perovskite oxide optimized for oxygen (2014). doi: 10.1021/nl500037x; pmid: 24506229
+ doi: 10.1016/j.physb.2005.11.170 evolution catalysis from molecular orbital principles. Science 150. Y. Hori, A. Murata, R. Takahashi, Formation of hydrocarbons in
+109. I. C. Man et al., Universality in oxygen evolution 334, 1383–1385 (2011). doi: 10.1126/science.1212858; the electrochemical reduction of carbon dioxide at a copper
+ electrocatalysis on oxide surfaces. ChemCatChem pmid: 22033519 electrode in aqueous solution. J. Chem. Soc., Faraday Trans. I
+ 3, 1159–1165 (2011). doi: 10.1002/cctc.201000397 130. Y.-L. Lee, M. J. Gadre, Y. Shao-Horn, D. Morgan, Ab initio 85, 2309–2326 (1989). doi: 10.1039/f19898502309
+110. K. J. May et al., Influence of oxygen evolution during water GGA+U study of oxygen evolution and oxygen reduction 151. Y. Hori, R. Takahashi, Y. Yoshinami, A. Murata, Electrochemical
+ oxidation on the surface of perovskite oxide catalysts. J. Phys. electrocatalysis on the (001) surfaces of lanthanum reduction of CO at a copper electrode. J. Phys. Chem. B 101,
+ Chem. Lett. 3, 3264–3270 (2012). doi: 10.1021/jz301414z transition metal perovskites LaBO3 (B = Cr, Mn, Fe, Co and 7075–7081 (1997). doi: 10.1021/jp970284i
+111. M. Risch et al., Structural changes of cobalt-based perovskites Ni). Phys. Chem. Chem. Phys. 17, 21643–21663 (2015). 152. K. P. Kuhl, E. R. Cave, D. N. Abram, T. F. Jaramillo, New
+ upon water oxidation investigated by EXAFS. J. Phys. doi: 10.1039/C5CP02834E; pmid: 26227442 insights into the electrochemical reduction of carbon dioxide
+ Chem. C 117, 8628–8635 (2013). doi: 10.1021/jp3126768 131. B. Zhang et al., Homogeneously dispersed multimetal on metallic copper surfaces. Energy Environ. Sci. 5,
+112. B. Han et al., Activity and stability trends of perovskite oxygen-evolving catalysts. Science 352, 333–337 (2016). 7050–7059 (2012). doi: 10.1039/c2ee21234j
+ oxides for oxygen evolution catalysis at neutral pH. doi: 10.1126/science.aaf1525; pmid: 27013427 153. A. A. Peterson, J. K. Nørskov, Activity descriptors for
+ Phys. Chem. Chem. Phys. 17, 22576–22580 (2015). 132. K. Gong, F. Du, Z. Xia, M. Durstock, L. Dai, Nitrogen-doped CO2 electroreduction to methane on transition-metal
+ doi: 10.1039/C5CP04248H; pmid: 26271910 carbon nanotube arrays with high electrocatalytic activity catalysts. J. Phys. Chem. Lett. 3, 251–258 (2012).
+113. K. A. Stoerzinger, L. Qiao, M. D. Biegalski, Y. Shao-Horn, for oxygen reduction. Science 323, 760–764 (2009). doi: 10.1021/jz201461p
+ Orientation-dependent oxygen evolution activities of rutile doi: 10.1126/science.1168049; pmid: 19197058 154. C. Shi, H. A. Hansen, A. C. Lausche, J. K. Nørskov,
+ IrO2 and RuO2. J. Phys. Chem. Lett. 5, 1636–1641 (2014). 133. L. Yang et al., Boron-doped carbon nanotubes as metal-free Trends in electrochemical CO2 reduction activity for open
+ doi: 10.1021/jz500610u; pmid: 26270358 electrocatalysts for the oxygen reduction reaction. and close-packed metal surfaces. Phys. Chem. Chem.
+114. Y. Lee, J. Suntivich, K. J. May, E. E. Perry, Y. Shao-Horn, Angew. Chem. Int. Ed. 50, 7132–7135 (2011). Phys. 16, 4720–4727 (2014). doi: 10.1039/c3cp54822h;
+ Synthesis and activities of rutile IrO2 and RuO2 nanoparticles doi: 10.1002/anie.201101287; pmid: 21688363 pmid: 24468980
+ for oxygen evolution in acid and alkaline solutions. J. Phys. 134. J. Zhang, Z. Zhao, Z. Xia, L. Dai, A metal-free bifunctional 155. K. P. Kuhl et al., Electrocatalytic conversion of carbon dioxide
+ Chem. Lett. 3, 399–404 (2012). doi: 10.1021/jz2016507; electrocatalyst for oxygen reduction and oxygen evolution to methane and methanol on transition metal surfaces.
+ pmid: 26285858 reactions. Nat. Nanotechnol. 10, 444–452 (2015). J. Am. Chem. Soc. 136, 14107–14113 (2014). doi: 10.1021/
+115. M. Bernicke et al., Iridium oxide coatings with templated doi: 10.1038/nnano.2015.48; pmid: 25849787 ja505791r; pmid: 25259478
+ porosity as highly active oxygen evolution catalysts: 135. R. Frydendal, E. A. Paoli, I. Chorkendorff, J. Rossmeisl, 156. A. A. Peterson, F. Abild-Pedersen, F. Studt, J. Rossmeisl,
+ Structure-activity relationships. ChemSusChem 8, I. E. L. Stephens, Toward an active and stable catalyst for J. K. Nørskov, How copper catalyzes the electroreduction of
+ 1908–1915 (2015). doi: 10.1002/cssc.201402988; oxygen evolution in acidic media: Ti-stabilized MnO2. Adv. Energy carbon dioxide into hydrocarbon fuels. Energy Environ. Sci.
+ pmid: 25958795 Mater. 5, 1500991 (2015). doi: 10.1002/aenm.201500991 3, 1311–1315 (2010). doi: 10.1039/c0ee00071j
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 11 of 12
+R ES E A RC H | R E V IE W
+
+157. B. A. Rosen et al., Ionic liquid-mediated selective conversion Nature 508, 504–507 (2014). doi: 10.1038/nature13249; 171. Y. Abghoui et al., Enabling electrochemical reduction of
+ of CO2 to CO at low overpotentials. Science 334, 643–644 pmid: 24717429 nitrogen to ammonia at ambient conditions through
+ (2011). doi: 10.1126/science.1209786; pmid: 21960532 164. C. J. Pickett, J. Talarmin, Electrosynthesis of ammonia. rational catalyst design. Phys. Chem. Chem. Phys. 17,
+158. J. H. Montoya, A. A. Peterson, J. K. Nørskov, Insights Nature 317, 652–653 (1985). doi: 10.1038/317652a0 4909–4918 (2015). doi: 10.1039/C4CP04838E;
+ into C-C coupling in CO2 electroreduction on copper 165. G. Marnellos, M. Stoukides, Ammonia synthesis at pmid: 25446373
+ electrodes. ChemCatChem 5, 737–742 (2013). atmospheric pressure. Science 282, 98–100 (1998). 172. S. Licht et al., Ammonia synthesis by N2 and steam electrolysis
+ doi: 10.1002/cctc.201200564 doi: 10.1126/science.282.5386.98; pmid: 9756486 in molten hydroxide suspensions of nanoscale Fe2O3.
+159. J. H. Montoya, C. Shi, K. Chan, J. K. Nørskov, Theoretical 166. R. Lan, J. T. S. Irvine, S. Tao, Synthesis of ammonia Science 345, 637–640 (2014). doi: 10.1126/science.1254234;
+ insights into a CO dimerization mechanism in CO2 directly from air and water at ambient temperature and pmid: 25104378
+ electroreduction. J. Phys. Chem. Lett. 6, 2032–2037 (2015). pressure. Sci. Rep. 3, 1145 (2013). doi: 10.1038/srep01145; 173. X. Hong, K. Chan, C. Tsai, J. K. Nørskov, How doped
+ doi: 10.1021/acs.jpclett.5b00722; pmid: 26266498 pmid: 23362454 MoS2 breaks transition-metal scaling relations for CO2
+160. K. J. P. Schouten, Y. Kwon, C. J. M. van der Ham, Z. Qin, 167. K. Kugler, M. Luhn, J. A. Schramm, K. Rahimi, M. Wessling, electrochemical reduction. ACS Catal. 6, 4428–4437 (2016).
+ M. T. M. Koper, A new mechanism for the selectivity Galvanic deposition of Rh and Ru on randomly structured doi: 10.1021/acscatal.6b00619
+ to C-1 and C-2 species in the electrochemical reduction Ti felts for the electrochemical NH3 synthesis. Phys. Chem. 174. N. B. Halck, V. Petrykin, P. Krtil, J. Rossmeisl, Beyond
+ of carbon dioxide on copper electrodes. Chem. Sci. Chem. Phys. 17, 3768–3782 (2015). doi: 10.1039/C4CP05501B; the volcano limitations in electrocatalysis—Oxygen evolution
+ 2, 1902–1909 (2011). doi: 10.1039/c1sc00277e pmid: 25556769 reaction. Phys. Chem. Chem. Phys. 16, 13682–13688 (2014).
+161. K. J. P. Schouten, Z. Qin, E. Pérez Gallent, M. T. M. Koper, 168. V. Kordali, G. Kyriacou, C. Lambrou, Electrochemical doi: 10.1039/c4cp00571f; pmid: 24671166
+ Two pathways for the formation of ethylene in CO synthesis of ammonia at atmospheric pressure and low
+ reduction on single-crystal copper electrodes. J. Am. temperature in a solid polymer electrolyte cell. Chem. AC KNOWLED GME NTS
+ Chem. Soc. 134, 9864–9867 (2012). doi: 10.1021/ja302668n; Commun. 2000, 1673–1674 (2000). doi: 10.1039/b004885m Supported by a grant from the Office of Basic Energy Sciences of the
+ pmid: 22670713 169. E. Skúlason et al., A theoretical evaluation of possible U.S. Department of Energy to the SUNCAT Center for Interface
+162. E. Bertheussen et al., Acetaldehyde as an intermediate transition metal electro-catalysts for N2 reduction. Phys. Chem. Science and Catalysis; Villum Foundation V-SUSTAIN grant 9455 to
+ in the electroreduction of carbon monoxide to ethanol Chem. Phys. 14, 1235–1245 (2012). doi: 10.1039/C1CP22271F; the Villum Center for the Science of Sustainable Fuels and
+
+ Downloaded from https://www.science.org at University of Tokyo on October 08, 2025
+ on oxide-derived copper. Angew. Chem. Int. Ed. 55, pmid: 22146855 Chemicals; the Institute of Materials Research and Engineering,
+ 1450–1454 (2016). doi: 10.1002/anie.201508851; 170. J. H. Montoya, C. Tsai, A. Vojvodic, J. K. Nørskov, The challenge Agency for Science, Technology and Research (A*STAR); and NSF
+ pmid: 26692282 of electrochemical ammonia synthesis: A new perspective Graduate Research Fellowship DGE-114747 (C.F.D.).
+163. C. W. Li, J. Ciston, M. W. Kanan, Electroreduction of carbon on the role of nitrogen scaling relations. ChemSusChem 8,
+ monoxide to liquid fuel on oxide-derived nanocrystalline copper. 2180–2186 (2015). doi: 10.1002/cssc.201500322; pmid: 26097211 10.1126/science.aad4998
+
+Seh et al., Science 355, eaad4998 (2017) 13 January 2017 12 of 12

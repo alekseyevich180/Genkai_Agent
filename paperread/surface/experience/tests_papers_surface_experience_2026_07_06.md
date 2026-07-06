@@ -1,0 +1,3492 @@
+# Surface Extraction Experience
+
+## Summary
+
+- Raw items: 855
+- Aggregated items: 456
+- Known useful: 94
+- Unknown: 362
+
+## adsorption_reaction
+
+- `1/3−2/3 monolayer` (known_useful, n=1)
+  - Fields: `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
+  - Context: Au(111)
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `1/3−2/3 monolayer OH*` (known_useful, n=1)
+  - Fields: `coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `full coverage` (known_useful, n=1)
+  - Fields: `coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `high OH or mixed OH/O coverage` (known_useful, n=1)
+  - Fields: `coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `sub-saturation coverage` (known_useful, n=1)
+  - Fields: `coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## clusters_single_atoms
+
+- `Single Atom` (known_useful, n=7)
+  - Fields: `Cluster/Single Atom`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Au/TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Cluster` (known_useful, n=3)
+  - Fields: `Cluster/Single Atom`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: Au–Ag/TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Au Nanoparticles` (known_useful, n=1)
+  - Fields: `Cluster/Single Atom`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ir nanoparticles` (known_useful, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Na clusters` (known_useful, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Pt nanoparticles` (known_useful, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ru nanoparticles` (known_useful, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Sn single atoms` (known_useful, n=1)
+  - Fields: `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## defects_active_sites
+
+- `oxygen vacancy` (known_useful, n=3)
+  - Fields: `defects`, `vacancy_models`, `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `point defects` (known_useful, n=2)
+  - Fields: `defects`, `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Sb vacancy` (known_useful, n=2)
+  - Fields: `defects`, `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `active sites` (known_useful, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Au Nanoparticles` (known_useful, n=1)
+  - Fields: `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `catalytic active site` (known_useful, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`
+  - Context: Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Defective` (known_useful, n=1)
+  - Fields: `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: CoO/Co
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `defective structure` (known_useful, n=1)
+  - Fields: `defects`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `eg orbital of surface transition metal ions` (known_useful, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`
+  - Context: A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## modeling_tasks
+
+- `active site` (known_useful, n=24)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Au/TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorbate_landscape` (known_useful, n=15)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `vacancy_landscape` (known_useful, n=12)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `oxygen vacancy` (known_useful, n=9)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: Au/TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `single_atom_site` (known_useful, n=9)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `doped_surface` (known_useful, n=8)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorbate` (known_useful, n=6)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorption` (known_useful, n=6)
+  - Fields: `Modeling Keywords`, `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`
+  - Context: CdN4C0-gra
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface` (known_useful, n=6)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: CdN4C0-gra
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface_functionalization` (known_useful, n=5)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `single atom` (known_useful, n=3)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: NiCo LDH/CC
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorption energies` (known_useful, n=2)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: Oxides
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface coverage` (known_useful, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `active sites` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: RuO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorbate coverage` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Co oxides
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `adsorption site` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`
+  - Context: (Ni,Fe)OOH
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Au nanoparticles` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `defect` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: CoO/Co
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `dopant` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`
+  - Context: ZnO
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `interface model` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Cr2O3
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `metal cluster` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: Au/TiO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `nanoparticle` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Ru nanoparticles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `nanoparticles` (known_useful, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `oxygen adsorption energy` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Pt10Pb/C
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `SAC` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `SACs` (known_useful, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `slab_generation` (known_useful, n=1)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: review article
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `subnanometer clusters` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: Pd4, Pd6, Pd17 clusters
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface defects` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: RuO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface intermediates` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: Electrochemical
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface reactions` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface stability` (known_useful, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Co oxides
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `surface_cluster_builder` (known_useful, n=1)
+  - Fields: `recommended_modeling_tasks`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: review article
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## surface_materials
+
+- `CoPt nanoparticles` (known_useful, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Pt nanoparticles` (known_useful, n=2)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Pt nanoparticles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `(112)-oriented surface of hausmannitene` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
+  - Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Au/NiFe LDH surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `bimetallic cluster` (known_useful, n=1)
+  - Fields: `slab_models`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `BP/Au surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`
+  - Context: Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `carbon supported Ir` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `carbon supported Pt` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `carbon supported Ru` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `clean surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Co3O4(001) surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `CoO surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `g-C3N4 surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `gold nanoparticles` (known_useful, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`
+  - Context: Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `graphene-like carbon surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ir nanoparticles` (known_useful, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Ir nanoparticles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `monolayer` (known_useful, n=1)
+  - Fields: `slab_models`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `monometallic cluster` (known_useful, n=1)
+  - Fields: `slab_models`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ni surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ni-O-G SACs` (known_useful, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: Ni-O-G SACs
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `NiCo LDH surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `NiFe LDH surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `NiO surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `oxide surfaces` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`
+  - Context: DOI: 10.1002/cctc.201000397
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Pd17 clusters` (known_useful, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: Pd4, Pd6, Pd17 clusters
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Rh2O3 surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Ru nanoparticles` (known_useful, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Ru nanoparticles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `RuO2 (110) surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `rutile TiO2 surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Sb monolayer` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `tetrahedral cluster` (known_useful, n=1)
+  - Fields: `slab_models`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `transition metal oxide surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`
+  - Context: A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `water/platinum interface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `ZnO surface` (known_useful, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## surface_structure
+
+- `A-layer (tetrahedral Co termination)` (known_useful, n=1)
+  - Fields: `Surface Termination`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Co3O4
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `O-terminated` (known_useful, n=1)
+  - Fields: `surface_terminations`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `primarily exposed facet` (known_useful, n=1)
+  - Fields: `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `Pt(111) nanofacets` (known_useful, n=1)
+  - Fields: `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+- `tetrahedral Co termination (A-layer)` (known_useful, n=1)
+  - Fields: `surface_terminations`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Use as candidate input for ptomodel or downstream surface-modeling workflows.
+
+## unknown_information
+
+- `OER` (unknown_high_value, n=20)
+  - Fields: `modeling_keywords`, `Modeling Keywords`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `H2O` (unknown_high_value, n=15)
+  - Fields: `Adsorbate/Reactant`, `adsorbates`, `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: TiO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `O2` (unknown_high_value, n=15)
+  - Fields: `products`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `density functional theory` (unknown_high_value, n=13)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni` (unknown_context, n=11)
+  - Fields: `materials`, `dopants`, `Dopant/Modifier`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag` (unknown_high_value, n=9)
+  - Fields: `materials`, `active_sites`, `Active Site`, `Dopant/Modifier`, `Material`, `dopants`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co` (unknown_high_value, n=9)
+  - Fields: `materials`, `Modeling Keywords`, `adsorbates`, `Adsorbate/Reactant`, `dopants`, `Dopant/Modifier`, `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Fe` (unknown_context, n=9)
+  - Fields: `Active Site`, `materials`, `modifiers`, `dopants`, `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt` (unknown_high_value, n=8)
+  - Fields: `materials`, `Material`, `Modeling Keywords`, `dopants`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co3O4` (unknown_high_value, n=7)
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `DFT` (unknown_high_value, n=7)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalysis` (unknown_high_value, n=6)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `O` (unknown_high_value, n=6)
+  - Fields: `adsorbates`, `intermediates`, `Adsorbate/Reactant`, `dopants`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au` (unknown_context, n=5)
+  - Fields: `materials`, `active_sites`, `Active Site`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cd` (unknown_high_value, n=5)
+  - Fields: `materials`, `dopants`, `Dopant/Modifier`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co3+` (unknown_high_value, n=5)
+  - Fields: `Modeling Keywords`, `Active Site`, `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `H2` (unknown_high_value, n=5)
+  - Fields: `products`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pd` (unknown_high_value, n=5)
+  - Fields: `materials`, `Material`, `Modeling Keywords`, `dopants`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt(111)` (unknown_high_value, n=5)
+  - Fields: `surfaces`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ru` (unknown_context, n=5)
+  - Fields: `materials`, `dopants`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalyst` (unknown_high_value, n=4)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electronic structure` (unknown_high_value, n=4)
+  - Fields: `Modeling Keywords`, `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ir` (unknown_high_value, n=4)
+  - Fields: `materials`, `Modeling Keywords`, `dopants`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NO` (unknown_high_value, n=4)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OH` (unknown_high_value, n=4)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ORR` (unknown_high_value, n=4)
+  - Fields: `Modeling Keywords`, `modeling_keywords`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Au(111)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh` (unknown_high_value, n=4)
+  - Fields: `materials`, `Adsorption Site`, `dopants`, `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh2O3 sites` (unknown_high_value, n=4)
+  - Fields: `active_sites`, `adsorption_sites`, `Active Site`, `Adsorption Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `water` (unknown_high_value, n=4)
+  - Fields: `products`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `β-CoOOH` (unknown_high_value, n=4)
+  - Fields: `materials`, `Modeling Keywords`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(001)` (unknown_high_value, n=3)
+  - Fields: `Facet`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Cr2O3
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(0112̅)` (unknown_high_value, n=3)
+  - Fields: `Facet`, `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: β-CoOOH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(100)` (unknown_high_value, n=3)
+  - Fields: `Facet`, `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Au(100)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `antimonene` (unknown_high_value, n=3)
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au(100)` (unknown_high_value, n=3)
+  - Fields: `surfaces`, `Modeling Keywords`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au(111)` (unknown_high_value, n=3)
+  - Fields: `surfaces`, `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bi` (unknown_context, n=3)
+  - Fields: `Modeling Keywords`, `materials`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `computational methods` (unknown_high_value, n=3)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: ja511559d 1..9
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr` (unknown_context, n=3)
+  - Fields: `Dopant/Modifier`, `Modeling Keywords`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr2O3` (unknown_high_value, n=3)
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr3c` (unknown_high_value, n=3)
+  - Fields: `active_sites`, `Active Site`, `Adsorption Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cu` (unknown_context, n=3)
+  - Fields: `dopants`, `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `HER` (unknown_high_value, n=3)
+  - Fields: `Modeling Keywords`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `HO*` (unknown_context, n=3)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`, `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: DOI: 10.1002/cctc.201000397
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `HOO*` (unknown_high_value, n=3)
+  - Fields: `intermediates`, `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mn` (unknown_context, n=3)
+  - Fields: `dopants`, `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OH*` (unknown_high_value, n=3)
+  - Fields: `intermediates`, `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OH−` (unknown_high_value, n=3)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Ni(Fe)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh2O3` (unknown_high_value, n=3)
+  - Fields: `materials`, `Adsorption Site`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ti` (unknown_context, n=3)
+  - Fields: `active_sites`, `Active Site`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ZnO` (unknown_high_value, n=3)
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`
+  - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(0001)` (unknown_high_value, n=2)
+  - Fields: `facets`, `Facet`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(101̅4)` (unknown_high_value, n=2)
+  - Fields: `facets`, `Facet`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(110)` (unknown_high_value, n=2)
+  - Fields: `facets`, `Facet`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(111)` (unknown_high_value, n=2)
+  - Fields: `Facet`, `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Au(111)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*OOH` (unknown_high_value, n=2)
+  - Fields: `intermediates`, `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `11.0%` (unknown_high_value, n=2)
+  - Fields: `coverage`, `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `7.9%` (unknown_high_value, n=2)
+  - Fields: `coverage`, `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `9.4%` (unknown_high_value, n=2)
+  - Fields: `coverage`, `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag/g-C3N4` (unknown_high_value, n=2)
+  - Fields: `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`
+  - Context: Ag/g-C3N4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ba0.5Sr0.5Co0.8Fe0.2O3–d` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`
+  - Context: A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bismuth (Bi)` (unknown_context, n=2)
+  - Fields: `materials`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `black phosphorus` (unknown_high_value, n=2)
+  - Fields: `materials`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `bridging Pd-Pd sites` (unknown_high_value, n=2)
+  - Fields: `active_sites`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `carbon cloth` (unknown_high_value, n=2)
+  - Fields: `surfaces`, `Surface/Support`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CdN4C0-gra` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CH3OH` (unknown_high_value, n=2)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `charge transfer` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co nanochains` (unknown_high_value, n=2)
+  - Fields: `clusters`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co oxides` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co site` (unknown_high_value, n=2)
+  - Fields: `Modeling Keywords`, `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co2+` (unknown_context, n=2)
+  - Fields: `Modeling Keywords`, `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co4+` (unknown_high_value, n=2)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CoO` (unknown_high_value, n=2)
+  - Fields: `materials`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CoO nanocubes` (unknown_high_value, n=2)
+  - Fields: `clusters`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co–Fe–Cr (oxy)Hydroxides` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr5c` (unknown_high_value, n=2)
+  - Fields: `Active Site`, `Adsorption Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Cr2O3
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `DFT+U` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `first-principles calculation` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `formic acid` (unknown_high_value, n=2)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `g-C3N4` (unknown_high_value, n=2)
+  - Fields: `materials`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `graphene-like carbon` (unknown_high_value, n=2)
+  - Fields: `materials`, `Surface/Support`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Habs` (unknown_high_value, n=2)
+  - Fields: `intermediates`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hads` (unknown_high_value, n=2)
+  - Fields: `adsorbates`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hg/HgO` (unknown_high_value, n=2)
+  - Fields: `Material`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`
+  - Context: Hg/HgO
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hubbard-U correction` (unknown_high_value, n=2)
+  - Fields: `modifiers`, `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydrogen` (unknown_context, n=2)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `kinks` (unknown_high_value, n=2)
+  - Fields: `defects`, `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mo–N/C@MoS2` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
+  - Context: Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mx-Ny-C` (unknown_context, n=2)
+  - Fields: `active_sites`, `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `N` (unknown_context, n=2)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Na` (unknown_high_value, n=2)
+  - Fields: `adsorbates`, `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `nanoporous` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni(111)` (unknown_high_value, n=2)
+  - Fields: `surfaces`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiCoOOH` (unknown_context, n=2)
+  - Fields: `active_sites`, `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiO` (unknown_high_value, n=2)
+  - Fields: `materials`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NO2*` (unknown_context, n=2)
+  - Fields: `adsorbates`, `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `O*` (unknown_context, n=2)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `octahedral site` (unknown_high_value, n=2)
+  - Fields: `adsorption_sites`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OHads` (unknown_high_value, n=2)
+  - Fields: `adsorbates`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ONOO*` (unknown_context, n=2)
+  - Fields: `adsorbates`, `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OOH` (unknown_high_value, n=2)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OOH*` (unknown_context, n=2)
+  - Fields: `adsorbates`, `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxides` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pb` (unknown_context, n=2)
+  - Fields: `dopants`, `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pd4` (unknown_high_value, n=2)
+  - Fields: `clusters`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pd6` (unknown_high_value, n=2)
+  - Fields: `clusters`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PEC` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `phase evolution` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `planar deposition` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt(335)` (unknown_high_value, n=2)
+  - Fields: `surfaces`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt10Pb/C` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `RuO2` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Silver` (unknown_context, n=2)
+  - Fields: `materials`, `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `steps` (unknown_high_value, n=2)
+  - Fields: `defects`, `Defect`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `tetrahedral site` (unknown_high_value, n=2)
+  - Fields: `adsorption_sites`, `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `TiO2` (unknown_high_value, n=2)
+  - Fields: `materials`, `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `transition metal` (unknown_high_value, n=2)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Ba0.5Sr0.5Co0.8Fe0.2O3–d
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `water splitting` (unknown_high_value, n=2)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `β-CoOOH(0112̅)` (unknown_high_value, n=2)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`, `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(012)` (unknown_high_value, n=1)
+  - Fields: `Facet`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Cr2O3
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(101)` (unknown_high_value, n=1)
+  - Fields: `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `(Ni` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`
+  - Context: (Ni,Fe)OOH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*H2O` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*H2O2` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*O` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*O2` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `*OH` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `activation energy` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Pt10Pb/C
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag nanospheres` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag(111)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag/TiO2` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: Ag/TiO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag4` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ag@Sb` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `AgSA` (unknown_high_value, n=1)
+  - Fields: `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `alkaline electrolyte` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`
+  - Context: Hg/HgO
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `alkaline water electrolysis` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ammonia` (unknown_context, n=1)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `anodic oxidation` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Atomic Simulation Environment` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au/TiO2` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: Au/TiO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au2–Ag2` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au4` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Au–Ag/TiO2` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: Au–Ag/TiO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `B-layer (octahedral Co and O ions)` (unknown_context, n=1)
+  - Fields: `Surface Termination`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Co3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bader charge analysis` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `bimetallic catalysts` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `binding` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bismuth` (unknown_context, n=1)
+  - Fields: `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Black Phosphorus Nanosheets` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `bridging oxygen vacant site` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bulk Ir` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Bulk Ir
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `bulk material` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Bulk Ru
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bulk Pt` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Bulk Pt
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Bulk Ru` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Bulk Ru
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `carbon` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalyst` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+  - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalyst development` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalysts` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: review article
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalytic activity` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalytic mechanism` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalytic reactions` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl`
+  - Context: review article
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `catalytic sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CdN0C4-gra` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `charge redistribution` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CO2` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: CoO nanocubes
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co3+δ` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CO32−` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co3O4(001)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Co3O4(110)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl`
+  - Context: jp306303y 1..6
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `composition` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `computational standard hydrogen electrode` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`
+  - Context: DOI: 10.1002/cctc.201000397
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CoO/Co` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: CoO/Co
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CoOct (+4)` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Co3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `CoOOH` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `copper` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `covalency` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`
+  - Context: Ba0.5Sr0.5Co0.8Fe0.2O3–d
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr2O3(001)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr2O3(012)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cr3c site` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cu-based` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_table.csv`
+  - Context: Cu-based
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Cu-based nanostructures` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `d-band` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `d-band theory` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`
+  - Context: A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `dendrite` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Sn SAs/G-Na
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `dendrite-free` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `density of states` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `dispersion interactions` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `dissolution pathways` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
+  - Context: RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `doping` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
+  - Context: Co3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `edge sites` (unknown_high_value, n=1)
+  - Fields: `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalysts` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalytic` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalytic activity` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalytic OER` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au-exp_conditions_input_table.csv`
+  - Context: Black Phosphorus Nanosheets
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrocatalytic water splitting` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrochemical processes` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electrochemistry` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `electron transfer` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Fe atoms in NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Fe sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`
+  - Context: ja511559d 1..9
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Fe)OOH` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`
+  - Context: (Ni,Fe)OOH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Fe3+` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv`
+  - Context: (Ni,Fe)OOH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `five-coordinated Cr5c` (unknown_context, n=1)
+  - Fields: `surface_terminations`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `free energy landscape` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl`
+  - Context: Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Full` (unknown_high_value, n=1)
+  - Fields: `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: CoPt nanoparticles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `GCE-DFT` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Gibbs free energy` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `gold` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl`
+  - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Graphene` (unknown_high_value, n=1)
+  - Fields: `Surface/Support`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Sn SAs/G-Na
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Graphene (G)` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `graphene plane` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `H*` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `H+` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `H2O2` (unknown_context, n=1)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hausmannitene` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
+  - Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `He` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
+  - Context: Co nanochains
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hg` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hg/HgO electrode` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `HgO` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `High OH or mixed OH/O` (unknown_high_value, n=1)
+  - Fields: `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
+  - Context: Au(100)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hubbard U` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Hubbard-U approach` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydrocarbons` (unknown_context, n=1)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydrogen evolution` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydrogen molecules` (unknown_context, n=1)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydrogen oxidation` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydroxides` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydroxy` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `hydroxyl species` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `interfacial interactions` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `kinetic characteristics` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `KOH` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `layered double hydroxide (LDH)` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `metal-oxygen bonding` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: Ni-O-G SACs
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `metal–oxygen bonding` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Methanol` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Pt nanoparticles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mn (II) sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
+  - Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mn (III) sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
+  - Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Mn3O4` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
+  - Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `molecular orbital` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl`
+  - Context: A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `monochain CrO3` (unknown_context, n=1)
+  - Fields: `modifiers`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `MoS2` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
+  - Context: Mo–N/C@MoS2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `nanoscale single crystal ensemble` (unknown_high_value, n=1)
+  - Fields: `facets`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NaOH` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `neighboring Rh sites` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Nernst equation` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
+  - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni atom` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_table.csv`
+  - Context: Ni-O-G SACs
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni reaction sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
+  - Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni sites` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni(Fe)` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`
+  - Context: Ni(Fe)
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni-Cd` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`
+  - Context: Ni-Cd
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ni1−xFexOOH` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`
+  - Context: ja511559d 1..9
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `nickel` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Nickel–Bismuth Oxide` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`
+  - Context: Nickel–Bismuth Oxide
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiCo Layer Double Hydroxide` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiCo LDH/CC` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv`
+  - Context: NiCo LDH/CC
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiCoOOH*` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiFe layered double hydroxide` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiFe LDH` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `nitrogen` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `nitrogen-doped carbon` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `NO oxidation` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
+  - Context: Cr2O3
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Noble metal` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Noble metal
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `non-precious metal catalysts` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `O2*` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `octahedral Co` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `octahedral Co and O ions (B-layer)` (unknown_context, n=1)
+  - Fields: `surface_terminations`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `octahedral sites` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OER intermediates` (unknown_high_value, n=1)
+  - Fields: `adsorption_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`
+  - Context: ja511559d 1..9
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OH–` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`
+  - Context: Ba0.5Sr0.5Co0.8Fe0.2O3–d
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `OH⁻` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rh–Rh2O3-NPs/C
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `operando X-ray absorption spectroscopy` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl`
+  - Context: ja511559d 1..9
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `overpotential` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`
+  - Context: Co3O4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `overpotential (ηOER = 0.48 V` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxidation` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxide` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`
+  - Context: Oxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxide catalysts` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl`
+  - Context: DOI: 10.1002/cctc.201000397
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Oxygen` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Noble metal
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxygen evolution` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`
+  - Context: Oxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxygen reduction reaction` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Pt10Pb/C
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxygen-contained intermediates` (unknown_high_value, n=1)
+  - Fields: `adsorbates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `oxygenates` (unknown_context, n=1)
+  - Fields: `products`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `P` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `palladium` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `partial densities of states` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl`
+  - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pd-Pd sites` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: Pd4, Pd6, Pd17 clusters
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pd17` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `phosphides` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `photoanode` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`
+  - Context: Ag/g-C3N4
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `photoelectrochemical` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`
+  - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Polyaniline fibers` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Polyaniline fibers
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `porous Ni-Cd structure` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`
+  - Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pourbaix diagram` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+  - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt bimetallic` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: Pt bimetallic
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt-Bi` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt-Bi Alloy` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt/C` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt10Ni/C` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl`
+  - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Pt@Sb` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtBi` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: PtPb, PtBi
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtBi alloy` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtBi(100)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
+  - Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtPb` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: PtPb, PtBi
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtTiMe ternary alloys` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `PtxRu1-x/Ru(0001)` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Quantum Espresso` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `reaction mechanism` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv`
+  - Context: Reaction Mechanism
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `reaction mechanisms` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `reactive intermediates` (unknown_context, n=1)
+  - Fields: `intermediates`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh–Rh2O3-NPs` (unknown_high_value, n=1)
+  - Fields: `clusters`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
+  - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Rh–Rh2O3-NPs/C` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
+  - Context: Rh–Rh2O3-NPs/C
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Ru(0001)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
+  - Context: rsc_cp_b803956a_auto 3722..3730
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `RuOx` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `S` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sAu` (unknown_context, n=1)
+  - Fields: `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sAu/NiFe LDH` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv`
+  - Context: sAu/NiFe LDH
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Sc` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `scaling relation` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv`
+  - Context: Oxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `selenides` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `single Ni atoms` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `single nickel atoms` (unknown_high_value, n=1)
+  - Fields: `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+  - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `single-atom Au` (unknown_high_value, n=1)
+  - Fields: `single_atoms`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+  - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `single-atom catalyst` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `singly coordinated sites` (unknown_high_value, n=1)
+  - Fields: `active_sites`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl`
+  - Context: A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Sn` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Sn SAs/G-Na
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Sn SAs/G` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Sn SAs/G-Na` (unknown_high_value, n=1)
+  - Fields: `Material`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Sn SAs/G-Na
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sodium` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_table.csv`
+  - Context: Sn SAs/G-Na
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sodium metal batteries` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `structure` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sub-saturation` (unknown_high_value, n=1)
+  - Fields: `Coverage`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv`
+  - Context: CoPt nanoparticles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `sulfides` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `tellurides` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `tensile strain` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv`
+  - Context: Pt-Bi Alloy
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `tensile stress effect` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
+  - Context: Pt10Pb/C
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `theoretical studies` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl`
+  - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `three-coordinated Cr3c` (unknown_context, n=1)
+  - Fields: `surface_terminations`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+  - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `TiC` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
+  - Context: cs3003098 1..8
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Tin (Sn)` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl`
+  - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `TiO2(110)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
+  - Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `TM@Sb` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Transition metal ions` (unknown_context, n=1)
+  - Fields: `Active Site`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv`
+  - Context: Ba0.5Sr0.5Co0.8Fe0.2O3–d
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `transition metal-based catalysts` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
+  - Context: d0qi01060j 234..272 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `trifunctional` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ultrananocrystalline diamond` (unknown_high_value, n=1)
+  - Fields: `materials`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `UNCD` (unknown_high_value, n=1)
+  - Fields: `Surface/Support`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv`
+  - Context: Pd4, Pd6, Pd17 clusters
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `UNCD Si-coated electrode` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `V` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `W` (unknown_context, n=1)
+  - Fields: `Dopant/Modifier`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv`
+  - Context: Co–Fe–Cr (oxy)hydroxides
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `water oxidation` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
+  - Context: acs_nn_nn-2013-00772s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `XAS` (unknown_high_value, n=1)
+  - Fields: `modeling_keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
+  - Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Yes` (unknown_high_value, n=1)
+  - Fields: `Cluster/Single Atom`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv`
+  - Context: Ru nanoparticles
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Zn` (unknown_context, n=1)
+  - Fields: `dopants`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
+  - Context: d1nr02235k 12885..12895 ++
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `Zn–Air` (unknown_high_value, n=1)
+  - Fields: `Adsorbate/Reactant`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
+  - Context: Mo–N/C@MoS2
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `β-CoOOH(0001)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `β-CoOOH(101̅4)` (unknown_high_value, n=1)
+  - Fields: `surfaces`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl`
+  - Context: ja405997s 1..10
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ΔG*H` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+- `ηORR = 0.50 V)` (unknown_high_value, n=1)
+  - Fields: `Modeling Keywords`
+  - Sources: `/home/pj24001724/ku40000345/wu/Genkai_Agent/tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv`
+  - Context: Antimonene
+  - Action: Review as unknown information; consider adding prompt/schema/planner mapping if repeated.
+
+## Material Classes
+
+### battery_electrode_materials
+
+- `photoanode` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `sodium metal batteries` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+
+### carbides_mxenes
+
+- `Au Nanoparticles` (known_useful, n=3)
+  - Research category: `defects_active_sites`
+  - Fields: `Dopant/Modifier`, `Cluster/Single Atom`, `Modeling Keywords`
+- `Pt nanoparticles` (known_useful, n=3)
+  - Research category: `surface_materials`
+  - Fields: `Material`, `clusters`
+- `CoPt nanoparticles` (known_useful, n=2)
+  - Research category: `surface_materials`
+  - Fields: `materials`, `Material`
+- `Ir nanoparticles` (known_useful, n=2)
+  - Research category: `clusters_single_atoms`
+  - Fields: `clusters`, `Material`
+- `Ru nanoparticles` (known_useful, n=2)
+  - Research category: `clusters_single_atoms`
+  - Fields: `clusters`, `Material`
+- `catalytic active site` (known_useful, n=1)
+  - Research category: `defects_active_sites`
+  - Fields: `active_sites`
+- `catalytic activity` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `catalytic mechanism` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `catalytic reactions` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `catalytic sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `electrocatalytic` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `electrocatalytic activity` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `electrocatalytic OER` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `electrocatalytic water splitting` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `gold nanoparticles` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `materials`
+- `kinetic characteristics` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `nanoparticle` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `nanoparticles` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `modeling_keywords`
+- `theoretical studies` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `TiC` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### carbon_materials
+
+- `Ag/g-C3N4` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Material`, `Modeling Keywords`
+- `carbon cloth` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Surface/Support`
+- `g-C3N4` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`
+- `graphene-like carbon` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Surface/Support`
+- `carbon` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `carbon supported Ir` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Pt` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Ru` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `g-C3N4 surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Graphene` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Surface/Support`
+- `Graphene (G)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `graphene plane` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `adsorption_sites`
+- `graphene-like carbon surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `hydrocarbons` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `products`
+- `nitrogen-doped carbon` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### defect_engineered_materials
+
+- `oxygen vacancy` (known_useful, n=12)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`, `vacancy_models`, `Defect`, `Modeling Keywords`
+- `vacancy_landscape` (known_useful, n=12)
+  - Research category: `modeling_tasks`
+  - Fields: `recommended_modeling_tasks`
+- `doped_surface` (known_useful, n=8)
+  - Research category: `modeling_tasks`
+  - Fields: `recommended_modeling_tasks`
+- `point defects` (known_useful, n=2)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`, `Defect`
+- `Sb vacancy` (known_useful, n=2)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`, `Defect`
+- `defect` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `Defective` (known_useful, n=1)
+  - Research category: `defects_active_sites`
+  - Fields: `Defect`
+- `defective structure` (known_useful, n=1)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`
+- `dopant` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `nitrogen-doped carbon` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `surface defects` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+
+### hydroxides_oxyhydroxides
+
+- `β-CoOOH` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`, `Material`
+- `Co–Fe–Cr (oxy)Hydroxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `NiCoOOH` (unknown_context, n=2)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`, `Active Site`
+- `β-CoOOH(0112̅)` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Au/NiFe LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `CoOOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Fe atoms in NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `hydroxides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `layered double hydroxide (LDH)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiCo Layer Double Hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiCo LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `NiCo LDH/CC` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiCoOOH*` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `intermediates`
+- `NiFe layered double hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiFe LDH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiFe LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `sAu/NiFe LDH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `β-CoOOH(0001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `β-CoOOH(101̅4)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+
+### metals_alloys
+
+- `Ni` (unknown_context, n=11)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `dopants`, `Dopant/Modifier`, `Modeling Keywords`
+- `Ag` (unknown_high_value, n=9)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `active_sites`, `Active Site`, `Dopant/Modifier`, `Material`, `dopants`, `single_atoms`
+- `Co` (unknown_high_value, n=9)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`, `adsorbates`, `Adsorbate/Reactant`, `dopants`, `Dopant/Modifier`, `Active Site`
+- `Fe` (unknown_context, n=9)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`, `materials`, `modifiers`, `dopants`, `Dopant/Modifier`
+- `Pt` (unknown_high_value, n=8)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`, `dopants`, `single_atoms`
+- `Co3O4` (unknown_high_value, n=7)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+- `adsorption` (known_useful, n=6)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`, `modeling_keywords`
+- `Au` (unknown_context, n=5)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `active_sites`, `Active Site`, `dopants`
+- `Co3+` (unknown_high_value, n=5)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`, `Active Site`, `active_sites`
+- `Pd` (unknown_high_value, n=5)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`, `dopants`, `single_atoms`
+- `Pt(111)` (unknown_high_value, n=5)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Material`
+- `Ru` (unknown_context, n=5)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `dopants`, `Modeling Keywords`
+- `electronic structure` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`, `modeling_keywords`
+- `Ir` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`, `dopants`, `single_atoms`
+- `Rh` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Adsorption Site`, `dopants`, `single_atoms`
+- `Rh2O3 sites` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`, `adsorption_sites`, `Active Site`, `Adsorption Site`
+- `β-CoOOH` (unknown_high_value, n=4)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`, `Material`
+- `Au Nanoparticles` (known_useful, n=3)
+  - Research category: `defects_active_sites`
+  - Fields: `Dopant/Modifier`, `Cluster/Single Atom`, `Modeling Keywords`
+- `Au(100)` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Modeling Keywords`, `Material`
+- `Au(111)` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Material`, `Modeling Keywords`
+- `computational methods` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `Cu` (unknown_context, n=3)
+  - Research category: `unknown_information`
+  - Fields: `dopants`, `Dopant/Modifier`
+- `Pt nanoparticles` (known_useful, n=3)
+  - Research category: `surface_materials`
+  - Fields: `Material`, `clusters`
+- `Rh2O3` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Adsorption Site`, `Modeling Keywords`
+- `ZnO` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+- `adsorption energies` (known_useful, n=2)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `Ag/g-C3N4` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Material`, `Modeling Keywords`
+- `Ba0.5Sr0.5Co0.8Fe0.2O3–d` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `black phosphorus` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`
+- `bridging Pd-Pd sites` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`, `Modeling Keywords`
+- `charge transfer` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+- `Co nanochains` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `clusters`, `Material`
+- `Co oxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Co site` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`, `active_sites`
+- `Co2+` (unknown_context, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`, `Active Site`
+- `Co4+` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `CoO` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`
+- `CoO nanocubes` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `clusters`, `Material`
+- `CoPt nanoparticles` (known_useful, n=2)
+  - Research category: `surface_materials`
+  - Fields: `materials`, `Material`
+- `Co–Fe–Cr (oxy)Hydroxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `first-principles calculation` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `Hubbard-U correction` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `modifiers`, `modeling_keywords`
+- `Ir nanoparticles` (known_useful, n=2)
+  - Research category: `clusters_single_atoms`
+  - Fields: `clusters`, `Material`
+- `Ni(111)` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Material`
+- `NiCoOOH` (unknown_context, n=2)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`, `Active Site`
+- `NiO` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`
+- `Pd4` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `clusters`, `Material`
+- `Pd6` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `clusters`, `Material`
+- `point defects` (known_useful, n=2)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`, `Defect`
+- `Pt(335)` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`, `Material`
+- `Pt10Pb/C` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Ru nanoparticles` (known_useful, n=2)
+  - Research category: `clusters_single_atoms`
+  - Fields: `clusters`, `Material`
+- `RuO2` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `surface coverage` (known_useful, n=2)
+  - Research category: `modeling_tasks`
+  - Fields: `modeling_keywords`, `Modeling Keywords`
+- `water splitting` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `β-CoOOH(0112̅)` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `(112)-oriented surface of hausmannitene` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `(Ni` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `A-layer (tetrahedral Co termination)` (known_useful, n=1)
+  - Research category: `surface_structure`
+  - Fields: `Surface Termination`
+- `adsorbate coverage` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `adsorption site` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `Ag nanospheres` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Ag(111)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Ag4` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Ag@Sb` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `AgSA` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `single_atoms`
+- `ammonia` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `products`
+- `Atomic Simulation Environment` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `Au/NiFe LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Au/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Au2–Ag2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Au4` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Au–Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `B-layer (octahedral Co and O ions)` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Surface Termination`
+- `Black Phosphorus Nanosheets` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `BP/Au surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Bulk Ir` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Bulk Pt` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Bulk Ru` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `carbon supported Ir` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Pt` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Ru` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `catalytic mechanism` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `CO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Adsorbate/Reactant`
+- `Co3+δ` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `CO32−` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `adsorbates`
+- `Co3O4(001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Co3O4(001) surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Co3O4(110)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `composition` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `computational standard hydrogen electrode` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `CoO surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `CoO/Co` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `CoOct (+4)` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `CoOOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `copper` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `covalency` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `Cu-based` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Cu-based nanostructures` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `defect` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `Defective` (known_useful, n=1)
+  - Research category: `defects_active_sites`
+  - Fields: `Defect`
+- `defective structure` (known_useful, n=1)
+  - Research category: `defects_active_sites`
+  - Fields: `defects`
+- `electrocatalytic water splitting` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `electron transfer` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `Fe atoms in NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `Fe sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `Fe)OOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Fe3+` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `five-coordinated Cr5c` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surface_terminations`
+- `full coverage` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `hausmannitene` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `high OH or mixed OH/O coverage` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `hydrogen molecules` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `products`
+- `molecular orbital` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `neighboring Rh sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `adsorption_sites`
+- `Ni atom` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `Ni reaction sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `Ni sites` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `Ni surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Ni(Fe)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Ni-Cd` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Ni-O-G SACs` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `Material`
+- `Ni1−xFexOOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `nickel` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Nickel–Bismuth Oxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiCo Layer Double Hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiCo LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `NiCo LDH/CC` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiCoOOH*` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `intermediates`
+- `NiFe layered double hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiFe LDH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiFe LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `NiO surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `nitrogen` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `dopants`
+- `nitrogen-doped carbon` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `octahedral Co` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `octahedral Co and O ions (B-layer)` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surface_terminations`
+- `operando X-ray absorption spectroscopy` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `oxygen adsorption energy` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `oxygen-contained intermediates` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `adsorbates`
+- `Pd-Pd sites` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `Pd17` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Pd17 clusters` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `Material`
+- `Polyaniline fibers` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `porous Ni-Cd structure` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Pourbaix diagram` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `Pt bimetallic` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Pt(111) nanofacets` (known_useful, n=1)
+  - Research category: `surface_structure`
+  - Fields: `facets`
+- `Pt-Bi` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `Pt-Bi Alloy` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Pt/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Pt10Ni/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Pt@Sb` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `PtBi` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `PtBi alloy` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `PtBi(100)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `PtPb` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `PtTiMe ternary alloys` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `PtxRu1-x/Ru(0001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `reaction mechanism` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `reaction mechanisms` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `Rh sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `Rh2O3 surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Rh–Rh2O3-NPs` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `clusters`
+- `Rh–Rh2O3-NPs/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Ru(0001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `RuO2 (110) surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `RuOx` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `rutile TiO2 surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `sAu` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Dopant/Modifier`
+- `sAu/NiFe LDH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `selenides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `single Ni atoms` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `single nickel atoms` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `single_atoms`
+- `single-atom Au` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `single_atoms`
+- `singly coordinated sites` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `Sn` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Active Site`
+- `Sn SAs/G` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Sn SAs/G-Na` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Sn single atoms` (known_useful, n=1)
+  - Research category: `clusters_single_atoms`
+  - Fields: `single_atoms`
+- `structure` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `sub-saturation coverage` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `surface defects` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `tensile stress effect` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `tetrahedral Co termination (A-layer)` (known_useful, n=1)
+  - Research category: `surface_structure`
+  - Fields: `surface_terminations`
+- `three-coordinated Cr3c` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surface_terminations`
+- `Tin (Sn)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `UNCD Si-coated electrode` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `water/platinum interface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Zn` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `dopants`
+- `ZnO surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Zn–Air` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Adsorbate/Reactant`
+- `β-CoOOH(0001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `β-CoOOH(101̅4)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+
+### nitrides
+
+- `antimonene` (unknown_high_value, n=3)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+- `1/3−2/3 monolayer` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `Coverage`
+- `1/3−2/3 monolayer OH*` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `ammonia` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `products`
+- `monochain CrO3` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modifiers`
+- `monolayer` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `slab_models`
+- `monometallic cluster` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `slab_models`
+- `Sb monolayer` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `subnanometer clusters` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `ultrananocrystalline diamond` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### other_inorganic_materials
+
+- `CdN4C0-gra` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Cr2O3` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Bi` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `bimetallic cluster` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `slab_models`
+- `Bismuth (Bi)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Cd` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `CdN0C4-gra` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `clean surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Cr2O3(001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Cr2O3(012)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `gold` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Hg` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `HgO` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `KOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Mn3O4` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NaOH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Noble metal` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `non-precious metal catalysts` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `palladium` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Silver` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `tetrahedral cluster` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `slab_models`
+- `transition metal-based catalysts` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `UNCD` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Surface/Support`
+
+### oxides
+
+- `O2` (unknown_high_value, n=15)
+  - Research category: `unknown_information`
+  - Fields: `products`, `Adsorbate/Reactant`
+- `Co3O4` (unknown_high_value, n=7)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`, `Modeling Keywords`
+- `Co oxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Co2+` (unknown_context, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`, `Active Site`
+- `Co–Fe–Cr (oxy)Hydroxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `NiO` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Modeling Keywords`
+- `NO2*` (unknown_context, n=2)
+  - Research category: `unknown_information`
+  - Fields: `adsorbates`, `intermediates`
+- `oxides` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `RuO2` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `TiO2` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `*H2O2` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `intermediates`
+- `*O2` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `intermediates`
+- `Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Au/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Au–Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `CO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Adsorbate/Reactant`
+- `Co3O4(001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Co3O4(001) surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Co3O4(110)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Fe atoms in NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `active_sites`
+- `H2O2` (unknown_context, n=1)
+  - Research category: `unknown_information`
+  - Fields: `products`
+- `hydroxides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `layered double hydroxide (LDH)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Nickel–Bismuth Oxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `NiCo Layer Double Hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiFe layered double hydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `NiFe oxyhydroxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `NiO surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `O2*` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `adsorbates`
+- `oxide` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `oxide catalysts` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `oxide surfaces` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `RuO2 (110) surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `rutile TiO2 surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `TiO2(110)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `transition metal oxide surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+
+### phosphides_phosphates
+
+- `CoPt nanoparticles` (known_useful, n=2)
+  - Research category: `surface_materials`
+  - Fields: `materials`, `Material`
+- `copper` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `operando X-ray absorption spectroscopy` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `phosphides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### selenides_tellurides
+
+- `selenides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `tellurides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### single_atom_catalysts
+
+- `Single Atom` (known_useful, n=10)
+  - Research category: `clusters_single_atoms`
+  - Fields: `Cluster/Single Atom`, `Modeling Keywords`
+- `Ni-O-G SACs` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `Material`
+- `SAC` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `Modeling Keywords`
+- `SACs` (known_useful, n=1)
+  - Research category: `modeling_tasks`
+  - Fields: `modeling_keywords`
+- `Sn SAs/G` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Sn SAs/G-Na` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Sn single atoms` (known_useful, n=1)
+  - Research category: `clusters_single_atoms`
+  - Fields: `single_atoms`
+
+### sulfides
+
+- `Mo–N/C@MoS2` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `catalytic mechanism` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `MoS2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `reaction mechanism` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Modeling Keywords`
+- `reaction mechanisms` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `modeling_keywords`
+- `sulfides` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+
+### supported_catalysts
+
+- `Ag/g-C3N4` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Material`, `Modeling Keywords`
+- `Hg/HgO` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `Material`, `Modeling Keywords`
+- `Mo–N/C@MoS2` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `Pt10Pb/C` (unknown_high_value, n=2)
+  - Research category: `unknown_information`
+  - Fields: `materials`, `Material`
+- `1/3−2/3 monolayer` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `Coverage`
+- `1/3−2/3 monolayer OH*` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Au/NiFe LDH surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `Au/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Au–Ag/TiO2` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `BP/Au surface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Ir` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Pt` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `carbon supported Ru` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+- `CoO/Co` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Hg/HgO electrode` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `High OH or mixed OH/O` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Coverage`
+- `high OH or mixed OH/O coverage` (known_useful, n=1)
+  - Research category: `adsorption_reaction`
+  - Fields: `coverage`
+- `NiCo LDH/CC` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Pt/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Pt10Ni/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `PtxRu1-x/Ru(0001)` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `materials`
+- `Rh–Rh2O3-NPs/C` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `sAu/NiFe LDH` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `Sn SAs/G` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `surfaces`
+- `Sn SAs/G-Na` (unknown_high_value, n=1)
+  - Research category: `unknown_information`
+  - Fields: `Material`
+- `water/platinum interface` (known_useful, n=1)
+  - Research category: `surface_materials`
+  - Fields: `surfaces`
+
+### surface_functionalized_materials
+
+- `O-terminated` (known_useful, n=1)
+  - Research category: `surface_structure`
+  - Fields: `surface_terminations`

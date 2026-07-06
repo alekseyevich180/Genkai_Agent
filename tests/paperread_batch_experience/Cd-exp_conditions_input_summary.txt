@@ -1,0 +1,43 @@
+这次抽到的关键信息包括：
+
+在 Cd-exp_conditions_input_table.csv 里：
+
+- Ni, Fe, Cd
+- 吸附物/反应物：OH−, O2, H2O
+- 建模关键词：nanoporous, active site, oxygen vacancy
+- Ni, Cd
+
+在 Cd-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ni
+  - Fe
+  - Cd
+- 材料参数：
+  - nanoporous structure
+  - composite
+- 反应参数：
+  - alkaline media
+  - overpotential = 382 mV
+  - overpotential = 290 mV
+  - 10 mA cm−2
+- 性能：
+  - high stability
+  - enhanced OER performance
+  - reduced overpotential
+- 表面/晶面：
+  - Ni surface
+  - porous Ni-Cd structure
+- 缺陷/活性位点：
+  - catalytic sites
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - electrocatalyst
+  - OER
+  - nanoporous
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape

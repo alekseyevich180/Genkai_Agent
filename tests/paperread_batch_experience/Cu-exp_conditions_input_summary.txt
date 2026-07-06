@@ -1,0 +1,44 @@
+这次抽到的关键信息包括：
+
+在 Cu-exp_conditions_input_table.csv 里：
+
+- mono-, bi-, tri-metallic
+- 吸附物/反应物：water
+- 建模关键词：surface, active site, adsorbate
+- oxides, hydroxides, sulfides, selenides, tellurides, phosphides
+
+在 Cu-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - copper
+  - transition metal-based catalysts
+  - Cu-based nanostructures
+  - oxides
+  - hydroxides
+  - sulfides
+  - selenides
+  - tellurides
+  - phosphides
+  - layered double hydroxide (LDH)
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - pH conditions
+- 性能：
+  - electrocatalytic activity
+  - high purity
+  - environmentally friendly
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - electrocatalysis
+  - water splitting
+  - catalyst development
+- 推荐建模任务：
+  - surface_functionalization

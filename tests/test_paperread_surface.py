@@ -2,6 +2,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import json
 from unittest.mock import patch
 from pathlib import Path
 
@@ -362,6 +363,22 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertIn("oxides", doc_payload["selected_information"]["material_classes"])
             self.assertIn("vacancy_landscape", doc_payload["task_inputs"])
             self.assertEqual(doc_payload["task_inputs"]["adsorbate_landscape"]["coverage"], ["0.25 ML CO"])
+            self.assertEqual(
+                doc_payload["task_argument_template"]["adsorbate_landscape"]["arguments"]["site_symbols"],
+                "Pt",
+            )
+            self.assertEqual(
+                doc_payload["task_argument_template"]["surface_cluster_builder"]["arguments"]["cluster_element"],
+                "Pt",
+            )
+            self.assertIn(
+                "surface",
+                doc_payload["task_argument_template"]["adsorbate_landscape"]["required_missing_parameters"],
+            )
+            self.assertEqual(
+                doc_payload["task_argument_template"]["adsorbate_landscape"]["argument_sources"]["surface"]["status"],
+                "needs_upstream_artifact",
+            )
 
             outputs = generate_ptomodel_output(
                 str(relations_path),
@@ -462,9 +479,32 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertEqual(result["markdown_path"], "")
             material_files = result["material_class_files"]
             self.assertIn("supported_catalysts", material_files)
-            content = Path(material_files["supported_catalysts"]).read_text(encoding="utf-8")
-            self.assertIn("known_useful", content)
-            self.assertIn("Pt/CeO2", content)
+            payload = json.loads(Path(material_files["supported_catalysts"]).read_text(encoding="utf-8"))
+            self.assertEqual(payload["schema_version"], "2.0")
+            self.assertIn("keyword_inventory", payload)
+            self.assertIn("material_descriptors", payload)
+            self.assertEqual(payload["material_descriptors"]["elements"][0]["term"], "Pt")
+            self.assertIn(
+                {"term": "{Ce, O, Pt}", "count": 2},
+                payload["material_descriptors"]["element_sets"],
+            )
+            self.assertIn(
+                "supported_catalyst",
+                [item["term"] for item in payload["material_descriptors"]["material_kinds"]],
+            )
+            self.assertIn(
+                "1 wt%",
+                [item["term"] for item in payload["material_descriptors"]["approx_loadings"]],
+            )
+            self.assertIn(
+                "Pt/CeO2",
+                [item["term"] for item in payload["keyword_inventory"]["materials"]],
+            )
+            self.assertEqual(payload["class_profile"]["descriptor_schema"], "supported_catalyst_profile")
+            self.assertIn(
+                "CeO2",
+                [item["term"] for item in payload["class_profile"]["support_components"]],
+            )
 
 
 def json_dumps_for_test(payload: dict) -> str:

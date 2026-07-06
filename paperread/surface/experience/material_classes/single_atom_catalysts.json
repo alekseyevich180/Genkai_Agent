@@ -1,17 +1,219 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "single_atom_catalysts",
-  "updated_at": "2026-06-30T06:51:57.279865+00:00",
+  "updated_at": "2026-07-06T07:30:22.308927+00:00",
   "summary": {
-    "terms": 5,
-    "known_useful": 3,
-    "unknown": 2,
-    "sources": [
-      "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv",
-      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    "terms": 8,
+    "known_useful": 6,
+    "unknown": 2
+  },
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "nickel single atoms",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "Single Atom",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "nickel single atoms",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Sn single atoms",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      }
+    ],
+    "materials": [
+      {
+        "term": "Ni-O-G SACs",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Sn SAs/G-Na",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "Single Atom",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "SAC",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "SACs",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "Ni-O-G SACs",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Sn SAs/G",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
     ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Sn",
+        "count": 5
+      },
+      {
+        "term": "As",
+        "count": 4
+      },
+      {
+        "term": "S",
+        "count": 4
+      },
+      {
+        "term": "Ni",
+        "count": 3
+      },
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "Na",
+        "count": 2
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "single_atom_catalyst",
+        "count": 21
+      },
+      {
+        "term": "surface",
+        "count": 5
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 4
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "Sn SAs",
+        "count": 4
+      },
+      {
+        "term": "Ni-O-G SACs",
+        "count": 3
+      },
+      {
+        "term": "G-Na",
+        "count": 2
+      },
+      {
+        "term": "Sn single atoms",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Ni, O}",
+        "count": 3
+      },
+      {
+        "term": "{As, Na, S, Sn}",
+        "count": 2
+      },
+      {
+        "term": "{As, S, Sn}",
+        "count": 2
+      },
+      {
+        "term": "{Sn}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "carbon_or_sac_profile",
+    "elements": [
+      {
+        "term": "Sn",
+        "count": 5
+      },
+      {
+        "term": "As",
+        "count": 4
+      },
+      {
+        "term": "S",
+        "count": 4
+      },
+      {
+        "term": "Ni",
+        "count": 3
+      },
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "Na",
+        "count": 2
+      }
+    ],
+    "host_structures": [],
+    "dopant_or_loaded_species": [
+      {
+        "term": "Single Atom",
+        "count": 13
+      },
+      {
+        "term": "nickel single atoms",
+        "count": 2
+      },
+      {
+        "term": "Sn single atoms",
+        "count": 1
+      }
+    ],
+    "coordination_environments": [],
+    "single_atom_centers": [
+      {
+        "term": "Sn",
+        "count": 1
+      }
+    ],
+    "reaction_families": []
   },
   "entries": [
     {
@@ -22,15 +224,12 @@
         "Cluster/Single Atom",
         "Modeling Keywords"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_table.csv",
-        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 13,
+      "example_contexts": [
         "Sn SAs/G-Na",
-        "Ni-O-G SACs"
-      ],
-      "count": 3
+        "Ni-O-G SACs",
+        "Au/TiO2"
+      ]
     },
     {
       "term": "Ni-O-G SACs",
@@ -40,15 +239,11 @@
         "surfaces",
         "Material"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
-        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 3,
+      "example_contexts": [
         "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
         "Ni-O-G SACs"
-      ],
-      "count": 2
+      ]
     },
     {
       "term": "nickel single atoms",
@@ -58,13 +253,10 @@
         "active_sites",
         "single_atoms"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ],
-      "count": 2
+      ]
     },
     {
       "term": "Sn SAs/G",
@@ -73,13 +265,10 @@
       "fields": [
         "surfaces"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ],
-      "count": 1
+      ]
     },
     {
       "term": "Sn SAs/G-Na",
@@ -88,13 +277,46 @@
       "fields": [
         "Material"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "SAC",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
       ],
-      "count": 1
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "SACs",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Sn single atoms",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "single_atoms"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
     }
   ]
 }

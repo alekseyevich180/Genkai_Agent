@@ -1,12 +1,711 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "other_inorganic_materials",
-  "updated_at": "2026-06-30T06:54:23.065890+00:00",
+  "updated_at": "2026-07-06T07:30:22.294576+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "terms": 23,
+    "known_useful": 3,
+    "unknown": 20
   },
-  "entries": []
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "CdN4C0-gra",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Cr2O3",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Bi",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Bismuth (Bi)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Cd",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CdN0C4-gra",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "gold",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hg",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HgO",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "KOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Mn3O4",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NaOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Noble metal",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "non-precious metal catalysts",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "palladium",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Silver",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "transition metal-based catalysts",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "bimetallic cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "clean surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Cr2O3(001)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Cr2O3(012)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "tetrahedral cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "UNCD",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 8
+      },
+      {
+        "term": "Cd",
+        "count": 4
+      },
+      {
+        "term": "Cr",
+        "count": 4
+      },
+      {
+        "term": "C",
+        "count": 3
+      },
+      {
+        "term": "N",
+        "count": 3
+      },
+      {
+        "term": "Bi",
+        "count": 2
+      },
+      {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Hg",
+        "count": 2
+      },
+      {
+        "term": "K",
+        "count": 1
+      },
+      {
+        "term": "Mn",
+        "count": 1
+      },
+      {
+        "term": "Na",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "surface",
+        "count": 6
+      },
+      {
+        "term": "cluster",
+        "count": 2
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "CdN4C0-gra",
+        "count": 2
+      },
+      {
+        "term": "Cr2O3",
+        "count": 2
+      },
+      {
+        "term": "Bi",
+        "count": 1
+      },
+      {
+        "term": "Bismuth (Bi",
+        "count": 1
+      },
+      {
+        "term": "Cd",
+        "count": 1
+      },
+      {
+        "term": "CdN0C4-gra",
+        "count": 1
+      },
+      {
+        "term": "clean surface",
+        "count": 1
+      },
+      {
+        "term": "Cr2O3(001",
+        "count": 1
+      },
+      {
+        "term": "Cr2O3(012",
+        "count": 1
+      },
+      {
+        "term": "Hg",
+        "count": 1
+      },
+      {
+        "term": "HgO",
+        "count": 1
+      },
+      {
+        "term": "KOH",
+        "count": 1
+      },
+      {
+        "term": "Mn3O4",
+        "count": 1
+      },
+      {
+        "term": "NaOH",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Cr, O}",
+        "count": 4
+      },
+      {
+        "term": "{C, Cd, N}",
+        "count": 3
+      },
+      {
+        "term": "{Bi}",
+        "count": 2
+      },
+      {
+        "term": "{Cd}",
+        "count": 1
+      },
+      {
+        "term": "{H, K, O}",
+        "count": 1
+      },
+      {
+        "term": "{H, Na, O}",
+        "count": 1
+      },
+      {
+        "term": "{Hg, O}",
+        "count": 1
+      },
+      {
+        "term": "{Hg}",
+        "count": 1
+      },
+      {
+        "term": "{Mn, O}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 8
+      },
+      {
+        "term": "Cd",
+        "count": 4
+      },
+      {
+        "term": "Cr",
+        "count": 4
+      },
+      {
+        "term": "C",
+        "count": 3
+      },
+      {
+        "term": "N",
+        "count": 3
+      },
+      {
+        "term": "Bi",
+        "count": 2
+      },
+      {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Hg",
+        "count": 2
+      },
+      {
+        "term": "K",
+        "count": 1
+      },
+      {
+        "term": "Mn",
+        "count": 1
+      },
+      {
+        "term": "Na",
+        "count": 1
+      }
+    ],
+    "components": [
+      {
+        "term": "CdN4C0-gra",
+        "count": 2
+      },
+      {
+        "term": "Cr2O3",
+        "count": 2
+      },
+      {
+        "term": "Bi",
+        "count": 1
+      },
+      {
+        "term": "Bismuth (Bi)",
+        "count": 1
+      },
+      {
+        "term": "Cd",
+        "count": 1
+      },
+      {
+        "term": "CdN0C4-gra",
+        "count": 1
+      },
+      {
+        "term": "gold",
+        "count": 1
+      },
+      {
+        "term": "Hg",
+        "count": 1
+      },
+      {
+        "term": "HgO",
+        "count": 1
+      },
+      {
+        "term": "KOH",
+        "count": 1
+      },
+      {
+        "term": "Mn3O4",
+        "count": 1
+      },
+      {
+        "term": "NaOH",
+        "count": 1
+      },
+      {
+        "term": "Noble metal",
+        "count": 1
+      },
+      {
+        "term": "non-precious metal catalysts",
+        "count": 1
+      },
+      {
+        "term": "palladium",
+        "count": 1
+      },
+      {
+        "term": "Silver",
+        "count": 1
+      },
+      {
+        "term": "transition metal-based catalysts",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "CdN4C0-gra",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+        "CdN4C0-gra"
+      ]
+    },
+    {
+      "term": "Cr2O3",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "Cr2O3"
+      ]
+    },
+    {
+      "term": "Bi",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
+      ]
+    },
+    {
+      "term": "bimetallic cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ]
+    },
+    {
+      "term": "Bismuth (Bi)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "Cd",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ]
+    },
+    {
+      "term": "CdN0C4-gra",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
+      ]
+    },
+    {
+      "term": "clean surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
+      ]
+    },
+    {
+      "term": "Cr2O3(001)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "Cr2O3(012)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "gold",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ]
+    },
+    {
+      "term": "Hg",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "HgO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "KOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "Mn3O4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
+      ]
+    },
+    {
+      "term": "NaOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "Noble metal",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Noble metal"
+      ]
+    },
+    {
+      "term": "non-precious metal catalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ]
+    },
+    {
+      "term": "palladium",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ]
+    },
+    {
+      "term": "Silver",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "tetrahedral cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ]
+    },
+    {
+      "term": "transition metal-based catalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "UNCD",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pd4, Pd6, Pd17 clusters"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,99 @@
+{
+  "id": "surface_relations",
+  "title": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+  "text": "Inﬂuence of Fe and Ni Doping on the OER Performance at the\nCo3O4(001) Surface: Insights from DFT+U Calculations\nYuman Peng, Hamidreza Hajiyani, and Rossitza Pentcheva*\nCite This: ACS Catal. 2021, 11, 5601−5613 Read Online\n\nABSTRACT: Using density functional theory calculations with an\non-site Hubbard U term, we study the oxygen evolution reaction\n(OER) at the Co3O4(001) surface. The stability of diﬀerent\nsurface terminations as a function of oxygen partial pressure as well\nDownloaded via UNIV OF TOKYO on November 26, 2025 at 10:16:15 (UTC).\n\nas pH and applied voltage is compiled in a Pourbaix diagram. The\ntermination with octahedral Co and O ions (B-layer) is found to\nhave the lowest overpotential of 0.46 V for an octahedral Co\nreaction site, associated with its p-type conducting character and\nthe higher oxidation state of the active site (+4) during OER.\nFurthermore, we systematically investigated the eﬀect of Fe and Ni\ndoping on the overpotential. Our results indicate that Ni doping at\nan octahedral site in the surface layer reduces the overpotential\nfrom 0.46 to 0.34 V. Likewise, Fe doping at an octahedral site at\nthe tetrahedral Co termination (A-layer) lowers η from 0.63 to 0.37 V with octahedral Co remaining in the active site. We note that\nthe potential determining step changes from *OH (B-layer) to *OOH formation (A-layer). While implicit solvation increases the\noverpotential by 0.2 V (B-layer) and 0.4 V (A-layer), which is attributed to enhanced binding energies of the intermediates, the\ngeneral trends with respect to doping remain unchanged. The scaling relationship of the binding energies of *OOH and *OH is\noverall satisﬁed, with the doped systems lying close to the top of the volcano plot of the overpotential versus (ΔGb*O − ΔGb*OH). A\nfurther insight into the origin of this behavior is gained by analyzing the changes in oxidation states of surface ions and, in particular,\nthe Co active site during OER.\nKEYWORDS: cobalt oxide, oxygen evolution reaction, water splitting, density functional theory, implicit solvation, transition metal oxides,\nspinel surfaces, Pourbaix diagram\n\n■ INTRODUCTION\nElectrochemical water splitting is considered to be an eﬀective\nsites (denoted hereafter as CoOct). As a p-type semiconductor,\nCo3O4 exhibits low conductivity.12 Experiments show that the\nstrategy in hydrogen production, as a source of renewable and OER overpotential of Co3O4 is 0.20−0.25 V higher than RuO2\ngreen fuel.1,2 The total reaction is composed of two half (0.23−0.30 V,12 in acidic conditions).13,14\nreactions: the hydrogen evolution reaction (HER) at the Extensive eﬀorts have been devoted to studying the OER\ncathode and the oxygen evolution reaction (OER) at the mechanism and improving the electrochemical properties of\nanode. The high overpotential of OER limits the overall Co3O4. There is a controversial debate concerning the active\neﬃciency of water decomposition and causes considerable site for OER catalysis. Menezes et al.15 proposed that divalent\nenergy loss due to the sluggish kinetics of OER.3 RuO24 and CoTet ions are catalytically inactive, and the generation of\nIrO25 are universally regarded as promising OER catalysts but quadrivalent CoOct ions facilitates OER activity; Wang et al.16\nare costly and rare. Therefore, there is an urgent need to suggested that CoTet ions act as the active site and CoOct limits\ndiscover cheap, stable, and active anode catalysts. The spinel\nthe OER activity. On the other hand, Plaisance and van\nfamily, involving more than one hundred compounds,6 has\nattracted increasing attention as electrocatalysts for decades, in Santen17 proposed that the active site consists of two coupled\nparticular, the iron-(ferrite) and cobalt-based compounds,6,7\nsuch as CoFe2O48,9 and Co3O4.7 Received: January 15, 2021\nCo3O4 has distinct advantages in catalytic applications due Revised: April 3, 2021\nto its availability, stability, and promising activity.10 Co3O4 is a Published: April 22, 2021\nnormal spinel (space group Fd3̅m),11 where Co2+ (d7, high\nspin) ions occupy 1/8 of the tetrahedral sites (denoted as\nCoTet), while Co3+ (d6, low spin) ions ﬁll 1/2 of the octahedral\n© 2021 The Authors. Published by\nAmerican Chemical Society https://doi.org/10.1021/acscatal.1c00214\n5601 ACS Catal. 2021, 11, 5601−5613",
+  "extraction": {
+    "materials": [
+      "Co3O4"
+    ],
+    "material_parameters": [
+      "normal spinel",
+      "space group Fd3̅m",
+      "Co2+ (d7, high spin)",
+      "Co3+ (d6, low spin)"
+    ],
+    "surfaces": [
+      "Co3O4(001) surface"
+    ],
+    "surface_terminations": [
+      "octahedral Co and O ions (B-layer)",
+      "tetrahedral Co termination (A-layer)"
+    ],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [
+      "Fe",
+      "Ni"
+    ],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "octahedral Co"
+    ],
+    "adsorbates": [
+      "*OH",
+      "*OOH"
+    ],
+    "adsorption_sites": [
+      "octahedral site",
+      "tetrahedral site"
+    ],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "p-type conducting character",
+      "overpotential of 0.46 V",
+      "overpotential of 0.34 V with Ni doping",
+      "overpotential of 0.37 V with Fe doping"
+    ],
+    "reaction_parameters": [
+      "oxygen partial pressure",
+      "pH",
+      "applied voltage"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "Hubbard U",
+      "Pourbaix diagram"
+    ],
+    "recommended_modeling_tasks": [
+      "doped_surface",
+      "vacancy_landscape"
+    ],
+    "applications": [
+      "electrochemical water splitting",
+      "oxygen evolution reaction"
+    ],
+    "links": [
+      {
+        "source": "Co3O4(001) surface",
+        "relation": "has_dopant",
+        "target": "Fe"
+      },
+      {
+        "source": "Co3O4(001) surface",
+        "relation": "has_dopant",
+        "target": "Ni"
+      },
+      {
+        "source": "octahedral Co",
+        "relation": "has_active_site",
+        "target": "OER"
+      },
+      {
+        "source": "octahedral site",
+        "relation": "adsorbs",
+        "target": "*OH"
+      },
+      {
+        "source": "tetrahedral site",
+        "relation": "adsorbs",
+        "target": "*OOH"
+      }
+    ]
+  }
+}

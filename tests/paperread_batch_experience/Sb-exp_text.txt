@@ -1,0 +1,262 @@
+REPORTS
+24. C. J. Evans et al., Astrophys. J. 715, L74 (2010). 32. M. Fujii, M. Iwasawa, Y. Funato, J. Makino, Astrophys. J. by Research Fellowships of the Japan Society for the Promotion
+25. O. Schnurr, A. F. J. Moffat, A. Villar-Sbaffi, N. St-Louis, 686, 1082 (2008). of Science for Young Scientists and the Netherlands Research
+ N. I. Morrell, Mon. Not. R. Astron. Soc. 395, 823 (2009). 33. P. Massey, L. R. Penny, J. Vukovich, Astrophys. J. 565, 982 (2002). Council NWO [grants VICI (639.073.803), AMUSE (614.061.608),
+26. But see (30), according to whom Mb = 240 Mʘ. 34. O. Schnurr, J. Casoli, A.-N. Chen’e, A. F. J. Moffat, and Little Green Machine] and by the Netherlands Research
+27. See http://acis.mit.edu/acis. N. St-Louis, Mon. Not. R. Astron. Soc. 389, L38 (2008). School for Astronomy. The simulation software is available at
+28. L. K. Townsley, P. S. Broos, E. D. Feigelson, G. P. Garmire, 35. W. D. Taylor et al., Astron. Astrophys. 530, L10 (2011). http://amusecode.org and the data can be found at
+ K. V. Getman, Astron. J. 131, 2164 (2006). 36. A. F. J. Moffat, in IAU Symposium, F. Bresolin, http://initialconditions.org.
+29. K. A. van der Hucht et al., in Massive Stars in Interactive P. A. Crowther, J. Puls, Eds., vol. 250 of IAU Symposium
+ Supporting Online Material
+ Binaries, N. St.-Louis, A. F. J. Moffat, Eds., vol. 367 of (International Astronomical Union, 2008), p. 119.
+ www.sciencemag.org/cgi/content/full/science.1211927/DC1
+ Astronomical Society of the Pacific Conference Series 37. E. Koumpia, A. Z. Bonanos, http://arxiv.org/abs/
+ SOM Text
+ (Astronomical Society of the Pacific, 2007), p. 159. 1009.4709 (2010).
+ Figs. S1 to S4
+30. A.-N. Chen’e, O. Schnurr, P. A. Crowther, E. Fern’andez-Laj’us, 38. A. E. Piatti, E. Bica, J. J. Claria, Astron. Astrophys.
+ Table S1
+ A. F. J. Moffat, in IAU Symposium, C. Neiner, G. Wade, Suppl Ser. 127, 423 (1998).
+ References (39–57)
+ G. Meynet, G. Peters, Eds., vol. 272 of IAU Symposium
+ (International Astronomical Union, 2011), p. 497. Acknowledgments: We thank B. Brandl, A. Brown, A. Gürkan, 29 July 2011; accepted 27 October 2011
+31. S. Portegies Zwart, E. Gaburov, H.-C. Chen, M. A. G¨urkan, K. Nitadori, and H. Sana for discussions and the anonymous Published online 17 November 2011;
+ Mon. Not. R. Astron. Soc. 378, L29 (2007). referees for their constructive criticism. This work was supported 10.1126/science.1211927
+
+ predict transition metal oxides with high OER
+A Perovskite Oxide Optimized for activity by means of these proposed descriptors
+ (7, 12, 13).
+Oxygen Evolution Catalysis from
+
+ Downloaded from https://www.science.org at University of Tokyo on January 15, 2026
+ Motivated by the success of the d-band theory
+ as the activity descriptor for metal surfaces (15),
+Molecular Orbital Principles we seek a simple activity descriptor that will
+ accomplish a similar correlation between sur-
+ face adsorbate binding and catalytic activity for
+Jin Suntivich,1,2 Kevin J. May,2,3 Hubert A. Gasteiger,2,3* John B. Goodenough,4 Yang Shao-Horn1,2,3† transition metal oxides. Here we report a dis-
+ tinct OER activity design principle, namely that a
+The efficiency of many energy storage technologies, such as rechargeable metal-air batteries and near-unity occupancy of the eg orbital of surface
+hydrogen production from water splitting, is limited by the slow kinetics of the oxygen evolution transition metal ions and high covalency in bond-
+reaction (OER). We found that Ba0.5Sr0.5Co0.8Fe0.2O3–d (BSCF) catalyzes the OER with intrinsic activity that ing to oxygen can enhance the intrinsic OER ac-
+is at least an order of magnitude higher than that of the state-of-the-art iridium oxide catalyst in alkaline tivity of perovskite transition metal oxides in
+media. The high activity of BSCF was predicted from a design principle established by systematic alkaline solution (4OH– → O2 + 2H2O + 4e–).
+examination of more than 10 transition metal oxides, which showed that the intrinsic OER activity exhibits We further show that this design principle has
+a volcano-shaped dependence on the occupancy of the 3d electron with an eg symmetry of surface predictive power, from which we were able to
+transition metal cations in an oxide. The peak OER activity was predicted to be at an eg occupancy close to identify a highly active OER oxide catalyst.
+unity, with high covalency of transition metal–oxygen bonds. Our approach is based on a molecular orbital
+ bonding framework. Because the eg orbital of sur-
+ he design of cost-effective, highly active iridium oxide (IrO2), which is considered to be face transition metal ions participates in s-bonding
+
+T catalysts for energy storage applications is
+ a critical element in the societal pursuit of
+sustainable energy. The oxygen evolution reac-
+ state of the art (table S1). As part of efforts to
+ discover highly active catalysts based on abun-
+ dant elements, substantial effort has been devoted
+ with a surface-anion adsorbate (16, 17), its occu-
+ pancy can greatly influence the binding of oxygen-
+ related intermediate species on B-sites (scheme
+tion (OER) in particular is an enabling process to understanding the mechanism and parameters S1) and thus the OER activity. We elected to
+for many energy storage options, such as direct- that govern the OER activity and ideally discov- study the perovskite structure (Fig. 1, inset)
+solar (1, 2) and electricity-driven (3) water splitting ering a convenient activity descriptor. Trasatti (13), A1–xA´xByB´1–yO3, where A or A´ is a rare-earth
+(H2O → H2 + ½O2) and rechargeable metal-air Bockris and Otagawa (12), and Rossmeisl et al. or alkaline-earth metal and B or B´ is a transition
+batteries (MxO2 → Mx + O2) (4, 5). However, the (7, 14) have reported the enthalpy of a lower to metal, because of its flexibility in both physical-
+kinetics of the OER are sluggish, even when fa- higher oxide transition, the 3d electron number of chemical and catalytic properties. Representa-
+cilitated by comparatively high-activity, precious bulk transition metal ions, and the surface oxygen tive OER currents of oxides collected in this
+metal–containing catalysts. This limitation imposes binding energy as OER activity descriptors, re- study (Fig. 1) were obtained by using a thin-film
+a considerable overpotential requirement (6, 7), spectively. However, it is not straightforward to rotating-disk electrode with well-defined oxygen
+similar to the case of the oxygen reduction re-
+action (ORR) (8, 9) for fuel cell applications Fig. 1. Exemplary OER currents of
+(10). First-row transition metal oxides such as La1–xCaxCoO3 and LaCoO3 thin films on
+NiCo2O4 (11) and LaNiO3 (12) are cost-effective GCE in O2-saturated 0.1 M KOH at 10 mV s−1
+ scan rate at 1600 rpm, capacitance-corrected
+alternatives, but they underperform relative to
+ by taking an average of the positive and
+1
+ Materials Science and Engineering Department, Massachu- negative scans. The contributions from AB
+setts Institute of Technology, Cambridge, MA 02139, USA. 2Elec- and binder (Nafion) in the thin film and
+trochemical Energy Laboratory, Massachusetts Institute of GCE are shown for comparison. The inset
+Technology, Cambridge, MA 02139, USA. 3Mechanical En- shows the structure of perovskite ABO3
+gineering Department, Massachusetts Institute of Technol- (where A is an alkali or a rare earth, yel-
+ogy, Cambridge, MA 02139, USA. 4Texas Materials Institute,
+University of Texas, Austin, TX 78712, USA.
+ low; B is a transition metal, blue; and O is
+ oxygen, red).
+*Present address: Department of Chemistry, Technische Uni-
+versität München, Lichtenbergstrasse 4, D-85747 Garching,
+Germany.
+†To whom correspondence should be addressed. E-mail:
+shaohorn@mit.edu
+
+ www.sciencemag.org SCIENCE VOL 334 9 DECEMBER 2011 1383
+ REPORTS
+ transport (18). The background contributions for spin state in the O2 electrocatalysis may help to branch of the volcano, the deprotonation of
+ OER from a carbon additive (acetylene black, AB) explain the difference between the trend of OER the oxyhydroxide group to form peroxide ions
+ and Nafion in the oxide films and GCE (glassy activity of perovskites in this study and that of (B(m)+-OOH– + OH– → B(m+1)+-O22– + H2O + e–)
+ carbon electrode) are negligible below ~1.65 V previous ab initio work (14) (as the trend in the may be rate-limiting (scheme S2) (7). Having eg
+ versus RHE (reversible hydrogen electrode) (Fig. 1). binding energy with oxygenated species on B-site filling close to unity experimentally facilitates
+ To separate the surface area effect from the ions would be expected to be different as well). these RDSs efficiently and thereby leads to the
+ intrinsic catalytic activity, we analyzed the sur- We explain the OER activity trend in Fig. 2 highest OER activity. Our molecular orbital mod-
+ face area–normalized kinetic current density (re- as follows. Considering the ab initio finding of el is further supported by the observation that the
+ ferred to as specific activity, is) as a function of Rossmeisl et al. (7), whose work suggests a uni- OER activity can be enhanced with increasing
+ voltage versus RHE to assess the intrinsic OER versal dependence of the OER activity on the oxy- covalent mixing between B-site ion and O atoms
+ activities of the perovskite oxides (fig. S1). Our gen binding strength, we propose that the eg filling of oxides at a constant eg filling (fig. S2), where
+ measurements consistently yielded a comparable of surface transition metal cations can greatly in- an active redox couple lies at the top of the O-2p
+ or higher specific OER activity of oxides than those fluence the binding of OER intermediates to the bands. Greater covalency between B-site and oxy-
+ found in previous reports (12, 19–22) (table S2). oxide surface and thus the OER activity. For the gen, where the active redox couple of the B-site
+ This discrepancy can be attributed to a higher right branch of the volcano, the rate-determining ion has a larger O-2p character, promotes the
+ catalyst utilization in thin films (<10 cm2ox/cm2disk) step (RDS) is the formation of the O-O bond in charge transfer between surface cations and ad-
+ on GCE (18, 23) than on traditional porous OOH adsorbate on B-site ions (B(m+1)+-O2– + sorbates such as O22– and O2– in the RDSs of
+ electrodes used in earlier work, which have a very OH– → B(m)+-OOH– + e–), whereas for the left OER, which can result in higher OER activity.
+ high internal surface area (~104 cm2ox/cm2disk) and
+
+ Downloaded from https://www.science.org at University of Tokyo on January 15, 2026
+ so yield less accurate determinations of the spe-
+ cific activity of powder oxide catalysts. Fig. 2. The relation between the OER cat- 1.4
+ Our studies showed that the specific OER alytic activity, defined by the overpoten-
+ activities of the perovskite oxides exhibit a vol- tials at 50 mA cm−2 ox of OER current, and
+ the occupancy of the eg-symmetry electron 1.5
+ cano shape as a function of the eg filling of sur-
+ of the transition metal (B in ABO3). Data
+ face B-site cations (Fig. 2), where the activities
+ symbols vary with type of B ions (Cr, red;
+ are compared in terms of the overpotential required Mn, orange; Fe, beige; Co, green; Ni, blue;
+ to provide a specific current of 50 mA/cm2ox. In 1.6
+ mixed compounds, purple), where x = 0,
+ this analysis, the eg filling of B-site ions was es- 0.25, and 0.5 for Fe. Error bars represent
+ timated from a combination of literature data and SDs of at least three independent mea-
+ results of thermogravimetry and x-ray absorption 1.7
+ surements. The dashed volcano lines are
+ studies (24); partial substitution on the A- or B- shown for guidance only.
+ sites, resulting in oxygen vacancy or B-site ion
+ valence changes, was taken into consideration. 1.8
+ 0.0 0.5 1.0 1.5 2.0 2.5
+ The assignment of the eg-orbital occupancy for
+ oxides with two different B-site ions such as
+ LaMn0.5Cu0.5O3 was based on the more active
+ surface transition metal cation under an assump-
+ tion that the less active cation contributes neg- A B
+ ligibly. With a Tafel slope of ~60 mV/decade, the
+ eg occupancy correlated with the specific OER
+ activities of oxides across four orders of magni-
+ tude, over a voltage span of 0.3 V; this obser-
+ vation allows identification of eg filling of surface
+ transition metal cations as a universal activity
+ descriptor for these oxides.
+ The eg-filling descriptor proposed in this study
+ is fundamentally different from the number of 3d
+ electrons (both eg and t2g electrons) of bulk B-site
+ cations proposed by Otagawa and Bockris (12)
+ or the conduction band described by Matsumoto
+ (20). The filling of the surface transition metal
+ C Fig. 3. (A) Evidence of O2 generated from BSCF
+ antibonding states of eg-orbital parentage is a more
+ appropriate descriptor for catalysis because the using rotating ring disk electrode measurements
+ (schematic shown as an inset). The O2 gas gen-
+ s-bonding eg orbital has a stronger overlap with the
+ erated from BSCF on GCE disk (OER current
+ oxygen-related adsorbate than does the p-bonding
+ given as idisk) is reduced at the Pt ring at a
+ t2g orbital, and thus can more directly promote constant potential of 0.4 V versus RHE. The O2
+ electron transfer between surface cation and ad- collection efficiency as determined using the same
+ sorbed reaction intermediates. Moreover, lower- configuration with an IrO2 thin-film electrode is
+ ing of the site symmetry at the surface can induce ~0.2 (24). (B) OER specific activity (in logarith-
+ orbital localization and modify the surface elec- mic scale) of BSCF (squares) and IrO2 (circles) as
+ tronic state to differ from that of the bulk (25), a function of potential. Error bars represent
+ and the use of the surface eg filling as opposed to standard deviations of at least three indepen-
+ the bulk value is crucial to prescribe accurately dent measurements. (C) Galvanostatic (constant
+ the catalytic trend for ORR on oxides (26). Our current) measurement of mass activities of BSCF,
+ observation of the importance of the surface BM-BSCF, and IrO2.
+
+1384 9 DECEMBER 2011 VOL 334 SCIENCE www.sciencemag.org
+ REPORTS
+ The OER design principle shown in Fig. 2 could further improve its mass activity and thus 21. Y. Matsumoto, E. Sato, Electrochim. Acta 24, 421
+was applied to obtain a highly active OER cata- yield highly efficient OER electrodes. (1979).
+ 22. A. Wattiaux, J. C. Grenier, M. Pouchard, P. Hagenmuller,
+lyst, BSCF, which was best known for its high Our study suggests the importance of devel- J. Electrochem. Soc. 134, 1714 (1987).
+performance as a cathode in solid oxide fuel cells oping a transition metal oxide having a surface 23. T. J. Schmidt et al., J. Electrochem. Soc. 145, 2354
+(27) and oxygen permeation membranes. Be- cation eg occupancy close to unity and high B-site (1998).
+cause the surface Co cations of BSCF are in the oxygen covalency for enhancing the OER cat- 24. See supporting material on Science Online.
+ 25. J. Q. Yan, J. S. Zhou, J. B. Goodenough, Phys. Rev. B 70,
+intermediate spin state (28, 29), the electronic alytic activity. This approach is a promising strat- 014402 (2004).
+configuration of Co cations (estimated oxidation egy to create bifunctional oxide catalysts and 26. J. Suntivich et al., Nat. Chem. 3, 546 (2011).
+state of ~2.8; table S3) in BSCF can be assigned electrodes for the development of efficient, re- 27. Z. P. Shao, S. M. Haile, Nature 431, 170 (2004).
+as t2g5eg~1.2. We found that BSCF (fig. S3) had chargeable metal-air batteries, regenerative fuel 28. A. S. Harvey et al., Phys. Chem. Chem. Phys. 11, 3090
+ (2009).
+the highest OER activity among all oxides studied cells, and other rechargeable air-based energy 29. A. S. Harvey et al., J. Phys. Condens. Matter 21, 015801
+as predicted by the eg activity descriptor (Fig. 2). storage devices. (2009).
+To ensure that the observed oxidation current
+was from oxygen evolution, we used a rotating Pt Acknowledgments: Supported by a Chesonis Foundation
+ References and Notes Fellowship (J.S.), a Natural Sciences and Engineering Research
+ring electrode held at the ORR potential of 0.4 V 1. H. B. Gray, Nat. Chem. 1, 7 (2009). Council of Canada postgraduate scholarship (K.J.M.), the
+versus RHE to detect O2 gas generated at the 2. N. S. Lewis, D. G. Nocera, Proc. Natl. Acad. Sci. U.S.A. Robert A. Welch Foundation (J.B.G.), and the U.S. Department
+catalyst by electrochemical reduction (Fig. 3A). 103, 15729 (2006). of Energy Hydrogen Initiative program under award
+The reduction current detected on the ring elec- 3. M. W. Kanan, D. G. Nocera, Science 321, 1072 (2008). DE-FG02-05ER15728. The research made use of the Shared
+ 4. Y. C. Lu et al., J. Am. Chem. Soc. 132, 12170 (2010). Experimental Facilities supported by the MRSEC Program of
+trode suggested that the oxidation current from 5. M. Armand, J. M. Tarascon, Nature 451, 652 (2008). the National Science Foundation under award DMR 08-019762.
+
+ Downloaded from https://www.science.org at University of Tokyo on January 15, 2026
+BSCF could be accounted for fully by the OER. 6. M. T. M. Koper, J. Electroanal. Chem. 660, 254 (2011). We acknowledge collaboration with H. Nakanishi (Toyota Motor
+The measured intrinsic OER activity of BSCF 7. J. Rossmeisl, Z. W. Qu, H. Zhu, G. J. Kroes, J. K. Norskov, Corporation). We thank Y. Lee, N. Yabuuchi, and L. Wang
+was higher than that of IrO2 nanoparticles (av- J. Electroanal. Chem. 607, 83 (2007). (oxide synthesis), D. G. Kwabi and A. N. Mansour (x-ray
+ 8. H. A. Gasteiger, N. M. Marković, Science 324, 48 (2009). absorption), C. K. Brozek and M. Dinca (surface area
+erage diameter ~6 nm) (Fig. 3B) by at least an 9. V. R. Stamenkovic et al., Science 315, 493 (2007). measurements), and Exponent (thermogravimetry). The National
+order of magnitude when considering a conserv- 10. H. A. Gasteiger, S. S. Kocha, B. Sompalli, F. T. Wagner, Synchrotron Light Source is supported by the U.S. Department
+ative experimental uncertainty in the intrinsic Appl. Catal. B 56, 9 (2005). of Energy, Division of Material Sciences and Division of
+OER activity of approximately an order of mag- 11. C. R. Davidson, G. Kissel, S. Srinivasan, J. Electroanal. Chemical Sciences, under contract DE-AC02-98CH10886. Beamline
+nitude (24). The exceptional OER activity of Chem. 132, 129 (1982). X11 is supported by the Office of Naval Research and
+ 12. J. O. Bockris, T. Otagawa, J. Electrochem. Soc. 131, contributions from Participating Research Team members.
+BSCF was further confirmed by galvanostatic 290 (1984). A patent related to this invention has been filed.
+measurements, which manifested no degrada- 13. S. Trasatti, J. Electroanal. Chem. 111, 125 (1980).
+tion in the OER activity (fig. S4). Once the sizes 14. I. C. Man et al., ChemCatChem 3, 1159 (2011). Supporting Online Material
+of BSCF particles were reduced to submicro- 15. B. Hammer, J. K. Nørskov, Adv. Catal. 45, 71 (2000). www.sciencemag.org/cgi/content/full/science.1212858/DC1
+ 16. C. J. Ballhausen, H. B. Gray, Inorg. Chem. 1, 111 (1962). Materials and Methods
+meter range via ball-milling, the mass activity of 17. T. A. Betley, Q. Wu, T. Van Voorhis, D. G. Nocera, Figs. S1 to S7
+ball-milled BSCF (BM-BSCF) was found to com- Inorg. Chem. 47, 1849 (2008). Tables S1 to S5
+pare favorably with IrO2, and the overpotential of 18. J. Suntivich, H. A. Gasteiger, N. Yabuuchi, Y. Shao-horn, Schemes S1 and S2
+BM-BSCF was shown to be nearly identical to J. Electrochem. Soc. 157, B1263 (2010). References (30–47)
+ 19. Y. Matsumoto, J. Kurimoto, E. Sato, J. Electroanal. Chem.
+that of IrO2 at a catalytic activity normalized to 102, 77 (1979). 18 August 2011; accepted 11 October 2011
+the catalyst’s mass (i.e., mass activity) of 10 A g−1
+ ox 20. Y. Matsumoto, H. Manabe, E. Sato, J. Electrochem. Soc. Published online 27 October 2011;
+(Fig. 3C). Developing nanostructured BSCF 127, 811 (1980). 10.1126/science.1212858
+
+ trial times has been established as a well-defined
+Climate Sensitivity Estimated standard measure (1). Moreover, because transient
+ (disequilibrium) climate change and impacts on
+from Temperature Reconstructions ecological and social systems typically scale with
+ ECS2xC, it is a useful and important diagnos-
+of the Last Glacial Maximum tic in climate modeling (1). Initial estimates of
+ ECS2xC = 3 T 1.5 K suggested a large uncer-
+Andreas Schmittner,1* Nathan M. Urban,2 Jeremy D. Shakun,3 Natalie M. Mahowald,4 tainty (2), which has not been reduced in the
+Peter U. Clark,5 Patrick J. Bartlein,6 Alan C. Mix,1 Antoni Rosell-Melé7 past 32 years despite considerable efforts (1–10).
+ On the contrary, many recent studies suggest a
+Assessing the impact of future anthropogenic carbon emissions is currently impeded by small possibility of very high (up to 10 K and
+uncertainties in our knowledge of equilibrium climate sensitivity to atmospheric carbon dioxide higher) values for ECS2xC (3–10), implying extreme
+doubling. Previous studies suggest 3 kelvin (K) as the best estimate, 2 to 4.5 K as the 66% probability
+range, and nonzero probabilities for much higher values, the latter implying a small chance of 1
+ College of Oceanic and Atmospheric Sciences, Oregon State
+high-impact climate changes that would be difficult to avoid. Here, combining extensive sea and University, Corvallis, OR 97331–5503, USA. 2Woodrow Wilson
+land surface temperature reconstructions from the Last Glacial Maximum with climate model School of Public and International Affairs, Princeton University,
+ NJ 08544, USA. 3Department of Earth and Planetary Sciences,
+simulations, we estimate a lower median (2.3 K) and reduced uncertainty (1.7 to 2.6 K as the 66% Harvard University, Cambridge, MA 02138, USA. 4Department
+probability range, which can be widened using alternate assumptions or data subsets). Assuming of Earth and Atmospheric Sciences, Cornell University, Ithaca,
+that paleoclimatic constraints apply to the future, as predicted by our model, these results imply NY 14850, USA. 5Department of Geosciences, Oregon State
+a lower probability of imminent extreme climatic change than previously thought. University, Corvallis, OR 97331, USA. 6Department of Geogra-
+ phy, University of Oregon, Eugene, OR 97403, USA. 7Institució
+ Catalana de Recerca i Estudis Avançats and Institute of Envi-
+ limate sensitivity is the change in global the top of the atmosphere with respect to a given
+
+C mean near-surface air temperature DSAT
+ caused by an arbitrary perturbation DF
+(radiative forcing) of Earth’s radiative balance at
+ reference state. The equilibrium climate sensitiv-
+ ity for a doubling of atmospheric carbon dioxide
+ (CO2) concentrations (ECS2xC) from preindus-
+ ronmental Science and Technology, Autonomous University of
+ Barcelona, Bellaterra, Spain.
+ *To whom correspondence should be addressed. E-mail:
+ aschmitt@coas.oregonstate.edu
+
+ www.sciencemag.org SCIENCE VOL 334 9 DECEMBER 2011 1385

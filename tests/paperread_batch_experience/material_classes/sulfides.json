@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "material_class": "sulfides",
+  "updated_at": "2026-07-06T06:19:14.627166+00:00",
+  "summary": {
+    "terms": 6,
+    "known_useful": 0,
+    "unknown": 6,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "Mo–N/C@MoS2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ],
+      "count": 2
+    },
+    {
+      "term": "catalytic mechanism",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "MoS2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Mo–N/C@MoS2"
+      ],
+      "count": 1
+    },
+    {
+      "term": "reaction mechanism",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Reaction Mechanism"
+      ],
+      "count": 1
+    },
+    {
+      "term": "reaction mechanisms",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ],
+      "count": 1
+    },
+    {
+      "term": "sulfides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    }
+  ]
+}

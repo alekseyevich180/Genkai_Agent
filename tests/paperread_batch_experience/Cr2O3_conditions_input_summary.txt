@@ -1,0 +1,42 @@
+这次抽到的关键信息包括：
+
+在 Cr2O3_conditions_input_table.csv 里：
+
+- Cr2O3 暴露/涉及晶面 (001), (012)
+- 吸附物/反应物：NO, O2，吸附位点 Cr3c, Cr5c
+- 建模关键词：Cr2O3, NO oxidation, active site, adsorption, interface model, oxygen vacancy
+
+在 Cr2O3_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Cr2O3
+- 材料参数：
+  - stable chromium oxide
+  - Cr3+/Cr6+ redox
+- 反应参数：
+  - room temperature
+- 性能：
+  - catalytic ability
+  - O2 adsorption energy of -0.99 eV
+- 表面/晶面：
+  - Cr2O3(001)
+  - Cr2O3(012)
+  - five-coordinated Cr5c
+  - three-coordinated Cr3c
+- 缺陷/活性位点：
+  - Cr3c
+- 吸附/覆盖度：
+  - NO
+  - O2*
+  - NO2*
+  - ONOO*
+  - Cr3c site
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - DFT+U
+  - catalytic mechanism
+- 推荐建模任务：
+  - adsorbate_landscape
+  - doped_surface

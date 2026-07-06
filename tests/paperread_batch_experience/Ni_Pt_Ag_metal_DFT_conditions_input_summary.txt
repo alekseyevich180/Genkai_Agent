@@ -1,0 +1,60 @@
+这次抽到的关键信息包括：
+
+在 Ni_Pt_Ag_metal_DFT_conditions_input_table.csv 里：
+
+- 吸附物/反应物：Oxygen
+- 吸附物/反应物：CO, CH3OH，覆盖度 Full, sub-saturation
+- 吸附物/反应物：CO，覆盖度 Full, sub-saturation
+- 吸附物/反应物：Formic acid
+- Cyanide-modified
+- 吸附物/反应物：NO
+- Ru modified
+- 吸附物/反应物：Methanol, Formic acid
+- 吸附物/反应物：CO
+- 吸附物/反应物：Methanol
+
+在 Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - CoPt nanoparticles
+  - Pd
+  - Pt
+  - Ru
+  - PtxRu1-x/Ru(0001)
+  - PtTiMe ternary alloys
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - bias potential
+- 性能：
+  - electrocatalytic activity
+  - catalytic properties
+- 表面/晶面：
+  - water/platinum interface
+  - Pt(335)
+  - Pt(111)
+  - Ru(0001)
+  - Ni(111)
+  - Ag(111)
+  - nanoscale single crystal ensemble
+  - Pt(111) nanofacets
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - CO
+  - CH3OH
+  - formic acid
+  - hydroxyl species
+  - NO
+  - full coverage
+  - sub-saturation coverage
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - DFT
+  - electrocatalysis
+  - adsorption
+  - oxidation
+- 推荐建模任务：
+  - adsorbate_landscape
+  - vacancy_landscape

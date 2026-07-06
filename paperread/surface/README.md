@@ -37,6 +37,9 @@ Outputs:
 - `*_ptomodel.json`: filtered and normalized Agent-oriented bridge from paper key information to modeling inputs
 - `material_classes/*.json`: material-class experience records when
   `--collect-experience` is enabled
+- `agents/Agent/skills/paperread-surface-learning/experience/surface_parameter_registry.json`:
+  reusable parameter vocabulary regenerated from the canonical material-class
+  experience store
 
 Optional outputs:
 
@@ -125,8 +128,8 @@ surface-modeling direction:
 - `collect_experience.py`
   - Input: `*_surface_relations.jsonl` and/or `*_table.csv`
   - Output:
-    - `material_classes/<material_class>.json`: default cumulative experience
-      store grouped by inorganic material type
+    - `material_classes/<material_class>.json`: default cumulative keyword
+      inventory grouped by inorganic material type
     - `<stem>.json`: optional per-run aggregate only when `--write-run-file`
       is passed
     - `<stem>.md`: optional human-readable review report only when
@@ -145,6 +148,13 @@ surface-modeling direction:
     - `unknown_information`
   - The default long-term experience store is organized by inorganic material
     type rather than by paper.
+  - The material-class files emphasize keyword frequencies and descriptor
+    buckets such as materials, surface/support, states, dopants/modifiers,
+    active sites, adsorbates/reactants, coverage, clusters/single atoms, and
+    reactions. They intentionally avoid long per-paper source lists.
+  - The canonical experience store can be converted into a reusable parameter
+    registry so later extractions can reuse previously learned material,
+    loading, coordination, support, and reaction vocabulary.
   - Current inorganic material classes include:
     - `single_atom_catalysts`
     - `supported_catalysts`
@@ -199,6 +209,12 @@ For papers focused on surface-material reactions:
    human summary before opening the full plan.
 6. Enable `--collect-experience` when you want to preserve useful and unknown
    extraction information for later prompt/schema/planner improvements.
+9. Rebuild or inspect the reusable registry when you want later paperread runs
+   to reuse learned parameter vocabulary:
+
+```bash
+python agents/Agent/skills/paperread-surface-learning/scripts/build_surface_parameter_registry.py
+```
 7. Use `standardize_surface_time.py` separately only if you already have a
    condition table and want to normalize time values again.
 8. Enable `--keep-intermediate` only when you need PDF text, section diagnostics,

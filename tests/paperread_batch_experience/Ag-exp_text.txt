@@ -1,0 +1,464 @@
+Optical Materials 145 (2023) 114376
+
+ Contents lists available at ScienceDirect
+
+ Optical Materials
+ journal homepage: www.elsevier.com/locate/optmat
+
+Research Article
+
+Advances in modifications of Ag/g-C3N4 for stable and effective
+photoanode for OER
+Hira Jabeen c, Rida Shahzadi Haider d, e, Shamaila Sajjad a, c, *, Sajjad Ahmed Khan Leghari b,
+Saima Noor c, Mohammed A. Amin f, Mohamed M. Ibrahim f
+a
+ CIRBS, International Islamic University, Islamabad, Pakistan
+b
+ Pakistan Institute of Engineering and Applied Sciences, Islamabad, Pakistan
+c
+ Department of Physics, International Islamic University, Islamabad, Pakistan
+d
+ Dalian Institute of Chemical Physics, Chinese Academy of Sciences, Dalian, China
+e
+ University of Chinese Academy of Sciences, China
+f
+ Department of Chemistry, College of Science, Taif University, P.O.BOX 11099, Taif, 21944, Saudi Arabia
+
+A R T I C L E I N F O A B S T R A C T
+
+Keywords: Silver (Ag) incorporated graphitic carbon nitride (g-C3N4) nano-composites having various ratios of Ag were
+Ag/g-C3N4 prepared via a chemical route. The synthesized catalysts were potentially employed in an oxygen evolution
+Photoelectrochemical process reaction (OER) through photoelectrochemical (PEC). An XRD profile of Ag/g-C3N4 nano-composite depicted
+Oxygen evolution reaction
+ hexagonal g-C3N4 along with FCC Ag presence. The inhomogeneous distribution of tiny Ag nanospheres on
+Open-circuit voltage
+ irregularly agglomerated sheets of g-C3N4 was clearly seen in SEM images. The elemental mapping provided
+Water splittiing
+ distribution of elements in the composite sample. Ag/g-C3N4 nano-composite samples show improvement in
+ absorption edge with a reduction in band gap energy. FTIR studies illustrated strong surface interaction among
+ Ag and g-C3N4 nano-sheets. The prominent reduction in PL peaks intensity for B30 Ag/g-C3N4 nano-composite
+ suggested a long lifetime of photo induced charge carriers. XPS analysis confirmed the existence of metallic
+ Ag on g-C3N4. B30 Ag/g-C3N4 attained better PEC activity results as compared to all other prepared photo­
+ catalysts. In OER experiments, B30 Ag/g-C3N4 showed a small onset potential (0.33 V) leading to more pro­
+ duction of photo excited electrons and a reduction in photo generated electron-hole recombination process. The
+ improved Jsc and Voc of B30 Ag/g-C3N4 indicated the shorter lifetime of charge carriers across electrode and
+ electrolyte interface through suitable charge separation. Optimized B30 Ag/g-C3N4 is active and steady for
+ efficient PEC water splitting in comparison to other prepared nanosystems.
+
+1. Introduction challenges associated with PEC production that needs to be addressed i.
+ e. its low quantum yield, light scattering and fast electron-hole separa­
+ In the last couple of decades, energy shortage and environmental tion efficiency [7]. Therefore, cost effective, stable and active materials
+pollution increases by increasing the population rate. The industriali­ for designing of photoelectrodes of the PEC water splitting process are
+zation resulted in severe risks to mankind and living beings [1]. The imperative.
+toxicity from petroleum products, greenhouse effect and carbon dioxide g-C3N4 having highly stable and well organized structure is a metal-
+emission is a worldwide concern. The photo-catalysis appears to be an free organic semiconductor [8]. It has excellent optical properties suit­
+effective and environmentally compassionate solution for the afore­ able for OER and hydrogen generation [9,10]. Carbon (C) and nitrogen
+mentioned problems of pollutants [2–4]. PEC is a potential approach for (N) are their main constituents [11]. The minimal surface area of the
+hydrogen production as a clean energy carrier [5]. OER is the essential conjugated polymeric structure of g-C3N4 promotes quick recombina­
+module in many energy storage devices. OER is a kinetically sluggish tion of charges [12,13]. This structure is also responsible for stacking
+process that involved in complicated oxidation process that restricts its that occurs between the aromatic layers [14,15]. Various methodologies
+production and practical applications [6]. There are still numerous for modifying the g-C3N4 have been developed to overcome this
+
+ * Corresponding author. CIRBS, International Islamic University, Islamabad, Pakistan.
+ E-mail addresses: shalisajjad@yahoo.com, shamaila.sajjad@iiu.edu.pk (S. Sajjad).
+
+https://doi.org/10.1016/j.optmat.2023.114376
+Received 22 April 2023; Received in revised form 20 August 2023; Accepted 13 September 2023
+Available online 3 October 2023
+0925-3467/© 2023 Elsevier B.V. All rights reserved.
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+problem. The methodologies involved are doping of foreign ions (Fe, Ag, C3N4 suspension to prepare nano-composites in different concentrations.
+P, B etc.) to improve its surface activity by strong interaction between Finally, samples were named B10, B20 and B30 nano-composites based
+nitrogen atoms (host species) and metal ions [16,17]. The band position on added AgNO3 solution. The synthetic protocol of nano-composites is
+and lattice parameters of g-C3N4 can be altered by introducing various illustrated in Scheme 1.
+metal or non-metal ions which improves lifespan, separation and
+transportation of charges [18]. According to the literature, different 2.4. Characterization
+noble metals like platinum (Pt) and gold (Au) improved the visible light
+harvesting capability of g-C3N4. This happened because of surface The phase and structural characteristics of composites were tested
+plasmon resonance and electron sink persuaded effectively which pre­ through Bruker X-ray diffractometer (Co Kα1 radiation, λ = 1.5 Å)
+vents photo generated electrons and holes from recombination of ter­ working at 40 KV potential and a current of 100 mA. The surface
+tiary amines [19,20]. Zou X et al. introduced the Cu-C3N4 composite microstructure, elemental composition and elemental mapping were
+with good HER performance [21]. I.N. Reddy et al. have reported that performed through scanning electron microscope (SEM-EDX) (MAIA3
+0.3 mol % vanadium-doped g-C3N4 had excellent stability and improved TESCAN). The chemical bonding of specimens was determined by FTIR
+photocurrent density [22]. Babu P. et al. have studied Boron and Sulfur analysis (FTIR ALPHA-II). Shimadzu UV-2700 is used for the optical
+co-doped g-C3N4 and noted 53.2 μmolh− 1 H2 production [23]. Y. Yang characteristics of materials. PL data were performed by PerkinElmer
+et al. have reported that Au single atom on amino-group modified LS45 Fluorescence Spectrometer. XPS spectra were performed via Kratos
+g-C3N4 which exhibited excellent CO2 reduction [24]. Axis Ultra spectrometer at 40 eV and 180 W.
+ In our current research, g-C3N4 has been synthesized through a dry
+calcination procedure using comparatively cost effective precursors. Ag/ 2.5. PEC measurements
+g -C3N4 composites were prepared via mild urea reduction way. The PEC
+response of the optimized 30 mL Ag/g-C3N4 is relatively stable In order to design the electrode for PEC measurements, 20 mg of
+throughout the PEC process. The incorporation of Ag NPs enhances OER samples were ultrasonically dispersed in 0.5 mL ethanol to make a
+performance with a photocurrent density of 110 μA/cm2 at an onset slurry. After that, the slurry was coated dropwise onto the F doped SnO2-
+potential of 0.3 V vs. RHE which attained the chemical stability at coated glass (FTO) (2 × 2 cm2), which served as a substrate to hold the
+smaller onset potentials. The low value of photocurrent in 10 mL Ag/g- sample. The FTO glass covered by prepared pure and composite samples
+C3N4 photocatalyst may be due to the lower Ag content leading to un­ were heated to 410 ◦ C in a furnace for 1 h for calcination. For
+availability of active sites under visible light excitation. This study aims photoelectron-catalytic (PEC) experiments, a 1.3 × 1.3 cm2 sample area
+to investigate OER performance and overall water splitting of Ag/g-C3N4 on FTO was exposed.
+nano-composites when subjected to visible light irradiation and Corr Test electrochemical workstation was used to measure photo­
+improved electron trapping sites for PEC. current responses having three electrode system, FTO coated with
+ resultant samples (working electrode), Pt wire (counter electrode) and
+2. Experimental SCE (reference electrode) in 0.07 M KOH electrolyte solution. Xenon
+ lamp as a visible light source (λ > 420 nm) was used.
+2.1. Materials
+ 3. Results and discussion
+ Urea (CH4N2O), Thiourea (CH4N2S), Silver nitrate (AgNO3), Sodium
+hydroxide (NaOH) and Ethanol (C2H6O) were of Sigma Aldrich. 3.1. XRD
+
+2.2. g-C3N4 fabrication XRD analysis is collected for synthesized samples to determine
+ crystal structure, phase purity and crystallite size. Fig. 1 indicates the
+ The calcination of thiourea and urea was utilized in g-C3N4 prepa­ XRD pattern of g-C3N4 (1 A), B10, B20 and B30 samples (1 B). The g-
+ration. In this approach, urea and thiourea at a mass ratio of 1:1 are C3N4 shows its strong characteristic signals at 27.56◦ (002) with an inter
+taken and placed in a crucible. After that, the above combination was planer spacing of 11.8 Å, which suggests the distinct inter layered
+heated at 410 ◦ C for 1 h in an oven. After completion of the above re­ packing (graphitic) of hexagonal g-C3N4 (JCPDS 87–1526) [23]. The
+action, the sample was cooled at room temperature. Finally, the dried other comparatively low intensity peak at 10.6◦ (100) with an inter­
+powder of g-C3N4 was obtained and used for nano-composites planar distance of 7.7 Å signifies the presence of interlayered
+formation. tri-s-triazine units [25]. Fig. 1B represents the XRD profile of Ag/g-C3N4
+ nano-composites. It is observed from the results that all composite
+2.3. Fabrication of Ag/g-C3N4 nano-composites samples have the signals of pure g-C3N4 together with diffraction signals
+ (2θ = 38.2◦ (111), 44.5◦ (200) and 64.8◦ (220)) of FCC Ag metal (JCPDS
+ Ag/g-C3N4 nano-composites were fabricated via eco-friendly mild No. 04e0783) [26]. It is also noted that high intensity peaks of g-C3N4
+urea reduction method. 0.1 M AgNO3 solution was prepared by adding have been suppressed in all composite samples. Furthermore, the slight
+AgNO3 in deionized water and stirred for 30 min. 1.0 g of g-C3N4 was shifting of signals towards a higher 2θ value relative to pure g-C3N4
+scattered in 50 mL distilled water. 0.1 M AgNO3 solution was poured indicates that the dopant material disturbed in the composite lattice
+slowly into the above g-C3N4 solution under constant magnetic stirring. structure by imposing internal stress on the host g-C3N4 lattice [27]. The
+NaOH was added as a pH regulator in the suspension of AgNO3 and g- observed changes implied that there is great synergy among g-C3N4 and
+C3N4 to expedite the formation of Ag-containing precipitates on g-C3N4. Ag which indicated that Ag NPs fill the spacing of the g-C3N4 structure
+The above suspension was stirred for 5 h in an oil bath at 80 ◦ C. After 5 h, [28]. The average particle size calculated by the most intense peak (002)
+a dry dark green powder was formed. Subsequently, g-C3N4 and AgNO3 of g-C3N4, B10, B20 and B30 was noted to be 8.13, 19.2, 22.1 and 23.12
+hybrid structure was annealed for 3 h at 300 ◦ C. In final step, thiourea nm, respectively.
+leaching was used to extract Ag nanoparticles by forming a coordinate
+bond with Ag. The prepared powder was washed with 0.5 M thiourea 3.2. SEM photographs
+solution for once and then 2–3 times with deionized water. Then dried it
+for 8 h in the oven at 90–100 ◦ C. Fig. 2 shows SEM, EDX and elemental mapping of pure g-C3N4 and
+ Various Ag/g-C3N4 nano-composites were prepared by altering the B30 Ag/g-C3N4 nano-composites. g-C3N4 represents smooth agglomer­
+concentration of AgNO3 solution i.e. 10, 20, 30 mL and combined with g- ated irregular (lamellar) 2-D nano sheets like structure with a thickness
+
+ 2
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+ Scheme 1. Experimental approach of g-C3N4 and Ag/g-C3N4 nano-composites formation.
+
+ Fig. 1. XRD profile of (A) g-C3N4, (B) B10, B20 and B30 Ag/g-C3N4 nano-composites.
+
+ Fig. 2. SEM images and EDX of g-C3N4 and B30 Ag/g-C3N4 and elemental mapping of B30 Ag/g-C3N4.
+
+ 3
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+of a few nanometers [29,30]. Nano-sheets of g-C3N4 offer more active
+sites for photocatalytic reactions. It is clearly seen in the SEM image of
+B30 Ag/g-C3N4 nano-composite that the stacked sheets of g-C3N4 are
+fully covered by dots like structures of Ag nanoparticles. The homoge­
+nous distribution of Ag shows a strong attachment on g-C3N4 sheets with
+highly active sites which are favourable in capturing of visible light
+photons during PEC activity. EDX analysis of g-C3N4 and B30 Ag/g-C3N4
+indicated the constituent elements (N, O, C) and (C, N, O and Ag) of both
+samples, respectively. This confirms the purity of pure and composite
+materials. Furthermore, the distribution of elements of B30 Ag/g-C3N4
+composite has been confirmed by elemental mapping images. Red,
+purple, yellow and green colours showed the existence of C, N, Ag and O,
+respectively. Both EDX and elemental mapping results contain oxygen
+contents due to samples preparation in the air atmosphere [31].
+
+3.3. Diffused reflectance spectroscopy analysis
+
+ The absorbance spectra in Fig. 3A displays the absorption band edges
+of g-C3N4, B10, B20 and B30 Ag/g-C3N4 nano-composites with 458, 484,
+535 and 538 nm, respectively. The band gap of g-C3N4 led to an expected Fig. 4. FTIR pattern of g-C3N4 and B10, B20 and B30 Ag/g-C3N4
+absorption edge at 458 nm to make it more active in the visible light nano-composites.
+region [32]. In g-C3N4, C (2p orbitals) and N (2p orbitals) represent
+conduction (C⋅B) and valance bands (V⋅B), respectively. When g-C3N4 particles have strong interactions that performed a dynamic role in
+was modified with the various concentrations of Ag, the defect levels are promoting the PEC water splitting activity of prepared nanocomposites.
+created below the minima of C⋅B of g-C3N4. Due to this, an obvious red
+shift was detected. The absorbance intensities become more pronounced 3.5. PL spectroscopy
+in the visible region [33,34]. Energy band gap values of
+nano-composites were determined through Tauc plot and obtained to be Fig. 5 indicates the PL data of g-C3N4 and B10, B20 and B30 Ag/g-
+2.7, 2.48, 2.32 and 2.30 eV for g-C3N4, B10, B20 and B30 Ag/g-C3N4 C3N4 nanocomposite samples. PL result of g-C3N4 shows two noticeable
+nano-composites, respectively (Fig. 3B). Additionally, a reduction in the emission signals located at 440 and 481 nm. It conforms to sp3 C–Nσ
+band gap energy occurs when nitrogen in g-C3N4 is replaced by Ag (2.98 eV) and sp2 C–Nπ (2.7 eV) bonds associated with triazine units of g-
+nanoparticles [35]. C3N4, respectively [39]. The PL intensities of composite samples show a
+ substantial decrease as compared to g-C3N4. It represents the Ag effect of
+3.4. FTIR studies the recombination process in host material g-C3N4. A lower PL intensity
+ peak of B30 Ag/g-C3N4 nano-composite suggests a long lifetime of
+ Fig. 4 illustrates the FTIR data of g-C3N4, B10, B20 and B30 Ag/g- photo-induced charge carriers which are helpful in PEC water splitting
+ [40]. The sequence in PL reduction peak intensities were observed as
+C3N4 nano-composites. In all nano-systems, the wide frequency band
+ranging from 3400 to 3050 cm− 1 come out of stretching vibrations due follows: g-C3N4 < B10 < B20 < B30 Ag/g-C3N4. Ag metals introduced
+ the trapping centres under the influence of surface plasmon resonance
+to the presence of adsorbed water molecules and N–H stretching mode
+ and acted as sink for photogenerated electrons. Photoexcited electrons
+[36]. The breathing mode of the entire s-triazine unit was depicted by
+ migrated from the surface of g-C3N4 could be significantly scavenged by
+the signals centred at 780 cm− 1 [25]. A range of characteristic absorp­
+ Ag leading to the prevention of charge carrier recombination rate. Hack
+tion peaks were located from 1200 to 1750 cm− 1 which indicated sp3
+ C.H. et al. reported that 20 mM Ag-doped g-C3N4 showed a pronounced
+C–N and sp2 C=N bonds stretching vibrations of C–N heterocycles [37].
+ quenched PL intensity than g-C3N4 and other noble metals incorporated
+Triazine units of g-C3N4 were formed by sp2 hybridized C–N bonds
+ in g-C3N4 [41].
+(C–N=C and N=C–N). When Ag is incorporated, the triazine units have
+fragmented and sp2 hybridize C–N bonds are replaced by the cyano
+group located at 2339 cm− 1 leading to a significant change in B30
+Ag/g-C3N4 composite [38]. FTIR study revealed that g-C3N4 and Ag
+
+ Fig. 3. (A) DRS spectra (B) Tauc plots of pure g-C3N4, B10 B20 and B30 Ag/g-C3N4 nano-composites.
+
+ 4
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+ [ o ]
+ H2 O + 4h+ → 4H + + O2 Eox = 1.23V vs. NHE (2)
+
+ For any photo-induced charge carriers, not all are directly involved
+ in electro-catalytic activities. The relocation process either prevents
+ them from reaching the photo electrode’s surface or causes them to be
+ reconstructed and cancelled out as shown in Fig. 7A.
+
+ 3.8. PEC activity
+
+ PEC measurements of photocatalysts were conducted by LSV in 0.07
+ M KOH electrolyte at pH ∼ 12.8 and λ > 420 nm at a scan rate of 10
+ mvsec− 1 (Fig. 7B). Applied potential is converted into reversible
+ hydrogen electrode (RHE). Under visible light exposure, pure g-C3N4
+ photoanode shows lower current density in contrast to Ag NPs decorated
+ g-C3N4 photocatalyst. Incorporated Ag NPs on g-C3N4 affected the
+ overall water splitting because of their surface plasmon resonance.
+ When it is excited by visible light, it shows better absorption. However,
+ Ag NPs decorated g-C3N4 with the incorporation of increasing contents
+Fig. 5. PL of g-C3N4 and (10 mL) Ag/g-C3N4 nano-composite (B10), (20 mL) show better response in contrast to g-C3N4 photoanode. It is observed
+Ag/g-C3N4 nano-composite (B20) and (30 mL) Ag/g-C3N4 (B30). that more loading of Ag NPs on g-C3N4 increases the photocurrent
+ response. In OER, the obtained optimized photocatalyst is B30 Ag/g-
+3.6. XPS analysis C3N4 nanocomposite with photocurrent density of 110 μA/cm2 at a start-
+ up potential of 0.33 V in contrary to B10 Ag/g-C3N4 nanocomposite and
+ XPS findings were done to elucidate the chemical composition of B30 g-C3N4 photoanode with photocurrent density of 55 μA/cm2 (0.2 V) and
+Ag/g-C3N4 nano-composite (Fig. 6). In Ag 3d (Fig. 6a), two obvious 10 μA/cm2 (0.6V), respectively.
+peaks Ag 3d 5/2 and Ag 3d 3/2 are found at 368.4 eV and 374.4 eV The stability of photocatalyst is the main concern that specifies its
+representing metallic Ag [42]. Fig. 6b illustrates the XPS spectrum of C1s long-term PEC stability. Fig. 7C indicates transient photocurrent-time
+which is deconvoluted into three prominent peaks. The most intense curves of samples at λ > 420 nm with the same reaction parameters as
+peak centred at 283.8 eV is originated from the sp2 C=C bonding before. Cut off light response shows stability along with current density
+configuration. The other two comparatively small intensity peaks at up to 500 s. No visible fluctuation in photoelectrocatalytic response was
+285.06 and 287.2 eV correspond to (N–C=N) sp2 carbon-nitrogen observed. From the graph, it was seen that B30 Ag/g-C3N4 nano-
+bonding (s-triazine unit) and N–(C)3 groups in the C–N network, composite shows better photocurrent density compared to all other
+respectively [43,44]. N 1s is fitted into three obvious peaks (Fig. 6c) samples leading to more production of photo excited electrons and
+found at 399.8, 400.8 and 401.6 eV reflecting N–C=N, N-(C)3 groups reduction in photogenerated electron-hole recombination process as per
+and C–N–H (amino group) bonding configuration, respectively [45]. PL analysis response. This response implies a positive effect on overall
+ performance of the PEC experiment.
+ To check the recyclability of the optimized photocatalyst (i.e. B30
+3.7. Principle of PEC water splitting by Ag/g-C3N4 photo anodes Ag/g-C3N4 nanocomposite), recycling voltammetry up to 5-cycles
+ (Fig. 7D) at a scan rate of 10 mv/sec was conducted. The constant ef­
+ A distinctive three-electrode cell for conducting PEC water splitting fect of current density in repeated cycles indicates visible light activa­
+consists of photo electrodes, which are used for harvesting as shown in tion of B30 Ag/g-C3N4 nanocomposite with improved stability.
+Fig. 7A. Probes are connected through an external circuit after being So as to explore the mechanism involved in the PEC performance of
+submerged in an electrolyte (∼ 0.07 M KOH/pH ≅ 12.8). OER and HER photocatalysts, electrochemical impedance spectrum (EIS) was con­
+were happened on the photoanode face and photocathode, respectively. ducted. EIS was determined at open-circuit voltage using visible light
+Under visible light excitation (λ ≥ 420 nm) on the photoelectrode, spectrum (Fig. 8). Fig. 8A expresses the Nyquist plots of g-C3N4, B10 and
+photoexcited electron-hole pairs are produced in respective C⋅B and V.B. B30 Ag/g-C3N4 nano-composites. B30 composite indicated a small arc
+The photoexcited electrons are moved from C⋅B of g-C3N4 to the surface radius than g-C3N4 and B10 which suggested small carrier-transfer
+of Ag metal where reduction process occurs on photocathode as shown impedance between the electrode and electrolyte as well as improved
+in Eq. (1) charge separation and recombination process during PEC analysis.
+ [ o ] Fig. 8B demonstrates the frequency-dependent real part of the imped­
+2H + + 2e− →H2 Ered = 0V vs. NHE (1)
+ ance of pristine samples. The Bode plot is typically used to assess the
+ Meanwhile, holes from V⋅B of g-C3N4 are contributed to oxidation of relaxation frequency of highly resistive contribution. The distinctive
+water to OER happened on the photoanode as shown in Eq. (2) frequency (fmax ) centred at peak shifts to the higher frequency for pure g-
+
+ Fig. 6. XPS data of (a) Ag 3d (b) C 1s and (c) N 1s of B30 nano-composite.
+
+ 5
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+Fig. 7. (A) Mechanistic route of PEC water splitting on Ag/g-C3N4 photoanode (B) Photo electrochemical LSV of g-C3N4, B10 and B30 Ag/g-C3N4 nano-composite (C)
+It of pristine g-C3N4, B10 and B30 in 0.07 M KOH (pH ∼ 12.8) under light irradiation (λ > 420 nm) (D) Photo-induced electrochemical CV response of B30 for 5 cycles
+at a scan rate of 10 mvsec− 1.
+
+ Fig. 8. (A) Nyquist plots (B) corresponding Bode plots of pristine g-C3N4, B10 and B30 Ag/g-C3N4 nano-composites.
+
+C3N4 in contrast to B30 Ag/g-C3N4 nanocomposite. The fmax is associated difference in their work functions [46]. As a result, it is an effective
+with the distinctive relaxation time (fmax ∝ 1/T). The value of fmax of the method for detecting electron dynamics across the Ag/g-C3N4 interface
+B30 Ag/g-C3N4 nano-composite is the largest in contrast to pure g-C3N4 and observing the impact of AgNPs on charge separation efficiency.
+photocatalyst, respectively. However, the relaxation process is fastest in Furthermore, a negative shift in Voc was seen for all samples in a series
+B10 and B30 linked to a potential release of space charge. This result upon visible light stimulation which demonstrated the charge separation
+indicates an effective detachment of excitons at the edges of Ag and g- efficiency (Fig. 9A) [47]. However, zero-bias open-circuit potential
+C3N4, where charge transport occurs in the active layers [38]. Conse­ measurements are taken. When the visible light is removed, the possi­
+quently, Jsc and Voc were improved. This outcome is linked with the bility of electron hole recombination has increased across the interface
+improved performance of the B30 by plasmonic properties of Ag as of Ag/g-C3N4 nano-composites which return to their original value. In
+discussed in Fig. 7A. addition, open-circuit potential profiles can be used to determine the
+ To study the charge recombination and dynamics across electrolytes, lifetime of particular photoanodes. A lifetime of charge carriers in the
+open-circuit potential measurements were carried out which are regar­ conduction band (C⋅B) of the composite is shown in Fig. 9B. For each
+ded as a reliable approach for photocatalytic systems. g-C3N4, B10 and sample, the quasi-Fermi level of the catalyst is used to determine the
+B30 open-circuit potential photo anodes are activated under visible light decline in electron lifespan within the potential of − 0.02 V to − 0.14 V
+illumination. However, any change noticed in the photocatalysts at Voc [48]. The recombination process of charges improves when the amount
+could be attributed to electrons injection from g-C3N4 to Ag due to the of Ag increases in B10 and B30 Ag/g-C3N4 nanocomposite. The best
+
+ 6
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+ Fig. 9. (A) Open-circuit potential measurements (B) Open-circuit decay curves of g-C3N4, B10 and B30 Ag/g-C3N4 nanocomposite.
+
+photocatalyst B30 has a shorter lifetime of carriers across electrode and g-C3N4 nano-composite is relatively stable throughout the experiment.
+electrolyte interface in contrast to pure g-C3N4 which indicates higher Incorporation of Ag NPs enhances the OER performance (i.e., Optimized
+photocatalytic performance through suitable charge separation and B30 Ag/g-C3N4 nano-composite showed improved OER response with
+recombination. A comparison of current work with reported literature photocurrent density of 110 μA/cm2 at 0.3 V (onset potential) vs. NHE
+about PEC and photocatalytic water splitting has shown in Table 1. by attaining chemical stability at smaller onset potentials. A decrease in
+ photocurrent during water splitting of B10 photocatalyst may happen
+ due to lower Ag content or unavailability of active sites under visible
+3.9. Mechanistic illustration of photocatalyst
+ light excitation. The idea of decorating g-C3N4 with Ag for other pho­
+ tocatalytic applications with better stability and visible light sensitivity
+ Scheme 2 shows the mechanistic approach of Ag/g-C3N4 photo­
+ is possibly used.
+catalyst by increasing the Ag percentage. An increase in Ag concentra­
+tion also increases active sites for carrying photocatalytic reactions
+ CRediT authorship contribution statement
+while decreasing the energy band gap values of samples. The reduction
+potential of g-C3N4 is higher (− 1.3 eV vs. NHE) [32] than Ag+/Ag (0.79
+ Hira Jabeen: Data curation, Formal analysis, Validation, Method­
+V vs. NHE). Ag is acted as an electron pool or sink. The electrons start
+ ology, Writing – original draft. Rida Shahzadi Haider: Writing – review
+injecting from C⋅B of g-C3N4 into the Ag. As oxidation potential of
+ & editing, Formal analysis. Shamaila Sajjad: Supervision, Project
+•OH/H2O (2.7V vs. NHE) is more positive as compared to V⋅B of g-C3N4
+ administration. Sajjad Ahmed Khan Leghari: Visualization, Resources,
+(1.4 eV vs. NHE). Hence filled holes on the V⋅B of g-C3N4 become
+ Software. Saima Noor: Writing – review & editing. Mohammed A.
+inactive toward H2O to generate •OH. The incorporation of Ag and its
+ Amin: Writing – review & editing, Formal analysis. Mohamed M.
+mild etching from the g-C3N4 surface makes reaction possible at the
+ Ibrahim: Formal analysis, Writing – review & editing.
+interface for water oxidation reaction by efficiently extracting holes
+from V⋅B of g-C3N4 [37]. The more the Ag concentration, the more will
+ Declaration of competing interest
+be efficient charge separation and extraction of holes.
+ The authors declare that they have no known competing financial
+4. Conclusions interests or personal relationships that could have appeared to influence
+ the work reported in this paper.
+ Recent work investigates the strong chemical stability of Ag deco­
+rated g-C3N4 nano-composites in comparison to the pristine one due to
+active surface charge transportation. PEC response of optimized B30 Ag/
+
+Table 1
+Literature studies of PEC and photocatalytic water splitting with present work.
+ Materials Applications Findings Light Source References
+ 2
+ Co-S doped g-C3N4/RGO OER current density 10 mA cm− at cell potential 0.63V [49]
+ HER
+ Ni-doped/g-C3N4 OER 1.8mAcm− 2 at 0.9 V Visible light illumination [50]
+ HER 0.05mAcm− 2 at − 1.0 V
+ V-doped g-C3N4 PEC activity Photo current density 0.80mAcm− 2 Visible light irradiation [22]
+ Platinum complexed phosphorus doped HER Current density 25 mAcm− 2 at 1.8V potential (vs. RHE) _ [51]
+ g-C3N4
+ 2
+ CQDs on NiO/g-C3N4 HER 19 mAcm− at potential 0.39 V 15 mAcm-2 at potential 1.42 V Visible light irradiation [12]
+ OER >420
+ Black Cu-g-C3N4 nanosheets Photocatalytic HER H2 526 μmolg− 1h− 1 Visible-light [52]
+ g-C3N4/NiCNTs composites Photocatalytic H2 1050.4 μmol g− 1 h− 1 Visible-light [53]
+ production
+ 1.0% Ag2S/g-C3N4 composites H2 generation 1030 μmol/g/h Visible-light [54]
+ Pt-g-C3N4 nanosheets PEC H2 generation 23.1 mmolh− 1m-20.6 V (vs. Ag/AgCl) 300 W Xenon lamp [55]
+ CNT/Au/g-C3N4 H2 evolution 0.95 mmol g− 1 h− 1 Visible Light [56]
+ Bi2MoO6/Ru/g-C3N4 O2 production 328.34 μmolg− 1h− 1 Visible Light [57]
+ CuCo2S4/g-C3N4 composite OER Over potential 242 mV at 10 mAcm− 2Tafel slop 57 mVdec− 1 _ [58]
+ Ag/g-C3N4 OER 110 Acm− 2 at potential 0.33V 10 mAcm− 2 at potential − 0.17 Visible light >420 Our work
+ HER V (vs. RHE)
+
+ 7
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+ Scheme 2. Mechanistic illustration of Ag incorporated gC3N4 photocatalyst for water splitting by increasing Ag contents.
+
+Data availability [18] T. Wu, et al., Hydrogen peroxide-impregnated supramolecular precursors
+ synthesize mesoporous-rich ant nest-like filled tubular g-C3N4 for effective
+ photocatalytic removal of pollutants, Chem. Eng. J. 447 (2022), 137332.
+ No data was used for the research described in the article. [19] Y. Zheng, et al., Graphitic carbon nitride materials: controllable synthesis and
+ applications in fuel cells and photocatalysis, Energy Environ. Sci. 5 (5) (2012)
+Acknowledgements 6717–6731.
+ [20] M.K. Seery, et al., Silver doped titanium dioxide nanomaterials for enhanced
+ visible light photocatalysis, Journal of photochemistry and Photobiology A:
+ Present research work is acknowledged to the International Islamic Chemistry 189 (2–3) (2007) 258–263.
+University and Pakistan Institute of Engineering and Applied Sciences [21] X. Zou, et al., Cu-doped carbon nitride: bio-inspired synthesis of H2-evolving
+ electrocatalysts using graphitic carbon nitride (g-C3N4) as a host material, Appl.
+(PIEAS) Islamabad to support. The researchers highly appreciate the Surf. Sci. 357 (2015) 221–228.
+Deanship of Scientific Research, Taif University for supporting this [22] I.N. Reddy, et al., Vanadium-doped graphitic carbon nitride for multifunctional
+work. applications: photoelectrochemical water splitting and antibacterial activities,
+ Chemosphere 264 (2021), 128593.
+ [23] P. Babu, et al., Synergistic effects of boron and sulfur Co-doping into graphitic
+References carbon nitride framework for enhanced photocatalytic activity in visible light
+ driven hydrogen generation, ACS Appl. Energy Mater. 1 (11) (2018) 5936–5947.
+ [1] J. Liu, et al., Oriented nanostructures for energy conversion and storage, [24] Y. Yang, et al., Single Au atoms anchored on amino-group-enriched graphitic
+ ChemSusChem: Chemistry & Sustainability Energy & Materials 1 (8-9) (2008) carbon nitride for photocatalytic CO2 reduction, ChemSusChem 13 (8) (2020)
+ 676–697. 1979–1985.
+ [2] S. Noor, et al., Electronic transitions of SWCNTs in comparison to GO on Mn3O4/ [25] J. Liu, et al., Simple pyrolysis of urea into graphitic carbon nitride with recyclable
+ TiO2 nano-composites for hydrogen energy generation and solar photocatalysis, adsorption and photocatalytic activity, J. Mater. Chem. 21 (38) (2011)
+ New J. Chem. 45 (5) (2021) 2431–2442. 14398–14401.
+ [3] J. Chow, R.J. Kopp, P.R. Portney, Energy resources and global development, [26] X. Wang, et al., Metal-containing carbon nitride compounds: a new functional
+ Science 302 (5650) (2003) 1528–1531. organic–metal hybrid material, Adv. Mater. 21 (16) (2009) 1609–1612.
+ [4] A. Naseri, et al., Graphitic carbon nitride (g-C3N4)-based photocatalysts for solar [27] G.S. Jamila, et al., Nitrogen doped carbon quantum dots and GO modified WO3
+ hydrogen generation: recent advances and future development directions, J. Mater. nanosheets combination as an effective visible photo catalyst, J. Hazard Mater. 382
+ Chem. A 5 (45) (2017) 23406–23433. (2020), 121087.
+ [5] V. Dusastre, Materials for Sustainable Energy: a Collection of Peer-Reviewed [28] S. Noor, et al., Efficient electrochemical hydrogen evolution reaction and solar
+ Research and Review Articles from Nature Publishing Group, World Scientific, activity via bi-functional GO/Co3O4–TiO2 nano hybrid structure, Int. J. Hydrogen
+ 2010. Energy 45 (35) (2020) 17410–17421.
+ [6] S. Noor, et al., Energy harvesting for electrochemical OER and solar photocatalysis [29] Y. Che, et al., Plasmonic ternary hybrid photocatalyst based on polymeric g-C3N4
+ via dual functional GO/TiO2-NiO nanocomposite, J. Clean. Prod. 277 (2020), towards visible light hydrogen generation, Sci. Rep. 10 (1) (2020) 1–12.
+ 123280. [30] B. Gao, et al., Enhanced photocatalytic removal of amoxicillin with Ag/TiO2/
+ [7] T.W. Kim, K.-S. Choi, Nanoporous BiVO4 photoanodes with dual-layer oxygen mesoporous g-C3N4 under visible light: property and mechanistic studies, Environ.
+ evolution catalysts for solar water splitting, Science 343 (6174) (2014) 990–994. Sci. Pollut. Control Ser. 27 (7) (2020) 7025–7039.
+ [8] H. Yan, et al., Spontaneous exciton dissociation in organic photocatalyst under [31] P. Praus, et al., The presence and effect of oxygen in graphitic carbon nitride
+ ambient conditions for highly efficient synthesis of hydrogen peroxide, Proc. Natl. synthetized in air and nitrogen atmosphere, Appl. Surf. Sci. 529 (2020), 147086.
+ Acad. Sci. USA 119 (22) (2022), e2202913119. [32] N.L. Reddy, et al., Graphitic carbon nitride–based nanocomposite materials for
+ [9] A. Kumar, et al., Two dimensional S-scheme Bi2WO6–TiO2–Ti3C2 nano-composites photocatalytic hydrogen generation, in: Nanostructured, Functional, and Flexible
+ for efficient degradation of organic pollutants under natural sunlight, Chemosphere Materials for Energy Conversion and Storage Systems, Elsevier, 2020, pp. 293–324.
+ 308 (2022), 136212. [33] X. Zhang, et al., In situ formation of catalytically active graphene in ethylene
+[10] H. Wang, et al., Molecular design of two-dimensional covalent heptazine photo-epoxidation, Nat. Commun. 9 (1) (2018) 1–10.
+ frameworks for photocatalytic overall water splitting under visible light, J. Phys. [34] R.C. Pawar, et al., Photoelectrochemical properties and photodegradation of
+ Chem. Lett. 13 (17) (2022) 3949–3956. organic pollutants using hematite hybrids modified by gold nanoparticles and
+[11] H.S. Gujral, et al., Mesoporous titanium carbonitride derived from mesoporous graphitic carbon nitride, Appl. Catal. B Environ. 176 (2015) 654–666.
+ C3N5 for highly efficient hydrogen evolution reaction, Carbon 195 (2022) 9–18. [35] D.R. Paul, et al., Silver doped graphitic carbon nitride for the enhanced
+[12] S. Noor, et al., Role of conductive channels via CQDs on NiO/g-C3N4 Z-scheme photocatalytic activity towards organic dyes, J. Nanosci. Nanotechnol. 19 (8)
+ composite as a bi-functional photocatalyst, Int. J. Hydrogen Energy 47 (86) (2022) (2019) 5241–5248.
+ 36517–36529. [36] J. Liu, et al., Metal-free efficient photocatalyst for stable visible water splitting via
+[13] X. Zhang, Layered g-C3N4/TiO2 nano-composites for efficient photocatalytic water a two-electron pathway, Science 347 (6225) (2015) 970–974.
+ splitting and CO2 reduction: a review, Mater. Today Energy 23 (2022), 100904. [37] A. Kanwal, et al., Cascade electron transfer in ternary CuO/α-Fe2O3/γ-Al2O3
+[14] J. Liebig, Uber einige stickstoff-verbindungen, Annalen der Pharmacie 10 (1) nanocomposite as an effective visible photocatalyst, J. Phys. Chem. Solid. 151
+ (1834) 1–47. (2021), 109899.
+[15] X. Wang, S. Blechert, M. Antonietti, Polymeric graphitic carbon nitride for [38] A. Thomas, et al., Graphitic carbon nitride materials: variation of structure and
+ heterogeneous photocatalysis, ACS Catal. 2 (8) (2012) 1596–1606. morphology and their use as metal-free catalysts, J. Mater. Chem. 18 (41) (2008)
+[16] J. Qin, et al., Heat treatment to prepare boron doped g-C3N4 nanodots/carbon-rich 4893–4908.
+ g-C3N4 nanosheets heterojunction with enhanced photocatalytic performance for [39] K. Hu, et al., Pressure tuned photoluminescence and band gap in two-dimensional
+ water splitting hydrogen evolution, J. Alloys Compd. 898 (2022), 162846. layered gC3N4: the effect of interlayer interactions, Nanoscale 12 (23) (2020)
+[17] B. Jin, et al., Materials Today Advances, 2023. 12300–12307.
+
+ 8
+H. Jabeen et al. Optical Materials 145 (2023) 114376
+
+[40] Q. Liu, et al., Ultrathin g-C3N4 nanosheets coupled with carbon nanodots as 2D/0D electrocatalyst for overall water splitting in alkaline media, ACS Sustain. Chem.
+ composites for efficient photocatalytic H2 evolution, Appl. Catal. B Environ. 193 Eng. 7 (18) (2019) 15373–15384.
+ (2016) 248–258. [50] I.N. Reddy, et al., Photoelectrochemical studies on metal-doped graphitic carbon
+[41] C.H. Hak, et al., M/g-C3N4 (M= Ag, Au, and Pd) composite: synthesis via sunlight nitride nanostructures under visible-light illumination, Catalysts 10 (9) (2020)
+ photodeposition and application towards the degradation of bisphenol A, Environ. 983.
+ Sci. Pollut. Control Ser. 25 (2018) 25401–25412. [51] F. Nichols, et al., Platinum-complexed phosphorous-doped carbon nitride for
+[42] H. Xu, et al., An electrochemical thrombin aptasensor based on the use of graphite- electrocatalytic hydrogen evolution, J. Mater. Chem. A 10 (11) (2022) 5962–5970.
+ like C3N4 modified with silver nanoparticles, Microchim. Acta 187 (2020) 1–9. [52] X. Zhang, et al., Black magnetic Cu-g-C3N4 nanosheets towards efficient
+[43] B. Peng, et al., Synthesis and characterization of g-C3N4/Cu2O composite catalyst photocatalytic H2 generation and CO2/benzene conversion, Chem. Eng. J. 450
+ with enhanced photocatalytic activity under visible light irradiation, Mater. Res. (2022), 138030.
+ Bull. 56 (2014) 19–24. [53] T. Song, et al., N-doped carbon nanotubes enhanced charge transport between Ni
+[44] X. Zhang, K. Matras-Postolek, P. Yang, Z-scheme WOx/Cu-g-C3N4 heterojunction nanoparticles and g-C3N4 nanosheets for photocatalytic H2 generation and 4-
+ nanoarchitectonics with promoted charge separation and transfer towards efficient nitrophenol removal, Carbon 210 (2023), 118052.
+ full solar-spectrum photocatalysis, J. Colloid Interface Sci. (2023). [54] B. Xu, et al., Ag2S nanoparticle promoted charge separation and transfer in g-C3N4
+[45] D. Gao, et al., Atomically thin B doped g-C3N4 nanosheets: high-temperature nanosheets for efficient photo and electro chemical performance, J. Environ.
+ ferromagnetism and calculated half-metallicity, Sci. Rep. 6 (1) (2016) 1–8. Chem. Eng. 11 (2) (2023), 109567.
+[46] F. Raziq, et al., Photocatalytic solar fuel production and environmental [55] Y. Wang, et al., Investigation of Photo (electro) catalytic water splitting to evolve
+ remediation through experimental and DFT based research on CdSe-QDs-coupled H2 on Pt-g-C3N4 nanosheets, Int. J. Hydrogen Energy 47 (65) (2022) 28007–28018.
+ P-doped-g-C3N4 composites, Appl. Catal. B Environ. 270 (2020), 118867. [56] Z. Xia, et al., Delocalized electrons via in situ CNT growth on Au/g-C3N4 for
+[47] A. Mishra, et al., Graphitic carbon nitride (g–C3N4)–based metal-free boosting photocatalytic H2 evolution, Advanced Sustainable Systems 7 (1) (2023),
+ photocatalysts for water splitting: a review, Carbon 149 (2019) 693–721. 2200134.
+[48] Y. Zhang, et al., Reconstruction of relaxation time distribution from linear [57] Y. Wu, et al., Assembling Bi2MoO6/Ru/g-C3N4 for highly effective oxygen
+ electrochemical impedance spectroscopy, J. Power Sources 283 (2015) 464–477. generation from water splitting under visible-light irradiation, Inorg. Chem. 58
+[49] W.-K. Jo, S. Moru, S. Tonda, Cobalt-coordinated sulfur-doped graphitic carbon (11) (2019) 7374–7384.
+ nitride on reduced graphene oxide: an efficient metal–(N, S)–C-class bifunctional [58] R. Biswas, et al., Interfacial engineering of CuCo2S4/g-C3N4 hybrid nanorods for
+ efficient oxygen evolution reaction, Inorg. Chem. 60 (16) (2021) 12355–12366.
+
+ 9

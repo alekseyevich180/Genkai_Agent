@@ -1,0 +1,41 @@
+这次抽到的关键信息包括：
+
+在 importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv 里：
+
+- Co, O
+- Co3O4 暴露/涉及晶面 (001)
+- 吸附物/反应物：O2
+- 建模关键词：Co3O4, β-CoOOH, active site, OER, overpotential
+- β-CoOOH 暴露/涉及晶面 (0112̅)
+
+在 importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Co3O4
+  - β-CoOOH
+- 材料参数：
+  - spinel structure
+  - CoIII-containing species
+- 反应参数：
+  - applied potential
+- 性能：
+  - electrocatalytic activity
+  - stability
+  - theoretical overpotential
+- 表面/晶面：
+  - Co3O4(001)
+  - β-CoOOH(0112̅)
+  - Co3O4(110)
+- 缺陷/活性位点：
+  - Co site
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - DFT
+  - DFT+U
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape

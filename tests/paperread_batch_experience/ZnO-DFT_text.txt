@@ -1,0 +1,629 @@
+Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ Tailoring the Performance of ZnO for Oxygen Evolution by
+ Effective Transition Metal Doping
+ Qiuhua Liang,[a, c] Geert Brocks,*[b, c, d] Vivek Sinha,[a, e] and Anja Bieberle-Hütter*[a, b]
+
+ In the quest for active and inexpensive (photo)electrocatalysts, reaction steps of the OER. The Gibbs free energies associated
+ atomistic simulations of the oxygen evolution reaction (OER) with the adsorption of these intermediate species increased in
+ are essential for understanding the catalytic process of water the series from Mn to Zn, but the difference between OH and
+ splitting at solid surfaces. In this paper, the enhancement of the OOH adsorption (the species involved in the first, respectively
+ OER by first-row transition-metal (TM) doping of the abundant the third reaction step) was always in the range 3.0–3.3 eV,
+ semiconductor ZnO was studied using density functional theory despite a considerable variation in possible bonding geo-
+ (DFT) calculations on a substantial number of possible struc- metries. The bonding of the O intermediate species (involved in
+ tures and bonding geometries. The calculated overpotential for the second reaction step), which is optimal for Co, and to a
+ undoped ZnO was 1.0 V. For TM dopants in the 3d series from somewhat lesser extend for Ni, then ultimately determined the
+ Mn to Ni, the overpotentials decreased from 0.9 V for Mn and overpotential. These results implied that both Co and Ni are
+ 0.6 V for Fe down to 0.4 V for Co, and rose again to 0.5 V for Ni promising dopants for increasing the activity of ZnO-based
+ and 0.8 V for Cu. The overpotentials were analyzed in terms of anodes for the OER.
+ the binding to the surface of the species involved in the four
+
+ Introduction potentially unfavorable thermodynamically or kinetically, which
+ to overcome then requires an overpotential in the electrolytic
+ Water splitting is a promising technology for future generation cell.[3] Platinum-group metal-containing catalysts, such as RuO2
+ and storage of clean and sustainable energy. Electrolytic water and IrO2, are considered state-of-the-art OER catalysts owing to
+ splitting comprises two reactions, the oxygen evolution reaction their relatively small overpotentials,[4] but their high costs and
+ (OER) at the anode and the hydrogen evolution reaction (HER) scarcity severely hinder large-scale applications. Therefore, it is
+ at the cathode.[1] Current research strongly focuses on OER, as it crucial to explore alternative OER catalysts with high catalytic
+ is the bottleneck in terms of poor energy efficiency and slow activity, good stability, abundance, and low cost, where the
+ reaction rate. The OER is a four-electron process that is more most obvious direction is towards catalysts based on earth-
+ complicated than the two-electron process of the HER.[2] Current abundant 3d metals.
+ understanding models these as multi-step reactions with a Recently, precious-metal-free catalysts based on earth-
+ single electron transfer at each step. Each of these steps is abundant 3d metals, such as transition-metal (TM) nitrides,[5]
+ phosphides,[6] oxides,[3,7] sulfides,[8] and MXenes[9] have gained
+ attention. In particular, TM oxides have been considered as
+ [a] Q. Liang, Dr. V. Sinha, Dr. A. Bieberle-Hütter potential substitutes for Pt-based catalysts due to their low cost
+ Electrochemical Materials and Interfaces (EMI), Dutch Institute for Funda-
+ mental Energy Research (DIFFER) and excellent chemical stability.[10] Photoelectrolytic water
+ De Zaale 20, 5612 AJ, Eindhoven (The Netherlands) splitting in integrated devices poses extra demands on
+ E-mail: a.bieberle@differ.nl electrode materials, the most obvious ones being that they
+ [b] Prof. G. Brocks, Dr. A. Bieberle-Hütter
+ Center for Computational Energy Research (CCER)
+ should not block photon absorption, have a decent conductiv-
+ P.O. Box 513, 5600 MB, Eindhoven (The Netherlands) ity, and be stable in contact with an (alkaline or acidic)
+ E-mail: g.h.l.a.brocks@utwente.nl electrolyte, which all point in the direction of doped, trans-
+ [c] Q. Liang, Prof. G. Brocks
+ Materials Simulation and Modeling (MSM), Department of Applied Physics
+ parent oxide semiconductors. In this respect, ZnO is expected
+ Eindhoven University of Technology to be a good candidate due to its large bandgap, good (semi)
+ P.O. Box 513, 5600 MB, Eindhoven (The Netherlands) conducting properties,[11] low cost, non-toxicity, appropriate
+ [d] Prof. G. Brocks
+ Computational Materials Science, Faculty of Science and Technology and
+ redox potential, and high electrochemical stability.[12] However,
+ MESA + Institute for Nanotechnology pure ZnO shows a rather poor OER activity,[13,14] and to make it
+ University of Twente suitable, one should enhance its OER performance, for instance
+ P.O. Box 217, 7500 AE Enschede (The Netherlands)
+ [e] Dr. V. Sinha
+ by doping or by nano-structuring.[15] Jang et al.[14] have exper-
+ Process and Energy (P&E) Department, Faculty of Mechanical, Maritime and imentally studied composites of ZnO and 3d TM (Mn, Fe, Co, Ni)
+ Materials Engineering (3mE) oxides and found that all these composites exhibit a greatly
+ Delft University of Technology
+ Leeghwaterstraat 39, 2628CB, Delft (The Netherlands)
+ enhanced OER activity compared to pure ZnO.
+ Supporting information for this article is available on the WWW under Composites are, however, a rather drastic way of combining
+ https://doi.org/10.1002/cssc.202100715 TMs with ZnO, which can have a large impact on its (micro)
+
+ ChemSusChem 2021, 14, 3064 – 3073 3064 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ structure as well as its optical and electronic properties. We series from Sc to Cu. With the PBE functional we find that the
+ suggest a milder route, which involves incorporating 3d TM 3d states in the series from Sc to Cr overlap with the ZnO
+ atoms in the ZnO lattice as substitutional dopants. This type of conduction band and partially lose their electrons (see
+ doping has been identified as an effective way to enhance the Table S1). We test whether the PBE + U functional improves this
+ OER activity.[14,16] The dopant atom serves both as a trapping description. The magnetic moments of the TM-doped ZnO slab
+ site for a charge carrier, thereby localizing it, as well as a are calculated with the PBE + U functional, as shown in Table S2
+ catalytic reaction center for the OER. In the present paper, we for the TM dopants from Sc to Cr. Comparison to the results
+ study 3d TM-doped ZnO with respect to OER activity by means shown in Table S1 demonstrates that enlarging the bandgap of
+ of density functional theory (DFT) calculations, exploring a large ZnO using the PBE + U functional actually changes the magnetic
+ range of possible structures of dopants and absorbed species moments very little. Qualitatively this does not change even if
+ involved in the OER. PBE-optimized structures are used. Whereas these cases may
+ require further study, these particular TM atoms are in fact of
+ small interest. Their catalytic activity is expected to be small,
+ Results and Discussion exactly because of the high energy of the 3d states, which
+ results in a strong bonding to oxygen species, and a high
+ GGA + U functional overpotential.[16a] Therefore, we will not discuss the early TMs
+ from Sc to Cr further.
+ It is well-known that the Perdew-Burke-Ernzerhof (PBE) func- The 3d states of substitutions by late TM atoms (Mn to Cu)
+ tional severely underestimates the bandgap of ZnO, where our show no overlap with the ZnO conduction band (see Figure S4)
+ findings agree with previously obtained results[17] (see Figure S1 and are thus not affected by a bandgap that is too small.
+ in the Supporting Information). Previous DFT studies have used Moreover, these late TM substitutions may be expected to have
+ the PBE + U method to correct for this bandgap error.[18] Note, significant catalytic activity.[16a] Our calculations therefore focus
+ however, that an accurate description of the bandgap can be on the series from Mn to Cu.
+ obtained only by using parameters that are physically not It should be noted that all TM dopant atoms are found in
+ extremely well justified, such as UO on the oxygen 2p states high-spin states corresponding to a valency of 2 + , and a
+ besides UZn on the zinc 3d states.[19] We have tested the PBE + U configuration 4 s03dn, n = 5–10 for Mn Zn, as demonstrated by
+ functional, treating the on-site electron-electron Coulomb and their calculated magnetic moments and the projected density
+ exchange interactions within the approach by Dudarev et al.[20] of states (PDOS) (see Table S6 and Figure S4).
+ for a range of values for UZn and UO, as suggested by the
+ literature.[18] More details are discussed in Section 1 of the
+ Supporting Information. We find, in agreement with the OER mechanism and free energies
+ literature, that inclusion of U can indeed markedly improve the
+ bandgap (see Figures S2 and S3). However, whereas the We assume liquid water under alkaline conditions as the
+ optimized lattice parameters calculated with the standard PBE electrolyte, which gives the following overall OER at the anode
+ functional (a = 3.28 Å, c = 5.30 Å) are in reasonable agreement [Eq. (1)]:[24]
+ with the experimental values (a = 3.25 Å, c = 5.21 Å),[21] those
+ calculated with the PBE + U functionals are significantly too 4OH ! O2 þ 2H2 O þ 4e (1)
+ small, the largest deviation being presented by the cases with
+ the best bandgap (for more details see Section 1.1 in the This four-electron OER is broken down into four elementary
+ Supporting Information). Straining the lattice leads to changes reaction steps, which is believed to be the dominant reaction
+ in the OER performance,[22] which renders the applicability of mechanism for TM oxides under alkaline conditions [Eqs. (2)–
+ the PBE + U functional for calculations on the OER questionable. (5)]:[14,24b, 25]
+ Using a hybrid functional, such as PBE0, would be a better
+ way to obtain a better bandgap without deteriorating the * þ OH ! * OH þ e (2)
+ structure of ZnO.[23] However, calculations with hybrid func-
+ tionals increase the computational costs by 1–2 orders of * OH þ OH ! * O þ H2 OðlÞ þ e (3)
+ magnitude.[19] In our case we need to perform a large number
+ * O þ OH ! * OOH þ e (4)
+ of geometry optimizations on sizable supercells and slabs, the
+ costs of which prohibit the use of a hybrid functional. Therefore, * OOH þ OH ! * þ O2 ðgÞ þ H2 OðlÞ þ e (5)
+ we hold on to the PBE functional (and PBE-optimized
+ structures).
+ Upon substitution of Zn atoms in ZnO by first-row TM where * represents an adsorption site on the catalyst surface,
+ atoms, the 3d states of the latter contribute to the valence *OH, *O, and *OOH are the intermediate reactant species
+ band but can also appear as defect states in the ZnO bandgap adsorbed on the active site, and (g) and (l) indicate the gas
+ (see Figure S4). Therefore, it is possible that the electronic phase and the liquid phase, respectively.
+ structure of TM substituent atoms is affected by a ZnO bandgap The Gibbs free energies and overpotentials that characterize
+ that is too small. The 3d states decrease in energy along the TM the OER are calculated by the computational hydrogen
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3065 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ electrode (CHE) approach developed by Rossmeisl and co- Doping configurations and adsorption sites
+ workers.[26] To calculate the difference in Gibbs free energies
+ GOH Ge , which is needed in describing reactions (2)–(5), we The (1010)� surface of the ZnO wurtzite, which is the most
+ assume the equilibria H2O(l)⇋H + + OH and H + (aq) + e ⇋1/ prominent surface orientation emerging under typical growth
+ 2H2(g) at standard conditions (P = 1 bar and T = 298 K). conditions, has a slightly corrugated structure with two
+ We then have Equation (6): inequivalent Zn atomic sites exposed at the surface (see
+ Figure 1). To make a distinction between the two sites, we call
+ 1 the Zn atoms on the ridges surface positions (Figure 1a) and
+ GOH Ge ¼ GH2 OðlÞ GHþ Ge ¼ GH2 OðlÞ G þ eU (6)
+ 2 H2 the Zn atoms in the valleys subsurface positions (Figure 1b). We
+ consider the TM substituted in different positions; the sub-
+ where U is the potential with respect to the reversible hydrogen stituted positions labelled by the number are shown in
+ electrode (RHE).[27] Using (6), the Gibbs free energies of reactions Figure 2a. The energy depicted is the relative energy of a TM
+ (2)–(5) are then given by Equations (7)–(10): atom substituting a Zn atom, as a function of position of the
+ substituted atom, with substitution in a “bulk” position (in the
+ 1 middle of the slab) taken as zero. We observe that the TM
+ DG1 ¼ E* OH E* EH2 O þ EH2 þ ðDZPE TDSÞ1 eU (7)
+ 2 substitutions are generally more stable at the surface than in
+ the bulk (see Figure 2b). The surface positions (labeled “0” in
+ 1 Figure 2) are 0.2–0.6 eV lower in energy than positions deeper
+ DG2 ¼ E* O E* OH þ EH2 þ ðDZPE TDSÞ2 eU (8)
+ 2 down, whereas subsurface positions (labeled “1” in Figure 2) are
+ 0.1–0.3 eV lower in energy for most TM substitutions. This
+ 1 would mean that dopant atoms preferentially reside at the
+ DG3 ¼ E* OOH E* O EH2 O þ EH2 þ ðDZPE TDSÞ3 eU (9)
+ 2 surface, where they can be catalytically active. The exception is
+ substitution by Mn, whose energy is practically independent of
+ DG4 ¼ DG0 DG1 DG2 DG3 4eU (10)
+ position. Positions of Zn atoms deeper down in the slab play no
+ role, as they show no catalytic activity. To study catalytic
+ where ΔG0 = 4:92 eV is the Gibbs free energy of the overall activity, we substitute a surface or a subsurface Zn atom by a
+ reaction (1), E* X are the DFT-calculated total energies of the TM atom. In addition, we also consider simultaneous substitu-
+ substrate with adsorbed species X, EY are the DFT-calculated tions at both these positions.
+ total energies of molecule Y, and DZPE and TDS are the
+ changes in zero-point energies and entropy contributions
+ related to the different adsorbed species (see the Computa-
+ tional Methods section). ZPE corrections and entropic contribu-
+ tions (TS) to the free energies are listed in Table S3. Note that in
+ Equation (10) we make use of the sum rule [Eq. (11)]:
+
+ DG0 ¼ DG1 þ DG2 þ DG3 þ DG4 (11)
+
+ to avoid having to calculate EO2 , which is problematic in DFT
+ because of the open-shell character of the O2 molecule. Figure 1. Top and side views of the atomic structures of (a) the TM-doped
+ For the ideal catalyst, all four reaction steps should involve ZnO surface and (b) the TM-doped ZnO subsurface.
+ equal Gibbs free energy changes [Eq. (12)]:
+
+ DG1 ¼ DG2 ¼ DG3 ¼ DG4 ¼ DG0 =4 ¼ 1:23 eV (12)
+
+ at potential U = 0, implying that at U � 1.23 eV reactions (2)–(5)
+ become thermodynamically favorable. In reality, the four steps
+ will not have the same Gibbs free energy, which then leads to
+ an overpotential to initiate the reaction step with the largest
+ free energy. The overpotential is thus defined as Equation (13):
+
+ h ¼ ðmax½DGn � DG0 =4Þ=e (13)
+
+ where n = 1,2,3,4. Figure 2. (a) Side view of the substituted positions of the TM in ZnO (1010) �
+ surface. (b) Total energy in different substituted positions; the x axis
+ indicates the substituted position. We assume the total energy of TM
+ substitutes in the bulk (i. e., substituted position 5) as 0, and negative values
+ mean that other substitutions show lower total energy than TM substitutes
+ in the bulk, which are more stable than position 5 substitution.
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3066 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ Having established the relative stability of the TM dopant (see Figure 4a,b), whereas top site adsorption involves bonding
+ positions, their overall stability can be assessed through their to the TM atom only (see Figure S5). The OH and O species can
+ formation energies [Eq. (14)]:[28] be adsorbed both on bridge and top sites if the TM dopant
+ atom is at a Zn surface position and both these bonding
+ DEform ¼ ETM=ZnO EZnO slab mTM þ mZn (14) geometries are locally stable. However, the total energies of
+ these OER intermediates adsorbed on bridges site are always
+ where ETM=ZnO and EZnO slab are the total energies of the ZnO slab lower than adsorbed on top sites. Therefore, we only discuss
+ doped with one TM atom, and that of the pure ZnO slab, bridge site adsorption in the following, whereas top site
+ respectively, and mTM and mZn are the chemical potentials of the adsorption is discussed in the Supporting Information.
+ TM and of Zn, respectively. For mTM we use the total energy of We find that for a TM dopant at a Zn subsurface position,
+ the bulk TM in its most stable structure. To calculate mZn , we OH and O only adsorb in a bridge configuration, and on top
+ assume oxygen-rich conditions, where ZnO and oxygen gas are adsorption is not stable. For the adsorption of the OOH species,
+ in equilibrium, as is appropriate for the OER [Eq. (15)]: we have identified three different (meta)stable bridge site
+ configurations, both for TM dopants in the Zn surface and in
+ 1 the Zn subsurface positions (see Figure S6). In the following we
+ mZn ¼ EZnO bulk m (15)
+ 2 O2 ðgÞ will only discuss the results pertaining to the most stable
+ bonding configurations. Results for other, metastable, config-
+ Here EZnO bulk is the total energy per formula unit of bulk urations can be found in the Supporting Information (see
+ ZnO, and mO2 ðgÞ is the chemical potential of oxygen gas at Tables S4 and S5).
+ standard conditions (T = 298 K and P = 1 bar), which is calcu- The structures shown in Figure 4 have the Zn atoms at the
+ lated as in Ref. [29]. A negative formation energy DEform surface exposed, whereas under alkaline conditions they may
+ indicates the TM-doped system is stable. be covered by hydroxy (OH) groups. Figure S7 in the Support-
+ The formation energies of TM-doped ZnO, with the TM ing Information shows a calculated Pourbaix diagram,[30] which
+ atoms in surface and subsurface positions are shown in demonstrates that under usual operating conditions (U and pH)
+ Figure 3. It clearly shows that, although the stability of the hydroxylation is only partial, such that the OER is not hindered.
+ doped systems decreases if one goes down the TM series from Hydroxylation of the TM active site is required for the first step
+ Mn to Cu, all systems are in fact stable. in the OER anyway [see Eq. (2)].
+ The OER intermediate species OH, O, and OOH [reactions
+ (2)–(5)] can adsorb on the ZnO (1010) � surface in a variety of
+ bonding configurations. Bridge site adsorption involves bond- Gibbs free energies and overpotentials
+ ing of the species to the TM and an adjacent surface Zn atom
+ We calculate the Gibbs free energies [Eqs. (7)–(10)] of the four
+ reaction steps (2)–(5) for the pristine and for the TM-doped ZnO
+ � surface. The results are shown in Figure 5a. According to
+ (1010)
+ the sum rule [Eq. (11)], the Gibbs free energy difference
+ between the initial plateau, marked *, and the final plateau,
+ marked O2, is fixed at 4.92 eV.[31] The corresponding calculated
+ overpotentials [Eq. (13)] are summarized in Figure 5b. The
+ overpotentials range from 0.43 to 1.14 V. The potential
+ determining step for the first half of the series (Mn, Fe, Co) is
+ the formation of *O, whereas for the second half of the series
+ (Ni, Cu, Zn), it is the *OOH formation. As we move from left to
+ right through the 3d series (Mn to Zn), the overpotential first
+ decreases, reaches a minimum, and then increases again. The
+ Figure 3. Formation energies [Eqs. (14) and (15)] of TM dopant atoms in ZnO overpotentials for the surface and subsurface substitutional
+ in surface and subsurface positions.
+ sites are generally similar, where only in the Mn case there is a
+ significant difference.
+ Pristine ZnO shows large overpotentials of 1.04 and 1.10 V
+ for surface and subsurface sites, which is in agreement with the
+ observed low activity of ZnO regarding the OER.[14] The lowest
+ overpotentials, 0.43 and 0.49 V, are obtained for surface and
+ subsurface Co substitution. Ni substitution is a close second,
+ with an overpotential of 0.50 V, whereas Fe substation gives an
+ overpotential that is approximately 0.1 V higher than that of Ni.
+ Figure 4. Atomic structures without and with OER intermediates are shown
+ for (a) surface and (b) subsurface TM doping. The structures from left to right Cu substitution leads to a significant overpotential of 0.76 V,
+ are in the sequence of vacant site (*), *OH, *O, and *OOH. Only the case for and Mn substitution gives virtually no improvement over
+ bridge site adsorption is shown. pristine ZnO.
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3067 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ Figure 5. (a) Gibbs free energy diagrams of pristine and TM-doped ZnO surface and subsurface systems. The purple-shaded fields indicate the potential
+ determining steps. The overpotentials are given in the legends; ηsurface and ηsubsurface represent the overpotentials of surface- and subsurface-doped systems,
+ respectively. (b) Summary plot of the overpotential for the different TM dopants on surface and subsurface. The potential determining steps are represented
+ by different colors.
+
+ Park and co-workers[14] have studied composites of ZnO and properties of the ZnO matrix, whereas those can be affected in
+ TM oxides for the OER, where they have observed that mixing a major way if one considers composite materials.
+ ZnO with Co oxide gives an overpotential of approximately
+ 0.4 V, whereas mixing with Ni and Fe oxides gives an over-
+ potential that is approximately 0.2 V higher, and mixing with Binding energies of adsorbed species
+ Mn oxide leads to an overpotential comparable to that of Fe
+ and Ni. A direct comparison is difficult, however, as the TMs in To interpret the trends in the calculated overpotentials, we
+ their native oxides typically have an oxidation state and oxygen focus on the free energies of the individual adsorbed
+ coordination that is different from our substitutional TM atoms, intermediate species.[16a] The Gibbs free energies of the OER
+ which likely alters their catalytic activity. Note that substitu- intermediates can be calculated from Equations (7)–(10) for U =
+ tional doping is aimed at maintaining the good conductive 0 [Eqs. (16)–(18)]:
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3068 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ 1 elements before Ni (i. e., Mn to Co) give too strong a bonding to
+ DG* OH ¼ DG1 ¼ E* OH E* E H2 O þ E H2 OH, whereas the element after Cu (i. e., Zn) gives too weak a
+ 2 (16)
+ þðDZPE TDSÞ1 bonding.
+ ΔG*O shows a similar monotonic behavior as ΔG*OH, but it
+ DG* O ¼ DG1 þ DG2 ¼ E* O E* E H2 O þ E H2 has a stronger dependence on the TM dopant atom. Compar-
+ (17) ison to the ideal value ΔG0/2 = 2.46 eV (the horizontal yellow
+ þ ðDZPE TDSÞ1þ2
+ dashed lines in Figure 6a,b) shows that Mn and Fe bind the O
+ DG* OOH ¼ DG1 þ DG2 þ DG3 ¼ E* OOH E* 2EH2 O atom too strongly, with ΔG*O < 2.0 eV, and Cu and Zn bind O
+ 3 (18) too weakly, with ΔG*O > 3.0 eV. From the perspective of ΔG*O,
+ þ EH2 þ ðDZPE TDSÞ1þ2þ3
+ 2 Co and Ni dopants are the most suitable for the OER. The
+ ΔG*OOH curves are similar in shape to the ΔG*OH curves, with a
+ The free energies of the OER intermediates, ΔG*OH, ΔG*O, similar decrease in bonding strength of the adsorbed species
+ and ΔG*OOH, are plotted in Figure 6a,b for TM surface and for the TM dopant series from Mn to Zn. The ΔG*OOH for Co is
+ subsurface dopants. The lower the free energy, the stronger the very close to the ideal value 3ΔG0/4 = 3.69 eV (the horizontal
+ bonding of the intermediate to the active site on the substrate. green dashed lines in Figure 6a,b), making the Co dopant most
+ All ΔG*OH, ΔG*O, and ΔG*OOH curves show a similar trend. We find optimal for the OER regarding the bonding to OOH.
+ that all free energies monotonically increase as we go down the From these results one concludes that there is not a single
+ 3d series from Mn to Zn, meaning that the bonding between TM dopant that gives an optimal bonding to all intermediate
+ intermediate and substrate becomes weaker, which is consis- species, OH, O, and OOH, such that it leads to a zero
+ tent with previous studies.[16a,32] overpotential. Overall the best TM dopants are Co, which binds
+ The ideal values for ΔG*OH, ΔG*O, and ΔG*OOH are ΔG0/4 = OH and O slightly too strongly, but is perfect for OOH, and Ni,
+ 1.23 eV, ΔG0/2 = 2.46 eV, and 3ΔG0/4 = 3.69 eV, respectively, as which is almost perfect for OH, but binds O and OOH lightly too
+ then the overpotential η = 0 V, according to Equations (12), (13), weakly. The elements before Co (i. e., Mn, Fe) tend to bind the
+ and (16)–(18). These ideal values are indicated by horizontal intermediate species too strongly, and the elements after Ni
+ dashed lines in Figure 6a,b. For the TM dopant series, we find (i. e., Cu, Zn) give too weak a bonding.
+ ΔG*OH < ΔG0/4 for Mn to Ni, and ΔG*OH > ΔG0/4 for Cu and Zn,
+ where Ni and Cu are closest to the ideal value for ΔG*OH. The
+ Analysis of overpotential
+
+ In Figure 5, we observe that for all TM dopants the over-
+ potential is determined by one of the two middle steps, ΔG2 or
+ ΔG3 (i. e., the formation of *O from *OH, or the formation of
+ *OOH from *O). In Figure 6, we notice that the ΔG*OH and
+ ΔG*OOH curves run almost parallel. One can connect the two
+ observations by focusing upon the Gibbs free energy difference
+ between the bonding of the OH and the OOH species [Eq. (19)]:
+
+ DG23 ¼ DG* OOH DG* OH ¼ DG2 þ DG3 (19)
+
+ according to Equations (16) and (18). To obtain a zero over-
+ potential, ideally ΔG23 = ΔG0/2 = 2.46 eV, according to Equa-
+ tion (12). It has been observed that for most TM oxides ΔG23
+ � 3.2 eV, irrespective of the TM.[31–33] In many of these cases,
+ both the OH and OOH species are bonded to the active
+ catalytic site by a single bond to the (terminal) O atom, and the
+ relatively materials independent ΔG23 is thought to reflect the
+ notion that the two bonds from OH or OOH to any TM are very
+ similar to one another.
+ It is useful to see whether the cases we study here fall
+ within the same scheme. At first sight, the bonding of the OH
+ and OOH species to the substrate are quite different. The O
+ atom of OH forms bridge bonds to the TM dopant and a Zn
+ atom of the substrate, whereas for OOH, one of the O atoms
+ Figure 6. Gibbs free energies of the OER intermediates on TM-doped and binds to the TM dopant, and the other O atom binds to a
+ � (a) surface and (b) subsurface. Adsorbed species are
+ pristine ZnO (1010)
+ abbreviated as ADS and signify *OH (blue squares), *O (yellow circles), and substrate Zn atom, see Figure 4a,b. Nevertheless, the calculated
+ *OOH (green triangles). The blue, yellow, and green dashed horizontal lines ΔG23 are remarkably similar for the different TM dopants, as
+ stand for the Gibbs free energies of 1.23, 2.46, and 3.69 eV, respectively. shown in Figure 7. Moreover, they are all significantly larger
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3069 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ 1 1
+ DDG* O ¼ DG* O ðDG* OH þ DG* OOH Þ ¼ ðDG2 DG3 Þ (22)
+ 2 2
+
+ According to Equation (21), ΔΔG*O should ideally be zero,
+ and the more it deviates from zero, the larger the overpotential.
+ Figure 7b shows ΔΔG*O, calculated for the TM dopant series. It
+ shows a monotonic behavior along the series, starting with
+ ΔΔG*O < 0 for Mn and increasing to ΔΔG*O > 0. The most
+ interesting TM dopants are Co and Ni, as there ΔΔG*O is closest
+ to zero. For these dopants, the binding energy of O is closest to
+ the average of the binding energies of OH and OOH. For Mn
+ and Fe dopants, the O binding is too strong, resulting in
+ ΔΔG*O < 0, and for the Cu dopant and pristine ZnO, the O
+ binding is too weak, which gives ΔΔG*O > 0. The optimal TM
+ dopants are then Co and Ni, where the overpotential η � η23.
+
+ Double transition metal substitutions
+
+ If the doping concentration is increased, one will encounter
+ more frequently a situation where two adjacent Zn atoms at
+ the surface are replaced by TM atoms (see Figure 8). We will call
+ Figure 7. (a) Gibbs free energy difference ΔG23 on TM-doped and pristine this “double doping” in the following. As the adsorbed
+ � surface and subsurface; the dashed horizontal line indicates the
+ ZnO (1010)
+ ideal value of 2G0 = 2.46 eV. (b) Gibbs free energy difference ΔΔG*O on TM- intermediate species of the OER generally form bridge bonds to
+ doped and pristine ZnO (1010)� surface and subsurface; the value larger than the metal atoms of the substrate, they can simultaneously bind
+ 0 eV indicates weak O adsorption and smaller than 0 eV indicates strong O to two TM dopants, instead of to one TM dopant and one Zn
+ adsorption; the dashed horizontal line indicates the optimal value of 0 eV.
+ The lines between data points are added to guide the eye. atom, compared to Figure 4. It is instructive to investigate
+ whether this altered bonding scheme can change the over-
+ potential. Again, there are two possible configurations of
+ interest, one where two adjacent Zn atoms at the surface ridges
+ than the ideal value of 2.46 eV. In fact, the average ΔG23 for are replaced by TM atoms, and another where one such Zn
+ surface/subsurface TM dopants is 3.17/3.20 eV, with a standard atom and one adjacent valley Zn atom are replaced. We call
+ deviation of 0.07/0.12 eV, which is strikingly similar to the these the “surface” and “subsurface” configurations, respectively
+ results obtained for pure TM oxides, such as Co3O4 and NiO.[31] (see Figure 8).
+ Any excess of ΔG23 over 2.46 eV contributes to the over- The total energies of the ZnO slab doped with two TM
+ potential. According to Equation (12), the minimum overpoten- atoms in adjacent surface positions, one in a surface position
+ tial resulting from Equation (19) is [Eq. (20)]: and one in an adjacent subsurface position, are listed in
+ Tables S8 and S9, respectively. The relative stability of double
+ h23 ¼ ðDG23 DG0 =2Þ=ð2eÞ (20) TM doped systems with respect to single TM doped systems is
+ investigated by focusing on the binding energy. The net
+ Based on the data shown in Figure 7a, η23 ranges between interaction between the dopants is in most cases 0.1 eV (see
+ 0.30 and 0.42 V for surface doping and between 0.25 and 0.44 V
+ for subsurface doping, which are all values that are relatively
+ close to one another. For a TM surface dopant, the minimum
+ η23 is for Co and for a TM subsurface dopant it is for Zn.
+ The quantity η23 gives a lower bound to the overpotential in
+ case ΔG2 = ΔG3. In case ΔG2 ¼ 6 ΔG3, and assuming that one of
+ these steps determines the overpotential η, Equation (13), one
+ can rewrite the latter as Equation (21):
+
+ h ¼ h23 þ jDDG* O j=e (21)
+ Figure 8. (a) Side view of the double TM-doped ZnO surface doping; the
+ where ΔΔG*O measures the binding energy of the O species sequence is nothing adsorbed, OH, O, and OOH adsorbed; after relaxation,
+ the OOH shows two configurations: TM OOH1 and TM OOH2; (b) Side view
+ relative to the average binding energy of the OH and OOH of the double TM-doped ZnO subsurface doping; the sequence is nothing
+ species [Eq. (21)]: adsorbed, OH, O, and OOH adsorbed. After relaxation, the OOH shows three
+ configurations: TM OOH1, TM OOH2, and TM OOH3.
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3070 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ Figure S8 of the Supporting Information), which means that the
+ driving force for clustering is small.
+ As before, the OER intermediate species can bind in several
+ configurations, where a number of possibilities are shown in
+ Figure 8. A full list of the calculated total energies of those
+ configurations is given in Tables S10 and S11 in the Supporting
+ Information. In the following we only use the configurations
+ with the lowest total energy.
+ A summary of the calculated overpotentials resulting from
+ the double TM substitution is given in Figure 9, whereas the
+ Gibbs free energies of all intermediate steps, ΔG1–4, are shown
+ in in Figure S9. Comparison to single TM substitution (refer to
+ Figure 5b) shows that the overpotentials of single and double
+ substitution are of a similar magnitude. However, the minimum
+ overpotential is shifted from Co/Ni in the single substitution
+ case to Ni/Cu in the double substitution, where in both cases
+ the minimum occurs around the point where the third step of
+ the OER, Equation (9), takes over as the potential determining
+ step from the second step of the OER, Equation (8). As the O
+ intermediate species is common in both of these steps, this is
+ an indication that the bonding of the O atom to the substrate is
+ mainly responsible for the difference in overpotentials between
+ single (Figure 5b) and double (Figure 9) substitution.
+ The individual Gibbs free energies of the OER intermediates Figure 10. (a) Gibbs free energy difference ΔG23 on double TM-doped ZnO (
+ on double TM-doped ZnO (1010) � surface and subsurface can be � surface and subsurface; the dashed horizontal line indicates the ideal
+ 1010)
+ value of 2G0 = 2.46 eV. (b) Gibbs free energy difference ΔΔG*O on double
+ found in the Supporting Information, Figure S10. We can
+ TM-doped ZnO (10� 10) surface and subsurface; the value larger than 0 eV
+ analyze the overpotential η resulting from the double sub- indicates weak O adsorption and smaller than 0 eV indicates strong O
+ stitution in terms of ΔG23 and ΔΔG*O, as in the previous section adsorption; the dashed horizontal line indicates the optimal value of 0 eV.
+ The lines between data points are added to guide the eye.
+ [Eq. (21)]. ΔG23 reflects the difference in the bonding of the OH
+ and the OOH species to the substrate [Eq. (19)]. Plotted in
+ Figure 10a, it displays a little more variation with the TM dopant
+ than for the single substitution case, compared to Figure 7a. The second contribution ΔΔG*O to the overpotential,
+ Nevertheless, also for double TM substitution, the values of Equations (21) and (22), reflecting the adsorption strength of
+ ΔG23 are still significantly larger that the ideal value ΔG0/2 = the O species with respect to the average of the OH and OOH
+ 2.46 eV, which results in a contribution to the overpotential species, is plotted in Figure 10b. ΔΔG*O increases monotonically
+ [Eq. (20)]. going down the TM series from Mn to Cu, which is similar to
+ the single TM dopant case, shown in Figure 7b. However, for
+ the double TM dopant case, Figure 10b, the ΔΔG*O values are
+ significantly smaller, indicating a bonding of the O species to
+ the two TM dopant atoms that is much stronger than the
+ bonding to a single TM dopant (and a Zn atom of the
+ substrate).
+ To obtain a low overpotential one needs ΔΔG*O � 0
+ [Eq. (21)], which only occurs for the late TM dopants Ni and Cu.
+ So, qualitatively the difference between the overpotentials for
+ the single TM dopant (Figure 5b) and the double TM dopant
+ (Figure 9) is due to the stronger bonding of the O intermediate
+ species to the substrate.
+ Alternative ways to analyze the overpotential for metal
+ electrodes make use of scaling relations to, for instance, the
+ electrochemical-step symmetry index (ESSI).[34] In the present
+ case the results regarding the use of the ESSI as a descriptor
+ does not give further insight (see Supporting Information,
+ Figure S11).
+ Figure 9. Summary plot of the overpotential for the different TM dopants in
+ the case of double TM doping on surface and subsurface. The potential
+ determining steps are represented by different colors.
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3071 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ Conclusions We start from the wurtzite structure of ZnO, and model the (non-
+ � surface, which is the surface orientation that emerges
+ polar) (1010)
+ We computationally investigate the electrochemical activity under most growth conditions, as it is more stable than other (non-
+ � surface is modeled by a
+ polar and polar) surfaces.[38] The (1010)
+ under alkaline conditions of the ZnO (1010) � surface substitu-
+ (periodic) five-layer slab, using an in-plane 3 × 2 supercell, compris-
+ tionally doped with transition metals (TMs) of the 3d series. ing 120 atoms, with a vacuum spacing of 15 Å between the
+ Varying the TM and the doping site, we find that Co doping periodic images of the slab to avoid spurious interactions. To model
+ gives the minimum calculated overpotential, which is between doping, one or two of the zinc atoms are replaced by TM atoms.
+ 0.43 and 0.49 V. In addition, Ni doping also gives a low The structure we use is shown in Figure 1. We use the top surface
+ of the slab to model the OER, where the top three layers of the
+ overpotential of 0.50 V, whereas Fe or Cu doping give smaller
+ (doped) ZnO substrate, as well as the adsorbates, are fully relaxed
+ improvements over pure ZnO regarding the oxygen evolution until the maximum force on each atom is less than 0.01 eV Å 1,
+ reaction (OER) activity. Mn gives practically no improvement at while keeping the bottom two layers fixed. We use a dipole
+ all. correction[39] and set the energy convergence criterion to 1 ×
+ TMs dopants from the second half of the 3d series are more 10 5 eV. The surface Brillouin zone is sampled using a 2 × 2 × 1
+ often found to improve the OER performance of oxides and Monkhorst-Pack k-point mesh for all calculations.[40]
+ nitrides. For instance, Liao et al.[3b] have calculated that Co and In calculating Gibbs free energies of the adsorbed species, we
+ Ni dopants lower overpotential of pure hematite (Fe2O3), and incorporate zero-point energy (ZPE) and entropy corrections. The
+ Zaffran and Toroker[35] have concluded that Fe, Co, or Cu doping ZPE values are obtained from the calculated frequencies (vi ) of all
+ vibrations of the atoms in the slab [Eq. (23)]:
+ significantly lowers the overpotential of NiOOH. In our previous
+ work on two-dimensional AlN and GaN,[16a] we found that in X1
+ particular Ni doping lowers the overpotential. ZPE ¼ hvi (23)
+ 2
+ Liao et al.[3b] correlated the lowering of the overpotential of i
+
+ hematite upon Co and Ni doping with Co or Ni dopants being
+ where h is Planck’s constant. The vibrational contribution to the
+ less positively charged than the host Fe atoms, resulting in a entropy S of the molecules and the adsorbed species can be
+ more optimal bonding to the OER intermediates. We have calculated in the usual way from these frequencies,[41] using
+ calculated the Bader charges of pristine and TM doped ZnO temperature T = 298 K.[42] We used gas-phase H2O at 0.035 bar and
+ surfaces (see Section 2.6, Table S7 in the Supporting Informa- this temperature as the reference state for water molecules, which
+ tion), but observed no distinct correlation between the over- is in equilibrium with liquid water at standard temperature (T =
+ 298 K). The entropy of H2O gas is then taken from ref. [42], as are
+ potential and these Bader charges. In our work on TM doped
+ the entropies under standard conditions of the other gas-phase
+ 2D AlN/GaN, we observed that the low overpotential found for molecules. In the solid state, volume changes are typically very
+ Ni doping correlates with a transition from a high-spin to a low- small, and therefore the small difference between enthalpy and
+ spin state on the Ni atom.[16a] In TM doped ZnO, it turns out that energy is not considered.[16a] We have refrained from modeling
+ all TM dopants remain in high-spin states, with or without solvation effects.
+ adsorbed OER intermediate species.
+ For TM oxides, it has been observed that the difference in
+ adsorption free energy of the OH and OOH is fairly constant for Acknowledgements
+ most TM species DG23 ¼ 3:2 � 0:2 eV [Eq. (19)]:[31–33] We find
+ that this result is also valid for TM-doped ZnO, irrespective of Q.L. acknowledges funding from the China Scholarship Council
+ the TM or of the details of the TM OH or TM OOH bonding (CSC) (No. 201708450082). A. Bieberle-Hütter and V. Sinha
+ configurations. This results in a minimum overpotential in the acknowledge the financial support from M-ERA.NET (project
+ range η23 = 0.27–0.47 V [Eqs. (20) and (21)] for all TM dopants. “MuMo4PEC” no. 4089). This work was carried out on the Dutch
+ The second factor contributing to the overpotential is the national e-infrastructure with the support of SURF Cooperative.
+ adsorption free energy of the O species, ΔΔG*O, relative to that Dr. Ionut Tranca, Technical University Eindhoven, the Netherlands,
+ of the OH and OOH species [Eq. (22)], which ideally should be is thanked for fruitful discussions. We acknowledge COST Action
+ zero. Going down the 3d TM series, ΔΔG*O increases monotoni- 18234, supported by COST (European Cooperation in Science and
+ cally. For TM-doped ZnO, ΔΔG*O crosses zero between Co and Technology) for workshop organization and stimulating discus-
+ Ni for single surface or subsurface TM dopant atoms. This is the sions.
+ parameter that can be varied most by changing the TM or the
+ bonding configuration of the adsorbents.
+ Conflict of Interest
+
+ Experimental Section The authors declare no conflict of interest.
+ We use the Vienna ab initio package (VASP) to carry out DFT
+ calculations within the projector-augmented wave (PAW) Keywords: density functional theory · overpotential · oxygen
+ approach.[36] The exchange-correlation function is treated within evolution reaction · transition metal doping · ZnO
+ the generalized gradient approximation (GGA) with the form
+ developed by Perdew, Burke, and Ernzerhof (PBE).[37] We use a plane
+ wave basis with an energy cutoff of 500 eV.
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3072 © 2021 Wiley-VCH GmbH
+ 1864564x, 2021, 15, Downloaded from https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cssc.202100715 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Full Papers
+ChemSusChem doi.org/10.1002/cssc.202100715
+
+ [1] a) E. Fabbri, A. Habereder, K. Waltar, R. Kötz, T. J. Schmidt, Catal. Sci. [19] C. Freysoldt, B. Grabowski, T. Hickel, J. Neugebauer, G. Kresse, A. Janotti,
+ Technol. 2014, 4, 3800–3821; b) J. Joo, T. Kim, J. Lee, S. I. Choi, K. J. A. M. C. G. Van de Walle, Rev. Mod. Phys. 2014, 86, 253–305.
+ Lee, Adv. Mater. 2019, 31, 1806682; c) C. Hu, L. Zhang, J. J. E. Gong, E. [20] S. Dudarev, G. Botton, S. Savrasov, C. Humphreys, A. Sutton, Phys. Rev. B
+ Science, Energy Environ. Sci. 2019, 12, 2620–2645. 1998, 57, 1505.
+ [2] X. Zhang, A. Bieberle-Hütter, ChemSusChem 2016, 9, 1223–1242. [21] Ü. Özgür, Y. I. Alivov, C. Liu, A. Teke, M. Reshchikov, S. Doğan, V. Avrutin,
+ [3] a) M. C. Toroker, J. Phys. Chem. C 2014, 118, 23162–23167; b) P. Liao, S.-J. Cho, H. Morkoç, J. Appl. Phys. 2005, 98, 11.
+ J. A. Keith, E. A. Carter, J. Am. Chem. Soc. 2012, 134, 13296–13309. [22] a) L. Wang, Z. Zeng, W. Gao, T. Maxson, D. Raciti, M. Giroux, X. Pan, C.
+ [4] a) Y. Lee, J. Suntivich, K. J. May, E. E. Perry, Y. Shao-Horn, J. Phys. Chem. Wang, J. J. S. Greeley, Science 2019, 363, 870–874; b) H. Wang, S. Xu, C.
+ Lett. 2012, 3, 399–404; b) H. G. Sanchez Casalongue, M. L. Ng, S. Kaya, D. Tsai, Y. Li, C. Liu, J. Zhao, Y. Liu, H. Yuan, F. Abild-Pedersen, F. B. J. S.
+ Friebel, H. Ogasawara, A. Nilsson, Angew. Chem. Int. Ed. 2014, 53, 7169– Prinz, Science 2016, 354, 1031–1036.
+ 7172; Angew. Chem. 2014, 126, 7297–7300; c) R. R. Rao, M. J. Kolb, N. B. [23] F. Viñes, F. Illas, J. Comput. Chem. 2017, 38, 523–529.
+ Halck, A. F. Pedersen, A. Mehta, H. You, K. A. Stoerzinger, Z. Feng, H. A. [24] a) S. Zhou, N. Liu, Z. Wang, J. Zhao, ACS Appl. Mater. Interfaces 2017, 9,
+ Hansen, H. J. E. Zhou, E. Science, Energy Environ. Sci. 2017, 10, 2626– 22578–22587; b) X. Rong, J. Parolin, A. M. Kolpak, ACS Catal. 2016, 6,
+ 2637. 1153–1158.
+ [5] a) Y. Zhang, B. Ouyang, J. Xu, G. Jia, S. Chen, R. S. Rawat, H. J. Fan, [25] a) J. Pfrommer, M. Lublow, A. Azarpira, C. Göbel, M. Lücke, A. Steigert,
+ Angew. Chem. Int. Ed. 2016, 55, 8670–8674; Angew. Chem. 2016, 128, M. Pogrzeba, P. W. Menezes, A. Fischer, T. Schedel-Niedrig, Angew.
+ 8812–8816; b) P. Chen, K. Xu, Z. Fang, Y. Tong, J. Wu, X. Lu, X. Peng, H. Chem. Int. Ed. 2014, 53, 5183–5187; Angew. Chem. 2014, 126, 5283–
+ Ding, C. Wu, Y. Xie, Angew. Chem. Int. Ed. 2015, 54, 14710–14714; 5287; b) L. Zhuang, Y. Jia, T. He, A. Du, X. Yan, L. Ge, Z. Zhu, X. Yao,
+ Angew. Chem. 2016, 127, 14923–14927. Nano Res. 2018, 11, 3509–3518.
+ [6] a) K. Liu, C. Zhang, Y. Sun, G. Zhang, X. Shen, F. Zou, H. Zhang, Z. Wu, [26] A. Bagger, I. E. Castelli, M. H. Hansen, J. Rossmeisl, in Handbook of
+ E. C. Wegener, C. J. Taubert, ACS Nano 2018, 12, 158–167; b) J. Xu, J. Li, Materials Modeling: Applications: Current and Emerging Materials, Spring-
+ D. Xiong, B. Zhang, Y. Liu, K.-H. Wu, I. Amorim, W. Li, L. Liu, Chem. Sci. er, 2018, pp. 1–31.
+ 2018, 9, 3470–3476; c) H.-W. Man, C.-S. Tsang, M. M.-J. Li, J. Mo, B. [27] Q. Liang, G. Brocks, A. Bieberle-Hütter, J. Phys. Energy 2021, 3, 026001.
+ Huang, L. Y. S. Lee, Y.-C. Leung, K.-Y. Wong, S. C. E. Tsang, Chem. [28] X. Luo, G. Wang, Y. Huang, B. Wang, H. Yuan, H. Chen, J. Phys. Chem. C
+ Commun. 2018, 54, 8630–8633. 2017, 121, 18534–18543.
+ [7] Y. Zhao, G. Brocks, H. Genuit, R. Lavrijsen, M. A. Verheijen, A. Bieberle- [29] M. García-Mota, A. Vojvodic, H. Metiu, I. C. Man, H.-Y. Su, J. Rossmeisl,
+ Hütter, Adv. Energy Mater. 2019, 9, 1900940. J. K. Nørskov, ChemCatChem 2011, 3, 1607–1611.
+ [8] a) L. Zeng, K. Sun, X. Wang, Y. Liu, Y. Pan, Z. Liu, D. Cao, Y. Song, S. Liu, [30] a) F. Calle-Vallejo, M. T. M. Koper, Electrochim. Acta 2012, 84, 3–11; b) H.-
+ C. Liu, Nano Energy 2018, 51, 26–36; b) Y. Zhu, H. Yang, K. Lan, K. Iqbal, Y. Su, Y. Gorlin, I. C. Man, F. Calle-Vallejo, J. K. Nørskov, T. F. Jaramillo, J.
+ Y. Liu, P. Ma, Z. Zhao, S. Luo, Y. Luo, J. Ma, Nanoscale 2019, 11, 2355– Rossmeisl, Phys. Chem. Chem. Phys. 2012, 14, 14010–14022.
+ 2365; c) G. Zhang, Y.-S. Feng, W.-T. Lu, D. He, C.-Y. Wang, Y.-K. Li, X.-Y. [31] I. C. Man, H. Y. Su, F. Calle-Vallejo, H. A. Hansen, J. I. Martinez, N. G.
+ Wang, F.-F. Cao, ACS Catal. 2018, 8, 5431–5441. Inoglu, J. Kitchin, T. F. Jaramillo, J. K. Nørskov, J. Rossmeisl, ChemCatCh-
+ [9] a) Á. Morales-García, F. Calle-Vallejo, F. Illas, ACS Catal. 2020, 10, 13487– em 2011, 3, 1159–1165.
+ 13503; b) B. Anasori, M. R. Lukatskaya, Y. Gogotsi, Nat. Rev. Mater. 2017, [32] F. Calle-Vallejo, J. I. Martínez, J. Rossmeisl, Phys. Chem. Chem. Phys. 2011,
+ 2, 16098; c) H. Oschinski, Á. Morales-García, F. Illas, J. Phys. Chem. C 13, 15639–15643.
+ 2021, 125, 2477–2484. [33] J. Rossmeisl, Z.-W. Qu, H. Zhu, G.-J. Kroes, J. K. Nørskov, J. Electroanal.
+ [10] a) H. Osgood, S. V. Devaguptapu, H. Xu, J. Cho, G. Wu, Nano Today Chem. 2007, 607, 83–89.
+ 2016, 11, 601–625; b) Y. Dou, T. Liao, Z. Ma, D. Tian, Q. Liu, F. Xiao, Z. [34] O. Piqué, F. Illas, F. Calle-Vallejo, Phys. Chem. Chem. Phys. 2020, 22,
+ Sun, J. H. Kim, S. X. Dou, Nano Energy 2016, 30, 267–275. 6797–6803.
+ [11] A. Janotti, C. G. Van de Walle, Rep. Prog. Phys. 2009, 72, 126501. [35] J. Zaffran, M. C. Toroker, ChemistrySelect 2016, 1, 911–916.
+ [12] A. Kołodziejczak-Radzimska, T. J. M. Jesionowski, Materials 2014, 7, [36] a) P. E. Blöchl, Phys. Rev. B 1994, 50, 17953; b) G. Kresse, D. Joubert,
+ 2833–2881. Phys. Rev. B 1999, 59, 1758; c) G. Kresse, J. Furthmüller, Phys. Rev. B
+ [13] C. B. Ong, L. Y. Ng, A. W. Mohammad, Renewable Sustainable Energy Rev. 1996, 54, 11169.
+ 2018, 81, 536–551. [37] J. P. Perdew, K. Burke, M. Ernzerhof, Phys. Rev. Lett. 1996, 77, 3865.
+ [14] D. M. Jang, I. H. Kwak, E. L. Kwon, C. S. Jung, H. S. Im, K. Park, J. Park, J. [38] X. Tian, J. Xu, W. Xie, J. Phys. Chem. C 2010, 114, 3973–3980.
+ Phys. Chem. C 2015, 119, 1921–1927. [39] J. Neugebauer, M. Scheffler, Phys. Rev. B 1992, 46, 16067.
+ [15] a) K. Qi, X. Xing, A. Zada, M. Li, Q. Wang, S.-y. Liu, H. Lin, G. Wang, [40] H. J. Monkhorst, J. D. Pack, Phys. Rev. B 1976, 13, 5188.
+ Ceram. Int. 2020, 46, 1494–1502; b) G. Wang, L. Zhang, Y. Li, W. Zhao, A. [41] M. J. van Setten, G. A. de Wijs, G. Brocks, Phys. Rev. B 2008, 77, 165115.
+ Kuang, Y. Li, L. Xia, Y. Li, S. Xiao, J. Phys. D 2019, 53, 015104. [42] J. K. Nørskov, J. Rossmeisl, A. Logadottir, L. Lindqvist, J. R. Kitchin, T.
+ [16] a) Q. Liang, G. Brocks, X. Zhang, A. Bieberle-Hütter, J. Phys. Chem. C Bligaard, H. Jonsson, J. Phys. Chem. B 2004, 108, 17886–17892.
+ 2019, 123, 26289–26298; b) Q. Wang, X. Huang, Z. L. Zhao, M. Wang, B.
+ Xiang, J. Li, Z. Feng, H. Xu, M. Gu, J. Am. Chem. Soc. 2020, 142, 7425–
+ 7433.
+ [17] C. Wang, G. Zhou, J. Li, B. Yan, W. Duan, Phys. Rev. B 2008, 77, 245303.
+ [18] a) A. Walsh, J. L. Da Silva, S.-H. Wei, Phys. Rev. Lett. 2008, 100, 256401; Manuscript received: April 6, 2021
+ b) K. Harun, N. A. Salleh, B. Deghfel, M. K. Yaakob, A. A. Mohamad, Revised manuscript received: May 20, 2021
+ Results Phys. 2020, 16, 102829; c) X. Ma, Y. Wu, Y. Lv, Y. Zhu, J. Phys. Accepted manuscript online: May 26, 2021
+ Chem. C 2013, 117, 26029–26039. Version of record online: June 14, 2021
+
+ ChemSusChem 2021, 14, 3064 – 3073 www.chemsuschem.org 3073 © 2021 Wiley-VCH GmbH

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "material_class": "phosphides_phosphates",
+  "updated_at": "2026-07-06T06:15:09.190681+00:00",
+  "summary": {
+    "terms": 4,
+    "known_useful": 1,
+    "unknown": 3,
+    "sources": [
+      "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv"
+    ]
+  },
+  "entries": [
+    {
+      "term": "CoPt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ],
+      "count": 2
+    },
+    {
+      "term": "copper",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    },
+    {
+      "term": "operando X-ray absorption spectroscopy",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "ja511559d 1..9"
+      ],
+      "count": 1
+    },
+    {
+      "term": "phosphides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,623 @@
+View Article Online / Journal Homepage / Table of Contents for this issue
+
+ Physical Chemistry Chemical Physics
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ This paper is published as part of a PCCP Themed Issue on:
+
+ Electrocatalysis: theory and experiment at the interface
+ Guest Editor: Andrea Russell
+
+ Editorial Electrodeposited noble metal particles in polyelectrolyte
+ multilayer matrix as electrocatalyst for oxygen reduction
+ Electrocatalysis: theory and experiment at the studied using SECM
+ interface Yan Shen, Markus Träuble and Gunther Wittstock, Phys.
+ Phys. Chem. Chem. Phys., 2008 Chem. Chem. Phys., 2008
+ DOI: 10.1039/b808799g DOI: 10.1039/b802688b
+
+ Papers CoPt nanoparticles and their catalytic properties in
+ electrooxidation of CO and CH3OH studied by in situ
+ Structure of the water/platinum interface––a first FTIRS
+ principles simulation under bias potential Qing-Song Chen, Shi-Gang Sun, Zhi-You Zhou, Yan-Xin
+ Minoru Otani, Ikutaro Hamada, Osamu Sugino, Yoshitada Chen and Shi-Bin Deng, Phys. Chem. Chem. Phys., 2008
+ Morikawa, Yasuharu Okamoto and Tamio Ikeshoji, Phys. DOI: 10.1039/b802047g
+ Chem. Chem. Phys., 2008
+ DOI: 10.1039/b803541e
+ Kinetic studies of adsorbed CO electrochemical
+ oxidation on Pt(335) at full and sub-saturation coverages
+ A first-principles study of molecular oxygen Prachak Inkaew and Carol Korzeniewski, Phys. Chem.
+ dissociation at an electrode surface: a comparison of Chem. Phys., 2008
+ potential variation and coadsorption effects DOI: 10.1039/b804507k
+ Sally A. Wasileski and Michael J. Janik, Phys. Chem.
+ Chem. Phys., 2008
+ DOI: 10.1039/b803157f Formic acid electrooxidation on Pd in acidic solutions
+ studied by surface-enhanced infrared absorption
+ spectroscopy
+ Electrochemical and FTIRS characterisation of NO Hiroto Miyake, Tatsuhiro Okada, Gabor Samjeské and
+ adlayers on cyanide-modified Pt(111) electrodes: the Masatoshi Osawa, Phys. Chem. Chem. Phys., 2008
+ DOI: 10.1039/b805955a
+ mechanism of nitric oxide electroreduction on Pt
+ Angel Cuesta and María Escudero, Phys. Chem. Chem.
+ Phys., 2008 Voltammetric surface dealloying of Pt bimetallic
+ DOI: 10.1039/b717396b nanoparticles: an experimental and DFT computational
+ analysis
+ Peter Strasser, Shirlaine Koh and Jeff Greeley, Phys.
+ Chem. Chem. Phys., 2008
+ DOI: 10.1039/b803717e
+ View Article Online
+
+ Unique activity of Pd monomers: hydrogen evolution Electrochemical study on the adsorption of carbon
+ at AuPd(111) surface alloys oxides and oxidation of their adsorption products on
+ Y. Pluntke, L. A. Kibler and D. M. Kolb, Phys. Chem. platinum group metals and alloys
+ Chem. Phys., 2008 Hanna Siwek, Mariusz Lukaszewski and Andrzej
+ DOI: 10.1039/b802915f Czerwinski, Phys. Chem. Chem. Phys., 2008
+ DOI: 10.1039/b718286b
+
+ Shape-dependent electrocatalysis: methanol and
+ formic acid electrooxidation on preferentially oriented Ethanol electrooxidation onto stepped surfaces
+ Pt nanoparticles modified by Ru deposition: electrochemical and
+ J. Solla-Gullón, F. J. Vidal-Iglesias, A. López-Cudero, E. spectroscopic studies
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ Garnier, J. M. Feliu and A. Aldaz, Phys. Chem. Chem. V. Del Colle, A. Berná, G. Tremiliosi-Filho, E. Herrero and J.
+ Phys., 2008 M. Feliu, Phys. Chem. Chem. Phys., 2008
+ DOI: 10.1039/b802703j DOI: 10.1039/b802683a
+
+ The role of adsorbed hydroxyl species in the The effects of the specific adsorption of anion on the
+ electrocatalytic carbon monoxide oxidation reaction reactivity of the Ru(0001) surface towards CO
+ on platinum adsorption and oxidation: in situ FTIRS studies
+ Anthony R. Kucernak and Gregory J. Offer, Phys. Chem. J. M. Jin, W. F. Lin and P. A. Christensen, Phys. Chem.
+ Chem. Phys., 2008 Chem. Phys., 2008
+ DOI: 10.1039/b802816h DOI: 10.1039/b802701c
+
+ An unexpected enhancement in methanol electro- Experimental and numerical model study of the limiting
+ oxidation on an ensemble of Pt(111) nanofacets: a current in a channel flow cell with a circular electrode
+ case of nanoscale single crystal ensemble J. Fuhrmann, H. Zhao, E. Holzbecher, H. Langmach, M.
+ electrocatalysis Chojak, R. Halseid, Z. Jusys and J. Behm, Phys. Chem.
+ Ceren Susut, George B. Chapman, Gabor Samjeské, Chem. Phys., 2008
+ Masatoshi Osawa and YuYe Tong, Phys. Chem. Chem. DOI: 10.1039/b802812p
+ Phys., 2008
+ DOI: 10.1039/b802708k
+ Using layer-by-layer assembly of polyaniline fibers in
+ the fast preparation of high performance fuel cell
+ Surface Pourbaix diagrams and oxygen reduction nanostructured membrane electrodes
+ activity of Pt, Ag and Ni(111) surfaces studied by DFT Marc Michel, Frank Ettingshausen, Frieder Scheiba, André
+ Heine A. Hansen, Jan Rossmeisl and Jens K. Nørskov, Wolz and Christina Roth, Phys. Chem. Chem. Phys., 2008
+ Phys. Chem. Chem. Phys., 2008 DOI: 10.1039/b802813n
+ DOI: 10.1039/b803956a
+
+ Stripping voltammetry of carbon monoxide oxidation on
+ Electrocatalytic mechanism and kinetics of SOMs stepped platinum single-crystal electrodes in alkaline
+ oxidation on ordered PtPb and PtBi intermetallic solution
+ compounds: DEMS and FTIRS study Gonzalo García and Marc T. M. Koper, Phys. Chem. Chem.
+ Hongsen Wang, Laif Alden, F. J. DiSalvo and Héctor D. Phys., 2008
+ Abruña, Phys. Chem. Chem. Phys., 2008 DOI: 10.1039/b803503m
+ DOI: 10.1039/b801473f
+
+ PtxRu1-x/Ru(0001) surface alloys—formation and atom
+ Combinatorial screening of PtTiMe ternary alloys for distribution
+ oxygen electroreduction H. E. Hoster, A. Bergbreiter, P. M. Erne, T. Hager, H.
+ Ting He and Eric Kreidler, Phys. Chem. Chem. Phys., Rauscher and R. J. Behm, Phys. Chem. Chem. Phys., 2008
+ 2008 DOI: 10.1039/b802169d
+ DOI: 10.1039/b802818b
+ PAPER www.rsc.org/pccp | Physical Chemistry Chemical Physics
+
+ Surface Pourbaix diagrams and oxygen reduction activity of Pt, Ag and
+ Ni(111) surfaces studied by DFTw
+ Heine A. Hansen, Jan Rossmeisl* and Jens K. Nørskov
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ Received 6th March 2008, Accepted 22nd April 2008
+ First published as an Advance Article on the web 27th May 2008
+ DOI: 10.1039/b803956a
+
+ Based on density functional theory calculations we investigate the electrochemically most stable
+ surface structures as a function of pH and electrostatic potential for Pt(111), Ag(111) and
+ Ni(111), and we construct surface Pourbaix diagrams. We study the oxygen reduction reaction
+ (ORR) on the diﬀerent surface structures and calculate the free energy of the intermediates. We
+ estimate their catalytic activity for ORR by determining the highest potential at which all ORR
+ reaction steps reduce the free energy. We obtain self-consistency in the sense that the surface is
+ stable under the potential at which that particular surface can perform ORR. Using the self
+ consistent surfaces, the activity of the very reactive Ni surface changes dramatically, whereas the
+ activity of the more noble catalysts Pt and Ag remains unchanged. The reason for this diﬀerence
+ is the oxidation of the reactive surface. Oxygen absorbed on the surface shifts the reactivity
+ towards the weak binding region, which in turn increases the activity. The oxidation state
+ of the surface and the ORR potential are constant versus the reversible hydrogen electrode
+ (RHE). The dissolution potential in acidic solution, on the other hand, is constant vs. the
+ standard hydrogen electrode (SHE). For Ag, this means that where the potential for
+ dissolution and ORR are about the same at pH = 0, Ag becomes more stable relative to RHE as
+ pH is increased. Hence the pH dependent stability oﬀers an explanation for the possible use of Ag
+ in alkaline fuel cell cathodes.
+
+ 1. Introduction reduction5 and how it is possible to improve the ORR activity
+ by alloying with other metals, e.g. Ni.6,7 Previous theoretical
+ Proton exchange membrane fuel cells are attracting consider- studies have focused on the relevant surface structure for Pt
+ able attention especially for transport applications. It is re- and other good ORR catalysts. But from such a study it is not
+ cognized that many of the major drawbacks for the PEM fuel clear why metals such as silver or nickel may be used success-
+ cell are related to the cathode reaction. The oxygen reduction fully in alkaline fuel cells but not in acidic PEM fuel cells.
+ reaction (ORR) at the cathode is irreversible and introduces a In heterogeneous catalysis the atomic structure of the
+ signiﬁcant potential drop.1,2 Furthermore, only Pt and Pt alloy catalyst surface is important because it determines the activity
+ catalysts have a reasonable activity and stability in the acid of sites on the surface. A Pourbaix diagram shows the most
+ environment. In alkaline fuel cells where the ﬂexibility con- stable bulk phase of an element in an aqueous environment as
+ cerning the cathode catalyst is much larger, non-precious function of pH and potential. In the present work we identify
+ metals like Ni and Ag can be used.3 From an atomistic point the most stable surface structures relevant for oxygen reduc-
+ of view less is known about alkaline oxygen reduction. Water tion on the (111) surfaces of Ag, Ni and Pt. We refer to the
+ splitting potentials in acid and alkaline electrolytes are known corresponding phase diagrams for the surfaces as surface
+ from cyclic voltammetry.4 However, the molecular structure Pourbaix diagrams. Furthermore, for the three diﬀerent me-
+ of the surface is not known. It is obvious that the molecular tals we determine the potential where surface catalysis starts
+ structures on the surface is dependent on the metal, potential playing a limiting role for ORR. This introduces a self-con-
+ and pH of the electrolyte. To understand ORR catalysis at the sistency problem, since the ORR potential will depend on the
+ atomic level it is important to determine the molecular struc- surface structure and the surface structure depends on the
+ ture of the surface in play. potential. Fortunately only a few surfaces are relevant for
+ The acidic cathode reaction has previously been studied ORR. In the context of steady state ORR the cathode surface
+ applying a model based on density functional theory (DFT) structure is independent of pH. In other words: the ORR
+ calculations. The theoretic model provides understanding on potentials versus the reversible hydrogen electrode (RHE) are
+ why platinum is the most eﬃcient elemental catalyst for oxygen the same in alkaline and acidic solution. Hence, we ﬁnd that
+ the reason for the activity of Ag and Ni in alkaline solution
+ Center for Atomic-scale Materials Design, Department of Physics, compared to acidic solution, is not related to a diﬀerent
+ Technical University of Denmark, DK-2800 Lyngby, Denmark surface structure, but rather related to higher dissolution
+ w Electronic supplementary information (ESI) available: Energies and
+ surface structures of the studies compounds. See DOI: 10.1039/ potential (vs. RHE) and better stability in alkaline solution
+ b803956a than in acidic solution.
+
+ 3722 | Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 This journal is 
+ c the Owner Societies 2008
+ 2. Methods described by neglecting DGﬁeld in the construction of the
+ surface Pourbaix diagram.10
+ 2.1 Surface Pourbaix diagrams We calculate DG0 by correcting the DFT energies for zero
+ We determine the most stable surfaces without molecular point energies and entropy via
+ oxygen present, as these are the relevant surfaces for the
+ DG0 = DE + DZPE  TDS, (8)
+ surface Pourbaix diagrams and normal cyclic voltammograms
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ (CV). To calculate the stability of a surface we use the concept where DE is the DFT energy and DZPE is the change in zero-
+ of the theoretical standard hydrogen electrode (SHE),5 which point energy of the adsorbates. We have used the zero point
+ has previously been shown to give reliable results for theore- energy of the adsorbates on Cu(111) obtained within the
+ tical cyclic voltammograms for hydrogen on Pt surfaces8 and harmonic approximation using the PW91 functional.11,12 DS
+ for predicted ORR activity for Pt alloys.6 The method is is approximated from the loss of entropy of the gas phase
+ summarized here. It is assumed the surface is in equilibrium molecules upon binding them to the surface.13,14 We note that
+ with protons and liquid water at 298 K, so that oxygen and the method described above could equally well have been
+ hydroxyl may be exchanged between the surface and a refer- formulated in terms of OH instead of H+, without changing
+ ence electrolyte through the following steps the results.
+ The free energy of a given molecular surface structure can
+ H2O(l) + * 2 HO* + H+(aq) + e (1)
+ be calculated as a function of potential USHE and pH from
+ and eqn (7). The structure with the lowest free energy at a given set
+ of conditions determines the surface structure. An example is
+ HO* 2 O* + H+(aq) + e, (2)
+ shown in Fig. 1, where the stability of diﬀerent Ag(111)
+ where * denotes a site on the catalyst surface and O* and HO* surfaces is plotted against potential at pH = 0. The lowest
+ denote oxygen and hydroxide adsorbed on a site. line determines the surface with the lowest free energy at a
+ The oxidation of water to O* and HO* depends on the given potential. The surface Pourbaix diagram in Fig. 2 is then
+ potential U and pH through the chemical potentials of H+ constructed by plotting the most stable surface as function of
+ and e. The reaction: pH and USHE.
+ For HO* and HOO* we have included the possible stabi-
+ H+(aq) + e 2 1/2H2(g) (3)
+ lization by forming hydrogen bonds to water by incorporating
+ has DG1 = 0 at standard conditions (pH = 0, p(H2) = 1 bar) the adsorbates in a hexagonal hydrogen bonded network with
+ deﬁning U = 0 VSHE. This allows us to calculate the free water. On Pt(111) this hexagonal water layer is known to be
+ energy of adsorbed O* and HO* at U = 0 V and pH = 0 stable and has been observed in UHV experiments.15,16 This
+ directly from the free energy of the reactions approach for including water has previously been used in
+ calculations.5,9 We adjust the water layer found on Pt to ﬁt
+ H2O(l) + * 2 HO* + 1/2H2(g) (4) Ni and Ag. The considered structures are shown in the ESI.w
+ HO* 2 O* + 1/2H2(g). (5) The theoretical reversible hydrogen electrode (RHE) can be
+ deﬁned by demanding that the equilibrium in reaction (3)
+ This has the advantage that H2(g) is much easier to handle deﬁnes URHE = 0 at all conditions. The potential versus the
+ computationally than solvated protons. Reactions (4) and (5) reversible hydrogen electrode becomes
+ deﬁne the free energy, DG0, of HO* and O* at zero pH and
+ zero potential vs. SHE. URHE = USHE + kB T ln10 pH/e. (9)
+ At ﬁnite pH and potential, the free energy of reaction (3) is
+ Clearly, at pH = 0, USHE = URHE and any ﬁxed potential vs.
+ (p(H2) = 1 bar)
+ RHE, e.g. the potential for reversible water oxidation will
+ DG = e USHE + kB T ln 10 pH, (6)
+ Since (4) and (5) are independent of pH and potential, we may
+ calculate the free energy of (1) and (2) at any pH and
+ potential from
+ G(HO*) = DG0(HO*)  e USHE  kB T ln 10 pH
+ + DGﬁeld, (7)
+ where DGﬁeld is the change in the adsorption energy due to the
+ electric ﬁeld in the electrochemical double layer at the cathode.
+ To ﬁrst order in the electric ﬁeld DGﬁeld = lE, where l is the
+ dipole moment of the adsorbate and E is the electric ﬁeld at the
+ position of the dipole. DGﬁeld has been studied in detail for
+ Pt(111),9,10 and the relative change in stability of O* and HO*
+ is less than 0.11 eV when the potential is increased from 0 to Fig. 1 Stability of O* and HO* on Ag(111) at pH = 0. Dissolution is
+ 1 V vs. SHE. Since the ﬁrst term in eqn (6) changes the relative spontaneous at URHE 4 0.80 V. Neglecting dissolution, a structure
+ stability of O* and HO* by 1 eV when the potential is with 1/6 ML HO stabilized by water forms at 0.93 V. The hydroxyl
+ increased by 1 V, the trends in adsorption energies are well coverage increases to 1/3 ML at 1.11 V.
+
+ This journal is 
+ c the Owner Societies 2008 Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 | 3723
+ The free energy of anion adsorption therefore depends on the
+ potential vs. SHE, rather than the potential vs. RHE. If HO*
+ and O* compete with spectator species for the free sites, then
+ this might change the surface coverage of HO* and O* as
+ function of potential versus the reversible hydrogen electrode
+ for diﬀerent pH. This eﬀect has not been considered in
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ this work.
+
+ 2.2 Calculation details
+ All calculations have been done within density functional
+ theory (DFT),17,18 with the RPBE functional19 for exchange
+ and correlation. The RPBE functional has been shown to
+ Fig. 2 Surface Pourbaix diagram for Ag(111). The dashed line at provide better19 adsorption energies than the closely related
+ URHE 0.8 V marks the potential of a good ORR catalyst under steady PBE20 functional. The Kohn–Sham equations18 have been
+ state conditions. It is seen that dissolution is a much larger problem in solved using a plane wave basis with a cutoﬀ of 350 eV for
+ acidic than in alkaline electrolytes, and that the coverage of the Ag the eigenstates and the densities have been described using a
+ surface is low at URHE 0.8 V. cutoﬀ corresponding to 1000 eV. The ionic cores are described
+ using Vanderbilt ultrasoft pseudo potentials,21 which give
+ show up as lines with a slope of kBT/e ln10 (59 mV/pH at faster convergence with respect to the plane wave basis set
+ 298 K) in the Pourbaix diagrams. A special case of this is the than norm conserving pseudo potentials.
+ formation of HO*, because by rewriting eqn (7) in terms of The adsorption energies on Ag, Pt and Ni(111) have been
+ URHE and neglecting the eﬀect of the electric ﬁeld, calculated using (22) and (23) supercells consisting of 3
+ close packed layers of metal atoms. The top metal layer is
+ G(HO*) = DG0(HO*)  e URHE, (10) allowed to relax and the two bottom layers are ﬁxed in their
+ bulk positions. The adsorbates are allowed to relax freely on
+ we can see that hydroxyl adsorbs at a ﬁxed potential vs. the
+ the surface, until the maximum component of the Cartesian
+ RHE. A similar argument holds for the adsorption of O*
+ forces is below 0.02 eV Å1. The periodically repeated slabs
+ formed from water, which means that the coverage and
+ have been separated by at least 12.4 Å of vacuum and the
+ structure of adsorbed O* and HO* at a given URHE are
+ dipoles of the images have been decoupled. The Brillouin zone
+ independent of pH within this model. As the potential of the
+ has been sampled using an [881] and a [1061]
+ cathode relative to the hydrogen electrode determines the fuel
+ Monkhorst-Pack special grid of k-points22 for the (22) and
+ cell potential, the coverage and structure of adsorbates at the
+ the (23) cells, respectively. The DFT calculations have been
+ cathode depend only on the fuel cell potential under steady
+ performed using Dacapo with the ASE interface on our local
+ state conditions and not on pH, provided we disregard dis-
+ Linux cluster supercomputer.23
+ solution and adsorption of the electrolyte ions.
+ The metals may dissolve in acidic or alkaline solution. The
+ free energy of dissolution has been estimated from standard 3. Results
+ reduction potentials and thermochemical data, as uniform
+ dissolution of a monolayer of metal atoms on the surface 3.1 Ag(111)
+ corresponds to dissolution of the bulk. When speaking of a To investigate the Ag(111) surface, diﬀerent structures of
+ process as spontaneous, it will be in the sense DG1(U) o 0, hydroxyl and oxygen on the surface have been considered.
+ which gives a conservative estimate of the stability vs. dissolu- In acidic solution, dissolution of Ag is spontaneous at poten-
+ tion. An example is dissolution of silver in acidic solution: tials above 0.80 V, see Fig. 1, so ORR on this surface is not
+ likely. In alkaline environment the dissolution process is24
+ Ag(s) 2 Ag+(aq) + e. (11)
+ Ag(s) + H2O(l) 2 AgO(aq) + 2H+(aq)+e, U1=2.2 V.
+ Since this process involves electrons but not protons, the free (13)
+ energy of dissolution of the metal surface depends on the
+ potential vs. SHE but not on pH. Hence the boundary between In alkaline solution at low potentials, the most stable surface
+ Ag and Ag+-ions is horizontal in a Pourbaix diagram. For- considered is the clean Ag(111) surface, showing that Ag is a
+ mation of 1/2 ML O on Ag(111) from H2O requires transfer of noble metal. At pH = 14, the free energy of dissolution in (13)
+ one electron per Ag atom. The formation of Ag+ ions also is negative for USHE 4 0.5 V for the clean (111) surface.
+ involves one electron. The diﬀerence in free energy of 1/2 ML Dissolution is therefore not as critical as in acidic solution, see
+ O on Ag and Ag+ ions therefore do not depend on the Fig. 2. Water oxidation starts at 0.93 V (RHE) forming a
+ potential, so the boundary becomes vertical in a Pourbaix structure with 1/6 ML HO* and 1/2 ML water. At 1.11 V
+ diagram. (RHE) the HO* coverage increases to 1/3 ML HO*. At
+ Adsorption of spectator ions from the solvent, e.g. anions, potentials above 1.19 V (RHE) hydroxyl is oxidized further
+ usually involves only electrons. to O*. At higher potentials we ﬁnd that as more oxygen or
+ hydroxyl is adsorbed on the surface, O atoms will sponta-
+ *+ Cl(aq) 2 Cl* + e (12) neously substitute Ag atoms on the surface when the surface is
+
+ 3724 | Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 This journal is 
+ c the Owner Societies 2008
+ relaxed. This may be interpreted as an onset of dissolution or
+ oxidation of the Ag(111) surface. We note that the substitution
+ is favored by 0.25 V relative to the alkaline dissolution process
+ at pH = 14. The pH and U range where the observed
+ substitution mechanism is favorable instead of alkaline
+ dissolution is shown in the Pourbaix diagram Fig. 2.
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ The substitution becomes spontaneous at potentials above
+ 1.44 V (RHE).
+ The potential of the onset of dissolution or oxidation is
+ determined by the details of the substituted Ag surface, and it
+ is very likely that surfaces with diﬀerent atomic conﬁgurations
+ turn out to be more stable than the ones we have considered—
+ for example, a surface oxide25,26 or even formation of bulk Fig. 3 Surface Pourbaix diagram for Pt(111). If DGﬁeld is neglected,
+ Ag2O which may form at potentials above 1.18 V (RHE). The the oxygen coverage increases gradually starting at 0.78 V (RHE). If
+ kinetics of the oxidation and dissolution mechanisms of the DGﬁeld is included as found by Karlberg et al.,9 1/3 ML OH is less than
+ Ag(111) surface is without the scope of the present paper. 0.05 eV more unstable than O* in the potential range 0.78 VRHE–0.84
+ We have added the potentials of the reversible hydrogen and VRHE (black area). We consider O* and HO* to be equally stable in
+ oxygen electrodes to the Pourbaix diagram to mark the this potential range within the accuracy of the calculations.
+ stability range of water at URHE = 0 V and URHE =
+ 1.23 V, respectively. We have also added a line at Recent DFT calculations including the electric ﬁeld in the
+ URHE = 0.80 V, because it is a realistic potential for a good double layer show that 1/3 ML hydroxyl in a hexagonal layer
+ ORR catalyst. We emphasize that the surface structure does of water is stable from 0.75 V (RHE) to 0.9 V (RHE), as a
+ not vary along the lines of constant URHE, if the surface does result of the electric ﬁeld stabilizing HO* relative to O*.9,10
+ not dissolve. This means that at URHE = 0.80 V, the This surface has also previously been found to be stable in
+ same surface structure will be relevant for ORR UHV.15,16
+ regardless of pH. Including the eﬀect of the electric ﬁeld from ref. 9, we ﬁnd
+ CV experiments in alkaline electrolytes show a reversible that hydroxyl in the water layer is unstable by less than 0.05 eV
+ peak around 0.3 V (RHE) on Ag(111), and at lower potentials relative to 1/4–1/3 ML O, in the potential range from 0.78 to
+ on Ag(100) and Ag(110).4,27 This peak has been suggested to 0.84 V (RHE). We therefore consider the stability of 1/3 ML
+ be caused by hydrogen adsorption, alkali metal deposition or hydroxyl and 1/3 ML O to be the same near 0.80 V (RHE)
+ oxidation of water to HO*.28 Recent EC-STM experiments within the accuracy of the calculations.
+ have shown that the Ag(111) surface is unmodiﬁed up to a
+ potential near 0.7 V (RHE), after which protrusions, which are 3.3 Ni(111)
+ assigned to 2D Ag2O nuclei, begin to emerge.29 The Ni(111) surface is quite reactive, and corrosion is a
+ Our calculations do not support the view that the CV peak problem in acidic as well as alkaline solutions. We consider
+ at 0.3 V (RHE) is due to HO* or H* on the ﬂat Ag(111) the acidic dissolution13 process
+ surface, as we ﬁnd water oxidation to start at 0.93 V (RHE).
+ To get HO* at 0.3 V therefore requires a stabilization of HO* Ni(s) 2 Ni2+(aq) + 2e, U1 = 0.257 V. (14)
+ by 0.63 eV relative to our calculations. Such stabilization 13,30,31
+ could, in principle, be caused by HO* adsorbing at steps or and the dominant alkaline corrosion process
+ defects rather than on the Ag(111) terraces. This is however an Ni(s) + 3H2O(l) 2 2e + 3H+(aq) + Ni(OH)3 (aq),
+ unlikely explanation for the existence of a peak at 0.3 V U1 = 0.63 V. (15)
+ (RHE), as the HO* coverage is reported to be 0.2–0.35
+ ML.4,27 We note that our theoretical HO* formation is in We ﬁnd that at URHE = 0 V, 1/4 ML H is adsorbed at the
+ good agreement with the high potential adsorption peak surface up to 0.14 V (RHE). Oxygen starts to adsorb at URHE
+ starting at 0.9 V (RHE) also observed in CV experiments.4 4 0.20 V, with 1/3 ML O* stabilized by water being the most
+ stable structure in the potential range from 0.34 V (RHE) to
+ 0.82 V (RHE). The highest resistance against corrosion is
+ 3.2 Pt(111)
+ obtained at pH = 9.9, where DG1 o 0 for URHE 4 0.38 V,
+ For Pt the surface structures have been investigated pre- as seen from Fig. 4 and 5. The free energy of formation for O*
+ viously.9,10 Here we have redone the calculations with the is 0.39 eV/O at 1/4 ML O coverage as calculated from (4) and
+ same setup as for Ag and Ni. At potentials below 0.78 V (5), which is in reasonable agreement with the experimental
+ (RHE) the pure Pt surface without adsorbates is the most value of 0.49  0.10 eV/O*.32
+ stable. Water is oxidized to O* at potentials above 0.78 V In contrast to Taylor et al.,33 we do not ﬁnd HO* or co
+ (RHE). From 0.78 V (RHE) to 1.0 V (RHE) the O coverage is adsorbed O* and HO* to be stable on the Ni(111)-surface.
+ 1/4 ML. At higher potentials the coverage increases gradually However we note that at 0.18 V the free energies of 1/4 ML
+ to 1/3 ML O, then 1/2 ML O etc., see the Pourbaix diagram H*, 1/4 ML O* and 1/6 ML HO* are equal within 0.1 eV. The
+ Fig. 3. Potentials near 1.5 V are required before standard diﬀerence could therefore be caused by diﬀerent functionals
+ dissolution becomes thermodynamically favored. and atomic structures of the adsorbates.
+
+ This journal is 
+ c the Owner Societies 2008 Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 | 3725
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ Fig. 4 The most stable Ni(111) surfaces at pH = 9.9. The resistance Fig. 5 Surface Pourbaix diagram for Ni(111) including alkaline and
+ against dissolution is at maximum at this potential because DG of the acidic dissolution. Dissolution is a problem in both acidic and alkaline
+ acidic and alkaline dissolution are equal at this potential. Neglecting electrolytes. The best resistance against dissolution is obtained at pH
+ dissolution, the oxygen coverage then increases gradually with 1/3 ML = 10, where dissolution becomes spontaneous for URHE 4 0.38 V.
+ O having a broad stability range from 0.34 V (RHE) to 0.82 V (RHE). Oxygen is adsorbed for URHE 4 0.20 V.
+ Dissolution is spontaneous for U 4 0.38 V (RHE).
+ hydronium ion in acid electrolytes to being H2O in alkaline
+ In UHV experiments oxygen on Ni(111) may form an electrolytes.
+ ordered
+ pﬃﬃﬃ pﬃﬃﬃp(22) structure with 0.25 ML coverage or a We now calculate the free energy of the intermediates in
+ ð 3  3ÞR30 -structure with 0.33 ML coverage.34 Oxidation eqn (17) or (19). We will consider ORR feasible as long as all
+ of the Ni(111) surface initiates at a coverage between 0.33 and reaction steps along the reaction decrease the free energy. We
+ 0.5 ML,32,34 suggesting that ORR on the metallic Ni surface determine the highest potential where this still holds, and refer
+ could occur on a surface with up to 1/2 ML O. Thermodyna- to this as the ORR potential. The ORR potential depends on
+ mically b-Ni(OH)2 is however the most stable nickel phase at the metal and surface structure, which means we have to ﬁnd
+ these conditions.30 the surface structure with the highest ORR potential that is
+ consistent with the stability of the surface structure. We use
+ 3.4 Oxygen reduction reaction
+ the fact that the most stable surface at a given potential found
+ We now consider the situation in the presence of molecular above will be one of the intermediates during the ORR. Free
+ oxygen. The aim is to determine the intermediates of the energy diagrams of the intermediates on Pt, Ag and Ni are
+ oxygen reduction reaction at the relevant surface for the shown in Fig. 6, 7 and 11 at the ORR potential and at 0 V
+ diﬀerent metals. In an acidic solution we write the electrode (RHE) and 1.23 V (RHE). The higher the ORR potential, the
+ reactions as: better the ORR catalyst.
+ Anode: It has previously been shown for Pt and Pt-alloys that the
+ ORR potential is determined by either reduction of HO* (the
+ H2 - 2H* - 2H+ + 2e (16)
+ last step in reaction 17) or the formation of OOH* (the ﬁrst
+ Cathode: step in reaction 17).9 For reactive surfaces the ﬁrst of the two is
+ rate determining and for noble surfaces the latter is rate
+ O2 + 4H+ + 4e - HOO* + 3H+ + 3e
+ - H2O + O* + 2H+ + 2e
+ - H2O+HO*+H++e - 2H2O
+ (17)
+ In an alkaline solution the same reactions can be expressed
+ with OH instead:
+ Anode:
+ 2OH + H2 - 2H* + 2OH - 2H2O + 2e (18)
+ Cathode:
+ O2 + 2H2O + 4e - HOO* + H2O + OH + 3e
+ - O* + H2O + 2OH + 2e
+ - HO* + 3OH + e - 4OH
+ (19) Fig. 6 Stability of the intermediates for the oxygen reduction reaction
+ on Pt(111). The stability of the intermediates has been corrected for
+ It is interesting to note that the adsorbed intermediates along the eﬀect of the electric ﬁeld using the results of Karlberg et al.9 The
+ the reaction coordinate are independent of the concentration formation of HOO* and desorption of HO* become exothermic at
+ of protons. The only change is the chemical potential of the nearly the same potential, in agreement with previous ﬁndings that Pt
+ protons, and that the proton donor changes from being H+ or is close to the optimal catalyst for ORR.
+
+ 3726 | Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 This journal is 
+ c the Owner Societies 2008
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ Fig. 7 Stability of intermediates for the oxygen reduction reaction on Fig. 9pﬃﬃﬃThepfree
+ ﬃﬃﬃ energy of the intermediates adsorbed at vacancies in
+ Ag(111). The formation of HOO* determines the overpotential, in Ni  3  3R30 O. All steps decrease the free energy at potentials
+ agreement with previous trend studies showing that Ag binds adsor- below 0.14 V. A water layer has been used to stabilize all intermediates
+ bates too weakly. The stability of the intermediates has been corrected as shown in Fig. 8. Without the water layer to stabilize O*, the self-
+ for the eﬀect of the electric ﬁeld using the results of Karlberg et al.9 consistent ORR potential is 0.26 V.
+
+ determining. Both reaction energies scale linearly with the The stability of the intermediates is shown in Fig. 6 at
+ oxygen binding energy, which determines a Sabatier volcano potentials 0.0, 0.75 and 1.23 V vs. RHE. The two potential
+ where the lowest overpotential is found for a material with the determining steps are O2(g) + H+ + e + * - OOH* and
+ optimal trade-oﬀ between strong and weak binding of oxygen. HO* + H+ + e - * + H2O(l).5 That these two steps
+ Pt is close to this optimum, Ni binds too strongly and Ag binds determine the same ORR potential reﬂects that Pt has a
+ just too weakly. However, previous analysis has been done for reactivity close to optimal, as increasing DG0 for one of the
+ the surface relevant for Pt. As seen above, the most stable steps will decrease DG0 for the other step due to the linear
+ surface of Ni at a given potential will be diﬀerent from the relations between the adsorption energies. Dissolution of Pt is
+ most stable Pt surface which, again, is diﬀerent from the Ag not a big problem since it requires USHE 4 1.2 V.
+ surface.
+ 3.4.2 ORR on Ag(111). We ﬁnd the Ag(111) surface to be
+ free of adsorbates up to 0.93 V (RHE), where 1/6 ML
+ hydroxyl is adsorbed, followed by additional HO* formation
+ 3.4.1 ORR on Pt(111). We have previously studied ORR to form a structure with 1/3 ML hydroxyl at 1.11 V. At any
+ on Pt in details. The results are summarized here for compar- reasonable overpotential we would therefore expect the total
+ ison with Ag and Ni. The most stable surface in the relevant coverage on the surface to be very low. At 1/6 ML total
+ potential region is O* and the mixed HO*-water layer as coverage the rate limiting step is the formation of HOO*,
+ discussed in details above. We therefore use these two surfaces which becomes exothermic at potentials below 0.73 V. This is
+ to represent the two last ORR intermediates in eqn (17). We in agreement with previous estimations based on DFT calcu-
+ construct the OOH* intermediate from the HO*-water layer lations of the oxygen binding energy on Ag(111).5 The adsorp-
+ by inserting an oxygen atom between HO* and the surface. tion of HOO* being rate limiting reﬂects the fact that Ag is a
+
+ pﬃﬃﬃ pﬃﬃﬃ
+ Fig. 8 Intermediates forming at vacancies on ﬃﬃﬃ 3  3R30 O. (a) + (b): The HOO* intermediates dissociates into hydroxyl and oxygen.
+ pﬃﬃﬃNi p
+ (c) + (d): Adsorbed oxygen completing the 3  3R30 O structure. (e) + (f): Adsorbed hydroxyl. (g) + (h): The vacancy. The Ni atoms and
+ the molecules adsorbed directly at the surface are represented by spaceﬁll whereas the surrounding water molecules, which are not in direct contact
+ with the Ni surface, are represented by enlarged CPK spheres. Ni atoms are blue, O atoms red and H atoms white.
+
+ This journal is 
+ c the Owner Societies 2008 Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 | 3727
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ pﬃﬃﬃ pﬃﬃﬃ
+ Fig. 10 Intermediates
+ pﬃﬃﬃ pﬃﬃﬃ adsorbed at free sites on Ni  3  3R30 O. (a) + (b): HOO*. (c) + (d): O*, (e) + (f): HO*, (g) + (f):
+ The Ni  3  3R30 O surface.
+
+ noble metal that binds the intermediates too weakly relative to on this surface. All steps are exothermic for URHE o 0.14 V
+ the optimal ORR catalyst. Ag therefore seems like a good with the rate limiting step being a reduction of O* to HO*.
+ alternative to Pt, however the problem in acidic solution is pﬃﬃAnother
+ ﬃ pﬃﬃﬃ possible reaction mechanism on the
+ dissolution and not activity. Dissolution involves only electron 3  3R30 O surface is that O2 adsorbs and is reduced
+ transfer to Ag, which means that the relevant dissolution at free sites on the surface as shown in Fig. 10. Because of
+ potential will not change vs. SHE. Since ORR in alkaline repulsion between adsorbed oxygen and H2O adsorbed at the
+ environment runs at lower potentials vs. SHE, Ag-dissolution top sites, a H2O–HO* bonding network directly on the surface
+ becomes less of a problem. is rather unstable. We ﬁnd HO* to be the most stable with the
+ Assuming the eﬀect of the electric ﬁeld in the dipole layer is water layer placed above the surface, with hydrogen bonds
+ similar on Pt(111) and Ag(111), the electric ﬁeld destabilizes between the surface and the water layer. A similar structure is
+ O* by ca. 0.04 eV and stabilizes HO* by ca. 0.06 eV at the found to be the most stable for O* and HOO*, except that it
+ ORR potential. The adsorption energy of HOO*, which has been possible to include HOO* into the water layer, as it
+ determines the overpotential in this model, is destabilized by protrudes from the surface. When HOO* is included in the
+ ca. 0.01 eV by the electric ﬁeld. The corrections due to the water layer and allowed to relax, hydrogen moves from HOO*
+ electric ﬁeld are therefore too small to change the qualitative to a nearby water molecule, forming a H3O molecule. The
+ picture of ORR on Ag(111). The free energy of the intermedi- H–O bond in H3O is 1.05 Å and the H–OO* bond is 1.51 Å.
+ ates is shown at diﬀerent potentials in Fig. 7 including the The free energy of the intermediates is shown in Fig. 11. The
+ corrections due to the potential. free energies of O* and HO* have increased signiﬁcantly
+ compared to the clean Ni(111) surface, making the surface
+ much more noble. The signiﬁcantly increased interaction
+ 3.4.3 ORR on Ni(111). On the clean Ni(111) surface O2
+ between adsorbates may be rationalized by the fact that the
+ dissociates easily, so the rate limiting step on Ni at very low
+ coverage is reduction of O* to HO* or HO* to H2O. With a
+ water layer included to stabilize HO* on the surface, we ﬁnd
+ DG0(HO*) = 0.27 eV and DG0(O*) = 0.41 eV. All reduction
+ steps are therefore exothermic at URHE o 0.14 V, which shows
+ that the clean Ni(111) surface is too reactive to be a good ORR
+ catalyst. From the surface Pourbaix diagram we would how-
+ ever expect some oxygen at the surface at higher potentials.
+ This changes the adsorption energies due to adsorbate inter-
+ actions.
+ To take adsorbate pﬃﬃﬃinteractions
+ pﬃﬃﬃ into account we consider
+ ORR involving the 3  3R30 O surface, as it is the most
+ stable in the potential range from 0.33 to 0.82 V (RHE). The
+ oxygen reduction reaction might occur by adsorption
+ and
+ p ﬃﬃﬃ subsequent
+ pﬃﬃﬃ reduction of O2 at vacancies in the
+ Fig. 11 Free energy of the intermediates along
+ pﬃﬃﬃ the
+ pﬃﬃﬃ reaction path (17)
+ 3  3R30  O structure, as shown in Fig. 8. The free 
+ or (19) adsorbed at the free sites on Ni  3  3R30  O. Because
+ energy of the intermediates is shown in Fig. 9. the formation of HOO* limits the ORR potential, the overpotential
+ We ﬁnd that spectator O* makes the Ni(111) surface a bit could be reduced if thepbinding
+ ﬃﬃﬃ pﬃﬃﬃ energies could be increased. If O2
+ more noble because the binding energies of O* and HO* are dissociates easily on the 3  3R30 O surface, the overpotential is
+ decreased by ca. 0.1 eV. The HOO* intermediate dissociates also decreased.
+
+ 3728 | Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 This journal is 
+ c the Owner Societies 2008
+ adsorbates bind to the same Ni atoms on the surface. The rate = 0 in the dissolution region and as pH is increased the ORR
+ limiting step is the formation of HOO*, which is exothermic at potential line moves further and further away from dissolu-
+ potentials below 0.40 V (RHE). The binding free energies for tion, as shown in Fig. 2. The stability thereby oﬀers an
+ oxygen and hydroxyl are 1.64 and 0.80 eV respectively. The O* explanation of the possible use of Ag in alkaline fuel cell
+ and HO* binding energy on Ni(111) with 1/3 ML O suggests cathodes.
+ that this surface is a good ORR catalyst comparable to Pt, but
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ the binding energy of HOO* is weaker than that of Pt.
+ Formation of HOO* therefore becomes the rate limiting Acknowledgements
+ step on Ni.
+ An alternative to the OOH formation mechanism in CAMD is funded by the Lundbeck foundation. This work was
+ eqn (17) or (19) is that oxygen dissociates on the surface. An supported by the Danish Center for Scientiﬁc Computing
+ estimate of the O2 dissociation barrier, based on the oxygen through grant no. HDW-1103-06. The work is also supported
+ binding energy and the Brøndsted–Evans–Polany relationship by EU and NABIT grant no. 2106-04-0039 through the
+ between the adsorption energy and the energy,35 Speciﬁc Target Project Apollon-B grant no. MMP3-CT-
+ pﬃﬃactivation
+ ﬃ pﬃﬃﬃ  2006-033228.
+ suggests that dissociation on the Ni  3  3R30  O sur-
+ face is non-activated. Taking the dissociation reaction path
+ into consideration increases the ORR potential to a value close
+ to that of Ag and Pt, References
+ pﬃﬃﬃbecause
+ pﬃﬃﬃ reduction of O* and HO* is
+ eﬃcient on the Ni  3  3R30 O surface. However, me- 1. N. M. Markovic and P. N. Ross, CATTECH, 2000, 4, 110.
+ tallic Ni will dissolve in alkaline solution at URHE = 0.7–0.8 2. G. Hoogers and D. Thompsett, CATTECH, 1999, 3, 106.
+ V, clariﬁed in Fig. 5. 3. J. Larminie and A. Dicks, Fuel cell systems explained, J. Wiley,
+ Chichester, West Sussex, 2003.
+ 4. B. B. Blizanac, P. N. Ross and N. M. Markovic, J. Phys. Chem. B,
+ 2006, 110, 4735–4741.
+ 4. Conclusion 5. J. K. Nørskov, J. Rossmeisl, A. Logadottir, L. Lindqvist,
+ J. R. Kitchin, T. Bligaard and H. Jonsson, J. Phys. Chem. B,
+ We have, based on DFT calculations, constructed surface 2004, 108, 17886–17892.
+ Pourbaix diagrams for Ag, Ni and Pt(111) surfaces at poten- 6. V. Stamenkovic, B. S. Mun, K. J. J. Mayrhofer, P. N. Ross,
+ tials relevant for oxygen reduction. These diagrams show the N. M. Markovic, J. Rossmeisl, J. Greeley and J. K. Nørskov,
+ most stable surface structure as function of pH and potential. Angew. Chem., Int. Ed., 2006, 45, 2897–2901.
+ 7. V. R. Stamenkovic, B. Fowler, B. S. Mun, G. F. Wang,
+ The surface structure is obviously important for the catalytic P. N. Ross, C. A. Lucas and N. M. Markovic, Science, 2007,
+ activity. The calculated values for the HO* formation poten- 315, 493–497.
+ tial is 0.86 V (RHE) for Pt and 0.93 V (RHE) for Ag, both in 8. G. S. Karlberg, T. F. Jaramillo, E. Skulason, J. Rossmeisl,
+ T. Bligaard and J. K. Nørskov, Phys. Rev. Lett., 2007, 99, 126101.
+ good agreement with experimental CV diagrams.4,7 It is im- 9. G. S. Karlberg, J. Rossmeisl and J. K. Nørskov, Phys. Chem.
+ portant to note that the coverage of O* and HO* is indepen- Chem. Phys., 2007, 9, 5158–5161.
+ dent of pH at a given potential vs. RHE whereas the potential 10. J. Rossmeisl, J. K. Nørskov, C. D. Taylor, M. J. Janik and
+ of dissolution is not. M. Neurock, J. Phys. Chem. B, 2006, 110, 21833–21839.
+ 11. S. Kandoi, A. A. Gokhale, L. C. Grabow, J. A. Dumesic and
+ We investigate oxygen reduction reaction on the diﬀerent M. Mavrikakis, Catal. Lett., 2004, 93, 93–100.
+ surface structures and calculate the free energy of the inter- 12. M. Mavrikakis, personal communication.
+ mediates along the ORR. We estimate their catalytic activity 13. R. C. Weast, CRC Hanbook of Chemistry and Physics, The
+ Chemical Rubber Company, Cleveland, OH, 49th edn,
+ for ORR by determining the highest potential at which all
+ 1968–1969.
+ ORR reaction steps reduce the free energy. We refer to this 14. P. W. Atkins, Physical Chemistry, Oxford University Press,
+ potential as the ORR-potential. By demanding that one of the Oxford, UK, 1998.
+ intermediates in ORR belongs to the most stable surface in the 15. H. Ogasawara, B. Brena, D. Nordlund, M. Nyberg,
+ A. Pelmenschikov, L. G. M. Petterson and A. Nilsson, Phys.
+ absence of molecular oxygen, it is possible to obtain self- Rev. Lett., 2002, 89, 276102.
+ consistency in the sense that the surface is stable at the surface 16. C. Clay, S. Haq and A. Hodgson, Phys. Rev. Lett., 2004, 92,
+ structure dependent ORR potential. The self-consistency 046102.
+ changes the activity of too reactive catalyst surfaces (Ni), 17. P. Hohenberg and W. Kohn, Phys. Rev., 1964, 136, B864–B871.
+ 18. W. Kohn and L. J. Sham, Phys. Rev., 1965, 140, A1133–A1138.
+ whereas the activity for a close to optimal catalyst (Pt) and 19. B. Hammer, L. B. Hansen and J. K. Nørskov, Phys. Rev. B:
+ the too noble catalyst (Ag) is unchanged. The reason for this Condens. Matter Mater. Phys., 1999, 59, 7413–7421.
+ change is that as the reactive surface is oxidized, the absorbed 20. J. P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett., 1996,
+ 77, 3865–3868.
+ oxygen shifts the reactivity towards the noble region, which in 21. D. Vanderbilt, Phys. Rev. B: Condens. Matter Mater. Phys., 1990,
+ turn increases the activity. This explains why Ni has catalytic 41, 7892–7895.
+ ORR activity but cannot be used in acidic PEM fuel cells. We 22. H. J. Monkhorst and J. D. Pack, Phys. Rev. B: Solid State, 1976,
+ ﬁnd that whereas there is no eﬀect of the pH on the coverage 13, 5188–5192.
+ 23. Dacapo is available from https://wiki.fysik.dtu.dk/dacapo, and
+ of adsorbates at the relevant ORR-potential, pH has a dra- ASE from https://wiki.fysik.dtu.dk/ase. The cluster consists of
+ matic eﬀect on the dissolution potential relative to the ORR Intel Pentium-4 PC’s and AMD Opteron servers: https://
+ potential. In the case of Ni the ORR-potential line (U = 0.8 V wiki.fysik.dtu.dk/niﬂheim/Hardware.
+ (RHE) in Fig. 5) is still in the dissolution area at pH = 14, 24. M. Pourbaix, Atlas of Electrochemical Equilibria, Oxford, New
+ York, Pergamon Press, 1966.
+ which means that for Ni the stability limits the ORR-potential. 25. G. Rovida, F. Pratesi, M. Magliett and E. Ferroni, J. Vac. Sci.
+ For Ag the line of 0.8 V (RHE) in the Pourbaix starts for pH Technol., 1972, 9, 796.
+
+ This journal is 
+ c the Owner Societies 2008 Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 | 3729
+ 26. J. Schnadt, A. Michaelides, J. Knudsen, R. T. Vang, K. Reuter, 31. C. F. Baes and R. E. Mesmer, The Hydrolysis of Cations, Krieger
+ E. Lægsgaard, M. Scheﬄer and F. Besenbacher, Phys. Rev. Lett., Publishing Company, Malabar, FL, 1986.
+ 2006, 96, 146101. 32. J. T. Stuckless, C. E. Wartnaby, N. Al-Sarraf, St. J. B. Dixon-
+ 27. S. L. Horswell, A. L. N. Pinheiro, E. R. Savinova, Warren, M. Kovar and D. A. King, J. Chem. Phys., 1997, 106,
+ M. Danckwerts, B. Pettinger, M.-S. Zei and G. Ertl, Langmuir, 2012–2030.
+ 2004, 20, 10970–10981. 33. C. Taylor, R. G. Kelly and M. Neurock, J. Electrochem. Soc.,
+ 28. E. R. Savinova, A. Scheybal, M. Danckwerts, U. Wild, 2006, 153, E207–E214.
+Published on 27 May 2008. Downloaded by The University of Tokyo on 11/26/2025 10:23:00 AM.
+
+ B. Pettinger, K. Doblhofer, R. Schlögl and G. Ertl, Faraday 34. A. R. Kortan and R. L. Park, Phys. Rev. B: Condens. Matter
+ Discuss., 2002, 121, 181–198. Mater. Phys., 1981, 23, 6340–6347.
+ 29. V. Maurice, L. H. Klein, H. H. Strehblow and P. Marcus, J. Phys. 35. J. K. Nørskov, T. Bligaard, A. Logadottir, S. Bahn, L. B. Hansen,
+ Chem. C, 2007, 111, 16351–16361. M. Bollinger, H. Bengaard, B. Hammer, Z. Sljivancanin,
+ 30. B. Beverskog and I. Puigdomenech, Corros. Sci., 1997, 39, M. Mavrikakis, Y. Xu, S. Dahl and C. J. H. Jacobsen, J. Catal.,
+ 969–980. 2002, 209, 275–278.
+
+ 3730 | Phys. Chem. Chem. Phys., 2008, 10, 3722–3730 This journal is 
+ c the Owner Societies 2008

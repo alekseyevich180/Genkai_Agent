@@ -1,0 +1,38 @@
+这次抽到的关键信息包括：
+
+在 nchem.121_conditions_trimmed_table.csv 里：
+
+- 建模关键词：surface reactions, catalytic activity, electronic structure, composition, structure
+
+在 nchem.121_conditions_trimmed_surface_relations.jsonl 里：
+
+- 材料：
+  - 未提取
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - 未提取
+- 性能：
+  - 未提取
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - catalytic reactions
+  - computational methods
+  - catalysts
+  - electronic structure
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape
+  - surface_cluster_builder
+  - single_atom_site
+  - doped_surface
+  - surface_functionalization
+  - slab_generation

@@ -1,0 +1,69 @@
+{
+  "id": "surface_relations",
+  "title": "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+  "text": "Strategies to Improve the Oxygen Reduction Reaction Activity on\nPt−Bi Bimetallic Catalysts: A Density Functional Theory Study\nYan-Ping Zhang, Zi-Xiang Su, He-He Wei, Zhi-Qiang Wang,* and Xue-Qing Gong*\nCite This: J. Phys. Chem. Lett. 2023, 14, 1990−1998 Read Online\n\nABSTRACT: Decreasing the level of use of Pt in proton exchange membrane fuel cells is of\ngreat research interest both academically and industrially. In this work, we systematically\nstudied the oxygen reduction reaction (ORR) following the four-electron association\nmechanism at various Pt−Bi surfaces with density functional theory calculations. The results\nDownloaded via UNIV OF TOKYO on November 26, 2025 at 10:58:26 (UTC).\n\nshowed that the introduction of Bi changes the potential-determining step of ORR. Moreover,\nthe hydroxy adsorption free energy (GOH*) can be used as a descriptor of ORR activity, and\n0.74 eV is the ideal GOH* for it to reach its maximum. Notably, we also found that the tensile\nstrain introduced by Bi and electron transfer between Pt and Bi synergize to modulate the d-\nband of Pt to contract, shift downward, and break the 5d96s1 valence electron configuration of\nPt, and accordingly, PtBi(100), with the lowest d-band center, gives the best ORR activity,\nwhich is even slightly higher than that of Pt(111).\n\nW ith the global trend of minimizing fossil fuel use and the\ndevelopment of sustainable technologies, electrocata-\nlytic energy conversion processes have become increasingly\ncathode catalyst in fuel cells, a high loading of Pt is often\nrequired to compensate for the large overpotential caused by\nthe slow ORR process, which may even result in an 8-fold\nimportant. Specifically, proton exchange membrane fuel cells higher Pt loading on the cathode than on the anode.6 As a\n(PEMFCs) can act as a clean and efficient energy source by result, electrocatalysts usually account for up to 50% of the cost\nconverting chemical energy into electrical energy and have of fuel cells.16,17 In addition, the cathode Pt catalysts of fuel\ngarnered attention worldwide.1−3 However, the high cost and cells are also relatively easy to lead to poisoning under long-\nlimited catalyst lifetime have significantly restricted the term operating conditions, which then caused the conversion\ncommercial application of PEMFCs.4 Moreover, the relatively efficiency to decrease and caused poor tolerance.18,19\nslow kinetics of oxygen reduction reaction (ORR) on the In recent years, more and more studies have been devoted to\ncathode of PEMFCs, which usually requires a higher modulating Pt surface structures and electronic properties to\noverpotential to meet the actual current density, still makes achieve increased activities by doping with other species. For\nit difficult for PEMFCs to achieve high conversion example, by constructing non-noble metal (M)-doped alloys\nefficiencies.5,6 Therefore, the development of new catalytic (Pt-M), one can obtain the ORR catalyst with high activity but\nelectrode materials, in particular cathodes, with high perform- a with significantly reduced amount of Pt.20,21 It has been\nance, high durability, and low cost has become a hot research shown experimentally that Pt usually forms alloys with metals\ntopic for PEMFCs. such as Ni, Co, and Bi, and these alloy catalysts exhibited\nAccording to previous studies,7,8 the ORR process in an acid excellent activities in acidic ORR.22−25 In particular, Huang\nsolution usually involves the two-electron reduction of O2 to and co-workers26 prepared hexagonal PtBi alloy nanoplates by\nH2O2 and the four-electron reduction to H2O. The two- colloidal chemistry methods and showed that such alloy\nelectron reaction pathway can be simply written as O2 + 2(H+ catalysts exhibited significantly enhanced electrocatalytic\n+ e−) → H2O2, and for the four-electron ORR path, i.e., O2 + activity toward ORR compared with other PtBi nanomaterials,\n4(H+ + e−) → 2H2O, it proceeds through a dissociation which was mainly attributed to their unique two-dimensional\nmechanism or an association mechanism to gradually reduce nanostructure, and they also confirmed that the ORR process\noxygen species to water;9 they both give rise to the electric\npotential for the fuel cell.10 The catalysts used for ORR are Received: November 15, 2022\nusually Pt-based, non-Pt metal-based, and nonmetallic carbon- Accepted: January 20, 2023\nbased materials.11−13 For the Pt-based catalysts, which are Published: February 16, 2023\nconsidered to be the most efficient ORR catalysts, the surface-\npromoted ORR process is believed to follow the four-electron\nmechanism.14,15 Accordingly, for the practical use of the",
+  "extraction": {
+    "materials": [
+      "Pt",
+      "Bi",
+      "PtBi alloy"
+    ],
+    "material_parameters": [
+      "high loading",
+      "low cost"
+    ],
+    "surfaces": [
+      "PtBi(100)",
+      "Pt(111)"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [
+      "Bi"
+    ],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [
+      "hydroxy"
+    ],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [
+      "*O2",
+      "*H2O2",
+      "*H2O"
+    ],
+    "products": [
+      "H2O",
+      "H2O2"
+    ],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "ORR activity",
+      "d-band center"
+    ],
+    "reaction_parameters": [
+      "temperature",
+      "pressure",
+      "atmosphere"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "electrocatalysis",
+      "bimetallic catalysts"
+    ],
+    "recommended_modeling_tasks": [
+      "doped_surface",
+      "vacancy_landscape"
+    ],
+    "applications": [
+      "proton exchange membrane fuel cells",
+      "electrocatalytic energy conversion"
+    ],
+    "links": []
+  }
+}

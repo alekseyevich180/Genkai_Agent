@@ -6,11 +6,15 @@ from pathlib import Path
 
 try:
     from .common import chat_completion, extract_json_block, load_records
+    from .parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 except ImportError:  # pragma: no cover - direct script execution
     from common import chat_completion, extract_json_block, load_records
+    from parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 
 
 def build_prompt(title: str, text: str) -> str:
+    registry_hint = render_registry_prompt_hint(load_surface_parameter_registry())
+    registry_section = f"\n\n{registry_hint}" if registry_hint else ""
     schema = {
         "materials": [],
         "material_parameters": [],
@@ -81,6 +85,7 @@ Title:
 
 Passage:
 {text}
+{registry_section}
 """.strip()
 
 

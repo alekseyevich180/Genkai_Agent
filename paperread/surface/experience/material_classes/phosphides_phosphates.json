@@ -1,12 +1,151 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "phosphides_phosphates",
-  "updated_at": "2026-06-30T06:54:23.056827+00:00",
+  "updated_at": "2026-07-06T07:30:22.304945+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "terms": 4,
+    "known_useful": 1,
+    "unknown": 3
   },
-  "entries": []
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "copper",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "phosphides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "operando X-ray absorption spectroscopy",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Pt",
+        "count": 2
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "nanoparticle",
+        "count": 2
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Co, Pt}",
+        "count": 2
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Pt",
+        "count": 2
+      }
+    ],
+    "components": [
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "copper",
+        "count": 1
+      },
+      {
+        "term": "phosphides",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "CoPt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ]
+    },
+    {
+      "term": "copper",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "operando X-ray absorption spectroscopy",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja511559d 1..9"
+      ]
+    },
+    {
+      "term": "phosphides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    }
+  ]
 }

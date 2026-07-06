@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "material_class": "other_inorganic_materials",
+  "updated_at": "2026-07-06T06:21:58.453086+00:00",
+  "summary": {
+    "terms": 23,
+    "known_useful": 3,
+    "unknown": 20,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+      "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "CdN4C0-gra",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+        "CdN4C0-gra"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Cr2O3",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "Cr2O3"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Bi",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "bimetallic cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Bismuth (Bi)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Cd",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ],
+      "count": 1
+    },
+    {
+      "term": "CdN0C4-gra",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "clean surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Cr2O3(001)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Cr2O3(012)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "gold",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Hg",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "HgO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "KOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Mn3O4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
+      ],
+      "count": 1
+    },
+    {
+      "term": "NaOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Noble metal",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Noble metal"
+      ],
+      "count": 1
+    },
+    {
+      "term": "non-precious metal catalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ],
+      "count": 1
+    },
+    {
+      "term": "palladium",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Silver",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "tetrahedral cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ],
+      "count": 1
+    },
+    {
+      "term": "transition metal-based catalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    },
+    {
+      "term": "UNCD",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv"
+      ],
+      "contexts": [
+        "Pd4, Pd6, Pd17 clusters"
+      ],
+      "count": 1
+    }
+  ]
+}

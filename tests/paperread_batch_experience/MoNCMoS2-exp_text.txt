@@ -1,0 +1,549 @@
+FULL PAPER
+Batteries www.afm-journal.de
+
+Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER,
+OER, ORR, and Zn–Air Batteries
+Ibrahim Saana Amiinu, Zonghua Pu, Xiaobo Liu, Kwadwo Asare Owusu,
+Hellen Gabriela Rivera Monestel, Felix Ofori Boakye, Haining Zhang, and Shichun Mu*
+
+ batteries.[3,4] At present, developing a
+Replacement of noble-metal platinum catalysts with cheaper, operationally practical and economically viable electro-
+stable, and highly efficient electrocatalysts holds huge potential for large- catalyst with high stability and enhanced
+scale implementation of clean energy devices. Metal–organic frameworks performance still remains as a major task.
+(MOFs) and metal dichalcogenides (MDs) offer rich platforms for design of Platinum and its derivatives are by far the
+ most effective electrocatalysts for ORR and
+highly active electrocatalysts owing to their flexibility, ultrahigh surface area,
+ HER.[1–4] However, such noble materials
+hierarchical pore structures, and high catalytic activity. Herein, an advanced are very costly and also lack the long-term
+electrocatalyst based on a vertically aligned MoS2 nanosheet encapsulated operational stability and/or immunity
+Mo–N/C framework with interfacial Mo–N coupling centers is reported. The from fuel oxidation molecules.[5,6] Regard-
+hybrid structure exhibits robust multifunctional electrocatalytic activity and less of any challenges, developing an
+ efficient, durable, and non-noble electro-
+stability toward the hydrogen evolution reaction, oxygen evolution reaction,
+ catalyst is extremely desirable for sustain-
+and oxygen reduction reaction. Interestingly, it further displays high-perfor- able and large scale implementation of
+mance of Zn–air batteries as a cathode electrocatalyst with a high power clean energy devices. Alternatively, non-
+density of ≈196.4 mW cm−2 and a voltaic efficiency of ≈63 % at 5 mA cm−2, metallic and cheap earth-abundant metal-
+as well as excellent cycling stability even after 48 h at 25 mA cm−2. Such based electrocatalysts have been rigorously
+outstanding electrocatalytic properties stem from the synergistic effect of the researched for such purposes.[1–6]
+ On the one hand, a metal sulfide such
+distinct chemical composition, the unique three-phase active sites, and the
+ as molybdenum disulfide (MoS2) is widely
+hierarchical pore framework for fast mass transport. This work is expected to applied as an industrial hydrodesulfuriza-
+inspire the design of advanced and performance-oriented MOF/MD hybrid- tion catalyst.[7] Owing to the accessibility
+based electrocatalysts for wider application in electrochemical energy devices. of its abundantly exposed (10–10) plane
+ active sites, MoS2 has also been inves-
+ tigated as a promising low-cost electro-
+1. Introduction catalyst for HER.[8–10] Previous studies have demonstrated that
+ MoS2 with a 1T crystalline phase could execute high catalytic
+The growing demand for renewable and cleaner energy has activity regardless of any oxidation at the active edges.[11–14] The
+prompted a worldwide search for ecofriendly, economically sus- catalytic activity of MoS2 nanosheets increases with decreasing
+tainable, and highly efficient energy technologies. Hydrogen thickness and could even surpass that of edge-rich pyramid
+evolution reaction (HER) is an important kinetic process for MoS2 nanoplates.[15,16] In addition to the active site at the
+hydrogen production, which has the potentials to replace fossil edges, recent studies demonstrate that S-vacancies and grain
+fuels.[1,2] Similarly, efficient oxygen reduction reaction (ORR) boundaries of MoS2 films could also effectively act as active
+and oxygen evolution reaction (OER) are vital in the renewable sites and contribute to the catalytic activity.[10] Despite pos-
+energy platform particularly for fuel cells and rechargeable sessing such abundant catalytic sites, MoS2 and its derivatives
+ are mainly applied as HER catalysts. The composite structure
+ of MoS2 nanosheets and nanoplates has also been reported as
+Dr. I. S. Amiinu, Z. Pu, X. Liu, H. G. R. Monestel,
+F. O. Boakye, Prof. H. Zhang, Prof. S. Mu a high capacity electrode for both sodium-ion[17] and lithium-
+State Key Laboratory of Advanced Technology ion[18] batteries, and more recently as an electrocatalyst for
+for Materials Synthesis and Processing ORR.[19,20] Surprisingly, to our knowledge, the application of
+Wuhan University of Technology MoS2-based heterostructures as a multipurpose electrocata-
+Wuhan 430070, P. R. China
+E-mail: msc@whut.edu.cn
+ lyst particularly for OER and zinc–air batteries is still lacking.
+K. A. Owusu
+ Nonetheless, Zhang et al.[21] recently reported an MoS2/Ni3S2-
+WUT-Harvard Joint Nano Key Laboratory based heterostructure for complete water splitting in which
+Wuhan University of Technology the interface between MoS2 and NiO is regarded to strongly
+Wuhan 430070, P. R. China contribute to the enhanced OER activity. This further reveals
+ The ORCID identification number(s) for the author(s) of this article that engineered interfaces of MoS2 could play a crucial role in
+ can be found under https://doi.org/10.1002/adfm.201702300. enhancing the catalytic activity of MoS2 composites. Undoubt-
+DOI: 10.1002/adfm.201702300 edly, the abundant active sites of MoS2 could be structurally
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (1 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+tailored to design cheap and high performance-oriented by carbonization. The X-ray diffraction (XRD) pattern of as-
+electrodes. obtained N/C (Figure 2a) shows disappearance of all the sharp
+ On the other hand, zeolitic imidazole frameworks (ZIFs), a diffraction peaks of the pristine ZIF (Figure S2a, Supporting
+subclass of metal–organic frameworks, have been recognized Information). Instead, new broad peaks emerge at ≈23.7°
+as suitable precursors for synthesis of structure-tailored nano- and ≈43.8°, corresponding to the (002) and (101) diffraction
+carbon frameworks owing to their versatile surface geometry, planes of carbon with a low degree of graphitization.[24,25] The
+flexibility, abundant pores, and high specific surface area.[2,22–24] new peaks in the diffraction pattern of Mo–N/C@MoS2 can
+The structural adjustability of ZIFs offers rich platforms to be attributed to 2H-MoS2[17] and MoN.[26] The (002) and (100)
+design functional materials for applications in several fields facets of MoS2 nanosheets and neighboring Mo–N coupling
+including rechargeable batteries,[3,24] supercapacitors,[25] and centers at the N/C surface constitute an interactive interface
+fuel cells.[4,22,23] Highly graphitized and amorphous carbon within the hybrid structure. The degree of graphitization was
+frameworks or an integrated structure of quasi-amorphous also probed by Raman spectroscopy. As shown in Figure 2b,
+carbon with graphitic edge planes can be prepared through N/C possesses the D- and G-peaks of a typical carbon material
+direct carbonization of ZIFs.[22–25] However, in such carbon with a low degree of graphitization,[24] while Mo–N/C@MoS2
+frameworks, the micropores may limit the diffusion and mass has additional peaks assignable to the Mo-coupling phases.
+transport of ionic species, and a very high degree of graphitiza- The peak intensity ratio (ID/IG) of N/C is ≈1.12 but decreases
+tion could lead to collapse of pores and active sites.[25,26] None- to ≈1.01 for Mo–N/C@MoS2, owing to the thermally induced
+theless, the coordination chemistry between organic deriva- metal (Mo) catalyzed graphitization.[25]
+tives and metal ion clusters can be rationalized to effectively The X-ray photoelectron spectroscopy (XPS) survey scan
+tune the microstructure and directly influence the active sites, of Mo–N/C@MoS2 displays well-resolved peaks of C, N, Mo,
+making ZIFs highly versatile for the design of multifunctional S, and O species as shown in Figure S2b in the Supporting
+materials. Information. The amount of doped-N is higher in Mo–N/C@
+ Herein, we report the synthesis of a highly active and very MoS2 (≈17.7 at%) than N/C (≈10.2 at%), owing to the thio-
+stable electrocatalyst with an integrated advantage of the abun- urea in the precursor and thermal decomposition of the CN
+dant active site of MoS2 nanosheets and the rich doped-N bonds in N/C, respectively.[25,27] The deconvoluted C 1s peak
+induced active sites of nanocarbon frameworks. To this end, (Figure 2c) shows subpeaks of sp2-hybridized CC/CC
+a layered MoS2 nanosheet array with hierarchically intercon- (≈284.1 eV), CN (≈285.6 eV), and CO (≈286.6 eV) species.
+nected pore networks is vertically grown over an N-doped nano- The deconvoluted N 1s peak (Figure 2d) also reveals subpeaks
+carbon framework through a facile procedure, resulting in the of pyridinic (pyri-N, ≈395.2 eV), graphitic (grap-N, ≈396.2 eV),
+formation of metal-N/C coordination centers at the interface. and pyrrolic (pyrr-N, ≈398.5 eV) nitrogen species. The N1s sub-
+ peak at the binding energy of ≈394.2 eV can be attributed to the
+ Mo–N coupling phase. The high concentration of pyri-N can
+2. Structure and Composition of Electrocatalysts improve electrical conductivity and surface wettability, whereas
+ the grap-N is expected to boost the diffusion-limited current
+The electrocatalyst formation (Figure 1) is primarily driven density.[28–30] For pyrr-N, despite being widely regarded to have
+by the room temperature crystallization of organometallic little impact on catalytic activity, coupling pyrr-N with pyri-N
+complexes through the coordination reaction between the could improve catalytic activity toward ORR.[31,32] As displayed
+metal ion clusters and organic ligands, and subsequently in Figure 2e, Mo also possesses two main subpeaks of Mo 3d3/2
+
+Figure 1. Schematics for the synthesis of Mo–N/C@MoS2 and corresponding TEM images; scale: 50 nm. a) Room-temperature self-assembly of
+metal–organic clusters into ZIF-8. b) Carbonization of ZIF-8 in to N-doped carbon framework (N/C), followed by hydrothermal evolution of vertically
+aligned MoS2 nanosheet array. c) Final carbonization leads to the formation of the Mo–N/C@MoS2 hybrid.
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (2 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+Figure 2. Microstructure and chemical composition of Mo–N/C@MoS2: a) X-ray diffraction patterns of Mo–N/C@MoS2 and N/C. b) Raman spectra
+of Mo–N/C@MoS2 and N/C. X-ray photoelectron spectra of c) C 1s, d) N 1s, e) Mo 3d, and f) S 2p.
+
+(≈232.4 eV) and Mo 3d5/2 (≈229.3 eV) as well as a minor subpeak are more distinct from the magnification TEM and the corre-
+for oxidized-Mo (Mo+6, ≈235.6 eV). In the case of S (Figure 2f), sponding fast Fourier transform (FFT) images marked as 1−3.
+two subpeaks emerge as S 2p3/2 (terminal S2– and S22–) and S Field emission scanning electron microscopy (FESEM) images
+2p1/2 (bridging S22–) at ≈162.25 and ≈163.5 eV, respectively.[8,33] of Mo–N/C@MoS2 (Figure S6, Supporting Information) further
+Oxidized sulfur (SO, typically at ≈167.94 ± 0.4 eV) and sulfhy- show that N/C is completely enveloped by interconnected and
+dryl groups (SH, typically at ≈162 ± 0.3 eV) are not detected, vertically aligned MoS2 nanosheets. The energy dispersive X-ray
+implying that S primarily exists in the MoS2 phase. (EDX) spectrum (Figure 3c) and elemental mapping (Figure S6,
+ Transmission electron microscopy (TEM) investigations Supporting Information) also confirm the presence and uni-
+of the microstructure and selected area electron diffraction form distribution of all the key elements of Mo–N/C@MoS2.
+(SAED) analysis (Figure S3, Supporting Information) show that As a control experiment, the formation of MoS2 nanosheets
+N/C is largely composed of a quasi-amorphous framework with over N/C and their effect on the catalytic activity was also veri-
+a marginal degree of graphitization, encompassing few gra- fied. In this regard, a solution of MoS2 precursors was directly
+phitic carbon layers at the edges akin to graphene particles.[24,25] mixed with that of ZIF-8 and subjected to similar treatments.
+Figure 3a and Figure S4 in the Supporting Information show As displayed in Figure S7 in the Supporting Information,
+that N/C is well enveloped by MoS2 nanosheets without any the direct mixing procedure leads to segregated formation of
+noticeable damage to the polyhedron structure. HR-TEM uneven N–C frameworks in terms of orientation, shape, and
+images shown in Figure 3b and Figure S5 in the Supporting size distribution. The formed N–C frameworks are poorly dis-
+Information, further reveal that MoN/C@MoS2 consists of persed together with MoS2 microspheres without formation
+vertically aligned MoS2 nanosheets, mostly less than five layers of any nanosheets. Such a nonuniform morphology could
+with a lattice spacing of ≈0.64 nm. The thermally induced reac- hinder the diffusion and mass transport of ionic species and
+tion between Mo-precursors and graphene analogue particles directly affects the catalytic activity. For proper comparison, a
+within the edges of N/C facilitates the formation of the MoN C@MoS2 sample was also synthesized in a similar procedure
+bonding phase, which constitutes an interface between N/C as Mo–N/C@MoS2 without any N-doping, which ensures the
+and MoS2 nanosheets. The synergistic effect of such a unique absence of the Mo–N coupling phase (Figure S8, Supporting
+composite structure consisting of exposed edges of MoS2 Information).
+nanosheets, N-doped carbon frameworks, and Mo–N coupling To determine the interlayer electronic-coupling effects of the
+centers at the interface, could be highly beneficial for boosting three phases, we further probed the band structure and den-
+catalytic activity. sity of state-based descriptors. As shown in Figure 3d, contrary
+ The SAED pattern (inset of Figure 3b) shows rings of dif- to the pure semiconductor behavior of MoS2, both N/C and
+fraction spots assignable to a typical carbon framework with a Mo–N/C@MoS2 exhibit no band gaps owing to a downshifting
+low graphitic degree and crystalline MoS2 in harmony with the of the Dirac cone to afford fast electron transfer. This should
+XRD results. The three different phases of the hybrid structure enhance the electrical conductivity and electrocatalytic
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (3 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+Figure 3. Microstructure of Mo–N/C@MoS2: a) TEM image, scale: 100 nm. b) High resolution TEM image; scale: 5 nm, interlayer spacing: ≈0.64 nm.
+Inset is the normal-incident selected area electron diffraction patterns; scale: 2 nm–1. Images 1− 3 on the right are magnifications (scale: 1 nm) and
+fast Fourier transform (FFT), corresponding to the selected areas in (b). c) EDX elemental spectrum. d,e) Band structures and corresponding structural
+models of i) MoS2, ii) N/C, and iii) Mo–N/C@MoS2. f) Calculated partial density of states. Dotted lines represent the Fermi level (EF).
+
+properties of Mo–N/C@MoS2 and then benefits the HER, ORR, current density of j0 ≈2.76 × 10–4 A cm–2 (Figure S9a, Sup-
+and OER performance. The partial density of state (DOS) of the porting Information). The high HER activity of Mo–N/C@MoS2
+Mo 3d and N 2p orbitals (Figure 3f) also signal to the Mo–N can be attributed to the synergistic effect of the unique three-
+coordination as an active phase within the Mo–N/C@MoS2 phase configuration of active sites, consisting of interfacial
+heterostructure. Mo–N coupling centers, the N-induced active sites on neigh-
+ boring C-atoms of the N/C framework, and abundantly exposed
+ active edges of MoS2 nanosheets. Compared to Mo–N/C@
+3. Electrocatalytic HER Activity and Stability MoS2, the results clearly suggest that the absence of the Mo–N
+ coupling phase could be liable for the poor performance of
+The well-formed composite structure of Mo–N/C@MoS2 N/C, C@MoS2, and N–C@MoS2, indicating that the Mo–N
+could take full advantage of the structural integrity and the coupling centers serve as effective catalytic sites. Based on the
+hierarchical porous framework, which can boost the mass multifaceted physicochemical structure, the mechanism for
+transport efficiency and catalytic activity. The HER activity the improved HER performance is proposed. Typically, H2O
+of Mo–N/C@MoS2 was evaluated by linear sweep vol- molecules in alkaline solution adsorb electrons and dissociate
+tammetry (LSV) under static condition at room tempera- into intermediate OH– ions and H-atoms via the Volmer reac-
+ture. As displayed in Figure 4a, an impressive HER activity tion procedure, followed by adsorption and recombination of
+(η = ≈117 mV) is attained for Mo–N/C@MoS2 at the current den- the H-atoms through the Heyrovsky or Tafel step (Supporting
+sity of 10 mA cm–2. This overpotential is much lower than that Information). It is well known that N-atoms can induce irreg-
+of MOF-derived N/C (η = ≈360 mV), C@MoS2 (η = ≈323 mV), ular charge distributions by suppressing the electron densities
+and NC@MoS2 (η = ≈295 mV) as well as most MoS2- of adjacent C-atoms, making N/C favorable for oxygen adsorp-
+based catalysts recently reported in alkaline media (Table S1, tion. The absence of active metal species, the strong immo-
+Supporting Information). Moreover, Mo–N/C@MoS2 presents bilizing affinity of OH– ions, the low density of active proton
+a Tafel slope of ≈64.3 mV dec−1 (Figure 4b) and a high exchange adsorption sites, and the weak hydrogen adsorption strength
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (4 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+Figure 4. a) HER polarization curves of Mo–N/C@MoS2, N/C, C@MoS2, N–C@MoS2, and Pt/C. b) Corresponding Tafel plots. c) The calculated free-
+energy diagram of catalyst samples. d) HER polarization curves of Mo–N/C@MoS2 with and without CN– poisoning. The inset figure is the schematic
+depiction of the CN– ions interaction with Mo–N coordination centers.
+
+of N/C are accountable for its poor HER activity. However, the with N/C (Figure 3d) indicates a redistribution of the charge
+favorable adsorption of OH– ions on N/C prevents blockage of density within the hybrid structure in the form of an apparent
+active sites on Mo–N and MoS2. Meanwhile, the intermediary electron transfer from conductive N/C to MoS2, leading to
+H-atom is favorably adsorbed at the Mo–N site, owing to its enriched electron regions on the MoS2 phase (Figure S11,
+proximity to N/C, and higher atomic electronegativity differ- Supporting Information). The accumulation of such localized
+ence than MoS2. Besides, N-atoms in Mo-lattices could also electrons induces the downshifting of the valance and conduc-
+enhance the H-adsorption kinetics due to the poor electron tion bands of MoS2. As a result, the EF crosses the conduc-
+donating ability of nitrides.[26] Consequently, with the thin layer tion band of MoS2, as demonstrated by the partial density of
+interface, it is reasonable to anticipate that the rate of H2O dis- states (PDOS), indicating an improved electron mobility in
+sociation/uptake of OH– at the N/C site is higher than that of Mo–N/C@MoS2. In principle, the higher the active center
+H*-adsorption at the Mo–N coupling centers. As a result, the DOS (Ep), the stronger the H*-adsorption strength.[34] There-
+extra H-atom is adsorbed on active sites of adjoining MoS2 fore, to further demonstrate which of the three phases plays
+nanosheets, enabling fast recombination through the Hey- the most active role, the total DOS was conducted for initial
+rovsky step. This suggests that Mo–N/C@MoS2 catalyzes HER adsorption of H* at a specific active site on the catalyst sur-
+mainly through the Volmer–Heyrovsky steps (Figure S10, Sup- face. As shown in Figure S12 in the Supporting Information,
+porting Information). the highest peak of active center DOS exhibits an overall linear
+ Given that the HER activity is strongly correlated to the trend for the adsorbed H*, approaching the Femi level in
+Gibbs free energy for hydrogen adsorption (|ΔGH*|), we con- the order of Mo–N (−0.585 eV), MoS2 (−0.632 eV), and N/C
+ducted a series of density functional theory (DFT) calculations (−0.736 eV). This demonstrates that the Mo–N coupling at the
+to further investigate the activity origin of Mo–N/C@MoS2. As interface possesses the optimum strength and most favorable
+displayed in Figure 4c, N/C, MoS2, and N/C@MoS2 yield cal- interactions with the adsorbed H* as compared to MoS2 and
+culated |ΔGH*| values of 1.70, 1.29, and 1.04 eV, respectively, N/C. Therefore, on the basis of these additional findings, it
+indicating weak hydrogen binding strength on the catalyst can be rationally concluded that the Mo–N coupling at the
+surface. However, owing to the improved H*-chemisorption interface plays the key role in enhancing the HER perfor-
+strength, which is promoted by the interfacial Mo–N cou- mance of Mo–N/C@MoS2. As results, the synergy between
+pling, Mo–N/C@MoS2 yields the smallest |ΔGH*| value of the N/C phase, for enhancing water dissociation through fast
+0.236 eV, approaching that of Pt (|ΔGH*| ≈ 0.09 eV).[34] More OH– adsorption, and the cooperative effect between Mo–N and
+significantly, the absence of a band gap after coupling MoS2 MoS2, for promoting rapid H* adsorption and recombination,
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (5 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+render the Mo–N/C@MoS2 heterostructure as an excellent an N2-saturated electrolyte. However, in an O2-saturated elec-
+electrocatalyst for HER. trolyte a cathodic peak with high current emerges at a poten-
+ In addition, Mo–N/C@MoS2 possesses a high electrochemi- tial of ≈0.84 V versus reversible hydrogen electrode (RHE),
+cally active surface area (ECSA: ≈225.8 cm2) (Figure S13, Sup- indicating superb oxygen reduction activity. The LSV curves
+porting Information) which can favor effective accessibility (Figure 5a), obtained by a rotating disk electrode (RDE) at
+of the intrinsic active sites. Such large ECSA benefits from 1600 rpm, present only a slight variation of the onset-potential
+the high specific surface area (Brunuaer-Emmett-Teller, BET: between Mo–N/C@MoS2 (Eo ≈ 0.90 V) and commercial Pt/C
+≈519.5 m2 g–1) and intrinsic porosity of the hybrid structure (Eo ≈ 0.92 V). Furthermore, Mo–N/C@MoS2 exhibits a notice-
+for the enhancement of diffusion and mass transport efficiency ably higher diffusion-limited current density and an equiva-
+Figure S14 in the Supporting Information. lent half-wave potential (jL ≈ −0.53 mA cm–2 and E1/2 ≈ 0.81 V)
+ As an important requirement for sustainable hydrogen pro- as compared to Pt/C (jL ≈ −0.49 mA cm–2 and E1/2 ≈ 0.81 V),
+duction, the stability of Mo–N/C@MoS2 was also investigated respectively. The ORR kinetic values of Mo–N/C@MoS2 are
+via an accelerated degradation test. As shown in Figure S15a also more positive than that of N/C, C@MoS2, and N–C@MoS2
+in the Supporting Information, Mo–N/C@MoS2 sustains the (Figure S16a, Supporting Information), suggesting that both
+current density of 10 mA cm–2 with only a marginal degrada- the vertically aligned MoS2 nanosheet geometry and Mo–N
+tion of the potential (≈19 mV) after 5000 cycles. This excellent coupling at the interface are highly significant for the further
+stability is further validated by the time-dependent stability of improvement of the ORR activity. Despite possessing similar
+the current density. Figure S15b in the Supporting Informa- chemical composition, the N–C@MoS2 exhibits poor catalytic
+tion presents a negligible loss of current densities even after activity which could be attributed to the segregated structure,
+46 h. The slight degradation could be attributed to gradual poor distribution of active sites and inadequate diffusion chan-
+etching of metallic Mo from the composite framework and/or nels to effectively enhance mass transport of ionic species.
+electrode oxidation owing to the long exposure in the concen- The kinetic activity of Mo–N/C@MoS2 was further probed
+trated solution during the electrochemical stability test. Transi- by the K–L method (Figure 5b), which shows that the cur-
+tion metals are well known to be very sensitive and reactive to rent density increases consistently with the speed of rotation,
+CN– ions which can coordinate strongly with metallic species resulting in linearly fitted plots (inset of Figure 5b). This sug-
+in carbon frameworks and poison the metal-centered catalytic gests first-order reaction kinetics relative to the amount of
+site. Therefore, we probed the effect of Mo–N coupling on the dissolved O2 and similar mechanism of the electron transfer
+HER activity by injecting 10 × 10−3 m of KCN into the electrolyte for O2 reduction at the given potentials.[4,35,36] In the poten-
+prior to the polarization scan. As shown in Figure 4d, the cata- tial range of 0.3–0.7 V, the calculated average electron transfer
+lyst displays a significant drop in activity with a more-negative number is ≈3.96 which is equal to the theoretical value (4.0) of
+shift of the overpotential after CN– interaction, signifying the high quality Pt/C, suggesting that Mo–N/C@MoS2 ideally con-
+blockage of Mo sites by CN– ions. This observation further vali- ducts a complete 4e– pathway.
+dates that the Mo–N coupling centers are critical active sites. The improved ORR performance of Mo–N/C@MoS2 can be
+To confirm this analogy, the Mo-free N-carbon framework was attributed to the synergistic effect of the abundant active sites
+also analyzed under similar conditions. Despite possessing low especially the N/C phase and Mo–N coupling centers.[37] As
+HER activity (Figure S9b, Supporting Information), N/C shows mentioned above, the N-doping is beneficial for inducing irreg-
+no significant degradation of overpotentials upon interacting ular charge distribution and positive charges on neighboring
+with the CN– ions, indicating a negligible effect on the doped-N C-atoms, which can enhance the adsorption of oxygen during
+functionalities. This further confirms that the effect of Mo–N the ORR kinetic processes. Due to the relatively high concen-
+coupling at the interface is very significant for enhancing the tration of pyridinic-N (Figure 2d), a high density of ORR active
+catalytic activity of Mo–N/C@MoS2. sites (neighboring C-atoms of pyridinic-N) for enhancement
+ of oxygen adsorption and reduction is expected. Conversely,
+ metallic Mo is naturally inactive toward ORR and OER. How-
+4. Electrocatalytic Activity toward ORR and OER ever, when it interacts with N at the interface to form an active
+ Mo–N coupling, it can effectively facilitate the ORR activity due
+Electrocatalytic materials with high multifunctional activity to the induced changes in the electron distribution to promote
+offer great promise to significantly reduce the complexity and oxygen adsorption and dissociation.[37]
+cost of electrochemical energy conversion and storage devices. To meet practical application requirements, the electro-
+Previous studies have demonstrated that MOF-derived mate- chemical stability of the catalysts was investigated via an
+rials can exhibit good bifunctional OER/ORR activity, owing accelerated cycling durability test based on the test protocols of the
+to the synergistic chemical composition and robust structures US Department of Energy. Thus, the stability was evaluated in an
+as well as the influence of coordinative unsaturated metal O2 saturated electrolyte at 50 mV s–1 in the potential window of
+atoms.[4,35] MoS2-based heterostructures also exhibit signifi- 0.6–1.0 V.[38–40] After scanning for 50 000 cycles (Figure 5c), Pt/C
+cant bifunctional HER/OER activity toward complete water exhibits a large negative shift of half-wave potential (≈36.2 mV)
+splitting.[21] In this light, we further explored the electrocata- as compared to Mo–N/C@MoS2 (≈19.9 mV). Furthermore, the
+lytic activity toward ORR and OER. On the one hand, the ORR relative current versus time (i vs t) was examined. As shown in
+performance was studied in 0.1 m KOH at room temperature. Figure S16b in the Supporting Information, Mo–N/C@MoS2 also
+The cyclic voltammetry (CV) scan (inset of Figure 5a) shows exhibits high durability and retains a relative current of ≈91.8%
+that Mo–N/C@MoS2 possesses no oxygen reduction activity in after more than 16 h compared to Pt/C (≈74.3%). The resistance
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (6 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+Figure 5. a) ORR polarization curves of Mo–N/C@MoS2 and Pt/C at 1600 rpm. The inset figure is the CV curves of Mo–N/C@MoS2 in N2– and O2-sat-
+urated solution. b) ORR polarization curves of Mo–N/C@MoS2 at various rotation rates in rpm. The inset figure is the K–L plots (ω–1/2 vs j –1; ω and j
+are the speed of angular rotation and current density, respectively). c) Negative shift of half-wave potential (E1/2) under O2 cycling for Mo–N/C@MoS2
+in comparison with Pt/C. d) Comparative OER polarization curves. e) Corresponding OER Tafel plots. f) Time-dependent OER stability of Mo–N/C@
+MoS2 at the applied current density of 10 mA cm–2.
+
+to poisoning effects of fuel oxidation intermediates was also and peroxides (O22–). Furthermore, the higher electronegativity
+probed. In this regard, a methanol solution was injected into of oxygen than carbon within the N/C framework, coupled with
+100 mL of electrolyte and then subjected to chronoamperometry the high electron affinity of doped-N, could introduce positively
+at 0.6 V. The LSV curves (Figure S16c, Supporting Information) charged neighboring carbon atoms as OER active sites.[41,42]
+show that Mo–N/C@MoS2 remains largely immune to inter- The improved electrical conductivity, owing to the interfacial
+mediate fuel oxidation molecules displaying only a minor loss coupling centers, can also favorably enhance the OER activity.
+(≈1.6%) of the relative current. However, Pt/C exhibits high sen- Despite that MoS2 is a poor ORR/OER catalyst, the highly
+sitivity to the intermediate products, resulting in a high relative porous nanosheets framework could facilitate accessibility of
+current loss. the active sites of N/C and Mo–N by providing excellent chan-
+ On the other hand, the OER activity was investigated by nels for efficient diffusion and mass transport of ionic spe-
+extending the ORR potential window in the more positive cies. The nanosheet envelope also serves as a protective sheath
+region. As shown in Figure 5d, Mo–N/C@MoS2 displays a to shield the ORR/OER active sites from impurities and fuel
+relatively high onset potential and requires an overpotential of oxidation products. The mechanism for the oxygen evolution
+≈0.39 V to achieve the current density of 10 mA cm–2, which and reduction processes is depicted in Figure S18 (Supporting
+is only ≈0.04 V higher than that of IrO2, but far superior to Information).
+Pt/C, N/C, and N–C@MoS2 (Figure S17a, Supporting Informa- In addition to the robust electrochemical durability of the
+tion). Furthermore, Mo–N/C@MoS2 presents a Tafel slope of catalyst, the stability of the microstructure was also investigated
+≈72 mV dec–1, approaching that of IrO2 (≈65 mV dec–1) (Figure 5e) by consecutively subjecting a fresh catalyst sample to various
+as well as exhibits high stability with a potential reten- electrochemical tests including LSV0.5 mVs–1, CV10 000 cycles, and
+tion of ≈83% after 60 h (Figure 5f). A further analysis of the i–t20 000 s. As presented in Figure S19a (Supporting Information),
+OER stability via accelerated durability cycling shows that scanning electron microscopy (SEM) images show that the
+Mo–N/C@MoS2 can sustain high cycling stability without any Mo–N/C@MoS2 architecture remains almost unaffected by the
+substantial degradation of the overpotential after 1000 acceler- harsh electrochemical processes, and no obvious detachment of
+ated sweep cycles, and only drops by ≈9.0 mV after 5000 cycles the porous interconnected MoS2 nanosheets occurs. The high
+(Figure S17b, Supporting Information). The enriched OER magnification image shows only a slight surface roughness
+activity of Mo–N/C@MoS2 could possibly be ascribed to the of MoS2 nanosheets, demonstrating that Mo–N/C@MoS2 not
+enhanced adsorption of OH– and efficient transport of inter- only maintains its microstructure but also exhibits a firm resist-
+mediate oxygen-containing products such as superoxides (O2–) ance to severe electrochemical/solution induced oxidation.
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (7 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+Moreover, XRD patterns (Figure S19b, Supporting Information) density profiles. As anticipated, Mo–N/C@MoS2 presents an
+show that all the primary phases are maintained without any open-circuit voltage as high as ≈1.46 V and a peak power den-
+significant structural transformation. sity of ≈196.4 mW cm–2, outperforming that of Pt/C and even
+ recently reported electrodes.[41,44] When cycled as a recharge-
+ able battery at the current density of 5 mA cm–2 under fast-
+5. Zinc–Air Battery Performance scan rate, the Mo–N/C@MoS2 electrode generates the initial
+ charge and discharge potentials of ≈1.99 and ≈1.24 V, respec-
+The high electrocatalytic performance of Mo–N/C@MoS2 tively, representing an overpotential of ≈0.75 V (Figure S21b,
+toward both ORR and OER indicates its bifunctional catalytic Supporting Information). The calculated energy density, rela-
+ability. When the catalysts were further evaluated by linear tive to the normalized amount of zinc electrode consumed, is
+sweep voltammetry in concentrated electrolyte (6 m KOH), ≈846.07 Wh kgZn–1 at 5 mA cm–2, which is higher than previ-
+Mo–N/C@MoS2 displays superior performance than com- ously reported.[41] The Mo–N/C@MoS2 cathode further rep-
+mercial Pt/C (Figure S20, Supporting Information), indicating licates a very stable round-trip galvanostatic cycling profile,
+a promising candidate for bifunctional electrocatalytic appli- leading to a high voltaic efficiency of ≈63.6% after more than
+cations. Besides portable electronics, rechargeable batteries 12 h of discharge–charge cycling. However, the Pt/C cathode
+also have great potentials for grid-scale and renewable energy displays an abrupt increase in the overpotential and poor sta-
+storage applications.[3,17,24,43] Given that the charge process of bility in good accord with previous observations.[45–47] The poor
+Zn–air batteries is driven by OER kinetics, while the discharge performance of Pt/C could be attributed to its poor OER activity
+process is catalyzed by ORR on the air-cathode side, we further and/or degradation-induced oxidative support-particle detach-
+explored the bifunctional applicability of Mo–N/C@MoS2 as ments and subsequent particle aggregation.[41,47] However, the
+cathodes of Zn–air batteries. high performance of Mo–N/C@MoS2 benefits from the syn-
+ To this end, a primary Zn–air battery was first assembled ergistic effects of its excellent ORR/OER activity. Therefore,
+according to the schematics shown in Figure S21a (Sup- it is reasonable to conclude that the high ORR kinetic activity
+porting Information), wherein a catalyst coated carbon paper enables Mo–N/C@MoS2 to effectively catalyze the discharge
+serves as an air-cathode and high purity Zn-foil as an anode. kinetics at the air-cathode side of Zn–air batteries. In an alter-
+Figure 6a presents the polarization and corresponding power nating cycle, the charging process at the anode is driven by the
+
+Figure 6. Fabrication and performance of zinc–air batteries: a) V ∼ i polarization and power density curves of Mo–N/C@MoS2 and Pt/C electrocatalyst
+as air-cathodes. b) Galvanostatic discharge–charge cycling profiles of Mo–N/C@MoS2 at 25 mA cm–2 with a pulse cycling interval of 4 h per cycle.
+c) Schematic for fabrication of all-solid-state zinc–air battery. d) Photograph of all-solid-state zinc–air battery displaying a measured open circuit
+voltage of ≈1.34 V. e) Photograph of a lighted LED powered by only four all-solid-state Zn–air batteries. f) Rate of self-discharge of all-solid-state Zn–air
+batteries with Mo–N/C@MoS2 and Pt/C cathodes measured over 24-h discharge interval. Each voltage point is the average of five voltages taken at
+0.25 h interval.
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (8 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+efficient OER kinetics. The high electrochemical and structural frameworks (N/C) which is well encapsulated by vertically
+stability of Mo–N/C@MoS2 toward both ORR and OER also aligned MoS2 nanosheets. This leads to the formation of an
+benefits the long-term Zn–air battery cycling stability, while Mo–N/C coordination at the interface. The hybrid framework
+the highly porous architecture and large surface area boost the presents a robust HER performance (ηj=10 ≈117 mV) with high
+charge storage and transport properties. stability, excellent ORR (E1/2 ≈0.81 V) and OER (ηj=10 ≈0.39 V)
+ Motivated by this initial performance, the robustness of performance. Remarkably, the Mo–N/C@MoS2 air–cathode
+Mo–N/C@MoS2 cathodes was further investigated by cycling at effectively drives the electrochemical discharge and charge
+a high current density of 25 mA cm–2 over a long cycling rate of kinetics of Zn–air batteries (≈63.9% efficient at 5 mA cm–2).
+4 h per cycle. As shown in Figure 6b, the battery executes a high The home-made all-solid-state Zn–air battery also exhibits
+cycling stability when repeatedly charged and discharged for 48 h a high open circuit voltage (OCV ≈1.34 V) and only four bat-
+without any significant drop of the overpotential. However, by teries can efficiently power a ≈3.4 V LED, demonstrating high
+doubling the current density to 50 mA cm–2 and the scan rate to prospects for scalability. The boosted catalytic activity is mainly
+20 h per cycle, the discharge overpotential gradually increases attributed to the synergistic effect of the exposed edges of MoS2
+in the subsequent cycles by about 93–97 mV more than the first nanosheets as active sites, the highly active interfacial Mo–N
+discharge overpotential (Figure S21c, Supporting Information). coupling centers and the N-induced active sites on neighboring
+This gradual increase of the overpotential could be attributed carbon atoms of the N/C framework. The electrochemical
+to early onset of passivation at high current, leading to the for- analysis and DFT calculations suggest that the Mo–N cou-
+mation of a passive Zn(OH)2 layer over the zinc anode. Accu- pling phase plays the dominant trifunctional role in enhancing
+mulation of the passivation layer gradually insulates the pure the multifunctional activity of the catalyst. The pore-enriched
+zinc anode from the electrolyte (inhibits ion transport and con- hybrid geometry and high surface area also boost the diffusion
+ductivity), leading to degradation of the kinetic efficiency. The and mass transport efficiency. There is still a huge window of
+loss of active sites via electrode oxidation could also be account- opportunity for further enhancement of the electrocatalytic
+able. Regardless, the electrode performance at such a high cur- properties. For example, regulating the synthesis parameters
+rent density, in terms of the stability and efficiency, is superior to effectively control the geometry and orientation of the MoS2
+to that of previous reports in which substantial deterioration nanosheet array and the metal–N coupling interface could be
+occurred even at lower current densities.[45,47] beneficial for further enriching the intrinsic catalytic properties.
+ A major limitation to the design of electrochemical energy
+devices is their confinement to lab-scale performance. Here,
+we further demonstrate the applicability and prospects of 7. Experimental Section
+Mo–N/C@MoS2 as a Zn–air battery cathode electrocatalyst
+ Preparation of ZIF-8 Crystals and N-Doped Nanocarbon (N/C): ZIF-8
+for portable electronic devices. To this end, a home-made and crystals were first prepared under ambient conditions as detailed in the
+scalable all-solid-state battery (ASSB) was fabricated according Supporting Information. N-doped carbon (N/C) was prepared by directly
+to Figure 6c, via the schematics shown in Figure S22 in the subjecting the as-obtained ZIF-8 crystals to a tubular heat treatment
+Supporting Information. Interestingly, the assembled ASSB under continuous N2 flow at 5 °C min–1 and kept at 800 °C for 2 h. To
+also displays very stable galvanostatic discharge and charge remove any impurities, the product was sequentially washed in HCl
+potentials of ≈0.98 and ≈1.81 V, respectively, at 2 mA cm–2 (36%), ethanol absolute, and deionized (DI) water before finally dried
+ at 80 °C.
+(Figure S23, Supporting Information). The efficiency of the Preparation of Mo–N/C@MoS2: Vertically aligned MoS2 nanosheet
+ASSB is slightly lower than that of the primary battery, owing array encapsulated Mo–N/C was prepared as follows: 0.05 g of
+to high contact resistance of the battery components and/or ammonium molybdate tetrahydrate, [(NH4)6Mo7O24.4H2O] was
+weak conductivity of the sand-witched alkaline polyvinylalcohol dissolved in DI water (20 mL) followed by the addition of thiourea
+(PVA) electrolyte. However, the battery displays a surprisingly (0.85 g) under stirring to obtain a uniform solution. The obtained
+high open circuit voltage of ≈1.34 V (Figure 6d), and only four solution was then added dropwise to a solution of N/C nanoparticles
+ (0.1 g/10 mL DI water) under vigorous magnetic stirring for at least
+batteries can effectively power a light emitting diode (Figure 6d,
+ 1 h. The obtained homogeneous solution was then transferred into an
+see Video S1, Supporting Information). Finally, to further eval- autoclave and subjected to hydrothermal treatment for 24 h at 180 °C in
+uate the applicability and rate of self-discharge for the home- an air-blast oven. The composite solid was cleansed with DI water for at
+made ASSB, we directly measured the time-dependent open least three times and dried at 80 °C in vacuum. The dried solid particles
+circuit potentials. As displayed in Figure 6f, the Mo–N/C@ were finally treated at the heat rate of 5 °C min–1 in a tubular furnace
+MoS2 battery self-discharges in open circuit at a much slower at 800 °C for 2 h under Ar blanket. After naturally cooling to room
+ temperature, the obtained product was again washed to remove any
+rate, further demonstrating the high promise of our electrocata-
+ residues and dried at 80–110 °C before characterizations. As a control
+lyst toward cheap and high performance-oriented electrodes. experiment, the MoS2 precursor solution was directly added to that of
+ ZIF-8 at the same stoichiometric ratios and similar treatments. The
+ obtained product is labelled as N–C@MoS2. Fresh N-doped nanocarbon
+ (N/C) from the carbonized ZIF-8 was also prepared for comparison.
+6. Conclusions Finally, C@MoS2 was also prepared without any N-doping, in order to
+In summary, our studies suggest that Mo–N/C@MoS2 can completely eliminate the formation and influences of the Mo–N coupling
+ phase. All samples were structurally and electrochemically characterized
+be facilely synthesized and applied as a low cost and highly under similar conditions.
+active multifunctional electrocatalyst. The analysis of the Materials Characterization and Equipment: Surface morphology was
+microstructure indicates that Mo-species can be integrated into observed using JSM 7100F FESEM (Zeiss Ultra Plus) fitted with energy
+the graphitic domains of the MOF derived N-doped carbon dispersive spectrum analyzer and operated at 20 kV. Structural features
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (9 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+were characterized by TEM on a JEM 2010 FEF microscope operated [1] M. G. Walter, E. L. Warren, J. R. McKone, S. W. Boettcher, Q. Mi,
+at 20 kV. A Rigaku D/MAX-RB diffractometer operated at 40 kV with E. A. Santori, N. S. Lewis, Chem. Rev. 2010, 110, 6446.
+monochromatized Cu-Kα radiation was employed to record the XRD [2] Y. Shi, B. Zhang, Chem. Soc. Rev. 2016, 45, 1529.
+patterns. A Lab-RAM, Aramis Raman spectrometer was used to record [3] J.-S. Lee, S. T. Kim, R. Cao, N.-S. Choi, M. Liu, K. T. Lee, J. Cho. Adv.
+Raman spectra with Ar-ion laser, λexcitation = 632.8 nm. XPS spectra were Energy Mater. 2011, 1, 34.
+recorded on a VG MultiLab 2000 spectrometer using a monochromatic [4] B. Y. Xia, Y. Yan, N. Li, H. B. Wu, X. W. D. Lou, X. Wang, Nat. Energy
+Al-Kα (≈1486 eV) radiation. 2016, 1, 15006.
+ Electrochemical Measurements: The catalyst ink recipe was mildly [5] A. Zitolo, V. Goellner, V. Armel, M. T. Sougrati, T. Mineva,
+sonicated overnight and optimized for homogeneity before coated on a
+ L. Stievano, E. Fonda, F. Jaouen, Nat. Mater. 2015, 14, 937.
+mirror-polished glassy carbon working electrode (0.196 cm2). To avoid
+ [6] D. He, K. Cheng, T. Peng, M. Pan, S. Mu, J. Mater. Chem. A 2013,
+mass transport limitations, which is often caused by nonuniform catalyst
+ 1, 2126.
+film, a homogeneous film was ensured by drying the catalyst ink (10 µL)
+on the electrode under continuous rotation at 200–750 rpm in ambient. [7] R. Prins, V. H. J. Debeer, G. A. Somorjai, Catal. Rev. Sci. Eng. 1989,
+Commercially acquired IrO2 and Pt/C (20 wt%) were used as reference 31, 1.
+catalysts. A graphite rod (99.999%) or platinum-foil was used as the [8] M.-R. Gao, J.-X. Liang, Y.-R. Zheng, Y. F. Xu, J. Jiang, Q. Gao, J. Li,
+counter electrode and Ag/AgCl as reference electrode. The measured S.-H. Yu, Nat. Commun. 2015, 6, 5982.
+potentials are referred to the RHE, ERHE = EAg/AgCl + 0.059pH + EθAg/AgCl. The [9] a) Y. Tan, P. Liu, L. Chen, W. Cong, Y. Ito, J. Han, X. Guo, Z. Tang,
+number of electrons transferred was determined according to Koutecky– T. Fujita, A. Hirata, M. W. Chen, Adv. Mater. 2014, 26, 8023;
+Levich (K–L) equations (Supporting Information). The HER polarization b) Z. Zhang, W. Li, M. F. Yuen, T. W. Ng, Y. Tang, C. S. Lee, X. Chen,
+curves were recorded in 1.0 m KOH (pH ≈ 14) at the scan rate of 2 mV s–1 W. Zhang, Nano Energy 2015, 18, 196.
+at room temperature on a three-electrode workstation (CHI 660E). All [10] G. Li, D. Zhang, Q. Qiao, Y. Yu, D. Peterson, A. Zafar, R. Kumar,
+electrochemical ORR and OER properties were evaluated in 0.1 m KOH S. Curtarolo, F. Hunte, S. Shannon, Y. Zhu, W. Yang, L. Cao, J. Am.
+solution at room temperature. LSV was executed by the RDE technique Chem. Soc. 2016, 138, 16632.
+within −1.0–0.2 V at 5 mV s–1. CV was executed under static electrode [11] D. Voiry, M. Salehi, R. Silva, T. Fujita, M. Chen, T. Asefa,
+condition at 20 mV s–1. The polarization curves for OER were recorded V. B. Shenoy, G. Eda, M. Chhowalla, Nano Lett. 2013, 13, 6222.
+at the rate of 2 mV s–1. ORR stability and resistance to fuel oxidation [12] M. A. Lukowski, A. S. Daniel, F. Meng, A. Forticaux, L. Liand, S. Jin,
+molecules were characterized by chronoamperometry (current vs time J. Am. Chem. Soc. 2013, 135, 10274.
+(i–t)) at 1600 rpm and 0.6 V. The catalyst-coated working electrode was [13] Y. Yin, J. Han, Y. Zhang, X. Zhang, P. Xu, Q. Yuan, L. Samad,
+electrochemically cleaned and stabilized through potential cycling at
+ X. Wang, Y. Wang, Z. Zhang, P. Zhang, X. Cao, B. Song, S. Jin, J.
+0.5 V s–1. Any capacitive current contributions were eliminated via iR
+ Am. Chem. Soc. 2016, 138, 7965.
+correction by deducting the background current from the measured
+ [14] H. Wang, Z. Lu, S. Xu, D. Kong, J. J. Cha, G. Zheng, P.-C. Hsu,
+currents. The air-cathodes for primary Zn–air battery were prepared
+by coating the catalysts (1.0 mg cm−2) on a hydrophobic carbon paper K. Yan, D. Bradshaw, F. B. Prinz, Y. Cui, Proc. Natl. Acad. Sci. USA
+(Figure S21a, Supporting Information) and evaluated in 6 m KOH electrolyte 2013, 110, 19701.
+containing 0.2 m ZnAc. The fabricated all-solid-state battery (Supporting [15] a) Y. Yu, S. Hu, L. Su, L. Huang, Y. Liu, Z. Jin, A. A. Purezky,
+information) was assembled and tested under ambient conditions. No D. B. Geohegan, K. W. Kim, Y. Zhang, L. Cao, Nano Lett. 2014, 15,
+inert atmosphere or glove box was used. The galvanostatic cycling and 486; b) B. Hinnemann, P. G. Moses, J. Bonde, K. P. Jørgensen,
+polarization profiles (LSV, 5 mV s–1) were also recorded on CHI 660E. J. H. Nielsen, S. Horch, I. Chorkendorff, J. K. Nørskov, J. Am. Chem.
+ Soc. 2005, 127, 5308; c) T. F. Jaramillo, K. P. Jørgensen, J. Bonde,
+ J. H. Nielsen, S. Horch, I. Chorkendorff, Science 2007, 317, 100.
+Supporting Information [16] Y. Tan, P. Liu, L. Chen, W. Cong, Y. Ito, J. Han, X. Guo, Z. Tang,
+ T. Fujita, A. Hirata, M. W. Chen, Adv. Mater. 2014, 26, 8023.
+Supporting Information is available from the Wiley Online Library or
+from the author. [17] X. Xie, T. Makaryan, M. Zhao, K. L. V. Aken, Y. Gogotsi, G. Wang,
+ Adv. Energy Mater. 2015, 6, 1502161.
+ [18] H. Hwang, H. Kim, J. Cho, Nano Lett. 2011, 11, 4826.
+Acknowledgements [19] L. Hao, J. Yu, X. Xu, L. Yang, Z. Xing, Y. Dai, Y. Sun, J. Zou, J. Power
+ Sources 2017, 339, 68.
+The authors gratefully acknowledge the National Key Research and [20] H. Zhang, Y. Tian, J. Zhao, Q. Cai, Z. Chen, Electrochim. Acta 2017,
+Development Program of China (Grant No. 2016YFA0202603) and
+ 225, 543.
+National Natural Science Foundation of China (NNRF, Grant Nos.
+ [21] J. Zhang, T. Wang, D. Pohl, B. Rellinghaus, R. Dong, J. Liu,
+51372186 and 51672204) for the generous funding support. The authors
+also thank the anonymous reviewers for their constructive engagement, X. Zhuang, X. Feng, Angew. Chem., Int. Ed. 2016, 55, 6702.
+prompt feedback, and valuable suggestions. [22] B. You, N. Jiang, M. Sheng, W. S. Drisdell, J. Yano, Y. Sun, ACS
+ Catal. 2015, 5, 7068.
+ [23] W. Xia, A. Mahmood, R. Zou, Q. Xu, Energy Environ. Sci. 2015, 8,
+Conflict of Interest 1837.
+ [24] a) F. Zheng, Y. Yang, Q. Chen, Nat. Commun. 2014, 5, 5261;
+The authors declare no conflict of interest. b) J. Tang, Y. Yamauchi, Nat. Chem. 2016, 8, 638; c) J. Tang,
+ R. R. Salunkhe1, H. Zhang, V. Malgras, T. Ahamad, S. M. Alshehri,
+ N. Kobayashi, S. Tominaka, Y. Ide1, J. H. Kim, Y. Yamauchi. Sci. Rep.
+ 2016, 6, 30295.
+Keywords
+ [25] a) J. Tang, R. R. Salunkhe, J. Liu, N. L. Torad, M. Imura, S. Furukawa,
+DFT calculations, graphene analogue particles, metal–organic Y. Yamauchi, J. Am. Chem. Soc. 2015, 137, 1572; b) R. R. Salunkhe,
+frameworks, MoS2 nanosheets, multifunctional electrocatalysts J. Tang, Y. Kamachi, T. Nakato, J. H. Kim, Y. Yamauchi, ACS Nano
+ 2015, 9, 6288; c) R. R. Salunkhe, Y. V. Kaneti, J. Kim, J. H. Kim,
+ Received: April 29, 2017 Y. Yamauchi, Acc. Chem. Res. 2016, 49, 2796; d) R. R. Salunkhe,
+ Revised: August 2, 2017 C. Young, J. Tang, T. Takei, Y. Ide, N. Kobayashi, Y. Yamauchi, Chem.
+ Published online: September 29, 2017 Commun. 2016, 52, 4764.
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (10 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 16163028, 2017, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.201702300 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.afm-journal.de
+
+[26] W.-F. Chen, K. Sasaki, C. Ma, A. I. Frenkel, N. Marinkovic, [37] a) J. Qi, L. Jiang, Q. Jiang, S. Wang, G. Sun, J. Phys. Chem. C 2010,
+ J. T. Muckerman, Y. Zhu, R. R. Adzic, Angew. Chem., Int. Ed. 2012, 114, 18159; b) H. Zhong, H. Zhang, G. Liu, Y. Liang, J. Hu, B. Yi,
+ 51, 6131. Electrochem. Commun. 2006, 8, 707; c) X. Liu, I. S. Amiinu, S. Liu,
+[27] J. Chmiola, G. Yushin, R. Dash, Y. Gogotsi, J. Power Sources 2006, Z. Pu, W. Li, B. Ye, D. Tan, S. Mu, Adv. Mater. Interfaces 2017, 4,
+ 158, 765. 1601227.
+[28] D. Yu, K. Goh, H. Wang, L. Wei, W. Jiang, Q. Zhang, L. Dai, Y. Chen, [38] Y. Li, W. Zhou, H. Wang, L. Xie, Y. Liang, F. Wei, J.-C. Idrobo,
+ Nat. Nanotechnol. 2014, 7, 555. S. J. Pennycook, H. Dai, Nat. Nanotechnol. 2012, 7, 394.
+[29] N. Daems, X. Sheng, I. F. J. Vankelecom, P. P. Pescarmona, [39] G. Wu, K. L. More, C. M. Johnston, P. Zelenay, Science 2011, 332,
+ J. Mater. Chem. A 2014, 2, 4085. 443.
+[30] L. Lai, J. R. Potts, D. Zhan, L. Wang, C. K. Poh, C. Tang, H. Gong, [40] G. Wu, M. A. Nelson, N. H. Mack, S. Ma, P. Sekhar, F. H. Garzon,
+ Z. Shen, J. Lin, R. S. Ruoff, Energy Environ. Sci. 2012, 5, 7936. P. Zelenay, Chem. Commun. 2010, 46, 7489.
+[31] Y. Li, W. Zhou, H. Wang, L. Xie, Y. Liang, F. Wei, J.-C. Idrobo, [41] Q. Liu, Y. Wang, L. Dai, J. Yao, Adv. Mater. 2016, 28, 3000.
+ S. J. Pennycook, H. Dai, Nat. Nanotechnol. 2012, 7, 394. [42] X. Lu, W.-L. Yim, B. H. R. Suryanto, C. J. Zhao, Am. Chem. Soc.
+[32] L.-M. Zhang, Z.-B. Wang, J. J. Zhang, X.-L. Sui, L. Zhao, D.-M. Gu, 2015, 137, 2901.
+ Carbon 2015, 93, 1050. [43] X. Huang, R. Wang, D. Xu, Z. Wang, H. Wang, J. Xu, Z. Wu, Q. Liu,
+[33] D. J. Li, N. M. Uday, L. Joonwon, S. C. Dong, J. L. Won, O. Youngtak, Y. Zhang, X. Zhang, Adv. Funct. Mater. 2013, 23, 4345.
+ Y. L. Gil, O. K. Sang, Nano Lett. 2014, 14, 1228. [44] F. Meng, F. Zhong, B. Bao, J. Yan, X. Zhang, J. Am. Chem. Soc.
+[34] a) J. K. Nørskov, T. Bligaard, A. Logadottir, J. R. Kitchin, J. G. Chen, 2016, 138, 10226.
+ S. Pandelov, U. Stimming. J. Electrochem. Soc. 2005, 152, J23; [45] F. Gengtao, C. Zhiming, C. Yifan, L. Yutao, T. Yawen, B. John, Adv.
+ b) Y. Jiao, Y. Zheng, K. Davey, S.-Z. Qiao, Nat. Energy 2016, 1, 16130. Energy Mater. 2016, 7, 1601172.
+[35] S. Zhao, Y. Wang, J. Dong, C.-T. He, H. Yin, P. An, K. Zhao, [46] D. U. Lee, J.-Y. Choi, K. Feng, H. W. Park, Z. Chen, Adv. Energy
+ X. Zhang, C. Gao, L. Zhang, J. Lv, J. Wang, J. Zhang, A. M. Khattak, Mater. 2014, 4, 1301389.
+ N. A. Khan, Z. Wei, J. Zhang, S. Liu, H. Zhao, Z. Tang, Nat. Energy [47] a) Y. Li, M. Gong, Y. Liang, J. Feng, J.-E. Kim, H. Wang, G. Hong,
+ 2016, 1, 16184. B. Zhang, H. Dai, Nat. Commun. 2013, 4, 1805; b) I. S. Amiinu,
+[36] Y. Liang, Y. Li, H. Wang, J. Zhou, J. Wang, T. Regier, H. Dai, Nat. J. Zhang, Z. Kou, X. Liu, K. A. Owusu, H. Zhou, C. Kun, H. Zhang,
+ Mater. 2011, 10, 780. L. Mai, M. Pan, S. Mu, ACS Appl. Mater. Interfaces 2016, 8, 29408.
+
+Adv. Funct. Mater. 2017, 27, 1702300 1702300 (11 of 11) © 2017 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim

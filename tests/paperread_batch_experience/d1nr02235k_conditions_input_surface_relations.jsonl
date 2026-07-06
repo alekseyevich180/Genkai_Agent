@@ -1,0 +1,95 @@
+{
+  "id": "surface_relations",
+  "title": "d1nr02235k 12885..12895 ++",
+  "text": "Cite this: Nanoscale, 2021, 13, 12885\nantimonene monolayers as eﬃcient trifunctional\nelectrocatalysts for the HER, OER and ORR:\na density functional theory study†\nSong Lu,a Huong Lan Huynh,a Fengliu Lou,b Kun Guo *c and Zhixin Yu *a\n\nHighly eﬃcient, stable and cost-eﬀective electrocatalysts for the hydrogen evolution reaction (HER),\noxygen evolution reaction (OER), and oxygen reduction reaction (ORR) have been pursued for several\ndecades. Herein, by employing density functional theory (DFT), a wide range of transition metal (TM = Sc,\nTi, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ru, Rh, Pd, Ag, Cd, Ir, Pt and Au) atoms anchored on antimonene (Sb\nmonolayer) with a single Sb vacancy as single-atom catalysts (SACs) were investigated for their HER, OER\nand ORR performance. The results indicate that the defective Sb monolayer can be stable. Some TM@Sb\nmonolayers show excellent stability and good electrical conductivity, beneﬁcial for electron transfer\nduring electrocatalytic reactions. The Ir@ and Pt@Sb monolayers exhibit excellent HER performance, both\nwith about −0.01 eV of ΔG*H. The d band centre of the TM@Sb monolayer can be used to describe the\nbinding strength between substrates and intermediates directly. The best OER electrocatalyst is the Pt@Sb\nmonolayer, which shows an overpotential (ηOER) of 0.48 V. In contrast, the best ORR electrocatalyst is the\nAg@Sb monolayer with an ηORR of 0.50 V, followed by Pd@, Rh@, Cd@ and Pt@Sb monolayers. Compared\nReceived 10th April 2021, with pristine antimonene, only the noble metal atom could improve its OER and ORR performance eﬀec-\nAccepted 27th June 2021\ntively, and the Pt@Sb monolayer can be a trifunctional electrocatalyst for the HER/OER/ORR. Therefore,\nDOI: 10.1039/d1nr02235k our calculations highlight a new type of SAC based on antimonene, which can be useful for energy con-\nrsc.li/nanoscale version and storage.\n\n1. Introduction tential in electrochemical reactions. Noble metal electrocata-\nlysts such as Pt exhibit excellent HER and ORR activity, while\nIncreasing fossil fuel consumption with the emission of green- noble metal compounds including IrO2 and RuO2 showed\nhouse gases is driving society to find better energy solutions great OER activity.7–9 However, the large-scale applications of\nthat can help us out of the current predicament. Metal–air bat- these electrocatalysts will be unrealistic due to their scarcity\nteries, fuel cells, and water splitting systems are some of the and high costs and the poor durability of noble metals.\nrenewable energy storage and conversion techniques that have Tremendous eﬀorts have been devoted to the design and syn-\nbeen demonstrated to be promising strategies to mitigate thesis of nonprecious electrocatalysts, including metal\nenergy and environmental issues.1–5 The electrochemical carbides,10,11 transition metal chalcogenides,12,13 modified\nhydrogen evolution reaction (HER), oxygen evolution reaction graphene,14–16 metal nitrides,17 metal oxides,18,19 carbon-\n(OER), and oxygen reduction reaction (ORR) are crucial for based hybrids,20–22 etc. for the HER, OER and ORR. In\nthese techniques.6 Nevertheless, the eﬃciencies of these tech- addition, IrO2/RuO2 exhibits only unifunctional OER activity,\nniques are dependent on the performance of electrocatalysts while noble metal Pt has separate unifunctional HER and ORR\nused to overcome the sluggish kinetics and the large overpo- activity where the optimal reaction conditions are not always\nidentical. On the other hand, bifunctional electrocatalysts\ncould catalyze diﬀerent reactions under identical and optimal\na\nDepartment of Energy and Petroleum Engineering, University of Stavanger, 4036 working conditions, which brings lots of advantages such as\nStavanger, Norway. E-mail: zhixin.yu@uis.no; Tel: +47 51832238 the reduction of costs and the simplification of technological\nb\nBeyonder AS, Kanalsletta 2, 4033 Stavanger, Norway processes.23 It has been reported that HER/OER bifunctional\nc\nInstitute of New Energy, School of Chemistry and Chemical Engineering, Shaoxing\nelectrocatalysts can be used for overall water splitting, and\nUniversity, Shaoxing 312000, China. E-mail: kun.guo@usx.edu.cn\n† Electronic supplementary information (ESI) available. See DOI: 10.1039/ OER/ORR bifunctional electrocatalysts can be applied for\nd1nr02235k rechargeable metal–air batteries.24–28",
+  "extraction": {
+    "materials": [
+      "antimonene"
+    ],
+    "material_parameters": [
+      "monolayer",
+      "single Sb vacancy"
+    ],
+    "surfaces": [
+      "Sb monolayer"
+    ],
+    "surface_terminations": [],
+    "slab_models": [
+      "monolayer"
+    ],
+    "facets": [],
+    "dopants": [
+      "Sc",
+      "Ti",
+      "V",
+      "Cr",
+      "Mn",
+      "Fe",
+      "Co",
+      "Ni",
+      "Cu",
+      "Zn",
+      "Ru",
+      "Rh",
+      "Pd",
+      "Ag",
+      "Cd",
+      "Ir",
+      "Pt",
+      "Au"
+    ],
+    "defects": [
+      "Sb vacancy"
+    ],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [
+      "Ir",
+      "Pt",
+      "Ag",
+      "Pd",
+      "Rh",
+      "Cd"
+    ],
+    "modifiers": [],
+    "properties": [
+      "stability",
+      "good electrical conductivity",
+      "excellent HER performance",
+      "excellent OER performance",
+      "excellent ORR performance"
+    ],
+    "reaction_parameters": [
+      "overpotential (ηOER) 0.48 V",
+      "overpotential (ηORR) 0.50 V"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "electrocatalysts",
+      "trifunctional"
+    ],
+    "recommended_modeling_tasks": [
+      "single_atom_site"
+    ],
+    "applications": [
+      "HER",
+      "OER",
+      "ORR",
+      "energy conversion",
+      "energy storage"
+    ],
+    "links": [
+      {
+        "source": "d1nr02235k",
+        "relation": "used_for",
+        "target": "HER/OER/ORR"
+      }
+    ]
+  }
+}

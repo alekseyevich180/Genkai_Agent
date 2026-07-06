@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "material_class": "nitrides",
+  "updated_at": "2026-07-06T06:21:58.451212+00:00",
+  "summary": {
+    "terms": 10,
+    "known_useful": 6,
+    "unknown": 4,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+      "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+      "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "antimonene",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ],
+      "count": 3
+    },
+    {
+      "term": "1/3−2/3 monolayer",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Au(111)"
+      ],
+      "count": 1
+    },
+    {
+      "term": "1/3−2/3 monolayer OH*",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "ammonia",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ],
+      "count": 1
+    },
+    {
+      "term": "monochain CrO3",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "modifiers"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "monolayer",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ],
+      "count": 1
+    },
+    {
+      "term": "monometallic cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Sb monolayer",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ],
+      "count": 1
+    },
+    {
+      "term": "subnanometer clusters",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv"
+      ],
+      "contexts": [
+        "Pd4, Pd6, Pd17 clusters"
+      ],
+      "count": 1
+    },
+    {
+      "term": "ultrananocrystalline diamond",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ],
+      "count": 1
+    }
+  ]
+}

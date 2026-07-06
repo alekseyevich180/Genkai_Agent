@@ -1,37 +1,374 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "carbon_materials",
-  "updated_at": "2026-06-30T06:51:57.274771+00:00",
+  "updated_at": "2026-07-06T07:30:22.257815+00:00",
   "summary": {
-    "terms": 3,
-    "known_useful": 1,
-    "unknown": 2,
-    "sources": [
-      "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test2_short_conditions_input_table.csv",
-      "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
-      "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
+    "terms": 16,
+    "known_useful": 6,
+    "unknown": 10
+  },
+  "keyword_inventory": {
+    "adsorbates_reactants": [
+      {
+        "term": "hydrocarbons",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "adsorption_sites": [
+      {
+        "term": "graphene plane",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "materials": [
+      {
+        "term": "graphene-like carbon",
+        "count": 4,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Graphene",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Graphene (G)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "g-C3N4",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "graphene-like carbon",
+        "count": 4,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Graphene",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon cloth",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "g-C3N4 surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "graphene surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "graphene-like carbon surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
     ]
   },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "C",
+        "count": 5
+      },
+      {
+        "term": "N",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "Ir",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "carbon_material",
+        "count": 24
+      },
+      {
+        "term": "surface",
+        "count": 8
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 5
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "g-C3N4",
+        "count": 4
+      },
+      {
+        "term": "graphene-like carbon",
+        "count": 4
+      },
+      {
+        "term": "Graphene",
+        "count": 3
+      },
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "carbon cloth",
+        "count": 2
+      },
+      {
+        "term": "carbon",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1
+      },
+      {
+        "term": "g-C3N4 surface",
+        "count": 1
+      },
+      {
+        "term": "Graphene (G",
+        "count": 1
+      },
+      {
+        "term": "graphene plane",
+        "count": 1
+      },
+      {
+        "term": "graphene surface",
+        "count": 1
+      },
+      {
+        "term": "graphene-like carbon surface",
+        "count": 1
+      },
+      {
+        "term": "hydrocarbons",
+        "count": 1
+      },
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{C, N}",
+        "count": 3
+      },
+      {
+        "term": "{Ag, C, N}",
+        "count": 2
+      },
+      {
+        "term": "{Ir}",
+        "count": 1
+      },
+      {
+        "term": "{Pt}",
+        "count": 1
+      },
+      {
+        "term": "{Ru}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "carbon_or_sac_profile",
+    "elements": [
+      {
+        "term": "C",
+        "count": 5
+      },
+      {
+        "term": "N",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "Ir",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
+      }
+    ],
+    "host_structures": [
+      {
+        "term": "graphene-like carbon",
+        "count": 4
+      },
+      {
+        "term": "graphene-like carbon",
+        "count": 4
+      },
+      {
+        "term": "Graphene",
+        "count": 3
+      },
+      {
+        "term": "Graphene",
+        "count": 3
+      },
+      {
+        "term": "Ag/g-C3N4",
+        "count": 2
+      },
+      {
+        "term": "carbon cloth",
+        "count": 2
+      },
+      {
+        "term": "g-C3N4",
+        "count": 2
+      },
+      {
+        "term": "carbon",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ir",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Pt",
+        "count": 1
+      },
+      {
+        "term": "carbon supported Ru",
+        "count": 1
+      },
+      {
+        "term": "g-C3N4 surface",
+        "count": 1
+      },
+      {
+        "term": "Graphene (G)",
+        "count": 1
+      },
+      {
+        "term": "graphene surface",
+        "count": 1
+      },
+      {
+        "term": "graphene-like carbon surface",
+        "count": 1
+      },
+      {
+        "term": "nitrogen-doped carbon",
+        "count": 1
+      }
+    ],
+    "dopant_or_loaded_species": [],
+    "coordination_environments": [],
+    "single_atom_centers": [],
+    "reaction_families": []
+  },
   "entries": [
-    {
-      "term": "Graphene",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "materials",
-        "Surface/Support"
-      ],
-      "sources": [
-        "tests/paperread_pdf_test/test_short_conditions_input_surface_relations.jsonl",
-        "tests/paperread_pdf_test/test_short_conditions_input_table.csv"
-      ],
-      "contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
-        "Sn SAs/G-Na"
-      ],
-      "count": 2
-    },
     {
       "term": "graphene-like carbon",
       "kind": "unknown_high_value",
@@ -40,15 +377,150 @@
         "materials",
         "Surface/Support"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl",
-        "tests/paperread_pdf_test/test2_short_conditions_input_table.csv"
-      ],
-      "contexts": [
+      "count": 4,
+      "example_contexts": [
         "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
         "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "Graphene",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Surface/Support"
       ],
-      "count": 2
+      "count": 3,
+      "example_contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "Ag/g-C3N4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "carbon cloth",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces",
+        "Surface/Support"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "g-C3N4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "carbon",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "carbon supported Ir",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "carbon supported Pt",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "carbon supported Ru",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "g-C3N4 surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
+      ]
+    },
+    {
+      "term": "Graphene (G)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
+    },
+    {
+      "term": "graphene plane",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorption_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
     },
     {
       "term": "graphene surface",
@@ -57,13 +529,46 @@
       "fields": [
         "surfaces"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 1,
+      "example_contexts": [
         "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "graphene-like carbon surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
       ],
-      "count": 1
+      "count": 1,
+      "example_contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "hydrocarbons",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ]
+    },
+    {
+      "term": "nitrogen-doped carbon",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
+      ]
     }
   ]
 }

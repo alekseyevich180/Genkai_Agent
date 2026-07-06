@@ -1,0 +1,53 @@
+这次抽到的关键信息包括：
+
+在 Ru-Ir-Pt-exp_conditions_input_table.csv 里：
+
+- 吸附物/反应物：Water
+- 团簇/单原子建模线索：Yes
+- 建模关键词：Ru, OER, nanoparticle, active site
+- 建模关键词：Ir, OER, nanoparticle, active site
+- 建模关键词：Pt, OER, nanoparticle, active site
+- 建模关键词：Ru, OER, bulk material
+- 建模关键词：Ir, OER, bulk material
+- 建模关键词：Pt, OER, bulk material
+
+在 Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ru
+  - Ir
+  - Pt
+  - carbon
+  - TiC
+  - RuOx
+- 材料参数：
+  - nanoparticles
+  - bulk materials
+  - noble metal content
+  - high surface area
+- 反应参数：
+  - OER potentials
+  - voltage cycling
+- 性能：
+  - catalytic activity
+  - durability
+  - oxophilic nature
+- 表面/晶面：
+  - carbon supported Ru
+  - carbon supported Ir
+  - carbon supported Pt
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - Ru nanoparticles
+  - Ir nanoparticles
+  - Pt nanoparticles
+- 建模关键词：
+  - electrocatalytic
+  - OER
+  - water splitting
+  - anodic oxidation
+- 推荐建模任务：
+  - 未提取

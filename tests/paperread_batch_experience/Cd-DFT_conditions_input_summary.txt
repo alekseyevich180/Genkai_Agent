@@ -1,0 +1,35 @@
+这次抽到的关键信息包括：
+
+在 Cd-DFT_conditions_input_table.csv 里：
+
+- 吸附物/反应物：H2, O2
+- 建模关键词：surface, active site, electrocatalyst, adsorption
+
+在 Cd-DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - CdN4C0-gra
+  - CdN0C4-gra
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - ƞHER = 0.05 V
+  - ƞOER = 0.48 V
+  - ƞORR = 0.75 V
+- 性能：
+  - electrocatalytic properties
+  - overpotential
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - Mx-Ny-C
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - Gibbs free energy
+  - partial densities of states
+- 推荐建模任务：
+  - 未提取

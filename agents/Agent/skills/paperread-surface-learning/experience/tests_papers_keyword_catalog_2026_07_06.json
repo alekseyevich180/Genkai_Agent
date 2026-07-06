@@ -1,0 +1,1648 @@
+{
+  "generated_at": "2026-07-06",
+  "source_dir": "tests/paperread_batch_experience",
+  "pair_count": 38,
+  "unknown_term_count": 269,
+  "categories": {
+    "Adsorption Site": [
+      {
+        "term": "Cr3c",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+        "context": "Cr2O3",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Cr5c",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+        "context": "Cr2O3",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Rh",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Rh2O3",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "Cluster/Single Atom": [
+      {
+        "term": "Yes",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Ru nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "Coverage": [
+      {
+        "term": "11.0%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+        "context": "Pd4, Pd6, Pd17 clusters",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "7.9%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+        "context": "Pd4, Pd6, Pd17 clusters",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "9.4%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+        "context": "Pd4, Pd6, Pd17 clusters",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Full",
+        "source": "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv",
+        "context": "CoPt nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "High OH or mixed OH/O",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+        "context": "Au(100)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "sub-saturation",
+        "source": "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv",
+        "context": "CoPt nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "Modeling Keywords": [
+      {
+        "term": "activation energy",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+        "context": "Pt10Pb/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ag/g-C3N4",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "context": "Ag/g-C3N4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "alkaline electrolyte",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv",
+        "context": "Hg/HgO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "antimonene",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Au(100)",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+        "context": "Au(111)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Au(111)",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+        "context": "Au(111)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Bi",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv",
+        "context": "Nickel–Bismuth Oxide",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "black phosphorus",
+        "source": "tests/paperread_batch_experience/Au-exp_conditions_input_table.csv",
+        "context": "Black Phosphorus Nanosheets",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "bulk material",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Bulk Ru",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalytic activity",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv",
+        "context": "",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "charge redistribution",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv",
+        "context": "NiFe LDH",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "charge transfer",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+        "context": "CoO/Co",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+        "context": "Co nanochains",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv",
+        "context": "Co oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co2+",
+        "source": "tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv",
+        "context": "Co–Fe–Cr (oxy)hydroxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co3+",
+        "source": "tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv",
+        "context": "Co–Fe–Cr (oxy)hydroxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co3+",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv",
+        "context": "Co oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co3O4",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co3O4",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co4+",
+        "source": "tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv",
+        "context": "Co–Fe–Cr (oxy)hydroxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co4+",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv",
+        "context": "Co oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "composition",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv",
+        "context": "",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "CoO",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+        "context": "Co nanochains",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "covalency",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv",
+        "context": "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Cr",
+        "source": "tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv",
+        "context": "Co–Fe–Cr (oxy)hydroxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Cr2O3",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+        "context": "Cr2O3",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "d-band",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv",
+        "context": "Pt-Bi Alloy",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "dendrite",
+        "source": "tests/paperread_batch_experience/test_conditions_input_table.csv",
+        "context": "Sn SAs/G-Na",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "dissolution pathways",
+        "source": "tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv",
+        "context": "RuO2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "doping",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalyst",
+        "source": "tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv",
+        "context": "CdN4C0-gra",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Electrocatalyst",
+        "source": "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv",
+        "context": "Mo–N/C@MoS2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalytic OER",
+        "source": "tests/paperread_batch_experience/Au-exp_conditions_input_table.csv",
+        "context": "Black Phosphorus Nanosheets",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electron transfer",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv",
+        "context": "Pt-Bi Alloy",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electronic structure",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv",
+        "context": "Nickel–Bismuth Oxide",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electronic structure",
+        "source": "tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv",
+        "context": "RuO2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electronic structure",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv",
+        "context": "",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "g-C3N4",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "context": "Ag/g-C3N4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Habs",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hads",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "HER",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv",
+        "context": "Nickel–Bismuth Oxide",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "HER",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv",
+        "context": "Hg/HgO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hg/HgO",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv",
+        "context": "Hg/HgO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "interfacial interactions",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv",
+        "context": "NiFe LDH",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ir",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Ir nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "metal-oxygen bonding",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_table.csv",
+        "context": "Ni-O-G SACs",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "MoS2",
+        "source": "tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv",
+        "context": "Mo–N/C@MoS2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "nanoporous",
+        "source": "tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv",
+        "context": "Ni(Fe)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ni",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_table.csv",
+        "context": "Ni-O-G SACs",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "NiFe oxyhydroxide",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_table.csv",
+        "context": "NiFe LDH",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "NiO",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv",
+        "context": "Nickel–Bismuth Oxide",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "NO oxidation",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+        "context": "Cr2O3",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "O",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_table.csv",
+        "context": "Ni-O-G SACs",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "context": "Ag/g-C3N4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+        "context": "Au(111)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv",
+        "context": "Nickel–Bismuth Oxide",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+        "context": "Co nanochains",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Fe_Co_Cr_oxide_conditions_input_table.csv",
+        "context": "Co–Fe–Cr (oxy)hydroxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv",
+        "context": "Hg/HgO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Ru nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv",
+        "context": "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv",
+        "context": "ZnO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv",
+        "context": "Co oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OHads",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ORR",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv",
+        "context": "Au(111)",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ORR",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv",
+        "context": "Pt-Bi Alloy",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "overpotential",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "overpotential (ηOER = 0.48 V",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "oxide",
+        "source": "tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv",
+        "context": "Oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "oxygen evolution",
+        "source": "tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv",
+        "context": "Oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "oxygen reduction reaction",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+        "context": "Pt10Pb/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pd",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_table.csv",
+        "context": "Pd4, Pd6, Pd17 clusters",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "PEC",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "context": "Ag/g-C3N4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "phase evolution",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+        "context": "CoO nanocubes",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "photoanode",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "context": "Ag/g-C3N4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "planar deposition",
+        "source": "tests/paperread_batch_experience/test_conditions_input_table.csv",
+        "context": "Sn SAs/G-Na",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pt",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Pt nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pt-Bi",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv",
+        "context": "Pt-Bi Alloy",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "reaction mechanism",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv",
+        "context": "Reaction Mechanism",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Rh2O3",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv",
+        "context": "Rh–Rh2O3-NPs/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ru",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+        "context": "Ru nanoparticles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "SAC",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "scaling relation",
+        "source": "tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv",
+        "context": "Oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "single-atom catalyst",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "sodium",
+        "source": "tests/paperread_batch_experience/test_conditions_input_table.csv",
+        "context": "Sn SAs/G-Na",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "structure",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv",
+        "context": "",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "tensile strain",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_table.csv",
+        "context": "Pt-Bi Alloy",
+        "suggested_action": "Review whether slab strain control should be added to the modeling planner."
+      },
+      {
+        "term": "tensile stress effect",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+        "context": "Pt10Pb/C",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "transition metal",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_table.csv",
+        "context": "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "transition metal",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ZnO",
+        "source": "tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv",
+        "context": "ZnO",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "β-CoOOH",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "β-CoOOH",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv",
+        "context": "Co oxides",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ΔG*H",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ηORR = 0.50 V)",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+        "context": "Antimonene",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "Surface Termination": [
+      {
+        "term": "B-layer (octahedral Co and O ions)",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+        "context": "Co3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "adsorption_sites": [
+      {
+        "term": "*",
+        "source": "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl",
+        "context": "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "graphene plane",
+        "source": "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl",
+        "context": "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER intermediates",
+        "source": "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl",
+        "context": "ja511559d 1..9",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "clusters": [
+      {
+        "term": "Ag nanospheres",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+        "context": "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ag4",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Au2–Ag2",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Au4",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Co nanochains",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "context": "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "CoO nanocubes",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "context": "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pd17",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pd4",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pd6",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Rh–Rh2O3-NPs",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "coverage": [
+      {
+        "term": "11.0%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "7.9%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "9.4%",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "links": [
+      {
+        "term": "adsorbs",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "adsorbs",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "cites",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "cites",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "enhances",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "forms_intermediate",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "produces",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "shows_property",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: Bismuth (Bi)",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: d1nr02235k",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: H2O",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: http://dx.doi.org/10.1126/science.aad4998",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: NiO",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: octahedral Co",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: Rh–Rh2O3-NPs/C",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "source: Scientific Reports",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: *OH",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: *OOH",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: Bismuth (Bi)",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: catalytic activity",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: Fe",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: H2",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: Hads",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: HER activity",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: HER/OER/ORR",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: HOR activity",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: https://doi.org/10.1038/s41598-022-06608-7",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: Ni",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: OER",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: OHads",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "target: Z. W. Seh et al., Science 355, eaad4998 (2017)",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "used_for",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "alkaline water electrolysis",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+        "context": "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "anodic oxidation",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "context": "cs3003098 1..8",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Atomic Simulation Environment",
+        "source": "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+        "context": "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Bader charge analysis",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "bimetallic catalysts",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+        "context": "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "binding",
+        "source": "tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalyst",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "context": "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalyst development",
+        "source": "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+        "context": "d0qi01060j 234..272 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalysts",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+        "context": "review article",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalytic mechanism",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "catalytic reactions",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+        "context": "review article",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "charge transfer",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "context": "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "computational methods",
+        "source": "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl",
+        "context": "ja511559d 1..9",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "computational methods",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+        "context": "review article",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "computational methods",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "computational standard hydrogen electrode",
+        "source": "tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl",
+        "context": "DOI: 10.1002/cctc.201000397",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "d-band theory",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl",
+        "context": "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "dendrite-free",
+        "source": "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl",
+        "context": "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl",
+        "context": "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+        "context": "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+        "context": "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+        "context": "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl",
+        "context": "DOI: 10.1002/cctc.201000397",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+        "context": "jp306303y 1..6",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+        "context": "review article",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl",
+        "context": "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density functional theory",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl",
+        "context": "ja405997s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "density of states",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "context": "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+        "context": "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+        "context": "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "context": "rsc_cp_b803956a_auto 3722..3730",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+        "context": "jp306303y 1..6",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT+U",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "DFT+U",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+        "context": "jp306303y 1..6",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "dispersion interactions",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl",
+        "context": "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+        "context": "d0qi01060j 234..272 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+        "context": "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "context": "rsc_cp_b803956a_auto 3722..3730",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+        "context": "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysis",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalyst",
+        "source": "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "context": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalyst",
+        "source": "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+        "context": "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalysts",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalytic",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "context": "cs3003098 1..8",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalytic activity",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl",
+        "context": "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrocatalytic water splitting",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+        "context": "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrochemical processes",
+        "source": "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl",
+        "context": "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electrochemistry",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+        "context": "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "electronic structure",
+        "source": "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+        "context": "review article",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "first-principles calculation",
+        "source": "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl",
+        "context": "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "first-principles calculation",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "free energy landscape",
+        "source": "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl",
+        "context": "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "GCE-DFT",
+        "source": "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+        "context": "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Gibbs free energy",
+        "source": "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+        "context": "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hubbard U",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hubbard-U approach",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl",
+        "context": "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hubbard-U correction",
+        "source": "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl",
+        "context": "ja405997s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "hydrogen evolution",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "hydrogen oxidation",
+        "source": "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+        "context": "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "kinetic characteristics",
+        "source": "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "molecular orbital",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl",
+        "context": "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "nanoporous",
+        "source": "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+        "context": "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Nernst equation",
+        "source": "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+        "context": "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+        "context": "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+        "context": "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+        "context": "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "context": "cs3003098 1..8",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/Sb-exp_conditions_input_surface_relations.jsonl",
+        "context": "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl",
+        "context": "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "OER",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl",
+        "context": "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "operando X-ray absorption spectroscopy",
+        "source": "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl",
+        "context": "ja511559d 1..9",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "ORR",
+        "source": "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+        "context": "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "oxidation",
+        "source": "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "context": "rsc_cp_b803956a_auto 3722..3730",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "partial densities of states",
+        "source": "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+        "context": "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "PEC",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+        "context": "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "phase evolution",
+        "source": "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "context": "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "photoelectrochemical",
+        "source": "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+        "context": "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "planar deposition",
+        "source": "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl",
+        "context": "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pourbaix diagram",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Quantum Espresso",
+        "source": "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+        "context": "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "reaction mechanisms",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "SACs",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl",
+        "context": "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "sodium metal batteries",
+        "source": "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl",
+        "context": "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "theoretical studies",
+        "source": "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "context": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "trifunctional",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "water oxidation",
+        "source": "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+        "context": "acs_nn_nn-2013-00772s 1..10",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "water splitting",
+        "source": "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl",
+        "context": "d0qi01060j 234..272 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "water splitting",
+        "source": "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "context": "cs3003098 1..8",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "XAS",
+        "source": "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+        "context": "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "modifiers": [
+      {
+        "term": "Fe",
+        "source": "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+        "context": "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Hubbard-U correction",
+        "source": "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+        "context": "jp306303y 1..6",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "monochain CrO3",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "single_atoms": [
+      {
+        "term": "Ag",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "AgSA",
+        "source": "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+        "context": "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Cd",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Ir",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pd",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Pt",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "Rh",
+        "source": "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "context": "d1nr02235k 12885..12895 ++",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "single nickel atoms",
+        "source": "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl",
+        "context": "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "single-atom Au",
+        "source": "tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl",
+        "context": "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ],
+    "surface_terminations": [
+      {
+        "term": "five-coordinated Cr5c",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "octahedral Co and O ions (B-layer)",
+        "source": "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "context": "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      },
+      {
+        "term": "three-coordinated Cr3c",
+        "source": "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "context": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "suggested_action": "Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow."
+      }
+    ]
+  }
+}

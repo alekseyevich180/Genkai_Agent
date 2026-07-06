@@ -1,0 +1,37 @@
+这次抽到的关键信息包括：
+
+在 origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv 里：
+
+- 吸附物/反应物：O, OH
+- 建模关键词：surface, active site, adsorbate, oxygen vacancy
+- 吸附物/反应物：H2, O
+- 建模关键词：surface intermediates, adsorption energies
+
+在 origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Pt
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - applied bias
+  - temperature (300 K)
+- 性能：
+  - overpotential
+  - adsorption energy
+- 表面/晶面：
+  - Pt(111)
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - O
+  - OH
+  - *
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - electrochemical processes
+  - free energy landscape
+- 推荐建模任务：
+  - adsorbate_landscape

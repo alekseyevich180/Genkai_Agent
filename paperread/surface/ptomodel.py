@@ -164,6 +164,24 @@ def _normalize_reaction(raw: str) -> str:
     return raw.strip()
 
 
+def _infer_cluster_structures(cluster_entries: list[str]) -> list[str]:
+    structures: list[str] = []
+    joined = " ".join(cluster_entries).lower()
+    for label in ("fcc", "hcp", "bcc"):
+        if label in joined:
+            structures.append(label)
+    return structures
+
+
+def _infer_site_symbols(active_sites: list[str]) -> list[str]:
+    symbols: list[str] = []
+    for item in active_sites:
+        symbol = _normalize_species(item)
+        if symbol and symbol not in symbols:
+            symbols.append(symbol)
+    return symbols
+
+
 def _pick_reaction_type(extraction: dict[str, Any], table_row: dict[str, str] | None) -> str | None:
     table_reaction = _clean_scalar((table_row or {}).get("Reaction Type"))
     application_reaction = _first_nonempty(*_flatten_strings(extraction.get("applications")))
@@ -334,6 +352,127 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
     return payload
 
 
+def _build_argument_template(
+    task_name: str,
+    task_inputs: dict[str, Any],
+    normalized_mapping: dict[str, Any],
+    parameter_schema_registry: dict[str, Any],
+) -> dict[str, Any]:
+    task_schema = parameter_schema_registry["tasks"].get(task_name, {})
+    parameters = task_schema.get("parameters", {})
+    argument_values = {name: None for name in parameters}
+    argument_sources: dict[str, dict[str, Any]] = {}
+
+    def mark(
+        parameter_name: str,
+        *,
+        value: Any,
+        status: str,
+        reason: str,
+        from_task_inputs: list[str] | None = None,
+        from_normalized_mapping: list[str] | None = None,
+    ) -> None:
+        argument_values[parameter_name] = value
+        argument_sources[parameter_name] = {
+            "status": status,
+            "reason": reason,
+            "from_task_inputs": from_task_inputs or [],
+            "from_normalized_mapping": from_normalized_mapping or [],
+        }
+
+    if "task_name" in parameters:
+        mark(
+            "task_name",
+            value=task_name,
+            status="auto",
+            reason="Executable task name is already selected by ptomodel.",
+        )
+
+    if task_name == "adsorbate_landscape":
+        site_symbols = _infer_site_symbols(task_inputs.get("active_sites", []))
+        if site_symbols:
+            mark(
+                "site_symbols",
+                value=",".join(site_symbols),
+                status="auto",
+                reason="Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+                from_task_inputs=["active_sites"],
+            )
+    elif task_name == "surface_cluster_builder":
+        cluster_species = task_inputs.get("cluster_species", [])
+        if cluster_species:
+            mark(
+                "cluster_element",
+                value=cluster_species[0],
+                status="auto",
+                reason="Cluster species normalized from paper cluster mentions.",
+                from_task_inputs=["cluster_species"],
+            )
+        cluster_structures = _infer_cluster_structures(task_inputs.get("clusters", []))
+        if cluster_structures:
+            mark(
+                "cluster_structures",
+                value=cluster_structures,
+                status="auto",
+                reason="Cluster text explicitly mentions crystal-structure keywords.",
+                from_task_inputs=["clusters"],
+            )
+
+    for parameter_name, parameter_spec in parameters.items():
+        if parameter_name in argument_sources:
+            continue
+
+        if parameter_name in {"input", "surface", "molecule", "cluster", "cluster_bulk_file"}:
+            mark(
+                parameter_name,
+                value=None,
+                status="needs_upstream_artifact",
+                reason="This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+                from_task_inputs=["material", "surfaces", "facets"],
+                from_normalized_mapping=["primary_material", "primary_surface_or_support", "facet_set"],
+            )
+        elif parameter_name in {"vacancy_counts", "coverage_counts", "adsorption_sites", "active_symbols"}:
+            mark(
+                parameter_name,
+                value=None,
+                status="needs_manual_decision",
+                reason="Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+                from_task_inputs=["coverage", "adsorption_sites", "active_sites", "defects", "vacancy_models"],
+            )
+        elif parameter_name in {"cluster_atoms", "cluster_layers", "cluster_radius"}:
+            mark(
+                parameter_name,
+                value=None,
+                status="needs_manual_decision",
+                reason="Cluster size mode must be chosen explicitly before invoking the builder.",
+                from_task_inputs=["clusters"],
+            )
+        else:
+            default_status = "optional_unset"
+            if parameter_spec.get("required"):
+                default_status = "unresolved_required"
+            mark(
+                parameter_name,
+                value=None,
+                status=default_status,
+                reason="No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+            )
+
+    required_missing = [
+        name
+        for name, spec in parameters.items()
+        if spec.get("required") and argument_values.get(name) is None
+    ]
+    auto_mapped = [name for name, meta in argument_sources.items() if meta["status"] == "auto"]
+
+    return {
+        "arguments": argument_values,
+        "argument_sources": argument_sources,
+        "auto_mapped_parameters": auto_mapped,
+        "required_missing_parameters": required_missing,
+    }
+
+
 def build_ptomodel_payload(
     relations_jsonl: str,
     table_csv: str | None = None,
@@ -377,6 +516,22 @@ def build_ptomodel_payload(
             + _to_list(extraction.get("surface_terminations"))
             + _to_list(extraction.get("defects"))
         )
+        normalized_mapping = {
+            "primary_material": _first_nonempty(*materials),
+            "material_classes": material_classes,
+            "primary_surface_or_support": _first_nonempty(*supports),
+            "facet_set": normalized_facets,
+            "loaded_species": [item["normalized_species"] for item in cluster_species],
+            "reaction_family": (
+                [_normalize_reaction(reaction_type)]
+                if reaction_type
+                else []
+            ),
+        }
+        task_inputs = {
+            task_name: _build_task_inputs(task_name, extraction, table_row)
+            for task_name in executable_tasks
+        }
 
         documents.append(
             {
@@ -410,30 +565,26 @@ def build_ptomodel_payload(
                     "active_sites": _to_list(extraction.get("active_sites")) or _to_list((table_row or {}).get("Active Site")),
                     "modeling_keywords": modeling_keywords,
                 },
-                "normalized_mapping": {
-                    "primary_material": _first_nonempty(*materials),
-                    "material_classes": material_classes,
-                    "primary_surface_or_support": _first_nonempty(*supports),
-                    "facet_set": normalized_facets,
-                    "loaded_species": [item["normalized_species"] for item in cluster_species],
-                    "reaction_family": (
-                        [_normalize_reaction(reaction_type)]
-                        if reaction_type
-                        else []
-                    ),
-                },
+                "normalized_mapping": normalized_mapping,
                 "recommended_modeling_tasks": tasks,
                 "executable_tasks": executable_tasks,
                 "deferred_tasks": deferred_tasks,
-                "task_inputs": {
-                    task_name: _build_task_inputs(task_name, extraction, table_row)
-                    for task_name in executable_tasks
-                },
+                "task_inputs": task_inputs,
                 "task_parameter_schema_refs": {
                     task_name: {
                         "schema_path": parameter_schema_registry["schema_path"],
                         "task_key": task_name,
                     }
+                    for task_name in executable_tasks
+                    if task_name in parameter_schema_registry["tasks"]
+                },
+                "task_argument_template": {
+                    task_name: _build_argument_template(
+                        task_name,
+                        task_inputs.get(task_name, {}),
+                        normalized_mapping,
+                        parameter_schema_registry,
+                    )
                     for task_name in executable_tasks
                     if task_name in parameter_schema_registry["tasks"]
                 },

@@ -1,0 +1,47 @@
+这次抽到的关键信息包括：
+
+在 influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv 里：
+
+- Co, O
+- Co3O4 暴露/涉及晶面 (001)
+- 建模关键词：OER, Co3O4, doping, active site, octahedral site, oxygen vacancy
+- 建模关键词：OER, Co3O4, doping, active site, tetrahedral site, oxygen vacancy
+
+在 influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Co3O4
+- 材料参数：
+  - normal spinel
+  - space group Fd3̅m
+  - Co2+ (d7, high spin)
+  - Co3+ (d6, low spin)
+- 反应参数：
+  - oxygen partial pressure
+  - pH
+  - applied voltage
+- 性能：
+  - p-type conducting character
+  - overpotential of 0.46 V
+  - overpotential of 0.34 V with Ni doping
+  - overpotential of 0.37 V with Fe doping
+- 表面/晶面：
+  - Co3O4(001) surface
+  - octahedral Co and O ions (B-layer)
+  - tetrahedral Co termination (A-layer)
+- 缺陷/活性位点：
+  - octahedral Co
+- 吸附/覆盖度：
+  - *OH
+  - *OOH
+  - octahedral site
+  - tetrahedral site
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - Hubbard U
+  - Pourbaix diagram
+- 推荐建模任务：
+  - doped_surface
+  - vacancy_landscape

@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "material_class": "carbides_mxenes",
+  "updated_at": "2026-07-06T06:23:12.654730+00:00",
+  "summary": {
+    "terms": 20,
+    "known_useful": 9,
+    "unknown": 11,
+    "sources": [
+      "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Au-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+      "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv",
+      "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "Au Nanoparticles",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier",
+        "Cluster/Single Atom",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Black Phosphorus Nanosheets"
+      ],
+      "count": 3
+    },
+    {
+      "term": "Pt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "clusters"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Pt nanoparticles",
+        "cs3003098 1..8"
+      ],
+      "count": 3
+    },
+    {
+      "term": "CoPt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Ir nanoparticles",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "clusters",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "cs3003098 1..8",
+        "Ir nanoparticles"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Ru nanoparticles",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "clusters",
+        "Material"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "cs3003098 1..8",
+        "Ru nanoparticles"
+      ],
+      "count": 2
+    },
+    {
+      "term": "catalytic active site",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "catalytic activity",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv"
+      ],
+      "contexts": [],
+      "count": 1
+    },
+    {
+      "term": "catalytic mechanism",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ],
+      "count": 1
+    },
+    {
+      "term": "catalytic reactions",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "review article"
+      ],
+      "count": 1
+    },
+    {
+      "term": "catalytic sites",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ],
+      "count": 1
+    },
+    {
+      "term": "electrocatalytic",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "cs3003098 1..8"
+      ],
+      "count": 1
+    },
+    {
+      "term": "electrocatalytic activity",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "electrocatalytic OER",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Black Phosphorus Nanosheets"
+      ],
+      "count": 1
+    },
+    {
+      "term": "electrocatalytic water splitting",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ],
+      "count": 1
+    },
+    {
+      "term": "gold nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Au-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ],
+      "count": 1
+    },
+    {
+      "term": "kinetic characteristics",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ],
+      "count": 1
+    },
+    {
+      "term": "nanoparticle",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ru nanoparticles"
+      ],
+      "count": 1
+    },
+    {
+      "term": "nanoparticles",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ],
+      "count": 1
+    },
+    {
+      "term": "theoretical studies",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ],
+      "count": 1
+    },
+    {
+      "term": "TiC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "cs3003098 1..8"
+      ],
+      "count": 1
+    }
+  ]
+}

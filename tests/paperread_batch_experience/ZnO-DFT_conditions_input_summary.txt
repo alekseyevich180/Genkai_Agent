@@ -1,0 +1,37 @@
+这次抽到的关键信息包括：
+
+在 ZnO-DFT_conditions_input_table.csv 里：
+
+- Zn, Co, Ni, Mn, Fe, Cu
+- 建模关键词：OER, ZnO, dopant, active site, adsorption
+
+在 ZnO-DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - ZnO
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - temperature
+  - 1.0 V
+  - 0.4 V
+  - 0.5 V
+  - 0.8 V
+- 性能：
+  - overpotential
+- 表面/晶面：
+  - ZnO surface
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - OH
+  - OOH
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - DFT
+  - OER
+  - adsorption
+  - binding
+- 推荐建模任务：
+  - doped_surface

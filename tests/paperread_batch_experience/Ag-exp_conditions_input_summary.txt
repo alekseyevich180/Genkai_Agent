@@ -1,0 +1,38 @@
+这次抽到的关键信息包括：
+
+在 Ag-exp_conditions_input_table.csv 里：
+
+- Ag, g-C3N4
+- 团簇/单原子建模线索：Cluster
+- 建模关键词：Ag/g-C3N4, g-C3N4, OER, PEC, photoanode, oxygen vacancy
+
+在 Ag-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ag
+  - g-C3N4
+- 材料参数：
+  - hexagonal g-C3N4
+  - FCC Ag
+  - various ratios of Ag
+- 反应参数：
+  - onset potential (0.33 V)
+- 性能：
+  - improved absorption edge
+  - reduction in band gap energy
+  - long lifetime of photo induced charge carriers
+- 表面/晶面：
+  - g-C3N4 surface
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - Ag nanospheres
+- 建模关键词：
+  - photoelectrochemical
+  - OER
+  - PEC
+- 推荐建模任务：
+  - doped_surface
+  - surface_functionalization

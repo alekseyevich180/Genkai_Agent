@@ -1,0 +1,58 @@
+{
+  "id": "surface_relations",
+  "title": "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+  "text": "A Theoretical Investigation into the Role of Surface Defects for\nOxygen Evolution on RuO2\nColin F. Dickens†,‡ and Jens K. Nørskov*,†,‡\n†\nSUNCAT Center for Interface Science and Catalysis, Department of Chemical Engineering, Stanford University, Shriram Center,\n443 Via Ortega, Stanford, California 94305, United States\n‡\nSUNCAT Center for Interface Science and Catalysis, SLAC National Accelerator Laboratory, 2575 Sand Hill Road, Menlo Park,\nCalifornia 94025, United States\n*\nS Supporting Information\nSee https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.\n\nABSTRACT: The inability of conventional theoretical models to corroborate\nthe well-known experimental activity of RuO2 for the oxygen evolution reaction\nDownloaded via UNIV OF TOKYO on January 15, 2026 at 09:19:22 (UTC).\n\n(OER) has recently been the subject of numerous research eﬀorts. In this study,\nwe use density functional theory calculations to investigate the possibility that\nsurface defects formed during dissolution are responsible for the OER activity of\nRuO2. It has been well-established experimentally that RuO2 undergoes\ndissolution during OER, yet little is known about the atomic structure or\ncatalytic reactivity of the resulting defect sites. Through simulation of point\ndefects, steps, and kinks derived from the RuO2 (110) surface, we discover a 0.7\neV range in the primary descriptor for OER activity, with the most active sites\noutperforming those at the ideal (110) surface by nearly 0.5 eV. We postulate\nthat these variations in reactivity are due to diﬀerences in the local electronic\nstructure, and we investigate in more detail the electronic structure of two singly\ncoordinated sites at the same Ru atom located at a kink. Finally, we investigate\npossible dissolution pathways that may proceed at the RuO2 surface under OER conditions.\n\n■ INTRODUCTION\nOxygen electrochemistry plays a key role in renewable energy\nthe binding energy of O at all surfaces was similar (within 0.25\neV) to that of the (110) surface.14 Additionally, terraces cut\nfrom various RuO2 polymorphs were modeled by Kitchin and\ntechnologies.1−3 The oxygen evolution reaction (OER) splits\nXu, and the primary theoretical descriptor for OER activity\nwater to provide protons and electrons that can be reduced into\n(ΔGO − ΔGOH) was found in all cases to be within 0.15 eV of\nhydrogen gas or used to reduce carbon dioxide into\nthat of rutile RuO2 (110).15 Despite the well-known fact that\nhydrocarbons or oxygenates in an electrolyzer. Improving the\nRuO2 readily dissolves during OER6,10 and the decades-old\nactivity of OER catalysts directly translates to improved\nhypothesis that the formation of reactive surface groups under\nelectrolyzer eﬃciency. In addition to catalyst activity, it is also\noperating conditions are responsible for the observed OER\ncrucial to optimize catalyst stability.4−7 Proton exchange\nactivity on RuO2,16 previous theoretical eﬀorts have focused on\nmembrane electrolyzers make use of an acidic membrane, idealized and defect-free terraces. In this study, we investigate\nwhich places very stringent criteria on the OER catalyst, that it the possibility that defect sites are responsible for the well-\nmust be stable under acidic, oxidizing conditions. Very few known OER activity of RuO2 and examine possible dissolution\nOER catalysts satisfy this requirement while simultaneously pathways that they are associated with. Through modeling of\nmaintaining adequate electrical transport and catalytic activity, point defects, steps, and kinks, we illustrate a diverse subset of\nnamely, iridium- and ruthenium-based oxides.4 the types of active sites present at the surface of RuO2 under\nIt has long since been observed experimentally that reaction conditions.\n\n■\nruthenium-based electrodes are less stable but more active\nthan iridium-based electrodes,7−10 but this is actually in THEORETICAL METHODS\ncontradiction to recent density functional theory (DFT)\ncalculations, which predict RuO2 to lie ∼0.6 eV oﬀ of the All calculations were performed using Quantum Espresso\npeak of the OER volcano while IrO2 sits very near the top.11,12 through the Atomic Simulation Environment interface.17,18\nTheoretical studies have attempted to reconcile this theory− Plane-wave/density-wave cutoﬀs of 600/6000 eV were used. A\nexperiment discrepancy with varying degrees of success by 4 × 4 × 1 Monkhorst−Pack sampling of reciprocal space was\nadding a Hubbard U,11 explicit solvation,12,13 and van der Waals\ncorrections12 to the calculation of RuO2 (110) surfaces. Very Received: April 12, 2017\nrecently, the reactivity of other low-index facets including Revised: July 7, 2017\n(100), (101), and (111) were investigated, but it was found that Published: August 1, 2017",
+  "extraction": {
+    "materials": [
+      "RuO2"
+    ],
+    "material_parameters": [],
+    "surfaces": [
+      "RuO2 (110) surface"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [
+      "(110)",
+      "(100)",
+      "(101)",
+      "(111)"
+    ],
+    "dopants": [],
+    "defects": [
+      "point defects",
+      "steps",
+      "kinks"
+    ],
+    "vacancy_models": [],
+    "active_sites": [
+      "singly coordinated sites"
+    ],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "OER activity"
+    ],
+    "reaction_parameters": [],
+    "modeling_keywords": [
+      "density functional theory",
+      "Quantum Espresso",
+      "Atomic Simulation Environment"
+    ],
+    "recommended_modeling_tasks": [
+      "vacancy_landscape",
+      "adsorbate_landscape"
+    ],
+    "applications": [
+      "oxygen evolution reaction",
+      "electrolyzer efficiency"
+    ],
+    "links": []
+  }
+}

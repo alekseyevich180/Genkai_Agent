@@ -1,0 +1,422 @@
+pubs.acs.org/acscatalysis Viewpoint
+
+ Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for
+ Reporting Alkaline Water Electrolysis Overpotentials
+ Kenta Kawashima, Raúl A. Márquez, Yoon Jun Son, Clarissa Guo, Rinish Reddy Vaidyula,
+ Lettie A. Smith, Chikaodili E. Chukwuneke, and C. Buddie Mullins*
+ Cite This: ACS Catal. 2023, 13, 1893−1898 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ A lkaline water electrolysis (AWE) at a low temperature
+ (<100 °C) is one of the most promising sustainable
+ technologies for green hydrogen production.1 The AWE
+ and their concentrations. To better understand this phenom-
+ enon, one must first take a look at the Hg/HgO half-cell
+ reaction28 and corresponding Nernst equation17 as shown
+ Downloaded via UNIV OF TOKYO on January 15, 2026 at 09:06:17 (UTC).
+
+ process is composed of the hydrogen evolution reaction below:
+ (HER: 4H2O + 4e− → 2H2 + 4OH−) and oxygen evolution
+ reaction (OER: 4OH− → O2 + 2H2O + 4e−). By designing HgO(s , yellow) + H 2O(l) + 2e Hg(l) + 2OH (aq)
+ and synthesizing highly active electrocatalysts for both the (2)
+ HER and OER, high energy efficiency for AWE can be
+ achieved. In typical lab-scale AWE experiments, the activity of E[Hg/HgO with internal solution (x M M OH): M = NaorK]
+ an electrocatalyst for each half-cell reaction can be evaluated in
+ real RT aHg aOH 2
+ a standard three-electrode system in which three electrodes = E Hg/HgO( °
+ x M M OH) = E Hg/HgO ln
+ (i.e., working, counter, and reference electrodes) are placed in 2F aHgOa H2O
+ an alkaline electrolyte (as typified by the following RT a 2
+ concentrations: 0.1, 0.5, and 1 M NaOH/KOH). A °
+ = E Hg/HgO ln OH
+ mercury/mercuric oxide (Hg/HgO) electrode has been 2F a H 2O (3)
+ utilized for many electrochemical studies involving alkaline
+ where x M is the solute concentration in molarity (M: mol·
+ electrolytes2−17 and is also typically used as a reference
+ L−1) and EHg/HgO(x
+ real
+ M MOH) is the Hg/HgO electrode potential
+ electrode for electrocatalytic water splitting in alkaline media.18
+ with the internal alkaline solution at a given solute
+ The internal aqueous solution within this Hg/HgO electrode is
+ concentration. As indicated in eq 3, the Hg/HgO electrode
+ usually either 1 M NaOH or 1 M KOH (see the left side of
+ potential can be altered mainly by a change in the activities of
+ Figure 1). In alkaline overall water splitting research,
+ overpotentials required to deliver a given current density OH− (aOH−) and H2O (aH2O). The solute/solvent activity is
+ d
+
+ (e.g., 10 mA·cm−2) for the HER and OER half-reactions are given by
+ measured with respect to the Hg/HgO reference elec- a= ×C (4)
+ trode.18,19 It is then common practice to convert the potential
+ values from V vs Hg/HgO (EHg/HgO) to V vs the reversible where γ and C are the activity coefficient and concentration
+ hydrogen electrode (RHE) (E RHE ) using the Nernst (M), respectively. At 25 °C and relatively low NaOH/KOH
+ equation.18 The widely used equation (simplified Nernst concentrations (e.g., 0.1, 0.5, and 1 M), the H2O activity is
+ equation) for the Hg/HgO (1 M NaOH/KOH)-to-RHE nearly equal to one (see Table S1), while the NaOH/KOH
+ potential conversion is shown below:18,20−27 concentration change (e.g., 0.1 → 1 M) leads the OH− activity
+ change from 0.782/0.789 to 0.677/0.748, respectively.29
+ i RT yz Hence, in eq 3, the OH− activity mainly contributes to the
+ E RHE = E Hg/HgO + jjj2.303 × zz × pH + E Hg/HgO
+ °
+ k F { deviation from the standard potential of the Hg/HgO
+ electrode. Additionally, as the activities of pure substances in
+ °
+ = E Hg/HgO + 0.0592 × pH + E Hg/HgO condensed phases (i.e., solids or liquids) at 1 atm are one by
+ (1) definition,30 the activities of Hg and HgO become one. All
+ things considered, the potential of the Hg/HgO electrode (1
+ where E°Hg/HgO is the half-cell standard reduction potential of M NaOH/KOH) should not become equal to EHg/HgO ° . This
+ the Hg/HgO electrode [0.0983 V vs SHE (standard hydrogen
+ electrode) at 25 °C],28 R is the ideal gas constant (8.31432 J·
+ K−1·mol−1), T is the temperature [298.15 K (= 25 °C)], and F Published: January 18, 2023
+ is the Faraday constant (96485 C·mol−1). In eq 1, the Hg/
+ HgO electrode potential is denoted as EHg/HgO ° . However,
+ according to previous reports,3,14,15,17 it has already been found
+ that this electrode potential tends to vary depending on the
+ components of the internal solution in the Hg/HgO electrode
+
+ © 2023 American Chemical Society https://doi.org/10.1021/acscatal.2c05655
+ 1893 ACS Catal. 2023, 13, 1893−1898
+ACS Catalysis pubs.acs.org/acscatalysis Viewpoint
+
+Figure 1. Left: External and internal views of the Hg/HgO reference electrode. Right: Two-electrode system for the Hg/HgO reference electrode
+potential determination.
+ real
+Table 1. Theoretical and Experimental Hg/HgO Electrode Potentials [EHg/HgO(x M MOH)] with Different Internal Aqueous
+Solutions at 25 °C
+ real
+ Hg/HgO electrode potential: EHg/HgO(x M MOH) (mV)
+
+ internal solution
+ 0.1 M NaOH 0.5 M NaOH 1 M NaOH 0.1 M KOH 0.5 M KOH 1 M KOH
+ calc. potential 163.7 125.4 107.9 163.5 124.1 105.3
+ exp. potential [SCE (No. 1)] 148.5 ± 1.8 128.0 ± 1.7 108.9 ± 1.4 141.5 ± 1.2 126.7 ± 1.7 103.4 ± 2.3
+ exp. potential [SCE (No. 2)] 148.7 ± 1.5 127.0 ± 1.4 107.8 ± 0.6 141.4 ± 2.7 125.6 ± 1.7 102.7 ± 2.6
+ exp. potential3 169.0a 113.5a 110.0a
+a
+ The potentials of the Hg/HgO electrodes were determined by using the calomel electrode with a 0.1 or 1 M KCl internal aqueous solution.3
+
+misconception of the Hg/HgO electrode potential values may electrode potentials, and (iii) additional instructions/precau-
+hinder the accurate determination of the HER and OER tions that should be considered when using Hg/HgO reference
+overpotentials as these values are directly measured with electrodes.
+respect to the Hg/HgO reference electrode and converted to V
+vs RHE based on the standard reduction potential of the Hg/
+HgO electrode.
+ ■ Hg/HgO ELECTRODE POTENTIAL CALCULATION
+ Since 0.1−1 M NaOH/KOH aqueous electrolytes are typically
+ There are several works that have experimentally and used for testing electrocatalysts for the HER and OER, we
+theoretically obtained the potentials of Hg/HgO electrodes recommend the readers use the same electrolytes as the
+with NaOH, KOH, Ca(OH)2, and Ba(OH)2 used as internal internal solutions (this point will be discussed in detail later in
+aqueous solutions at different concentrations.3,31,14−17 How- this Viewpoint).32,33 Here, we attempted to calculate the
+ever, most of these previous reports only considered internal potentials of the Hg/HgO electrodes with 0.1, 0.5, and 1 M
+solutions with concentrations in molality (m: mol·kg−1)14,15,17 NaOH/KOH internal aqueous solutions at 25 °C. For
+and percent composition (%)31 rather than in molarity (M: calculating the Hg/HgO electrode potentials, we used eq 3
+mol·L−1 ). More generally, few reports have provided and also calculated all the necessary parameters [i.e., γOH− (the
+experimentally measured potentials of the Hg/HgO electrodes stoichiometric activity coefficient of OH−) and aH2O] through
+having internal solutions with concentrations in molarity.3
+ d
+
+ the Excel spreadsheet tool created by Hausmann et al.29 The
+Nowadays, as molarity is most frequently used in the field of as-calculated parameters are available in Table S1. Here, aOH−
+electrocatalytic water splitting, we urgently need the calculated can further be calculated through eq 4 (aOH− = γOH− × COH−).
+potential values of the Hg/HgO electrodes (x M MOH, M = Importantly, since the as-calculated γOH− is a stoichiometric
+Na or K) that can be utilized for the Hg/HgO-to-RHE activity coefficient,29 COH− becomes equivalent to the molar
+potential conversion and can also act as benchmarks for solute concentration (M) of sodium/potassium hydroxide.
+judging the reliability of each user’s Hg/HgO electrode. To The as-calculated potentials of Hg/HgO electrodes (0.1, 0.5,
+address these concerns, we herein discuss three points: (i) and 1 M NaOH/KOH) are listed in Table 1. Within the
+calculating the potentials of the Hg/HgO electrodes containing concentration range from 0.1 to 1 M, all the as-calculated
+NaOH/KOH internal aqueous solution with different molar potential values are higher than the standard potential
+concentrations (M), (ii) how to calibrate/check the Hg/HgO (E°Hg/HgO) value (98.3 mV) of the Hg/HgO electrode. Of the
+ 1894 https://doi.org/10.1021/acscatal.2c05655
+ ACS Catal. 2023, 13, 1893−1898
+ACS Catalysis pubs.acs.org/acscatalysis Viewpoint
+
+internal solution concentrations evaluated, the Hg/HgO Table 2. Calculated Liquid Junction (KCl sat.|x M MOH)
+electrodes with 1 M NaOH and KOH exhibited the calculated Potentials (ELJP) at 25 °C
+potentials closest to the standard potential at 9.6 and 7.0 mV
+ junction: solution A|solution B ELJP (mV)a ELJP (mV)b
+higher than 98.3 mV, respectively. Thus, when one conducts
+the Hg/HgO (1 M NaOH/KOH)-to-RHE potential con- KCl sat.|1 M KOH 6.4 6.8
+version using eq 1 to determine the overpotential for the HER KCl sat.|1 M NaOH 8.0 8.5
+and OER, one may underestimate and overestimate over- KCl sat.|0.5 M KOH 3.7 4.0
+potential values. Instead of using eq 1, we recommend the KCl sat.|0.5 M NaOH 4.8 5.1
+readers use the Nernst equation with the Hg/HgO electrode KCl sat.|0.1 M KOH −0.1 0.0
+ real KCl sat.|0.1 M NaOH 0.2 0.3
+potential [EHg/HgO(x M MOH)], keeping the internal solution (1
+ a
+M NaOH/KOH) for the potential conversion in mind [see eq Liquid junction potentials were calculated through the Henderson
+5]. equation.35 bLiquid junction potential was calculated according to the
+ stationary Nernst−Planck equation36 using LJPcalc software (https://
+ real swharden.com/LJPcalc).
+ E RHE = E Hg/HgO + 0.0592 × pH + E Hg/HgO(1 MNaOH/KOH)
+ (5)
+ real
+ were used. By using the as-obtained triplicate EHg/HgO(x
+■ Hg/HgO ELECTRODE POTENTIAL CALIBRATION
+In this section, we provide a facile experimental procedure for
+ values, means ± standard deviations were determined as shown
+ in Table 1. To check whether the results of two sets of
+ M MOH)
+
+obtaining the real Hg/HgO electrode potential (additional potential measurements can agree within experimental error or
+details are available in the Supporting Information). For this not, we conducted two-sample t-tests (see more details in the
+measurement, a two-electrode system consisting of the Hg/ Supporting Information) and compared the results from two
+HgO electrode of interest and a saturated calomel electrode different SCEs for each internal solution case.28 As indicated in
+(SCE) was used (see the right side of Figure 1). In this system, Table S3, in all the internal solution cases, the calculated t
+0.1, 0.5, and 1 M NaOH/KOH aqueous solutions were used as values became smaller than a critical t value at a 95%
+both the external and internal electrolytes. To evaluate the confidence level. Therefore, it can be concluded that there is
+measurement’s reliability and reproducibility, three Hg/HgO no statistically significant difference between the two measure-
+electrodes (Nos. 1−3) and two SCEs (Nos. 1 and 2) were ments using two different SCEs. Furthermore, by computing
+used (see Scheme S1 and Figure S1), and each SCE was the 95% confidence intervals for all the experimentally
+ real
+utilized to measure the potential of each Hg/HgO electrode obtained EHg/HgO(x M MOH) values [see eq S4], we also
+ real
+with the same internal solution type and concentrations. The confirmed whether the experimental EHg/HgO(x M MOH) values
+ real
+potential difference (Eobserved) between the Hg/HgO electrode agree with the calculated EHg/HgO(x M MOH) values or not. All the
+
+and SCE was monitored using a multimeter for 2 h at 25 °C computational results are demonstrated in Figure 2. Each point
+ real
+(see Figure S2), and the Eobserved value was recorded every 10 and bar represent the mean of triplicate EHg/HgO(x M MOH) values
+
+min. All the resultant time−potential (Eobserved) curves can be and their corresponding 95% confidence interval, respectively.
+found in Figures S3−S8. The Eobserved values recorded at 2 h At the higher NaOH/KOH concentrations of 1 and 0.5 M
+were used for calculating the Hg/HgO electrode potentials. (Figure 2a−d), the ranges of the as-computed 95% confidence
+ real
+Note that the as-observed Eobserved value expresses the potential intervals contain the calculated EHg/HgO(x M MOH) values
+
+difference between the Hg/HgO electrode and SCE because of (dashed orange lines). Thus, for 1 and 0.5 M NaOH/KOH
+the presence of a liquid junction potential (ELJP). Since the internal solutions, the experimentally obtained and calculated
+ real
+internal solution of the SCE [saturated KCl aqueous solution EHg/HgO(x M MOH) values agree with each other within
+
+(KCl sat.)] and the external electrolyte (x M NaOH/KOH) experimental error: the experimentally obtained results are
+were different, a liquid junction potential at the KCl sat.|x M not significantly different from the calculated results. In
+MOH interface exists and must, therefore, be considered for contrast, at the lower NaOH/KOH concentration of 0.1 M
+ real
+the Hg/HgO electrode calculation (see the right side of Figure (Figure 2e,f), the calculated EHg/HgO(x M MOH) values are outside
+
+1). An ELJP is present if one or more of the following cases are of the ranges of the 95% confidence intervals, implying that our
+ real
+true:34 (1) solutions A and B have the same constituents but at measurements provided different EHg/HgO(x M MOH) values from
+ real
+different concentrations, (2) solutions A and B have different the calculated EHg/HgO(x M MOH) values. In 1911, Donann et al.
+constituents at the same concentrations, and (3) solutions A observed a different result when they also measured the
+and B have different constituents at different concentrations. potentials of three Hg/HgO electrodes with three different
+As indicated in Table 2, the ELJP values for the different KCl internal solutions (i.e., 0.1 M NaOH, 1 M NaOH, and 1 M
+ real
+sat.|x M MOH interfaces were calculated through two different KOH). Their resultant EHg/HgO(x M MOH) values are similar to
+
+methods: the Henderson equation35 [see eq S1 and Table S2] our calculated values in both the higher and lower
+and the stationary Nernst−Planck equation36 (LJPcalc concentration cases (see Table 1).3 As shown in Figure S9a,
+software: https://swharden.com/LJPcalc). When one takes a commercially available Hg/HgO electrode contains a cotton
+the ELJP into consideration, the as-obtained Eobserved can be absorbent at the Hg/HgO|internal solution interface, whereas
+expressed by the Hg/HgO electrode prepared by Donann et al.3 did not
+ contain cotton. Accordingly, there is a possibility that the as-
+ real observed potential deviations from the calculated
+ Eobserved = E Hg/HgO( x M M OH) ° + E LJP
+ ESCE (6) real
+ EHg/HgO(0.1 M NaOH/KOH) might be caused by some chemical
+where E°SCE is the half-cell standard reduction potential of the species (e.g., K+, Na+, OH−, etc.) being unintentionally trapped
+SCE (0.2412 V vs SHE at 25 °C).37 Using eq 6, each in the cotton absorbent. To investigate this hypothesis, we
+ real
+EHg/HgO(x M MOH) value was obtained. For the true potential prepared the Hg/HgO electrode main body preimmersed in 1
+calculation, the ELJP values determined by the LJPcalc software M KOH, washed it with deionized (DI) water, and then
+ 1895 https://doi.org/10.1021/acscatal.2c05655
+ ACS Catal. 2023, 13, 1893−1898
+ACS Catalysis pubs.acs.org/acscatalysis Viewpoint
+
+Figure 2. 95% confidence interval (CI) plots for the experimentally obtained potentials of Hg/HgO electrodes with different internal solutions
+(0.1−1 M NaOH/KOH). Dashed orange lines indicate the calculated Hg/HgO electrode potentials. Here, 95% probability experiment objective
+values lie in these as-calculated intervals. Note that experimental values are statistically compared with calculated values (≈ true values) in these
+figures.
+
+performed SEM-EDX analysis of the cotton absorbent after Based on the above observations, we strongly recommend the
+immersing the as-washed Hg/HgO electrode main body in DI readers calibrate their own Hg/HgO electrodes before
+water for 50 h (see Figure S9b, details are available in the performing any electrochemical tests, especially when they
+Supporting Information). Figure S9c shows the SEM image of exchange the internal alkaline solution from high concentration
+the cotton absorbent after the 50 h DI water immersion. The to low concentration (e.g., 1 M → 0.1 M).
+cotton absorbent possessed a random micrometer-scale
+structure. The EDX elemental mapping images and corre-
+sponding EDX spectra are displayed in Figures S10 and S11.
+ ■ ADDITIONAL INSTRUCTIONS/PRECAUTIONS
+ Finally, we provide several instructions and discuss precautions
+Surprisingly, even after the 50 h DI water immersion, the when using the Hg/HgO electrode as a reference electrode in a
+presence of potassium species in the cotton absorbent was standard three-electrode system.
+confirmed. This result tells us that it is difficult to remove • As seen in Table 3, if one uses two different alkaline
+cations (i.e., Na+ and K+) from the cotton absorbent using solutions as internal and external electrolytes, undesired
+concentration gradient as a driving force. In the liquid junction potentials will be established at the Hg/
+ real
+EHg/HgO(0.1 M NaOH/KOH) measurement, the cotton absorbent HgO electrode frit. Moreover, during a long-term
+probably retains Na+/K+ species from the previous experi- electrochemical test, internal/external solution may
+ments using the internal solutions with the higher NaOH/ flow through the frit pores, resulting in the cation
+KOH concentrations. Presumably, OH− can also be trapped (Na+/K+) contamination and the concentration change
+due to the presence of Na+/K+ species, which induces charge of internal and external solutions.38 Thus, one should
+neutralization. Consequently, the remaining Na+/K+ species use alkaline solutions with the same constituents at the
+might cause the local pH change near the Hg/HgO|internal same concentrations for both internal and external
+solution interface, resulting in the Hg/HgO potential decrease. electrolytes.
+ 1896 https://doi.org/10.1021/acscatal.2c05655
+ ACS Catal. 2023, 13, 1893−1898
+ACS Catalysis pubs.acs.org/acscatalysis Viewpoint
+
+Table 3. Calculated Liquid Junction (x M M1OH|y M Authors
+M2OH) Potentials (ELJP) at 25 °C Kenta Kawashima − Department of Chemistry, The University
+ a b
+ of Texas at Austin, Austin, Texas 78712, United States;
+ junction: solution A|solution B ELJP (mV) ELJP (mV)
+ orcid.org/0000-0001-7318-6115
+ 1 M KOH|1 M NaOH 2.3 2.3 Raúl A. Márquez − Department of Chemistry, The University
+ 0.1 M KOH|0.1 M NaOH 2.3 2.3 of Texas at Austin, Austin, Texas 78712, United States;
+ 1 M KOH|0.1 M KOH −27.1 −27.1 orcid.org/0000-0003-3885-5007
+ 1 M NaOH|0.1 M NaOH −35.3 −35.2 Yoon Jun Son − McKetta Department of Chemical
+ 1 M KOH|0.1 M NaOH −27.3 −26.8 Engineering, The University of Texas at Austin, Austin, Texas
+ 1 M NaOH|0.1 M KOH −34.9 −35.4 78712, United States; orcid.org/0000-0003-1704-2314
+a
+ Liquid junction potentials were calculated through the Henderson Clarissa Guo − McKetta Department of Chemical Engineering,
+equation.35 bLiquid junction potentials were calculated according to The University of Texas at Austin, Austin, Texas 78712,
+the stationary Nernst−Planck equation36 using LJPcalc software United States
+(https://swharden.com/LJPcalc). Rinish Reddy Vaidyula − Department of Chemistry, The
+ University of Texas at Austin, Austin, Texas 78712, United
+ • Since yellow HgO is highly soluble in aqueous solutions States
+ at low pH values (<4),12,39 the use of Hg/HgO Lettie A. Smith − Department of Chemistry, The University of
+ electrodes in acidic media should be avoided. Texas at Austin, Austin, Texas 78712, United States;
+ • A small amount of yellow HgO can also dissolve into orcid.org/0000-0003-0378-072X
+ alkaline solutions.40 Thus, laboratory safety regulations Chikaodili E. Chukwuneke − Department of Chemistry, The
+ with instructions for mercury-containing wastes should University of Texas at Austin, Austin, Texas 78712, United
+ be followed when disposing of external electrolytes and States; orcid.org/0000-0003-0478-8387
+ especially internal solutions. Complete contact information is available at:
+ • As the Hg/HgO electrode can be electrochemically https://pubs.acs.org/10.1021/acscatal.2c05655
+ stable under temperatures up to 90 °C,13,15−17 one can
+ use the Hg/HgO electrode for electrochemical studies Notes
+ that require relatively hot environments (e.g., alkaline The authors declare no competing financial interest.
+ fuel cells,41 methane electrooxidation systems,42 etc.).
+ ■ ACKNOWLEDGMENTS
+
+■ SUMMARY
+In this Viewpoint, we discussed computational and exper-
+ The authors gratefully acknowledge the support of the
+ National Science Foundation (NSF) via Grant CHE-
+ 2102307. We also recognize the Welch Foundation for its
+imental methods for obtaining accurate potentials for Hg/HgO generous support through Grant F-1436.
+reference electrodes having NaOH/KOH solutions with
+different molar concentrations (0.1, 0.5, and 1 M) that are
+often used. By applying an accurate Hg/HgO electrode
+potential to the Hg/HgO-to-RHE potential conversion
+ ■ REFERENCES
+ (1) Kou, T.; Wang, S.; Li, Y. Perspective on High-Rate Alkaline
+ Water Splitting. ACS Mater. Lett. 2021, 3 (2), 224−234.
+equation, one can report more accurate overpotential values (2) Brönsted, J. N. Die elektromotorische Kraft der Knallgaskette. Z.
+for the HER and OER. We hope this study will improve the Für Phys. Chem. 1909, 65U (1), 84−92.
+fundamental interpretation of the Hg/HgO electrode potential (3) Donnan, F. G.; Allmand, A. J. XC.�A Standard Electrode with
+as well as the accuracy of reporting performance parameters in Alkaline Electrolyte: Hg | HgO Alkali. J. Chem. Soc. Trans. 1911, 99
+energy conversion devices involving alkaline media. (0), 845−856.
+ (4) Chow, M. THE FREE ENERGY OF POTASSIUM HYDROX-
+■
+*
+ ASSOCIATED CONTENT
+sı Supporting Information
+ IDE IN AQUEOUS SOLUTION AND THE ACTIVITIES OF ITS
+ IONS. J. Am. Chem. Soc. 1920, 42 (3), 488−497.
+ (5) Miyamoto, S. A Study on The Reducing Action of Ferrous
+The Supporting Information is available free of charge at Hydroxide. Sci. Pap. Inst. Phys. Chem. Res. 1922, 1 (4), 31−56.
+https://pubs.acs.org/doi/10.1021/acscatal.2c05655. (6) Knobel, M. THE ACTIVITIES OF THE IONS OF
+ POTASSIUM HYDROXIDE IN AQUEOUS SOLUTION. J. Am.
+ Experimental details, a scheme (experimental design), Chem. Soc. 1923, 45 (1), 70−76.
+ calculation details, digital photographs, tables (calcu- (7) Fried, F. Messungen der EMK galvanischer Elemente vom
+ lation parameters and results), time−potential curves Typus Me/MeO/NaOH/H2(Pt) und ihre Verwertung zur Prüfung
+ (SCE vs Hg/HgO), SEM and EDX elemental mapping des Nernstschen Wärmesatzes. Z. Für Phys. Chem. 1926, 123U (1),
+ images, and EDX spectra (PDF) 406−428.
+ (8) Shibata, E.; Kobayashi, Y.; Furukawa, S. The Differential
+
+■ AUTHOR INFORMATION
+Corresponding Author
+ Dilution of the Aqueous Solutions of Potassium Hydroxide. Nippon
+ Kagaku Kaishi 1931, 52 (7), 404−409.
+ (9) Shibata, E.; Murata, F. The Differential Dilution of the Aqueous
+ Solutions of Sodium Hydroxide. Nippon Kagaku Kaishi 1931, 52 (7),
+ C. Buddie Mullins − Department of Chemistry, McKetta 393−403.
+ Department of Chemical Engineering, Texas Materials (10) Ives, D. J. G.; Janz, G. J.; King, C. V. Reference Electrodes: Theory
+ Institute, Center for Electrochemistry, and H2@UT, The and Practice; Academic Press: New York, NY, 1961.
+ University of Texas at Austin, Austin, Texas 78712, United (11) Case, B.; Bignold, G. J. The Mercury/Mercuric Oxide Electrode
+ States; orcid.org/0000-0003-1030-4801; in High Temperature Aqueous Solutions. J. Appl. Electrochem. 1971, 1
+ Email: mullins@che.utexas.edu (2), 141−146.
+
+ 1897 https://doi.org/10.1021/acscatal.2c05655
+ ACS Catal. 2023, 13, 1893−1898
+ACS Catalysis pubs.acs.org/acscatalysis Viewpoint
+
+ (12) Ohtaki, H.; Maeda, M. Electrochemical Measurement Series - (30) Hussein, A. Chapter 12 - Flow Assurance Solids Prediction and
+Reference Electrode - Reference Electrode for Aqueous Solutions Modeling. In Essentials of Flow Assurance Solids in Oil and Gas
+(title in Japanese). Denki Kagaku Oyobi Kogyo Butsuri Kagaku 1980, Operations; Hussein, A., Ed.; Gulf Professional Publishing, 2023; pp
+48 (5), 278−283. 503−577; DOI: 10.1016/B978-0-323-99118-6.00018-6.
+ (13) Corti, H.; Fernández-Prini, R. Behaviour of the Mercury, (31) Every, R. L.; Banks, W. P. Reference Electrodes in Acid and
+Mercuric Oxide Electrode in Alkaline Solutions in the Temperature Base Systems. Corrosion 1967, 23 (6), 151−153.
+Range 298−363 K. J. Chem. Soc. Faraday Trans. 1 Phys. Chem. (32) Hall, D. S.; Bock, C.; MacDougall, B. R. The Electrochemistry
+Condens. Phases 1982, 78 (2), 545−554. of Metallic Nickel: Oxides, Hydroxides, Hydrides and Alkaline
+ (14) Kam, T. T. On the Nernst Equations of Mercury-Mercuric Hydrogen Evolution. J. Electrochem. Soc. 2013, 160 (3), F235.
+Oxide Half-Cell Electrodes. J. Chem. Educ. 1983, 60 (2), 133. (33) Lyu, X.; Li, J.; Jafta, C. J.; Bai, Y.; Canales, C. P.; Magnus, F.;
+ (15) Longhi, P.; Mussini, T.; Orsenigo, R.; Rondinini, S. Ingason, Á . S.; Serov, A. Investigation of Oxygen Evolution Reaction
+Redetermination of the Standard Potential of the Mercuric Oxide with Ni Foam and Stainless-Steel Mesh Electrodes in Alkaline
+Electrode at Temperatures between 283 and 363 K and the Solubility Seawater Electrolysis. J. Environ. Chem. Eng. 2022, 10 (5),
+Product Constant of Mercuric Hydroxide. J. Appl. Electrochem. 1987, No. 108486.
+17 (3), 505−514. (34) Bard, A. J., Inzelt, G., Scholz, F., Eds. Electrochemical Dictionary,
+ (16) Rondinini, S.; Longhi, P.; Mussini, P. R.; Mussini, T. 2nd ed.; Springer-Verlag: Berlin Heidelberg, 2012; DOI: 10.1007/
+Mercury(II) Oxide and Silver(I) Oxide Electrodes in Aqueous 978-3-642-29551-5.
+Solutions (Technical Report). Pure Appl. Chem. 1994, 66 (3), 641− (35) Bates, R. G. Determination of pH, 2nd ed.; A Wiley-Interscience
+647. Publication: New York, NY, 1973.
+ (17) Nickell, R. A.; Zhu, W. H.; Payne, R. U.; Cahela, D. R.; (36) Marino, M.; Misuri, L.; Brogioli, D. A New Open Source
+Tatarchuk, B. J. Hg/HgO Electrode and Hydrogen Evolution Software for the Calculation of the Liquid Junction Potential between
+Potentials in Aqueous Sodium Hydroxide. J. Power Sources 2006, Two Solutions According to the Stationary Nernst-Planck Equation.
+161 (2), 1217−1224. arXiv 2014, 1403.3640; DOI: 10.48550/arXiv.1403.3640.
+ (18) Niu, S.; Li, S.; Du, Y.; Han, X.; Xu, P. How to Reliably Report (37) Inzelt, G., Lewenstam, A., Scholz, F., Eds. Handbook of Reference
+the Overpotential of an Electrocatalyst. ACS Energy Lett. 2020, 5 (4), Electrodes; Springer: Berlin, Heidelberg, 2013; DOI: 10.1007/978-3-
+1083−1087. 642-36188-3.
+ (19) Wei, C.; Xu, Z. J. The Comprehensive Understanding of 10 mA (38) Mousavi, M. P. S.; Saba, S. A.; Anderson, E. L.; Hillmyer, M. A.;
+cm−2geo as an Evaluation Parameter for Electrochemical Water Splitting.
+ Bühlmann, P. Avoiding Errors in Electrochemical Measurements:
+Small Methods 2018, 2 (11), No. 1800168. Effect of Frit Material on the Performance of Reference Electrodes
+ (20) Qiang, F.; Feng, J.; Wang, H.; Yu, J.; Shi, J.; Huang, M.; Shi, Z.; with Porous Frit Junctions. Anal. Chem. 2016, 88 (17), 8706−8713.
+Liu, S.; Li, P.; Dong, L. Oxygen Engineering Enables N-Doped Porous (39) Hocsman, A.; Di Nezio, S.; Charlet, L.; Avena, M. On the
+Carbon Nanofibers as Oxygen Reduction/Evolution Reaction Mechanisms of Dissolution of Montroydite [HgO(s)]: Dependence
+Electrocatalysts for Flexible Zinc−Air Batteries. ACS Catal. 2022, of the Dissolution Rate on pH, Temperature, and Stirring Rate. J.
+12 (7), 4002−4015. Colloid Interface Sci. 2006, 297 (2), 696−704.
+ (21) Tabassum, L.; Khairul Islam, M.; Perea, I. P.; Li, M.; Huang, X.; (40) Garrett, A. B.; Hirschler, A. E. The Solubilities of Red and
+Tansim, H.; Suib, S. L. Facile Synthesis of Transition-Metal-Doped Yellow Mercuric Oxides in Water, in Alkali, and in Alkaline Salt
+(Fe, Co, and Ni) CuS/CuO/CS Nanorod Arrays for Superior Solutions. The Acid and Basic Dissociation Constants of Mercuric
+Electrocatalytic Oxygen Evolution Reaction. ACS Appl. Energy Mater. Hydroxide. J. Am. Chem. Soc. 1938, 60 (2), 299−306.
+2022, 5, 12039. (41) Ferriday, T. B.; Middleton, P. H. Alkaline Fuel Cell Technology
+ (22) Wu, Z.; Feng, Y.; Qin, Z.; Han, X.; Zheng, X.; Deng, Y.; Hu, W. - A Review. Int. J. Hydrog. Energy 2021, 46 (35), 18489−18510.
+Bimetallic Multi-Level Layered Co-NiOOH/Ni3S2@NF Nanosheet (42) Fornaciari, J. C.; Primc, D.; Kawashima, K.; Wygant, B. R.;
+for Hydrogen Evolution Reaction in Alkaline Medium. Small 2022, 18 Verma, S.; Spanu, L.; Mullins, C. B.; Bell, A. T.; Weber, A. Z. A
+(43), No. 2106904. Perspective on the Electrochemical Oxidation of Methane to
+ (23) Choi, G. H.; Moon, J.; Song, E.; Cho, S.; Park, K. W.; Park, J. T. Methanol in Membrane Electrode Assemblies. ACS Energy Lett.
+Rational Design of Hierarchical MOF-Derived CoP@Co-Fe LDH 2020, 5, 2954−2963.
+Bifunctional Electrocatalyst: An Approach toward Efficient Overall
+Water Splitting in Alkaline Media. Int. J. Energy Res. 2022, 46, 24633.
+ (24) Son, Y. J.; Kim, S.; Leung, V.; Kawashima, K.; Noh, J.; Kim, K.;
+Marquez, R. A.; Carrasco-Jaim, O. A.; Smith, L. A.; Celio, H.;
+Milliron, D. J.; Korgel, B. A.; Mullins, C. B. Effects of Electrochemical
+Conditioning on Nickel-Based Oxygen Evolution Electrocatalysts.
+ACS Catal. 2022, 12 (16), 10384−10399.
+ (25) Tian, X.; Liu, Y.; Xiao, D.; Sun, J. Ultrafast and Large Scale
+Preparation of Superior Catalyst for Oxygen Evolution Reaction. J.
+Power Sources 2017, 365, 320−326.
+ (26) Kargar, A.; Yavuz, S.; Kim, T. K.; Liu, C.-H.; Kuru, C.;
+Rustomji, C. S.; Jin, S.; Bandaru, P. R. Solution-Processed CoFe2O4
+Nanoparticles on 3D Carbon Fiber Papers for Durable Oxygen
+Evolution Reaction. ACS Appl. Mater. Interfaces 2015, 7 (32), 17851−
+17856.
+ (27) Zhao, H.; Li, W.; Wang, R. One-Pot Synthesis and
+Microstructure Analysis of Fe-Doped NiS2 for Efficient Oxygen
+Evolution Electrocatalysis. Mater. Adv. 2022, 3 (18), 7125−7131.
+ (28) Harris, D. C. Quantitative Chemical Analysis, 8th ed.; Clancy
+Marshall: New York, NY, 2010.
+ (29) Hausmann, J. N.; Traynor, B.; Myers, R. J.; Driess, M.;
+Menezes, P. W. The pH of Aqueous NaOH/KOH Solutions: A
+Critical and Non-Trivial Parameter for Electrocatalysis. ACS Energy
+Lett. 2021, 6 (10), 3567−3571.
+
+ 1898 https://doi.org/10.1021/acscatal.2c05655
+ ACS Catal. 2023, 13, 1893−1898

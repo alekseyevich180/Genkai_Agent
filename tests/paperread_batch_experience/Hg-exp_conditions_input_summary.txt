@@ -1,0 +1,43 @@
+这次抽到的关键信息包括：
+
+在 Hg-exp_conditions_input_table.csv 里：
+
+- 1 M NaOH, 1 M KOH
+- 吸附物/反应物：H2O, OH−
+- 建模关键词：Hg/HgO, alkaline electrolyte, HER, OER
+
+在 Hg-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Hg
+  - HgO
+  - NaOH
+  - KOH
+- 材料参数：
+  - 1 M NaOH
+  - 1 M KOH
+  - solid
+  - yellow
+- 反应参数：
+  - <100 °C
+  - 0.1 M NaOH/KOH
+  - 0.5 M NaOH/KOH
+  - 1 M NaOH/KOH
+  - 10 mA·cm−2
+- 性能：
+  - electrode potential
+  - 0.0983 V vs SHE at 25 °C
+- 表面/晶面：
+  - Hg/HgO electrode
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - Nernst equation
+  - electrocatalytic water splitting
+  - alkaline water electrolysis
+- 推荐建模任务：
+  - 未提取

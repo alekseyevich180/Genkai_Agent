@@ -1,0 +1,34 @@
+这次抽到的关键信息包括：
+
+在 Sb-exp_conditions_input_table.csv 里：
+
+- Ba, Sr, Co, Fe, O
+- 吸附物/反应物：O2, H2O, OH–
+- 建模关键词：OER, surface, active site, transition metal, covalency, adsorption
+
+在 Sb-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ba0.5Sr0.5Co0.8Fe0.2O3–d
+- 材料参数：
+  - perovskite
+  - transition metal oxide
+- 反应参数：
+  - alkaline media
+- 性能：
+  - high OER activity
+  - high covalency in bonding
+- 表面/晶面：
+  - transition metal oxide surface
+- 缺陷/活性位点：
+  - eg orbital of surface transition metal ions
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - OER
+  - molecular orbital
+  - d-band theory
+- 推荐建模任务：
+  - surface_functionalization

@@ -1,0 +1,29 @@
+这次抽到的关键信息包括：
+
+在 MoNCMoS2-exp_conditions_input_table.csv 里：
+
+- 吸附物/反应物：HER, OER, ORR, Zn–Air
+- 建模关键词：MoS2, Electrocatalyst, Active Site
+
+在 MoNCMoS2-exp_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Mo–N/C@MoS2
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - 未提取
+- 性能：
+  - 未提取
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - 未提取
+- 推荐建模任务：
+  - 未提取

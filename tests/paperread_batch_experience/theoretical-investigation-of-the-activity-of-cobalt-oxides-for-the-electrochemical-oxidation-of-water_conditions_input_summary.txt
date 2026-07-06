@@ -1,0 +1,47 @@
+这次抽到的关键信息包括：
+
+在 theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv 里：
+
+- Co3O4, CoOOH
+- Co oxides 暴露/涉及晶面 (0001), (0112̅), (101̅4)
+- 吸附物/反应物：H2O, OH−
+- 建模关键词：Co, Co3+, Co4+, OER, β-CoOOH, surface stability, adsorbate coverage
+
+在 theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Co oxides
+  - Co3O4
+  - CoOOH
+  - Ni
+- 材料参数：
+  - layered phase
+  - spinel phase
+  - bulk phase
+  - Co3+
+  - Co4+
+- 反应参数：
+  - applied potential
+  - pH
+- 性能：
+  - high activity
+  - overpotential of 0.48 V
+- 表面/晶面：
+  - β-CoOOH(0001)
+  - β-CoOOH(0112̅)
+  - β-CoOOH(101̅4)
+  - (0001)
+  - (0112̅)
+  - (101̅4)
+- 缺陷/活性位点：
+  - Co3+
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - Hubbard-U correction
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape

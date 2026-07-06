@@ -1,0 +1,13 @@
+Index,Reaction Type,Material,Composition,Phase,Morphology/Size,Surface Area,Surface/Support,Facet,Surface Termination,Active Site,Defect,Dopant/Modifier,Adsorbate/Reactant,Adsorption Site,Coverage,Cluster/Single Atom,Feed/Concentration,Atmosphere,Pressure,Gas Flow,Solvent,pH,Temperature,Time,Loading,Potential/Bias,Current Density,Product,Conversion,Selectivity,Yield,Rate/Activity,Stability/Cycles,Modeling Keywords
+surface_conditions_1,Electrocatalysis,Noble metal,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Oxygen,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Electrocatalysis,CoPt nanoparticles,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"CO, CH3OH",N/A,"Full, sub-saturation",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Electrochemical oxidation,Pt(335),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CO,N/A,"Full, sub-saturation",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Electrochemical study,Pd,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Formic acid,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Electrochemical characterization,Pt(111),Cyanide-modified,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NO,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Voltammetric surface dealloying,Pt bimetallic,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Electrocatalytic mechanism,"PtPb, PtBi",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Shape-dependent electrocatalysis,Pt nanoparticles,Ru modified,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"Methanol, Formic acid",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Hydroxyl species role,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,CO,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Nanoscale single crystal ensemble,Pt(111),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Methanol,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Layer-by-layer assembly,Polyaniline fibers,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+surface_conditions_1,Surface Pourbaix diagrams,"Pt, Ag, Ni(111)",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A

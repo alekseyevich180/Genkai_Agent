@@ -7,8 +7,10 @@ import pandas as pd
 
 try:
     from .common import chat_completion, load_records, parse_markdown_table
+    from .parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 except ImportError:  # pragma: no cover - direct script execution
     from common import chat_completion, load_records, parse_markdown_table
+    from parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 
 
 COLUMNS = [
@@ -50,6 +52,8 @@ COLUMNS = [
 
 
 def build_prompt(title: str, text: str) -> str:
+    registry_hint = render_registry_prompt_hint(load_surface_parameter_registry())
+    registry_section = f"\n\n{registry_hint}" if registry_hint else ""
     return f"""
 You will be given a title and a surface-science-related passage. Extract experimental or processing
 conditions into a markdown table for surface research.
@@ -74,6 +78,7 @@ Title:
 
 Passage:
 {text}
+{registry_section}
 """.strip()
 
 

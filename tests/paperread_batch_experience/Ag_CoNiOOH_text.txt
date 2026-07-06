@@ -1,0 +1,473 @@
+Research Article
+ www.small-journal.com
+
+Atomically Dispersed Silver Atoms Embedded in NiCo
+Layer Double Hydroxide Boost Oxygen Evolution Reaction
+Wenjun He, Rui Zhang, Hui Liu,* Qiuyan Hao, Ying Li, Xuerong Zheng, Caichi Liu,
+Jun Zhang, and Huolin L. Xin*
+
+ anode that involves complicated four elec-
+Bimetallic layered double hydroxides (LDHs) are promising catalysts for trons coupled with protons transfer pro-
+anodic oxygen evolution reaction (OER) in alkaline media. Despite good sta- cess is more sluggish than the hydrogen
+bility, NiCo LDH displays an unsatisfactory OER activity relative to the most evolution reaction at the cathode, resulting
+ in more energy consumption.[2] Thus far,
+robust NiFe LDH and CoFe LDH. Herein, a novel NiCo LDH electrocatalyst
+ taking account of catalytic activity and sta-
+modified with single-atom silver grown on carbon cloth (AgSA-NiCo LDH/CC) bility, noble metal oxides such as IrO2 and
+that exhibits exceptional OER activity and stability in 1.0 m KOH is reported. RuO2 are still regarded as the state-of-the-
+The AgSA-NiCo LDH/CC catalyst only requires a low overpotential of 192 mV art OER catalysts, but they are scarce and
+to reach a current density of 10 mA cm−2, obviously boosting the OER activity expensive.[3] Therefore, exploiting low-cost
+of NiCo LDH/CC (410 mV@10 mA cm−2). Inspiringly, AgSA-NiCo LDH/CC non-noble metal OER catalysts that pos-
+ sess good activity and long-term durability
+can maintain its high activity for up to 500 h at a large current density of
+ is urgent for large-scale electrochemical
+100 mA cm−2, exceeding most single-atom OER catalysts. In situ Raman hydrogen generation.
+spectroscopy studies uncover that the in situ formed NiCoOOH during OER Recently, many kinds of earth-abun-
+is the real active species. Hard X-ray absorption spectrum (XAS) and density dant OER catalysts, such as 3d transition-
+functional theory (DFT) calculations validate that single-atom Ag occupying metal layered double hydroxides (LDHs),[4]
+ perovskite oxides,[5] spinel oxides,[6] sele-
+Ni site increases the chemical valence of Ni elements, and then weakens the
+ nides,[7] sulfides,[8] phosphides[9] et al.,
+adsorption of oxygen-contained intermediates on Ni sites, fundamentally have been developed rapidly. From the
+accounting for the enhanced OER performance. view of activity, bimetallic NiFe LDH is
+ considered as the most advanced OER
+ catalyst in alkaline solution due to bime-
+1. Introduction tallic synergistic effects, whereas CoFe LDH shows comparable
+ activity.[10] Strasser et al.[11] investigated the structure evolution
+Electrochemical alkaline water splitting to produce H2 by the of MFe LDHs (M = Ni, Co) under high applied anodic poten-
+means of renewable sources such as solar, wave, and wind tials and observed that the as-prepared α-phase MFe LDHs are
+energies has attracted great interest in both scientific and oxidized to the active γ-phase MFeOOH. Despite the contro-
+industrial communities all over the world.[1] During electrolysis versy concerning the real active site of MFeOOH (M or Fe), the
+of water, the oxygen evolution reaction (OER) kinetics at the agreement on the key role of Fe in boosting the OER activity is
+ almost universal. However, the activity of these Fe-incorporated
+W. He, H. Liu, Q. Hao, Y. Li, C. Liu, J. Zhang bimetallic oxyhydroxides declines rapidly during OER process.
+Key Laboratory of Special Functional Materials for Ecological Environ- Markovic et al.[12] studied the active-stability trends of monome-
+ment and Information (Ministry of Education)
+Hebei University of Technology tallic and Fe-modified (oxy)hydroxides for OER and found that
+Tianjin 300130, China Fe is more easy to dissolve into the alkaline electrolyte com-
+E-mail: 2013104@hebut.edu.cn pared to Ni and Co components, accounting for the degradation
+R. Zhang, H. L. Xin of these catalysts. Du's[13] investigation indicated that the dis-
+Department of Physics and Astronomy solved Fe from NiFeOOH lattice would redeposit on its surface
+University of California
+Irvine, CA 92697, USA
+ to generate a secondary phase of FeOOH, which deactivated
+E-mail: huolin.xin@uci.edu the catalyst. These discoveries motivate researchers to explore
+X. Zheng Fe-free bimetallic (oxy)hydroxides/LDHs that possess both high
+State Key Laboratory of Marine Resource Utilization in South China Sea, activity and good stability in alkaline media, but it is yet to be
+School of Materials Science and Engineering satisfactory.
+Hainan University NiCo LDH, as one kind of Fe-free bimetallic LDHs, has been
+Haikou 570228, China
+ neglected for a long time because of its unsatisfactory OER
+ The ORCID identification number(s) for the author(s) of this article
+ can be found under https://doi.org/10.1002/smll.202301610.
+ activity relative to NiFe LDH and CoFe LDH, despite a good
+ stability.[14] According to the previous studies, the inferior OER
+DOI: 10.1002/smll.202301610 activity of NiCo LDH is mainly attributed to the strong bonding
+
+Small 2023, 19, 2301610 2301610 (1 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+interaction between active Ni sites and oxygen-contained inter- NiCo LDH/CC nanoflake arrays were successfully synthesized
+mediates, as well as its poor conductivity.[15] Many attempts (Figure S1, Supporting Information). Then, NiCo LDH/CC
+have been made to regulate the electronic structure of NiCo was used as the working electrode and 2.5 mm AgNO3 solu-
+LDH and enhance their intrinsic activity through heteroatoms tion as the electrolyte, followed by cyclic voltammetry (CV)
+doping,[16] heterostructure constructing,[17] and defects regula- in a standard three-electrode system to synthesis AgSA-NiCo
+tion.[18] However, despite the progress, the OER activity of NiCo LDH/CC. The electrolyte after CV was tested by inductively cou-
+LDH is still far less than the most robust Fe-contained bime- pled plasma-optical emission spectrometry (ICP-OES) (Table S1,
+tallic LDHs catalysts such as NiFe LDH and CoFe LDH. Hence, Supporting Information), and the result indicated that slight Ni
+it is urgently needed to further optimize the electronic struc- and Co atoms were dissolved during the cycle process, possibly
+ture of NiCo LDH through other strategy to boost the intrinsic resulting in the cationic vacancies on the surface of LDH, so Ag
+OER activity, meanwhile, without sacrificing its good stability. may occupy the cationic vacancy sites. Given that the dissolved
+ Recently, noble-metal single-atom modification has emerged Ni ions are one order of magnitude bigger than the Co ions, it
+as a promising strategy to optimize the electronic structure of is logical that Ag prefers to occupy the Ni vacancy sites. More-
+OER catalysts and boost their intrinsic activity, such as single- over, we also compared the formation energies of Ag atoms that
+atom Au/NiFe LDH,[19] Ru/CoFe LDH,[20] Ir/NiFe LDH[21] and occupy Ni sites (0.36 eV) and Co sites (0.79 eV) on the surface
+so on. This strategy possesses many benefits: I) optimizing of LDH by using DFT calculation, respectively, as illustrated in
+the electronic structure of active site through the strong elec- Figure S2, Supporting Information. The results also demon-
+tronic coupling between single atom and support; II) enabling strate that Ag prefers to occupy Ni sites instead of Co sites on
+more active sites number; III) promoting the stability due to the basis of thermodynamics.
+the lower solubility of noble metal atoms in alkaline solution The X-ray diffraction (XRD) patterns of NiCo LDH/CC and
+compared to 3d transition metal; IV) competitive cost relative AgSA-NiCo LDH/CC are shown in Figure S1a, Supporting Infor-
+to noble-metal catalysts due to high atomic utilization. To our mation and Figure 1b. In the XRD pattern (Figure S1a, Supporting
+best knowledge, there have been few reports about using noble- Information), the characteristic peaks located at 2θ = 11.3°,
+metal single-atom modification strategy to improve the OER 22.7°, 33.5°, 34.4°, 38.8°, 46.0°, 60.0°, and 61.3°, agreeing well
+performance of NiCo LDH. with the (003), (006), (101), (012), (015), (018), (110) and (113)
+ Herein, a novel Fe-free NiCo LDH modified with single-atom planes of hexagonal NiCo LDH (PDF No. 38–0715). After incorpo-
+Ag grown on carbon cloth (AgSA-NiCo LDH/CC) was fabricated. rating Ag atoms into NiCo LDH/CC, we observe that AgSA-NiCo
+High-angle annular dark field-scanning transmission electron LDH/CC shows almost the same XRD pattern as NiCo LDH/CC,
+microscopy (HAADF-STEM) and hard X-ray absorption spec- validating the introduced Ag may exist as atomically dispersed
+troscopy (XAS) validated that the atomically dispersed Ag atoms single atom. Figure 1c,d illustrates the scanning electron micro-
+were embedded in NiCo LDH, and occupied Ni sites to form scope (SEM) images of AgSA-NiCo LDH/CC, showing a uni-
+AgOM (M = Ni or Co) bond. Inspiringly, the AgSA-NiCo form array of hexagonal nanoflakes, with an average length
+LDH/CC catalyst not only exhibits an exceptional alkaline OER of ≈2 µm and an average thickness of ≈40 nm. Transmission
+activity with a relatively low overpotential of 192 mV at a current electron microscopy (TEM) analysis also reveals that AgSA-NiCo
+density of 10 mA cm−2 and a low Tafel slope of 39 mV dec−1, but LDH/CC sample displays hexagonal shapes of nanoflakes
+also maintain the excellent catalytic activity up to 500 h even at a (Figure 1e and Figure S3, Supporting Information). As shown
+large current density of 100 mA cm−2, exceeding NiCo LDH/CC in Figure S4, Supporting Information, the lattice spacing of
+(410 mV@10 mA cm−2), commercial IrO2 (325 mV@10 mA cm−2) 0.16 nm in the high-resolution TEM (HRTEM) image can be
+and most of single-atom OER catalysts reported recently. The assigned to the (110) crystal plane of hexagonal NiCo LDH/CC.
+in situ Raman spectroscopy uncovers that the in situ formed Furthermore, the HAADF-STEM image reveals the atomical
+NiCoOOH during OER is the real active species. The DFT cal- dispersion of Ag atoms on NiCo LDH. (Figure 1f,g). Energy
+culation demonstrates that single-atom Ag plays a key role in dispersive X-ray spectroscopy (EDS) elemental mapping images
+regulating the electronic density of active Ni sites, giving rise illustrate the uniform distribution of Ni, Co, O, and Ag in
+to an obviously reduced thermodynamics energy barrier, funda- AgSA-NiCo LDH/CC (Figure 1h–k). In addition, the results of
+mentally accounting for the enhanced OER activity. Moreover, ICP-OES show that the loading amount of Ag single atoms is
+the increased NiO bond strength induced by single-atom Ag 0.5 wt% (0.5 AgSA-NiCo LDH/CC). As a contrast, NiCo LDH/CC
+also enhances the stability of the catalyst. nanoflakes catalyst loaded with Ag nanoparticles (denoted as
+ AgNP-NiCo LDH/CC) were synthesized by merely increasing
+ the concentration of AgNO3 solution during electrochemical
+2. Results and Discussion deposition, and the relative characterization of AgNP-NiCo
+ LDH/CC such as XRD, EDS, and SEM are illustrated in
+2.1. Synthesis and Structural Characterization Figure S5, Supporting Information.
+ To further investigate the chemical composition and valence
+NiCo LDH modified with single-atom Ag nanoflake arrays state of NiCo LDH/CC and AgSA-NiCo LDH/CC, X-ray photo-
+grown on carbon cloth (AgSA-NiCo LDH/CC) was synthe- electron spectroscopy (XPS) characterization was carried out.
+sized by a two-step process, and the schematic illustration Compared with the pristine NiCo LDH/CC, the XPS survey
+is displayed in Figure 1a. First, NiCo LDH nanoflake arrays spectra of AgSA-NiCo LDH/CC clearly shows the elemental
+were directly grown on CC (NiCo LDH/CC) by hydrothermal signal of Ag, which further confirms the presence of Ag in
+method. The results of XRD, SEM, and EDS indicated that AgSA-NiCo LDH/CC (Figure S6, Supporting Information). For
+
+Small 2023, 19, 2301610 2301610 (2 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 1. a) Schematic illustration for the formation of the AgSA-NiCo LDH/CC. b) XRD pattern of the AgSA-NiCo LDH/CC sample. c,d) SEM, e) TEM,
+f,g) HAADF-STEM images of AgSA-NiCo LDH. EDS elemental mapping of h) Ni, i) Co, j) O, and k) Ag.
+
+the high-resolution Ni 2p spectra of NiCo LDH/CC (Figure 2a), not only beneficial for the formation of active phase of metal
+two distinct spin-orbit peaks located at 873.1 and 855.4 eV can oxyhydroxides, but also can optimize the electronic structure of
+be observed, which are ascribed to Ni 2p1/2 and Ni 2p3/2 of oxyhydroxides to facilitate OER kinetics.[25] The high-resolution
+Ni2+, and their corresponding satellite peaks locate at 878.9 and O 1s XPS spectra (Figure 2c) were deconvoluted into three dis-
+861.1 eV, respectively.[22] As shown in Figure 2b, the peak fit- tinct peaks, which are ascribed to physiosorbed H2O molecules,
+ting analysis of the Co 2p spectra for NiCo LDH/CC reveals two chemisorbed MOH and MO species, respectively.[26] In addi-
+kinds of cobalt species, where the peaks at 797.8 and 782.2 eV tion, the high-resolution Ag 3d spectra of AgSA-NiCo LDH/CC
+corresponding to Co2+, and the peaks at 796.4 and 780.5 eV can also be deconvoluted into two peaks (Figure 2d), which
+are attributable to Co3+.[23] It is worth noting that the binding locate at 373.4 and 367.4 eV, corresponding to Ag 3d3/2 and
+energy of Ni 2p and Co 2p in AgSA-NiCo LDH/CC shows a Ag 3d5/2, respectively.[27] Compared with AgNP-NiCo LDH/CC
+positive shift of ≈0.3 eV in contrast to the pure NiCo-LDH/CC, (Figure S7, Supporting Information), the peaks of Ag 3d3/2 and
+demonstrating the increased valence states of both Ni and Ag 3d5/2 in AgSA-NiCo LDH/CC shift to the negative direction
+Co.[24] According to previous studies, the high-valence Ni/Co is (≈0.4 eV), suggesting the formation of Ag+.[28] In conclusion,
+
+Small 2023, 19, 2301610 2301610 (3 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 2. XPS spectra of a) Ni 2p, b) Co 2p, c) O 1s, and d) Ag 3d of NiCo LDH/CC and AgSA-NiCo LDH/CC.
+
+XPS results verify that the introduction of single-atom Ag can To investigate the effect of the atomically dispersed Ag atoms
+obviously modulate the electronic structure of NiCo LDH/CC, on NiCo LDH support, the XAFS analysis of Ni K-edge and Co
+and the generated high-valent nickel and cobalt may be benefi- K-edge are also performed, as illustrated in Figure 3g–i and
+cial to improve the OER performance of the catalyst. Figure S8, Supporting Information. In the Ni K-edge XANES
+ In addition, X-ray absorption fine structure (XAFS) char- spectra (Figure 3g), the absorption edge of Ni in AgSA-NiCo
+acterization including X-ray absorption near-edge spectra LDH displays a positive shift relative to that in NiCo LDH,
+(XANES) and Fourier transformed extended X-ray absorption implying a higher valence state of Ni,[31] which is consistent with
+fine structure (EXAFS) spectra were used to identify the local the XPS results (Figure 2a). The EXAFS spectra of AgSA-NiCo
+electronic and coordinated structure of AgSA-NiCo LDH and LDH exhibit two main peaks located at about 1.53 and 2.75 Å,
+NiCo LDH. The Ag K-edge XANES spectra of AgSA-NiCo LDH, corresponding to the nearest-neighbor NiO and NiNi/Co
+Ag2O, and Ag foil are shown in Figure 3a. It can be seen that coordination (Figure 3h).[32] Notably, the NiO bond length
+the absorption edge of AgSA-NiCo LDH is slightly lower than (1.53 Å) of AgSA-NiCo LDH is shorter than that of NiCo LDH
+that of Ag foil but higher than that of Ag2O, indicating that (1.63 Å), implying a stronger bond strength after incorporating
+the valence state of Ag atoms in AgSA-NiCo LDH is between 0 Ag atoms.[33] The EXAFS fitting result based on the Ni- K-edge
+and +1.[29] In the EXAFS spectra (Figure 3b), AgSA-NiCo LDH EXAFS spectra (Figure 3i and Figure S8, Supporting Informa-
+does not show a peak at 2.63 Å belonging to AgAg bonding tion) also validates that the Ni sites are substituted by Ag atoms,
+as Ag foil, but displays a main peak at 0.81 Å that belongs which agrees well with the fitting result of Ag K-edge EXAFS
+to AgO bonding like Ag2O,[30] validating the atomic disper- spectra (Figure 3c). Furthermore, the calculated coordination
+sion of Ag atoms in AgSA-NiCo LDH support, which is con- number (N) of the second shell of Ni-Ni for AgSA-NiCo LDH
+sistent with the HAADF-STEM result (Figure 1f,g). The fitting (6.5) reduces obviously relative to that of NiCo LDH (7.5), also
+result of Ag K-edge EXAFS spectra suggests that the isolated implying that single-atom Ag replaces the Ni site (Table S2,
+Ag atoms occupy Ni sites in AgSA-NiCo LDH, and the AgO Supporting Information). The Co K-edge XAFS spectra of
+coordination numbers are 5.7, implying a AgO6 moiety for AgSA-NiCo LDH are also shown in Figure S9, Supporting
+AgSA-NiCo LDH (Figure 3c and Table S2, Supporting Informa- Information. It can be observed that the Co K-edge XANES
+tion). Furthermore, wavelet transformed (WT) analysis of Ag shows a positive shift compared with NiCo LDH, indicating an
+K-edge EXAFS oscillation was used to obtain more information increased valence state of Co in AgSA-NiCo LDH,[34] which coin-
+about the atomic configuration because of the high R-space cides with Co 2p XPS spectra (Figure 2b). However, there is no
+and K-space resolution, as shown in Figure 3d–f. The WT obvious Co-O peak change between NiCo LDH and AgSA-NiCo
+of AgSA-NiCo LDH exhibits a maximum strength at ≈7.5 Å−1 LDH. Based on the above discussion, the XAFS analysis reflects
+(Figure 3f ), corresponding to AgO scattering (Figure 3e), that the introduced Ag is in the form of single atom that occu-
+and no AgAg scattering located at ≈12.4 Å−1 illustrated in pies the Ni sites in NiCo LDH, and the doping of single-atom
+Figure 3d can be observed, which further validates the exist- Ag can increase the oxidation state of both Ni and Co elements,
+ence of single-atom Ag. which may enhance its intrinsic activity toward OER.[35]
+
+Small 2023, 19, 2301610 2301610 (4 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 3. a) Normalized Ag K-edge XANES, b) Corresponding FT-EXAFS spectra of Ag foil, NiCo LDH, and AgSA-NiCo LDH. c) Corresponding EXAFS
+fitting curves at R space of AgSA-NiCo LDH. d–f) Wavelet transforms results of Ag K-edge EXAFS. g) Normalized Ni K-edge XANES, h) corresponding
+FT-EXAFS spectra of Ni foil, NiCo LDH, and AgSA-NiCo LDH. i) Corresponding EXAFS fitting curves at R space of AgSA-NiCo LDH, inset showing the
+top-view structure model.
+
+2.2. Electrochemical OER Performance intrinsic catalytic activity of each active site (Figure S11, Sup-
+ porting Information), and the results suggested that the TOF
+The OER performance of the obtained samples and IrO2 was of AgSA-NiCo LDH/CC was much higher than that of NiCo
+evaluated in 1.0 m KOH (the purified electrolyte without iron LDH/CC and AgNP-NiCo LDH/CC at any potential, implying
+ions) by a typical three-electrode system. As shown in Figure 4a, that AgSA-NiCo LDH/CC has the best intrinsic activity among
+0.5AgSA-NiCo LDH/CC exhibits an excellent OER activity, only the samples. The electrochemical double-layer capacitance
+requiring an overpotential of 192 mV to deliver a current den- (Cdl) is also measured by cyclic voltammetry (CV) to evaluate
+sity of 10 mA cm−2, which is significantly superior to pristine electrochemical surface area (ECSA) of catalysts, because the
+NiCo LDH/CC (410 mV), 0.3AgSA-NiCo LDH/CC (387 mV), Cdl is positively correlated with the ECSA of the electrode. The
+0.7AgSA-NiCo LDH/CC (290 mV) (Figure S10, Supporting Infor- calculated Cdl and relative ECSA are summarized in Table S4,
+mation), AgNP-NiCo LDH/CC (352 mV), IrO2 (325 mV) and the Supporting Information. The Cdl value of AgSA-NiCo LDH/CC
+majority of single-atom catalysts recently reported (Table S3, is 31.1 mF cm−2 (Figure 4d), which is larger than that of NiCo
+Supporting Information). The corresponding Tafel slopes are LDH/CC (11.6 mF cm−2) and AgNP-NiCo LDH/CC (22.3 mF cm−2),
+shown in Figure 4b, AgSA-NiCo LDH/CC exhibits a smaller implying that AgSA-NiCo LDH/CC has a larger ECSA. More
+Tafel slope (39 mV dec−1) than NiCo LDH/CC (139 mV dec−1), importantly, the specific activity of AgSA-NiCo LDH/CC toward
+AgNP-NiCo LDH/CC (75 mV dec−1) and IrO2 (78 mV dec−1), OER (normalized by ECSA) is obviously better than that of
+indicating that AgSA-NiCo LDH/CC has faster OER kinetics. NiCo LDH/CC and AgNP-NiCo LDH/CC (Figure 4e), which fur-
+Figure 4c quantitatively displays the overpotential at a cur- ther suggests that the introduction of Ag single atoms in NiCo
+rent density of 10 mA cm−2 as well as the Tafel slopes of NiCo LDH/CC can obviously improve its intrinsic activity. Electro-
+LDH/CC, AgNP-NiCo LDH/CC, AgSA-NiCo LDH/CC, and IrO2. chemical impedance spectroscopy (EIS) was further employed
+Moreover, turnover frequency (TOF) was used to measure the to evaluate the charge transfer process of the electrode reaction.
+
+Small 2023, 19, 2301610 2301610 (5 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 4. a) LSV curves, b) Tafel plots, and c) the comparison of overpotential at 10 mA cm−2 and Tafel slopes of NiCo LDH/CC, AgNP-NiCo LDH/CC,
+AgSA-NiCo LDH/CC, and IrO2. d) Cdl, e) polarization curves from normalized to ECSA, and f) EIS results of NiCo LDH/CC, AgNP-NiCo LDH/CC
+AgSA-NiCo LDH/CC.
+
+NiCo LDH/CC and AgNP-NiCo LDH/CC show a large charge indicating that no new crystalline phase is formed. The SEM
+transfer resistance (Rct) of about 21.5 and 54.8 Ω, while the Rct images (Figure S13b–d, Supporting Information) suggest that
+of AgSA-NiCo LDH/CC is only about 6.6 Ω (Figure 4f), dem- AgSA-NiCo LDH/CC still maintained the nanosheet arrays mor-
+onstrating that the introduction of single atoms Ag in NiCo phology and scattered individual Ag atoms are clearly observed
+LDH/CC accelerates the charge transfer rate at the solid-liquid in HAADF-STEM images (Figure S14, Supporting Information)
+interface. Moreover, the contact angle between the electrode after OER. However, the HRTEM image of AgSA-NiCo LDH/CC
+and the liquid also plays a key role in mass transfer during after OER (Figure S15, Supporting Information) showed that an
+OER. Therefore, contact angle measurements were performed. amorphous layer was formed on the surface of the nanosheets,
+As shown in Figure S12, Supporting Information, the contact which was markedly different from the sample before OER
+angle of AgSA-NiCo LDH/CC (30°) is smaller pristine NiCo (Figure S4, Supporting Information). We conclude that the
+LDH/CC (60°), indicating that AgSA-NiCo LDH/CC has a higher amorphous layer may be NiCo oxyhydroxides (NiCoOOH),
+surface hydrophilicity, which will facilitate the mass transfer according to previous studies.[37] The high-resolution XPS
+during OER.[36] spectra were also utilized to investigate the chemical state of
+ The stability is also another important factor to evaluate AgSA-NiCo LDH/CC after OER. As shown in Figure 5c, For Ni
+the OER performance of the electrocatalysts besides cata- 2p spectra of AgSA-NiCo LDH/CC after the OER test, a pair of
+lytic activity, especially considering the actual application. The new peaks appears at 875.8 and 857.8 eV, corresponding to high-
+stability of AgSA-NiCo LDH/CC was first evaluated by 5000 valence Ni (Ni3+) in NiCoOOH.[38] In addition, the peaks of Co
+cycles CV scanning, as shown in Figure 5a. The LSV curves of 2p and Ag 3d spectra (Figure S16, Supporting Information)
+AgSA-NiCo LDH/CC after 5000 cycles CV show negligible shift toward high binding energy, also suggesting the superior
+change compared to the initial curves, implying a good stability. oxidation. To gain a deep insight into the structural evolution
+Furthermore, the chronoamperometry test is also performed for of AgSA-NiCo LDH/CC during OER, in situ electrochemical
+investigating the long-term durability of AgSA-NiCo LDH/CC. Raman spectroscopy technique was performed. As shown in
+Figure 5b shows that the current density of single-atom cata- Figure 5d, a series of Raman spectra for AgSA-NiCo LDH/CC
+lyst exhibits a decay of only 5.3% at a large current density of were obtained by applying an anodic potential during CV scans
+≈100 mA cm−2 after 500 h of long-term OER stability testing, [ from 1.20 to 1.55 to 1.35 V (versus reversible hydrogen electrode
+highlighting the outstanding stability of AgSA-NiCo LDH/CC (RHE))]. When no potential is applied, the two obvious peaks
+during the OER process. observed at 463 and 521 cm−1 are attributed to the NiO vibra-
+ To further identify the actual active species of AgSA-NiCo tions of defective or disordered NiCo LDH nanocrystals.[39] And
+LDH/CC during the OER process, XRD, SEM, HAADF-STEM, the peak position did not change when the scanning potential
+TEM, and XPS were carried out for AgSA-NiCo LDH/CC after was increased to 1.40 V (versus RHE). However, two new peaks
+the OER test. As shown in Figure S13a, Supporting Infor- appear at 469 and 527 cm−1 when the potential reaches 1.45 V,
+mation, no new peaks appear in the XRD pattern after OER, which are assigned to the characteristic peaks of NiCoOOH,[40]
+
+Small 2023, 19, 2301610 2301610 (6 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 5. a) LSV curves of AgSA-NiCo LDH/CC before and after 5000 CV cycles. b) Long-term stability test of AgSA-NiCo LDH/CC at 100 mA cm−2 for
+500 h. c) XPS spectra of Ni 2p for AgSA-NiCo LDH/CC after stability test. d) Raman spectra of AgSA-NiCo LDH/CC at different potentials (the arrow in
+the vertical direction is the direction of potential increase).
+
+validating that the surface of AgSA-NiCo LDH/CC has been con- free energy diagrams of four OER reaction steps for NiCoOOH
+verted to oxyhydroxide (AgSA-NiCoOOH/CC) during the OER and AgSA-NiCoOOH are then illustrated in Figure 6b,c. It can
+process, which agrees well with the XPS results (Figure 5c and be clearly observed that the rate-determining step (RDS) of
+Figure S16, Supporting Information). These two peaks still exist NiCoOOH is the generation of *OOH (step 3), with a high
+when the potential continues to increase to 1.55 V. Interest- overpotential of 1.67 V. However, the RDS of AgSA-NiCoOOH is
+ingly, while the potential sweep was back to 1.35 V, the two new the formation of *OH (step 2), and the overpotential decreases
+peaks mentioned above still existed, indicating that the phase to 0.55 eV, implying that AgSA-NiCoOOH exhibits a better
+transition was irreversible. It is noteworthy that the formation intrinsic activity than NiCoOOH, which is consistent with the
+potential of NiCoOOH is directly related to the corresponding experimental results.
+OER onset potential, and the lower formation potential gener- To analyze the electron transfer, we calculate the Bader
+ally means the better OER performance.[41] The in situ Raman charge and differential charge densities (Figure S18, Supporting
+results show that the formation potential of NiCoOOH is sig- Information). The Bader charges analysis in Figure 6d reveals
+nificantly reduced from 1.65 V (Figure S17, Supporting Infor- that the introduction of Ag atoms in NiCoOOH decreases
+mation) to 1.45 V (Figure 5d) after the introduction of Ag single the Bader charge of Ni atoms from 8.90 to 8.75, giving rise to
+atoms, implying a better OER performance for AgSA-NiCo the increase of Ni valence, which is consistent with the XPS
+LDH/CC. In a word, both XPS and in situ Raman spectroscopy (Figure 2a) and XANES (Figure 3d) results. The result of differ-
+results confirm that the in situ formed NiCoOOH is the really ential charge densities analysis also supports this conclusion.
+active specie for OER rather than NiCo LDH. Additionally, the high-valence Ni in bimetallic Ni-based (oxy)
+ hydroxides is considered to be favorable for facilitating OER
+ kinetics.[43] To further reveal the impact of electronic structure
+2.3. Theoretical Calculations of Ni active sites on the OER activity, the projected density of
+ states (PDOS) of Ni 3d orbit and O 2p orbit in NiCoOOH and
+Density functional theory (DFT) calculations were further AgSA-NiCoOOH after adsorbing O* intermediate is analyzed
+applied to investigate the structure-property relationship (Figure 6e,f). It is shown that the O 2pz and the Ni 3dz2 orbitals
+between the electronic structure and the OER performance. form σ bonding orbitals away from the Fermi level and σ*
+Based on the above characterization analysis, we adopt antibonding orbitals near the Fermi level in both catalysts.[44]
+NiCoOOH and AgSA-NiCoOOH instead of the pristine NiCo Compared to antibonding orbital (σ*) of NiCoOOH that only
+LDH and AgSA-NiCo LDH as the actual catalytic species, and appears above the Fermi level, part of the antibonding orbitals
+choose the Ni sites on (110) plane as the active sites according (σ*) of AgSA-NiCoOOH appear below the Fermi level, meaning
+to the previous studies,[42] as shown in Figure 6a. The Gibbs more electrons filling in antibonding orbitals, which results
+
+Small 2023, 19, 2301610 2301610 (7 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+Figure 6. a) The side-view structure model of NiCoOOH and AgSA-NiCoOOH. Calculated free energy diagrams for the OER at different potentials of
+b) NiCoOOH and c) AgSA-NiCoOOH. d) Bader charge analysis of Ni site and free energy of oxygen adsorption (∆GO*) for NiCoOOH and
+AgSA-NiCoOOH, inset showing the top-view structure model. PDOS of e) NiCoOOH and f) AgSA-NiCoOOH.
+
+in the weaker MO* bond strength in AgSA-NiCoOOH than sistent with the theoretical prediction results aforementioned.
+in NiCoOOH,[45] agreeing well with the analysis of the Gibbs In a word, both the theoretical calculation and experimental
+free energy diagrams (Figure 6b,c). The DFT calculation results results validate the increased NiO bond strength induced by
+reveal that Ag single atoms doping can effectively adjust the single-atom Ag enhance the long-term durability of the catalyst.
+geometric and electronic structure of catalysts to improve OER
+activity.
+ 3. Conclusions
+2.4. Stability Mechanism In conclusion, we have successfully fabricated Fe-free NiCo
+ LDH/CC catalyst modified with Ag single atoms by hydro-
+To investigate the enhancement mechanism of stability for thermal and electrochemical CV methods. The single-atom cat-
+AgSA-NiCoOOH, the NiO bond length as well as the forma- alyst exhibit distinguished catalytic activity and stability toward
+tion energy of Ni vacancies (Evac) are also calculated by DFT, alkaline OER, greatly exceeding NiCo LDH/CC and commer-
+as shown in Figure S19a, Supporting Information. It can be cial IrO2. HAADF-STEM and XAFS reveal that the atomically
+observed that the NiO bond length in AgSA-NiCoOOH is dispersed Ag atoms occupy the superficial Ni sites in NiCo
+shorter than that in NiCoOOH, indicating a stronger NiO LDH. DFT calculation result validates that the introduction of
+bond strength, which may be conducive to the stable exist- catalytic inert Ag single atoms not only optimizes the adsorp-
+ence of Ni elements in AgSA-NiCoOOH lattice.[46] Furthermore, tion energy of OER intermediates on Ni active sites, thereby
+the calculated Evac of AgSA-NiCoOOH is 4.95 eV (Figure S19b, boosting the intrinsic OER activities, but also increases NiO
+Supporting Information), which is much higher than that of bond energy and strengthens the structure stability of the cata-
+NiCoOOH (2.37 eV), also suggesting that the introduction of lyst, which enhance the long-term durability. This work sheds
+single-atom Ag into NiCoOOH will inhibit the NiO bond light on designing highly active and durable single-atom cata-
+breaking and the dissolution of Ni elements in the electrolyte, lysts toward OER and beyond in the future.
+thereby strengthening the structure stability of NiCoOOH.[47]
+To further validate the theoretical calculation results, the con-
+centration of metallic ions in the electrolyte after long-term 4. Experimental Section
+OER stability test was measured by inductively coupled plasma
+optical emission spectrometry (ICP-OES), as shown in Table S5, Materials: All experiments used deionized water (DIW) purified by the
+ Millipore system. Ni(NO3)2·6H2O, Co(NO3)2·6H2O, NH4F, urea, AgNO3
+Supporting Information. It can be clearly seen that the con-
+ and ethyl alcohol were purchased from Aladdin. Nafion and Commercial
+centration of Ni ions in the electrolyte after stability test for IrO2 were acquired from Sigma Aldrich. Carbon cloth (CC) was obtained
+AgSA-NiCoOOH (0.0100 mg L−1) is lower by an order of magni- from Wuhan Instrument Surgical Instruments business, and the CC
+tude relative to that for NiCoOOH (0.5091 mg L−1), which is con- substrate was pretreated with DIW, H2SO4 solution, and ethanol.
+
+Small 2023, 19, 2301610 2301610 (8 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+ Synthesis of NiCo LDH/CC: NiCo LDH nanoflake arrays were Conflict of Interest
+synthesized on carbon cloth (CC) by a hydrothermal method. First,
+2 mmol Ni(NO3)2·6H2O, 0.25 mmol Co(NO3)2·6H2O, 4 mmol NH4F and The authors declare no conflict of interest.
+10 mmol urea were dissolved in 35 mL DIW. Then the fully dissolved
+solution was transferred to a 45 mL autoclave with two pieces of
+pretreated CC (1 × 3 cm2) and the sealed autoclave was kept in an oven
+at 120 °C for 6 h. After naturally cooling to room temperature, NiCo Data Availability Statement
+LDH/CC was washed with DIW and ethanol for several times and dried
+in a vacuum oven at 60 °C for 12 h. Research data are not shared.
+ Synthesis of AgSA-NiCo LDH/CC and AgNP-NiCo LDH/CC: AgSA-NiCo
+LDH/CC was fabricated by a simple cyclic voltammetry (CV) treatment.
+A piece of NiCo LDH/CC (1 × 1 cm2) was used as the working electrode
+and the electrolyte solution consisted of 2.5 mm AgNO3. Single atoms Keywords
+Ag were deposited in NiCo LDH/CC by stepping the potential from −0.75 density functional theory calculations, NiCo layered double hydroxide,
+to −0.35 V for 10 s for five cycles. AgNP-NiCo LDH/CC was obtained by oxygen evolution reaction, silver, single-atom
+the same CV treatment; the difference was that the amount of AgNO3
+was 15 mm. Received: February 23, 2023
+ Materials Characterization: XRD patterns were obtained using X'Pert
+ Revised: March 19, 2023
+PRO MPD with a Cu Kα radiation source (λ = 1.5406 Å). SEM was
+ Published online: April 24, 2023
+performed on Hitachi Regulus8100 at 15 kV. TEM, HRTEM, and HAADF-
+STEM were carried out on Titan Cubed Themis G2300 operating at
+300 kV. XPS spectra were obtained on Thermo ESCALAB 250XI with Al Ka
+anode (1486.6 eV). X-ray absorption spectroscopy (XAS) measurements
+were acquired at Beamline 7bm, National Synchrotron Light Source, [1] a) A. Ali, F. Long, P. K. Shen, Electrochem. Energy Rev. 2022, 5, 1;
+Brookhaven National Laboratory through a Si(111) monochromator and b) Z. Li, J. Y. Fu, Y. Feng, C. K. Dong, H. Liu, X. W. Du, Nat. Catal.
+Lytle detector. Raman spectra were recorded on LabRAM HR Evolution 2019, 2, 1107.
+at a laser with a wavelength of 532 nm. [2] a) Y. Yao, S. Hu, W. Chen, Z. Q. Huang, W. Wei, T. Yao, R. Liu,
+ Electrochemical Measurements: Electrochemical tests were K. Zang, X. Wang, G. Wu, W. Yuan, T. Yuan, B. Zhu, W. Liu, Z. Li,
+performed on a CHI 760E potentiostat via a standard three-electrode D. He, Z. Xue, Y. Wang, X. Zheng, J. Dong, C. R. Chang, Y. Chen,
+system, which consists of a working electrode (synthesized samples),
+ X. Hong, J. Luo, S. Wei, W. X. Li, P. Strasser, Y. Wu, Y. Li, Nat. Catal.
+reference electrode (Hg/HgO), and counter electrode (graphite rod).
+ 2019, 2, 304; b) O. Diaz-Morales, Nat. Energy 2020, 5, 193.
+All potentials were converted to RHE: E (V versus RHE) = E (V versus
+ [3] a) C. Liu, J. Qian, Y. Ye, H. Zhou, C. J. Sun, C. Sheehan, Z. Zhang,
+Hg/HgO) + 0.098 V + 0.059 × pH. Linear sweep voltammetry (LSV)
+tests for OER with 90% iR compensation were performed along G. Wan, Y. S. Liu, J. Guo, S. Li, H. Shin, S. Hwang, T. B. Gunnoe,
+a potential window of ≈0–0.8 V at a scan rate of 2 mV s−1. Double W. A. Goddard, S. Zhang, Nat. Catal. 2021, 4, 36; b) I. T. McCrum,
+layer capacitance (Cdl) was obtained using cyclic voltammetry (CV) at M. T. M. Koper, Nat. Energy 2020, 5, 891.
+scan rates from 5 to 150 mV s−1. EIS experiments were carried out at [4] a) S. Li, C. Xi, Y. Z. Jin, D. Wu, J. Q. Wang, T. Liu, H. B. Wang,
+frequencies from 100 kHz to 0.1 Hz with an AC voltage of 5 mV s−1. C. K. Dong, H. Liu, S. A. Kulinich, X. W. Du, ACS Energy Lett. 2019,
+The 5000 CV cycles stability test was researched at a scan rate of 4, 1823; b) S. Dresp, T. Ngo Thanh, M. Klingenhof, S. Brueckner,
+100 mV s−1. P. Hauke, P. Strasser, Energy Environ. Sci. 2020, 13, 1725; c) C. X. Zhao,
+ Computational Methods: DFT calculations were performed in the B. Q. Li, M. Zhao, J. N. Liu, L. D. Zhao, X. Chen, Q. Zhang, Energy
+Vienna Ab-initio Simulation Package (VASP) using the Perdew–Burke– Environ. Sci. 2020, 13, 1711.
+Ernzerhof and projected enhanced wave methods.[48] The K-point grid for [5] a) J. Li, F. Yang, M. Jiang, X. Cai, Q. Hu, J. Zhang, Chem. Eng. J.
+the Brillouin zone was set to a 3 × 3 × 1 and the energy cutoff for the 2023, 451, 138646; b) J. X. Flores-Lasluisa, F. Huerta, D. Cazorla-
+plane-wave basis set was 450 eV. To simulate the catalytic process on the Amoros, E. Morallon, Environ. Res. 2022, 214, 113731.
+surface, a model with a vacuum layer thickness of 15 Å was constructed [6] a) J. Ge, W. Zhang, J. Tu, T. Xia, S. Chen, G. Xie, Small 2020, 16,
+and the convergence criterion for energy was 10−5 eV between two 2001856; b) J. O. Olowoyo, R. J. Kriek, Small 2022, 18, 2203125.
+electron steps. [7] a) X. Zheng, Y. Zhang, H. Liu, D. Fu, J. Chen, J. Wang, C. Zhong,
+ Y. Deng, X. Han, W. Hu, Small 2018, 14, 1803666; b) Y. Wang, X. Li,
+ M. Zhang, J. Zhang, Z. Chen, X. Zheng, Z. Tian, N. Zhao, X. Han,
+ K. Zaghib, Y. Wang, Y. Deng, W. Hu, Adv. Mater. 2022, 34, 2107053.
+Supporting Information [8] a) Z. Xue, X. Li, Q. Liu, M. Cai, K. Liu, M. Liu, Z. Ke, X. Liu, G. Li,
+ Adv. Mater. 2019, 31, 1900430; b) Y. Sun, J. Wu, Z. Zhang, Q. Liao,
+Supporting Information is available from the Wiley Online Library or
+ S. Zhang, X. Wang, Y. Xie, K. Ma, Z. Kang, Y. Zhang, Energy Environ.
+from the author.
+ Sci. 2022, 15, 633.
+ [9] a) Z. Wang, S. Wang, L. Ma, Y. Guo, J. Sun, N. Zhang, R. Jiang,
+ Small 2021, 17, 2006770; b) Y. Wu, H. Wang, S. Ji, B. G. Pollet,
+ X. Wang, R. Wang, Nano Res. 2020, 13, 2098.
+Acknowledgements [10] a) L. Peng, N. Yang, Y. Yang, Q. Wang, X. Xie, D. Sun-Waterhouse,
+This work was supported by the Nature Science Foundation of Hebei L. Shang, T. Zhang, G. I. N. Waterhouse, Angew. Chem., Int. Ed.
+Province (E2022202035, E2022202042) and the Graduate Innovation 2021, 60, 24612; b) X. Shen, H. Li, Y. Zhang, T. Ma, Q. Li, Q. Jiao,
+Funding Project of Hebei Province (CXZZBS2022031). In addition, Y. Zhao, H. Li, C. Feng, Appl. Catal., B 2022, 319, 121917.
+R.Z. and H.L.X. were funded by the HLX start-up fund provided by the [11] F. Dionigi, Z. Zeng, I. Sinev, T. Merzdorf, S. Deshpande,
+University of California Irvine. This research used the 7-BM beamline of M. B. Lopez, S. Kunze, I. Zegkinoglou, H. Sarodnik, D. Fan,
+the National Synchrotron Radiation Light Source II, which is operated A. Bergmann, J. Drnec, J. F. de Araujo, M. Gliech, D. Teschner,
+by Brookhaven National Laboratory for the U.S. Department of Energy, J. Zhu, W. X. Li, J. Greeley, B. Roldan Cuenya, P. Strasser, Nat.
+Office of Science. Commun. 2020, 11, 2522.
+
+Small 2023, 19, 2301610 2301610 (9 of 10) © 2023 Wiley-VCH GmbH
+ 16136829, 2023, 34, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/smll.202301610 by University Of Tokyo, Wiley Online Library on [26/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.small-journal.com
+
+[12] D. Y. Chung, P. P. Lopes, P. F. B. D. Martins, H. He, T. Kawaguchi, [31] L. Han, H. Cheng, W. Liu, H. Li, P. Ou, R. Lin, H. T. Wang,
+ P. Zapol, H. You, D. Tripkovic, D. Strmcnik, Y. Zhu, S. Seifert, C. W. Pao, A. R. Head, C. H. Wang, X. Tong, C. J. Sun, W. F. Pong,
+ S. Lee, V. R. Stamenkovic, N. M. Markovic, Nat. Energy 2020, 5, 222. J. Luo, J. C. Zheng, H. L. Xin, Nat. Mater. 2022, 21, 681.
+ [13] Z. W. Gao, J. Y. Liu, X. M. Chen, X. L. Zheng, J. Mao, H. Liu, T. Ma, [32] Q. Wang, X. Huang, Z. L. Zhao, M. Wang, B. Xiang, J. Li, Z. Feng,
+ L. Li, W. C. Wang, X. W. Du, Adv. Mater. 2019, 31, 1804769. H. Xu, M. Gu, J. Am. Chem. Soc. 2020, 142, 7425.
+ [14] J. Abed, S. Ahmadi, L. Laverdure, A. Abdellah, C. P. O'Brien, K. Cole, [33] Y. Wang, S. Tao, H. Lin, G. Wang, K. Zhao, R. Cai, K. Tao, C. Zhang,
+ P. Sobrinho, D. Sinton, D. Higgins, N. J. Mosey, S. J. Thorpe, M. Sun, J. Hu, B. Huang, S. Yang, Nano Energy 2021, 81, 105606.
+ E. H. Sargent, Adv. Mater. 2021, 33, 2103812. [34] K. Shah, R. Dai, M. Mateen, Z. Hassan, Z. Zhuang, C. Liu, M. Israr,
+[15] X. Han, Y. Niu, C. Yu, Z. Liu, H. Huang, H. Huang, S. Li, W. Guo, W. C. Cheong, B. Hu, R. Tu, C. Zhang, X. Chen, Q. Peng, C. Chen,
+ X. Tan, J. Qiu, Nano Energy 2020, 69, 104367. Y. Li, Angew. Chem., Int. Ed. 2022, 61, e202114951.
+[16] B. Chen, Z. Zhang, S. Kim, M. Baek, D. Kim, K. Yong, Appl. Catal., B [35] M. Han, N. Wang, B. Zhang, Y. Xia, J. Li, J. Han, K. Yao, C. Gao,
+ 2019, 259, 118017. C. He, Y. Liu, Z. Wang, A. Seifitokaldani, X. Sun, H. Liang, ACS
+ [17] R. Fan, Q. Mu, Z. We, Y. Peng, M. Shen, J. Mater. Chem. A 2020, 8, Catal. 2020, 10, 9725.
+ 9871. [36] P. Chen, T. Zhou, S. Wang, N. Zhang, Y. Tong, H. Ju, W. Chu, C. Wu,
+[18] W. He, D. Cao, D. Ma, Y. Li, C. Chen, L. Liang, H. Liu, Chem. Y. Xie, Angew. Chem., Int. Ed. 2018, 57, 15471.
+ Commun. 2022, 58, 7757. [37] H. Liang, F. Meng, M. Caban-Acevedo, L. Li, A. Forticaux, L. Xiu,
+[19] J. Zhang, J. Liu, L. Xi, Y. Yu, N. Chen, S. Sun, W. Wang, K. M. Lange, Z. Wang, S. Jin, Nano Lett. 2015, 15, 1421.
+ B. Zhang, J. Am. Chem. Soc. 2018, 140, 3876. [38] Q. Niu, M. Yang, D. Luan, N. W. Li, L. Yu, X. W. D. Lou, Angew.
+[20] P. Li, M. Wang, X. Duan, L. Zheng, X. Cheng, Y. Zhang, Y. Kuang, Chem., Int. Ed. 2022, 61, e202213049.
+ Y. Li, Q. Ma, Z. Feng, W. Liu, X. Sun, Nat. Commun. 2019, 10, 1711. [39] F. Zhang, Y. Liu, L. Wu, M. Ning, S. Song, X. Xiao, V. G. Hadjiev,
+[21] X. Zheng, J. Tang, A. Gallo, J. A. G. Torres, X. Yu, C. J. Athanitis, D. E. Fan, D. Wang, L. Yu, S. Chen, Z. Ren, Mater. Today Phys. 2022,
+ E. M. Been, P. Ercius, H. Mao, S. C. Fakra, C. Song, R. C. Davis, 27, 100841.
+ J. A. Reimer, J. Vinson, M. Bajdich, Y. Cui, Proc. Natl. Acad. Sci. U. S. [40] Z. Zhang, C. Feng, D. Wang, S. Zhou, R. Wang, S. Hu, H. Li,
+ A. 2021, 118, e2101817118. M. Zuo, Y. Kong, J. Bao, J. Zeng, Nat. Commun. 2022, 13, 2473.
+[22] H. Yang, Z. Chen, P. Guo, B. Fei, R. Wu, Appl. Catal., B 2020, 261, [41] Y. Sun, J. Wu, Y. Xie, X. Wang, K. Ma, Z. Tian, Z. Zhang, Q. Liao,
+ 118240. W. Zheng, Z. Kang, Y. Zhang, Adv. Funct. Mater. 2022, 32,
+[23] W. Chen, Y. Zhang, R. Huang, Y. Zhou, Y. Wu, Y. Hu, K. Ostrikov, 2207116.
+ J. Mater. Chem. A 2019, 7, 4950. [42] C. Liu, Y. Han, L. Yao, L. Liang, J. He, Q. Hao, J. Zhang, Y. Li, H. Liu,
+[24] J. Chang, G. Wang, Z. Yang, B. Li, Q. Wang, R. Kuliiev, Small 2021, 17, 2007334.
+ N. Orlovskaya, M. Gu, Y. Du, G. Wang, Y. Yang, Adv. Mater. 2021, [43] Z. Li, X. Zhang, Y. Kang, C. C. Yu, Y. Wen, M. Hu, D. Meng, W. Song,
+ 33, 2101425. Y. Yang, Adv. Sci. 2021, 8, 2002631.
+[25] J. Yin, J. Jin, M. Lu, B. Huang, H. Zhang, Y. Peng, P. Xi, C. H. Yan, [44] H. Shang, X. Zhou, J. Dong, A. Li, X. Zhao, Q. Liu, Y. Lin, J. Pei,
+ J. Am. Chem. Soc. 2020, 142, 18378. Z. Li, Z. Jiang, D. Zhou, L. Zheng, Y. Wang, J. Zhou, Z. Yang, R. Cao,
+[26] S. W. Jang, S. Dutta, A. Kumar, Y. R. Hong, H. Kang, S. Lee, S. Ryu, R. Sarangi, T. Sun, X. Yang, X. Zheng, W. Yan, Z. Zhuang, J. Li,
+ W. Choi, I. S. Lee, ACS Nano 2020, 14, 10578. W. Chen, D. Wang, J. Zhang, Y. Li, Nat. Commun. 2020, 11, 3049.
+[27] S. A. Chala, M. C. Tsai, W. N. Su, K. B. Ibrahim, B. Thirumalraj, [45] Z. He, J. Zhang, Z. Gong, H. Lei, D. Zhou, N. Zhang, W. Mai,
+ T. S. Chan, J. F. Lee, H. Dai, B. J. Hwang, ACS Nano 2020, 14, 1770. S. Zhao, Y. Chen, Nat. Commun. 2022, 13, 2191.
+[28] C. Cai, M. Wang, S. Han, Q. Wang, Q. Zhang, Y. Zhu, X. Yang, D. Wu, [46] W. He, L. Han, Q. Hao, X. Zheng, Y. Li, J. Zhang, C. Liu, H. Liu,
+ X. Zu, G. E. Sterbinsky, Z. Feng, M. Gu, ACS Catal. 2021, 11, 123. H. L. Xin, ACS Energy Lett. 2019, 4, 2905.
+[29] C. Lee, K. Shin, C. Jung, P.-P. Choi, G. Henkelman, H. M. Lee, ACS [47] F. Dionigi, J. Zhu, Z. Zeng, T. Merzdorf, H. Sarodnik, M. Gliech,
+ Catal. 2020, 10, 562. L. Pan, W.-X. Li, J. Greeley, P. Strasser, Angew. Chem., Int. Ed. 2021,
+[30] F. F. Zhang, C. Q. Cheng, J. Q. Wang, L. Shang, Y. Feng, Y. Zhang, 60, 14446.
+ J. Mao, Q. J. Guo, Y. M. Xie, C. K. Dong, Y. H. Cheng, H. Liu, [48] J. Zhang, Y. Zhao, X. Guo, C. Chen, C. L. Dong, R.-S. Liu, C. P. Han,
+ X. W. Du, ACS Energy Lett. 2021, 6, 1588. Y. Li, Y. Gogotsi, G. Wang, Nat. Catal. 2018, 1, 985.
+
+Small 2023, 19, 2301610 2301610 (10 of 10) © 2023 Wiley-VCH GmbH

@@ -1,0 +1,463 @@
+DOI: 10.1002/cctc.201000397
+
+Universality in Oxygen Evolution Electrocatalysis on Oxide
+Surfaces
+Isabela C. Man,[a] Hai-Yan Su,[a] Federico Calle-Vallejo,[a] Heine A. Hansen,[b] Jos I. Martnez,[c]
+Nilay G. Inoglu,[d] John Kitchin,[d] Thomas F. Jaramillo,[e] Jens K. Nørskov,[f] and
+Jan Rossmeisl*[a]
+
+Trends in electrocatalytic activity of the oxygen evolution reac- the adsorption energies of HOO* vs HO*, it is possible to ana-
+tion (OER) are investigated on the basis of a large database of lyze the reaction free energy diagrams of all the oxides in a
+HO* and HOO* adsorption energies on oxide surfaces. The the- general way. This gave rise to an activity volcano that was the
+oretical overpotential was calculated by applying standard same for a wide variety of oxide catalyst materials and a uni-
+density functional theory in combination with the computa- versal descriptor for the oxygen evolution activity, which sug-
+tional standard hydrogen electrode (SHE) model. We showed gests a fundamental limitation on the maximum oxygen evolu-
+that by the discovery of a universal scaling relation between tion activity of planar oxide catalysts.
+
+Introduction
+
+Electrochemical water splitting has attracted substantial inter- standard enthalpy of lower to higher oxide transformation
+est in the recent years as a key process in hydrogen produc- (MOx !MOx + 1).[3b, d–g]
+tion from sunlight and other sources of electricity.[1] The clean, Advances in density functional theory (DFT) calculations
+renewable conversion of solar radiation into fuels can be done make it possible to accurately determine surface binding ener-
+directly by photons exciting electrons in a semiconductor in gies that can hence be used as activity descriptors.[3h] The re-
+which the energy level of the valence band is sufficiently low. verse reaction, the oxygen reduction reaction (ORR) in which
+The conversion could also be done, in an indirect way, by elec- molecular oxygen is reduced to water, involves the same gen-
+trolysis using a potential difference obtained from a photovol- eral reaction intermediates as the OER. Recently, new alloy
+taic cell or from a wind turbine. In both cases, effective cataly- electrocatalysts for the ORR have been suggested on the basis
+sis for water oxidation to molecular oxygen, that is, the oxygen
+evolution reaction (OER), is needed. There are, however, several [a] I. C. Man, H.-Y. Su, F. Calle-Vallejo, J. Rossmeisl
+challenges that have to be solved for the process to become Center for Atomic-Scale Materials Design
+economically attractive. One of them is associated with the Department of Physics, Technical University of Denmark
+substantial overpotential and thereby energy losses at the DK-2800 Kgs. Lyngby (Denmark)
+ Fax: (+ 45) 4593-2399
+anode, where oxygen is evolved, according to the following E-mail: jross@fysik.dtu.dk
+overall reaction, involving four electron transfers [Eq. (1)]:[2] [b] Dr. H. A. Hansen
+ Department of Materials Science and Engineering
+ Northwestern University
+2 H2 O ðlÞþ4  1:23 eV ! O2 þ4Hþ þ4 e ð1Þ
+ Evanston, Ilinois 60208 (USA)
+ [c] Dr. J. I. Martnez
+ Dpto. de Fsica Terica de la Materia Condensada
+ Substantial effort has been devoted to find more effective Universidad Autnoma de Madrid
+catalysts for the oxygen evolution reaction and to elucidate E-28049 Madrid (Spain)
+the reaction mechanism.[3] Two excellent reviews describing [d] N. G. Inoglu, Prof. J. Kitchin
+the development in this field can be found in Ref. [4]. Department of Chemical Engineering
+ Carnegie Mellon University
+ To improve upon current electrocatalysts, it is important to
+ Pittsburgh, Pennsylvania 15213 (USA)
+develop a fundamental understanding of the reactions on dif-
+ [e] Prof. T. F. Jaramillo
+ferent materials.[3f–h] The electrocatalytic activity is to a large Department of Chemical Engineering
+extent determined by the binding strength of the reaction in- Stanford, California, 94305-5025 (USA)
+termediates to the electrode surface. Plotting the activity as a [f] Prof. J. K. Nørskov
+function of binding energy can give rise to a volcano plot. This SLAC National Accelerator Laboratory
+ Stanford, California, 94025-7015 (USA)
+concept has been previously successfully applied to the
+ Department of Chemical Engineering
+oxygen evolution reaction.[3a,c,h] As the binding energies are dif- Stanford, California, 94305-5025 (USA)
+ficult to measure, other descriptors believed to correlate with Supporting information for this article is available on the WWW under
+the reactivity, have been used. An example is the use of the http://dx.doi.org/10.1002/cctc.201000397.
+
+ChemCatChem 2011, 3, 1159 – 1165  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim 1159
+ J. Rossmeisl et al.
+
+of computational studies, in which the values of the activity We applied a method previously developed for modeling
+descriptor are calculated, followed by identification of promis- the thermochemistry of electrochemical reactions based on
+ing candidates.[5] density functional calculations.[4b, 7, 9] The derivation of rela-
+ Previously, the OER has been studied using computational tions 2–5 is in the Supporting Information. The effect of liquid
+methods on two classes of materials: metals[6] and rutile water was implicitly taken into account as we used liquid
+oxides.[7] A similar computational approach has been used for water as reference. However, the interaction of water with the
+the OER which is in competition with chlorine evolution on intermediates at the surfaces has been neglected. The reason
+rutile oxides.[8] In these studies, the proposed reaction mecha- is that on the oxidized surface, there was no room for water
+nism consists of four consecutive proton and electron transfer molecules at the surface, where the interactions would have
+steps. Considering the OER intermediates to be HO*, O*, and been the largest.[7] We calculated DG1–4 using the computation-
+HOO*, free energy diagrams have been constructed and the al standard hydrogen electrode (SHE) allowing us to replace a
+oxygen evolving activity has been estimated using O* binding proton and an electron with half a hydrogen molecule at U =
+energies as a descriptor. Our previous studies[6, 7] have shown 0 V vs SHE.[9] The theoretical overpotential is independent of
+that scaling relationships can be established between the bind- the pH or the potential values, because the free energies ob-
+ing energies of HO*, HOO*, and O* species on oxide surfaces. tained by using Equations (2)–(5) vary in the same way with
+The scaling relations suggest that there is only one free param- pH and U, thereby the potential determining step remains the
+eter that determines the free energy diagram and thereby the same. Therefore, the analysis performed for the free energies is
+activity. In other words, the activity can be plotted as a func- at standard conditions (pH = 0, T = 298.15 K) and U = 0: DG1–40.
+tion of only one parameter, for example, the oxygen binding Since the barriers between the intermediates are not included,
+energy. The result is a volcano-shaped relationship between the free energy diagrams we have produced represent a first
+catalytic activity and the calculated oxygen adsorption energy. step towards a complete picture of the reaction path. We
+We found that on the surfaces that bind oxygen too strongly, expect that the thermodynamic analysis presented here will
+the potential is limited by the formation of HOO* species, capture trends in activity, due to cancellation of errors when
+whereas for surfaces that bind oxygen too weakly, the poten- similar surfaces are compared; however, absolute activities are
+tial is limited by the oxidation of HO*.[6, 7] not obtained at this level of modeling.
+ Herein, we revisit the origin of the overpotential for oxygen A very important parameter which can be deduced from the
+evolution on the basis of an extensive database of calculated free energy diagram is the size of the potential-determining
+binding energies on oxide surfaces. We include rutile, perov- step. This concept was developed in other previous papers for
+skite, spinel, rock salt, and bixbyite oxides in our calculations. OER and ORR[6–7, 9–10] and reviewed in two other recent
+The scaling relationship between HO* and HOO* is found to papers.[4] More precisely, the catalytic performance was esti-
+be universal for all the studied materials. We introduce a new mated by the magnitude of the potential-determining step for
+descriptor, the energy of a reaction step, which gives rise to a the OER, GOER. This was the last step to become downhill in
+universal description of oxygen evolving activities on the stud- free energy as the potential increased, that is, the specific reac-
+ied materials. Excellent agreement was found in terms of tion step in the four-step mechanism with the largest DG
+trends, between the calculated overpotentials and the experi- [Eq. (6)]:
+mental results reported in literature.
+ GOER ¼ max ½DG1 0 , DG2 0 , DG3 0 , DG4 0  ð6Þ
+
+Results and Discussion For which DG1–40 is DG1–4 at U = 0 (pH 0 and T = 298.15 K).
+ The theoretical overpotential, which is independent of pH,
+Free energy diagram at standard conditions is then given by Equation (7):
+ We consider the following four electron reaction paths in
+Equations (2)–(5): hOER ¼ ðGOER =eÞ1:23 V ð7Þ
+
+H2 O ðlÞþ* Ð HO* þHþ þe ð2Þ The energy diagram for the ideal (but nonexistent) oxygen
+ evolution catalyst is shown in Figure 1 a. This ideal catalyst
+ DG1 ¼ DGHO DGH2 O ðlÞ eUþkb T ln aHþ
+ * should be able to facilitate water oxidation just above the
+HO* Ð O* þHþ þe ð3Þ equilibrium potential. This requires all the four charge transfer
+ steps to have reaction free energies of the same magnitude at
+ DG2 ¼ DGO DGHO eUþk b T ln aHþ zero potential (4.92 eV/4 = 1.23 eV). This is equivalent to all the
+ * *
+ reaction free energies being zero at the equilibrium potential,
+O* þH2 O ðlÞ Ð HOO* þHþ þe ð4Þ 1.23 V (Figure 1 a). The catalyst that fulfills this requirement is
+ thermochemically ideal. Real catalysts do not show this behav-
+ DG3 ¼ DGHOO DGO eUþkb T ln aHþ
+ * * ior. The calculated free energy diagrams at standard conditions
+HOO* Ð * þO2 ðgÞþHþ þe ð5Þ of the OER on the surfaces of LaMnO3 (strong binding), SrCoO3
+ (intermediate binding), and LaCuO3 (weak binding) are shown
+ DG4 ¼ DGO2 DGHOO eUþk b T ln aHþ in Figure 1a,c,d. The most representative potentials are at U =
+ *
+
+1160 www.chemcatchem.org  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim ChemCatChem 2011, 3, 1159 – 1165
+Electrocatalysis on Oxide Surfaces
+
+Figure 1. Standard free energy diagram for the OER at zero potential (U = 0), equilibrium potential for oxygen evolution (U = 1.23), and at the potential for
+which all steps become downwards at pH 0 and T = 298 K over: a) the ideal catalyst, b) LaMnO3, c) SrCoO3, and d) LaCuO3. Standard free energies at U = 0 for
+e) the ideal catalyst, f) LaMnO3, g) SrCoO3, and d) LaCuO3. For all three cases, DGHOO*DGHO* (vertical dashed lines) is approximately constant with an average
+value of 3.2 eV, whereas the optimum value is 2.46 eV. The variation of DGO* between DGHO* and DGHOO* differs for each one. For the ideal case, DGHO* is
+1.23 eV, DGHOO* is 3.69 eV, and DGO* is in the middle at 2.46 eV.
+
+0 V for which all steps are uphill, at standard equilibrium po- Here, we established the formal scaling relationship between
+tential for oxygen evolution at U = 1.23 V, when some of the HO* and HOO* binding energies over a wide range of oxides.
+steps become downhill but some still remain uphill, and at the Figure 2 shows that the binding energies of HOO* and HO*
+GOER potentials when the potential-determining step becomes species on the various oxide surfaces were linearly correlated,
+downhill. Accordingly, LaMnO3 had a rather large overpotential with a slope of approximately 1, and an intercept of 3.2 eV.
+due to DG30. For SrCoO3, DG20 and DG30 were almost the same The mean absolute error (MAE) of the linear fit was 0.17 eV, in-
+value and the overpotential was small, whereas for LaCuO3,
+DG2 was the potential-determining step.
+
+Scaling relations
+Figures 1g,f,h show that the bond strength of all the inter-
+mediates decreases from left to right (LaMnO3, SrCoO3,
+LaCuO3). Note that the levels of the intermediates moved to-
+gether, that is, if one reaction energy changed, the others did
+too. This correlated energy phenomenon has been observed
+on metal and metal oxide surfaces as a result of the scaling re-
+lations between the intermediates.[6–7, 11] An example is the
+linear relation between the binding energy of HO* and O*, for
+which the slope of one half reflects that oxygen has two
+bonds to the surface, whereas HO* has only one bond. The in-
+tercept is determined by the type of binding site, meaning
+that there are different intercepts for HO*(ontop) vs O*(ontop)
+scaling compared to the HO*(hollow) vs O*(hollow) scaling.
+This gives rise to different intercepts for metals and oxides be- Figure 2. Adsorption energy of HOO* plotted against the adsorption energy
+cause the binding sites are different. Figures 1e–h show that of HO* on perovskites, rutiles, anatase, MnxOy, Co3O4, and NiO oxides. They
+ were calculated using the relations (10) and (11) and do not include zero
+the free energy difference between HO* and HOO* is almost
+ point energy and entropy corrections. Hollow symbols represent the adsorp-
+constant, independent of the binding strength to the surface. tion energy on the clean surfaces: perovskites (*), rutiles (~), MnxOy (&), ana-
+It was pointed out in a recent review by M. Koper[4b] that the tase (^), Co3O4 (+), NiO. The solid symbols represent the adsorption ener-
+bindings of HO* and HOO* are related to each other by a con- gies on high coverage surfaces, with oxygen atoms representing nearest
+ neighbors. The best fit of all the points is DEHOO* = DEHO*+3.20 eV and with
+stant of approximately 3.2 eV both for metals and oxide surfa-
+ 68 % of the points within  0.2 eV and 95 % within  0.4 eV. The red star in-
+ces regardless of the binding site, which implies that there is a dicates the point at which the binding energies need to be for an ideal elec-
+universal scaling relation between HO* and HOO*. trocatalyst. The relation for the perfect catalyst is: DEHOO* = DEHO*+2.44 eV.
+
+ChemCatChem 2011, 3, 1159 – 1165  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.chemcatchem.org 1161
+ J. Rossmeisl et al.
+
+dicating an extremely strong correlation between the two spe- Plotting hOER as function of DG0O* DG0HO* for the classes of
+cies. materials considered here will therefore lead to a universal vol-
+ The slope of unity in the correlated binding energies of HO* cano relationship independent of the catalyst material. For
+and HOO* reflects the fact that both species have a single clarity, the trends are shown separately for perovskites (Fig-
+bond between an O atom and the surface. The constant inter- ure 3 a) and rutiles (Figure 4 a), and the points represent the
+cept implies that HO* and HOO* normally prefer the same calculated value for each oxide.
+type of binding site. From the point of view of the surface,
+HO* and HOO* look very similar. This results in the approxi-
+mately constant difference of DEHOO*DEHO* of 3.2 eV for all the
+oxides considered. Notably, this difference is also observed on
+metal surfaces.[6] Furthermore, DEHOO* and DEHO* are independ-
+ent of potential and they only describe the interaction be-
+tween the intermediates and surface oxides. However, DG1–4
+changes with potential, pH, and temperature.
+ Interestingly, the constant difference between the adsorp-
+tion energies of HO* and HOO* of 3.2 eV, regardless of the
+binding energy of O*, defines a lower limit for the OER overpo-
+tential.[4b] Since two proton and electron transfer steps sepa-
+rate the two intermediates, the perfect separation in terms of
+energy should be 2.46 eV, as illustrated in Figure 1 e. The differ-
+ence in the energetic of these two steps between actual cata-
+lysts and an ideal one (3.2–2.46 eV)/2 e gives a minimum over-
+potential of 0.4–0.2 V, even if we could find a material in which
+the O* level is placed optimally between those of HO* and
+HOO*, as shown in Figure 1 g (with the value 0.2 V that
+comes from standard deviation of the population from 3.2 eV
+value: 2s =  0.4 V with 95 % of the values expected to lie
+within this confidence interval). The thermochemically ideal
+catalyst is characterized by having DG10 = DG20 = DG30 = DG40 =
+1.23 eV at standard conditions, which can only be achieved at
+a specific binding of all intermediates indicated by the red star
+in Figure 2. It is seen that this point clearly falls outside the
+general trends and there is no oxide-based material in the
+classes considered here that provides an optimum binding of
+both HO* and HOO*. In this picture, the challenge is to find a
+way to modify oxide surfaces or the electrochemical interface,
+such that the relative stability of HOO* and HO* changes.
+
+ Figure 3. a) Activity trends towards oxygen evolution plotted for perovskites.
+Descriptor and activity volcano The negative theoretical overpotential was plotted against the standard free
+ energy of the DG0O* DG0HO* step. The low coverage regime was considered
+Given the constant difference between the HOO* and HO* and the calculated values were used to show the activity of each oxide. The
+levels, the variation in the overpotential, hOER from one oxide volcano curve was established by using the scaling relation between
+surface to the next is determined by the O* adsorption energy. G0HOO* G0O* and G0O* G0HO* . b) Theoretical overpotential vs the experimental
+ overpotential in alkaline media. Experimental data were adapted from the
+This means that, either step (2) or step (3) is potential deter-
+ study of O. M. Bockris and T. Otagawa.[3a, 12] All experimental values were re-
+mining [Eq. (8): corded at 10 mA cm2, room temperature, and pH 14.
+
+GOER ¼ max½DG02, DG03 ¼ max½ðDG0O* DG0HO* Þ, ðDG0HOO* DG0O* Þ
+ max½ðDG0O* DG0HO* Þ, 3:2 eVðDG0O* DG0HO* Þ This theoretical analysis leads to the following ordering of
+ ð8Þcatalyst activities for the following perovskites: SrCoO3 >
+ LaNiO3 > SrNiO3 > SrFeO3 > LaCoO3 > LaFeO3 > LaMnO3. The
+ The difference (DG0O* DG0HO* ) is therefore a unique descrip-
+ trend agrees well with experimental findings by Bockris et al.
+tor for the OER activity, and the theoretical overpotential at
+ and Y. Matsumoto et al.[3a, 12] under alkaline conditions (Fig-
+standard conditions is given by Equation (9):
+ ure 3 b). All experimental overpotentials were reported at
+ 10 mA cm2, because a large database of overpotentials are re-
+hOER ¼ fmax½ðDG0O* DG0HO* Þ, 3:2 eVðDG0O* DG0HO* Þ=eg1:23 V ported at this current density. Ideally, the comparison should
+ ð9Þ be made with potentials obtained on single crystals. Even
+
+1162 www.chemcatchem.org  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim ChemCatChem 2011, 3, 1159 – 1165
+Electrocatalysis on Oxide Surfaces
+
+ SrCoO3 has a DG0HO* DG0O* of 1.48 eV, close to the very top of
+ the volcano. The high activity of SrCoO3 was also predicted
+ theoretically by Y. Matsumoto et. al.;[13] however, the main
+ problem lies in the experimentally determined value and is re-
+ lated to how to obtain SrCoO3 with perovskite-type structure,
+ since experimentally SrCoO3 was obtained under a non-perov-
+ skite type structure and exists as SrCoO2.5 in composition.
+ For the other oxides such as rutiles (anatases), Mn oxides,
+ and Co oxides, the activity order given by the theoretical cal-
+ culations was extracted from Figure 4 a: Co3O4  RuO2 >
+ PtO2rutile phase  RhO2 > IrO2  PtO2 b-phase(CaCl2) 
+ MnxOy  NiOb2  RuO2 and IrO2 anatase phase > PbOb2 @ Ti, Sn,
+ Mo, V, Nb, Re oxides. The anatase phases with crystallographic
+ orientation 001, such as RuO2 and IrO2, showed approximately
+ the same activity as the rutile phases. A similarly good agree-
+ ment between the theoretical and experimental values of over-
+ potentials on oxides other than perovskites is illustrated in Fig-
+ ure 4 b.
+ Even the comparisons between different experimental
+ values were difficult to establish, due to many factors that
+ affect the potential, such as pH, effective surface area, and par-
+ ticle size. A slight discrepancy exists between the calculated
+ and measured Co3O4 activity. DFT calculations showed that
+ Co3O4 was slightly more reactive than RuO2, whereas most of
+ the experimental studies suggest that Co3O4 has a higher over-
+ potential than RuO2 by 0.2–0.25 V.[12] It was shown that Co3O4
+ is nonstoichiometric with an excess of oxygen and that the
+ size of crystallites vary with the calcination temperature.[3g] Re-
+ cently, Singh et al. synthesized a spinel type of Co3O4 thin film
+ which showed a low overpotential[14] in agreement with our
+ calculations. It has also been reported that the overpotential
+ on Co-oxide nanoparticle electrocatalysts is size-dependent
+ with lower overpotentials on smaller particles.[15] Other Co
+Figure 4. a) Activity trends towards oxygen evolution, for rutile, anatase, oxide structures with a low overpotential have been reported
+Co3O4, MnxOy oxides. The negative values of theoretical overpotential were as well.[16] In Figure 4 b, we compared for Co3O4, three experi-
+plotted against the standard free energy of DGHO*DGO* step. The effect of
+ mental overpotentials from the literature to the computed
+interaction with the oxygen from the neighboring site is considered: rutile
+oxides (~), MnxOy (&). For NiOb2, PbOb2, and SnOb2, cus sites (see Figure 5 a,b) overpotential. Starting from left to right, the most active was
+are empty, and the reaction takes place on the bridge sites (a complete pic- the value reported by Singh et al.,[14] followed by three values
+ture of the surface is given in the Supporting Information). Hollow triangles reported by Esswein et al.[15a] A slight discrepancy was also ob-
+(~) represent the low coverage regime. b) Theoretical overpotential vs the
+ tained in the case of NiO, however, the theoretical value was
+experimental overpotential in acidic media (*) and in alkaline media (*). Ex-
+perimental data were taken from Y. Matsumoto and E. Sato.[12] All experi- calculated for a perfect single crystal NiO, whereas in reality,
+mental values were considered at 10 mA cm2 and room temperature. NiO is expected to have a more complicated composition, in-
+ cluding species in higher oxidation states.[3g, 17]
+then, the quantitative comparison between theoretical and ex- We emphasize that the reaction mechanism is more flexible
+perimental overpotentials remains difficult. The theoretical for the oxides close to the top of the volcano at which point
+overpotential is not directly comparable to experimentally de- the intermediates have a better compromise in interaction
+termined values because the activation barriers were neglect- strength, which could be the case for MnxOy oxides (detailed
+ed. Furthermore, the experiments were performed using elec- results will be discussed in a future manuscript). However, at
+trodes with oxide nanoparticles, for which the effective surface the top of the volcano, the overpotential is small and other re-
+area is often unknown or not reported. Hence, the current per action paths could be relevant if their overpotential is smaller
+geometric area is not directly available. In addition, the experi- than the values reported in this study. This flexibility of reac-
+mentally measured overpotential depends on the current den- tion mechanism might result in a slight variation in the theo-
+sity at which it is measured. Despite these uncertainties, it retical overpotentials, and the details of this matter are out of
+should be possible to compare trends in overpotentials for a the scope of this paper.
+set of different oxides. The actual surface of an oxide catalyst can experience oxida-
+ The comparison to the experiments can be seen in Fig- tion and/or dissolution in the highly corrosive OER environ-
+ure 3 b for the perovskites. According to our calculations, ment. For example, some oxides such as NbO2, ReO2, VO2,
+
+ChemCatChem 2011, 3, 1159 – 1165  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.chemcatchem.org 1163
+ J. Rossmeisl et al.
+
+MoO2, and CrO2[17a] are not stable. Still, the theoretical values Experimental Section
+may be interesting as a guide in designing mixed oxides that
+ We calculated the binding energies of the intermediates O*, HO*,
+could show improved activity.[18]
+ and HOO* on the rutile, perovskite, Mn, Co, and Ni oxide surfaces
+ Given the robustness of this theoretical model as applied to [Eqs. (10)–(12)]:
+oxide materials of well-defined stoichiometry and crystal struc-
+ture, one can also potentially apply these methods to nonstoi- DE HO ¼ EðHO* ÞEð* ÞðE H2 O 1=2 E H2 Þ ð10Þ
+ *
+chiometric oxide catalysts.
+ DE HOO ¼ EðHOO* ÞEð* Þð2 E H2 O 3=2 E H2 Þ ð11Þ
+ *
+Conclusions DE O ¼ EðO* ÞEð* ÞðE H2 O E H2 Þ ð12Þ
+ *
+First principles periodic DFT calculations have been used to re-
+ For which E(*), E(HO*), E(O*), and E(HOO*) are the ground state en-
+visit the origin of the overpotential for oxygen evolution for a ergies of the clean surface and the surfaces with HO*, O*, and
+wide range of oxides including rutile, perovskite, spinel, rock HOO* adsorbed, respectively. EH2O, EH2 are the calculated DFT ener-
+salt, and bixbyite. A universal scaling relationship between the gies of H2O and H2 molecules in the gas phase.
+binding energy of HOO* and HO* was identified. The scaling The surface structures together with the unit cells we used are
+relation led to an approximately constant difference between shown in Figure 5. The stoichiometric surfaces were considered for
+the binding energies of HOO* and HO*, which in turn defined rutile oxides, with the exception of PbO2, SnO2, and NiO2, on which
+ the binding of intermediates are thermodynamically favored on
+the lowest possible theoretical overpotential for the OER on a
+ nonstoichiometric surfaces (denoted by the subscript b, Figure 5).
+wide variety of oxides. Few catalyst materials operate at this
+ The results presented here, were obtained using DFT,[20] with the
+minimum theoretical overpotential, and the remaining hun- RPBE[21] exchange-correlation functional, and using the Dacapo
+dreds of catalyst materials are further burdened by an addi- plane-wave implementation.[22] Using RPBE functional will give
+tional overpotential arising from a suboptimal O* binding better adsorption properties.[21] This level of theory has previously
+energy. Thus, the origin of the
+overpotential for oxygen evolu-
+tion catalysis has been elucidat-
+ed, whereby a single descriptor
+(DGO*DGHO*) was introduced,
+which resulted in a universal de-
+scription of oxygen-evolving ac-
+tivities. Experimental trend stud-
+ies from the literature could be
+described and understood
+within the model.
+ This study provides an under-
+standing of the fundamental lim-
+itations for the OER activity on
+oxide-based electrocatalysts. Our
+results showed that for the
+classes of structures considered
+here, the OER activity could not
+be significantly improved
+beyond RuO2 by tuning the
+binding between the intermedi-
+ates and the catalyst surface.
+ To avoid the limitations de-
+fined by the universal scaling re-
+ Figure 5. Visualization of the considered surface structures of metal oxides. The dashed lined squares indicate the
+lation, one must find ways to
+ unit cells used in the calculations. The reaction takes place only on one site at a time. a) Rutile-like stoichiometric
+stabilize HOO* compared to surface (110) for MO2 with M = Ti, V, Cr, Mn, Nb, Mo, Ru, Rh, Re, Ir, Pt, Sn. Red and light blue spheres represent O
+HO*. It is possible that three di- and metal atoms, respectively. Positions 1 and 2 represent the active sites (cus). Positions 3 and 4 represent the in-
+mensional structures, such as active sites (BRIDGE) and are covered with oxygen with (1  2) unit cell. b) Rutile-like reduced surface (110) for
+ MO2. Positions 3 and 4 represent the active position (BRIDGE) and positions 1 and 2 represent the inactive posi-
+rough surface structures, zeolites
+ tion (cus) with M = Ni, Pb, Sn. Red, and light blue represent O and metal atoms, respectively with (1  2) unit cell.
+or co-adsorbates on the surface c) Perovskite structure for LaMO3 and SrMO3 (100) surface with M = Ti, V, Mn, Fe, Co, Ni, Cu. Red, dark blue, and
+could achieve this relative stabili- light blue spheres represent O, La(Sr), and metal, respectively. Sr and La are in the subsurface. The active sites/
+zation of HOO*. Effects such as unit cell are represented by (1,2,3,4) and the subsurface atom is represented by 5, with (2  2) unit cell, d) Mn2O3
+ (110) surface structure. The binding site is represented by 1. (1  1) unit cell was used in the calculations, e) Mn3O4
+these are likely present in en-
+ (001) surface structure. (2  1) unit cell was used in the calculations, f) Co3O4. Dashed lines indicate the (1  1) unit
+zymes that catalyze water oxida- cell, g) (001) anatase-like surface with (1  2) unit cell, and h) MO(100) surface with M = Mn, Ni. The (1  1) unit cell
+tion very effectively in nature.[19] is indicated.
+
+1164 www.chemcatchem.org  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim ChemCatChem 2011, 3, 1159 – 1165
+Electrocatalysis on Oxide Surfaces
+
+predicted trends in formation energy of rutile[23] and perovskite 241, 101; e) E. R. S. Winter, J. Chem. Soc. A 1968, 2889; f) G. K. Boreskov,
+oxides.[24] We therefore expected that it also correctly captured Adv. Catal. 1965, 15, 285; g) S. Trasatti, Electrochim. Acta 1984, 29, 1503;
+trends on adsorption energies. The Kohn–Sham equations were h) P. Ruetschi, P. Delahay, J. Chem. Phys. 1955, 23, 556.
+ [4] a) H. Dau, C. Limberg, T. Reier, M. Risch, S. Roggan, P. Strasser, Chem-
+solved using a plane wave basis with a cutoff of 350–400 eV for ki-
+ CatChem 2010, 2, 724; b) M. T. M.Koper, J. Electroanal. Chem. 2010, in
+netic energy and a cutoff of 500 eV for density. The ionic cores and
+ press, DOI:10.1016/j.physletb.2003.10.071.
+their interaction with valence electrons were described by ultrasoft [5] a) J. K. Nørskov, T. Bligaard, J. Rossmeisl, C. H. Christensen, Nat. Chem.
+pseudopotentials.[21] The exchange and correlation effects are de- 2009, 1, 37; b) J. Greeley, I. E. L. Stephens, A. S. Bondarenko, T. P. Johans-
+scribed using RPBE functional (a gradient approximation GGA for son, H. A. Hansen, T. F. Jaramillo, J. Rossmeisl, I. Chorkendorff, J. K. Nor-
+these effects) because they describe well the absorption proper- skov, Nat. Chem. 2009, 1, 552.
+ties. The occupancy of the one-electron states was calculated [6] J. Rossmeisl, A. Logadottir, J. K. Norskov, Chem. Phys. 2005, 319, 178.
+using an electronic temperature of kBT = 0.1 eV for surfaces and [7] J. Rossmeisl, Z. W. Qu, H. Zhu, G. J. Kroes, J. K. Norskov, J. Electroanal.
+0.01 eV for molecules in vacuum. All energies were extrapolated to Chem. 2007, 607, 83.
+ [8] H. A. Hansen, I. C. Man, F. Studt, F. Abild-Pedersen, T. Bligaard, J. Ross-
+T = 0 K. The ionic degrees of freedom were relaxed using the
+ meisl, Phys. Chem. Chem. Phys. 2010, 12, 283.
+quasi-Newton minimization scheme until the maximum force com-
+ [9] J. K. Nørskov, J. Rossmeisl, A. Logadottir, L. Lindqvist, J. R. Kitchin, T. Bli-
+ponent was smaller than 0.05 e 1. Spin-polarization calculations gaard, H. Jonsson, J. Phys. Chem. B 2004, 108, 17 886.
+were carried out for CrO2, Mn, Ni and Co oxides, and for perov- [10] a) A. Valdes, Z. W. Qu, G. J. Kroes, J. Rossmeisl, J. K. Norskov, J. Phys.
+skites when appropriate. More about the surfaces and other com- Chem. C 2008, 112, 9872; b) H. A. Hansen, J. Rossmeisl, J. K. Norskov,
+putational details can be found in the Supporting Information. Phys. Chem. Chem. Phys. 2008, 10, 3722.
+Instead of using the RPBE-generalized gradient correction self con- [11] a) F. Abild-Pedersen, J. Greeley, F. Studt, J. Rossmeisl, T. R. Munter, P. G.
+sistency,[21] we could have used other approaches for self-interac- Moses, E. Skulason, T. Bligaard, J. K. Norskov, Phys. Rev. Lett. 2007, 99;
+tion corrections, such as GGA+U[25] for some of the oxides (Co3O4 b) E. M. Fernndez, P. G. Moses, A. Toftelund, H. A. Hansen, J. I. Martinez,
+ F. Abild-Pedersen, J. Kleis, B. Hinnemann, J. Rossmeisl, T. Bligaard, J. K.
+and manganese oxides). This method presents its own limitations
+ Norskov, Angew. Chem. 2008, 120, 4761; Angew. Chem. Int. Ed. 2008, 47,
+in terms of different U values that have to be chosen for each
+ 4683.
+system and thereby the results could not be directly compared. As [12] Y. Matsumoto, E. Sato, Mater. Chem. Phys. 1986, 14, 397.
+any functional, does not necessary gives better results.[26] These [13] Y. Matsumoto, S. Yamada, T. Nishida, E. Sato, J. Electrochem. Soc. 1980,
+will make subject for each oxide separately. For the study of some 127, 2360.
+oxides like Mn3O4, Mn2O3, and CoO4, other approximations for the [14] R. N. Singh, D. Mishra, Anindita, A. S. K. Sinha, A. Singh, Electrochem.
+exchange and correlations effects could be imposed, such as Commun. 2007, 9, 1369.
+DFT+U.[24] This choice imposes limitations, because each system [15] a) A. J. Esswein, M. J. McMurdo, P. N. Ross, A. T. Bell, T. D. Tilley, J. Phys.
+needs different values of U and finally the values cannot be Chem. C 2009, 113, 15068; b) F. Jiao, H. Frei, Angew. Chem. 2009, 121,
+ 1873; Angew. Chem. Int. Ed. 2009, 48, 1841.
+compared.
+ [16] M. W. Kanan, J. Yano, Y. Surendranath, M. Dinca, V. K. Yachandra, D. G.
+ Nocera, J. Am. Chem. Soc. 2010, 132, 13692.
+ [17] a) M. Pourbaix, Atlas of electrochemical equilibria in aqueous solutions,
+Acknowledgements Pergamon Press, Houston, Texas, 1966; b) S. M. Jasem, A. C. C. Tseung,
+ J. Electrochem. Soc. 1979, 126, 1353.
+The authors thank Dr. Marc Koper and Dr. Peter Strasser for shar- [18] a) M. V. Makarova, J. Jirkovsky, M. Klementova, I. Jirka, K. Macounov, P.
+ing preprints of reference [4]. This research was supported in part Krtil, Electrochim. Acta 2008, 53, 2656; b) R. Forgie, G. Bugosh, K. C.
+ Neyerlin, Z. C. Liu, P. Strasser, Electrochem. Solid-State Lett. 2010, 13,
+by the European Commission (Marie Curie Research Training Net-
+ B36; c) K. C. Neyerlin, G. Bugosh, R. Forgie, Z. C. Liu, P. Strasser, J. Electro-
+work MRTN-CT-2006-032474), the Danish Council for Strategic Re- chem. Soc. 2009, 156, B363; d) K. Macounov, M. Makarova, J. Franc, J.
+search via SERC project through grant no.2104-06-011, the Catal- Jirkovsky, P. Krtil, Electrochem. Solid-State Lett. 2008, 11, F27; e) K. Ma-
+ysis for Sustainable Energy (CASE) initiative, the Danish Strategic counov, J. Jirkovsky, M. V. Makarova, J. Franc, P. Krtil, J. Solid State Elec-
+ trochem. 2009, 13, 959; f) K. Macounov, M. Makarova, P. Krtil, Electro-
+Research Council’s HyCycle program, and the Danish Council for
+ chem. Commun. 2009, 11, 1865; g) H. Y. Kim, H. M. Lee, R. G. S. Pala, H.
+Technology and Innovation’s FTP program. NI and JRK gratefully Metiu, J. Phys. Chem. C 2009, 113, 16083; h) H. Y. Kim, H. M. Lee, R. G. S.
+acknowledge support from the DOE Office of Science Early Career Pala, V. Shapovalov, H. Metiu, J. Phys. Chem. C 2008, 112, 12398.
+Research program (DE-SC0004031). This work was partially sup- [19] J. Rossmeisl, K. Dimitrievski, P. Siegbahn, J. K. Norskov, J. Phys. Chem. C
+ 2007, 111, 18821.
+ported by the IMI Program of the National Science Foundation
+ [20] a) W. Kohn, L. J. Sham, Phys. Rev. 1965, 140, 1133; b) P. Hohenberg, W.
+under Award no. DMR 0843934. TFJ and JKN acknowledge sup- Kohn, Phys. Rev. B 1964, 136, 864.
+port from the Global Climate and Energy Program (GCEP), Stan- [21] B. Hammer, L. B. Hansen, J. K. Norskov, Phys. Rev. B 1999, 59, 7413.
+ford University. JIM acknowledges funding from Spanish MICINN [22] http://wiki.fysik.dtu.dk/dacapo.
+ [23] F. Calle-Vallejo, J. I. Martinez, J. M. Garcia-Lastra, M. Mogensen, J. Ross-
+through the Juan de la Cierva Program.
+ meisl, Angew. Chem. 2010, 122, 7865; Angew. Chem. Int. Ed. 2010, 49,
+ 7699.
+ [24] J. I. Martinez, H. A. Hansen, J. Rossmeisl, J. K. Norskov, Phys. Rev. B 2009,
+Keywords: density functional calculations · electrochemistry ·
+ 79.
+electron transfer · heterogeneous catalysis · oxygen [25] V. I. Anisimov, J. Zaanen, O. K. Andersen, Phys. Rev. B 1991, 44, 943.
+ [26] C. Franchini, R. Podloucky, J. Paier, M. Marsman, G. Kresse, Phys. Rev. B
+ [1] J. O. Bockris, T. N. Veziroglu, Int. J. Hydrogen Energy 2007, 32, 1605. 2007, 75.
+ [2] J. O. Bockris, Int. J. Hydrogen Energy 2008, 33, 2129.
+ [3] a) J. O. Bockris, T. Otagawa, J. Electrochem. Soc. 1984, 131, 290; b) S. Tra-
+ satti, J. Electroanal. Chem. 1980, 111, 125; c) S. Trasatti, Electrochim. Acta Received: November 10, 2010
+ 1991, 36, 225; d) Klissurs. Dg, R. P. Dikova, Z. Phys. Chem. (Leipzig) 1969, Published online on March 16, 2011
+
+ChemCatChem 2011, 3, 1159 – 1165  2011 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.chemcatchem.org 1165

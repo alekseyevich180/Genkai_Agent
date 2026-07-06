@@ -1,0 +1,402 @@
+Applied Catalysis B: Environmental 225 (2018) 1–7
+
+ Contents lists available at ScienceDirect
+
+ Applied Catalysis B: Environmental
+ journal homepage: www.elsevier.com/locate/apcatb
+
+An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of T
+Cd in alkaline media
+Jun-Hyuk Kima, Duck Hyun Youna,b, Kenta Kawashimac, Jie Lina,d, Hyungseob Limc,
+ ⁎
+C. Buddie Mullinsa,c,e,
+a
+ McKetta Department of Chemical Engineering, University of Texas at Austin, TX, 78712, United States
+b
+ Department of Chemical Engineering, Kangwon National University, Gangwondaehak-gil, Chuncheon, Gangwon-do, 24341, South Korea
+c
+ Department of Chemistry, University of Texas at Austin, TX 78712, United States
+d
+ Pen-Tung Sah Micro-Nano Science and Technology Institute, Xiamen University, Xiamen, Fujian, 361006, China
+e
+ Texas Materials Institute, University of Texas at Austin, TX 78712, United States
+
+A R T I C L E I N F O A B S T R A C T
+
+Keywords: Although there has been a signiﬁcant progress regarding electrocatalysts for the electrochemical oxygen evo-
+Oxygen evolution reaction lution reaction, further breakthroughs are still required due to its sluggish 4-electron transfer mechanism. Ni is
+Nanoporous considered as a potential candidate for the oxygen evolution reaction (OER) in alkaline media in lieu of noble
+NiFe metals, however, the utility of Ni has been limited by the required and relatively high overpotentials. In this
+Cd
+ study, we fabricated a nanoporous Ni structure by selective and partial dissolution of Cd from a NiCd composite
+d-Band center
+ (without using hazardous acids or bases). The formation of nanoporous Ni greatly enhanced OER performance
+ because of the increased number of catalytic sites. Furthermore, there was a promotional electronic eﬀect on the
+ electrocatalyst induced by Cd atoms under the Ni surface tuning the catalytic reactivity could be tuned.
+ Additionally, Fe deposition on the porous Ni-Cd structure signiﬁcantly raised the OER activity via a reduction in
+ the overpotential from a value of η = 382 mV (before Fe deposition) to η = 290 mV (after Fe deposition) to
+ achieve 10 mA cm−2.
+
+1. Introduction and has high stability in alkaline solution. There have been many Ni-
+ based investigations from oxide [13,14] to mixed metal oxide (Ni-Fe
+ Hydrogen and oxygen obtained from water splitting are very im- [15–17], Ni-V [18], Ni-Co [19]) in recent years. However, since the
+portant as a power source with regard to the growing demand for re- utility of Ni-oxide electrocatalysts has still been limited by the required
+newable energy [1–3]. However, the oxygen evolution reaction (OER) high overpotentials, there have been many studies aimed at eﬀective
+process is a four-electron transfer reaction (4OH− → O2 + 2H2O strategies for activity improvement; one promising approach is the
++ 4e− in an alkaline medium) limited by large overpotentials [4] and fabrication/synthesis of nanoporous electrocatalysts [20]. Because of
+slow kinetics [5] so much research related to the OER regarding elec- their unique intermetallic connections and high surface area, nano-
+trocatalysts, photocatalysts, or thermal decomposition pathways is porous structures are exceptionally attractive as OER electrocatalysts.
+currently underway. Among the various approaches for eﬀective facil- Thus, several attempts to synthesize nanoporous structures or 3D ar-
+itation of the OER, employing electrocatalysts in alkaline electrolyte is chitectures have been made via templating [21,22], solvothermal [23],
+considered one of the most viable solutions, especially considering the nanocasting [24], electrospinning [25], and nitridation reaction [26]
+possibility of using alternative cheap earth-abundant catalysts [6] techniques. Additionally, a common approach to obtain nanoporous
+which can be applied as favorable oxygen electrocatalyts at the anode sponge materials is an electrochemical dissolution method [27]. With
+side [7]. Indeed, considering the cost of noble metals as OER electro- this method, the porous structure can be fabricated with ease by se-
+catalysts [8–11], there has been increasing interest in the application of lective dissolution of an unstable element from a composite [20]
+non-noble metal based electrocatalysts (mostly 3d elements [7,12]). without hazardous acids or bases. Furthermore, it can lead to geometric
+Among them, recent advances with Ni oxide have shown great im- eﬀects as well as promotional electronic eﬀects by forming a diﬀerent
+provement in OER activity and stability and nickel is abundant, cheap elemental composition in the surface and sub-surface layers [28] which
+
+ ⁎
+ Corresponding author at: McKetta Department of Chemical Engineering, Department of Chemistry, Texas Materials Institute, University of Texas at Austin, Texas, 78712, United
+States.
+ E-mail address: mullins@che.utexas.edu (C.B. Mullins).
+
+https://doi.org/10.1016/j.apcatb.2017.11.053
+Received 16 June 2017; Received in revised form 3 November 2017; Accepted 20 November 2017
+Available online 22 November 2017
+0926-3373/ © 2017 Elsevier B.V. All rights reserved.
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+can alter the adsorption energy resulting in a tuning of the activity [29] of D.I water followed by addition of 50 ml of 0.1 M NaBH4 solution
+since the OER consists of several elementary reaction steps involving under vigorous stirring. After 1 h of stirring, the solution was ﬁltered,
+adsorbates such as *O, *OH, and *OOH [30]. washed with excess amount of water and dried at 80 °C for 12 h in an
+ Here we describe our synthesis of a porous Ni structure with Cd (as a oven. The NiCd(A)_P was prepared in the above manner for the NiCd
+pore maker) which can be readily and eﬀectively dissolved in an al- (A).
+kaline medium (pH 13–14] [31] for synergistic (geometry and elec-
+tronic) electrocatalytic eﬀects. Interestingly, nanoporous Ni electro- 2.2. Characterization
+catalyst was clearly formed after Cd dissolution drastically enhancing
+OER performance compared to bulk Ni. Furthermore, a promotional All the samples were quantitatively analyzed for Ni, Cd, and Fe by
+electronic eﬀect induced by Cd (at bulk) under Ni surface could pro- using an inductively coupled plasma mass spectrometry (ICP-MS). A
+mote the catalytic reactivity. Additionally, we readily deposited Fe on three-electrode system was used for the evaluation of the electro-
+the porous Ni electrocatalyst using an electron-beam (e-beam). It ba- chemical behavior with a potentiostat (CHI660D, CH instruments)
+sically proposes its empirical usage as a highly active nanoporous NiFe consisting of a working electrode (catalyst), reference electrode (Ag/
+based electrocatalyst. The Fe evaporation boosted the OER activity AgCl in sat. KCl, converted to RHE scale as shown in Fig. S5) and an
+from the overpotential of η = 382 mV (before Fe deposition) to auxiliary electrode (Pt mesh). Cyclic voltammetry (CV) was conducted
+η = 290 mV (at 10 mA cm−2). Scanning electron microscopy (SEM), in the voltage range 1.0–1.1 V vs. RHE with a scan rate of 10, 20, 50,
+optical proﬁlometry, X-ray diﬀraction (XRD), and electrochemical tests and 100 mV s−1 in Ar fully purged 0.1 M NaOH electrolyte in order to
+were conducted for the characterization of the nanoporous Ni electro- estimate the electrochemical surface area (ECSA). The water oxidation
+catalyst. X-ray photoemission spectroscopy (XPS) was employed to in- reaction was evaluated by measuring an anodic current sweep using
+vestigate potential electronic eﬀects. linear sweep voltammetry (LSV) in the voltage range between 1.0–1.9 V
+ with a scan rate of 5 mV s−1. All electrochemical data have been cor-
+2. Experimental rected with an i-R compensation (27 Ω) and obtained at room tem-
+ perature under ambient pressure. The total metal loading of catalysts
+2.1. Electrocatalyst fabrication was identical for electrochemical test as shown in Tables S1–S2 and S4.
+ The NiCd(A)_P was dispersed on a glassy carbon electrode (1/4″ of
+ Polycrystalline titanium (1/4″ of diameter, 99.99% purity, and Kurt diameter) with 89.6 ml of D.I water, 10 ml of isopropanol, and 0.4 ml of
+J. Lesker) was used as a substrate for the NiCd electrocatalyst. Details Naﬁon solution (5%). The 30 μl of ink was dropped on the working
+regarding preparations of the electrocatalyst can be found in reference electrode with the same metal loading of the NiCd(A) catalyst. The
+[32] but a brief description of the synthetic procedure follows. Firstly, surface of the thin ﬁlm was observed using scanning electron micro-
+the Ti substrate was polished for ∼30 min employing two diﬀerent scopy (SEM, FEI Quanta 650 SEM) without a noble metal coating. The
+types of sandpaper (1500- and 2000-grit) and alumina powder having a accelerating voltage was 15 kV with 2 nA of current and a 10 mm
+particle size of 1 and 0.3 μm (CH instruments) in order to obtain a working distance. The surface proﬁle was measured using a non-contact
+smooth surface. The polished Ti was then washed with distilled water optical proﬁlometer (Wyko NT 9100, FOV 2.0 X). XPS spectra were
+three times while under sonication, and ﬁnally rinsed with distilled recorded on a Kratos Axis Ultra DLD spectrometer using monochro-
+water in preparation for the deposition of Ni or NiCd. matic Al Kα radiation (1486.6 eV) with 400 μm spot sizes of X-ray
+ The Ni or NiCd was electrodeposited on the prepared Ti under the monochromator under 1 × 10−10 Torr for information on elemental
+modiﬁed conditions of Dougherty [33] at a constant cathodic current of composition and chemical bonding states of samples. All XPS energy
+5 mA for 300 s without stirring. The solution for electrodeposition was data were calibrated with the C 1s electron peak (284.6 eV). The
+prepared with water based mixing of NiSO4 6H2O (9 mM) and (NH4)2 samples were structurally characterized by X-ray diﬀraction (XRD,
+SO4 (25 mM) adjusting the pH to 3. For the NiCd electrocatalyst, the Cd Rigaku Ultima IV) equipped with CuKα radiation (λ = 1.54056 Å)
+precursor, 3CdSO4 8H2O (0.5 mM), was also added to the deposition using a ﬁxed glancing incidence angle α = 1° at room temperature.
+electrolyte. Before the deposition process, the prepared solution was Rietveld analyses were performed using the PANalytical X’pert high-
+bubbled and fully saturated with Ar gas. The electrodeposition was score software (Philips, Netherlands). The microstructure of the cata-
+carried out employing a hanging meniscus rotating disk electrode lytic ﬁlm was investigated by using TEM (JEOL 2010F) with an electron
+(RDE) conﬁguration [34,35] for precise surface area determination. gun operated at 200 KV.
+After the deposition, the prepared samples were rinsed with distilled
+water thoroughly. In order to conduct a systematic investigation, we 3. Results and discussion
+prepared three samples each of NiCd with increasing Cd ratios in-
+cluding 100:3, 100:5, 100:10 and 100:20 (Ni:Cd) and named the sam- In order to identify the optimal compositions of Ni and Cd for
+ples with the following convention: NiCd(I) for the initial NiCd prior to creating active porous Ni electrocatalysts, the OER performance was
+any processing and NiCd(A) for the material after Cd dissolution from measured with various ratio of Ni to Cd. Fig. 1 shows OER polarization
+the NiCd(I). curves for NiCd electrocatalysts as a function of Cd ratio
+ For the preparation of the NiCd(A) electrocatalysts, the potential (Ni:Cd = 100:3, 100:5, 100:10, and 100:20). The onset potential for
+was swept in the range of 1.35–1.55 V (vs. RHE) with a scan rate of OER shifted positively with an increasing ratio of Cd (Ni:Cd = 100:10
+50 mV s−1 for 500 cycles under rotating of 1600 rpm (experimental and 100:20). The Cd in the samples with the ratio of 100:10 and 100:20
+details in Fig. S1). An e-beam evaporator was used for deposition of Fe may cover the active Ni sites while the samples with relatively low
+for the synthesis of both NiFe and NiCd(A)Fe electrocatalyst materials portion of Cd (100:3 and 100:5) required less overpotential and showed
+(characterization details in Figs. S2–S4). The e-beam deposition rates similar initial OER performance. All the samples have a signiﬁcant
+were controlled by adjustment of the emission current with a rate of activity enhancement after Cd dissolution, it is interesting to note that
+0.2 Å/s for a thickness of 3 nm as measured by a quartz crystal mi- the electrocatalyst with Ni:Cd = 100:5 showed the best performance
+crobalance (QCM). The main chamber pressure was maintained at a which could have optimal trade-oﬀ characteristics between pores and
+pressure of 1 × 10−7 during the evaporation (TEM images of evapo- structural integrity. Thus, we decided to focus on the NiCd (100:5)
+rated Fe on C-coated Cu grid and Ni ﬁlm represent in Fig. S4). material in this study of OER electrocatalysts.
+ The particle type NiCd catalyst with a molar ratio of 100:5 was Scanning electron microscopy (SEM) was used to examine the sur-
+prepared by a chemical reduction method. The stoichiometric amounts face morphology of the samples. The microstructure of the NiCd(I) and
+of NiSO4·6H2O and CdSO4·8/3H2O precursors were dissolved in 100 ml NiCd(A) along with Ni ﬁlms are shown via the SEM images shown in
+
+ 2
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+ technique as shown in Fig. 2e–f. The surface roughness parameter (Rt)
+ of the NiCd(A) sample showed more than a 5-fold increase compared to
+ pure nickel [from 3.01 μm for Ni and 5.26 μm for NiCd(I) to 16.42 μm
+ for NiCd(A)] due to the dissolution of surface Cd. The Rt of the NiFe
+ catalyst (3.28 μm) is similar to that of the pure Ni catalyst (see Fig. S9).
+ In order to gain insight into the porous structure, XRD was used in
+ the NiCd(I) and NiCd(A) as shown in Fig. 3, using a ﬁxed grazing angle
+ of incidence (GIXRD). Since the NiCd sample is a thin ﬁlm it will only
+ produce a weak diﬀraction signal, but a ﬁxed angle mode instead of
+ conventional θ/2θ scanning can enhance the signal by reducing the
+ intense signal from the substrate. For more detailed structural analysis,
+ we performed Rietveld reﬁnement with the data from the NiCd sample.
+ Metallic phases of Ni (cubic close-packed, JCPDS ﬁle no. 00-001-1258)
+ and Cd (hexagonal close-packed, 01-085-1328) were observed in both
+ of the NiCd(I) and NiCd(A), no other phases or amorphous components
+ except for Ni and Cd are present in detectable quantities by the re-
+ ﬁnement. The obtained quantitative result suggests that the Cd ratio
+Fig. 1. OER polarization curve for NiCd electrocatalysts as a function of Cd ratio
+ (%) decreased in the NiCd(A) sample to 97:3 from the initial NiCd(I)
+(Ni:Cd = 100:3, 100:5, 100:10, and 100:20). Dotted lines represent initial NiCd (before 84:16, which is in close agreement with the result from SEM analysis.
+Cd dissolution). All the data was collected with the scan rate of 5 mV s−1 in Ar fully We next attempted to optimize the eﬀectiveness of the porous Ni
+purged 0.1 M NaOH electrolyte. structure by depositing a small amount of Fe as explained in the last
+ part of introduction section since Ni and Fe mixed oxyhydroxides are
+Fig. 2a–d. Grain size was determined as roughly 100 nm for Ni, 250 nm currently known as one of the most active OER catalysts in alkaline
+for the NiCd(I) and the NiCd(A), respectively. The thickness of the ﬁlms electrolyte [36] and there are several reports that the introduction of Fe
+was estimated to be ∼3 μm as shown in Fig. S6. can enhance the OER activity. [16,37,38]
+ As shown in Fig. 2b, the SEM image of the NiCd(I) sample indicates The OER activity was evaluated electrochemically using rotating
+that the substrate surface was completely covered by a Ni and Cd disk electrode (TF-RDE) measurements. The substrate Ti can be seen to
+mixture. The formation of a porous structure of Ni began with elec- be electrochemically inert toward the OER catalyst over the entire ex-
+trochemical dissolution by removing surface exposed Cd atoms, for perimental potential range (Fig. S11). Polarization curves for the OER
+which Cd has a thermodynamically high solubility at high pH. [31] with the various samples are shown in Fig. 4a. An anodic current fea-
+With this feature, selective dissolution of Cd was generated as shown in ture appears at a potential of ∼1.39 V vs. RHE for both Ni and NiCd(A)
+Fig. 2c and it remained Ni atoms onto the surface dominantly left Cd and is consistent with Ni being oxidized to Ni(OH)2 as described in a
+atoms into subsurface of the structure, which formed interconnected previous report: [39]
+porous NiCd structure. The dissolution of Cd atoms also can be esti- Ni(OH)2 + OH− → NiOOH + H2O + e− (1)
+mated by analysis of the EDS spectrum and quantitative elemental data
+(details in Figs. S7–S8). Fig. 2d shows the ratio of Ni:Cd in NiCd(I) and where reaction occurs in the potential range 1.38–1.40 V [37,40,41].
+NiCd(A) was calculated with the relative weight percent of Ni as 100%. The OER activity for NiCd(A) (η = 382 mV at 10 mA cm−2) was higher
+The relative Cd ratio drastically decreased from 35 ± 7 to 13 ± 5%, than that of pure Ni (η = 433 mV), primarily due to the enhanced
+clearly showing selective dissolution of Cd. The roughness in the porous surface area from the NiCd(A) porous structure. The NiFe electro-
+structure was also clearly observed via the optical proﬁlometer catalyst, which has highly optimal adsorption energies for OER inter-
+ mediates which enhance the performance [16], showed the same trend
+
+Fig. 2. Top-view SEM images of (a) Ni, (b) NiCd(I), and (c) NiCd(A). (d) Relative Ni and Cd composition ratio of NiCd(I) and NiCd(A) obtained from EDS. Surface proﬁles obtained using a
+3D optical proﬁlometer for (e) Ni and (f) NiCd(A). The NiCd(I) and NiCd(A) represent for the initial NiCd catalyst and the catalyst after Cd dissolution from the NiCd(I), respectively.
+
+ 3
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+Fig. 3. The Rietveld reﬁnement of the XRD pattern for (a) NiCd(I) and (b) NiCd(A). The blue line denotes the diﬀerence between the raw and the simulated proﬁles. The composition ratio
+of Ni and Cd phases in the same structure is described in insets (weight, %). (For interpretation of the references to colour in this ﬁgure legend, the reader is referred to the web version of
+this article.)
+
+in this electrochemical study. The overpotential of the NiFe electro- Tafel slope of 38 mV dec−1 was achieved for the NiCd(A)Fe sample
+catalyst (η = 337 mV) was drastically lower than both those for pure Ni which implies the most favorable OER process on this sample. This
+(η = 415 mV) and even the porous Ni at the same current density value was better than that of the NiFe sample (51 mV dec−1), and both
+(10 mA cm−2). Interestingly, the most active OER catalyst was the NiCd values are consistent with NiFe (oxy)hydroxide electrocatalysts re-
+(A)Fe (η = 290 mV) in which the overpotential for 10 mA cm−2 was ported in the literature which vary between 25 and 60 mV dec−1 [38].
+shifted by 47 mV compared to the non-porous NiFe catalyst. Tafel slopes were slightly lower in samples with no iron doping
+ Fig. 4b. shows the Tafel slopes for the Ni, NiCd(A), NiFe, and NiCd (59 mV dec−1 for the NiCd(A) and 75 mV dec−1 for the Ni. The im-
+(A)Fe electrocatalysts. A Tafel plot is known as one of the most eﬀective proved kinetics is attributed to the increase in the number of active
+indicator for the OER catalytic behavior of materials in terms of surface surface sites for the porous structure [42], which has been conﬁrmed by
+kinetics and elucidation of the reaction mechanism [38]. The smallest ECSA.
+
+Fig. 4. Electrochemical test results of various catalysts based on Ni. (a) OER polarization curves, (b) Tafel plots, (c) speciﬁc activity (per ECSA) at η = 0.35 V for Ni, NiCd(A), and NiCd(A)
+Fe with NiFe, NiCd(A)_P [NiCd(A) particles], CdFe, and Cd for comparison. (d) Electrochemical impedance spectra of NiCd(A) prepared with diﬀerent type of catalyst (ﬁlm and particle).
+The atomic composition of elements in the catalysts: Ni (92%), Cd (8%) in the NiCd(A) and Ni (94%), Cd (6%) in the NiCd(A)_P and Ni (84%), Fe (16%) in the NiFe, and Ni (73%), Cd
+(9%), Fe (18%) in the NiCd(A)Fe (see Table S3). The NiCd(A) sample was conditioned by sweeping the potential in the range of 1.35–1.55 V (vs. RHE) with a scan rate of 50 mV s−1 for
+500 cycles (see experimental section). All the data was collected in an Ar fully purged 0.1 M NaOH electrolyte.
+
+ 4
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+ The intrinsic activity of the samples can be reported based on actual ∼14 nm (at 99.8%) for a 1.5 keV photoelectron kinetic energy [48]. In
+surface area as well as geometric surface area. The ECSA measurements this study, XPS signals might be detected from the surface also the sub-
+provide information regarding the actual surface for electrochemical surface (mainly reﬂecting Ni0) which might be attributed to the rough
+reaction. In particular, the ECSA measurement is essential for porous or sample surface or the high take-oﬀ angle (90°) [49].
+high roughness factor (RF) catalysts since surface imperfections con- It was determined that the Ni0 at ∼852 eV contributed 31 and
+tributes to the actual surface area being greater than the corresponding 22.5% of peak area percentages for the total Ni 2p3/2 signal for the pure
+geometrical area [43]. Here, we measure the ECSA for each sample Ni and NiCd(I) samples, respectively (Table S6). The peak at
+from the electrochemical double-layer capacitance of the catalytic ∼855.80 eV is associated with Ni2+/3+ species corresponding to Ni
+surface [44,45] with a typical speciﬁc capacitance of 0.040 mF cm−2 (OH)2 and/or γ-NiOOH since the peak position is not sensitive enough
+reported for a metal electrode in an aqueous NaOH solution [46] (es- to set apart these two compounds from one another [50]. The peak in
+timation details in Fig. S12). The current densities of the samples em- the higher binding energy region above 860 eV is thought to be cor-
+ploying ESCA determined surface areas at the overpotential of related with satellites [50].
+η = 350 mV are shown in Fig. 4c. The highest speciﬁc activity was Since it is reported that co-deposition can give rise to a homo-
+observed with the NiCd(A)Fe sample (6.79 mA cm−2 ECSA), and the order geneous distribution of elements throughout a thick ﬁlm (∼1 μm) [51],
+followed the sequence: NiFe (2.00 mA cm−2ECSA) > NiCd(A) the XPS results in our study indicate electron charge transfer from Ni
+(0.46 mA cm−2 ECSA) > NiCd(A)_P [NiCd(A) particles] (0.36 mA c- might occur in Ni-Cd mixtures. Because the percentage of the oxidation
+m−2 −2
+ ECSA) > Ni (0.09 mA cmECSA). The value for pure Ni is in good state except for metallic Ni was diﬀered as 69.0 and 77.5% for Ni and
+agreement with observations reported by Jaramillo et al. in which the NiCd(I), respectively. In order to examine the charge transfer, the Cd 3d
+speciﬁc current density of oxidized Ni at η = 350 mV is in the range of core spectrum was further studied (Fig. S14), however it was diﬃcult to
+0.07–0.17 mA cm−2 ECSA [45]. It is readily apparent that the intrinsic OER obtain meaningful information due to the similar chemical states of the
+activity was improved in the porous structure from a metallic inter- metal and oxidized phases [52–55]. Since higher valent Ni species can
+connection as well as larger surface area to electrolyte so that the mass be beneﬁcial to greater catalytic OER activity [51] and the charge
+transport was enhanced [42]. transfer is able to promote Ni into an oxidation state that can enhance
+ It is known that particular microstructures with a large density of OER performance, further study regarding clariﬁcation of the charge
+grain boundaries can impact negatively on OER performance with a transfer should be undertaken.
+higher resistance [47]. This impact can be further studied with the The Ni 2p3/2 core spectrum in the NiCd(A) sample is represented in
+techniques of electrochemical impedance spectroscopy (EIS) as shown Fig. 5c. The chemical oxidation state of Ni was changed in the NiCd(A)
+in the Nyquist plots in Fig. 4d. The semicircle in the high-frequency compared to the NiCd(I), metallic Ni phase more reduced and the peak
+region exhibits the charge transfer resistance (Rct) from the bulk elec- assigned to Ni(OH)2 dominantly possessed at the NiCd(A) surface. This
+trolyte to the catalyst surface, which is unaﬀected to the potential ap- could be from the repetitive electrochemical cycling for the Cd dis-
+plied [21]. Metal interconnected porous NiCd(A) showed a lower value solution process.
+for Rct in comparison with the NiCd(A) particles [NiCd(A)_P] (Table S5) Fig. 6 gives the valence band XPS spectra for the Ni and NiCd(A)
+resulting from an eﬃcient pathway for electron transport in the porous samples. The surface valence band photoemission spectrum was verti-
+structure providing the conductive channel [42]. cally aligned relative to the Fermi level (EF = 0). Analysis of the va-
+ Overall, the porous electrocatalyst showed an excellent intrinsic lence band has received considerable attention in the literature since it
+OER activity (based on both geometry and ECSA) and comparable represents information regarding the d-band center, which is a very
+stability (as shown in Fig. S13) compared to other samples and possibly general descriptor of the reactivity of a surface [56]. Although the main
+a promotional electronic eﬀect due to the formation of a Ni (surface) – features in valence band region remained the same in the Ni and NiCd
+Cd (bulk) structure via Cd dissolution at the top most layers. For this (A), the d-band center shifted upward relative to EF in the NiCd(A)
+reason, we carried out further analysis for the NiCd(A) samples to un- (3.91 eV) sample relative to that for the Ni (4.01 eV) sample. This
+derstand their enhanced performance due to electronic structure higher binding energy of the d-band center can be attributed to the
+changes. electronic interaction between neighboring Ni and Cd atoms and sur-
+ XPS analysis was carried out in order to observe the electronic face strain attributed to the diﬀerent atomic radii of Ni (0.56–0.7 Å)
+properties of Ni in the surface layers. Fig. 5 shows the result of the XPS and Cd (0.84–1.31 Å) atoms [57,58].
+analysis of Ni 2p3/2 for the Ni, NiCd(I), and NiCd(A) samples. An XPS Koper and Calle-Vallejo et al. reported on the Sabatier-type volcano
+deconvolution analysis revealed that both the Ni and NiCd(I) were activity curve trend of OER on the basis of a HO* and HOO* adsorption
+mainly covered with oxygen species. According to Rubio-Zuazo’s re- energies on a Ni-based oxyhydroxide. [30] In their activity plot, NiOOH
+search, the information depth is ∼10 nm (at 99% of detection) and is located on the right leg (the weak binding side) and needs to be
+
+ Fig. 5. XPS analysis of Ni 2p3/2 for (a) Ni, (b) NiCd(I), and (c) NiCd(A). Here, “Ni” refers to the catalyst before OER sweeps.
+
+ 5
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+ lithium cobalt oxide as a bifunctional electrocatalyst for the oxygen evolution and
+ oxygen reduction reactions, Nat. Commun. 5 (2014) 3949.
+ [2] K.L. Pickrahn, S.W. Park, Y. Gorlin, H.-B.-R. Lee, T.F. Jaramillo, S.F. Bent, Active
+ MnOx electrocatalysts prepared by atomic layer deposition for oxygen evolution
+ and oxygen reduction reactions, Adv. Energy Mater. 2 (2012) 1269.
+ [3] H. Ibrahim, A. Ilinca, J. Perron, Energy storage systems – characteristics and
+ comparisons, Renew. Sustain. Energ. Rev. 12 (2008) 1221.
+ [4] S. Song, H. Zhang, X. Ma, Z. Shao, R.T. Baker, B. Yi, Electrochemical investigation
+ of electrocatalysts for the oxygen evolution reaction in PEM water electrolyzers, Int.
+ J. Hydrogen Energy 33 (2008) 4955.
+ [5] J. Rossmeisl, A. Logadottir, J.K. Nørskov, Electrolysis of water on (Oxidized) metal
+ surfaces, Chem. Phys. 319 (2005) 178.
+ [6] J. Suntivich, K.J. May, H.A. Gasteiger, J.B. Goodenough, Y. Shao-Horn, A perovskite
+ oxide optimized for oxygen evolution catalysis from molecular orbital principles,
+ Science 334 (2011) 1383.
+ [7] E. Fabbri, A. Habereder, K. Waltar, R. Kotz, T.J. Schmidt, Developments and per-
+ spectives of oxide-based catalysts for the oxygen evolution reaction, Catal. Sci.
+ Technol. 4 (2014) 3800.
+ [8] T. Reier, M. Oezaslan, P. Strasser, Electrocatalytic oxygen evolution reaction (OER)
+ on Ru Ir, and Pt catalysts: a comparative study of nanoparticles and bulk materials,
+ ACS Catal. 2 (2012) 1765.
+ [9] N. Danilovic, R. Subbaraman, K.C. Chang, S.H. Chang, Y. Kang, J. Snyder,
+ A.P. Paulikas, D. Strmcnik, Y.T. Kim, D. Myers, V.R. Stamenkovic, N.M. Markovic,
+ Using surface segregation to design stable Ru-Ir oxides for the oxygen evolution
+ reaction in acidic environments, Angew. Chem. Int. Ed. 53 (2014) 14016.
+ [10] Y. Lee, J. Suntivich, K.J. May, E.E. Perry, Y. Shao-Horn, Synthesis and activities of
+ rutile IrO2 and RuO2 nanoparticles for oxygen evolution in acid and alkaline so-
+ lutions, J. Phys. Chem. Lett. 3 (2012) 399.
+ [11] W. Hu, Y. Wang, X. Hu, Y. Zhou, S. Chen, Three-dimensional ordered macroporous
+ IrO2 as electrocatalyst for oxygen evolution reaction in acidic medium, J. Mater.
+ Chem. 22 (2012) 6010.
+Fig. 6. (a) Valence band XPS spectra for the Ni and NiCd(A) samples. The Ni and NiCd(I) [12] R. Subbaraman, D. Tripkovic, K.-C. Chang, D. Strmcnik, A.P. Paulikas, P. Hirunsit,
+ M. Chan, J. Greeley, V. Stamenkovic, N.M. Markovic, Trends in activity for the
+were electrodeposited (as described in the text) and two both samples underwent 500
+ water electrolyser reactions on 3d M(Ni,Co,Fe,Mn) hydr(oxy)oxide catalysts, Nat.
+cycles of CV (from 1.35 V–1.55 V at 50 mV) to create NiCd(A) and for fair comparison.
+ Mater. 11 (2012) 550.
+Inset: magniﬁed region from 3.5–4.5 eV in the vicinity of the d-band center. The binding [13] L. Wang, H. Chen, Q. Daniel, L. Duan, B. Philippe, Y. Yang, H. Rensmo, L. Sun,
+energy was scanned over the range from 0 to 10 eV. Promoting the water oxidation catalysis by synergistic interactions between Ni
+ (OH)2 and carbon nanotubes, Adv. Energy Mater. 6 (2016) 1600516.
+ [14] O. Mabayoje, A. Shoola, B.R. Wygant, C.B. Mullins, The role of anions in metal
+modiﬁed so that the bond strength to adsorbates is increased in order to chalcogenide oxygen evolution catalysis: electrodeposited thin ﬁlms of nickel sul-
+reduce the OER overpotential [30]. Therefore, one of the strategies is to ﬁde as pre-catalysts, ACS Energy Lett. 1 (2016) 195.
+ [15] M. Gong, Y. Li, H. Wang, Y. Liang, J.Z. Wu, J. Zhou, J. Wang, T. Regier, F. Wei,
+strengthen the bond with adsorbates for active surface Ni2+/Ni3+
+ H. Dai, An advanced Ni-Fe layered double hydroxide electrocatalyst for water
+species than for pure NiOOH. Since it is known that a d-band center oxidation, J. Am. Chem. Soc. 135 (2013) 8452.
+upshift can increase the bond strength to adsorbates [58,59], the [16] M. Gong, H. Dai, A mini review of niFe-based materials as highly active oxygen
+ evolution reaction electrocatalysts, Nano Res. 8 (2015) 23.
+electronic eﬀect observed in this study may result in stronger surface
+ [17] J.R. Swierk, S. Klaus, L. Trotochaud, A.T. Bell, T.D. Tilley, Electrochemical study of
+bonds thereby favorably tuning OER activity. the energetics of the oxygen evolution reaction at nickel iron (Oxy)Hydroxide
+ catalysts, J. Phys. Chem. C 119 (2015) 19022.
+4. Conclusions [18] K. Fan, H. Chen, Y. Ji, H. Huang, P.M. Claesson, Q. Daniel, B. Philippe, H. Rensmo,
+ F. Li, Y. Luo, L. Sun, Nickel–vanadium monolayer double hydroxide for eﬃcient
+ electrochemical water oxidation, Nat. Commun. 7 (2016) 11981.
+ In this work, a porous Ni structure was created via the selective [19] C. Bocca, A. Barbucci, M. Delucchi, G. Cerisola, Nickel–cobalt oxide-coated elec-
+dissolution of Cd for synergistic (geometry and electronic) eﬀects. The trodes: inﬂuence of the preparation technique on oxygen evolution reaction (OER)
+ in an alkaline solution, Int. J. Hydrogen Energy 24 (1999) 21.
+nanoporous Ni electrocatalyst was characterized by SEM, XRD, and [20] C. Baldizzone, L. Gan, N. Hodnik, G.P. Keeley, A. Kostka, M. Heggen, P. Strasser,
+optical proﬁlometry. Porosity could enhance the surface area drasti- K.J.J. Mayrhofer, Stability of dealloyed porous Pt/Ni nanoparticles, ACS Catal. 5
+cally enhancing OER performance, moreover electronic eﬀect derived (2015) 5000.
+ [21] J. Qi, W. Zhang, R. Xiang, K. Liu, H.-Y. Wang, M. Chen, Y. Han, R. Cao, Porous
+from sub-surface Cd atoms could promote the activity. Finally, we de- nickel-iron oxide as a highly eﬃcient electrocatalyst for oxygen evolution reaction,
+posited Fe atoms on the porous Ni nanostructured catalyst resulting in a Adv. Sci. 2 (2015) 1500199.
+marked enhancement of the OER performance (η = 290 mV at [22] X.Y. Yu, Y. Feng, B.Y. Guan, X.W. Lou, U. Paik, Carbon coated porous nickel
+10 mA cm−2). phosphides nanoplates for highly eﬃcient oxygen evolution reaction, Energy
+ Environ. Sci. 9 (2016) 1246.
+ [23] M. Gao, W. Sheng, Z. Zhuang, Q. Fang, S. Gu, J. Jiang, Y. Yan, Eﬃcient water
+Acknowledgment oxidation using nanostructured α-nickel-hydroxide as an electrocatalyst, J. Am.
+ Chem. Soc. 136 (2014) 7077.
+ [24] C. Xiao, X. Lu, C. Zhao, Unusual synergistic eﬀects upon incorporation of Fe and/or
+ This work was supported by the Welch Foundation through grant F- Ni into mesoporous Co3O4 for enhanced oxygen evolution, Chem. Commun. 50
+1436 and by the National Science Foundation (NSF) through grant (2014) 10122.
+CHE-1664941. We also acknowledge the National Science Foundation [25] A. Vignesh, M. Prabu, S. Shanmugam, Porous LaCo1?xNixO3-δ nanostructures as an
+ eﬃcient electrocatalyst for water oxidation and for a zinc–air battery, ACS Appl.
+(Grant 0618242) for funding the X-ray photoelectron spectrometer used Mater. Inter. 8 (2016) 6019.
+in this work. [26] Y. Wang, C. Xie, D. Liu, X. Huang, J. Huo, S. Wang, Nanoparticle-stacked porous
+ nickel–iron nitride nanosheet: a highly eﬃcient bifunctional electrocatalyst for
+ overall water splitting, ACS Appl. Mater. Inter. 8 (2016) 18652.
+Appendix A. Supplementary data [27] J. Erlebacher, M.J. Aziz, A. Karma, N. Dimitrov, K. Sieradzki, Evolution of nano-
+ porosity in dealloying, Nature 410 (2001) 450.
+ Supplementary data associated with this article can be found, in the [28] D. Wang, H.L. Xin, R. Hovden, H. Wang, Y. Yu, D.A. Muller, F.J. DiSalvo,
+ H.D. Abruña, Structurally ordered intermetallic platinum-cobalt core-shell nano-
+online version, at http://dx.doi.org/10.1016/j.apcatb.2017.11.053. particles with enhanced activity and stability as oxygen reduction electrocatalysts,
+ Nat. Mater. 12 (2013) 81.
+References [29] J.W.D. Ng, M. García-Melchor, M. Bajdich, P. Chakthranont, C. Kirk, A. Vojvodic,
+ T.F. Jaramillo, Gold-supported cerium-doped NiOx catalysts for water oxidation,
+ Nat. Energy 1 (2016) 16053.
+ [1] T. Maiyalagan, K.A. Jarvis, S. Therese, P.J. Ferreira, A. Manthiram, Spinel-type [30] O. Diaz-Morales, I. Ledezma-Yanez, M.T.M. Koper, F. Calle-Vallejo, Guidelines for
+
+ 6
+J.-H. Kim et al. Applied Catalysis B: Environmental 225 (2018) 1–7
+
+ the rational design of Ni-based double hydroxide electrocatalysts for the oxygen electrocatalysts for the oxygen evolution reaction, J. Am. Chem. Soc. 135 (2013)
+ evolution reaction, ACS Catal. 5 (2015) 5380. 16977.
+[31] D. Tromans, Pitting behavior of passivated cadmium monocrystals, J. Electrochem. [46] S. Jung, C.C.L. McCrory, I.M. Ferrer, J.C. Peters, T.F. Jaramillo, Benchmarking
+ Soc. 156 (2009) C367. nanoparticulate metal oxide electrocatalysts for the alkaline water oxidation reac-
+[32] J.-H. Kim, H. Woo, J. Choi, H.-W. Jung, Y.-T. Kim, CO2 electroreduction on Au/TiC: tion, J. Mater. Chem. A 4 (2016) 3068.
+ enhanced activity due to metal-support interaction, ACS Catal. 7 (2017) 2101. [47] W. Hu, S. Chen, Q. Xia, IrO2/Nb-TiO2 electrocatalyst for oxygen evolution reaction
+[33] M.D. Merrill, R.C. Dougherty, Metal oxide catalysts for the evolution of O2 from in acidic medium, Int. J. Hydrogen Energy 39 (2014) 6967.
+ H2O, J. Phys. Chem. C 112 (2008) 3655. [48] J. Rubio-Zuazo, G.R. Castro, Information depth determination for hard X-ray pho-
+[34] M.D. Maciá, J.M. Campiña, E. Herrero, J.M. Feliu, On the kinetics of oxygen re- toelectron spectroscopy up to 15 keV photoelectron kinetic energy, Surf. Interface
+ duction on platinum stepped surfaces in acidic media, J. Electroanal. Chem. 564 Anal. 40 (2008) 1438.
+ (2004) 141. [49] V.A. Bondzie, P. Kleban, D.J. Dwyer, XPS identiﬁcation of the chemical state of
+[35] B.D. Cahan, H.M. Villullas, The hanging meniscus rotating-disk (HMRD), J. subsurface oxygen in the O/Pd(110) system, Surf. Sci. 347 (1996) 319.
+ Electroanal. Chem. 307 (1991) 263. [50] H. Ali-Löytty, M.W. Louie, M.R. Singh, L. Li, H.G. Sanchez Casalongue,
+[36] D. Friebel, M.W. Louie, M. Bajdich, K.E. Sanwald, Y. Cai, A.M. Wise, M.-J. Cheng, H. Ogasawara, E.J. Crumlin, Z. Liu, A.T. Bell, A. Nilsson, D. Friebel, Ambient-
+ D. Sokaras, T.-C. Weng, R. Alonso-Mori, R.C. Davis, J.R. Bargar, J.K. Nørskov, pressure XPS study of a Ni-Fe electrocatalyst for the oxygen evolution reaction, J.
+ A. Nilsson, A.T. Bell, Identiﬁcation of highly active fe sites in (Ni,Fe)OOH for Phys. Chem. C 120 (2016) 2247.
+ electrocatalytic water splitting, J. Am. Chem. Soc. 137 (2015) 1305. [51] N. Li, D.K. Bediako, R.G. Hadt, D. Hayes, T.J. Kempa, F. Von Cube, D.C. Bell,
+[37] T.T.H. Hoang, A.A. Gewirth, High activity oxygen evolution reaction catalysts from L.X. Chen, D.G. Nocera, Inﬂuence of iron doping on tetravalent nickel content in
+ additive-controlled electrodeposited Ni and NiFe ﬁlms, ACS Catal. 6 (2016) 1159. catalytic oxygen evolving ﬁlms, Proc. Natl. Acad. Sci. U. S. A. 114 (2017) 1486.
+[38] F. Dionigi, P. Strasser, NiFe-based (Oxy)hydroxide catalysts for oxygen evolution [52] V. Di Castro, G. Polzonetti, G. Contini, XPS study of the oxidation of a Cu-Cd thin
+ reaction in non-acidic electrolytes, Adv. Energy Mater. 6 (2016) 1600621. ﬁlm, Surf. Sci. 251 (1991) 814.
+[39] X. Li, F.C. Walsh, D. Pletcher, Nickel based electrocatalysts for oxygen evolution in [53] S. Ciampi, V. Di Castro, C. Furlani, G. Polzonetti, Cadmium oxidation in diﬀerent
+ high current density in alkaline water electrolysers, Phys. Chem. Chem. Phys. 13 environments: an XPS study, J. Electron. Spectrosc. Relat. Phenom. 60 (1992) 375.
+ (2011) 1162. [54] D. Barreca, Nanostructured cadmium sulﬁde thin ﬁlms by XPS, Surf. Sci. Spectra 9
+[40] P. Oliva, J. Leonardi, J.F. Laurent, C. Delmas, J.J. Braconnier, M. Figlarz, F. Fievet, (2002) 46.
+ A.D. Guibert, Review of the structure and the electrochemistry of nickel hydroxides [55] J.F. Moulder, W.F. Stickle, P.E. Sobol, K.D. Bomben, Handbook of x ray photo-
+ and oxy-Hydroxides, J. Power Sources 8 (1982) 229. electron spectroscopy, A Reference Book of Standard Spectra for Identiﬁcation and
+[41] L. Trotochaud, J.K. Ranney, K.N. Williams, S.W. Boettcher, Solution-cast metal Interpretation of XPS Data, Physical Electronics inc., 1992.
+ oxide thin ﬁlm electrocatalysts for oxygen evolution, J. Am. Chem. Soc. 134 (2012) [56] F. Abild-Pedersen, J. Greeley, J.K. Norskov, Understanding the eﬀect of steps strain,
+ 17253. poisons, and alloying: methane activation on Ni surfaces, Catal. Lett. 105 (2005) 9.
+[42] Z. Wang, J. Li, X. Tian, X. Wang, Y. Yu, K.A. Owusu, L. He, L. Mai, Porous nickel- [57] R.D. Shannon, C.T. Prewitt, Eﬀective ionic radii in oxides and ﬂuorides, Acta
+ iron selenide nanosheets as highly eﬃcient electrocatalysts for oxygen evolution Crystallogr. Sect. B: Struct. Sci. B25 (1969) 925.
+ reaction, ACS Appl. Mater. Inter. 8 (2016) 19386. [58] M. Mavrikakis, B. Hammer, J.K. Norskov, Eﬀect of strain on the reactivity of metal
+[43] S. Lowell, J.E. Shields, Powder surface area and porosity, Powder Surface Area and surfaces, Phys. Rev. Lett. 81 (1998) 2819.
+ Porosity, Springer, Netherlands: Dordrecht, 1984, pp. 3–6. [59] J.-H. Kim, S. Chang, Y.-T. Kim, Compressive strain as the main origin of enhanced
+[44] S. Trasatti, O.A. Petrii, Real surface area measurements in electrochemistry, J. oxygen reduction reaction activity for Pt electrocatalysts on chromium-doped ti-
+ Electroanal. Chem. 327 (1992) 353. tania support, Appl. Catal. B: Environ. 158 (2014) 112.
+[45] C.C.L. McCrory, S.H. Jung, J.C. Peters, T.F. Jaramillo, Benchmarking heterogeneous
+
+ 7

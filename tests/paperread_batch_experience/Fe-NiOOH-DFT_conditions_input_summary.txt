@@ -1,0 +1,37 @@
+这次抽到的关键信息包括：
+
+在 Fe-NiOOH-DFT_conditions_input_table.csv 里：
+
+- Ni1−xFexOOH
+- 吸附物/反应物：Water
+- 建模关键词：active site, oxygen vacancy, adsorbate, adsorption site
+
+在 Fe-NiOOH-DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ni1−xFexOOH
+  - Ni
+  - Fe
+- 材料参数：
+  - mixed (Ni,Fe)oxyhydroxides
+  - octahedral sites
+  - Fe3+
+  - Fe−O bond distances
+- 反应参数：
+  - alkaline electrolyte
+- 性能：
+  - high OER activity
+  - low overpotentials
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - Fe sites
+- 吸附/覆盖度：
+  - OER intermediates
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - operando X-ray absorption spectroscopy
+  - computational methods
+- 推荐建模任务：
+  - adsorbate_landscape

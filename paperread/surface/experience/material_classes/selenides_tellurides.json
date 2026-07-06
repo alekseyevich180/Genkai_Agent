@@ -1,12 +1,69 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "selenides_tellurides",
-  "updated_at": "2026-06-30T06:54:23.052510+00:00",
+  "updated_at": "2026-07-06T07:30:22.307033+00:00",
   "summary": {
-    "terms": 0,
+    "terms": 2,
     "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "unknown": 2
   },
-  "entries": []
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "selenides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "tellurides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {},
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [],
+    "components": [
+      {
+        "term": "selenides",
+        "count": 1
+      },
+      {
+        "term": "tellurides",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "selenides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "tellurides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    }
+  ]
 }

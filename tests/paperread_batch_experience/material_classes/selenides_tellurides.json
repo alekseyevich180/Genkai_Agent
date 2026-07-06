@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "material_class": "selenides_tellurides",
+  "updated_at": "2026-07-06T06:12:21.099188+00:00",
+  "summary": {
+    "terms": 2,
+    "known_useful": 0,
+    "unknown": 2,
+    "sources": [
+      "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "selenides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    },
+    {
+      "term": "tellurides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "d0qi01060j 234..272 ++"
+      ],
+      "count": 1
+    }
+  ]
+}

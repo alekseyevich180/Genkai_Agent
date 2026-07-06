@@ -1,0 +1,45 @@
+{
+  "id": "surface_relations",
+  "title": "review article",
+  "text": "Over the past decade the theoretical description of surface reactions has undergone a radical development. Advances in density\nfunctional theory mean it is now possible to describe catalytic reactions at surfaces with the detail and accuracy required for\ncomputational results to compare favourably with experiments. Theoretical methods can be used to describe surface chemical\nreactions in detail and to understand variations in catalytic activity from one catalyst to another. Here, we review the first steps\ntowards using computational methods to design new catalysts. Examples include screening for catalysts with increased activity\nand catalysts with improved selectivity. We discuss how, in the future, such methods may be used to engineer the electronic\nstructure of the active surface by changing its composition and structure.",
+  "extraction": {
+    "materials": [],
+    "material_parameters": [],
+    "surfaces": [],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [],
+    "reaction_parameters": [],
+    "modeling_keywords": [
+      "density functional theory",
+      "catalytic reactions",
+      "computational methods",
+      "catalysts",
+      "electronic structure"
+    ],
+    "recommended_modeling_tasks": [
+      "vacancy_landscape",
+      "adsorbate_landscape",
+      "surface_cluster_builder",
+      "single_atom_site",
+      "doped_surface",
+      "surface_functionalization",
+      "slab_generation"
+    ],
+    "applications": [],
+    "links": []
+  }
+}

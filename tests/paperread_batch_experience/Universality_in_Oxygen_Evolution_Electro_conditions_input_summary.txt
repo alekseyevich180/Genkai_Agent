@@ -1,0 +1,32 @@
+这次抽到的关键信息包括：
+
+在 Universality_in_Oxygen_Evolution_Electro_conditions_input_table.csv 里：
+
+- 吸附物/反应物：HOO*, HO*
+- 建模关键词：surface, oxide, active site, adsorption energies, oxygen evolution, scaling relation
+
+在 Universality_in_Oxygen_Evolution_Electro_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - oxide catalysts
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - 未提取
+- 性能：
+  - electrocatalytic activity
+  - oxygen evolution activity
+- 表面/晶面：
+  - oxide surfaces
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - HOO*
+  - HO*
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - computational standard hydrogen electrode
+- 推荐建模任务：
+  - 未提取

@@ -1,0 +1,54 @@
+{
+  "id": "surface_relations",
+  "title": "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles",
+  "text": "REPORTS\n24. C. J. Evans et al., Astrophys. J. 715, L74 (2010). 32. M. Fujii, M. Iwasawa, Y. Funato, J. Makino, Astrophys. J. by Research Fellowships of the Japan Society for the Promotion\n25. O. Schnurr, A. F. J. Moffat, A. Villar-Sbaffi, N. St-Louis, 686, 1082 (2008). of Science for Young Scientists and the Netherlands Research\nN. I. Morrell, Mon. Not. R. Astron. Soc. 395, 823 (2009). 33. P. Massey, L. R. Penny, J. Vukovich, Astrophys. J. 565, 982 (2002). Council NWO [grants VICI (639.073.803), AMUSE (614.061.608),\n26. But see (30), according to whom Mb = 240 Mʘ. 34. O. Schnurr, J. Casoli, A.-N. Chen’e, A. F. J. Moffat, and Little Green Machine] and by the Netherlands Research\n27. See http://acis.mit.edu/acis. N. St-Louis, Mon. Not. R. Astron. Soc. 389, L38 (2008). School for Astronomy. The simulation software is available at\n28. L. K. Townsley, P. S. Broos, E. D. Feigelson, G. P. Garmire, 35. W. D. Taylor et al., Astron. Astrophys. 530, L10 (2011). http://amusecode.org and the data can be found at\nK. V. Getman, Astron. J. 131, 2164 (2006). 36. A. F. J. Moffat, in IAU Symposium, F. Bresolin, http://initialconditions.org.\n29. K. A. van der Hucht et al., in Massive Stars in Interactive P. A. Crowther, J. Puls, Eds., vol. 250 of IAU Symposium\nSupporting Online Material\nBinaries, N. St.-Louis, A. F. J. Moffat, Eds., vol. 367 of (International Astronomical Union, 2008), p. 119.\nwww.sciencemag.org/cgi/content/full/science.1211927/DC1\nAstronomical Society of the Pacific Conference Series 37. E. Koumpia, A. Z. Bonanos, http://arxiv.org/abs/\nSOM Text\n(Astronomical Society of the Pacific, 2007), p. 159. 1009.4709 (2010).\nFigs. S1 to S4\n30. A.-N. Chen’e, O. Schnurr, P. A. Crowther, E. Fern’andez-Laj’us, 38. A. E. Piatti, E. Bica, J. J. Claria, Astron. Astrophys.\nTable S1\nA. F. J. Moffat, in IAU Symposium, C. Neiner, G. Wade, Suppl Ser. 127, 423 (1998).\nReferences (39–57)\nG. Meynet, G. Peters, Eds., vol. 272 of IAU Symposium\n(International Astronomical Union, 2011), p. 497. Acknowledgments: We thank B. Brandl, A. Brown, A. Gürkan, 29 July 2011; accepted 27 October 2011\n31. S. Portegies Zwart, E. Gaburov, H.-C. Chen, M. A. G¨urkan, K. Nitadori, and H. Sana for discussions and the anonymous Published online 17 November 2011;\nMon. Not. R. Astron. Soc. 378, L29 (2007). referees for their constructive criticism. This work was supported 10.1126/science.1211927\n\npredict transition metal oxides with high OER\nA Perovskite Oxide Optimized for activity by means of these proposed descriptors\n(7, 12, 13).\nOxygen Evolution Catalysis from\n\nDownloaded from https://www.science.org at University of Tokyo on January 15, 2026\nMotivated by the success of the d-band theory\nas the activity descriptor for metal surfaces (15),\nMolecular Orbital Principles we seek a simple activity descriptor that will\naccomplish a similar correlation between sur-\nface adsorbate binding and catalytic activity for\nJin Suntivich,1,2 Kevin J. May,2,3 Hubert A. Gasteiger,2,3* John B. Goodenough,4 Yang Shao-Horn1,2,3† transition metal oxides. Here we report a dis-\ntinct OER activity design principle, namely that a\nThe efficiency of many energy storage technologies, such as rechargeable metal-air batteries and near-unity occupancy of the eg orbital of surface\nhydrogen production from water splitting, is limited by the slow kinetics of the oxygen evolution transition metal ions and high covalency in bond-\nreaction (OER). We found that Ba0.5Sr0.5Co0.8Fe0.2O3–d (BSCF) catalyzes the OER with intrinsic activity that ing to oxygen can enhance the intrinsic OER ac-\nis at least an order of magnitude higher than that of the state-of-the-art iridium oxide catalyst in alkaline tivity of perovskite transition metal oxides in\nmedia. The high activity of BSCF was predicted from a design principle established by systematic alkaline solution (4OH– → O2 + 2H2O + 4e–).\nexamination of more than 10 transition metal oxides, which showed that the intrinsic OER activity exhibits We further show that this design principle has\na volcano-shaped dependence on the occupancy of the 3d electron with an eg symmetry of surface predictive power, from which we were able to\ntransition metal cations in an oxide. The peak OER activity was predicted to be at an eg occupancy close to identify a highly active OER oxide catalyst.\nunity, with high covalency of transition metal–oxygen bonds. Our approach is based on a molecular orbital\nbonding framework. Because the eg orbital of sur-\nhe design of cost-effective, highly active iridium oxide (IrO2), which is considered to be face transition metal ions participates in s-bonding",
+  "extraction": {
+    "materials": [
+      "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
+    ],
+    "material_parameters": [
+      "perovskite",
+      "transition metal oxide"
+    ],
+    "surfaces": [
+      "transition metal oxide surface"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "eg orbital of surface transition metal ions"
+    ],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "high OER activity",
+      "high covalency in bonding"
+    ],
+    "reaction_parameters": [
+      "alkaline media"
+    ],
+    "modeling_keywords": [
+      "OER",
+      "molecular orbital",
+      "d-band theory"
+    ],
+    "recommended_modeling_tasks": [
+      "surface_functionalization"
+    ],
+    "applications": [
+      "oxygen evolution reaction",
+      "energy storage technologies"
+    ],
+    "links": []
+  }
+}

@@ -1,0 +1,540 @@
+Article
+
+ pubs.acs.org/JACS
+
+ Theoretical Investigation of the Activity of Cobalt Oxides for the
+ Electrochemical Oxidation of Water
+ Michal Bajdich,†,§ Mónica García-Mota,‡ Aleksandra Vojvodic,‡ Jens K. Nørskov,*,‡ and Alexis T. Bell*,†,§
+ †
+ The Joint Center for Artiﬁcial Photosynthesis, Lawrence Berkeley National Laboratory, Berkeley, California 94720, United States
+ ‡
+ SUNCAT Center for Interface Science and Catalysis, Department of Chemical Engineering, Stanford University, Stanford,
+ California 94305, United States
+ §
+ Department of Chemical and Biomolecular Engineering, University of California at Berkeley, Berkeley, California 94720,
+ United States
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ *
+ S Supporting Information
+
+ ABSTRACT: The presence of layered cobalt oxides has been identiﬁed
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:15:36 (UTC).
+
+ experimentally in Co-based anodes under oxygen-evolving conditions.
+ In this work, we report the results of theoretical investigations of the
+ relative stability of layered and spinel bulk phases of Co oxides, as well as
+ the stability of selected surfaces as a function of applied potential and pH.
+ We then study the oxygen evolution reaction (OER) on these surfaces
+ and obtain activity trends at experimentally relevant electro-chemical
+ conditions. Our calculated volume Pourbaix diagram shows that
+ β-CoOOH is the active phase where the OER occurs in alkaline media.
+ We calculate relative surface stabilities and adsorbate coverages of the
+ most stable low-index surfaces of β-CoOOH: (0001), (0112̅ ), and
+ (101̅4). We ﬁnd that at low applied potentials, the (101̅4) surface is the
+ most stable, while the (011̅2) surface is the more stable at higher
+ potentials. Next, we compare the theoretical overpotentials for all three
+ surfaces and ﬁnd that the (1014̅ ) surface is the most active one as characterized by an overpotential of η = 0.48 V. The high
+ activity of the (101̅4) surface can be attributed to the observation that the resting state of Co in the active site is Co3+ during the
+ OER, whereas Co is in the Co4+ state in the less active surfaces. Lastly, we demonstrate that the overpotential of the (101̅4)
+ surface can be lowered further by surface substitution of Co by Ni. This ﬁnding could explain the experimentally observed
+ enhancement in the OER activity of NiyCo1−yOx thin ﬁlms with increasing Ni content. All energetics in this work were obtained
+ from density functional theory using the Hubbard-U correction.
+
+ 1. INTRODUCTION have shown that in alkaline electrolyte Co3O4 undergoes oxida-
+ The electrochemical splitting of water oﬀers an attractive means tion to CoOOH via the reaction5 Co3O4 + OH− + H2O →
+ for providing a carbon-free source of hydrogen when the 3CoOOH + e− as the potential is raised to the onset of the OER
+ necessary energy is provided by solar radiation. The overall and that CoOOH is the bulk phase present during evolution of
+ process of water splitting comprises two half reactions: the O2.6−8 While it is known that surface morphology can aﬀect the
+ evolution of O2 and the evolution of H2. Extensive research on activity of catalysts in general and that adsorbed species can
+ this subject1,2 has shown that the potential needed to split further alter the surface structure of the active catalysts, the way
+ water at rates provided by the solar ﬂux (e.g., 10 mA/cm2) is in which these eﬀects aﬀect the activity of electrocatalysts for the
+ limited primarily by the oxygen evolution reaction (OER), OER is not fully understood. In the present study we address
+ since none of the currently known catalysts for this reaction these questions by carrying out a theoretical investigation to
+ have an overpotential that is less than ∼230 mV at the above identify the eﬀects of electrolyte pH and applied potential on
+ rate.3 Thus, an important challenge is the discovery and the most thermodynamically stable bulk and surface phases of
+ development of OER catalysts that can reduce the overpotential Co oxides and to estimate the inﬂuence of these variables on the
+ for the OER. Moreover, for practical reasons the catalyst must overpotential for the OER.
+ be based on earth-abundant materials.1,2 Past work has shown Theoretical investigations of the OER have been carried out
+ that a reasonable starting point is the oxides of Ni and Co, since for metals9 and metal oxides with a rutile structure.10 The rutile
+ these materials have been shown to perform well and to be phase of TiO2 has received particular attention11−13 because of
+ stable in alkaline electrolytes.4 its potential as a photocatalyst. More recent work has focused
+ In the present study we have focused on understanding the
+ factors inﬂuencing the performance of Co oxides and identifying Received: June 14, 2013
+ means for improving their performance. Several recent studies Published: August 14, 2013
+
+ © 2013 American Chemical Society 13521 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+on transition metal oxides14,15 with rutile, anatase, and perovskite 2H 2O + * → OH* + H 2O + e− + H+ (6)
+structures, as well as spinel-type oxides. The eﬀects of doping
+metal oxides by other transition metal cations have also been OH* + H 2O → O* + H 2O + e− + H+ (7)
+reported. For example, it has been found theoretically that
+increases in the OER activity of the (0001) surface of hematite O* + H 2O → OOH* + e− + H+ (8)
+can be improved by Ni and Co doping16 and the activity of the
+(110) surface of rutile TiO2 can be improved by Mn and OOH* → O2 + e− + H+ (9)
+Mo doping.17 It is noted that the majority of the studies have
+been conducted at the generalized-gradient approximation The two schemes (reactions 1, 2, 4, and 5 and reactions 6−9)
+(GGA) level of density functional theory (DFT). We have are equivalent from a thermodynamic perspective. At neutral
+recently reported that inclusion of the Hubbard-U correction pH, substitution of H2O(l) ⇌ H+(aq) + OH−(aq) into the ﬁrst
+(i.e., GGA+U) leads to improvement of the description of the scheme naturally leads to the second scheme.
+OER activity of Co3O4 and CoOOH.18 The Gibbs free energy change for steps 6−9 can be expressed
+ In the present study we have used DFT at the GGA+U level as
+to determine the relative stability of bulk Co(OH)2, Co3O4 ΔG1 = ΔGOH − eU + ΔG H +(pH) (10)
+(spinel phase), CoOOH, and CoO2 via the Pourbaix method.
+All of these phases, with the exception of spinel, are composed ΔG2 = ΔGO − ΔGOH − eU + ΔG H +(pH) (11)
+of CoO2 layers in edge-sharing octahedral geometry with 2, 1,
+or 0 interlayer hydrogen(s) per CoO2 unit. We then focus on ΔG3 = ΔGOOH − ΔGO − eU + ΔG H +(pH) (12)
+the low-index surfaces of CoOOH, which has been identiﬁed
+as the active phase, and study the inﬂuence of pH and applied ΔG4 = 4.92 [eV] − ΔGOOH − eU + ΔG H +(pH) (13)
+potential on the surface structure of this compound. The
+ where U is the potential measured against normal hydrogen
+theoretical overpotential for the OER is then determined for
+ electrode (NHE) at standard conditions (T = 298.15 K, P = 1
+these low-index surfaces. No consideration was given, though,
+ bar, pH = 0). The free energy change of the protons relative to
+to non-stoichiometric CoOOH.19 Lastly, we investigated the
+ the above speciﬁed electrode at non-zero pH is represented by
+eﬀect of doping the surface of CoOOH by ﬁrst row transition
+ Nernst equation as ΔGH+(pH) = −kBT ln(10) × pH. The sum
+metal cations on the overpotential for the OER.
+ of ΔG1−4 is ﬁxed to the negative of experimental Gibbs free
+ energy of formation of two water molecules −2Δgexp H2O = 4 ×
+2. THEORETICAL APPROACH
+ 1.23 = 4.92 eV in order to avoid the calculation of the O2
+ Thermodynamics of Water Oxidation. The thermody- bond energy, which is diﬃcult to determine accurately within
+namic potential for the oxidation of water to produce oxygen, GGA-DFT. The Gibbs free energies of eqs 10−13 depend on
+2H2O → O2 + 4H+ + 4e−, is 1.23 V at standard conditions the adsorption energies of OH*, O*, and OOH*. The Gibbs
+(T = 298.15 K, P = 1 bar, pH = 0). In practice, though, a free energy diﬀerences of these intermediates include zero point
+potential above 1.23 V is required in order for this reaction to energy (ZPE) and entropy corrections (listed in Supplementary
+proceed at a measurable rate. For heterogeneous catalysts, this Table S1) according to ΔGi = ΔEi + ΔZPEi −TΔSi and energy
+additional potential is referred to as the overpotential η. diﬀerences ΔEi calculated relative to H2O and H2 (at U = 0 and
+ With the exception of IrO2, all heterogeneous OER catalysts pH = 0) as
+including Co oxides operate in alkaline conditions. The elementary
+ 1
+steps by which the OER occurs are believed to involve adsorbed ΔEOH = E(OH*) − E(*) − [E(H 2O) − E(H 2)]
+OH and O species on the surface (*) according to the following 2 (14)
+scheme:
+ ΔEO = E(O*) − E(*) − [E(H 2O) − E(H 2)] (15)
+ OH + ∗ → OH* + e−
+ − (1)
+ 3
+ ΔEOOH = E(OOH*) − E(*) − [2E(H 2O) − E(H 2)]
+ OH* + OH− → O* + H 2O + e− (2) 2
+ (16)
+where O2 is thought to form via one of two pathways. The ﬁrst
+ The theoretical overpotential is then readily deﬁned as:
+pathway involves direct recombination of two O* intermediates as
+ η = max[ΔG1 , ΔG2 , ΔG3 , ΔG4 , ]/e − 1.23 [V] (17)
+ O* + O* → O2 (3)
+ We note that the overpotential given by eq 17 is only a thermo-
+and the second pathway involves the reaction of O* with OH− in dynamic quantity, but it has been found to scale well with
+a two-step sequence that proceeds via OOH* as an intermediate measured overpotentials, which depend on the concentration of
+according to active sites and the current density.21
+ O* + OH− → OOH* + e− (4) Computational Methodology. All components of free
+ energies were obtained within the GGA-DFT plus Hubbard-U
+ OOH* + OH− → O2 + H 2O + e− (5) framework (GGA+U),22−24 which has been shown to improve
+ the description of bulk oxidation energies,25 formation energies,26
+Only reactions 4 and 5 will be considered hereafter, since the surface energies,27,28 and redox potentials29 of transition metal
+thermodynamic barrier for reaction 3 is almost always larger (see oxides. This approach has also been shown to be more accurate
+refs 15 and 20 for a detailed discussion). for predicting the theoretical overpotentials for the OER
+ To model the thermochemistry of the OER, it is more occurring on Co oxides.18 All calculations were performed with
+convenient to work at acidic conditions, where steps 1, 2, 4, and the GPAW code30 using the ASE simulation package.31 The inner
+5 are modiﬁed as cores of the atoms were replaced by all-electron, frozen-core,
+ 13522 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+Table 1. Measured and Calculated Lattice Constants for Layered and Spinel Co Oxidesa
+ space ahex/chex ahex/chex ΔG°f (exp) ΔG°f (calc)
+ compound group structure (exp) [ref] [Å] (calc) [Å] [eV/fu] [eV/fu] ground state/moment [μB]
+ β-Co(OH)2 P3̅m1 layered-P2 3.18254 3.262 −4.77 −5.00 AFM, high-spin, 2.84
+ 4.658 4.891 −4.7355
+ β-CoOOH ̅
+ R3m layered-P3 2.85156,57 2.922 −4.0058 −3.98 PM, low spin, ∼0
+ 13.150 13.150 −3.7255
+ CoO Fm3̅m rocksalt 4.26359 4.372 −2.2260 −2.10 AFM, high-spin, 2.72
+ 4 units
+ Co3O4 ̅
+ Fd3m spinel 8.0861 8.244 −8.2440 −8.34 AFM, Co2+: high-spin 2.65 Co3+: low-
+ spin, ∼0
+ 8 units −7.2855
+ CoO2 P3̅m1 layered-O1 2.82262 2.87 −2.2555 −2.37 AFM, low-spin 1.23
+ 4.29 4.144
+a
+ The letters O and P are used to designate octahedral and prismatic cation coordination, respectively; and the digit following P or O indicates the
+number of primitive CoO2 layers. The labels PM (paramagnetic) and AFM (anti-ferromagnetic) refer to the atomic spin conﬁgurations of Co.
+
+projector augmented-wave potentials (PAW),32 and the electronic Supplementary Figure S1), with the exception of that for
+wave functions were represented on a uniform real-spaced grid.30 β-Co(OH)2, which is overestimated by Δμsexp‑calc = 0.23 eV/fu.
+ The rotationally invariant implementation of Hubbard-U To construct the volume Pourbaix diagram, we followed the
+model by Dudarev33 was employed with the revised Perdew− scheme developed by Persson et al.,39 with the energies of
+Burke−Ernzerhof exchange-correlation functional (RPBE)34 dissolved states, i.e., the aqueous ions, taken from Chivot et al.40
+and applied to the 3d electrons of Co atoms and dopants. and corrected by −Δμsexp‑calc for β-Co(OH)2.
+Following the approach of Wang and Ceder,25 the eﬀective Surface Properties. All surface energies were calculated
+Hubbard-U parameter (U-J) was ﬁtted to recover the experi- within GGA+U as deﬁned above using a simulation cell size
+mental oxidation energy for the reaction 6CoO + O2 → of 2 × 2 primitive cells, i.e., with four Co sites per each surface.
+2Co3O4. The value of (U-J) equal to Ueff = 3.52 eV, reported in A minimal thickness of four Co oxide layers with 15 Å of
+our previous work,18 in good agreement with values reported vacuum was required to obtain convergence in the adsorption
+by others,25,26,35 was used throughout this work. In principle, energies and to recover the bulk magnetic ordering of the
+the Ueff value could also be calculated from linear response36 or center layers. For computational eﬃciency, a larger grid spacing
+in connection with unrestricted Hartree−Fock theory.37 Using of 0.2 Å and sparser 3 × 3 × 1 k-point sampling was used for
+the latter approach, it was found in ref 25 that the Ueff values all surface properties. This choice aﬀects the calculated energy
+are close to the empirical estimates of Wang and Ceder. diﬀerences by less than 0.05 eV, as we have established
+ Bulk Properties. For accurate prediction of bulk properties, previously.18 The surface Pourbaix diagrams and adsorption
+the lattice constants of each compound, listed in Table 1, were energies of intermediates were calculated from eqs 10−13 on
+optimized within their respective primitive cell using a ﬁnite either stoichiometric or non-symmetric slabs for which the
+grid spacing of 0.12 Å and a dense 12 × 12 × 12 Monkhorst− two topmost Co oxide layers were allowed to relax below the
+Pack k-point mesh considering ferromagnetic and anti- maximum force threshold of 0.05 eV/Å. A dipole moment
+ferromagnetic ordering. As expected, the GGA+U approach correction was used to correct for residual dipole moments
+consistently overestimates experimental crystalline lattice con- perpendicular to the surface. It should be noted that the
+stants (by less than 2%, see Table 1), a trend observed previously reported surface energies are based on calculations of the fully
+(see, e.g., ref 38). The calculated lowest energy magnetic relaxed symmetric slabs with ﬁve Co oxide layers and near-zero
+structures are consistent with experimental and previously residual dipole moments.
+calculated25 data, with Co2+ and Co4+ ions having average To determine the surface coverage and relative surface
+magnetic moments of 2.75 ± 0.05 μB and 1.23 μB, respectively stability between diﬀerent surfaces as a function of applied
+(Table 1). Co3+ ions were always found to be in their non- voltage U and pH, we determined the chemical potentials μi of
+magnetic state. the adsorbed species. For OER, the chemical potentials are the
+ The formation free energies, ΔG°f, were calculated within the free energies of adsorbents taken relative to the free energy of
+GGA and GGA+U mixing scheme of Jain et al.,26 using the spinel liquid water and hydrogen gas, written explicitly as functions of
+Co3O4 and rocksalt CoO experimental formation enthalpies as pH and applied potential U:
+references. Next, following above scheme, the chemical potential
+for oxygen was chosen to match the experimental enthalpies of μO = [G(H 2O) − G(H 2)] + 2[eU − ΔG H +(pH)] (18)
+simple oxides Li2O and Na2O. Using the entropy corrections
+from Supplementary Table S1, the value obtained using 1
+the RPBE functional and our potential for oxygen was μO = μOH = [G(H 2O) − G(H 2)] + [eU − ΔG H +(pH)]
+ 2
+−4.37 eV. To obtain the reference state for hydrogen, we follow (19)
+the approach of Persson et al.,39 with the choice of preserving
+the Gibbs free energy of formation of water, e.g., μH = [gH2O − 3
+μO − ΔgexpH2O]/2 ≈ [(E
+ DFT
+ − TΔSexp)H2O − (−4.37) − (−2.46)]/ μOOH = [2G(H 2O) − G(H 2)] + [eU − ΔG H +(pH)]
+2 = −3.70 eV, where EDFT and TΔSexp of water are listed in 2
+ (20)
+Supplementary Table S1. The calculated Gibbs free energies,
+which do not include entropies of the solid compounds, agree
+well with the latest experimental data (see Table I and μH2O = G(H 2O) (21)
+
+ 13523 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+Figure 1. Pourbaix diagrams of bulk phases based on (a) the calculated formation free energies of solid compounds from Table 1 and corrected
+experimental free energies of aqueous ions of Chivot et al.39 and (b) based only on experimental formation free energies of Chivot et al. The
+assumed concentration of Co was ﬁxed at 10−6 mol kg−1.
+
+Figure 2. Side- and top-views of the optimized geometries for the lowest-energy surfaces of β-CoOOH represented as 5-layer symmetric slabs and
+used to determine the surface energies shown in Figure 3. Small white spheres represent H, red spheres represent O, and large pink spheres
+represent Co atoms.
+
+ G(H 2) were calculated and used to construct the Pourbaix diagram shown
+ μH = − eU + ΔG H +(pH) in Figure 1a. The theoretically determined phase boundaries are
+ 2 (22)
+ in good agreement with the experimental Pourbaix diagram of
+ To extract the surface free energies, we followed the work Chivot et al.,40 shown in Figure 1b. Only two notable diﬀerences
+of Reuter and Sheﬄer,41 in which the surface energy of a are observed: the overestimation of the stability of β-Co(OH)2
+symmetric slab of given area 2A and free energy Gslab can be and a small shift in the relative stability of Co3O4 versus
+obtained as γ = [Gslab − ΣiNiμi]/2A, where the sum is over CoOOH from below 1.23 V to just above this potential. Most
+chemical potentials μi and the number of atoms Ni of each of importantly, the CoOOH phase is found to be the stable phase
+the constituent species in a slab. It is often more convenient to under typical OER conditions (pH = 12−13 and U > 1.23 to
+express γ as a function of the bulk free energy of formation ∼1.7 V vs RHE), in agreement with experimental observation.6−8
+gbulk (using Co as a reference) as γ = [Gslab − NCogbulk − Σi(Ni Since β-CoOOH has been identiﬁed as the stable bulk phase
+− xiNCo)μi]/2A, where the last sum is the free energy excess of under OER conditions,5−7 we next focused our attention on
+the adsorbed species over the bulk (xi being the number of identifying the eﬀects of pH and applied potential on the most
+atoms per bulk formula). As a consequence, stoichiometric thermodynamically stable surfaces of this material. To this
+slabs are always independent of chemical potentials. Further, we end, we calculated the surface free energies of the (101̅4),
+neglect the ZPE and entropy corrections for gbulk and Gslab, (0001), and (011̅2) facets for a variety of surface termina-
+which then become equal to the DFT energies of the bulk EDFT bulk tions according to the scheme discussed in the section on
+and the surface EDFTslab . The ZPE and entropy corrections are, Computational Methodology. Detailed surface Pourbaix
+however, included for excess species, in which case the chemical diagrams are included in the Supporting Information. The
+potentials μi are given by eqs 18−22. Finally, the Wulﬀ shape of choice of the low-index surfaces of β-CoOOH was based on
+the particles was generated using the Wulﬀman program.42 the ﬁndings of Kramer and Ceder43 for the structurally related
+ compound α-LiCoO2. Application of the semiempirical
+3. RESULTS Bravais−Friedel−Donnay−Harker (BFDH) method44−46 to
+ 3.1. Pure Co Oxide. The relative stability of the bulk β-CoOOH also revealed the existence of an additional stable
+structures of β-Co(OH)2, Co3O4, β-CoOOH, and O1-CoO2 facet: (101̅1). However, upon closer examination, this surface
+ 13524 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+was found to be less stable than the three surfaces noted above Table 2. Computed Adsorption Energies Based on
+at conditions relevant to OER. Equations 14−16 and Overpotentials for the Surfaces of
+ The surface terminations exhibiting the lowest free energies β-CoOOH
+were as follows: H-free (0001) surface, the (011̅2) surface with
+ surface ΔEOH [eV] ΔEO [eV] ΔEOOH [eV] η [V]
+1 mL of Ot (t denotes the top position), and the (101̅4) surface
+with 1 mL of coadsorbed H2O. The structure of each of these (011̅2) 1.59 3.77 4.35 0.80
+surface terminations is shown in Figure 2. The variation in the (011̅4) 0.47 2.31 3.58 0.48
+surface free energy of each of these surfaces with applied (0001) −0.15 1.70 3.29 0.80
+potential is shown in Figure 3a for pH = 0. It is evident from
+ for applied potentials below Ut the β-CoOOH(1014̅ ) surface
+ terminated with 1 mL of H2O is the most active surface for the
+ OER. The H-free (0001) surface was found to have overpotential
+ of 0.8 V, with the oxygen evolution limited thermodynamically
+ by the formation of OOH*.
+ In practice cobalt oxide is most likely to consist of particles,
+ rather than single crystal, and therefore we used the Wulﬀ
+ construction47 to determine the equilibrium crystal shapes for
+ β-CoOOH particles as function of applied voltage. The results
+ are shown in Figure 4 for pH = 13 (the experimental value of
+
+ Figure 4. Equilibrium crystal shapes of β-CoOOH determined by Wulﬀ
+ constructions using the surface free energies of Figure 3 at pH = 13.
+ Symbols indicate the surface termination, and small numbers the
+ corresponding theoretical overpotentials. The shape below 1 V stays
+ ﬁxed. At this pH, the transition voltage is Ut = 1.13 V, below which only
+ the (1014̅ ) surface is active. The surface energies at Ut = 1.13 V and
+ pH = 13 used to construct the Wulﬀ shape were 0.0720, 0.0724, and
+Figure 3. (a) Surface energy of symmetric slabs of β-CoOOH as a
+ 0.0746 eV/Å2 for (1014̅ ), (0112̅ ), and (0001), respectively.
+function of applied potential at pH = 0. The solid red and black lines
+indicate the stable terminations of the (011̅2) and the (0001) surfaces.
+The solid blue line is for the (1014̅ ) surface terminated by 1 mL of ref 7) and indicate that for low potentials the ratio between the
+H2O. The black dashed line indicates the overall minimum surface (101̅4) and the (011̅2) surface areas is about 1:1, whereas the
+energy. The structures of the relevant surfaces are depicted in Figure 2.
+The light blue area indicates the region of OER activity. The vertical
+ (011̅2) surface dominates at higher potentials. These calcula-
+lines indicate the overpotentials. (b) The transition voltage between tions reveal that the observed activity of β-CoOOH particles
+the two lowest energy surfaces follows the pH dependence of the will depend on the distribution of surface facets, which is a
+reversible-hydrogen electrode, Ut = 1.90 − 0.059 pH. function of the pH and applied potential.
+ To understand the reasons for the much lower overpotential
+ of the (1014̅ ) relative to (0112̅ ) surface, it is useful to
+this plot that the (101̅4) surface with 1 mL of H2O exhibits the determine the Bader charges, q, and the local magnetic
+highest stability below the transition voltage of Ut = 1.90 V and moments, m, of the Co site participating in the OER at each
+has a surface energy of 0.072 eV/Å2. The stability of the (101̅4) step of the reaction (see Figures 5 and 6). The values for q and
+surface is a consequence of the energetically favorable adsorp- m, given in Table 3, reveal that the Co site can be in only one of
+tion of H2O. Above 1.90 V, the (011̅2) surface terminated three states: (a) q = 1.36, |m| = 2.67 μB, (b) q = 1.44(±0.02),
+with 1 mL of Ot becomes more stable. The value of Ut is pH- |m| = 0.0(±0.1) μB; and (c) q = 1.57(±0.01), |m| = 1.10(±0.03)
+dependent, in the same manner as the reversible-hydrogen μB, the parentheses indicating the variation in the values within
+electrode, and given by Ut = 1.90 − 0.059pH, as can be seen the table. We notice a monotonic increase in the value of q
+in Figure 3b. We note further that the H-free (0001) surface proceeding from (a) to (c). Next, we assign the state of the
+is never the most stable surface in the potential window active site in the OER mechanism. Ligand-ﬁeld theory predicts
+considered here. that a Co2+ site of octahedral symmetry can be either in a high-
+ The eﬀect of surface termination for β-CoOOH on the spin state (S = 3/2) or a low-spin state (S = 1/2), a Co3+ can be
+theoretical overpotential of the OER is given in Table 2. The in a singlet spin state (S = 0), and a Co4+ can be in a low-spin
+overpotential for the (1014̅ ) surface containing 1 mL of adsorbed state (S = 1/2). Similarly, our calculated GGA+U magnetic
+H2O is 0.48 V, and the formation of O2 is thermodynamically ground states of compounds (Table 1) have magnetic moments
+limited by the formation of OOH*. By contrast, the overpotential of ∼2.7 for Co2+, ∼0 for Co3+, and ∼1.23 for Co4+. Therefore,
+for the (0112̅ ) surface with 1 mL of adsorbed Ot is 0.80 V, we can assign the state of the active site in the mechanism
+and the formation of O2 is limited thermodynamically by the of the OER to have (a) Co2+, (b) Co3+, and (c) Co4+ character,
+formation of OH*. These results clearly demonstrate that respectively.
+ 13525 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+Figure 5. Schematic of the OER on the (101̅4) surface. The inset shows the free-energy landscape compared to an ideal catalyst (dashed-line) for
+zero pH. Reaction 3 is the potential-limiting step. For U > 1.71 V, all steps are thermodynamically accessible. For each step, we list the measured
+Bader charge of the Co active site and of the adsorbed species (Table 3).
+
+Table 3. Calculated Bader Charges q (in Units of Electrons) and Local Atomic Magnetic Moments m (in Units of μB) for the Co
+Empty Site As Well As Co Sites Occupied by O, OH, and OOH on the Diﬀerent Surfaces of β-CoOOHa
+
+a
+ The red bold font indicates the equilibrium state of the surface at OER conditions. The charge character of the active site is indicated in brackets
+(see also text). For the (0001) surface, the active site is composed of 3 Co atoms.
+
+ On the basis of the above assignment, we note that under We note further that the free energies of adsorption for O* and
+OER conditions, the (101̅4) surface is best described as having OOH* are also lower for the (101̅4) surface, since as discussed
+Co3+ ions, while the (0001) and the (011̅2) the surfaces have below, they correlate with that for the formation of OH*, and
+more Co4+ ions (as indicated by the bold text in Table 3). This for this surface the formation of OOH* becomes the potential-
+is not surprising, since for bulk phases shown in the Pourbaix limiting step.
+diagram (Figure 1), higher voltage is needed to achieve higher 3.2. Doped Co Oxide. Previous studies have shown that
+oxidation states of cobalt. Next, consider the oxidation states introduction of transition metal cations into the (110) surface
+of the Co cations during a OER cycle on the (101̅4) surface of rutile TiO217 and the (0001) surface of hematite16 can lead
+(Figure 5) and on the (011̅2) surface (Figure 6). We notice to signiﬁcant decreases in the theoretical overpotential for the
+that the adsorption of OH− to form OH* involves the oxida- OER. We carried out similar calculations in order to determine
+tion of Co2+ to Co3+ on the (1014̅ ) surface, but a Co3+ to Co4+ the extent to which the overpotential for β-CoOOH could be
+on the (0112̅ ) surface. For this step, the Co3+ to Co4+ transition reduced by substitutional doping of a Co active site by another
+on the (011̅2) surface results in a too-weak adsorption and transition metal cation. To this end, we examined single-site
+makes the formation of OH* to be the potential-limiting step. doping of the (101̅4) and (011̅2) surfaces as shown in Figures 8
+For the (101̅4) surface, on the other hand, the free energy of and 9, respectively. The evolution of O2 is assumed to occur
+forming OH* is much closer to the optimal value of 1.23 eV. only at the dopant site. These calculations were carried out at
+ 13526 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+Figure 6. Same as Figure 5 but for the (011̅2) surface. For this surface, reaction 1 is the potential-limiting step. For U > 2.03 V, all steps are
+thermodynamically accessible. For each step, we list the measured Bader charge of the active Co site and of the adsorbed species (Table 3).
+
+the DFT+U level of theory using a single value of Ueff = 3.52 eV
+for all 3d electrons of the dopants and Co atoms, in order to
+limit the number of free parameters. This approximation is
+justiﬁed by noticing that the values of Ueff for Mn, Fe, Co, Ni,
+and Cu used in other studies16,25,38 all lie within the narrow
+range of 3.0−4.3 eV and that variations in Ueff for Fe between
+3 and 5 eV result in a less than 0.05 V change in the value of η
+(not shown).
+ The calculated adsorption energies for both pure and doped
+surfaces are plotted as scaling relations9,14,40 between ΔEO and
+ΔEOH and between ΔEOOH and ΔEOH in Figure 7a and b,
+respectively. Figure 7a shows a monotonic weakening in the
+adsorption energies of all species with increasing number of d
+electrons of the dopant, and adsorption on the (1014̅ ) surface is Figure 7. Scaling relations between (a) ΔEO and ΔEOH and (b) ΔEOH
+ and ΔEOOH. The blue points are for surface doped (101̅4) and red
+generally stronger than on the (0112̅ ) surface. We ﬁnd that the
+ points for (011̅2) terminations of β-CoOOH. (a) The scaling between
+scaling relation between ΔEO and ΔEOH (slope 0.67, intercept ΔEO and ΔEOH with single linear ﬁt over data. (b) The scaling
+0.96 eV) closely resembles that reported for rutile-type oxides10 between ΔEOH and ΔEOOH with linear ﬁt over only (101̅4) data (blue
+(slope 0.61 and intercept 0.9 eV). The scaling relationship dashed line) compared to ΔEOOH = ΔEOH + (3.2 ± 0.2) eV scaling
+between ΔEOH and ΔEOOH (Figure 7b) also shows above indicated by the shaded area.
+monotonic weakening in the adsorption energies and is compared
+to approximate universal scaling of ΔEOOH = ΔEOH + (3.2 ± 0.2) The resulting overpotentials for the doped (101̅4) and
+eV, observed in rutile oxides and perovskites.21 However, for the (0112̅ ) surfaces are plotted on a 2D map of (ΔGO − ΔGOH)
+(1014̅ ) surface, we ﬁnd a deviation from this dependence with and ΔGOH energies in Figures 8 and 9. For the (101̅4) surface
+a smaller slope of 0.69, which is later used for construction of (Figure 8), the overpotential for Ni decreases to 0.36 V relative
+the 2D map of theoretical overpotentials for this surface. We also to that for undoped β-CoOOH, 0.48 V. For the (011̅2) surface
+note that similar reduction in the slope was recently reported by (Figure 9), the largest decrease in the overpotential is 0.27 V
+Calle-Vallejo et al. for a variety of metals and metal oxides.50 and occurs for a vanadium dopant, which has an overpotential
+ 13527 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+Figure 8. (a) 2D map of theoretical overpotentials η for the doped (101̅4) surface of β-CoOOH as function of ΔGO − ΔGOH and ΔGOH. The
+individual values of η are indicated in brackets. The contour map is constructed using ﬁtted scaling of Figure 7b for (011̅4) points only as ΔEOOH =
+0.69ΔEOH + 3.23 eV in order to minimize the errors in the mapping. Improvement in activity relative to undoped surface is obtained in the case of
+Ni with η = 0.36 V and Fe with η = 0.43 V. (b) The corresponding atomic system with the green sphere indicating a position of the dopant. Only the
+dopants with η < 1 V are shown.
+
+Figure 9. (a) Same as Figure 8, but for the (011̅2) surface of β-CoOOH. The contour map is constructed assuming ΔEOOH = EOH + 3.2 eV. The
+improvement relative to undoped surface is obtained in the case of vanadium with η = 0.53 V. (b) The corresponding atomic system. For
+computational eﬃciency, we have reduced the slab to only 4 layers, resulting in a diﬀerence of 0.07 V for Co compared to a 5-layer slab. Only the
+dopants with η < 1 V are shown.
+
+of 0.53 V compared to the overpotential of 0.8 V for the coexistence of the (1014̅ ) and the (0112̅ ) surfaces with a ratio of
+undoped surface. approximately 1:1 at the onset of OER. Hence, we can deduce
+ It is interesting to examine the results of our work with the that the activity enhancement of the Ni-doped β-CoOOH(1014̅ )
+recent experimental work of Trotochaud et al.,51 who report an surface, which constitutes about 50% active surface, is responsible
+increase in the OER activity of NiyCo1−yOx thin ﬁlms with for the experimentally observed decrease in the overpotential of
+growing Ni content. The measured overpotentials at 1 mA 40(±10) mV.
+cm−2 were η = 380(±10) mV for pure CoOx and η = 341(5)
+mV for Ni0.25Co0.75Ox. We note that similar activity enhance- 4. CONCLUSIONS
+ment with increasing content of Ni in Ni−Co mixed oxides The work presented here has shown that theory at the DFT+U
+have also been reported by other investigators when the OER is level can be used to predict the bulk and surface structure of
+carried out in alkaline media.52,53 While the absolute theoretical cobalt oxide catalysts used for the electrochemical evolution of
+values of the overpotentials reported here are not directly O2 under alkaline conditions. The calculated Pourbaix diagram
+comparable to experimental values, the observed enhancement agrees well with the recently reported experimental data. In
+in the OER activity upon Ni substitution into CoOx could in addition, it predicts β-CoOOH to be the active phase at OER
+principle be explained by our calculations. As we have shown, conditions, in agreement with observations by in situ Raman
+the overpotential of the (101̅4) surface of CoOOH is lowered spectroscopy. It is found that the thermodynamically stable
+by 120 mV upon 25% surface doping of Ni (Figure 8). On the surface of β-CoOOH exposed under condition of the OER
+other hand, doping of the (011̅2) surface by Ni leads to no depends on the pH and the applied potential. Below Ut (Ut =
+lowering of the overpotential (Figure 9). As we showed above, 1.90 V − 0.059pH), the (101̅4) surface covered by 1 mL of
+based on the Wulﬀ construction (see Figure 4) there is a H2O is the most stable surface, whereas above Ut, the (011̅2)
+ 13528 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+surface terminated by 1 mL of Ot is the most stable surface. The (13) Geng, W. T.; Kim, K. S. Phys. Rev. B 2003, 68, 125203.
+theoretical value of the overpotential for the (1014̅ ) surface is (14) Hansen, H. A.; Man, I. C.; Studt, F.; Abild-Pedersen, F.;
+0.48 V, and for the (0112̅ ) surface it is 0.80 V. Finally, our Bligaard, T.; Rossmeisl, J. Phys. Chem. Chem. Phys. 2009, 12, 283−290.
+calculations show that the overpotential for the OER can be (15) Valdés, Á .; Brillet, J.; Grätzel, M.; Gudmundsdóttir, H.; Hansen,
+ H. A.; Jónsson, H.; Klüpfel, P.; Kroes, G.-J.; Formal, F. L.; Man, I. C.;
+reduced to 0.36 V by doping the (1014̅ ) surface of β-CoOOH
+ Martins, R. S.; Nørskov, J. K.; Rossmeisl, J.; Sivula, K.; Vojvodic, A.;
+with Ni cations, whereas doping the (0112̅ ) surface with V can Zäch, M. Phys. Chem. Chem. Phys. 2011, 14, 49−70.
+reduce the overpotential for the OER to 0.53 V. The ﬁrst of these (16) Liao, P.; Keith, J. A.; Carter, E. A. J. Am. Chem. Soc. 2012, 134,
+ﬁndings can explain the recently reported enhancement in the 13296−13309.
+activity of NiyCo1−yOx thin ﬁlms with increasing addition of Ni.
+
+■
+ (17) García-Mota, M.; Vojvodic, A.; Metiu, H.; Man, I. C.; Su, H.-Y.;
+ Rossmeisl, J.; Nørskov, J. K. ChemCatChem 2011, 3, 1607−1611.
+ ASSOCIATED CONTENT (18) García-Mota, M.; Bajdich, M.; Viswanathan, V.; Vojvodic, A.;
+*
+S Supporting Information Bell, A. T.; Nørskov, J. K. J. Phys. Chem. C 2012, 116, 21077−21082.
+Further computational details, components of free energies, (19) Bode, H.; Dehmelt, K.; Witte, J. Electrochim. Acta 1966, 11,
+ 1079−1087.
+Gibbs free energies of formation, and surface Pourbaix diagrams (20) Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Bahn, S.; Hansen, L.
+as discussed in the text. This material is available free of charge B.; Bollinger, M.; Bengaard, H.; Hammer, B.; Sljivancanin, Z.;
+via the Internet at http://pubs.acs.org.
+
+■
+ Mavrikakis, M.; Xu, Y.; Dahl, S.; Jacobsen, C. J. H. J. Catal. 2002,
+ 209, 275−278.
+ AUTHOR INFORMATION (21) Man, I. C.; Su, H.; Calle-Vallejo, F.; Hansen, H. A.; Martínez, J.
+Corresponding Authors I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.; Rossmeisl,
+norskov@stanford.edu J. ChemCatChem 2011, 3, 1159−1165.
+alexbell@berkeley.edu (22) Anisimov, V. I.; Aryasetiawan, F.; Lichtenstein, A. I. J. Phys.:
+ Condens. Matter 1997, 9, 767−808.
+Notes (23) Anisimov; Zaanen; Andersen. Phys. Rev. B 1991, 44, 943−954.
+The authors declare no competing ﬁnancial interest.
+
+■
+ (24) Bacq, O. L.; Pasturel, A.; Bengone, O. Phys. Rev. B 2004, 69,
+ 245107.
+ ACKNOWLEDGMENTS (25) Wang, L.; Maxisch, T.; Ceder, G. Phys. Rev. B 2006, 73, 195107.
+This material is based upon work performed by the Joint (26) Jain, A.; Hautier, G.; Ong, S. P.; Moore, C. J.; Fischer, C. C.;
+ Persson, K. A.; Ceder, G. Phys. Rev. B 2011, 84, 045115.
+Center for Artiﬁcial Photosynthesis, a DOE Energy Innovation
+ (27) Montoya, A.; Haynes, B. S. Chem. Phys. Lett. 2011, 502, 63−68.
+Hub. The majority of the theoretical work and computer time (28) Chen, J.; Selloni, A. Phys. Rev. B 2012, 85, 085306.
+allocated by the National Energy Research Super Computer (29) Zhou, F.; Cococcioni, M.; Marianetti, C. A.; Morgan, D.; Ceder,
+(NERSC) was supported through the Oﬃce of Science of the G. Phys. Rev. B 2004, 70, 235121.
+U.S. Department of Energy under Award Number DE- (30) Enkovaara, J.; Rostgaard, C.; Mortensen, J. J.; Chen, J.; Dułak,
+SC0004993. Method development and additional computer M.; Ferrighi, L.; Gavnholt, J.; Glinsvad, C.; Haikola, V.; Hansen, H. A.;
+allocation was provided by the Center of Nanostructuring for Kristoffersen, H. H.; Kuisma, M.; Larsen, A. H.; Lehtovaara, L.;
+Eﬃcient Energy Conversion (CNEEC) at Stanford University, Ljungberg, M.; Lopez-Acevedo, O.; Moses, P. G.; Ojanen, J.; Olsen,
+an Energy Frontier Research Center funded by the U.S. T.; Petzold, V.; Romero, N. A.; Stausholm-Møller, J.; Strange, M.;
+Department of Energy, Oﬃce of Basic Energy Sciences under Tritsaris, G. A.; Vanin, M.; Walter, M.; Hammer, B.; Häkkinen, H.;
+Award Number DE-SC0001060. M.B. would like to thank Madsen, G. K. H.; Nieminen, R. M.; Nørskov, J. K.; Puska, M.;
+Mary Louie and Yun Cai for useful discussions, Kristin Persson Rantala, T. T.; Schiøtz, J.; Thygesen, K. S.; Jacobsen, K. W. J. Phys.:
+ Condens. Matter 2010, 22, 253202.
+for providing useful contributions regarding the construction of
+ (31) Bahn, S. R.; Jacobsen, K. W. Comp. Sci. Eng. 2002, 4, 56−66.
+Pourbaix diagrams, and Julien Panetier for careful reading of the (32) Kresse, G.; Joubert, D. Phys. Rev. B 1999, 59, 1758−1775.
+manuscript.
+
+■
+ (33) Dudarev, S. L.; Botton, G. A.; Savrasov, S. Y.; Humphreys, C. J.;
+ Sutton, A. P. Phys. Rev. B 1998, 57, 1505−1509.
+ REFERENCES (34) Hammer, B.; Hansen, L. B.; Nørskov, J. K. Phys. Rev. B 1999, 59,
+ (1) Walter, M. G.; Warren, E. L.; McKone, J. R.; Boettcher, S. W.; Mi, 7413−7421.
+Q.; Santori, E. A.; Lewis, N. S. Chem. Rev. 2010, 110, 6446−6473. (35) Chen, J.; Wu, X.; Selloni, A. Phys. Rev. B 2011, 83, 245204.
+ (2) Cook, T. R.; Dogutan, D. K.; Reece, S. Y.; Surendranath, Y.; (36) Cococcioni, M.; de Gironcoli, S. Phys. Rev. B 2005, 71, 035105.
+Teets, T. S.; Nocera, D. G. Chem. Rev. 2010, 110, 6474−6502. (37) Mosey, N. J.; Liao, P.; Carter, E. A. J. Chem. Phys. 2008, 129,
+ (3) Matsumoto, Y.; Sato, E. Mater. Chem. Phys. 1986, 14, 397−426. 014103−014103−13.
+ (4) Lyons, M. E. G.; Brandon, M. P. J. Electroanal. Chem. 2010, 641, (38) Lutfalla, S.; Shapovalov, V.; Bell, A. T. J. Chem. Theory Comput.
+119−130. 2011, 7, 2218−2223.
+ (5) Hamdani, M.; Singh, R. N.; Chartier, P. Int. J. Electrochem. Sci. (39) Persson, K. A.; Waldwick, B.; Lazic, P.; Ceder, G. Phys. Rev. B
+2010, 5, 556−577. 2012, 85, 235438.
+ (6) Kanan, M. W.; Nocera, D. G. Science 2008, 321, 1072−1075. (40) Chivot, J.; Mendoza, L.; Mansour, C.; Pauporté, T.; Cassir, M.
+ (7) Yeo, B. S.; Bell, A. T. J. Am. Chem. Soc. 2011, 133, 5587−5593. Corros. Sci. 2008, 50, 62−69.
+ (8) Subbaraman, R.; Tripkovic, D.; Chang, K.-C.; Strmcnik, D.; (41) Reuter, K.; Scheffler, M. Phys. Rev. B 2001, 65, 035406.
+Paulikas, A. P.; Hirunsit, P.; Chan, M.; Greeley, J.; Stamenkovic, V.; (42) Roosen, A. R.; McCormack, R. P.; Carter, W. C. Comput. Mater.
+Markovic, N. M. Nat. Mater. 2012, 11, 550−557. Sci. 1998, 11, 16−26.
+ (9) Rossmeisl, J.; Logadottir, A.; Nørskov, J. K. Chem. Phys. 2005, (43) Kramer, D.; Ceder, G. Chem. Mater. 2009, 21, 3799−3809.
+319, 178−184. (44) Bravais, A. Etudes Cristallographiques; Paris: Gauthier Villars,
+ (10) Rossmeisl, J.; Qu, Z.-W.; Zhu, H.; Kroes, G.-J.; Nørskov, J. K. J. 1866.
+Electroanal. Chem. 2007, 607, 83−89. (45) Friedel, G. Bull. Soc. Fr. Mineral. 1907, 30, 326.
+ (11) Valdés, A.; Qu, Z.-W.; Kroes, G.-J.; Rossmeisl, J.; Nørskov, J. K. (46) Donnay, J. D. H.; Harker, D. Am. Mineral. 1937, 22, 463.
+J. Phys. Chem. C 2008, 112, 9872−9879. (47) Cahn, J. W.; Carter, W. C. Metall. Mater. Trans. A 1996, 27,
+ (12) Valdés, Á .; Kroes, G.-J. J. Phys. Chem. C 2010, 114, 1701−1708. 1431−1440.
+
+ 13529 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530
+Journal of the American Chemical Society Article
+
+ (48) Calle-Vallejo, F.; Martínez, J. I.; Rossmeisl, J. Phys. Chem. Chem.
+Phys. 2011, 13, 15639−15643.
+ (49) Koper, M. T. M. J. Electroanal. Chem. 2011, 660, 254−260.
+ (50) Calle-Vallejo, F.; Inoglu, N. G.; Su, H.-Y.; Martínez, J. I.; Man, I.
+C.; Koper, M. T. M.; Kitchin, J. R.; Rossmeisl, J. Chem. Sci. 2013, 4,
+1245−1249.
+ (51) Trotochaud, L.; Ranney, J. K.; Williams, K. N.; Boettcher, S. W.
+J. Am. Chem. Soc. 2012, 134, 17253−17261.
+ (52) De Chialvo, M. R. G.; Chialvo, A. C. Electrochim. Acta 1993, 38,
+2247−2252.
+ (53) Wu, G.; Li, N.; Zhou, D.-R.; Mitsuo, K.; Xu, B.-Q. J. Solid State
+Chem. 2004, 177, 3682−3692.
+ (54) Mockenhaupt, C.; Zeiske, T.; Lutz, H. D. J. Mol. Struct. 1998,
+443, 191−196.
+ (55) Pourbaix, M. Atlas d’Equilibres Electrochimiques; Gauthiers-
+Villars: Paris, 1963.
+ (56) Kondrashev, Y.; Fedorova, N. Dok. Akad. Nauk SSSR 1954, 94,
+229−231.
+ (57) Delaplane, R. G. J. Chem. Phys. 1969, 50, 1920.
+ (58) Hem, J. D.; Roberson, C. E.; Lind, C. J. Geochim. Cosmochim.
+Acta 1985, 49, 801−810.
+ (59) Sasaki, S.; Fujino, K.; Takeuchi, Y. Proc. Jpn. Acad., Ser. B 1979,
+55, 43−48.
+ (60) CRC Handbook of Chemistry and Physics, 93rd ed.; CRC Press:
+Boca Raton, FL, 2012.
+ (61) Smith, W. L.; Hobson, A. D. Acta Crystallogr., Sect. B 1973, 29,
+362−363.
+ (62) Amatucci, G. G.; Tarascon, J. M.; Klein, L. C. J. Electrochem. Soc.
+1996, 143, 1114−1123.
+
+ 13530 dx.doi.org/10.1021/ja405997s | J. Am. Chem. Soc. 2013, 135, 13521−13530

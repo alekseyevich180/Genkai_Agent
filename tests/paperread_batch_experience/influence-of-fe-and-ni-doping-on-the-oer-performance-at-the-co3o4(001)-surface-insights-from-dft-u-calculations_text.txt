@@ -1,0 +1,783 @@
+pubs.acs.org/acscatalysis Research Article
+
+ Inﬂuence of Fe and Ni Doping on the OER Performance at the
+ Co3O4(001) Surface: Insights from DFT+U Calculations
+ Yuman Peng, Hamidreza Hajiyani, and Rossitza Pentcheva*
+ Cite This: ACS Catal. 2021, 11, 5601−5613 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Using density functional theory calculations with an
+ on-site Hubbard U term, we study the oxygen evolution reaction
+ (OER) at the Co3O4(001) surface. The stability of diﬀerent
+ surface terminations as a function of oxygen partial pressure as well
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:16:15 (UTC).
+
+ as pH and applied voltage is compiled in a Pourbaix diagram. The
+ termination with octahedral Co and O ions (B-layer) is found to
+ have the lowest overpotential of 0.46 V for an octahedral Co
+ reaction site, associated with its p-type conducting character and
+ the higher oxidation state of the active site (+4) during OER.
+ Furthermore, we systematically investigated the eﬀect of Fe and Ni
+ doping on the overpotential. Our results indicate that Ni doping at
+ an octahedral site in the surface layer reduces the overpotential
+ from 0.46 to 0.34 V. Likewise, Fe doping at an octahedral site at
+ the tetrahedral Co termination (A-layer) lowers η from 0.63 to 0.37 V with octahedral Co remaining in the active site. We note that
+ the potential determining step changes from *OH (B-layer) to *OOH formation (A-layer). While implicit solvation increases the
+ overpotential by 0.2 V (B-layer) and 0.4 V (A-layer), which is attributed to enhanced binding energies of the intermediates, the
+ general trends with respect to doping remain unchanged. The scaling relationship of the binding energies of *OOH and *OH is
+ overall satisﬁed, with the doped systems lying close to the top of the volcano plot of the overpotential versus (ΔGb*O − ΔGb*OH). A
+ further insight into the origin of this behavior is gained by analyzing the changes in oxidation states of surface ions and, in particular,
+ the Co active site during OER.
+ KEYWORDS: cobalt oxide, oxygen evolution reaction, water splitting, density functional theory, implicit solvation, transition metal oxides,
+ spinel surfaces, Pourbaix diagram
+
+ ■ INTRODUCTION
+ Electrochemical water splitting is considered to be an eﬀective
+ sites (denoted hereafter as CoOct). As a p-type semiconductor,
+ Co3O4 exhibits low conductivity.12 Experiments show that the
+ strategy in hydrogen production, as a source of renewable and OER overpotential of Co3O4 is 0.20−0.25 V higher than RuO2
+ green fuel.1,2 The total reaction is composed of two half (0.23−0.30 V,12 in acidic conditions).13,14
+ reactions: the hydrogen evolution reaction (HER) at the Extensive eﬀorts have been devoted to studying the OER
+ cathode and the oxygen evolution reaction (OER) at the mechanism and improving the electrochemical properties of
+ anode. The high overpotential of OER limits the overall Co3O4. There is a controversial debate concerning the active
+ eﬃciency of water decomposition and causes considerable site for OER catalysis. Menezes et al.15 proposed that divalent
+ energy loss due to the sluggish kinetics of OER.3 RuO24 and CoTet ions are catalytically inactive, and the generation of
+ IrO25 are universally regarded as promising OER catalysts but quadrivalent CoOct ions facilitates OER activity; Wang et al.16
+ are costly and rare. Therefore, there is an urgent need to suggested that CoTet ions act as the active site and CoOct limits
+ discover cheap, stable, and active anode catalysts. The spinel
+ the OER activity. On the other hand, Plaisance and van
+ family, involving more than one hundred compounds,6 has
+ attracted increasing attention as electrocatalysts for decades, in Santen17 proposed that the active site consists of two coupled
+ particular, the iron-(ferrite) and cobalt-based compounds,6,7
+ such as CoFe2O48,9 and Co3O4.7 Received: January 15, 2021
+ Co3O4 has distinct advantages in catalytic applications due Revised: April 3, 2021
+ to its availability, stability, and promising activity.10 Co3O4 is a Published: April 22, 2021
+ normal spinel (space group Fd3̅m),11 where Co2+ (d7, high
+ spin) ions occupy 1/8 of the tetrahedral sites (denoted as
+ CoTet), while Co3+ (d6, low spin) ions ﬁll 1/2 of the octahedral
+ © 2021 The Authors. Published by
+ American Chemical Society https://doi.org/10.1021/acscatal.1c00214
+ 5601 ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Co cations connected by bridging oxygen, and most of the applied voltage in a surface Pourbaix diagram. We consider
+exposed cobalt sites are inactive. also diﬀerent substitution sites for Fe or Ni dopants and
+ To enhance the electrochemical activity of pure Co3O4, determine their formation energies. Furthermore, the OER
+bimetallic cobalt oxides MxCo3−xO4 (M = Li,18 Fe,19,20 Ni,21 overpotentials of pure and Fe- or Ni-doped Co3O4(001) for
+and Cu22) have been investigated. In particular, a small diﬀerent terminations and reaction sites were obtained to
+amount of Fe doping in mesoporous Co3O4 signiﬁcantly identify the active site. Additionally, we also explore the eﬀect
+reduces the OER overpotential and contributes to a better of solvation on the OER overpotential for the most active sites
+stability in alkaline media.23 Furthermore, incorporation of Ni by adopting the continuum model implemented in VAS-
+leads to a remarkable increase in conductivity and density of Psol.43,44 Moreover, we investigate if the universal scaling
+active sites and better electrocatalytic performance.24 Bothra relationship between the binding energies of *OOH and
+and Pati reported a considerable enhancement of OER *OH45 is fulﬁlled and compile a volcano plot of the
+electrocatalytic activity by modifying the pure Co3O4(110) overpotential versus (ΔGB*O − ΔGB*OH). To gain insights into
+surface with Fe, Ni, and Cu dopants.25 the energetic trends and underlying mechanisms and variation
+ Previous theoretical studies have addressed the electronic, of oxidation states of the surface ions and, in particular, the
+magnetic, and structural properties of bulk Co3O4 within the active site during OER, we analyze the site-resolved electronic
+generalized gradient approximation (GGA), also with an on- and magnetic properties.
+site Hubbard term (GGA + U) and hybrid functionals
+(PBE0).26 Concerning the surface properties, Montoya and
+Haynes27 investigated the stability of diﬀerent terminations of
+ ■ THEORETICAL MODELING OF OER
+ During the OER, oxygen is formed from water at the anode in
+(100), (110), and (111)-oriented surfaces and found the B- a four step coupled electron−proton transfer process (2H2O
+layer containing octahedral Co and oxygen and the A-layer → O2 + 4H+ + 4e−). We note that several studies have
+with additional tetrahedral Co to be most favorable at the proposed recently mechanisms involving two sites.32,37,41
+(001)-surface, depending on oxygen partial pressure. Zasada et While such mechanisms should be further investigated, the
+al.28 proposed additionally a 0.5A-layer termination at resulting overpotentials are found similar to the single-site
+moderate μO. It was also shown that the equilibrium crystal mechanism proposed by Rossmeisl et al.46 and can be
+shape of Co3O4 contains (100) and (111) facets.29 On the considered as competing paths. We therefore proceed with
+other hand, the formation of a (110) surface in nanorods the mechanism proposed by Rossmeisl et al.46 which consists
+motivated researchers to investigate the stability and water of the following intermediate steps
+absorption on this surface.30,31
+ Regarding the OER activity, the theoretical overpotential of * + H 2O(l) → *OH + H+ + e− (1)
+an oxygen-covered termination of the Co3O4(001) surface
+with octahedral Co and O ions (B-layer) was initially reported *OH → *O + H+ + e− (2)
+to be 0.76 V,13 with H2O deprotonation as the potential- *O + H 2O(l) → *OOH + H+ + e− (3)
+determining step. In addition, Pham et al.32 studied the OER
+mechanism on a hydroxyl-covered B-layer at Co3O4(001) *OOH → * + O2 + H+ + e− (4)
+including transition states and kinetic barriers. Recently, He et
+al.33 analyzed the role of oxygen defects in strongly reduced where *, *OH, *O, and *OOH represent the clean surface and
+Co3O4-surfaces. Plaisance and collaborators investigated higher hydroxyl, oxo-, and hydroperoxide intermediates adsorbed on
+index pristine and doped Co3O4 surfaces.17,34,35 Previous PBE the surface, respectively. Under standard conditions (T = 298
++ U calculations have shown that a low concentration of Ni K, pH = 0, p = 1 bar), the energy of H+ + e− is expressed by
+can reduce the overpotential of the Co3O4(110) surface25 from 1/2H2 using the standard hydrogen electrode (SHE).47 For
+0.76 to 0.53 V. A recent density functional theory (DFT) + U ﬁnite ϕ versus SHE and pH, the reaction free energies of the
+study on CoxNi1−xFe2O4(001) points toward a strong individual elementary steps are calculated as
+dependence of the OER activity on the surface termination ΔGi = ΔEi + ΔZPE − T ΔS − eϕ + kBT ln(10) × pH
+and composition and a lowering of the OER overpotential for x
+ (5)
+= 50%.36
+ Despite its relevance and extensive studies on its impact on Therein, ΔEi denotes the total energy diﬀerence between
+metal surfaces, the eﬀect of solvation on the OER activity of intermediates mentioned in eqs 1−4, and ϕ is the external
+transition metal oxide surfaces has been rarely addressed so far. potential. In addition, the ZPE (zero-point energy) and the
+Implicit solvation models that treat the solvent as a polarizable entropic (TS) contribution of the relevant species are taken
+continuum to describe the screening eﬀect of water have been into account according to Liao et al.,48 as listed in Table S4
+applied to address the stability of oxide surfaces under (see Supporting Information). The potential-determining step
+electrocatalytic conditions37−39 or the binding energies of is the highest reaction free energy among ΔGi. An external
+bioactive molecules to transition metal oxide surfaces.40 Only potential ϕOER needs to be applied to turn all ΔGi negative.
+recently, the eﬀect of solvation on the OER overpotentials was The theoretical overpotential is deﬁned as
+addressed using an implicit approach for CoOOH41 and an η = max{ΔGi}/e − 1.23V (6)
+explicit one on IrO2(110).42
+ Motivated by these results for diﬀerent spinel surfaces or where the equilibrium potential ϕeq is equal to 1.23 V.
+surface orientations, we focus here on the OER activity of pure The binding energies of intermediates used for the analysis
+and Fe and Ni-doped Co3O4(001). First, we address the of the scaling behavior and volcano plot are calculated
+surface composition and stability of diﬀerent terminations of according to
+the Co3O4(001) surface, based on surface free energies as a
+ ΔG bO = E O − E − E H2O + E H2 + ΔZPE − T ΔS (7)
+function of the oxygen chemical potential as well as pH and * * *
+ 5602 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 1. Top and side views of Co3O4(001), terminated with a (a) B-layer, (b) 0.5A-layer and (c) A-layer. Light- and dark-colored spheres
+represent initial and relaxed positions, respectively. Relative displacements of ions with respect to the bulk positions are indicated by black arrows.
+The magnetic moments of nonequivalent surface octahedral ions in μB are given in red. Additionally, their projected density of states (PDOS) is
+shown.
+
+ ΔG bOH = E OH − E − E H2O + (1/2)E H2 + ΔZPE information on the bulk properties, see Supporting Informa-
+ * * * tion).
+ − T ΔS (8) The B-layer termination of the (001) surface was modeled
+ by a symmetric slab containing 9 layers (Co28O40), separated
+ by ∼15 Å of vacuum to avoid interaction between the slab and
+ ΔG bOOH = E OOH − E − 2E H2O + (3/2)E H2 + ΔZPE
+ * * * its periodically repeated images along the z-direction. The A-
+ − T ΔS (9) layer (11 layers, Co32O40) and 0.5A-layer terminations (11
+ layers, Co30O40) contain correspondingly additional tetrahedral
+
+■
+ Co. For the Fe or Ni-doped systems, all possible cation
+ COMPUTATIONAL DETAILS substitution sites in the topmost surface layer were taken into
+ account. For the surface calculations, we used a plane-wave
+DFT calculations were performed with the VASP code49−51
+ cut-oﬀ of 500 eV and a k-point mesh58 of 8 × 8 × 1. The ion
+using pseudopotentials and the projected augmented wave
+ positions in the slabs were relaxed until the residual forces were
+method.52 We chose the GGA53 for the exchange−correlation
+ less than 0.01 eV/Å.
+functional, in particular, the revised RPBE,54 which is derived
+ To model OER in the liquid phase, we have used the
+from the PBE53 functional and considerably improves
+ implicit solvent model by solving the linearized Poisson−
+chemisorption energies. As transition metal oxides and, in
+ Boltzmann equation as implemented in VASPsol.43 In this self-
+particular, spinels are strongly correlated systems, we have
+ consistent continuum dielectric model, the relative permittivity
+added a Hubbard U term,55 which has been found to improve
+ of water εr = 80, a width of dielectric cavity σ = 0.6, a cutoﬀ
+the description of OER activity.13 To simulate OER on the
+ charge density ρ = 0.00025 Å−3, and an eﬀective cavity surface
+pure and Fe- or Ni-doped Co3O4(001) surface, we adopted an
+ tension value of 0.6 meV/Å2 were used. Since we are using
+eﬀective U value of 3.0 eV for Co, Fe, and Ni, similar to values
+ symmetric slabs, no electrostatic corrections are necessary.
+
+ ■
+used in previous DFT + U studies for Co, Fe, and Ni-
+containing oxides.11,36,48,56 This choice is also supported by the
+U values obtained from the oxidation energies of cobalt, iron, RESULTS AND DISCUSSION
+and nickel oxides: UCo = 2.8 eV, UFe = 3.1 eV, and UNi = 4.2 eV Surface Composition and Reconstruction of Diﬀerent
+(see Supporting Information), following the approach of Terminations. Three diﬀerent terminations of the
+Wang, Maxisch, and Ceder.57 Since in the latter study a higher Co3O4(001) surface were taken into account: a B-layer
+value for Ni was reported, we have performed additional containing ﬁvefold coordinated CoOct5c (subscript nc represents
+calculations and ﬁnd only a small enhancement of the the coordination number) and oxygen ions; the A-layer and
+overpotential by 0.04 eV for the Ni-doped B-layer, when UNi the 0.5A-layer having two and one additional CoTet ions,
+= 6.4 eV is used, while the overpotential is unchanged when respectively. Figure 1 displays the bulk-truncated and relaxed
+increasing U Ni from 3.0 to 4.0 eV (see Supporting terminations of B-, A-, and 0.5A-layers for the Co3O4(001)
+Information). surface. Only subtle ion displacements were observed for the
+ For the bulk Co3O4 calculations, needed as a reference, we B-layer (Figure 1a). In contrast, both the A- and 0.5A-layer
+used a plane-wave cut-oﬀ of 500 eV and a Monkhorst−Pack k- exhibit pronounced surface relaxation, in particular, the
+point mesh58 of 8 × 8 × 8. The unit cell contains eight formula additional CoTet
+ 2c ions in the topmost layer move downwards
+units with 56 ions (Co24O32), the positions of which were fully and along the [110] direction, which results in an eﬀective
+relaxed, until the net forces were less than 0.01 eV/Å. The enhancement of coordination from initially two to four (shown
+calculated band gap with U = 3.0 eV is 1.57 eV, in good in Figure 1b,c). A similar relaxation pattern was found in
+agreement with the experimental value of 1.60 eV.59 (For more previous studies of Fe3O4(001)60 and CoxNi1−xFe2O4(001)36
+ 5603 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+surfaces. After relaxation, there are two distinct types of CoOct 5c surface Pourbaix diagram (cf. Figure 3). The details of this
+ions at the A- or 0.5A-layer terminations that exhibit diﬀerent method have been described previously.13,32,62 The applied
+magnetic moments: the one adjacent to the CoTet 4c (denoted as entropic and ZPE corrections are listed in the Supporting
+ 5c ) has a magnetic moment of 1.9 μB for the A-layer or 2.0
+CoOct1 Information. In Figure 3, we present the whole region of pH
+μB for the 0.5A-layer; a further one (denoted as CoOct2 5c ) shows values but note that OER takes place in an alkaline
+2.7 μB for the A-layer and 3.0 μB for the 0.5A-layer, respectively environment,63,64 whereas cobalt oxides dissolve under acidic
+(see also the corresponding PDOS shown in Figure 1 and the conditions. Our results show that the clean B-layer is stable up
+spin density in Figures S5 and S6 which will be discussed to ϕRHE = 1.51 V (at pH = 0) and at higher values, a mixed 3/4
+later). ML *O and 1/4 ML *OOH surface emerges by dissociation of
+ The surface stability of these terminations as a function of water molecules. The same trend can be observed in Figure 3b
+the oxygen chemical potential is described in the framework of for the A-layer where the clean surface is stable up to 1.06 V
+
+ Ä
+ 1 ÅÅÅÅ slab
+ab initio thermodynamics61 as (at pH = 0). With increasing potential, a 1/3 ML *OH,
+
+ ÅECo O (T , pO , NCo , NO)
+ followed by a mixture of *O and *OH/*OOH groups, forms
+
+ 2A ÅÅÅÇ x y
+ γ(T , pO ) = at the surface.
+
+ i y
+ (T , pO ) − jjjNO − NCozzzμO
+ 2 2
+ Formation Energies of Dopants at the Surface. To
+ determine the tendency of the dopant to substitute a cobalt ion
+ k {
+ N 4
+ − Co ECo bulk
+
+ ÉÑ
+ at the Co3O4(001) surface, the formation energy Eform was
+ ÑÑ
+ 3O4
+ 3 3
+
+ (T , pO )ÑÑÑ
+ 2
+ calculated as
+
+ 2 Ñ ÑÖ (10)
+ Eform = Ex:Co3O4 (001) − ECo3O4 (001) + nECo − nEx (11)
+ bulk slab
+where ECo 3O4
+ and ECo x Oy
+ denote the energies of the bulk and where Ex:Co3O4(001) and ECo3O4(001) represent the energy of the
+slab, respectively, and A is the surface area of the slab. The doped and undoped systems, respectively. ECo and Ex is the
+surface phase diagram of Co3O4(001) is shown in Figure 2, energy of a Co or dopant (Fe or Ni) atom in their respective
+ bulk metal ground state, applying for consistency the same
+ Hubbard U as for the surface calculation. n is the number of
+ dopants on the surface. Negative values of Eform suggest that
+ the incorporation of ions is favorable and vice versa. We have
+ considered all possible incorporation sites in the surface layer:
+ at the B-layer, the dopant can substitute CoOct or subsurface
+ CoTet. At the A- and 0.5A-layers, the substitution can take place
+ at the CoTet site in the topmost layer or at the two distinct
+ CoOct sites (shown in Figure 1).
+ According to Table 1, Fe doping is favorable at all
+ terminations with Eform ranging from −0.95 (at CoOct2 of the
+ A-layer) to −1.54 eV/Fe (at CoOct of the B-layer). On the
+ other hand, Ni doping has a positive formation energy,
+ indicating that it can be realized only in a metastable state. In
+ addition, Ni dopants are found to have a preference for CoOct
+ at the B- or CoOct1 at the A- and 0.5A-layer. Fe dopants tend to
+ substitute also CoOct at the B-layer and CoOct1 at the A-layer
+ but CoOct2 for the 0.5A-layer.
+Figure 2. Surface free energies of the clean and doped B-, A- and Overpotentials for OER at the Clean and Doped
+0.5A-terminations of the Co3O4(001) surface as a function of the Co3O4(001) Surface. In order to assess the role of Fe or Ni
+oxygen chemical potential, 1/2EO2 is used as zero reference. doping on the OER activity of the Co3O4(001) surface, we
+ have studied OER at all possible reaction sites at the three
+where μO = 0.0 eV corresponds to the oxygen-rich limit, distinct terminations. As the relevant indicator of OER activity,
+whereas the oxygen-poor limit is deﬁned by μO = −2.1 eV, the the reaction free energies of intermediates (eq 5) and the
+heat of formation of bulk Co3O4. The B-layer is found to be derived overpotentials are listed in Table 2 and also displayed
+more stable in the O-rich region, and the A-layer is preferable in Figures 4 and 5 together with a side view of the structure at
+at O-poor conditions. This is overall consistent with previous the intermediate steps, showing also the spin density and
+studies27,28 except that the 0.5A termination lies close to but magnetic moments. We ﬁrst discuss the undoped surface for
+above the crossing point of the A and B-terminations. This each termination, also considering the inﬂuence of additional
+diﬀerence may be attributed to the diﬀerent exchange functional groups that become relevant at higher applied
+correlation functionals, here RPBE vs. PW91, in Zasada et voltages, according to the Pourbaix diagram (cf. Figure 3) and
+al.28 Concerning the eﬀect of dopants, we ﬁnd that Fe or Ni then address the eﬀect of Ni and Fe doping, followed by a
+substitution lowers the free energies of the B- and 0.5A-layer discussion of the eﬀect of solvation.
+but increases the surface free energy of the A-layer, thus B-Layer. At the B-layer, the ﬁve-fold octahedral Co site was
+extending the region of stability of the B-layer by ∼1 eV investigated as the reaction site. Compared to the other
+toward oxygen poor conditions and stabilizing the 0.5A-layer terminations, the B-layer of the clean surface has the lowest
+for Fe doping in a narrow range at intermediate μO. overpotential of 0.46 V. Since this corresponds to the area in
+ To identify the stable coverage of functional groups under the Pourbaix diagram (Figure 3a) where a (3/4 ML *O and 1/
+applied external potential and pH, we have constructed a 4 ML *OOH)-coverage of this termination is stable, we also
+ 5604 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 3. Surface Pourbaix diagram of Co3O4(001) for the (a) B-layer and (b) A-layer, under applied potential and pH. The dashed lines represent
+the standard electrode potential and H+/H2 the reversible hydrogen electrode (RHE) potential, respectively. The black lines in (a,b) denote
+overpotentials as a function of pH.
+
+Table 1. Formation Energy Eform (eV/Dopant) for Fe or Ni Table 2. Reaction Free Energies ΔG1 to ΔG4 of the
+Dopants at the B-, A-, and 0.5A-Layer Individual Steps of OER for the B-, A- and 0.5A-Layer with
+ the Overpotentials of Possible Active Sites Given in
+ Parenthesesa
+ Eform (eV/dopant) dopant Oct1 Oct2 Tet
+ B-layer Fe −1.54 −1.54 −1.46
+ Ni 0.60 0.60 0.95 ΔG1 ΔG2 ΔG3 ΔG4
+ (eV) (eV) (eV) (eV) η (V)
+ A-layer Fe −1.15 −0.95 −0.96
+ Ni 0.54 0.61 0.72 B-Layer
+ 0.5A-layer Fe −1.21 −1.39 −0.95 Co3O4 (CoOct) 1.69 1.40 1.49 0.34 0.46
+ Ni 0.59 0.63 0.71 FexCo3−xO4(CoOct) 1.68 1.43 1.52 0.29 0.45
+ FexCo3−xO4(Fe) 1.99 1.53 1.57 −0.17 0.76
+explored the OER for this case and ﬁnd that the overpotential NixCo3−xO4(CoOct) 1.57 1.43 1.55 0.37 0.34
+(0.50 V) is slightly higher than the one of the clean surface. NixCo3−xO4(Ni) 1.88 2.00 1.08 0.04 0.77
+The ﬁrst step, namely the deprotonation of H2O to *OH, is Co3O4(CoOct) 1.73 1.48 1.42 0.29 0.50
+ (3/4*O + 1/4 *OOH)
+found to be the potential-determining step, in accordance with Co3O4 (CoOct)sol 1.90 1.49 1.81 −0.27 0.67
+a previous study of Garcı ́a-Mota et al.13 who, however, NixCo3−xO4(CoOct)sol 1.81 1.48 1.78 −0.15 0.58
+reported a larger value of 0.76 V for Co3O4(001) precovered Co3O4(CoOct) 2.10 1.53 1.44 −0.15 0.87
+with 3/4 ML *O and 1/4 ML *OH, which is related to using (3/4*O + 1/4*OOH)sol
+H2O in equilibrium with liquid water as a reference. A-Layer
+Interestingly, this value is consistent with the result when Co3O4(CoOct2) 1.58 1.37 1.86 0.11 0.63
+implicit solvation is taken into account, discussed below. FexCo3−xO4(CoOct2) 1.53 1.36 1.60 0.43 0.37
+ To elucidate the eﬀect of Fe or Ni doping on the NixCo3−xO4(CoOct2) 1.57 1.39 1.64 0.33 0.41
+overpotential, we consider cobalt or the dopant as the reaction Co3O4(CoOct2) (5/6 *O + 1/ 1.63 1.56 1.54 0.19 0.40
+site. Interestingly, incorporation of a Ni ion at the B-layer 6 *OOH)
+reduces the overpotential for a CoOct reaction site signiﬁcantly Co3O4(CoTet) 1.08 1.45 1.93 0.46 0.70
+(from 0.46 to 0.34 V), while the overpotential for Fe doping is FexCo3−xO4(CoTet) 1.01 1.41 1.87 0.63 0.64
+nearly unchanged (0.45 V). Thereby, the rate-determining step NixCo3−xO4(CoTet) 1.23 1.26 1.84 0.59 0.61
+is not altered. In contrast, for a Fe or Ni ion as the reaction Co3O4(CoOct2)sol 1.67 1.30 2.27 −0.29 1.04
+site, the overpotentials are much higher (0.76 and 0.77 V, FexCo3−xO4(CoOct2)sol 1.63 1.30 2.00 −0.01 0.77
+respectively). This correlates with a larger bond length of Fe− Co3O4(CoOct2) 2.27 1.36 1.71 −0.41 1.04
+ (5/6*O + 1/6*OOH)sol
+OH or Ni−OH (1.84 Å) and Ni−O (1.77 Å), compared to
+ 0.5A-Layer
+Co−OH (1.79 Å) and Co−O (1.64 Å) (displayed in Figure
+ Co3O4(CoTet) 0.98 1.48 1.91 0.54 0.68
+S3). FexCo3−xO4(CoTet) 1.04 1.35 1.99 0.55 0.76
+ A-Layer. There are initially three possible reaction sites on NixCo3−xO4(CoTet) 1.05 1.45 1.86 0.56 0.63
+the A-layer: CoOct1 Oct2 Tet
+ 5c , Co5c , and the topmost Co4c . However,
+the relaxation of Co4c toward the neighboring CoOct1
+ Tet
+ a
+ The “sol” superscript indicates the calculation with implicit solvent.
+ 5c prevents
+*OOH species from forming at the CoOct1 5c site. A similar
+behavior was also reported for CoxNi1−xFe2O4(001).36 For the and 1/6 ML *OOH)-covered A-layer, where the formation of
+pure A-layer, we found that the CoOct2
+ 5c site (η = 0.63 V) shows *OH is the potential-determining step. At the latter, the
+higher OER activity than the CoTet4c site (η = 0.70 V). For both formation of a hydrogen bond between *OH and *O on top of
+sites, the formation of *OOH is found to be the energetically an adjacent CoTet reduces signiﬁcantly the overpotential to
+highest step, in contrast to the B layer and the (5/6 ML *O 0.40 V.
+ 5605 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 4. OER cumulative free energies ∑ΔGi of step (1)−(4) at the B-layer. Side view of the intermediates is displayed together with the spin-
+density. Additionally, the magnetic moments are given in μB in black or white and bond lengths in Å in magenta. Black, green, and red frames
+denote the undoped, Fe-, and Ni-doped Co3O4(001) surfaces; the dashed lines indicate calculations including solvation eﬀects.
+
+ A substantial improvement in OER performance is also solvation energies, deﬁned as the diﬀerence of the total
+noticed upon Fe or Ni doping at the A-layer (shown in Figure energies of the calculation with and without implicit solvent.
+5). In particular, the overpotential of the CoOct2 reaction site is While the solvation energies for the bare surfaces are similar
+decreased strongly from 0.63 to 0.37 V for Fe doping and to 0.30−0.36 eV, they are higher for intermediates at the B-layer
+0.41 V for Ni doping at the CoOct1 site, respectively. In (0.35−0.46 eV) and especially at the A-layer (0.52−0.63 eV),
+comparison, the overpotential for CoTet 4c as the reaction site is suggesting that the use of an universal solvation correction is of
+nearly unchanged by Fe or Ni doping. In addition, Fe or Ni limited validity.
+doping at the A-layer does not alter the potential-determining Comparison of the overpotentials in Table 2 and Figures 4
+step, for both the CoOct2
+ 5c and CoTet
+ 4c reaction sites. and 5 indicates that including solvation eﬀects increases the
+ 0.5A-Layer. Although the relaxation patterns of the overpotential of the B-layer by around 0.2 V (from 0.46 to 0.67
+additional tetrahedral ions at the 0.5A- and A-termination V for the pure and from 0.34 to 0.58 V for Ni-doped case) and
+are similar, we found that both CoOct1 5c and CoOct2
+ 5c sites are by 0.4 V for the A-layer termination (from 0.63 to 1.04 V for
+unfavorable for the formation of *OOH species. The the pure and from 0.37 to 0.77 V for the Fe-doped case). A
+overpotential of the CoTet 4c reaction site is calculated to be stronger enhancement is obtained for the *O and *OOH
+0.68 V. As discussed above and displayed in the Table 1, the Fe precovered surfaces. To rationalize this trend, we have listed in
+dopant tends to substitute the CoOct2 5c site, resulting in an Table 3 the binding energies of intermediates without and with
+increase of the overpotential (0.76 V) instead. For Ni doping, solvation. Overall, an enhancement of the binding energies is
+the overpotential is moderately reduced from 0.68 to 0.63 V observed but the value depends strongly on the surface
+with CoTet
+ 4c remaining in the reaction site. termination and adsorbed species: For the B-layer, the increase
+ Inﬂuence of Implicit Solvation on the OER Activity. In of binding energy due to solvation is ∼0.2 eV for *OH, ∼0.2−
+order to assess the eﬀect of solvation, we have adopted an 0.3 eV for *O, and ∼0.5−0.6 eV for *OOH. In contrast, for
+implicit solvent approach which models the solvent as a the A-layer, the binding energies are nearly unchanged for the
+polarizable continuum to describe the screening of water.44 In *O intermediate and enhanced by ∼0.1 and ∼0.4 eV for the
+Table S5 (Supporting Information), we have displayed the *OH and *OOH intermediates. Since for the B- (A-)layer the
+ 5606 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 5. OER cumulative free energies ∑ΔGi of step(1)−(4) at the A-layer. The side view of the intermediates with the corresponding spin-
+density is displayed. Additionally, the magnetic moments are given in μB in black or white and bond lengths in Å in magenta. Black, green, and red
+frames denote the undoped, Fe-, and Ni-doped Co3O4(001) surfaces, respectively; the dashed lines indicate the calculations including solvation
+eﬀects.
+
+Table 3. Binding Energies ΔGb*OH, ΔGb*O, and ΔGb*OOH of formation of *OH (*OOH) are the potential determining
+Intermediates for the B- and A-Layer with and without steps, the enhancement of binding energy of these
+Including Solvation Eﬀects intermediates directly correlates with the increase in over-
+ potential. Despite the quantitative changes, overall, the
+ ΔGb*OH ΔGb*O ΔGb*OOH
+ (eV) (eV) (eV) η (V) qualitative trends of the inﬂuence of dopants are not aﬀected
+ B-Layer by the solvation; that is the overpotential is signiﬁcantly
+Co3O4 (CoOct) 1.69 3.09 4.58 0.46 reduced for the Ni-doped B-layer and Fe-doped A-layer. We
+Co3O4 (CoOct)sol 1.90 3.39 5.19 0.67 have also analyzed the structural changes due to solvation (see
+NixCo3−xO4(CoOct) 1.57 3.00 4.55 0.34 bond lengths shown in magenta in the side view of
+NixCo3−xO4(CoOct)sol 1.80 3.29 5.07 0.58 intermediates in Figures 4 and 5). Generally, the bond lengths
+Co3O4(CoOct) 1.73 3.21 4.63 0.50 are very weakly aﬀected by solvation; still, the bond length
+ (3/4*O + 1/4*OOH) between *OOH and Co is reduced by 0.02 Å for the B-layer
+Co3O4(CoOct) 2.11 3.63 5.07 0.87 and 0.03−0.07 Å for the pure and Ni-doped A-layer, consistent
+ (3/4*O+1/4*OOH)sol
+ with the enhancement of binding energy when solvation eﬀects
+ A-Layer
+ are considered. Simultaneously, the O−OH bond is increased
+Co3O4(CoOct2) 1.58 2.95 4.81 0.63
+ by 0.01−0.04 Å. Further studies including explicit solvation
+Co3O4(CoOct2)sol 1.67 2.94 5.21 1.04
+ will be useful to shed more light on these phenomena.
+FexCo3−xO4(CoOct2) 1.53 2.89 4.49 0.37
+ Scaling Relationship and Volcano Plot. Based on
+FexCo3−xO4(CoOct2)sol 1.63 2.93 4.93 0.77
+Co3O4(CoOct2) 1.63 3.19 4.73 0.40
+ results for a series of transition metal oxide surfaces, a
+ (5/6*O + 1/6*OOH) universal scaling relation has been identiﬁed between the
+Co3O4(CoOct2) 2.27 3.62 5.33 1.04 binding energies ΔGb*OOH and ΔGb*OH, regardless of the type of
+ (5/6*O + 1/6*OOH)sol reaction sites.45,65 The unity slope in the scaling relationship
+ (ΔGb*OOH = ΔGb*OH + 3.20 eV) is substantiated by the
+ 5607 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 6. (a) Scaling relationship between ΔGb*OOH and ΔGb*OH for diﬀerent reaction sites at the B-, A-, and 0.5A-terminations of the Co3O4(001)
+surface. Red and black dashed lines indicate the result of the linear ﬁt and unity slope, respectively; (b) Volcano plot of the negative overpotential as
+a function of (ΔGb*O − ΔGb*OH). The red dashed line is calculated according to eq 12. The yellow triangles indicate the results for
+CoxNi1−xFe2O4(001)36 recalculated by using of the RPBE functional.
+
+assumption that the intermediate species (*OH or *OOH) and the predicted trends generally correlate with experimental
+connect to the surface with a single bond, and the constant values.71 While the inclusion of kinetic eﬀects goes beyond the
+intercept (3.20 eV) indicates that *OH and *OOH scope of the present study due to the multiple terminations,
+intermediates have the same preference for the adsorption active sites, presence of dopants, and coverage with functional
+site.45 However, a deviation from the classical scaling groups, we take the opportunity to discuss current develop-
+relationship has been pointed out in several recent ments in this context: recently, changes of the rate-determining
+studies.36,66−70 In Figure 6a, we plotted the binding energies step with voltage were proposed, where the corresponding
+of ΔGb*OOH against ΔGb*OH for the Co3O4(001) surface, in barrier is approximated by an oﬀset.72 On the other hand,
+combination with data for the CoxNi1−xFe2O4(001) surface.36 investigations on higher index Co3O4 surfaces34,35 suggest the
+For consistency, the latter results were recalculated in the *OOH formation and *O2 desorption as rate-determining
+RPBE functional (the PBE and RPBE results are compared in steps, whereas all other steps are assumed to be quasi-
+Figure S3, Supporting Information). Our results indicate that equilibrated. While this model is not directly comparable to
+both the slope (0.96) and the intercept (3.15) of the ﬁtting our study, as it considers a mechanism including two cation
+line are very close to the ones in the standard scaling sites as well as a connecting surface oxygen, where the
+relationship.45 Deviations from the line are related to the hydroperoxo intermediate is formed by bonding a hydroxyl
+stabilization of the *OOH intermediate by forming a hydrogen radical, the main conclusion is that the kinetic and
+bond to a surface oxygen, in particular, for thermodynamic models predict the same optimal site for an
+CoxNi1−xFe2O4(001), a deviation of ±0.4 eV was observed electrode potential of 0.5 V but other sites may emerge in the
+previously.36 kinetic model for lower or higher applied potentials.
+ Since the binding energies of *OH and *OOH are linearly Furthermore, a recent investigation on rutile MO2(110)
+correlated, the overpotential depends on two of the surfaces (M = Ir, Ru, Rh, and Pt)73 has found that the proton
+intermediates. The negative overpotential −η plotted versus exchange steps between oxygen on the surface and the
+(ΔGb*O − ΔGb*OH) results in a volcano,13,45 as shown in Figure electrolyte are barrierless, which is also applied to other
+6b. The dashed line of the ideal volcano is derived from the deprotonation steps such as *H2O and *OOH. This analysis
+scaling relationship, according to points also toward *OOH formation and *O2 desorption as
+ the rate-determining steps. The barriers for *OOH are
+ ηsc = [max((ΔG bO − ΔG bOH), 3.15 eV expressed in terms of scaling relationships versus the above
+ * *
+ − (ΔG bO − ΔG bOH))/e] − 1.23V (12) used descriptor (ΔGb*O − ΔGb*OH), while an experimental value
+ * * of 0.28 eV is taken for the *O2 desorption rate at IrO2(110)
+ As shown in Figure 6b, most of the cases are located at the and extended to other surfaces, using Brønsted−Evans−
+left leg of the volcano, indicating lower surface hydroxide Polanyi (BEP) relationships that the desorption barrier is
+deprotonation energy. The CoOct reaction site on the 5/6 linearly related to the *O2 binding energy, leading to barriers
+ML*O and 1/6 ML *OOH covered A-layer is found to closely between 0.28 and 0.98 eV. We note that BEP and scaling
+approach the peak of the volcano (η = 0.40 V) with an relationships were used in the previous study for the water
+optimum binding energy diﬀerence of ∼1.6 eV. CoOct at the addition step and the O−H versus O−OH bond dissociation,
+Ni-doped B-layer and the Fe-doped A-layer with their low respectively.35 Interestingly, the peak of the volcano in the
+overpotentials of 0.34 and 0.37 V, respectively, are also close to thermodynamic models and the kink in the kinetic model
+the peak of the volcano but with lower binding energy appear at the same optimal descriptor value of 1.6 eV.
+diﬀerence ∼1.4 eV. Moreover, the results suggest that further optimization of the
+ The thermodynamic considerations presented here are a ﬁrst catalyst would require the stabilization of the transition state of
+step toward determining the relative activity of reaction sites, *OOH rather than the *OOH intermediate itself. While
+ 5608 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+further investigations are necessary, these studies suggest that 0.5A-Layer. At the 0.5A-layer, there are also two types of
+some general trends from thermodynamic models seem to be octahedrally coordinated cobalt ions: CoOct1 (magnetic
+consistent with kinetic models. moment of 2.0 μB) and CoOct2 (3.0 μB). As shown in Figure
+ Relation between OER Activity and Underlying S6, the valence state (+2) and the magnetic moment of the
+Electronic and Magnetic Properties. To gain insights CoTet reaction site change weakly with the adsorbates.
+into the origin of OER activity and the role of doping, we Regarding the doped cases, Fe and Ni ions display magnet-
+analyze the underlying electronic and magnetic properties and izations of 4.1 μB (+3) and 0.9 μB (+3), respectively.
+derive the valence state of surface cations. We note that the Despite the signiﬁcant variation in the oxidation state of the
+latter is not trivial and diﬀerent methods are used in the active Co site during OER, the observed trends are similar for
+literature.74,75 In order to determine the valence states of the the doped and undoped cases. To gain further insights into the
+Co active sites during the OER process, we use a combination origin of distinct OER activity, we have analyzed the electronic
+of the spin density and magnetic moments in Figures 4 and 5 properties of the Co3O4(001) surface prior to OER, based on
+(additional cases are presented in Figures S4−S6), as well as the surface layer contribution to the DOS for the A and B
+the projected density of states and orbital occupation. -terminations with respect to the vacuum level, as plotted in
+ B-Layer. A remarkable increase in magnetic moment of the Figure 7. Remarkably, for the B-layer, the Fermi level crosses
+surface CoOct (2.1 μB) takes place at the B-layer as compared to
+the bulk (d6, low spin, 0 μB), indicating an intermediate spin
+state with an occupied dz2 orbital due to the missing apical
+ligand and a partial reduction from +3 to +2, consistent with
+previous results of Zasada et al.28 For the *OH or *O
+intermediates, the magnetic moment of the CoOct reaction site
+is reduced to 1.1 μB and 1.3 μB, respectively, indicating a +4
+oxidation state. Higher valence states of the surface cations
+have been proposed as beneﬁcial for OER electrocatalysis12,76
+because they are considered to enhance the electrophilicity of
+cations to bind the oxygen of the water molecule or other
+species and facilitate the formation of intermediates (such as
+*OOH) on the surface. With the formation of *OOH, the
+CoOct magnetic moment is nearly quenched to 0.4 μB
+indicating a valence state of +3, low spin. Similar variation of
+the magnetic moment during OER at the active site is also
+found for the 3/4 ML *O and 1/4 ML *OOH covered B-layer,
+whereas the remaining Co-sites with terminal oxo-ligands have
+ ́
+a magnetic moment of 1.1 μB, consistent with Garcia-Mota et
+ 13
+al. In the doped systems, the dopants show magnetic
+moments of 3.5−3.6 μB for Fe ions and 0.9−1.1 μB for Ni ions,
+corresponding to +2 and +3 oxidations states, respectively.
+These oxidation states persist during OER for a CoOct reaction
+site; the magnetic moment of the latter itself varies similar to
+the undoped case.
+ A-Layer. The dramatic displacement of the topmost CoTet
+(with a magnetic moment of 2.6 μB corresponding to a +2
+oxidation state) at the A-layer aﬀects the magnetic moment of Figure 7. Contribution of the surface layer to the DOS of the
+the nearest CoOct1 1.9 μB (+3, intermediate spin), while CoOct2 Co3O4(001) surface for the pure and doped B- and A-layer. The
+has a magnetic moment of 2.7 μB (+2). The magnetic moment LDOS is plotted wrt the vacuum level; thus, the Fermi level indicates
+of the latter reaction site varies less (between 2.2 and 3.0 μB) the respective work function. Additionally, the spin-projected and
+than at the B-layer indicating a lower oxidation state during average band centers are given.
+OER compared to the B-layer. The magnetic moment of CoTet
+changes only weakly from 2.6 to 2.9 μB with the diﬀerent the top of the valence band, indicating a pronounced p-type
+adsorbates, and the valence state remains +2. The absence of character, even stronger for the Ni-doped case, possibly
+high valence may indicate weak electrophilicity, thus leading to explaining the lower overpotential for the B-layer (0.46 V) and
+the rather high overpotential of 0.70 V for this reaction site. the further reduction to 0.34 V for Ni doping. In contrast, the
+For the Fe-doped A-layer, the Fe ion has a higher magnetic valence band of the A-layer is fully occupied, and the Fermi
+moment of 4.1 μB (+3) than at the B-layer. For the Ni-doped level lies in the gap. Here, the Fe-doped case exhibits a lower
+A-layer, the Ni ion shows almost the same magnetic moment work function of 4.17 eV compared to 4.32 eV for the pure A-
+of 0.8−1.0 μB (+3) as at the B-layer. In both cases, the layer. Consequently, the top of the valence band is pushed
+magnetic moment of CoOct itself varies similar to the undoped upward compared to the pure and Ni-doped cases, which
+case during OER. The A- and B-terminations precovered by together with the slightly higher lying valence band center
+(5/6 ML *O + 1/6 ML *OOH) and (3/4 ML *O + 1/4 ML correlates with the reduced overpotential from 0.63 to 0.37 V.
+*OOH), respectively, show reduced Co4+ at the oxygenated A similar upward shift of the band center was recently reported
+sites, while the active site is weakly inﬂuenced with maximum for strongly reduced Co3O4 surfaces33 and is expected to
+change in the magnetic moment of 0.3 μB. facilitate the transfer of electrons, for example, in the
+ 5609 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 8. PDOS of 3d states at the CoOct reaction site and the magnetic moments are given for the pure and Fe- and Ni-doped B- and A-layer,
+denoted by a black, green, and red lines, respectively. The dashed line indicates the Fermi level.
+
+absorption of oxo-groups. To obtain a comprehensive picture, speciﬁcally, the active site shows a strong variation of the
+the intermediates also need to be analyzed besides the surfaces oxidation state, in particular, at the B-layer. The lower
+prior to OER. In this context we have plotted in Figure 8 the overpotential of the pure B-layer is correlated to the p-type
+PDOS of the 3d states of the Co reaction site for the pure and character of this termination with hole doping at the top of the
+Fe and Ni-doped cases during OER. We observe the strongest valence band and the higher oxidation state (+4) of the active
+downward shift of the PDOS for Ni doping at the B-layer and site during OER, whereas the stronger eﬀect of Fe doping at
+for Fe doping at the A-layer, which is consistent with the the A-layer is associated with a slightly reduced work function
+stronger reduction of overpotential in the doped cases. and a concomitant upward shift of the valence band. The
+
+■
+ results point toward paths for selective modiﬁcation of the
+ CONCLUSIONS OER activity of transition metal oxide surfaces through the
+ surface termination and dopants.
+
+ ■
+Using DFT + U calculations, we systematically explored the
+OER at the clean, Fe-, and Ni-doped Co3O4(001) surfaces, ASSOCIATED CONTENT
+where we consider diﬀerent terminations with a B-, A-, and
+0.5A-layer. The relative stability as a function of the oxygen * Supporting Information
+ sı
+
+chemical potential calculated in the framework of ab initio The Supporting Information is available free of charge at
+thermodynamics shows that the B- and A-layer prevail at https://pubs.acs.org/doi/10.1021/acscatal.1c00214.
+oxygen-rich and poor conditions, respectively. To determine Discussion on the inﬂuence of the Hubbard U parameter
+the stability of relevant terminations under reaction conditions, on the heat of formation of bulk Co, Fe, and Ni oxides
+a Pourbaix diagram was constructed as a function of pH and and on the overpotential for Ni-doped Co3O4(001);
+applied voltage. Examining diﬀerent OER reaction sites at the electronic and magnetic properties (density of states and
+undoped Co3O4(001) surface, the B-layer with the octahedral spin density) of bulk and intermediates for diﬀerent
+Co active site was found to have the lowest overpotentials of reaction sites and terminations of the (001) surface;
+0.46 V. Prior to assessing the role of Ni- and Fe-dopants, adopted zero-point energy; entropic corrections; and
+possible substitution sites and formation energies were solvation energies of intermediate species and molecules
+determined. Ni doping is found to decrease the overpotential (PDF)
+
+ ■
+of Co3O4(001) from 0.46 to 0.34 V for the B-layer, more
+signiﬁcantly than Fe doping (nearly unchanged, 0.45 V). On AUTHOR INFORMATION
+the other hand, Fe and Ni incorporation as well as a 5/6 ML Corresponding Author
+*O + 1/6 ML *OOH coverage at the A-layer reduces the Rossitza Pentcheva − Department of Physics, Theoretical
+overpotential from 0.63 V for the clean surface to 0.37, 0.41, Physics and Center of Nanointegration (CENIDE),
+and 0.40 V, respectively. Octahedral cobalt emerges as the University of Duisburg-Essen, 47057 Duisburg, Germany;
+active site both for the pure and doped systems. While orcid.org/0000-0002-4423-8980; Phone: +49 (0)203
+solvation eﬀects, considered in an implicit model, increase the 379 2238; Email: Rossitza.Pentcheva@uni-due.de;
+overpotential by ∼0.2 and ∼0.4 eV for the B- and A-layer, Fax: +49 (0)203 379 1679
+respectively, due to enhanced binding energies of intermedi-
+ates, the trends with doping remain unaltered. In addition, we Authors
+also investigated the scaling relationship between the binding Yuman Peng − Department of Physics, Theoretical Physics and
+energies of *OOH and *OH and the volcano plot, where the Center of Nanointegration (CENIDE), University of
+most promising cases (the Ni-doped B-layer and the Fe-doped Duisburg-Essen, 47057 Duisburg, Germany
+A-layer) are at the top of the volcano with slightly lower Hamidreza Hajiyani − Department of Physics, Theoretical
+binding energy diﬀerence. Moreover, the catalytic activity is Physics and Center of Nanointegration (CENIDE),
+correlated to the electronic and magnetic properties: University of Duisburg-Essen, 47057 Duisburg, Germany
+ 5610 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Complete contact information is available at: catalysts for efficient oxidation of water. J. Mater. Chem. A 2016, 4,
+https://pubs.acs.org/10.1021/acscatal.1c00214 10014.
+ (16) Wang, H.-Y.; Hung, S.-F.; Chen, H.-Y.; Chan, T.-S.; Chen, H.
+Notes M.; Liu, B. operando identification of geometrical-site-dependent
+ water oxidation activity of spinel Co3O4. J. Am. Chem. Soc. 2016, 138,
+The authors declare no competing ﬁnancial interest. 36−39.
+
+■ ACKNOWLEDGMENTS
+We acknowledge useful discussions on solvation eﬀects with
+ (17) Plaisance, C. P.; van Santen, R. A. Structure sensitivity of the
+ oxygen evolution reaction catalyzed by cobalt(II, III) oxide. J. Am.
+ Chem. Soc. 2015, 137, 14660−14672.
+ (18) Nikdov, I.; Darkaoui, R.; Zhecheva, E.; Stoyanova, R.;
+M. Todorova and S. Wippermann and funding from the Dimitrov, N.; Vitanov, T. Electrocatalytic activity of spinel related
+IMPRS-SurMat as well as the German Research Foundation cobalties MxCo3−xO4 (M = Li, Ni, Cu) in the oxygen evolution
+(DFG) within the Collaborative Research Center TRR247 reaction. J. Electroanal. Chem. 1997, 429, 157−168.
+(B4, project number 388390466). The computational time was (19) Grewe, T.; Deng, X.; Tüysüz, H. Influence of Fe Doping on
+granted at the Leibniz Rechenzentrum (grant pr87ro) and at Structure and Water Oxidation Activity of Nanocast Co3O4. Chem.
+magnitUDE of the Center of Computer Science and Mater. 2014, 26, 3162−3168.
+Simulation at UDE (DFG grant INST 20876/209-1 FUGG). (20) Wang, X. T.; Ouyang, T.; Wang, L.; Zhong, J. H.; Ma, T.; Liu,
+
+■
+ Z. Q. Redox-Inert Fe3+ Ions in Octahedral Sites of Co-Fe Spinel
+ Oxides with Enhanced Oxygen Catalytic Activity for Rechargeable
+ REFERENCES Zinc-Air Batteries. Angew. Chem., Int. Ed. 2019, 58, 13291−13296.
+ (1) Dresselhaus, M. S.; Thomas, I. L. Alternative energy (21) Li, Y.; Hasin, P.; Wu, Y. NixCo3−xO4 Nanowire Arrays for
+technologies. Nature 2001, 414, 332−337. Electrocatalytic Oxygen Evolution. Adv. Mater. 2010, 22, 1926−1929.
+ (2) Chu, S.; Majumdar, A. Opportunities and challenges for a (22) Wu, X.; Scott, K. CuxCo3−xO4 (0 ≤ x < 1) nanoparticles for
+sustainable energy future. Nature 2012, 488, 294−303. oxygen evolution in high performance alkaline exchange membrane
+ (3) McCrory, C. C. L.; Jung, S.; Ferrer, I. M.; Chatman, S. M.; water electrolysers. J. Mater. Chem. 2011, 21, 12344−12351.
+Peters, J. C.; Jaramillo, T. F. Benchmarking Hydrogen Evolving (23) Xiao, C.; Lu, X.; Zhao, C. Unusual synergistic effects upon
+Reaction and Oxygen Evolving Reaction Electrocatalysts for Solar incorporation of Fe and/or Ni into mesoporous Co3O4 for enhanced
+Water Splitting Devices. J. Am. Chem. Soc. 2015, 137, 4347−4357. oxygen evolution. Chem. Commun. 2014, 50, 10122−10125.
+ (4) Cherevko, S.; Geiger, S.; Kasiana, O.; Kulyka, N.; Grotea, J.; (24) Lambert, T. N.; Vigil, J. A.; White, S. E.; Davis, D. J.; Limmer,
+Savanc, A.; Shresthaa, B. R.; Merzlikina, S.; Breitbachb, B.; Ludwigc, S. J.; Burton, P. D.; Coker, E. N.; Beechem, T. E.; Brumbach, M. T.
+A.; Mayrhofer, K. Oxygen and hydrogen evolution reactions on Ru, Electrodeposited NixCo3−xO4 nanostructured films as bifunctional
+RuO2, Ir and IrO2 thin film electrodes in acidic and alkaline oxygen electrocatalysts. Chem. Commun. 2015, 51, 9511.
+electrolytes: A comparative study on activity and stability. Catal. (25) Bothra, P.; Pati, S. K. Activity of Water Oxidation on Pure and
+Today 2016, 262, 170−180. (Fe, Ni, and Cu)-Substituted Co3O4. ACS Energy Lett. 2016, 1, 858−
+ (5) Lee, Y.; Suntivich, J.; May, K. J.; Perry, E. E.; Shao-Horn, Y. 862.
+Synthesis and Activities of Rutile IrO2 and RuO2 Nanoparticles for (26) Chen, J.; Wu, X.; Selloni, A. Electronic structure and bonding
+Oxygen Evolution in Acid and Alkaline Solutions. J. Phys. Chem. Lett. properties of cobalt oxide in the spinel structure. Phys. Rev. B:
+2012, 3, 399−404. Condens. Matter Mater. Phys. 2011, 83, 245204.
+ (6) Suen, N.-T.; Hung, S.-F.; Quan, Q.; Zhang, N.; Xu, Y.-J.; Chen, (27) Montoya, A.; Haynes, B. S. Periodic density functional study of
+H. M. Electrocatalysis for the oxygen evolution reaction: recent Co3O4 surfaces. Chem. Phys. Lett. 2011, 502, 63−68.
+development and future perspectives. Chem. Soc. Rev. 2017, 46, 337. (28) Zasada, F.; Piskorz, W.; Sojka, Z. Cobalt Spinel at Various
+ (7) Zhu, J.; Ren, X.; Liu, J.; Zhang, W.; Wen, Z. Unraveling the Redox Conditions: DFT+U Investigations into the Structure and
+Catalytic Mechanism of Co3O4 for the Oxygen Evolution Reaction in Surface Thermodynamics of the (100) Facet. J. Phys. Chem. C 2015,
+a Li − O2 Battery. ACS Catal. 2015, 5, 73−81. 119, 19180−19191.
+ (8) Hou, Y. H.; Zhao, Y. J.; Liu, Z. W.; Yu, H. Y.; Zhong, X. C.; Qiu, (29) Zasada, F.; Piskorz, W.; Cristol, S.; Paul, J.-F.; Kotarba, A.;
+W. Q.; Zeng, D. C.; Wen, L. S. Structural, electronic and magnetic Sojka, Z. Periodic Density Functional Theory and Atomistic
+properties of partially inverse spinel CoFe2O4: a first-principles study. Thermodynamic Studies of Cobalt Spinel Nanocrystals in Wet
+J. Phys. D: Appl. Phys. 2010, 43, 445003. Environment: Molecular Interpretation of Water Adsorption Equi-
+ (9) Fritsch, D.; Ederer, C. Epitaxial strain effects in the spinel ferrites libria. J. Phys. Chem. C 2010, 114, 22245−22253.
+CoFe2O4 and NiFe2O4 from first principles. Phys. Rev. B: Condens. (30) Chen, J.; Selloni, A. Water Adsorption and Oxidation at the
+Matter Mater. Phys. 2010, 82, 104117. Co3O4 (110) Surface. J. Phys. Chem. Lett. 2012, 3, 2808−2814.
+ (10) Hamdani, M.; Singh, R. N.; Chartier, P. Co3O4 and Co-Based (31) Selcuk, S.; Selloni, A. DFT+U Study of the Surface Structure
+Spinel Oxides Bifunctional Oxygen Electrodes. Int. J. Electrochem. Sci. and Stability of Co3O4(110): Dependence on U. J. Phys. Chem. C
+2010, 5, 56−77. 2015, 119, 9973−9979.
+ (11) Kaptagay, G. A.; Inerbaev, T. M.; Mastrikov, Y. A.; Kotomin, E. (32) Pham, H. H.; Cheng, M.-J.; Frei, H.; Wang, L.-W. Surface
+A.; Akilbekov, A. T. Water interaction with perfect and fluorine-doped proton hopping and fast-kinetics pathway of water oxidation on
+Co3O4 (100) surface. Solid State Ionics 2015, 277, 77−82. Co3O4 (001) surface. ACS Catal. 2016, 6, 5610−5617.
+ (12) Matsumoto, Y.; Sato, E. Electrocatalytic properties of transition (33) He, D.; Song, X.; Li, W.; Tang, C.; Liu, J.; Ke, Z.; Jiang, C.;
+metal oxides for oxygen evolution reaction. Mater. Chem. Phys. 1986, Xiao, X. Active Electron Density Modulation of Co3O4-Based
+14, 397−426. Catalysts Enhances their Oxygen Evolution Performance. Angew.
+ (13) García-Mota, M.; Bajdich, M.; Viswanathan, V.; Vojvodic, A.; Chem., Int. Ed. 2020, 59, 6929−6935.
+Bell, A. T.; Nørskov, J. K. Importance of Correlation in Determining (34) Plaisance, C. P.; Reuter, K.; van Santen, R. A. Quantum
+Electrocatalytic Oxygen Evolution Activity on Cobalt Oxides. J. Phys. chemistry of the oxygen evolution reaction on cobalt(ii,iii) oxide -
+Chem. C 2012, 116, 21077−21082. implications for designing the optimal catalyst. Faraday Discuss. 2016,
+ (14) Trasatti, S. Physical electrochemistry of ceramic oxides. 188, 199−226.
+Electrochim. Acta 1991, 36, 225−241. (35) Plaisance, C. P.; Beinlich, S. D.; Reuter, K. Kinetics-Based
+ (15) Menezes, P. W.; Indra, A.; Bergmann, A.; Chernev, P.; Walter, Computational Catalyst Design Strategy for the Oxygen Evolution
+C.; Dau, H.; Strasser, P.; Driess, M. Uncovering the prominent role of Reaction on Transition-Metal Oxide Surfaces. J. Phys. Chem. C 2019,
+metal ions in octahedral versus tetrahedral sites of cobalt-zinc oxide 123, 8287−8303.
+
+ 5611 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ (36) Hajiyani, H.; Pentcheva, R. Surface Termination and (57) Wang, L.; Maxisch, T.; Ceder, G. Oxidation energies of
+Composition Control of Activity of the CoxNi1−xFe2O4(001) Surface transition metal oxides within the GGA+U framework. Phys. Rev. B:
+for Water Oxidation: Insights from DFT+U Calculations. ACS Catal. Condens. Matter Mater. Phys. 2006, 73, 195107.
+2018, 8, 11773−11782. (58) Monkhorst, H. J.; Pack, J. D. Special points for Brillouin-zone
+ (37) Tkalych, A. J.; Zhuang, H. L.; Carter, E. A. A Density integrations. Phys. Rev. B: Condens. Matter Mater. Phys. 1976, 13,
+Functional+ U Assessment of Oxygen Evolution Reaction Mecha- 5188.
+nisms on beta-NiOOH. ACS Catal. 2017, 7, 5329−5339. (59) Shinde, V. R.; Mahadik, S. B.; Gujar, T. P.; Lokhande, C. D.
+ (38) Yoo, S.-H.; Todorova, M.; Neugebauer, J. Selective Solvent- Supercapacitive cobalt oxide (Co3O4) thin filmsby spray pyrolysis.
+Induced Stabilization of Polar Oxide Surfaces in an Electrochemical Appl. Surf. Sci. 2006, 252, 7487−7492.
+Environment. Phys. Rev. Lett. 2018, 120, 066101. (60) Novotny, Z.; Mulakaluri, N.; Schmid, M.; Pentcheva, R.;
+ (39) Mathew, K.; Kolluru, V. S. C.; Mula, S.; Steinmann, S. N.; Diebold, U.; Parkinson, G. S. Probing the surface phase diagram of
+Hennig, R. G. Implicit self-consistent electrolyte model in plane-wave Fe3O4 (001) towards the Fe rich limit: Evidence for progressive
+density-functional theory. J. Chem. Phys. 2019, 151, 234101−234108. reduction of the surface. Phys. Rev. B: Condens. Matter Mater. Phys.
+ (40) Bandyopadhyay, P.; Jana, R.; Bhattacharyya, K.; Lebedev, O. I.; 2013, 87, 195410.
+Dutta, U.; Sarkar, U.; Datta, A.; Seikh, M. M. Interaction of a (61) Reuter, K.; Scheffler, M. Composition, structure, and stability of
+bioactive molecule with surfaces of nanoscale transition metal oxides: RuO2(110) as a function of oxygen pressure. Phys. Rev. B: Condens.
+experimental and theoretical studies. New J. Chem. 2019, 43, 16621− Matter Mater. Phys. 2001, 65, 035406.
+16628. (62) Bajdich, M.; Garcia-Mota, M.; Vojvodic, A.; Nørskov, J. K.;
+ (41) Curutchet, A.; Colinet, P.; Michel, C.; Steinmann, S. N.; Le Bell, T. A. Theoretical investigation of the activity of cobalt oxides for
+Bahers, T. Two-sites are better than one: revisiting the OER the electrochemical oxidation of water. J. Am. Chem. Soc. 2013, 135,
+mechanism on CoOOH by DFT with electrode polarization. Phys. 13521−13530.
+Chem. Chem. Phys. 2020, 22, 7031−7038. (63) Pourbaix, M. Atlas of Electrochemical Equilibria in Aqueous
+ (42) Gauthier, J. A.; Dickens, C. F.; Chen, L. D.; Doyle, A. D.; Solutions; National Association of Corrosion: Houston, TX, 1974; p
+Nørskov, J. K. Solvation Effects for Oxygen Evolution Reaction 79.
+Catalysis on IrO2(110). J. Phys. Chem. C 2017, 121, 11463. (64) Su, H.-Y.; Gorlin, Y.; Man, I. C.; Calle-Vallejo, F.; Rossmeisl, J.
+ (43) Mathew, K.; Sundararaman, R.; Letchworth-Weaver, K.; Arias, K.; Nørskov, T. F. Identifying active surface phases for metal oxide
+T. A.; Hennig, R. G. Implicit solvation model for density-functional electrocatalysts: a study of manganese oxide bi-functional catalysts for
+study of nanocrystal surfaces and reaction pathways. J. Chem. Phys. oxygen reduction and water oxidation catalysis. Phys. Chem. Chem.
+2014, 140, 084106−084108. Phys. 2012, 14, 14010−14022.
+ (44) Tomasi, J.; Mennucci, B.; Cammi, R. Quantum Mechanical (65) Koper, M. T. M. Thermodynamic theory of multi-electron
+Continuum Solvation Models. Chem. Rev. 2005, 105, 2999−3094. transfer reactions: Implications for electrocatalysis. J. Electroanal.
+ (45) Man, I. C.; Su, H. Y.; Calle-Vallejo, F.; Hansen, H. A.;
+ Chem. 2011, 660, 254−260.
+Martínez, J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J.
+ (66) Busch, M.; Halck, N. B.; Siahrostami, S.; Krtil, P.; Rossmeisl, J.;
+K. Universality in Oxygen Evolution Electrocatalysis on Oxide
+ Rossmeisl, J. Beyond the top of the volcano? - A unified approach to
+Surfaces. ChemCatChem 2011, 3, 1159−1165.
+ electrocatalytic oxygen reduction and oxygen evolution. Nano Energy
+ (46) Rossmeisl, J.; Qu, Z.-W.; Zhu, H.; Kroes, G.-J.; Nørskov, J. K.
+ 2016, 29, 126−135.
+Electrolysis of water on oxide surfaces. J. Electroanal. Chem. 2007, 607,
+ (67) Halck, N. B.; Petrykin, V.; Krtil, P.; Rossmeisl, J. Beyond the
+83−89.
+ (47) Valdés, Á .; Qu, Z.-W.; Kroes, G.-J.; Rossmeisl, J.; Nørskov, J. K.
+ volcano limitations in electrocatalysis - oxygen evolution reaction.
+Oxidation and Photo-Oxidation of Water on TiO2 Surface. J. Phys. Phys. Chem. Chem. Phys. 2014, 16, 13682−13688.
+Chem. C 2008, 112, 9872−9879. (68) Calle-Vallejo, F.; Krabbe, A.; García-Lastra, J. M. How
+ (48) Liao, P.; Keith, J. A.; Carter, E. A. Water Oxidation on Pure and covalence breaks adsorption-energy scaling relations and solvation
+Doped Hematite (0001) Surfaces: Prediction of Co and Ni as restores them. Chem. Sci. 2017, 8, 124−130.
+Effective Dopants for Electrocatalysis. J. Am. Chem. Soc. 2012, 134, (69) Briquet, L. G. V.; Sarwar, M.; Mugo, J.; Jones, G.; Calle-Vallejo,
+13296−13309. F. A New Type of Scaling Relations to Assess the Accuracy of
+ (49) Kresse, G.; Hafner, J. Ab initio molecular-dynamics simulation Computational Predictions of Catalytic Activities Applied to the
+of the liquid-metal-amorphous-semiconductor transition in germa- Oxygen Evolution Reaction. ChemCatChem 2017, 9, 1261−1268.
+nium. Phys. Rev. B: Condens. Matter Mater. Phys. 1994, 49, 14251. (70) Govindarajan, N.; García-Lastra, J. M.; Meijer, E. J.; Calle-
+ (50) Kresse, G.; Furthmüller, J. Efficiency of ab-initio total energy Vallejo, F. Does the breaking of adsorption-energy scaling relations
+calculation for metals and semiconductors using a plane-wave basis guarantee enhanced electrocatalysis? Curr. Opin. Electrochem. 2018, 8,
+set. Comput. Mater. Sci. 1996, 6, 15−50. 110−117.
+ (51) Kresse, G.; Furthmüller, J. Efficient iterative schemes for ab (71) Hong, W. T.; Risch, M.; Stoerzinger, K. A.; Grimaud, A.;
+initio total-energy calculations using a plane-wave basis set. Phys. Rev. Suntivich, J.; Shao-Horn, Y. Toward the rational design of non-
+B: Condens. Matter Mater. Phys. 1996, 54, 11169−11186. precious transition metal oxides for oxygen electrocatalysis. Energy
+ (52) Blöchl, P. E. Projector augmented-wave method. Phys. Rev. B: Environ. Sci. 2015, 8, 1404−1427.
+Condens. Matter Mater. Phys. 1994, 50, 17953−17979. (72) Exner, K. S. A Universal Descriptor for the Screening of
+ (53) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient Electrode Materials for Multiple-Electron Processes: Beyond the
+Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868. Thermodynamic Overpotential. ACS Catal. 2020, 10, 12607−12617.
+ (54) Hammer, B.; Hansen, L. B.; Nørskov, J. K. Improved (73) Dickens, C. F.; Kirk, C.; Nørskov, J. K. Insights into the
+adsorption energetics within density-functional theory using revised Electrochemical Oxygen Evolution Reaction with ab Initio Calcu-
+Perdew-Burke-Ernzerhof functionals. Phys. Rev. B: Condens. Matter lations and Microkinetic Modeling: Beyond the Limiting Potential
+Mater. Phys. 1999, 59, 7413−7421. Volcano. J. Phys. Chem. C 2019, 123, 18960−18977.
+ (55) Dudarev, S. L.; Botton, G. A.; Savrasov, S. Y.; Humphreys, C. J.; (74) Quan, Y.; Pardo, V.; Pickett, W. E. Formal Valence, 3d-Electron
+Sutton, A. P. Electron-energy-loss spectra and the structural stability Occupation, and Charge-Order Transitions. Phys. Rev. Lett. 2012, 109,
+of nickel oxide: An LSDA+U study. Phys. Rev. B: Condens. Matter 216401.
+Mater. Phys. 1998, 57, 1505−1509. (75) Sit, P. H.-L.; Car, R.; Cohen, M. H.; Selloni, A. Simple,
+ (56) Chen, Z.; Kronawitter, C. X.; Koel, B. E. Facet-dependent Unambiguous Theoretical Approach to Oxidation State Determi-
+activity and stability of Co3O4 nanocrystals towards the oxygen nation via First-Principles Calculations. Inorg. Chem. 2011, 50,
+evolution reaction. Phys. Chem. Chem. Phys. 2015, 17, 29387−29393. 10259−10267.
+
+ 5612 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ (76) Lu, Z.; Wang, H.; Kong, D.; Yan, K.; Hsu, P.; Zheng, G.; Yao,
+H.; Liang, Z.; Sun, X.; Cui, Y. Electrochemical tuning of layered
+lithium transition metal oxides for improvement of oxygen evolution
+reaction. Nat. Commun. 2014, 5, 4345.
+
+■ NOTE ADDED AFTER ASAP PUBLICATION
+This research article was published ASAP on April 22, 2021.
+The title has been updated and the corrected version was
+reposted on May 7, 2021.
+
+ 5613 https://doi.org/10.1021/acscatal.1c00214
+ ACS Catal. 2021, 11, 5601−5613

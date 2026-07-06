@@ -106,12 +106,17 @@ In `*_ptomodel.json`:
 - top-level `surface_modeling_parameter_schema` contains the shared task schema registry
 - each document's `task_inputs` contains paper-derived modeling context
 - each document's `task_parameter_schema_refs` links an executable task to the matching schema entry by `task_key`
+- each document's `task_argument_template` pre-expands the task schema into:
+  - `arguments`: parameter skeleton with auto-filled values when safe
+  - `argument_sources`: whether each parameter is auto-mapped, needs upstream structure artifacts, or still needs manual choice
+  - `required_missing_parameters`: required slots still unresolved
 
 So `ptomodel` is not supposed to invent final CLI values by itself. Its job is to:
 
 - decide which supported task applies
 - provide normalized paper evidence as `task_inputs`
 - point downstream execution to the exact parameter schema that must be filled
+- make paper-to-parameter links explicit where they are safe enough to materialize
 
 ## Usage Policy
 

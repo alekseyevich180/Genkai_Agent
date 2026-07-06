@@ -1,0 +1,928 @@
+This article is licensed under CC-BY 4.0
+
+ pubs.acs.org/electrochem Article
+
+ The Surface Chemistry of Au(111) and Au(100) Electrodes under
+ Oxygen Reduction and Evolution Potentials
+ Kayvan Moradi and Marko M. Melander*
+ Cite This: ACS Electrochem. 2025, 1, 2338−2352 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Oxygen electrochemistry plays a central role in various sustainable
+ energy solutions, but the factors controlling the electrocatalytic oxygen reduction
+ reaction (ORR) and oxygen evolution reaction (OER) are still not fully understood
+ even on model electrodes. As the electrocatalytic (OER and ORR) mechanisms cannot
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:50:16 (UTC).
+
+ be understood without knowing the electrode state under operation conditions, herein,
+ we have employed grand canonical ensemble density functional theory (GCE-DFT) to
+ systematically investigate the pH- and potential-dependent surface coverage of model
+ Au(111) and Au(100) electrodes. Under ORR conditions (0.6−1.1 VRHE), both
+ surfaces exhibit a moderate 1/3−2/3 monolayer OH* coverage. Adsorption structures containing OOH* intermediates are not
+ among the thermodynamically most stable surface structures, challenging previous models of Au-catalyzed ORR activity and
+ selectivity. Instead, our results suggest that the pH-, potential-, and coverage-dependent surface charge play key roles in the ORR
+ activity and selectivity. Close to the OER equilibrium potential, both surfaces have high OH or mixed OH/O adsorbate coverage,
+ which transform into surface or bulk oxides above 1.4−1.6 VRHE. These oxidation processes coincide with the onset of gold
+ dissolution and indicate that the OER active surfaces consist of gold (hydr)oxides rather than metallic gold. Our findings have direct
+ implications for the necessity of explicitly accounting for the effects of surface coverage, applied potential, and pH on electrocatalytic
+ activity and long-term stability of gold electrodes in oxygen electrochemistry.
+ KEYWORDS: Gold single crystal electrode, Oxygen reduction reaction, Oxygen evolution reaction,
+ Grand canonical density functional theory, Oxygen electrochemistry, Surface coverage
+
+ ■ INTRODUCTION
+ Environmental hazards and climate change resulting from
+ mechanism on catalysts such as gold or carbon-based
+ materials.13,14 However, despite extensive experimental and
+ industrial fossil fuel consumption present significant chal- computational studies,3,4,6,7,10−12,15−18 the microscopic mech-
+ lenges, necessitating a transition to clean energy sources.1−4 anisms and factors governing ORR activity and selectivity
+ Oxygen electrochemistry plays a key role in this transition:5 the towards the 4e− or 2e− pathways are not fully understood even
+ oxygen reduction reaction (ORR) is crucial for electrochemical on model electrodes such as gold single crystals. This
+ energy conversion, particularly in fuel cells, hydrogen peroxide knowledge gap hinders the rational design and development
+ production, and metal−air batteries.6,7 In contrast, the of more active, stable, and selective ORR electrocatalysts.
+ The ORR mechanism, selectivity, and activity are known to
+ oxidative oxygen evolution reaction (OER) is the crucial
+ depend sensitively on the electrochemical reaction conditions
+ half-cell reaction in electrocatalytic hydrogen production
+ such as the electrode material, surface structure, (nano)particle
+ through water splitting.1,8 The ORR is thermodynamically
+ size, electrode potential, electrolyte composition, and mass
+ favorable below electrode potentials of 1.23 V versus RHE,
+ transport.3,6,15,18−20 This sensitivity is often more pronounced
+ while the OER is possible above this potential. Despite decades
+ in alkaline environments than in acidic environments. This is
+ of intense studies in ORR and OER electrocatalysis, the
+ particularly true for materials (e.g., Au) and conditions for
+ complex electrochemistry of these reactions still remains only
+ which the potential of zero charge is located positive of the
+ partly understood, even on well-defined single-crystal model
+ ORR potentials where the surface is negatively charged. For
+ electrodes; in this work, we focus on resolving the surface
+ instance, on materials like gold, the potential of zero charge is
+ chemistry of gold model electrodes under ORR and OER
+ conditions as a function of pH.
+ In ORR electrocatalysis, molecular oxygen is converted into Received: May 22, 2025
+ water or hydroxide ions under acidic or alkaline conditions, Revised: July 31, 2025
+ respectively, through a 4e− mechanism.2,9 Currently, platinum- Accepted: September 4, 2025
+ based materials are the best 4e−-ORR electrocatalysts as they Published: September 19, 2025
+ achieve superior activity and stability.10−12 On the other hand,
+ hydrogen peroxide can be generated through a 2e−-ORR
+
+ © 2025 American Chemical Society https://doi.org/10.1021/acselectrochem.5c00202
+ 2338 ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+moved to more positive potentials under more alkaline that the formation of a superoxide (O2 ) ion in solution due to
+conditions, which means that the surface carries a more an outer-sphere electron transfer step that initiates the 4e-ORR
+negative charge density under alkaline conditions, which in in alkaline media.35,36 This initial outer-sphere electron transfer
+turn is expected to amplify the role of electrolyte interactions step facilitates the adsorption of the O2 species and thereby
+and cation effects.3,15,17−19,21 Most often the ORR activity and increases activity, but the selectivity towards 2e− or 4e−
+selectivity are explained through the stability of key adsorbed depends on the O−O dissociation barrier, which is lower on
+ORR intermediates, such as O*2 , OOH*, OH*, and Au(100).23 This view is somewhat supported by DFT studies
+O*.3,15,17−19 However, the intermediate adsorption energies of O2 adsorption and the initial step in ORR on gold, which
+alone cannot explain the ORR selectivity and activity trends, have suggested that O2 adsorption is better viewed as an
+and therefore, recent focus has been devoted to understanding electrochemical step rather than a purely chemical one due to
+the role of the electrode potential, the anion and cation effects, the significant local electric field effects on reaction kinetics.16
+and the role of the solvent, all of which significantly modulate Recent computational studies further demonstrate that a
+the ORR kinetics.6,15,21 It is also possible that both the 2e− and high kinetic barrier of O−O bond dissociation on Au(111) is
+4e− mechanisms may involve so-called outer-sphere steps, the underlying reason for the 2e− selectivity and stems from
+which take place in the solvent phase rather than trough the intrinsic properties of Au(111) rather than the applied
+adsorbed intermediates.6,22,23 potential.32 Additionally, a recent computational study found
+ It should also be noted that the ORR does not typically take that, in alkaline solutions, the 2e− ORR pathway is preferred
+place on pristine metal surfaces as the electrode surface may be due to lower O2 adsorption and association barriers, while
+covered by various species. Thermodynamic Pourbaix higher potentials favor the 4e− pathway through O−O
+diagrams have shown15,17,24 that the surface coverage depends dissociation.37 It should be noted, however, that the above
+on the reaction conditions, such as the electrode potential and computational studies have not considered the impact of
+electrolyte composition, and that the electrocatalytic surface surface coverage, which plays a crucial role in ORR. For
+may have a high coverage oxygenous species such as O*2 , instance, the chemisorption of OH− acts as a precursor for the
+OOH*, OH*, O*, H2O and H 2O*2 under the relevant dissociative adsorption of molecular oxygen or reaction
+ intermediates, facilitating the 4e− reduction of O2.29 Addition-
+electrode potential; the coverage is a key factor influencing
+ ally, coadsorbed water can function as a proton donor,
+the mechanism, activity, and selectivity of ORR.3,6,15,17
+ promoting O−O bond cleavage and leading to 4e −
+Furthermore, the formation and reduction of the oxygenous
+ reduction.30 It has also be suggested that the 4e-ORR
+species may lead to severe surface roughening and dissolution,
+ selectivity on Au(100) results from the high pre-exponential
+changes in the active surface area and morphology of the
+ factor of the O−O breaking step rather than its low reaction
+electrocatalysts, and thereby the electrode performance and
+ barrier.38
+stability under ORR conditions.25−28 Therefore, careful
+ Besides the importance of the O−O bond cleavage kinetics,
+consideration of the surface coverage under working
+ several studies have concluded that stabilization of adsorbed
+conditions is crucial when studying and designing ORR
+ OOH* through dipole-field interactions is the underlying
+electrocatalysts.
+ Gold has and continues to serve as a crucial model system to reason for Au(100)’s selectivity towards 4e-ORR;17,39,40
+understand the surface structure, pH, electrode potential, and however, it must again be emphasized that this conclusion is
+electrolyte’s impact on ORR electrocatalysis selectivity and largely based on DFT simulations at very low surface coverage
+activity. In particular, experiments on Au single crystal and without the presence of possible co-adsorbates, such as
+electrodes show curious selectivity; on most gold surfaces, OH* and O*, which may significantly impact the stability of
+Au(111) in particular, only 2e-ORR is observed under all pH OOH*.17,39 While the stability of the surface-bound OOH*
+conditions but the Au(100) electrode is highly active and intermediate is often invoked to explain the 2e− vs 4e− ORR
+selective toward the 4e-ORR under alkaline conditions. In selectivity difference between Au(111) and Au(100),17,39
+acidic conditions, gold surfaces typically follow a 2-electron recent large-scale enhanced sampling molecular dynamics
+(2e−) pathway, producing hydrogen peroxide (H2O2) or simulations of alkaline ORR on Au(100) show that OOH*
+hydroperoxide (OOH−) intermediates. Conversely, in alkaline is not a thermodynamically stable state along the reaction
+environments, gold, especially the Au(100) surface, not only pathway from O*2 to OH*.41 This study further shows that
+shows higher catalytic activity compared to platinum but also while OOH* is formed during the ORR reaction, it easily
+facilitates the 4e− pathway within a specific potential range dissociates to form OH*, which is thermodynamically more
+(0.7−1.0 V RHE).16,17,21,23,29−34 stable than either O*2 or OOH*.42 It has also been shown the
+ Over the years, several explanations have been proposed to both OOH* and H2O2* formation steps are facile on Au(100)
+explain the ORR selectivity differences between Au(100) and under alkaline conditions. These findings imply that the
+Au(111). While 2e−-ORR may proceed through an outer- OOH* species is not among the thermodynamically most
+sphere mechanism without the adsorption of reaction stable surface species and that it forms only transiently without
+intermediates on the surface, at least the 4e− pathway is long-lived OOH*.
+expected to include inner-sphere steps where stable reaction It has also been demonstrated that the local electric field at
+intermediates such as O*2 or OH* are adsorbed on the surface. the metal/electrolyte interface significantly influences O2
+It is furthermore possible that both the 2e− and 4e− pathways adsorption during the ORR. Ab initio molecular dynamics
+include both inner- and outer-sphere reaction steps. For simulations reveal that, while O2 adsorption on Au(111)
+instance, it has been proposed that the 4e− reduction of O2 on exhibits strong potential dependence, this effect is absent on
+Au(100) in basic electrolytes is due to the disproportionation Pt(111) due to its intrinsically different reactivity and surface
+mechanism, where two initially formed OOH− react to form coverage dynamics.33 However, the influence of surface
+OH− and O2 in the liquid phase.31 Another study suggested coverage, which plays a crucial role in modifying the local
+ 2339 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+electric field and subsequently affecting the ORR potential and Au dissolution and bulk oxidation may be initiated by
+performance, has not been addressed. More generally, it should extraction and place-exchange mechanisms.62 In surface
+be noted that dipole-field models cannot reliably distinguish extraction gold atoms are removed from the outermost Au
+electrostatic interactions from covalent or charge-transfer layer due to repulsive interactions between adsorbed oxygen
+interactions43 and that electrostatic potential profile, or the species (OHad and Oad), while in the place-exchange
+associated electric field, cannot correctly predict the electro- mechanism, an oxygen atom (Oad) penetrates the subsurface
+static interactions at the electrochemical interface.44 region and replaces a gold atom. However, differentiation
+ Besides ORR, potential-dependent surface coverage is a key between these two mechanisms has not been possible
+factor in determining OER activity and electrode stability, experimentally. While the dissolution mechanism and related
+which are crucial for any practical OER catalyst.8,45−52 oxygen species are generally unknown, the onset of oxidative
+Furthermore, the catalyst dissolution and its OER activity are gold dissolution is accompanied by “massive” OH/O
+often related as they share common reaction intermediates.53 adsorption and likely OH/O place-exchange around 1.5
+Electrocatalyst instability during OER can arise from several VRHE.62 At higher potentials, OER and gold dissolution take
+mechanisms, but surface oxidation, followed by electrode place simultaneously,62 and it has also been proposed that the
+dissolution, is usually the initial and predominant pathway onset of OER (1.9−2.0 V RHE ) coincides with oxide
+leading to electrode destruction.54−56 Understanding dissolu- decomposition, likely through lattice oxygen participation.63
+tion under OER conditions is, however, far from complete, and The dynamic restructuring of Au under these conditions
+the complex dissolution (electro)chemistry remains poorly underscores the complexity of its catalytic and degradation
+understood and constitutes a critical issue in fundamental and behavior.57,63
+applied electrochemistry.55,56 The above discussion clearly highlights that the electrode
+ As the fundamental mechanisms of dissolution remain potential has a crucial role in determining the surface coverage,
+poorly understood even on ideal model systems,54 in this work, thermodynamics, and kinetics of ORR, OER, and electrode
+the thermodynamics of gold electrode oxidation is studied to dissolution, but despite extensive studies on oxygen electro-
+understand how the oxidation is linked to surface dissolution chemistry, many questions regarding the effect of surface
+and OER. Although gold is not a proper OER catalyst due its coverage, electrode potential, and pH on the ORR and OER
+poor OER activity, Au(111) and Au(100) serve as prototypical mechanism, activity, and selectivity remain open. Computa-
+single-crystal electrodes whose well-defined surfaces enable tional approaches can provide detailed atomistic insight on
+precise investigations of potential- and pH-dependent these issues, but the most widely used computational method
+adsorption, charge transfer, and oxide formation under OER
+ in electrocatalysis−the computational hydrogen electrode
+conditions; this makes gold single crystal ideal model
+ (CHE)64−cannot self-consistently describe the influence of
+electrodes for gaining fundamental understanding on the
+ electrode potential, surface charge, explicit pH, or electric field
+coupling between surface oxidation, electrode dissolution, and
+ effects on the reaction thermodynamics. Consequently, the
+OER.57,58 In particular, both the OER activity and dissolution
+ CHE method falls short of accurately explaining the effects of
+of gold electrodes appear to be due to the formation of gold
+ electrode potential and pH on the surface (electro)chemistry
+(surface) oxides, but the nature of these oxide surface species
+in the OER region remains unknown:59 “the precise nature of of gold.17,65
+these adsorbed oxygenated species remains uncertain, whether Grand canonical ensemble density functional theory (GCE-
+they are OHads/Oads or various forms of oxides/hydrous DFT) offers an alternative approach to traditional constant
+oxide...the term ‘oxide’” is instead used in the literature as an charge or canonical DFT calculations and the CHE model.
+umbrella term for both OH/O adsorption and true oxide GCE-DFT facilitates simulations of electrochemical interfaces
+formation. under constant electrode potential by self-consistently adjust-
+ Previous computational and experimental studies57,60 of gold ing the system charge until the chosen electrode potential is
+oxidation under OER conditions (1.23−2.0 VRHE) concluded reached. In contrast to CHE, GCE-DFT explicitly and self-
+that the oxidation starts with surface oxidation and formation consistently incorporates the effect of the electrode potential
+of Au(OH)3 species, which is transformed into a highly on all properties of the system. Therefore, GCE-DFT can
+disordered Au−O−OH surface at 1.28 VRHE before trans- naturally capture the influence of the electrode potential,
+forming into bulk Au2O3 at 1.54 VRHE. OER starts at around surface charge, and electric-field effects on reaction thermody-
+2.0 VRHE, likely through a mechanism where two oxygens from namics without resorting to, e.g., additional field corrections
+the surface oxide form O2 through either oxide decomposition often used to correct for canonical DFT and CHE
+or oxide disproportionation.57 The surface oxidation is also results.43,66−68 Furthermore, GCE-DFT can naturally describe
+closely linked to gold dissolution, which starts at around 1.5 how the electrode potential influences reaction kinetics and
+VRHE. Beyond this potential, gold is susceptible to both anodic thermodynamics of pure charge or electron transfer reactions,
+and cathodic dissolution, which means that gold can dissolve nominally chemical reactions, and, e.g., proton transfer
+either oxidatively as the potential is made higher or through reactions while the CHE model is limited to describing the
+reductive processes as the potential is lowered, respectively. electrode potential effects on the reaction thermodynamics of
+Both dissolution and oxide formation depend sensitively on proton-coupled electron transfer reactions.66,68 In the context
+both the electrode potential and transient dissolution occurs of ORR, GCE-DFT has been particularly useful for
+during both oxide formation (anodic dissolution) and demonstrating and clarifying the so-called non-Nernstian67
+reduction (cathodic dissolution).57,60,61 Acidic media favors and electric field effects on adsorption energies and surface
+anodic dissolution, while alkaline conditions favor cathodic coverages of particularly OH and OOH.6,17 One consequence
+dissolution and the amount of gold transiently dissolved in of the non-Nernstian effects is the nonlinearity of the grand
+alkaline medium is more than an order of magnitude higher in adsorption free energies as a function of the electrode potential
+comparison to that in acidic medium.58,61 and pH, while the CHE results in a strictly linear dependency
+ 2340 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+between in the adsorption energy as a function of electrode atoms, consistent with prior findings,78 while standard cavity
+potential and pH.67,69 radii were applied for oxygen and hydrogen atoms. Further
+ In this work, we present a comprehensive computational details regarding the GCE-DFT calculations are provided in
+investigation of the electrochemical surface chemistry of the Supporting Information.
+Au(111) and Au(100) under ORR and OER conditions The lattice constant of Au was calculated to be 4.10 Å, which
+using constant potential GCE-DFT simulations. By explicitly is in good agreement with the experimental value of 4.065 Å.79
+modeling the effect of the electrode potential on surface The Au(111) and Au(100) surfaces were studied as the former
+coverage, our results provide insight into the chemical state of is selective toward 2e-ORR and the latter toward 4e-ORR. The
+the electrode surface under operating conditions. Our results electrode surfaces were modeled as four-layer 2D-periodic 3 ×
+show that under the ORR-relevant potential both surfaces are 3 orthogonal unit cells. The positions of the top two layers
+covered only by OH* species and that OOH*-containing were allowed to relax, while the bottom two layers were fixed at
+structures are not among the thermodynamically most stable their bulk positions. A 5 × 5 ×1 k-point mesh was employed in
+under the considered potential and pH range; this challenges the surface calculations, and a continuum water layer of 15 Å
+previous models that attribute 4e− ORR activity on Au(100) to was added on top of the slab. Geometry optimizations were
+field-stabilized OOH* adsorption. We also find that OH* performed using the BFGS algorithm until the maximum
+coverage modulates the surface charge and PZC, which residual force was less than 0.05 eV Å−1. Vibrational analysis
+together with recent experimental findings21 suggests that was performed for all optimized minima to confirm their
+ORR selectivity is determined by the surface structure and the nature as stationary points.
+surface charge and related electrostatic properties of the Adsorption Free Energies, Surface Coverages, and
+electrochemical interfaces rather than adsorption energies of Potential of Zero Charge. Adsorption grand free energies
+reaction intermediates. At the OER-relevant potentials (∼1.2− were computed using constant potential and electronically
+1.4 VRHE), where also Au dissolution starts, the surfaces grand canonical ensemble DFT and used for constructing
+undergo adsorbate-induced restructuring; in this potential surface phase diagrams, i.e., Pourbaix diagrams,80 as a function
+range, Au(111) exhibits signatures of coverage-driven oxygen of potential and pH. The grand free energies were calculated in
+place-exchange, while Au(100) shows potential-driven gold the e NI eTV ensemble corresponding to a constant electrode
+atom lifting or extraction. These processes signal the onset of potential, i.e., the chemical potential electrons, e , fixed number
+surface dissolution that precedes bulk oxidation. At even higher of other species (NI≠e), temperature, and volume. The
+potentials, both surfaces can form bulk oxide phases such as aqueous-phase free energies were obtained by using the
+Au2O3 and Au(100) and can form complex surface oxides. The ideal-gas approximation. As the pV term for adsorbed species is
+formation of bulk and surface oxides under potentials where negligible, their Gibbs free energies for the adsorbed species
+OER is observed implies that the oxides are the catalytically were approximated as Helmholtz free energies. The potential
+active states during the OER. Altogether, our findings offer a of zero charge (PZC) values are given by the maxima81 of the
+unified understanding of how surface coverage, potential, and parabolic grand free energy curves presented in Figure S3.
+pH collectively shape the surface (electro)chemistry of gold The derivation of the grand free energies can be found in the
+electrodes in oxygen electrochemistry. Supporting Information, and the adsorption grand free
+
+■ COMPUTATIONAL METHODS AND MODELS
+Constant potential DFT calculations were carried out within
+ energies for various combinations of OOH*, OH*, O*, and
+ H* as functions of potential and pH on the RHE scale are
+ computed as
+the electronically GCE-DFT formalism using the surface-
+jellium model (SJM) as implemented in GPAW.70−72 The ads(URHE) = (3nOOH + 2nO + nOH nH)
+electrode potential is controlled by using the SJM72 approach ÅÄÅ 1 ÑÉÑ
+in which the number of electrons is adjusted iteratively until × ÅÅÅÅ URHE ÑÑÑÑ + surf (2nOOH + nO + nOH)
+the absolute electrode potential (Fermi level) converges to its ÅÇ 2 H2 ÑÖ
+preset value. As derived and discussed in the Supporting × H 2O Au (2)
+Information, the absolute potential is related to the desired
+standard hydrogen electrode (SHE) potential by aligning the Here, ΔΩads(URHE) is the explicitly potential-dependent grand
+Fermi level with the absolute vacuum level, using −4.44 eV as free energy of adsorption at the applied potential on the RHE
+the absolute SHE reference.73 In this work, we report the scale (URHE), surf is the electrochemical potential, i.e., the
+potentials on the reversible hydrogen electrode (RHE) scale as grand free energy, of the surface with the adsorbed species at a
+it removes the constant, Nernstian pH shift from the electrode constant potential, H is the chemical potential of molecular
+potentials68 and thereby facilitates the comparison of electrode 2
+
+potential and pH effects on coverages, voltammetry, and the hydrogen, H O is the chemical potential of water, Au is the
+ 2
+potentials of zero charge. The conversion to URHE and the electrochemical potential, i.e., the grand free energy, of the
+description of pH effects is achieved through the relation bare gold surface, and nx presents the number of adsorbed
+ URHE = USHE + 2.303kBT ·pH OOH*, OH*, O*, and H* species. The considered adsorbates
+ (1)
+ were selected based on their direct involvement in oxygen
+ The Kohn−Sham equations were solved on a real-space grid electrochemistry, and H2O was excluded due to its low
+with a grid spacing of 0.18 Å. Exchange and correlation effects adsorption energy on the considered Au surfaces under the
+were described with the Perdew−Burke−Ernzerhof (PBE) studied conditions82,83 The procedure for computing the grand
+functional74 with the Tkatchenko and Scheffler (TS09) adsorption energies from GCE-DFT calculations is also
+dispersion correction.75,76 To incorporate solvent effects, the visualized in Figure S2.
+continuum solvent model for water as implemented in GPAW We note that while eq 2 used for computing the adsorption
+was employed.77 A cavity radius of 2.0 Å was used for Au grand free energies appears similar to the computational
+ 2341 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+Figure 1. An overview of Au(100) (top) and Au(111) (bottom) surface coverage as a function of potential. The extent of surface displacement
+relative to the bare surface is also shown.
+
+hydrogen electrode (CHE) method,84 there is a key difference: DFT methods because the electrostatic potential that
+in GCE-DFT, the grand free energies (Ω or i ) of each surface determines the reference scale for the absolute potential in
+state depends explicitly and uniquely on the electrode potential GCE-DFT is not unique in charged periodic systems, which
+and surface configuration/coverage. The stoichiometric prevents the establishment of a unique value for the electrode
+coefficients in the equation have the same meaning as in the potential.95 Therefore, we used the implicit CHE method to
+CHE and simply account for the number of electrons and compute the formation free energy of the bulk gold oxides
+protons exchanged between the electron reservoir (electrode) from the Au(111) and Au(100) surfaces as a function of
+and the hydrogen reservoir (H2O). Note that we use solvated potential.84 The CHE model is expected to provide a valid
+H2O and H2 as references as they are significantly less prone to description of bulk oxides that remain charge neutral and
+DFT errors than, e.g., O285−89 and compute all reaction/ unpolarized under varying electrode potential conditions. The
+adsorption grand free energies against this reference. This reaction equation for the bulk oxidation from a gold surface is
+choice is also convenient, as it leads to the formation of H2, given by
+which allows facile presentation of the electrode potential on x × Au(surf) + y × H 2O AuxOy (bulk) + y × H 2
+the SHE or RHE rather than on the absolute electrode
+potential scale as shown in the Supporting Information. (3)
+ It is important to note that the inherent uncertainty in When normalized by the number of Au atoms, the formation
+adsorption energy calculations from DFT is approximately energy on the RHE scale is given by
+±0.2 eV, corresponding to an error of ±0.2 V in the predicted
+adsorption potentials86,90 (see also the discussion in the G(URHE)
+ = G bulk + y × (G H2 2 × URHE)
+Supporting Information). Furthermore, we have neglected the nAu
+explicit solvent and electrolyte ion effects, which may
+ x × G(surf) y × G(H 2O) (4)
+contribute to the accuracy of our results, especially when the
+surface charge is high. However, our previous study has shown where x and y are the stoichiometric coefficients. Further
+that the used computational procedure describes potential- details regarding the CHE-DFT calculations are provided in
+dependent surface coverage of Pt(111) under ORR conditions the Supporting Information.
+in excellent agreement with experiments and that the neglect of Simulated Linear Sweep Voltammetry. Potential-
+solvent and cation effects leads to an ∼±0.05 V error in the dependent adsorption energies were used to compute
+OH adsorption potential.6 Another limitation of the used thermodynamic linear sweep voltammograms (LSVs) via the
+computational approach is its limited ability to capture following equation:6
+potential-induced surface restructuring phenomena such as
+add-atom formation or global restructuring such as the Q Q U
+ jads = = · · = Cads· ·
+herringbone pattern formation91,92 of the Au(111) or t U t U (5)
+Au(100) surface reconstruction from a hexagonal structure where jads, Q, ΔCads, θ, U, t, and ν are the adsorption current
+to a 1 × 1 structure.38 Capturing such effects would require density, the total charge passed, the charge associated with
+using larger unit cells as well as combining computationally adsorption/desorption of a species (e.g., −1 for O, OH, and
+expensive state-of-the-art global structure search methods93,94 OOH adsorption), surface coverage, applied potential, time,
+with the performed OOH/OH/O coverage sampling, which is and the sweep rate, respectively. The potential-dependent
+currently computationally intractable at the GCE-DFT level of surface coverages were directly computed using GCE-DFT,
+theory. and a smooth, continuous spline fit was made on the
+ Bulk Oxidation Free Energies. We also considered the discontinuous surface coverage to facilitate the computation
+electrochemical properties of the gold surfaces to bulk oxides.
+The formation thermodynamics of bulk structures cannot be of the term in eq 5. The surface coverage is discontinuous
+ U
+computed explicitly as a function of the potential using GCE- due to the use of a rather small simulation cell. Further details
+ 2342 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+Figure 2. Computed adsorption grand free energies for (left) Au(100) and (right) Au(111) surfaces. The solid lines in different colors represent
+varying coverages of H, OH, O, and OOH as a function of electrode potential.
+
+Figure 3. Top: Coverages (θ) as a function of potential. There are 9 surface atoms so, e.g., a 3OH coverage corresponds to 1/3 monolayer (ML)
+coverage. The dots are the GCE-DFT computed coverages; the line is a spline fit. Bottom: Thermodynamic linear-sweep voltammograms for
+surface oxidation.
+
+on the computational procedure are provided in the Adsorption as a Function of Potential and pH. We
+Supporting Information. Note that our GCE-DFT simulations systematically investigated the adsorption of different oxide
+address adsorption and surface coverage as a function of species (H*, OH*, O*, and OOH*) and their combinations
+potential and pH. This means that the simulated LSVs are on the Au(111) and Au(100) surfaces as a function of
+purely thermodynamic, and therefore, they cannot replicate the potential under various pH conditions. Figure S1 shows the
+voltammetric peaks due to surface reactions (kinetics were not atomic structures of bare Au(111) and Au(100) slabs with
+studied) or capacitive baseline of experimental scans (due to adsorbates from both top and side views. An overview of the
+inherent limitations of the solvent model). For these reasons, most stable structures within a potential range of 0−2 VRHE is
+the simulated current densities do not quantitatively match given in Figure 1, and the computed adsorption grand free
+experiments, but peak positions due to adsorption and surface energies of all relevant surface coverages as a function of VRHE
+oxidation are captured. are depicted in Figure 2. Below, we discuss the surface
+
+■ RESULTS AND DISCUSSION
+Here, we present the thermodynamic surface phase diagrams
+ coverages separately for the ORR and the OER or the gold
+ oxidation regions.
+ Surface Structure in the ORR Region. Figures 1 and 2
+of Au(111) and Au(100) as functions of potential and pH as show that under potentials below 1.23 VRHE only a few surface
+obtained through GCE-DFT simulations. As our results show structures are thermodynamically stable. In the potential range
+that the electrode potential effects are more prominent, we first of 0.0−0.6 VRHE, the gold surfaces are free of adsorbates while
+focus on the influence of the electrode potential on the hydrogen adsorption is observed at potentials below 0 VRHE
+adsorption energies, surface phase diagrams, and main (Figure S9). As a general trend, we observe that, as the
+adsorption phenomena at a fixed pH of 13. This is followed potential is increased into the ORR region (0.6−1.23 VRHE),
+by a discussion on how the pH and potential together OH adsorption occurs on both Au(100) and Au(111) surfaces,
+influence the surface chemistry of Au(111) and Au(100). as shown in Figure 1. This indicates that, under ORR
+ 2343 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+Figure 4. Coverages (θ) and thermodynamic linear-sweep voltammograms for surface oxidation as a function of potential and pH for Au(100)
+(left) and Au(111) (right) . There are 9 surface atoms so, e.g., a 3OH coverage corresponds to 1/3 monolayer (ML) coverage.
+
+conditions, gold surfaces become increasingly covered by around 0.6 and 0.9 V vs RHE have been reported.99 According
+varying amounts of OH species. to our results in Figures 3 and 4, these adsorption peaks
+ A more careful inspection shows differences between the correspond to the formation of 4/9 OH* coverage and the
+Au(100) and Au(111) coverages. The surface phase diagram of mixed OH*+O* coverage. On Au(100), the main OH*
+Au(100) is rather simple. In the ORR region, i.e., potentials adsorption occurs around 0.5 V vs RHE for Au(100),98 which
+between 0.6 and 1.1 VRHE Au(100) have a moderate OH we attribute to the formation of 1/3 ML OH* coverage.
+coverage between 1/3 and 2/3 monolayers (ML). At higher Overall, the experimental OH* adsorption potentials agree
+potentials between 1.1 and 1.4 VRHE, an even higher OH well with the OH* adsorption potentials identified in our
+coverage of 8/9 is observed. The surface coverage of Au(111) simulations as the computed adsorption transition potentials
+is slightly more complex. Similar to Au(100), in the ORR fall within ∼0.2 V of the experimental features, which is within
+region, Au(111) is also covered with moderate OH coverage the expected accuracy of DFT-based adsorption energetics
+between 4/9 and 6/9 monolayers. However, around 1.0 VRHE, (Supporting Information).
+a mixed OH+O phase is observed before the surface is oxidized We also investigated the combined effect of pH and
+around 1.4 VRHE, as also observed experimentally.29,38 These electrode potential on surface coverages. The results in Figure
+findings highlight that in the ORR region both Au(100) and 4 show that for Au(100) increases the pH shifts the OH
+Au(111) have a moderate OH coverage, which will likely adsorption peaks between ∼0.5 and 1.2 VRHE to lower
+influence the surface properties and reactivity under ORR potentials while the main oxidation peak above 1.2 VRHE is
+conditions. shifted to higher potentials. This shows that Au(100) in
+ To facilitate the comparison of our simulations with alkaline pH facilitates OH adsorption and prevents oxidation.
+experiments, Figures 3 and 4 show the thermodynamic linear In alkaline conditions, also, a higher OH coverage is reached
+sweep voltammograms corresponding to the thermodynamic than in acidic conditions as seen also experimentally.100 Similar
+adsorption processes at the Au(100) and Au(111) surfaces at trends are observed also for the Au(111) surface, as shown in
+pH 13. On Au(100), the main OH* is around 0.5 VRHE, while Figure 4: the OH adsorption peaks move to higher potentials
+smaller peaks at 0.65 and 0.85 VRHE corresponding to as the pH is decreased, while the opposite is observed for O
+moderate OH adsorption are observed in the ORR region. adsorption. Overall, the observed pH dependencies on the
+Au(111) displays two main peaks at around 1.1 and 0.6 VRHE, surface coverage are rather small, but the pH effects are slightly
+which correspond to mixed OH/O adsorption and moderate stronger for Au(111) than for Au(100).
+coverage OH adsorption, respectively. In the ORR region, both Figure 4 shows that the surface coverage of Au(111)
+Au(100) and Au(111) have moderate, 4/9−6/9 monolayer depends more sensitively on the pH than that of Au(100). In
+OH coverage, and surface structures containing OOH* are not general, lowering the pH increases the OH and O adsorption
+among the most thermodynamically stable species on either potentials on both surfaces. However, in the ORR region, i.e.,
+surface. around 0.8 VRHE, Au(100) has 4/9 monolayer (4OH) coverage
+ By comparing the peak positions in the computed and of OH at all pH values. In contrast, Au(111) exhibits distinct
+experimentally measured LSVs, we can understand the surface pH-dependent behavior. At a fixed potential of approximately
+coverage under the ORR conditions. Although many 0.8 VRHE, the surface coverage at pH = 1 consists of a lower
+experimental CVs of Au(111) and Au(100) appear featureless OH adsorption, forming a 4/9 monolayer (4OH). However,
+between 0 and 1 V vs RHE and only show the significantly with increasing pH, the OH coverage increases to a 5/9
+high oxide formation peak around 1.4 V vs RHE,29,38 the monolayer (5OH). This suggests that Au(111) demonstrates
+smaller current densities related to OH adsorption96 between greater resistance towards surface oxide formation in acidic
+0.5 and 0.9 V vs RHE are clearly visible when a proper conditions compared to alkaline environments, a trend that is
+magnification of the relevant potential region is provided.97,98 also evident from the LSV results presented in Figures 3 and 4.
+For Au(111), either clear OH* peaks at ∼0.7−0.9 V vs RHE97 Interestingly and in contrast to previous studies17,30,39,101
+or two broad features attributed to OH* adsorption centered that emphasize the role of a stable OOH* in controlling the
+ 2344 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+4e-ORR on selectivity, we find that structures containing negatively charged. It is important to note that, although
+OOH* are never among the most stable adsorption previous studies have suggested that the ORR on Au occurs at
+configurations. Instead, our calculations show that, while potentials positive relative to the PZC,23,38 our findings
+OOH* adsorption is exergonic and therefore thermodynami- indicate that this is not the case for the relevant stable surface
+cally possible at potentials above ∼1 V vs RHE (magenta lines coverage within the ORR potential region. These findings
+in Figure 2), the adsorption of O* and OH* is always more highlight the critical role of surface coverage in modulating the
+exergonic than that of OOH*; therefore, coverages of O*/ PZC, surface charge, and thereby the electrostatic properties of
+OH* are thermodynamically more stable than those of the electrochemical interfaces, such as the local electric field
+adsorbed OOH*. and likely their electrocatalytic behavior.
+ While our results on the unstable nature of OOH* with To quantify the surface charge as a function of potential and
+respect to OH* are in line with the enhanced sampling coverage, we compared the surface charge densities of the
+simulations of ORR on Au(100),41 we manually changed the Au(111) and Au(100) surfaces. The data in Table 1 indicate
+adsorption energy of OOH* in the coverage simulations at an
+ORR-relevant potential of 0.9 VRHE across varying pH Table 1. Surface Charge Density for the Au(100) and
+conditions to check that this result is not an artifact of our Au(111) Surfaces at a Potential of 1.07 (and 0.77) VRHE at
+simulation setup. For Au(100), substantial corrections to the pH = 13 for the Bare and the Most Stable Surface Structures
+DFT-calculated adsorption energies were necessary to observe in the ORR Region
+any OOH-containing structure at 0.9 VRHE: the OOH
+ Au(100) μC/cm2 Au(111) μC/cm2
+adsorption energy needed to be modified by −0.43 eV,
+−0.41 eV, and −0.40 eV at pH 1, 7, and 13, respectively, to bare −1.44 (−6.31) bare −3.45 (−7.40)
+make any OOH*-containing surface structure appear among 3OH −4.76 (−9.15) 3OH −17.78 (−21.79)
+the most stable coverages. On the Au(111) surface, slightly 4OH −6.31 (−10.78) 5OH −28.69 (−32.86)
+smaller modifications to the DFT adsorption energy were 6OH −12.63 (−17.50) 6OH+2O −24.67 (−30.75)
+sufficient to observe OOH* among the most stable structures
+and corrections of −0.26 eV, −0.28 eV, and −0.30 eV were that Au(111) is more negatively charged than Au(100) under
+needed for pH 1, 7, and 13, respectively. As discussed in detail the same electrode potential conditions and that the higher
+in the Supporting Information, the correction needed to make hydroxyl coverage leads to a more negative surface charge.
+any OOH*-containing structure appear among the thermody- This is an important finding because the recent work by
+namically most stable configurations is significantly larger than Bender et al.21 shows that cation effects on alkaline ORR are
+the gas-phase or inherent DFT errors in adsorption more pronounced on surfaces whose PZC is more positive
+energies,86,90 and therefore, the conclusion that OOH* is than the ORR potential. In particular, the higher electric field
+not among the most stable species is not an artifact caused by resulting from the more negative surface charge promotes
+limitations of the computational model. It is also important to cation adsorption at the interface, which may result in surface
+notice (1) that Au(111) requires weaker OOH* stabilization poisoning, lower interfacial O2 concentration,21 and thereby
+than Au(100) and (2) that the correction is pH independent slow the ORR kinetics of Au(111) as compared to Au(100).
+even though stabilization of OOH* under alkaline conditions This enhanced cation adsorption may contribute to the higher
+has often been used to explain Au(100)’s 4e-ORR ORR activity observed for Au(100) relative to Au(111) in
+selectivity.17,30,39,101 These tests strongly indicate that even alkaline conditions and its preference for the 4e− reduction
+very strong stabilization of the OOH* by water, ion, or dipole- pathway as suggested for the alkaline ORR on Pt(111).6 In
+field interactions are unlikely to render any OOH*-containing general, it is expected that variations in the surface coverage
+coverage to be among the thermodynamically most stable impact both the PZC and surface charge with a significant
+surface structures under ORR conditions; this in turn influence on the properties of the electrochemical interfaces
+questions the role of a stable OOH* species in controlling and the selectivity and activity toward the ORR and other
+the ORR selectivity. electrocatalytic processes.
+ To gain insight into surface coverage effects on the The PZC of Au(100) and Au(111) surfaces are also strongly
+interfacial properties of Au(111) and Au(100) under ORR influenced by the coverage and the pH on the RHE scale, as
+potentials, we analyzed the potential of zero charge (PZC) for summarized in Table 2. As a general trend, we observe that
+the most stable structures at different SHE potentials, as increasing the pH and the OH coverage shifts the PZC toward
+presented in Table 2 and Figure S3. The bare Au(111) surface higher potentials and that Au(111) has a higher PZC than
+exhibits a higher PZC than Au(100), which indicates that Au(100) under the same conditions. The most striking
+Au(111) tends to become more negatively charged at the same observation is that under acidic conditions the PZC of
+applied potential below PZC. As discussed in the Supporting Au(100) is below the ORR region of 0.6−1.0 VRHE for all
+Information, the calculated PZC values for bare Au(100) and structures but the 2/3 ML OH coverage; this means that the
+Au(111) achieve good agreement with previous computational most stable surface structures of Au(100), i.e., the 3 and 4 OH
+studies but overestimate the experimental PZCs by ∼0.2 V. coverage (Figure 4), are positively charged under acidic ORR
+ The OH adsorption and higher OH coverage move the PZC conditions. This observation aligns with a previous report
+to higher potentials on both Au(100) and Au(111). This shift suggesting that ORR on gold occurs at potentials more positive
+is attributed to the strong electron-withdrawing nature of OH than the PZC in acidic conditions.38 In contrast, under neutral
+species, which increases the work function of the surface and and alkaline conditions, the ORR generally takes place at
+consequently moves the PZC toward more oxidative potentials negative relative to the PZC on both Au(111) and
+potentials. The increase in PZC with OH coverage is more Au(100). While the O2 dissociation barrier does not depend
+pronounced for Au(111) than for Au(100), emphasizing that on the surface charge,37 O2 adsorption is significantly stronger
+at the same potentials below the PZC, Au(111) is more on negatively charged surfaces.16,37 Our previous studies of
+ 2345 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+Table 2. PZC of Au(100) and Au(111) Surfaces as a Function of pH for the Bare and the Most Stable Surface Structures in the
+ORR Region
+ U(SHE)/PZC U(RHE)/pH = 1 U(RHE)/pH = 7 U(RHE)/pH = 13
+Au(100)
+ bare 0.48 0.54 0.89 1.25
+ 3OH 0.61 0.67 1.02 1.38
+ 4OH 0.68 0.73 1.09 1.44
+ 6OH 1.00 1.05 1.41 1.76
+Au(111)
+ bare 0.64 0.69 1.05 1.40
+ 3OH 0.83 0.89 1.24 1.60
+ 5OH 1.84 1.90 2.26 2.61
+ 6OH+2O 1.08 1.14 1.49 1.85
+
+alkaline ORR on Pt(111) further show that the ORR kinetics similar effect. At pH = 1 and 7, the mixed 6OH + 2O coverage
+become faster under more reducing potentials and on more is the most stable Au(111) coverage. This coverage also shows
+negatively charged surfaces.6 We therefore expect that the pH- clear signatures of place exchange, and a Au atom is lifted from
+and coverage-dependent surface charge is a key factor in the lattice by 2OH and 2O groups. While the geometry of the
+controlling the ORR thermodynamics and kinetics. place-exchange structures depends only slightly on the pH
+ Gold Oxidation in the OER Region. In order to further values (Figures 1, S4, and S5), it is important to note that
+understand the surface oxidation process and its connection under acidic conditions the mixed OH+O coverage is observed
+with surface degradation and the OER, we also present a at much lower potentials than at neutral or alkaline conditions.
+comprehensive structural analysis of the oxidation of Au(111) We therefore propose that the lower potential to form the
+and Au(100) electrodes. In particular, the GCE-DFT results mixed OH+O coverage is the underlying reason anodic
+allow us to study the potential-dependent surface coverage, (oxidative) dissolution is more prevalent under acidic than
+structure, and their influence on surface extraction and place- alkaline conditions.58,61
+exchange mechanisms, which have been suggested to control The above results raise the question of whether the initial
+the initial stages of gold oxidation and dissolution as well as surface dissolution is driven by the surface coverage or the
+their OER activity.58 electrode potential. This was studied by Fuchs et al.26 for
+ The simulated LSVs and surface coverage presented in Pt(111) who demonstrated that its dissolution is primarily
+Figures 3 and 4 between 0.8 and ∼1.2 VRHE show both governed by electrode potential rather than oxygen coverage.
+Au(100) and Au(111) have a moderate OH coverage at pH = On gold, we observe signatures of both effects. On Au(111),
+13. The geometries in Figure 1 show that, when the surfaces the place exchange is highly dependent on surface coverage but
+have moderate 2/3 ML coverage of OH species, no surface less sensitive towards the electrode potential while on Au(100)
+extraction or place exchange is observed, and between 0.8 and the lifting of gold atoms is predominantly influenced by the
+1.2 VRHE, both Au(100) and Au(111) are expected to be stable applied potential as shown in Figures 1 and S5. The finding for
+towards degradation despite the OH coverage. This is also in Au(111) suggests that when a mixed OH+O has become
+agreement with dissolution experiments.58,61,62 Our results also stable on the Au(111) surface at an oxidizing potential, this
+partly agree with previous computational results obtained using structure remains stable when the potential is made more
+the simplified CHE model, which show that Au has a moderate reductive and, thereby, serves as an initiator for reductive gold
+OH coverage between 1.05 and 1.17 VRHE. However, our dissolution. This mechanism may explain the experimental
+results predict a much higher OH coverage at lower potentials observations where the initial oxidation of the gold surface
+while the previous study predicted that the Au surface is not followed by reduction leads to cathodic dissolution especially
+covered by any adsorbates at potentials below 1.05 VRHE.57 under alkaline conditions when the oxidative potential has
+The differences are likely due to the non-Nernstian effects67 exceeded ∼1.2 VRHE;58 this potential agrees excellently with
+arising from the explicit potential dependency of adsorption the potential value we find for the formation of the Au(111)-
+energies in our GCE-DFT simulations. 5OH+2O surface structure.
+ At higher potentials between 1.2 and 1.4 VRHE, Au(100) To further validate that surface coverage, rather than
+develops a high 8/9 ML OH coverage, while Au(111) has a electrode potential, governs the place-exchange process on
+mixed OH+O coverage. Figure 1 shows that, under these Au(111), we conducted structural optimizations in which an
+conditions, both surfaces start to exhibit initial signatures of oxygen atom was replaced with an extracted gold atom at a
+instability. For instance, at 1.37 VRHE, the 8/9 ML OH potential of 1.37 VRHE (Figure S6). Subsequent re-optimization
+coverage of Au(100) leads to a significant lifting (0.48 Å) of a was performed to determine the most stable configuration.
+Au atom coordinated to 2OH groups and may serve as the Notably, as shown in Figure S6, after re-optimization, the gold
+initial stage for surface extraction of a gold atom. On the other atom did not undergo further displacement, and the oxygen
+hand, the mixed 5OH+2O coverage of Au(111) coordinated to atom reverted to its original position. We also reoptimized the
+2OH and 2O groups leads to clear signatures of place exchange place-exchange geometry where the oxygen atom has replaced
+between 1.2 and 1.4 VRHE at pH = 13. Figure 1 shows that the the Au atom in the lattice at more and less oxidizing potentials,
+adsorbed O atoms pull a gold atom from its lattice and make it but the oxygen atom always moved away from the gold site and
+susceptible to dissolution. These findings strongly suggest that closer to the surface without further displacement of gold
+the adsorbed O atoms are important in the place-exchange and atoms (Figure S7). This observation suggests that place
+initial stages of dissolution, while OH groups do not have a exchange is primarily dictated and stabilized by surface
+ 2346 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+Figure 5. Formation free energy of bulk gold oxides from Au(100) and Au(111) as a function of potential on the RHE scale.
+
+Figure 6. A schematic overview of the surface chemistry of Au(111) and Au(100) surfaces under ORR and OER conditions as a function of
+electrode potential.
+
+coverage rather than potential on Au(111) or that larger important in the Au-catalyzed OER as well as the dissolution of
+structural changes, such as the extraction of multiple Au atoms, Au(100). Unlike Au(100), Au(111) does not exhibit more
+are needed for the potential-controlled mechanism to be pronounced place-exchange behavior as the potential increases
+operational. Overall, these findings show how the surface from 1.4 to 2 VRHE and only a moderate increase in the surface
+coverage and potential may lead to mechanistic differences in concentration of OH and O species is observed instead. This
+the initial stages of Au(100) and Au(111) oxidation and suggests that Au(111) is more stable against surface oxidation
+dissolution. than Au(100).
+ At potentials above ∼1.4 VRHE both Au(100) and Au(111) The high oxygen coverage on Au(100) and the place-
+surfaces become oxidized as shown in Figures 1−3. Between exchange observed above 1.6 VRHE prompted us to consider
+1.4 and 1.6 VRHE, the Au(100) surface exhibits the same OH the formation of bulk gold oxides or oxide films. Both scenarios
+coverage (8OH) as observed in the 1.2−1.4 VRHE range; are consistent with the place exchange acting as a precursor to
+however, at the higher potentials, the topmost gold atoms are the development of bulk-like oxides. To explore this
+pulled up more from their lattice sites. At even higher hypothesis, we employ the CHE approach to evaluate the
+potentials between 1.6 and 2.0 VRHE, Au(100) develops a high thermodynamics of oxidizing Au(111) and Au(100) to bulk
+oxygen coverage (8O) and a pronounced place-exchange Au2O3 and Au2O under the OER-relevant conditions. Because
+behavior is observed as gold and oxygen atoms swap places and previous studies57,58 indicate that metallic gold is oxidized to
+oxygen penetrates even into the subsurface region. This an AuIII oxidation state under OER conditions, Au2O3 and
+observation suggests that, under highly oxidizing conditions, Au2O were selected as representative gold oxides. However, it
+Au(100) forms complex surface oxides, which are likely is important to note that other gold oxides may also form
+ 2347 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+under these conditions, as suggested by Pourbaix diagrams.24 Au(100) has a high OH coverage, which leads to the lifting of
+As shown in Figure 5, both Au(100) and Au(111) surfaces Au from the surface. At even higher potentials above 1.6 VRHE,
+undergo bulk oxidation at potentials above 1.4 VRHE and both the entire Au(100) is covered by O adsorbates, which also
+surfaces transform to Au2O3. Under even more reducing penetrate the Au surface through a place-exchange mechanism;
+conditions, Au2O is formed at around 1.7 VRHE. These findings the resulting highly rugged structure is expected to be highly
+indicate that, deep in the OER region, either bulk oxide or susceptible to dissolution. Above 1.4 V RHE , Au(111)
+thick oxide layers can form in addition to near-surface oxides. accumulates a modest coverage of OH and a small coverage
+Furthermore, it is expected that the OER is catalyzed by of O adsorbates, which leads to lifting of the gold atoms
+surface oxides, bulk-like gold oxides, or possibly both, rather through a place-exchange-like mechanism.
+than by metallic gold. This is consistent with previously At potentials above 1.4 VRHE, both surfaces can transform to
+reported experimental observations for gold-based catalysts.57 a bulk Au2O3 oxide, which marks the onset of the OER and
+ Overview of Gold Electrodes under ORR and OER electrochemical degradation. As Au dissolution is observed to
+Conditions. Our results on the surface chemistry of Au(111) start at ∼1.5 VRHE,57,58,60,61 the dissolution is very likely driven
+and Au(100) under ORR and OER conditions are summarized by the formation of surface and bulk oxides. As gold becomes
+in Figure 6. This figure shows that the potential-dependent OER active at ∼2.0 VRHE, the actual catalytically active gold
+surface chemistry of gold is governed by a complex sequence of species are most likely the bulk and surface oxides, which
+varying adsorption processes, place-exchange, bulk oxide catalyze OER through a lattice oxygen or oxide decomposition
+formation, OER, and dissolution. mechanism.57,58
+ At low potentials between 0.0 and 0.4 VRHE, both Au(111)
+and Au(100) surfaces are either pristine (“empty”) or have a
+small hydrogen coverage. In the ORR region, ∼0.6−1.1 VRHE,
+ ■ CONCLUSIONS
+ In this work, we have used explicitly potential-dependent grand
+both facets have a modest coverage of OH species. The canonical DFT simulations to systematically explore the
+adsorbed OH is expected to play a key role in the ORR activity surface chemistry of Au(111) and Au(100) electrodes under
+and selectivity because it (1) can block ORR active sites, (2) the ORR and the OER conditions. Our primary goals were to
+can act as a hydrogen (bond) donor or acceptor, and (3) resolve how the surface coverage and electrode properties
+controls the potential of zero charge and thereby the surface depend on the electrode potential and pH and to use this
+charge. Notably, OOH* is not among the thermodynamically understanding as the first step toward understanding the
+most stable surface structures, which questions their role as the precise atomistic mechanisms of gold-catalyzed ORR and the
+underlying reason for the 4e-ORR activity of on Au(100). OER as well as electrode stability under oxidizing conditions.
+Overall, the surface phase diagrams of Au(111) and Au(100) We found that, under ORR conditions, both surfaces exhibit
+are very similar in the ORR region, and major differences are moderate, 1/3-2/3 ML OH* coverage. The pH and OH
+found only in the pH- and coverage-dependent PZC and coverage were found to significantly impact the surface charge
+surface charge, which are key factors in ORR.21 In general, the and the potential of zero charge of the surfaces, which makes
+higher pHs and coverages make the PZC more negative, and the electrodes negatively charged under the reaction
+under most conditions, the PZC is above the ORR potential. conditions. In agreement with the recent experiments by
+The only exception is the Au(100) surface under acidic Bender et. al.,21 we also expect that the surface charge will have
+conditions, for which the PZC is below the ORR potential a key role in defining the properties of the electrochemical Au
+range and the surface is positively charged under ORR interface and the differing activity and selectivity of Au(111)
+conditions. Because the O2 adsorption becomes stronger on and Au(100) electrodes towards the 2e− and 4e− ORR,
+more negatively charged surfaces16,37 and because ORR respectively. This proposition differs from previous explan-
+kinetics are faster on a more negatively charged surface,6 the ations where the field-induced stability of OOH* has been
+pH- and coverage-dependent PZC and surface charge are proposed as the underlying reason for Au(100)’s 4e−-ORR
+expected to control the activity and selectivity of ORR.21 As activity and selectivity; our results show that the OOH*
+both the surface charge and the OH coverage significantly intermediate is not among the thermodynamically most stable
+influence the surface and electrochemical properties of gold in adsorbates under ORR conditions, which indicates that
+the ORR region, they need to be explicitly considered in future previous 4e−-ORR mechanisms on Au(100) involving a highly
+experimental and computational studies. stable OOH* species may need to be revisited. Overall, our
+ As the electrode potential increases above 1.1−1.4 VRHE, the results underline the importance of OH coverage on the
+OH coverage saturates and mixed OH/O surface coverages are electrochemical properties of gold and Au-catalyzed ORR, and
+observed. These mixed coverages trigger surface restructuring, they highlight that the potential-dependent OH coverage
+and on Au(111), an initial place-exchange between O and Au needs to be carefully considered in computational and
+atoms of the two species is observed; this rugged structure is experimental studies.
+likely susceptible toward surface dissolution. The restructuring At higher electrode potentials of ∼1.1−1.6 VRHE, both
+and place-exchange of Au(111) occur under less oxidizing Au(111) and Au(100) surfaces undergo significant surface
+potentials under alkaline conditions due to the earlier onset of oxidation and structural deformation. At these potentials, both
+mixed OH/O phases at lower potentials. On Au(100), the surfaces have either a high OH or a mixed OH+O coverage,
+surface degradation is mainly driven by Au extraction or lifting. which leads to the lifting of Au atoms from the surface. We
+Our results also imply that the Au(111) restructuring and propose that the experimentally observed initiation of gold
+possible dissolution are driven mostly by the surface coverage dissolution in this potential range results from the formation of
+while the same processes on Au(100) are more sensitive these rugged OH+O surfaces. At potentials above 1.6 VRHE,
+toward the electrode potential. both surfaces are predicted to form bulk-like oxide phases
+ At potentials above 1.4 VRHE, both surfaces can undergo (Au2O3) and/or surface oxides. The formation of these oxides
+both surface and bulk oxidation. Between 1.4 and 1.6 VRHE, coincides with the onset of the OER activity but pronounced
+ 2348 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+gold dissolution. These findings suggest that gold’s OER (2) Jiao, K.; Xuan, J.; Du, Q.; Bao, Z.; Xie, B.; Wang, B.; Zhao, Y.;
+activity and dissolution are due to the formation of surface and Fan, L.; Wang, H.; Hou, Z. others Designing the next generation of
+bulk oxides. proton-exchange membrane fuel cells. Nature 2021, 595, 361−369.
+ Overall, building upon detailed atomistic modeling and (3) Yang, Y.; Peltier, C. R.; Zeng, R.; Schimmenti, R.; Li, Q.; Huang,
+ X.; Yan, Z.; Potsi, G.; Selhorst, R.; Lu, X.; et al. Electrocatalysis in
+potential-dependent simulations, our study establishes a
+ alkaline media and alkaline membrane-based energy technologies.
+comprehensive framework that links surface coverage, Chem. Rev. 2022, 122, 6117−6321.
+electrode potential, and pH with the structural evolution and (4) Ramaswamy, N.; Mukerjee, S. Alkaline anion-exchange
+electrochemical response of gold electrodes. This integrated membrane fuel cells: challenges in electrocatalysis and interfacial
+understanding sheds light on the nuanced surface chemistry of charge transfer. Chem. Rev. 2019, 119, 11945−11979.
+gold electrodes under conditions relevant to oxygen reduction (5) Katsounaros, I.; Cherevko, S.; Zeradjanin, A. R.; Mayrhofer, K. J.
+and evolution reactions (ORR/OER) as well as the onset of J. Oxygen Electrochemistry as a Cornerstone for Sustainable Energy
+gold oxidation and dissolution. Conversion. Angew. Chem., Int. Ed. 2014, 53, 102−121.
+ (6) Kumeda, T.; Laverdure, L.; Honkala, K.; Melander, M. M.;
+
+■ ASSOCIATED CONTENT
+Data Availability Statement
+ Sakaushi, K. Cations determine the mechanism and selectivity of
+ alkaline oxygen reduction reaction on Pt (111). Angewandte Chemie
+ 2023, 135, No. e202312841.
+The structural data obtained in this study are openly available (7) Yasin, G.; Ali, S.; Ibraheem, S.; Kumar, A.; Tabish, M.; Mushtaq,
+at the University of Jyväskylä’s gitlab page: https://gitlab.jyu. M. A.; Ajmal, S.; Arif, M.; Khan, M. A.; Saad, A. others
+fi/mamimela/auoxidation. Simultaneously engineering the synergistic-effects and coordination-
+ environment of dual-single-atomic iron/cobalt-sites as a bifunctional
+*
+sı Supporting Information
+ oxygen electrocatalyst for rechargeable zinc-air batteries. ACS Catal.
+The Supporting Information is available free of charge at 2023, 13, 2313−2325.
+https://pubs.acs.org/doi/10.1021/acselectrochem.5c00202. (8) Chatenet, M.; Pollet, B. G.; Dekel, D. R.; Dionigi, F.; Deseure, J.;
+ Millet, P.; Braatz, R. D.; Bazant, M. Z.; Eikerling, M.; Staffell, I.;
+ Theory of grand-canonical ensemble DFT simulations, Balcombe, P.; Shao-Horn, Y.; Schäfer, H. Water electrolysis: from
+ O/OH/OOH/H adsorption thermodynamics, simulated textbook knowledge to the latest scientific strategies and industrial
+ voltammograms, additional results, computational hy- developments. Chem. Soc. Rev. 2022, 51, 4583−4762.
+ drogen electrode DFT (CHE-DFT) simulations, hydro- (9) Luo, M.; Sun, W.; Xu, B. B.; Pan, H.; Jiang, Y. Interface
+ gen coverage, discussion on the computed accuracy of engineering of air electrocatalysts for rechargeable zinc−air batteries.
+ PZC values and comparison with experiments, and Adv. Energy Mater. 2021, 11, 2002762.
+ discussion on the accuracy of DFT-computed adsorp- (10) Wang, L.; Holewinski, A.; Wang, C. Prospects of platinum-
+ tion energies (PDF) based nanostructures for the electrocatalytic reduction of oxygen. ACS
+ Catal. 2018, 8, 9388−9398.
+
+■ AUTHOR INFORMATION
+Corresponding Author
+ (11) Greeley, J.; Stephens, I.; Bondarenko, A.; Johansson, T. P.;
+ Hansen, H. A.; Jaramillo, T.; Rossmeisl, J.; Chorkendorff, I.; Nørskov,
+ J. K. Alloys of platinum and early transition metals as oxygen
+ reduction electrocatalysts. Nature Chem. 2009, 1, 552−556.
+ Marko M. Melander − Department of Chemistry, Nanoscience (12) Huang, L.; Zaman, S.; Tian, X.; Wang, Z.; Fang, W.; Xia, B. Y.
+ Center, University of Jyväskylä, FI-40014 Jyväskylä, Finland; Advanced platinum-based oxygen reduction electrocatalysts for fuel
+ orcid.org/0000-0001-7111-1603; cells. Accounts of chemical research 2021, 54, 311−322.
+ Email: marko.m.melander@jyu.fi (13) Zhao, L.; Yan, R.; Mao, B.; Paul, R.; Duan, W.; Dai, L.; Hu, C.
+ Advanced Nanocarbons Toward two-Electron Oxygen Electrode
+Author Reactions for H2O2 Production and Integrated Energy Conversion.
+ Kayvan Moradi − Department of Chemistry, Nanoscience Small 2024, 20, 2403029.
+ Center, University of Jyväskylä, FI-40014 Jyväskylä, (14) Rodriguez, P.; Koper, M. T. Electrocatalysis on gold. Physical
+ Finland; orcid.org/0009-0009-1647-452X Chemistry Chemical Physics 2014, 16, 13583−13594.
+ (15) Mao, X.; Wang, L.; Li, Y. Understanding pH-Dependent
+Complete contact information is available at: Oxygen Reduction Reaction on Metal Alloy Catalysts. ACS Catal.
+https://pubs.acs.org/10.1021/acselectrochem.5c00202 2024, 14, 5429−5435.
+ (16) Dudzinski, A. M.; Diesen, E.; Heenen, H. H.; Bukas, V. J.;
+Notes Reuter, K. First step of the oxygen reduction reaction on Au (111): a
+The authors declare no competing financial interest. computational study of O2 adsorption at the electrified metal/water
+ interface. ACS Catal. 2023, 13, 12074−12081.
+
+■ ACKNOWLEDGMENTS
+The work was supported by the Academy of Finland through
+ (17) Duan, Z.; Henkelman, G. Theoretical resolution of the
+ exceptional oxygen reduction activity of Au (100) in alkaline media.
+ ACS Catal. 2019, 9, 5567−5573.
+project #338228. M.M.M. was also supported by the Central (18) Kulkarni, A.; Siahrostami, S.; Patel, A.; Nørskov, J. K.
+Finland Mobility Foundation, Cefmof. The computational Understanding catalytic activity trends in the oxygen reduction
+resources were provided by the CSC-IT Center for Science, reaction. Chem. Rev. 2018, 118, 2302−2312.
+Espoo, Finland (https://www.csc.fi/en/) and the FGCI− (19) Orellana, W.; Zuniga, C.; Gatica, A.; Ureta-Zanartu, M.-S.;
+Finnish Grid and Cloud Infrastructure. Zagal, J. H.; Tasca, F. Effect of electrolyte media on the catalysis of Fe
+ Phthalocyanine toward the oxygen reduction reaction: ab initio
+
+■ REFERENCES
+ (1) Moradi, K.; Ashrafi, M.; Salimi, A.; Melander, M. M. Hierarchical
+ molecular dynamics simulations and experimental analyses. ACS
+ Catal. 2022, 12, 12786−12799.
+ (20) Wang, L.; Tang, Z.; Yan, W.; Yang, H.; Wang, Q.; Chen, S.
+MoS2@NiFeCo-Mo(doped)-Layered Double Hydroxide Hetero- Porous Carbon-Supported Gold Nanoparticles for Oxygen Reduction
+structures as Efficient Alkaline Water Splitting (Photo)Electro- Reaction: Effects of Nanoparticle Size. ACS Appl. Mater. Interfaces
+catalysts. Small 2025, 21, 2409097. 2016, 8, 20635−20641.
+
+ 2349 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+ (21) Bender, J. T.; Sanspeur, R. Y.; Valles, A. E.; Uvodich, A. K.; (40) Vassilev, P.; Koper, M. T. Electrochemical reduction of oxygen
+Milliron, D. J.; Kitchin, J. R.; Resasco, J. The potential of zero total on gold surfaces: a density functional theory study of intermediates
+charge predicts cation effects for the oxygen reduction reaction. ACS and reaction paths. J. Phys. Chem. C 2007, 111, 2607−2613.
+Energy Lett. 2024, 9, 4724−4733. (41) Yang, X.; Bhowmik, A.; Vegge, T.; Hansen, H. A. Neural
+ (22) Melander, M. M. Grand Canonical Rate Theory for network potentials for accelerated metadynamics of oxygen reduction
+Electrochemical and Electrocatalytic Systems I: General Formulation kinetics at Au−water interfaces. Chem. Sci. 2023, 14, 3913−3922.
+and Proton-coupled Electron Transfer Reactions. J. Electrochem. Soc. (42) Li, Y.; Liu, B.-Y.; Chen, Y.; Liu, Z.-F. From 2e− to 4e−
+2020, 167, 116518. pathway in the alkaline oxygen reduction reaction on Au(100):
+ (23) Ignaczak, A.; Nazmutdinov, R.; Goduljan, A.; de Campos Pinto, Kinetic circumvention of the volcano curve. J. Chem. Phys. 2024, 160,
+L. M.; Juarez, F.; Quaino, P.; Belletti, G.; Santos, E.; Schmickler, W. 244705.
+Oxygen reduction in alkaline media�a discussion. Electrocatalysis (43) Domínguez-Flores, F.; Melander, M. M. Approximating
+2017, 8, 554−564. constant potential DFT with canonical DFT and electrostatic
+ (24) Pourbaix, M. Atlas of electrochemical equilibria in aqueous corrections. J. Chem. Phys. 2023, 158, 144701.
+solutions; NACE, 1966. (44) Nauman, J. A.; Suvlu, D.; Willard, A. P. Electric Fields at Solid-
+ (25) Kumeda, T.; Kondo, K.; Tanaka, S.; Sakata, O.; Hoshi, N.; Liquid Interfaces: Insights from Molecular Dynamics Simulation.
+Nakamura, M. Surface Extraction Process During Initial Oxidation of Annual Review of Physical Chemistry 2025, 76, 181−202.
+Pt (111): Effect of Hydrophilic/Hydrophobic Cations in Alkaline (45) Cherevko, S. Stability and dissolution of electrocatalysts:
+Media. J. Am. Chem. Soc. 2024, 146, 10312−10320. Building the bridge between model and “real world” systems. Current
+ (26) Fuchs, T.; Briega-Martos, V.; Fehrs, J. O.; Qiu, C.; Mirolo, M.; Opinion in Electrochemistry 2018, 8, 118−125.
+Yuan, C.; Cherevko, S.; Drnec, J.; Magnussen, O. M.; Harrington, D. (46) Meharban, F.; Lin, C.; Wu, X.; Tan, L.; Wang, H.; Hu, W.;
+A. Driving force of the initial step in electrochemical Pt (111) Zhou, D.; Li, X.; Luo, W. Scaling Up Stability: Navigating from Lab
+oxidation. J. Phys. Chem. Lett. 2023, 14, 3589−3593. Insights to Robust Oxygen Evolution Electrocatalysts for Industrial
+ (27) Duan, Z.; Henkelman, G. Atomic-scale mechanisms of Water Electrolysis. Adv. Energy Mater. 2024, 14, 2402886.
+electrochemical Pt dissolution. ACS Catal. 2021, 11, 14439−14447. (47) Kolle-Görgen, E.; Fortunato, G.; Ledendecker, M. Catalyst
+ (28) Fuchs, T.; Drnec, J.; Calle-Vallejo, F.; Stubb, N.; Sandbeck, D. Stability in Aqueous Electrochemistry. Chem. Mater. 2022, 34,
+J.; Ruge, M.; Cherevko, S.; Harrington, D. A.; Magnussen, O. M. 10223−10236.
+Structure dependency of the atomic-scale mechanisms of platinum (48) Ehlers, J. C.; Feidenhans’l, A. A.; Therkildsen, K. T.; Larrazábal,
+electro-oxidation and dissolution. Nature Catalysis 2020, 3, 754−761. G. O. Affordable Green Hydrogen from Alkaline Water Electrolysis:
+ (29) Strbac, S.; Adz̆ić, R. The influence of OH- chemisorption on Key Research Needs from an Industrial Perspective. ACS Energy Lett.
+the catalytic properties of gold single crystal surfaces for oxygen 2023, 8, 1502−1509.
+reduction in alkaline solutions. Journal of Electroanalytical Chemistry (49) Edgington, J.; Seitz, L. C. Advancing the Rigor and
+1996, 403, 169−181. Reproducibility of Electrocatalyst Stability Benchmarking and
+ (30) Lu, F.; Zhang, Y.; Liu, S.; Lu, D.; Su, D.; Liu, M.; Zhang, Y.; Intrinsic Material Degradation Analysis for Water Oxidation. ACS
+Liu, P.; Wang, J. X.; Adzic, R. R. others Surface proton transfer Catal. 2023, 13, 3379−3394.
+promotes four-electron oxygen reduction on gold nanocrystal surfaces (50) Ehelebe, K.; Escalera-López, D.; Cherevko, S. Limitations of
+in alkaline solution. J. Am. Chem. Soc. 2017, 139, 7310−7317. aqueous model systems in the stability assessment of electrocatalysts
+ (31) Kim, J.; Gewirth, A. A. Mechanism of oxygen electroreduction for oxygen reactions in fuel cell and electrolyzers. Current Opinion in
+on gold surfaces in basic media. J. Phys. Chem. B 2006, 110, 2565− Electrochemistry 2021, 29, 100832.
+2571. (51) Ouimet, R. J.; Glenn, J. R.; De Porcellinis, D.; Motz, A. R.;
+ (32) Diesen, E.; Dudzinski, A. M.; Reuter, K.; Bukas, V. J. Origin of Carmo, M.; Ayers, K. E. The Role of Electrocatalysts in the
+Electrocatalytic Selectivity during the Oxygen Reduction Reaction on Development of Gigawatt-Scale PEM Electrolyzers. ACS Catal. 2022,
+Au(111). ACS Catal. 2025, 15, 5403−5411. 12, 6159−6171.
+ (33) Dudzinski, A. M.; Diesen, E.; Reuter, K.; Bukas, V. J. Oxygen (52) Shih, A. J.; et al. Water electrolysis. Nature Reviews Methods
+Adsorption at the Electrochemical Metal/Water Interface: Au(111) vs Primers 2022, 2, 84.
+Pt(111). J. Phys. Chem. C 2024, 128, 20886−20894. (53) Binninger, T.; Moss, G. C.; Rajan, Z. S. H. S.; Mohamed, R.;
+ (34) Behjati, S.; Koper, M. T. M. Effect of Trace Amounts of Eikerling, M. H. How to Break the Activity-Stability Conundrum in
+Chloride on Roughening of Au(111) Single-Crystal Electrode Surface Oxygen Evolution Electrocatalysis: Mechanistic Insights. ChemCatCh-
+in Sulfuric Acid Solution during Oxidation−Reduction Cycles. ACS em. 2024, 16, No. e202400567.
+Electrochemistry 2025, 1, 1082. (54) Zeradjanin, A. R.; Lim, A.; Spanos, I.; Masa, J. What Limits
+ (35) Quaino, P.; Luque, N. B.; Nazmutdinov, R.; Santos, E.; Conquest of Stability Descriptors? − Intriguing Aspects of
+Schmickler, W. Why is gold such a good catalyst for oxygen reduction Dissolution of Oxygen Evolution Electrocatalysts. ChemElectroChem.
+in alkaline media? Angew. Chem. Int. Ed. Engl. 2012, 51 (52), 12997− 2024, 11, No. e202300832.
+13000. (55) Zeng, F.; Mebrahtu, C.; Liao, L.; Beine, A. K.; Palkovits, R.
+ (36) Ignaczak, A.; Santos, E.; Schmickler, W. Oxygen reduction Stability and deactivation of OER electrocatalysts: A review. J. Energy
+reaction on gold in alkaline solutions - The inner or outer sphere Chem. 2022, 69, 301−329.
+mechanisms in the light of recent achievements. Curr. Opin. (56) Wang, Q.; Cheng, Y.; Tao, H. B.; Liu, Y.; Ma, X.; Li, D.-S.;
+Electrochem. 2019, 14, 180−185. Yang, H. B.; Liu, B. Long-Term Stability Challenges and
+ (37) Li, Y.; Liu, B.-Y.; Chen, Y.; Liu, Z.-F. From 2e- to 4e- pathway Opportunities in Acidic Oxygen Evolution Electrocatalysis. Angew.
+in the alkaline oxygen reduction reaction on Au (100): Kinetic Chem., Int. Ed. 2023, 62, No. e202216645.
+circumvention of the volcano curve. J. Chem. Phys. 2024, 160, 244705. (57) Diaz-Morales, O.; Calle-Vallejo, F.; de Munck, C.; Koper, M. T.
+ (38) Mei, D.; He, Z. D.; Zheng, Y. L.; Jiang, D. C.; Chen, Y.-X. Electrochemical water splitting by gold: evidence for an oxide
+Mechanistic and kinetic implications on the ORR on a Au(100) decomposition mechanism. Chemical Science 2013, 4, 2334−2343.
+electrode: pH, temperature and H−D kinetic isotope effects. Phys. (58) Cherevko, S.; Zeradjanin, A. R.; Keeley, G. P.; Mayrhofer, K. J.
+Chem. Chem. Phys. 2014, 16, 13762−13773. J. A Comparative Study on Gold and Platinum Dissolution in Acidic
+ (39) Kelly, S. R.; Kirk, C.; Chan, K.; Nørskov, J. K. Electric field and Alkaline Media. J. Electrochem. Soc. 2014, 161, H822.
+effects in oxygen reduction kinetics: rationalizing pH dependence at (59) Stojanovski, K.; Briega-Martos, V.; Zlatar, M.; Göllner, C.;
+the Pt (111), Au (111), and Au (100) electrodes. J. Phys. Chem. C Cherevko, S. pH Dependence of Noble Metals Dissolution: Gold.
+2020, 124, 14581−14591. ChemElectroChem. 2024, 11, No. e202400373.
+
+ 2350 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+ (60) Pfisterer, J. H.; Nattino, F.; Zhumaev, U. E.; Breiner, M.; Feliu, constant ion and electrode potentials. J. Chem. Phys. 2019, 150,
+J. M.; Marzari, N.; Domke, K. F. Role of OH intermediates during the 041706.
+Au oxide electro-reduction at low pH elucidated by electrochemical (79) Davey, W. P. Precision Measurements of the Lattice Constants
+surface-enhanced raman spectroscopy and implicit solvent density of Twelve Common Metals. Phys. Rev. 1925, 25, 753−761.
+functional theory. ACS catalysis 2020, 10, 12716−12726. (80) Exner, K. S. Constrained Ab Initio Thermodynamics:
+ (61) Stojanovski, K.; Briega-Martos, V.; Zlatar, M.; Göllner, C.; Transferring the Concept of Surface Pourbaix Diagrams in Electro-
+Cherevko, S. pH Dependence of Noble Metals Dissolution: Gold. catalysis to Electrode Materials in Lithium-Ion Batteries. ChemElec-
+ChemElectroChem. 2024, 11, No. e202400373. troChem. 2017, 4, 3231−3237.
+ (62) Cherevko, S.; Topalov, A. A.; Zeradjanin, A. R.; Katsounaros, I.; (81) Hagopian, A.; Doublet, M.-L.; Filhol, J.-S.; Binninger, T.
+Mayrhofer, K. J. J. Gold dissolution: towards understanding of noble Advancement of the Homogeneous Background Method for the
+metal corrosion. RSC Adv. 2013, 3, 16516−16527. Computational Simulation of Electrochemical Interfaces. J. Chem.
+ (63) Stumm, C.; Grau, S.; Speck, F. D.; Hilpert, F.; Briega-Martos, Theory Comput. 2022, 18, 1883−1893.
+V.; Mayrhofer, K.; Cherevko, S.; Brummel, O.; Libuda, J. Reduction (82) Liu, R. Adsorption and dissociation of H2O on Au(111)
+of oxide layers on Au (111): the interplay between reduction rate, surface: A DFT study. Computational and Theoretical Chemistry 2013,
+dissolution, and restructuring. J. Phys. Chem. C 2021, 125, 22698− 1019, 141−145.
+22704. (83) Huzayyin, A.; Chang, J. H.; Lian, K.; Dawson, F. Interaction of
+ (64) Nørskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.;
+ Water Molecule with Au(111) and Au(110) Surfaces under the
+Kitchin, J. R.; Bligaard, T.; Jonsson, H. Origin of the overpotential for
+ Influence of an External Electric Field. J. Phys. Chem. C 2014, 118,
+oxygen reduction at a fuel-cell cathode. J. Phys. Chem. B 2004, 108,
+ 3459−3470.
+17886−17892.
+ (84) Nørskov, J. K.; et al. Origin of the Overpotential for Oxygen
+ (65) Levell, Z.; Le, J.; Yu, S.; Wang, R.; Ethirajan, S.; Rana, R.;
+Kulkarni, A.; Resasco, J.; Lu, D.; Cheng, J. others Emerging Atomistic Reduction at a Fuel-Cell Cathode. J. Phys. Chem. B 2004, 108, 17886.
+Modeling Methods for Heterogeneous Electrocatalysis. Chem. Rev. (85) Christensen, R.; Hummelshøj, J. S.; Hansen, H. A.; Vegge, T.
+2024, 124, 8620−8656. Reducing Systematic Errors in Oxide Species with Density Functional
+ (66) Moradi, K.; Melander, M. M. Electronic structure methods for Theory Calculations. J. Phys. Chem. C 2015, 119, 17596−17601.
+simulating the applied potential in semiconductor electrochemistry. (86) Urrego-Ortiz, R.; Builes, S.; Illas, F.; Calle-Vallejo, F. Gas-phase
+Current Opinion in Electrochemistry 2025, 49, 101615. errors in computational electrocatalysis: a review. EES Catal. 2024, 2,
+ (67) Patel, D. M.; Kastlunger, G. Non-Nernstian Effects in 157−179.
+Theoretical Electrocatalysis. Chem. Rev. 2025, 125, 3378−3400. (87) Sargeant, E.; Illas, F.; Rodríguez, P.; Calle-Vallejo, F.
+ (68) Patel, D. M.; Tripathi, A.; Ocampo-Restrepo, V. K.; Kastlunger, Importance of the gas-phase error correction for O2 when using
+G. Electrocatalysis beyond the reversible hydrogen electrode. Current DFT to model the oxygen reduction and evolution reactions. Journal
+Opinion in Electrochemistry 2025, 49, 101611. of Electroanalytical Chemistry 2021, 896, 115178.
+ (69) Verma, A. M.; Laverdure, L.; Melander, M. M.; Honkala, K. (88) Martínez, J. I.; Hansen, H. A.; Rossmeisl, J.; Nørskov, J. K.
+Mechanistic Origins of the pH Dependency in Au-Catalyzed Glycerol Formation energies of rutile metal dioxides using density functional
+Electro-oxidation: Insight from First-Principles Calculations. ACS theory. Phys. Rev. B 2009, 79, 045120.
+Catal. 2022, 12, 662−675. (89) Christensen, R.; Hansen, H. A.; Dickens, C. F.; Nørskov, J. K.;
+ (70) Mortensen, J. J.; et al. GPAW: An open Python package for Vegge, T. Functional Independent Scaling Relation for ORR/OER
+electronic structure calculations. J. Chem. Phys. 2024, 160, 092503. Catalysts. J. Phys. Chem. C 2016, 120, 24910−24916.
+ (71) Hjorth Larsen, A.; Jørgen Mortensen, J.; Blomqvist, J.; Castelli, (90) Hensley, A. J.; Ghale, K.; Rieg, C.; Dang, T.; Anderst, E.; Studt,
+I. E; Christensen, R.; Dułak, M.; Friis, J.; Groves, M. N; Hammer, F.; Campbell, C. T.; McEwen, J.-S.; Xu, Y. DFT-based method for
+B.ør.; Hargus, C.; Hermes, E. D; Jennings, P. C; Bjerre Jensen, P.; more accurate adsorption energies: an adaptive sum of energies from
+Kermode, J.; Kitchin, J. R; Leonhard Kolsbjerg, E.; Kubal, J.; RPBE and vdW density functionals. J. Phys. Chem. C 2017, 121,
+Kaasbjerg, K.; Lysgaard, S.; Bergmann Maronsson, J.; Maxson, T.; 4937−4945.
+Olsen, T.; Pastewka, L.; Peterson, A.; Rostgaard, C.; Schiøtz, J.; (91) Mom, R. V.; Melissen, S. T.; Sautet, P.; Frenken, J. W.;
+Schutt, O.; Strange, M.; Thygesen, K. S; Vegge, T.; Vilhelmsen, L.; Steinmann, S. N.; Groot, I. M. The pressure gap for thiols:
+Walter, M.; Zeng, Z.; Jacobsen, K. W; et al. The atomic simulation Methanethiol self-assembly on Au (111) from vacuum to 1 bar. J.
+environment�a Python library for working with atoms. J. Phys.: Phys. Chem. C 2019, 123, 12382−12389.
+Condens. Matter 2017, 29, 273002. (92) Häkkinen, H. The gold−sulfur interface at the nanoscale.
+ (72) Kastlunger, G.; Lindgren, P.; Peterson, A. A. Controlled- Nature Chem. 2012, 4, 443−455.
+Potential Simulation of Elementary Electrochemical Reactions: (93) Cheng, D.; Nguyen, K.-L. C.; Sumaria, V.; Wei, Z.; Zhang, Z.;
+Proton Discharge on Metal Surfaces. J. Phys. Chem. C 2018, 122, Gee, W.; Li, Y.; Morales-Guio, C. G.; Heyde, M.; Roldan Cuenya, B.;
+12771.
+ Alexandrova, A. N.; Sautet, P. Structure Sensitivity and Catalyst
+ (73) Trasatti, S. The absolute electrode potential: The end of the
+ Restructuring for CO2 Electro-reduction on Copper. Nat. Commun.
+story. Electrochim. Acta 1990, 35, 269−271.
+ (74) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient 2025, 16, 4064.
+Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868. (94) Du, X.; Liu, M.; Peng, J.; Chun, H.; Hoffman, A.; Yildiz, B.; Li,
+ (75) Tkatchenko, A.; Scheffler, M. Accurate Molecular Van Der L.; Bazant, M. Z.; Gómez-Bombarelli, R. Accelerating and Enhancing
+Waals Interactions from Ground-State Electron Density and Free- Thermodynamic Simulations of Electrochemical Interfaces. ACS
+Atom Reference Data. Phys. Rev. Lett. 2009, 102, 073005. Central Science 2025; DOI: 10.1021/acscentsci.5c00547.
+ (76) Ruiz, V. G.; Liu, W.; Zojer, E.; Scheffler, M.; Tkatchenko, A. (95) Melander, M. M.; Wu, T.; Weckman, T.; Honkala, K. Constant
+Density-Functional Theory with Screened van der Waals Interactions inner potential DFT for modelling electrochemical systems under
+for the Modeling of Hybrid Inorganic-Organic Systems. Phys. Rev. constant potential and bias. npj Computational Materials 2024, 10, 5.
+Lett. 2012, 108, 146103. (96) Strbac, S.; Adzić, R. The influence of OH- chemisorption on
+ (77) Held, A.; Walter, M. Simplified continuum solvent model with the catalytic properties of gold single crystal surfaces for oxygen
+a smooth cavity based on volumetric data. J. Chem. Phys. 2014, 141, reduction in alkaline solutions. Journal of Electroanalytical Chemistry
+174108. 1996, 403, 169−181.
+ (78) Melander, M. M.; Kuisma, M. J.; Christensen, T. E. K.; (97) Hamelin, A. Cyclic voltammetry at gold single-crystal surfaces.
+Honkala, K. Grand-canonical approach to density functional theory of Part 1. Behaviour at low-index faces. Journal of Electroanalytical
+electrocatalytic systems: Thermodynamics of solid-liquid interfaces at Chemistry 1996, 407, 1−11.
+
+ 2351 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352
+ACS Electrochemistry pubs.acs.org/electrochem Article
+
+ (98) Srejić, I.; Smiljanić, M.; Rakočević, Z.; Š trbac, S. Oxygen
+Reduction on Au(100)-like Polycrystalline Gold Electrode in Alkaline
+Solution. Int. J. Electrochem. Sci. 2016, 11, 10436−10448.
+ (99) Adnan, A.; Behjati, S.; Félez-Guerrero, N.; Ojha, K.; Koper, M.
+T. Tracking the surface structure and the influence of cations and
+anions on the double-layer region of a Au (111) electrode. Physical
+Chemistry Chemical Physics 2024, 26, 21419−21428.
+ (100) Blizanac, B. B.; Lucas, C. A.; Gallagher, M. E.; Arenz, M.;
+Ross, P. N.; Marković, N. M. Anion Adsorption, CO Oxidation, and
+Oxygen Reduction Reaction on a Au(100) Surface: The pH Effect. J.
+Phys. Chem. B 2004, 108, 625−634.
+ (101) Prieto, A.; Hernández, J.; Herrero, E.; Feliu, J. M. The role of
+anions in oxygen reduction in neutral and basic media on gold single-
+crystal electrodes. J. Solid State Electrochem. 2003, 7, 599−606.
+
+ 2352 https://doi.org/10.1021/acselectrochem.5c00202
+ ACS Electrochem. 2025, 1, 2338−2352

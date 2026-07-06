@@ -1,0 +1,563 @@
+Nanoscale
+ View Article Online
+ PAPER View Journal | View Issue
+
+ Single transition metal atom embedded
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ Cite this: Nanoscale, 2021, 13, 12885
+ antimonene monolayers as eﬃcient trifunctional
+ electrocatalysts for the HER, OER and ORR:
+ a density functional theory study†
+ Song Lu,a Huong Lan Huynh,a Fengliu Lou,b Kun Guo *c and Zhixin Yu *a
+
+ Highly eﬃcient, stable and cost-eﬀective electrocatalysts for the hydrogen evolution reaction (HER),
+ oxygen evolution reaction (OER), and oxygen reduction reaction (ORR) have been pursued for several
+ decades. Herein, by employing density functional theory (DFT), a wide range of transition metal (TM = Sc,
+ Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ru, Rh, Pd, Ag, Cd, Ir, Pt and Au) atoms anchored on antimonene (Sb
+ monolayer) with a single Sb vacancy as single-atom catalysts (SACs) were investigated for their HER, OER
+ and ORR performance. The results indicate that the defective Sb monolayer can be stable. Some TM@Sb
+ monolayers show excellent stability and good electrical conductivity, beneﬁcial for electron transfer
+ during electrocatalytic reactions. The Ir@ and Pt@Sb monolayers exhibit excellent HER performance, both
+ with about −0.01 eV of ΔG*H. The d band centre of the TM@Sb monolayer can be used to describe the
+ binding strength between substrates and intermediates directly. The best OER electrocatalyst is the Pt@Sb
+ monolayer, which shows an overpotential (ηOER) of 0.48 V. In contrast, the best ORR electrocatalyst is the
+ Ag@Sb monolayer with an ηORR of 0.50 V, followed by Pd@, Rh@, Cd@ and Pt@Sb monolayers. Compared
+ Received 10th April 2021, with pristine antimonene, only the noble metal atom could improve its OER and ORR performance eﬀec-
+ Accepted 27th June 2021
+ tively, and the Pt@Sb monolayer can be a trifunctional electrocatalyst for the HER/OER/ORR. Therefore,
+ DOI: 10.1039/d1nr02235k our calculations highlight a new type of SAC based on antimonene, which can be useful for energy con-
+ rsc.li/nanoscale version and storage.
+
+ 1. Introduction tential in electrochemical reactions. Noble metal electrocata-
+ lysts such as Pt exhibit excellent HER and ORR activity, while
+ Increasing fossil fuel consumption with the emission of green- noble metal compounds including IrO2 and RuO2 showed
+ house gases is driving society to find better energy solutions great OER activity.7–9 However, the large-scale applications of
+ that can help us out of the current predicament. Metal–air bat- these electrocatalysts will be unrealistic due to their scarcity
+ teries, fuel cells, and water splitting systems are some of the and high costs and the poor durability of noble metals.
+ renewable energy storage and conversion techniques that have Tremendous eﬀorts have been devoted to the design and syn-
+ been demonstrated to be promising strategies to mitigate thesis of nonprecious electrocatalysts, including metal
+ energy and environmental issues.1–5 The electrochemical carbides,10,11 transition metal chalcogenides,12,13 modified
+ hydrogen evolution reaction (HER), oxygen evolution reaction graphene,14–16 metal nitrides,17 metal oxides,18,19 carbon-
+ (OER), and oxygen reduction reaction (ORR) are crucial for based hybrids,20–22 etc. for the HER, OER and ORR. In
+ these techniques.6 Nevertheless, the eﬃciencies of these tech- addition, IrO2/RuO2 exhibits only unifunctional OER activity,
+ niques are dependent on the performance of electrocatalysts while noble metal Pt has separate unifunctional HER and ORR
+ used to overcome the sluggish kinetics and the large overpo- activity where the optimal reaction conditions are not always
+ identical. On the other hand, bifunctional electrocatalysts
+ could catalyze diﬀerent reactions under identical and optimal
+ a
+ Department of Energy and Petroleum Engineering, University of Stavanger, 4036 working conditions, which brings lots of advantages such as
+ Stavanger, Norway. E-mail: zhixin.yu@uis.no; Tel: +47 51832238 the reduction of costs and the simplification of technological
+ b
+ Beyonder AS, Kanalsletta 2, 4033 Stavanger, Norway processes.23 It has been reported that HER/OER bifunctional
+ c
+ Institute of New Energy, School of Chemistry and Chemical Engineering, Shaoxing
+ electrocatalysts can be used for overall water splitting, and
+ University, Shaoxing 312000, China. E-mail: kun.guo@usx.edu.cn
+ † Electronic supplementary information (ESI) available. See DOI: 10.1039/ OER/ORR bifunctional electrocatalysts can be applied for
+ d1nr02235k rechargeable metal–air batteries.24–28
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12885
+ View Article Online
+
+ Paper Nanoscale
+
+ In recent years, the development of two-dimensional (2D) SACs for HER, OER and ORR reactions. Therefore, a vacancy
+ materials has brought new lights for exploring outstanding will be introduced into the 2D antimonene monolayer, and
+ HER, OER and ORR catalysts.29,30 These materials show novel then TMs will be anchored to design and form SACs.
+ properties and excellent activity in catalytic reactions compared In this work, we embedded diﬀerent TM atoms (Sc, Ti, V,
+ with conventional bulk materials. They have a high specific Cr, Mn, Fe, Co, Ni, Cu, Zn, Ru, Rh, Pd, Ag, Cd, Ir, Pt and Au) in
+ surface area and a high percentage of bare surface atoms that the single Sb vacancy of the antimonene monolayer (TM@Sb)
+ can oﬀer abundant active sites. Graphene as one of the first 2D to build SACs for investigating their performance for the HER,
+ materials has attracted much attention as promising electrocata- OER and ORR by the DFT study. The Gibbs free energy change
+ lysts for energy conversion. So far, much eﬀort in improving the of the adsorbed hydrogen (ΔG*H) was used to evaluate the
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ performance of HER, OER and ORR electrocatalysts has been HER activity. Our calculated results suggest that the Ir@Sb
+ focused on 2D carbon-based materials due to their inherent (ΔG*H = 0.009 eV) system exhibits the best electrocatalytic
+ excellent conductivity.31,32 The HER and OER activities of gra- activity toward the HER. The scaling relationships between the
+ phene can be further enhanced by doping heteroatoms.20 Gibbs free energies of the intermediates are used to describe
+ Additionally, other 2D materials such as transition metal dichal- the catalytic activity trend. Meanwhile, Pt@Sb shows the best
+ cogenides,33 metal–organic frameworks (MOFs),34 and metal OER performance with the lowest overpotential of 0.48 V.
+ borides (MBenes)35 can also have specific HER, OER and ORR Ag@Sb shows the best ORR performance with an overpotential
+ activity. In addition, new 2D materials consisting of arsenene of 0.50 V. The Pt@Sb system could be a trifunctional electroca-
+ and antimonene in the VA group of the periodic table have been talyst for the HER/OER/ORR. The d band center is a good
+ predicted theoretically and synthesized experimentally.36–39 descriptor to estimate the binding strength between intermedi-
+ Both show excellent properties including thermodynamic ates and substrates.
+ stability, electron mobility and suitable bandgap and can be
+ promising 2D semiconductor materials for energy devices,
+ electrocatalysts, gas sensors and so on. 2. Computational methods
+ Moreover, the development and exploration of novel struc-
+ tures promote the rational design of catalysts with high A 4 × 4 supercell monolayer Sb (Sb32) was built, then one Sb
+ activity. Single-atom catalysts (SACs) have become increasingly atom was removed to form one vacancy where one TM atom
+ popular in electrocatalysis as they surpass conventional cata- was embedded (Fig. 1a and b). Supercells were repeated
+ lysts in terms of high atom utilization rate and unique elec- periodically on the xy plane, and a vacuum region of 20 Å
+ tronic structure, which significantly aﬀect catalytic activities.40 along the z-direction is enough to avoid the spurious inter-
+ For instance, a single Pt atom loaded on FeOx exhibits excel- actions between adjacent units. All the calculations, including
+ lent stability and high activity for CO oxidation. Density func- geometric relaxation, total energy and electronic properties,
+ tional theory (DFT) calculations indicate that the high catalytic were carried out at the spin-polarized DFT level via the Vienna
+ activity is correlated with the partially vacant 5d orbitals of the Ab initio Simulation Package (VASP) code.46 DFT+U calcu-
+ positively charged high-valent Pt atoms, resulting in the lations are also considered; however, it is not clear what value
+ reduction of CO adsorption energy and activation barrier for of U should be chosen, and U is introduced as an empirical
+ CO oxidation.41,42 Wu et al. simulated single TM atoms loaded parameter and taken from previous computational or experi-
+ on the surface of graphitic carbon nitride (g-C3N4), which was mental studies. Meanwhile, many prominent studies on SACS
+ predicted to be an excellent bifunctional electrocatalyst have demonstrated that U is not critical for anchoring single-
+ because the overpotentials of the OER and ORR were reduced metal atoms and show reasonable results.41,47 Therefore, we
+ due to the embedded TM atoms.43 Similarly, single TM atoms compared the eﬀects of U on the activity of the best perform-
+ loaded on a nitrogen-doped boron phosphide monolayer ing HER, OER and ORR catalysts. The projector augmented
+ showed lower overpotentials of the OER and ORR.44 Zhang wave (PAW) method was used to describe the eﬀective potential
+ et al. investigated single TM atoms anchored on a C2N mono- between ionic cores and electrons and the Perdew–Burke–
+ layer as eﬃcient bifunctional electrocatalysts for the HER and Ernzerh (PBE) function within the generalized gradient
+ OER, manifesting that TM atoms acting as active sites are approximation (GGA) was used to describe the electron
+ crucial for the reduction of overpotentials.3 exchange–correlation interaction.48–50 The empirical correction
+ Arsenene based SACs have recently been reported as prom- method (DFT-D3) was chosen to describe the long-range van
+ ising electrocatalysts for N2 reduction to NH3 by DFT calcu- der Waals (vdW) interactions.51 The parameters for dipole cor-
+ lations,45 whereas there is little study on the modified antimo- rection along the z-direction are included in our calculations.
+ nene as electrocatalysts for various reactions. In particular, it The energy cutoﬀ of electron wave functions was set to 500 eV,
+ has been demonstrated experimentally that shear-exfoliated Sb and a k-point sampling of 5 × 5 × 1 (structure relaxation) and
+ exhibits the best electrochemical performance in the HER, 9 × 9 × 1 (electronic structure calculations) for all systems were
+ OER and ORR compared with other members in the VA tested to achieve convergence. The convergence criterion of
+ group.39 Inspired by the advanced electrochemical properties energy and force in calculations was set to 1.0 × 10−5 eV and
+ of the 2D antimonene monolayer, it is stimulating to explore 1.0 × 10−2 eV Å−1, respectively. Moreover, the ab initio mole-
+ the electrocatalytic performance of TM@antimonene based cular dynamics (AIMD) simulation as implemented in VASP
+
+ 12886 | Nanoscale, 2021, 13, 12885–12895 This journal is © The Royal Society of Chemistry 2021
+ View Article Online
+
+ Nanoscale Paper
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ Fig. 1 Top view (a) and side view (b) of the schematic structure of 4 × 4 monolayer Sb with one TM atom embedded into the Sb vacancy, where the
+ medium-orchid ball and red ball represent the Sb and TM atoms respectively; (c) the total energy variations of the defective Sb monolayer at a target
+ temperature of 298.15 K under AIMD simulation. (d) The binding energy of TM embedded into Sb monolayers Eb, the cohesive energy of TM bulk Ec,
+ and the formation energy of TM@Sb monolayers Ef.
+
+ was carried out to explore defective structure stability.52,53 The More detailed computational methods are explained in the
+ simulations were performed in an NVT ensemble with a target ESI.†
+ temperature of 300 K for 18 ps with a time step of 3 fs. The
+ Phonopy code based on the density functional perturbation
+ theory (DFPT) – linear response method was used to calculate
+ phonon spectra.54 The implicit solvent model based on
+ 3. Results and discussion
+ VASPsol with the dielectric constant was set to 78.4 to consider 3.1. Structural features, stabilities, and active sites of the
+ the influence of polarization due to water conditions.55 The TM@Sb monolayers
+ TM atom diﬀusion barrier was calculated by the climbing After structure relaxation, the calculated lattice parameter of
+ image nudged elastic band method (CINEB).56 the pristine Sb monolayer (a = 4.11 Å) and the bond length of
+ In each elementary step of the OER and ORR, the free Sb–Sb (dSb–Sb = 2.89 Å) are well consistent with previous
+ energy can be calculated based on the approach proposed by reports.58,59 By removing one Sb atom to form a defective
+ Nørskov et al.57 The diﬀerence of free energy between the structure Vsb@Sb monolayer, the lattice parameter a decreases
+ initial state and the final state of the reactions was defined as to 4.05 Å. After embedding the TM atoms, the lattice para-
+ below: meter a of all specimens reduces by no more than 1.50%.
+ ΔG ¼ ΔE þ ΔEZPE  TΔS þ ΔGpH þ ΔGU ð1Þ There are three nearest Sb atoms bonding the TM atom, and
+ the average bond lengths of Sb–TM (dSb–TM) of all systems
+ where ΔE, ΔEZPE and ΔS are the total energy changes from decrease by less than 15% in comparison with dSb–Sb of the
+ DFT calculations, zero-point energy and entropy diﬀerence pristine Sb monolayer (Table S1†). This can be attributed to
+ between the reactants and the products, respectively. T is the variation of the atomic radius of TM and the positions of
+ 298.15 K in our calculations. ΔGpH is the correction of the free host atoms and TM atoms. These results are quite close to
+ energy introduced by the diﬀerence in pH (H+ concentration) single TM atoms anchored on arsenene monolayers.45 For
+ of the solution, calculated by the formula ΔGpH = 2.303kBTpH, instance, the bond length dSb–Pt of the Pt@Sb monolayer is
+ where kB is the Boltzmann constant. We assume a pH of zero 2.59 Å, and the location of the Pt atom is below the sites of the
+ under acidic conditions. ΔGU represents the free energy correc- host atoms which can also be evidenced from other
+ tion which was introduced by the diﬀerence of the electrode specimens.
+ potential. Thus, the following equation can be obtained: ΔGU The structural stability of TM@Sb monolayers was investi-
+ = −neU, where n, e, and U are the number of electrons trans- gated. Firstly, the vacancy formation energy of the Sb single
+ ferred, charge and applied electrode potential, respectively. vacancy (Ef(VSb)) was estimated to be 1.77 eV. In general, the
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12887
+ View Article Online
+
+ Paper Nanoscale
+
+ smaller the vacancy formation energy, the easier the formation 3.2. Electronic properties
+ of the vacancy. Compared with the formation energies of the Electronic conductivity is a vital parameter for the eﬃciency of
+ monovacancy in other 2D materials such as graphene (7.69 eV electron transfer during electrocatalytic reactions. Therefore,
+ for the C vacancy),60 silicene (3.77 eV for the Si vacancy),61 and the density of states of pristine and defective Sb monolayer
+ VA group material arsenene (2.12 eV for the As vacancy)62 and was calculated at the PBE level and is shown in Fig. S3.† The
+ phosphorene (2.03 eV for the P vacancy),63 it is obvious that DOS states of spin up and down of the pristine Sb monolayer
+ the Sb monolayer is easier to form the Sb vacancy due to its are completely symmetric, demonstrating its nonmagnetic
+ relatively low Ef(VSb). Furthermore, the defect concentration property. Meanwhile, the pristine Sb monolayer shows an
+ was evaluated in the range of 2–6.25%. As shown in Fig. S1,† indirect bandgap of 1.28 eV, which is well in agreement with
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ the Sb monolayer with a high vacancy concentration will previous studies.64,65 However, the defective Sb monolayer has
+ exhibit very high Ef(VSb), indicating that it is diﬃcult to form asymmetric DOS states of spin up and down. Besides, there
+ high vacancy concentrations. Meanwhile, the total energy of are some impurity levels in the defective Sb monolayer and
+ the defective Sb monolayer oscillating around the equilibrium even electron states crossing the Fermi level, showing a
+ state by AIMD simulation verifies its high stability (Fig. 1c). decrease in the bandgap, which are beneficial for electron
+ The binding energies (Eb) of transition metal atoms transfer.
+ embedded in the Sb monolayer are summarized as shown in After introducing TM atoms, there are more impurity levels
+ Fig. 1d. The more negative the Eb of the TM atoms to the sub- between the maximum valence band and minimum conduc-
+ strates, the better the stability of the sample. In contrast, the tive band. For instance, for the PDOS of Fe@, Ni@, Ru@,
+ more positive the Eb of TM atoms in the Sb monolayer, the Ag@, Pt@ and Pd@Sb monolayers exhibited in Fig. 2 and the
+ easier the TM agglomeration to form metal clusters, which can other systems shown in Fig. S4,† impurity levels mainly result
+ aﬀect the formation of SACs and reduce the active sites. For from the TM-d states. It is evident that the Fermi level after
+ our investigated samples, all Eb systems are negative with the TM atom embedding merged into the electron states, revealing
+ Ir@Sb monolayer being the most negative (−10.34 eV) and Cd that TM@Sb monolayers possess metallic properties. Thus, Sb-
+ being the least (−4.70 eV). The eﬀects of the TM concen- based SACs display good electronic conductivity which could
+ trations (2–6.25%) on Eb for the best HER, OER and ORR SACs further improve the electrocatalytic performance. Moreover,
+ are elucidated in Fig. S2.† Again, high concentrations of TMs the PDOS of some TM@Sb monolayers also demonstrates a
+ for SACs will not be easily formed. Experimentally, the SAC strong interaction between p orbitals of host atoms and d orbi-
+ concentration is generally lower than 3 wt%. Therefore, the tals of TM atoms, implying TM atoms as active sites for electro-
+ TM single-atom concentrations will be fixed at an intermediate catalytic reactions.
+ value of 3.125%. It is worth noting that there is an overall
+ increasing trend from Sc to Zn in 3d TM embedded systems.
+ Similarly, Ru to Ag in 4d and Ir to Au in the 5d system demon- 3.3. HER activity
+ strate the same upward trend. This suggests that the later the The overall HER processes can be divided into * + (H+ + e−),
+ TM atoms, the more diﬃcult for them to form SACs on Sb *H, and * + H2. Herein, the electrocatalytic activities of
+ monolayer substrates. TM@Sb monolayers for the HER were investigated by employ-
+ The cohesive energies of bulk metal (Ec) have also been ing a crucial descriptor ΔG*H that is the Gibbs free energy
+ studied (Fig. 1d). It shows that the Eb values of all doped speci- diﬀerence between the intermediate *H and products * + H2.
+ mens are stronger than their corresponding Ec, indicating that Generally, the closer the value of ΔG*H to zero, the better the
+ metal atoms can be stably and uniformly embedded into the HER catalytic activity. Meanwhile, it is worth noting that the
+ Sb monolayers as active sites. Thus, the TM@Sb monolayer positive value of ΔG*H indicates that it is thermodynamically
+ will exhibit excellent stability in electrocatalytic reactions. unfavorable for hydrogen to adsorb on the surface of the cata-
+ Hereafter, only one TM atom active site will be considered in lysts. In contrast, the negative value suggests that hydrogen de-
+ HER, OER and ORR calculations. sorption from the catalysts will be diﬃcult, thus limiting the
+ We finally consider the formation energies (Ef ) of SACs in HER performance. The ΔG*H values of all TM@Sb monolayers
+ order to evaluate the level of diﬃculty for the synthesis of at one site (TM–H site) are shown in Fig. 3a and Fig. S5,† and
+ diﬀerent SACs experimentally (Fig. 1d). A negative Ef indicates summarized in Table S2.† Moreover, the intrinsic rate of elec-
+ that the synthesis process will be exothermic. Therefore, the trons in the HER under equilibrium potential can be reflected
+ more negative the Ef, the easier the synthesis process. It can be by the theoretical exchange current i.66 Thus, a noticeable
+ seen that the Ef of all SACs is negative from −5.73 (Ir@Sb) to volcano curve is formed by plotting ΔG*H vs. i (Fig. 3b), which
+ −0.08 eV (Zn@Sb). The Cd@Sb and Zn@Sb show a large Ef can help screen potential HER electrocatalysts. Apparently,
+ incredibly close to zero, manifesting that preparing these two TMs located closer to the peak of the volcano will possess
+ SACs may be diﬃcult. However, noble metal-based Ru@Sb, better HER performance. For comparison, the ΔG*H of the
+ Rh@Sb and Pd@Sb from 4d and Ir@Sb, Pt@Sb and Au@Sb pristine Sb monolayer (Sb–H site) was calculated to be 1.74 eV,
+ from 5d show quite a negative Ef. It could be predicted that indicating a weak interaction between Sb and H atoms and the
+ these samples could be easily prepared and potentially have relatively poor HER activity of the pure Sb monolayer. In our
+ high catalytic performance in the HER, OER and ORR. work, the Ir@, Pt@, Ni@, and Cu@Sb monolayers show the
+
+ 12888 | Nanoscale, 2021, 13, 12885–12895 This journal is © The Royal Society of Chemistry 2021
+ View Article Online
+
+ Nanoscale Paper
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ Fig. 2 The projected density of states (PDOS) of (a) Fe@, (b) Ni@, (c) Ru@, (d) Ag@, (e) Pt@ and (f) Pd@Sb monolayers, where the Fermi energy was
+ set to zero (dashed line).
+
+ Fig. 3 (a) The obtained Gibbs free energy of adsorption of hydrogen (ΔG*H) for Ir@, Pt@, Ni@ and Cu@Sb monolayers; (b) the HER volcano curve
+ relationship between ΔG*H and theoretical exchange current i.
+
+ lowest value of ΔG*H (−0.009, −0.010, 0.059 and 0.193 eV, cating the adsorption of a proton. The diﬀerence in the two
+ respectively). mechanisms is the second step, in which either the adsorbed
+ We further explored the HER mechanism over the best per- H* reacts with another proton to form H2 (*H + H+ + e− → H2,
+ forming Ir@Sb monolayer under acid, neutral and alkaline the Heyrovský step), or two adsorbed *H react to form H2 (*H +
+ media. Each step of H2 formation was studied. Under an acid *H → H2, the Tafel step). Note that two H2O groups with one
+ medium, there are two types of mechanisms, i.e., Volmer– H+ were used to describe the proton in the solution.68,69 As
+ Heyrovský or Volmer–Tafel.67 The Volmer reaction is the first shown in Fig. 4a, the Volmer reaction exhibits a small energy
+ step of the HER and can be expressed by H+ + e− → *H, indi- barrier for the hydrogen adsorption process. For the dehydro-
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12889
+ View Article Online
+
+ Paper Nanoscale
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ Fig. 4 The HER reaction pathways over the Ir@Sb monolayer (a) Volmer, (b) Heyrovský, and (c) Tafel reaction under an acidic medium; the free
+ energy change through (d) Volmer–Heyrovský and (e) Volmer–Tafel pathways under a neutral or alkaline medium.
+
+ genation process in Fig. 4b and c, the Tafel reaction shows a 16 showed the lowest value of −0.009 eV, where the concen-
+ larger energy barrier (0.63 eV) than the Heyrovský reaction trations of the vacancy and SACs are both 3.125%. For the Sb
+ (0.49 eV), implying that the HER on the Ir@Sb monolayer site (Sb–H site) of the Ir@Sb monolayer, it shows a large ΔG*H
+ under acidic conditions follows the Volmer–Heyrovský mecha- value of 0.96 eV. Thus, at this concentration, TM sites of Sb
+ nism. Under neutral and alkaline media, the HER requires based SACs exhibit excellent activity. The calculated phonon
+ extra energy to produce protons by breaking the H2O mole- dispersion shows that there are no imaginary bands
+ cules, which aﬀects the overall reaction rates.70 Similarly, the (Fig. S6a†), demonstrating that the Ir@Sb monolayer structure
+ HER in neutral and alkaline media can also follow the is stable. The stability of the Ir@Sb monolayer is evaluated
+ Volmer–Heyrovský route or the Volmer–Tafel route.71,72 The further by AIMD simulation at T = 300, 400 and 500 K. The
+ Volmer step can be expressed by H2O + e− → *H + OH−, which structure almost did not change at 300 K and 400 K (Fig. S6b
+ is the dissociation of water. The subsequent Heyrovský step is and c†). However, at 500 K, there is an obvious deformation on
+ H2O + *H + e− → H2 + OH−, which combines with a proton the structure, indicating weak stability at high temperature
+ from another H2O molecule to form H2, while the Tafel step is (Fig. S6d†). Moreover, these SACs are located around the peak
+ the combination of two nearby *H to form H2: *H + *H → H2. of the volcano curve with maximum exchange current, indicat-
+ Three factors including activation barrier, the ability to ing that these TM atoms can be active sites for the HER. This
+ capture water and free energy of hydrogen adsorption, deter- can be attributed to the charge redistribution directly aﬀecting
+ mine the activity of the HER in neutral and alkaline environ- the adsorption of intermediates, as evidenced from the inter-
+ ments. As shown in Fig. 4d and e, the first step of water split- action between Sb-p orbitals and TM-d orbitals due to the elec-
+ ting into *H and *OH controls the rate of the HER for both tron transfer.
+ mechanisms. Nevertheless, the HER over the Ir@Sb monolayer
+ under neutral and alkaline conditions follows the Volmer– 3.4. OER/ORR activity
+ Tafel mechanism due to a lower energy barrier of 1.85 eV. The electrocatalytic activities of TM@Sb monolayers for the
+ Overall, it can be concluded that the Ir@Sb monolayer exhibits OER and ORR were studied by calculating the Gibbs free
+ better HER activity under acidic conditions with a much lower energy diﬀerence of the adsorbed intermediates (ΔG*OH, ΔG*O
+ energy barrier. and ΔG*OOH). The detailed results are also summarized in
+ We also considered the eﬀect of DFT+U on the HER for the Table S2.† There are four elementary steps of the OER, which
+ Ir@Sb monolayer, as summarized in Table S3.† There is a neg- are also the reverse steps of the ORR. The Gibbs free energy
+ ligible gap between them, thus U will not make an obvious diﬀerences of each step were calculated to determine the
+ diﬀerence on our results. Besides, we also made a comparison potential determining steps (PDS) of the OER and ORR. In our
+ between diﬀerent hydrogen coverage from 1/25 to 1/8 for the calculations, the initial sites for intermediates of OH, O and
+ Ir@Sb monolayer (Table S4†). An intermediate percentage of 1/ OOH radicals were on the top of TM. After relaxation, only
+
+ 12890 | Nanoscale, 2021, 13, 12885–12895 This journal is © The Royal Society of Chemistry 2021
+ View Article Online
+
+ Nanoscale Paper
+
+ intermediates of the Sc@Sb monolayer transfer to the Sb We also considered DFT+U calculations for ηOER of the
+ atom, while other systems remain unchanged. Two free energy Pt@Sb monolayer. The resulting OER overpotential of 0.49 V is
+ diagrams of SACs with low ηOER are shown in Fig. 5a and b, consistent with that without U, further indicating that PBE
+ while the others are plotted as shown in Fig. S7 and S8.† It is level is enough to describe the activity of SACs. For Sb sites of
+ well known that the energy barriers of two neighboring the Pt@Sb monolayer, it exhibits a large ηOER of 1.20 V, imply-
+ elementary steps should be 1.23 eV for the ideal OER electroca- ing that the TM site is the only active site. Similar to the Ir
+ talysts, and the ηOER is zero. Nevertheless, the distance of two @Sb monolayer, there are no imaginary bands in the calcu-
+ adjacent elementary steps is not always equal, which causes lated phonon dispersion (Fig. S9a†), asserting the structural
+ diﬀerent ηOER determined by the largest energy diﬀerence. stability of the Pt@Sb monolayer. We also tested its stability at
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ It can be seen that 3d TM (from Sc to Co) @Sb monolayers diﬀerent temperatures (Fig. S9b–d†). A high temperature of
+ in the first step of *OH formation show negative values of 500 K could induce the deformation of the Pt@Sb monolayer,
+ ΔG*OH, which indicates a strong interaction between the OH thus exhibiting instability. Furthermore, the ηOER of the pris-
+ radical and the catalysts. However, 4d and 5d TM (noble tine Sb monolayer was calculated to be 1.36 V, which high-
+ metal)@Sb monolayers have positive values of ΔG*OH, ΔG*O lighted the eﬀects of the TM atom on the performance of the
+ and ΔG*OOH, showing a weak binding strength between inter- Sb monolayer OER. Thus, we can conclude that only noble
+ mediates and substrates. It is also clear that the PDS of all metal embedded systems can exhibit excellent OER electro-
+ SACs (except the Sc@Sb monolayer) appear in the third catalytic activity among Sb monolayer based SACs, as shown in
+ elementary step, in which *O reacts with H2O to form *OOH. Table S2.†
+ For instance, ΔG1, ΔG2, ΔG3, and ΔG4 of the Pt@Sb monolayer Since the ORR is the reverse reaction of the OER, the Gibbs
+ in the OER are 0.52, 1.38, 1.71 and 1.31 eV, respectively, while free energy of the ORR processes for TM@Sb monolayers can
+ it is 0.65, 1.01, 2.12 and 1.14 eV for the Pd@Sb monolayer. be easily obtained (Table S2†). Meanwhile, we can find that
+ Thus, the third step is the most energy consuming, and Pt and the PDS of the ORR of almost all SACs occur at the third step
+ Pd@Sb monolayers possess smaller ηOER of 0.48 V and 0.89 V (*O to *OH) and the fourth step (*OH to H2O) (Fig. S7 and
+ among all SACs. Interestingly, our calculated ηOER of the S8†), which determines the overpotential ηORR. For example,
+ Pt@Sb monolayer is smaller than the state-of-the-art catalyst Fig. 5c and d show Ag and Pd@Sb monolayers with two small
+ IrO2 (ηOER = 0.56 V).73 ηORR of 0.50 and 0.58 V, respectively. Besides, ηORR of the
+
+ Fig. 5 Gibbs free energy diagrams for OER elementary steps of the Pt@Sb monolayer (a) and the Pd@Sb monolayer (b) at diﬀerent potentials; Gibbs
+ free energy diagrams for the ORR elementary steps of the Ag@Sb monolayer (c) and Pd@Sb monolayer (d) at diﬀerent potentials.
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12891
+ View Article Online
+
+ Paper Nanoscale
+
+ Ag@Sb monolayer is evaluated at the PBE+U level. The result
+ is the same as the Ir@ and Pt @Sb monolayer, showing a very
+ slight diﬀerence (Table S3 vs. Table S2†). The ηORR of the Sb
+ site of Ag@Sb was calculated to have a larger value at 0.61 V,
+ suggesting TM sites are indeed the active sites. No imaginary
+ bands appear in the calculated phonon dispersion curves for
+ the Ag@Sb monolayer (Fig. S10a†). AIMD simulation for
+ Ag@Sb demonstrated that the structure shows great stability at
+ 300 and 400 K (Fig. S10b and c†) but exhibits obvious defor-
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ mation at 500 K (Fig. S10d†), similar to the Ir@ and Pt@Sb
+ monolayers. The Gibbs free energy diagrams of ORR processes
+ indicate that ΔGd (*OH to H2O) is the most energy-consuming
+ step for these two SACs during the ORR. The ΔG of each
+ elementary step of the Ag@Sb monolayer is ΔGa = −0.88, ΔGb
+ = −2.57, ΔGc = −0.74 and ΔGd = −0.73 eV, respectively, while it
+ is −1.14, −2.12, −1.01 and −0.65 eV for the Pd@Sb monolayer.
+ Fig. 6 The d band center against the Gibbs free energy of *OOH
+ Notably, the Ag@Sb monolayer with the lowest ηORR among
+ (ΔG*OOH) for TM@Sb monolayers.
+ these SACs is extremely close to Pt (ηORR = 0.45 V).57 Compared
+ with the ηORR (0.87 V) of the pristine Sb monolayer, only the
+ noble metal atoms could eﬀectively improve the ηORR of the Sb Ru > Rh > Pd > Ag > Cd and Ir > Pt > Au. Similar results were
+ monolayer, as also manifested for the OER. In addition, with confirmed by earlier studies.76 For example, Fe, Co, and
+ the increased number of d-electrons in the same row, the ηORR Ni@Sb monolayers have strong interactions, thus leading to
+ generally decreases (3d: from V to Zn, 4d: from Ru to Ag and high overpotential. Interestingly, we also find that the d band
+ 5d: from Ir to Pt), which is similar to other SAC studies. center of SACs with low ηOER/ORR lies between −4.0 and −2.5
+ Therefore, we could identify a promisingly trifunctional SAC eV. Thus, we can tune the interaction strength between inter-
+ Pt@Sb monolayer for the HER/OER/ORR based on lower mediates and substrates to optimize the OER and ORR per-
+ overpotentials. formance of the Sb monolayer via doping TM atoms.
+ The relationship between the Gibbs free energies of three
+ 3.5. Scaling relationships and volcano curves intermediates (ΔG*OH, ΔG*O and ΔG*OOH) in OER/ORR pro-
+ Based on the Sabatier’s principle,66 neither too strong nor too cesses have been customarily used to describe the interaction
+ weak interactions between adsorbates and the active sites are strength between intermediates and active atoms, and further
+ preferred for high catalytic activity. Too strong interactions will to describe the overpotentials.77–79 Herein, the scaling relation-
+ poison the electrode, whereas too weak interaction will not ship between the Gibbs free energies of ΔG*OH and ΔG*OOH,
+ activate the reactants or intermediates to drive the further reac- and the Gibbs free energies of ΔG*O and ΔG*OH for the investi-
+ tions.74 For instance, the V@Sb monolayer shows the strongest gated TM@Sb monolayers are plotted as shown in Fig. 7a and
+ interaction between catalysts and OOH radicals among b. Remarkably, the ΔG*OH shows a strong linear relationship
+ TM@Sb monolayers, thus it has a high OER overpotential with ΔG*OOH. The regression equation can be expressed as
+ (ηOER = 2.31 V). The Au@Sb monolayer with the largest ΔG*OOH ΔG*OOH = ΔG*OH + 3.17 with the coeﬃcient determination (R2)
+ represents the poorest interaction, and its OER overpotential is of 0.99, which agrees well with other OER/ORR catalysts.78,79
+ also quite large (ηOER = 1.61 V). The electronic structures of the However, the linear equation between ΔG*O and ΔG*OH appar-
+ TM@Sb monolayers could also provide insights on how to ently does not fit all data, as expressed by ΔG*O = 1.42ΔG*OH +
+ improve the performance of electrocatalysts. Therefore, we cal- 0.52 with R2 of 0.70. A slope of 1 for ΔG*OOH = ΔG*OH + 3.17
+ culated the d band center, which is widely used to describe the indicates that *OH and *OOH have the same bond order and
+ interaction strength between catalysts and adsorbates accord- TM atoms bind them by a single bond, consistent with other
+ ing to the d orbitals of PDOS of TM atoms. It can be seen that studies.80,81
+ with an increasing number of d-electrons of the embedded TM Since the PDS of the OER for all TM@Sb monolayers occur
+ atoms, the d band center moves to a lower energy level than to mostly under ΔG3 (*OOH to *O) and the ΔG*OOH − ΔG*OH is a
+ the Fermi energy level (EF was set to 0 eV) (Fig. 6 and constant, the overpotentials ηOER can be determined by the
+ Table S5†). Generally, the large number of d-electrons of the diﬀerence between ΔG*OOH and ΔG*O. ΔG*OOH − ΔG*O was
+ TM atoms and the lower energy level of the d band center will employed as a descriptor for ηOER, and a volcano curve can be
+ lead to weaker interactions between substrates and intermedi- plotted (Fig. 8a). Therefore, the Pt@Sb monolayer located at
+ ates.75 These interactions can be attributed to the hybridiz- the peak of the volcano indicates the best electrocatalysts. For
+ ation of their electronic levels and charge transfers from TM ORR processes, the PDS of all TM@Sb monolayers occur
+ atoms to the intermediates. Consequently, there is a negative mainly at the third step (*O to *OH) and the fourth step (*OH
+ correlation between ΔG*OOH and the d band center for TM to H2O). We then chose ΔG*OH as a descriptor for ηORR, and an
+ atoms in the same row: V > Cr > Mn > Fe > Co > Ni > Cu > Zn, inverse volcano can be plotted (Fig. 8b). Similarly, the best
+
+ 12892 | Nanoscale, 2021, 13, 12885–12895 This journal is © The Royal Society of Chemistry 2021
+ View Article Online
+
+ Nanoscale Paper
+
+ as the active sites for the HER, OER and ORR have been inves-
+ tigated. We demonstrated that almost all TM@Sb monolayers
+ could present good stability to form SACs. Meanwhile, some of
+ the SACs also show good electrical conductivity. For the HER,
+ the Ir@, Pt@, Ni@, and Cu@Sb monolayers show a small
+ value of ΔG*H (−0.009, −0.010, 0.059 and 0.193 eV, respect-
+ ively). In terms of OER performance, the Pt@Sb monolayer
+ shows the smallest ηOER of 0.48 V, which is smaller than the
+ state-of-the-art catalyst IrO2 (0.56 V). The binding strength of
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ substrates and intermediates displays a close correlation with
+ the d band center of TM atoms. For the ORR performance of
+ antimonene based SACs, the overpotential ηORR of the Ag@Sb
+ monolayer is the smallest at only 0.50 V, followed by Pd@,
+ Rh@, Cd@ and Pt@Sb monolayers (0.58 V, 0.60 V, 0.62 V and
+ 0.71 V, respectively). The noble metal atoms can improve the
+ OER and ORR performances of antimonene better than other
+ TM atoms. It could be suggested that the Pt@Sb monolayer
+ Fig. 7 (a) Scaling relations between ΔG*OH and ΔG*OOH for TM@Sb
+ monolayers; (b) scaling relations between the ΔG*OH and ΔG*O for can be a trifunctional electrocatalyst for HER, OER and ORR
+ TM@Sb monolayers. reactions. Our studies predicate a new type of catalyst with a
+ single TM atom anchored on antimonene, which could be
+ applied in water splitting, metal–air batteries and fuel cells.
+
+ Author contributions
+ S. Lu, K. Guo and Z. Yu designed the research. S. Lu performed
+ DFT and AIMD simulations. All authors collaboratively ana-
+ lyzed the data. S. Lu and Z. Yu contributed to the interpret-
+ ation of the results. All authors wrote the paper and prepared
+ revisions.
+
+ Conﬂicts of interest
+ There are no conflicts of interest to declare.
+
+ Fig. 8 (a) The volcano curve between negative OER overpotential
+ (−ηOER) and ΔG*OOH − ΔG*O for TM@Sb monolayers; (b) the inverse
+ volcano curve between ORR overpotential (ηORR) and ΔG*OH for TM@Sb Acknowledgements
+ monolayers.
+ This work was supported by the Norwegian Ministry of
+ Education and Research. The computations were performed
+ ORR electrocatalyst is the Ag@TM monolayer at the peak of on resources provided by UNINETT Sigma2 – the National
+ the volcano. As the Pt@Sb monolayer possesses significantly Infrastructure for High Performance Computing and Data
+ smaller ΔG*H, we can conclude that the Pt@Sb monolayer Storage in Norway.
+ could be a potential trifunctional electrocatalyst for the HER,
+ OER and ORR. We further evaluated the stability of Pt SACs by
+ calculating the diﬀusion barrier of Pt from the vacancy to the References
+ neighboring site (Fig. S11†). An energy barrier of 2.18 eV indi-
+ cates that it is challenging to form the cluster, confirming the 1 Z. H. Zhao, M. T. Li, L. P. Zhang, L. M. Dai and Z. H. Xia,
+ Pt-SACs with great stability. Adv. Mater., 2015, 27, 6834–6840.
+ 2 M. H. Shao, Q. W. Chang, J. P. Dodelet and R. Chenitz,
+ Chem. Rev., 2016, 116, 3594–3657.
+ 4. Conclusions 3 X. Zhang, A. Chen, Z. H. Zhang, M. G. Jiao and Z. Zhou,
+ J. Mater. Chem. A, 2018, 6, 11446–11452.
+ Through computational screening, a series of TM atoms 4 Z. P. Cano, D. Banham, S. Y. Ye, A. Hintennach, J. Lu,
+ embedded in the single vacancy of the antimonene monolayer M. Fowler and Z. W. Chen, Nat. Energy, 2018, 3, 279–289.
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12893
+ View Article Online
+
+ Paper Nanoscale
+
+ 5 Y. Yu, J. Zhou and Z. Sun, Adv. Funct. Mater., 2020, 30, 29 X. Y. Chia and M. Pumera, Nat. Catal., 2018, 1, 909–921.
+ 2000570. 30 B. L. Xu, S. H. Qi, M. M. Jin, X. Y. Cai, L. F. Lai,
+ 6 Z. W. Seh, J. Kibsgaard, C. F. Dickens, I. B. Chorkendorﬀ, Z. T. Sun, X. G. Han, Z. F. Lin, H. Shao, P. Peng,
+ J. K. Norskov and T. F. Jaramillo, Science, 2017, 355, Z. H. Xiang, J. E. Elshof, R. Tan, C. Liu, Z. X. Zhang,
+ eaad4998. X. C. Duan and J. M. Ma, Chin. Chem. Lett., 2019, 30, 2053–
+ 7 J. Greeley, T. F. Jaramillo, J. Bonde, I. B. Chorkendorﬀ and 2064.
+ J. K. Norskov, Nat. Mater., 2006, 5, 909–913. 31 M. S. Desselhaus and P. T. Araujo, ACS Nano, 2010, 4,
+ 8 T. Reier, M. Oezaslan and P. Strasser, ACS Catal., 2012, 2, 6297–6302.
+ 1765–1772. 32 C. L. Tan, X. H. Cao, X. J. Wu, Q. Y. He, J. Yang, X. Zhang,
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ 9 H. X. Xu, D. J. Cheng, D. P. Cao and X. C. Zeng, Nat. Catal., J. Z. Chen, W. Zhao, S. K. Han, G. H. Nam, M. Sindoro and
+ 2018, 1, 339–348. H. Zhang, Chem. Rev., 2017, 117, 6225–6331.
+ 10 Y. Zheng, Y. Jiao, L. H. Li, T. Xing, Y. Chen, M. Jaroniec and 33 C. R. Zhu, D. Q. Gao, J. Ding, D. L. Chao and J. Wang,
+ S. Z. Qiao, ACS Nano, 2014, 8, 5290–5296. Chem. Soc. Rev., 2018, 47, 4332–4356.
+ 11 W. Chen, C. H. Wang, K. Sasaki, N. Marinkovic, W. Xu, 34 Z. X. Tao, T. Wang, X. J. Wang, J. Zheng and X. G. Li, ACS
+ J. T. Muckerman, Y. Zhu and R. R. Adzic, Energy Environ. Appl. Mater. Interfaces, 2016, 8, 35390–35397.
+ Sci., 2013, 6, 943–951. 35 T. Zhang, B. K. Zhang, Q. Peng, J. Zhou and Z. M. Sun,
+ 12 R. Miao, B. Dutta, S. Sahoo, J. K. He, W. Zhong, J. Mater. Chem. A, 2021, 9, 433–441.
+ S. A. Cetegen, T. Jiang, S. P. Alpay and S. L. Suib, J. Am. 36 S. L. Zhang, Z. Yang, Y. F. Li, Z. F. Chen and H. B. Zeng,
+ Chem. Soc., 2017, 139, 13604–13607. Angew. Chem., 2015, 127, 3155–3158.
+ 13 T. F. Jaramillo, K. P. Jorgensen, J. Bonde, J. H. Nielsen, 37 H. S. Tsai, S. W. Wang, C. H. Hsiao, C. W. Chen,
+ S. Horch and I. Chorkendorﬀ, Science, 2007, 317, 100–102. H. Ouyang, Y. L. Chueh, H. C. Kuo and J. H. Liang, Chem.
+ 14 M. Jahan, Z. L. Liu and K. P. Loh, Adv. Funct. Mater., 2013, Mater., 2016, 28, 425–429.
+ 23, 5363–5372. 38 J. P. Ji, X. F. Song, J. Z. Liu, Z. Yan, C. X. Huo, S. L. Zhang,
+ 15 L. S. Bezerra and G. Maia, J. Mater. Chem. A, 2020, 8, M. Su, L. Liao, W. H. Wang, Z. H. Ni, Y. F. Hao and
+ 17691–17705. H. B. Zeng, Nat. Commun., 2016, 7, 13352.
+ 16 X. M. Zhao, X. Liu, B. Y. Huang, P. Wang and Y. Pei, 39 R. G. Mao, Z. sofer, D. Bousa and M. Pumera, Angew.
+ J. Mater. Chem. A, 2019, 7, 24583–24593. Chem., 2017, 129, 14609–14614.
+ 17 B. F. Cao, G. M. Veith, J. C. Neuefeind, R. R. Adzic and 40 X. Q. Wang, Z. J. Li, Y. T. Qu, T. W. Yuan, W. Y. Wei, Y. Wu
+ P. G. Khalifah, J. Am. Chem. Soc., 2013, 135, 19186–19192. and Y. D. Li, Chem, 2019, 5, 1486–1511.
+ 18 L. Zhuang, L. Ge, Y. Yang, M. Li, Y. Jia, X. Yao and Z. Zhu, 41 B. Qiao, A. Wang, X. Yang, L. F. Allard, Z. Jiang, Y. Cui,
+ Adv. Mater., 2017, 29, 1606793. J. Liu, J. Li and T. Zhang, Nat. Chem., 2011, 3, 634.
+ 19 G. L. Tian, M. Q. Zhao, D. S. Yu, X. Y. Kong, J. Q. Huang, 42 X. F. Yang, A. Wang, B. Qiao, J. Li, J. Liu and T. Zhang, Acc.
+ Q. Zhang and F. Wei, Small, 2014, 10, 2251–2259. Chem. Res., 2013, 46, 1740–1748.
+ 20 Y. Zheng, Y. Jiao, Y. H. Zhu, Q. R. Cai, A. Vasileﬀ, L. H. Li, 43 Y. Wu, C. Li, W. Liu, H. H. Li, Y. Y. Gong, L. Y. Niu,
+ Y. Han, Y. Chen and S. Z. Qiao, J. Am. Chem. Soc., 2017, X. J. Liu, C. Q. Sun and S. Q. Xu, Nanoscale, 2019, 11, 5064–
+ 139, 3336–3339. 5071.
+ 21 Q. M. Deng, J. Zhao, T. T. Wu, G. B. Chen, H. A. Hansen 44 H. G. Zeng, X. Y. Liu, F. B. Chen, Z. G. Chen, X. L. Fan and
+ and T. Vegge, J. Catal., 2019, 370, 378–384. W. M. Lau, ACS Appl. Mater. Interfaces, 2020, 12, 52549–
+ 22 H. L. Pan, Y. Wu, C. Li, H. H. Li, Y. Y. Gong, L. Y. Niu, 52559.
+ X. J. Liu, C. Q. Sun and S. Q. Xu, Appl. Surf. Sci., 2020, 531, 45 Z. W. Xu, R. F. Song, M. Y. Wang, X. Z. Zhang, G. W. Liu
+ 147292. and G. J. Qiao, Phys. Chem. Chem. Phys., 2020, 22, 26223–
+ 23 H. T. Wang, H. W. Lee, Y. Deng, Z. Y. Lu, P. C. Hsu, 26230.
+ Y. Y. Liu, D. C. Lin and Y. Cui, Nat. Commun., 2015, 6, 8. 46 G. Kresse and D. Joubert, Phys. Rev. B: Condens. Matter
+ 24 C. Y. Ling, L. Shi, Y. X. Ouyang, X. C. Zeng and J. L. Wang, Mater. Phys., 1999, 59, 1758.
+ Nano Lett., 2017, 17, 5133–5139. 47 F. Y. Li, Y. F. Li, X. C. Zeng and Z. F. Chen, ACS Catal.,
+ 25 I. S. Amiinu, Z. H. Pu, X. B. Liu, K. A. Owusu, 2015, 5, 544–552.
+ H. R. Monestel, F. O. Boakye, H. N. Zhang and S. C. Mu, 48 P. E. Blöchl, Phys. Rev. B: Condens. Matter Mater. Phys.,
+ Adv. Funct. Mater., 2017, 27, 1702300. 1994, 50, 17953–17979.
+ 26 Y. Cheng, P. F. Yuan, X. H. Xu, S. J. Guo, K. L. Pang, 49 J. P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett.,
+ H. R. Guo, Z. G. Zhao, X. Wu, L. R. Zheng and R. Song, 1996, 77, 3865–3868.
+ Nanoscale, 2019, 11, 20284–20294. 50 J. P. Perdew, M. Ernzerhof and K. Burke, J. Chem. Phys.,
+ 27 J. W. Lim, J. W. Jung, N. Y. Kim, G. Y. Lee, H. J. Lee, 1996, 105, 9982–9985.
+ Y. H. Lee, D. S. Choi, K. R. Yoon, Y. H. Kim, I. D. Kim and 51 S. Grimme, J. Antony, S. Ehrlich and H. Krieg, J. Chem.
+ S. O. Kim, Energy Storage Mater., 2020, 32, 517–524. Phys., 2010, 132, 154104–154123.
+ 28 H. F. Wang, C. Tang, B. Wang, B. Q. Li and Q. Zhang, Adv. 52 G. Kresse and J. Hafner, Phys. Rev. B: Condens. Matter
+ Mater., 2017, 29, 1702327. Mater. Phys., 1993, 47, 558.
+
+ 12894 | Nanoscale, 2021, 13, 12885–12895 This journal is © The Royal Society of Chemistry 2021
+ View Article Online
+
+ Nanoscale Paper
+
+ 53 C. Su, H. Jiang and J. Feng, Phys. Rev. B: Condens. Matter 67 Y. D. Yu, J. Zhou and Z. M. Sun, Adv. Funct. Mater., 2020,
+ Mater. Phys., 2013, 87, 075453. 30, 2000570.
+ 54 S. Baroni, S. de Gironcoli, A. dal Corso and P. Giannozzi, 68 H. Li, Y. Wu, C. Li, Y. Gong, L. Niu, X. Liu, Q. Jiang, C. Sun
+ Rev. Mod. Phys., 2001, 73, 515. and S. Xu, Appl. Cata., B, 2019, 251, 305–312.
+ 55 K. Mathew, R. Sundararaman, K. L. Weaver, T. A. Arias and 69 G. P. Gao, Q. Sun and A. J. Du, J. Phys. Chem. C, 2016, 120,
+ R. G. Hennig, J. Chem. Phys., 2014, 140, 084106– 16761–16766.
+ 084114. 70 M. Nasir, Y. D. Yao, J. W. Zhang, L. Pan, X. W. Zhang and
+ 56 G. Henkelman, A. Arnaldsson and H. Jonsson, Comput. J. J. Zou, Adv. Sci., 2018, 5, 1700464.
+ Mater. Sci., 2006, 36, 354–360. 71 Y. N. Men, P. Li, J. H. Zhou, G. Z. Chen, S. L. Chen and
+Published on 28 June 2021. Downloaded by The University of Tokyo on 11/26/2025 10:17:30 AM.
+
+ 57 J. K. Nørskov, J. Rossmeisl, A. Logadottir, L. Lindqvist, W. Luo, ACS Catal., 2019, 9, 3744–3752.
+ J. R. Kitchin, T. Bligaard and H. Jonsson, J. Phys. Chem. B, 72 X. K. Huang, H. X. Xu, D. Cao and D. J. Cheng, Nano
+ 2004, 108, 17886–17892. Energy, 2020, 78, 105253–105261.
+ 58 P. Aghdasi and R. Ansari, Solid State Commun., 2020, 311, 73 I. C. Man, H. Y. Su, F. Calle-Vallejo, H. A. Hansen,
+ 113849. J. I. Martinez, N. G. Inoglu, J. Kitchin, T. F. Jaramillo,
+ 59 P. Aghdsi, S. Yousefi and R. Ansari, J. Mol. Model., 2021, 15, J. K. Norskov and J. Rossmeisl, ChemCatChem, 2011, 3,
+ 27. 1159–1165.
+ 60 A. A. El-Barbary, R. H. Telling, C. P. Ewels, M. I. Heggie and 74 C. Y. Ling, L. Shi, Y. X. Ouyang, X. C. Zeng and J. L. Wang,
+ P. R. Briddon, Phys. Rev. B: Condens. Matter Mater. Phys., Nano Lett., 2017, 17, 5133–5139.
+ 2003, 68, 144107. 75 F. Calle-Vallejo, A. Krabbe and J. M. Garcia-Lastra, Chem.
+ 61 L. Oakes, R. Carter and C. L. Pint, Nanoscale, 2016, 8, Sci., 2017, 8, 124–130.
+ 19368–19375. 76 G. P. Gao, E. R. Waclawik and A. J. Du, J. Catal., 2017, 352,
+ 62 Q. X. Zhou, W. W. Ju, Y. L. Yong and X. H. Li, J. Magn. 579–585.
+ Magn. Mater., 2019, 491, 165613. 77 H. Niu, X. H. Wan, X. T. Wang, C. Shao, J. Robertson,
+ 63 C. Freysoldt, B. Grabowski, T. Hickel, J. Neugebauer, Z. F. Zhang and Y. Z. Guo, ACS Sustainable Chem. Eng.,
+ G. Kresse, A. Janotti and C. G. Van de Walle, First-prin- 2021, 9, 3590–3599.
+ ciples calculations for point defects in solids, Rev. Mod. 78 M. T. Li, L. P. Zhang, Q. Xu, J. B. Niu and Z. H. Xia,
+ Phys., 2014, 86, 253–305. J. Catal., 2014, 314, 66–72.
+ 64 D. Singh, S. K. Gupta, Y. Sonvane and I. Lukacevic, J. Mater. 79 D. X. Kan, R. Q. Lian, D. S. Wang, X. L. Zhang, J. Xu,
+ Chem. C, 2016, 4, 6386–6390. X. Y. Gao, Y. Yu, G. Chen and Y. J. Wei, J. Mater. Chem. A,
+ 65 O. Ü. Aktürk, V. O. Özçelik and S. Ciraci, Phys. Rev. B: 2020, 8, 17065–17077.
+ Condens. Matter Mater. Phys., 2015, 91, 235446. 80 H. X. Xu, D. J. Cheng, D. P. Cao and X. C. Zeng, Nat. Catal.,
+ 66 J. K. Nørskov, T. Bligaard, A. Logadottir, J. R. Kitchin, 2018, 1, 339–348.
+ J. G. Chen, S. Pandelov and U. Stimming, J. Electrochem. 81 S. Zhou, N. S. Liu, Z. Y. Wang and J. J. Zhao, ACS Appl.
+ Soc., 2005, 152, J23–J26. Mater. Interfaces, 2017, 9, 22578–22587.
+
+ This journal is © The Royal Society of Chemistry 2021 Nanoscale, 2021, 13, 12885–12895 | 12895

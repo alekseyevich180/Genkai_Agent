@@ -1,0 +1,71 @@
+{
+  "id": "surface_relations",
+  "title": "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+  "text": "the intrinsic active component and reaction mechanism at the\natomic level remain unclear. Here, taking the Cr2O3, one of the\nmost stable chromium oxides, as an object, we systematically\ninvestigated NO oxidation processes on Cr2O3(001) and -(012)\nsurfaces by virtue of DFT+U calculations, aiming to uncover the\nactivity-limiting factors and basic structure−activity relationship of\nthe Cr2O3 catalyst. It was revealed that NO oxidation could not\nproceed via a Mars−van Krevelen mechanism involving the lattice\noxygen on both surfaces. For the Cr2O3(001) surface exposing the\nisolated three-coordinated Cr3c, the reactions are inclined to occur\nthrough the Eley−Rideal route, in which the NO couples directly\nwith the molecular O2* or atomic O* adsorbed at the Cr3c site to form two key intermediate species (ONOO* and NO2*)\nfollowing a barrierless process. Nevertheless, the overall activity is limited by the irreversible adsorption of NO2 species on the\nhighly unsaturated Cr3c. In contrast, on the (012) termination, which exposes the ﬁve-coordinated Cr5c, the NO2* can be easily\nreleased, but the reactant O2 cannot be eﬃciently adsorbed and also results in a limited overall activity at room temperature. To\nachieve a higher activity, a thermodynamically favored interface model of monochain CrO3 supported on Cr2O3(012) was\nproposed, which shows an improved O2 adsorption energy of −0.99 eV and thus an enhanced activity of Cr2O3(012), possibly\naccounting for the experimentally high activity of Cr-based catalysts usually involving the Cr3+/Cr6+ redox. This study\ndemonstrated the catalytic ability of Cr2O3 for NO oxidation at room temperature, and the presented systematic picture may\nfacilitate the further design of more active Cr-based catalysts.\nKEYWORDS: density functional theory, chromium oxides, NO oxidation, room temperature, catalytic mechanism, monochain CrO3\n\n1. INTRODUCTION because of the irreversible adsorption of NO2. Thus, exploring\nNO oxidation to NO2 is a key process in a number of NOx nonprecious and low-temperature catalysts for NO oxidation\nremediation technologies,1 including selective catalytic reduc- and understanding the catalytic mechanism are of great\ntion (SCR)2−4 and NOx storage and reduction (NSR).5,6 importance.\nPlatinum-based catalysts7−10 have been widely used for NO Recently, there has been great interest in the development of\noxidation; however, their high cost restrict their applications. Cr-based catalysts17−24 for the eﬀective removal of NOx from\nTransition-metal oxides (TMOs) have recently attracted great stationary sources. Smirniotis et al.17,25 found that Cr oxides\nattention as promising catalysts for NO oxidation, and previous supported on Hombikat TiO2 showed superior performance in\nstudies have made much progress in ﬁnding highly eﬃcient the low-temperature selective catalytic reduction (SCR) of NO\nTMO catalysts. Perovskites such as La 1−x Sr x CoO 3 , with NH3 and pointed out the existence of a Cr2O3 crystal\nLa1−xSrxMnO3, and Mn-mullite (Sm,Gd)Mn2O5 are expected phase. Shiba et al.26 reported earlier that a TiO2-supported\nto be viable alternatives to precious-metal catalysts.11−14 These chromium component had a high ability for the oxidation of\nobservations/suggestions are particularly noteworthy because NO to NO2. Cai et al.27 studied the eﬀect of Cr on the NO\nthese catalysts are much less expensive than catalysts based on oxidation over ceria−zirconia solid solutions, proposing that\nPt-group metals. However, they are still not satisfactory for NO the synergistic mixture of the well-dispersed CrOx and\noxidation at room temperature. It has been reported that the\nactivated carbon, especially modiﬁed carbon15 and activated Received: January 8, 2018\ncarbon ﬁbers,16 are active for catalytic NO oxidation at room Revised: April 6, 2018\ntemperature, but the catalytic activity diminished quickly Published: May 3, 2018\n\nFigure 1. Hexagonal unit cell of Cr2O3 (a) together with the rhombohedral primitive cell (b). Red spheres stand for O atoms; blue spheres represent\nCr atoms. The Cr atoms denoting with ↑↓ stand for the spin arrangements. (c, d) Top views of the optimized surface conﬁguration of the\nCr2O3(001) and -(012) surfaces, respectively. This notation is used throughout the paper.",
+  "extraction": {
+    "materials": [
+      "Cr2O3"
+    ],
+    "material_parameters": [
+      "stable chromium oxide",
+      "Cr3+/Cr6+ redox"
+    ],
+    "surfaces": [
+      "Cr2O3(001)",
+      "Cr2O3(012)"
+    ],
+    "surface_terminations": [
+      "five-coordinated Cr5c",
+      "three-coordinated Cr3c"
+    ],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "Cr3c"
+    ],
+    "adsorbates": [
+      "NO",
+      "O2*",
+      "NO2*",
+      "ONOO*"
+    ],
+    "adsorption_sites": [
+      "Cr3c site"
+    ],
+    "coverage": [],
+    "intermediates": [
+      "ONOO*",
+      "NO2*"
+    ],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [
+      "monochain CrO3"
+    ],
+    "properties": [
+      "catalytic ability",
+      "O2 adsorption energy of -0.99 eV"
+    ],
+    "reaction_parameters": [
+      "room temperature"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "DFT+U",
+      "catalytic mechanism"
+    ],
+    "recommended_modeling_tasks": [
+      "adsorbate_landscape",
+      "doped_surface"
+    ],
+    "applications": [
+      "NO oxidation",
+      "catalytic remediation technologies"
+    ],
+    "links": []
+  }
+}

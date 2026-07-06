@@ -1,0 +1,550 @@
+pubs.acs.org/JPCL Letter
+
+ Strategies to Improve the Oxygen Reduction Reaction Activity on
+ Pt−Bi Bimetallic Catalysts: A Density Functional Theory Study
+ Yan-Ping Zhang, Zi-Xiang Su, He-He Wei, Zhi-Qiang Wang,* and Xue-Qing Gong*
+ Cite This: J. Phys. Chem. Lett. 2023, 14, 1990−1998 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Decreasing the level of use of Pt in proton exchange membrane fuel cells is of
+ great research interest both academically and industrially. In this work, we systematically
+ studied the oxygen reduction reaction (ORR) following the four-electron association
+ mechanism at various Pt−Bi surfaces with density functional theory calculations. The results
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:58:26 (UTC).
+
+ showed that the introduction of Bi changes the potential-determining step of ORR. Moreover,
+ the hydroxy adsorption free energy (GOH*) can be used as a descriptor of ORR activity, and
+ 0.74 eV is the ideal GOH* for it to reach its maximum. Notably, we also found that the tensile
+ strain introduced by Bi and electron transfer between Pt and Bi synergize to modulate the d-
+ band of Pt to contract, shift downward, and break the 5d96s1 valence electron configuration of
+ Pt, and accordingly, PtBi(100), with the lowest d-band center, gives the best ORR activity,
+ which is even slightly higher than that of Pt(111).
+
+ W ith the global trend of minimizing fossil fuel use and the
+ development of sustainable technologies, electrocata-
+ lytic energy conversion processes have become increasingly
+ cathode catalyst in fuel cells, a high loading of Pt is often
+ required to compensate for the large overpotential caused by
+ the slow ORR process, which may even result in an 8-fold
+ important. Specifically, proton exchange membrane fuel cells higher Pt loading on the cathode than on the anode.6 As a
+ (PEMFCs) can act as a clean and efficient energy source by result, electrocatalysts usually account for up to 50% of the cost
+ converting chemical energy into electrical energy and have of fuel cells.16,17 In addition, the cathode Pt catalysts of fuel
+ garnered attention worldwide.1−3 However, the high cost and cells are also relatively easy to lead to poisoning under long-
+ limited catalyst lifetime have significantly restricted the term operating conditions, which then caused the conversion
+ commercial application of PEMFCs.4 Moreover, the relatively efficiency to decrease and caused poor tolerance.18,19
+ slow kinetics of oxygen reduction reaction (ORR) on the In recent years, more and more studies have been devoted to
+ cathode of PEMFCs, which usually requires a higher modulating Pt surface structures and electronic properties to
+ overpotential to meet the actual current density, still makes achieve increased activities by doping with other species. For
+ it difficult for PEMFCs to achieve high conversion example, by constructing non-noble metal (M)-doped alloys
+ efficiencies.5,6 Therefore, the development of new catalytic (Pt-M), one can obtain the ORR catalyst with high activity but
+ electrode materials, in particular cathodes, with high perform- a with significantly reduced amount of Pt.20,21 It has been
+ ance, high durability, and low cost has become a hot research shown experimentally that Pt usually forms alloys with metals
+ topic for PEMFCs. such as Ni, Co, and Bi, and these alloy catalysts exhibited
+ According to previous studies,7,8 the ORR process in an acid excellent activities in acidic ORR.22−25 In particular, Huang
+ solution usually involves the two-electron reduction of O2 to and co-workers26 prepared hexagonal PtBi alloy nanoplates by
+ H2O2 and the four-electron reduction to H2O. The two- colloidal chemistry methods and showed that such alloy
+ electron reaction pathway can be simply written as O2 + 2(H+ catalysts exhibited significantly enhanced electrocatalytic
+ + e−) → H2O2, and for the four-electron ORR path, i.e., O2 + activity toward ORR compared with other PtBi nanomaterials,
+ 4(H+ + e−) → 2H2O, it proceeds through a dissociation which was mainly attributed to their unique two-dimensional
+ mechanism or an association mechanism to gradually reduce nanostructure, and they also confirmed that the ORR process
+ oxygen species to water;9 they both give rise to the electric
+ potential for the fuel cell.10 The catalysts used for ORR are Received: November 15, 2022
+ usually Pt-based, non-Pt metal-based, and nonmetallic carbon- Accepted: January 20, 2023
+ based materials.11−13 For the Pt-based catalysts, which are Published: February 16, 2023
+ considered to be the most efficient ORR catalysts, the surface-
+ promoted ORR process is believed to follow the four-electron
+ mechanism.14,15 Accordingly, for the practical use of the
+
+ © 2023 American Chemical Society https://doi.org/10.1021/acs.jpclett.2c03465
+ 1990 J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+followed the four-electron oxygen reduction mechanism on According to the calculated results of PtxBi1−x in Table 1, the
+these PtBi catalysts. Zhang et al.27 proposed a novel ultrafast lattice parameters generally increase with Bi content. This
+technique for the synthesis of PtBi alloy nanoparticles and
+found that the PtBi nanoparticles also exhibited high ORR Table 1. Calculated Lattice Parameters and Formation
+activity and excellent methanol tolerance. These studies further Energies (ΔEalloy) of PtxBi1−x Alloys with Different
+suggested that the introduction of Bi may effectively increase Compositions
+the distance between Pt atoms and generate highly active
+ a (Å) b (Å) c (Å) ΔEalloy (eV)
+adsorption sites, which can in turn enhance the ORR activity of
+the PtBi catalysts. In addition to the simple PtBi nanoalloys, Pt 3.982 3.982 3.982 −
+the complex core−shell structures of PtBi alloys have also been Pt0.75Bi0.25 4.110 4.110 4.110 −0.45
+successfully constructed and exhibited improved catalytic Pt0.50Bi0.50 4.944 4.944 3.499 −1.05
+activities for ORR.28 Pt0.25Bi0.75 4.746 4.746 4.746 0.41
+ We must mention that Nørskov and co-workers29 used first- Bi 4.624 4.727 6.523 −
+principles density functional theory (DFT) calculations to
+predict the volcano-type trends in ORR activity on transition indicates that Pt atoms are subjected to a tensile force on the
+metals and concluded that catalysts with oxygen binding different Pt−Bi surfaces. More importantly, from the calculated
+energies that were ∼0.2 eV lower than that at Pt(111) may formation energies of PtxBi1−x alloys (Table 1), we can find
+yield the best ORR activity. In addition, Qin et al.30 conducted that the formation of Pt0.75Bi0.25 and Pt0.50Bi0.50 is exothermic
+DFT calculations and proposed that the O-related inter- (ΔEalloy = −0.45 and −1.05 eV, respectively), and the Pt0.5Bi0.5
+mediates in the ORR process bind to both Bi and Pt sites on alloy is significantly more stable. At the same time, with a
+the interface regions between the Pt shell and PtBi core of the further increase in Bi content, the alloy formation energy for
+hcp-PtBi/fcc-Pt core/shell nanoplates, with OH protonation Pt0.25Bi0.75 is endothermic by ∼0.41 eV, which indicates that
+reduction as the potential-determining step (PDS). the PtBi3 alloy should be rather unstable. Then, in this work,
+ In general, one can indeed see that the doping of Bi can we mainly focused on the ORR on the Pt, Pt3Bi, and PtBi
+improve the electrocatalytic activity of the ORR on the Pt- surfaces.
+based catalysts. In addition, it has also been shown that the First, seven surfaces were constructed (see Figure 1),
+introduction of Bi can effectively improve the tolerance of the namely, Pt(111), Pt3Bi(100), Pt3Bi(110), Pt3Bi(111), Pt3Bi-
+Pt-based ORR catalysts to methanol and CO poisoning (311), PtBi(100), and PtBi(111), which were also determined
+compared with the regular Pt/C catalysts. However, one may experimentally.33 To keep the number of exposed active sites
+still note that it is not clear how the doping of Bi modulates the largely consistent for different surface cells, the p(2 × 2)
+surface structures and electronic properties of the Pt catalysts surface slabs were used for the Pt(111), Pt3Bi(110), Pt3Bi-
+and in turn affects the ORR performance. (111), and PtBi(111) surfaces, the p(1 × 2) surface slab was
+ In this work, we systematically studied the catalytic ORR used for the Pt3Bi(311) surface, the p(3 × 3) surface slab was
+activities of Pt−Bi bimetallic surfaces with different composi- used for the Pt3Bi(100) surface, and the p(3 × 3) surface slab
+tions and orientations by using DFT calculations. We found was used for the PtBi(100) surface. In addition, we also
+that the PDS of the ORR process in these Pt−Bi systems is the calculated the surface energies of these seven surfaces (Table
+*OH → H2O step, which is different from that on the Pt S1), and the results showed that the PtBi surfaces are generally
+catalyst (O* → OH*). Moreover, we also found that the more stable than those of Pt3Bi.
+hydroxyl adsorption free energy (GOH*) can be used as an It is generally accepted that the moderate adsorption of O2
+effective descriptor for the theoretical evaluation of the ORR on the catalyst surface is critical for the oxygen reduction
+activity, and accordingly, the PtBi(100) surface was deter- reaction, and overly strong or overly weak adsorption is
+mined to have a rather high ORR catalytic activity close to that unfavorable.34,35 Therefore, we first calculated the adsorption
+of Pt(111), which can also be attributed to the fact that the of O2 on the different PtxBi1−x surfaces [Pt(111), Pt3Bi(100),
+introduction of Bi changes the d-band structures of the Pt- Pt 3 Bi(110), Pt 3 Bi(111), Pt 3 Bi(311), PtBi(100), and
+based catalyst. This work provides some theoretical insights PtBi(111)]. From the calculated results (Figure 2), one can
+into the rules of modulation of Pt electrocatalysts with cheap note that the adsorption of O2 is always exothermic on these
+metals like Bi and may also help in the design of more surfaces and its adsorption on the Pt3Bi(100) surface is the
+affordable Pt-based catalysts with high ORR performance. strongest with an Eads(O2) of 0.82 eV. On the contrary, the
+ To investigate their structures and stabilities, we first weakest O2 adsorption occurs on the Pt(111) surface with an
+calculated the formation energies (ΔEalloy) of the Pt−Bi Eads(O2) of only 0.37 eV. Therefore, these two surfaces may
+bimetallic systems with different compositions, namely PtxBi1−x not be good candidates for catalytic ORR. At the same time,
+(x = 1, 0.75, 0.5, 0.25, or 0), by using the following moderate adsorption strengths of O2 can be determined on the
+equation:31,32 PtBi(100), Pt3Bi(110), and PtBi(111) surfaces [Eads(O2) =
+ 0.48, 0.52, and 0.62 eV, respectively], which is depicted as the
+ Ealloy = E(A xB1 x , a) xEA(aA0 ) (1 x)E B(aB0) (1) yellow region in Figure 2. Then, one can expect that these
+ surfaces might efficiently activate O2 and promote further
+where E(AxB1−x, a) is the total energy of the bimetallic alloy reactions to form stable OOH* intermediates to achieve
+system, a is the lattice constant of alloy AxB1−x, and EA(a0A) and superior ORR activities.
+EB(a0B) are the total energies of the A and B components of the The Gibbs free energy change (ΔG) for each elementary
+alloy system at their own equilibrium lattice constants, step in ORR can be used as an important parameter for
+respectively. Obviously, a negative value of ΔEalloy indicates determining the electrocatalytic activity; i.e., the step with the
+that the alloys can be thermodynamically favorable to form, largest ΔG in the ORR elementary step is the PDS.36
+and the more negative the ΔEalloy, the more stable the alloy. Computational details are presented in the Supporting
+ 1991 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+Figure 1. Calculated structures (left, side view; right, top view) of (a) Pt(111), (b) Pt3Bi(100), (c) Pt3Bi(110), (d) Pt3Bi(111), (e) Pt3Bi(311), (f)
+PtBi(100), and (g) PtBi(111) surfaces. Deep blue for Pt atoms and purple for Bi atoms. This notation is used throughout the paper.
+
+ the reaction potential deviates from the ideal state due to the
+ binding energy associated with the intermediate, which makes
+ it necessary to overcome the reaction potential barrier (η) for
+ most electrocatalytic reactions.37 Therefore, the overpotential
+ is a key descriptor of the ORR activity of the electrocatalyst,
+ and a lower η usually suggests a higher ORR activity.
+ Then, to determine the ORR activities of the PtxBi1−x
+ bimetallic catalysts, we systematically calculated the Gibbs
+ free energy changes and overpotentials of ORR on the seven
+ surfaces of PtxBi1−x (see Tables S2−S4, Figure 3, and Figures
+ S1−S7). The results showed that the four-electron elementary
+ steps on the PtxBi1−x surfaces are exothermic at U = 0 V
+ (Figure 3a). However, at the equilibrium potential (namely, U
+ = 1.23 V), we can find that the first elementary step of ORR
+ (O2 → OOH*) is endothermic [except for that at Pt3Bi(110)],
+Figure 2. Calculated adsorption energies of O2 on the different the second step (OOH* → O*) is exothermic, and the third
+PtxBi1−x surfaces (the yellow area indicates the moderate O2
+adsorption region). (O → OH*) and fourth (OH* → H2O) elementary steps are
+ also endothermic (Figure 3b). Therefore, at the equilibrium
+ potential, the PDS of ORR should be among the endothermic
+Information, and the theoretical overpotential (η) of the ORR reaction steps (i.e., O2 to OOH*, O* to OH*, or OH* to
+under standard conditions can be obtained with eq 2: H2O). Moreover, we found that the overpotentials on the
+ seven Pt−Bi surfaces increase in the following order:
+ = Gmax /e + 1.23 V (2) PtBi(100) < Pt(111) < Pt3Bi(111) < PtBi(111) < Pt3Bi(311)
+where ΔGmax is the maximum among the reaction free energy < Pt3Bi(100) < Pt3Bi(110) (see Table S4 and Figure 3b; the
+changes (ΔG1−ΔG4). Ideally, all intermediates (such as corresponding overpotentials are 0.53, 0.55, 0.59, 0.62, 0.69,
+OOH*, O*, and OH* species) in the ORR should have the 0.72, and 0.78 V, respectively). This result clearly suggests that
+same chemical potential as the initial and final states are at the the Pt catalyst may have a high activity for ORR and the PDS
+equilibrium potential (U = 1.23 V). However, in the real case, of ORR is O* → OH* on the Pt(111) surface, which is also
+
+Figure 3. Calculated free energy profiles of the ORR processes on the seven PtxBi1−x surfaces at different applied potentials: (a) U = 0 V and (b) U
+= 1.23 V.
+
+ 1992 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+Figure 4. (a) Linear relationship among the calculated GOH*, GO*, and GOOH* values for the seven PtxBi1−x surfaces (U = 0 V). (b) Calculated
+limiting potentials for individual steps in eqs 4, 6, and 7. The solid lines indicate the lowest limiting potentials at the different GOH* values, and the
+dashed lines indicate the limiting potentials for nondetermining steps. The solid blue, red, and green lines show the three regions of strongly bound
+OH*, weakly bound OH*, and weakly bound OOH* for the four-electron processes, respectively. The blue−red intersection indicates the highest
+UL at a GOH* of 0.74 eV that can be achieved with the O* → OH* or OH* → H2O step as the PDS; the green−red intersection indicates the
+highest UL at a GOH* of 1.05 eV that can be achieved with the O2* → OOH* step as the PDS.
+
+consistent with previous studies.38 In addition, it is noteworthy coverage of 1/6 ML from 0.85 V (RHE) to 0.88 V (RHE); at
+that the overpotential of ORR on the PtBi(100) surface is even higher potentials, the coverage of O species gradually increases
+lower than that on the Pt(111) surface, indicating that the to 1/4 ML and then to 3/4 ML.
+ORR activity of the PtBi(100) surface may be higher than that The calculated free energies of the adsorption intermediates
+of Pt(111). Interestingly, with the introduction of Bi, the PDS were further analyzed (Figure 4a), and one can see that the
+of the ORR in the Pt−Bi system also changed to the OH* → Gibbs free energies of both OOH* and O* species are linearly
+H2O step, which can be attributed to the fact that the correlated with the free energies of the OH* species (GOOH* =
+introduction of Bi generates new active sites and effectively 1.13GOH* + 3.11 eV, and GO* = 0.63GOH* + 1.01 eV). These
+modulates the electronic properties of the Pt catalyst. We also results suggest that GOH* can be used as a good descriptor for
+calculated the kinetic barrier of the PDS for the most active describing the adsorption free energies of the key intermediates
+catalyst PtBi(100), and the results suggested that this process on these electrocatalyst surfaces. In fact, the thermodynamic
+needs to overcome an energy barrier of 0.55 eV and gives an limiting potential (UL) is also often used as an indicator of the
+exothermic reaction energy of 0.84 eV (Figure S8). ORR activity, and it can be calculated as follows:40−42
+ Notably, considering that the solvation effect should be UL = 1.23 V (3)
+important for the ORR processes, we also calculated the four-
+electron association mechanism for the Pt(111) and PtBi(100) which shows that a more positive UL indicates the lower
+surfaces in solution at different potentials (Figures S9 and overpotential (i.e., better ORR activity). Due to the linear
+S10). The calculated results showed that the free energies of all relationship between GOOH* (GO*) and GOH*, the overpotential
+of the intermediates at Pt(111) (Figure S9a) and PtBi(100) can be described by a function involving only GOH*.
+(Figure S9b) surfaces are considerably lower under a solvation Accordingly, the limiting potentials (UL1−UL4) of the four
+effect. However, we can still notice that the PDS is the third elementary steps in the ORR as a function of GOH* can also be
+step on the Pt(111) surface (Figure S9a) and the fourth step defined as
+on the PtBi(100) surface (Figure S9b). Therefore, the PDS of UL1 = GO2 GOOH * = 1.13GOH * + 1.81 (4)
+ORR on the different surfaces did not change with or without
+the solvation effect. Moreover, the calculated results showed UL2 = GOOH * GO * = 0.5GOH * + 2.1 (5)
+that under the solvation effect, the overpotential of Pt(111)
+(0.66 eV) is slightly larger than that of PtBi(100) (0.61 eV), UL3 = GO * GOH * = 0.37GOH * + 1.01 (6)
+and this result is also consistent with that obtained without the
+ UL4 = GOH * (7)
+solvation effect.
+ In addition, we also calculated the Pourbaix diagram39 of the With the calculated free energies of the OH species on the
+PtBi(100) surface with the highest ORR activity to better different PtxBi1−x surfaces, one can obtain the three limiting
+understand the most stable state of surface species and potentials UL1, UL3, and UL4 for the three candidate PDSs
+coverage under different catalytic conditions (Figure S11). The (Figure 4b) from eqs 4−7. The lowest limiting potential of the
+calculated result shows that the clean PtBi(100) surface is the full reaction defines the overall limiting potential of the ORR.43
+most stable at potentials of < 0.77 V (RHE), and when the In Figure 4b, we illustrate the volcano plot of the limiting
+potential reaches 0.77 V (RHE), water starts to be oxidized potential with the largest UL and the smallest η on the top.
+and the surface structure with 1/6 ML OH* species is formed. Specifically, for the strong OH binding area of the plot
+When the potential is further increased above 0.85 V (RHE), (namely, GOH* < 0.74 eV), the PDS is the OH* → H2O step
+OH would further be oxidized to O* species with an O (blue solid line), and once the adsorption free energy of OH
+ 1993 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+Table 2. Calculated Average Metal Bond Lengths (M−M bonds) of the Different Surfaces and the M−O Bond Lengths on the
+PtxBi1−x Surfaces after OH Adsorption (H, white; O, red) and the Corresponding Calculated η Values
+
+species is closer to 0.74 eV, the OH* → H2O process is more strong effect on the ORR activity. For example, when the OH*
+likely to occur and gives the higher ORR activity. Notably, one species are adsorbed at PtBi(100), Pt3Bi(311), and Pt3Bi(100),
+can also find that the calculated results on the surfaces of Pt− the Pt−O bond lengths are 2.18, 2.14, and 2.11 Å and the
+Bi alloys are on the blue solid line, as well, and the corresponding η values are 0.53, 0.69, and 0.72 V, respectively,
+corresponding ORR activities of the PtBi surfaces are higher which shows that the longer the Pt−O bond, the lower the η
+than those of Pt3Bi, with PtBi(100) giving the highest ORR and the higher the ORR activity. However, on the PtBi(111)
+activity. Then, for the weak binding area of the OH species surface, the Pt−O bond (2.12 Å) is slightly shorter than that at
+(0.74 eV < GOH* < 1.05 eV), the PDS of ORR turns to be the Pt3Bi(311) (2.14 Å), though the η at PtBi(111) (0.62 V) is
+O* → OH* step (Figure 4b, red solid line) on surfaces like lower than that at Pt3Bi(311) (0.69 V), and this may be
+Pt(111). From Figure 4b, one can indeed find that due to the because the Bi−O bond at PtBi(111) (2.69 Å) is much longer
+weak OH* adsorption on the Pt(111) surface, one may than that at Pt3Bi(311) (2.41 Å). Then, we also compared the
+attempt to enhance its ORR activity by increasing the OH* metal bonds of the Pt3Bi and PtBi surfaces and found that the
+adsorption. The intersection of the red and blue lines is the top average Pt−Pt and Pt−Bi bonds on the first layer of the PtBi
+of the volcano plot, and it represents the highest UL that can be surfaces (3.50 and 3.07 Å, respectively) are longer than those
+reached for the O* → OH* or OH* → H2O step as the PDS. on the Pt3Bi surfaces (2.86 and 2.91 Å, respectively). As one
+In other words, a GOH* of 0.74 eV is the ideal OH* free energy may already notice from Figure 3, the PtBi surfaces in general
+for the Pt−Bi bimetallic system to achieve on the basis of this also have higher ORR activities, further indicating that longer
+linear relationship. In addition, when the OH binding is too metal bonds may help weaken the OH adsorption. The fact
+weak (GOH* > 1.05 eV), the PDS becomes the O2 → OOH* that the metal bonds on the surfaces of the PtBi alloy become
+step (green solid line), indicating that the OOH* adsorption is longer is also consistent with the fact that Pt atoms are
+weak at this time, which affects the formation of O* species, subjected to greater tensile strain.
+and thus, the OH* adsorption becomes difficult. From the results presented above, we can conclude that
+ Therefore, we found that in the four-electron association longer Pt−O bonds can generally give higher ORR activity,
+mechanism of ORR, the PDS on the Pt(111) surface occurs at though longer Bi−O bonds may also assist in enhancing the
+the O* → OH* step, and with the introduction of Bi, the PDS ORR activity when the Pt−O bond lengths are similar. In
+changes to the OH* → H2O step. To improve the ORR other words, for each triangle unit formed by the Pt−Bi−O
+activity in the Pt−Bi bimetallic system, it is necessary to group (Table 2), the tensile strain of the metal substrate can
+weaken the OH adsorption to a certain extent (GOH* ∼ 0.74 make the PtBi alloys with Pt−Bi bond distances longer than
+eV). To better understand the origin of these changes in the those of Pt3Bi, which leads to the longer Pt−O or Bi−O bond,
+PDS, we further analyzed the geometrical and electronic thus weakening the adsorption of the OH species for better
+properties of the Pt−Bi bimetallic systems. ORR activity closer to the apex of the volcano plot (Figure
+ It is well-known that the catalyst’s activity is closely related 4b).
+to its surface geometric and electronic properties. We then In addition, for the Pt3Bi surfaces, we found that the
+calculated the metal bond lengths (Pt−Pt and Pt−Bi) of the adsorption sites of the OH species on the Pt3Bi(111) surface
+seven different PtxBi1−x surfaces and the M−O (M = Pt or Bi) are the same as that on the Pt(111) surface (Figures S1 and
+bond lengths of the adsorbed OH* species on these surfaces S4), which are both the Pt−Pt bridge sites, and the Pt−O
+[Pt(111), Pt3Bi(100), Pt3Bi(110), Pt3Bi(111), Pt3Bi(311), bonds lengths are also close to that on the Pt(111) surface (the
+PtBi(100), and PtBi(111) (see Table 2)]. The calculated corresponding bond lengths are 2.19 and 2.20 Å, respectively).
+results showed that the adsorbed OH* species on the PtxBi1−x Therefore, the ORR activity of the Pt3Bi(111) surface (0.59 V)
+surfaces achieve the most stable configuration at the bridge is rather close to that of the Pt(111) surface (0.55 V).
+site, where Pt−Bi is the best adsorption site for the Pt3Bi(100), Therefore, one can see that the new active surface sites are
+Pt3Bi(311), PtBi(100), and PtBi(111) surfaces. Moreover, the generated with the introduction of Bi, which also affects the
+length of the Pt−O(OH*) bond was also found to have a bond lengths of the Pt−Bi surfaces. Moreover, when the OH
+ 1994 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+species are adsorbed on the different PtxBi1−x surfaces, longer
+M−O bonds also occur, which can effectively weaken the
+adsorption of the OH species, thus improving the ORR
+activity. This partly explains that the PtBi(100) surface with
+longer Pt−Bi and Pt−O bonds has the weakest OH adsorption
+and the highest ORR activity compared with other Pt−Bi
+surfaces.
+ To further explain the change in the PDS in ORR, we
+calculated the d-band centers (εd) of the Pt species on the
+different PtxBi1−x surfaces. For the sake of accuracy, in this
+work, the εd of Pt for each surface model was calculated by
+using the HSE06 functional44 and a 2 × 2 × 1 k-point mesh.
+Figure 5a shows that with an increase in Bi content, the d-band
+of Pt shows an obvious contraction for narrowing and a
+significant downward shift of the d-band center position, which
+may be attributed to the fact that the tensile strain caused by Bi
+effectively changes the d-electron structure of Pt. In addition,
+we also calculated the relationship between the d-band center
+of Pt and the OH adsorption energy on the PtxBi1−x surfaces
+(Figure 5b). The results show that there is a linear relationship
+between the εd of Pt and the OH adsorption energy in the Pt−
+Bi bimetallic systems, which also illustrates that the lower the
+d-band center, the weaker the interaction between OH and the
+Pt−Bi bimetallic surfaces, which is consistent with the
+previously reported experimental results.30,45,46 Therefore,
+GOH* can be effectively regulated by adjusting the d-band
+center of Pt in the bimetallic systems, and the d-band center
+can be then used as another good descriptor of ORR activity.
+Therefore, PtBi(100) with the lowest d-band center gives the
+weakest OH* adsorption energy and is closest to the vertex of
+the volcano diagram (Figure 4b).
+ However, it is noteworthy that the OH* adsorption on the
+Pt(111) surface does not conform to the d-band center model.
+This is mainly because the valence electron of Pt is 5d96s1 and
+the outermost d orbitals are almost fully occupied, so as the
+outermost orbitals of OH*, causing strong repulsive inter-
+actions between the outermost electrons of Pt and OH* and
+leading to a weak OH* adsorption, which is consistent with
+previous reports.47
+ To gain an even deeper understanding of how the
+introduction of Bi regulates the electronic properties of Pt,
+we further calculated the average Bader charges of Pt and Bi
+atoms on the seven surfaces (Table 3). The results show that
+the average Pt charge on the Pt(111) surface is almost 0 |e|,
+while in the Pt−Bi bimetallic systems, due to the different
+ Figure 5. (a) Calculated density of states of the d-orbitals (d-DOSs)
+electronegativity of Pt and Bi, electron transfer from Bi to Pt of Pt species and the d-band centers (units of electronvolts) on the
+occurs [Pt with a negative charge (−0.35 to −0.68 |e|) and Bi different PtxBi1−x surfaces. All DOSs were aligned with respect to the
+with a positive charge (0.67−0.93 |e|)] and the Pt atoms on the Fermi energy level. (b) Correlation between the calculated d-band
+PtBi surfaces gain more electrons than those on the Pt3Bi ones, centers and the OH adsorption energies on the different PtxBi1−x
+which may be beneficial to ORR activity. surfaces.
+ In addition, we also calculated and compared the partial
+DOS (PDOS) of the Pt and Bi atoms forming the Pt−Bi bonds outermost valence electrons (5d96s1) of Pt in the Pt−Bi system
+on the PtBi(100) surface and the Pt atoms on the Pt(111) and makes the Pt−Bi alloy system conform again to the linear
+surface (Figure 6). The results show that the electron transfer relationship between the d-band center and OH adsorption
+mainly occurs from the p-orbital of Bi to the s- and d-orbitals strength. This may also largely explain the change in the PDS
+of Pt (Figure 6b). Furthermore, we can also find that the of the ORR on the Pt−Bi bimetallic catalysts.
+introduction of Bi causes the upward shift of the s-orbital (red In summary, we systematically calculated the four-electron
+line) and the downward shift of the d-orbital (black line) of Pt ORR association mechanism at seven PtxBi1−x surfaces
+species (Figures 6c), which indicates that the electrons of Bi [Pt(111), Pt3Bi(100), Pt3Bi(110), Pt3Bi(111), Pt3Bi(311),
+are not only transferred to the s-orbital of Pt, promoting the PtBi(100), and PtBi(111)] by DFT and gave an explanation
+involvement of s-orbital electrons in bonding, and they can of the activity in terms of geometric and electronic structures.
+also cause the contraction of the d-band of Pt. Therefore, the The calculated results showed that the ORR activity decreases
+special electronic nature of Bi breaks the arrangement of the in the following order: PtBi(100) > Pt(111) > Pt3Bi(111) >
+ 1995 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+Table 3. Calculated Average Bader Charges of Pt and Bi
+Atoms on the Different PtxBi1−x Surfaces
+ ■ CALCULATION METHODS
+ All geometric optimization and total energy calculations in this
+ average Bader charge of average Bader charge of study were performed at the spin-polarized DFT + U level by
+ model surface Pt atoms (|e|) surface Bi atoms (|e|) using the Vienna Ab initio Simulation Package (VASP).48−51
+ Pt(111) −0.02 − The projector-augmented wave (PAW) method52,53 and the
+ Pt3Bi(110) −0.38 0.86 Perdew−Burke−Ernzerh (PBE)54 functional under the gener-
+ Pt3Bi(100) −0.36 0.76 alized gradient approximation (GGA)55 were applied through-
+ Pt3Bi(311) −0.37 0.93 out the calculations, and a cutoff energy of 450 eV was used.
+ Pt3Bi(111) −0.35 0.86 To avoid interactions between neighboring slabs, a vacuum
+ PtBi(111) −0.66 0.70 layer of ∼15 Å was set. We constructed altogether seven
+ PtBi(100) −0.68 0.67 PtxBi1−x (x = 1, 0.75, 0.5, 0.25, or 0) surfaces, and each surface
+ model contains five atomic layers [except for Pt3Bi(100),
+PtBi(111) > Pt3Bi(311) > Pt3Bi(100) > Pt3Bi(110). We also which contains six atomic layers] with the bottom two atomic
+found that GOH* can be used as a descriptor for the adsorption layers kept fixed. The Brillouin zones were sampled with k-
+free energies of the ORR intermediates to obtain the volcano points of 7 × 7 × 7 and 2 × 2 × 1 Gamma grids for PtBi alloy
+plot of the limiting potential. The PDS of Pt(111) is the O* → bulk and surface calculations, respectively. The convergence
+OH* step, but all Pt−Bi alloy systems are on the left side of the criteria of the energy and force in the calculations were set to
+volcanic diagram, with the PDS being changed to the OH* → 1.0 × 10−4 eV and 0.02 eV/Å, respectively. Note that the on-
+H2O step, where the weaker the OH adsorption (the closer the site Coulomb interaction correction is necessary for the
+GOH* is to 0.74 eV), the higher the ORR activity. This is appropriate description of the localized Pt 5d and Bi 5d
+because that Pt atoms are subjected to tensile strain on the Pt− electrons,56,57 and we used the Hubbard model to describe the
+Bi alloy surfaces, and the longer Pt−Bi bond can more localized d-orbitals of Pt and Bi, where the Hubbard U
+significantly weaken the OH adsorption. Second, the strain parameters for Pt and Bi (Ud) are 6.89 and 2.39 eV,30
+effect and the electron transfer between Pt and Bi can narrow respectively. Other detailed calculation procedures are
+the d-orbitals of Pt and shift the d-band center downward. The provided in the Supporting Information.
+transferred electrons from Bi can promote the s-orbital
+electrons of Pt to participate in the bonding, breaking the
+5d96s1 arrangement of the valence electrons of Pt and making
+the OH adsorption energy of the Pt−Bi material consistent
+ ■
+ *
+ ASSOCIATED CONTENT
+ sı Supporting Information
+with the d-band center scheme, which explains the change in The Supporting Information is available free of charge at
+the PDS of the ORR in the Pt−Bi systems compared with that https://pubs.acs.org/doi/10.1021/acs.jpclett.2c03465.
+of Pt. Finally, we also found that PtBi(100) gives the best ORR
+activity, which is mainly because that PtBi(100) exhibits a long Computational details, calculated structures, zero-point
+Pt−Bi bond and the lowest d-band center among the various energies, entropies, total energies, Gibbs free energies,
+Pt−Bi alloy surfaces. We believe that this work can provide a and Gibbs free energy changes (PDF)
+theoretical guidance for the rational design of Pt−Bi bimetallic
+materials with high ORR activity. Transparent Peer Review report available (PDF)
+
+Figure 6. (a) Calculated structures (top view) of the Pt(111) (left) and PtBi(100) (right) surfaces. Pt atoms are marked by yellow boxes, and the
+Pt−Bi bond is specified by a red line. (b) Calculated partial DOS (PDOS) of Pt and Bi atoms on the PtBi(100) surface. (c) Calculated PDOS of Pt
+atoms on the Pt(111) and PtBi(100) surfaces.
+
+ 1996 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+■ AUTHOR INFORMATION
+Corresponding Authors
+ ■ REFERENCES
+ (1) Debe, M. K. Electrocatalyst Approaches and Challenges for
+ Zhi-Qiang Wang − Key Laboratory for Advanced Materials Automotive Fuel Cells. Nature 2012, 486, 43−51.
+ (2) Mardle, P.; Du, S.Encyclopedia of Smart Materials; Elsevier Korea:
+ and Joint International Research Laboratory for Precision
+ Seoul, 2021.
+ Chemistry and Molecular Engineering, Feringa Nobel Prize (3) Centi, G. Smart Catalytic Materials for Energy Transition.
+ Scientist Joint Research Center, Centre for Computational SmartMat 2020, 1, e1005.
+ Chemistry and Research Institute of Industrial Catalysis, (4) Shu, Q.; Zhang, J.; Hu, B.; Deng, X.; Yuan, J.; Ran, R.; Zhou, W.;
+ School of Chemistry and Molecular Engineering, East China Shao, Z. Rational Design of a High-Durability Pt-Based ORR Catalyst
+ University of Science and Technology, Shanghai 200237, Supported on Mn/N Codoped Carbon Sheets for PEMFCs. Energy
+ China; orcid.org/0000-0001-6293-1474; Fuels 2022, 36, 1707−1715.
+ Email: zhiqiangwang@ecust.edu.cn (5) Wan, S.; Wu, J.; Wang, D.; Liu, H.; Zhang, Z.; Ma, J.; Wang, C.
+ Xue-Qing Gong − Key Laboratory for Advanced Materials Co/N-Doped Carbon Nanotube Arrays Grown on 2D MOFs-Derived
+ and Joint International Research Laboratory for Precision Matrix for Boosting the Oxygen Reduction Reaction in Alkaline and
+ Chemistry and Molecular Engineering, Feringa Nobel Prize Acidic Media. Chin. Chem. Lett. 2021, 32, 816−821.
+ Scientist Joint Research Center, Centre for Computational (6) Wang, Y.; Wang, D.; Li, Y. A Fundamental Comprehension and
+ Chemistry and Research Institute of Industrial Catalysis, Recent Progress in Advanced Pt-Based ORR Nanocatalysts. SmartMat
+ School of Chemistry and Molecular Engineering, East China 2021, 2, 56−75.
+ (7) Holewinski, A.; Linic, S. Elementary Mechanisms in Electro-
+ University of Science and Technology, Shanghai 200237,
+ catalysis: Revisiting the ORR Tafel Slope. J. Electrochem. Soc. 2012,
+ China; orcid.org/0000-0002-9566-7427;
+ 159, H864−H870.
+ Email: xgong@ecust.edu.cn (8) Cui, J.; Chen, Q.; Li, X.; Zhang, S. Recent Advances in Non-
+ Precious Metal Electrocatalysts for Oxygen Reduction in Acidic
+Authors
+ Media and PEMFCs: an Activity, Stability and Mechanism Study.
+ Yan-Ping Zhang − Key Laboratory for Advanced Materials Green Chem. 2021, 23, 6898−6925.
+ and Joint International Research Laboratory for Precision (9) Shin, D. Y.; Shin, Y.-J.; Kim, M.-S.; Kwon, J. A.; Lim, D.-H.
+ Chemistry and Molecular Engineering, Feringa Nobel Prize Density Functional Theory−Based Design of a Pt-Skinned PtNi
+ Scientist Joint Research Center, Centre for Computational Catalyst for the Oxygen Reduction Reaction in Fuel Cells. Appl. Surf.
+ Chemistry and Research Institute of Industrial Catalysis, Sci. 2021, 565, 150518−150526.
+ School of Chemistry and Molecular Engineering, East China (10) Machan, C. W. Advances in the Molecular Catalysis of
+ University of Science and Technology, Shanghai 200237, Dioxygen Reduction. ACS Catal. 2020, 10, 2640−2655.
+ China (11) Liu, C.; Li, H.; Liu, F.; Chen, J.; Yu, Z.; Yuan, Z.; Wang, C.;
+ Zi-Xiang Su − Key Laboratory for Advanced Materials and Zheng, H.; Henkelman, G.; Wei, L.; Chen, Y. Intrinsic Activity of
+ Joint International Research Laboratory for Precision Metal Centers in Metal−Nitrogen−Carbon Single-Atom Catalysts for
+ Chemistry and Molecular Engineering, Feringa Nobel Prize Hydrogen Peroxide Synthesis. J. Am. Chem. Soc. 2020, 142, 21861−
+ Scientist Joint Research Center, Centre for Computational 21871.
+ (12) Trindell, J. A.; Duan, Z.; Henkelman, G.; Crooks, R. M. Well-
+ Chemistry and Research Institute of Industrial Catalysis,
+ Defined Nanoparticle Electrocatalysts for the Refinement of Theory.
+ School of Chemistry and Molecular Engineering, East China Chem. Rev. 2020, 120, 814−850.
+ University of Science and Technology, Shanghai 200237, (13) Jin, H.; Guo, C.; Liu, X.; Liu, J.; Vasileff, A.; Jiao, Y.; Zheng, Y.;
+ China Qiao, S.-Z. Emerging Two-Dimensional Nanomaterials for Electro-
+ He-He Wei − Key Laboratory for Advanced Materials and catalysis. Chem. Rev. 2018, 118, 6337−6408.
+ Joint International Research Laboratory for Precision (14) Haile, A. S.; Yohannes, W.; Mekonnen, Y. S. Oxygen Reduction
+ Chemistry and Molecular Engineering, Feringa Nobel Prize Reaction on Pt-skin Pt3V (111) Fuel Cell Cathode: A Density
+ Scientist Joint Research Center, Centre for Computational Functional Theory Study. RSC Adv. 2020, 10, 27346−27356.
+ Chemistry and Research Institute of Industrial Catalysis, (15) Zhang, J.; Shen, S.Low Platinum Fuel Cell Technologies;
+ School of Chemistry and Molecular Engineering, East China Springer: Berlin, 2021.
+ University of Science and Technology, Shanghai 200237, (16) Wang, Y.-J.; Long, W.; Wang, L.; Yuan, R.; Ignaszak, A.; Fang,
+ China; orcid.org/0000-0002-0480-8280 B.; Wilkinson, D. P. Unlocking the Door to Highly Active ORR
+ Catalysts for PEMFC Applications: Polyhedron-Engineered Pt-Based
+Complete contact information is available at: Nanocrystals. Energy Environ. Sci. 2018, 11, 258−275.
+https://pubs.acs.org/10.1021/acs.jpclett.2c03465 (17) Stephens, I. E. L.; Rossmeisl, J.; Chorkendorff, I. Toward
+ Sustainable Fuel Cells. Science 2016, 354, 1378−1379.
+Notes (18) Antolini, E. Palladium in Fuel Cell Catalysis. Energy Environ.
+ Sci. 2009, 2, 915−931.
+The authors declare no competing financial interest.
+ (19) Chung, S.; Ham, K.; Kang, S.; Ju, H.; Lee, J. Enhanced
+
+■ ACKNOWLEDGMENTS
+This work was supported by the National Key R&D Program
+ Corrosion Tolerance and Highly Durable ORR Activity by Low Pt
+ Electrocatalyst on Unique Pore Structured CNF in PEM Fuel Cell.
+ Electrochim. Acta 2020, 348, 136346−136354.
+ (20) Hodnik, N.; Jeyabharathi, C.; Meier, J. C.; Kostka, A.; Phani, K.
+of China (2021YFA1500700 and 2018YFA0208602), the L.; Rečnik, A.; Bele, M.; Hočevar, S.; Gaberšcě k, M.; Mayrhofer, K. J.
+ Effect of Ordering of PtCu3 Nanoparticle Structure on the Activity
+National Nature Science Foundation of China (22203030, and Stability for the Oxygen Reduction Reaction. Phys. Chem. Chem.
+22102057, 21825301, and 92045303), the Shanghai Sailing Phys. 2014, 16, 13610−13615.
+ (21) Zhang, J.; Shen, L.; Jiang, Y.; Sun, S. Random Alloy and
+Program (21YF1409400), and the China Postdoctoral Science Intermetallic Nanocatalysts in Fuel Cell Reactions. Nanoscale 2020,
+Foundation (2020M671020). 12, 19557−19581.
+
+ 1997 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998
+The Journal of Physical Chemistry Letters pubs.acs.org/JPCL Letter
+
+ (22) Deng, Z.; Pang, W.; Gong, M.; Jin, Z.; Wang, X. Revealing the Oxygen Reduction Reaction on Pt. J. Phys. Chem. C 2015, 119,
+Role of Mo Doping in Promoting Oxygen Reduction Reaction 19042−19052.
+Performance of Pt3Co Nanowires. J. Energy Chem. 2022, 66, 16−23. (41) Viswanathan, V.; Hansen, H. A.; Rossmeisl, J.; Nørskov, J. K.
+ (23) Zhang, L.; Ji, X.; Wang, X.; Fu, Y.; Zhu, H.; Liu, T. X. Unifying the 2e− and 4e− Reduction of Oxygen on Metal Surfaces. J.
+Chemically Ordered Pt-Co-Cu/C as Excellent Electrochemical Phys. Chem. Lett. 2012, 3, 2948−2951.
+Catalyst for Oxygen Reduction Reaction. J. Electrochem. Soc. 2020, (42) Karlberg, G.; Rossmeisl, J.; Nørskov, J. K. Estimations of
+167, 024507−024512. Electric Field Effects on the Oxygen Reduction Reaction Based on the
+ (24) Ma, H.; Zheng, Z.; Zhao, H.; Shen, C.; Chen, H.; Li, H.; Cao, Density Functional Theory. Phys. Chem. Chem. Phys. 2007, 9, 5158−
+Z.; Kuang, Q.; Lin, H.; Xie, Z. Trimetallic PtNiCo Branched 5161.
+Nanocages as Efficient and Durable Bifunctional Electrocatalysts (43) Kulkarni, A.; Siahrostami, S.; Patel, A.; Nørskov, J. K.
+Towards Oxygen Reduction and Methanol Oxidation Reactions. J. Understanding Catalytic Activity Trends in the Oxygen Reduction
+Mater. Chem. A 2021, 9, 23444−23450. Reaction. Chem. Rev. 2018, 118, 2302−2312.
+ (25) Zhao, X.; Xi, C.; Zhang, R.; Song, L.; Wang, C.; Spendelow, J. (44) Xing, W.; Liu, P.; Cheng, X.; Niu, H.; Ma, H.; Li, D.; Li, Y.;
+S.; Frenkel, A. I.; Yang, J.; Xin, H. L.; Sasaki, K. High-Performance Chen, X.-Q. Vacancy Formation Enthalpy of Filled d-Band Noble
+Nitrogen-Doped Intermetallic PtNi Catalyst for the Oxygen Metals by Hybrid Functionals. Phys. Rev. B 2014, 90, 144105−
+Reduction Reaction. ACS Catal. 2020, 10, 10637−10645. 144110.
+ (26) Feng, Y.; Shao, Q.; Lv, F.; Bu, L.; Guo, J.; Guo, S.; Huang, X. (45) Hammer, B.; Nørskov, J. K. Why Gold is the Noblest of All the
+Intermetallic PtBi Nanoplates Boost Oxygen Reduction Catalysis with Metals. Nature 1995, 376, 238−240.
+Superior Tolerance Overchemical Fuels. Adv. Sci. 2020, 7, 1800178− (46) Hammer, B.; Nørskov, J. K. Electronic Factors Determining the
+1800184. Reactivity of Metal Surfaces. Surf. Sci. 1995, 343, 211−220.
+ (27) Zhang, D.; Wu, F.; Peng, M.; Wang, X.; Xia, D.; Guo, G. One- (47) Xin, H.; Linic, S. Communications: Exceptions to the d-Band
+Step, Facile and Ultrafast Synthesis of Phase- and Size-Controlled Pt- Model of Chemisorption on Metal Surfaces: the Dominant Role of
+Bi Intermetallic Nanocatalysts through Continuous-Flow Micro- Repulsion Between Adsorbate States and Metal d-States. J. Chem.
+fluidics. J. Am. Chem. Soc. 2015, 137, 6263−6269. Phys. 2010, 132, 221101−221104.
+ (28) Guan, J.; Yang, S.; Liu, T.; Yu, Y.; Niu, J.; Zhang, Z.; Wang, F. (48) Kresse, G.; Furthmüller, J. Efficient Iterative Schemes for Ab
+Intermetallic FePt@PtBi Core−Shell Nanoparticles for Oxygen Initio Total-Energy Calculations Using a Plane-Wave Basis Set. Phys.
+Reduction Electrocatalysis. Angew. Chem. 2021, 133, 22070−22075. Rev. B 1996, 54, 11169−11186.
+ (29) Greeley, J.; Stephens, I. E.; Bondarenko, A. S.; Johansson, T. P.; (49) Kresse, G.; Hafner, J. Ab Initio Molecular Dynamics for Liquid
+Hansen, H. A.; Jaramillo, T. F.; Rossmeisl, J.; Chorkendorff, I.; Metals. Phys. Rev. B 1993, 47, 558−561.
+Nørskov, J. K. Alloys of Platinum and Early Transition Metals as (50) Kresse, G.; Hafner, J. Ab Initio Molecular-Dynamics Simulation
+Oxygen Reduction Electrocatalysts. Nat. Chem. 2009, 1, 552−556. of the Liquid-Metal−Amorphous-Semiconductor Transition in
+ (30) Qin, Y.; Luo, M.; Sun, Y.; Li, C.; Huang, B.; Yang, Y.; Li, Y.; Germanium. Phys. Rev. B 1994, 49, 14251−14271.
+Wang, L.; Guo, S. Intermetallic hcp-PtBi/fcc-Pt Core/Shell Nano- (51) Kresse, G.; Furthmüller, J. Efficiency of Ab-Initio Total Energy
+plates Enable Efficient Bifunctional Oxygen Reduction and Methanol Calculations for Metals and Semiconductors Using a Plane-Wave
+Oxidation Electrocatalysis. ACS Catal. 2018, 8, 5581−5590. Basis Set. Comput. Mater. Sci. 1996, 6, 15−50.
+ (31) Ou, L. Design of Pd-based bimetallic catalysts for ORR: A DFT (52) Blöchl, P. E. Projector Augmented-Wave Method. Phys. Rev. B
+Calculation Study. J. Chem. 2015, 2015, 932616. 1994, 50, 17953−17979.
+ (32) Shishkin, M.; Yamaguchi, T. Layered Pt-Co alloys: Bulk, (53) Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the
+Surface and Nanoparticle Analysis, Based on DFT. Surf. Sci. 2022, Projector Augmented-Wave Method. Phys. Rev. B 1999, 59, 1758−
+721, 122082−122091. 1775.
+ (33) Remona, A. M.; Phani, K. L. N. Study of Methanol-Tolerant (54) Perdew, J. P.; Chevary, J. A.; Vosko, S. H.; Jackson, K. A.;
+Oxygen Reduction Reaction at Pt-Bi/C Bimetallic Nanostructured Pederson, M. R.; Singh, D. J.; Fiolhais, C. Atoms, Molecules, Solids,
+Catalysts. Fuel Cells 2011, 11, 385−393. and Surfaces: Applications of the Generalized Gradient Approx-
+ (34) Ou, L.; Yang, F.; Liu, Y.; Chen, S. First-Principle Study of the imation for Exchange and Correlation. Phys. Rev. B 1992, 46, 6671−
+Adsorption and Dissociation of O2 on Pt(111) in Acidic Media. J. 6687.
+Phys. Chem. C 2009, 113, 20657−20665. (55) Teter, M. P.; Payne, M. C.; Allan, D. C. Solution of
+ (35) Wang, S.; Zhu, E.; Huang, Y.; Heinz, H. Direct Correlation of Schrödinger’s Equation for Large Systems. Phys. Rev. B 1989, 40,
+Oxygen Adsorption on Platinum-Electrolyte Interfaces with the 12255−12263.
+Activity in the Oxygen Reduction Reaction. Sci. Adv. 2021, 7, (56) Huang, B. The Screened Pseudo-Charge Repulsive Potential in
+eabb1435. Perturbed Orbitals for Band Calculations by DFT+U. Phys. Chem.
+ (36) Wang, X.; Guo, L.; Xie, Z.; Peng, X.; Yu, X.; Yang, X.; Lu, Z.; Chem. Phys. 2017, 19, 8008−8025.
+Zhang, X.; Li, L. Coordination Environment Engineering of (57) Huang, B. 4f Fine-Structure Levels as the Dominant Error in
+ the Electronic Structures of Binary Lanthanide Oxides. J. Comput.
+Graphene-Supported Single/Dual-Pd-Site Catalysts Improves the
+ Chem. 2016, 37, 825−835.
+Electrocatalytic ORR Activity. Appl. Surf. Sci. 2022, 606, 154749−
+154758.
+ (37) Lee, C. H.; Jun, B.; Lee, S. U. Metal-Free Oxygen Evolution
+and Oxygen Reduction Reaction Bifunctional Electrocatalyst in
+Alkaline Media: from Mechanisms to Structure-Catalytic Activity
+Relationship. ACS Sustain. Chem. Eng. 2018, 6, 4973−4980.
+ (38) Ou, L.; Chen, S. Comparative Study of Oxygen Reduction
+Reaction Mechanisms on the Pd(111) and Pt(111) Surfaces in Acid
+Medium by DFT. J. Phys. Chem. C 2013, 117, 1342−1349.
+ (39) Hansen, H. A.; Rossmeisl, J.; Nørskov, J. K. Surface Pourbaix
+Diagrams and Oxygen Reduction Activity of Pt, Ag and Ni(111)
+Surfaces Studied by DFT. Phys. Chem. Chem. Phys. 2008, 10, 3722−
+3730.
+ (40) Sethuraman, V. A.; Vairavapandian, D.; Lafouresse, M. C.; Adit
+Maark, T.; Karan, N.; Sun, S.; Bertocci, U.; Peterson, A. A.; Stafford,
+G. R.; Guduru, P. R. Role of Elastic Strain on Electrocatalysis of
+
+ 1998 https://doi.org/10.1021/acs.jpclett.2c03465
+ J. Phys. Chem. Lett. 2023, 14, 1990−1998

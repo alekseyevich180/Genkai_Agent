@@ -1,0 +1,470 @@
+Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+ Contents lists available at ScienceDirect
+
+ Journal of Industrial and Engineering Chemistry
+ journal homepage: www.elsevier.com/locate/jiec
+
+Understanding the electrocatalysis OER and ORR activity of ultrathin
+spinel Mn3O4
+Chinmayee Chowde Gowda a,1, Ankita Mathur b,1, Arko Parui c,1, Partha Kumbhakar d, Prafull Pandey e,
+Sudhanshu Sharma f, Amreesh Chandra g, Abhishek K. Singh c,⇑, Aditi Halder b,⇑, Chandra Sekhar Tiwary a,d,⇑
+a
+ School of Nano Science and Technology, Indian Institute of Technology Kharagpur, West Bengal 721302, India
+b
+ School of Basic Science, Indian Institute of Technology Mandi, Himachal Pradesh 175005, India
+c
+ Materials Research Centre, Indian Institute of Science, Bangalore, Karnataka 560012, India
+d
+ Department of Metallurgical and Materials Engineering, Indian Institute of Technology Kharagpur, West Bengal 721302, India
+e
+ Department of Materials Engineering, Indian Institute of Science, Bangalore, Karnataka 560012, India
+f
+ Department of Chemistry, Indian Institute of Technology Gandhinagar, Palaj, Gandhinagar, Gujarat 382355, India
+g
+ Department of Physics, Indian Institute of Technology Kharagpur, West Bengal 721302, India
+
+a r t i c l e i n f o a b s t r a c t
+
+Article history: Rapid depletion of non-renewable sources has made us look into possible green energy alternatives to
+Received 24 March 2022 meet energy challenges. Electrocatalytic reactions involving oxygen evolution reaction (OER) and oxygen
+Revised 25 April 2022 reduction reaction (ORR) play crucial roles in assisting the derivation of clean forms of energy. Here, we
+Accepted 13 May 2022
+ demonstrate that few layers of the manganese oxide: hausmannitene (atomically thin two dimensional
+Available online 21 May 2022
+ (2D-Mn3O4) can be exfoliated from its bulk form hausmannite (Mn3O4). Most significantly, the hausman-
+ nitene exhibits catalytic activity towards oxygen reduction and evolution reactions. The hausmannitene
+Keywords:
+ has enhanced Mn(III) ions (65%) compared to its parent structure hausmannite (31%). The Mn(III) ions
+2D metal oxides
+Hausmannitene
+ in a distorted lattice show the highest catalytic activity towards OER performance with the oxygen elec-
+Oxygen evolution reaction trode activity (DE) of 1.08 eV for hausmannitene. The density functional theory (DFT) calculations, con-
+Oxygen reduction reaction firmed the presence of both Mn(III) and Mn(II) sites on the (112)-oriented surface of Mn3O4 which are
+ highly active for OER and ORR, having vacant and filled orbitals of lowest and highest energy, respec-
+ tively. Increased oxidation sites aiding to better performance of 2D structure was theoretically mani-
+ fested. Therefore, demonstrating that similar mechanisms can be used to explore other 2D oxides as
+ possible efficient stable electrocatalyst substitute for energy conversion.
+ Ó 2022 The Korean Society of Industrial and Engineering Chemistry. Published by Elsevier B.V. All rights
+ reserved.
+
+Introduction been dedicated to improving the OER kinetics, such as optimization
+ of components, potential cycling, and incorporation of a carbon
+ Sustainable sources and efficient conversion mechanisms can material or porous nanostructures, enabling easy facilitation of
+account for the improved performance of energy harvesting ions during reactions [3]. The efficiency of ORR can be improved
+devices. Latest energy-efficient systems (reversible metal-air bat- using a four-electron pathway involving a four-electrode reaction
+teries and fuel cells) involve conversion reactions such as hydrogen yielding hydroxyl (OH) ions over an incomplete two-electron
+evolution reaction (HER), oxygen evolution reaction (OER), oxygen pathway in order to avoid the formation of hydro-peroxide ions.
+reduction reaction (ORR), and other oxidation–reduction reactions State-of-the-art electrocatalysts extensively use noble metal-
+[1,2]. Nonetheless, the sluggish kinetics pertaining to these reac- based oxides like ruthenium and iridium [4]. Though they have
+tions have still been elusive and under debate, compelling a stable been commercialized, they are expensive and hard to procure for
+and highly active electrocatalyst. A large amount of research has usage in large scale applications. These noble catalysts are also
+ non-bifunctional, and either exhibit OER or ORR activity. Only a
+ ⇑ Corresponding authors at: Department of Metallurgical and Materials few bi-functional catalysts exist of some complex cobalt structures
+Engineering, Indian Institute of Technology Kharagpur, West Bengal 721302, India. and Mn oxides [5–7]. Mn oxides also have the ability to switch
+ E-mail addresses: abhishek@iisc.ac.in (A.K. Singh), aditi@iitmandi.ac.in polarity during OER/ORR reactions from p-type to n-type. Over
+(A. Halder), chandra.tiwary@metal.iitkgp.ac.in (C.S. Tiwary). time other structure–property correlation, inclusion of carbon
+ 1
+ Equal contribution.
+
+https://doi.org/10.1016/j.jiec.2022.05.024
+1226-086X/Ó 2022 The Korean Society of Industrial and Engineering Chemistry. Published by Elsevier B.V. All rights reserved.
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+additives, morphological variation of these materials and other lent bonds in-between the layers, solvent’s surface energy was
+alternatives have been looked into as electrocatalysts [8,9]. considered very crucial during exfoliation. With Iso-propanol as
+Reduced dimensionality in two-dimensional (2D) materials has solvent, powdered hausmannite obtained by co-precipitation were
+proved to be one amongst them to produce better electrocatalysts exfoliated in this medium. The concentration of the sample to sol-
+due to their higher surface area and confined dimensions for diffu- vent ratio was of the order 1:500 mg/ml. The probe sonicator fre-
+sion reactions [10–12]. 2D RuO2 nanosheets have been explored in quency was at 30 kHz and exfoliation was done in pulses of 10 s
+this aspect due to their stable performance for decomposing each, for 2 h. The sample suspension was extracted and dried at
+through peroxymonosulfate (PMS) [13]. Atomically thin sulfides 40 °C to obtain the powdered sample.
+and selenides (MoS2, ReS2, MoSe2, ReSe) have also gained vast pop-
+ularity in the field of HER and OER activities [12,14–16]. Existing Characterization
+electrocatalysts comprise of complex structures which include
+doped materials, heterostructures or composite formations for X-ray diffraction patterns and information of crystalline phases
+enhancement of their OER/ORR properties. were analyzed by Bruker, D8 Advance (X-ray diffractometer). Cu-
+ We rely upon metal oxides as a possible alternative due to its Ka source of wavelength (k) 1.5406 Å, operating at 40 kV voltage
+multiple oxidation states, ease of morphology tuning and stability and 40 mA current, was used. Pearson’s Crystal Database and Pan-
+in alkaline medium. Amongst which manganese oxide occurrence alytical Xpert high score plus softwares were used to analyze the
+in nature as active enzyme clusters are responsible for light- XRD patterns. Raman spectroscopic graphs were measured using
+dependent reactions of oxygenic photosynthesis (photosystem II) WITec UHTS Raman Spectrometer (WITec, UHTS 300 VIS, Ger-
+[17] making them an exciting material for these electrocatalyst many) with a laser excitation wavelength of 532 nm at room tem-
+reactions. Mn3O4 is the most stable Mn oxide in alkaline medium, perature (RT). The optical absorbance property of pristine
+whereas other metal oxides tend to corrode or be unstable in alka- hausmannitene was characterized using a UV–visble spectrometer
+line media [18]. Studies of Pt/Mn3O4 has proven to be an effective in the range of 200 to 800 nm. The optical energy band gap was cal-
+electrocatalytic material for facilitating the ORR as compared to culated using the Tauc plot. Scanning electron microscopy (SEM)
+commercial Pt/C catalysts [19]. The presence of Mn (III) ions in a was performed using SEM CARL ZEISS SUPRA 40, thermal field
+distorted lattice (oxygen point defects) of MnxOy shows highest emission type, with probe current upto 20 nA. We then used Trans-
+catalytic activity towards OER [20]. Reduced dimension enables mission electron microscopy (TEM) to analyze the sample further.
+quantum confinement in structure aiding better conductivity com- TEM FEI-TECHNAI G220S-Twin was utilized to obtain high-
+pared to its bulk form [21]. Increased surface area and altering the resolution TEM micrographs. Atomic Force Microscopy (AFM)
+average valence of Mn between Mn (III) and Mn (IV) have was performed using Agilent Technologies Model No 5500. Drop
+improved ORR performance [21,22]. Hence the need for lower deposition technique was used for sample deposition on
+dimensional, better conducting, easily scalable, and cost-effective monocrystalline silicon substrate. To investigate oxidation states
+material is of greater importance. and surface composition of the materials, XPS ThermoFisher Scien-
+ In this work, we have synthesized hausmannitene (2D Mn3O4) tific Nexsa was used, with Al-Ka radiation (k = 1486.71 eV) as
+by liquid phase exfoliation (LPE) in IPA solvent by probe sonication source.
+method. The present work gives a comparable discussion involving
+hausmannite and hausmannitene structures for their possible Electrochemical measurements
+application as multifunctional catalyst. OER at anode and ORR at
+the cathode were studied in an alkaline solution of potassium For electrochemical measurements, Autolab (Metrohm) Electro-
+hydroxide (0.1 M KOH) and the efficiency is compared with state chemical workstation was used in a three-electrode setup. The
+of the art catalysts. Extensive structural and morphological charac- setup includes a rotating disc electrode, as working electrode
+terization of the material was carried out with XRD, AFM and TEM, RDE: 5 mm diameter, reference electrode was Ag/AgCl (3 M KCl)
+providing a clear description of the material formation. Spectro- and Pt wire as counter electrode. Ink for working electrode was
+scopic studies were performed with Raman spectroscopy and XPS made by mixing 1:4 ratio by weight of active material: Vulcan
+studies to gain insight to the change of vibrational modes after XC72 with 1:1 ratio by volume of isopropyl alcohol: distilled water.
+the formation of 2D structure and chemical integrity of the mate- 20 ll Nafion solution was used as a binder. A homogeneous slurry
+rial. The OER/ORR catalytic activity was further verified using den- was formed and 20 ll (loading = 102 lg cm2) and solution was
+sity functional theory calculations on the (112)-oriented surface of dropped over working electrode. 0.1 M KOH saturated with oxygen
+Mn3O4 where the Bader charge calculations and qualitative CFT and used as electrolyte.
+diagrams provided insights on the origin of the different active
+sites for both OER and ORR. DFT calculations
+
+ DFT calculations for these systems were done with Vienna
+Experimental section ab initio simulation (VASP) package [23]. Electronic exchange
+ and correlations were calculated using all-electron projector aug-
+Synthesis techniques mented wave pseudopotentials [24], and Perdew-Bruke-Ernzehof
+ (PBE) generalized gradient approximation (GGA) [25]. The plane-
+ Hausmannite nanoparticles were synthesized by Co- wave kinetic energy cut-off of 520 eV was used for calculations.
+precipitation method. 0.22 M of Manganese Chloride Tetrahydrate The Brillouin zone was sampled using a 8  8  8, 5  5  1,
+(MnCl2.4H2O) and 1.37 mM Hexadecyl trimethyl-ammonium Bro- and 2  2  1 Monkhorst-Pack k-grid for bulk Mn3O4, unit cell of
+mide (CTAB) was added under constant stirring. 0.44 M Sodium (112) oriented surface of Mn3O4, and supercell of (112) surface,
+hydroxide (NaOH) solution was prepared separately and added respectively. A conjugate gradient scheme was used for structure
+dropwise to the first solution and was constantly stirred for 24 h. relaxation until the energies and every component of the forces
+The sample was then washed with DI water and ethanol for 3–4 converged to 106 eV and 0.001 eV Å1 for bulk Mn3O4, 105 eV
+times. Then the material was dried in the oven at 80 °C overnight. and 0.01 eV Å1 for (112) oriented surface of Mn3O4, and 104
+ Large-scale synthesis of hausmannitene was obtained by LPE and 0.01 eV Å1 for supercell of (112) surface, respectively. All
+technique by probe sonication method. In order to break the cova- the calculations are spin polarized.
+ 154
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+Results and discussions XRD patterns of hausmannitene sample showed narrow peaks com-
+ pared to hausmannite exhibiting a broader spectrum, as seen in
+Structural and optical property analysis of hausmannitene Fig. 2a. Narrower peaks with shift in (112) peak position and
+ increased intensity signifies noticeable change in structure. Exter-
+ Sonication-assisted liquid-phase exfoliation method has been nal lattice strain applied during exfoliation has resulted in genera-
+employed to obtain hausmannitene from its parent form, as seen tion of defects during the transformation to a lower-dimensional
+in Fig. 1 (details in Experimental section). Previous studies show structure. We observe few new peak formations because of the oxi-
+that similar exfoliation techniques at RT was carried out to procure dation of Mn during exfoliation process. Morphological analysis of
+2D materials [26]. The X-ray diffraction (XRD) patterns of synthe- the formed hausmannitene was carried out with bright-field TEM
+sized samples indicate a single phase with polycrystalline nature, (BF-TEM) and AFM analysis. The high-resolution BF-TEM (HRTEM)
+and the peaks were indexed with JCPDS card no 00-024-0734. No image of hausmannitene with well-defined lattice spacing is
+other impurity peaks associated with the synthesized material observed in Fig. 2b. The crystal lattice fringes with d-spacing of
+were evident, indicating a pure tetragonal phase formation. The 0.31 nm corresponds to (112) plane. Plane (112) has been exfoli-
+
+ Fig. 1. Schematic representation of liquid phase exoliation method with hausmannitene formation.
+
+Fig. 2. (a) XRD patterns of both hausmannite and hausmannitene, (b) HAADF-STEM image of hausmannitene, inset: HRTEM of the exfoliated flakes, (c) AFM image with (d) line
+profile (2.5 nm) of hausmannitene, (e) Raman spectroscopic studies of hausmannite and hausmannitene, XPS spectra shows (f) Mn 2p and (g) O 1s spectra for hausmannitene.
+
+ 155
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+ated in excess, which was also observed from the XRD graphs Table 2
+(Fig. 2a). Atomically thin layers were found overlapped on to each Composition of oxygen containing species, calculated from O 1s spectrum.
+
+other with common lateral sizes ranging from 10–15 nm and a Hausmannitene Hausmannite
+few layers thick, which was observed clearly (Fig. 2b inset). As Mn-O-Mn 68.13% 67.97%
+compared to hausmannitene, parent form hausmannite structure Mn-O-H 17.51% 25.17%
+had smaller agglomerated units (Fig. S1). AFM image confirms H-O-H 14.36% 6.86%
+the formation of an ultrathin 2D material with very low thickness
+(Fig. 2c), which is a common signature of the formation of atomi-
+cally thin materials. Restacking upto a few layers horizontally is mannite is 5.56 eV and 5.88 eV, respectively, indicating the
+observed in the AFM image, which was due to drop-casting existence of both +2 and +3 oxidation states. The composition of
+method used during the sample preparation. The ultrathin sheets oxygen-containing species also calculated from O 1s spectrum
+show thickness of 2.5 nm, obtained from the height profile of (Fig. S3d) are tabulated in Table 2.
+the sheets (Fig. 2d). Raman spectroscopic results provides struc-
+tural insights on both the samples (Fig. 2e). Strong phonon bands ORR and OER studies of hausmannitene catalyst
+are generally observed in the range of 640 to 660 cm1 for all man-
+ganese oxides. The A1g peak corresponding to Mn–O breathing To study the electrochemical properties of hausmannitene, oxy-
+vibration of Mn2+ in tetrahedral coordination, shifts towards higher gen evolution and oxygen reduction reactions were performed.
+wavenumber in the exfoliated sample. These vibrations involve the Linear sweep voltammetry (LSV) was executed in order to analyze
+motion of oxygen atoms inside the octahedral unit MnO6 [27]. The the OER and ORR abilities and of the synthesized material. LSV was
+shift in peak is due to change in bond length which is induced from obtained from 1.1 to 0.4 V (vs RHE) potential range to evaluate the
+strain applied externally by exfoliation [28]. The possible blue shift ORR ability of the exfoliated material (Fig. 3a). The graphs show
+for the exfoliated sample from 647 cm1 to 657 cm1 can be attrib- ORR plot at 900 rpm which reveals that exfoliated samples possess
+uted to the quantum confinement effect in the structure along its onset potential of nearly equal to 0.87 V slightly less than Pt/C
+thickness. To obtain the optical absorption property of the synthe- (0.98 V) as seen in the polarization curves. We also calculate
+sized samples, UV–visible absorption was measured in the range of diffusion-limited current density (Jdl) for both hausmannite and
+200 to 800 nm wavelength. The UV–visible absorption spectrum hausmannitene sample. Hausmannitene possesses higher onset
+(Fig. S2a) of hausmannitene exhibits broad absorption in both the potential, and Jdl as compared to its counterpart, which plays an
+UV and visible regions. The results concur that the hausmannitene essential role in the kinetics of the system. Further to study the
+sample can be a potential catalyst due to its broad absorption in order of ORR, the Koutecky- Levich (K-L) plot was drawn
+the electromagnetic spectral region. The optical bandgap energy (Fig. 3b). The K-L plot follows the equation as given below:
+(Eg) was also calculated using the Tauc plot and the estimated Eg
+value for hausmannitene was 4.0 eV which was more significant 1 1 1
+ ¼ þ ð1Þ
+than its parent material (3.8 eV) (Fig. S2b). The increment of I Ik Ilev
+bandgap, which was due to confinement effect is also known to
+ where I, Ik and Ilev refers to disk, kinetic and levich current density
+exhibit catalytic activity by slow recombination rate. Studies per-
+ respectively. The above current densities can be described as:
+taining to smaller-sized transition metal oxides (TMOs) show a rise
+in the conduction band and lowering of the valence band, which Ik ¼ nFAkO2 C O2 ccatalyst ; ð2Þ
+results in a blue shift in the absorption edge [29,30]. For prelimi-
+
+ O2 m
+nary investigation of the chemical state of the sample surface, Ilev ¼ 0:62nFA C O2 D2=3 x
+ 1=6 1=2
+ ð3Þ
+XPS measurement (Fig. S3a) was performed for both, hausman-
+nitene and hausmannite, showing the presence of Mn and O atoms where n = number of electrons transferred during ORR; F = Faraday’s
+with a nearly 1:2 atomic % ratio of MnO. The elemental core spec- constant (96485 C mol1); A = 0.19 cm2 (surface area of working
+trum of Mn 2p (Fig. S3b) shows a spin–orbit splitting of 11.74 eV, electrode); kO2 = rate constant for ORR (ms1); CO2 = dissolved oxy-
+indicating the presence of hausmannite [31]. Hausmannite shows a gen concentration (1.21 mol m3 in 0.1 M KOH); ccatalyst = 102 lg c
+slight shift in the peak positions as compared to synthesized haus- m2 (surface concentration of catalyst); DO2 = 1.87  109 m2 s1 in
+mannitene. To get more information on hausmannitene, Mn 2p was 0.1 M KOH (diffusion coefficient of oxygen in solution); m = 1  106-
+deconvoluted into Mn (II) and Mn (III) (Fig. 2f). The peak observed m2s1 in 0.1 M KOH (kinematic viscosity) and x = angular fre-
+at 640.58 eV (2p3/2) and 652.13 eV (2p1/2) corresponds to Mn (II) quency of rotation (rad s1).
+and other peaks at 642.10 eV (2p3/2) and 653.28 eV (2p1/2) belong In Fig. 3b, we present the K-L plot which shows that hausman-
+to Mn (III). As for hausmannite (Fig. 2f), 641.44 and 653.30 eV was nitene possesses first-order kinetics for ORR. This result indicates
+attributed to Mn (II), similarly, 643.20 and 655.56 eV belongs to that hausmannitene has the same pathway for ORR which follows
+Mn (III), respectively. The surface composition of various oxidation a four electron pathway of ORR involving complete reduction of
+states of Mn was also calculated from the spectrum. Hausman- O2 to OH. The electrochemical activity of hausmannitene was
+nitene possesses a higher amount of Mn (III) (64.87 atomic %), explained on the basis of electrochemical impedance spectroscopy
+whereas hausmannite contains a higher amount of Mn (II) (69.13 (EIS) results. The EIS studies were performed at open-circuit poten-
+atomic %) (Table 1). The difference in peak splitting (DEb) in Mn tial. It can be observed that in Fig. 3c, the solution resistance (Rs)
+3 s spectrum (Fig. S3c) is usually used to calculate the average oxi- and charge-transfer resistance (Rct) exhibited by hausmannitene is
+dation state of Mn [31]. The DEb value for hausmannitene and haus- lower, thus enabling higher charge transfer and better electronic
+ conductivity. These results suggest better electrochemical activity
+ of hausmannitene. The presence of a higher amount of Mn (III) in
+ hausmannitene is also the reason for its higher catalytic activity,
+Table 1
+Composition of various oxidation states of Mn, calculated from Mn 2p spectrum. as Mn (III) contains a single unpaired electron in t2g orbital avail-
+ able for conductivity, as also discussed later in the theoretical sec-
+ Hausmannitene Hausmannite
+ tions [32]. Fig. 3d shows Cyclic voltammetry (CV) curves in O2- and
+ Mn(II) 35.12% 69.13% N2- saturated 0.1 M KOH for hausmannitene to investigate the ORR
+ Mn(III) 64.87% 30.88%
+ performance. Oxygen reduction current peaks was observed in
+ 156
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+Fig. 3. Electrochemical analysis and Stability evaluation of hausmannitene (a) ORR ability in comparison with Pt/C, (b) K-L plot taken at 0.55 V, (c) FRA taken at open-circuit
+potential. (d) CV curves in N2- or O2-saturated 0.1 M KOH solution, (e) Plot describing the nature of hausmannitene, and (f) Comparison graph of overpotential for various
+structures of Mn3O4.
+
+both electrolyte. The ORR peak potential is 0.53 V for O2- satu- in eg orbital [35]. The eg antibonding orbitals of Mn (III) overlap
+rated electrolyte and 0.58 V for N2- saturated electrolyte which with adsorbed oxygen, affects the Mn-O bond strength and
+is more positive suggesting ORR performance. improves the catalytic activity.
+ To further confirm the nature of the catalyst in OER, essential After knowing the contributions of active sites in OER and ORR
+measurements were performed. The potential was applied from activity, we then test the stability of the material by performing
+1.20 to 1.96 V (vs RHE) and Fig. S4a shows the LSV plot for OER chronoamperometry of hausmannitene at 0.55 V (vs Ag/AgCl)
+taken in 0.1 M KOH as a correlation between Ruthenium oxide potential for 13 h with continuous oxygen purging at rotation
+(RuO2) state-of-the-art catalyst at 900 rpm. Both Mn-samples (bulk 900 rpm (Fig. 4a). The material shows initial gradual degradation
+and 2D) possess nearly the same onset potential but vary in current but stabilizes later, 67.39 % degradation was also observed over
+density. The hausmannitene possesses higher OER ability with the long term. Fig. 4b shows a comparison of ORR activity taken
+greater current density and onset potential. compared to bulk at 900 rpm before and after chronoamperometry performance. A
+Mn3O4. The Tafel plot, as shown in Fig. S4b, investigates the kinet- slight change in the onset potential (30 mV) is observed, which
+ics of OER, revealing that hausmannitene possesses a lower Tafel might be due to the degradation of the material with time. But
+slope (316 mV dec1) than hausmannite (339 mV dec1). It can increase in the diffusion-limited current density is also noted.
+be seen that the synthesized hausmannitene structure exhibits a The reason for this may be attributed to activation of pores of
+far lesser Tafel slope value compared to many other Mn-oxides the material [36]. The EIS shown in Fig. 4c compares the behavior
+structutres owing to faster kinetics. A comparative study of the of material before and after chronoamperometry at onset current
+existing overpotential of some Mn-oxide structures was plotted potential. The semi-circular region in the EIS plot shows the forma-
+in Fig. 3f. Other hausmannite structures [20] exhibit an overpoten- tion of a double-layer region, whereas the straight line represents
+tial of 570 mVRHE (J = 10 mV cm2) and there also exists studies on that the diffusion of ions is occurring. After chronoamperometry,
+Mn-doped materials showing that the overpotential can be the material degrades, and thereby its Rct enhances as compared
+reduced up to 283 mVRHE (J = 10 mV cm2) with 10% doping of to the initial material. In the inset, it can be seen that Rs for after
+Nickel [33] which is better than pure hausmannite (Fig. 3f). There- chronoamperometry sample is lower than that of the initial mate-
+fore, this study suggests that without the addition of a doping rial, complementing the fact that pores activate after long-term
+agent or any additive and just by tuning the morphology to 2D operation. Pt/C is considered to be the best catalyst for ORR but
+structure, lesser overpotential can be achieved. it suffers from the drawback of methanol poisoning. Therefore to
+ In Fig. 3e we present the catalytic nature of hausmannitene check the methanol tolerance of our material, chronoamperometry
+towards ORR and OER. The oxygen electrode activity (DE) exhib- was performed at 0.55 V (vs Ag/AgCl) and 900 rpm rotation for
+ited by hausmannitene is 1.08 V. So overall, hausmannitene per- 600 seconds. After 200th second, 3 ml methanol was added to
+formed as a better catalyst than its counterpart, with a lower DE 50 ml 0.1 M KOH electrolyte and it shows no visible change in
+value. To explain the above mechansim of Mn3O4, we correlate the plot, indicating that hausmannitene is tolerant towards metha-
+the generation of new oxidation states due to lowering of dimen- nol (Fig. 4d). Furthermore, the presence of Mn+3 in octahedral sites
+sion. Hausmannite possesses Mn (II) at tetrahedral site and Mn has also been reported to enhance the ORR activity. There are exist-
+(III) at octahedral site being a spinel structure [34]. The presence ing studies on the catalytic property of manganese oxides, but we
+of two redox oxidation states (Mn+2 and Mn+3), results in proper have tried to correlate the experimental results with a theoritical
+charge-distribution and favorable charge-transfer to adsorbed oxy- backup on tuning Mn oxidation states in the exfoliated structure.
+gen, leading to catalytic activity of the catalyst. We observe from These studies can help in understanding the very nature of ultra-
+XPS results (Fig. 2f) that formation of Mn (III) was higher in exfoli- thin hausmannitene aiding better catalytic property and controlling
+ated strucutre. The correlation between the formation of +3 state in the oxidation states in the structure. Therefore the 2D structure
+exfoliated structure is further discussed and confirmed by theoret- aids to increased current densities compared, which is due to the
+ical calculation later in the paper. This Mn (III) oxidation states has increased oxygen generation by defect surface and edges, which
+been reported to show higher ORR activity due to a single electron provides active sites for OER and ORR mechanisms.
+ 157
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+Fig. 4. Stability evaluation of hausmannitene: (a) Chronoamperometry at 0.55 V (vs Ag/AgCl) at 900 rpm for 13 h, (b) Polarization performance comparison before and after
+chronoamperometry, (c) EIS comparison before and after chronoamperometry, and (d) Methanol tolerance test.
+
+Theoretical study on ORR and OER of hausmannitene catalyst very close in energy and electrons remain unpaired. As a result, the
+ lowest unoccupied orbital for Mn (1) is dz2 and is of lower energy
+ To gain insights into the recognition of different active sites and than the lowest unoccupied orbital for Mn (2) which is dyz. There-
+their role in making hausmannitene as catalyst for both OER and fore, Mn (1) can easily accept electrons as it behaves as an oxidiz-
+ORR, DFT calculations were performed. In Fig. 5a, we optimize ing site during OER reaction. Now, the oxidation state of all the Mn
+and simulate the lattice parameters of bulk hausmannite with (3), Mn (4), Mn (5) and Mn (6) atoms are +2. Hence, these Mn
+16O and 12 Mn that are a = 5.89 Å, b = 5.89 Å, c = 9.57 Å, which atoms contain 5e and all of them form a high spin complex.
+matches with earlier reported literature [37]. Later, the (112)- Accordingly, the highest occupied orbital of Mn (4) is dz2 and has
+oriented surface was considered as it has the most prominent peak the highest energy. As a result, the electron residing in the dz2 orbi-
+in experimental XRD with lattice parameters a = 8.09 Å, b = 14.0 tal of Mn (4) can easily be donated during ORR reaction. However,
+0 Å, c = 25.70 Å. A supercell of 2  1  1 was considered to maxi- the lowest unoccupied molecular orbital of reactant molecule, O2 is
+mize the exploration of surface effect with sufficient concentration p* orbital, which cannot overlap with the dz2 orbital which has a
+of different Mn sites (Fig. 5a and b). To choose a particular Mn site single lobe in the z-direction. Therefore, Mn (3) was chosen as
+on (112) surface of Mn3O4, Bader charge calculation was performed the following best possible ORR active site having dxz as the highest
+for different top and bottom surface atoms (Fig. 5c). A particular occupied orbital and can easily overlap with the p* of O2.
+Mn atom with a low positive Bader charge holds high electron den- To understand the catalytic activity of the chosen active centres,
+sity and can easily donate electrons for the reduction reaction. reaction mechanisms and involved intermediates were analysed.
+Whereas, Mn atom having a high positive Bader charge holds less Ideally, both ORR and OER reactions are 4e process, in which
+electron density and can easily accept electrons, behaving as an intermediates are *OOH, *O, and *OH [38,39]. These intermediates
+oxidising agent. Therefore, Mn (1) and Mn (3) was chosen as an were optimized on the active site and their adsorption energies
+active site for ORR and OER, having the lowest (0.72) and highest were calculated using the formula, as given below [38].
+(1.31) positive Bader charge among the surface atoms.
+ DEads ðOOHÞ ¼ EðOOHÞ  ½E  þ2EðH2 OÞ  1:5EðH2 Þ ð4Þ
+ To further explain the observed reactions on different active
+sites, the qualitative crystal field splitting diagram of the active DEads ðOÞ ¼ EðOÞ  ½E  þ EðH2 OÞ  EðH2 Þ ð5Þ
+Mn sites was considered (Fig. 5d). First, the band center of each
+d-orbitals for the considered surface Mn atom was calculated. DEads ðOHÞ ¼ EðOHÞ  ½E  þ EðH2 OÞ  0:5EðH2 Þ ð6Þ
+According to relative positions of the band centers, qualitative rel-
+ative splitting of the d-orbitals of the surface Mn atoms in the crys- where * represents the catalyst surface. This is due to the depen-
+tal field was considered. Now, the oxidation state of both Mn (1) dence of overpotential of the considered reaction on the stability
+and Mn (2) is +3, according to the shared charge of the O2 ligands of the intermediates. Then, free energies (DG) were calculated using
+around them. Hence, these Mn atoms contain 4e and Mn (1) the following equation through which thermodynamics of the con-
+forms a high spin complex, whereas Mn (2) forms a low spin com- cerned reactions were analysed [38].
+plex. This is because, in Mn (1), the energy gap in between dyz and
+ DG ¼ DEads þ DZPE  T DS þ DGU þ DGHp ð7Þ
+dz2 orbital is very high, whereas, for Mn (2), dxy and dz2 orbitals are
+ 158
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+Fig. 5. (a) Top and (b) bottom surface atoms in supercell of (112)-oriented surface of Mn3O4. White balls represent Mn and blue balls represent O. Different surface atoms are
+marked, (c) Bader charge of different surface atoms in supercell of (112) oriented surface of Mn3O4. Blue region atoms are more suitable for OER reaction and red region atoms
+are more suitable for ORR reaction (d) Qualitative crystal field splitting diagram of d-orbital of different surface Mn atoms, (e) Free energy diagram for OER and ORR.
+
+where, DZPE and TDS is the difference in zero-point energies of the ing higher catalytic activity was established with these mecha-
+species, and vibrational motion contributions were only considered nisms stating that the chosen Mn (III) and Mn (II) sites have
+for calculating the entropies. DGU (DGU = eU; e represents number maximum and minimum positive Bader charges which can easily
+of electrons transferred) and DGH p (DGp = 2.303 kB T  p ) is the
+ H H
+ accept and donate electrons during OER and ORR, respectively. Fur-
+free-energy corrections due to electrode potentials and pH, respec- ther analysis showed that the energy of the lowest unoccupied
+tively. And T = 298 K and pH = 0 was considered. Free energy profiles orbital of chosen Mn (III) site is minimum and the highest occupied
+was plotted based on these values. (Fig. 5e) shows the free energy orbital of chosen Mn (II) site is maximum in the qualitative CFT
+profile. At open circuit condition, i.e., U = 0 V, free energy profile diagram. Overall, we believe that the synthesized atomically thin
+is denoted by a black line. At this potential, for OER, all the steps hausmannitene opens up a brand new approach for a broad range
+are uphill; however, all the steps are downhill for ORR. For both of 2D oxides in catalytic applications.
+OER and ORR, at 1.23 V (Ero) potential, the formation of OOH* from
+*O and gaseous O2 from *OOH is uphill. Still, the former is rate Declaration of Competing Interest
+determining step with an activation barrier of 0.85 eV for OER
+and the latter is rate determining step with an activation energy The authors declare that they have no known competing finan-
+of 0.9 eV for ORR. This was numerically equal to the theoretical cial interests or personal relationships that could have appeared
+overpotential for OER and ORR, respectively, on hausmannitene to influence the work reported in this paper.
+(112). Therefore, having low overpotential for OER and ORR reac-
+tions, atomically thin Mn3O4 (112) is a good catalyst.
+ Acknowledgements
+Conclusions
+ C.C.G, P.K. and C.S.T. acknowledge AOARD (Asian Office of Aero-
+ space Research and Development) grant no. FA2386-19-1-4039
+ Morphologically tuned hausmannitene was obtained by a scal-
+ and grant no. FA2386-21-1-4014. C.S.T. acknowledges Ramanujan
+able synthesis technique involving liquid phase exfoliation. Series
+ fellowship and core research grant of SERB, India. C.C.G, P.K and
+of structural and morphological characterizations confirmed the
+ C.S.T. acknowledge the funding received from STARS project by
+formation of the atomically thin structure. XPS studies revealed
+ MHRD, India.
+the significant increase of Mn (III) ions which are responsible for
+enhanced OER and ORR activity in metal-based hausmannitene.
+Theoretical studies like DFT showed that (112)-oriented surface Appendix A. Supplementary data
+of hausmannitene contains both Mn (III) and Mn (II) sites that are
+active for OER and ORR, having low theoretical overpotentials of Supplementary data to this article can be found online at
+0.85 eV and 0.9 eV, respectively. The exact mechanism for achiev- https://doi.org/10.1016/j.enbuild.2021.111537.
+ 159
+C. Chowde Gowda, A. Mathur, A. Parui et al. Journal of Industrial and Engineering Chemistry 113 (2022) 153–160
+
+References [19] K.W. Kim, S.M. Kim, S. Choi, J. Kim, I.S. Lee, ACS Nano 6 (6) (2012) 5122–5129,
+ https://doi.org/10.1021/nn300782m.
+ [20] A. Ramírez, P. Hillebrand, D. Stellmach, M.M. May, P. Bogdanoff, S. Fiechter, J.
+ [1] H.S. Jadhav, A. Roy, G.M. Thorat, W.J. Chung, J.G. Seo, J. Ind. Eng. Chem. 71 (3)
+ Phys. Chem. C 118 (26) (2014) 14073–14081, https://doi.org/10.1021/
+ (2019) 452–459, https://doi.org/10.1016/j.jiec.2018.12.002.
+ jp500939d.
+ [2] R. Bose, B. Patil, V. Rajendiran Jothi, T.H. Kim, P. Arunkumar, H. Ahn, S.C. Yi, J.
+ [21] X. Han, Y. Hu, J. Yang, F. Cheng, J. Chen, Chem. Commun. 50 (12) (2014) 1497–
+ Ind. Eng. Chem. 65 (2018) 62–71, https://doi.org/10.1016/j.jiec.2018.04.013.
+ 1499, https://doi.org/10.1039/c3cc48207c.
+ [3] Y. Wei, W. Zhang, Catalysts 10 (1) (2020), https://doi.org/
+ [22] J. Suntivich, H.A. Gasteiger, N. Yabuuchi, H. Nakanishi, J.B. Goodenough, Y.
+ 10.3390/catal10010119.
+ Shao-Horn, Nat. Chem. 3(7) (2011) 546–550. 10.1038/nchem.1069.
+ [4] K.A. Stoerzinger, O. Diaz-Morales, M. Kolb, R.R. Rao, R. Frydendal,, L. Qiao, X.R.
+ [23] G. Kresse, J. Hafner, Phys. Rev. B 47(1) (1993) 558–561. 10.1103/
+ Wang, N.B. Halck, J. Rossmeisl, H.A. Hansen, T. Vegge, I.E.L. Stephens, M.T.M.
+ PhysRevB.47.558.
+ Koper, Y. Shao-Horn, ACS Energy Lett. 2(4) (2017) 876–881. 10.1021/
+ [24] D. Joubert, Phys. Rev. B - Condens. Matter Mater. Phys. 59(3) (1999) 1758–
+ acsenergylett.7b00135.
+ 1775. 10.1103/PhysRevB.59.1758.
+ [5] W. Gong, H. Zhang, L. Yang, Y. Yang, J. Wang, H. Liang, J. Ind. Eng. Chem. 106
+ [25] J.P. Perdew, K. Burke, M. Ernzerhof, Phys. Rev. Lett. 77 (18) (1996) 3865–3868,
+ (2022) 492–502, https://doi.org/10.1016/j.jiec.2021.11.032.
+ https://doi.org/10.1103/PhysRevLett.77.3865.
+ [6] F.D. Speck, P.G. Santori, F. Jaouen, S. Cherevko, J. Phys. Chem. C 123 (41) (2019)
+ [26] T.P. Yadav, S.N. Shirodkar, N. Lertcumfu, S. Radhakrishnan, F.N. Sayed, K.D.
+ 25267–25277, https://doi.org/10.1021/acs.jpcc.9b07751.
+ Malviya, G. Costin, R. Vajtai, B.I. Yakobson, C.S. Tiwary, P.M. Ajayan, Adv. Mater.
+ [7] I. Roy, Q. Wang, V. Chakrapani, J. Phys. Chem. C 124 (9) (2020) 5286–5299,
+ Interfaces 5(19) (2018) 1–9. 10.1002/admi.201800549.
+ https://doi.org/10.1021/acs.jpcc.0c00714.
+ [27] C.M. Julien, M. Massot, J. Phys. Condens. Matter 15 (19) (2003) 3151–3162,
+ [8] S. Xu, Y. Kim, J. Park, D. Higgins, S.J. Shen, P. Schindler, D. Thian, J. Provine, J.
+ https://doi.org/10.1088/0953-8984/15/19/315.
+ Torgersen, T. Graf, T.D. Schladt, M. Orazov, B.H. Liu, T.F. Jaramillo, F.B. Prinz,
+ [28] L. Ren, W. Zhou, Y. Wang, M. Meng, S. Wu, S. Li, J. Appl. Phys. 116 (2) (2014),
+ Nat. Catal. 1(8) (2018) 624–630. 10.1038/s41929-018-0118-1.
+ https://doi.org/10.1063/1.4889819.
+ [9] L. Castanheira, W.O. Silva, F.H.B. Lima, A. Crisci, L. Dubau, F. lard, ACS Catal. 5(4)
+ [29] Z. Sun, T. Liao, Y. Dou, S.M. Hwang, M.S. Park, L. Jiang, J.H. Kim, S.X. Dou, Nat.
+ (2015) 2184–2194. 10.1021/cs501973j.
+ Commun. 5 (May) (2014), https://doi.org/10.1038/ncomms4813.
+[10] G.R. Zhang, S. Wöllner, Appl. Catal. B Environ. 222(July 2017) (2018) 26–34.
+ [30] L. Wang, W. Chen, D. Zhang, Y. Du, R. Amal, S. Qiao, J. Wu, Z. Yin, Chem. Soc.
+ 10.1016/j.apcatb.2017.09.066.
+ Rev. 48 (21) (2019) 5310–5349, https://doi.org/10.1039/c9cs00163h.
+[11] L. He, J. Liu, Y. Liu, B. Cui, B. Hu, M. Wang, K. Tian, Y. Song, S. Wu, Z. Zhang, Z.
+ [31] X. Chen, Q. Feng, Q. Cai, S. Huang, Y. Yu, R.J. Zeng, M. Chen, S. Zhou, Environ. Sci.
+ Peng, M. Du, Appl. Catal. B Environ. 248(August 2018) (2019) 366–379.
+ Technol. 54 (17) (2020) 10820–10830, https://doi.org/10.1021/acs.
+ 10.1016/j.apcatb.2019.02.033.
+ est.0c02709.
+[12] H. Wu, X. Lu, G. Zheng, G.W. Ho, Adv. Energy Mater. 8 (14) (2018) 1–9, https://
+ [32] A. Mathur, R. Kaushik, A. Halder, Catal. Sci. Technol. 10 (21) (2020) 7352–7364,
+ doi.org/10.1002/aenm.201702704.
+ https://doi.org/10.1039/d0cy01581d.
+[13] Z.W. Seh, K.D. Fredrickson, B. Anasori, J. Kibsgaard, A.L. Strickler, M.R.
+ [33] V. Maruthapandian, T. Pandiarajan, V. Saraswathy, S. Muralidharan, RSC Adv. 6
+ Lukatskaya, Y. Gogotsi, T.F. Jaramillo, A. Vojvodic, ACS Energy Lett. 1(3)
+ (54) (2016) 48995–49002, https://doi.org/10.1039/c6ra01877g.
+ (2016) 589–594. 10.1021/acsenergylett.6b00247.
+ [34] K.A. Stoerzinger, M. Risch, B. Han, Y. Shao-Horn, ACS Catal. 5 (10) (2015) 6021–
+[14] D. Kong, H. Wang, J.J. Cha, M. Pasta, K.J. Koski, J. Yao, Y. Cui, Nano Lett. 13 (3)
+ 6031, https://doi.org/10.1021/acscatal.5b01444.
+ (2013) 1341–1347, https://doi.org/10.1021/nl400258t.
+ [35] A. Mathur, R. Kaushik, A. Halder, Mater. Today Energy 19 (2021), https://doi.
+[15] J. Gao, L. Li, J. Tan, H. Sun, B. Li, J.C. Idrobo, C.V. Singh, T.M. Lu, N. Koratkar, Nano
+ org/10.1016/j.mtener.2020.100612.
+ Lett. 16 (6) (2016) 3780–3787, https://doi.org/10.1021/acs.nanolett.6b01180.
+ [36] S.K. Balasingam, A. Thirumurugan, J.S. Lee, Y. Jun, Nanoscale 8 (23) (2016)
+[16] J. Zhou, J. Lin, X. Huang, Y. Zhou, Y. Chen, J. Xia, H. Wang, Y. Xie, H. Yu, J. Lei, D.
+ 11787–11791, https://doi.org/10.1039/c6nr01200k.
+ Wu, F. Liu, Q. Fu, Q. Zeng, C.H. Hsu, C. Yang, L. Lu, T. Yu, Z. Shen, H. Lin, B.I.
+ [37] M. Yang, H. Yuan, H. Wang, P. Hu, Sci. China Chem. 61 (4) (2018) 457–467,
+ Yakobson, Q. Liu, K. Suenaga, G. Liu, Z. Liu, Nature 556(7701) (2018) 355–359.
+ https://doi.org/10.1007/s11426-017-9134-0.
+ 10.1038/s41586-018-0008-3.
+ [38] B. Sarkar, A. Parui, A.K. Singh, K.K. Nanda, J. Mater. Chem. A (2021), https://doi.
+[17] S. Mukhopadhyay, S.K. Mandal, S. Bhaduri, W.H. Armstrong, Chem. Rev. 104 (9)
+ org/10.1039/d1ta03079e.
+ (2004) 3981–4026, https://doi.org/10.1021/cr0206014.
+ [39] R.V. Mom, J. Cheng, M.T.M. Koper, M. Sprik, J. Phys. Chem. C 118 (8) (2014)
+[18] V. Maruthapandian, T. Pandiarajan, V. Saraswathy, S. Muralidharan, RSC Adv. 6
+ 4095–4102, https://doi.org/10.1021/jp409373c.
+ (54) (2016) 48995–49002, https://doi.org/10.1039/c6ra01877g.
+
+ 160

@@ -1,0 +1,42 @@
+这次抽到的关键信息包括：
+
+在 Ag_CoNiOOH_conditions_input_table.csv 里：
+
+- Ni, Co, Ag
+- 吸附物/反应物：O2
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：Active site, oxygen vacancy, single atom, adsorbate
+
+在 Ag_CoNiOOH_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - NiCo Layer Double Hydroxide
+  - Silver
+- 材料参数：
+  - bimetallic
+  - Fe-free
+  - layered double hydroxides
+- 反应参数：
+  - 1.0 m KOH
+  - 192 mV overpotential
+  - 10 mA cm−2 current density
+  - 500 h stability
+  - 100 mA cm−2 current density
+- 性能：
+  - OER activity
+  - stability
+- 表面/晶面：
+  - NiCo LDH surface
+  - carbon cloth
+- 缺陷/活性位点：
+  - NiCoOOH
+- 吸附/覆盖度：
+  - oxygen-contained intermediates
+- 团簇/单原子：
+  - AgSA
+- 建模关键词：
+  - DFT
+  - XAS
+- 推荐建模任务：
+  - single_atom_site
+  - doped_surface

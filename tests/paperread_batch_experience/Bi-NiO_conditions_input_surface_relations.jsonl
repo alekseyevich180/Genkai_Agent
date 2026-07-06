@@ -1,0 +1,83 @@
+{
+  "id": "surface_relations",
+  "title": "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+  "text": "High-Performance Nickel−Bismuth Oxide Electrocatalysts\nApplicable to Both the HER and OER in Alkaline Water Electrolysis\nSeunghyun Jo, Byeol Kang, SiEon An, Hye Bin Jung, JunHwa Kwon, Hyunjun Oh, Jeonghyeon Lim,\nPilsoo Choi, Jungho Oh, Ki-yeop Cho, Hyun-Seok Cho, MinJoong Kim,* Joo-Hyoung Lee,*\nKwangSup Eom,* and Thomas F. Fuller\nCite This: ACS Appl. Mater. Interfaces 2025, 17, 11946−11955 Read Online\nSee https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.\n\noxide (NiO) has received significant attention due to its cost-\neffectiveness and high reactivity among non-noble-metal-based\ncatalytic materials. However, NiO still exhibits poor alkaline\nhydrogen evolution reaction (HER) and oxygen evolution reaction\n(OER) kinetics compared to conventional noble metal-based\ncatalysts. This is because NiO has a strong interaction with protons\nfor the HER and too low free energy of the OH* state, resulting in\nslower rate-determining step (RDS) kinetics for the OER. To\naddress these issues, adding a dopant is suggested as an efficient\nmethod to modify the electron structure of the NiO electrocatalyst\nfavorably for each reaction kinetics. In this context, we demonstrate that Bismuth (Bi), due to its higher electronegativity than that of\nNickel (Ni), induces a positive charge on Ni sites. This enhances the catalytic activity by reducing the number of excessive cation\ninteractions with the NiO electrocatalyst. Moreover, as the Bi ratio increases, the Ni reaction sites in NiO become more positively\ncharged, and these changes in the electronic structure directly impact the free energy of the reaction mechanism. Particularly, it is\nconfirmed that for the HER, Bi additives increase the proton-adsorbed free energy toward a near-zero value and, additionally,\ndecrease the free energy difference of the second step considered as the RDS in the OER, as calculated by density functional theory.\nThe positive effects of Bi in both the HER and the OER are demonstrated in practical electrochemical evaluations of half/single\ncells. Notably, the Bi-containing catalysts Bi05:NiO and Bi02:NiO exhibit remarkable alkaline HER and OER kinetics, showing\nperformance improvements of 97.0% and 21.9%, respectively.\nKEYWORDS: water electrolysis, hydrogen evolution reaction, oxygen evolution reaction, electrocatalyst, nickel oxide, bismuth,\nhydrothermal\n\n1. INTRODUCTION essential to study the catalytic mechanisms of both the HER\nand OER and design suitable, low-cost catalytic materials.6\nRecently, as environmental pollution caused by fossil fuels has\nFor instance, the mechanism of the HER in alkaline media is\nworsened, the necessity for eco-friendly fuels has been widely as follows\nrecognized.1 Among these, hydrogen fuel has received\nsignificant attention as a next-generation energy source H 2O H* + OH* (1)\nowing to its high energy density and eco-friendliness,\ngenerating only water as a byproduct. However, current OH* + e OH (2)\nhydrogen production via steam reforming generates carbon 2H* H2 (3)\ndioxide, causing more environmental pollution than the use of\nfossil fuels.2,3 In contrast, water electrolysis, which induces the In this mechanism, the free energies of the initial (H2O,\nhydrogen evolution reaction (HER) and the oxygen evolution reactant of eq 1) and final (H2, product of eq 3) states are\nreaction (OER) from water using separate cathode and anode\nelectrodes, is a perfectly eco-friendly method.4,5 However, the Received: September 11, 2024\nhigh activation energy of the HER and OER necessitates the Revised: December 23, 2024\nuse of electrocatalysts, and the high cost of these catalysts is Accepted: December 24, 2024\nthe primary obstacle to achieving sufficient cost-competitive- Published: February 12, 2025\nness of hydrogen produced by water electrolysis compared to\nthe other processes. Therefore, to overcome this barrier, it is\n© 2025 The Authors. Published by\nAmerican Chemical Society https://doi.org/10.1021/acsami.4c15514\n11946 ACS Appl. Mater. Interfaces 2025, 17, 11946−11955",
+  "extraction": {
+    "materials": [
+      "NiO",
+      "Bismuth (Bi)"
+    ],
+    "material_parameters": [
+      "cost-effective",
+      "high reactivity"
+    ],
+    "surfaces": [
+      "NiO surface"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [
+      "Bismuth (Bi)"
+    ],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "Ni reaction sites"
+    ],
+    "adsorbates": [
+      "H*",
+      "OH*"
+    ],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [
+      "H2"
+    ],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "high alkaline HER kinetics",
+      "high alkaline OER kinetics"
+    ],
+    "reaction_parameters": [
+      "temperature",
+      "pressure"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "electrocatalyst"
+    ],
+    "recommended_modeling_tasks": [
+      "doped_surface"
+    ],
+    "applications": [
+      "water electrolysis",
+      "hydrogen production"
+    ],
+    "links": [
+      {
+        "source": "NiO",
+        "relation": "has_dopant",
+        "target": "Bismuth (Bi)"
+      },
+      {
+        "source": "Bismuth (Bi)",
+        "relation": "enhances",
+        "target": "catalytic activity"
+      },
+      {
+        "source": "NiO",
+        "relation": "has_active_site",
+        "target": "Ni reaction sites"
+      },
+      {
+        "source": "H2O",
+        "relation": "produces",
+        "target": "H2"
+      }
+    ]
+  }
+}

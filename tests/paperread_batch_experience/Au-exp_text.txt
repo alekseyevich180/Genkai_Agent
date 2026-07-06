@@ -1,0 +1,397 @@
+Full Paper
+ www.advenergymat.de
+
+Black Phosphorus Nanosheets Modified with Au
+Nanoparticles as High Conductivity and High Activity
+Electrocatalyst for Oxygen Evolution Reaction
+Hui Qiao, Huating Liu, Zongyu Huang,* Qian Ma, Siwei Luo, Jun Li, Yundan Liu,
+Jianxin Zhong, and Xiang Qi*
+
+ clean and sustainable strategy to produce
+As a unique monoelemental 2D material, black phosphorus (BP) has O2.[1] To date, metallic materials, including
+attracted great research interest in the field of electrocatalytic oxygen Pt, Ir, and Ru, are still the most effective
+release due to its special electronic structure and satisfactory catalytic electrocatalytic OER materials owing to
+ their excellent carrier mobilities and high
+activity. However, the limited catalytic activity of BP nanosheets limits
+ catalytic activities.[2] However, from a com-
+its practical application. Here, a one-pot hot solution method is used to mercial perspective, the expensive cost of
+synthesize a mixed-dimensional hybrid of BP nanosheets loaded with Au these precious metals has limited their
+nanoparticles (BP/Au). The electrochemical test results show the BP/ practical application.[3] As a result, there
+Au exhibits excellent electrocatalytic oxygen evolution performance with is an urgent need to find low-cost mate-
+ rials and high-performance electrocatalytic
+an ultra-low onset potential (1.36 V) and Tafel slope (68.1 mV dec−1). The
+ OER materials as substitutes for precious
+first-principles calculation results further support the experimental results, metals.
+in which the loading of Au nanoparticles realizes the transition of BP from With the advent of graphene, 2D
+the semiconductor phase to the metal phase, which makes the BP/Au materials have gradually appeared in
+exhibit faster carrier mobility. The BP/Au also exhibits a Gibbs free energy the field of vision and are considered as
+closer to the optimal value of the OER. This is because Au nanoparticles good candidates for electrocatalytic OER
+ materials due to their excellent electronic
+can inject free electrons unto the surface of BP and realize the coupling
+ properties and catalytic activities. Pre-
+effect between the local semiconductor and metal, thereby effectively vious reports have confirmed that 2D
+improving the carrier mobility and catalytic activity. This work fully materials have excellent electrocatalytic
+confirms that the BP/Au is a suitable candidate for electrocatalytic oxygen OER properties, such as MoS2,[4] WS2,[5]
+evolution, and provides effective strategies for constructing efficient and MXenes.[6] Recently, a new single-
+ element 2D material, black phosphorus
+electrocatalysts.
+ (BP), has been successfully synthesized,
+ which has excellent carrier mobility
+ (1000 cm2 V−1 s−1 at ten-layer thickness[7])
+1. Introduction and good catalytic activity.[8] Therefore, it is widely used in the
+ field of catalysis, especially as an electrocatalytic OER mate-
+Oxygen (O2) is necessary for the survival of human beings and rial.[9] For instance, Wang and co-workers[10] adopted a simple
+most other organisms, and it also plays an irreplaceable role method to grow BP nanosheets on a carbon nanotube net-
+in industrial production. Therefore, it is necessary to develop work and showed excellent electrocatalytic OER performance.
+an efficient technique to produce and prepare O2. At present, Although many studies have reported that BP nanosheets
+the electrocatalytic splitting of water for the oxygen evolution have shown good applications in the field of electrocatalytic
+reaction (OER) has shown good application prospects as a OER, its high overpotential and limited catalytic activity
+ still needs to be further improved. Therefore, it is crucial to
+ improve the electrocatalytic OER performance of BP through
+Dr. H. Qiao, Dr. H. Liu, Dr. Z. Huang, Dr. Q. Ma, Dr. S. Luo, Dr. J. Li,
+Dr. Y. Liu, Prof. J. Zhong, Prof. X. Qi
+ various strategies.
+Hunan Key Laboratory for Micro-Nano Energy Materials and Devices, It is well known that the main factors that determine the
+and School of Physics and Optoelectronic performance of electrocatalyst OER include the number of cata-
+Xiangtan University lytic active site, electrical conductivity, and catalytic activity.[3,11]
+Hunan 411105, P. R. China Our previous work has reported[12] that reducing the number
+E-mail: zyhuang@xtu.edu.cn; xqi@xtu.edu.cn
+ of layers of BP nanosheets can expose more reactive sites to
+ The ORCID identification number(s) for the author(s) of this article
+ can be found under https://doi.org/10.1002/aenm.202002424.
+ enhance its electrocatalytic performance. The experimental
+ results show that with the degree of BP nanosheets, its elec-
+DOI: 10.1002/aenm.202002424 trocatalytic oxygen evolution performance is continuously
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (1 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+enhanced. In addition, improving the conductivity is considered required for the catalytic reaction, and thereby improving
+an effective strategy to enhance the electrocatalytic OER perfor- the electrocatalytic oxygen evolution performance of the BP
+mance, because high conductivity can ensure a rapid electron nanosheets.
+transfer process.[13] For instance, Zhao and co-workers[14] grew
+2D MOF ultrathin nanosheet arrays on various highly conduc-
+tive substrates, achieving a small overpotential of 240 mV for 2. Results and Discussion
+OER at 10 mA cm−2. In addition, it is also an effective strategy
+to improve the electrocatalyst conductivity through metal ion The BP/Au was successfully prepared by a simple one-pot hot
+doping. Li et al.[15] greatly improved the electronic conductivity solution method, and a series of characterizations methods
+of layered perovskite through Co doping, which resulted in an were used to further confirm its microstructure and com-
+ultrahigh-efficiency electrocatalytic OER, and where the Tafel position. As shown in Figure 1a and Figure S2 (Supporting
+slope was reduced from 656 to 87 mV dec−1. However, metal Information), we can clearly observe that the Au particles are
+doping is usually a complicated process, and it is difficult to uniformly distributed on the BP nanosheets. The size of the
+achieve controllable operation. Therefore, a simple strategy Au nanoparticles is about a dozen nanometers, and about
+to construct a heterojunction to enhance the conductivity of 75% of Au nanoparticles have a size distribution between
+the electrocatalyst is a very convenient method and has been 12 and 20 nm. The inset is the selected area electron diffraction
+widely studied.[16] For example, Xue et al.[17] constructed NiPS3 (SAED) pattern in the transmission electron microscopy (TEM)
+nanosheets-graphene heterojunctions to improve the conduc- image, and the results provide strong evidence for the com-
+tivity of NiPS3 nanosheets and showed significantly improved position of the BP/Au heterojunction. The SAED mode shows
+OER performance. Krishnan and co-workers[18] effectively rings corresponding to the (111) and (200) crystal planes of Au
+improved the conductivity of TiO2 nanorods through the sup- nanoparticles, revealing their polycrystalline nature. In addi-
+port of Pt nanoparticles. Interestingly, the loading of metal nan- tion, the (131) and (060) crystal planes of BP are also depicted,
+oparticles can effectively enhance the contact and adsorption which is consistent with the expected BP crystal structure.
+of the catalyst with the OH− ions in the electrolyte,[19] thereby Figure 1c shows a high-resolution TEM image, which indicates
+achieving the optimized Gibbs free energy of OH− adsorption the lattice fringe corresponding to the (021) crystal plane of
+and effectively reducing the activation energy required for the BP and the (111) crystal plane of Au. In order to further con-
+oxygen evolution reaction.[18] Zhang et al.[20] confirmed that the firm the composition of the prepared powder sample, energy
+OER activity of NiFe increased six times by the loading of Au dispersive spectroscopy (EDS) mapping of the selected area
+atoms. In this structure, due to the local metal–semiconductor in Figure 1d is shown in Figure 1e–g, and the distribution of
+interface effect, Au nanoparticles can transfer electrons to NiFe Au nanoparticles on BP nanosheets can also be evaluated. The
+and change their charge distribution, thereby further improving EDS element analysis results of the corresponding positions
+the catalytic performance. Subsequently, Jung and co-workers[21] in Figure 1d–g are shown in Figure S3 (Supporting Informa-
+showed through simulation studies that metal nanoparticles tion). The peaks corresponding to the elements P and Au were
+accelerated the overall electrocatalytic reaction kinetics and clearly explored, and there were no other impurity peaks. In
+activated the hydrolytic absorption at the metal–semiconductor addition, atomic force microscope (AFM) characterization fur-
+interface by donating extra electrons, thereby reducing the elec- ther confirmed the micromorphology of the BP/Au, as shown
+trocatalytic reaction barrier. These reports indicate that metal in Figure S4 in the Supporting Information. Among them, it
+loading is an effective strategy to improve the catalytic activity can be clearly observed that Au nanoparticles are uniformly
+of 2D semiconductor electrocatalysts. It is worth noting that the adsorbed on the large-size BP nanosheets with a thickness
+three-coordinate honeycomb structure of BP allows it to con- of 5 nm. At the same time, the atomic vibration modes of BP
+tain bare lone electrons with negative adsorption energy for nanosheets and BP/Au were also analyzed by Raman spectros-
+metal atoms, which indicates that BP may bond with the metal copy. As shown in Figure S5 (Supporting Information), the
+to form a stable structure.[22] This shows that improving the Raman peak corresponding to the three vibration modes of
+electrocatalytic performance of BP through metal adsorption is BP is clearly observed. The plasma effect of Au nanoparticles
+an effective strategy. promotes the absorption of incident light, thereby enhancing
+ In our work, BP/Au were prepared by a simple one-pot the vibration energy of its atoms, such that the intensity of the
+hot solution method and used as OER electrocatalysts. The Raman peak is increased, and the peak position produces a
+microstructure and composition of the BP/Au were con- blue shift corresponding to the three vibration modes.[23] All
+firmed through a series of characterization methods. In addi- the characterization results show that the BP/Au has been
+tion, electrochemical studies showed that the BP/Au had successfully constructed, and a considerable specific surface
+lower superpoints and smaller Tafel slopes compared to sole area and plasma hot electron injection can be achieved in this
+BP nanosheets, which indicates that our synthesized BP/Au mixed-dimensional structure, thereby effectively improving the
+has better electrocatalytic oxygen evolution properties. Fur- electrocatalytic activity.
+thermore, it is confirmed by first-principles calculations that The electrocatalytic oxygen evolution performance of the
+the carrier mobility and interface electron transfer rate of BP prepared BP/Au was evaluated by electrochemical testing. The
+nanosheets are effectively improved due to the loading of Au linear scanning voltammetry (LSV) curves of the BP/Au and
+nanoparticles. More importantly, the loading of Au nanopar- pure BP nanosheets in 0.1 mol L−1 (m) KOH electrolyte are
+ticles enhances the adsorption ability of the catalyst for OH− shown in Figure 2a, in which the electrocatalytic activity of BP/
+in the electrolyte, effectively reducing the activation energy Au outperforms pure BP nanosheets. The BP/Au exhibited an
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (2 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+Figure 1. a,b) TEM images of BP/Au heterojunction. The illustration shows the SAED pattern of BP/Au heterojunction. C) HRTEM image of BP/Au
+heterojunction. d–g) EDS mapping of P, Au elements from the selected area.
+
+onset potential of ≈1.36 V, which is significantly better than that a current density of 10 mA cm−2 are 1.39 and 1.61 V, respec-
+of BP nanosheets and those of previously reported BP electroca- tively. This mixed-dimensional BP/Au shows better electro-
+talysis (1.45 V of BP nanosheets[12] and 1.48 V of bulk BP[24]). In catalytic performance than most of the 2D materials and their
+addition, the Tafel slopes corresponding to the LSV curve of the heterojunctions. The detailed information is shown in Table 1.
+BP/Au and pure BP nanosheets were obtained by calculation as In order to further verify that the BP/Au has better electro-
+shown in the inset of Figure 2a, which can reflect the voltage catalytic performance than the pure BP nanosheets, the elec-
+required to increase the equivalent current density. The results trochemical AC impedance spectrum (EIS) is characterized as
+show that the BP/Au (≈68.1 mV dec−1) has a very low Tafel slope shown in Figure 2b. The EIS curves show that the BP/Au has
+compared to the pure BP nanosheets (114.4 mV dec−1), and this smaller internal resistance (intercept on the horizontal axis)[25]
+result is far superior to previous reports (88 mV dec−1 of BP and charge transfer resistance (radius corresponding to the arc),
+nanosheets[12] and 91.5 mV dec−1 of bulk BP[24]). Meanwhile, the which indicates that the BP/Au has faster charge transfer and
+corresponding overpotentials of BP/Au and BP nanosheets at catalytic reaction kinetic process.
+
+Figure 2. a) C–V polarization curve of BP/Au and pure BP in 1 m KOH electrolyte. The curves in the inset correspond to the calculated Tafel slope of
+BP/Au and pure BP, respectively. b) Electrochemical AC impedances spectroscopy of BP/Au and pure BP in 1 m KOH electrolyte.
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (3 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+Table 1. Comparison of electrocatalytic oxygen evolution performance while the P atoms with short bond lengths and large bond
+parameters between BP/Au and other 2D materials. angles lose charge. Similarly, the electron localization functions
+ (Figure 3e) show that the electron locality of the Au atom is very
+Materials Measurement Onset-potential Tafel slope Ref. weak, while that of the P atom is strong. This fact is attributed
+ Conditions (vs RHE) [mV dec−1]
+ to the metal plasma effect, which allows Au atoms to inject hot
+BP/Au 1 m KOH 1.36 V 68.1 This work electrons into the BP nanosheets, thereby effectively enhancing
+BP nanosheets 1 m KOH 1.45 V 88 [12] their carrier mobility and improving the electrocatalytic activity.
+BP bulk@Ti foil 0.1 m KOH 1.48 V 91.5 [24] To evaluate the electrical conductivity, we focused our atten-
+MoS2 nanosheets 1 m KOH 1.6 V 143 [4]
+ tion on the carrier mobility of BP/Au. The calculation results
+ confirm that the BP/Au mixed dimension system has better
+MoS2 QDs 1 m KOH 1.51 39
+ electron mobility than the pure BP nanosheet. The specific
+Co3O4/MoS2 1 m KOH 1.46 V 94 [39] parameters and calculation results are listed in Table S2 in
+ (at 20 mA cm−2) the Supporting Information. Compared with the pure mon-
+NiFeCr-6:2:1 @ CP 1 m KOH 1.45 V 69 [40] olayer BP, whose mobility was similar to the results of previous
+Co3O4 nanosheets 1 m KOH 1.5 V 243 [41] studies,[28] the effective mass and deformation potential of the
+Ar-plasma engraved 1 m KOH 1.45 V 68 monolayer BP/Au structure are reduced, the elastic modulus is
+Co3O4 nanosheets increased, and the carrier mobility is increased, indicating that
+ the BP/Au system is more conducive to electronic transmis-
+ sion.[29] The metallicity and high carrier mobility of BP/Au have
+ The above-mentioned experimental results confirm that the an intrinsic advantage in electrical conductivity, which is benefi-
+adsorption of Au nanoparticles can greatly enhance the electro- cial for efficient electrocatalytic.
+catalytic oxygen evolution of BP nanosheets. To explain the elec- The ∆GOH* value of the monolayer BP and BP/Au OER
+trocatalytic enhancement mechanism in detail, we calculated process were calculated in detail. Since we used a 2 × 2 super-
+and analyzed the electronic properties and catalytic properties cell, we needed to adsorb a total of four hydroxyl groups. The
+of BP nanosheets and Au-adsorbed BP nanosheets by first prin- optimal adsorption site structure is shown in Figure 4a, in
+ciples. First, the atomic structure model of a monolayer BP which oxygen atoms form a single bond with hydrogen atoms
+nanosheet was constructed, and a feasible single-atom model while bonding with neighboring P atoms. In Figure 4b, the
+was adopted to simulate the results after comprehensive evalu- ∆GOH* of monolayer BP in the OER process was calculated
+ation of various factors, and gave full consideration to the three to be 1.032 eV, which is lower than the optimal value of 1.6 eV
+kinds of Au atomic adsorption sites, through the comparison under the limitation of linear relationships in the adsorption
+of binding energy data in Table S3 (Supporting Information), it free energies of oxygen-containing species. This indicates that
+can be found that the structure of the system is the most stable the reaction between the hydroxyl group and monolayer BP was
+when Au atoms are adsorbed on BP nanosheets in vacancy. too strong to effectively break away from the adsorption and
+Therefore, subsequent calculations are based on the BP struc- release oxygen.[30] This shows that in the actual electrocatalytic
+ture of Au atom adsorption by vacancy. The bond lengths OER process, it is not only necessary to provide more activa-
+length and different bond angles after optimization are shown tion energy for the catalytic reaction, but also causes hysteresis
+in Figure S1 (Supporting Information), and the corresponding phenomenon of the Kinetic rate in catalytic reaction.[31] The
+structural information is summarized in Table S1 (Supporting ∆GOH* of OER process calculated on monolayer BP adsorbed
+Information) (see Supporting Information for details). The by Au adatom is 1.204 eV, which is closer to the optimal value,
+electronic energy band structures of single-layer BP and BP/Au indicating that the BP/Au structure has better OER activity than
+are determined by first-principles calculations, and the corre- that of monolayer BP.
+sponding calculation results are clearly presented in Figure 3a,b. The calculation results confirm that the BP/Au has excellent
+It is worth noting that the BP/Au system changed from a quasi- electrocatalytic oxygen evolution performance, in which the BP/
+direct bandgap semiconductor to a metal[26] compared to the Au exhibits stronger OH− ion adsorption and O2 desorption
+original single-layer BP,[27] and exhibited anisotropy and a high ability. Hence, the OER performance of the BP/Au under dif-
+electron mobility of 1.62 cm2 V−1 s−1 along a certain direction, ferent KOH electrolyte concentrations (1, 0.5, 0.1, and 0.05 m)
+which shows that Au adsorption can effectively improve the car- was performed to evaluate the regulatory mechanism of OH−
+rier mobility of BP nanosheets. This phenomenon is attribut- concentration (C[OH−]) on its OER performance. As shown
+able to the fact that Au nanoparticles can act as electron donors in Figure 5a, the initial potential of the electrocatalytic OER of
+to inject only electrons into the surface of BP nanosheets. the BP/Au continues to decrease and the current density con-
+This is similar to a negative charge doping process, which can tinues to increase with increasing C[OH−] concentration. Sub-
+change the electronic structure of BP nanosheets and change sequently, the Tafel slope of the BP/Au under different C[OH−]
+the position of the Fermi level. Subsequently, further calcula- values were obtained by calculation, as shown in Figure 5b. The
+tion of the charge density difference clearly showed that the BP/Au has a Tafel slope of 68.1, 108, 124, 159.4 mV dec−1 in 1, 0.5,
+adsorption of Au atoms promoted the charge transfer between 0.1, and 0.05 m, respectively. To reflect the impact of C[OH−] on
+Au atoms and the BP layer, as shown in Figure 3c,d. A note- the performance of BP/Au OER more intuitively, the Tafel slope,
+worthy phenomenon is that Au atoms show a loss of charge, current density at 1.48 V, and potential at 10 mV cm−2 as a func-
+the two P atoms with long bond lengths and small bond angles tion of the concentration of C[OH−] are presented in Figure 5c.
+that are adjacent to and form a bond with the Au gain charge, It can be clearly observed that the performance of the BP/Au
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (4 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+Figure 3. Calculated band structure of a) original monolayer BP and b) monolayer BP adsorbed by Au adatom, where the energy is scaled with respect
+to the Fermi energy EF and the size of the red and blue illustrate the projected weight of P, Au atoms, respectively. The corresponding band gap values
+are indicated in the band diagram. c) Top and d) side views of the charge density difference of monolayer BP adsorbed by Au atom. The loss of elec-
+trons is indicated in blue and gain of electrons is indicated in yellow. e) side views of the electron localization functions from the (100) section of the
+monolayer BP adsorbed by Au atom. The concentration of electrons increases from blue to red.
+
+OER increases linearly with increasing C[OH−], which shows is due to the increase in C[OH−], and the conductivity and
+that increasing C[OH−] can effectively improve the OER perfor- ion transfer ability of the electrolyte are enhanced, and it can
+mance of the BP/Au in the range 0.05–1 m. This phenomenon provide more reactants for the BP/Au OER. In addition, EIS
+
+Figure 4. a) Top and side views of BP/Au with the adsorbed OH− at the most stable adsorption site. Key: yellow, Au; purple, phosphorus; red, oxygen;
+and white, hydrogen. b) The corresponding calculated standard free energy diagram of the oxygen evolution reaction process for monolayer BP (black)
+and BP/Au (red).
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (5 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+Figure 5. a) The C–V polarization curve and b) Calculated Tafel slope of BP/Au in different concentrations of KOH electrolyte solution (1, 0.5, 0.1,
+0.05 m). c) Calculated Tafel slope, current density at 1.48 V, and potential at 10 mV cm−2 as a function of the concentration of C[OH−]. d) Electrochemical
+AC impedances spectroscopy of BP/Au in different concentrations of KOH electrolyte solution.
+
+also further confirmed that the BP/Au has the smallest internal microscopic morphology did not change significantly compared
+resistance and charge transfer resistance in 1 m KOH electro- to before the test. This series of evidence proves that BP/Au
+lyte as shown in Figure 5d. These results indicate that changing have good environmental stability and chemical stability, and
+C[OH−] is an effective means to adjust the performance of the are excellent candidates for electrocatalysts.
+electrocatalytic OER within a certain range.
+ It is well known that the stability of an electrocatalyst is one
+of the key parameters for evaluating its performance. There- 3. Conclusions
+fore, this experiment also tested and evaluated the cyclic sta-
+bility and long-term stability of the BP/Au heterojunction. As In summary, we successfully synthesized a BP/Au hybrid by a
+shown in Figure 6a, the LSV polarization curve of the BP/Au simple one-pot hot solution method. Electrochemical test results
+has almost no change after 500 and 1000 cycles in 0.5 m KOH show that the BP/Au has excellent electrocatalytic oxygen evo-
+electrolyte. In addition, Figure 6b is the i–t characteristic curve lution performance, which is far superior to that of pure BP
+of BP/Au under 1.45 V bias, which shows that BP/Au still has nanosheets and most 2D materials. Through first-principles calcu-
+good electrocatalytic activity for 72 h in 0.5 m electrolyte, and lations, we investigated the enhancement mechanism of the elec-
+its current density has been maintained at about 10 mA cm−2. trocatalytic oxygen evolution performance. The results show that
+Subsequently, the BP/Au was subjected to 1000 consecutive Au-adsorbed BP undergoes a transition from the semiconductor
+C–V cycle tests, the current density corresponding to the 1.4 V phase to the metal phase, and the electron mobility has been
+voltage was taken out and its change was observed, as shown greatly improved. In addition, compared to the BP nanosheets,
+in Figure 6c. It can be clearly observed that the current den- the BP/Au mixed-dimensional structure shows a ΔGOH* closer
+sity of positive scanning and reverse scanning only fluctuates to the optimal value, which indicates that the OER of the BP/Au
+within a small range, and there is almost no obvious change. has a lower onset potential and a fast catalytic reaction kinetic pro-
+Moreover, the BP/Au samples after the test were collected and cess. Our research paves the way for further development of lay-
+characterized by TEM. As shown in the inset of Figure 5b, the ered 2D materials as effective electrocatalysts for water splitting.
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (6 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+Figure 6. The stability of BP/Au is in 0.5 m KOH electrolyte. a) Cyclic stability of C–V polarization curve. b) Long-term stability test for i–t curve duration 72 h.
+The illustration shows the TEM image and SAED mode of the BP/Au after the test. c) Current density corresponding to 1.4 V voltage on C–V cycle curve.
+
+4. Experimental Section BP nanosheets were added to the above-mentioned yellow Au precursor
+ solution. The mixed solution was heated to 100 °C and maintained for
+Synthesis of Materials–Preparation of BP Nanosheets: Black phosphorus 20 min to prepare the BP/Au hybrids. After the solution was cooled to
+nanosheets were prepared using a recently reported method of liquid exfoli- room temperature, the mixed solution was centrifuged to collect the BP/
+ation. Briefly, a certain amount of bulk BP was added to a 50 mL beaker filled Au powder. The collected powder was washed three times with deion-
+with N-methyl-2-pyrrolidone (NMP, 99.5%, anhydrous) and sonicated using ized water and dried under a vacuum environment at 60 °C for 6 h.
+a high-powered probe ultrasound equipment for 4 h. The above solution Characterizations and Electrochemical Testing: The micromorphology
+was subjected to an ice bath treatment and the temperature was kept below and structure of as-prepared BP/Au were characterized using and TEM.
+25 °C during the sonication process. The turbid solution after sonication EDS mapping were obtained by operating at 200 kV on an EDAX solid
+was centrifuged at 3000 rpm for 20 min to remove the incomplete exfolia- state X-ray detector using JEAX ARM-200F. The Raman spectroscopy was
+tion bulk BP. The upper liquid was filtered and washed 2–3 times with ace- performed to analyze the composition of the prepared BP nanosheets
+tone and ethanol to obtain BP nanosheets. and BP/Au, respectively. The thickness of the BP/Au was measured
+ Synthesis of Materials–Preparation of BP/Au Hybrids: First, 1 g of using an AFM (SEIKO, SPI3800N + 300 HV). The electrochemical test
+sodium citrate (Na3C6H5O7 • 2H2O) was dissolved in 100 mL of distilled was implemented relying on a standard three-electrode system elec-
+water, and an aqueous solution with a mass fraction of 1% was config- trochemical workstation, in which a glass-carbon electrode coated
+ured. Chloroauric acid solution (1 mL) (HAuCl4 • 4H2O, mass fraction with BP/Au was used as the working electrode, a platinum flake was
+of 1%) and 100 mL of deionized water was added to the flask. Subse- used as the counter electrode, and a saturated calomel electrode
+quently, 5 mL of an aqueous sodium citrate solution and the as-prepared was used as the reference electrode. The KOH solutions of different
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (7 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+concentrations (0.05, 0.1, 0.5, 1 m) were used as electrolytes during Energy Lett. 2018, 3, 1110; c) C. C. McCrory, S. Jung, J. C. Peters,
+the test. Test the LSV characteristic curve of BP and BP/Au at a sweep T. F. Jaramillo, J. Am. Chem. Soc. 2013, 135, 16977; d) X.-D. Zhu,
+speed of 0.01 V s−1. EIS measurements of BP/Au were performed at Y. Xie, Y.-T. Liu, J. Mater. Chem. A 2018, 6, 21255.
+open circuit potentials with a frequency range of 100 kHz to 0.01 Hz. [2] T. Reier, M. Oezaslan, P. Strasser, ACS Catal. 2012, 2, 1765.
+ [3] Q. Shi, C. Zhu, D. Du, Y. Lin, Chem. Soc. Rev. 2019, 48, 3181.
+According to the Nernst equation, the electrode potential was
+ [4] B. Mohanty, M. Ghorbani-Asl, S. Kretschmer, A. Ghosh, P. Guha,
+converted to the RHE potential with respect to the Hg2Cl2/Hg electrode:
+ S. K. Panda, B. Jena, A. V. Krasheninnikov, B. K. Jena, ACS Catal.
+E (vs RHE) = E (vs Hg2Cl2/Hg) + 0.241 V + 0.0591 × pH. 2018, 8, 1683.
+ Computational Method: All theoretical calculations are based on the [5] D. Wang, Q. Li, C. Han, Z. Xing, X. Yang, ACS Cent. Sci. 2018, 4, 112.
+first-principles calculations performed in the Vienna ab initio simula- [6] L. He, J. Liu, Y. Liu, B. Cui, B. Hu, M. Wang, K. Tian, Y. Song, S. Wu,
+tion package (VASP)[32] using the projector-augmented wave (PAW)[33] Z. Zhang, Appl. Catal., B 2019, 248, 366.
+scheme based on density functional theory. The generalized gradient [7] L. Li, Y. Yu, G. J. Ye, Q. Ge, X. Ou, H. Wu, D. Feng, X. H. Chen,
+approximation (GGA)[34] with the Perdew–Burke–Ernzerhof functional Y. Zhang, Nat. Nanotechnol. 2014, 9, 372.
+(PBE)[35] is used as the exchange-correlation potential. In optimizing the [8] a) Z. Yuan, J. Li, M. Yang, Z. Fang, J. Jian, D. Yu, X. Chen,
+system geometry, van der Waals interactions were considered by optB88 L. Dai, J. Am. Chem. Soc. 2019, 141, 4972; b) G. Xu, H. Li,
+ A. S. Bati, M. Bat-Erdene, M. J. Nine, D. Losic, Y. Chen,
+exchange functional (optB88-vdWs).[36] Using the plane wave basis set,
+ J. G. Shapter, M. Batmunkh, T. Ma, J. Mater. Chem. A 2020, 8,
+the kinetic energy cutoff of 400 eV is adopted. A 2 × 2 × 1 orthorhombic
+ 4735; c) M. Batmunkh, A. Shrestha, M. Bat-Erdene, M. J. Nine,
+supercell in a 15 Å vacuum space with periodic boundary conditions C. J. Shearer, C. T. Gibson, A. D. Slattery, S. A. Tawfik, M. J. Ford,
+was used in the whole calculation process to safely avoid the interac- S. Dai, Angew. Chem., Int. Ed. 2018, 57, 2644; d) Y.-T. Liu, D. Li, J. Yu,
+tion between the periodically repeated structures. All the structures were B. Ding, Angew. Chem., Int. Ed. 2019, 58, 16439; e) X. Ren, D. Philo,
+relaxed until the forces became smaller than 0.01 eV Å−1, and the energy Y. Li, L. Shi, K. Chang, J. Ye, Coord. Chem. Rev. 2020, 424, 213516.
+tolerances were less than 10−5 eV per atom. Because the influence of [9] a) J. Wang, D. Liu, H. Huang, N. Yang, B. Yu, M. Wen, X. Wang,
+dipole moment correction on binding energy can be ignored, the dipole P. K. Chu, X. F. Yu, Angew. Chem., Int. Ed. 2018, 57, 2600; b)
+moment correction is not included.[37] A 3 × 5 × 1 k-points are used in the M. Batmunkh, M. Myekhlai, A. S. Bati, S. Sahlos, A. D. Slattery,
+geometry optimization and static electronic structure computation.[38] T. M. Benedetti, V. R. Gonçales, C. T. Gibson, J. J. Gooding,
+ R. D. Tilley, J. Mater. Chem. A 2019, 7, 12974; c) F. Shi, Z. Geng,
+ K. Huang, Q. Liang, Y. Zhang, Y. Sun, J. Cao, S. Feng, Adv. Sci. 2018,
+ 5, 1800575.
+Supporting Information [10] Q. Jiang, L. Xu, N. Chen, H. Zhang, L. Dai, S. Wang, Angew. Chem.,
+Supporting Information is available from the Wiley Online Library or Int. Ed. 2016, 55, 13849.
+from the author. [11] a) N.-T. Suen, S.-F. Hung, Q. Quan, N. Zhang, Y.-J. Xu, H. M. Chen,
+ Chem. Soc. Rev. 2017, 46, 337; b) F. Song, M. M. Busch, B. Lassalle-Kaiser,
+ C.-S. Hsu, E. Petkucheva, M. L. Bensimon, H. M. Chen, C. Corminboeuf,
+ X. Hu, ACS Cent. Sci. 2019, 5, 558; c) L. Lv, Z. Yang, K. Chen, C. Wang,
+Acknowledgements Y. Xiong, Adv. Energy Mater. 2019, 9, 1803358.
+H.Q. and H.L. contributed equally to this work. The research was [12] X. Ren, J. Zhou, X. Qi, Y. Liu, Z. Huang, Z. Li, Y. Ge,
+partially supported by National Natural Science Fund Foundation of S. C. Dhanabalan, J. S. Ponraj, S. Wang, Adv. Energy Mater. 2017, 7,
+China (Grant No. 61 605 166), Scientific Research Fund of Hunan 1700396.
+Provincial Education Department (No. 18A059), the Open Fund based [13] a) G. N. Vayssilov, Y. Lykhach, A. Migani, T. Staudt, G. P. Petrova,
+on innovation platform of Hunan colleges and universities (No. 18K032) N. Tsud, T. Skála, A. Bruix, F. Illas, K. C. Prince, Nat. Mater. 2011,
+and Provincial Natural Science Foundation of Hunan (No. 2019JJ50612), 10, 310; b) K. Xu, P. Chen, X. Li, Y. Tong, H. Ding, X. Wu, W. Chu,
+and Program for Changjiang Scholars and Innovative Research Team in Z. Peng, C. Wu, Y. Xie, J. Am. Chem. Soc. 2015, 137, 4119.
+University (IRT_17R91). [14] J. Duan, S. Chen, C. Zhao, Nat. Commun. 2017, 8, 1.
+ [15] X. Li, Y. Sun, Q. Wu, H. Liu, W. Gu, X. Wang, Z. Cheng, Z. Fu, Y. Lu,
+ J. Am. Chem. Soc. 2019, 141, 3121.
+Conflict of Interest [16] F. Shi, K. Huang, Y. Wang, W. Zhang, L. Li, X. Wang, S. Feng, ACS
+ Appl. Mater. Interfaces 2019, 11, 17459.
+The authors declare no conflict of interest.
+ [17] S. Xue, L. Chen, Z. Liu, H.-M. Cheng, W. Ren, ACS Nano 2018, 12,
+ 5297.
+ [18] P. S. M. Kumar, V. K. Ponnusamy, K. R. Deepthi, G. Kumar,
+Keywords A. Pugazhendhi, H. Abe, S. Thiripuranthagan, U. Pal, S. K. Krishnan,
+ J. Mater. Chem. A 2018, 6, 23435.
+Au nanoparticles, black phosphorus, mixed-dimensional, oxygen
+ [19] P. Bothra, M. Pandey, S. K. Pati, Catal. Sci. Technol. 2016, 6, 6389.
+evolution reaction
+ [20] J. Zhang, J. Liu, L. Xi, Y. Yu, N. Chen, S. Sun, W. Wang, K. M. Lange,
+ B. Zhang, J. Am. Chem. Soc. 2018, 140, 3876.
+ Received: July 28, 2020
+ [21] Y. Choi, S. K. Cha, H. Ha, S. Lee, H. K. Seo, J. Y. Lee, H. Y. Kim,
+ Revised: September 18, 2020
+ S. O. Kim, W. Jung, Nat. Nanotechnol. 2019, 14, 245.
+ Published online: October 11, 2020
+ [22] a) X. Wang, L. Bai, J. Lu, X. Zhang, D. Liu, H. Yang, J. Wang,
+ P. K. Chu, S. Ramakrishna, X. F. Yu, Angew. Chem., Int. Ed. 2019,
+ 58, 19060; b) L. Bai, X. Wang, S. Tang, Y. Kang, J. Wang, Y. Yu,
+ Z. K. Zhou, C. Ma, X. Zhang, J. Jiang, Adv. Mater. 2018, 30, 1803641.
+ [1] a) M. Martin-Sabi, J. Soriano-López, R. S. Winter, J.-J. Chen, [23] a) E. L. Keller, R. R. Frontiera, ACS Photonics 2017, 4, 1033;
+ L. Vilà-Nadal, D.-L. Long, J. R. Galán-Mascarós, L. Cronin, b) G. Yang, Z. Liu, Y. Li, Y. Hou, X. Fei, C. Su, S. Wang, Z. Zhuang,
+ Nat. Catal. 2018, 1, 208; b) S.-A. Park, K.-S. Kim, Y.-T. Kim, ACS Z. Guo, Biomater. Sci. 2017, 5, 2048.
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (8 of 9) © 2020 Wiley-VCH GmbH
+ 16146840, 2020, 44, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/aenm.202002424 by University Of Tokyo, Wiley Online Library on [15/01/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advenergymat.de
+
+[24] Q. Jiang, L. Xu, N. Chen, H. Zhang, L. Dai, S. Wang, Angew. Chem. [34] a) J. P. Perdew, J. A. Chevary, S. H. Vosko, K. A. Jackson,
+ 2016, 128, 14053. M. R. Pederson, D. J. Singh, C. Fiolhais, Phys. Rev. B 1992, 46, 6671;
+[25] Z. He, F. Mansfeld, Energy Environ. Sci. 2009, 2, 215. b) Y. Perdew, Phys. Rev. B 1989, 33, 8800.
+[26] V. V. Kulish, O. I. Malyi, P. Clas, W. Ping, Phys. Chem. Chem. Phys. [35] B. Hammer, L. B. Hansen, J. K. Nørskov, Phys. Rev. B 1999, 59, 7413.
+ 2014, 17, 992. [36] a) M. Farmanbar, G. Brocks, Phys. Rev. B 2016, 93, 085304;
+[27] K. Gong, Z. Lei, J. Wei, G. Hong, Phys. Rev. B 1992, 47, 121. b) G. C. Constantinescu, N. D. M. Hine, Phys. Rev. B 2015, 91, 195416.
+[28] J. Qiao, X. Kong, Z. X. Hu, F. Yang, W. Ji, Nat. Commun. 2014, 5, 4475. [37] L. Bengtsson, Phys. Rev. B 1999, 59, 12301.
+[29] J. Isberg, J. Hammersberg, E. Johansson, T. Wikström, [38] a) H. Jochen, G. E. Scuseria, J. Chem. Phys. 2004, 121, 1187;
+ D. J. Twitchen, A. J. Whitehead, S. E. Coe, G. A. Scarsbrook, Science b) J. E. Peralta, J. Heyd, G. E. Scuseria, R. L. Martin, Phys. Rev. B
+ 2002, 297, 1670. 2006, 74, 073101.
+[30] Q. Liang, L. Zhong, C. Du, Y. Luo, Y. Zheng, S. Li, Q. Yan, Nano [39] A. Muthurasu, V. Maruthapandian, H. Y. Kim, Appl. Catal., B 2019,
+ Energy 2018, 47, 257. 248, 202.
+ [31] Y. Li, Z. Dong, L. Jiao, Adv. Energy Mater. 2020, 10, 1902104. [40] Y. Yang, L. Dang, M. J. Shearer, H. Sheng, W. Li, J. Chen, P. Xiao,
+[32] a) B. Shan, K. Cho, Phys. Rev. Lett. 2005, 94, 236602; b) J. Carrasco, Y. Zhang, R. J. Hamers, S. Jin, Adv. Energy Mater. 2018, 8, 1703189.
+ N. Lopez, F. Illas, Phys. Rev. Lett. 2004, 93, 225502. [41] L. Xu, Q. Jiang, Z. Xiao, X. Li, J. Huo, S. Wang, L. Dai, Angew. Chem.
+[33] K. Gajdos, Furthmüller, Bechstedt, Phys. Rev. B 2006, 20, 5112. 2016, 128, 5363.
+
+Adv. Energy Mater. 2020, 10, 2002424 2002424 (9 of 9) © 2020 Wiley-VCH GmbH

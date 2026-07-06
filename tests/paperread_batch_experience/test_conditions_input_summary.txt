@@ -1,0 +1,43 @@
+这次抽到的关键信息包括：
+
+在 test_conditions_input_table.csv 里：
+
+- Sn
+- 吸附物/反应物：Na
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：surface, active site, sodium, dendrite, planar deposition
+
+在 test_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Tin (Sn)
+  - Graphene (G)
+- 材料参数：
+  - single metal atoms
+  - 4th main group element
+  - sp hybridization
+- 反应参数：
+  - 4 mA cm−2
+  - 8 mA cm−2
+  - 20 C
+- 性能：
+  - Coulombic efficiency of 99.8%
+  - high specific capacity (1166 mAh g−1)
+  - ultralow overpotential of 40 mV
+  - capacity retention of 91% after 500 cycles
+- 表面/晶面：
+  - Sn SAs/G
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - Na
+  - graphene plane
+- 团簇/单原子：
+  - Na clusters
+  - Sn single atoms
+- 建模关键词：
+  - dendrite-free
+  - sodium metal batteries
+  - planar deposition
+- 推荐建模任务：
+  - single_atom_site

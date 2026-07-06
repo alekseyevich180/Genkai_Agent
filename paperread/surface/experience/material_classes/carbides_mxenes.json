@@ -1,12 +1,576 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-06-30T06:54:23.055448+00:00",
+  "updated_at": "2026-07-06T07:30:22.254305+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "terms": 20,
+    "known_useful": 9,
+    "unknown": 11
   },
-  "entries": []
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "catalytic active site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "catalytic sites",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "Au Nanoparticles",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pt nanoparticles",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Ru nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "Au Nanoparticles",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "materials": [
+      {
+        "term": "Pt nanoparticles",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Ru nanoparticles",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "gold nanoparticles",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "TiC",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "Au Nanoparticles",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "catalytic activity",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "catalytic mechanism",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "catalytic reactions",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic activity",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic OER",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic water splitting",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "kinetic characteristics",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "nanoparticle",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "nanoparticles",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "theoretical studies",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "Au",
+        "count": 3
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Ir",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "nanoparticle",
+        "count": 15
+      },
+      {
+        "term": "sulfide",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "Au Nanoparticles",
+        "count": 3
+      },
+      {
+        "term": "Pt nanoparticles",
+        "count": 3
+      },
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "Ru nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "TiC",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Au}",
+        "count": 3
+      },
+      {
+        "term": "{Pt}",
+        "count": 3
+      },
+      {
+        "term": "{Co, Pt}",
+        "count": 2
+      },
+      {
+        "term": "{Ir}",
+        "count": 2
+      },
+      {
+        "term": "{Ru}",
+        "count": 2
+      },
+      {
+        "term": "{C, Ti}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "Au",
+        "count": 3
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Ir",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "components": [
+      {
+        "term": "Pt nanoparticles",
+        "count": 3
+      },
+      {
+        "term": "CoPt nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "Ru nanoparticles",
+        "count": 2
+      },
+      {
+        "term": "gold nanoparticles",
+        "count": 1
+      },
+      {
+        "term": "TiC",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "Au Nanoparticles",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier",
+        "Cluster/Single Atom",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets"
+      ]
+    },
+    {
+      "term": "Pt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "clusters"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Pt nanoparticles",
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "CoPt nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ]
+    },
+    {
+      "term": "Ir nanoparticles",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "clusters",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "cs3003098 1..8",
+        "Ir nanoparticles"
+      ]
+    },
+    {
+      "term": "Ru nanoparticles",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "clusters",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "cs3003098 1..8",
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "catalytic active site",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "catalytic activity",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1
+    },
+    {
+      "term": "catalytic mechanism",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "catalytic reactions",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "review article"
+      ]
+    },
+    {
+      "term": "catalytic sites",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ]
+    },
+    {
+      "term": "electrocatalytic",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "electrocatalytic activity",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "electrocatalytic OER",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets"
+      ]
+    },
+    {
+      "term": "electrocatalytic water splitting",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "gold nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "kinetic characteristics",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "nanoparticle",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "nanoparticles",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ]
+    },
+    {
+      "term": "theoretical studies",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ]
+    },
+    {
+      "term": "TiC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "cs3003098 1..8"
+      ]
+    }
+  ]
 }

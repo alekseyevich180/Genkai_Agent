@@ -1,0 +1,61 @@
+{
+  "id": "surface_relations",
+  "title": "d0qi01060j 234..272 ++",
+  "text": "The eﬀective use of earth-abundant electrocatalyst copper in the splitting of water as nanostructures with\ndiﬀerent combinations is central in replacing noble metals for the industrialization of hydrogen generation.\nCarbonaceous fuels, being front-line suppliers of energy, adversely aﬀect the environment with greenhouse\ngas emission. Considering the electrocatalytic way of splitting water, it is one of the ﬁnest ways for producing\npure hydrogen with a fast rate with no other undesired by-products; hence, researchers across the world\nhave focused maximum attention to make them commercially applicable. To replace the noble metals, tran-\nsition metal-based catalysts are promising. In this review, we have chosen to highlight solely the importance\nof Cu-based nanostructures as eﬀective electrocatalysts for both oxygen evolution reaction (OER) and\nhydrogen evolution reaction (HER). Moreover, various synthetic approaches with Cu nanostructures such as\nReceived 1st September 2020, mono-, bi-, and tri-metallic catalysts as oxides, hydroxides, sulﬁdes, selenides, tellurides, and phosphides\nAccepted 27th October 2020\nwere studied for OER and HER in diﬀerent pH conditions. Hence, this review gives a brief understanding of\nDOI: 10.1039/d0qi01060j Cu-based nanostructures in electrocatalytic water splitting and based on this, it can be applied with other\nrsc.li/frontiers-inorganic advancements in catalysts development for viable hydrogen generation with electrocatalytic water splitting.\n\nK. Karthick received his B.Sc. K. Sangeetha received her B.Sc.\ndegree from Government Arts degree in Chemistry (2011–2014)\nand Science College, and M.Sc. degree in Organic\nUdumalapet, India, and M.Sc. Chemistry (2014–2016) from\ndegree from The American Periyar University, Salem. As she\nCollege, Madurai, India, in was the university topper in M.\nGeneral Chemistry. He qualified Sc, she received the gold medal\nUGC-JRF in December-2014 and and was awarded the INSPIRE\njoined Dr Subrata Kundu’s scholarhsip (JRF) in March 2017\nresearch group in August 2015. by DST, New Delhi. Currently,\nHe is currently working towards she is pursuing her Ph.D. under\nhis Ph.D. thesis, which is mainly Dr Subrata Kundu since August\nKannimuthu Karthick focused on electrocatalytic water Kumaravel Sangeetha 2017 in the field of size- and\nsplitting applications. shape-selective synthesis of\nvarious transition metal nanostructures and their applications in\nenergy, environment, and catalysis.\n\nfor ammonia production (Haber process), hydrogenation pro- shown predominant results with extendable activity through\ncesses of oils and fats, production of hydrochloric acid, metha- pioneering surface modifications of the nanostructures.64\nnol production, etc.2 As of now, hydrogen is majorly produced The activities of these transition metal-based catalysts are\nby the steam reforming process and possesses its own draw- fine-tuned when they are studied as bi- and tri-metallic catalysts\nbacks such as the utilization of high temperature and pressure with other less explored metals of interest.64 Recent literature\nconditions, and also the discharge of CO2 into the environ- analysis has showed the appreciable use of earth-abundant Cu-\nment. Since fossil fuels are finite, findings other sources of based electrocatalysts for both OER and HER applications.65,66\nenergy in order to obtain hydrogen in a viable way and a large Cu-Based electrocatalysts are prepared in diﬀerent ways such as\nscale with no harm to the environment is highly required cur- oxides, hydroxides, chalcogenides, phosphides, and also as\nrently for a greener world.3,4 In the above-mentioned layered double hydroxide (LDH)-based catalysts with other tran-\napproaches, water electrolysis is one of the primary ways of\nsition metal-based catalysts for both OER and HER in unique\nproducing highly pure hydrogen with no carbonaceous emis-\npH conditions.67–71 The results of Cu-based catalysts showed\nsion. When the produced hydrogen is utilized for the fuel cell,\ntheir potential in water splitting applications, which can be\nthe by-product is just water, which makes this process as a\nfurther enhanced by making them as eﬀective nanostructures\nhighly advantageous one compared to other methods. Since\nPublished on 28 October 2020. Downloaded on 1/15/2026 7:34:31 AM.",
+  "extraction": {
+    "materials": [
+      "copper",
+      "transition metal-based catalysts",
+      "Cu-based nanostructures",
+      "oxides",
+      "hydroxides",
+      "sulfides",
+      "selenides",
+      "tellurides",
+      "phosphides",
+      "layered double hydroxide (LDH)"
+    ],
+    "material_parameters": [],
+    "surfaces": [],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [
+      "hydrogen",
+      "water"
+    ],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "electrocatalytic activity",
+      "high purity",
+      "environmentally friendly"
+    ],
+    "reaction_parameters": [
+      "pH conditions"
+    ],
+    "modeling_keywords": [
+      "electrocatalysis",
+      "water splitting",
+      "catalyst development"
+    ],
+    "recommended_modeling_tasks": [
+      "surface_functionalization"
+    ],
+    "applications": [
+      "hydrogen generation",
+      "oxygen evolution reaction (OER)",
+      "hydrogen evolution reaction (HER)"
+    ],
+    "links": []
+  }
+}

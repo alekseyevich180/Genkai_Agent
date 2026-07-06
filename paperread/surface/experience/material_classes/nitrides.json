@@ -1,12 +1,314 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-06-30T06:54:23.053821+00:00",
+  "updated_at": "2026-07-06T07:30:22.291675+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
-    "unknown": 0,
-    "sources": []
+    "terms": 10,
+    "known_useful": 6,
+    "unknown": 4
   },
-  "entries": []
+  "keyword_inventory": {
+    "adsorbates_reactants": [
+      {
+        "term": "ammonia",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "coverage": [
+      {
+        "term": "1/3−2/3 monolayer",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "1/3−2/3 monolayer OH*",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "monochain CrO3",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "materials": [
+      {
+        "term": "antimonene",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ultrananocrystalline diamond",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "antimonene",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "subnanometer clusters",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "monolayer",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "monometallic cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Sb monolayer",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 2
+      },
+      {
+        "term": "Cr",
+        "count": 1
+      },
+      {
+        "term": "H",
+        "count": 1
+      },
+      {
+        "term": "Sb",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "nitride",
+        "count": 11
+      },
+      {
+        "term": "surface",
+        "count": 3
+      },
+      {
+        "term": "cluster",
+        "count": 2
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 2
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "3 monolayer OH*",
+        "count": 1
+      },
+      {
+        "term": "monochain CrO3",
+        "count": 1
+      },
+      {
+        "term": "Sb monolayer",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Cr, O}",
+        "count": 1
+      },
+      {
+        "term": "{H, O}",
+        "count": 1
+      },
+      {
+        "term": "{Sb}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 2
+      },
+      {
+        "term": "Cr",
+        "count": 1
+      },
+      {
+        "term": "H",
+        "count": 1
+      },
+      {
+        "term": "Sb",
+        "count": 1
+      }
+    ],
+    "components": [
+      {
+        "term": "antimonene",
+        "count": 3
+      },
+      {
+        "term": "ultrananocrystalline diamond",
+        "count": 1
+      }
+    ],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "antimonene",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "1/3−2/3 monolayer",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au(111)"
+      ]
+    },
+    {
+      "term": "1/3−2/3 monolayer OH*",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ]
+    },
+    {
+      "term": "ammonia",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Combining theory and experiment in electrocatalysis: Insights into materials design"
+      ]
+    },
+    {
+      "term": "monochain CrO3",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "modifiers"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "monolayer",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "monometallic cluster",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "slab_models"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
+      ]
+    },
+    {
+      "term": "Sb monolayer",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "subnanometer clusters",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pd4, Pd6, Pd17 clusters"
+      ]
+    },
+    {
+      "term": "ultrananocrystalline diamond",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "acs_nn_nn-2013-00772s 1..10"
+      ]
+    }
+  ]
 }

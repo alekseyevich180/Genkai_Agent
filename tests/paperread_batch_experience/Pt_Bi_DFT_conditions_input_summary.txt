@@ -1,0 +1,41 @@
+这次抽到的关键信息包括：
+
+在 Pt_Bi_DFT_conditions_input_table.csv 里：
+
+- Pt, Bi
+- Pt-Bi Alloy 暴露/涉及晶面 (100)
+- 吸附物/反应物：O2, H+
+- 建模关键词：Pt-Bi, ORR, active site, d-band, tensile strain, electron transfer
+
+在 Pt_Bi_DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Pt
+  - Bi
+  - PtBi alloy
+- 材料参数：
+  - high loading
+  - low cost
+- 反应参数：
+  - temperature
+  - pressure
+  - atmosphere
+- 性能：
+  - ORR activity
+  - d-band center
+- 表面/晶面：
+  - PtBi(100)
+  - Pt(111)
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - hydroxy
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - electrocatalysis
+  - bimetallic catalysts
+- 推荐建模任务：
+  - doped_surface
+  - vacancy_landscape

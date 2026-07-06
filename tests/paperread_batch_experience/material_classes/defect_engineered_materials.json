@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0",
+  "material_class": "defect_engineered_materials",
+  "updated_at": "2026-07-06T06:23:12.656776+00:00",
+  "summary": {
+    "terms": 11,
+    "known_useful": 10,
+    "unknown": 1,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv",
+      "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv",
+      "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+      "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl",
+      "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv",
+      "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+      "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "oxygen vacancy",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "vacancy_models",
+        "Defect",
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Fe-NiOOH-DFT_conditions_input_table.csv",
+        "tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv",
+        "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv",
+        "tests/paperread_batch_experience/origin-of-the-overpotential-for-oxygen-reduction-at-a-fuel-cell-cathode_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "Au/TiO2",
+        "Ag/g-C3N4",
+        "NiCo LDH/CC",
+        "Ni(Fe)",
+        "Cr2O3",
+        "(Ni,Fe)OOH",
+        "Pt10Pb/C",
+        "Co3O4",
+        "Pt(111)"
+      ],
+      "count": 12
+    },
+    {
+      "term": "vacancy_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ag_Au_metal_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/science.aad4998_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "rsc_cp_b803956a_auto 3722..3730",
+        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "jp306303y 1..6",
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "Combining theory and experiment in electrocatalysis: Insights into materials design",
+        "ja405997s 1..10",
+        "review article"
+      ],
+      "count": 12
+    },
+    {
+      "term": "doped_surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/ZnO-DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/nchem.121_conditions_trimmed_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
+        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
+        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "review article"
+      ],
+      "count": 9
+    },
+    {
+      "term": "point defects",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-DFT_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2"
+      ],
+      "count": 2
+    },
+    {
+      "term": "Sb vacancy",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl",
+        "tests/paperread_batch_experience/d1nr02235k_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ],
+      "count": 2
+    },
+    {
+      "term": "defect",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "CoO/Co"
+      ],
+      "count": 1
+    },
+    {
+      "term": "Defective",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Defect"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "CoO/Co"
+      ],
+      "count": 1
+    },
+    {
+      "term": "defective structure",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
+      ],
+      "count": 1
+    },
+    {
+      "term": "dopant",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "ZnO"
+      ],
+      "count": 1
+    },
+    {
+      "term": "nitrogen-doped carbon",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
+      ],
+      "count": 1
+    },
+    {
+      "term": "surface defects",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "RuO2"
+      ],
+      "count": 1
+    }
+  ]
+}

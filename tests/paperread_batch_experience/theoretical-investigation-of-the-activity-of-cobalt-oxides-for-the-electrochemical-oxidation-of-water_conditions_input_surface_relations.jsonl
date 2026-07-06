@@ -1,0 +1,69 @@
+{
+  "id": "surface_relations",
+  "title": "ja405997s 1..10",
+  "text": "Theoretical Investigation of the Activity of Cobalt Oxides for the\nElectrochemical Oxidation of Water\nMichal Bajdich,†,§ Mónica García-Mota,‡ Aleksandra Vojvodic,‡ Jens K. Nørskov,*,‡ and Alexis T. Bell*,†,§\n†\nThe Joint Center for Artiﬁcial Photosynthesis, Lawrence Berkeley National Laboratory, Berkeley, California 94720, United States\n‡\nSUNCAT Center for Interface Science and Catalysis, Department of Chemical Engineering, Stanford University, Stanford,\nCalifornia 94305, United States\n§\nDepartment of Chemical and Biomolecular Engineering, University of California at Berkeley, Berkeley, California 94720,\nUnited States\nSee https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.\n\nexperimentally in Co-based anodes under oxygen-evolving conditions.\nIn this work, we report the results of theoretical investigations of the\nrelative stability of layered and spinel bulk phases of Co oxides, as well as\nthe stability of selected surfaces as a function of applied potential and pH.\nWe then study the oxygen evolution reaction (OER) on these surfaces\nand obtain activity trends at experimentally relevant electro-chemical\nconditions. Our calculated volume Pourbaix diagram shows that\nβ-CoOOH is the active phase where the OER occurs in alkaline media.\nWe calculate relative surface stabilities and adsorbate coverages of the\nmost stable low-index surfaces of β-CoOOH: (0001), (0112̅ ), and\n(101̅4). We ﬁnd that at low applied potentials, the (101̅4) surface is the\nmost stable, while the (011̅2) surface is the more stable at higher\npotentials. Next, we compare the theoretical overpotentials for all three\nsurfaces and ﬁnd that the (1014̅ ) surface is the most active one as characterized by an overpotential of η = 0.48 V. The high\nactivity of the (101̅4) surface can be attributed to the observation that the resting state of Co in the active site is Co3+ during the\nOER, whereas Co is in the Co4+ state in the less active surfaces. Lastly, we demonstrate that the overpotential of the (101̅4)\nsurface can be lowered further by surface substitution of Co by Ni. This ﬁnding could explain the experimentally observed\nenhancement in the OER activity of NiyCo1−yOx thin ﬁlms with increasing Ni content. All energetics in this work were obtained\nfrom density functional theory using the Hubbard-U correction.\n\n1. INTRODUCTION have shown that in alkaline electrolyte Co3O4 undergoes oxida-\nThe electrochemical splitting of water oﬀers an attractive means tion to CoOOH via the reaction5 Co3O4 + OH− + H2O →\nfor providing a carbon-free source of hydrogen when the 3CoOOH + e− as the potential is raised to the onset of the OER\nnecessary energy is provided by solar radiation. The overall and that CoOOH is the bulk phase present during evolution of\nprocess of water splitting comprises two half reactions: the O2.6−8 While it is known that surface morphology can aﬀect the\nevolution of O2 and the evolution of H2. Extensive research on activity of catalysts in general and that adsorbed species can\nthis subject1,2 has shown that the potential needed to split further alter the surface structure of the active catalysts, the way\nwater at rates provided by the solar ﬂux (e.g., 10 mA/cm2) is in which these eﬀects aﬀect the activity of electrocatalysts for the\nlimited primarily by the oxygen evolution reaction (OER), OER is not fully understood. In the present study we address\nsince none of the currently known catalysts for this reaction these questions by carrying out a theoretical investigation to\nhave an overpotential that is less than ∼230 mV at the above identify the eﬀects of electrolyte pH and applied potential on\nrate.3 Thus, an important challenge is the discovery and the most thermodynamically stable bulk and surface phases of\ndevelopment of OER catalysts that can reduce the overpotential Co oxides and to estimate the inﬂuence of these variables on the\nfor the OER. Moreover, for practical reasons the catalyst must overpotential for the OER.\nbe based on earth-abundant materials.1,2 Past work has shown Theoretical investigations of the OER have been carried out\nthat a reasonable starting point is the oxides of Ni and Co, since for metals9 and metal oxides with a rutile structure.10 The rutile\nthese materials have been shown to perform well and to be phase of TiO2 has received particular attention11−13 because of\nstable in alkaline electrolytes.4 its potential as a photocatalyst. More recent work has focused\nIn the present study we have focused on understanding the\nfactors inﬂuencing the performance of Co oxides and identifying Received: June 14, 2013\nmeans for improving their performance. Several recent studies Published: August 14, 2013",
+  "extraction": {
+    "materials": [
+      "Co oxides",
+      "Co3O4",
+      "CoOOH",
+      "Ni"
+    ],
+    "material_parameters": [
+      "layered phase",
+      "spinel phase",
+      "bulk phase",
+      "Co3+",
+      "Co4+"
+    ],
+    "surfaces": [
+      "β-CoOOH(0001)",
+      "β-CoOOH(0112̅)",
+      "β-CoOOH(101̅4)"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [
+      "(0001)",
+      "(0112̅)",
+      "(101̅4)"
+    ],
+    "dopants": [
+      "Ni"
+    ],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "Co3+"
+    ],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [
+      "high activity",
+      "overpotential of 0.48 V"
+    ],
+    "reaction_parameters": [
+      "applied potential",
+      "pH"
+    ],
+    "modeling_keywords": [
+      "density functional theory",
+      "Hubbard-U correction"
+    ],
+    "recommended_modeling_tasks": [
+      "vacancy_landscape",
+      "adsorbate_landscape"
+    ],
+    "applications": [
+      "electrochemical oxidation of water",
+      "OER catalysts"
+    ],
+    "links": []
+  }
+}

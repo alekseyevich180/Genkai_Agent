@@ -1,0 +1,794 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "tests/paperread_batch_experience/Cd-DFT_conditions_input_surface_relations.jsonl",
+    "table_csv": "tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv",
+    "summary_txt": "tests/paperread_batch_experience/Cd-DFT_conditions_input_summary.txt",
+    "time_csv": "tests/paperread_batch_experience/Cd-DFT_conditions_input_time.csv"
+  },
+  "surface_modeling_parameter_schema": {
+    "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+    "schema_version": "1.0",
+    "tasks": {
+      "vacancy_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
+        "ptomodel_mapping_role": "oxide surface vacancy modeling input",
+        "parameters": {
+          "input": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "vacancy_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "samples_per_count": {
+            "type": "int",
+            "required": false
+          },
+          "mu_o": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_max": {
+            "type": "float",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "write_all_structures": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "samples_per_count >= 1",
+          "0 <= z_frac_min <= z_frac_max <= 1",
+          "calculator in ['uma', 'none']",
+          "calculator='uma' requires uma_model and device"
+        ]
+      },
+      "adsorbate_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py",
+        "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "molecule": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "site_symbols": {
+            "type": "string",
+            "required": false
+          },
+          "site_z_tolerance": {
+            "type": "float",
+            "required": false
+          },
+          "max_sites": {
+            "type": "int",
+            "required": false
+          },
+          "site_group_size": {
+            "type": "int",
+            "required": false
+          },
+          "n_trials_single": {
+            "type": "int",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_max": {
+            "type": "float",
+            "required": false
+          },
+          "coverage_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "patterns": {
+            "type": "comma_separated_strings",
+            "required": false
+          },
+          "random_repeats": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "site_group_size >= 1",
+          "coverage_counts values must be within the computed max_adsorbates range",
+          "patterns must be drawn from uniform, clustered, stripe, island, random",
+          "calculator in ['uma', 'none']"
+        ]
+      },
+      "surface_cluster_builder": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py",
+        "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_element": {
+            "type": "string",
+            "required": false
+          },
+          "cluster_bulk_file": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_structures": {
+            "type": "string_list",
+            "required": false,
+            "choices": [
+              "fcc",
+              "hcp",
+              "bcc"
+            ]
+          },
+          "cluster_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_layers": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_radius": {
+            "type": "float",
+            "required": false
+          },
+          "stack_layers": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_rows": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_a": {
+            "type": "float",
+            "required": false
+          },
+          "cluster_c": {
+            "type": "float",
+            "required": false
+          },
+          "fcc_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "fcc_row_profile": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "auto",
+              "custom",
+              "triangle",
+              "hexagon",
+              "trapezoid",
+              "rectangle"
+            ]
+          },
+          "fcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_row_count": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_stacking_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "ABC",
+              "AB"
+            ]
+          },
+          "fcc_layers": {
+            "type": "int",
+            "required": false
+          },
+          "hcp_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "hcp_layers": {
+            "type": "int",
+            "required": false
+          },
+          "x_frac": {
+            "type": "float",
+            "required": false
+          },
+          "y_frac": {
+            "type": "float",
+            "required": false
+          },
+          "z_height": {
+            "type": "float",
+            "required": false
+          },
+          "phi": {
+            "type": "float",
+            "required": false
+          },
+          "theta": {
+            "type": "float",
+            "required": false
+          },
+          "psi": {
+            "type": "float",
+            "required": false
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          }
+        },
+        "constraints": [
+          "cluster_element and cluster_bulk_file should provide enough information to resolve a metal species",
+          "in generic mode exactly one of cluster_atoms, cluster_layers, cluster_radius should be provided",
+          "bcc bridge mode requires bcc_rows, bcc_max_row_atoms, stack_layers",
+          "fcc row mode requires fcc_layers plus fcc_rows or an inferable fcc_row_profile setup",
+          "hcp row mode requires hcp_rows"
+        ]
+      },
+      "surface_cluster_mlip_search": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py",
+        "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "cluster": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "n_trials": {
+            "type": "int",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "checkpoint": {
+            "type": "path_or_null",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "placement_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cell",
+              "active"
+            ]
+          },
+          "active_symbols": {
+            "type": "string_list",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_max": {
+            "type": "float",
+            "required": false
+          },
+          "detach_cutoff": {
+            "type": "float",
+            "required": false
+          },
+          "penalty_energy": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "candidate_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "selection_count": {
+            "type": "int",
+            "required": false
+          },
+          "top_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "top_pick_count": {
+            "type": "int",
+            "required": false
+          },
+          "tail_bin_size": {
+            "type": "int",
+            "required": false
+          },
+          "tail_pick_per_bin": {
+            "type": "int",
+            "required": false
+          },
+          "selection_random_seed": {
+            "type": "int",
+            "required": false
+          }
+        },
+        "constraints": [
+          "placement_mode in ['cell', 'active']",
+          "placement_mode='active' requires active_symbols",
+          "this task requires fairchem-core, torch, and a usable UMA model"
+        ]
+      }
+    }
+  },
+  "summary_excerpt": [
+    "这次抽到的关键信息包括：",
+    "在 Cd-DFT_conditions_input_table.csv 里：",
+    "- 吸附物/反应物：H2, O2",
+    "- 建模关键词：surface, active site, electrocatalyst, adsorption",
+    "在 Cd-DFT_conditions_input_surface_relations.jsonl 里：",
+    "- 材料：",
+    "- CdN4C0-gra",
+    "- CdN0C4-gra",
+    "- 材料参数：",
+    "- 未提取",
+    "- 反应参数：",
+    "- ƞHER = 0.05 V"
+  ],
+  "documents": [
+    {
+      "id": "surface_relations",
+      "title": "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
+      "selected_information": {
+        "materials": [
+          "CdN4C0-gra",
+          "CdN0C4-gra"
+        ],
+        "material_classes": [
+          "other_inorganic_materials"
+        ],
+        "supports_or_surfaces": [],
+        "surface_facets": [],
+        "surface_terminations": [],
+        "loaded_nanoparticles_or_clusters": [],
+        "single_atom_species": [],
+        "reaction_types": [
+          {
+            "raw": "Electrocatalysis",
+            "normalized": "Electrocatalysis"
+          }
+        ],
+        "adsorbates": [
+          "H2",
+          "O2"
+        ],
+        "adsorption_sites": [],
+        "coverage": [],
+        "defects": [],
+        "active_sites": [
+          "Mx-Ny-C"
+        ],
+        "modeling_keywords": [
+          "density functional theory",
+          "Gibbs free energy",
+          "partial densities of states"
+        ]
+      },
+      "normalized_mapping": {
+        "primary_material": "CdN4C0-gra",
+        "material_classes": [
+          "other_inorganic_materials"
+        ],
+        "primary_surface_or_support": null,
+        "facet_set": [],
+        "loaded_species": [],
+        "reaction_family": [
+          "Electrocatalysis"
+        ]
+      },
+      "recommended_modeling_tasks": [
+        "adsorbate_landscape",
+        "doped_surface"
+      ],
+      "executable_tasks": [
+        "adsorbate_landscape"
+      ],
+      "deferred_tasks": [
+        "doped_surface"
+      ],
+      "task_inputs": {
+        "adsorbate_landscape": {
+          "material": "CdN4C0-gra",
+          "surfaces": [],
+          "facets": [],
+          "active_sites": [
+            "Mx-Ny-C"
+          ],
+          "reaction_type": "Electrocatalysis",
+          "adsorbates": [
+            "H2",
+            "O2"
+          ],
+          "adsorption_sites": [],
+          "coverage": []
+        }
+      },
+      "task_parameter_schema_refs": {
+        "adsorbate_landscape": {
+          "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+          "task_key": "adsorbate_landscape"
+        }
+      },
+      "task_argument_template": {
+        "adsorbate_landscape": {
+          "arguments": {
+            "surface": null,
+            "molecule": null,
+            "output_dir": null,
+            "structure_prefix": null,
+            "site_symbols": "Mx",
+            "site_z_tolerance": null,
+            "max_sites": null,
+            "site_group_size": null,
+            "n_trials_single": null,
+            "site_radius": null,
+            "z_gap_min": null,
+            "z_gap_max": null,
+            "coverage_counts": null,
+            "patterns": null,
+            "random_repeats": null,
+            "seed": null,
+            "calculator": null,
+            "uma_model": null,
+            "device": null,
+            "task_name": "adsorbate_landscape",
+            "include_d3": null,
+            "fmax": null,
+            "max_steps": null,
+            "smoke_test": null
+          },
+          "argument_sources": {
+            "task_name": {
+              "status": "auto",
+              "reason": "Executable task name is already selected by ptomodel.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "site_symbols": {
+              "status": "auto",
+              "reason": "Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+              "from_task_inputs": [
+                "active_sites"
+              ],
+              "from_normalized_mapping": []
+            },
+            "surface": {
+              "status": "needs_upstream_artifact",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ]
+            },
+            "molecule": {
+              "status": "needs_upstream_artifact",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ]
+            },
+            "output_dir": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "structure_prefix": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "site_z_tolerance": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "max_sites": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "site_group_size": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "n_trials_single": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "site_radius": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "z_gap_min": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "z_gap_max": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "coverage_counts": {
+              "status": "needs_manual_decision",
+              "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+              "from_task_inputs": [
+                "coverage",
+                "adsorption_sites",
+                "active_sites",
+                "defects",
+                "vacancy_models"
+              ],
+              "from_normalized_mapping": []
+            },
+            "patterns": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "random_repeats": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "seed": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "calculator": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "uma_model": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "device": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "include_d3": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "fmax": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "max_steps": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            },
+            "smoke_test": {
+              "status": "optional_unset",
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": []
+            }
+          },
+          "auto_mapped_parameters": [
+            "task_name",
+            "site_symbols"
+          ],
+          "required_missing_parameters": [
+            "surface",
+            "molecule"
+          ]
+        }
+      }
+    }
+  ],
+  "global_recommended_tasks": [
+    "adsorbate_landscape",
+    "doped_surface"
+  ],
+  "global_executable_tasks": [
+    "adsorbate_landscape"
+  ],
+  "global_deferred_tasks": [
+    "doped_surface"
+  ]
+}

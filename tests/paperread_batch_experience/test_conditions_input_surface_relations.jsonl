@@ -1,0 +1,65 @@
+{
+  "id": "surface_relations",
+  "title": "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
+  "text": "The sp Hybridization of Tin Single Atoms for Dendrite-Free\nSodium Metal Batteries\nYaguang Li, Yuejiao Li, Jianmin Lu, Pengchao Wen, Liqiang Zhang, Qike Jiang,\nHaodong Shi, Caixia Meng, Junwei Sun, Yunna Guo, Yi Wang, Yu Yao, Shangshu Qian,\nYan Yu,* Jun Lu,* Xinhe Bao, and Zhong-Shuai Wu*\n\n1. Introduction\nRestricting the growth of sodium (Na) dendrites at the atomic level is the\npremise to enable both the stability and safety of sodium metal batteries The development of metal-based batter-\n(SMBs). Here, the universal synthesis of the fourth main group element (Sn, ies to replace traditional energy sources\nis becoming a hot topic due to the ever-\nGe, Pb) as single metal atoms anchored on graphene (Sn, Ge, Pb SAs/G) with\nincreasing energy crisis and environmental\nsp hybridization for dendrite-free sodium metal anode is reported. The in situ problems.[1,2] In contrast with the scarcity\nreal-time observation of Na growth on Sn SAs/G uncoils a kinetically uniform of lithium, sodium (Na) undoubtedly shows\nplanar deposition at the atomic level for substantially suppressing the a unique advantage in large-scale energy\ndendrite growth. The symmetrical Sn SAs/G-Na battery exhibits high storage due to its natural abundance.[3,4]\nEspecially, sodium metal batteries (SMBs)\nCoulombic eﬃciency of 99.8% for 200 cycles, long-term cyclability with 600 h\nusing Na metal as anode possess the\nat 4 mA cm−2 , and ultralow overpotential of 40 mV at 8 mA cm−2 . Further, the merits of high speciﬁc capacity (1166\nfull batteries Na3 V2 (PO4 )3 ||Sn SAs/G-Na show unprecedented rate capability mAh g−1 ) and relatively low redox po-\nof 67 mAh g−1 at 20 C and a capacity retention as high as 91% after 500 tential (−2.71 V vs standard hydrogen\ncycles. The theoretical calculations of Na deposition on diﬀerent M SAs/G electrode).[5,6] Unfortunately, their prac-\n(M═Sn, Ni, Zn, Fe, Co) reveal that the 5s 2 5p 2 electron conﬁguration of Sn ticability is intrinsically restricted by the\nformation and growth of Na dendrites\nSAs/G realizes the planar deposition mechanism of Na clusters along the\nduring repeated charge/discharge pro-\ngraphene plane. Therefore, this work provides an atom-level accurate cesses, resulting in safety issues and\nminiaturization strategy for constructing dendrite-free SMBs. short lifespan.[7,8] So far, various strate-\ngies such as 3D frameworks,[9,10] spatial\n\nY. Li, Y. Li, J. Lu, P. Wen, H. Shi, J. Sun, Y. Wang, X. Bao, Z.-S. Wu Q. Jiang, C. Meng, X. Bao, Z.-S. Wu\nState Key Laboratory of Catalysis Dalian National Laboratory for Clean Energy\nDalian Institute of Chemical Physics Dalian Institute of Chemical Physics\nChinese Academy of Sciences Chinese Academy of Sciences\n457 Zhongshan Road, Dalian 116023, China 457 Zhongshan Road, Dalian 116023, China\nE-mail: wuzs@dicp.ac.cn Y. Yao, Y. Yu\nY. Li Hefei National Research Center for Physical Sciences at the Microscale\nResearch Center for Solar Driven Carbon Neutrality Department of Materials Science and Engineering\nEngineering Research Center of Zero-carbon Energy Buildings and Mea- CAS Key Laboratory of Materials for Energy Conversion\nsurement Techniques University of Science and Technology of China\nMinistry of Education Hefei, Anhui 230026, China\nThe College of Physics Science and Technology E-mail: yanyumse@ustc.edu.cn\nInstitute of Life Science and Green Development S. Qian, J. Lu\nHebei University College of Chemical and Biological Engineering\nBaoding 071002, China Zhejiang University\nL. Zhang, Y. Guo Hangzhou, Zhejiang 310058, China\nClean Nano Energy Center E-mail: junzoelu@zju.edu.cn\nState Key Laboratory of Metastable Materials Science and Technology\nYanshan University\nQinhuangdao 066004, China",
+  "extraction": {
+    "materials": [
+      "Tin (Sn)",
+      "Graphene (G)"
+    ],
+    "material_parameters": [
+      "single metal atoms",
+      "4th main group element",
+      "sp hybridization"
+    ],
+    "surfaces": [
+      "Sn SAs/G"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [
+      "Na"
+    ],
+    "adsorption_sites": [
+      "graphene plane"
+    ],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [
+      "Na clusters"
+    ],
+    "single_atoms": [
+      "Sn single atoms"
+    ],
+    "modifiers": [],
+    "properties": [
+      "Coulombic efficiency of 99.8%",
+      "high specific capacity (1166 mAh g−1)",
+      "ultralow overpotential of 40 mV",
+      "capacity retention of 91% after 500 cycles"
+    ],
+    "reaction_parameters": [
+      "4 mA cm−2",
+      "8 mA cm−2",
+      "20 C"
+    ],
+    "modeling_keywords": [
+      "dendrite-free",
+      "sodium metal batteries",
+      "planar deposition"
+    ],
+    "recommended_modeling_tasks": [
+      "single_atom_site"
+    ],
+    "applications": [
+      "sodium metal batteries"
+    ],
+    "links": []
+  }
+}

@@ -1,0 +1,36 @@
+这次抽到的关键信息包括：
+
+在 Bi-NiO_conditions_input_table.csv 里：
+
+- Bi05:NiO, Bi02:NiO
+- 吸附物/反应物：H2O
+- 建模关键词：HER, OER, NiO, Bi, active site, electronic structure
+
+在 Bi-NiO_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - NiO
+  - Bismuth (Bi)
+- 材料参数：
+  - cost-effective
+  - high reactivity
+- 反应参数：
+  - temperature
+  - pressure
+- 性能：
+  - high alkaline HER kinetics
+  - high alkaline OER kinetics
+- 表面/晶面：
+  - NiO surface
+- 缺陷/活性位点：
+  - Ni reaction sites
+- 吸附/覆盖度：
+  - H*
+  - OH*
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - density functional theory
+  - electrocatalyst
+- 推荐建模任务：
+  - doped_surface

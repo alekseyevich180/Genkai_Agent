@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "material_class": "battery_electrode_materials",
+  "updated_at": "2026-07-06T06:19:29.585150+00:00",
+  "summary": {
+    "terms": 2,
+    "known_useful": 0,
+    "unknown": 2,
+    "sources": [
+      "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv",
+      "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl"
+    ]
+  },
+  "entries": [
+    {
+      "term": "photoanode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv"
+      ],
+      "contexts": [
+        "Ag/g-C3N4"
+      ],
+      "count": 1
+    },
+    {
+      "term": "sodium metal batteries",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "sources": [
+        "tests/paperread_batch_experience/test_conditions_input_surface_relations.jsonl"
+      ],
+      "contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ],
+      "count": 1
+    }
+  ]
+}

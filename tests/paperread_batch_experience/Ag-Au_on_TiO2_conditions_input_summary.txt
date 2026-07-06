@@ -1,0 +1,53 @@
+这次抽到的关键信息包括：
+
+在 Ag-Au_on_TiO2_conditions_input_table.csv 里：
+
+- Au, TiO2
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：active site, oxygen vacancy, metal cluster
+- Ag, TiO2
+- Au, Ag, TiO2
+- 团簇/单原子建模线索：Cluster
+- 吸附物/反应物：H2O
+- 建模关键词：adsorbate, active site
+- 建模关键词：reaction mechanism, active site
+
+在 Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Au
+  - Ag
+  - TiO2
+- 材料参数：
+  - rutile
+  - bimetallic alloy
+  - tetrahedral cluster
+- 反应参数：
+  - overpotential
+  - U = 0 V
+- 性能：
+  - photocatalytic activity
+  - charge transfer
+- 表面/晶面：
+  - TiO2(110)
+  - rutile TiO2 surface
+- 缺陷/活性位点：
+  - oxygen vacancy
+  - oxygen vacancy
+  - Au
+  - Ag
+  - Ti
+- 吸附/覆盖度：
+  - bridging oxygen vacant site
+- 团簇/单原子：
+  - Au2–Ag2
+  - Au4
+  - Ag4
+- 建模关键词：
+  - DFT
+  - density of states
+  - Bader charge analysis
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape
+  - single_atom_site

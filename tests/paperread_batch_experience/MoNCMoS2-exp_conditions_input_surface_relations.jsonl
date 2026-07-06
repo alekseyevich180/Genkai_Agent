@@ -1,0 +1,38 @@
+{
+  "id": "surface_relations",
+  "title": "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+  "text": "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER,\nOER, ORR, and Zn–Air Batteries\nIbrahim Saana Amiinu, Zonghua Pu, Xiaobo Liu, Kwadwo Asare Owusu,\nHellen Gabriela Rivera Monestel, Felix Ofori Boakye, Haining Zhang, and Shichun Mu*",
+  "extraction": {
+    "materials": [
+      "Mo–N/C@MoS2"
+    ],
+    "material_parameters": [],
+    "surfaces": [],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [],
+    "adsorbates": [],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [],
+    "products": [],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [],
+    "reaction_parameters": [],
+    "modeling_keywords": [],
+    "recommended_modeling_tasks": [],
+    "applications": [
+      "HER",
+      "OER",
+      "ORR",
+      "Zn–Air Batteries"
+    ],
+    "links": []
+  }
+}

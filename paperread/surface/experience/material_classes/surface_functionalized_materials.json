@@ -1,14 +1,58 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "material_class": "surface_functionalized_materials",
-  "updated_at": "2026-06-30T06:51:57.281189+00:00",
+  "updated_at": "2026-07-06T07:30:22.319435+00:00",
   "summary": {
     "terms": 1,
     "known_useful": 1,
-    "unknown": 0,
-    "sources": [
-      "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
+    "unknown": 0
+  },
+  "keyword_inventory": {
+    "surface_states": [
+      {
+        "term": "O-terminated",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
     ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 2
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "O-terminated",
+        "count": 2
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{O}",
+        "count": 2
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 2
+      }
+    ],
+    "components": [],
+    "surface_states": [
+      {
+        "term": "O-terminated",
+        "count": 2
+      }
+    ],
+    "reaction_families": []
   },
   "entries": [
     {
@@ -18,13 +62,10 @@
       "fields": [
         "surface_terminations"
       ],
-      "sources": [
-        "tests/paperread_pdf_test/test2_short_conditions_input_surface_relations.jsonl"
-      ],
-      "contexts": [
+      "count": 2,
+      "example_contexts": [
         "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ],
-      "count": 1
+      ]
     }
   ]
 }

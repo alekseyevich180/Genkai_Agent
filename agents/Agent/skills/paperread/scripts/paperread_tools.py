@@ -13,6 +13,12 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from paperread.surface.collect_experience import main as collect_experience_main
+from paperread.surface.parameter_registry import (
+    DEFAULT_MATERIAL_CLASS_DIR,
+    DEFAULT_REGISTRY_MARKDOWN_PATH,
+    DEFAULT_REGISTRY_PATH,
+    build_surface_parameter_registry,
+)
 from paperread.surface.run_surface_pipeline import main as run_surface_pipeline_main
 
 
@@ -79,6 +85,26 @@ def _build_parser() -> argparse.ArgumentParser:
         default="paperread/surface/experience",
         help="Directory where material class files should be initialized.",
     )
+
+    registry = subparsers.add_parser(
+        "build-parameter-registry",
+        help="Build a reusable parameter registry from paperread material-class experience files.",
+    )
+    registry.add_argument(
+        "--material-class-dir",
+        default=str(DEFAULT_MATERIAL_CLASS_DIR),
+        help="Directory containing material_classes/*.json files.",
+    )
+    registry.add_argument(
+        "--output-json",
+        default=str(DEFAULT_REGISTRY_PATH),
+        help="Output JSON registry path.",
+    )
+    registry.add_argument(
+        "--output-md",
+        default=str(DEFAULT_REGISTRY_MARKDOWN_PATH),
+        help="Output Markdown registry path.",
+    )
     return parser
 
 
@@ -115,6 +141,16 @@ def main(argv: list[str] | None = None) -> int:
             )
             or 0
         )
+
+    if args.command == "build-parameter-registry":
+        build_surface_parameter_registry(
+            material_class_dir=Path(args.material_class_dir),
+            output_json_path=Path(args.output_json),
+            output_markdown_path=Path(args.output_md),
+        )
+        print(args.output_json)
+        print(args.output_md)
+        return 0
 
     parser.error(f"Unsupported command: {args.command}")
     return 2

@@ -1,0 +1,35 @@
+这次抽到的关键信息包括：
+
+在 science.aad4998_conditions_input_table.csv 里：
+
+- 未提取到可汇总的条件信息
+
+在 science.aad4998_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - non-precious metal catalysts
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - pH
+  - solvent
+  - electrolyte
+- 性能：
+  - rate
+  - efficiency
+  - selectivity
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - active sites
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - theoretical studies
+  - computational methods
+  - reaction mechanisms
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape

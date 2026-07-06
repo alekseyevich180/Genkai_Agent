@@ -1,0 +1,684 @@
+Journal of
+ Materials Chemistry A
+ View Article Online
+ PAPER View Journal | View Issue
+
+ Rhodium metal–rhodium oxide (Rh–Rh2O3)
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ Cite this: J. Mater. Chem. A, 2018, 6,
+ nanostructures with Pt-like or better activity
+ 23531 towards hydrogen evolution and oxidation
+ reactions (HER, HOR) in acid and base: correlating
+ its HOR/HER activity with hydrogen binding energy
+ and oxophilicity of the catalyst†
+ Manas Kumar Kundu,‡ Ranjit Mishra,‡ Tanmay Bhowmik and Sudip Barman *
+
+ Design and synthesis of HER/HOR catalysts are of crucial importance for the development of polymer fuel
+ cells and water electrolyzers. We report the synthesis of Rh–Rh2O3 nanoparticles/nitrogen-doped carbon
+ composite (Rh–Rh2O3-NPs/C) for HER/HOR applications. The HER activity of this catalyst is 2.2 times and
+ 1.43 times better than that of commercial Pt/C in base and acid, respectively. Rh–Rh2O3-NPs/C exhibited 10
+ mA cm2 current density at an overpotential of 63 mV and 13 mV with Tafel slopes of 70 mV dec1 and
+ 32 mV dec1 in base and acid, respectively. The catalyst showed superior HOR activity at all pH values.
+ The exchange current densities were 0.425 mA cmRh2 and 0.43 mA cmRh2 in base and acid,
+ respectively. In base, the HOR and HER activities of Rh–Rh2O3-NPs/C are 50-fold and 10-fold higher,
+ respectively, in comparison with those of the Rh2O3-free RhNPs/C catalyst, although the HER/HOR
+ activity of both the catalysts is comparable in acid. In base, the adsorption of OH species (OHads) on
+ Rh2O3 sites increases the reactivity of hydrogen intermediate (Habs), which leads to the enhancement of
+ Received 10th August 2018
+ Accepted 24th October 2018
+ HOR activity of Rh–Rh2O3-NPs/C. For HER in base, the adsorptive dissociation of water occurs on the
+ Rh2O3 sites to form Hads on the neighboring Rh sites and then, the recombination of Hads results in the
+ DOI: 10.1039/c8ta07028h
+ formation of hydrogen molecules. This study may provide an opportunity to develop an eﬃcient catalyst
+ rsc.li/materials-a for hydrogen-based renewable energy technologies.
+
+ Pt is the most active catalyst for both processes in acidic
+ 1. Introduction media.8,9 The high price, scarcity and poor stability of Pt-based
+ With the increase in energy demand and environmental prob- catalysts in acidic media are the main drawbacks for its
+ lems due to the use of fossil fuels, there is an urgent need for commercialization.10 In proton exchange membrane fuel cells
+ alternative energy conversion and storage devices.1,2 Electrolysis (PEMFCs), hydrogen and oxygen are used as reactants for HOR
+ of water and fuel cells are the two important renewable tech- at the anode and oxygen reduction reaction (ORR) at the
+ nologies for energy conversion and energy storage.3,4 Hydrogen cathode, respectively, in strong acidic conditions. PEMFCs have
+ is considered as one of the greenest fuels and energy carriers,4 high power eﬃciency and are environment-friendly due to their
+ but production of pure hydrogen is a challenging task. Elec- ability to convert hydrogen into water.5,11 Pt is also used as ORR
+ trocatalytic water splitting is one of the renewable ways to catalyst. However, its commercialization is limited because of
+ produce pure H2.5 Hydrogen evolution reaction (HER) is the very slow kinetics of ORR at the cathode and to overcome
+ a cathodic process of electrolysis and hydrogen oxidation this, large amount of Pt is required.12 Compared with acidic
+ reaction (HOR) is generally applied at the anode of fuel cells.6,7 PEMFC-based technologies, alkali membrane fuel cells (AMFCs)
+ or alkaline electrolyzers, which operate in alkaline media, are
+ highly attractive since highly active earth abundant cheap
+ School of Chemical Sciences, National Institute of Science Education and Research
+ transition metal-based catalysts are available for ORR and OER
+ (NISER), HBNI, Bhubaneswar, Orissa-751 005, India. E-mail: sbarman@niser.ac.in;
+ Tel: +91 6742494183
+ in alkaline media.13–16 However, the main obstacle of AMFCs is
+ † Electronic supplementary information (ESI) available: Details of materials that the HER and HOR activity of Pt in basic media is 2–3 orders
+ synthesis, extended characterization, ECSA calculation, electrochemical of magnitude lower than the activity in acidic media.9,17,18 Thus,
+ HER/HOR study, stability test, activity comparison table. See DOI: highly eﬃcient HER and HOR catalysts are desirable for the
+ 10.1039/c8ta07028h development of AFCs and alkali electrolyzers. The
+ ‡ Authors with equal contributions.
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23531
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ understanding of the HER/HOR mechanism in alkaline media lower than that of Pt metal.28 Several groups have also reported
+ is also important for the development of new eﬃcient HER/ rhodium-based catalysts such as Rh2P nanocubes,30 Rh/Si
+ HOR catalysts for alkaline fuel cells and alkaline electrolyzers. NPs,31 Rh–MoS2,32 Rh tetrahedra,43 concave tetrahedra and
+ There are two contradictory mechanisms reported in the liter- nanosheets43 for diﬀerent electrocatalytic energy conversion
+ ature9,19–24 that explain the poor performance of HOR in alkaline and storage applications. Although some HER/HOR applica-
+ media: (1) eﬀect of hydrogen binding energy (HBE) of metal and tions in acidic medium are available,28,44,45 reports on HOR/HER
+ (2) eﬀect of OH adsorption (oxophilicity) of the metal. In acidic activity in basic media are very few.19,46
+ media, HOR occurs via 2 step processes: dissociative adsorption Herein, we report the synthesis of Rh–Rh2O3 nanostructures
+ of H2 on the metal surface to form an intermediate (M–Hads), on nitrogen-doped carbon support (Rh–Rh2O3-NPs/C). The HER
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ followed by oxidative desorption to form proton. This suggests activity of this Rh–Rh2O3-NPs/C catalyst in both acidic and basic
+ that HBE is the sole inuencing factor for HOR in acidic media was higher than that of comm. Pt/C. The HOR activity of
+ media.20 In basic media, hydrogen intermediate species (M– the Rh–Rh2O3-NPs/C catalyst in acidic and alkaline medium
+ Hads) is desorbed as a proton to react with solution OH to form was studied using the rotating disk electrode (RDE) method and
+ water.9,25,26 Another possibility for HOR in basic media is that found to be almost equal in diﬀerent pH solutions. We propose
+ M–Hads reacts with adsorbed OHads to form water.21,24 However, a bi-functional mechanism for the enhanced HER/HOR activity
+ the role of OH is not clear for HER/HOR in alkaline media. of Rh–Rh2O3-NPs/C in basic media. The Rh surface provides
+ Therefore, either hydrogen binding energy of the catalyst or active sites for hydrogen intermediates (Hads), whereas the
+ oxophilicity of the catalyst is the main inuencing factor for the Rh2O3 surface oﬀers adsorption sites for OH. The presence of
+ HOR in alkaline media. Yan et al.19,27 have shown that HBE is OHads species in Rh–Rh2O3-NPs/C enhances the reactivity of
+ the main inuencing factor for HER/HOR activities as volcano- Hads, which leads to an improvement in HOR activity in basic
+ shaped curves were obtained when HER/HOR activities were media. In bi-functional mechanism of HER in basic media, the
+ plotted against HBE on diﬀerent monometallic metals. Durst dissociation of water occurs on Rh2O3 sites, leading to the
+ et al.28 also showed that poor HER/HOR activity in basic media formation of hydrogen intermediates (Hads) on the neighboring
+ was correlated with higher HBE of the catalyst. Wang et al.29 Rh site and subsequent recombination of Hads to form H2
+ reported that the HOR activity of PtRu alloy catalyst in basic molecules. The hydrogen binding energy (HBE) and oxophilicity
+ media is double that of monometallic Pt, although the on-set are the two inuencing factors for HER/HOR in basic media.
+ potential of Pt for OH adsorption is lower, suggesting that
+ the oxophilicity of metals does not play a major role in HOR 2. Results and discussion
+ activity. Wang et al.30 have shown 4-fold enhancement in the
+ mass activity of Ru–Pt core–shell nanoparticles compared with 2.1 Characterization
+ that of bulk Pt due to the shi in overall HBE to a lower value. The Rh–Rh2O3-NPs/C nanostructures were synthesized in two
+ Wong et al.31 have concluded that the electronic eﬀect imposed steps: rst, rhodium nanoparticles supported on nitrogen-
+ on Pt by Ru substantially controls HBE values and consequently, doped carbon were produced by ultrasound-mediated NaBH4
+ the HOR activity. Recently, our group32 also showed that HBE is reduction of rhodium(II) acetate in presence of nitrogen-doped
+ the sole inuencing factor for HOR in alkaline media. carbon (RhNPs/C); second, Rh–Rh2O3-NPs/C hybrid was
+ Furthermore, Strmcnik et al.21 reported that the oxophilicity of formed on heating the RhNPs/C compound at 450  C for 4 h (for
+ metals plays a signicant role in determining the HER/HOR detailed synthesis procedure, see ESI†). The powder X-ray
+ activity in basic medium. They have suggested that the poor diﬀraction (p-XRD) patterns of RhNPs/C and Rh–Rh2O3-NPs/C
+ HOR activity in basic media is due to the non-availability of are displayed in Fig. 1a. XRD patterns of these two
+ OHads species on the catalyst surface and also showed that HOR compounds were compared with standard data for Rh2O3 (COD
+ activity can be improved by alloying Pt with more oxophilic 1525682) and Rh0 (COD 9008482). The diﬀraction pattern of
+ metals such as Ni. Although several reports are available on Rh–Rh2O3-NPs/C shows several well-resolved, highly intense
+ HOR mechanisms in basic medium, it is still not clear why the diﬀraction peaks positioned at 41.07 , 47.79 , 69.9 , 84.4 and
+ HOR activity in basic medium is poor. Thus, there is a need for 89.1 , corresponding to (111), (200), (220), (311) and (222)
+ a systematic study to understand the HOR/HER mechanism in planes of face-centered cubic (fcc) Rh(0) metal. In addition, four
+ alkaline medium. peaks at 34.18 , 34.829 , 53.332 and 60.779 corresponding to
+ Noble metal nanostructures display distinctive and fasci- the (114), (200), (128) and (028) planes of Rh2O3 are also present,
+ nating properties in various important elds such as hetero- which suggests the presence of oxide (Rh2O3) in the composite.
+ geneous catalysis,33,34 fuel cell electrocatalysis35–38 and sensors.39 The XRD pattern of RhNPs/C shows peaks at 2q values of 41.07
+ Rhodium is a well-known noble metal, and it has high catalytic and 69.9 , corresponding to the (111) and (220) plane of Rh
+ activity towards many important industrial processes, e.g., metal.47 The peak at 2q ¼ 41.07 for Rh metal (111) plane was
+ automobile engineering (synthesis of catalytic converters), used to calculate the size of Rh nanostructures using the Debye–
+ petroleum renement processes, ne chemical production and Scherrer equation48 (for details see ESI†). The calculated average
+ energy generation by fuel cells.40,41 These properties of metal size of Rh nanostructures in Rh–Rh2O3-NPs/C was 10 nm.
+ nanostructures can be easily tuned by tailoring the size and Electron microscopy measurements were performed to investi-
+ morphology of metal nanostructures.42 Although Rh metal gate the surface morphology of Rh–Rh2O3-NPs/C. The eld
+ shows good activity for HER/HOR, its activity is 20–30 times emission scanning electron microscopy (FESEM) images of Rh–
+
+ 23532 | J. Mater. Chem. A, 2018, 6, 23531–23541 This journal is © The Royal Society of Chemistry 2018
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ Fig. 1(a) p-XRD of Rh–Rh2O3-NPs/C and RhNPs/C composites, (b and c) FESEM images, (d–g) TEM images, (h) SAED image and (i) HRTEM
+ image of the Rh–Rh2O3-NPs/C composite.
+
+ Rh2O3-NPs/C are shown in Fig. 1b and c. These images show images of Rh–Rh2O3-NPs/C and the corresponding EDS
+ small Rh nanoparticles interconnected to form a chain-like elemental mapping is shown in Fig. S3b–e.† The elemental
+ structure. Transmission electron microscopy (TEM) images of mapping shows the distribution of Rh, O, C and N on the Rh–
+ the Rh–Rh2O3-NPs/C catalyst are presented in Fig. 1d–g and Rh2O3-NPs/C composite. TEM and HRTEM images of the
+ S1a–c.† These images also conrm that the spherical NPs of 10– RhNPs/C composite are presented in Fig. S4 (ESI).† These TEM
+ 15 nm size are fused together to form the chain-like structure. images (Fig. S4a–d†) show small Rh NPs are dispersed on the
+ These NPs are interconnected, which is clearly visible in all carbon support. The interlayer spacing calculated from SAED
+ images. The SAED image of Rh–Rh2O3-NPs/C is shown in image of the RhNPs/C composite also suggested the presence of
+ Fig. 1h, which shows a polycrystalline nature of the composite. RhNPs/C (Fig. S4e, ESI†). The lattice spacing of 0.22 nm in
+ The interlayer spacing calculated from the SAED image of the HRTEM images (Fig. S4f, ESI†) conrm the presence of crys-
+ Rh–Rh2O3-NPs/C composite was 2.57 Å, 2.19 Å, 1.9 Å, 1.344 Å talline Rh nanostructures in RhNPs/C. When RhNPs/C was
+ and 1.146 Å. The d spacing of 2.57 Å corresponds to the (200) heated at a high temperature (450  C), the growth of RhNPs
+ lattice plane of Rh2O3, and the d-spacing of 2.19 Å, 1.9 Å, 1.344 occurred, following which they fused together to form Rh nano-
+ Å, 1.146 Å correspond to (111), (200), (220) and (311) plane of chains; also, some Rh2O3 nanostructures formed due to the air
+ Rh0, which suggest the presence of both metal (Rh0) and oxide oxidation of Rh.
+ (Rh2O3) in the composite. High-Resolution TEM (HRTEM) The electronic states of Rh–Rh2O3-NPs/C and RhNPs/C were
+ images are shown in Fig. 1i and S2 (ESI).† The lattice spacings of investigated using X-ray Photo Electron Spectroscopy (XPS). The
+ 0.219 nm and 0.257 nm correspond to Rh0 (111) and Rh2O3 XPS survey scan of the Rh–Rh2O3-NPs/C composite (Fig. 2a)
+ (200) planes, which conrm the presence of Rh metal and oxide clearly indicates the presence of carbon (C), rhodium (Rh),
+ (Rh2O3) in the composite. Fig. S3a† shows the bright eld STEM oxygen (O) and very small amount of nitrogen (N). The 3d XPS
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23533
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ of Rh–Rh–Rh2O3-NPs/C shows strong proton adsorption–
+ desorption peaks in 0.5 M H2SO4 solution. A broad anodic peak
+ at E z 0.75 V corresponds to the formation of Rh–O, and its
+ corresponding cathodic peak located at 0.52 V is ascribed to the
+ reduction of Rh–O. The symmetrical cathodic and anodic peaks
+ at 0.09 V and 0.12 V are assigned to UPD hydrogen adsorption
+ (UPD-Hads) and desorption (UPD-Hdes) from the Rh–Rh2O3-NPs/
+ C surface, respectively. The calculated DEp value for UPD-H of
+ the Rh–Rh2O3-NPs/C composite was 30 mV, which is lower
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ than the reversible value of 60 mV. Recently, Gasteiger et al.
+ reported28 that the DEp value for reversible UPD-H on comm. Pt/
+ C was 50 mV. Thus, the Rh–Rh2O3-NPs/C composite is more
+ reversible towards proton adsorption and desorption. The CV
+ curve of Rh–Rh2O3-NPs/C in 0.5 M KOH was also performed, as
+ shown in Fig. S7b.† Even in alkaline medium, the catalyst can
+ easily have a UPD-H peak separated from other processes.
+ The UPD-H peak of CV was used to determine the electro-
+ Fig. 2 (a) XPS survey scan of Rh–Rh2O3-NPs/C catalyst. Comparison
+ chemical surface area (ESCA) of diﬀerent catalysts. Fig. S8 (ESI)†
+ of (b) Rh 3d, (c) O 1s and (d) C 1s XPS spectra of Rh–Rh2O3-NPs/C and
+ RhNPs/C. shows the CV curves of comm. Pt/C, Rh–Rh2O3-NPs/C in N2
+ saturated H2SO4 and KOH solutions. All the curves have char-
+ acteristic peaks for UPD-H, which were used to calculate the
+ spectra of Rh–Rh2O3-NPs/C and RhNPs/C are shown in Fig. 2b. ECSA of these catalysts (see ESI†). The ECSA value of Rh–Rh2O3-
+ The peaks at 307.2 eV and 312.0 eV are assigned to Rh 3d5/2 and NPs/C catalyst was found to be 35 m2 gRh1 in 0.5 M H2SO4 and
+ 3d3/2, respectively, whereas those at 308.2 eV and 313.2 eV are 28 m2 gRh1 in 0.1 M KOH. ECSA for diﬀerent catalysts was also
+ attributed to 3d5/2 and 3d3/2 of Rh(III), respectively.49,50 This calculated from CO stripping voltammetry. Fig. S9 (ESI)† shows
+ suggests that there was a small amount of surface oxide in the CO stripping voltammograms of diﬀerent catalysts.
+ RhNPs/C compound, and these oxide peaks were enhanced in
+ the Rh–Rh2O3-NPs/C composite, suggesting the formation of
+ 2.2 HER activity of Rh–Rh2O3-NPs/C in alkaline and acidic
+ Rh2O3 on heating the RhNPs compound at 450  C. The O 1s XPS
+ medium
+ spectra (Fig. 2c) of Rh–Rh2O3-NPs/C exhibits the main peak at
+ 529.7, which is in good agreement with the previous literature Electrochemical HER was rst studied in 0.5 M KOH solution.
+ data49 of Rh2O3. This O 1s peak is broad and extends up to Three-electrode linear sweep voltammetry (LSV) at a scan speed
+ 535 eV. In the RhNPs/C, the O 1s peak appeared at 532.6 eV due of 10 mV s1 with 1600 rpm rotation was performed to study the
+ to adsorbed water/oxygen on the carbon-support. XPS studies HER activity of the Rh–Rh2O3-NPs/C catalyst. A comparison of
+ conrmed that a signicant amount of rhodium oxide was LSV curves of diﬀerent catalysts is shown in Fig. 3a. It shows
+ formed on heating the RhNPs/C composite. Fig. 2d shows the C that the GC and CNx-modied GC electrode are almost inert
+ 1s XPS spectrum for both the catalysts and Fig. S5a (ESI)† shows catalysts, but comm. Pt/C, comm. Rh/C, RhNPs/C and Rh–
+ the deconvoluted XPS spectrum of carbon (C 1s) of the RhNPs/C Rh2O3-NPs/C catalysts exhibited superior HER activity with an
+ catalyst. The binding energies of 285.3 eV and 286.5 eV are due onset potential of approximately zero volt, and low over-
+ to the presence of [(sp2)N–C]–N and C(–N)3, respectively, potentials were required to achieve appreciable current density.
+ whereas the peak at 288.5 eV is attributed to CO.51 However, the Among them, the Rh–Rh2O3-NPs/C catalyst showed the highest
+ C 1s spectrum of Rh–Rh2O3-NPs/C shows a negative shi in the activity. The HER activities of diﬀerent catalysts were rst
+ C 1s XPS peak, which appeared at 284.6 eV and can be assigned compared on the basis of overpotentials required for 10 mA
+ to graphitic carbon.52 Fig. S5b (ESI)† shows the XPS spectrum of cm2 current density. Rh–Rh2O3-NPs/C required only 63 mV
+ nitrogen (N 1s) of RhNPs/C indicating the presence of [C(sp2)– overpotential to acquire 10 mA cm2 current density, which is
+ N1]C(sp2)] nitrogen and graphitic nitrogen.51,53 The EDS 40 mV lower than that of comm. Pt/C (103 mV). HER activities of
+ spectra of Rh–Rh2O3-NPs/C and RhNPs/C composites (Fig. S6a these catalysts were then compared using current density,
+ and b, ESI†) show the presence of carbon, nitrogen, oxygen and surface activity (SA), and mass activity (MA) data obtained at an
+ rhodium. Rh loading in Rh–Rh2O3-NPs/C and RhNPs/C was overpotential of 0.1 V. Fig. 3b, c and d show the comparison of
+ found to be 79.15 wt% and 70.87 wt%, respectively. The Rh geometric current density, MA and SA of diﬀerent catalysts,
+ loading in Rh–Rh2O3-NPs/C and RhNPs/C composites was respectively. Geometric current density at 0.1 V of the Rh–
+ further conrmed by XPS studies. The exact Rh loading in Rh– Rh2O3-NPs/C catalysts is 2.2 times, 4.1 times and 8.2 times
+ Rh2O3-NPs/C and RhNPs/C composites was found to be 78.6% higher than that of comm. Pt/C, comm. Rh/C and RhNPs/C
+ and 67.7%, respectively. catalysts, respectively. MA of the Rh–Rh2O3-NPs/C catalyst was
+ The cyclic voltammetry (CV) curves of Rh–Rh2O3-NPs/C in 0.72 A mgRh1, which was 2.18 times and 4.2 times higher than
+ 0.5 M H2SO4 solution are shown in Fig. S7a (ESI).† The CV curve that of comm. Pt/C (0.33 A mgPt1) and comm. Rh/C (0.17 A
+ mgRh1), respectively. SA of the Rh–Rh2O3-NPs/C catalyst was
+
+ 23534 | J. Mater. Chem. A, 2018, 6, 23531–23541 This journal is © The Royal Society of Chemistry 2018
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ catalyst in basic medium was achieved, as presented in
+ Fig. S11a.† This result proves the extraordinary stability of the
+ Rh–Rh2O3-NPs/C catalyst, which is much better than that of
+ comm. Pt/C and comm. Rh/C in alkaline media. The compar-
+ ison of HER activity of the Rh–Rh2O3-NPs/C catalyst with other
+ reported catalysts is given in Table S4 (ESI),† suggesting that
+ this is one of the best catalysts in basic medium.
+ We also studied the HER activity of Rh–Rh2O3-NPs/C catalyst
+ in acidic medium. The comparative HER LSV curves of diﬀerent
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ catalysts in 0.5 M H2SO4 are shown in Fig. 4a. The overpotential
+ required for Rh–Rh2O3-NPs/C to drive a current density of 10
+ mA cm2 is 13 mV, which is lower than that required for
+ comm. Pt/C (24 mV) and comm. Rh/C (55 mV). Although the
+ activity of RhNPs/C is very poor in alkaline medium, it shows
+ almost similar activity to that of the Rh–Rh2O3-NPs/C catalyst in
+ acidic medium. The geometric current densities acquired by
+ diﬀerent catalysts at constant voltage (0.1 V) is shown in
+ Fig. 3 (a) HER polarization curves of Rh–Rh2O3-NPs/C, comm. Pt/C, Fig. 4b. The geometric current density of Rh–Rh2O3-NPs/C is
+ comm. Rh/C, RhNPs/C, CNx and GC in 0.5 M KOH. (b–d) Comparison 1.43 times, 3.3 times and 1.3 times higher than that of comm.
+ of geometric current density, MA and SA of diﬀerent catalysts at
+ 0.1 V. (e) HER Tafel plots of Rh–Rh2O3-NPs/C, comm. Pt/C and
+ Pt/C, comm. Rh/C and RhNPs/C, respectively (Table S1, ESI†).
+ comm. Rh/C (metal: 28 mg cm2). (f) Chronopotentiometric stability of MA of the Rh–Rh2O3-NPs/C catalyst is 3.4 A mgRh1, which is
+ Rh–Rh2O3-NPs/C, comm. Pt/C and comm. Rh/C at 10 mA cm2 1.45 times, 1.37 times and 3.36 times higher than that of comm.
+ current density (metal: 57 mg cm2). Pt/C (2.34 A mgRh1), RhNPs/C (2.48 A mgRh1) and comm. Rh/C
+ (1.01 A mgRh1) catalyst, respectively (Fig. 4c). SA of the Rh–
+ Rh2O3-NPs/C catalyst at 0.1 V was found to be 9.6 mA cmRh2,
+ 2.56 mA cmRh2 at 0.1 V, which was 2.9 times and 1.7 times which was comparable with that of RhNPs/C and was 1.72 times
+ higher than that of the comm. Pt/C (0.87 mA cmPt2) and comm. higher than that of the comm. Pt/C catalyst (5.58 mA cmPt2)
+ Rh/C (1.45 mA cmRh2), respectively. These results clearly and also higher than that of comm. Rh/C (Fig. 4d). Fig. 4e shows
+ demonstrate the superior electrocatalytic activity of the Rh– the Tafel plots of the diﬀerent catalysts. The Tafel slope of Rh–
+ Rh2O3-NPs/C catalyst compared with the other studied catalysts Rh2O3-NPs/C and comm. Pt/C catalyst are found to be 30 and
+ towards HER in basic media. Tafel slope is an inherent property 33 mV dec1. This suggests that the HER in acidic medium
+ of a catalyst. The HER Tafel plot is presented in Fig. 3e. The follows the Volmer–Tafel pathway, where the Tafel pathway is
+ Tafel slope of Rh–Rh2O3-NPs/C in 0.5 M KOH solution was
+ 70 mV dec1, which was lower than that of comm. Pt/C (113 mV
+ dec1) and comm. Rh/C (116 mV dec1). This low Tafel slope
+ value indicates that the Rh–Rh2O3-NPs/C catalyst follows
+ Volmer–Heyrovsky pathway, where the Heyrovsky pathway is
+ the rate-limiting step. The exchange current density (i0) is also
+ an important kinetic parameter that reveals the rate of electron
+ transfer at the reversible condition. The i0 values of Rh–Rh2O3-
+ NPs/C, comm. Pt/C and comm. Rh/C were 1.5 mA cm2, 1.3 mA
+ cm2 and 0.9 mA cm2, respectively, in 0.5 M KOH medium.
+ The comparison of HER performance of the Rh–Rh2O3-NPs/C
+ catalyst with other commercial catalysts is provided in Table
+ S1 (ESI).† The HER activity of the Rh–Rh2O3-NPs/C catalyst was
+ also determined in 1 M KOH solution (Fig. S10; ESI†), which
+ showed better activity than other catalysts in strong basic
+ medium. Chronopotentiometric technique was used to study
+ the HER stability in 0.5 M KOH solution. A comparison of
+ chronopotentiometric studies at a constant current density of
+ 10 mA cm2 for Rh–Rh2O3-NPs/C, comm. Pt/C and comm. Rh/C
+ in 0.5 M KOH is shown in Fig. 3f. Rh–Rh2O3-NPs/C showed
+ a small increase in overpotential (32 mV) to maintain Fig. 4 (a) HER LSV curves of Rh–Rh2O3-NPs/C, RhNPs/C and comm.
+ a current density of 10 mA cm2 for 10 h, whereas the increase Pt/C, comm. Rh/C, CNx and GC in 0.5 M H2SO4. (b–d) Comparison of
+ current density, MA and SA of Rh–Rh2O3-NPs/C, RhNPs/C, comm. Rh/
+ in the overpotential was very large for comm. Pt/C and comm.
+ C and comm. Pt/C at 0.1 V. (e) HER Tafel plot of diﬀerent catalysts. (f)
+ Rh/C under the same experimental conditions. Furthermore, Chronopotentiometric responses of Rh–Rh2O3-NPs/C, comm. Rh/C
+ the long term stability of 20 hours for the Rh–Rh2O3-NPs/C and comm. Pt/C at 10 mA cm2 current density.
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23535
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ the rate-limiting step. The i0 values for Rh–Rh2O3-NPs/C and
+ RhNPs/C in 0.5 M H2SO4 medium are 4.2 mA cm2 and 2.8 mA
+ cm2, respectively (Table S1, ESI†) which are higher than those
+ of comm. Pt/C (2.28 mA cm2), comm. Rh/C (0.96 mA cm2) and
+ other related systems.54–56 Fig. 4f shows a comparison of the
+ chronopotentiometric study of diﬀerent catalysts. In addition,
+ the long term stability of 18 h for the Rh–Rh2O3-NPs/C catalyst
+ in acidic medium was achieved, as presented in Fig. S11a.† Rh–
+ Rh2O3-NPs/C can sustain almost the same potential to produce
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ a constant current density of 10 mA cm2 for 18 h. We have also
+ performed post-characterization of the Rh–Rh2O3-NPs/C cata-
+ lyst aer HER stability measurements. PXRD, FESEM, EDS and
+ XPS data of the Rh–Rh2O3-NPs/C catalyst before and aer the
+ stability test of 15 h are given in Fig. S12a–e.† These analyses
+ indicate that the structure and morphology of the composite
+ remained unchanged even aer the 15 h-stability measurement.
+ XPS studies of Rh 3d show the presence of both Rh metal and
+ Rh2O3 aer the chronopotentiometric stability test. We have
+ calculated the Rh : Rh2O3 ratio in Rh–Rh2O3-NPs/C from Rh 3d-
+ XPS spectra (Fig. S12d and e†), which was found to be 1 : 3. Aer
+ the 15 h-HER stability test, Rh : Rh2O3 ratio was 1 : 2. This
+ Fig. 5 (a and b) HER/HOR polarization curves of Rh–Rh2O3-NPs/C
+ suggests that the Rh–Rh2O3-NPs/C hybrid is quite stable under catalyst in 0.5 M HClO4 and 0.1 M KOH solution saturated with H2 (1
+ the HER experimental conditions. The HER activity of Rh– atm) at variable rotation speeds (inset of (a and b): Koutecky–Levich
+ Rh2O3-NPs/C in 0.5 M H2SO4 medium was compared with that plots at 0.2 and 0.4 V in RHE). (c and d) Kinetic current vs. iR corrected
+ of other reported HER catalysts, as summarized in Table S5 potential plots (Butler–Volmer plots) of Rh–Rh2O3-NPs/C catalyst at
+ 0.5 M HClO4 and 0.1 M KOH solution.
+ (ESI),† which suggests that Rh–Rh2O3-NPs/C is one of the best
+ catalysts even in acidic medium.
+
+ of the electrolyte. The K–L plot of Rh–Rh2O3-NPs/C catalyst passes
+ 2.3 HOR study on Rh–Rh2O3-NPs/C surfaces over a broad pH through the origin, which suggested that the HOR reaction
+ range kinetics in both media are fully controlled by diﬀusion of the H2
+ We studied the HOR activity of the Rh–Rh2O3-NPs/C catalyst in mass. The BC0 values of Rh–Rh2O3-NPs/C catalyst obtained from
+ acidic and basic electrolytes using the RDE method. The iR- the K–L plot are 0.07 and 0.068 (mA cmdisk2 rpm1/2) in 0.5 M
+ corrected HOR LSV curves of the Rh–Rh2O3-NPs/C catalyst in HClO4 and 0.1 M KOH, respectively. These values are consider-
+ H2-saturated 0.5 M HClO4 and 0.1 M KOH solution at diﬀerent ably closer to the reported values.57,58 To study the kinetics of
+ rotations are presented in Fig. 5a and b. These two gures HOR, diﬀusion correction of the HOR polarization curve was
+ indicate that the limiting current density (jl) increases gradually calculated by the following equation:58
+ on increasing the rotation speeds of both the electrolytes. In the
+ RDE method, the obtained current density (jl) originates from jd ¼ jl(1  exp(2Fh/RT))
+ both kinetic current density (jk) and diﬀusion current density
+ (jd). where jl and jd are the measured and diﬀusion limited current
+ Assuming HOR is a rst order reaction, the limiting current densities, respectively.
+ density can be derived using the Koutecky–Levich20 (K–L) The HOR diﬀusion overpotential is also corrected by
+ equation: following equation:58
+
+ 1/jl ¼ 1/jk ¼ 1/jd ¼ 1/jk + 1/BC0u1/2 hdiffusion ¼ RT/F ln(1 j/jl)
+
+ where jd obeys the Levich equation:
+ The diﬀusion-corrected and iR-corrected polarization curves
+ 2/3 1/6 are shown in Fig. S13a and b (ESI)† for both acidic and alkaline
+ jd ¼ 0.62nFD n C0u
+ 1/2
+ ¼ BCu
+ 1/2
+
+ media.
+ where n is the number of electrons involved in the oxidation The kinetic current density was obtained from the positive
+ reaction, F is the Faraday constant (96 485 C mol1), n is the polarization curve using the rst-order Koutecky–Levich
+ viscosity of the electrolyte (cm2 s1), D is the diﬀusion coeﬃ- correction:58
+ cient of the reactant (cm2 s1), C0 is the H2 concentration in the
+ solution, and u is the rotation speed (rpm). BC0 is a constant jk ¼ j(jlim/(jlim  j))
+ related to the concentration and diﬀusivity of gas, the number
+ of electrons transferred in the reaction, and the kinetic velocity
+
+ 23536 | J. Mater. Chem. A, 2018, 6, 23531–23541 This journal is © The Royal Society of Chemistry 2018
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ where jk is the kinetic current density (mA cm2), j is the
+ measured current density (mA cm2) at 1600 rpm and jlim is the
+ diﬀusion limiting current. The experimental plots of jk vs.
+ overpotential and corresponding Butler–Volmer ttings of the
+ Rh–Rh2O3-NPs/C catalyst in both the electrolytes are shown in
+ Fig. 5c and d. Diﬀerent kinetic parameters such as transfer
+ coeﬃcient (a), Tafel slope (b) and exchange current density (i0)
+ can easily be obtained from the plot of kinetic current (jk) vs.
+ over-potential. Parameters such as aa, ac, and i0 of the HOR/
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ HER are obtained by tting the Butler–Volmer equation58 in jk
+ vs. h plot:
+
+ jk ¼ i0[e(aF/RT)h  e[(a1)F/RT]h]
+
+ where h is the overpotential, i0 is the exchange current density
+ (mA cm2), a represents the transfer coeﬃcient, F is the Faraday
+ constant (96 485 C mol1), R is the universal gas constant (8.314
+ Fig. 6 (a and b) Normalized HER/HOR polarization curves on Rh–
+ J (mol1 K1)), and T is the temperature in Kelvin. The i0 values Rh2O3-NPs/C and RhNPs/C composites in H2-saturated (1 atm)
+ of the Rh–Rh2O3-NPs/C catalyst in 0.5 M HClO4 and 0.1 M KOH electrolytes of diﬀerent pH. (c) The plot of HOR current density at
+ solutions were 4.3 mA cm2 and 3.4 mA cm2, respectively. The 50 mV voltage at diﬀerent pH of the solution. (d) A plot of HOR
+ i0 values normalized by active surface area of the Rh–Rh2O3- overpotential required at half of the normalized current (0.5ilim) with
+ the pH of buﬀer solution (scan rate: 10 mV s1, rotating speed: 1600
+ NPs/C catalyst are 0.43 mA cmRh2 and 0.425 mA cmRh2 in
+ rpm).
+ acidic and alkaline media, respectively. Specic exchange
+ current densities were found to be 150 and 119 A mg1 (Table
+ S2†) for Rh–Rh2O3-NPs/C in acidic and alkaline medium,
+ catalyst is less dependent on pH of the solution. Comparison
+ respectively. The i0 value of Rh–Rh2O3-NPs/C catalyst in acid is
+ of the half-wave potentials (the particular overpotential at which
+ almost same/slightly higher than the i0 value obtained in alka-
+ the current density is half the normalized limiting current
+ line medium (Table S2†). We have also measured the HOR
+ density (hi ¼ 0.5ilim)) of Rh–Rh2O3-NPs/C and RhNPs/C catalysts
+ activity and i0 value of the RhNPs/C catalyst in both acidic and
+ in diﬀerent pH is shown in Fig. 6d. The half-wave potential of
+ alkaline solutions (Fig. S14a, ESI†). The i0 values of RhNPs/C
+ the RhNPs/C catalyst remains unchanged when pH is less than
+ were found to be 4.7 (Fig. S14b, ESI†) and 0.08 mA cm2
+ 7, whereas above pH 7, the half-wave potential shis signi-
+ (Fig. S14c, ESI†) in 0.5 M H2SO4 and 0.1 M KOH, respectively. As
+ cantly to positive potentials. In contrast, half-wave potential of
+ shown in Table S2,† the i0 value of RhNPs/C in alkaline medium
+ the Rh–Rh2O3-NPs/C catalyst remains almost unchanged over
+ is 50 times lower than that in acidic medium, which suggests
+ the entire range of pH of the solution, which conrms the less
+ strong pH-dependent HOR behaviour of RhNPs/C. We also
+ pH-dependent HOR behaviour of Rh–Rh2O3-NPs/C and strong
+ measured the i0 values of these two catalysts in diﬀerent acidic
+ pH-dependent HOR behaviour of RhNPs/C catalyst. It is re-
+ and basic solutions (Table S3, ESI†). Due to the presence of
+ ported9,18 in the literature that in an acidic pH solution,
+ oxide (Rh2O3), the HOR activity of Rh–Rh2O3-NPs/C in basic
+ hydrogen oxidation involves two steps: (1) dissociative-
+ medium enhanced by 40-fold compared with that of the oxide-
+ adsorption of hydrogen (Tafel step: M + 1/2H2 / M–Hads)
+ free RhNPs/C catalyst. The HOR activity of Rh–Rh2O3-NPs/C in
+ and then (2) direct oxidation of Hads to protons (Volmer step: M–
+ both acidic and basic media is comparable. This observation
+ Hads / M + H+ + e).58 The HOR kinetics in acid media is
+ suggested that HOR activity of Rh–Rh2O3-NPs/C catalyst is less
+ generally governed by M–H bond energies, and several
+ dependent/independent of solution pH. To get an insight into
+ researchers have found that weakening of HBE enhances the
+ the contrasting pH-dependent HOR activities of these two
+ HOR activity.31,57 However, the role of OH ions in alkaline-HOR
+ catalysts, we studied the HOR activity of Rh–Rh2O3-NPs/C and
+ is not clear to date. In alkaline media, the hydrogen interme-
+ RhNPs/C in diﬀerent buﬀer solutions, as shown in Fig. S15a and
+ diate (Hads) can react with either OH from the solution or
+ b,† and the corresponding normalized HOR polarization curves
+ adsorbed OH from the sample. If Hads reacts with OH from the
+ of both the catalysts are shown in Fig. 6a and b. HOR activities
+ solution, then HBE will be the sole inuencing factor, but if
+ of Rh2O3-NPs/C and RhNPs/C in diﬀerent pH solutions were
+ Hads reacts with OHads species, then oxophilicity will have some
+ quantied by comparing current densities at 0.05 V potential, as
+ role in alkaline-HOR.17,25 In order to understand fundamental
+ shown in Fig. 6c. The current density at 0.05 V potential for the
+ reasons for the pH-dependent HOR of RhNPs/C catalyst and
+ RhNPs/C catalyst gradually decreases with the increase in pH of
+ HOR property of Rh–Rh2O3-NPs/C, we calculated hydrogen
+ the solution, suggesting the strong pH-dependent HOR behav-
+ binding energy (HBE) values from CV curves at diﬀerent pH,
+ iour of the RhNPs/C catalyst. Moreover, the current density at
+ and then correlated them with HOR activities for these cata-
+ 0.05 V for the Rh–Rh2O3-NPs/C catalyst remained almost
+ lysts. The peak potential of UPD-Hdes in the CV curve is directly
+ unchanged with the change in pH of the solution. This behav-
+ related to the HBE via the following equation:
+ iour suggested that the HOR activity of the Rh–Rh2O3-NPs/C
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23537
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ DG(M–H) ¼ FEpeak values of RhNPs/C and Rh–Rh2O3-NPs/C are almost equal in
+ acidic medium (Table S2†). However, the presence of Rh2O3 in
+ where F is the Faraday constant (96 485 C mol1), DG is the the Rh–Rh2O3-NPs/C catalyst enhances the HOR activity in
+ hydrogen binding energy and Epeak is directly taken from the alkaline medium by a factor of 40 in comparison with that of the
+ peak position in the CV curves. CV curves of the Rh–Rh2O3-NPs/ oxide-free RhNPs/C catalyst. The lower HBE of Rh–Rh2O3-NPs/C
+ C composite in diﬀerent buﬀer solutions under the same elec- when compared with that of oxide-free RhNPs/C cannot explain
+ trochemical conditions were recorded in order to calculate the this dramatic enhancement of HOR activity in alkaline medium
+ HBE of the composite. The CV curves of solutions at diﬀerent (almost equal to that in acidic medium). Thus, HBE cannot be
+ pH for Rh–Rh2O3-NPs/C and RhNPs/C catalysts are shown in the sole inuencing factor for HOR kinetics of Rh–Rh2O3-NPs/C
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ Fig. 7a and S16 (ESI),† respectively. The comparison of the in alkaline solution. Markovic et al.21 reported that the oxo-
+ change in HBE with pH for the two catalysts, Rh–Rh2O3-NPs/C philicity of metals can play a major role in the enhancement of
+ and RhNPs/C, is presented in Fig. 7b. At the low pH (pH ¼ 0– HOR activity in basic medium.
+ 2) region, the change in HBE with pH for RhNPs/C catalyst is To investigate the role of OH ions in HOR kinetics of the
+ very small, but above pH 7, the change in HBE with the increase Rh–Rh2O3-NPs/C catalyst in basic media, we performed CO
+ in pH is very large, with a shi towards higher values (stronger stripping voltammetry for both the catalysts. CO stripping vol-
+ M–H bond). The linear tting of HBE change with pH of the tammetry curves of Rh–Rh2O3-NPs/C and RhNPs/C in acidic
+ solution gives a slope of 11 MeV pH1, which is very close to medium are shown in Fig. 7c. The Rh–Rh2O3-NPs/C catalyst
+ other noble metal-based HOR catalysts.19,20 The HOR kinetics of shows a peak at around +0.88 V with an onset potential of
+ RhNPs/C catalyst decreased with the increase in HBE of the +0.51 V (RHE), whereas the RhNPs/C catalyst shows a CO
+ catalyst, suggesting that HBE is the sole inuencing factor for stripping peak at +1.05 V with a higher onset potential at
+ the HOR kinetics of the RhNPs/C catalyst. The HBE trend of Rh– +0.81 V. This shows that the oxophilicity of Rh–Rh2O3-NPs/C is
+ Rh2O3-NPs/C is similar to that of the RhNPs/C catalyst in the low more than that of RhNPs/C catalyst. This is probably due to the
+ pH region, which suggests that its HOR kinetics is controlled by presence of more oxophilic oxide (Rh2O3) in the Rh–Rh2O3-NPs/
+ HBE in the lower pH region for both the catalysts. However, C catalyst. The Rh2O3 surface provides OH adsorption sites,
+ above pH 7, the increase in HBE for Rh–Rh2O3-NPs/C is very suggesting that Rh–Rh2O3-NPs/C can be considered as a bi-
+ small as compared with that observed for the RhNPs/C catalyst. functional catalyst. We also performed CO stripping voltam-
+ The observed slope for Rh–Rh2O3-NPs/C is 6 MeV pH1, which metry at diﬀerent pH for both catalysts, as presented in Fig. S17
+ is much lower than that for the oxide-free RhNPs/C catalyst or and S18 (ESI).† The on-set potentials of CO stripping
+ other reported catalysts.19,28 Although the HBE of the Rh–Rh2O3- measurements at diﬀerent pH values for both catalysts are given
+ NPs/C catalyst is low, HBE in higher (basic) pH solutions is in Fig. 7d. The onset potential of CO stripping of the RhNPs/C
+ higher than that in acidic solutions. The exchange current catalyst gradually decreases (oxophilicity increases) with the
+ increase in pH of the solution. Its HOR activity also gradually
+ decreases with the increase in pH of the solution. However, HBE
+ of RhNPs/C catalyst increases with the increase in pH of the
+ solution. Hence, HBE in the basic medium can explain the poor
+ HOR activity of the RhNPs/C catalyst. Moreover, the presence of
+ Rh2O3 in Rh–Rh2O3-NPs/C catalyst facilitates OH adsorption,
+ and it has stronger OH adsorption at all pH values than that of
+ RhNPs/C. However, the increase in OH adsorption on the Rh–
+ Rh2O3-NPs/C catalyst is small at solutions with pH above 7. Rh–
+ Rh2O3-NPs/C also exhibited very less pH dependent/
+ independent HOR activity. This suggests that the oxophilicity
+ of the catalyst (Rh–Rh2O3-NPs/C) has played a signicant role in
+ enhancing the HOR activity in basic medium. The strain
+ introduced by Rh2O3 on Rh metal alters the electronic structure
+ of the catalyst. The presence of Rh2O3 in Rh–Rh2O3-NPs/C
+ lowers the HBE of the catalyst due to the electronic eﬀect and
+ also enhances the OH adsorption (oxophilic character) of the
+ Rh–Rh2O3-NPs/C catalyst. Based on above observations, we
+ proposed a bi-functional mechanism of Rh–Rh2O3-NPs/C cata-
+ lyst for its enhanced HOR activity in basic media. Fig. 8a shows
+ a schematic of HOR mechanism in alkaline medium. Rh metal
+ is a good catalyst for the hydrogen intermediate (Hads), whereas
+ Fig. 7 (a) CVs of Rh–Rh2O3-NPs/C at diﬀerent pH of an N2 saturated
+ Rh2O3 acts as the OH adsorption site. As shown in Fig. 8a,
+ medium at 30 mV s1 scan rate. (b) A plot of HBE vs. pH for Rh–Rh2O3-
+ NPs/C and RhNPs/C catalysts. (c) CO stripping voltammetry of Rh– dissociative-adsorption of hydrogen molecule occurs on the Rh
+ Rh2O3-NPs/C and RhNPs/C in acidic medium. (d) Onset potential of metal surface to form Hads (i.e. Rh–Hads) and Rh2O3 provides the
+ CO stripping vs. pH plot of Rh–Rh2O3-NPs/C and RhNPs/C catalysts. active sites for the adsorption of OHads. In the 2nd step, Hads
+
+ 23538 | J. Mater. Chem. A, 2018, 6, 23531–23541 This journal is © The Royal Society of Chemistry 2018
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ The superior activity and stability of this catalyst could be
+ attributed to several other following reasons.
+ One important factor could be the synergistic eﬀect of the
+ three components in the Rh–Rh2O3-NPs/C hybrid. Each of the
+ three components has diﬀerent functions: Rh metal and Rh2O3
+ serve as active sites for H adsorption and OH adsorption,
+ respectively, whereas the supported carbon material acts as
+ a high electrical conductive support required for electro-
+ catalysis. The high activity could be also due to the strong
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ catalyst–support interactions, as suggested by electrochemical
+ impedance measurements (Fig. 8e and S19, ESI†). The charge
+ transfer resistance (Rct) values of Rh–Rh2O3-NPs/C and Rh–
+ Fig. 8 Schematic of bi-functional (a) HOR (b) HER mechanism on Rh– Rh2O3 (without support) are 60 and 390 ohms, respectively. This
+ Rh2O3-NPs/C in base. (c) HER activity (current normalized by surface suggests that there is a strong interaction between the catalyst
+ area) of Rh–Rh2O3-NPs/C and comm. Pt/C in acidic and alkaline and the C support. The catalyst–support interaction was further
+ media and (d) corresponding comparison of HER speciﬁc activities at conrmed by comparing the HER activity and stability of this
+ a constant voltage (0.1 V). (e) EIS of diﬀerent catalysts, i.e. Rh–Rh2O3
+ catalyst with Rh/Rh2O3 nanostructures (without support) and
+ (without support), CNx, Rh–Rh2O3-NPs/C, in 0.5 M KOH at a constant
+ voltage 20 mV (RHE). a physical mixture of Rh–Rh2O3 and C support (Fig. S20a and b,
+ ESI†). The Rh nanochain structures of the composite could be
+ one of the reasons for its high activity and stability.61–63 These
+ reacts with the neighbouring reactive OHads to form water. An Rh–Rh2O3-NPs/C nanostructures are interconnected to form
+ optimal HOR catalyst for alkaline media may be achieved by porous network morphology, which could enhance its activity
+ lowering the HBE and increasing the oxophilicity of the catalyst. by allowing easy transport of reactants and products.
+ The presence of oxide Rh2O3 in the catalyst (Rh–Rh2O3-NPs/
+ C) enhances not only the HOR activity but also its HER activity
+ in basic medium drastically. The previous section and Fig. 3a
+ 3. Conclusions
+ and 4a show that although the HER activity of both the catalysts In conclusion, by growing metal oxide (Rh2O3) on metal (Rh)
+ (Rh–Rh2O3-NPs/C and RhNPs/C) is almost same in acid media, nanostructures, we were able to develop new eﬃcient electro-
+ in basic media, HER activity of Rh–Rh2O3-NPs/C catalyst catalyst for HER and HOR in alkaline and acidic media. The
+ enhanced by a factor of 10 relative to the oxide-free Rh NPs/C HER activity of the Rh–Rh2O3-NPs/C composite is much better
+ catalyst. The presence of oxide (Rh2O3) enhances the basic than that of comm. Pt/C in both acid and base. The HOR activity
+ medium HER activity of the Rh–Rh2O3-NPs/C catalyst and is was found to be independent of pH of the solution. We
+ almost similar to that of comm. Pt/C catalyst in acid medium. demonstrated that Rh2O3 oﬀers stronger OH adsorption, and
+ The comparison of HER LSV curves (current normalized by its presence in the Rh–Rh2O3-NPs/C catalyst drastically
+ surface area) of Rh–Rh2O3-NPs/C and comm. Pt/C in 1 M KOH enhances the HER/HOR activity of the catalyst in alkaline media
+ and 0.5 M H2SO4 solutions are shown in Fig. 8c, and the cor- through the bi-functional mechanism. We have also demon-
+ responding comparison of specic activities (SA) at 0.1 V is strated that HBE and oxophilicity are the two inuencing
+ shown in Fig. 8d. The SA in basic media of Rh–Rh2O3-NPs/C factors for HER and HOR in alkaline media. We hope that our
+ catalyst is higher than the SA of comm. Pt/C in acid media, approach (combining the properties of metal and metal oxide in
+ which suggests that the oxide surface makes this Rh–Rh2O3- a single catalyst) will eventually lead to the development of new
+ NPs/C catalyst highly active towards hydrogen evolution in active and durable catalysts for AFCs, alkaline electrolyzers, etc.
+ basic solution. A bi-functional HER mechanism21,25,59,60 is
+ proposed for enhanced HER activity of Rh–Rh2O3-NPs/C in
+ basic medium, as shown in Fig. 8b. The edge Rh2O3 facilitates Conﬂicts of interest
+ dissociative water adsorption, leading to the adsorption of OH
+ The authors declare no competing nancial interest.
+ on Rh2O3, whereas the adsorption of H occurs at neighbouring
+ Rh sites. The recombination of Hads then occurs on the neigh-
+ bouring Rh metal site to form the H2 molecules. Therefore, the Acknowledgements
+ best catalyst can be developed by combining the properties of
+ a metal and its oxide (i.e., growing metal oxide on metal We are thankful to NISER and Department of Atomic Energy
+ nanostructures). The presence of metal oxide on the same metal (DAE), India, for nancial support. We also thank Mr Sarat
+ modies the electronic property as well as enhances OH Kanrar for helping in setting up of experiments.
+ adsorption/oxophilicity of the catalyst, resulting in enhanced
+ HER/HOR activity in both acidic and basic media. This result Notes and references
+ thus provides an opportunity to develop new bi-functional
+ HOR/HER catalysts for basic media by growing metal oxide on 1 Y. Lu, S. Du and R. Steinberger-Wilckens, Appl. Catal., B,
+ metal nanostructures. 2016, 199, 292–314.
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23539
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ 2 T. Wilberforce, A. Alaswad, A. Palumbo, M. Dassisti and 31 M. E. Scoeld, Y. Zhou, S. Yue, L. Wang, D. Su, X. Tong,
+ A. G. Olabi, Int. J. Hydrogen Energy, 2016, 41, 16509–16522. M. B. Vukmirovic, R. R. Adzic and S. S. Wong, ACS Catal.,
+ 3 H. A. Gasteiger and N. M. Marković, Science, 2009, 324, 48– 2016, 6, 3895–3908.
+ 49. 32 T. Bhowmik, M. K. Kundu and S. Barman, ACS Catal., 2016,
+ 4 M. Winter and R. J. Brodd, Chem. Rev., 2004, 104, 4245–4270. 6, 1929–1941.
+ 5 A. Kraytsberg and Y. Ein-Eli, Energy Fuels, 2014, 28, 7303– 33 G. M. Scheuermann, L. Rumi, P. Steurer, W. Bannwarth and
+ 7330. R. Mülhaupt, J. Am. Chem. Soc., 2009, 131, 8262–8270.
+ 6 P. C. K. Vesborg, B. Seger and I. Chorkendorﬀ, J. Phys. Chem. 34 X.-F. Wu, P. Anbarasan, H. Neumann and M. Beller, Angew.
+ Lett., 2015, 6, 951–957. Chem., Int. Ed., 2010, 49, 9047–9050.
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ 7 S. Lu and Z. Zhuang, Sci. China Mater., 2016, 59, 217–238. 35 S. Guo and E. Wang, Nano Today, 2011, 6, 240–264.
+ 8 Z. W. Seh, J. Kibsgaard, C. F. Dickens, I. Chorkendorﬀ, 36 M. Sadhukhan, M. K. Kundu, T. Bhowmik and S. Barman,
+ J. K. Nørskov and T. F. Jaramillo, Science, 2017, 355, 146. Int. J. Hydrogen Energy, 2017, 42, 9371–9383.
+ 9 W. Sheng, H. A. Gasteiger and Y. Shao-Horn, J. Electrochem. 37 T. Bhowmik, M. K. Kundu and S. Barman, Int. J. Hydrogen
+ Soc., 2010, 157, B1529–B1536. Energy, 2016, 41, 14768–14777.
+ 10 S. Lu, J. Pan, A. Huang, L. Zhuang and J. Lu, Proc. Natl. Acad. 38 T. Bhowmik, M. K. Kundu and S. Barman, Int. J. Hydrogen
+ Sci. U. S. A., 2008, 105, 20611–20614. Energy, 2017, 42, 212–217.
+ 11 S. J. Peighambardoust, S. Rowshanzamir and M. Amjadi, Int. 39 S. Badhulika, R. K. Paul, Rajesh, T. Terse and
+ J. Hydrogen Energy, 2010, 35, 9349–9384. A. Mulchandani, Electroanalysis, 2014, 26, 103–108.
+ 12 M. Cao, D. Wu and R. Cao, ChemCatChem, 2014, 6, 26–45. 40 Y. Yuan, N. Yan and P. J. Dyson, ACS Catal., 2012, 2, 1057–
+ 13 S. Guo, S. Zhang, L. Wu and S. Sun, Angew. Chem., Int. Ed., 1069.
+ 2012, 51, 11770–11773. 41 K.-Y. Chan, J. Ding, J. Ren, S. Cheng and K. Y. Tsang, J. Mater.
+ 14 C. Y. Son, I. H. Kwak, Y. R. Lim and J. Park, Chem. Commun., Chem., 2004, 14, 505–516.
+ 2016, 52, 2819–2822. 42 E. Ye, M. D. Regulacio, S.-Y. Zhang, X. J. Loh and M.-Y. Han,
+ 15 P. Jiang, Q. Liu and X. Sun, Nanoscale, 2014, 6, 13440–13445. Chem. Soc. Rev., 2015, 44, 6001–6017.
+ 16 T. Bhowmik, M. K. Kundu and S. Barman, ACS Appl. Energy 43 N. Zhang, Q. Shao, Y. Pi, J. Guo and X. Huang, Chem. Mater.,
+ Mater., 2018, 1, 1200–1209. 2017, 29, 5009–5015.
+ 17 Y. Cong, B. Yi and Y. Song, Nano Energy, 2018, 44, 288–303. 44 J. Masud, T. Van Nguyen, N. Singh, E. McFarland,
+ 18 J. Durst, A. Siebel, C. Simon, F. Hasche, J. Herranz and M. Ikenberry, K. Hohn, C.-J. Pan and B.-J. Hwang, J.
+ H. A. Gasteiger, Energy Environ. Sci., 2014, 7, 2255–2260. Electrochem. Soc., 2015, 162, F455–F462.
+ 19 J. Zheng, W. Sheng, Z. Zhuang, B. Xu and Y. Yan, Sci. Adv., 45 J. Uribe-Godı́nez, V. Garcı́a-Montalvo and O. Jiménez-
+ 2016, 2, e1501602. Sandoval, Int. J. Hydrogen Energy, 2016, 41, 22520–22528.
+ 20 W. Sheng, Z. Zhuang, M. Gao, J. Zheng, J. G. Chen and 46 M. A. Montero, M. R. Gennero de Chialvo and A. C. Chialvo,
+ Y. Yan, Nat. Commun., 2015, 6, 5848. J. Power Sources, 2015, 283, 181–186.
+ 21 D. Strmcnik, M. Uchimura, C. Wang, R. Subbaraman, 47 R. Zou, S. Wen, L. Zhang, L. Liu and D. Yue, RSC Adv., 2015,
+ N. Danilovic, V. van der, A. P. Paulikas, V. R. Stamenkovic 5, 99884–99891.
+ and N. M. Markovic, Nat. Chem., 2013, 5, 300–306. 48 M. K. Kundu, T. Bhowmik and S. Barman, J. Mater. Chem. A,
+ 22 P. J. Rheinländer, J. Herranz, J. Durst and H. A. Gasteiger, J. 2015, 3, 23120–23135.
+ Electrochem. Soc., 2014, 161, F1448–F1457. 49 L. S. Kibis, A. I. Stadnichenko, S. V. Koscheev, V. I. Zaikovskii
+ 23 S. M. Alia, B. S. Pivovar and Y. Yan, J. Am. Chem. Soc., 2013, and A. I. Boronin, J. Phys. Chem. C, 2016, 120, 19142–19150.
+ 135, 13473–13478. 50 S. Blomberg, E. Lundgren, R. Westerström, E. Erdogan,
+ 24 M. K. Kundu, T. Bhowmik, R. Mishra and S. Barman, N. M. Martin, A. Mikkelsen, J. N. Andersen, F. Mittendorfer
+ ChemSusChem, 2018, 11, 2388–2401. and J. Gustafson, Surf. Sci., 2012, 606, 1416–1421.
+ 25 G. Wang, J. Parrondo, C. He, Y. Li and V. Ramani, J. 51 S. Barman and M. Sadhukhan, J. Mater. Chem., 2012, 22,
+ Electrochem. Soc., 2017, 164, F1307–F1315. 21832–21837.
+ 26 E. S. Davydova, S. Mukerjee, F. Jaouen and D. R. Dekel, ACS 52 R. Blume, D. Rosenthal, J.-P. Tessonnier, H. Li, A. Knop-
+ Catal., 2018, 8, 6665–6690. Gericke and R. Schlögl, ChemCatChem, 2015, 7, 2871–2881.
+ 27 W. Sheng, M. Myint, J. G. Chen and Y. Yan, Energy Environ. 53 M. Sadhukhan and S. Barman, J. Mater. Chem. A, 2013, 1,
+ Sci., 2013, 6, 1509–1512. 2752–2756.
+ 28 J. Durst, C. Simon, F. Hasché and H. A. Gasteiger, J. 54 E. J. Popczun, J. R. McKone, C. G. Read, A. J. Biacchi,
+ Electrochem. Soc., 2015, 162, F190–F203. A. M. Wiltrout, N. S. Lewis and R. E. Schaak, J. Am. Chem.
+ 29 Y. Wang, G. Wang, G. Li, B. Huang, J. Pan, Q. Liu, J. Han, Soc., 2013, 135, 9267–9270.
+ L. Xiao, J. Lu and L. Zhuang, Energy Environ. Sci., 2015, 8, 55 W.-F. Chen, K. Sasaki, C. Ma, A. I. Frenkel, N. Marinkovic,
+ 177–181. J. T. Muckerman, Y. Zhu and R. R. Adzic, Angew. Chem.,
+ 30 K. Elbert, J. Hu, Z. Ma, Y. Zhang, G. Chen, W. An, P. Liu, Int. Ed., 2012, 51, 6131–6135.
+ H. S. Isaacs, R. R. Adzic and J. X. Wang, ACS Catal., 2015, 56 M.-R. Gao, J.-X. Liang, Y.-R. Zheng, Y.-F. Xu, J. Jiang, Q. Gao,
+ 5, 6764–6772. J. Li and S.-H. Yu, Nat. Commun., 2015, 6, 5982–5988.
+
+ 23540 | J. Mater. Chem. A, 2018, 6, 23531–23541 This journal is © The Royal Society of Chemistry 2018
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ 57 J. Zheng, Z. Zhuang, B. Xu and Y. Yan, ACS Catal., 2015, 5, 60 N. Danilovic, R. Subbaraman, D. Strmcnik, K.-C. Chang,
+ 4449–4455. A. P. Paulikas, V. R. Stamenkovic and N. M. Markovic,
+ 58 J. Zheng, Y. Yan and B. Xu, J. Electrochem. Soc., 2015, 162, Angew. Chem., Int. Ed., 2012, 51, 12495–12498.
+ F1470–F1481. 61 C. Koenigsmann, M. E. Scoeld, H. Liu and S. S. Wong, J.
+ 59 R. Subbaraman, D. Tripkovic, D. Strmcnik, K.-C. Chang, Phys. Chem. Lett., 2012, 3, 3385–3398.
+ M. Uchimura, A. P. Paulikas, V. Stamenkovic and 62 H. Liu, C. Koenigsmann, R. R. Adzic and S. S. Wong, ACS
+ N. M. Markovic, Science, 2011, 334, 1256–1260. Catal., 2014, 4, 2544–2555.
+ 63 L. Cademartiri and G. A. Ozin, Adv. Mater., 2009, 21, 1013–
+ 1020.
+Published on 25 October 2018. Downloaded by The University of Tokyo on 1/15/2026 8:51:22 AM.
+
+ This journal is © The Royal Society of Chemistry 2018 J. Mater. Chem. A, 2018, 6, 23531–23541 | 23541

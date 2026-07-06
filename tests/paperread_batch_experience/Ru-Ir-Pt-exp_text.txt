@@ -1,0 +1,478 @@
+Research Article
+
+ pubs.acs.org/acscatalysis
+
+ Electrocatalytic Oxygen Evolution Reaction (OER) on Ru, Ir, and Pt
+ Catalysts: A Comparative Study of Nanoparticles and Bulk Materials
+ Tobias Reier,* Mehtap Oezaslan, and Peter Strasser
+ The Electrochemical Energy, Catalysis, and Materials Science Laboratory, Technische Universität Berlin, Department of Chemistry,
+ 10623 Berlin, Germany
+
+ ABSTRACT: A comparative investigation was performed to examine the
+ intrinsic catalytic activity and durability of carbon supported Ru, Ir, and Pt
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ nanoparticles and corresponding bulk materials for the electrocatalytic oxygen
+ evolution reaction (OER). The electrochemical surface characteristics of
+ nanoparticles and bulk materials were studied by surface-sensitive cyclic
+ voltammetry. Although basically similar voltammetric features were observed
+ Downloaded via UNIV OF TOKYO on January 15, 2026 at 08:06:17 (UTC).
+
+ for nanoparticles and bulk materials of each metal, some diﬀerences were
+ uncovered highlighting the changes in oxidation chemistry. On the basis of
+ the electrochemical results, we demonstrated that Ru nanoparticles show
+ lower passivation potentials compared to bulk Ru material. Ir nanoparticles
+ completely lost their voltammetric metallic features during the voltage cycling,
+ in contrast to the corresponding bulk material. Finally, Pt nanoparticles show
+ an increased oxophilic nature compared to bulk Pt. With regard to the OER
+ performance, the most pronounced eﬀects of nanoscaling were identiﬁed for Ru and Pt catalysts. In particular, the Ru
+ nanoparticles suﬀered from strong corrosion at applied OER potentials and were therefore unable to sustain the OER. The Pt
+ nanoparticles exhibited a lower OER activity from the beginning on and were completely deactivated during the applied OER
+ stability protocol, in contrast to the corresponding bulk Pt catalyst. We highlight that the OER activity and durability were
+ comparable for Ir nanoparticles and bulk materials. Thus, Ir nanoparticles provide a high potential as nanoscaled OER catalyst.
+ KEYWORDS: oxygen evolution reaction (OER), water splitting, iridium, ruthenium, platinum, anodic oxidation, nanoparticles
+
+ 1. INTRODUCTION catalysts, because of an enhanced structural ﬂexibility,9 but
+ One major roadblock on the way to a sustainable energy showed insuﬃcient durability.10,11
+ infrastructure based on renewable energies is an appropriate Ru and Ir oxides have emerged as the most promising
+ grid-scale chemical energy storage solution. A grid scale energy catalyst candidates for the OER and thus are frequently
+ storage solution is constituted by the electrocatalytic splitting of studied.12−15 Active and stable non-noble metal based catalysts
+ water into molecular hydrogen and oxygen using polymer for the OER in acidic media are essentially unknown because of
+ electrolyte membrane (PEM) electrolyzer architectures. Con- the acid-aggressive and strong corrosive conditions. Recent
+ sidering the cathodic part of water splitting, that is, the research has therefore focused on the reduction of the noble
+ reduction of water to hydrogen, Pt is a nearly ideal catalyst.1,2 metal amount in PEM electrolyzers, for example by using
+ In contrast, for the anodic part, that is, the oxidation of water to supported metal (oxide) nanoparticles and mesoporous metal
+ molecular oxygen in strong acidic environment (referred to as oxide ﬁlms.16−19 Nanoscale catalysts are of great advantage
+ oxygen evolution reaction (OER)), the search of active, stable, because of the reduced noble metal content and a high
+ and inexpensive electrocatalysts is an outstanding problem to catalytically active surface area achieved by a large surface area
+ date.3 to volume ratio.20 On the other hand, the choice of an
+ Although, the OER itself has been described as early as 1789, appropriate corrosion-resistant support for the OER is a further
+ detailed molecular insight into the relationship between catalyst challenge. Commonly used conductive carbon support
+ surface structure and OER reactivity has remained scarce.3,4 materials, such as carbon nanotubes or carbon blacks, show
+ Thermochemical density functional theory (DFT)-based OER stability deﬁciencies at high potentials which constrain their
+ studies have predicted the binding energy of a surface oxygen utilization in OER catalysis.21 The stability of carbon based
+ species as the activity-controlling parameter, yielding a volcano support materials can be improved by graphitization or carbide
+ type activity plot, with Ru and Ir oxide near the top.5,6 formation.22−24 For example, TiC has proved to be a promising
+ Furthermore, alloys of Ru and Ir with other transition metals
+ showed improved OER activity, as reported by Neyerlin and Received: January 6, 2012
+ Forgie.7,8 Amorphous oxide catalysts, such as RuOx, revealed an Revised: July 9, 2012
+ increased OER performance compared to crystalline Ru oxide Published: July 23, 2012
+
+ © 2012 American Chemical Society 1765 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+candidate as support material for the OER with improved high embedded in a polyether ether ketone RDE. Before each
+voltage stability.16 experiment, the bulk materials were carefully polished to a
+ Nevertheless, supporting and nanoscaling of OER anode mirror like surface ﬁnish using diamond pastes (Buehler) down
+electrocatalysts are in their early research stages. Although the to 1 μm.
+eﬀects of nanoscaling of OER catalysts, such as catalyst− 2.3. Electrochemical Measurements. All electrochemical
+support-interactions and particle size eﬀects, can have great measurements were performed in a RDE setup equipped with a
+impact for both activity and stability,25,26 they are scarcely three compartment electrochemical glass cell with Luggin
+studied. For instance, unsupported crystalline RuO2 reported capillary, PINE rotator (Pine Research Instrumentation) and
+by Jirkovský et al. showed an improved OER activity with potentiostat, VSP-5 or SP-200 (BioLogic, France). A saturated
+decreasing particle size.27,28 This activity improvement was mercury/mercury sulfate (MMS) electrode was used as
+explained by the availability of certain edge atoms. In a Tafel reference electrode. The reference electrode was calibrated
+analysis of RuO2, the rate determining step (rds) for the OER against a reversible hydrogen electrode (RHE) in the same
+was related to the crystallite size. Large crystals showed a electrolyte at room temperature. All potentials were converted
+similar rds as single crystals.29 However, systematic OER and referred to the RHE. The acid electrolyte solutions, 0.1 M
+studies focusing on the eﬀects of nanoscaling and supporting of HClO4 and 0.05 M H2SO4, were prepared by diluting from a
+diﬀerent OER electrocatalysts, are missing to date. 70% perchloric acid (Sigma-Aldrich, 99.999%) and a 98%
+ Here, we present an investigation of various nanoscaled OER sulfuric acid (Carl Roth) with deionized water (18 MOhm cm
+electrocatalysts (Ru, Ir, and Pt) to reveal trends for the catalytic at room temperature).
+performance and stability. We compare the electrochemical 2.3.1. Electrochemical Surface Characterization Protocol.
+characteristics and the resulting OER activities and stabilities This protocol was only used for Ir and Ru catalysts to trace the
+for electrochemically oxidized metal nanoparticles of Ru, Ir, and potential-dependent behavior of irreversible oxide formation.
+Pt with those for the corresponding bulk metal catalysts as The catalysts used for this protocol were rejected afterward and
+benchmarks. We ﬁnd the OER activity to be sensitively were not used for the OER study. The catalysts were immersed
+dependent on the dimension of the Ir, Ru, and Pt catalysts. On into the electrolyte at 0.05 V before the cyclic voltammogram
+the basis of electrocatalytic results, distinct activity and stability measurement with a scan rate of 500 mV/s was started. The
+trends for each noble metal are uncovered. lower potential limit was kept constant at 0.05 V, whereas the
+ upper potential limit was successively raised from 0.5 to 1.3 V
+2. EXPERIMENTAL SECTION with an increment of 0.1 V after each 100 cycles. In case of Ru
+ 2.1. Synthesis of Carbon Supported Nanoparticles. Ru catalysts, 100 scans with 500 mV/s were followed by 6 scans
+and Ir nanoparticles supported on Vulcan XC 72R with a metal with 50 mV/s.
+loading of 20 wt % were synthesized by an incipient wetness 2.3.2. Determination of Surface Sites. The following
+method. Vulcan XC 72R (240 mg, GP-3875, Cabot) was electrochemical protocol was used for the determination of
+impregnated with the appropriate amount of iridium acetate the electrochemically available surface sites for all electro-
+(48.76 wt % Ir, Heraeus, CAS#52705-52-9, LOT#10307) or catalysts prior to the OER. Perchloric acid was used as
+ruthenium acetate (42.23 wt % Ru, Heraeus, CAS#55466−76− electrolyte for Pt and Ru catalysts. Because of stability problems
+7, LOT#10309) which had previously been dissolved in 3.5 mL of perchloric acid at potentials below 1.0 V, sulfuric acid was
+of deionized water (18 MOhm cm at room temperature). After used as electrolyte for Ir catalysts. Prior the electrochemical
+careful horn-soniﬁcation, the impregnated powders were frozen measurement, the working electrode was immersed under
+in liquid nitrogen and freeze-dried in vacuum. Finally, the dried potential control at 0.05 V into the nitrogen-deaerated (15
+powders were annealed in a tube furnace under reductive min) electrolyte. The potential was cycled in the range of 0.05
+atmosphere (4 Vol. % H2, 96 Vol. % Ar, Air Liquide, quality and 1.0 V (0.8 V for Ir). After an electrochemical cleaning step
+5.0). The furnace temperature was raised to 250 °C with a (100 cycles with 500 mV/s), the scan rate was reduced to 50
+heating rate of 10 K/min and then to 465 °C with the maximal mV/s. The number of surface sites for each catalyst was
+rate holding each temperature for 2 h. Commercially available established with CO stripping. In the CO stripping experi-
+Pt nanoparticles supported on Vulcan XC 72R (BASF Fuel Cell ments, the electrolyte was consecutively bubbled with CO and
+Inc.) with a loading of 20 wt % were used as received. N2 for 15 min, respectively, while the electrode remained at
+ 2.2. Electrode Preparation. Supported metal nanoparticle 0.05 V. The potential was then cycled from 0.05 V to x, with v
+catalysts were coated as thin ﬁlm layer on a previously polished to strip oﬀ the adsorbed CO completely (v = 20 mV/s, x = 1 V
+and cleaned glassy carbon surface of a rotating disk electrode for Ru and Pt and v = 50 mV/s and x = 1.2 V for Ir). The CO
+(RDE) (5 mm diameter, Pine Research Instrumentation). stripping charge was corrected with the oxide formation charge
+Therefore, a catalyst ink was prepared by mixing of the catalyst in the same potential range without adsorbed CO and divided
+powder (5.00 mg), deionized water (3.980 mL), 2-propanol by two to gain the number of surface sites.30
+(1.000 mL), and Naﬁon solution (20.0 μL, 5 wt % in lower 2.3.3. Electrocatalytic OER Protocol. After the number of
+aliphatic alcohols and H2O, Sigma-Aldrich). The catalyst surface sites had been determined (2.3.2), the OER protocol
+suspension was horn-soniﬁcated for 10 min. Ten microliters was started. All measurements were conducted with 1600 rpm
+of the catalyst ink were pipette onto the glassy carbon surface in 0.1 M HClO4 at room temperature. The Ir catalysts were
+and dried for 10 min at 60 °C in air to form a homogeneous, cleaned with water and transferred to HClO4 for the OER
+thin ﬁlm. experiment. To determine the OER performance, all Ru, Ir, and
+ Bulk ruthenium (American Elements, purity 99.95%) and Pt catalysts were subjected to 1.0 V for 3 min, followed by a
+iridium (MaTec, purity 99.99%) catalysts, cylinders with a quasi stationary scan with 6 mV/s. The OER stability protocol,
+diameter of 5 mm, were ﬁxed on a Teﬂon interchangeable RDE which subsequently took place after the OER activity protocol,
+holder (Pine Research Instrumentation). Platinum (Pine consisted of 51 fast scans with 200 mV/s and one additional
+Research Instrumentation, purity 99.99%) was permanently quasi stationary scan with 6 mV/s into the voltage range of the
+ 1766 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+OER. The electrolyte resistance was measured by means of reﬂections of Ru nanoparticles indicate a hexagonal crystal
+potentiostatic impedance prior to the OER measurement. phase, whereas Ir and Pt nanoparticles show cubic phases.
+ 2.4. X-ray Diﬀraction. XRD proﬁles were measured in Because of the overlap by the very broad, amorphous
+Bragg−Brentano geometry in a D8 Advance X-ray diﬀrac- background of the carbon support, Vulcan XC 72R, in the 2
+tometer (Bruker AXS) using a Cu Kα source, variable Θ range between 20° and 50°, the mean crystallite sizes were
+divergence slit, and position sensitive device as detector. Data evaluated from reﬂexes in the 50°−100° 2 Θ range (see Table
+were collected in a 2Θ range of 15° to 100° with an increment 1). The line broadening analysis revealed a mean crystallite size
+of 0.05°, a measuring time of 7 s per step, and a sample rotation
+rate of 15 rotations per minute. The XRD proﬁles were ﬁtted Table 1. Results of Particle Size Investigation for Vulcan XC
+with the Pearson VII function using the software Jade 8 72R Supported Ru, Ir, and Pt Nanoparticles from TEM and
+(Materials Data Inc.). A corundum reference sample (Bruker XRD Line Broadening Analysis
+AXS) was measured to determine instrumental line broadening.
+ nanocatalyst particle size (TEM)/nm crystallite size (XRD)/nm
+The full width at half-maximum (fwhm) of Bragg reﬂexes,
+corrected with the instrumental line broadening, was used to Ru 4.3 ± 1.2 5.0 ± 0.3
+determine the crystallite size utilizing the Scherrer equation. A Ir 2.0 ± 1.1 3.0 ± 0.1
+value of 0.9 was used for the Scherrer constant.31,32 Pt 2.5 ± 0.3 2.6 ± 0.1
+ 2.5. Transmission Electron Microscopy. TEM micro-
+graphs were aquired using a FEI TECNAI G2 20 S-TWIN of 5.0 ± 0.3 nm for Ru, 3.0 ± 0.1 nm for Ir, and 2.6 ± 0.1 mn
+equipped with LaB6 cathode and GATAN MS794 P CCD for Pt, respectively. Energy dispersive X-ray measurements of
+camera. The microscope was operated at an acceleration Ru, Ir, and Pt nanocatalysts just showed the desired metals
+voltage of 200 kV. The catalyst powders were suspended in a beside components of Vulcan XC 72R. Additionally, the mean
+1:1 mixture of 2-propanol and deionized water. The particle size was determined from TEM images (see Figure 2).
+suspensions were pipetted onto a carbon coated copper grid The TEM images of the carbon-supported Ru, Ir, and Pt
+(400 mesh, Plano). Particle size distributions were determined nanoparticles are presented in Figure 2. The nanoparticles were
+by counting of more than 250 particles using the ImageJ 1.43 well distributed on the carbon support and exhibited mostly
+software (U.S. National Institutes of Health). spherical shape. The evaluated particles size histograms showed
+ 2.6. ICP-OES. An inductively coupled plasma optical a near logarithmic normal distribution which is common for
+emission spectrometer (715-ES ICP, Varian) was employed nanocrystalline samples.33 A detailed TEM investigation of the
+to analyze the electrolyte after the OER protocol. The following Pt nanoparticles used in this study is given in reference 24. The
+emission lines were used: for Ru, 240.27 and 267.87 nm; for Ir, mean particle sizes (davg TEM) of all three metals, summarized
+212.68 and 224.27 nm; and for Pt, 203.65 and 224.52 nm. in Table 1, are consistent with the XRD line broadening
+ analysis. The slightly larger crystallite sizes established by XRD
+3. RESULTS AND DISCUSSION are due to the diﬀerent types of averaging. The TEM analysis
+ 3.1. Nanoparticle Synthesis and Characterization. Ir yields a number-average, whereas the XRD analysis yields a
+and Ru nanoparticles supported on Vulcan XC 72R were volume-average size.32
+synthesized by an acetate precursor-based incipient wetness- 3.2. Electrochemical Surface Characterization. The
+ electrochemical behavior and change of the surface oxidation
+impregnation method. Because of the thermally well-decom-
+ states for Ru, Ir, and Pt catalysts were studied by recording of
+posable precursor salts, this synthesis route yields surfactant-
+ cyclic voltammograms (CVs).
+free carbon supported metal nanoparticles.
+ 3.2.1. Ruthenium-Nanoparticle and Bulk Electrocatalysts.
+ The X-ray diﬀraction data of the supported metal nano-
+ Figure 3 shows selected CVs for Ru with an upper potential
+particles are shown in Figure 1. The broad reﬂections exhibit
+ limit at and above 1.1 V highlighting the main features,
+small crystallite sizes for Pt, Ir, and Ru nanoparticles. The
+ diﬀerences, and similarities of Ru in the form of nanoparticles
+ and bulk material. It is noted that Figure 3 reveals mostly
+ featureless CVs without distinct current peaks for both Ru
+ nanoparticle and bulk catalysts proving a basically similar
+ electrochemical behavior. In the applied voltage range, Ru exists
+ as Ru(III) below 0.8 V and as Ru(IV) above.34,35 The observed
+ increased current densities close to the turning potentials can
+ be described by the highly irreversible nature of the oxidation
+ and reduction processes of Ru. Exceeding a certain potential
+ limit, these increased current densities diminished, and a new
+ redox peak couple emerged at approximately 0.75 V, denoted as
+ passivation. Considering the required potential limit for the
+ passivation, the nanoparticle and bulk catalysts revealed a
+ diﬀerence. The Ru nanoparticle catalyst already passivated
+ exceeding potentials of 1.1 V as opposed to the bulk catalyst
+ which passivated exceeding potentials of 1.2 V. The passivation
+Figure 1. XRD patterns of Vulcan XC 72R supported Ru, Ir, and Pt process can be explained by the gradual conversion of Ru(IV)
+nanoparticles. Vertical lines denote reference patterns taken from the surface oxide species to an anhydrous RuO2 oxide layer.34,35
+powder diﬀraction ﬁle (PDF) of the international center of diﬀraction The observed surface chemistry of polycrystalline Ru is rather
+data, reference numbers Ru: 00-006-0663, Ir: 00-006-0598, Pt: 00-004- unique compared with other Pt group metals and deviates
+0802. signiﬁcantly from the surface chemistry of Ru (0001) single
+ 1767 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+Figure 2. Bright ﬁeld transmission electron micrographs and particle size distribution histograms of Ir (a), Ru (b), and Pt (c) nanoparticles
+supported on Vulcan XC 72R.
+
+Figure 3. CVs of nanoparticle (a) and bulk (b) catalysts of Ru measured with 50 mV/s in deaerated 0.1 M HClO4 at room temperature (RT). The
+upper potential limit was successively raised in 100 mV steps.
+
+Figure 4. CVs of nanoparticle (a) and bulk (b) catalysts of Ir recorded with 500 mV/s in deaerated 0.05 M H2SO4 at RT. The upper potential limit
+was successively raised in 100 mV steps from 0.5 to 1.3 V. Each scan is number 100 in the given voltage range. Arrows indicate the increase or
+decrease of the three distinct regions by changing the upper turning potential.
+
+crystals.34−37 The Ru (0001) single crystal showed a distinct catalysts. Here, the upper turning potential was successively
+oxidation peak at 0.5 V and required one electron per surface increased from 0.5 to 1.3 V to monitor the changes of
+atom for the oxidation processes prior to the oxidation of voltammetric features by the formation of irreversible surface
+subsurface atoms.37 In contrast the bulk Ru electrodes showed oxide species. In contrast to Pt and Ru catalysts, the Ir catalyst
+approximately 10 times larger oxidation currents and formed no was studied in a sulfuric acid electrolyte. It is well-known in the
+distinct peaks yielding a featureless CV.37 The absence of literature that perchloric acid is not suitable for low potential-
+distinct hydrogen under potential deposition (Hupd) on iridium investigations because of the chemical instability of
+polycrystalline Ru surfaces is likely based on the low voltage HClO4 below 1.0 V, where perchlorate ions can be reduced in
+onset of oxide formation.34,35,38 the presence of Ir catalysts to chloride ions.39−41 Chloride ions
+ 3.2.2. Iridium-Nanoparticle and Bulk Electrocatalysts. have a strong tendency to bind on noble metal surfaces and
+Figure 4 shows a series of CVs for Ir nanoparticle and bulk thus strongly contaminate the surface.42,43
+ 1768 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+Figure 5. CVs of nanoparticle (a) and bulk (b) catalysts of Pt recorded with 50 mV/s in deaerated 0.1 M HClO4 at RT.
+
+ The CVs shown in Figure 4a illustrate three main this shift is based on the stronger adsorption behavior of
+voltammetric features for Ir nanoparticles. Starting from low oxygen on nanoparticles due to electronic and geometric
+potentials, the CV proﬁles for Ir nanoparticles show a hydrogen eﬀects.25 Smaller particles oﬀer a larger fraction of corner and
+adsorption region (1), distinguished by a large oxidation and edge atoms with low coordination numbers which bond oxygen
+reduction peak, followed by the formation of two diﬀerent stronger than terrace atoms with high coordination numbers.26
+oxide species, each associated by a redox peak couple (2) and 3.3. Electrocatalytic OER Activity and Stability.
+(3). Here, Ir was initially oxidized to an Ir(III) species as 3.3.1. Determination of Electrochemically Available Surface
+Ir(OH)3 in the voltage region (2) and further to an hydrous Sites. The number of surface sites for Ru, Ir, and Pt catalysts
+Ir(IV) oxide species in the voltage region (3).44 were determined by CO stripping experiments and could
+ Interestingly, when the anodic turning potential reached the subsequently be considered for the catalytic comparison of
+voltage range for Ir(IV) oxide formation (3), both the Hupd speciﬁc OER activities in acid. Here, the number of active
+(1) and the Ir(III) (2) formation peak started to decline until surface sites was used to determine the speciﬁc current densities
+they had completely disappeared in the CV (Figure 4a). The rather as the electrochemically active surface area, since this
+current peak (3) growth and the decrease of the current peaks approach makes diﬀerent surfaces with deviating density of
+in region (1) and (2) evidence the electrochemical active sites intrinsically comparable. Table 2 summarizes the
+irreversibility of the Ir(IV) oxide formation. The disappearance number of electrochemically available surface sites for Pt, Ir,
+of features, characteristic for metallic Ir, namely, the Hupd (1) and Ru catalysts in the form of nanoparticles and bulk
+and the oxide formation in voltage region (2), demonstrate the materials.
+loss of the metallic character of the particle surface.
+ Bulk iridium catalysts show similarities to nanoparticle Table 2. Absolute Number of Surface Sites for Nanoparticle
+catalysts but also interesting diﬀerences (see Figure 44B). An and Bulk Catalysts of Ru, Ir, and Pt Determined from CO
+interesting diﬀerence was observed in the voltage range of (3). Stripping Experiments
+Here, in contrast to the nanoparticles, the metallic features
+ number of active surface sites/10−9 mol
+remained on the bulk Ir upon formation of Ir(IV) oxide and
+became more distinct. catalyst bulk nanoparticles
+ Electrochemically formed Ir(IV) oxide layers are known to Ru 4.50 5.54
+exhibit a porous structure which provides electrochemical Ir 0.45 3.26
+access to the underlying metal, reported by Conway and Pt 0.40 3.38
+Mozota.45 Hence, in case of an Ir(IV) oxide covered bulk Ir
+catalyst the underlying metal can contribute to the voltam- Bulk Pt and Ir revealed comparable numbers of surface sites
+metric phenomena revealing the characteristic metallic features. for bulk materials and nanoparticles. As expected, the number
+The loss of the metallic nature of Ir nanoparticles initiated by of electrochemically available surface sites was 7-fold higher for
+continuous potential cycling between ranges (1) and (3), Ir and Pt nanoparticles than those for the corresponding bulk
+therefore, indicates the complete irreversible conversion of all Ir materials. In addition, the bulk Ru catalyst showed ten times
+centers to Ir oxide species. more surface sites compared to Pt and bulk Ir catalysts. We
+ 3.2.3. Platinum-Nanoparticle and Bulk Electrocatalysts. hypothesized, that the bulk Ru catalyst was roughened during
+The CVs of Pt nanoparticle and bulk catalysts are compared in voltage cycling because of the low onset potential for oxide
+Figure 5. Both CVs exhibit the commonly characteristic formation. Furthermore, the geometric current densities
+features for pure Pt such as the Hupd region between 0.05 observed in the CVs for polycrystalline bulk Ru catalysts are
+and 0.35 V, the double layer region commencing at 0.35 V, and known to be approximately 10 times higher than those for Ru
+the Pt (hydr-)oxide regime at and beyond approximately 0.7 (0001) single crystal electrodes.37
+V.25 The direct comparison showed, however, some diﬀerences. 3.3.2. Speciﬁc OER Activity and Stability. In the following
+In the view of the Pt-oxide reduction peak, a small cathodic section the speciﬁc OER activities of all catalysts will be
+peak shift is apparent for nanoparticles which is generally reported together with the stability study. Here, the speciﬁc
+attributed to a particle size eﬀect.25 The chemical reason for current densities and speciﬁc OER activities were obtained by
+ 1769 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+normalizing the current to the number of surface sites observed, the dissolution process and the OER on Ru
+established by CO stripping experiments (see 3.3.1). All Ir, nanoparticles apparently took place in the same voltage
+Ru, and Pt catalysts were tested for the OER in HClO4. It is range. This observation was corroborated by in situ reﬂectance
+noted that the chemical instability of HClO4 with respect to Ir measurements of bulk Ru catalysts which detected the
+is only relevant in the low voltage range which was not applied formation of RuO4 as corrosion product at the onset potential
+during this OER study. Figure 6 shows the speciﬁc OER of the OER.10 In the case of bulk Ru catalyst, the dissolution
+ charge could account for maximal 4% of the anodic charge
+ observed during the OER activity and stability protocol.
+ Thereby, the nanoparticle catalyst revealed a larger fraction of
+ dissolved Ru compared to the bulk catalyst. The instability of
+ Ru nanocatalyst with a size of 4−6 nm may be explained by a
+ higher surface energy of small particles which likely facilitates
+ the electrochemical dissolution process.
+ In contrast to Ru catalyst, both nanoparticles and bulk
+ catalysts of Ir showed stable polarization curves. Very similar
+ OER activities were observed for Ir nanoparticles and bulk
+ material. In addition, the OER activity remains almost
+ unchanged during the applied OER stability test (not
+ shown). The compositional stability was also supported by
+ the ICP analysis of the electrolytes after the OER stability test.
+ Only small amounts of dissolved Ir were found for the
+ nanocatalyst, while no metal was detected for the bulk Ir
+Figure 6. First quasi stationary OER scan for bulk and nanoparticle
+ catalyst (see Table 3). Unlike Ir nanoparticles, the bulk catalyst
+catalysts of Ru, Ir, and Pt recorded with 6 mV/s and 1600 rotations exhibited a signiﬁcantly smaller surface area and therefore a
+per minute (rpm) in deaerated 0.1 M HClO4 at RT. The current is reduced loss of metal. Interestingly, the activity of both Ir
+normalized to the number of surface sites determined from CO catalysts only deviated by 12 mV at 0.5 × 109 mA/mol. Further
+stripping experiments. work is in progress to clarify the eﬀect of particle size for Ir.
+ Turning to the Pt catalysts, the nanoparticles showed a
+activities in terms of quasi-stationary cyclic polarization curves signiﬁcantly lower OER performance than the bulk material
+into the OER voltage region in 0.1 M HClO4. To detect non- (see 7a). Furthermore, after the OER stability protocol the Pt
+OER related anodic currents, which can be related to catalyst nanocatalyst was completely deactivated, while the bulk catalyst
+degradation processes or metal oxidation reactions, a series of only showed a reduced activity (see Figure 7a). To clarify the
+polarization curves were performed as stability test. Sub- strong decay of performance, CVs for Pt nanoparticles were
+sequently, the used electrolyte was analyzed by inductively recorded before and after the OER stability test (see Figure
+coupled plasma optical emission spectrometry (ICP-OES) to 7b). Here, the CV revealed the commonly characteristic
+quantify the amount of dissolved metal from the tested catalyst. features for Pt after the OER stability test. Despite the complete
+Here, the required overvoltage for a given speciﬁc OER current deactivation for the OER, the CV (Figure 7b) indicated the
+density serves as measure for the catalytic activity (see Figure 6 electrochemical accessibility of Pt nanoparticles after the OER
+and Table 3). stability protocol. In accordance with this result, no Pt was
+ The bulk Ru catalyst showed the best intrinsic OER activity detectable in the electrolyte after the OER stability test. Shown
+in this study. Close to the OER onset potential, Ru in Figure 7b, the reduced Hupd regime evidenced a loss of Pt
+nanoparticles revealed a comparable activity. But, in contrast surface area because of a catalyst degradation process.
+to the bulk catalyst, a current maximum appeared during the Moreover, the increased current density in the double layer
+ﬁrst anodic scan, indicating stability problems for Ru nano- region also indicated an alteration of the supporting material,
+particles. On the basis of the ICP analysis, the amount of connected to a gain of surface area. The catalyst degradation,
+dissolved Ru equaled the used total loading of metal however, cannot explain the complete deactivation for the
+nanocatalyst within the accuracy of the ICP measurement. OER.
+So, the Ru nanoparticles were completely dissolved during the To describe the lower activity of Pt nanoparticles compared
+ﬁrst anodic scan. Considering a maximum dissolution charge to the bulk material a model developed by Damjanovic for bulk
+for Ru, by assuming the dissolution of Ru as RuO4,10,11 the Pt catalysts was considered. Under potential conditions of the
+calculated value could only account for 19% of the observed OER, the surface is covered with a poorly conductive Pt oxide
+anodic charge. Because only one anodic current peak was species.46,47 The electrons freed during the OER have to tunnel
+
+Table 3. Potentials for an OER Current Density of 0.5 mA mol−1 109, Tafel Slopes, and Dissolved Metal Masses for Ir, Ru, and
+Pt Nanoparticle and Bulk Catalysts
+ potential at 0.5 mA mol−1 109/V Tafel slope/mV dec−1 dissolved metal (ICP)/μg
+ catalyst bulk nanoparticles bulk nanoparticles bulk nanoparticles
+ Ru 1.449 1.504 44 13.1 ± 0.2 1.7 ± 0.4
+ Ir 1.551 1.563 63 64 blda 0.8 ± 0.3
+ Pt 1.766 1.870 145 210 blda blda
+
+a
+ bld - below limit of detection.
+
+ 1770 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+Figure 7. (a) Quasi stationary OER scans of nanoparticle and bulk catalysts of Pt before and after OER stability test measured with 6 mV/s and 1600
+rpm in deaerated 0.1 M HClO4 at RT. (b) CVs for Pt nanoparticles before and after OER stability test.
+
+through this oxide layer which makes the current exponentially 4. CONCLUSIONS
+dependent on the oxide layer thickness at a certain electrode A comparative study of the OER activity and stability for
+potential.46 Because of the more pronounced oxophilicity of Pt oxidized Ru, Ir, and Pt nanoparticle catalysts was presented and
+nanoparticles compared to bulk material, the poorly conductive benchmarked to the corresponding bulk catalysts. The
+oxide layer may grow faster and become thicker on nano- experimentally observed intrinsic OER activities for nano-
+particles. With a thicker oxide layer, the current decreases particle catalysts decreased in the order: oxidized Ru > oxidized
+which likely explains the lower activity of the Pt nanoparticles. Ir > oxidized Pt. Although the OER performance of Ru was
+The complete deactivation may be related to an almost outstanding, stability problems prevent the utilization of Ru
+complete oxidation of Pt nanoparticles. nanoparticles as a practical nanoscaled OER catalyst. The Pt
+ The OER activity of Pt catalysts was the lowest in this study. nanoparticles suﬀered from additional deactivation compared
+This observation is exceptional because Pt is known as good to the bulk catalyst and were therefore a suboptimal choice as a
+catalyst for the reverse reaction, the reduction of molecular nanostructured OER catalyst. In this study, the supported Ir
+oxygen to water (ORR).24,48 Moreover, a density functional nanoparticles revealed a high activity and a suﬃcient stability
+theory (DFT) based study predicted for Pt oxide an OER for the OER. These ﬁndings point out that Ir nanoparticles
+activity comparable to or higher than that for Ir oxide emerge as a future nanoscaled OER catalyst concept for acidic
+dependent on the considered phase.5 PEM electrolyzer devices.
+ 3.3.3. Tafel Behavior. The Tafel behavior, especially the
+Tafel-slope, is an important kinetic parameter to reveal changes
+in the apparent OER mechanism.49 Tafel-slopes determined
+ ■ AUTHOR INFORMATION
+ Corresponding Author
+from the data shown in Figure 6 are given in Table 3. The *E-mail: tobias.reier@tu-berlin.de.
+measured Tafel slope for the bulk Ru catalyst is in accordance
+ Funding
+with 41 mV/dec observed for a Ru electrode50 and 39 mV/dec
+ This project was supported by the Cluster of Excellence in
+obtained for a thermally prepared RuO2 electrode in sulphuric
+ Catalysis (unifying concepts in catalysis, UNICAT) funded by
+acid.15 A Tafel-slope of 40 mV/dec is consistent with the
+ the DFG and managed by the TU Berlin.
+second electron transfer step in the OER mechanism to be rate
+determining.49 Because of the instability of Ru nanoparticles, a Notes
+ The authors declare no competing ﬁnancial interest.
+
+ ■
+Tafel slope could not be determined.
+ Similar Tafel slopes of approximately 60 mV/dec were
+observed for nanoparticle and bulk catalysts of Ir, demonstrat- ACKNOWLEDGMENTS
+ing that both catalysts exhibit the similar rate determining step The authors thank Dr. rer. nat. Frédéric Hasché and the
+for the OER. A value of 60 mV/dec can be indicative for a Central Facility for Electron microscopy at the Technische
+chemical rate determining step, in which an OH surface species Universität Berlin for support.
+is rearranged via a surface reaction.49 The resulting Tafel-slopes
+for Ir deviated slightly from 55 mV/dec obtained for anodically
+oxidized Ir nanoparticles in sulphuric acid,51 and are in good
+ ■ REFERENCES
+ (1) Nørskov, J. K.; Christensen, C. H. Science 2006, 312, 1322−1323.
+accordance with 61 mV/dec obtained for thermally prepared (2) Trasatti, S. J. Electroanal. Chem. Interfacial Electrochem. 1972, 39,
+IrO2 in sulphuric acid.15 163−184.
+ Both Pt catalysts showed an exceptionally high Tafel slope, (3) Dau, H.; Limberg, C.; Reier, T.; Risch, M.; Roggan, S.; Strasser,
+higher than 120 mV/dec found by Damjanovic.46 A Tafel-slope P. ChemCatChem 2010, 2, 724−761.
+ (4) de Levie, R. J. Electroanal. Chem. 1999, 476, 92−93.
+above 120 mV/dec was not included in an OER mechanistic (5) Man, I. C.; Su, H.-Y.; Calle-Vallejo, F.; Hansen, H. A.; Martínez,
+model.49 The experimentally observed high Tafel-slope J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.;
+indicates additional contributions from processes with Rossmeisl, J. ChemCatChem 2011, 3, 1159−1165.
+exponential current−potential dependency, probably related (6) Rossmeisl, J.; Qu, Z. W.; Zhu, H.; Kroes, G. J.; Nørskov, J. K. J.
+to the formation of Pt oxide layers. Electroanal. Chem. 2007, 607, 83−89.
+
+ 1771 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772
+ACS Catalysis Research Article
+
+ (7) Neyerlin, K. C.; Bugosh, G.; Forgie, R.; Liu, Z.; Strasser, P. J. (42) Lam, A.; Li, H.; Zhang, S.; Wang, H.; Wilkinson, D. P.; Wessel,
+Electrochem. Soc. 2009, 156, B363−B369. S.; Cheng, T. T. H. J. Power Sources 2012, 205, 235−238.
+ (8) Forgie, R.; Bugosh, G.; Neyerlin, K. C.; Liu, Z.; Strasser, P. (43) Markovic, N.; Hanson, M.; McDougall, G.; Yeager, E. J.
+Electrochem. Solid-State Lett. 2010, 13, B36−B39. Electroanal. Chem. Interfacial Electrochem. 1986, 214, 555−566.
+ (9) Tsuji, E.; Imanishi, A.; Fukui, K.-i.; Nakato, Y. Electrochim. Acta (44) Juodkazytė, J.; Šebeka, B.; Valsiunas, I.; Juodkazis, K.
+2011, 56, 2009−2016. Electroanalysis 2005, 17, 947−952.
+ (10) Kötz, R.; Stucki, S.; Scherson, D.; Kolb, D. M. J. Electroanal. (45) Conway, B. E.; Mozota, J. Electrochim. Acta 1983, 28, 9−16.
+Chem. Interfacial Electrochem. 1984, 172, 211−219. (46) Damjanovic, A.; Birss, V. I.; Boudreaux, D. S. J. Electrochem. Soc.
+ (11) Wohlfahrt-Mehrens, M.; Heitbaum, J. J. Electroanal. Chem. 1991, 138, 2549−2555.
+Interfacial Electrochem. 1987, 237, 251−260. (47) Schultze, J. W.; Vetter, K. J. Electrochim. Acta 1973, 18, 889−
+ (12) Lodi, G.; Sivieri, E.; Battisti, A.; Trasatti, S. J. Appl. Electrochem. 896.
+1978, 8, 135−143. (48) Hasché, F.; Oezaslan, M.; Strasser, P. ChemPhysChem 2012, 13,
+ (13) De Pauli, C. P.; Trasatti, S. J. Electroanal. Chem. 2002, 538−539, 828−834.
+145−151. (49) Faria, L. A.; Boodts, J. F. C.; Trasatti, S. J. Appl. Electrochem.
+ (14) Trasatti, S. Electrochim. Acta 1984, 29, 1503−1512. 1996, 26, 1195−1199.
+ (15) Mattos-Costa, F. I.; de Lima-Neto, P.; Machado, S. A. S.; Avaca, (50) Miles, M. H.; Klaus, E. A.; Gunn, B. P.; Locker, J. R.; Serafin, W.
+L. A. Electrochim. Acta 1998, 44, 1515−1523. E.; Srinivasan, S. Electrochim. Acta 1978, 23, 521−526.
+ (16) Ma, L.; Sui, S.; Zhai, Y. J. Power Sources 2008, 177, 470−477. (51) Pauporté, T.; Andolfatto, F.; Durand, R. Electrochim. Acta 1999,
+ (17) Ortel, E.; Reier, T.; Strasser, P.; Kraehnert, R. Chem. Mater. 45, 431−439.
+2011, 23, 3201−3209.
+ (18) Sui, S.; Ma, L.; Zhai, Y. Asia-Pac. J. Chem. Eng. 2009, 4, 8−11.
+ (19) Nakagawa, T.; Beasley, C. A.; Murray, R. W. J. Phys. Chem. C
+2009, 113, 12958−12961.
+ (20) Campelo, J. M.; Luna, D.; Luque, R.; Marinas, J. M.; Romero, A.
+A. ChemSusChem 2009, 2, 18−45.
+ (21) Maass, S.; Finsterwalder, F.; Frank, G.; Hartmann, R.; Merten,
+C. J. Power Sources 2008, 176, 444−451.
+ (22) Borchardt, L.; Hasché, F.; Lohe, M. R.; Oschatz, M.; Schmidt,
+F.; Kockrick, E.; Ziegler, C.; Lescouet, T.; Bachmatiuk, A.; Büchner, B.;
+Farrusseng, D.; Strasser, P.; Kaskel, S. Carbon 2012, 50, 1861−1870.
+ (23) Hasché, F.; Fellinger, T.-P.; Oezaslan, M.; Paraknowitsch, J. P.;
+Antonietti, M.; Strasser, P. ChemCatChem 2012, 4, 479−483.
+ (24) Hasché, F.; Oezaslan, M.; Strasser, P. Phys. Chem. Chem. Phys.
+2010, 12, 15251−15258.
+ (25) Mayrhofer, K. J. J.; Blizanac, B. B.; Arenz, M.; Stamenkovic, V.
+R.; Ross, P. N.; Markovic, N. M. J. Phys. Chem. B 2005, 109, 14433−
+14440.
+ (26) Kinoshita, K. J. Electrochem. Soc. 1990, 137, 845−848.
+ (27) Jirkovský, J.; Hoffmannová, H.; Klementová, M.; Krtil, P. J.
+Electrochem. Soc. 2006, 153, E111−E118.
+ (28) Jirkovský, J.; Makarova, M.; Krtil, P. Electrochem. Commun.
+2006, 8, 1417−1422.
+ (29) Guerrini, E.; Trasatti, S. Russ. J. Electrochem. 2006, 42, 1017−
+1025.
+ (30) Trasatti, S.; Petrii, O. A. J. Electroanal. Chem. 1992, 327, 353−
+376.
+ (31) Langford, J. I.; Wilson, A. J. C. J. Appl. Crystallogr. 1978, 11,
+102−113.
+ (32) Cullity, B. D.; Stock, S. R. Elements of X-Ray Diﬀraction; Prentice
+Hall: Upper Saddle River, NJ, 2001; 385−402.
+ (33) Gubicza, J.; Szépvölgyi, J.; Mohai, I.; Zsoldos, L.; Ungár, T.
+Mater. Sci. Eng., A 2000, 280, 263−269.
+ (34) Juodkazytė, J.; Vilkauskaitė, R.; Šebeka, B.; Juodkazis, K. Trans.
+Inst. Met. Finish. 2007, 85, 194−201.
+ (35) Juodkazytė, J.; Vilkauskaitė, R.; Stalnionis, G.; Šebeka, B.;
+Juodkazis, K. Electroanalysis 2007, 19, 1093−1099.
+ (36) Vuković, M.; Č ukman, D. J. Electroanal. Chem. 1999, 474, 167−
+173.
+ (37) Marinković, N. S.; Wang, J. X.; Zajonz, H.; Adžić, R. R. J.
+Electroanal. Chem. 2001, 500, 388−394.
+ (38) El-Aziz, A. M.; Kibler, L. A. Electrochem. Commun. 2002, 4,
+866−870.
+ (39) Wasberg, M.; Horányi, G. J. Electroanal. Chem. 1995, 385, 63−
+70.
+ (40) Kaghazchi, P.; Simeone, F. C.; Soliman, K. A.; Kibler, L. A.;
+Jacob, T. Faraday Discuss. 2009, 140, 69−80.
+ (41) Pajkossy, T.; Kibler, L. A.; Kolb, D. M. J. Electroanal. Chem.
+2007, 600, 113−118.
+
+ 1772 dx.doi.org/10.1021/cs3003098 | ACS Catal. 2012, 2, 1765−1772

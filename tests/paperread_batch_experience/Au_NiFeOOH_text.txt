@@ -1,0 +1,285 @@
+Communication
+
+ Cite This: J. Am. Chem. Soc. 2018, 140, 3876−3879 pubs.acs.org/JACS
+
+ Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst:
+ Probing the Origin of Activity for Oxygen Evolution Reaction
+ Jingfang Zhang,†,§ Jieyu Liu,‡,§ Lifei Xi,⊥,§ Yifu Yu,† Ning Chen,∥ Shuhui Sun,¶ Weichao Wang,*,‡,#
+ Kathrin M. Lange,⊥,+ and Bin Zhang*,†,#
+ †
+ Department of Chemistry, School of Science, and Tianjin Key Laboratory of Molecular Optoelectronic Science, Tianjin University,
+ Tianjin 300072, China
+ ‡
+ Department of Electronics, Nankai University, Tianjin 300071, China
+ #
+ Collaborative Innovation Center of Chemical Science and Engineering, Tianjin 300072, China
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ∥
+ Canadian Light Source, Saskatoon, Saskatchewan S7N 2 V3, Canada
+ ¶
+ Institut National de la Recherche Scientiﬁque-Énergie Matériaux et Télécommunications, Varennes, Quebec J3X 1S2, Canada
+ ⊥
+ Young Investigator Group Operando Characterization of Solar Fuel Materials (EE-NOC), Helmholtz-Zentrum Berlin für
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:43:52 (UTC).
+
+ Materialien und Energie GmbH, Berlin 12489, Germany
+ +
+ Physikalische Chemie, Universität Bielefeld, Universitätsstr. 25, D-33615 Bielefeld, Germany
+ *
+ S Supporting Information
+
+ Surprisingly, NiFe layered double hydroxides (LDHs) stand
+ ABSTRACT: A fundamental understanding of the origin out from these candidates because of their excellent OER
+ of oxygen evolution reaction (OER) activity of transition- performances,21−23 which stimulates the ongoing exploration
+ metal-based electrocatalysts, especially for single precious and optimization of OER properties on these electro-
+ metal atoms supported on layered double hydroxides catalysts.24−29 Though the pioneering reports on the oxy-
+ (LDHs), is highly required for the design of eﬃcient hydroxides as the real active species for LDHs during OER,30,31
+ electrocatalysts toward further energy conversion tech- the large activity gap between LDHs and oxyhydroxides still
+ nologies. Here, we aim toward single-atom Au supported remains unexplainable. Therefore, it is highly desirable to
+ on NiFe LDH (sAu/NiFe LDH) to clarify the activity obtain a fundamental understanding of the origin of out-
+ origin of LDHs system and a 6-fold OER activity standing OER activity on the surface of LDHs.
+ enhancement by 0.4 wt % sAu decoration. Combining Recent works have suggested that supported Au nanostruc-
+ with theoretical calculations, the active behavior of NiFe tures can eﬀectively enhance electrocatalytic activity by
+ LDH results from the in situ generated NiFe oxyhydroxide favorable local catalyst−gold interfacial interactions.32−35 In
+ from LDH during the OER process. With the presence of addition, an emerging class of single-atom metal modiﬁed
+ s
+ Au, sAu/NiFe LDH possesses an overpotential of 0.21 V catalysts exhibits higher catalytic activity than nonmodiﬁed ones
+ in contrast to the calculated result (0.18 V). We ascribe the toward hydrogen evolution reaction.13,14 Considering the noble
+ excellent OER activity of sAu/NiFe LDH to the charge nature of Au, downsizing the nanometre-scale to single-atoms
+ redistribution of active Fe as well as its surrounding atoms could eﬀectively decrease Au usage and maximize atomic
+ causing by the neighboring sAu on NiFe oxyhydroxide utilization eﬃciency.36−38 However, to date, there is no
+ stabilized by interfacial CO32− and H2O interfacing with conclusion whether single-atom Au (sAu) is helpful to enhance
+ LDH. OER activity of current electrocatalysts, especially for LDHs, or
+ not.
+ Herein, we employed sAu supported on NiFe LDH (sAu/
+
+ T he oxygen evolution reaction (OER) has been extensively
+ studied due to its critical role in the expansion of
+ renewable energy technologies, including water splitting and
+ NiFe LDH) catalyst as a model to evaluate the OER activity
+ and understand the activity origin at the atomic level.
+ Theoretical results demonstrate that active sites could be
+ rechargeable metal−air batteries.1−3 Because of the intrinsically attributed to Fe atoms in NiFe oxyhydroxide supported by
+ sluggish reaction kinetics of the OER, highly eﬃcient LDH and stabilized by CO32− anions and H2O. sAu could
+ electrocatalysts are desired to improve the energy conversion transfer electrons to LDH, changing the charge distribution and
+ thus further improving the catalytic performance. Subsequent
+ eﬃciency. Up to now, noble metal oxides (RuO2 and IrO2) are experimental measurements exhibit an outstanding OER
+ considered as active catalysts,4 but their high cost and scarcity performance, validating our theoretical ﬁndings.
+ severely impede their wide applications. Recently, much eﬀort Density functional theory calculations plus Hubbard-U
+ has focused on inexpensive and earth-abundant elements based approach that includes dispersion interactions (i.e., van der
+ materials as viable alternatives for OER, such as transition-metal
+ sulﬁdes/selenides,1,5−8 oxides,9−14 nitrides15 and (oxy)- Received: January 23, 2018
+ hydroxides.16−20 Published: March 8, 2018
+
+ © 2018 American Chemical Society 3876 DOI: 10.1021/jacs.8b00752
+ J. Am. Chem. Soc. 2018, 140, 3876−3879
+Journal of the American Chemical Society Communication
+
+Waals eﬀects) (DFT + U + vdW) were conducted on sAu/NiFe oxyhydroxide thus stabilizes the surface NiFeOOH layer and
+LDH to explore its OER activity. We deﬁned the activity using leads to optimal adsorption energies of OER intermediates on
+the free energy diﬀerence (ΔG) for each elementary step39,40 Fe active sites.
+(see Supporting Information (SI) for details). It is known that Encouraged by these DFT results, we synthesized sAu/NiFe
+OER activity is determined by the stabilities of the adsorbed LDH on Ti mesh to further certify the results. Scanning
+intermediates (OH*, O*, OOH*) on the surface of catalysts electron microscopy (SEM) and transmission electron
+and evaluated by the descriptor of free energy diﬀerence, i.e., microscopy (TEM) images reveal that sAu/NiFe LDH still
+ΔGO* − ΔGOH*.18,41,42 For the NiFe LDH, we ﬁnd that the maintain nanosheet morphology of NiFe LDH (Figure S3) and
+ﬁrst step of the OER process involves the detachment of H no nanoparticles are observed (Figures S4a and 2a). Also, no
+from the topmost surface of the regular LDH, also certiﬁed by a
+previous study.29 Consequently, LDH could be covered with
+NiFeOOH during the OER.43 Even more complex local
+environments like Ni−O or Fe−O with structural defects can
+form during the OER process.31 Therefore, a two-layer periodic
+(1 × 2) slab composed of a LDH bottom layer and a
+NiFeOOH stepped surface with a single Au atom is constructed
+as simulation model for sAu/NiFe LDH, denoted as sAu/
+NiFeOOH-NiFe LDH (Figure 1a). With the absence of Au
+
+ Figure 2. (a) TEM, (b) HAADF-STEM, (c) EDS mapping images of
+ s
+ s
+Figure 1. (a) Two-layer slab model for Au/NiFe LDH with interlayer Au/NiFe LDH. (d) Au L3-edge XANES spectra of the experimental
+CO32− anions and water molecules. (b) Proposed OER pathways with and simulated results for sAu/NiFe LDH as well as Au foil.
+OH*, O* and OOH* intermediates for sAu/NiFe LDH. (c) Free
+energy diagram for the OER at diﬀerent potentials on the surface of peaks of Au appear in the XRD pattern (Figure S4b).
+s
+ Au/NiFe LDH model. Moreover, the high-angle annular dark ﬁeld-scanning trans-
+ mission electron microscopy (HAADF-STEM) image clearly
+atom, the corresponding simulation model is denoted as shows individual Au atoms uniformly dispersed on the surface
+NiFeOOH-NiFe LDH (Figure S1). Figure 1b shows the of NiFe LDH (Figures 2b and S4c). Meanwhile, energy-
+optimized pathways of OER on the sAu/NiFeOOH-NiFe LDH dispersive X-ray spectroscopy (EDS) mapping images of sAu/
+surface. Based on the free energy diagram of sAu/NiFeOOH- NiFe LDH suggest that atomic Au is evenly distributed over the
+NiFe LDH for OER (Figure 1c), the rate-determining step is entire nanosheet (Figure 2c). According to the results of
+the formation of OOH* from O* with an overpotential of 0.18 inductively coupled plasma mass spectrometry, the atomic ratio
+V. The corresponding binding energies ΔEOH* and ΔEOOH* for of Ni/Fe is 7.3 and the loading content of Au is 0.4 wt %. To
+s
+ Au/NiFeOOH-NiFe LDH are 0.93 and 3.46 eV, resulting in a conﬁrm the local structure of Au speciation, X-ray absorption
+favorable Gibbs energy of the four elementary steps, i.e., ΔG01 = near-edge structure (XANES) measurements were performed
+1.33 eV, ΔG02 = 1.15 eV, ΔG03 = 1.41 eV and ΔG04 = 1.03 eV at (Figure 2d). The white line peak in the Au L3-edge XANES
+standard conditions. Our calculated results are very close to the accords with an electronic transition from 2p3/2 to unoccupied
+thermochemically ideal OER process (ΔEOH* = 0.86 eV and 5d states. The XANES spectrum of Au foil exhibit almost no
+ΔEOOH* = 3.3 eV, with ΔG01 = ΔG02 = ΔG03 = ΔG04 = 1.23 eV) white line marked as A due to the almost completely ﬁlled 5d
+predicted by Rossmeisl et al.44 In contrast, for the NiFeOOH- state of Au0. In contrast, feature A in the spectrum of sAu/NiFe
+NiFe LDH without sAu, the overpotential increases up to 0.26 LDH is sharp. The absence of feature B is also observed in the
+V for which the rate-determining step is the formation of O* spectrum of Au foil. And the feature D for sAu/NiFe LDH
+from OH*. The decrease of overpotential after dispersing sAu locates at higher energy than that of Au foil. All these results
+on NiFe LDH catalyst implies that the Au-catalyst interface suggest that sAu/NiFe LDH have a diﬀerent gold atomic local
+sites play a vital role in improving OER activity. To further structural environment compared to that of metallic Au.
+examine the eﬀect of a LDH bottom layer on the OER activity, Moreover, the good accordance of experimental and simulated
+we also construct a slab model of sAu/NiFeOOH to simulate results of Au L3-edge XANES spectra indicate the presence of
+the OER process (Figure S2). An onset overpotential of 0.23 V single-atom Au and an Au−O bond distance of 1.88 Å (Figure
+is obtained, which is larger than that of sAu/NiFeOOH-NiFe S5). All these results certify the successful formation of sAu/
+LDH (0.18 V). The theoretical results reveal that the LDH NiFe LDH.
+substrate along with interlayer CO32− anions in sAu/ The OER activities of NiFe LDH and sAu/NiFe LDH were
+NiFeOOH-NiFe LDH maintains the charge balance of investigated (Figure 3a). When the current density of 10 mA
+ 3877 DOI: 10.1021/jacs.8b00752
+ J. Am. Chem. Soc. 2018, 140, 3876−3879
+Journal of the American Chemical Society Communication
+
+ potential sweep is reversed to 1.12 V, the persistence of
+ aforementioned peaks suggests that this transformation is not
+ reversible, reinforced by ex situ XANES spectra of post-OER
+ s
+ Au/NiFe LDH (Figure S16). In other words, it is the in situ
+ formed oxyhydroxide that acts as the catalytic species for OER.
+ In order to address the reaction mechanism, we theoretically
+ investigate the transformation of surface charge of sAu/
+ NiFeOOH-NiFe LDH with O* (Figure 4). The Au atom
+
+Figure 3. (a) Cyclic voltammetry (CV) curves of sAu/NiFe LDH,
+pure NiFe LDH and bare Ti mesh in 1 M KOH. (b) Overpotential (η) Figure 4. Diﬀerential charge densities of NiFe LDH with and without
+at 10 mA cm−2 (left) and Tafel slope (right) for sAu/NiFe LDH and Au atom when one O atom is adsorbed on the Fe site. Iso-surface
+pure NiFe LDH. (c) Polarization curves of sAu/NiFe LDH before and value is 0.004 eÅ−3. Yellow and blue contours represent electron
+after 2000 cycles. Inset in panel c is time-dependent current density accumulation and depletion, respectively.
+curve. (d) Raman spectra of sAu/NiFe LDH at diﬀerent potentials
+during anodic and cathodic sweep in a CV cycle.
+ locates upon one O atom. The orientation of Au−O bond is
+cm−2 is required, sAu/NiFe LDH needs an overpotential of parallel to the c-axis. Each d orbital of Au is fully occupied by 2
+only 237 mV, whereas NiFe LDH needs a higher overpotential electrons and each p orbital of O possesses 4/3 electrons
+of 263 mV (Figure 3b). Consistently, galvanostatic measure- averagely. After the adsorption of Au on O, the ﬁve degenerated
+ments indicate sAu/NiFe LDH requires lower applied potential d orbitals of Au are spatially redistributed. dz2 orbital of Au and
+(Figure S6). Furthermore, the current density on sAu/NiFe pz orbital of O are hybridized and form energetically separated
+LDH at an overpotential of 280 mV can reach 129.8 mA cm−2, σ bonding state at −5.6 eV and σ* antibonding state at 0.2 eV
+which is about 6 times higher than that on NiFe LDH (21.5 (Figures S17 and S18). The spatially redistribution of d orbitals
+mA cm−2) (Figure S7). The higher OER activity of sAu/NiFe gives rise to the charge density around the ring region of Au
+LDH is also evidenced by speciﬁc (calculated by electrochemi- parallel to the surface direction. The integrated charge density
+cally active surface area) and mass activities (Figure S8 and diﬀerence yields a net Au-to-LDH charge redistribution of 0.32
+Table S1). sAu/NiFe LDH show the advantages not only in e, which transfers to surrounding O, Ni and Fe atoms, thus
+improving OER activity but also lowering Au usage (Figures S9 facilitating the adsorption of OH− and modify the adsorption
+and S10). The smaller Tafel slope and larger turnover energies of O* and OOH* intermediates, resulting in low
+frequency of sAu/NiFe LDH suggest its faster OER kinetic overpotential in the rate-limiting step from O* to OOH*.
+rate (Figures S7 and S11). Consistently, the Nyquist plots In summary, DFT + U + vdW calculations on representative
+indicate a faster charge-transfer rate of sAu/NiFe LDH (Figure s
+ Au/NiFe LDH catalyst are used to predict and investigate the
+S12).45 In addition, sAu/NiFe LDH shows a nearly 100% origin of OER activity of LDH system and signiﬁcant OER
+Faradaic eﬃciency toward OER (Figure S13). We further enhancement by sAu-decoration. Subsequent experimental
+examine the stability of sAu/NiFe LDH (Figure 3c). After 2000 observations validate our theory model construction and
+continuous cycles, no obvious activity decay is observed. Also, simulations, providing evidence that each of sAu, NiFe
+the current density can maintain around 100 mA cm−2 for 20 h. oxyhydroxide transformed from LDH and LDH itself with
+Moreover, the HAADF-STEM image and XANES spectra interlayer CO32− anions has contributed to the local Au-catalyst
+highlight that atomically dispersed Au preserve in sAu/NiFe interface site and thus the excellent OER activity close to that
+LDH after OER test (Figures S14 and S15). As a result, sAu/ of ideal electrocatalyst. Importantly, this study may pave new
+NiFe LDH shows excellent OER activity and strong stability. avenues to the exploration and design of highly eﬃcient
+ To reveal the electrocatalytic mechanism experimentally, an electrocatalysts for energy conversion applications.
+
+ ■
+in situ Raman technology is employed. A series of Raman
+spectra for sAu/NiFe LDH are obtained as a function of the ASSOCIATED CONTENT
+applied potential during a CV sweep (from 1.12 to 1.44 V to *
+ S Supporting Information
+1.12 V), as shown in Figure 3d. During the anodic half sweep The Supporting Information is available free of charge on the
+from 1.12 to 1.32 V, the peaks observed at 462 and 535 cm−1 ACS Publications website at DOI: 10.1021/jacs.8b00752.
+are attributed to Ni−O vibrations of defective or disordered
+NiFe LDH nanocrystals. As the potential is swept anodically to Details of synthesis, characterization and computational
+1.44 V, at which OER occurs, the primary two peaks disappear methods (PDF)
+and new peaks at 475 and 559 cm−1 appear. The pair of new
+peaks is assigned to characteristic bands in NiOOH, indicating
+the LDHs have been transformed into oxyhydroxides under the
+ ■ AUTHOR INFORMATION
+ Corresponding Authors
+oxygen evolution potential. The result is consistent with our *bzhang@tju.edu.cn
+theory simulation for OER process of NiFe LDH. When the *weichaowang@nankai.edu.cn
+ 3878 DOI: 10.1021/jacs.8b00752
+ J. Am. Chem. Soc. 2018, 140, 3876−3879
+Journal of the American Chemical Society Communication
+
+ORCID (25) Oliver-Tolentino, M. A.; Vázquez-Samperio, J.; Manzo-Robledo,
+Lifei Xi: 0000-0002-5248-7936 A.; González-Huerta, R. d. G.; Flores-Moreno, J. L.; Ramírez-Rosales,
+ D.; Guzmán-Vargas, A. J. Phys. Chem. C 2014, 118, 22432.
+Shuhui Sun: 0000-0002-0508-2944 (26) Gorlin, M.; Chernev, P.; Ferreira de Araujo, J.; Reier, T.; Dresp,
+Bin Zhang: 0000-0003-0542-1819 S.; Paul, B.; Krahnert, R.; Dau, H.; Strasser, P. J. Am. Chem. Soc. 2016,
+Author Contributions 138, 5603.
+§ (27) Ahn, H. S.; Bard, A. J. J. Am. Chem. Soc. 2016, 138, 313.
+ These authors contributed equally.
+ (28) Trotochaud, L.; Young, S. L.; Ranney, J. K.; Boettcher, S. W. J.
+Notes Am. Chem. Soc. 2014, 136, 6744.
+The authors declare no competing ﬁnancial interest. (29) Dong, Y.; Zhang, P.; Kou, Y.; Yang, Z.; Li, Y.; Sun, X. Catal. Lett.
+
+■
+ 2015, 145, 1541.
+ (30) Friebel, D.; Louie, M. W.; Bajdich, M.; Sanwald, K. E.; Cai, Y.;
+ ACKNOWLEDGMENTS Wise, A. M.; Cheng, M. J.; Sokaras, D.; Weng, T. C.; Alonso-Mori, R.;
+This work was ﬁnancially supported by the National Natural Davis, R. C.; Bargar, J. R.; Norskov, J. K.; Nilsson, A.; Bell, A. T. J. Am.
+Science Foundation of China (No. 21422104), National key Chem. Soc. 2015, 137, 1305.
+research and development program (No. 2016YFB0901600), (31) Lu, Z.; Xu, W.; Zhu, W.; Yang, Q.; Lei, X.; Liu, J.; Li, Y.; Sun, X.;
+ Duan, X. Chem. Commun. 2014, 50, 6479.
+the Natural Science Foundation of Tianjin City (No.
+ (32) Kuo, C.-H.; Li, W.; Pahalagedara, L.; El-Sawy, A. M.; Kriz, D.;
+17JCJQJC44700 and No. 16JCZDJC30600) and the Helm- Genz, N.; Guild, C.; Ressler, T.; Suib, S. L.; He, J. Angew. Chem., Int.
+holtz Association (VH-NG-1140). Ed. 2015, 54, 2345.
+
+■ REFERENCES
+ (1) Liang, L.; Cheng, H.; Lei, F.; Han, J.; Gao, S.; Wang, C.; Sun, Y.;
+ (33) Zhao, S.; Jin, R.; Abroshan, H.; Zeng, C.; Zhang, H.; House, S.
+ D.; Gottlieb, E.; Kim, H. J.; Yang, J. C.; Jin, R. J. Am. Chem. Soc. 2017,
+ 139, 1077.
+ (34) Ng, J. W. D.; García-Melchor, M.; Bajdich, M.; Chakthranont,
+Qamar, S.; Wei, S.; Xie, Y. Angew. Chem., Int. Ed. 2015, 54, 12004. P.; Kirk, C.; Vojvodic, A.; Jaramillo, T. F. Nat. Energy 2016, 1, 16053.
+ (2) Cheng, F.; Chen, J. Chem. Soc. Rev. 2012, 41, 2172. (35) Ge, X.; Chen, L.; Zhang, L.; Wen, Y.; Hirata, A.; Chen, M. Adv.
+ (3) Meng, F.; Zhong, H.; Bao, D.; Yan, J.; Zhang, X. J. Am. Chem. Soc. Mater. 2014, 26, 3100.
+2016, 138, 10226. (36) Qiao, B.; Wang, A.; Yang, X.; Allard, L. F.; Jiang, Z.; Cui, Y.; Liu,
+ (4) Xia, B. Y.; Yan, Y.; Li, N.; Wu, H. B.; Lou, X. W.; Wang, X. Nat. J.; Li, J.; Zhang, T. Nat. Chem. 2011, 3, 634.
+Energy 2016, 1, 15006. (37) Liu, P.; Zhao, Y.; Qin, R.; Mo, S.; Chen, G.; Gu, L.; Chevrier, D.
+ (5) Zhang, J.; Hu, Y.; Liu, D.; Yu, Y.; Zhang, B. Adv. Sci. 2017, 4, M.; Zhang, P.; Guo, Q.; Zang, D.; Wu, B.; Fu, G.; Zheng, N. Science
+1600343. 2016, 352, 797.
+ (6) Feng, L. L.; Yu, G.; Wu, Y.; Li, G. D.; Li, H.; Sun, Y.; Asefa, T.; (38) Flytzani-Stephanopoulos, M. Acc. Chem. Res. 2014, 47, 783.
+Chen, W.; Zou, X. J. Am. Chem. Soc. 2015, 137, 14023. (39) Wang, H. Y.; Hung, S. F.; Chen, H. Y.; Chan, T. S.; Chen, H.
+ (7) Long, X.; Li, G.; Wang, Z.; Zhu, H.; Zhang, T.; Xiao, S.; Guo, W.; M.; Liu, B. J. Am. Chem. Soc. 2016, 138, 36.
+Yang, S. J. Am. Chem. Soc. 2015, 137, 11900. (40) Bajdich, M.; García-Mota, M.; Vojvodic, A.; Nørskov, J. K.; Bell,
+ (8) Gao, M.-R.; Xu, Y.-F.; Jiang, J.; Zheng, Y.-R.; Yu, S.-H. J. Am. A. T. J. Am. Chem. Soc. 2013, 135, 13521.
+Chem. Soc. 2012, 134, 2930. (41) Zhang, B.; Zheng, X.; Voznyy, O.; Comin, R.; Bajdich, M.;
+ (9) Xu, L.; Jiang, Q.; Xiao, Z.; Li, X.; Huo, J.; Wang, S.; Dai, L. Angew. García-Melchor, M.; Han, L.; Xu, J.; Liu, M.; Zheng, L.; Garcia de
+Chem., Int. Ed. 2016, 55, 5277. Arquer, F. P.; Dinh, C. T.; Fan, F.; Yuan, M.; Yassitepe, E.; Chen, N.;
+ (10) Qi, J.; Zhang, W.; Xiang, R.; Liu, K.; Wang, H. Y.; Chen, M.; Regier, T.; Liu, P.; Li, Y.; De Luna, P.; Janmohamed, A.; Xin, H. L.;
+Han, Y.; Cao, R. Adv. Sci. 2015, 2, 1500199. Yang, H.; Vojvodic, A.; Sargent, E. H. Science 2016, 352, 333.
+ (11) Jung, J.-I.; Risch, M.; Park, S.; Kim, M. G.; Nam, G.; Jeong, H.- (42) Jiao, Y.; Zheng, Y.; Jaroniec, M.; Qiao, S. Z. Chem. Soc. Rev.
+Y.; Shao-Horn, Y.; Cho, J. Energy Environ. Sci. 2016, 9, 176. 2015, 44, 2060.
+ (12) Jin, Y.; Wang, H.; Li, J.; Yue, X.; Han, Y.; Shen, P. K.; Cui, Y. (43) Desilvestro, J.; Corrigan, D. A.; Weaver, M. l. J. J. Electrochem.
+Adv. Mater. 2016, 28, 3785. Soc. 1988, 135, 885.
+ (13) Wang, Y.; Jiang, K.; Zhang, H.; Zhou, T.; Wang, J.; Wei, W.; (44) Man, I. C.; Su, H.-Y.; Calle-Vallejo, F.; Hansen, H. A.; Martínez,
+Yang, Z.; Sun, X.; Cai, W. B.; Zheng, G. Adv. Sci. 2015, 2, 1500003. J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.;
+ (14) Guo, Y.; Tong, Y.; Chen, P.; Xu, K.; Zhao, J.; Lin, Y.; Chu, W.; Rossmeisl, J. ChemCatChem 2011, 3, 1159.
+Peng, Z.; Wu, C.; Xie, Y. Adv. Mater. 2015, 27, 5989. (45) Jiang, N.; You, B.; Sheng, M.; Sun, Y. ChemCatChem 2016, 8,
+ (15) Jia, X.; Zhao, Y.; Chen, G.; Shang, L.; Shi, R.; Kang, X.; 106.
+Waterhouse, G. I. N.; Wu, L.-Z.; Tung, C.-H.; Zhang, T. Adv. Energy
+Mater. 2016, 6, 1502585.
+ (16) Gao, M.; Sheng, W.; Zhuang, Z.; Fang, Q.; Gu, S.; Jiang, J.; Yan,
+Y. J. Am. Chem. Soc. 2014, 136, 7077.
+ (17) Liu, W.; Liu, H.; Dang, L.; Zhang, H.; Wu, X.; Yang, B.; Li, Z.;
+Zhang, X.; Lei, L.; Jin, S. Adv. Funct. Mater. 2017, 27, 1603904.
+ (18) Feng, J.-X.; Xu, H.; Dong, Y.-T.; Ye, S.-H.; Tong, Y.-X.; Li, G.-R.
+Angew. Chem., Int. Ed. 2016, 55, 3694.
+ (19) Ping, J.; Wang, Y.; Lu, Q.; Chen, B.; Chen, J.; Huang, Y.; Ma,
+Q.; Tan, C.; Yang, J.; Cao, X.; Wang, Z.; Wu, J.; Ying, Y.; Zhang, H.
+Adv. Mater. 2016, 28, 7640.
+ (20) Fan, K.; Ji, Y.; Zou, H.; Zhang, J.; Zhu, B.; Chen, H.; Daniel, Q.;
+Luo, Y.; Yu, J.; Sun, L. Angew. Chem., Int. Ed. 2017, 56, 3289.
+ (21) Song, F.; Hu, X. Nat. Commun. 2014, 5, 4477.
+ (22) Gong, M.; Li, Y.; Wang, H.; Liang, Y.; Wu, J. Z.; Zhou, J.; Wang,
+J.; Regier, T.; Wei, F.; Dai, H. J. Am. Chem. Soc. 2013, 135, 8452.
+ (23) Lu, X.; Zhao, C. Nat. Commun. 2015, 6, 6616.
+ (24) Hou, Y.; Lohe, M. R.; Zhang, J.; Liu, S.; Zhuang, X.; Feng, X.
+Energy Environ. Sci. 2016, 9, 478.
+
+ 3879 DOI: 10.1021/jacs.8b00752
+ J. Am. Chem. Soc. 2018, 140, 3876−3879

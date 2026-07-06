@@ -1,0 +1,44 @@
+这次抽到的关键信息包括：
+
+在 Ag_Au_metal_conditions_input_table.csv 里：
+
+- Au(111) 暴露/涉及晶面 (111)
+- 吸附物/反应物：O2，覆盖度 1/3−2/3 monolayer
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：Au(111), Au(100), ORR, OER, surface coverage
+- Au(100) 暴露/涉及晶面 (100)
+- 吸附物/反应物：O2，覆盖度 High OH or mixed OH/O
+
+在 Ag_Au_metal_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - gold
+- 材料参数：
+  - single crystal
+  - electrode
+- 反应参数：
+  - 0.6−1.1 VRHE
+  - 1.4−1.6 VRHE
+- 性能：
+  - electrocatalytic activity
+  - selectivity
+  - long-term stability
+- 表面/晶面：
+  - Au(111)
+  - Au(100)
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - OH*
+  - OOH*
+  - 1/3−2/3 monolayer OH*
+  - high OH or mixed OH/O coverage
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - GCE-DFT
+  - surface coverage
+  - electrochemistry
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape

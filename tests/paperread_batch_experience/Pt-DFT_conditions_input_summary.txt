@@ -1,0 +1,42 @@
+这次抽到的关键信息包括：
+
+在 Pt-DFT_conditions_input_table.csv 里：
+
+- Pt, Pb
+- 吸附物/反应物：O2, H2O
+- 建模关键词：oxygen reduction reaction, active site, oxygen vacancy, adsorbate
+- 建模关键词：activation energy, tensile stress effect, oxygen adsorption energy
+
+在 Pt-DFT_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Pt10Pb/C
+  - Pt/C
+  - Pt10Ni/C
+- 材料参数：
+  - 未提取
+- 反应参数：
+  - 0.90 VRHE
+  - 0.973 V
+  - 0.984 V
+  - 0.999 V
+  - 29.89 kJ/mol
+- 性能：
+  - activation energy
+  - oxygen adsorption energy
+- 表面/晶面：
+  - 未提取
+- 缺陷/活性位点：
+  - 未提取
+- 吸附/覆盖度：
+  - O
+  - OH
+  - OOH
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - DFT
+  - kinetic characteristics
+  - first-principles calculation
+- 推荐建模任务：
+  - 未提取

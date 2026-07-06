@@ -1,0 +1,46 @@
+这次抽到的关键信息包括：
+
+在 d1nr02235k_conditions_input_table.csv 里：
+
+- TM@Sb (TM = Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Ru, Rh, Pd, Ag, Cd, Ir, Pt, Au)
+- 团簇/单原子建模线索：Single Atom
+- 建模关键词：SAC, antimonene, transition metal, single-atom catalyst
+- Pt@Sb
+- 建模关键词：ΔG*H, overpotential (ηOER = 0.48 V, ηORR = 0.50 V)
+- Ag@Sb
+
+在 d1nr02235k_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - antimonene
+- 材料参数：
+  - monolayer
+  - single Sb vacancy
+- 反应参数：
+  - overpotential (ηOER) 0.48 V
+  - overpotential (ηORR) 0.50 V
+- 性能：
+  - stability
+  - good electrical conductivity
+  - excellent HER performance
+  - excellent OER performance
+  - excellent ORR performance
+- 表面/晶面：
+  - Sb monolayer
+- 缺陷/活性位点：
+  - Sb vacancy
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - Ir
+  - Pt
+  - Ag
+  - Pd
+  - Rh
+  - Cd
+- 建模关键词：
+  - density functional theory
+  - electrocatalysts
+  - trifunctional
+- 推荐建模任务：
+  - single_atom_site

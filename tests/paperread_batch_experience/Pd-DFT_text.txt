@@ -1,0 +1,672 @@
+ARTICLE
+ Size-Dependent Subnanometer Pd
+ Cluster (Pd4, Pd6, and Pd17) Water
+ Oxidation Electrocatalysis
+ Gihan Kwon,†,# Glen A. Ferguson,†,# Christopher J. Heard, ,# Eric C. Tyo,^ Chunrong Yin,† Janae DeBartolo,‡
+
+ )
+ Sönke Seifert,‡ Randall E. Winans,‡ A. Jeremy Kropf,§ Jeffrey Greeley,¥ Roy L. Johnston, Larry A. Curtiss,†,¥,*
+
+ )
+ Michael J. Pellin,†,* and Stefan Vajda†,¥,^,*
+ †
+ Materials Science Division, ‡X-ray Science Division, §Chemical Sciences and Engineering Division, and ¥Nanoscience and Engineering Division, Argonne National
+
+ )
+ Laboratory, 9700 South Cass Avenue, Argonne, Illinois 60439, United States, School of Chemistry, University of Birmingham, Edgbaston, Birmingham B15 2TT,
+ United Kingdom, and ^Department of Chemical and Environmental Engineering, School of Engineering & Applied Science, Yale University, 9 Hillhouse Avenue,
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ New Haven, Connecticut 06520, United States. #These authors contributed equally to this work.
+
+ ABSTRACT Water oxidation is a key catalytic step for electrical
+ Downloaded via UNIV OF TOKYO on January 15, 2026 at 09:16:43 (UTC).
+
+ fuel generation. Recently, signiﬁcant progress has been made in
+ synthesizing electrocatalytic materials with reduced overpotentials
+ and increased turnover rates, both key parameters enabling
+ commercial use in electrolysis or solar to fuels applications. The
+ complexity of both the catalytic materials and the water oxidation
+ reaction makes understanding the catalytic site critical to improving
+ the process. Here we study water oxidation in alkaline conditions
+ using size-selected clusters of Pd to probe the relationship between
+ cluster size and the water oxidation reaction. We ﬁnd that Pd4 shows no reaction, while Pd6 and Pd17 deposited clusters are among the most active (in
+ terms of turnover rate per Pd atom) catalysts known. Theoretical calculations suggest that this striking diﬀerence may be a demonstration that bridging
+ PdPd sites (which are only present in three-dimensional clusters) are active for the oxygen evolution reaction in Pd6O6. The ability to experimentally
+ synthesize size-speciﬁc clusters allows direct comparison to this theory. The support electrode for these investigations is ultrananocrystalline diamond
+ (UNCD). This material is thin enough to be electrically conducting and is chemically/electrochemically very stable. Even under the harsh experimental
+ conditions (basic, high potential) typically employed for water oxidation catalysts, UNCD demonstrates a very wide potential electrochemical working
+ window and shows only minor evidence of reaction. The system (soft-landed Pd4, Pd6, or Pd17 clusters on a UNCD Si-coated electrode) shows stable
+ electrochemical potentials over several cycles, and synchrotron studies of the electrodes show no evidence for evolution or dissolution of either the
+ electrode material or the clusters.
+
+ KEYWORDS: palladium . subnanometer clusters . nanocrystalline diamond . hybrid nanostructures . nanoparticles . catalysis .
+ electrocatalysis . water oxidation . water splitting . X-ray absorption . GIXAS . GIXAFS . X-ray scattering . GISAXS
+
+ E
+ ﬃcient methods for splitting water overpotential, η, is the potential required
+ are a key grand scientiﬁc challenge above the standard reaction potential (1.23 V
+ for meeting the world's fuel needs at pH = 0). This critical step occurs in acid
+ over the next century.13 Electrochemical via the reaction 2H2O f 4Hþþ 4e þ O2
+ water splitting is a ﬁrst step for the produc- and in base via the reaction 4OH f 2H2O * Address correspondence to
+ tion of either H2 or other fuels from the þ 4e þ O2. In a fuel cell, where the inverse vajda@anl.gov,
+ carbon oxides. It consists of two reactions; acid ORR is employed to produce energy, pellin@anl.gov,
+ curtiss@anl.gov.
+ the hydrogen evolution reaction (HER) and this poor catalytic performance results
+ the oxygen evolution reaction (OER). Of in the need for a high Pt catalyst loading Received for review February 14, 2013
+ these, the OER is presently the least eﬃ- on the cathode and adds signiﬁcantly to and accepted June 25, 2013.
+ cient, requiring a high overpotential (η = the cost of this device.4 In electrolyzers, the
+ Published online June 25, 2013
+ 0.30.5 V depending on the catalytic ma- reaction in base is often employed to im- 10.1021/nn400772s
+ terial and support chosen) for the reaction prove catalytic performance, and extensive
+ to proceed even at low turnover rates. The recent eﬀort has been employed to identify C 2013 American Chemical Society
+
+ KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5808
+ www.acsnano.org
+ ARTICLE
+Figure 1. (a) Performance of size-selected palladium cluster on UNCD under pH 13.6 (1 M NaOH) with current densities
+normalized to the dipped chip area, Schip, for the blank UNCD support (gray, dashed line), Pd4 (blue), Pd6 (green), and Pd17
+(red) clusters. The fraction of surface area, Scluster, covered by clusters was 9.4, 7.9, and 11.0% for the Pd4, Pd6, and Pd17
+clusters, respectively, calculated as Scluster/Schip  100. (b) Background corrected (i.e., after subtraction of the current of the
+blank UNCD support) currents normalized for the cluster-covered area.
+
+more eﬃcient, less expensive electrocatalysts for the diﬀerence in reactivity based on cluster composi-
+OER.3,520 tion consistent with the experimental evidence.
+ Recently, we have had success in synthesizing
+subnanometer metal and metal oxide clusters with RESULTS AND DISCUSSION
+very narrow size distributions on thin ﬁlm support Oxygen Evolution Reaction Activity of Pd Subnanometer
+materials (e.g., alumina).2124 These materials show Clusters. The OER activity of three Pd clusters (Pd4,
+excellent activity and speciﬁcity for several hetero- Pd6, and Pd17) has been measured on an ultranano-
+geneous, oxidative reactions2530 along with surpris- crystalline diamond film electrode at pH 13.6 (1 M
+ing stability.23,24,31 Here we explore the eﬃciency and NaOH). Figure 1a shows linear sweep voltammetry
+turnover rate for three Pd cluster sizes (Pd4, Pd6, and (LSV) curves of Pd4 (blue), Pd6 (green), and Pd17 (red)
+Pd17) on thin ultrananocrystalline diamond (UNCD) clusters after 500 s cleaning by chronoamperometry at
+supports for the OER. The study is important since (1) 1.7 V. A background curve (gray) for a UNCD-coated
+small clusters have not been explored for electrocata- electrode without deposited Pd clusters is also shown.
+lysis, (2) clusters of this size are essentially single The blank UNCD used had the same dimensions
+catalytic sites, (3) their activity can provide valuable and identical batch as the cluster-covered samples.
+insights into catalytic mechanisms, and (4) calculations Immediately apparent is the large increase in anodic
+can be done at suﬃcient accuracy to allow guidance current between Pd6 (green) or Pd17 (red) and the UNCD
+for improvement. support (gray). This difference is more remarkable con-
+ We ﬁnd that the system (soft-landed Pd4, Pd6, or sidering that only about 10% of the total surface area of
+Pd17 clusters on a UNCD-coated Si electrode) is stable the electrode was coated with Pd clusters; moreover,
+under the harsh electrochemical conditions of the within this area, as low as 0.1 atomic monolayer equiva-
+OER (pH = 13.1 at 1.8 V vs RHE). To our knowledge, lent of Pd metal (1.5  1014 atoms/cm2) was deposited.
+this is the ﬁrst demonstration that catalysts in this size In considering the cluster size dependence of OER
+range are stable as electrochemical electrodes. We also activity, it is also clear that the activity of palladium
+show that the overpotential and turnover frequency clusters increases with particle size (see also Figure S1
+are strongly size-dependent. The best of these catalysts in Supporting Information). A very interesting feature is
+shows competitive eﬃciencies and very high turnover observed for the smallest size Pd4 clusters, where no
+rates per atom (a unit of comparison that has been increase in activity can be detected.
+adopted by the thin ﬁlm OER community5,7,11,18). This is more apparent in Figure 1b, where back-
+ The dramatic cluster size dependence is particularly ground corrected (i.e., after subtraction of the current
+interesting given that our catalysts are deposited as of the blank UNCD support) currents normalized for
+essentially single catalytic sites and that our deposition the cluster-covered area. Here, a slight drop within the
+method allows us to measure for the ﬁrst time the estimated uncertainty (see Methods section) is ob-
+number of “sites” on our electrodes. Density functional served for Pd4. We hypothesize that more careful
+calculations were employed to explore the origin of studies might reveal that the drop is consistent with
+the diﬀerence in electrochemical activity between the fraction of UNCD surface sites blocked by the Pd4
+the Pd4 and Pdx (x = 6 and 17) clusters. Calculations clusters, which may provide a selective route to “heal”
+of the reaction thermodynamics under electrochemi- surface defects where deterioration of the surface of
+cal conditions allow us to propose an explanation for the support may occur.
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5809
+ www.acsnano.org
+ ARTICLE
+ a
+TABLE 1. Per Pd Cluster and Per Pd Atom Turnover Rates at 1.626 V vs RHE (η = 351 mV)
+
+ TOR/Pdn TOR per cluster TOR/Pd TOR per total TOR/surface Pd atom TOR/surface Co atom
+ (this work) atom (this work) (based on ref 7) (surface of bulk Pd) (based on ref 7) (CoOx on Au surface)
+cluster [1  cluster1 s1] [1  atom1 s1] [1  atom1 s1] [1  atom1 s1]
+
+ Pd4 0.15 0.038 0.024 1.24
+ Pd6 4.03 0.68
+ Pd17 10.17 0.60
+a
+ We note that water oxidation is a four-electron transfer process, so per electron rate has been divided by a factor of four. The turnover rates are compared to published studies
+of Pd metal and Co oxide deposited on Au.7 In this table, we use the background corrected results displayed in Figure 1b. The reported values were calculated based on
+the background corrected current intensities plotted in Figure 1b and the knowledge of the metal loading of the immersed area. Based on the ∼5% estimated uncertainties
+in the metal loading, ∼10% estimated uncertainties in the determination of the immersed area and current measurement, the estimated uncertainty of the reported data is
+∼15% or smaller.
+
+ Stability of the system is demonstrated in Figures S3 Table 1 compares the result of our cluster deposited
+and S4. In Figure S3, we show that at an applied electrodes to previous work on Pd metal and to
+potential of 1.7 V vs RHE the current density shows ∼0.4 monolayers of cobalt oxide on Au.7 Clearly these
+an initial decay that stabilizes after a few minutes. We clusters are signiﬁcantly more active than Pd metal
+interpret this as an initial surface cleaning. Figure S4 surfaces. In fact, the activities are comparable to
+demonstrates stable cyclic voltammetry data for the Ir (TOR = 0.64 atom1 s1),7 the most active metal for
+three cycles following the “cleaning” pulse. We note OER, and to cobalt oxide deposited on Au electrodes
+that this does not ensure “durability” for an extended (TOR = 1.24 atom1 s1).7 It is also interesting to note
+period. However, their durability is suﬃcient to deter- that the per atom turnover rates of Pd6 and Pd17 are
+mine the catalytic properties of this catalytic site. similar despite the likelihood that only a fraction of the
+ One unique aspect of the sample fabrication meth- Pd17 atoms occupy surface sites, in contrast to Pd6.
+od here is the ability to use the deposition current to All cluster samples showed stable performance
+calculate accurately the number of deposited clusters during four voltammetric cycles applied, with currents
+(whose atom number represents an upper bound on within the estimated experimental 5% uncertainty.
+the number of catalytic reaction sites). We have used Further, as explained below, the amount of Pd metal
+the background corrected current of Figure 1b and the is also constant during cycling.
+known concentration of deposited clusters to calculate GIXAS Studies of Pd Cluster Electrodes. Following elec-
+the OER turnover rates. These data are displayed in trochemical cycling, the electrodes were investigated
+Table 1. at the 10-ID beamline of Advanced Photon Source
+ Based on the ∼5% estimated uncertainties in the using grazing incidence X-ray absorption spectroscopy
+metal loading, ∼10% estimated uncertainties in the (GIXAS). Figure 2 displays GIXAS data, acquired for uni-
+determination of the immersed area and current mea- mmersed (as deposited, black) and immersed, cycled
+surement, the estimated uncertainty of the reported (red) areas of electrodes with Pd4 (Figure 2a,b), Pd6
+data is better than 15%. (Figure 2c,d), and Pd17 (Figure 2e,f) clusters investi-
+ We have chosen to calculate these turnover rates gated. The concordance of the XANES features of the
+at the same overpotential reported recently for water bulk PdO standard and each cluster sample demon-
+oxidation studies of several metal and cobalt oxide- strates that clusters' oxidation state resembles that of
+coated metal electrodes at similar pH.7 bulk PdO. The difference in the initial peak shape likely
+ Several interesting aspects are revealed by Table 1. arises from subnanometer size effects, as also reported
+First, as is clear in Figure 1, Pd4 clusters supported for other subnanometer size clusters.36,42,43
+on ultrananocrystalline diamond ﬁlm electrodes if The purpose of this ex situ work was to compare
+anything exhibit a small decrease in reactivity when the (re)oxidation properties of the three cluster sizes
+compared to UNCD electrodes alone. A drop in activity in a standard laboratory environment and to look for
+might arise either from site blocking or from interac- any potential lasting changes that might arise during
+tions that change the electronegativity of the UNCD electrochemical cycling. A comparison of the GIXAS
+surface atoms (such eﬀects have been seen for the OER spectra of Pd clusters with standards of Pd metal (gray,
+activity of Au clusters with small additions of Co32). The solid) and PdO (gray, dotted) reveal that all three
+change points out a key assumption in calculating the cluster samples contain oxidized palladium species.
+per Pd atom and per Pd cluster turnover rates of these A comparison of immersed, cycled spectra with
+electrode materials, namely, that the support activity is those that were never immersed indicates only very
+not signiﬁcantly changed by cluster deposition. The small changes resulting from electrochemical cycling
+Pd4 result supports this assumption. The turnover rates under the conditions employed here (Figure 2a,c,e).
+for Pd6 and Pd17 are, in contrast to Pd4, signiﬁcant. The number of Pd atom absorbers in each sample is
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5810
+ www.acsnano.org
+ ARTICLE
+ by electrochemical cycling. A change in the oxidizabil-
+ ity as a function of cluster size may be a possible clue to
+ signiﬁcantly diﬀerent catalytic activity of these clusters
+ since several recent theoretical studies have commen-
+ ted on the sensitivity of the water oxidation reaction to
+ the water absorption energy.1,4,7,33 A much closer
+ view of the role of the oxidation state of clusters will
+ require in situ studies, however. In summary, for all
+ clusters, GIXAS spectra obtained on the cycled and
+ uncycled halves of the sample provide additional
+ evidence of the stability and leach resistance of the
+ subnanometer clusters (under harsh electrocatalytic
+ conditions for the ﬁrst time, to the best of our
+ knowledge).
+ Grazing Incidence Small Angle X-ray Scattering (GISAXS)
+ Studies of Pd Cluster Electrodes. We also collected GISAXS
+ data on the samples following electrochemical cycling
+ with the goal to investigate potential changes in
+ cluster sizes and of the morphology of the thin support
+ UNCD film. Figure 3 displays horizontal and vertical
+ cuts of GISAXS data, acquired with photons of 24 keV
+ energy, for unimmersed (as deposited, black) and
+ immersed, cycled (red) areas of electrodes with Pd4
+ (Figure 3a,b), Pd6 (Figure 3c,d), and Pd17 (Figure 3e,f)
+ clusters investigated, as well as a blank UNCD support
+ (Figure 3g,h). The identical patterns of the scattering
+ data obtained on the blank UNCD support indicate
+ a stable support without a change in its morphology
+ under electrocatalytic conditions (Figure 3g,h). Simi-
+ larly, the identical, featureless GISAXS patterns for
+ cluster electrodes (Figure 3af) show no evidence for
+ the growth of nanometer-sized cluster aggregates.
+ Previous studies demonstrate our ability to detect
+ clusters above 1 nm with high sensitivity,23,31,34,35 as
+ well as earliest stage of agglomeration of sub-
+ nanometer clusters.30,36 It is worth emphasizing the
+Figure 2. X-ray absorption spectra (left) and enlarged edge lack of any feature of nanoparticle formation via
+region (right) for unimmersed (as deposited, black) and
+immersed and cycled (red) areas of electrodes with Pd4 (a,b),
+ aggregation of subnanometer clusters. This result
+Pd6 (c,d), and Pd17 (e,f) clusters investigated. An oﬀset was coupled with GIXAS demonstration that Pd atoms
+applied on spectra for clarity in (a), (c), and (e). The spectra of are not lost confirms that our samples have sintering-
+bulk Pd(0) (foil) and Pd(II)O standards are shown, as well, for
+comparison.
+ and leaching-resistant subnanometer clusters under
+ electrocatalytic conditions.
+within experimental error (∼10%) identical. This de- Density Functional Calculations of the O2 Evolution Thermo-
+monstrates that Pd did not dissolve from our electrode chemistry by Pd Subnanometer Clusters. An understanding
+during electrochemical experiments. of the palladium cluster OER can be gained by cal-
+ An expanded look at the near edge spectra culating the thermochemistry of the most important
+(Figure 2b,d,f) indicates subtle diﬀerences for Pd4 intermediates for each of the four-electron transfer
+clusters in comparison with either Pd6 or Pd17. The electrochemical reactions required for water oxidation.
+almost identical spectra of immersed and unimmersed The OER activity of each cluster type is investigated
+Pd4 clusters (Figure 2b) indicate almost no diﬀerence in using the method of Rossmeisl et al.3 In this method,
+oxidation state caused by electrochemical cycling. the thermochemistry of each OER reaction step is cal-
+Pd6 and Pd17 clusters (Figure 2d,f) show a small culated with respect to the reversible hydrogen elec-
+oxidation state change. However, we note that these trode including the applied electrochemical potential.
+clusters as well remain clearly oxidized and that While this method has been previously used to model
+small changes such as these can arise during spectra the water electrolysis on metal oxides surfaces (e.g.,
+processing. The most important ﬁnding from XAS is RuO2, IrO2, and TiO2),3 to our knowledge, this is the
+that the clusters remain largely unaﬀected, long-term, first time it has been applied to subnanometer clusters.
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5811
+ www.acsnano.org
+ ARTICLE
+Figure 3. Horizontal (qy) and vertical (qz) cuts of the GISAXS data, acquired with photons of 24 keV energy, for unimmersed (as
+deposited) and immersed area for the Pd4 (a,b), Pd6 (c,d), and Pd17 (e,f) clusters investigated, as well as blank UNCD support (g,
+h). There was a similar oﬀset applied for clarity between the unimmersed and immersed curves. The apparent peak at
+∼4 nm1 in the vertical cuts is caused by scattering from the Kapton window; qy and qz denote scattering vectors in the
+horizontal and vertical plane, respectively.
+
+The Rossmeisl et al.3 method involves evaluating the
+thermodynamic potential required to drive each of the
+four-electron transfer reactions (Figure 4d) required for
+water oxidation. We note that this method should only
+be considered a first-order approximation due its neglect
+of kinetic barriers. In this method, the free energy change
+for each electron transfer step is calculated using the
+chemical potential of hydrogen, that is, *AH f *A þ Hþ þ
+e calculated as *AH f *A þ 1/2H2.
+ An ideal catalyst would have a potential at each
+electron transfer step of 1.355 eV at a potential of 0 V on
+the reversible hydrogen scale (note that this is 1.23 V
+when referenced to the free energy of water), achiev-
+ing the needed energy to drive the overall reaction at Figure 4. Structures used for calculation of the thermo-
+the lowest possible cell potential. Any thermodynamic chemistry of the OER reactions (S0fS4 in e) of the (a) Pd4O4,
+ (b) Pd4, (c) Pd4O3, and (d) Pd6O6 clusters. For ad, the “*”
+step larger than this ideal minimum potential will result indicates the reaction sites. For the Pd4O3 cluster, three sites
+in an overpotential being needed to drive the OER were explored labeled *1 for site 1, *2 for site 2, and *3 for site
+reaction reducing the eﬃciency of the process. Any 3. (e) Changes in free energy for the intermediates of the
+ electrolysis of water by the subnanometer clusters: Pd4
+thermodynamic step smaller than this ideal potential (dashed line), Pd4O3 site 1 (blue line), Pd4O3 site 2 (green
+results in the now necessary overpotential to be dis- line), and Pd6O6 (purple line) at U = 0 and pH = 0. The
+tributed among the remaining three reactions also products and reactants for each of the four-electron transfer
+ reactions are displayed on the S0 fS4 steps. Here the “*”
+lowering the OER eﬃciency. indicates a cluster attached product.
+ Given the four-electron transfer reactions required,
+a physical realization of the ideal catalyst would to liquid water for each of the important reaction
+have similar binding energy diﬀerences with respect intermediates (O, OH, and OOH).
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5812
+ www.acsnano.org
+ ARTICLE
+ a
+TABLE 2. ΔE and ΔΔE for Each Reaction Step of the Reactions Steps Shown in Figure 4e
+
+ OER palladium pathway
+
+ cluster
+
+ Pd4 Pd4O3 top site Pd4O3 bridge site Pd6O6
+
+ coordinate ΔE ΔΔE ΔE ΔΔE ΔE ΔΔE ΔE ΔΔE
+
+* þ 2(H2O) 0.00 0.00 0.00 0.00
+*OH þ H2O þ (Hþ þ e) 0.47 0.47 0.31 0.31 0.55 0.55 0.19 0.19
+*O þ H2O þ 2(Hþ þ e) 2.14 1.67 2.36 2.05 2.39 1.84 1.94 1.75
+*OOH þ 3(Hþ þ e) 3.37 1.23 3.51 1.15 3.71 1.33 3.59 1.66
+* þ O2 þ 4(Hþ þ e) 5.42 2.06 5.42 1.92 5.42 1.71 5.42 1.83
+a
+ All values are in eV. The value of O2 is determined as a parameter of the equation H2O f 1/2O2 þ 2H using the gas phase water values of ZPE = 0.56 eV and TS = 0.67 eV
+(0.035 bar and 300 K). The ﬁnal value of the O2 energy is 9.55 eV. This avoids calculating the O2 energy which is poorly described by DFT.
+
+ The reactions for the chart in Figure 4e are as bridges two Pd atoms. For this site (as with all Pd
+follows: clusters investigated), the largest energy diﬀerence
+ occurs between the S3 and S4 reaction steps, which
+ 2H2 O f OH þ (Hþ þ e  ) (1)
+ corresponds to the diﬀerences in the adsorption en-
+ ergies of the *OOH adsorbate and O2 with respect to
+ OH þ H2 O f O þ 2(Hþ þ e  ) (2)
+ liquid water. This diﬀerence (U = 1.83 eV) corresponds
+ to an overpotential of ∼0.6 eV which is in reasonable
+ O þ H2 O f OOH þ 3(Hþ þ e  ) (3) agreement with experimental results shown above.
+ These results are for gas phase Pd6O6. While calcula-
+ OOH f O2 þ 4(Hþ þ e  ) (4) tions on supported Pdx clusters are beyond the scope
+ of this publication, the larger number of atoms in
+Another mechanism is possible with the *O þ H2O Pd6O6 and its three-dimensional nature provides reac-
+binding being replaced by 2 *OH binding; however, tion sites that are not proximate to the support.
+these calculations resulted in either an equal or higher For the Pd4O4 cluster, the only discovered reaction
+overpotential for these clusters. Density functional sites lead to unrealistically large geometric rearrange-
+calculations were used to determine the energy diﬀer- ments upon O, OH, and OOH adsorption. This rearran-
+ences between the four reaction steps on a variety gement is the result of a low Pd4O4 cluster atomization
+of gas phase Pd clusters chosen to help understand energy (0.9 eV/PdO unit less than Pd6O6). Therefore,
+the experimental results. These clusters included the Pd4O4 results are not included in Figure 4e. Sig-
+Pd4, Pd4O4, Pd4O3, and Pd6O6. The structures are given niﬁcant distortion is likely also to occur for a supported
+in Figure 4ad. The Pd4O3, Pd4O4, and Pd4 clusters Pd4O4 cluster since all atoms are in contact with the
+used global minimum structures, while the Pd6O6 surface due to the two-dimensional nature of the
+cluster is constructed by adding six oxygen atoms to cluster (see Figure 4a). This theoretical result for the
+the most stable bare metal cluster found in previous Pd4O4 cluster is consistent with the experimental
+studies,37 followed by complete geometric relaxation. studies above that show it is not active as an OER
+The Supporting Information includes greater detail on catalyst.
+structural optimization including information on Pd4Ox While Pd4O3 is unlikely to be present in the electro-
+(x = 0, 3, 4). chemical cell at the potentials and pH needed to drive
+ Among these clusters, the GIXAS studies described the OER, the Pd4O3 cluster structure allows theoretical
+above and the strongly oxidizing conditions in the investigation of the eﬀects of local oxidation state and
+electrochemical cell at OER potentials suggest that binding site geometry. We investigated four catalytic
+the Pd4O4 and Pd6O6 clusters represent the oxidation sites on the Pd4O3 cluster (two bridging, 2* and 4*, and
+states of the supported Pd4 and Pd6 clusters in the two atop sites, 1* and 3*). Of these two sites, we ﬁnd
+experiments. The Pd4 cluster is included for reference. that only the 1*, 2*, and 3* sites in Figure 4c allow stable
+The key intermediates for the clusters in the OERs coordination of all three (O, OH, and OOH) species
+were calculated, and the resulting energies refer- necessary for OER. We ﬁnd a distinct diﬀerence in the
+enced to the RHE (Table 2 and Figure 4e). catalytic eﬃciency of the bridging site when compared
+ For the Pd6O6 cluster, the only reaction site discov- to either of the atop sites (1.84 eV at site 2* vs 2.05 eV at
+ered that allows stable coordination of all three (O, OH, site 1* or 2.31 eV at site 3*). This is consistent with the
+and OOH) species necessary for OER is labeled * and results described above for Pd6O6 where the OER
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5813
+ www.acsnano.org
+ ARTICLE
+reaction occurs on the bridging site. In both cases, this
+is due to a balanced O and OH adsorbate energy.
+
+CONCLUSION
+ We have to our knowledge demonstrated for the
+ﬁrst time that subnanometer clusters are stable en-
+ough electrocatalysts to allow their use for fundamen-
+tal studies of catalytic processes. Further we have
+shown signiﬁcant size dependence in their activity.
+We ﬁnd that Pd4 shows no reaction, while Pd6 and Pd17
+deposited clusters are among the most active (in terms
+ Figure 5. Schematics of the cluster-covered area on the
+of turnover rate per Pd atom) catalysts known. sample immersed into the electrolyte showing three cluster
+ Ex situ GIXAS studies and the strongly oxidizing spots of ∼4 mm in diameter. The arrows below and above
+ the central immersion line indicate the incident X-ray beams
+conditions in the electrochemical cell at OER potentials
+ which, in addition to the determination of cluster area and
+suggest that the Pd4O4 and Pd6O6 clusters represent position, were used to characterize by GISAXS and GIXANES
+the oxidation states of the supported Pd4 and Pd6 the potential diﬀerences in particle size and oxidation state
+ of the unimmersed (as deposited) and in electrolyte im-
+clusters during OER and that the clusters are largely
+ mersed exposed clusters, respectively.
+unaﬀected by electrochemical cycling. The ability to
+synthesize size-speciﬁc clusters with atomic precision The per atom turnover rates of these subnanometer Pd
+allows direct comparison to this theory. Density func- clusters are within a factor of 2 of the best reported
+tional calculations provide an explanation of the ob- values and are 100 times more active than a Pd metal
+served size dependence of the oxidized clusters. electrodes (compared on a per surface atom basis
+ Theoretical calculations suggest that this striking under the conservative assumption that all cluster
+diﬀerence may be a demonstration that bridging atoms participate in the reaction; see Supporting
+PdPd sites are active for the oxygen evolution reac- Information). As for eﬃciency, the overpotentials here
+tion (OER) in Pd6O6. Overall, a key descriptor for an are similar to those measured for the best catalysts;
+eﬃcient OER Pd catalyst is a balancing of binding but not better.
+energy diﬀerences with respect to liquid water for each Within these caveats, Pd clusters appear to be inter-
+of the important reaction intermediates (O, OH, and esting and informative catalysts. In addition, it is likely
+OOH). This descriptor arises because the O, OH, and that both the clusters and/or the support materials can
+OOH binding energies govern the E's of each of the four be further optimized for the water oxidation reaction.
+reaction steps. Thus at U = 0, optimization of this descrip- For example, nanometer and larger Pd catalysts are not
+tor would result in the lowest overpotential. For these Pd as active as Co or Ir catalysts. Further additions of other
+clusters, the OOH is more strongly bound than the other elements (e.g., Ni) to Pd clusters has also been shown to
+species, resulting in the ∼0.6 V overpotential observed. signiﬁcantly enhance activity.14 Given that clusters in
+ In comparing the activity and eﬃciency of these this size range are stable, we believe that the prospects
+subnanometer catalysts with the many catalysts that for signiﬁcant catalyst improvements are excellent.
+have been reported, it has been the most useful to One approach to ﬁnding ideal clusters for water oxida-
+review the work of Yao and Bell who have done a tion would be to carry out DFT studies of clusters to
+careful job of calculating turnover rates from the identify reaction descriptors and then screen for opti-
+literature based on the number of surface atoms.6,7 mal clusters of diﬀerent compositions and sizes.
+
+METHODS during electrochemical cycling and in principle could contribute
+ Figure 5 is a schematic of the cathodes used in this study. to the currents measured. Second, the presence of an air/liquid
+They consisted of a UNCD-coated Si wafer with three soft- boundary can also lead to enhanced electrochemical current. We
+landed (4 mm diameter) regions of clusters. A separate anode minimized the ﬁrst issue by running identically prepared and
+was prepared for each Pd cluster size (Pd4, Pd6, or Pd17). processed Pd-free cathodes as a background test. These results
+Electrochemical studies were conducted with the cathode demonstrate that the current produced is quite small when
+partially immersed in the electrolyte. This sample geometry compared to signals from Pd catalyst electrodes. Subtraction of
+was ideal for subsequent X-ray synchrotron studies of Pd cluster blank electrode currents then could be done without inducing
+stability and oxidation state, allowing careful GISAXS and GIXAS signiﬁcant additional errors. With these results, we minimized the
+of the potential diﬀerences in particle size and oxidation state of second issue by rerunning OER reactions with the electrodes fully
+the unimmersed (as deposited) and in electrolyte immersed immersed (after synchrotron study). Here, enhanced currents
+exposed clusters, respectively. The separate cluster deposition were consistent with the added number of Pd clusters.
+spots provided for an assessment of the uniformity of deposition. Support Material. Silicon wafers coated with a 0.3 μm thick
+While advantageous for assessing the stability of clusters sub- ultrananocrystalline diamond film purchased from Advanced
+jected to water oxidation (a primary purpose of this study), we Diamond Technologies (UA25-100-0-p3)38 were used as the
+recognize that is does raise some electrochemical issues. First, support electrodes in this study. All electrodes used in this study
+both Si and UNCD material (including their edges) are exposed were constructed from 15  18 mm size chips diced from the
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5814
+ www.acsnano.org
+ ARTICLE
+same wafer. UNCD is an excellent support material for this study characterization of the oxidation state of the clusters in the
+with a wide, flat potential window showing excellent stability electrolyte immersed and unimmersed areas of the samples,
+under the harsh electrochemical oxidation conditions. The sur- GIXAS was also used for the determination of the exact area
+face roughness of the wafers was ∼7 nm rms, and the electrical of the immersed cluster area by scanning the sample along
+conductivity of the B-doped silicon wafer/UNCD film combina- the deposition spot (see Figure 5), at 12-ID-C by a 4-element
+tion of ∼1 ohm 3 cm was sufficient to both allow controlled “soft- Vortex fluorescence detector mounted parallel to the sample
+landing” of size-selected Pd clusters and to allow electroche- surface.
+mical studies. The wafers were used as purchased except for the Electrochemical Measurements and Calculation of Turnover Rates.
+dicing operation and for solvent cleaning prior to size-selected Electrochemical measurements of the samples were collected
+cluster deposition as described below. in a 3-arm van Dyne electrochemical cell housed in a home-built
+ Size-Selected Cluster Deposition. The size-selected subnano- Faraday cage to minimize electrical noise and block stray
+meter palladium cluster-based catalysts were prepared by room light during measurement. The compartment of working
+depositing a narrow size distribution of palladium clusters electrode has a flat quartz optical window (20 mm diameter)
+generated in a laser vaporization cluster source. The size- for photoelectrochemical measurements. Pt wire and Ag/AgCl
+selected cluster deposition method has been described in detail (BASi Analytical Instruments, MR-5275) were used as the coun-
+elsewhere.25 In brief, a molecular beam of palladium clusters ter and reference electrodes, respectively. A Metrohm Autolab,
+was generated by laser vaporization of a rotating palladium μAUTOLAB III potentiostat with NOVA software was used to
+target using helium as a buffer gas. This continuous cluster collect the electrochemical data, which were measured at room
+beam was guided through ion optics and a quadrupole assem- temperature. The electrolyte solution was 1 M NaOH (Fisher-
+bly. This assembly could be tuned to select clusters of a single Scientific, ACS grade), pH 14, prepared using Millipore water
+nuclearity. Then mass-selected, positively charged clusters were (Resistivity = 18.0 MΩ cm1, TOC < 5 ppb). For sample evalua-
+directed onto the UNCD-coated Si wafer support. For the three tion, only half of the area of the cluster spot was immersed into
+cluster sizes chosen here (Pd4, Pd6, and Pd17), the size distribu- the electrolyte to measure the electrochemical current. Chron-
+tion was 1, 2, and 3 atoms, respectively, around the main size oamperometry (CA) was first performed with a potential of
+(i.e., 4 ( 1, 6 ( 2, and 17 ( 3 atoms per cluster). The kinetic 0.7 mV vs Ag/AgCl to evaluate the stability of the catalyst under
+energy of the clusters was controlled by electrical potentials water oxidation conditions. Next, cyclic voltammetry (CV) was
+placed on the wafer. This “soft-landing” method allowed de- performed in the dark using a scan rate of 20 mV/s. Chrono-
+position without subsequent agglomeration. amperometry was performed with an applied potential of
+ The amount of deposited palladium metal was determined 0.7 V vs Ag/AgCl for 500 s. Cyclic voltammetry measurements
+by real-time monitoring of the deposition ﬂux on the support. were recorded from 0.3 to 0.8 V vs Ag/AgCl;the starting
+The total charge deposited could be determined with less potential was 0.3 V;with a scan rate of 20 mV/s.
+than 5% uncertainty. In order to avoid possible aggregation The per Pd atom and per Pdn cluster turnover rates (TOR)
+of clusters on the surface, the surface coverage was chosen were determined using the current measured on the cluster
+to be around 0.1 atomic ML equivalent of palladium metal for all samples after subtraction of the contribution by the blank
+samples, based on 1.53  1015 atoms/cm2 of a Pd (111) plane. UNCD support and the known number of deposited Pd atoms
+Three spots were deposited on each sample with size-selected and clusters. Turnover rate (electron/cluster/s) was current
+clusters (see Figure 5). The exact position and diameter of the density (mA/cm2) from immersed cluster spot  immersed
+cluster-covered area was later determined by GIXAS at 12-ID-C cluster spot area (cm2)  number of atom per cluster 
+beamline of the Advanced Photon Source, with an estimated coulomb/s/number of atoms on 0.1 ML/elementary charge/
+uncertainty of 0.5 mm or better. The diameters of the cluster 1000. Based on the 5% or better estimated uncertainties in the
+spots varied between 4 and 5 mm, depending on cluster size metal loading, and 15% or better estimated uncertainties in the
+and deposition conditions. determination of the immersed area and current measurement,
+ Grazing Incidence Small-Angle X-ray Scattering. GISAXS was used the estimated uncertainty of the reported TOR data is 15%
+to monitor possible changes in cluster size and in the morphol- or better.
+ogy of the support material induced by the electrochemical Density Functional Calculations. Energies were calculated with
+environment by comparing the in electrolyte immersed and KohnSham density functional theory with a plane-wave basis
+unimmersed parts of the cluster samples as well as the blank set using the Vienna ab initio simulation package (VASP). The
+(i.e., without clusters) UNCD support. GISAXS technique has ionelectron interactions were described using the generalized
+proven to be very powerful for studying subnanometer and gradient corrected PW91 functional and the PAW potentials
+nanometer-sized particles at surfaces and their transforma- with an energy cutoff of 400 eV. Calculations were spin-
+tions under vacuum conditions as well as in a reactive gas polarized. The species used a 20  20  20 Å3 supercell. The
+environment.34,35,39,40 Therefore, it can provide particle size results were converged until the forces were 0.03 eV/Å.
+distribution, distance between particles, and average aspect Rossmeisl et al.3 previously described the method used to
+ratio of metal particles in reaction conditions. The GISAXS reference the free energies to those of the standard hydrogen
+characterization was performed in helium environment using electrode. Due to the poor description of the OO bond in the
+X-rays of 24.3 keV energy in a specially built reaction cell O2 molecule by standard GGA methods, the value for O2 was
+of unique design26,28,29,36,4144 at the 12-ID-C beamline of calculated as a parameter in the free energy of the reaction
+the Advanced Photon Source, by using a Mar 165 CCD H2O f 1/2O2 þ H2 with the overall reaction energy set to the
+(1024  1024 pixel) detector. experimental value of 2.46 eV.
+ Grazing Incidence X-ray Absorption Spectroscopy (XAS). (X-ray ab- Birmingham Cluster Genetic Algorithm. The Birmingham cluster
+sorption near-edge spectroscopy, XANES, and extended X-ray genetic algorithm (BCGA) is an unbiased global optimization
+absorption fine structure spectroscopy, EXAFS) is a powerful method for gas phase clusters, containing a range of empirical
+technique that is able to monitor changes in oxidation state and potentials, including MurrellMotram47,48 and Gupta,4952 and
+local coordination environment of metal nanoparticles during this work employs the new DFT-GA mode.53
+the course of the catalytic reaction. Unlike the conventional In general, an initial population of 10 clusters is randomly
+approach, GIXAS provides information of near surface region generated within a spherical simulation cell, set to be consider-
+especially when the incident beam is near to or below critical ably larger than the diameter of the random cluster. This
+angle. Therefore, GIXAS shows enhanced surface sensitivity population of clusters is acted upon by mating and mutation
+which allows monitoring chemical change in samples with operators and locally relaxed to form a set of progeny. Ranking
+fractional monolayer coverage. At the 10-ID beamline, GIXAS according to a hyperbolic tangent ﬁtness function allows for
+data were collected using a bent Laue crystal analyzer coupled selection of the ﬁttest elements to survive into a new genera-
+to scintillation detectors. The analyzer was tuned to the tion, maintained at an approximately equal size to the previous
+Pd KR1 X-ray emission line.45 The collected data were analyzed one. The speciﬁc ﬁtness functions, mutation, and mating
+using the IFEFFIT interactive software package (with ATHENA operators are described in detail in refs 50 and 54. Cluster
+and ARTEMIS graphical interfaces).34,40,46 In addition to the structures of Pd4Oy, x = 0, 3, and 4, are globally optimized from
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5815
+ www.acsnano.org
+ ARTICLE
+random initial geometries, using the BCGA calculated at the DFT 8. Perez-Alonso, F. J.; McCarthy, D. N.; Nierhoﬀ, A.; Hernan-
+level with a plane-wave pseudopotential approach within the dez-Fernandez, P.; Strebel, C.; Stephens, I. E. L.; Nielsen,
+Quantum Espresso55 package. The PerdewBerkeErnzerhof J. H.; Chorkendorﬀ, I. The Eﬀect of Size on the Oxygen
+hybrid exchange-correlation functional and ultrasoft pseudo- Electroreduction Activity of Mass-Selected Platinum Nano-
+potentials with nonlinear core corrections and a semicore particles. Angew. Chem., Int. Ed. 2012, 51, 4641–4643.
+d-orbital state for palladium atoms are employed for the cal- 9. Man, I. C.; Su, H. Y.; Calle-Vallejo, F.; Hansen, H. A.; Martinez,
+culation of electronic energies. Kinetic energy cutoﬀs are opti- J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Norskov, J. K.;
+mized and set to 40 Ry, along with a cutoﬀ of 450 Ry for the Rossmeisl, J. Universality in Oxygen Evolution Electroca-
+calculation of charge density. Electronic states are considered talysis on Oxide Surfaces. ChemCatChem 2011, 3, 1159–
+to be converged if the change between successive scf steps is 1165.
+no greater than 1  107 Ry. The MethfesselPaxton smearing 10. Lin, Y. J.; Zhou, S.; Sheehan, S. W.; Wang, D. W. Nanonet-
+scheme56 is employed in order to improve eﬃciency of electronic Based Hematite Heteronanostructures for Eﬃcient Solar
+convergence for metallic states. Local relaxation is performed by Water Splitting. J. Am. Chem. Soc. 2011, 133, 2398–2401.
+the BroydenFletcherGoldfarbShanno scheme within Quan- 11. Chou, N. H.; Ross, P. N.; Bell, A. T.; Tilley, T. D. Comparison of
+tum Espresso, with total energy and total force convergence Cobalt-Based Nanoparticles as Electrocatalysts for Water
+criteria of 1  104 Ry and 1  103 Ry a01, respectively. Oxidation. ChemSusChem 2011, 4, 1566–1569.
+ Progeny are produced by means of mating through a 12. Blakemore, J. D.; Schley, N. D.; Olack, G. W.; Incarvito, C. D.;
+mass-weighted version of the Deaven and Ho cut and splice Brudvig, G. W.; Crabtree, R. H. Anodic Deposition of a
+procedure.57 Mutation is a simple replacement by a new, Robust Iridium-Based Water-Oxidation Catalyst from Or-
+randomly generated cluster, in order to maintain variation in ganometallic Precursors. Chem. Sci. 2011, 2, 94–98.
+the population, and is applied once for every 10 clusters. 13. Watt, J.; Cheong, S.; Toney, M. F.; Ingham, B.; Cookson, J.;
+Convergence with respect to mutation and mating is deemed Bishop, P. T.; Tilley, R. D. Ultrafast Growth of Highly
+to have been obtained when the lowest energy cluster in a Branched Palladium Nanostructures for Catalysis. ACS
+population changes by less than 1  102 Ry for ﬁve consecu- Nano 2010, 4, 396–402.
+tive generations. 14. Singh, J. P.; Zhang, X. G.; Li, H. L.; Singh, A.; Singh, R. N.
+ Conflict of Interest: The authors declare no competing Electrocatalytic Activities of PdNi Nanoparticles Ob-
+ﬁnancial interest. tained on Multiwalled Carbon Nanotubes towards Oxygen
+ Evolution in 1M KOH. Int. J. Electrochem. 2008, 3, 416–426.
+ Acknowledgment. Work was supported by the U.S. Depart-
+ 15. Lyons, M. E. G.; Brandon, M. P. The Oxygen Evolution
+ment of Energy, BES Materials Sciences, under Contract
+ Reaction on Passive Oxide Covered Transition Metal Elec-
+DE-AC-02-06CH11357, with UChicago Argonne, LLC, operator of
+ trodes in Alkaline Solution. Part III - Iron. Int. J. Electrochem.
+Argonne National Laboratory. The use of the Advanced Photon
+ 2008, 3, 1463–1503.
+Source, an Oﬃce of Science User Facility operated for the
+ 16. Kanan, M. W.; Nocera, D. G. In Situ Formation of an Oxygen-
+U.S. Department of Energy (DOE) Oﬃce of Science by Argonne
+ Evolving Catalyst in Neutral Water Containing Phosphate
+National Laboratory, was supported by the U.S. DOE under
+ and Co2þ. Science 2008, 321, 1072–1075.
+Contract No. DE-AC02-06CH11357. The authors acknowledge
+the use of Argonne Advanced Photon Source (the 12-ID-C and 17. Nakagawa, T.; Bjorge, N. S.; Murray, R. W. Electrogenerated
+10-ID beamlines) and S. Lee for his assistance at sample prepara- IrOx Nanoparticles as Dissolved Redox Catalysts for Water
+tion, S. Riha and A. Martinson for the use and their advice at using Oxidation. J. Am. Chem. Soc. 2009, 131, 15578–15579.
+their electrochemical testing setup, as well as N. Markovic for 18. Esswein, A. J.; McMurdo, M. J.; Ross, P. N.; Bell, A. T.; Tilley,
+fruitful discussions. J.G. acknowledges support through a DOE T. D. Size-Dependent Activity of Co3O4 Nanoparticle An-
+Early Career Award. R.J. and C.H. acknowledge the University of odes for Alkaline Water Electrolysis. J. Phys. Chem. C 2009,
+Birmingham North America fund for travel to Argonne, and the 113, 15068–15072.
+Argonne's Center for Nanoscale Materials for computer resources. 19. Subbaraman, R.; Tripkovic, D.; Chang, K. C.; Strmcnik,
+ D.; Paulikas, A. P.; Hirunsit, P.; Chan, M.; Greeley, J.;
+ Supporting Information Available: Additional GIXANES, Stamenkovic, V.; Markovic, N. M. Trends in Activity for
+chronoampermetry and cyclic voltammetry data plots, and the Water Electrolyser Reactions on 3d M(Ni,Co,Fe,Mn)
+results of DFT calculations on Pd4 and Pd4Oy (y = 3,4) clusters. Hydr(oxy)oxide Catalysts. Nat. Mater. 2012, 11, 550–557.
+This material is available free of charge via the Internet at http:// 20. Wang, C.; Markovic, N. M.; Stamenkovic, V. R. Advanced
+pubs.acs.org. Platinum Alloy Electrocatalysts for the Oxygen Reduction
+ Reaction. ACS Catal. 2012, 2, 891–898.
+ 21. Deng, W.; Lee, S.; Libera, J. A.; Elam, J. W.; Vajda, S.; Marshall,
+REFERENCES AND NOTES C. L. Cleavage of the COC Bond on Size-Selected Sub-
+ 1. Suntivich, J.; May, K. J.; Gasteiger, H. A.; Goodenough, J. B.; nanometer Cobalt Catalysts and on ALD-Cobalt Coated
+ Shao-Horn, Y. A Perovskite Oxide Optimized for Oxygen Nanoporous Membranes. Appl. Catal., A 2011, 393, 29–35.
+ Evolution Catalysis from Molecular Orbital Principles. 22. Vajda, S.; Lee, S.; Sell, K.; Barke, I.; Kleibert, A.; von
+ Science 2011, 334, 1383–1385. Oeynhausen, V.; Meiwes-Broer, K.-H.; Rodriguez, A. F.;
+ 2. Vojvodic, A.; Norskov, J. K. Optimizing Perovskites for the Elam, J. W.; Pellin, M. M.; et al. Combined Temperature-
+ Water-Splitting Reaction. Science 2011, 334, 1355–1356. Programmed Reaction and In Situ X-ray Scattering Studies
+ 3. Rossmeisl, J.; Qu, Z. W.; Zhu, H.; Kroes, G. J.; Norskov, J. K. of Size-Selected Silver Clusters under Realistic Reaction
+ Electrolysis of Water on Oxide Surfaces. J. Electroanal. Conditions in the Epoxidation of Propene. J. Chem. Phys.
+ Chem. 2007, 607, 83–89. 2009, 131, 121104.
+ 4. Stephens, I. E. L.; Bondarenko, A. S.; Gronbjerg, U.; 23. Vajda, S.; Winans, R. E.; Elam, J. W.; Lee, B.; Pellin, M. J.;
+ Rossmeisl, J.; Chorkendorﬀ, I. Understanding the Electro- Seifert, S.; Tikhonov, G. Y.; Tomczyk, N. A. Supported Gold
+ catalysis of Oxygen Reduction on Platinum and Its Alloys. Clusters and Cluster-Based Nanomaterials: Characteriza-
+ Energy Environ. Sci. 2012, 5, 6744–6762. tion, Stability and Growth Studies by In Situ GISAXS under
+ 5. Jiao, F.; Frei, H. Nanostructured Cobalt and Manganese Vacuum Conditions and in the Presence of Hydrogen. Top.
+ Oxide Clusters as Eﬃcient Water Oxidation Catalysts. Catal. 2006, 39, 161–166.
+ Energy Environ. Sci. 2010, 3, 1018–1027. 24. Winans, R. E.; Lee, B.; Seifert, S.; Lee, S.; Elam, J. W.; Pellin,
+ 6. Yeo, B. S.; Bell, A. T. In Situ Raman Study of Nickel Oxide M. J.; Barke, I.; Kleiber, A.; Sell, K.; von Oeynhause, V.; et al.
+ and Gold-Supported Nickel Oxide Catalysts for the Elec- Grazing Incidence Small-Angle X-ray Scattering Studies of
+ trochemical Evolution of Oxygen. J. Phys. Chem. C 2012, Nano-Metal Catalysts. Prepr. Pap.  Am. Chem. Soc., Div.
+ 116, 8394–8400. Fuel Chem. 2009, 54, 114–115.
+ 7. Yeo, B. S.; Bell, A. T. Enhanced Activity of Gold-Supported 25. Winans, R. E.; Vajda, S.; Ballentine, G. E.; Elam, J. W.; Lee, B.;
+ Cobalt Oxide for the Electrochemical Evolution of Oxygen. Pellin, M. J.; Seifert, S.; Tikhonov, G. Y.; Tomczyk, N. A.
+ J. Am. Chem. Soc. 2011, 133, 5587–5593. Reactivity of Supported Platinum Nanoclusters Studied by
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5816
+ www.acsnano.org
+ ARTICLE
+ In Situ GISAXS: Clusters Stability under Hydrogen. Top. 41. Lee, S.; Lee, B.; Seifert, S.; Vajda, S.; Winans, R. E. Simultaneous
+ Catal. 2006, 39, 145–149. Measurement of X-ray Small Angle Scattering, Absorption
+26. Lee, S.; Molina, L. M.; Lopez, M.; Alonso, J. A.; Hammer, B.; and Reactivity: A Continuous Flow Catalysis Reactor. Nucl.
+ Lee, B.; Seifert, S.; Winans, R. E.; Elam, J. W.; Pellin, M. J.; et al. Instrum. Methods Phys. Res., Sect. A 2011, 649, 200–203.
+ Selective Propene Epoxidation on Immobilized Au610 42. Ferguson, G. A.; Yin, C.; Kwon, G.; Tyo, E. C.; Lee, S.; Greeley,
+ Clusters: The Eﬀect of Hydrogen and Water on Activity J. P.; Zapol, P.; Lee, B.; Seifert, S.; Winans, R. E.; et al. Stable
+ and Selectivity. Angew. Chem., Int. Ed. 2009, 48, 1467– Subnanometer Cobalt Oxide Clusters on Ultrananocrystal-
+ 1471. line Diamond and Alumina Supports: Oxidation State and
+27. Vajda, S.; Pellin, M. J.; Greeley, J. P.; Marshall, C. L.; Curtiss, the Origin of Sintering Resistance. J. Phys. Chem. C 2012,
+ L. A.; Ballentine, G. A.; Elam, J. W.; Catillon-Mucherie, S.; 116, 24027–24034.
+ Redfern, P. C.; Mehmood, F.; et al. Subnanometre Platinum 43. Lee, S.; Vece, M. D.; Lee, B.; Seifert, S.; Winans, R. E.; Vajda, S.
+ Clusters as Highly Active and Selective Catalysts for the Oxidative Dehydrogenation of Cyclohexene on Size Se-
+ Oxidative Dehydrogenation of Propane. Nat. Mater. 2009, lected Subnanometer Cobalt Clusters: Improved Catalytic
+ 8, 213–216. Performance via Evolution of Cluster-Assembled Nano-
+28. Lei, Y.; Mehmood, F.; Lee, S.; Greeley, J.; Lee, B.; Seifert, S.; structures. Phys. Chem. Chem. Phys. 2012, 14, 9336–9342.
+ Winans, R. E.; Elam, J. W.; Meyer, R. J.; Redfern, P. C.; et al. 44. Tyo, E. C.; Yin, C.; Di Vece, M.; Qian, Q.; Kwon, G.; Lee, S.; Lee,
+ Increased Silver Activity for Direct Propylene Epoxida- B.; DeBartolo, J. E.; Seifert, S.; Winans, R. E.; et al. Oxidative
+ tion via Subnanometer Size Eﬀects. Science 2010, 328, Dehydrogenation of Cyclohexane on Cobalt Oxide
+ 224–228. (Co3O4) Nanoparticles: The Eﬀect of Particle Size on Activ-
+29. Molina, L. M.; Lee, S.; Sell, K.; Barcaro, G.; Fortunelli, A.; Lee, ity and Selectivity. ACS Catal. 2012, 2, 2409–2423.
+ B.; Seifert, S.; Winans, R. E.; Elam, J. W.; Pellin, M. J.; et al. Size- 45. Kropf, A. J.; Finch, R. J.; Fortner, J. A.; Aase, S.; Karanﬁl, C.;
+ Dependent Selectivity and Activity of Silver Nanoclusters Segre, C. U.; Terry, J.; Bunker, G.; Chapman, L. D. Bent Silicon
+ in the Partial Oxidation of Propylene to Propylene Oxide Crystal in the Laue Geometry To Resolve X-ray Fluores-
+ and Acrolein: A Joint Experimental and Theoretical Study. cence for X-ray Absorption Spectroscopy. Rev. Sci. Instrum.
+ Catal. Today 2011, 160, 116–130. 2003, 74, 4696–4702.
+30. Lee, S.; Lee, B.; Mehmood, F.; Seifert, S.; Libera, J. A.; Elam, 46. Ravel, B.; Newville, M. Athena, Artemis, HephaestusS: Data
+ J. W.; Greeley, J.; Zapol, P.; Curtiss, L. A.; Pellin, M. J.; et al. Analysis for X-ray Absorption Spectroscopy Using IFEFFIT.
+ Oxidative Decomposition of Methanol on Subnanometer J. Synchrotron Radiat. 2005, 12, 537–541.
+ Palladium Clusters: The Eﬀect of Catalyst Size and Support 47. Murrell, J. N.; Mottram, R. E. Potential Energy Functions for
+ Composition. J. Phys. Chem. C 2010, 114, 10342–10348. Atomic Solids. Mol. Phys. 1990, 69, 571–585.
+31. Vajda, S.; Winans, R. E.; Elam, J. W.; Lee, B.; Pellin, M. J.; 48. Lloyd, L. D.; Johnston, R. L.; Roberts, C.; Mortimer-Jones,
+ Riley, S. J.; Seifert, S.; Tikhonov, G. Y.; Tomczyk, N. A. In Situ T. V. Geometry Optimisation of Aluminium Clusters Using
+ GISAXS Studies of the Thermal Stability and Temperature a Genetic Algorithm. ChemPhysChem 2002, 3, 408–415.
+ Induced Growth of Supported Cluster-Based Platinum and 49. Cleri, F.; Rosato, V. Tight-Binding Potentials for Transition
+ Gold Nanoparticles. Prepr. Pap.  Am. Chem. Soc., Div. Fuel Metals and Alloys. Phys. Rev. B 1993, 48, 22–33.
+ Chem. 2005, 50, 190–191. 50. Massen, C.; Mortimer-Jones, T. V.; Johnston, R. L. Geometries
+32. Hongfei, L.; Wei, T.; Kleiman-Shwarsctein, A.; McFarland, and Segregation Properties of Platinum-Palladium Nano-
+ E. W. Oxygen Electroreduction on GoldCobalt Oxide alloy Clusters. J. Chem. Soc., Dalton Trans. 2002, 4375–4388.
+ Binary Nanocluster Catalysts. J. Electrochem. Soc. 2008, 51. Nunez, S.; Johnston, R. L. Structures and Chemical Order-
+ 155, B200-6. ing of Small CuAg Clusters. J. Phys. Chem. C 2010, 114,
+33. Ferguson, G. A.; Mehmood, F.; Rankin, R. B.; Greeley, J. P.; 13255–13266.
+ Vajda, S.; Curtiss, L. A. Exploring Computational Design of 52. Wilson, N. T.; Johnston, R. L. A Theoretical Study of Atom
+ Size-Speciﬁc Subnanometer Clusters Catalysts. Top. Catal. Ordering in CopperGold Nanoalloy Clusters. J. Mater.
+ 2012, 55, 353–365. Chem. 2002, 12, 2913–2922.
+34. Lee, B.; Seifert, S.; Riley, S. J.; Tikhonov, G.; Tomczyk, N. A.; 53. Heiles, S.; Logsdail, A. J.; Schaefer, R.; Johnston, R. L.
+ Vajda, S.; Winans, R. E. Anomalous Grazing Incidence Dopant-Induced 2D3D Transition in Small Au-Containing
+ Small-Angle X-ray Scattering Studies of Platinum Nano- Clusters: DFT-Global Optimisation of 8-Atom AuAg
+ particles Formed by Cluster Deposition. J. Chem. Phys. Nanoalloys. Nanoscale 2012, 4, 1109–1115.
+ 2005, 123, 074701. 54. Rapallo, A.; Rossi, G.; Ferrando, R.; Fortunelli, A.; Curley, B. C.;
+ Lloyd, L. D.; Tarbuck, G. M.; Johnston, R. L. Global Optimiza-
+35. Winans, R. E.; Vajda, S.; Lee, B.; Riley, S. J.; Seifert, S.;
+ tion of Bimetallic Cluster Structures. I. Size-Mismatched
+ Tikhonov, G. Y.; Tomczyk, N. A. Thermal Stability of Sup-
+ AgCu, AgNi, and AuCu Systems. J. Chem. Phys. 2005,
+ ported Platinum Clusters Studied by In Situ GISAXS. J. Phys.
+ 122, 194308.
+ Chem. B 2004, 108, 18105–18107.
+ 55. Giannozzi, P.; Baroni, S.; Bonini, N.; Calandra, M.; Car, R.;
+36. Lee, S.; DiVece, M.; Lee, B.; Seifert, S.; Winans, R. E.; Vajda,
+ Cavazzoni, C.; Ceresoli, D.; Chiarotti, G. L.; Cococcioni, M.;
+ S. Support-Dependent Performance of Size-Selected
+ Dabo, I.; et al. Quantum Espresso: A Modular and Open-
+ Subnanometer Cobalt Cluster-Based Catalysts in the De-
+ Source Software Project for Quantum Simulations of
+ hydrogenation of Cyclohexene. ChemCatChem 2012, 4,
+ Materials. J. Phys.: Condens. Matter 2009, 21, 395502.
+ 1632–1637.
+ 56. Methfessel, M.; Paxton, A. T. High-Precision Sampling for
+37. vanSanten, R. A. The Cluster Approach to Molecular Hetero-
+ Brillouin-Zone Integration in Metals. Phys. Rev. B 1989, 40,
+ geneous Catalysis. J. Mol. Catal., A 1997, 115, 405–419.
+ 3616–3621.
+38. Advanced Diamond Technologies, Inc. http://www.thin- 57. Deaven, D. M.; Ho, K. M. Molecular-Geometry Optimization
+ diamond.com/ (accessed August 6, 2012). with a Genetic Algorithm. Phys. Rev. Lett. 1995, 75, 288–291.
+39. Yavuz, C. T.; Lee, S.; Lee, B.; Kim, M. H.; Baik, J. M.; Seifert, S.;
+ Vajda, S.; Larson, C.; Winans, R. E.; Moskovits, M.; et al. In Situ
+ Real Time Monitoring of Pt-VO2 Nanoparticle-Nanowire
+ Assembly by GISAXS. In Micro- and Nanotechnology Sen-
+ sors, Systems, and Applications II; George, T., Islam, M. S.,
+ Dutta, A. K., Eds.; SPIE: Bellingham, WA, 2010; Vol. 7679, pp
+ 76792D176792D9.
+40. Wyrzgol, S. A.; Schafer, S.; Lee, S.; Lee, B.; Di Vece, M.; Li, X. B.;
+ Seifert, S.; Winans, R. E.; Stutzmann, M.; Lercher, J. A.; et al.
+ Combined TPRx, In Situ GISAXS and GIXAS Studies of
+ Model Semiconductor-Supported Platinum Catalysts in
+ the Hydrogenation of Ethene. Phys. Chem. Chem. Phys.
+ 2010, 12, 5585–5595.
+
+KWON ET AL. VOL. 7 ’ NO. 7 ’ 5808–5817 ’ 2013 5817
+ www.acsnano.org

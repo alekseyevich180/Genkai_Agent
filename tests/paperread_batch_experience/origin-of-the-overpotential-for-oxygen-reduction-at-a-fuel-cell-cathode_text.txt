@@ -1,0 +1,468 @@
+17886 J. Phys. Chem. B 2004, 108, 17886-17892
+
+ Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode
+
+ J. K. Nørskov,* J. Rossmeisl, A. Logadottir, and L. Lindqvist
+ Center for Atomic-scale Materials Physics, Department of Physics, Technical UniVersity of Denmark,
+ DK-2800 Lyngby, Denmark
+
+ J. R. Kitchin
+ Department of Chemical Engineering, UniVersity of Delaware, Newark, Delaware 19716
+
+ T. Bligaard
+ Science Institute, VR-II, UniVersity of Iceland, IS-107 ReykjaVı́k, Iceland
+
+ H. Jónsson
+ Faculty of Science, VR-II, UniVersity of Iceland, IS-107 ReykjaVı́k, Iceland
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ReceiVed: June 18, 2004; In Final Form: September 2, 2004
+ Downloaded via UNIV OF TOKYO on October 9, 2025 at 05:45:48 (UTC).
+
+ We present a method for calculating the stability of reaction intermediates of electrochemical processes on
+ the basis of electronic structure calculations. We used that method in combination with detailed density
+ functional calculations to develop a detailed description of the free-energy landscape of the electrochemical
+ oxygen reduction reaction over Pt(111) as a function of applied bias. This allowed us to identify the origin
+ of the overpotential found for this reaction. Adsorbed oxygen and hydroxyl are found to be very stable
+ intermediates at potentials close to equilibrium, and the calculated rate constant for the activated proton/
+ electron transfer to adsorbed oxygen or hydroxyl can account quantitatively for the observed kinetics. On the
+ basis of a database of calculated oxygen and hydroxyl adsorption energies, the trends in the oxygen reduction
+ rate for a large number of different transition and noble metals can be accounted for. Alternative reaction
+ mechanisms involving proton/electron transfer to adsorbed molecular oxygen were also considered, and this
+ peroxide mechanism was found to dominate for the most noble metals. The model suggests ways to improve
+ the electrocatalytic properties of fuel-cell cathodes.
+
+ Introduction surface intermediates in the reactions, which cannot be easily
+ obtained by other means. We start by considering the simplest
+ Low-temperature fuel cells are attracting considerable interest
+ possible reaction mechanism over a Pt(111) surface. We intro-
+ as a means of producing electricity by direct electrochemical
+ duce a method for calculating the free energy of all intermediates
+ conversion of hydrogen and oxygen into water.1 There are,
+ however, severe shortcomings of the present technology, which as a function of the electrode potential directly from density
+ need to be overcome to make low-temperature fuel cells more functional theory calculations of adsorption energies for the
+ economically attractive. One of the most important problems surface intermediates. On this basis, we establish an overview
+ is related to the low rate of the cathode reaction where oxygen of the thermodynamics of the cathode reaction as a function of
+ is reduced voltage, and we show that the overpotential of the reaction can
+ be linked directly to the proton and electron transfer to adsorbed
+ 1 oxygen or hydroxide being strongly bonded to the surface at
+ O + 2(H+ + e-) f H2O (1) the electrode potential where the overall cathode reaction is at
+ 2 2
+ equilibrium. We introduce a database of density functional
+ Pt is the commonly used electrode material, but there is a theory calculations of energies of the surface intermediates for
+ considerable overpotential associated with this reaction over Pt. a number of metals and show that, on this basis, we can establish
+ For some reason, the kinetics of the cathode reaction make it trends in the thermodynamic limitations for all the metals in
+ much slower than the anode reaction, question. The model predicts a volcano-shaped relationship
+ between the rate of the cathode reaction and the oxygen ad-
+ H2 f 2(H+ + e-) (2) sorption energy. The model explains why Pt is the best elemental
+ cathode material and why alloying can be used to improve its
+ and there is presently no consensus why this is so.1,2 performance.3-7
+ In the following, we use density functional theory (DFT)
+ calculations to gain some insight into the cathode reactions. DFT The Simplest Model
+ calculations can provide information about the stability of
+ To introduce the basic concepts, we first study the simple
+ * Corresponding author. E-mail: norskov@fysik.dtu.dk. dissociative mechanism
+ 10.1021/jp047349j CCC: $27.50 © 2004 American Chemical Society
+ Published on Web 10/22/2004
+Oxygen Reduction at a Fuel-Cell Cathode J. Phys. Chem. B, Vol. 108, No. 46, 2004 17887
+
+ 1 TABLE 1: Binding Energies (∆E) and Free Energies (∆G)
+ O + * f O* (3) for Different Intermediatesa
+ 2 2
+ ∆E ∆Ew,water ∆Gw,water (300 K)
+ O* + H+ + e- f HO* (4) θO) 0 θO ) 1/2 θO ) 0 θO ) 1/2 θO ) 0 θO ) 1/2
+
+ HO* + H+ + e- f H2O + *
+ H2O(gas, 0 0 0
+ (5) 0.035 bar)
+ *OH + 1/2H2 0.78 1.52 0.45 1.41 0.80 1.76
+Here, * denotes a site on the surface. Later, we will also discuss (1 bar)
+ *O + H2 1.53 2.36 1.53 2.36 1.58 2.41
+in detail the associative mechanism where O2 does not dissociate 1/ O + H
+ 2 2 2 2.46
+before it is hydrogenated, and we will show that although this
+ a
+changes several important details of the reaction kinetics, it does The energies in bold were obtained from DFT calculations. Two
+not affect the main conclusions, in particular, regarding the oxygen coverages are considered, 0 and 1/2 of a monolayer. In the latter
+ case, the oxygen adsorption energy is the differential heat of adsorption
+overall variations in the reaction rate from one metal to the next. and OH is bonded to the surface in the presence of half a monolayer
+ The stability of the intermediates O* and HO* can be of oxygen. At zero O coverage, the lowest energy state of OH is one
+calculated on a Pt(111) surface. In Table 1, we show the with a coverage of 1/3 and this is the value given. We have also included
+calculated binding energies defined as the reaction energies of the effect of the water surroundings (∆Ew.water) as described in the text.
+the reactions The free-energy difference for the full reaction, eq 1, is taken from
+ experiment (see p 307 of ref 8). This makes sure that this key number
+ is correct, and it avoids a DFT calculation for the O2 molecule. The
+ H2O + * f HO* + 1/2 H2 (6) high-spin ground state of this molecule is notoriously poorly described
+ in DFT calculations.9,10 All other energies are derived from these
+ H2O + * f O* + H2 (7) numbers using the entropies and zero point energies from Appendix 1.
+ We use gas-phase H2O and H2 as reference states because they are
+where H2O and H2 are in the gas phase. The stability of both readily treated in the DFT calculations. The entropy for H2O is
+adsorbed OH and adsorbed O depends strongly on the oxygen calculated at 0.035 bar because this is the equilibrium pressure of H2O
+coverage; therefore in Table 1, we include results for two at 300 K.11 The free energy of this state is therefore equal to that of
+ liquid water.
+different oxygen coverages to illustrate this effect.
+ We now introduce our procedure for calculating the free
+energy of the intermediates of the electrochemical reactions (eqs proximately 0.05 eÅ × 0.3 V/Å ) 0.015 eV. We neglect this
+3-5). It goes in six steps: in the following.
+ 1. By setting the reference potential to be that of the standard 5. At a pH different from 0, we can correct the free energy
+hydrogen electrode, we can relate the chemical potential (the of H+ ions by the concentration dependence of the entropy:
+free energy per H) for the reaction (H+ + e-) to that of 1/2H2 G(pH) ) -kT ln[H+]) kT ln 10 × pH.
+(eq 2 is in equilibrium). This means that, at pH ) 0 in the 6. We calculate free energies of the intermediates at zero
+electrolyte and 1 bar of H2 in the gas phase at 298 K, the reaction potential and pH ) 0 as ∆G ) ∆Ew,water + ∆ZPE - T∆S, where
+free energies of eqs 6 and 7 are equal to those of the reverse ∆E is the reaction energy of eq 6 or 7, ∆ZPE is the difference
+reactions eq 5 and eq 4 + 5 at an electrode potential of U ) 0 in zero point energies due to the reaction, and ∆S is the change
+relative to the standard hydrogen electrode. in entropy. All of the parameters have been taken from DFT
+ 2. To model the water environment of the electrochemical calculations14 or standard tables for gas-phase molecules11,15 and
+cell, we include the effect of a monolayer of water on the are shown in Appendix 1.
+stability of adsorbed O and OH in the calculation. For the low The electronic structure problem has been solved using
+coverage results, we have simply added water to fill the surface, density functional theory in a plane wave pseudopotential
+and we have added bilayer of water on top of the adsorbed O implementation,16,17 employing the ultra-soft pseudopotentials
+and OH for the high coverage results as proposed by Ogasawara of Vanderbilt18 to represent the ionic cores. All calculations were
+et al.12 The interaction with water stabilizes OH groups on the performed with the RPBE exchange-correlation functional19 on
+surface relative to adsorbed oxygen due to hydrogen bonding. periodically repeated metal slabs. The Pt calculations were done
+The effect of the water layer on adsorped oxygen is negligible. on a (3 × 2) three-layer fcc(111) slab at the RPBE lattice
+This procedure can be improved by including more water in constant of Pt (4.02 Å) separated by at least five equivalent
+the calculation. layers of vacuum. The bottom two layers were fixed, and the
+ 3. We include the effect of a bias on all states involving an top layer was allowed to relax. A 3 × 4 × 1 Monkhorst-Pack
+electron in the electrode, by shifting the energy of this state by k-point sampling was used. The plane wave cutoff was 340 eV,
+-eU, where U is the electrode potential. and the density was treated on a grid corresponding to a plane
+ 4. The adsorbed states also interact with the field set up wave cutoff at 500 eV. For the results presented in Table 2, the
+outside the surface by the electrochemical double layer. The OH adsorption energies were calculated on (2 × 2) four-layer
+most rigorous treatment would involve a detailed model of the slabs with the top two layers relaxed. A 4 × 4 × 1 Monkhorst-
+water and two electrodes and the electrolytes with a bias. This Pack k-point sampling was used, with maximum symmetry
+would entail a calculation for a nonequilibrium system with two applied to reduce the number of k points in the calculations.
+Fermi levels, which is not currently possible. A simple estimate The dipole correction was used in all cases. The plane wave
+of the field effect can be obtained by calculating the coupling cutoff was 340 eV for OH, 350 eV for H, and 450 eV for the
+between the dipole moment of the adsorbed state and the average O adsorption calculations.
+field just outside the surface. For O* and OH*, this gives a Using the procedure outlined above, we construct the free-
+small effect because the dipole moments are small, 0.035 and energy diagram at several electrode potentials U, Figure 1. (The
+0.05 eÅ, respectively, on Pt(111).13 At a bias of 1 V relative to idea of making such free-energy diagrams is not new to
+the point of zero charge, the typical average field is ∼0.3 V/Å, electrochemistry; see, e.g., Figure 1, page 304 of ref 8.) We
+assuming the width of the double layer to be ∼3 Å. The effect first concentrate on the case where the oxygen coverage is small.
+of the electrical field on the adsorption energy is thus ap- The electrode potential measured relative to the standard
+17888 J. Phys. Chem. B, Vol. 108, No. 46, 2004 Nørskov et al.
+
+TABLE 2: Calculated Reaction Heats for Reaction 6 (∆EOH) that one of these is the rate-limiting step. There will be an
+and Reaction 7 (∆EO) over the Most Close Packed Surface activation free energy for the process, which is at least equal to
+of a Number of Metals at a Quarter Monolayer Coveragea the larger of the reaction free energies
+ ∆EOH ∆EO ∆G0(U0) ∆G1(U0) ∆G2(U0) Eadiss
+ metal (eV) (eV) (eV) (eV) (eV) (eV) ∆G1(U) ) GHO* + 1/2H2(U) - GO*+H2(U) )
+ Ag 0.72 2.12 -0.33 -0.43 0.76 0.93
+ Au 1.49 2.75 0.30 -0.29 -0.01 2.06
+ ∆G1(0) + eU ) ∆G1(U0) - eη (8a)
+ Co -0.08 -0.22 -2.67 1.11 1.56 -3.29
+ Cu 0.37 1.20 -1.25 0.14 1.11 -0.73 and
+ Fe -0.88 -0.90 -3.35 0.99 2.36 -4.51
+ Ir 0.63 1.00 -1.45 0.60 0.85 -1.09 ∆G2(U) ) GH2O(U) - GHO*+1/2H2(U) )
+ Mo -0.61 -1.62 -4.07 1.98 2.09 -5.81
+ Ni 0.13 0.34 -2.11 0.76 1.35 -2.28 ∆G2(0) + eU ) ∆G2(U0) - eη (8b)
+ Pd 0.92 1.53 -0.92 0.36 0.56 -0.14
+ Pt 1.05 1.57 -0.88 0.45 0.43 -0.06 where η ) U0 - U is the overpotential. In other words, adsorbed
+ Rh 0.34 0.44 -2.01 0.87 1.14 -2.10
+ oxygen and hydroxide on the Pt(111) surface are thermodynamic
+ Ru -0.01 -0.05 -2.50 1.01 1.49 -2.98
+ W -0.80 -2.06 -4.51 2.23 2.28 -6.60 sinks for the oxygen reduction process, and the activation energy
+ a
+ for the total process at the maximum cell voltage U0 ) 1.23 V
+ The free-energy differences take solvation, entropic, and zero point is at least ∆G1(U0) ) 0.45 eV (Table 1 and Figure 1). This
+energies into account by adjusting the reaction free energies to reproduce
+the low coverage results on Pt observed in Table 1 and by using the value is, indeed, close to the experimentally observed overpo-
+same adjustment for all of the other surfaces. ∆G0(U0) ) ∆EO - 2eU0 tential.2
++ 0.01 eV ) ∆EO - 2.45 eV. ∆G1(U0) ) ∆EOH - ∆EO + eU0 - 0.26 Figure 1 also shows that the opposite process, the dissociation
+eV ) ∆EOH - ∆EO + 0.97 eV. ∆G2(U0) ) -∆EOH + eU0 + 0.25 eV of water into OH or O, will be uphill at potentials up to 0.78
+) -∆EOH + 1.48 eV. We have calculated the activation energy for O2 V. After that it is down hill, and water should dissociate. This
+dissociation (the transition state energy between the molecularly is in excellent agreement with experiment.29 The potential at
+adsorbed and the atomically adsorbed states) using the atomically
+adsorbed state energy ∆EO and the linear relationship that has been
+ which water dissociates spontaneously is also the point at which
+established between this energy and the dissociative chemisorption the proton/electron transfer to adsorbed O and OH becomes
+energy.24 (The dissociative chemisorption energy is ∆EO2 ) 2(∆EO - activated and the oxygen reduction process starts becoming slow.
+0.29 eV) - 4eU0 eV ) 2∆EO - 5.51 eV, and because the activation The onset of water dissociation and the overpotential for the
+energy depends on the dissociative chemisorption energy as Ea ≈ 0.9 oxygen reduction process are therefore, in this picture, two sides
+∆EO2 + 2.07 eV24, we get Ea ≈ 1.8 ∆EO - 2.89 eV). of the same phenomenon.
+ Although we cannot deduce the detailed kinetics from the
+ thermodynamic data of Table 1 and Figure 1, we can develop
+ a simple model of the electrode kinetics in the following way.
+ We will assume, for simplicity, that the activation barrier for
+ the rate-limiting proton-transfer step is equal to the larger of
+ the free-energy differences, eqs. 8a and 8b. Detailed calculations
+ for the transfer of a solvated proton to adsorbed OH show this
+ to be a very good approximation for a situation where the proton
+ transfer is down hill in energy.20 At other potentials, there may
+ be an extra barrier, which will have to be included. In the case
+ where the is no extra barrier, the rate constant for the reaction
+ can be written as
+
+ k(U) ) k0e-∆G(U)/kT (9)
+
+ where ∆G(U) is the larger of the two free-energy steps in eqs
+ 8a and 8b. The prefactor, k0, includes all of the details of the
+Figure 1. Free-energy diagram for oxygen reduction over Pt(111) based
+ proton transfer to the surface and recombination with the
+on the energies in Table 1. Results for low oxygen coverage are electron. In units of current density, the rate constant is
+shown at zero cell potential (U ) 0), at the equilibrium potential (U )
+1.23 V), and at the highest potential (U ) 0.78 V) where all reaction Nsites
+steps are exothermic. For U ) 1.23 V, the free-energy diagram for the
+ ik(U) ) 2e k(U) (10)
+ A
+case of an oxygen coverage of 1/2 is included.
+ where Nsites/A is the number of sites per surface area. Equations
+hydrogen potential is equal to the potential of the fuel cell if 9 and 10 can be expressed as
+we assume the anode reaction to be in equilibrium and neglect
+ohmic losses. The relationship U ) 0 V corresponds to the ik(U) ) ĩke-∆G(U)/kT (11)
+reaction running by short circuiting the cell. This situation is
+roughly equivalent to the gas-phase hydrogen oxidation reaction, This equation represents an upper bound to the rate; however,
+and all elementary steps are strongly exothermic. If, however, if there are additional barriers to the proton transfer or if the
+we shift the chemical potential of the electrons by the equilib- coverage is far from ideal, this would slow the reaction.
+rium potential of U0 ) 1.23 eV, corresponding to the situation We can take the prefactor k0 from measured values of the
+where the fuel cell has the maximum potential allowed by proton-transfer rate to metal surfaces under conditions where
+thermodynamics, then both electron/proton-transfer steps (see there is no driving force (the exchange current). This gives a
+the equations and point 5 above) become uphill. The barriers value of k0 ≈ 200 s-1 site-1; 21 hence, ĩk ) 96 mA cm-2. The
+for the two steps are essentially the same. It is therefore likely result of the simple model, with no parameters fitted to the
+Oxygen Reduction at a Fuel-Cell Cathode J. Phys. Chem. B, Vol. 108, No. 46, 2004 17889
+
+Figure 2. Calculated potential vs the rate constant in units of current Figure 3. Free-energy diagram for oxygen reduction at the equilibrium
+density from the model, eqs 8-11. potential U0 ) 1.23 V over Pt, Au, and Ni.
+oxygen reduction data, is shown in Figure 2. When the
+ From this, we can evaluate ∆G1(U0) and ∆G2(U0) for the metals
+simplicity of the model and the approximate nature of the DFT
+ involved. It is the larger of the two that determines the over-
+calculations are taken into account, the similarity to experimental
+ potential for the proton-transfer reactions. It can be seen from
+data for the potential as a function of rate constant in units of
+ the table that there is a substantial variation in the overpotential.
+current density for a fuel cell is convincing.2
+ If we exclude Cu, Ag, and Au, then Pt and Pd stand out as the
+ We note that we can rewrite eqs 9-11 in the following way
+ metals with the smallest overpotentials, followed by Ir and Rh.
+ ik(U) ) i 0keeη/kT (12) This is in good agreement with experimental evidence.1,2
+ Figure 3 shows why metals that have either stronger or weaker
+where the exchange current rate constant is bonding of oxygen than Pt are poorer oxygen-reduction catalysts.
+ At the equilibrium cell potential, Ni binds O and OH so strongly
+ i 0k ) ĩke-∆G(U0)/kT (13) on the surface that the proton-transfer steps become strongly
+ activated, and thus very slow. For Au, however, the proton
+This leads to the usual Butler-Volmer type relation transfer is exothermic and should be fast, but oxygen on the
+
+ ()
+ surface is considerably less stable than it is in the gas phase;
+ ik therefore, no transfer of protons and electrons to oxygen can
+ U ) U0 - b log10 (14) occur. In fact, the problem for Au is even worse. The weak
+ i 0k
+ bonding of atomic oxygen is an indication that the barrier for
+where the Tafel slope is b ) kT ln10/e ) 60 mV at 300 K (71 oxygen dissociation is large. It has been shown that there is a
+mV at 357 K). This value is consistent with experiment for both linear dependence between the oxygen binding energy and the
+Pt surface and the catalyst.1,2,22,23 barrier for oxygen dissociation.24 In Table 2, we include an
+ A more detailed model would include the bias dependence estimate of the activation barrier for oxygen dissociation. For
+of the oxygen coverage and, hence, the coverage-dependent Au and Ag, this is the largest energy barrier in the problem, for
+oxygen adsorption energy. Without going into a detailed the simple dissociative reaction mechanism considered so far.
+evaluation of the oxygen coverage, we illustrate the effect of a To analyze this in further detail, we constructed an activity
+higher coverage in Figure 1, where we have included data for measure based on a microkinetic model. The rate constant for
+oxygen coverage of 0.5 at the equilibrium cell potential. Clearly, the forward direction of the elementary reaction step i is
+the energies are shifted up, and it is now clear that the first
+ ki ) νie-Ea /kT
+ i
+electron and proton transfer has the higher barrier, but the value (15)
+of the barrier is surprisingly independent of the coverage.
+ When the potential has been decreased by approximately the if step i is activated. Assuming that the rate-limiting reaction
+overpotential, the otherwise rate-limiting proton transfer be- step has full coverage of the reactant surface sites (free sites
+comes nonactivated, and the associated rate constant loses its for O2 dissociation, O sites for oxygen hydrogenation, and OH
+potential dependence and is given entirely by its prefactor. The sites for hydrogenation of hydroxyl groups) enables us to define
+Tafel slope must therefore start decreasing at low values of U a measure of maximal activity, A
+
+ ( ( ))
+because the (in this regime) potential-independent rate constant
+leads to a saturation of the current density and, hence, to larger ki
+values of b. More detailed modeling, including coverages A ) kT mini log (16)
+ k0
+determined self-consistently as a function of the potential, will
+be presented elsewhere. where k0 normalizes the activity of nonactivated electron/proton
+ transfer to zero. This is an application of the concept of Sabatier
+Other Metals
+ Analysis,25 which is a useful tool for studying trends in
+ We can use the simple picture developed above to investigate heterogeneous catalysis.
+the oxygen reduction reaction on other metals than Pt. To this The prefactor for O2 dissociation is somewhat larger than
+end, we have made DFT calculations to get the bond energies the prefactor for the hydrogenation steps. This leads to an
+of O* and HO* for a number of interesting metals, Table 2. increased activity for this elementary step. Assuming that all
+17890 J. Phys. Chem. B, Vol. 108, No. 46, 2004 Nørskov et al.
+
+ have smaller oxygen binding energies than pure Pt.27,28 (The
+ OH binding energies are not reduced to the same extent on these
+ surfaces. On a Pt monolayer over a monolayer of Ni, Co, or Fe
+ on a Pt substrate, DFT calculations give (∆EOH, ∆EO) ) (1.15
+ eV, 1.89 eV), (1.06 eV, 2.00 eV), and (0.85 eV, 2.06 eV),
+ respectively. This is to be compared to the adsorption on a pure
+ Pt surface: (∆EOH, ∆EO) ) (1.05 eV, 1.57 eV).) Yu et al.27
+ have shown that a Pt skin on top of Pt3Co(111) has an oxygen
+ binding energy that is 0.38 eV less than that on pure Pt(111).
+ It can be seen from Figure 4 that this should give a higher
+ reactivity. The calculations of Kitchin et al.28 show the same
+ trends when including a number of 3d metals below the surface
+ of Pt(111), but here, the absolute magnitudes cannot be used
+ directly to compare to Figure 4 because these are idealized
+ structures with no real alloy in the bulk and no alloying in the
+ 3d underlayer. This beautifully explains the experimental
+Figure 4. Trends in oxygen reduction activity (defined in the text) observations that skins of Pt on these alloys have a higher rate
+plotted as a function of the oxygen binding energy. than pure Pt.29-33 Defects and steps on Pt would not be expected
+ to improve the activity of the cathode because oxygen on these
+ sites is bound stronger than on the flat surface, for example, on
+ Pt(110), oxygen is bound 0.5 eV stronger.
+ It should be stressed in this context that it is not just the
+ oxygen binding energy that determines the activity of a surface
+ for oxygen reduction; the OH bonding energy is also important.
+ It can be observed in Figure 5 that the two are roughly linearly
+ correlated for the elemental surfaces. There are, however, ample
+ possibilities for finding new systems where bonding of O and
+ OH do not follow the same correlation and could lead to
+ completely new catalysts for this important reaction.
+
+ The Associative Mechanism
+ The study of trends above is quite simple, and in the present
+ section, we will refine it in two ways by including the possibility
+ that O2 does not dissociate before it is hydrogenated and the
+ bias dependence of the volcano; explicitly, the volcano in Figure
+ 4 is for the equilibrium bias, U ) 1.23 V. Although these effects
+ are important for the details, we will show that they do not
+ affect the overall trends.
+ At potentials and oxygen coverages where O2 dissociation is
+Figure 5. Trends in oxygen reduction activity plotted as a function of activated, it is possible that another reaction mechanism may
+both the O and the OH binding energy. take over, one that does not involve O2 dissociation. In the
+ following, we explore this possibility. Several authors have
+entropy is lost in the transition state for dissociation, the
+ suggested that oxygen reduction on Pt surfaces takes place via
+prefactor for dissociative chemisorption as determined from rate
+ peroxy intermediates,29,33-37 for example, in a reaction given
+theory is νdiss ) (kT/h)(1/qgas). Taking only translational and
+ by the elementary steps
+rotational contributions to the partition function qgas into account,
+we obtain O2 + * f O2* (18)
+
+ (
+ kT kT 2πmO2kT
+ )
+ 3/2
+ qgas ) (17) O2* + (H+ + e-) f HO2* (19)
+ 2rot PO2 h2
+where rot ) 0.179 meV is the rotational constant for O2. The HO2* + (H+ + e-) f H2O + O* (20)
+activity for O2 dissociation is thus increased compared to
+hydrogenation at similar barrier by kT log(νdiss/k0) ≈ 0.13 eV
+at 1 bar and 300 K. O* + (H+ + e-) f HO* (21)
+ The activities constructed from Table 2 are plotted in Figure
+4 as a function of the O binding energy and in Figure 5 as a HO* + (H+ + e-) f H2O + * (22)
+function of both the O and the OH binding energies. A nice
+volcano appears. In good agreement with experiment,1,2 it shows Steps 21 and 22 are the same as steps 4 and 5 for the dissociative
+that Pt and Pd are the best catalysts for oxygen reduction. mechanism above. The new steps, 18-20, involve adsorption
+ The volcano plot in Figure 4 shows that there is some room of molecular O2 and direct proton/electron transfer to it and to
+for improvement. Metals with a somewhat lower oxygen binding OOH. We refer to this as the associative mechanism. An
+energy than Pt should have a higher rate of oxygen reduction. alternative to forming water in step 20 is to form hydrogen
+DFT calculations have shown that Pt alloys with, for example, peroxide. The associative mechanism can therefore also be
+Ni, Co, Fe, and Cr (where Pt will segregate to the surface26) termed a peroxo mechanism.
+Oxygen Reduction at a Fuel-Cell Cathode J. Phys. Chem. B, Vol. 108, No. 46, 2004 17891
+
+ Figure 8. Trends in oxygen reduction activity plotted as a function of
+ the oxygen binding energy at U ) 0, 0.8 V, and 1.23 V. The activity
+Figure 6. Free-energy diagram for oxygen reduction at two different corresponding to the associative mechanism has been included. Because
+potentials and at two different oxygen coverages, including the barrier the associative mechanism will be competing with the direct dissociation
+for O2 dissociation. mechanism, the higher of these two activities will dominate the overall
+ rate of the right leg of the volcano. The activity has been calculated
+ using the linear relations defined in the captions of Table 2, and that
+ ∆EOH ≈ 90.5∆EO2 + 0.05 eV and ∆EOOH ≈ 0.5∆EO2 + 3.18 eV. The
+ activation energy for the associative reaction is ∆Gassoc (U) ≈ ∆EOOH
+ + eU - 4.92 eV + 0.18 eV ) 0.5∆EO2 -1.56 eV + eU. At potentials
+ below U ) 0.8 V, the associative mechanism will dominate over the
+ dissociation mechanism. The binding energies of oxygen on Pt at low
+ and high oxygen coverage as well as Au at low oxygen coverage are
+ depicted.
+
+ We note from Figure 8 that even when we include the
+ possibility of the associative mechanism and explicitly include
+ the bias dependence the maximum of the volcano hardly changes
+ and that the trends discussed above for the volcanoes in Figures
+ 4 and 5 remain valid.
+
+ Concluding Remarks
+Figure 7. Free-energy diagram for oxygen reduction by the peroxide In the present paper, we have introduced a method to use
+mechanism at two different potentials over Au(111) at a low oxygen density functional theory calculations to estimate the thermo-
+coverage and over Pt(111) at an oxygen coverage of 1/2. chemistry for electrochemical reactions. This part is com-
+ pletely general and should be applicable to any electrochemical
+ In Figure 7, we show the calculated potential-energy diagram reaction.
+for the associative mechanism. The procedure is exactly the We then used the method to gain further insight into the
+same as that for the dissociative reaction scheme, Figure 6. It electrochemical reduction of dioxygen. We have shown that for
+can be seen that Au(111) at low oxygen coverage and Pt(111) Pt(111) as electrode adsorbed oxygen tends to be so stable at
+at high oxygen coverage, the associative mechanism has lower high potentials that the proton and electron transfer becomes
+free-energy barriers than the dissociation mechanism. For Pt at impossible. By lowering the potential, the stability of oxygen
+low oxygen coverages, the O2 dissociation is not activated and decreases and the reaction may proceed. This is suggested to
+the dissociative mechanism has the lowest barriers and domi- be the origin of the overpotential for Pt.
+nates, Figure 6. We also used the calculations to compare dissociative and
+ We can include the associative mechanism in the measure associative reaction paths and to conclude that both may
+of maximal activity, A, eq 16. This is done in Figure 8. In Figure contribute depending on the metal and the potential.
+8, we have also explicitly included the bias dependence of the Finally, we have used the concept of a Sabatier Analysis38
+activities. to introduce a measure of maximal catalytic activity and used
+ There are three regimes visible in the kinetics: (I) the left that to construct volcano curves of the activity as a function of
+leg, where the proton transfer to adsorbed O or OH is rate oxygen and hydroxyl adsorption energies. The resulting volca-
+limiting, (II) a middle region where the dissociation is rate noes describe known trends and rationalize observed effects of
+limiting, and (III) the right leg where the proton and elec- alloying.
+tron transfer to adsorbed O2 is rate limiting. Note that, in this
+region, the dissociative mechanism may be operative but at a Acknowledgment. We thank Radoslav R. Adzic for helpful
+much lover rate (compare the dashed and full lines to the right discussions. The DFT calculations have been performed with
+in the diagram). Region II is not present at all biases. At support from the Danish Center for Scientific Computing
+potentials of about 0.8 V and below, the associative mechanism through grant no. HDW-1101-05. We acknowledge financial
+dominates over the dissociation path, which means that at support for A. Logadottir and T. Bligaard from the European
+realistic overpotentials the two mechanisms should run in Union through contract nos. ENK5-CT-2001-00572 and HPRN-
+parallel. CT-2002-00170, respectively.
+17892 J. Phys. Chem. B, Vol. 108, No. 46, 2004 Nørskov et al.
+
+TABLE 3: Zero Point Energy Corrections and Entropic (12) Ogasawara, H.; Brena, B.; Nordlund, D.; Nyberg, M.; Pelmen-
+Contributions to the Free Energies schikov, A.; Pettersson, L. G. M.; Nilsson, A. Phys. ReV. Lett. 2002, 89,
+ 276102.
+ TS T∆S ZPE ∆ZPE ∆ZPE - T∆S (13) Liu, P.; Logadottir, A.; Nørskov, J. K. Electrochim. Acta 2003,
+ H2O .67 0 .56 0 0 48, 3731.
+ (14) Kandoi, S.; Gokhale, A. A.; Grabow, L. C.; Dumesic, J. A.;
+ *OH + 1/2H2 .20 -0.47 .44 -0.12 .35
+ Mavrikakis, M. Catal. Lett. 2004, 93, 93.
+ *O + H2 .41 -0.27 .34 -0.22 .05 (15) Atkins, P. W. Physical Chemistry, 6th ed., Oxford University
+ 1/ O + H .73 .05 .32 -0.24 -0.29
+ 2 2 2 Press: Oxford, U.K., 1998; pp 485, 925-927, 942.
+ H2 .41 .27 (16) Payne, M. C.; Teter, M. P.; Allan, D. C.; Arias, T. A.; Joannopoulos,
+ 1/ O .32 .05
+ 2 2 J. D. ReV. Mod. Phys. 1992, 64, 1045.
+ O* 0 .07 (17) Kresse G.; Furtmüller, J. Comp. Mater. Sci 1996, 6, 15.
+ OH* 0 .30 (18) Vanderbilt, D. Phys. ReV. B 1990, 41, 7892.
+ H* 0 .17 (19) Hammer, B.; Hansen, L. B.; Nørskov, J. K. Phys. ReV. B 1999, 46,
+ 7413.
+ (20) Desai, S. K.; Neurock, M. Phys. ReV. B 2003, 68, 75420.
+Appendix 1 (21) Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Kitchin, J. R.; Chen,
+ Entropies and zero point energies (ZPEs) are used in the J. G.; Pandelov, S.; Stimming, U., submitted for publication.
+ (22) Markovic, N.; Gasteiger, H.; Ross, P. N. J. Electochem. Soc. 1997,
+construction of the reaction free energies throughout the paper 144, 1591.
+(Table 3). The gas-phase values are from ref 15, and the values (23) Paulus, U. A.; Schmidt, T. J.; Gasteiger, H. A.; Behm, R. J. J.
+for the adsorbed species are taken from DFT calculations for O Electroanal. Chem. 2001, 495, 134.
+ (24) Nørskov, J. K.; Bligaard, T.; Logadottir, A.; Bahn, S. R.; Hansen,
+and OH adsorbed on Cu(111) by Mavrikakis et al.14 We used L. B.; Bollinger, M. V.; Bengaard, H. S.; Hammer, B.; Sljivancanin, Z.;
+gas-phase H2O at 0.035 bar as the reference state because at Mavrikakis, M.; Xu, Y.; Dahl, S.; Jacobsen, C. J. H. J. Catal. 2002, 209,
+this pressure, gas-phase H2O is in equilibrium with liquid water 275.
+at 300 K.11 (25) Bligaard, T.; Nørskov, J. K.; Dahl, S.; Matthiesen, J.; Christensen,
+ C. H.; Sehested, J. J. Catal. 2004, 224, 206.
+ (26) Ruban, A. V.; Skriver. H. L.; Nørskov, J. K. Phys. ReV. B 1999,
+References and Notes 59, 15900.
+ (1) Markovic, N. M.; Ross, P. N. CATTECH 2000, 4, 110. (27) Xu, Y.; Ruban, A. V.; Mavrikakis, M. J. Am. Chem. Soc. 2004,
+ (2) Hoogers, G.; Thompsett, D. CATTECH 1999, 3, 106. 126, 4717.
+ (3) Toda, T.; Igarashi, H.; Uchida, H.; Watanabe, M. J. Electrochem. (28) Kitchin, J. R.; Nørskov, J. K.; Barteau, M. A.; Chen, J. G. J. Chem.
+Soc. 1999, 146, 3750. Phys. 2004, 120, 10240.
+ (4) Sasaki, K.; Mo, Y.; Wang, J. X.; Balasubramanian, M.; Uribe, F.; (29) Markovic, N. M.; Ross, P. N. Surf. Sci. Rep. 2002, 45, 117.
+McBreen, J.; Adzic, R. R. Electrochim. Acta 2003, 48, 3841. (30) Toda, T.; Igarashi, H.; Uchida, H.; Watanabe, M. J. Electrochem.
+ (5) Stamenkovic, V.; Schmidt, T. J.; Ross, P. N.; Marković, N. M. J. Soc. 1999, 146, 3750.
+Electroanal. Chem. 2003, 554-555, 191. (31) Stamenkovic, V.; Schmidt, T. J.; Ross, P. N.; Marković, N. M. J.
+ (6) Paulus, U. A.; Wokaun, A.; Scherer, G. G.; Schmidt, T. J.; Phys. Chem. B 2002, 106, 11970.
+Stamenkovic, V.; Markovic, N. M.; Ross, P. N. Electrochim. Acta 2002, (32) Mukerjee, S.; Srinivasan, S.; Soriaga, M.; McBreen, J. J. Electro-
+47, 3787. chem. Soc. 1995, 142, 1409.
+ (7) Antolini, E.; Passos, R. R.; Ticianelli, E. A. Electrochim. Acta 2002, (33) Grgur, B. N.; Markovic, N. M.; Ross, P. N. J. Can. Chem. 1997,
+48, 263. 75, 1465.
+ (8) Tarasevich, M. R.; Sadkowski, A.; Yeager, E. In Comprehensive (34) Chatenet, M.; Cenies-Butel, L.; Aurousseau, M.; Durand, R.;
+Treatise of Electrochemistry, Conway, B., Bockris, J. O′. M., Yeager, E., Andolfatto, F. J. Appl. Electrochem. 2002, 32, 1131.
+Khan, S. U. M., White, R. E., Eds.; Plenum Press: New York, 1983; Vol. (35) Blizanac, B. B.; Lucas, C. A.; Gallagher, M. E.; Arenz, M.; Ross,
+7, Chapter 6.. P. N.; Markovic, N. M. J. Phys. Chem. B 2004, 108, 625.
+ (9) Jones, R. O.; Gunnarsson, O. ReV. Mod. Phys. 1989, 61, 689. (36) Adzic R. R.; Wang, J. X. Solid State Ionics 2002, 150, 105.
+ (10) Kurth, S.; Perdew, J. P.; Blaha, P. Int. J. Quantum Chem. 1999, (37) Strabac, S.; Anastasijevic, N. A.; Adzic, R. R. Electrochim. Acta
+75, 889. 1994, 39, 983.
+ (11) CRC Handbook of Chemistry and Physics, 49th ed.; Weast, R. C. (38) Bligaard, T.; Nørskov, J. K.; Dahl, S.; Matthiesen, J.; Christensen,
+Ed.; The Chemical Rubber Company: Cleveland, OH, 1968-1969; p D109. C. H.; Sehested, J. J. Catal. 2004, 224, 206.

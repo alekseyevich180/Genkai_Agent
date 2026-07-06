@@ -6,7 +6,15 @@ import json
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 from typing import Any, Iterable
+
+try:
+    from .parameter_registry import build_surface_parameter_registry
+    from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
+except ImportError:  # pragma: no cover - direct script execution
+    from parameter_registry import build_surface_parameter_registry
+    from parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
 
 
 SUPPORTED_MODELING_TASKS = {
@@ -64,7 +72,9 @@ KNOWN_SURFACE_TERMS = {
 }
 
 RELATION_FIELDS = [
+    "applications",
     "materials",
+    "material_parameters",
     "surfaces",
     "surface_terminations",
     "slab_models",
@@ -86,7 +96,9 @@ RELATION_FIELDS = [
 ]
 
 TABLE_FIELDS = [
+    "Reaction Type",
     "Material",
+    "Composition",
     "Surface/Support",
     "Facet",
     "Surface Termination",
@@ -97,10 +109,13 @@ TABLE_FIELDS = [
     "Adsorption Site",
     "Coverage",
     "Cluster/Single Atom",
+    "Loading",
+    "Product",
     "Modeling Keywords",
 ]
 
 HIGH_VALUE_FIELDS = {
+    "material_parameters",
     "materials",
     "surfaces",
     "facets",
@@ -115,6 +130,7 @@ HIGH_VALUE_FIELDS = {
     "modeling_keywords",
     "recommended_modeling_tasks",
     "Material",
+    "Composition",
     "Surface/Support",
     "Facet",
     "Defect",
@@ -122,6 +138,7 @@ HIGH_VALUE_FIELDS = {
     "Adsorption Site",
     "Coverage",
     "Cluster/Single Atom",
+    "Loading",
     "Modeling Keywords",
 }
 
@@ -135,6 +152,7 @@ class ExperienceItem:
     kind: str
     context: str
     action: str
+    anchor_material: str = ""
 
 
 CATEGORY_RULES = {
@@ -161,6 +179,8 @@ CATEGORY_RULES = {
         "Dopant/Modifier",
     },
     "adsorption_reaction": {
+        "applications",
+        "Reaction Type",
         "adsorbates",
         "adsorption_sites",
         "coverage",
@@ -183,6 +203,58 @@ CATEGORY_RULES = {
         "Modeling Keywords",
     },
 }
+
+KEYWORD_BUCKET_RULES = {
+    "materials": {"materials", "Material"},
+    "compositions": {"material_parameters", "Composition", "Loading"},
+    "supports_surfaces": {"surfaces", "Surface/Support", "slab_models"},
+    "facets": {"facets", "Facet"},
+    "surface_states": {
+        "surface_terminations",
+        "Surface Termination",
+        "defects",
+        "vacancy_models",
+        "Defect",
+    },
+    "dopants_modifiers": {"dopants", "Dopant/Modifier", "modifiers"},
+    "active_sites": {"active_sites", "Active Site"},
+    "adsorbates_reactants": {"adsorbates", "Adsorbate/Reactant", "intermediates", "products", "Product"},
+    "adsorption_sites": {"adsorption_sites", "Adsorption Site"},
+    "coverage": {"coverage", "Coverage"},
+    "clusters_single_atoms": {"clusters", "single_atoms", "Cluster/Single Atom"},
+    "reactions": {"applications", "Reaction Type"},
+    "modeling_keywords": {"modeling_keywords", "Modeling Keywords", "recommended_modeling_tasks"},
+}
+
+PERIODIC_SYMBOLS = {
+    "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
+    "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
+    "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
+    "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
+    "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
+    "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
+    "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
+    "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
+    "Tl", "Pb", "Bi", "Po", "At", "Rn",
+}
+
+MATERIAL_KIND_TOKENS = {
+    "supported_catalyst": ("supported", "support", "/", "anchored", "metal-support"),
+    "single_atom_catalyst": ("single atom", "single atoms", "sac", "sacs"),
+    "nanoparticle": ("nanoparticle", "nanoparticles", "np", "nps"),
+    "cluster": ("cluster", "nanocluster"),
+    "nanosheet": ("nanosheet", "nanosheets"),
+    "oxide": ("oxide", "o2", "ceo2", "tio2", "co3o4", "nio", "ruo2", "mno"),
+    "hydroxide_oxyhydroxide": ("hydroxide", "oxyhydroxide", "ldh", "niooh", "feooh", "coooh"),
+    "sulfide": ("sulfide", "mos2", "ws2", "fes", "nis", "cos"),
+    "nitride": ("nitride", "nitrided", "mon"),
+    "carbon_material": ("graphene", "carbon", "graphite", "cnt", "g-c3n4", "c3n4"),
+    "surface": ("surface", "facet", "interface", "slab"),
+}
+
+TRANSITION_OR_SUPPORT_TOKENS = (
+    "Pt", "Pd", "Ni", "Co", "Fe", "Cu", "Ru", "Rh", "Ir", "Au", "Ag", "Sn", "Zn", "Mn", "Cr", "V", "Mo", "W"
+)
 
 MATERIAL_CLASS_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("single_atom_catalysts", ("single atom", "single atoms", "single metal atoms", "sac", "sacs", "sa/", "sas/")),
@@ -267,6 +339,90 @@ def _flatten(value: object) -> list[str]:
     return [cleaned] if cleaned else []
 
 
+def _iter_formula_like_tokens(text: str) -> list[str]:
+    tokens = re.findall(r"\b(?:[A-Z][a-z]?\d*){1,8}\b", text)
+    cleaned: list[str] = []
+    for token in tokens:
+        if token in PERIODIC_SYMBOLS:
+            cleaned.append(token)
+            continue
+        parts = re.findall(r"[A-Z][a-z]?", token)
+        if parts and all(part in PERIODIC_SYMBOLS for part in parts):
+            cleaned.append(token)
+    return cleaned
+
+
+def _extract_elements(text: str) -> list[str]:
+    elements: list[str] = []
+    for symbol in re.findall(r"\b[A-Z][a-z]?\b", text):
+        if symbol in PERIODIC_SYMBOLS and symbol not in elements:
+            elements.append(symbol)
+    for token in _iter_formula_like_tokens(text):
+        for symbol in re.findall(r"[A-Z][a-z]?", token):
+            if symbol in PERIODIC_SYMBOLS and symbol not in elements:
+                elements.append(symbol)
+    return elements
+
+
+def _extract_element_set(text: str) -> list[str]:
+    return sorted(_extract_elements(text))
+
+
+def _infer_material_kinds(text: str, field: str) -> list[str]:
+    lowered = _normalize_term(text)
+    kinds: list[str] = []
+    for kind, tokens in MATERIAL_KIND_TOKENS.items():
+        if any(token in lowered for token in tokens):
+            kinds.append(kind)
+    if field in {"surfaces", "Surface/Support", "slab_models"} and "surface" not in kinds:
+        kinds.append("surface")
+    return kinds
+
+
+def _extract_loadings(text: str) -> list[str]:
+    patterns = [
+        r"\b\d+(?:\.\d+)?\s*(?:wt%|wt\.%|at%|at\.%|mol%|mol\.%|mass%|mass\.%)\s*[A-Za-z0-9+\-]*",
+        r"\b\d+(?:\.\d+)?\s*(?:wt%|wt\.%|at%|at\.%|mol%|mol\.%|mass%|mass\.%)\b",
+        r"\b\d+(?:\.\d+)?\s*(?:mg|g)\s*(?:cm-2|cm\^-2|g-1|wt-1)?\b",
+    ]
+    matches: list[str] = []
+    for pattern in patterns:
+        for match in re.findall(pattern, text):
+            cleaned = " ".join(match.split())
+            if cleaned and cleaned not in matches:
+                matches.append(cleaned)
+    return matches
+
+
+def _extract_component_compounds(text: str) -> list[str]:
+    components: list[str] = []
+    for token in re.split(r"[/@]| on |\+| with ", text):
+        cleaned = token.strip(" ,;:()[]")
+        if not cleaned:
+            continue
+        if cleaned not in components and (
+            _extract_elements(cleaned)
+            or any(kind in _normalize_term(cleaned) for kind in ("surface", "graphene", "carbon", "oxide", "ldh", "mos2"))
+        ):
+            components.append(cleaned)
+    return components
+
+
+def _split_supported_components(text: str) -> tuple[list[str], list[str]]:
+    pieces = [part.strip(" ,;:()[]") for part in re.split(r"[/@]", text) if part.strip(" ,;:()[]")]
+    if len(pieces) < 2:
+        return [], []
+    support_like = []
+    loaded_like = []
+    for idx, piece in enumerate(pieces):
+        lowered = piece.lower()
+        if idx == len(pieces) - 1 and any(token in lowered for token in ("o2", "oxide", "ldh", "carbon", "graphene", "mos2", "al2o3", "sio2", "support")):
+            support_like.append(piece)
+        else:
+            loaded_like.append(piece)
+    return support_like, loaded_like
+
+
 def _split_cell(value: str) -> list[str]:
     parts = [part.strip() for part in value.replace(";", ",").split(",")]
     return [part for part in parts if part]
@@ -310,16 +466,47 @@ def _category_for(field: str, kind: str) -> str:
     return "other_useful_information"
 
 
-def _material_classes_for(value: str, field: str) -> list[str]:
+def _material_classes_for(value: str, field: str, anchor_material: str = "") -> list[str]:
+    anchor_preferred_fields = {
+        "applications", "Reaction Type", "adsorbates", "Adsorbate/Reactant",
+        "active_sites", "Active Site", "clusters", "single_atoms",
+        "Cluster/Single Atom", "dopants", "Dopant/Modifier", "facets", "Facet",
+        "material_parameters", "Composition", "Loading",
+    }
+    if anchor_material and field in anchor_preferred_fields:
+        anchor_lower = _normalize_term(anchor_material)
+        anchor_classes = [
+            material_class
+            for material_class, tokens in MATERIAL_CLASS_RULES
+            if any(token in anchor_lower for token in tokens)
+        ]
+        if anchor_classes:
+            return anchor_classes
+
     lower = _normalize_term(value)
     classes = [
         material_class
         for material_class, tokens in MATERIAL_CLASS_RULES
         if any(token in lower for token in tokens)
     ]
+    if not classes and anchor_material:
+        anchor_lower = _normalize_term(anchor_material)
+        classes = [
+            material_class
+            for material_class, tokens in MATERIAL_CLASS_RULES
+            if any(token in anchor_lower for token in tokens)
+        ]
     if classes:
         return classes
-    if field in {"materials", "surfaces", "slab_models", "Material", "Surface/Support"}:
+    if field in {
+        "materials", "surfaces", "slab_models", "Material", "Surface/Support",
+        "material_parameters", "Composition", "Loading", "applications",
+        "Reaction Type", "adsorbates", "Adsorbate/Reactant", "active_sites",
+        "Active Site", "clusters", "single_atoms", "Cluster/Single Atom",
+        "dopants", "Dopant/Modifier", "facets", "Facet",
+    } and anchor_material:
+        return ["other_inorganic_materials"]
+    if field in {"materials", "surfaces", "slab_models", "Material", "Surface/Support", "material_parameters", "Composition", "Loading"}:
         return ["other_inorganic_materials"]
     return []
 
@@ -332,6 +519,11 @@ def collect_from_relations(path: str) -> list[ExperienceItem]:
         if not isinstance(extraction, dict):
             continue
         context = _clean(payload.get("title")) or _clean(payload.get("id"))
+        anchor_material = ""
+        materials = extraction.get("materials", [])
+        flattened_materials = _flatten(materials)
+        if flattened_materials:
+            anchor_material = flattened_materials[0]
         for field in RELATION_FIELDS:
             for value in _flatten(extraction.get(field, [])):
                 kind = _kind_for(field, value)
@@ -344,6 +536,7 @@ def collect_from_relations(path: str) -> list[ExperienceItem]:
                         kind=kind,
                         context=context,
                         action=_action_for(field, value, known=kind == "known_useful"),
+                        anchor_material=anchor_material,
                     )
                 )
     return _dedupe(items)
@@ -356,6 +549,7 @@ def collect_from_table(path: str) -> list[ExperienceItem]:
         reader = csv.DictReader(handle)
         for row in reader:
             context = _clean(row.get("Material")) or _clean(row.get("Reaction Type"))
+            anchor_material = _clean(row.get("Material"))
             for field in TABLE_FIELDS:
                 raw = _clean(row.get(field))
                 if not raw:
@@ -371,6 +565,7 @@ def collect_from_table(path: str) -> list[ExperienceItem]:
                             kind=kind,
                             context=context,
                             action=_action_for(field, value, known=kind == "known_useful"),
+                            anchor_material=anchor_material,
                         )
                     )
     return _dedupe(items)
@@ -421,7 +616,8 @@ def aggregate_experience(items: list[ExperienceItem]) -> dict[str, Any]:
         if item.kind != entry["kind"] and item.kind.startswith("unknown"):
             entry["kind"] = item.kind
 
-        for material_class in _material_classes_for(item.value, item.field):
+        item_material_classes = _material_classes_for(item.value, item.field, item.anchor_material)
+        for material_class in item_material_classes:
             class_bucket = material_classes.setdefault(material_class, {})
             class_entry = class_bucket.setdefault(
                 term_key,
@@ -519,6 +715,273 @@ def _merge_class_entries(existing: list[dict[str, Any]], incoming: list[dict[str
     )
 
 
+def _compact_class_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    compacted = {
+        "term": entry.get("term", ""),
+        "kind": entry.get("kind", ""),
+        "research_category": entry.get("research_category", ""),
+        "fields": list(entry.get("fields", [])),
+        "count": int(entry.get("count", 0)),
+    }
+    contexts = [item for item in entry.get("contexts", []) if item]
+    if contexts:
+        compacted["example_contexts"] = contexts[:3]
+    return compacted
+
+
+def _build_keyword_inventory(entries: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    inventory: dict[str, dict[str, dict[str, Any]]] = {}
+
+    for entry in entries:
+        fields = entry.get("fields", [])
+        if not isinstance(fields, list):
+            continue
+        for bucket_name, bucket_fields in KEYWORD_BUCKET_RULES.items():
+            if not any(field in bucket_fields for field in fields):
+                continue
+            normalized_term = _normalize_term(str(entry.get("term", "")))
+            if not normalized_term:
+                continue
+            bucket = inventory.setdefault(bucket_name, {})
+            item = bucket.setdefault(
+                normalized_term,
+                {
+                    "term": entry.get("term", ""),
+                    "count": 0,
+                    "kind": entry.get("kind", ""),
+                    "research_category": entry.get("research_category", ""),
+                },
+            )
+            item["count"] += int(entry.get("count", 0))
+            if str(entry.get("kind", "")).startswith("unknown"):
+                item["kind"] = entry.get("kind", item["kind"])
+            if not item.get("research_category") and entry.get("research_category"):
+                item["research_category"] = entry["research_category"]
+
+    return {
+        bucket_name: sorted(
+            bucket.values(),
+            key=lambda item: (-int(item["count"]), str(item["term"]).casefold()),
+        )
+        for bucket_name, bucket in sorted(inventory.items())
+    }
+
+
+def _build_material_descriptors(entries: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    descriptor_buckets: dict[str, dict[str, dict[str, Any]]] = {
+        "elements": {},
+        "material_kinds": {},
+        "component_compounds": {},
+        "element_sets": {},
+        "approx_loadings": {},
+    }
+
+    def add(bucket_name: str, key: str, label: str, count: int) -> None:
+        if not key:
+            return
+        bucket = descriptor_buckets[bucket_name]
+        item = bucket.setdefault(key, {"term": label, "count": 0})
+        item["count"] += count
+
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        count = int(entry.get("count", 0))
+        fields = entry.get("fields", [])
+        if not term or count <= 0:
+            continue
+
+        for symbol in _extract_elements(term):
+            add("elements", symbol, symbol, count)
+
+        kinds = _infer_material_kinds(term, fields[0] if isinstance(fields, list) and fields else "")
+        for kind in kinds:
+            add("material_kinds", kind, kind, count)
+
+        components = _extract_component_compounds(term)
+        for component in components:
+            add("component_compounds", _normalize_term(component), component, count)
+
+        element_set = _extract_element_set(term)
+        if element_set:
+            label = "{" + ", ".join(element_set) + "}"
+            add("element_sets", "|".join(element_set), label, count)
+
+        for loading in _extract_loadings(term):
+            add("approx_loadings", _normalize_term(loading), loading, count)
+
+    return {
+        bucket_name: sorted(
+            bucket.values(),
+            key=lambda item: (-int(item["count"]), str(item["term"]).casefold()),
+        )
+        for bucket_name, bucket in descriptor_buckets.items()
+        if bucket
+    }
+
+
+def _entries_for_fields(entries: list[dict[str, Any]], field_names: set[str]) -> list[dict[str, Any]]:
+    matched: list[dict[str, Any]] = []
+    for entry in entries:
+        fields = entry.get("fields", [])
+        if isinstance(fields, list) and any(field in field_names for field in fields):
+            matched.append(entry)
+    return matched
+
+
+def _top_terms(entries: list[dict[str, Any]], limit: int = 20) -> list[dict[str, Any]]:
+    return [
+        {"term": entry.get("term", ""), "count": int(entry.get("count", 0))}
+        for entry in sorted(entries, key=lambda item: (-int(item.get("count", 0)), str(item.get("term", "")).casefold()))[:limit]
+        if entry.get("term")
+    ]
+
+
+def _detect_coordination_patterns(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    patterns: dict[str, int] = {}
+    regexes = {
+        "N-coordinated": r"\bN[- ]?coordin",
+        "O-coordinated": r"\bO[- ]?coordin",
+        "S-coordinated": r"\bS[- ]?coordin",
+        "C-coordinated": r"\bC[- ]?coordin",
+        "M-Nx": r"\bN\d\b|\bMN\d\b|\bM-N\d\b",
+        "M-Ox": r"\bO\d\b|\bM-O\d\b",
+        "M-Sx": r"\bS\d\b|\bM-S\d\b",
+    }
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        count = int(entry.get("count", 0))
+        for label, pattern in regexes.items():
+            if re.search(pattern, term, flags=re.IGNORECASE):
+                patterns[label] = patterns.get(label, 0) + count
+    return [{"term": key, "count": value} for key, value in sorted(patterns.items(), key=lambda item: (-item[1], item[0]))]
+
+
+def _detect_single_atom_centers(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    counts: dict[str, int] = {}
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        entry_count = int(entry.get("count", 0))
+        for element in _extract_elements(term):
+            counts[element] = counts.get(element, 0) + entry_count
+    return [{"term": key, "count": value} for key, value in sorted(counts.items(), key=lambda item: (-item[1], item[0]))]
+
+
+def _detect_exposed_surfaces(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    surface_like = []
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        if re.search(r"\(\d[\d\s-]{1,6}\)", term) or "surface" in term.lower() or "facet" in term.lower():
+            surface_like.append(entry)
+    return _top_terms(surface_like, limit=20)
+
+
+def _detect_spacegroup_terms(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    matched = []
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        lowered = term.lower()
+        if any(token in lowered for token in ("space group", "cubic", "tetragonal", "orthorhombic", "monoclinic", "trigonal", "hexagonal", "fluorite", "perovskite", "spinel")):
+            matched.append(entry)
+    return _top_terms(matched, limit=20)
+
+
+def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> dict[str, Any]:
+    material_entries = _entries_for_fields(entries, {"materials", "Material", "material_parameters", "Composition"})
+    support_entries = _entries_for_fields(entries, {"surfaces", "Surface/Support", "slab_models"})
+    facet_entries = _entries_for_fields(entries, {"facets", "Facet", "surfaces", "Surface/Support"})
+    dopant_entries = _entries_for_fields(entries, {"dopants", "Dopant/Modifier", "modifiers"})
+    active_site_entries = _entries_for_fields(entries, {"active_sites", "Active Site"})
+    cluster_entries = _entries_for_fields(entries, {"clusters", "single_atoms", "Cluster/Single Atom"})
+    composition_entries = _entries_for_fields(entries, {"material_parameters", "Composition", "Loading"})
+    state_entries = _entries_for_fields(entries, {"surface_terminations", "Surface Termination", "defects", "vacancy_models", "Defect"})
+    reaction_entries = _entries_for_fields(entries, {"applications", "Reaction Type"})
+
+    if material_class == "supported_catalysts":
+        support_candidates = []
+        loaded_candidates = []
+
+        for entry in material_entries + support_entries + composition_entries:
+            term = str(entry.get("term", ""))
+            lowered = term.lower()
+            split_supports, split_loaded = _split_supported_components(term)
+            for component in split_supports:
+                support_candidates.append({"term": component, "count": int(entry.get("count", 0))})
+            for component in split_loaded:
+                loaded_candidates.append({"term": component, "count": int(entry.get("count", 0))})
+            if any(token in lowered for token in ("ceo2", "tio2", "al2o3", "sio2", "graphene", "carbon", "ldh", "mos2", "support")):
+                for component in _extract_component_compounds(term) or [term]:
+                    if any(token in component.lower() for token in ("ceo2", "tio2", "al2o3", "sio2", "graphene", "carbon", "ldh", "mos2", "support")):
+                        support_candidates.append({"term": component, "count": int(entry.get("count", 0))})
+
+        for entry in cluster_entries + dopant_entries + active_site_entries + material_entries:
+            term = str(entry.get("term", ""))
+            if any(symbol in term for symbol in TRANSITION_OR_SUPPORT_TOKENS) and "support" not in term.lower():
+                loaded_candidates.append(entry)
+
+        return {
+            "descriptor_schema": "supported_catalyst_profile",
+            "elements": _build_material_descriptors(entries).get("elements", []),
+            "material_kind": [{"term": "supported_catalyst", "count": len(entries)}],
+            "support_components": _top_terms(support_candidates, 20),
+            "loaded_components": _top_terms(loaded_candidates, 20),
+            "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "approx_loadings": _build_material_descriptors(composition_entries).get("approx_loadings", []),
+            "reaction_families": _top_terms(reaction_entries, 20),
+        }
+
+    if material_class in {"carbon_materials", "single_atom_catalysts"}:
+        return {
+            "descriptor_schema": "carbon_or_sac_profile",
+            "elements": _build_material_descriptors(entries).get("elements", []),
+            "host_structures": _top_terms([entry for entry in material_entries + support_entries if any(token in str(entry.get("term", "")).lower() for token in ("graphene", "carbon", "g-c3n4", "cnt", "nanotube"))], 20),
+            "dopant_or_loaded_species": _top_terms(dopant_entries + cluster_entries, 20),
+            "coordination_environments": _detect_coordination_patterns(active_site_entries + state_entries + material_entries),
+            "single_atom_centers": _detect_single_atom_centers(cluster_entries + active_site_entries + dopant_entries),
+            "reaction_families": _top_terms(reaction_entries, 20),
+        }
+
+    if material_class == "metals_alloys":
+        return {
+            "descriptor_schema": "alloy_profile",
+            "elements": _build_material_descriptors(entries).get("elements", []),
+            "alloy_components": _top_terms(material_entries, 30),
+            "approx_compositions": _top_terms(composition_entries, 20),
+            "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "surface_states": _top_terms(state_entries, 20),
+            "reaction_families": _top_terms(reaction_entries, 20),
+        }
+
+    if material_class == "oxides":
+        return {
+            "descriptor_schema": "oxide_profile",
+            "elements": _build_material_descriptors(entries).get("elements", []),
+            "oxide_components": _top_terms([entry for entry in material_entries if "o" in _normalize_term(str(entry.get("term", "")))], 30),
+            "crystal_or_spacegroup_terms": _detect_spacegroup_terms(material_entries + composition_entries),
+            "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "defect_or_termination_states": _top_terms(state_entries, 20),
+            "reaction_families": _top_terms(reaction_entries, 20),
+        }
+
+    if material_class == "perovskites_spinels":
+        return {
+            "descriptor_schema": "perovskite_spinel_profile",
+            "elements": _build_material_descriptors(entries).get("elements", []),
+            "framework_components": _top_terms(material_entries, 30),
+            "a_b_site_related_terms": _top_terms([entry for entry in material_entries + composition_entries if any(token in str(entry.get("term", "")).lower() for token in ("abo3", "ab2o4", "a-site", "b-site", "perovskite", "spinel"))], 20),
+            "crystal_or_spacegroup_terms": _detect_spacegroup_terms(material_entries + composition_entries),
+            "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "reaction_families": _top_terms(reaction_entries, 20),
+        }
+
+    return {
+        "descriptor_schema": "generic_material_profile",
+        "elements": _build_material_descriptors(entries).get("elements", []),
+        "components": _top_terms(material_entries, 20),
+        "surface_states": _top_terms(state_entries, 20),
+        "reaction_families": _top_terms(reaction_entries, 20),
+    }
+
+
 def write_material_class_store(
     aggregate: dict[str, Any],
     output_dir: str,
@@ -540,26 +1003,25 @@ def write_material_class_store(
         existing_entries = payload.get("entries", [])
         merged_entries = _merge_class_entries(existing_entries, entries)
         payload = {
-            "schema_version": "1.0",
+            "schema_version": "2.0",
             "material_class": material_class,
             "updated_at": _now(),
             "summary": {
                 "terms": len(merged_entries),
                 "known_useful": sum(1 for entry in merged_entries if entry.get("kind") == "known_useful"),
                 "unknown": sum(1 for entry in merged_entries if entry.get("kind") != "known_useful"),
-                "sources": sorted(
-                    {
-                        source
-                        for entry in merged_entries
-                        for source in entry.get("sources", [])
-                        if source
-                    }
-                ),
             },
-            "entries": merged_entries,
+            "keyword_inventory": _build_keyword_inventory(merged_entries),
+            "material_descriptors": _build_material_descriptors(merged_entries),
+            "class_profile": _build_class_profile(material_class, merged_entries),
+            "entries": [_compact_class_entry(entry) for entry in merged_entries],
         }
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         written[material_class] = str(path)
+
+    target_material_class_dir = (Path(output_dir) / "material_classes").resolve()
+    if written and target_material_class_dir == DEFAULT_MATERIAL_CLASS_DIR.resolve():
+        build_surface_parameter_registry(target_material_class_dir)
 
     return written
 
@@ -576,15 +1038,17 @@ def init_material_class_store(output_dir: str) -> dict[str, Any]:
             existing.append(str(path))
             continue
         payload = {
-            "schema_version": "1.0",
+            "schema_version": "2.0",
             "material_class": material_class,
             "updated_at": _now(),
             "summary": {
                 "terms": 0,
                 "known_useful": 0,
                 "unknown": 0,
-                "sources": [],
             },
+            "keyword_inventory": {},
+            "material_descriptors": {},
+            "class_profile": {},
             "entries": [],
         }
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

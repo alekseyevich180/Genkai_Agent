@@ -1,0 +1,554 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl",
+    "table_csv": "tests/paperread_batch_experience/Mn-exp_conditions_input_table.csv",
+    "summary_txt": "tests/paperread_batch_experience/Mn-exp_conditions_input_summary.txt",
+    "time_csv": "tests/paperread_batch_experience/Mn-exp_conditions_input_time.csv"
+  },
+  "surface_modeling_parameter_schema": {
+    "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+    "schema_version": "1.0",
+    "tasks": {
+      "vacancy_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
+        "ptomodel_mapping_role": "oxide surface vacancy modeling input",
+        "parameters": {
+          "input": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "vacancy_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "samples_per_count": {
+            "type": "int",
+            "required": false
+          },
+          "mu_o": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_max": {
+            "type": "float",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "write_all_structures": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "samples_per_count >= 1",
+          "0 <= z_frac_min <= z_frac_max <= 1",
+          "calculator in ['uma', 'none']",
+          "calculator='uma' requires uma_model and device"
+        ]
+      },
+      "adsorbate_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py",
+        "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "molecule": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "site_symbols": {
+            "type": "string",
+            "required": false
+          },
+          "site_z_tolerance": {
+            "type": "float",
+            "required": false
+          },
+          "max_sites": {
+            "type": "int",
+            "required": false
+          },
+          "site_group_size": {
+            "type": "int",
+            "required": false
+          },
+          "n_trials_single": {
+            "type": "int",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_max": {
+            "type": "float",
+            "required": false
+          },
+          "coverage_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "patterns": {
+            "type": "comma_separated_strings",
+            "required": false
+          },
+          "random_repeats": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "site_group_size >= 1",
+          "coverage_counts values must be within the computed max_adsorbates range",
+          "patterns must be drawn from uniform, clustered, stripe, island, random",
+          "calculator in ['uma', 'none']"
+        ]
+      },
+      "surface_cluster_builder": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py",
+        "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_element": {
+            "type": "string",
+            "required": false
+          },
+          "cluster_bulk_file": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_structures": {
+            "type": "string_list",
+            "required": false,
+            "choices": [
+              "fcc",
+              "hcp",
+              "bcc"
+            ]
+          },
+          "cluster_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_layers": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_radius": {
+            "type": "float",
+            "required": false
+          },
+          "stack_layers": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_rows": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_a": {
+            "type": "float",
+            "required": false
+          },
+          "cluster_c": {
+            "type": "float",
+            "required": false
+          },
+          "fcc_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "fcc_row_profile": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "auto",
+              "custom",
+              "triangle",
+              "hexagon",
+              "trapezoid",
+              "rectangle"
+            ]
+          },
+          "fcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_row_count": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_stacking_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "ABC",
+              "AB"
+            ]
+          },
+          "fcc_layers": {
+            "type": "int",
+            "required": false
+          },
+          "hcp_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "hcp_layers": {
+            "type": "int",
+            "required": false
+          },
+          "x_frac": {
+            "type": "float",
+            "required": false
+          },
+          "y_frac": {
+            "type": "float",
+            "required": false
+          },
+          "z_height": {
+            "type": "float",
+            "required": false
+          },
+          "phi": {
+            "type": "float",
+            "required": false
+          },
+          "theta": {
+            "type": "float",
+            "required": false
+          },
+          "psi": {
+            "type": "float",
+            "required": false
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          }
+        },
+        "constraints": [
+          "cluster_element and cluster_bulk_file should provide enough information to resolve a metal species",
+          "in generic mode exactly one of cluster_atoms, cluster_layers, cluster_radius should be provided",
+          "bcc bridge mode requires bcc_rows, bcc_max_row_atoms, stack_layers",
+          "fcc row mode requires fcc_layers plus fcc_rows or an inferable fcc_row_profile setup",
+          "hcp row mode requires hcp_rows"
+        ]
+      },
+      "surface_cluster_mlip_search": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py",
+        "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "cluster": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "n_trials": {
+            "type": "int",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "checkpoint": {
+            "type": "path_or_null",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "placement_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cell",
+              "active"
+            ]
+          },
+          "active_symbols": {
+            "type": "string_list",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_max": {
+            "type": "float",
+            "required": false
+          },
+          "detach_cutoff": {
+            "type": "float",
+            "required": false
+          },
+          "penalty_energy": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "candidate_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "selection_count": {
+            "type": "int",
+            "required": false
+          },
+          "top_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "top_pick_count": {
+            "type": "int",
+            "required": false
+          },
+          "tail_bin_size": {
+            "type": "int",
+            "required": false
+          },
+          "tail_pick_per_bin": {
+            "type": "int",
+            "required": false
+          },
+          "selection_random_seed": {
+            "type": "int",
+            "required": false
+          }
+        },
+        "constraints": [
+          "placement_mode in ['cell', 'active']",
+          "placement_mode='active' requires active_symbols",
+          "this task requires fairchem-core, torch, and a usable UMA model"
+        ]
+      }
+    }
+  },
+  "summary_excerpt": [
+    "这次抽到的关键信息包括：",
+    "在 Mn-exp_conditions_input_table.csv 里：",
+    "- 未提取到可汇总的条件信息",
+    "在 Mn-exp_conditions_input_surface_relations.jsonl 里：",
+    "- 材料：",
+    "- Mn3O4",
+    "- hausmannitene",
+    "- 材料参数：",
+    "- atomically thin structure",
+    "- Mn (III) ions",
+    "- 反应参数：",
+    "- 0.85 eV"
+  ],
+  "documents": [
+    {
+      "id": "surface_relations",
+      "title": "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4",
+      "selected_information": {
+        "materials": [
+          "Mn3O4",
+          "hausmannitene"
+        ],
+        "material_classes": [
+          "metals_alloys"
+        ],
+        "supports_or_surfaces": [
+          "(112)-oriented surface of hausmannitene"
+        ],
+        "surface_facets": [],
+        "surface_terminations": [],
+        "loaded_nanoparticles_or_clusters": [],
+        "single_atom_species": [],
+        "reaction_types": [],
+        "adsorbates": [],
+        "adsorption_sites": [],
+        "coverage": [],
+        "defects": [],
+        "active_sites": [
+          "Mn (III) sites",
+          "Mn (II) sites"
+        ],
+        "modeling_keywords": [
+          "DFT",
+          "electrocatalysis",
+          "OER",
+          "ORR"
+        ]
+      },
+      "normalized_mapping": {
+        "primary_material": "Mn3O4",
+        "material_classes": [
+          "metals_alloys"
+        ],
+        "primary_surface_or_support": "(112)-oriented surface of hausmannitene",
+        "facet_set": [],
+        "loaded_species": [],
+        "reaction_family": []
+      },
+      "recommended_modeling_tasks": [
+        "slab_generation"
+      ],
+      "executable_tasks": [],
+      "deferred_tasks": [
+        "slab_generation"
+      ],
+      "task_inputs": {},
+      "task_parameter_schema_refs": {},
+      "task_argument_template": {}
+    }
+  ],
+  "global_recommended_tasks": [
+    "slab_generation"
+  ],
+  "global_executable_tasks": [],
+  "global_deferred_tasks": [
+    "slab_generation"
+  ]
+}

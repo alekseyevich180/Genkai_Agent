@@ -1,0 +1,386 @@
+Article
+
+ pubs.acs.org/JPCC
+
+ Importance of Correlation in Determining Electrocatalytic Oxygen
+ Evolution Activity on Cobalt Oxides
+ Mónica García-Mota,† Michal Bajdich,‡ Venkatasubramanian Viswanathan,† Aleksandra Vojvodic,†
+ Alexis T. Bell,‡,§ and Jens K. Nørskov*,†
+ †
+ SUNCAT Center for Interface Science and Catalysis, Department of Chemical Engineering, Stanford University, Stanford, California
+ 94305, United States
+ ‡
+ JCAP-North, The Joint Center for Artiﬁcial Photosynthesis, Lawrence Berkeley National Laboratory, Berkeley, California 94720,
+ United States
+ §
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ Department of Chemical and Biomolecular Engineering, University of California at Berkeley, Berkeley, California 94720, United
+ States
+ *
+ S Supporting Information
+ Downloaded via UNIV OF TOKYO on November 26, 2025 at 10:16:04 (UTC).
+
+ ABSTRACT: Co-based oxides are suitable electrode materials for the electro-
+ catalytic oxygen evolution reaction (OER) with promising activity and stability, in
+ addition to being widely available and relatively cheap. We investigate OER on
+ Co3O4(001) and β-CoOOH (0112̅ ) surfaces using density functional theory
+ calculations (DFT). We construct surface Pourbaix diagrams and investigate the
+ theoretical overpotential for the elementary steps involved in OER on these surfaces.
+ We show that inclusion of the Hubbard-U correction to DFT (DFT+U) is necessary
+ to recover experimentally observed trends in the activity for the strongly correlated
+ cobalt oxides. We ﬁnd that the inclusion of the Hubbard-U correction lowers the
+ activity of both Co3O4(001) and β-CoOOH(011̅2) when compared to results from
+ pure DFT. In addition, the Hubbard-U correction shifts the location of Co3O4 and β-
+ CoOOH from the strong binding leg to the weak binding leg of the OER volcano
+ plot. The calculations also suggest that the theoretical overpotentials for Co3O4 and
+ β-CoOOH are very nearly the same. We ascribe this to a similar local coordination environment of the active Co site in Co3O4
+ and CoOOH under OER conditions.
+
+ ■ INTRODUCTION
+ Electrochemical water splitting to form molecular oxygen,
+ in the spinel structure of Co3O4 are converted to CoIII-
+ containing species, such as CoOOH and Co2O3.8−10 Recent
+ protons, and electrons is a key step in routes for electro- experimental studies suggest CoOOH as one of the stable
+ chemical fuel production.1 The protons and electrons can be structures under OER working conditions by in situ Raman
+ used at the cathode to form hydrogen or reduce CO2 to spectroscopy,7 electron paramagnetic resonance,11 and X-ray
+ hydrocarbons or alcohols. If the electrical energy is produced absorption spectroscopy.12
+ from sources like wind, hydro, or solar power, the fuel The bulk and surface properties of spinel Co3O4 have been
+ production becomes sustainable.2 However, the substantial studied extensively using density functional theory calculations
+ energy loss associated with electrochemical water splitting (DFT);13−15 however, there is a lack of literature addressing
+ severely limits the overall eﬃciency of such systems. The the reactivity of stable cobalt oxides under OER working
+ energy losses are mainly due to the high overpotentials conditions. Furthermore, it is well-known that semilocal forms
+ associated with the oxygen-evolving anode.3−5 Therefore, to of DFT fail to describe correctly the electronic structure for
+ minimize these energy losses, it is important to ﬁnd active such strongly correlated systems due to large self-interaction
+ oxygen-evolving electrocatalysts. Co-based oxides have received errors. In a recent work, Selloni et al. showed the importance of
+ a signiﬁcant amount of interest as electrode materials with including a Hubbard correction to properly describe the
+ promising activity and stability in alkaline media, in addition to electronic states and the magnetic structure at the Co3O4(110)
+ being based on widely available and relatively cheap surface.16
+ elements.4,6 For these reasons, considerable eﬀort has been The purpose of the present study is to understand the
+ devoted to the understanding of the changes in composition electrocatalytic activity of Co oxides. The approach we take
+ and structure of cobalt anodes as a function of applied potential
+ and the inﬂuence of these changes on the activity for oxygen Received: June 26, 2012
+ evolution reaction (OER).4,7 It has been proposed that, under Revised: August 24, 2012
+ oxidative conditions relevant to OER, the CoII species present Published: September 10, 2012
+
+ © 2012 American Chemical Society 21077 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082
+The Journal of Physical Chemistry C Article
+
+here is to improve the accuracy of DFT by using the DFT+U energy for the oxidation of CoO to Co3O4 according to the
+method, in which a Hubbard-type term is added to account for equation
+the on-site Coulomb interactions of the localized d 6CoO + O2 → 2Co3O4 (1)
+orbitals.17−19 We begin by addressing the discrepancy between
+the previously calculated and measured activity trend between We fully optimize the cobalt oxide structures for each of the
+RuO2 and Co3O4 surfaces for electrocatalytic OER. In an earlier tested U values. We avoid the well-known errors associated
+theoretical study,15 it was predicted that Co3O4 is slightly more with the DFT-calculated energy of O2 by using the H2O
+active than RuO2, whereas experimental studies suggest that reference as carried out earlier.28 The experimental reaction
+Co3O4 has a higher overpotential than RuO2 by 0.2−0.25 V.3 enthalpy for reaction 1 at room temperature is −3.68 eV. We
+We resolve this issue by including a Hubbard-U correction to ﬁnd that the calculated reaction enthalpy is equal to the
+improve the description of the localized Co d electrons in experimental one at a value of U = 3.52 eV (see Figure 1 in the
+Co3O4. We ﬁnd that the Hubbard-U correction on Co3O4 Supporting Information). The calculated U value is in good
+results in a lowering of its activity toward OER. As a agreement with the one found in the study by Ceder et al.17 We
+consequence, we ﬁnd a higher theoretical overpotential on consider the most energetically preferred termination of the Co
+Co3O4 than on RuO2 in agreement with the experimental oxides, namely, Co3O4(001) and β-CoOOH (011̅2), under
+trend. In addition, there is also a change in the potential- oxygen-rich conditions, which are cobalt-terminated slabs with
+determining step found for the OER, which results in a shift Co in an octahedral position13,29 (see Figure 1). We model the
+from the strong binding energy leg to the weak binding energy
+leg of the OER volcano plot.
+ As noted earlier, under oxidative conditions, CoII species in
+the spinel structure can be oxidized.7−12 We consider that
+possibility by examining the electrocatalytic activity for one of
+the stable structures under OER working conditions, namely, β-
+CoOOH. We ﬁnd that the inclusion of the Hubbard-U
+correction on β-CoOOH results in a lowering of the activity
+similar to that obtained when the correction is applied on Figure 1. Side views of the top layers of the relaxed CoxOy surface
+Co3O4. We ﬁnd theoretical overpotentials on β-CoOOH slabs used in the DFT calculations. Oxygen atoms and cobalt atoms in
+similar to that found on Co3O4. tetrahedral and octahedral positions are colored red, green, and purple,
+
+■
+ respectively.
+ THEORETICAL METHODS Co3O4(001) surface with slabs consisting of eight Co layers in a
+We investigate the theoretical overpotential (ηOER) for OER on (1 × 1) supercell, while the CoOOH (011̅2) surface is modeled
+CoxOy surfaces (Co3O4 and CoOOH) by ﬁrst-principles with ﬁve Co layers in a (2 × 2) supercell. The k-point sampling
+density functional theory (DFT) calculations using a computa- consists of 3 × 3 × 1 Monkhorst−Pack points.30 During
+tional hydrogen electrode model.20 We perform all calculations structure relaxation, we allow relaxation of both the adsorbates
+with the GPAW code using the ASE simulation package.21 We involved in OER (O*, OH*, and OOH*) and the top four Co
+replace the inner cores by projector augmented wave layers for Co3O4(001) and the top two Co layers for
+pseudopotentials (PAW),22 and we use a uniform real-spaced CoOOH(0112̅ ). The rest of the Co layers of the Co oxides
+grid with a spacing smaller than 0.2 Å for the representation of were kept frozen at their bulk positions. We separate the slabs
+the electronic wave functions.23 We use the revised Perdew− by more than 16 Å of vacuum. We carry out spin-polarized
+Burke−Ernzerhof functional (RPBE) to describe the exchange calculations including the dipole correction.31 The Bader
+and correlation.24 To address the discrepancy between the charges reported in this article were calculated by using the
+previously calculated and measured activity trend between method developed by Henkelman et al.32
+
+ ■
+RuO2 and Co3O4 surfaces for electrocatalytic OER, we apply a
+Hubbard-U correction (DFT+U method) as implemented in RESULTS AND DISCUSSION
+GPAW25 to improve the description of localized Co d-electrons
+in the Co oxides. It has been shown that the bulk formation Surface Pourbaix Diagrams. The theoretical overpoten-
+energies of rutile oxides are well described within standard tial depends strongly on the coverage of the diﬀerent reactant
+DFT, and thus we would expect the thermodynamics of oxygen species at the surface.33 We construct surface Pourbaix
+intermediates to be well described on RuO2.17,26−28 We use the diagrams where we identify the most stable structures for
+theoretical overpotential on the RuO2(110) surface previously Co3O4(001) and CoOOH (011̅2) for a range of potentials and
+estimated by DFT calculations 15 as a benchmark for pH values. It is to be noted that the bulk dissolution of cobalt
+comparison purposes. There is no universally accepted method ions occurs spontaneously in acidic environment.34 Thus, we
+for the choice of the value of U for the Hubbard correction. compare the results of our model to experiments carried out in
+Ceder and co-workers carried out a systematic study of the alkaline environment where these dissolution eﬀects are not
+oxidation energies of transition metals and suggested that the present. We determine the free energies of diﬀerent surface
+choice of U should be made to describe accurately the structures based on RPBE+U calculations and the computa-
+formation energies of diﬀerent oxides.17 A similar approach has tional standard hydrogen electrode model.20 This model has
+been done in recent studies, where it was suggested that the U previously been successful in predicting theoretical cyclic
+value should be taken to ﬁt the reaction energy of the diﬀerent voltammograms for hydrogen and oxygen species on Pt
+oxide forms relevant for the catalytic reaction under surfaces,35,36 trends in oxygen reduction reaction (ORR)
+study.18,19Accordingly, as we are interested in the electro- activity for Pt and Pt alloys,37,38 and trends in electrochemical
+oxidation of water, we chose the value of U to ﬁt the reaction activity on oxide surfaces.15,33,39 The surface Pourbaix diagram
+ 21078 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082
+The Journal of Physical Chemistry C Article
+
+Figure 2. Surface Pourbaix diagram obtained from DFT+U calculations. (a) Co3O4(001) and (b) CoOOH (011̅2). The dashed black lines mark the
+reversible hydrogen electrode (RHE) and the H2O/O2 equilibrium. The dotted red lines indicate the self-consistent theoretical overpotential (ηOER).
+
+is constructed by assuming an equilibrium of the surface with ΔG4 OER = 4.92[eV] − ΔGOOH * − eU + kBT ln aH +
+water, protons, and electrons according to the equation
+ Cox Oy + zH 2O ↔ Cox Oy + z H w + (2z − w)(H+ + e‐) where * represents an active site on the oxide. A detailed
+ derivation of these expressions can be found elsewhere.40 It is
+ (2)
+ to be noted that an analogous derivation can be carried out for
+We consider the adsorption of O, OH, and OOH on the CoxOy alkaline environment since the intermediates are the same in
+surfaces. The adsorption of O and OH is considered in all both acidic and alkaline environment. We calculate the free
+possible combinations (see Table 2 in Supporting Informa- energy diﬀerences ΔG1−4OER using the computational standard
+tion). We identify the most stable coverage of these hydrogen electrode model.20 The free energies of the
+intermediate species as a function of potential and pH. From intermediates along the reaction path, ΔGO*, ΔGOH*, and
+the Surface Pourbaix diagram shown in Figure 2a, the bare
+ ΔGOOH*, are calculated relative to H2O, at a vapor pressure of
+Co3O4 surface is stable up to 1.8VRHE, where the voltage, VRHE,
+ 0.035 bar where it is in equilibrium with liquid water, and H2 in
+is reported versus the reversible hydrogen electrode. Beyond
+1.8VRHE, the formation of OOH occurs on an oxygen-covered the gas phase at U = 0 V and standard conditions. We neglect
+Co3O4 surface. This ﬁnding is in agreement with previous DFT any additional kinetic barriers that may be present between the
+studies.15 A similar trend is also observed on the CoOOH intermediates. This analysis can be viewed as a ﬁrst step toward
+surface (see Figure 2b). For the sake of comparison with the a complete picture of the reaction pathway. We note that
+GGA description, we show the surface Pourbaix diagram calculations for the oxygen reduction reaction (which is the
+obtained with both RPBE and RPBE+U in Figure 2 in the reverse of the OER) on Pt(111) indicate that these additional
+Supporting Information. A similar stabilization trend is barriers are typically small.41 The potential determining step, a
+observed for both of these descriptions with a higher potential concept that has been discussed and reviewed in previous
+for the stability transitions when the GGA+U approach is used. works on OER and ORR,20,42−44 can be deduced from the free
+ Oxygen Evolution Reaction on Co3O4(100) and β- energy diagram. The potential determining step is the highest
+CoOOH (011̅2). In the water splitting reaction, free energy step in the process (GOER) and, therefore, the last
+ 2H 2O(l) → O2 (g) + 2H 2(g) (3) step to become downhill in free energy as the potential
+ increases. With this approach, the theoretical overpotential
+hydrogen is produced at the cathode, and oxygen is evolved at (ηOER) at standard condition is deﬁned as
+the anode. As outlined in previous works, we will consider the
+following mechanism for the oxygen evolution reaction (OER) ηOER = (GOER /e) − 1.23 V (4)
+in an acidic environment
+ H 2O(l) + * → OH* + H+ + e− In a recent study, Man et al. showed the existence of a universal
+ (3a)
+ activity volcano to describe OER on oxide surfaces.15 This is
+ ΔG1OER = ΔGOH * − eU + kBT ln aH + based on the existence of a scaling relation between the binding
+ energies of the intermediates OOH* and OH* on oxide
+ OH* → O* + H + + e− (3b) surfaces. They showed that the binding energies of OOH* and
+ OH* scale according to the relation ΔEOOH* = ΔEOH* + 3.2,
+ ΔG2OER = ΔGO * − ΔGOH * − eU + kBT ln aH + with 95% of the points within ±0.4 eV. This approximate
+ scaling means that the trends in activity between oxide
+ O* + H 2O(l) → OOH* + H+ + e− (3c) materials are to a ﬁrst approximation determined by the O*
+ binding energy. The implication of this scaling relation is that
+ ΔG3OER = ΔGOOH * − ΔGO * − eU + kBT ln aH + either reaction 3b or 3c is the potential determining step on
+ materials of interest for OER. Therefore, eq 4 can be rewritten
+ OOH* → * + O2 (g) + H+ + e− (3d) as
+ 21079 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082
+The Journal of Physical Chemistry C Article
+
+ ηOER = Max{[(ΔGO * − ΔGOH *)/e], 3.2[eV] nearly 1.1 eV weaker than the binding energy obtained with the
+ RPBE functional. However, the destabilization of OH* and
+ − (ΔGO * − ΔGOH *)/e} − 1.23 V (5) OOH* binding energies due to the Hubbard-U correction is
+The binding energies of O* (ΔEO*), OH* (ΔEOH*), and only about 0.6 eV (see Table 1). Due to the more pronounced
+OOH* (ΔEOOH*), calculated relative to H2O and H2 in the gas destabilization of O*, it is not the oxidation of O* to OOH*
+phase, on the oxygen-covered Co3O4(001) and CoOOH which is the potential determining step for OER on Co3O4 but
+(011̅2) surfaces are compiled in Table 1. We ﬁnd that the it is the oxidation of water to form OH*. The oxidation of OH*
+ to O* is found to be the second elementary step with highest
+Table 1. Binding Energies of O*, OH*, and OOH* (ΔEO*, free energy change. As a consequence, the inclusion of the
+ΔEOH*, and ΔEOOH* in eV) on the Oxygen-Covered Co Hubbard-U correction shifts the location of Co3O4 from the
+Oxide Surfacesa strong binding leg to the weak binding leg of the OER volcano
+ plot, as shown in Figure 4b. It is to be noted that the universal
+ ΔEO* ΔEOH* ΔEOOH* pds ηOER activity volcano assumes that the potential determining step for
+ Co3O4 RPBE 2.56 0.90 3.76 OOH* 0.41 the weak binding leg of the volcano is the oxidation of OH* to
+ β-CoOOH RPBE 2.62 0.81 3.68 OOH* 0.27 O*. However, for the systems studied here, the potential
+ Co3O4 RPBE+U 3.71 1.55 4.32 OH* 0.76 determining step is the oxidation of H2O to OH*, and as a
+ β-CoOOH RPBE+U 3.72 1.57 4.34 OH* 0.78 result, these points are not expected to lie on the universal line
+a
+ Potential determining steps (pds), either O*, OH*, or OOH* as the activity descriptor is not ΔGOOH* − ΔGOH*. We ﬁnd that
+formation, and self-consistent theoretical overpotentials (ηOER in V) the inclusion of the Hubbard-U correction increases the
+associated with OER on the oxygen-covered Co oxide surfaces. theoretical overpotential on Co3O4 from 0.41 to 0.76 V.
+ Hence, the theoretical overpotential on Co3O4 calculated with
+ the DFT+U approximation is around 0.3 V higher than the
+binding energies of OH* and OOH* on the cobalt oxide
+ theoretical overpotential on RuO2 (∼0.4 V).15 This trend is
+surfaces, calculated with RPBE or RPBE+U, follow the constant
+ consistent with experiments and resolves the discrepancy found
+scaling relationship ΔEOOH* = ΔEOH* + 3.2 within ±0.43 eV
+(see Figure 4a). The existence of this scaling relation with the in the earlier study that used DFT to estimate the activity
+inclusion of U has not been demonstrated yet and is out of the toward OER on Co3O4.3,15
+scope of this paper. For the sake of simplicity, we assume that We also investigate the electrocatalytic OER on one of the
+the universal OER activity volcano calculated using DFT also stable structures under OER working conditions, CoOOH. We
+holds for the calculations carried out using DFT+U for the ﬁnd that the Hubbard-U correction results in modiﬁcations of
+cobalt oxide surfaces considered here. the interaction between the adsorbates and the CoOOH
+ We ﬁnd that the self-consistent theoretical overpotential (011̅2) surface. The modiﬁcation is similar to that found on the
+calculated with DFT-RPBE on the oxygen-covered Co3O4 Co3O4 surface (see Table 1). The consequence of applying the
+surface is 0.41 V. We obtain self-consistency in the sense that Hubbard-U correction is a similar destabilization of OH* and
+the surface is stable under the potential at which that particular OOH* species and a nearly double destabilization for O*. This
+surface can perform OER. We ﬁnd the oxidation of O* to trend is consistent with the principle of bond order
+OOH* to be the potential determining step for OER, as shown conservation, which predicts a slope of 1/2 between the
+in Figure 3a. These results agree with the previously reported binding energies of OH/OOH and O.45,46 We ﬁnd the self-
+theoretical overpotential value and potential determining step consistent theoretical overpotential on CoOOH to increase
+on the Co3O4(001) surface.15 In a second step, we apply a from 0.27 eV with DFT-RPBE to 0.78 eV, when the Hubbard-
+Hubbard-U correction (DFT+U method) to improve the U correction is applied. Hence, we ﬁnd the activity on CoOOH
+description of localized Co d-electrons. We ﬁnd this correction and Co3O4 to be comparable. This ﬁnding gives conﬁdence in
+leads to a destabilization of all oxygen-containing intermediates the theoretically calculated OER activity based on the spinel
+(see Table 1). The O* binding energy calculated by DFT+U is Co3O4 structure since we would expect similar trends on many
+
+Figure 3. Standard free energy diagram for the oxygen evolution reaction (OER) on oxygen-covered cobalt oxide surfaces calculated with RPBE and
+with RPBE+U, black and red line, respectively. The dashed lines indicate the free energy diagram for an ideal electrocatalyst. The potential
+determining steps for the OER on cobalt oxide surfaces calculated with both RPBE and with RPBE+U are marked as pds.
+
+ 21080 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082
+The Journal of Physical Chemistry C Article
+
+Figure 4. (a) Adsorption energies of OOH* (ΔEOOH*) as a function of the adsorption energies of OH* (ΔEOH*) on the oxygen-covered
+Co3O4(001) and CoOOH (011̅2) surfaces, shown in triangles and circles, respectively. The black and red colors correspond to calculations
+performed with RPBE and with RPBE+U, respectively. The small black circles correspond to ΔEOOH* as a function of ΔEOH* on oxides surfaces
+(data adapted from ref 15). The black star indicates the position of RuO2(110) (data adapted from ref 15). The binding energies of OOH* and OH*
+scale according to the relation, ΔEOOH* = ΔEOH* + 3.2, with 95% of the points within ±0.4 eV. (b) Calculated theoretical overpotentials (ηthe)
+plotted as a function of (ΔGO* − ΔGOH*) for oxygen-covered CoxOy surfaces. The small black circles correspond to ηthe as a function of (ΔGO* −
+ΔGOH*) on rutiles and perovskites (data adapted from ref 15). The volcano curve is established by using the scaling relation between (ΔGOOH* −
+ΔGO*) and (ΔGO* − ΔGOH*) as described in ref 15 . Same color code as in ﬁgure (a).
+
+of the other possible stable structures reported under these
+oxidative conditions.7,11,12
+ ■
+ *
+ ASSOCIATED CONTENT
+ S Supporting Information
+ The similar theoretical overpotential found on Co3O4 and β- Choice of U for DFT+U calculations for Co oxides, surface
+CoOOH can be understood by comparing the local Pourbaix diagrams for Co3O4(001) and β-CoOOH (0112̅ )
+coordination environment of the Co active site in Co3O4 and obtained with RPBE and RPBE+U approach, ZPE and TS at T
+CoOOH. The Co active sites of both Co3O4 and CoOOH = 298 K for all the relevant species involved in OER, and a
+share the same octahedral coordination with only minor comparison between the local coordination and charge of the
+diﬀerences in the O−O distances (see Figure 3 and Table 4 in Co active site on Co3O4(001) and β-CoOOH (0112̅ ) are
+ provided. This material is available free of charge via the
+the Supporting Information). Furthermore, an analysis of the
+ Internet at http://pubs.acs.org.
+
+ ■
+magnetic moment and the eﬀective charge via the Bader
+method for the two investigated surfaces yields almost identical AUTHOR INFORMATION
+values. We ﬁnd a slightly higher Bader charge of ∼+1.6 on the
+ Corresponding Author
+Co active site in CoOOH and Co3O4 surfaces compared to
+ *Email: norskov@stanford.edu.
++1.44 for the bulk Co3+. We also ﬁnd a non-null magnetic
+ Notes
+moment on the Co active site (∼1 μB). The calculated values of
+ The authors declare no competing ﬁnancial interest.
+
+ ■
+Bader charge and magnetic moment of Co in the cobalt oxide
+surfaces suggest that the Co active site has a formal charge that ACKNOWLEDGMENTS
+is slightly higher than Co3+ at OER conditions.
+
+■
+ The computational work on Hubbard-U correction and OER
+ on Co3O4 by MGM, AV, and JKN was supported by Center of
+ CONCLUSIONS Nanostructuring for Eﬃcient Energy Conversion (CNEEC) at
+In conclusion, we have investigated the electrocatalytic oxygen Stanford University, an Energy Frontier Research Center
+evolution reaction (OER) on the Co3O4(001) and β-CoOOH funded by the U.S. Department of Energy, Oﬃce of Basic
+(011̅2) surfaces using density functional theory calculations. Energy Sciences under Award Number DE-SC0001060. The
+ computational work on OER on β-CoOOH by MB and ATB
+We ﬁnd that the inclusion of the Hubbard correction (DFT+U)
+ was supported by the Joint Center for Artiﬁcial Photosynthesis
+resolves the discrepancy between the calculated and measured (JCAP), a DOE Energy Innovation Hub, through the Oﬃce of
+Co3O4 activity. We ﬁnd that the theoretical overpotential on Science of the U.S. Department of Energy under Award No.
+Co3O4(001) is about 0.3 V higher than that on RuO2 which is DE-SC0004993. The computational work on Hubbard-U
+in agreement with the experimental trend. We also calculate the correction by VV was supported by an UTRC fellowship.
+theoretical overpotential on the β-CoOOH (011̅2) surface and
+ﬁnd it to be almost identical to that of the spinel Co3O4(001)
+surface. We argue that this similarity is due to an identical local
+ ■ REFERENCES
+ (1) Dau, H.; Limberg, C.; Reier, T.; Risch, M.; Roggan, S.; Strasser,
+coordination environment of the Co active site. On the basis of P. ChemCatChem 2010, 2, 724−761.
+ (2) Dresselhaus, M. S.; Thomas, I. L. Nature 2001, 414, 332−337.
+these ﬁndings, we would expect similar trends on other possible (3) (a) Trasatti, S. Electrochim. Acta 1984, 29, 1503−1512.
+stable Co oxide structures reported in experiments under OER (b) Trasatti, S. Electrochim. Acta 1991, 36, 225−241. (c) Matsumoto,
+conditions. Y.; E. Sato, E. Mater. Chem. Phys. 1986, 397−426.
+
+ 21081 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082
+The Journal of Physical Chemistry C Article
+
+ (4) Hamdani, M.; Singh, R. N.; Chartier, P. Int. J. Electrochem. Sci. (37) Stamenkovic, V.; Mun, B. S.; Mayrhofer, K. J. J.; Ross, P. N.;
+2010, 5, 556−577. Markovic, N. M.; Rossmeisl, J.; Greeley, J.; Nørskov, J. K. Angew.
+ (5) Pinaud, B. A.; Chen, Z.; Abram, D. N.; Jaramillo, T. F. J. Phys. Chem., Int. Ed. 2006, 118, 2963−2967.
+Chem. C 2011, 115, 11830−11838. (38) Hansen, H. A.; Rossmeisl, J.; K., N. J. Phys. Chem. Chem. Phys.
+ (6) Liang, Y.; Li, Y.; Wang, H.; Zhou, J.; Wang, J.; Regier, T.; Dai, H. 2008, 10, 3722−3730.
+Nat. Mater. 2011, 10, 780−786. (39) Petrykin, V.; Macounova, K.; Shlyakhtin, O. A.; Krtil, P. Angew.
+ (7) Yeo, B. S.; Bell, A. T. J. Am. Chem. Soc. 2011, 133, 5587−5593. Chem. Int. Ed 2010, 122, 4923−4925; Angew. Chem., Int. Ed. 2010, 49,
+ (8) Casella, I. G.; Guascito, M. R. J. Electroanal. Chem. 1999, 476, 4813−4815.
+54−63. (40) Valdés, Á .; Qu, Z. W.; Kroes, G. J.; Rossmeisl, J.; Norskov, J. K.
+ (9) Casella, I. G.; Gatta, M. J. Electroanal. Chem. 2002, 534, 31−38. J. Phys. Chem. C 2008, 112, 9872−9879.
+ (10) Palmas, S.; Ferrara, F.; Vacca, A.; Mascia, M.; Polcaro, A. (41) Tripković, V.; Skúlasona, E.; Siahrostamia, S.; Nørskov, J. K.;
+Electrochim. Acta 2007, 53, 400−406. Rossmeisl, J. Electrochim. Acta 2010, 55, 7975−798.
+ (11) Gerken, J. B.; McAlpin, J. G.; Chen, J. Y. C.; Rigsby, M. L.; (42) Rossmeisl, J.; Qu, Z. W.; Zhu, H.; Kroes, G. J.; Nørskov., J. K. J.
+Casey, W. H.; Britt, R. D.; Stahl, S. S. J. Am. Chem. Soc. 2011, 133, Electroanal. Chem. 2007, 607, 83−89.
+14431−14442. (43) Dau, H.; Limberg, C.; Reier, T.; Risch, M.; Roggan, S.; Strasser,
+ (12) Subbaraman, R.; Tripkovic, D.; Chang, K. −C.; Strmcnik, D.; P. ChemCatChem 2010, 2, 724−761.
+Paulikas, A. P.; Hirunsit, P.; Chan, M.; Greeley, J.; Stamenkovic, V.; (44) Koper, M. T. M. J. Electroanal. Chem. 2011, 660, 254−260.
+Markovic, N. M. Nat. Mater. 2012, 11, 550−557. (45) Abild-Pedersen, F.; Greeley, J.; Studt, F.; Rossmeisl, J.; Munter,
+ (13) Xu, X.-L.; Chen, Z.-H.; Li, Y.; Chen, W.-K.; Li, J.-Q. Surf. Sci. T. R.; Moses, P. G.; Skulason, E.; Bligaard, T.; Nørskov, J. K. Phys. Rev.
+2009, 603, 653−658. Lett. 2007, 99, 16105−4.
+ (14) Montoya, A.; Haynes, B. S. Chem. Phys. Lett. 2011, 502, 63−68. (46) Fernández, E. M.; Moses, P. G.; Toftelund, A.; Hansen, H. A.;
+ (15) Man, I. C.; Su, H. Y.; Calle-Vallejo, F.; Hansen, H. A.; Martinez, Martínez, J. I.; Abild-Pedersen, F.; Kleis, J.; Hinnemann, B.; Rossmeisl,
+J. I.; Inoglu, N. G.; Kitchin, J.; Jaramillo, T. F.; Nørskov, J. K.; J.; Bligaard, T.; Nørskov, J. K. Angew. Chem., Int. Ed. 2008, 47, 4683−
+Rossmeisl, J. ChemCatChem 2011, 3, 1159−1165. 4686.
+ (16) Chen, J.; Selloni, A. Phys. Rev. B 2012, 85, 085306−9.
+ (17) Wang, L.; Maxisch, T.; Ceder, G. Phys. Rev. B 2006, 73,
+195107−6.
+ (18) Hu, Z.; Metiu, H. J. Phys. Chem. C 2011, 115, 5841−5845.
+ (19) Lutfalla, S.; Shapovalov, V.; Bell, A. T. J. Chem. Theory Comput.
+2011, 7, 2218−2223.
+ (20) Norskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.;
+Kitchin, J. R.; Bligaard, T.; Jonsson, H. J. Phys. Chem. B 2004, 108,
+17886−17892.
+ (21) Bahn, S. R.; Jacobsen, K. W. Comp. Sci. Eng. 2002, 4, 56−66.
+ (22) Kresse, G.; Joubert, D. Phys. Rev. B 1999, 59, 1758−1775.
+ (23) Enkovaara, J.; Rostgaard, C.; Mortensen, J. J.; Chen, J.; Dulak,
+M.; Ferrighi, L.; Gavnholt, J.; Glinsvad, C.; Haikola, V.; Hansen, H. A.;
+Kristoffersen, H. H.; Kuisma, M.; Larsen, A. H.; Lehtovaara, L.;
+Ljungberg, M.; Lopez-Acevedo, O.; Moses, P. G.; Ojanen, J.; Olsen, Y.;
+Petzold, T. V.; Romero, N. A.; Stausholm-Moller, J.; Strange, M.;
+Tritsaris, G.; Vanin, A.; Walter, M.; Hammer, B.; Hakkinen, H.;
+Madsen, G.; Nieminen, R. M.; Nørskov, J. K.; Puska, M.; Rantala, T.
+T.; Schiotz, J.; Thygesen, K.; Jacobsen, W. J. Phys. Condens. Matter
+2010, 22, 253202−253224.
+ (24) Hammer, B.; Hansen, L. B.; Nørskov, J. K. Phys. Rev. B 1999, 59,
+7413−7421.
+ (25) Stausholm-Møller, J.; Kristoffersen, H. H.; Hinnemann, B.;
+Madsen, G. K. H.; Hammer, B. J. Chem. Phys. 2010, 133, 144708−8.
+ (26) Mowbray, D. J.; Martínez, J. I.; Calle-Vallejo, F.; Rossmeisl, J.;
+Thygesen, K. S.; Jacobsen, K. W.; Nørskov, J. K. J. Phys. Chem. C 2011,
+115, 2244−2252.
+ (27) Hugosson, H. W.; Grechnev, G. E.; Eriksson, O. Phys. Rev. B
+2002, 66, 174111−7.
+ (28) Martínez, J. I.; Hansen, H. A.; Rossmeisl, J.; Nørskov, J. K. Phys.
+Rev. B 2009, 79, 045120−5.
+ (29) Tasker, P. J. Phys. C: Solid State Phys. 1979, 12, 4977−4984.
+ (30) Monkhorst, H. J.; Pack, J. D. Phys. Rev. B 1976, 13, 5188−5192.
+ (31) Bengtsson, L. Phys. Rev. B 1999, 59, 12301−12304.
+ (32) Henkelman, G.; Arnaldsson, A.; Jonsson, A. Comput. Mater. Sci.
+2006, 36, 354−360.
+ (33) Hansen, H. A.; Man, I. C.; Studt, F.; Abild-Pedersen, F.;
+Bligaard, T.; Rossmeisl, J. Phys. Chem. Chem. Phys. 2010, 12, 283−290.
+ (34) Pourbaix, M. Atlas of electrochemical equilibria in aqueous
+solutions; National Association of Corrosion: Houston, TX, 1974; p
+325
+ (35) Karlberg, G.; Jaramillo, T.; Skulason, E.; Rossmeisl, J.; Bligaard,
+T.; Nørskov, J. K. Phys. Rev. Lett. 2007, 99, 126101−4.
+ (36) Viswanathan, V.; Hansen, H.; Rossmeisl, J.; Jaramillo, T.; Pitsch,
+H.; Nørskov, J. K. J. Phys. Chem. C 2012, 116, 4698−4704.
+
+ 21082 dx.doi.org/10.1021/jp306303y | J. Phys. Chem. C 2012, 116, 21077−21082

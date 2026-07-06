@@ -1,0 +1,46 @@
+这次抽到的关键信息包括：
+
+在 Co-experiment_conditions_input_table.csv 里：
+
+- Co
+- 吸附物/反应物：He, H2
+- 建模关键词：Co, CoO, OER, active site
+- Co, CoO
+- 吸附物/反应物：CO2
+- 建模关键词：CoO, Co, phase evolution
+- 建模关键词：OER, charge transfer, defect
+
+在 Co-experiment_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Co
+  - CoO
+- 材料参数：
+  - nanostructure
+  - phase proportion
+  - high specific surface area
+- 反应参数：
+  - temperature
+  - partial pressure of CO2
+  - overpotential
+  - current density
+- 性能：
+  - high electrical conductivity
+  - robustness
+- 表面/晶面：
+  - CoO surface
+  - clean surface
+- 缺陷/活性位点：
+  - defective structure
+- 吸附/覆盖度：
+  - 未提取
+- 团簇/单原子：
+  - Co nanochains
+  - CoO nanocubes
+- 建模关键词：
+  - phase evolution
+  - charge transfer
+  - catalyst
+- 推荐建模任务：
+  - vacancy_landscape
+  - adsorbate_landscape
