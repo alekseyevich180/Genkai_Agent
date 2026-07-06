@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "carbon_materials",
-  "updated_at": "2026-07-06T15:18:47.670296+00:00",
+  "updated_at": "2026-07-06T15:48:30.308383+00:00",
   "summary": {
-    "terms": 19,
-    "known_useful": 9,
-    "unknown": 10
+    "terms": 21,
+    "known_useful": 12,
+    "unknown": 9
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -35,7 +35,7 @@
     "compositions": [
       {
         "term": "g-C3N4",
-        "count": 3,
+        "count": 4,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
@@ -52,12 +52,24 @@
         "count": 2,
         "kind": "known_useful",
         "research_category": "other_useful_information"
+      },
+      {
+        "term": "carbon doping",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
       }
     ],
     "materials": [
       {
+        "term": "carbon_materials",
+        "count": 18,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "g-C3N4",
-        "count": 3,
+        "count": 4,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
@@ -76,8 +88,8 @@
       {
         "term": "carbon",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Graphene (G)",
@@ -95,7 +107,7 @@
     "modeling_keywords": [
       {
         "term": "g-C3N4",
-        "count": 3,
+        "count": 4,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
@@ -103,6 +115,12 @@
         "term": "Ag/g-C3N4",
         "count": 2,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon doping",
+        "count": 2,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       },
       {
@@ -114,8 +132,8 @@
       {
         "term": "PEC",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       }
     ],
     "reactions": [
@@ -181,11 +199,11 @@
     "elements": [
       {
         "term": "C",
-        "count": 6
+        "count": 7
       },
       {
         "term": "N",
-        "count": 6
+        "count": 7
       },
       {
         "term": "Ag",
@@ -207,7 +225,7 @@
     "material_kinds": [
       {
         "term": "carbon_material",
-        "count": 20
+        "count": 41
       },
       {
         "term": "surface",
@@ -224,8 +242,12 @@
     ],
     "component_compounds": [
       {
+        "term": "carbon_materials",
+        "count": 18
+      },
+      {
         "term": "g-C3N4",
-        "count": 5
+        "count": 6
       },
       {
         "term": "Ag",
@@ -233,6 +255,10 @@
       },
       {
         "term": "carbon cloth",
+        "count": 2
+      },
+      {
+        "term": "carbon doping",
         "count": 2
       },
       {
@@ -287,7 +313,7 @@
     "element_sets": [
       {
         "term": "{C, N}",
-        "count": 4
+        "count": 5
       },
       {
         "term": "{Ag, C, N}",
@@ -316,11 +342,11 @@
     "elements": [
       {
         "term": "C",
-        "count": 6
+        "count": 7
       },
       {
         "term": "N",
-        "count": 6
+        "count": 7
       },
       {
         "term": "Ag",
@@ -341,8 +367,12 @@
     ],
     "host_structures": [
       {
+        "term": "carbon_materials",
+        "count": 18
+      },
+      {
         "term": "g-C3N4",
-        "count": 3
+        "count": 4
       },
       {
         "term": "Ag/g-C3N4",
@@ -403,6 +433,10 @@
         "count": 2
       },
       {
+        "term": "carbon doping",
+        "count": 2
+      },
+      {
         "term": "Cluster",
         "count": 1
       }
@@ -423,18 +457,34 @@
   },
   "entries": [
     {
+      "term": "carbon_materials",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 18,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "g-C3N4",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
         "materials",
         "Composition",
-        "Modeling Keywords"
+        "Modeling Keywords",
+        "Material"
       ],
-      "count": 3,
+      "count": 4,
       "example_contexts": [
         "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Ag/g-C3N4"
+        "Ag/g-C3N4",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
       ]
     },
     {
@@ -478,6 +528,20 @@
       ]
     },
     {
+      "term": "carbon doping",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
+      ]
+    },
+    {
       "term": "graphene-like carbon",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -506,8 +570,8 @@
     },
     {
       "term": "carbon",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -650,8 +714,8 @@
     },
     {
       "term": "PEC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],

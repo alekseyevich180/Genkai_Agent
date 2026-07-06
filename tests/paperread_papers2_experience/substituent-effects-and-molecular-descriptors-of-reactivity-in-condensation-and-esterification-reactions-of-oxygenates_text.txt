@@ -1,0 +1,1471 @@
+Article
+
+ pubs.acs.org/JPCC
+
+ Substituent Eﬀects and Molecular Descriptors of Reactivity in
+ Condensation and Esteriﬁcation Reactions of Oxygenates on Acid−
+ Base Pairs at TiO2 and ZrO2 Surfaces
+ Shuai Wang and Enrique Iglesia*
+ Department of Chemical and Biomolecular Engineering, University of California at Berkeley, Berkeley, California 94720, United
+ States
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: This study reports evidence for the identity and
+ kinetic relevance of the elementary steps that mediate
+ condensation and esteriﬁcation reactions of C2−C5 alkanals
+ Downloaded via UNIV OF TOKYO on March 18, 2026 at 05:46:57 (UTC).
+
+ and alkanones and for the number, role, and acid−base
+ properties of active Ti−O and Zr−O site pairs on catalytic
+ surfaces. Kinetic, isotopic, and theoretical methods show that
+ all reactants convert on TiO2 and ZrO2 surfaces via similar
+ routes, which involve (i) kinetically relevant α-C−H cleavage
+ in alkanals (alkanones) to enolates on sparsely covered M−O
+ pairs, (ii) selectivity-relevant subsequent enolate reactions with
+ coadsorbed alkanals/alkanones or 1-alkanols to form con-
+ densation or esteriﬁcation precursors, mediated by C−C coupling steps with carbonyl reactants and C−O coupling steps with
+ alkanal−alkoxide pairs formed via H transfer in enolate−1-alkanol pairs, (iii) hydrogenation of C−C coupling products to
+ carbonyl compounds and dehydrogenation of hemiacetals formed via C−O coupling to esters on an interspersed Cu function
+ present as a physical mixture. For mixtures of oxygenate reactants, enolate formation rates from each reactant are unaﬀected by
+ the other reactants, while C−C and C−O coupling product ratios allow measurements of the relative reactivity of each enolate
+ with diﬀerent carbonyls or alkanols; these reactivities are unavailable from carbonyl−alkanol mixtures derived from a single
+ reactant but are essential to benchmark theory and experiment. Density functional theory (DFT) treatments on model
+ Ti5O19H18 clusters give free energy barriers for enolate formation (ΔG‡) and ΔG‡ diﬀerences for the coupling of each enolate
+ with diﬀerent alkanals, alkanones, or 1-alkanols in excellent agreement with measured values. Enthalpy and entropy components
+ of DFT-derived activation free energy barriers show that alkyl substituents inﬂuence enolate reactivity through their eﬀects on α-
+ C−H bond energies and on steric hindrance at transition states (TS). Substituents inﬂuence enolate C−C coupling more
+ strongly than C−O coupling because steric eﬀects predominate at the tighter TS structures that mediate condensation events.
+ Enolate formation turnover rates, based on the number of active M−O pairs measured by titration with propanoic acid during
+ catalysis, are higher on ZrO2 than TiO2. Titrations during catalysis showed that the higher intrinsic reactivity of ZrO2 reﬂects its
+ weaker Lewis acid centers and more strongly basic O atoms than on TiO2, which lead, in turn, to more stable enolate formation
+ transition states. The diﬀerent properties of the two Zr centers in Zr−O−Zr structures lead to relative C−C and C−O coupling
+ rates that depend on the Zr center that stabilizes the O atom in enolates. This asymmetry contrasts the single-site character of
+ Ti−O−Ti structures and leads to marked diﬀerences in the eﬀects of alkanal/alkanol reactant ratios on condensation and
+ esteriﬁcation selectivities.
+
+ 1. INTRODUCTION as convenient renewable precursors to petrochemicals and
+ Aldol condensations of carbonyl compounds form new C−C transportation fuels.
+ bonds and remove O atoms via steps that involve the cleavage Aldol condensations can be catalyzed by monofunctional
+ of α-C−H bonds, nucleophilic attack of carbonyls by enolates acids and bases, resulting in enols and enolates as the respective
+ or enols, and dehydration of the aldols formed to α,β- intermediates.10 The concerted eﬀects of separate acid and base
+ unsaturated carbonyl compounds.1,2 In doing so, condensation sites eﬀectively stabilize the transition states that mediate the
+ and the mechanistically related esteriﬁcation reactions form elementary steps involved in aldol condensation (α-C−H
+ larger alkanals, alkanones, and esters from alkanol−alkanal cleavage and C−C coupling steps) on biological catalysts11 and
+ mixtures; these products contain longer chains with fewer O functionalized porous silicas.12,13 Such synergies also appear to
+ atoms than reactants, making such reactions ubiquitous in the
+ upgrading of biomass-derived oxygenates to molecules of Received: July 20, 2016
+ greater value and energy density.3−8 For instance, acetone− Revised: August 26, 2016
+ butanol−ethanol mixtures (ABE)8,9 and ethanol3 can be used Published: August 26, 2016
+
+ © 2016 American Chemical Society 21589 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+prevail on oxides (e.g., MgO,14−16 MgxAlOy,17−20 CexZrOy,21,22 Theoretical treatments on model anatase clusters accurately
+ZnxZrOy,23 and TiO224−26), which exhibit surfaces with acid− describe the eﬀects of molecular identity on enolate formation
+base site pairs consisting of M−O moieties (M, metal center; rates and on the selectivity for C−C and C−O formation steps
+O, lattice oxygen atom).27−31 Coordinative unsaturation is of enolates for C2−C5 oxygenates. These treatments and data
+required at metal centers for interactions with the carbonyl are useful in constructing kinetic models to describe rates and
+group, with vicinal O atoms acting as the H abstractor, as selectivities in complex mixtures of alkanols and carbonyl
+shown by infrared evidence,28,29 by the eﬀects of titrants compounds. DFT-derived enthalpy and entropy components of
+diﬀering in acidic or basic properties,15,30 and by theoretical activation free energy barriers conﬁrmed that enolate formation
+treatments.30,31 Thermodynamic hurdles, side reactions, and rates depend on α-C−H bond energies and on repulsive
+fast deactivation18,25,26 have led to imprecise assessments of interactions that inhibit reactivity when alkyl substituents are
+reactivity and of the number of active sites; these phenomena present at the α-C atom. Steric eﬀects of alkyl substituents at
+have led, in turn, to equivocal and contradictory proposals for the carbonyl C atom of alkanal/alkanone reactants are the sole
+the elementary steps and their kinetic relevance in con- descriptor of the relative rates of esteriﬁcation and
+densation catalytic cycles. condensation for each enolate and reﬂect transition states
+ H2 and a Cu function, present as a mixed cocatalyst with that are much tighter for C−C coupling than for C−O
+oxides (e.g., anatase TiO2 (TiO2(a))30 and monoclinic ZrO2 coupling.
+(ZrO2(m)) shown here), circumvent the thermodynamic
+bottlenecks and fast deactivation ubiquitous in these reactions 2. METHODS
+via hydrogenation of unsaturated products and dehydrogen- 2.1. Catalyst Synthesis and Characterization. TiO2
+ation of hemiacetals to complete catalytic turnovers that form Degussa P25 (99.8%, 50 m2 g−1, anatase/rutile = 3/1 mass)
+stable products; these bifunctional strategies also allow the was used as a catalyst; its condensation and esteriﬁcation
+interchangeable use of alkanals/alkanones and their respective reactivity arises exclusively from anatase surfaces30 and is
+alkanols as reactants via their fast equilibration. Our previous hereinafter denoted as TiO2(a). It was treated at 673 K (0.167
+study30 demonstrated the role of Ti−O Lewis acid−base site K s−1) for 3 h in ﬂowing dry air (1.67 cm3 g−1 s−1, 99.999%,
+pairs on TiO2(a) in stabilizing enolate formation transition Praxair) and then physically mixed with Cu/SiO2 (ca. 20% wt
+states (TS) in the conversion of C3 oxygenates. These enolates Cu) catalysts30 using a mortar and pestle. The mixtures
+then react with carbonyl molecules to form C−C bonds and (TiO2(a) + Cu/SiO2, 0−4 (Cu/SiO2)/TiO2 mass ratio) were
+with 1-alkanols to form alkanal−alkoxide pairs that form C−O pressed into pellets, crushed, and sieved to prepare 180−250
+bonds, thus completing condensation and esteriﬁcation turn- μm aggregates. These mixtures are used to circumvent the
+overs. The number of active acid−base site pairs, measured by thermodynamic, selectivity, and stability hurdles ubiquitous in
+titration with propanoic acid during catalysis, allowed measure- condensation and esteriﬁcation reactions.30
+ments of intrinsic site reactivities and the benchmarking of Monoclinic ZrO2 (ZrO2(m), 131 m2 g−1) was also used as a
+activation free energies and mechanistic conclusions against catalyst; it was prepared using hydrothermal methods.32
+density functional theory (DFT) estimates.30 ZrO(NO3)2·xH2O (99.99%, Sigma-Aldrich) and urea (CO-
+ The kinetic, isotopic, and theoretical assessments shown here (NH2)2, 99%, Aldrich) were dissolved in 60 cm3 of deionized
+demonstrate the general nature of these mechanistic con- water (0.40 mmol cm−3 Zr4+, urea/Zr4+ = 10 mol). The
+clusions for diverse C2−C5 oxygenates on TiO2(a) and also on solution was placed in a Teﬂon-lined stainless-steel autoclave
+ZrO2(m). Site titrations with CO2, pyridine, and propanoic acid (100 cm3) and held stagnant at 433 K for 20 h under its
+during catalysis conﬁrm that Ti−O and Zr−O acid−base site autogenous pressure. The solids formed were washed with
+pairs of moderate acid−base strength preferentially stabilize deionized water until the ﬁltrate reached a neutral pH and then
+enolate transition states that involve concerted interactions with treated in ambient air at 383 K (0.167 K s−1) overnight and in
+O and Ti or Zr centers. Esteriﬁcation/condensation rate ratios ﬂowing dry air (1.67 cm3 g−1 s−1, 99.999%, Praxair) at 673 K
+on ZrO2(m) depend weakly on alkanol/alkanal ratios, in (0.167 K s−1) for 4 h. This catalyst was physically mixed with
+contrast to the linear relations observed on TiO2(a) surfaces the Cu/SiO2 catalysts, as described above (ZrO2(m) + Cu/
+with uniform Ti centers.30 Such diﬀerences reﬂect distinct Zr SiO2, 1:1 mass, 180−250 μm).
+sites on Zr−O−Zr structures, which predominantly lead to the The Cu/SiO2 synthesis protocols were described else-
+formation of C−C or C−O bonds, depending on the speciﬁc where.30 They involved treating an aqueous suspension of
+Zr center used to stabilize the enolate at the bimolecular colloidal silica (30% wt LUDOX SM-30), Cu(NO3)2·2.5H2O
+transition states that mediate these reactions. (99.99%, Sigma-Aldrich), and urea (99%, Aldrich) (Cu/urea =
+ Detailed studies of the formation rates of various products 1/3 mol) at 363 K for 20 h while stirring. The powders were
+from mixtures of diﬀerent alkanals/alkanones led to rigorous rinsed with deionized water to a neutral ﬁltrate pH and treated
+assessments of the relative reactivity of diﬀerent carbonyl in ambient stagnant air at 383 K for 20 h, then in ﬂowing dry air
+compounds and 1-alkanols with enolates, which cannot be (1.67 cm3 g−1 s−1, 99.999%, Praxair) at 723 K for 5 h, and
+extracted from carbonyl−alkanol mixtures derived from a single ﬁnally in ﬂowing 10% H2/He (5.56 cm3 g−1 s−1, 99.999%,
+reactant. C−C bond formation rates of alkanals with a given Praxair) at 573 K for 2 h. A treatment in ﬂowing 1% O2/He
+enolate depend weakly on alkanal size or substitution but are (0.83 cm3 g−1 s−1, 99.999%, Praxair) at ambient temperature for
+signiﬁcantly higher than for alkanone reactions with the same 1 h was used to passivate the samples before exposure to
+enolate, as a result of steric eﬀects brought forth by the alkyl ambient air. The line breadth in X-ray diﬀractograms gave a
+substituents at carbonyl C atoms in nucleophilic attack mean Cu diameter of 7.9 nm.30
+reactions by enolates. H2O does not inhibit enolate formation 2.2. Catalytic Rate Measurements. C2−C5 oxygenates
+rates but acts as an esteriﬁcation cocatalyst via its reaction with and their mixtures were used as reactants; these oxygenates
+enolates to form 1,1-diols, which undergo rapid etheriﬁcation included ethanol (>99.9%, Fisher), ethanol-d6 (>99.96%,
+with alkanols to form hemiacetals and H2O. Sigma-Aldrich), 1-propanol (>99.9%, Sigma-Aldrich), 2-prop-
+ 21590 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+anol (>99.5%, Sigma-Aldrich), acetone (>99.9%, Fisher), c = 0.949 nm).30 Two Ti5c sites (coordination number (CN) 5)
+acetone-d6 (>99.9%, Aldrich), 1-butanol (>99.8%, Sigma- and one O3c site (CN 3) centered in the cluster are used as the
+Aldrich), 2-butanol (>99.5%, Sigma-Aldrich), 1-pentanol active sites (Scheme 1), as described elsewhere,30 with the
+(>99.0%, Sigma-Aldrich), and 3-methyl-1-butanol (>99.0%,
+Sigma-Aldrich). Their conversion rates and selectivities were Scheme 1. Ti5O19H18 Cluster Model for Theoretical
+measured on TiO2(a) + Cu/SiO2 and ZrO2(m) + Cu/SiO2 Treatments of Aldol Condensation and Esteriﬁcation
+mixtures (10−500 mg) using a quartz tubular ﬂow reactor (1.0 Pathways
+cm i.d.). The catalyst mixtures were treated in ﬂowing 10% H2/
+He (5.56 cm3 g−1 s−1, 99.999%, Praxair) at 543 K (0.0833 K
+s−1) for 2 h before contact with reactants. The liquid reactants
+were vaporized by introducing them into a stream of He
+(99.999%, Praxair) and H2 (99.999%, Praxair) mixtures with all
+transfer lines after the point of introduction held at 433 K. H2
+was replaced by D2 (99.8%, Praxair) when deuterated
+oxygenates were used as reactants. Reactant pressures and
+space velocities were varied by controlling the liquid and gas
+ﬂow rates using syringe pumps (Cole Parmer, 74900 series)
+and electronic mass ﬂow controllers (Porter, model 201),
+respectively.
+ The speciation of reaction products was carried out using
+known standards and mass spectrometry (HP 5972) after remaining O and Ti atoms providing the nonlocal coordination
+chromatographic separation (HP 5890 GC) with a methyl and electronic environment. Eighteen H atoms were bound to
+silicone capillary column (Agilent, HP-1, 50 m, 0.32 mm i.d. × the edge O atoms of the cluster along the orientation of the
+1.05 μm). The concentrations of reactants and products in the Ti−O bonds cleaved to extract the cluster from the extended
+eﬄuent stream were measured by online gas chromatography anatase structure in order to maintain the cluster charge neutral
+(Agilent 6890) using the same capillary column but with a and avoid extraneous H-bonding interactions at reactant and
+ﬂame ionization detector calibrated using response factors transition states. These Ti5O19H18 clusters provide computa-
+determined from known standard compounds. Equilibrated tionally tractable model surfaces that were shown to accurately
+mixtures of alkanol−alkanal/alkanone reactants formed on assess the kinetically relevant steps and estimate the activation
+TiO2(a) + Cu/SiO2 or ZrO2(m) + Cu/SiO2 at all H2 pressures free energy barriers for the formation of enolates in
+were treated as lumped reactants that are hereinafter denoted as esteriﬁcation and condensation reactions of C3 oxygenates.30
+the reactant pool; pool conversions and product selectivities are Similar theoretical protocols are extended here to describe the
+based on the molecules that leave this pool (on a carbon basis). eﬀects of molecular identity and structure on reactivity and
+Reaction rates are normalized by the number of accessible selectivity and on the kinetic relevance of speciﬁc elementary
+acid−base site pairs on TiO2(a) (3.7 nm−2)30 or ZrO2(m) (6.0 steps for reactants consisting of a much broader range of
+nm−2, shown in section 3.2), determined by titration with oxygenates.
+propanoic acid during acetone condensation at 453 K (section These theoretical methods used the Gaussian 09 program.35
+2.3). All ﬁve Ti atoms and the three inside O atoms in the Ti5O19H18
+ 2.3. Titration of Surface Sites by Probe Molecules cluster were relaxed, while the remaining atoms were held to
+during Catalysis. The number and type of active sites preserve the structure of the extended anatase parent surface.
+involved in C−H bond activation steps leading to enolate Geometry optimization of reactants, products, and transition
+intermediates on TiO2(a)30 and ZrO2(m) were determined by states (TS) used the Berny geometry algorithm36 at the hybrid
+in situ titrations with pyridine (>99.9%, Sigma-Aldrich), B3LYP functional level of theory37,38 with the Gaussian-type 6-
+propanoic acid (>99.5%, Sigma-Aldrich), and CO2 (50% 311G(d,p) basis set for the C, O, and H atoms39,40 and the
+CO2/He, 99.999%, Praxair). Acetone condensation rates were eﬀective core potential LANL2DZ basis set for the Ti atoms.41
+ﬁrst measured here on ZrO2(m) + Cu/SiO2 mixtures (1:1 An ultraﬁne grid (99590) was selected for numerical
+mass) without the titrants (523 K, 4 kPa acetone, 40 kPa H2) integration; convergence criteria were set to 1.0 × 10−8 Ha
+for 2 h. Titrants were then introduced by mixing them with for energy and 1.5 × 10−5 Ha Bohr−1 for the maximum residual
+acetone for liquid titrants (0.005 or 0.05 titrant/acetone molar; force on each atom. The van der Waals contributions to
+20 or 200 Pa) or as a separate stream for CO2 (4 kPa). electronic energies of optimized structures were estimated by
+Reactant, product, and titrant concentrations were determined Grimme’s D3BJ dispersion correction,42 and basis set super-
+by the chromatographic protocols described in section 2.2. The position errors (BSSE) were treated using the counterpoise
+number of Zr−O site pairs on ZrO2(m) was determined from correction method to eliminate overestimation of binding
+the propanoic acid uptakes required to suppress reactant energies as a result of basis-function overlaps for the ﬁnite basis
+conversion rates using a stoichiometry of one acid per two sets used.43,44
+vicinal Zr−O site pairs, as required for dissociative adsorption Enthalpies and entropies were calculated based on the
+to form carboxylates, based on theoretical33 and infrared34 vibrational partition functions derived from the rigid rotor
+evidence. harmonic oscillator (RRHO) approximation45 using DFT-
+ 2.4. Density Functional theory (DFT) Methods. A determined frequencies; these frequencies were scaled by a
+Ti5O19 cluster extracted from anatase (101) surface, the most factor of 0.9682 to compensate for anharmonicity eﬀects absent
+stable and prevalent exposed plane, was used to represent Ti− in the theoretical treatments.46 For low-frequency modes (<100
+O site pairs; the anatase structure was set based on cm−1) of weakly bound adsorbates, vibrational partition
+crystallographic data (tetragonal, I41/amd, a = b = 0.378 nm, functions were calculated using a free-rotor model instead of
+ 21591 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+the RRHO model to avoid signiﬁcant errors caused by the SiO2 catalysts (0−4 (Cu/SiO2)/TiO2 mass ratio; 523 K, 30 kPa
+latter.47 Bonding properties of all reactants and TS structures H2). The approach to equilibrium factor (ηdehy) for alkanol
+were analyzed using the Wiberg bond-order index48,49 dehydrogenation to alkanal (alkanone) is given by
+(implemented in the NBO 3.0 program50) that calculates K dehy
+bond orders based on the most possible Lewis electronic alkanol XooooY alkanal(alkanone) + H 2 (3)
+structures.
+ The acid−base strength of exposed Zr−O site pairs on P H2×PAlkanal(Alkanone) 1
+ ηdehy = ×
+ZrO2(m) surfaces was described using the aﬃnities of these PAlkanol Kdehy (4)
+sites for OH− or H+ gaseous ions using formalisms and
+methods described previously.30 The OH− aﬃnity (EHA) where Kdehy is the equilibrium constant for the dehydrogenation
+reﬂects the energy released upon binding a gaseous OH− at a reaction. The ηdehy value for ethanol dehydrogenation,
+Lewis acid center (A) determined from available thermodynamic data,65 increased
+ as the (Cu/SiO2)/TiO2 mass ratio increased and reached unity
+ E HA = E AOH− − EA − EOH− (1) for catalyst mass ratios above unity (Figure 1), indicative of full
+ +
+The H aﬃnity (EPA) reﬂects the energy released upon binding
+a gaseous H+ at a basic site (B)
+ E PA = E HB+ − E B − E H+ (2)
+Here, Ei is the electronic energy of species i. These aﬃnities for
+the most stable (−111) surfaces of monoclinic ZrO251 were
+calculated using periodic slab models, because the presence of
+distinct Zr and O sites precludes the use of the small cluster
+models that were adequate to describe single-site TiO2(a)
+surfaces.30
+ Energy and geometry optimizations of periodic neutral ZrO2
+slabs with and without adsorbed H+/OH− pairs were
+performed using periodic plane-wave DFT methods, as
+implemented in the Vienna ab initio Simulation Package
+(VASP).52−54 These calculations used the Perdew−Burke−
+Ernzerhof (PBE) exchange-correlation functional55,56 and
+projector augmented-wave (PAW) pseudopotentials57,58 for
+all atoms (400 eV energy cutoﬀ). Bulk ZrO2(m) structures were
+optimized using a 4 × 4 × 4 k-point mesh of the ﬁrst Brillouin
+zone generated from the Monkhorst-pack sampling method;59 Figure 1. Eﬀects of (Cu/SiO2)/TiO2 mass ratio on rates of aldol
+lattice parameters measured from neutron powder diﬀraction condensation (raldol) and esteriﬁcation (rester) and the alkanol
+(P21/c, a = 0.515 nm, b = 0.521 nm, c = 0.532 nm)60 were used dehydrogenation approach to equilibrium factor (ηdehy; eq 4) for
+to construct initial structures. All atoms were allowed to relax ethanol−ethanal reactants (TiO2(a) + 20% wt Cu/SiO2, 0−4 (Cu/
+until electronic energies varied by less 1 × 10−5 eV and forces SiO2)/TiO2 mass ratio, 523 K, 0.8 kPa ethanol, 30 kPa H2). Dashed
+on each atom were below 0.02 eV Å−1. DFT-optimized lattice lines indicate trends.
+parameters (a = 0.522 nm, b = 0.528 nm, c = 0.539 nm) were
+determined from correlations between electronic energy and ethanol−ethanal−H2 equilibration. Such rapid equilibration
+volume of the bulk structures by using the Birch−Murnaghan renders alkanals and alkanols equivalent as reactants; their
+equation of state;61 these parameters were 1.4% larger than the mixtures can therefore be rigorously treated as a single reactant
+starting values derived from crystallography. lump in all kinetic treatments.
+ These DFT-optimized structures were used to construct 2 × This equilibrated ethanol−ethanal reactant pool formed C4+
+2 supercells of the (−111) surfaces as slab models for the products (e.g., butanal, hexanal, and 2-ethyl-butanal) via ethanal
+calculations of OH− and H+ aﬃnities; each unit cell consisted aldol condensation and subsequent hydrogenation; it also
+of four Zr4O8 layers along the z direction and contained 64 Zr formed ethyl acetate via dehydrogenation of hemiacetals
+and 128 O atoms. These periodic slabs were separated by 1.5 derived from ethanol−ethanal coupling reactions (Scheme 2).
+nm vacuum layers in the z direction. The atoms in the bottom Condensation and esteriﬁcation turnover rates (per active Ti−
+layer of these slabs were ﬁxed at their bulk positions, while the O site pair) were insensitive to the amount of Cu for ((Cu/
+others were allowed to relax in all energy optimizations. A 4 × 4 SiO2)/TiO2) mass ratios larger than unity (Figure 1). These
+× 1 Monkhorst-pack sampling k-point set and the energy and data indicate that kinetically relevant steps occur on TiO2(a)
+force convergence criteria described above were used in all surfaces, with the Cu function serving to equilibrate the
+optimizations. At each optimization step, dipole and quadru- alkanol−alkanal reactants. This Cu function also removes
+pole corrections were used to account for interactions among thermodynamic hurdles by hydrogenating unsaturated con-
+periodic images.62,63 The Grimme’s D2 dispersion correction densation products and dehydrogenating hemiacetals,30 thus
+was used to describe dispersion forces.64 avoiding yield losses and deactivation processes mediated by
+ subsequent reactions of the initial condensation and
+3. RESULTS AND DISCUSSION esteriﬁcation products.
+ 3.1. Turnover Rates and Selectivities on Anatase TiO2 Combined aldol condensation and esteriﬁcation rates of
+Surfaces. Ethanol reaction rates and selectivities were ethanol−ethanal mixtures were proportional to ethanal
+measured on physical mixtures of TiO2(a) and 20% wt Cu/ pressure but unaﬀected by ethanol pressure (Figure 2a);
+ 21592 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 2. Reaction Network for the Conversion of Alkanols (CnH2n+1OH) and Its Equilibrated Carbonyl Analogs (CnH2nO) on
+Bifunctional TiO2(a) + Cu/SiO2 Catalystsa
+
+a
+ The products in brackets were below the experimental detection limit (0.001 kPa).
+
+Figure 2. Eﬀects of (a) ethanal pressure on pool turnover rates and (b) ethanol/ethanal ratio on ratios of esteriﬁcation and condensation rates (523
+K, TiO2(a) + 20% wt Cu/SiO2 (1:1 mass), 0.8 kPa ethanol/ethanol-d6, 10−60 kPa H2/D2). Solid lines in a and b represent the regression ﬁts to the
+functional forms of eqs 5 and 6, respectively.
+
+esteriﬁcation/condensation rate ratios, in contrast, increased state (TS) is stabilized via concerted interactions with a Lewis
+linearly with increasing ethanol/ethanal ratios (Figure 2b). acid center (step 2, Scheme 3). Another alkanal, coadsorbed on
+These pressure eﬀects on conversion rates and selectivities a vicinal M site, is then nucleophilically attacked by the enolate
+resemble those observed for 1-propanol−propanal reactant species to form the new C−C bond (steps 4−6, Scheme 3); the
+mixtures in a previous study,30 suggesting that mechanistic aldol that forms dehydrates to an α,β-unsaturated carbonyl
+features are similar for all these reactants, as conﬁrmed by the compound (step 7, Scheme 3), which is hydrogenated to the
+evidence from experiment and theory described in the sections corresponding alkanones, alkanals, and alkanols on Cu sites.
+that follow. The enolate can also react via reversible H-abstraction with a
+ A plausible sequence of elementary steps is shown in Scheme vicinal coadsorbed alkanol to form an alkanal−alkoxide pair
+3 for aldol condensation and esteriﬁcation reactions of C2−C5 (step 9, Scheme 3), which forms the new C−O bond via
+alkanol−alkanal reactants on M−O site pairs (e.g., M = Ti or subsequent nucleophilic attack (steps 10−12, Scheme 3); the
+Zr) at oxide surfaces (TiO2(a) used here as the illustrative hemiacetal formed then dehydrogenates to an ester on the Cu
+example). These steps are consistent with all rates and function (step 13, Scheme 3), thus completing an esteriﬁcation
+selectivities measured (shown below) and with DFT-derived turnover.
+free energies (section 3.5) for all C2−C5 oxygenate reactants. The linear rate dependence on the pressure of the carbonyl
+ An adsorbed alkanal, present at low coverages during component (Figure 2a), the normal H/D isotope eﬀects
+catalysis, undergoes α-H-abstraction by a basic lattice O (shown below), and the DFT-derived free energies (section
+atom; the incipiently formed enolate moiety at the transition 3.5) require that enolate formation (step 2, Scheme 3) be the
+ 21593 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 3. Aldol Condensation and Esteriﬁcation Pathways for C2−C5 Alkanol−Alkanal Reactants (CH2RCH2OH−CH2RCH
+O, R = H or alkyl) on Bifunctional TiO2(a) + Cu/SiO2 Mixturesa
+
+a
+ Reactions on Ti−O site pairs and Cu surfaces are represented by solid and dashed arrows, respectively. Quasi-equilibrated steps are noted by a
+circle over double arrows. Reaction numbers used throughout the text are in parentheses (e.g., (1)); the kj and Kj (j = 1−13) labels above each
+reaction arrow represent their respective kinetic constants for forward steps and equilibrium constants.
+
+sole kinetically relevant step. The relative rates of enolate− rester k K K P
+ = CO ol H alkanol
+alkanal C−C coupling (step 4, Scheme 3) and alkanal−alkoxide raldol k CCK alPalkanal (6)
+C−O coupling (step 10, Scheme 3) determine only the fate of
+the enolate species formed and thus the relative rates at which Here, [L] is the number of active M−O site pairs on oxide
+enolates ultimately appear as condensation or esteriﬁcation surfaces, renolate, raldol, and rester denote the respective rates of
+products, consistent with the observed eﬀects of ethanal and enolate formation, aldol condensation, and esteriﬁcation, the
+ethanol pressures (Figure 2b), the weak H/D isotope eﬀects kenolate, kCC, and kCO parameters represent the ﬁrst-order rate
+(shown below), and the DFT treatments of these enolate constants for enolate formation (step 2), C−C coupling (step
+conversion elementary steps (section 3.5). 4), and C−O coupling (step 10), k′enolate is the eﬀective rate
+ The sequence in Scheme 3 gives mechanism-based equations constant for enolate formation, Kol and Kal are the adsorption
+for enolate formation rates constants for alkanol and alkanal reactants on metal centers,
+ and KH is the equilibrium constant for H transfer between
+ renolate r + rester alkanols and enolates (step 9, Scheme 3).
+ = aldol = kenolateKalPalkanal = k′enolate Palkanal The k′enolate parameter in eq 5 represents the slope of the
+ [L] [L]
+ (5) conversion rates shown in Figure 2a; it reﬂects the reactivity of
+ the carbonyl molecule in the formation of enolate species (step
+and for the ratio of esteriﬁcation to condensation rates 2, Scheme 3) via concerted α-H abstraction (by lattice O sites)
+ 21594 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Table 1. Number of α-H Atoms (nα‑H), Measured k′enolate, kCOKolKH(kCCKal)−1, and ΔG Values for Enolate Formation,
+Esteriﬁcation, and Condensation Reactions of C2−C5 Alkanal and Alkanone Reactants on TiO2(a)
+ reactanta nα‑H k′enolatee (ks-kPa-(Ti−O))−1 ΔG′‡enolatef (kJ mol−1) kCOKolKH (kCCKal)−1 ΔΔG‡ester‑aldolg (kJ mol−1)
+ #
+ C H3CHO b
+ 3 37.7 ± 0.4 125 ± 1 0.034 ± 0.001 15 ± 1
+ C#D3CDOb 3 15.9 ± 0.1 129 ± 1 0.025 ± 0.001 16 ± 1
+ CH3C#H2CHOc 2 31.3 ± 0.9 126 ± 1 0.101 ± 0.003 10 ± 1
+ CH3CH2C#H2CHOc 2 20.6 ± 0.4 127 ± 1 0.152 ± 0.002 8±1
+ CH3(CH2)2C#H2CHOc 2 17.8 ± 0.4 128 ± 1 0.194 ± 0.004 7±1
+ (CH3)2CHC#H2CHOc 2 0.64 ± 0.01 143 ± 1 2.36 ± 0.02 −4 ± 1
+ CH3COC#H3d 6 4.80 ± 0.05 134 ± 1 h h
+ CH3CH2COC#H3d 3 2.55 ± 0.03 137 ± 1 h h
+ CH3C#H2COCH3d 2 1.11 ± 0.02 140 ± 1 h h
+a
+ α-C atoms from which a H atom is abstracted in the formation of the enolate are indicated by the pound sign (#). bData shown in Figure 2. cData
+shown in Figure 3. dData shown in Figure 4. eNormalized by nα‑H. fCalculated from eq 7. gCalculated from eq 9. hEsteriﬁcation reactions cannot
+occur from alkanones and nonterminal alkanols, because dehydrogenation to form an ester from hemiacetal intermediates (formed from alkanones)
+cannot occur at an OH group bound to a tertiary C atom.
+
+Figure 3. Eﬀects of (a) alkanal pressure in equilibrated alkanol−alkanal reactants on pool turnover rates and (b) alkanol/alkanal ratio on ratios of
+esteriﬁcation and condensation rates (TiO2(a) + 20% wt Cu/SiO2 (1:1 mass), 523 K, 0.8 kPa alkanol, 10−60 kPa H2). Solid lines in a and b
+represent the regression ﬁts to the functional forms of eqs 5 and 6, respectively. Data for 1-propanol−propanal mixtures have been adapted from ref
+30.
+
+and stabilization of the enolate moiety (by metal centers). The iﬁcation reactions from enolates involve either similar hydrogen
+kCOKolKH (kCCKal)−1 term in eq 6 corresponds to the slope of rearrangements or none at all. DFT treatments (section 3.5)
+the selectivity ratios in Figure 2b; it accounts for the relative show that the condensation steps from enolates are limited by
+rates of C−O coupling (step 10, Scheme 3) and C−C coupling the C−C bond formation in enolate−alkanal pairs (step 4,
+(step 4, Scheme 3) steps from a given enolate intermediate. Scheme 3); esteriﬁcation, in contrast, is limited by C−O bond
+ Deuterated C2D5OD−CD3CDO−D2 mixtures were also formation in alkanal−alkoxide pairs (step 10, Scheme 3) after
+fully equilibrated on TiO2(a) + Cu/SiO2 mixtures (1:1 mass) fast and equilibrated transfer of a H atom in enolate−alkanol
+at all conditions (ηdehy 0.9−1; Figure S1, Supporting pairs (step 9, Scheme 3). The limiting steps in either C−C and
+Information (SI)); their conversion rates were proportional C−O coupling reactions do not involve activation of H atoms;
+to alkanal pressure (Figure 2a), but the rate constants were indeed, DFT treatments predict weak H/D isotope eﬀects on
+smaller than for undeuterated reactants ((k′enolate)H/(k′enolate)D esteriﬁcation/condensation rate ratios (1.2; 523 K; section 3.5),
+= 2.3; 523 K; Table 1). These normal kinetic isotope eﬀects are consistent with measured values (1.4; Table 1).
+consistent with kinetically relevant α-C−H bond cleavage steps. Hydrogenation−dehydrogenation equilibria for C3−C5 alka-
+These values are similar to those derived from DFT treatments nol reactants (i.e., 1-propanol, 2-propanol, 1-butanol, 2-butanol,
+for the formation of enolates from ethanal (2.4; section 3.5) 1-pentanol, and 3-methyl-1-butanol) were also achieved (ηdehy
+and also to those measured (2.4; 523 K) and calculated (2.5; 0.9−1.0) on TiO2(a) + Cu/SiO2 mixtures (1:1 mass; 523 K,
+523 K) for enolate formation from acetone.30 10−60 kPa H2). These equilibrated 1-alkanol−alkanal and 2-
+ Deuterated ethanol−ethanal mixtures gave esteriﬁcation/ alkanol−alkanone reactant pools formed the products expected
+condensation rate ratios only slightly smaller than for from their aldol condensation and esteriﬁcation reactions
+undeuterated reactants ((kCOKolKH (kCCKal)−1)H/(kCOKolKH (Scheme 2). Equilibrated mixtures of alkanones and their
+(kCCKal)−1)D = 1.4; 523 K; Table 1), indicating that the nonterminal alkanol hydrogenation products cannot form
+kinetically relevant steps for both condensation and ester- esters because −OH groups at tertiary C atoms in hemiacetal
+ 21595 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+intermediates formed (step 12, Scheme 3) cannot dehydrogen- ethanol−ethanal reactants above and for C3 oxygenates
+ate to their more stable ester analogs (step 13, Scheme 3). elsewhere30 seem general and accurately account for the
+Butanone can form two condensation products, depending on formation rate and conversion selectivity of enolates on
+the location of α-H atom abstracted. Abstraction at the primary TiO2(a) and, without any required modiﬁcations, also on
+C atom (CH3CH2COC#H3) forms 5-methyl-3-heptanone, ZrO2(m) (section 3.2).
+while activation at the secondary C atom (CH3C#H2COCH3) For all reactant mixtures, the k′enolate term in eq 5 reﬂects the
+forms 3,4-dimethyl-2-hexanone. free Gibbs energy barrier (ΔG′‡enolate) to form the enolate
+ The eﬀects of carbonyl reactant pressure and of alkanol/ transition state (TS) from a gaseous alkanal (alkanone)
+alkanal ratios on rates and esteriﬁcation/condensation rate molecule and a bare acid−base site pair (TiO2(a) used in
+ratios obey eqs 5 and 6, respectively, for all reactants (Figures 3 Scheme 4 as the illustrative example)
+and 4; Table 1). The mechanistic conclusions reached for
+ kBT ⎛ ΔG′‡ ⎞
+ k′enolate = exp⎜⎜ − enolate
+ ⎟⎟
+ h ⎝ RT ⎠ (7)
+
+ ΔG′‡enolate = G‡enolate − Gcarbonyl − G Ti − O (8)
+
+ where G‡enolate, Gcarbonyl, and GTi−O are the Gibbs free energies
+ for the enolate formation TS, the gaseous carbonyl reactant
+ (i.e., alkanal or alkanone), and the bare Ti−O pair. The
+ ΔG′‡enolate (523 K) values derived from measured k′enolate
+ increased slightly but systematically from 125 ± 1 (ethanal)
+ to 128 ± 1 kJ mol−1 (pentanal) as the alkyl chains bound to the
+ CO group lengthened (Table 1). The slightly lower
+ reactivity of alkanals with longer chains predominantly reﬂects
+ steric eﬀects at the α-C atom, because DFT-derived α-C−H
+ bond heterolytic dissociation energies are actually lower for
+ alkanals with longer alkyl chains (from 1565 to 1545 kJ mol−1;
+ section 3.6). Measured ΔG′‡enolate values were much larger for
+ branched 3-methyl-butanal (143 ± 1 kJ mol−1; Table 1) than
+ for linear C2−C5 alkanals (125−128 kJ mol−1; Table 1),
+Figure 4. Eﬀects of alkanone pressure in equilibrated 2-alkanol− consistent with steric eﬀects by bulkier substituents at the α-C
+alkanone reactants on condensation turnover rates (TiO2(a) + 20% wt
+Cu/SiO2 (1:1 mass), 523 K, 0.8−2.0 kPa 2-alkanol, 40 kPa H2). Solid
+ atom and with the DFT-derived barriers for enolate formation
+lines represent the regression ﬁts to the functional form of eq 5. Data steps (section 3.5).
+for 2-propanol−acetone mixtures have been adapted from ref 30. C3 and C4 alkanones showed larger ΔG′‡enolate values than
+ linear C2−C5 alkanals, indicating that alkyls at carbonyl C
+ atoms also interfere with enolate formation, in this case,
+
+Scheme 4. Schematic Reaction Coordinate Diagram for Enolate Formation from a Gaseous Alkanal (alkanone) Reactant on a
+Ti−O Site Pair of TiO2(a)a
+
+a
+ ΔG′‡enolate represents the experimentally-measurable free energy barrier of the enolate formation (eq 7).
+
+ 21596 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 5. Schematic Reaction Coordinate Diagram for the Formation of C−C and C−O Bonds from Alkanal-Derived Enolates
+with Alkanal or Alkanol Reactants on Ti−O−Ti Surface Structures of TiO2(a)a
+
+a
+ ΔΔG‡ester‑aldol represents the experimentally-accessible diﬀerence in free energy barriers for esteriﬁcation and aldol condensation (eq 9).
+
+because of the combined eﬀects of steric hindrance and of gaseous alkanal reactant (Gal) and an enolate bound on a T−O
+electronic eﬀects on the strength of the C−H bonds at the α site pair (Genolate*) (eq 11; Scheme 5).
+position, as shown by theoretical treatments in section 3.6. The Measured ΔΔG‡ester‑aldol values decreased from 15 ± 1
+replacement of the H atom at the α-C atom with a −CH3 group (ethanol−ethanal) to 7 ± 1 kJ mol−1 (1-pentanol−pentanal)
+inﬂuenced ΔG′‡enolate for acetone (vs butanone) more strongly (523 K; Table 1) as alkyl chains lengthened, because larger
+than for ethanal (vs propanal) (6 ± 2 vs 1 ± 2 kJ mol−1; Table alkyl chains destabilize the C−C coupling TS more strongly
+1). DFT treatments (section 3.6) conﬁrmed that −CH3 groups than the C−O coupling TS relative to their respective gaseous
+at the α-C atom in alkanones distort enolate formation reactants. Consistent with this trend for linear alkanals, 3-
+transition states much more signiﬁcantly than in alkanals. methyl-butanal, with an isopropyl chain at the α-C atom,
+ The ratio of rate constants for C−O and C−C formation actually favors esteriﬁcation turnovers (ΔΔG′‡ester‑aldol = −4 ± 1
+from enolates (kCOKolKH (kCCKal)−1) reﬂects diﬀerences in the kJ mol−1; Table 1) because of its bulkier substituent. DFT
+free energy barriers (ΔΔG‡ester‑aldol; Scheme 5) between C−O treatments show that alkyl groups in enolate−alkanal pairs at
+coupling (step 10, Scheme 3) and C−C coupling (step 4, the C−C coupling TS are much closer to each other than in
+Scheme 3) steps alkoxide−alkanal pairs at the C−O coupling TS (shown in
+ ⎛ ΔΔG‡ ⎞ section 3.8); this leads to stronger steric eﬀects for C−C
+ k COKolKH
+ = exp⎜⎜ − ester − aldol
+ ⎟⎟ coupling than C−O coupling transition states and thus to
+ k CCK al ⎝ RT ⎠ smaller ΔΔG‡ester‑aldol values for longer alkanal/1-alkanol
+ ⎛ ΔG‡ ‡ ⎞ reactants.
+ ester − ΔG aldol These data show that α-C−H bond cleavage to form enolates
+ = exp⎜⎜ − ⎟⎟
+ ⎝ RT ⎠ (9) is the sole kinetically relevant step in reactions of C2−C5
+ oxygenates on TiO2(a), as also found on ZrO2(m) (section
+ 3.2). In contrast, esteriﬁcation/condensation rate ratios are
+ ΔG‡ester = G‡ester − Gol − Genolate * (10) mediated by C−O and C−C coupling reactions of enolates
+ with alkanol and carbonyl coadsorbed reactants, respectively.
+ ΔG‡aldol = G‡aldol − Gal − Genolate * (11) The acid−base site pairs exposed at TiO2(a) and ZrO2(m)
+ surfaces stabilize the enolate formation TS as well as those that
+ ΔΔG‡ester − aldol = G‡ester − G‡aldol + Gal − Gol (12)
+ mediate subsequent C−O and C−C coupling reactions.
+ Stabilization requires concerted interactions with acid−base
+ΔG‡ester is the free energy diﬀerence between the C−O site pairs of intermediate strength (section 3.2). Rates and
+coupling TS (G‡ester) and the sum of a gaseous alkanol reactant selectivities are also inﬂuenced by the structure of the reactant
+(Gol) and an enolate bound on a T−O site pair (Genolate*) (eq molecules. For example, alkyl groups inﬂuence alkanal reactivity
+10; Scheme 5); ΔG‡aldol represents the free energy diﬀerence through steric eﬀects that compensate for the weakening of the
+between the C−C coupling TS (G‡aldol) and the sum of a more substituted α-C−H bonds, while steric hindrance and α-
+ 21597 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+C−H bond strength combine to make alkanones signiﬁcantly Propanoic acid binds onto Zr−O pairs to form carboxylate
+less reactive than the respective alkanals with similar alkyl species bound at two adjacent Zr centers with the H atom from
+chains at the α-C atom. The C−C coupling TS involves its OH group bound at a lattice O atom; such surfaces saturate
+coreactants in tighter conﬁgurations than the C−O coupling at an acid/Zr stoichiometry of 0.5, as shown by infrared
+TS; as a result, esteriﬁcation rates are less inhibited by alkyl spectra34 and DFT treatments.33 The presence of propanoic
+chains than condensation rates. acid (20 Pa; acid/acetone = 0.005) led to strong suppression of
+ The above conclusions, derived here from experiments using acetone condensation rates (from 4.9 to 0.2 μmol C atom m−2
+reactant pools formed from a single alkanol, alkanal, or s−1; Figure 5); rates recovered only very gradually over an
+alkanone, are conﬁrmed in section 3.3 using mixtures of C2− extended period of time (ca. 5 h; section S2, SI); these data
+C4 reactants. These reactions also provide kinetic details about conﬁrm the presence of Zr−O pairs of moderate acid−base
+the reactivity of enolates with alkanols and alkanals/alkanones strength and their involvement in condensation turnovers.
+derived from a diﬀerent carbonyl precursor. Such kinetic details They also show that O atoms appear to act as a stronger base
+cannot be extracted from reactant streams consisting solely of (based on CO2 eﬀects) and Zr centers as weaker Lewis acids
+one alkanol or its equilibrated carbonyl analog. (based on pyridine eﬀects) than Ti−O species in TiO2(a) but
+ 3.2. Site Titrations, Turnover Rates, and Selectivities that both surfaces can strongly bind carboxylic acids in
+on Monoclinic ZrO2 Surfaces. ZrO2(m) also catalyzes aldol dissociated forms using acid−base site pairs present on these
+condensation and esteriﬁcation reactions of alkanol and surfaces.30,33
+carbonyl reactants.21−23 Acid−base properties of ZrO2(m) Titrations during acetone condensation at lower temper-
+surfaces were examined here using site titrations with CO2, atures (443 K) led to irreversible adsorption of propanoic acid
+pyridine, and propanoic acid during acetone condensation on and to the full suppression of condensation rates on ZrO2(m),
+ZrO2(m) + Cu/SiO2 mixtures (523 K; 4 kPa acetone; 40 kPa thus allowing the measurement of the number of accessible
+H2). Zr−O site pairs from the number of adsorbed propanoic acid
+ Condensation rates on ZrO2(m) + Cu/SiO2 mixtures (1:1 molecules requited to suppress rates. These Zr−O surface
+mass) decreased from 4.9 to 2.3 μmol C atom m−2 s−1 when densities (6.0 nm−2, Figure 6) resemble those estimated from
+CO2 (4 kPa) was introduced into the acetone reactant stream
+(CO2/acetone = 1.0; Figure 5); rates recovered gradually upon
+
+Figure 5. Eﬀects of CO2, pyridine, and propanoic acid introductions
+on areal forward acetone condensation rates (ZrO2(m) + 20% wt Cu/
+SiO2 (1:1 mass), 523 K, 4 kPa acetone, 4 kPa CO2, 200 Pa pyridine, 20
+Pa propanoic acid, 40 kPa H2). Figure 6. Forward acetone condensation rates before (vs time) and
+ after (vs cumulative titrant uptake) propanoic acid introduction
+ (ZrO2(m) + 20% wt Cu/SiO2 (1:1 mass), 443 K, 0.8 kPa acetone, 20
+ Pa propanoic acid, 20 kPa H2). Dashed lines are linear regression ﬁts.
+CO2 removal (ca. 3 h, section S2, SI), suggesting that relatively
+weak basic sites16 are involved in condensation turnovers.
+These basic sites are stronger than on TiO2(a), for which crystallography for low-index ZrO2(m) surfaces (6.8 (−111),
+condensation rates were unaﬀected by 4 kPa CO2.30 Pyridine 8.1 (111), and 5.7 nm−2 (−101); monoclinic ZrO2, space group
+(200 Pa; pyridine/acetone = 0.05) did not aﬀect acetone P21/c, a = 0.515 nm, b = 0.521 nm, c = 0.532 nm).60 Such site
+condensation rates on ZrO2(m) (Figure 5), indicating that densities, taken together with those measured by similar
+strong Brønsted or Lewis acid sites15 are not present or methods for Ti−O site pairs on TiO2(a) (3.7 nm−2),30 allow,
+required for enolate formation. Lewis acid−base site pairs for the ﬁrst time, a rigorous comparison of reactivity as turnover
+account for enolate formation on TiO2(a), for which pyridine, rates for ZrO2(m) and TiO2(a) surfaces and accurate theory−
+even at lower pressures (20 Pa; pyridine/acetone = 0.005), led experiment benchmarking.
+to small but detectable (and reversible) rate changes (ca. 20%; As in the case of TiO2(a) (section 3.1), ethanol−ethanal
+523 K, 4 kPa acetone, 40 kPa H2). These data seem to indicate interconversions were equilibrated on ZrO2(m) + Cu/SiO2
+that Zr centers on ZrO2(m) surfaces are involved in mixtures (1:1 mass; 523 K; 15−40 kPa H2; ηdehy 0.9−1); the
+condensation turnovers; such Zr centers are, however, weaker lumped ethanol−ethanal reactants formed the expected
+Lewis acids than Ti centers in TiO2(a), while O atoms on condensation and esteriﬁcation products (Scheme 2). Turnover
+ZrO2(m) are stronger basic sites than those on TiO2(a). rates were proportional to ethanal pressure (Figure 7a; eq 5)
+ 21598 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Figure 7. Eﬀects of (a) ethanal pressure on pool turnover rates and of (b) ethanol/ethanal ratio on ratios of esteriﬁcation and condensation rates
+(ZrO2(m) + 20% wt Cu/SiO2 (1:1 mass), 523 K, 0.6 kPa ethanol or 1.0 kPa ethanol-d6, 15−40 kPa H2/D2). Solid lines in a and b represent the
+regression ﬁts to the functional forms of eqs 14 and 22, respectively.
+
+Table 2. Number of α-H Atoms (nα‑H) and Measured k′enolate,total and k′enolate,B(k′enolate,A)−1 Values for Enolate Formation and for
+Esteriﬁcation and Condensation Reactions, Respectively, of Ethanal and Acetone Reactants on ZrO2(m)
+ reactanta nα‑H k′enolate,totald (ks-kPa-(Zr−O))−1 k′enolate,B(k′enolate,A)−1
+ #
+ C H3CHO b
+ 3 65.4 ± 0.6 0.51 ± 0.01
+ C#D3CDOb 3 37.1 ± 0.5 0.41 ± 0.01
+ C#H3COCH3c 6 6.70 ± 0.05 e
+ C#D3COCD3c 6 2.61 ± 0.03 e
+a
+ α-C atoms from which a H atom is abstracted in the formation of the enolate are indicated by the pound sign (#). bData shown in Figure 7. cData
+shown in section S3, SI. dNormalized by nα‑H. eEsteriﬁcation reactions cannot occur from 2-propanol−acetone reactants, because dehydrogenation to
+form an ester from hemiacetal intermediates (formed from alkanones) cannot occur at an OH group bound to a tertiary C atom.
+
+Scheme 6. Exposed Zr and O Centers for a Unit Cell of Monoclinic ZrO2 (−111) Surfacesa
+
+a
+ DFT-derived aﬃnities of these Zr and O centers for OH− (EHA, eq 1) or H+ (EPA, eq 2) gaseous species are included.
+
+and showed normal H/D isotope eﬀects ((k′enolate)H/(k′enolate)D which compensate for the weaker acid centers in the
+= 1.8; 523 K; Table 2), similar to those on TiO2(a) (2.3; Table stabilization of the concerted enolate formation TS.
+1) and consistent with the kinetically relevant formation of ZrO2(m) (+Cu/SiO2) gave esteriﬁcation/condensation rate
+enolates via α-C−H bond activation in ethanal on surfaces ratios that did not depend on ethanol/ethanal ratios (Figure
+sparsely covered with intermediates. These ﬁrst-order kinetic 7b), in sharp contrast with the proportional eﬀects observed on
+dependence and normal H/D isotope eﬀects were also TiO2(a) (Figure 2b). These diﬀerent trends appear to reﬂect
+observed for acetone condensation on ZrO2(m) (Table 2; the presence of more than one type of active structures on
+data shown in section S3, SI). Measured k′enolate values (per site ZrO2(m) surfaces (ZrO2(m) (−111) surface used here as the
+pair) for ethanal and acetone are both slightly higher on illustrative example; Scheme 6) instead of diﬀerent kinetically
+ZrO2(m) than on TiO2 (ethanal, 65.4 vs 37.7 (ks-kPa-(M− relevant steps for condensation and esteriﬁcation routes of
+O))−1; acetone, 6.70 vs 4.80 (ks-kPa-(M−O))−1; Tables 1 and bound enolates (Scheme 3). The most stable and typically
+2). These data indicate that acid−base site pairs on ZrO2(m) exposed ZrO2(m) (−111) surface has four distinct Zr centers
+are slightly more eﬀective than on TiO2(a) in α-C−H bond and seven types of O centers; they are distinct because of the
+activation for both reactants. The higher reactivity of ZrO2(m) number and distance of the nearest counterions.51 The DFT-
+surfaces reﬂects their more strongly basic lattice O atoms, derived OH− aﬃnities (EHA, eq 1) of the Zr centers ranged
+ 21599 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 7. C−C and C−O Coupling Transition State Structures for Enolates Bound on the ZrA Site of the ZrA−O−ZrB Surface
+Structurea
+
+a
+ EnolateA with respective alkanal and 1-alkanol coreactants. The enolate formation transition states on ZrB are the same but with the other species
+on ZrA.
+
+from −1 to −54 kJ mol−1 (Scheme 6); the respective H+ enolates formed at ZrB (EnolateB) can attack species
+aﬃnities of the O centers (EPA, eq 2) ranged from −1461 to coadsorbed at ZrA. We assume, by analogy with TiO2(a) (eq
+−1619 kJ mol−1 (Scheme 6). These diﬀerent aﬃnities lead to 6), that the ratios of esteriﬁcation (rester,i) to condensation
+an expectation that the reactivity of these diverse structures (raldol,i) for each enolatei (i = A, B) are given by
+would also diﬀer signiﬁcantly. rester, i αiPalkanol
+ One of the Zr−O pairs in Zr−O−Zr structures converts an =
+alkanal to an enolate via cleavage of the α-C−H bond in the raldol, i Palkanal (15)
+carbonyl reactant (steps 1 and 2, Scheme 3), while the other Zr
+center in Zr−O−Zr structures must then bind the coreactant in which αi is the kCOKolKH (kCCKal)−1 term for the C−O and
+required for C−C or C−O coupling steps (steps 3−6 or 8−12, C−C coupling reactions of enolates bound on Zri (i = A, B)
+Scheme 3). Here, ZrA−O−ZrB sites (shown in Scheme 6) are and the sum of rester,i and raldol,i is equal to renolate,i
+used to illustrate how the asymmetric nature of Zr−O−Zr renolate, i = rester, i + raldol, i (16)
+structures can aﬀect their reactivity for enolate formation and
+the extent to which enolates convert to esteriﬁcation or These equations (eqs 13, 15, and 16) can then be used to
+condensation products. Enolate formation from alkanals can describe measured esteriﬁcation and condensation rates
+occur on either ZrA−O or ZrB−O site pairs at asymmetric ZrA− (rester,total; raldol,total) and their rate ratios (rester,total/raldol,total) for
+O−ZrB structures at rates with similar functional forms ZrA−O−ZrB surface structures (derivation in section S4, SI)
+ renolate, i rester,total αik′enolate, i PalkanolPalkanal
+ = k′enolate, i Palkanal = ∑
+ [L] (13) [L] αiPalkanol + Palkanal
+ i ∈ {A,B} (17)
+but diﬀerent rate constants (k′enolate,i; i = A, B); their combined
+contributions then give the total enolate formation rates raldol,total k′enolate, i (Palkanal)2
+ renolate,total
+ = ∑
+ [L] i ∈ {A,B}
+ αiPalkanol + Palkanal (18)
+ = (k′enolate,A + k′enolate,B )Palkanal
+ [L]
+ αik ′enolate, i Palkanol
+ = k′enolate,total Palkanal (14) rester,total ∑i ∈ {A,B} αiPalkanol + Palkanal
+ = k ′enolate, i Palkanal
+which preserves the ﬁrst-order nature of measured rates with an raldol,total ∑i ∈ {A,B} α P
+ i alkanol + Palkanal (19)
+eﬀective kinetic constant of k′enolate,total, in agreement with
+experiments (Figure 7a). As a result, measured esteriﬁcation/condensation rate ratios (eq
+ The enolate bound at ZrA (EnolateA) can then nucleophili- 19) depend linearly on alkanol/alkanal ratios when αA and αB
+cally attack a coadsorbed alkanal or 1-alkanol at ZrB to form C− have similar values but become independent of these ratios
+C and C−O bonds, respectively (Scheme 3). Conversely, when the magnitudes of αA and αB diﬀer signiﬁcantly.
+ 21600 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 8. Aldol Condensation between (a) Ethanal and Propanal and between (b) Acetone and Propanal on Bifunctional TiO2
++ Cu/SiO2 Catalysts
+
+ As for the condensation and esteriﬁcation selectivities of an TS contains a slightly anionic enolate (−0.20; section S12, SI)
+enolate bound on a Ti center (eqs 9−12; Scheme 5), each αi and a nearly neutral alkanal (−0.02; section S12, SI), thus
+term (i = A, B) in eq 15 reﬂects the diﬀerence (ΔΔG‡ester,i‑aldol,i) making the strength of the Lewis acid more consequential for
+between free energies of the enolate−alkanal C−C coupling enolate than alkanal stability. The C−C coupling TS is more
+and the alkanal−alkoxide C−O coupling transition states stable when the enolate binds on ZrA, which shows the stronger
+derived from an enolate bound to a Zri site (G‡aldol,i, G‡ester,i;
+ OH− aﬃnity (Scheme 6).
+referenced to a bare ZrA−O−ZrB surface structure and
+respective gaseous reactants for each step) The O atoms in the alkanal and alkoxide moieties at the C−
+ O coupling TS also interact with each of the two Lewis acid
+ ⎛ ΔΔG‡ ⎞ centers in ZrA−O−ZrB structures (Scheme 7). At the TS, the
+ αi = exp⎜⎜ − ⎟
+ ester, i − aldol, i
+ ⎟ alkoxide is slightly anionic (−0.31; section S12, SI) and the
+ ⎝ RT ⎠ (20) alkanal is nearly neutral (0.03; section S12, SI). The C−O
+ coupling TS is therefore more stable when the alkoxide
+ ΔΔG‡ester, i − aldol, i = G‡ester, i − G‡aldol, i + Gal − Gol (21) (formed from 1-alkanol) binds on ZrA, the site with the
+ stronger OH− aﬃnity in ZrA−O−ZrB structures (Scheme 6).
+Here Gal and Gol are free energies of gaseous alkanal and
+ Consequently, esteriﬁcation is favored over condensation when
+alkanol reactants, respectively. Equation 20 shows that these αi
+terms (i = A, B) depend most sensitively on how diﬀerently ZrA the enolate precursor that forms the alkanal (via H transfer
+and ZrB interact with C−C and C−O coupling transition states. from the alkanol; Scheme 7) binds at the weaker Zr center. The
+ In C−C coupling, the enolate and the alkanal bind at ZrA− strong preference for C−C or C−O coupling transition states
+O−ZrB structures with their respective O atoms interacting when the enolate binds to ZrA or ZrB and the consequently
+with one Zr center at the TS (Scheme 7). The C−C coupling smaller values of αA than αB reﬂect the very diﬀerent OH−
+ 21601 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Figure 8. Eﬀects of reactant pressure ratio on ratios of C−C coupling rates for (a) ethanal−propanal and (b) acetone−propanal reactants (TiO2(a)
++ 20% wt Cu/SiO2 (1:1 mass), 523 K, 0−2.0 kPa ethanol/acetone, 0.5 kPa 1-propanol, 20 kPa H2). Solid lines in a and b represent regression ﬁts to
+the functional form of eq 23. Dashed line in b represents the maximum rate ratios estimated using the detection limit of the ﬂame ionization
+detector.
+
+aﬃnities of the ZrA or ZrB centers in ZrA−O−ZrB structures at these selectivity trends require the use of periodic slab
+ZrO2(m) surfaces (−53 vs −8 kJ mol−1; Scheme 6). structures, because small cluster models that are appropriate
+ These very diﬀerent values of αi (αA < αB) allow eq 19 to be for enolate formation on ZrO2(m) and TiO2(a) are able to
+simpliﬁed to capture the essential details required for selectivity predictions
+ rester,total k′enolate,B in the case of symmetric Ti−O−Ti structures (sections 3.5−3.9
+ = and ref 30) but not for asymmetric ZrA−O−ZrB species.51
+ raldol,total k′enolate,A (22) 3.3. Turnover Rates and Selectivities of Alkanol−
+ Alkanal/Alkanone Mixtures. Enolates form from two (or
+These ratios do not depend on alkanol/alkanal ratios, in
+ more) carbonyl compounds at rates which depend on their
+accordance with measurements (Figure 7b). They reﬂect the
+ respective pressures at Ti−O or Zr−O site pairs on TiO2(a)
+ratio of enolate formation rate constants at ZrB and ZrA sites
+ and ZrO2(m) surfaces that remain essentially uncovered during
+(k′enolate,B/k′enolate,A), which depends, in turn, on the relative
+stability of the enolate formation TS on ZrB−O and ZrA−O steady-state catalysis (sections 3.1 and 3.2 and ref 30). Each
+pairs. On TiO2(a), the two Ti centers at Ti−O−Ti surface enolate can then react with either one of the two carbonyl
+structures are crystallographically and chemically identical, reactants to form four distinguishable condensation products
+leading to ratios of esteriﬁcation and condensation rates that and also with each alkanol present to form distinct esteriﬁcation
+depend on the concentrations of the C−O and C−C coupling products.
+transition states (eq 6); these ratios reﬂect the relative stability For ethanol−1-propanol reactants on TiO2(a) + Cu/SiO2
+of the C−O and C−C coupling transition states and the mixtures, the Cu function equilibrates ethanol−ethanal and 1-
+concentrations of their respective alkanol and alkanal propanol−propanal reactants at each H2 pressure; ethenolate
+coreactants that react with the enolate on TiO2(a). (from ethanal) and propen-1-olate (from propanal) can each
+ These k′enolate,B/k′enolate,A ratios on ZrO2(m) give the react with either ethanal or propanal to form butanal, pentanal,
+individual k′enolate,B and k′enolate,A values that combine to give 2-methyl-butanal, and 2-methyl-pentanal (Scheme 8a); each of
+the measured k′enolate,total values (eq 14) and depend on the the two enolates also reacts with either ethanol or 1-propanol
+respective free energy barriers (ΔG′‡enolate) for enolate to form ethyl acetate, propyl acetate, ethyl propionate, and
+formation on ZrA−O and ZrB−O pairs (eq 7). For ethanol− propyl propionate. Similarly, acetone−1-propanol reactants on
+ethanal reactants, ΔG′‡enolate values for ZrA−O and ZrB−O site TiO2(a) + Cu/SiO2 mixtures form 2-methyl-pentanal, 2,3-
+pairs are 121 ± 1 and 124 ± 1 kJ mol−1, respectively. The dimethyl-butanal, 4-methyl-pentan-2-one, and hexan-2-one
+smaller barrier on ZrA−O pairs is consistent with the larger condensation products (Scheme 8b) and propyl propionate
+OH− binding energy of ZrA site (Scheme 6). ZrA is a stronger and isopropyl propionate as esteriﬁcation products. The relative
+acid than ZrB and stabilizes the enolate TS through more formation rates of these condensation and esteriﬁcation
+eﬀective interactions with the carbonyl O atom in alkanals than products depend on the rates at which each carbonyl reactant
+the weaker ZrB centers. These k′enolate,B/k′enolate,A ratios are forms its respective enolate and on the reactivity of the
+similar for deuterated and undeuterated ethanol−ethanal respective enolates toward each of the gaseous carbonyl or
+reactants ((k′enolate,B/k′enolate,A)H/(k′enolate,B/k′enolate,A)D = 1.2; alkanol reactants. We examine here the ethanol−1-propanol
+523 K; Table 2), indicative of transition states that exhibit a and acetone−1-propanol reactants on TiO2(a) + Cu/SiO2
+similar extent of C−H bond breaking and O−H bond making mixtures as illustrative examples of cross-condensation and
+on each of the ZrA−O and ZrB−O pairs. cross-esteriﬁcation reactions, but the conclusions are also
+ We conclude that condensation and esteriﬁcation elementary consistent with rate and selectivity data that we obtained for
+steps (Scheme 3) and their kinetic relevance are similar on several mixtures of the other oxygenates used in this study.
+ZrO2(m) and TiO2(a) surfaces but that selectivity descriptors Ethanol−1-propanol−H2 reactants reached thermodynamic
+must include the asymmetric nature of ZrA−O−ZrB centers, equilibrium with ethanal (C2al) and propanal (C3al) at all
+absent for Ti−O−Ti structures. Detailed DFT descriptions of conditions on TiO2(a) + Cu/SiO2 mixtures (1:1 mass; 523 K,
+ 21602 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Table 3. kC2al,iKC2al(kC3al,iKC3al)−1 and kC3one,iKC3one(kC3al,iKC3al)−1 Obtained from Regression Fits of Rate Data and
+Corresponding ΔG Values for C2 and C3 Enolate reactants
+ enolate reactant kC2al,iKC2al(kC3al,iKC3al)−1 a ΔΔG‡C2al,i‑C3al,ib (kJ mol−1) kC3one,iKC3one(kC3al,iKC3al)−1 c ΔΔG‡C3one,i‑C3al,ib (kJ mol−1)
+ ethenolate 0.91 ± 0.03 0±1
+ propen-1-olate 0.89 ± 0.03 1±1 <0.01 >20
+ propen-2-olate 0.0065 ± 0.0002 22 ± 1
+a
+ Data shown in Figure 8a. bCalculated using eq 24. cData shown in Figure 8b.
+
+20 kPa H2; 0−2.0 kPa ethanol; 0−0.5 kPa 1-propanol). The the equilibrium constants for the H transfer between each 1-
+conversion rates of each reactant did not depend on the alkanol and enolate i to form alkanal−alkoxide pairs (step 9,
+presence or the concentration of the other reactant (section S5, Scheme 3), kM,i and kN,i are the rate constants for each
+SI), consistent with the low coverages of adsorbed subsequent alkanal−alkoxide C−O coupling (step 10, Scheme
+intermediates prevalent during steady-state catalysis (section 3), and KM and KN are the adsorption constants of M and N,
+3.1). respectively. The grouping of rate and adsorption constants in
+ All four products expected from C−C coupling reactions of eq 26 reﬂects the free energy diﬀerence between the two C−O
+ethanal and propanal with ethenolate and propen-1-olate coupling transition states and the respective gaseous alkanol
+(Scheme 8a) were detected. For each given enolate i (i.e., reactants (ΔΔG‡M,i‑N,i; M = C2ol; N = C3ol)
+ethenolate or propen-1-olate), the C−C coupling rates were
+ kM, iKH − M, iKM ⎛ ΔΔG‡ ⎞
+proportional to the pressure of each carbonyl reactant (Figure
+ = exp⎜⎜ − ⎟
+ M, i − N, i
+8a) kN, iKH − N, iKN ⎟
+ ⎝ RT ⎠ (27)
+ rm, i k m, iK mPm
+ = ΔΔG‡ M, i − N, i = G‡ M, i − G‡ N, i + G N − GM
+ rn, i k n, iK nPn (23) (28)
+
+where rm,i and rn,i are the respective reaction rates of enolate i where G‡M,iand G‡N,i
+ are the free energies of the C−O coupling
+with carbonyl reactants m (C2al) and n (C3al) and km,i and kn,i transition states for enolate i with 1-alkanols M and N and GM
+are the respective rate constants for these C−C coupling steps; and GN are the free energies of gaseous M and N. Measured
+Km and Kn are the adsorption constants for m and n, ΔΔG‡C2ol,i‑C3ol,i values (523 K; eq 28) for both ethenolate and
+respectively. The grouping of rate and adsorption constants propen-1-olate were nearly zero (±1 and ±1 kJ mol−1; section
+in eq 23 is reﬂected in the slopes of the data shown in Figure S6, SI). These data show that diﬀerent enolates react at similar
+8a; these slopes depend on the diﬀerence between free energies rates in C−O coupling reactions with 1-alkanols; such similar
+of the two C−C coupling transition states and the respective rates reﬂect the very weak eﬀects of alkyl chains in 1-alkanols
+gaseous alkanal reactants (ΔΔG‡m,i‑n,i; m = C2al; n = C3al) on the stability of the TS that mediates C−O bond formation.
+ Hydrogenation−dehydrogenation equilibrium also prevailed
+ k m, iK m ⎛ ΔΔG‡ ⎞ at all conditions for acetone (0−2.0 kPa) and 1-propanol (0−
+ = exp⎜⎜ − ⎟
+ m, i − n, i
+ k n, iK n ⎟ 1.0 kPa) mixtures on TiO2(a) + Cu/SiO2 catalyst mixtures (1:1
+ ⎝ RT ⎠ (24) mass; 523 K, 20 kPa H2), and conversion rates for each
+ carbonyl reactant were independent of the presence or
+ ΔΔG‡ m, i − n, i = G‡ m, i − G‡ n, i + Gn − Gm (25) concentration of the other (section S5, SI). Acetone (C3one)
+where G‡m,i and G‡n,i are the free energies of the C−C coupling and propanal (C3al) reactions with propen-2-olate (from
+transition state of enolate i with carbonyl reactants m and n and acetone) were proportional to the respective pressures of each
+Gm and Gn are the free energies of gaseous m and n. carbonyl reactant (Figure 8b), as expected from the pathways
+ Measured ΔΔG‡C2al,i‑C3al,i values (523 K; eq 24) for reactions depicted in Scheme 8b and consistent with eq 23 (m = C3one;
+of ethanal and propanal with ethenolate species were essentially n = C3al). The slope of the regressed trend line in Figure 8b
+zero (±1 kJ mol−1; Table 3), indicative of their very similar (kC3one,iKC3one (kC3al,iKC3al)−1 in eq 23) reﬂects the free energies
+reactivity. Propanal and ethanal reacted with propen-1-olate of the transition states for C−C coupling between the enolate i
+also at similar rates (ΔΔG‡C2al,i‑C3al,i = 1 ± 1 kJ mol−1; Figure and the two carbonyl compounds and the respective free
+8a; Table 3). These reactivities indicate that nucleophilic attack energies of the carbonyl reactants as gaseous molecules
+by enolates on alkanals depends only weakly on the alkyl (ΔΔG‡C3one,i‑C3al,i; eqs 24 and 25).
+substituents at the α-C atom in alkanals, consistent with the The measured ΔΔG‡C3one,i‑C3al,i value for reactions of acetone
+DFT results discussed in section 3.9. and propanal with propen-2-olate was 22 ± 1 kJ mol−1 (523 K;
+ The four distinct esters expected from C−O coupling of Table 3), indicative of the much more reactive nature of
+ethanol (C2ol) and 1-propanol (C3ol) with ethenolate and alkanals than alkanones as reactants for each given enolate, as
+propen-1-olate were detected. The C−O coupling rate for each also found for their reactions with propen-1-olates species
+given enolate i (i.e., ethenolate or propen-1-olate) was derived from propanal (ΔΔG‡C3one,i‑C3al,i > 20 kJ mol−1, a limit
+proportional to the pressure of each alkanol coreactant (section set by chromatographic detection). The steric eﬀects are
+S6, SI) imposed by the additional −CH3 group at the carbonyl C atom
+ in acetone (vs the H atom in propanal); they oﬀset the higher
+ rM, i kM, iKH − M, iKMPM nucleophilic reactivity expected from the more electrophilic
+ = nature of the additional −CH3 group in acetone. Such eﬀects
+ rN, i kN, iKH − N, iKNPN (26)
+ are conﬁrmed and accurately described by the DFT-derived
+Here, rM,i and rN,i are the respective rates of enolate i reactions ΔΔG‡C2al,i‑C3al,i and ΔΔG‡C3one,i‑C3al,i values reported in section
+with 1-alkanols M (C2ol) and N (C3ol), KH‑M,i and KH−N,i are 3.9.
+ 21603 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 9. Reaction Network of Aldol Condensation for Mixtures of Ethanal, Butanal, and Acetone Reactants on Bifunctional
+TiO2(a) + Cu/SiO2 Catalysts
+
+Figure 9. Carbon selectivities for (a) C≤8 and (b) C9+ products as a function of pool conversion for acetone−1-butanol−ethanol reactant feeds (2.6
+kPa acetone, 4.2 kPa 1-butanol, 2.2 kPa ethanol, 20 kPa H2) on TiO2(a) + 20% wt Cu/SiO2 mixtures (1:1 mass) at 523 K. Dashed curves indicate
+trends. Combined selectivities to C1−4 and C9−10 products (not included here) did not exceed 5%.
+
+ These mechanistic conclusions were also evident from the and ethanal, instead of acetone, to form C5−C8 condensation
+rates and selectivities measured with acetone−butanal−ethanal products (Scheme 9) and with the respective alkanols to form
+reactant mixtures, typical of those formed in ABE fermentation C5−C8 esters. The selectivity to these primary condensation
+processes,8 on TiO2(a) + Cu/SiO2 mixtures (1:1 mass; 523 K, and esteriﬁcation products decreased monotonically as the
+20 kPa H2; acetone:1-butanol:ethanol = 2.6:4.2:1.1 kPa). The conversion of the reactant pool increased with increasing
+molecular speciation and selectivities of the products formed residence time (Figure 9a) along with a concomitant increase in
+were consistent with those independently measured from the selectivity to C 9+ products formed in secondary
+condensation and esteriﬁcation reactions of each of the condensation and esteriﬁcation reactions (Figure 9b).
+individual reactants involved. Speciﬁcally, conversion rates of The average carbon number in the eﬄuent stream (products
+each species were proportional to the pressure of each and unconverted reactants) increased from 3.4 in reactants to
+alkanone/alkanal and independent of the presence or 6.6 at 85% pool conversion (Figure 10a); the O/C ratio of the
+concentration of the other reactants. The enolates formed molecules in the eﬄuent stream concomitantly decreased from
+from each carbonyl reactant preferentially reacted with butanal 0.30 to 0.13 within the same conversion range (Figure 10b).
+ 21604 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Figure 10. Average number of (a) C atoms and (b) O/C ratio of liquid eﬄuents as a function of pool conversion for acetone−1-butanol−ethanol
+(2.6 kPa acetone, 4.2 kPa 1-butanol, 2.2 kPa ethanol, 20 kPa H2) and ethanol reactant feeds (0.8 kPa ethanol and 40 kPa H2) on TiO2(a) + 20% wt
+Cu/SiO2 mixtures (1:1 mass) at 523 K. Dashed curves indicate trends.
+
+Figure 11. Eﬀects of H2O pressure on (a) approach to equilibrium factor for 1-propanol−propanal interconversions (ηdehy; eq 4) and enolate
+formation rates (renolate) and (b) ratios of esteriﬁcation and condensation rates for 1-propanol−propanal reactants (TiO2(a) + 20% wt Cu/SiO2 (1:1
+or 1:4 mass), 523 K, 4 kPa 1-propanol, 40 kPa H2). Dashed lines indicate trends.
+
+Such trends resemble those observed for pure ethanol−ethanal ation to propanal on monofunctional Cu/SiO2 catalysts
+mixtures (Figure 10) on TiO2(a) + Cu/SiO2 mixtures (1:1 decreased slightly (from 0.19 to 0.15 μmol gCu/SiO2−1s−1) with
+mass; 523 K, 0.8 kPa ethanol, 40 kPa H2). For these mixtures, increasing H2O pressure (from 0.1 to 4 kPa; 523 K, 4.0 kPa 1-
+the average carbon number in the eﬄuent stream increased propanol, 20 kPa H2, section S7, SI), consistent with weak
+from 2.0 in reactants to 5.4 at 85% pool conversion (Figure inhibition of the Cu function. These experiments were carried
+10a), while the O/C ratio concurrently decreased from 0.50 to out at much higher space velocities (>1.2 mmol gCu/SiO2−1 s−1)
+0.19 (Figure 10b). to prevent full hydrogenation−dehydrogenation equilibrium
+ 3.4. Eﬀects of H2O on 1-Alkanol Turnover Rates and (ηdehy < 0.25). Such H2O pressures did not preclude 1-
+Selectivities. Condensation reactions form H2O and α,β-
+ propanol−propanal−H2 equilibration within the catalyst bed at
+unsaturated carbonyl molecules in equimolar amounts (Scheme
+ lower space velocities on either TiO2(a) + Cu/SiO2 mixture
+2), leading to H2O as a signiﬁcant coproduct. H2O may
+ (1:1 or 1:4 mass; ηdehy 0.9−1, Figure 11a). Enolate formation
+inﬂuence enolate formation or reaction rates through
+competitive molecular or dissociative binding onto acid−base rates did not depend on H2O pressure (Figure 11a), indicating
+site pairs or via interactions with enolates; H2O could also aﬀect that H2O did not interfere with their kinetically relevant step
+the Cu function by inhibiting hydrogenation−dehydrogenation and that equilibrated propanal pressures were established near
+reactions. the entrance of the catalyst bed even in the presence of H2O.
+ We examine here such eﬀects of H2O for 1-propanol These negligible H2O coverages on TiO2(a) surfaces are
+reactants on two bifunctional TiO2(a) + Cu/SiO2 mixtures consistent with the moderate strength of the acid and base
+with diﬀerent ratios of the two functions (1:1 or 1:4 mass; 523 moieties in Ti−O site pairs, evident from the weak eﬀects of
+K; 40 kPa H2). The forward rates of 1-propanol dehydrogen- pyridine and CO2 titrants on enolate formation rates and from
+ 21605 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 10. Proposed Pathway of the C−O Coupling between Enolates and H2O on Ti−O−Ti Surface Structures (R = H or
+alkyl)
+
+Scheme 11. DFT-Derived Structures Involved in Enolate Formation of Ethanala
+
+a
+ On Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; only Ti5c−
+O3c−Ti5c sites and two O atoms directly bound to the Ti5c sites are shown for clarity. Distances are reported in nanometers.
+
+theoretical treatments of the binding energies of OH− and H+ DFT calculations on Ti5O19H18 cluster models show that the
+species formed via H2O dissociation on TiO2(a) surfaces.30 C−O coupling TS of the propanal−hydroxyl pair gives the
+ In contrast, esteriﬁcation/condensation rate ratios on highest free energy along the proposed enolate−H2O reaction
+TiO2(a) + Cu/SiO2 (1:4 mass) increased from 0.38 to 1.2 as pathway at Ti−O−Ti surface structures (section S13, SI),
+the prevalent H2O pressure increased from 0.03 (2% suggesting that C−O coupling steps limit enolate−H2O
+conversion; mean bed value; no H2O added) to 3 kPa reactions, as also found for the analogous enolate−alkanol
+(added H2O) and reached nearly constant values before a slight esteriﬁcation route (section 3.1). The free energy of this
+decrease at higher pressures (4 kPa) (Figure 11b). Such eﬀects, propanal−hydroxyl C−O coupling TS is lower than for the
+without any concomitant changes in conversion rates, indicate propanal−1-propoxide C−O coupling TS involved in the
+that H2O favors C−O over C−C coupling reactions of the propen-1-olate−1-propanol reaction by 21 kJ mol−1 (section
+enolates to form hemiacetals. The weakening and ultimate S13, SI), consistent with the proposed catalytic role of H2O in
+reversal of such a preference reﬂect an inhibition of the Cu hemiacetal formation. Therefore, H2O, albeit at concentrations
+dehydrogenation function, required to scavenge hemiacetals to signiﬁcantly higher than those prevalent at the low conversions
+stable esters, at higher H2O pressures (Scheme 3; section S7, of this mechanistic study, leads to a preference for esteriﬁcation
+SI); this is also shown by the monotonic eﬀects of H2O routes (Figure 11b). Such promotion requires, however, high
+pressure on these rate ratios for TiO2(a) + Cu/SiO2 mixtures Cu contents in catalyst mixtures, because H2O also inhibits
+with lower Cu contents (1:1 mass ratio; Figure 11b). H2O and dehydrogenation steps required for hemiacetal conversion to
+Cu contents can therefore be used in practice to control the esters, thus creating a thermodynamic bottleneck for any
+relative rates of esteriﬁcation and condensation for equilibrated hemiacetal formation route, irrespective of kinetic preferences
+1-alkanol−alkanal reactants on bifunctional systems with Cu or the involvement of H2O.
+and TiO2(a) functions. 3.5. Theoretical Assessment of Condensation and
+ The strong promoting eﬀects of H2O on esteriﬁcation Esteriﬁcation Pathways on Ti5O19H18 Clusters. The
+selectivity, evident on the catalyst mixtures with higher Cu mechanistic inferences from the previous sections are
+contents (Figure 11b), indicate that H2O can increase conﬁrmed here by determining free energy barriers for the
+esteriﬁcation rates by decreasing the activation barrier to elementary steps in Scheme 3 on Ti5O19H18 cluster models.
+form C−O coupling products in enolate−1-propanol pairs. These clusters contain Ti (Ti5c and Ti6c, Scheme 1) and O (O2c
+Enolates can react with H2O to form 1,1-diols on Ti−O site and O3c, Scheme 1) centers with the same coordination as
+pairs (steps 1′−5′, Scheme 10) in reactions analogous to those those exposed on the predominant (101) surfaces of TiO2(a).
+that form new C−O bonds via coupling of enolates with Ti5c−O3c−Ti5c surface structures are more active than the other
+alkanols (HOH vs ROH in Scheme 3). Subsequent ether- structures for enolate formation and for subsequent coupling
+iﬁcation reactions of these diols with 1-propanol (step 6′, reactions of C3 oxygenates because of their moderate acid−base
+Scheme 10) then form the same hemiacetal as in the direct C− strength and the suitable distances between the O site and the
+O coupling of the enolate−1-propanol pair but apparently at two Ti centers; these coupling reactions are required to
+higher rates as the result of the action of H2O as a cocatalyst. complete condensation and esteriﬁcation turnovers.30 Similar
+ 21606 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Figure 12. DFT-derived reaction free energy diagram of aldol condensation (solid lines) and esteriﬁcation (dashed lines) for ethanol−ethanol
+reactants (on Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; 523
+K, 1 bar). TSj and Pj notations represent the respective transition state and product of step j in Scheme 3. Free energies are relative to a bare cluster
+and respective gaseous ethanal (C2H4O) and ethanol (C2H6O) reactants.
+
+Figure 13. Measured and DFT-derived (a) ΔG′‡enolate and (b) ΔΔG‡ester‑aldol for alkanals and alkanones (◆) CnH2nO, (◊) CnD2nO (n = 2−5) (on
+Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; 523 K, 1 bar).
+Data points for propanal and acetone adapted from ref 30. Dashed lines represent the parity lines.
+
+conclusions were reached for reactions of C2−C5 carbonyl The concerted and intermediate character of these transition
+molecules (section 3.1) in general, and these Ti5c−O3c−Ti5c states thus requires an appropriate balance of acid and basic
+surface structures are used throughout the DFT treatments that strength at Ti−O site pairs. The intermediates and transition
+follow. states involved in enolate formation (Scheme 11) and in its
+ DFT-derived structures for enolate formation steps from subsequent reactions (section S8, SI; Scheme 3) resemble those
+ethanal (step 2, Scheme 3) show that (i) the adsorbed ethanal involved in similar reactions of propanal and acetone,30
+(ethanal*) binds to a Ti5c Lewis acid center via its carbonyl O suggesting their general involvement in condensation and
+atom (Ti5c−O 0.219 nm, Scheme 11), (ii) an α-H atom in
+ esteriﬁcation reactions on acid−base site pairs at metal oxide
+ethanal* is abstracted by a basic O3c site (α-H−O3c 0.125 nm,
+ surfaces.
+Scheme 11), while the organic moiety is stabilized by the Ti5c
+ Gibbs free energies of formation for the DFT-derived
+center (Ti5c−O 0.200 nm, Scheme 11) at the enolate formation
+TS, and (iii) the α-H−O3c and Ti5c−O distances at the TS structures involved in ethanol−ethanal reactions (Scheme 3)
+become shorter (0.098 and 0.185 nm, respectively; Scheme 11) on Ti5c−O3c−Ti5c surface structures are shown in Figure 12. All
+as enolates form. The α-C−H bond at the TS (0.140 nm, free energies (and those in sections 3.6−3.9) are referenced to
+Scheme 11) is longer than in ethanal* (0.109 nm) but much a bare Ti5O19H18 cluster and to the respective gaseous carbonyl
+shorter than the combined van der Waals radii of the C and H or 1-alkanol reactants (at 523 K and 1 bar); the individual
+atoms (0.29 nm), suggesting that the enolate formation TS enthalpy and entropy components of these free energies are
+occurs at an intermediate point along the reaction coordinate. reported in the SI (section S8).
+ 21607 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Table 4. DFT-Derived ΔGads, ΔG‡enolate, and ΔG′‡enolate Values, Corresponding Enthalpy (ΔH) and Entropy (−TΔS)
+Contributions for Enolate Formation, and Deprotonation Enthalpies (ΔHDPE) for Gaseous C2−C5 Carbonyl Alkanals and
+Alkanonesa
+ adsorption energy (kJ mol−1) enolate formation barrier (kJ mol−1)
+ reactant b
+ ΔH −TΔS ΔG ΔH‡ −TΔS‡ ΔG‡ ΔG′‡enolate (kJ mol−1) ΔHDPE (kJ mol−1)
+ #
+ C H3CHO −88 89 1 105 15 120 121 1565
+ CH3C#H2CHO −92 93 1 101 20 121 122 1557
+ CH3CH2C#H2CHO −97 96 −1 107 18 125 124 1547
+ CH3(CH2)2C#H2CHO −98 99 1 107 17 124 125 1545
+ (CH3)2CHC#H2CHO −94 99 5 114 20 134 139 1556
+ CH3COC#H3 −92 97 4 109 17 126 130 1575
+ CH3CH2COC#H3 −94 99 5 113 13 126 131 1568
+ CH3C#H2COCH3 −94 99 5 114 19 133 138 1583
+a
+ On Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; 523 K, 1 bar.
+b
+ α-C atoms from which a H atom is abstracted in the formation of the enolate are indicated by the pound sign (#).
+
+ The activation of the α-H atom in ethanal on Ti−O site pairs ΔG′‡enolate = ΔGads + ΔG‡enolate (29)
+forms enolates in the elementary step with the highest free
+energy barrier along the condensation and esteriﬁcation The DFT-derived enthalpy (ΔH) and entropy (−TΔS)
+reaction coordinates (Figure 12). This elementary reaction contributions to ΔGads and ΔG‡enolate values for C2−C5
+thus represents the sole and common kinetically relevant step carbonyl reactants are shown in Table 4. For linear alkanals,
+for both reactions. DFT-derived ΔG′‡enolate values (121 kJ ΔHads values become more negative (from −88 to −98 kJ
+mol−1, Figure 13a) and kinetic isotope eﬀects ((k′enolate)H/ mol−1) as alkyl chains lengthen (from ethanal to pentanal) and
+(k′enolate)D = 2.4, Figure 13a) for ethanal agree well with interact more strongly with Ti−O site pairs through van der
+measured values (125 ± 1 kJ mol−1 and 2.3, Table 1). Waals interactions. In concert, the (−TΔSads) term becomes
+ Among the subsequent steps, which determine the fate of the more positive, thus compensating these changes in ΔHads and
+enolate species, the C−C coupling TS (step 4, Scheme 3) gives leading to adsorption free energies that are essentially
+the highest free energy along the condensation path (ΔG‡C−C independent of chain length for linear alkanals (±1 kJ mol−1
+81 kJ mol−1, Figure 12), while the C−O coupling TS in ΔGads diﬀerences). Consequently, the ΔG′‡enolate values that
+ethanal−alkoxide pairs (step 10, Scheme 3; formed via H account for reactivity predominantly reﬂect concomitant
+transfer in ethenolate−ethanol pairs in step 9, Scheme 3) changes in the activation free energy for the elementary step
+provides the highest barrier along the esteriﬁcation reaction that forms the enolate from the adsorbed linear alkanals
+coordinate (ΔG‡C−O 97 kJ mol−1, Figure 12). These two (ΔG‡enolate, eq 29). Such ΔG‡enolate values increase with the size
+transition states thus determine the ratio of esteriﬁcation and of the α-alkyl group for C2−C4 linear alkanals (121−125 kJ
+condensation rates. DFT-derived ΔΔG‡ester‑aldol (16 kJ mol−1, mol−1, Table 4) but then decrease slightly for n-pentanal (124
+eq 12, Figure 13b) and (kCOKolKH(kCCKal)−1)H/(kCOKolKH kJ mol−1, Table 4). These eﬀects of α-alkyl groups on ΔG‡enolate
+(kCCKal)−1)D values (1.2, eq 9, Figure 13b) for ethanol−ethanal are discussed below in the context of their enthalpy (ΔH‡enolate)
+reactants also agree well with their respective experimental and entropy (−TΔS‡enolate) components.
+values (15 ± 1 kJ mol−1 and 1.4, Table 1). These theory− First, we compare the ΔH ‡enolate and (−TΔS‡enolate)
+experiment benchmarks indicate that the level of theory and the contributions to ΔG‡enolate for propanal and ethanal reactants.
+ ΔH‡enolate values are smaller for propanal than ethanal (101 vs
+small cluster structures used here are adequate to describe the
+ 105 kJ mol−1, Table 4), consistent with a −CH3 group at the α-
+observed condensation and esteriﬁcation reactions on TiO2(a)
+ C atom stabilizing the enolate TS via p−π conjugation at the
+catalysts.
+ incipiently formed CC bond.66 Such a trend is evident from
+ DFT-derived and measured values of ΔG′‡enolate and
+ the smaller deprotonation enthalpy (ΔHDPE) for gaseous
+ΔΔG‡ester‑aldol are also similar to each other for reactions of propanal than ethanal (1557 vs 1565 kJ mol−1, Table 4). The
+C4 and C5 carbonyl molecules (Figure 13), conﬁrming the −CH3 group, however, also leads to larger (−TΔS‡enolate)
+accurate and general nature of the mechanistic proposals values (20 vs 15 kJ mol−1, Table 4) because it imposes greater
+derived from experiments. The diﬀerent values of ΔG′‡enolate conﬁgurational rigidity along the carbon backbone during α-C−
+and ΔΔG‡ester‑aldol among these oxygenate reactants (Figure 13) H bond cleavage; such constrained structures are evident from
+reﬂect the eﬀects of molecular identity on enolate formation the increase in dihedral angles between the O−C1 and the C2−
+rates and on C−C/C−O coupling selectivities, respectively. C3 bonds along the reaction coordinate that converts adsorbed
+The quantitative analysis of these molecular eﬀects on reactivity propanal (162°) to the propen-1-olate formation TS (177°;
+in terms of DFT-derived enthalpy and entropy values is Scheme 12a). These compensating eﬀects of the −CH3 group
+discussed below (sections 3.6−3.9). on ΔH‡enolate and (−TΔS‡enolate) result in the similar reactivities
+ 3.6. Theoretical Assessment of Alkyl Substituent of ethanal and propanal in the formation of their respective
+Eﬀects on Enolate Formation Rates on Ti−O Site Pairs. enolates (ΔG′‡enolate 121 vs 122 kJ mol−1, Table 4).
+The value of ΔG′‡enolate represents the combined free energy An additional −CH2− group in the chain attached to the α-C
+change upon adsorption of a gaseous carbonyl molecule onto a atom (e.g., propanal vs butanal) increased ΔH‡enolate values
+Ti−O site pair (ΔGads) and the formation of the α-C−H bond from 101 to 107 kJ mol−1 (Table 4) and decreased −TΔS‡enolate
+cleavage TS from the adsorbed precursor (ΔG‡enolate; Scheme from 20 to 18 kJ mol−1 (Table 4). The higher ΔH‡enolate values
+4) contrast the trends observed between ethanol and propanal;
+ 21608 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Scheme 12. DFT-Derived Structures of Adsorbed Reactants and Transition States Involved in Enolate Formation for (a)
+Propanal, (b) Butanal, and Butanone with α-C−H Bond Cleavage (c) at the Primary α-C Atom and (d) at the Secondary α-C
+Atoma
+
+a
+ On Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; only the
+Ti5c−O3c−Ti5c sites and two O atoms directly bound to the Ti5c sites are shown for clarity.
+
+they reﬂect a signiﬁcant distortion of the carbon backbone at with further lengthening of a linear alkyl chain (pentanal; Table
+the TS in order to avoid steric repulsion between the ethyl 4). We conclude that the higher ΔG′‡enolate values and the lower
+group and the Ti−O site pairs as the C−H bond is incipiently reactivity observed for butanal relative to propanal (Figure 13)
+cleaved at the TS (Scheme 12b). Such trends are also found predominantly reﬂect steric eﬀects caused by larger alkyls at the
+ 21609 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Table 5. Bond Order of Chemical Bonds Involved in Enolate Formation Transition States for C2−C5 Alkanals and Alkanonesa
+
+ reactantb α-C−H α-H−O3c O−Ti5c CO CC Ti5c−O3c
+ C#H3CHO 0.41 0.29 0.58 1.34 1.41 0.45
+ CH3C#H2CHO 0.39 0.27 0.61 1.31 1.40 0.45
+ CH3CH2C#H2CHO 0.39 0.27 0.61 1.31 1.40 0.45
+ CH3(CH2)2C#H2CHO 0.39 0.27 0.61 1.31 1.41 0.45
+ (CH3)2CHC#H2CHO 0.39 0.27 0.62 1.30 1.41 0.45
+ CH3COC#H3 0.38 0.30 0.62 1.26 1.41 0.43
+ CH3CH2COC#H3 0.38 0.30 0.62 1.26 1.41 0.43
+ CH3C#H2COCH3 0.37 0.29 0.65 1.24 1.39 0.43
+a
+ R, R′  H or alkyl; on Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti
+atoms. bα-C atoms from which a H atom is abstracted in the formation of the enolate are indicated by the pound sign (#).
+
+α-C atom. Indeed, 3-methyl butanal, in which the α-alkyl terminal α-C atom, as shown by the smaller dihedral angle
+substituent is branched, gave a much larger ΔG′‡enolate value between the C1−C2 and the C3−C4 bonds in the TS for the
+than pentanal (139 vs 125 kJ mol−1, Table 4); the branched secondary C atom than for the terminal α-C atom (16° vs 137°,
+alkyl group leads to less negative ΔHads values (by 4 kJ mol−1) Scheme 12c and 12d). The similar ΔH‡enolate values at terminal
+and to more positive ΔH‡enolate values (by 7 kJ mol−1) for 3- and secondary α-C atoms in butanone (113 and 114 kJ mol−1;
+methyl-butanal than for the linear pentanal, even though both Table 4) contrast their large ΔHDPE diﬀerences (15 kJ mol−1)
+reactants contain the same number of C atoms (Table 4). between these two α-C atoms for the gaseous molecule (1568
+ A second alkyl group at the carbonyl C atom (to give and 1583 kJ mol−1; Table 4). Their similar reactivity reﬂects the
+alkanones) makes adsorption less favorable (ΔGads less steric inﬂuence of the −C2H5 group as the TS for C−H
+negative) because of repulsion between the additional alkyl cleavage at the terminal α-C atom interacts with vicinal O
+and the Ti−O site pairs; it also leads to less stable enolate atoms on TiO2 surfaces (Scheme 1). These ﬁndings highlight
+formation transition states relative to its adsorbed carbonyl the pre-eminent role of steric eﬀects as the relevant descriptor
+precursors (lager ΔG‡enolate). These trends reﬂect a concom- that complements the DPE values of gaseous reactants,
+itant strengthening of the α-C−H bonds, as shown from the typically used to predict molecular reactivity in condensation
+reactivity diﬀerences between acetone and propanal (Figure reactions catalyzed by liquid acids and bases.67
+13). Among alkanone reactants, butanone gave ΔGads and 3.7. Molecular Descriptors and Brønsted−Evans−
+ΔG‡enolate values (for activation at the terminal α-C atom) Polanyi Relations for Enolate Formation Reactivity.
+similar to those for acetone (Table 4), reﬂecting the similar The activation barriers for enolate formation from carbonyl
+eﬀects of −C2H5 and −CH3 species at the CO group on the reactants (ΔH‡enolate) depend on the heterolytic dissociation
+adsorbed intermediates and the TS as a result of their energies of their α-C−H bonds (ΔHDPE) in formalisms
+compensating eﬀects on enthalpy (ΔH) and entropy (−TΔS) typically known as the Brønsted−Evans−Polanyi (BEP)
+in their ΔG terms. Speciﬁcally, the butanone backbone distorts relations.68 They also depend on steric eﬀects imposed by
+during α-C−H cleavage at its primary α-C atom, with dihedral the α-alkyl substituents at the enolate formation TS. Such steric
+angles between C1−C2 and C3−C4 bonds that decrease as the eﬀects, illustrated in section 3.6, are not inherently linked to the
+adsorbed reactant (170°) forms the enolate TS (137°; Scheme ΔHDPE values for the gaseous reactants. Here, we examine
+12c). This change leads, in turn, to larger ΔH‡enolate values (113 ΔH‡enolate values as a function of ΔHDPE for C2−C5 carbonyl
+kJ mol−1) but to smaller (−TΔS‡enolate) values (13 kJ mol−1) reactants to discern the relative contributions of ΔHDPE and of
+than for acetone reactants (109, 17 kJ mol−1; Table 4). Such steric eﬀects to the stability of their respective enolate
+compensation eﬀects are responsible for the similar reactivity formation TS (ΔH‡enolate).
+and ΔG‡enolate for butanone (at the terminal α-C atom) and The sensitivity of ΔH‡enolate to ΔHDPE depends on the extent
+acetone (Figure 13). to which the C−H bond is cleaved at the enolate formation
+ The activation of the secondary α-C atom in butanone gave transition state.68 This reﬂects, in turn, the lateness of the TS
+signiﬁcantly larger ΔG‡enolate values than at the terminal α- along the reaction coordinate, which can be deﬁned as the
+methyl group (133 vs 126 kJ mol−1, Table 4). These diﬀerences number of shared electron pairs in the most plausible Lewis
+predominantly reﬂect their diﬀerent (−TΔS‡enolate) values (19 electronic structures.48,49 Enolate formation on Ti5c−O3c site
+vs 13 kJ mol−1, Table 4), caused by the loss of rotational pairs involves the concerted cleavage of an α-C−H bond and
+freedom of the terminal −CH3 groups located at the secondary the formation of a bond between the H abstracted and the O3c
+α-C atom and the carbonyl C atom. These two −CH3 groups site (α-H−O3c) and between the carbonyl O atom and the Ti5c
+are much closer to each other at the TS for the activation of the center (O−Ti5c). These changes occur concurrently with the
+secondary α-C atom than at the TS for the activation of the transition of the carbonyl CO bond into to a single C−O
+ 21610 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+bond, of the C−C bond in the carbonyl reactant into a CC the TS relative to the structure of the gaseous reactants
+bond, and with the cleavage of the Ti5c−O3c bond (Scheme accounts for this strong destabilization.
+11). For C2−C5 alkanals and alkanones, the orders of the α-C− Butanone activation at the terminal α-C−H position
+H bond at the TS are similar (0.37−0.41; Table 5), as is the (CH3CH2COC#H3) also deviates from the linear trends in
+case also for the α-H−O3c (0.27−0.30), O−Ti5c (0.58−0.65), Figure 14 (by 7 kJ mol−1); these linear trends describe the
+CO (1.24−1.34), CC (1.39−1.41), and Ti5c−O3c (0.43− activation of its secondary α-C atom, indicating that deviations
+0.45) bonds involved in the enolate formation TS (Table 5); from such trends reﬂect the distortion imposed by the pendant
+these values are indicative of transition states similar in lateness −C2H5 group attached at the carbonyl C atom. Such steric
+along the reaction coordinate for all C2−C5 alkanals and hindrance is weaker than that observed for a −C2H5 group at
+alkanones. As a result, a nearly linear dependence between the α-C atom (butanal; 11 kJ mol−1; Figure 14), because of the
+ΔH‡enolate and ΔHDPE is expected for all C2−C5 alkanals and closer proximity of the −C2H5 group in butanal to the active
+alkanones in the absence of signiﬁcant steric eﬀects. Ti−O structures at the enolate formation TS.
+ DFT-derived ΔH‡enolate values for carbonyl reactants with These deviations from a universal relation between ΔH‡enolate
+short alkyl groups at the α-C atom (ethanal, propanal, acetone, and ΔHDPE (Figure 14) reﬂect the signiﬁcant consequences of
+butanone (CH3C#H2COCH3)) are proportional to their steric eﬀects for reactivity on surfaces and the incomplete
+respective ΔHDPE values with a slope of 0.49 ± 0.03 (Figure character of DPE values as sole molecular descriptors of
+14), consistent with values expected for TS structures nearly reactivity. More complete descriptors must capture the lateness
+ of the concerted transition states and the distortion required to
+ accommodate concerted interactions with O and Ti surface
+ atoms. These complexities, brought forth by the rigid nature of
+ surfaces and by the distance requirements for incipiently
+ formed O−Ti and H−O bonds, contrast the more general
+ descriptions based solely on DPE values for enolate formation
+ in condensation and esteriﬁcation reactions catalyzed by liquid
+ acids and bases.67 Their description requires a level of
+ theoretical treatment previously unavailable for these reactions
+ on realistic surfaces.
+ 3.8. Alkyl Substituent Eﬀects on C−C and C−O
+ Coupling of Enolates in Reactions of Alkanals and 1-
+ Alkanols. Esteriﬁcation and condensation selectivities are
+ determined by the relative rates of C−C bond formation in
+ enolate−alkanal pairs and of C−O bond formation in the
+ alkanal−alkoxide pairs formed via H transfer between enolates
+ and 1-alkanols (section 3.5). For all C2−C5 alkanal−alkanol
+ reactants, the length of the incipiently formed C−C bond at the
+ C−C coupling TS is 0.213−0.220 nm, while that of the C−O
+ bond at the C−O coupling TS is 0.173−0.184 nm (section S10,
+ SI). The structures of the transition states that mediate
+Figure 14. Correlation between DFT-derived ΔHDPE and ΔH‡enolate condensation and esteriﬁcation routes of enolates are similar for
+values for C2−C5 alkanals and alkanones (on Ti5c−O3c−Ti5c structures all reactants, irrespective of the backbone length or the extent
+of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O of branching at their alkyl chains.
+atoms, LANL2DZ for Ti atoms; 523 K). Solid line represents a linear DFT-derived enthalpy (ΔH‡i) and entropy (−TΔS‡i)
+ﬁt of the data for ethanal, propanal, acetone, and butanone (with a H
+ contributions to ΔG‡i (i = C−C for condensation or C−O
+atom abstracted from the secondary α-C atom in enolate formation).
+ for esteriﬁcation) values for C2−C5 alkanals are shown in Table
+ 6. ΔH‡i values are also dissected into their quasi-classical van
+equidistant between reactant and product states along the der Waals (ΔHvdw,i) and residual quantum mechanical
+reaction coordinate. C4 and C5 alkanals with bulkier alkyls at (ΔH‡unc,i) components
+their α-C atom, however, do not lie along the trend lines
+observed for the other alkanals (Figure 14); their TS structures ΔH ‡i = ΔH ‡ unc, i + ΔH vdw, i (30)
+are less stable, and the ΔH‡enolate values are larger than
+predicted from their α-C atom DPE values. These deviations in order to probe the role of dispersion forces on TS stability.
+increase as the size of the pendant alkyl groups increases (11, For C−C coupling, ΔH‡unc,C−C values became less negative for
+12, and 14 kJ mol−1 for butanal, pentanal, and 3-methyl- larger alkyl chains (from −24 (ethanal) to −11 kJ mol−1
+butanal; Figure 14). These diﬀerences seem unrelated to the (pentanal)), indicative of the repulsive component included
+ability of such transition states to bind at Ti−O site pairs, in the quantum mechanical treatments used to derive the
+because (i) the orders of the α-H−O3c (0.27−0.30) and the magnitude of this term. Such repulsive interactions between the
+O−Ti5c (0.58−0.65) bonds at the TS are similar for all alkyl groups in the enolate−alkanal pair at the TS are also
+reactants (Table 5) and (ii) the carbonyl O atoms in C4−C5 evident from the distance between the β-C atom in the enolates
+alkanals are more strongly basic than for propanal (DFT- and the α-C atom in the alkanals (0.315 nm for propen-1-
+derived proton aﬃnities: propanal −796 kJ mol−1; butanal olate−propanal pairs; Scheme 13a), which is smaller than the
+−810 kJ mol−1; pentanal −816 kJ mol−1; section S9, SI), combined van der Waals radii of these two C atoms (0.34 nm).
+leading to stronger binding at Ti centers for the C4−C5 enolate These steric eﬀects become more apparent for 3-methyl butanal
+formation TS structures. Thus, we conclude that distortion at reactants, which show nearly zero ΔH‡unc,C−C values (Table 6).
+ 21611 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Table 6. DFT-Derived Contributions of Enthalpy (ΔH‡unc,i), carbonyl C−C coupling TS (ΔG‡C−C, relative to a bare
+Dispersion Correction (ΔHvdw,i), and Entropy (−TΔS‡i) to Ti5O19H18 cluster and gaseous alkanal/alkanone reactants)
+ΔG‡i (i = C−C or C−O) and ΔΔG‡ester‑aldol for C2−C5 decrease as the backbone lengthens (from 82 to 71 kJ mol−1)
+Alkanalsa for linear C2−C5 alkanals, reﬂecting the stronger van der Waals
+ 3-methyl
+ interactions for larger bimolecular transition states; 3-methyl
+ alkanal reactant ethanal propanal butanal pentanal butanal butanal gave larger ΔG‡C−C values (84 kJ mol−1, Table 6) than
+ ΔH‡unc,C−C −24 −21 −15 −11 0 the linear alkanals, because steric repulsion oﬀsets the beneﬁts
+ ΔHvdw,C−C −87 −104 −111 −116 −121 of van der Waals stabilization for the C−C coupling TS
+ −TΔS‡C−C 192 200 199 200 205 structures derived from 3-methyl butanal reactants.
+ ΔG‡C−C 81 76 73 72 84 In contrast with the C−C coupling TS structures, the alkyl
+ ΔH‡unc,C−O 1 −1 −1 0 0 groups at the C−O coupling TS analogs point away from each
+ ΔHvdw,C−O −95 −106 −111 −116 −114 other (Scheme 13b), thus minimizing any steric eﬀects. Indeed,
+ −TΔS‡C−O 192 196 196 195 197 ΔH‡unc,C−O and −TΔS‡C−O are similar among all C2−C5
+ ΔG‡C−O 97 89 83 80 83 alkanals (Table 6). ΔHvdw,C−O values, however, become more
+ ΔΔH‡unc,ester‑aldol 25 19 13 12 0 negative with increasing alkyl size (−95 (ethanal) and−116 kJ
+ ΔΔHvdw, ester‑aldol −9 −2 0 1 7 mol−1 (pentanal)), leading to a decrease in ΔG‡C−O for longer
+ −TΔΔS‡ester‑aldol 0 −4 −3 −5 −8 backbones, as a result of the prevalent role of van der Waals
+ ΔΔG‡ester‑aldol 16 13 10 8 −1 interactions that favor the larger bimolecular C−O coupling
+a
+ Units: kJ mol−1; on Ti5c−O3c−Ti5c structures of the anatase transition states.
+Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, Table 6 lists the diﬀerences in the enthalpies uncorrected for
+LANL2DZ for Ti atoms; 523 K, 1 bar. van der Waals eﬀects (ΔΔH‡unc, ester‑aldol) and in the van der
+ Waals interaction enthalpies (ΔΔHvdw, ester‑aldol) and entropies
+The van der Waals interactions (ΔHvdw) at the C−C coupling (−TΔΔS‡ester‑aldol) involved in determining ΔG‡C−O and
+TS become stronger for larger alkyls (−87 (ethanal) and −121 ΔG ‡C−C ; their values determine, in turn, the relative
+kJ mol−1 (3-methyl butanal)). The −TΔS‡C−C term con- esteriﬁcation and condensation rates through ΔΔG‡ester‑aldol
+currently increases (192 (ethanal) and 205 kJ mol−1 (3-methyl values (eq 12). In contrast with the individual ΔG‡C−O and
+butanal)), because of the more rigid conﬁgurations imposed by ΔG‡C−C components, ΔΔG‡ester‑aldol predominantly reﬂects the
+longer or bulkier alkyls. Free energy values for the enolate− ΔΔH‡unc,ester‑aldol term, because of the ubiquitous compensation
+
+Scheme 13. DFT-Derived Transition State Structures of (a) C−C Coupling and (b) C−O Coupling Reactions for 1-Propanol-
+Propanal Reactions, of (c) C−C Coupling between Acetone and Propen-1-olate (derived from propanal), and of (d) C−C
+Coupling between Propanal and Propen-2-olate (derived from acetone)a
+
+a
+ On Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; only the
+Ti5c−O3c−Ti5c sites and two O atoms directly bound to the Ti5c sites are shown for clarity.
+
+ 21612 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+between ΔΔHvdw,ester‑aldol and ΔΔS‡ester‑aldol. As a result, the (0.356 nm) are slightly larger than the combined van der
+esteriﬁcation and condensation selectivities depend most Waals radii of the two C atoms (0.34 nm) (Scheme 13a).
+sensitively on the diﬀerent repulsive interactions between the As in the case of propanal and acetone reactions with
+alkyl groups at the C−C and C−O coupling transition states; propen-1-olates or propen-2-olates, all ΔΔG‡C3one,i‑n,i values (n
+these observations predominantly reﬂect the diﬀerent orienta- = C2al (ethanol) or C4al (butanal); eq 25) for enolates
+tions of these alkyl groups with respect to each other in the C− (ethenolate, propen-1-olate, propen-2-olate, buten-1-olate) are
+C and C−O bond formation TS structures (Scheme 13a and large and positive (Table 7), indicative of the ubiquitous lower
+13b). reactivity of alkanones in nucleophilic attack by enolates. The
+ 3.9. Relative Reactivities of Carbonyl and Enolate C−C coupling TS structures for reactions of propen-1-olate
+Reactants in C−C Coupling Reactions. The reactivity of with propanal (Scheme 13a) and acetone (Scheme 13c) reﬂect
+diﬀerent carbonyl reactants with a given enolate depends on the signiﬁcant steric eﬀects imposed by the second −CH3
+their diﬀerent ΔG‡C−C values, referenced to the gaseous group at the acetone carbonyl C atom, which obstructs the
+reactant and the given bound enolate (Scheme 5). position of the −C2H5 group at the α-C atom in propen-1-
+ΔΔG‡C2al,i‑C3al,i (eq 25; m = C2al, n = C3al) values reﬂect the olate. These conclusions are consistent with the predominant
+ΔG‡C−C diﬀerence between C−C coupling reactions of ethanal contributions of nondispersive interactions (ΔΔH‡unc,C−C 13 kJ
+and propanal with a given enolate i. DFT-derived mol−1, section S11, SI) and of entropy terms (−TΔΔS‡C−C 13
+ΔΔG‡C2al,i‑C3al,i values for reactions of ethanol and propanal kJ mol−1, section S11, SI) to the ΔΔG‡C3one,i‑C3al,i values (21 kJ
+with ethenolates and propen-1-olates are 3 and 1 kJ mol−1, mol−1, Table 7) for propen-1-olates.
+respectively (Table 7), in agreement with measurements (±1 DFT treatments can also probe enolate reactivity, a property
+ inaccessible to experiment because of the low prevalent enolate
+Table 7. DFT-Derived ΔG‡C−C (kJ mol−1) for Aldol coverages at all conditions of practical condensation and
+Condensation between Ethanal, Propanal, Butanal, and esteriﬁcation catalysis. ΔG‡C−C values (Table 7) show that
+Acetone and Their Respective Enolatesa enolates derived from C2−C4 alkanals have similar reactivities
+ in C−C coupling reactions with a given alkanal or alkanone.
+ carbonyl reactant
+ For instance, these C2−C4 enolates react with propanal with
+ enolate reactant ethanal propanal butanal acetone ΔG‡C−C values of 75−78 kJ mol−1 (Table 7), indicative of weak
+ ethenolate 81 78 78 95 eﬀects of enolate structure on reactivity and a speciﬁc
+ propen-1-olate 77 76 74 97 insensitivity of C−C coupling reactivity with a given carbonyl
+ buten-1-olate 79 75 73 93 coreactant to the nature of the alkyl substituents at the α-C
+ propen-2-olate 86 84 83 104 atom.
+a
+ On Ti5c−O3c−Ti5c structures of the anatase Ti5O19H18 cluster, Alkanone-derived enolates (e.g., propen-2-olate formed from
+B3LYP, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; acetone), in contrast, showed much larger ΔG‡C−C values than
+523 K, 1 bar. those formed from alkanals (Table 7). For instance, the
+ coupling of propanal with propen-2-olate has a ΔG‡C−C value
+ of 84 kJ mol−1, while its reaction with propen-1-olate exhibits a
+and 1 ± 1 kJ mol−1, Table 3). ΔΔG‡C3one,i‑C3al,i values (eq 25; m free energy barrier of 75 kJ mol−1. The −C2H5 group in
+= C3one, n = C3al) represent the diﬀerence in ΔG‡C−C for propanal lies parallel to the CC bond in propen-2-olate at
+reactions of a given enolate i with acetone and propanal. Their the C−C coupling TS (Scheme 13d), so as to minimize steric
+values are large and similar (21 kJ mol−1; Table 7) for reactions repulsion by the −CH3 group of the enolate. In contrast, this
+with propen-1-olates and propen-2-olates, consistent with the −C2H5 group is positioned in a nearly perpendicular position at
+observed preference of all enolates for reactions of alkanals the TS that mediates propanal reactions with propen-1-olate
+instead of alkanones (ΔΔG‡C3one,i‑C3al,i > 20 and 22 ± 1 kJ (Scheme 13a). The propen-1-olate−propanal TS places the
+mol−1, Table 3). Such benchmarking of theory and experiment −C2H5 group in propanal closer to the enolate than at the
+conﬁrms once again the adequacy of the theoretical methods propen-2-olate−propanal TS, thus leading to more eﬀective van
+and of the small TiO2 model clusters used here to describe the der Waals stabilization of its C−C coupling TS (ΔΔHvdw,C−C 7
+energetics of C−C and C−O coupling reactions of enolate− kJ mol−1, section S11, SI).
+carbonyl (enolate−alkanol) pairs for a broad range of
+oxygenates of practical interest in condensation and ester- 4. CONCLUSIONS
+iﬁcation reactions. Enolate formation of carbonyl compounds (i.e., alkanals and
+ C2−C4 alkanal reactants show similar ΔG‡C−C values for C− alkanones) via cleavage of α-C−H bonds is a common
+C coupling reactions with a given enolate, irrespective of the kinetically relevant step for aldol condensation and esteriﬁca-
+enolate structure (Table 7). For instance, ΔG‡C−C values for tion of alkanol−alkanal (alkanone) mixtures catalyzed by Lewis
+C−C coupling of propen-1-olates with C2−C4 alkanals decrease acid−base site pairs present on oxide surfaces. C−C coupling
+only slightly with increasing chain length (ethanal (77 kJ reactions of the formed enolates with coadsorbed alkanals
+mol−1); butanal (74 kJ mol−1)) in response to the stronger van (alkanones) and C−O coupling reactions of alkanal−alkoxide
+der Waals interactions for longer alkyls, as also observed for pairs (derived from H transfer between the enolates and
+self-condensation of linear alkanals (Table 6). These similar coadsorbed alkanols) mediate selectivities of the enolates to
+ΔG‡C−C values for C2−C4 alkanal reactants reﬂect weak eﬀects form condensation or esteriﬁcation products. These mecha-
+of the α-alkyl substituents on alkanal reactivity, consistent with nistic conclusions are general for C2−C5 oxygenate reactants
+the large distances between the α-alkyl substituent in alkanals and for anatase TiO2 and monoclinic ZrO2, as evident from
+and the alkyl group in the enolates at the C−C coupling kinetic, isotopic, and theoretical assessments.
+transition states. For instance, the C−C distance between the Enolate formation transition states at acid−base site pairs
+terminal −CH3 groups in propen-1-olate−propanal pairs with moderate acid−base strength occur at an intermediate
+ 21613 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+point along the reaction coordinate, irrespective of alkyl aﬃnities for carbonyl O atoms in C2−C5 carbonyl
+substituents at the α-C or carbonyl C atoms in the reactants, compounds; detailed DFT treatments of aldol con-
+and show concerted interactions of α-H atoms with basic lattice densation and esteriﬁcation pathways using anatase
+O sites and of the incipiently formed enolate moieties with Ti5O19H18 cluster models, including optimized structures
+acidic metal centers. The free energies of these enolate of reactants, transition states, and products involved in
+formation transition states are mediated by the heterolytic elementary steps, their enthalpies, entropies, and free
+dissociation energy of α-C−H bonds and steric hindrance of α- energies, analyses of charge distribution for C−C and C−
+alkyl groups to the abstraction of α-H atoms by the lattice O O coupling transition states, and pathways for reactions
+sites, leading to lower reactivities of alkanones than alkanals and of enolates with H2O (PDF)
+
+ ■
+to lower reactivities of alkanals with a longer or more branched
+α-alkyl group.
+ AUTHOR INFORMATION
+ Alkyl groups in enolate−alkanal pairs at C−C coupling
+transition states are much closer with each other than those in Corresponding Author
+alkanal−alkoxide pairs at C−O coupling transition states, *Fax: + 1 510- 642-4778. E-mail: iglesia@berkeley.edu. Phone:
+leading to much stronger steric repulsion between alkyl groups 925-323-5559.
+for the C−C bond formation. As a result of these steric eﬀects, Notes
+the intrinsic esteriﬁcation/condensation rate ratios of alkanol− The authors declare no competing ﬁnancial interest.
+
+ ■
+alkanal reactants increase as the alkyl chains of the reactants
+lengthen or become more branched. These steric eﬀects are ACKNOWLEDGMENTS
+also reﬂected in cross condensation of alkanals and alkanones;
+alkanones with two alkyl groups at the carbonyl C atom are less We are grateful for thoughtful technical discussions with Drs.
+reactive than alkanals with a single alkyl group in C−C coupling Eric Doskocil, John Shabaker, and Glenn Sunley and other
+reactions with enolates. H2O provides an alternative way to members of the XC2 program at BP p.l.c. We thank Drs.
+mediate the esteriﬁcation selectivity by acting as a cocatalyst, in Stanley Herrmann, Prashant Deshlahra, and Elif Gurbuz at
+which H2O reacts with enolates to form 1,1-diols that undergo UCBerkeley for their comments and advice throughout this
+esteriﬁcation with alkanols to give H2O and hemiacetals study and also thank Dr. Yongchun Hong and Mr. Trenton
+(precursors of ester products) with lower free energy barriers Otto at UCBerkeley for a careful review of this manuscript.
+than the direct C−O coupling reactions between enolates and We acknowledge the ﬁnancial support from BP through the
+alkanols to form the same hemiacetals. XC2 program at UCBerkeley. The computational resources
+ Monoclinic ZrO2 has weaker acid centers but stronger base provided by the Extreme Science and Engineering Discovery
+sites than anatase TiO2, resulting in more stable enolate Environment (XSEDE) (NSF, grant no. ACI-1053575) and the
+formation transition states that beneﬁt from stronger Molecular Graphics and Computation Facility at UC
+interactions between the base sites and the α-H atoms at the Berkeley (NSF, grant no. CHE-0840505) are also acknowl-
+ edged with thanks.
+
+ ■
+transition states. The two Zr centers in Zr−O−Zr structures on
+monoclinic ZrO2 surfaces are very diﬀerent in acid strength and
+lead to distinct esteriﬁcation/condensation rate ratios for REFERENCES
+enolates bound to one of these Zr centers, as the relative (1) Gines, M. J. L.; Iglesia, E. Bifunctional Condensation Reactions of
+stabilities of C−C and C−O coupling transition states (derived Alcohols on Basic Oxides Modified by Copper and Potassium. J. Catal.
+from an enolate and an alkanal or alkanol coreactant) depend 1998, 176, 155−172.
+on the interactions of these C−C and C−O coupling transition (2) Lin, F.; Chin, Y. Mechanism of Intra- and Inter-Molecular CC
+ Bond Formation of Propanal on Brønsted Acid Sites Contained within
+states with the enolate-bearing and coreactant-bearing Zr MFI Zeolites. J. Catal. 2014, 311, 244−256.
+centers, respectively. This eﬀect of asymmetric Zr centers (3) Huber, G. W.; Iborra, S.; Corma, A. Synthesis of Transportation
+leads to a weak dependence of measured esteriﬁcation/ Fuels from Biomass: Chemistry, Catalysts, and Engineering. Chem.
+condensation rate ratios on alkanol/alkanal reactant ratios, in Rev. 2006, 106, 4044−4098.
+contrast to the linear relations between these ratios observed on (4) Simonetti, D. A.; Dumesic, J. A. Catalytic Production of Liquid
+anatase TiO2 surfaces, which have uniform Ti centers. Fuels from Biomass-Derived Oxygenated Hydrocarbons: Catalytic
+
+■
+ Coupling at Multiple Length Scales. Catal. Rev.: Sci. Eng. 2009, 51,
+ ASSOCIATED CONTENT 441−484.
+ (5) Serrano-Ruiz, J. C.; West, R. M.; Dumesic, J. A. Catalytic
+*
+S Supporting Information Conversion of Renewable Biomass Resources to Fuels and Chemicals.
+The Supporting Information is available free of charge on the Annu. Rev. Chem. Biomol. Eng. 2010, 1, 79−100.
+ACS Publications website at DOI: 10.1021/acs.jpcc.6b07304. (6) Kunkes, E. L.; Simonetti, D. A.; West, R. M.; Serrano-Ruiz, J. C.;
+ Gartner, C. A.; Dumesic, J. A. Catalytic Conversion of Biomass to
+ Approach to equilibrium parameters for C2D5OD− Monofunctional Hydrocarbons and Targeted Liquid-Fuel Classes.
+ CD3CDO−D2 mixtures at catalytic conditions; reversi- Science 2008, 322, 417−421.
+ bility of adsorption of CO2 and propanoic acid and (7) Yang, J.; Li, N.; Li, G.; Wang, W.; Wang, A.; Wang, X.; Cong, Y.;
+ acetone condensation rates and H/D isotopic eﬀects on Zhang, T. Synthesis of Renewable High-Density Fuels Using
+ ZrO2(m); derivation of rate equations for ZrO2(m)- Cyclopentanone Derived from Lignocellulose. Chem. Commun.
+ catalyzed esteriﬁcation and condensation reactions; (Cambridge, U. K.) 2014, 50, 2572−2574.
+ (8) Anbarasan, P.; Baer, Z. C.; Sreekumar, S.; Gross, E.; Binder, J. B.;
+ comparison of enolate formation rates of carbonyl
+ Blanch, H. W.; Clark, D. S.; Toste, F. D. Integration of Chemical
+ compounds in the presence or absence of other carbonyl Catalysis with Extractive Fermentation to Produce Fuels. Nature 2012,
+ reactants; eﬀects of alkanol pressure on esteriﬁcation 491, 235−239.
+ rates of enolates with alkanol coreactants; eﬀect of H2O (9) Bankar, S. B.; Survase, S. A.; Ojamo, H.; Granström, T. The Two
+ on the dehydrogenation function of Cu; DFT-derived H+ Stage Immobilized Column Reactor with an Integrated Solvent
+
+ 21614 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+Recovery Module for Enhanced ABE Production. Bioresour. Technol. (31) An, W. The Role of Synergic Interaction in Transition State
+2013, 140, 269−276. Formation for the Aldol Reaction on a Metal Oxide Catalyst: A DFT
+ (10) Nielsen, A.; Houlihan, W. The Aldol Condensation. Org. React. Investigation. Phys. Chem. Chem. Phys. 2015, 17, 22529−22532.
+1968, 16, 1−438. (32) Li, W.; Huang, H.; Li, H.; Zhang, W.; Liu, H. Facile Synthesis of
+ (11) Du, J.; Say, R. F.; Lü, W.; Fuchs, G.; Einsle, O. Active-Site Pure Monoclinic and Tetragonal Zirconia Nanoparticles and Their
+Remodelling in the Bifunctional Fructose-1,6-Bisphosphate Aldolase/ Phase Effects on the Behavior of Supported Molybdena Catalysts for
+Phosphatase. Nature 2011, 478, 534−538. Methanol-Selective Oxidation. Langmuir 2008, 24, 8358−8366.
+ (12) Zeidan, R. K.; Hwang, S.; Davis, M. E. Multifunctional (33) Pacchioni, G. Ketonization of Carboxylic Acids in Biomass
+Heterogeneous Catalysts: SBA-15-Containing Primary Amines and Conversion over TiO2 and ZrO2 Surfaces: A DFT Perspective. ACS
+Sulfonic Acids. Angew. Chem., Int. Ed. 2006, 45, 6332−6335. Catal. 2014, 4, 2874−2888.
+ (13) Collier, V. E.; Ellebracht, N. C.; Lindy, G. I.; Moschetta, E. G.; (34) Panchenko, V. N.; Zaytseva, Yu. A.; Simonov, M. N.; Simakova,
+Jones, C. W. Kinetic and Mechanistic Examination of Acid−Base I. L.; Paukshtis, E. A. DRIFTS and UV−vis DRS Study of Valeric Acid
+Bifunctional Aminosilica Catalysts in Aldol and Nitroaldol Con- Ketonization Mechanism over ZrO2 in Hydrogen Atmosphere. J. Mol.
+densations. ACS Catal. 2016, 6, 460−468.
+ Catal. A: Chem. 2014, 388−389, 133−140.
+ (14) Iglesia, E.; Barton, D. G.; Biscardi, J. A.; Gines, M. J. L.; Soled, S.
+ (35) Frisch, M. J.; Trucks, G. W.; Schlegel, H. B.; Scuseria, G. E.;
+L. Bifunctional Pathways in Catalysis by Solid Acids and Bases. Catal.
+ Robb, M. A.; Cheeseman, J. R.; Scalmani, G.; Barone, V.; Mennucci,
+Today 1997, 38, 339−360.
+ (15) Di Cosimo, J. I.; Díez, V. K.; Apesteguía, C. R. Base Catalysis for B.; Petersson, G. A., et al. Gaussian 09, Revision D.01; Gaussian, Inc.:
+the Synthesis of α,β-Unsaturated Ketones from the Vapor-Phase Aldol Wallingford, CT, 2009.
+Condensation of Acetone. Appl. Catal., A 1996, 137, 149−166. (36) Li, X.; Frisch, M. J. Energy-Represented Direct Inversion in the
+ (16) Shen, W.; Tompsett, G. A.; Xing, R.; Conner, W. C., Jr.; Huber, Iterative Subspace within a Hybrid Geometry Optimization Method. J.
+G. W. Vapor Phase Butanal Self-Condensation over Unsupported and Chem. Theory Comput. 2006, 2, 835−839.
+Supported Alkaline Earth Metal Oxides. J. Catal. 2012, 286, 248−259. (37) Becke, A. D. Density−Functional Thermochemistry. III. The
+ (17) Di Cosimo, J. I.; Apesteguía, C. R.; Ginés, M. J. L.; Iglesia, E. Role of Exact Exchange. J. Chem. Phys. 1993, 98, 5648−5652.
+Structural Requirements and Reaction Pathways in Condensation (38) Lee, C.; Yang, W.; Parr, R. G. Development of the Colle-Salvetti
+Reactions of Alcohols on MgyAlOx Catalysts. J. Catal. 2000, 190, 261− Correlation-Energy Formula into a Functional of the Electron Density.
+275. Phys. Rev. B: Condens. Matter Mater. Phys. 1988, 37, 785−789.
+ (18) Di Cosimo, J. I.; Torres, G.; Apesteguía, C. R. One-Step MIBK (39) McLean, A. D.; Chandler, G. S. Contracted Gaussian Basis Sets
+Synthesis: A New Process from 2-Propanol. J. Catal. 2002, 208, 114− for Molecular Calculations. I. Second Row Atoms, Z = 11−18. J. Chem.
+123. Phys. 1980, 72, 5639−5648.
+ (19) Torres, G.; Apesteguía, C. R.; Di Cosimo, J. I. One-Step Methyl (40) Krishnan, R.; Binkley, J. S.; Seeger, R.; Pople, J. A. Self−
+Isobutyl Ketone (MIBK) Synthesis from 2-Propanol: Catalyst and Consistent Molecular Orbital Methods. XX. A Basis Set for Correlated
+Reaction Condition Optimization. Appl. Catal., A 2007, 317, 161−170. Wave Functions. J. Chem. Phys. 1980, 72, 650−654.
+ (20) Nikolopoulos, A. A.; Jang, B. W.-L.; Spivey, J. J. Acetone (41) Hay, P. J.; Wadt, W. R. Ab Initio Effective Core Potentials for
+Condensation and Selective Hydrogenation to MIBK on Pd and Pt Molecular Calculations. Potentials for the Transition Metal Atoms Sc
+Hydrotalcite-Derived Mg−Al Mixed Oxide Catalysts. Appl. Catal., A to Hg. J. Chem. Phys. 1985, 82, 270−283.
+2005, 296, 128−136. (42) Grimme, S.; Ehrlich, S.; Goerigk, L. Effect of the Damping
+ (21) Kunkes, E. L.; Gürbüz, E. I.; Dumesic, J. A. Vapour-Phase C−C Function in Dispersion Corrected Density Functional Theory. J.
+Coupling Reactions of Biomass-Derived Oxygenates over Pd/CeZrOx Comput. Chem. 2011, 32, 1456−1465.
+Catalysts. J. Catal. 2009, 266, 236−249. (43) Boys, S. F.; Bernardi, F. The Calculation of Small Molecular
+ (22) Gangadharan, A.; Shen, M.; Sooknoi, T.; Resasco, D. E.; Interactions by the Differences of Separate Total Energies. Some
+Mallinson, R. G. Condensation Reactions of Propanal over CexZr1−xO2 Procedures with Reduced Errors. Mol. Phys. 1970, 19, 553−566.
+Mixed Oxide Catalysts. Appl. Catal., A 2010, 385, 80−91. (44) Simon, S.; Duran, M.; Dannenberg, J. J. How Does Basis Set
+ (23) Sun, J.; Baylon, R. A. L.; Liu, C.; Mei, D.; Martin, K. J.; Superposition Error Change the Potential Surfaces for Hydrogen−
+Venkitasubramanian, P.; Wang, Y. Key Roles of Lewis Acid−Base Pairs Bonded Dimers? J. Chem. Phys. 1996, 105, 11024−11031.
+on ZnxZryOz in Direct Ethanol/Acetone to Isobutene Conversion. J. (45) McQuarrie, D. A. Statistical Mechanics; University Science
+Am. Chem. Soc. 2016, 138, 507−517. Books: Sausalito, CA, 2000.
+ (24) Hanna, D. G.; Shylesh, S.; Li, Y.; Krishna, S.; Head-Gordon, M.; (46) Merrick, J. P.; Moran, D.; Radom, L. An Evaluation of
+Bell, A. T. Experimental and Theoretical Study of n-Butanal Self-
+ Harmonic Vibrational Frequency Scale Factors. J. Phys. Chem. A 2007,
+Condensation over Ti Species Supported on Silica. ACS Catal. 2014,
+ 111, 11683−11700.
+4, 2908−2916.
+ (47) Grimme, S. Supramolecular Binding Thermodynamics by
+ (25) Rekoske, J. E.; Barteau, M. A. Kinetics, Selectivity, and
+ Dispersion-Corrected Density Functional Theory. Chem. - Eur. J.
+Deactivation in the Aldol Condensation of Acetaldehyde on Anatase
+Titanium Dioxide. Ind. Eng. Chem. Res. 2011, 50, 41−51. 2012, 18, 9955−9964.
+ (26) Luo, S.; Falconer, J. L. Acetone and Acetaldehyde Oligomeriza- (48) Wiberg, K. A. Application of the Pople-Santry-Segal CNDO
+tion on TiO2 Surfaces. J. Catal. 1999, 185, 393−407. Method to the Cyclopropylcarbinyl and Cyclobutyl Cation and to
+ (27) Barteau, M. A. Organic Reactions at Well-Defined Oxide Bicyclobutane. Tetrahedron 1968, 24, 1083−1096.
+Surfaces. Chem. Rev. 1996, 96, 1413−1430. (49) Mayer, I. Bond Order and Valence Indices: A Personal Account.
+ (28) Zaki, M. I.; Hasan, M. A.; Pasupulety, L. Surface Reactions of J. Comput. Chem. 2007, 28, 204−221.
+Acetone on Al2O3, TiO2, ZrO2, and CeO2: IR Spectroscopic (50) Martin, R. L. Natural Transition Orbitals. J. Chem. Phys. 2003,
+Assessment of Impacts of the Surface Acid−Base Properties. Langmuir 118, 4775−4777.
+2001, 17, 768−774. (51) Pulido, A.; Oliver-Tomas, B.; Renz, M.; Boronat, M.; Corma, A.
+ (29) Singh, M.; Zhou, N.; Paul, D. K.; Klabunde, K. J. IR Spectral Ketonic Decarboxylation Reaction Mechanism: A Combined Exper-
+Evidence of Aldol Condensation: Acetaldehyde Adsorption over TiO2 imental and DFT Study. ChemSusChem 2013, 6, 141−151.
+Surface. J. Catal. 2008, 260, 371−379. (52) Kresse, G.; Hafner, J. Ab Initio Molecular Dynamics for Liquid
+ (30) Wang, S.; Iglesia, E. Condensation and Esterification Reactions Metals. Phys. Rev. B: Condens. Matter Mater. Phys. 1993, 47, 558−561.
+of Alkanals, Alkanones, and Alkanols on TiO2: Elementary Steps, Site (53) Kresse, G.; Furthmuller, J. Efficiency of Ab-Initio Total Energy
+Requirements, and Synergistic Effects of Bifunctional Strategies. J. Calculations for Metals and Semiconductors using a Plane-Wave Basis
+Catal. 2016, 340, 302−320. Set. Comput. Mater. Sci. 1996, 6, 15−50.
+
+ 21615 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616
+The Journal of Physical Chemistry C Article
+
+ (54) Kresse, G.; Furthmuller, J. Efficient Iterative Schemes for Ab
+Initio Total-Energy Calculations using a Plane-Wave Basis Set. Phys.
+Rev. B: Condens. Matter Mater. Phys. 1996, 54, 11169−11186.
+ (55) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868.
+ (56) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+Approximation Made Simple [Phys. Rev. Lett. 77, 3865 (1996)]. Phys.
+Rev. Lett. 1997, 78, 1396.
+ (57) Blöchl, P. E. Projector Augmented-Wave Method. Phys. Rev. B:
+Condens. Matter Mater. Phys. 1994, 50, 17953−17979.
+ (58) Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the
+Projector Augmented-Wave Method. Phys. Rev. B: Condens. Matter
+Mater. Phys. 1999, 59, 1758−1775.
+ (59) Monkhorst, H. J.; Pack, J. D. Special Points for Brillouin-Zone
+Integrations. Phys. Rev. B 1976, 13, 5188−5192.
+ (60) Howard, C. J.; Hill, R. J.; Reichert, B. E. Structures of ZrO2
+Polymorphs at Room Temperature by High-Resolution Neutron
+Powder Diffraction. Acta Crystallogr., Sect. B: Struct. Sci. 1988, 44,
+116−120.
+ (61) Birch, F. Finite Elastic Strain of Cubic Crystals. Phys. Rev. 1947,
+71, 809−824.
+ (62) Makov, G.; Payne, M. C. Periodic Boundary Conditions in Ab
+Initio Calculations. Phys. Rev. B: Condens. Matter Mater. Phys. 1995, 51,
+4014−4022.
+ (63) Neugebauer, J.; Scheffler, M. Adsorbate-Substrate and
+Adsorbate-Adsorbate Interactions of Na and K Adlayers on Al(111).
+Phys. Rev. B: Condens. Matter Mater. Phys. 1992, 46, 16067−16080.
+ (64) Grimme, S. Semiempirical GGA-Type Density Functional
+Constructed with a Long-Range Dispersion Correction. J. Comput.
+Chem. 2006, 27, 1787−1799.
+ (65) Stull, D. R.; Westrum, E. F.; Sinke, G. C. The Chemical
+Thermodynamics of Organics Compounds; John Wiley & Sons, Inc.:
+New York, 1969.
+ (66) Chiang, Y.; Hojatti, M.; Keeffe, J. R.; Kresge, A. J.; Schepp, N.
+P.; Wirz, J. Vinyl Alcohol. Generation and Decay Kinetics in Aqueous
+Solution and Determination of the Tautomerization Equilibrium
+Constant and Acid Dissociation Constants of the Aldehyde and Enol
+Forms. J. Am. Chem. Soc. 1987, 109, 4000−4009.
+ (67) Guthrie, J. P. Rate-Equilibrium Correlations for the Aldol
+Condensation: An Analysis in Terms of Marcus Theory. J. Am. Chem.
+Soc. 1991, 113, 7249−7255.
+ (68) Santen, R. A. V.; Neurock, M.; Shetty, S. G. Reactivity Theory of
+Transition-Metal Surfaces: A Brønsted−Evans−Polanyi Linear Acti-
+vation Energy−Free-Energy Analysis. Chem. Rev. 2010, 110, 2005−
+2048.
+
+ 21616 DOI: 10.1021/acs.jpcc.6b07304
+ J. Phys. Chem. C 2016, 120, 21589−21616

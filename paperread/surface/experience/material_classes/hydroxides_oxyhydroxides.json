@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-07-06T15:18:47.673388+00:00",
+  "updated_at": "2026-07-06T15:48:30.312841+00:00",
   "summary": {
-    "terms": 61,
-    "known_useful": 20,
-    "unknown": 41
+    "terms": 65,
+    "known_useful": 34,
+    "unknown": 31
   },
   "keyword_inventory": {
     "active_sites": [
@@ -18,8 +18,8 @@
       {
         "term": "NiCoOOH",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "Co2+",
@@ -50,8 +50,8 @@
       {
         "term": "O2",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "CO32−",
@@ -62,8 +62,8 @@
       {
         "term": "H2O",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "NiCoOOH*",
@@ -88,8 +88,8 @@
       {
         "term": "AgSA",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "single-atom Au",
@@ -174,6 +174,12 @@
         "research_category": "other_useful_information"
       },
       {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Ag",
         "count": 2,
         "kind": "known_useful",
@@ -182,8 +188,8 @@
       {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "W",
@@ -208,10 +214,22 @@
     ],
     "materials": [
       {
+        "term": "hydroxides_oxyhydroxides",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "β-CoOOH",
         "count": 4,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Co–Fe–Cr (oxy)Hydroxides",
@@ -220,16 +238,22 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "NiOOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "CoOOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "hydroxides",
@@ -370,8 +394,8 @@
       {
         "term": "electrocatalysis",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OER",
@@ -382,20 +406,20 @@
       {
         "term": "oxygen evolution reaction",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalysts",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Electrochemical",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "energy conversion technologies",
@@ -405,6 +429,24 @@
       }
     ],
     "supports_surfaces": [
+      {
+        "term": "LDH",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiOOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "β-CoOOH(0112̅)",
         "count": 2,
@@ -451,19 +493,19 @@
       },
       {
         "term": "O",
-        "count": 17
-      },
-      {
-        "term": "Ni",
-        "count": 14
+        "count": 22
       },
       {
         "term": "H",
-        "count": 13
+        "count": 18
+      },
+      {
+        "term": "Ni",
+        "count": 16
       },
       {
         "term": "Fe",
-        "count": 12
+        "count": 15
       },
       {
         "term": "Cr",
@@ -493,15 +535,15 @@
     "material_kinds": [
       {
         "term": "hydroxide_oxyhydroxide",
-        "count": 27
+        "count": 44
       },
       {
         "term": "oxide",
-        "count": 13
+        "count": 23
       },
       {
         "term": "surface",
-        "count": 7
+        "count": 11
       },
       {
         "term": "supported_catalyst",
@@ -514,11 +556,23 @@
     ],
     "component_compounds": [
       {
+        "term": "hydroxides_oxyhydroxides",
+        "count": 8
+      },
+      {
+        "term": "LDH",
+        "count": 4
+      },
+      {
         "term": "β-CoOOH",
         "count": 4
       },
       {
         "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "FeOOH",
         "count": 3
       },
       {
@@ -555,6 +609,10 @@
       },
       {
         "term": "NiFe LDH surface",
+        "count": 2
+      },
+      {
+        "term": "NiOOH",
         "count": 2
       },
       {
@@ -680,6 +738,10 @@
         "count": 3
       },
       {
+        "term": "{Fe, H, O}",
+        "count": 3
+      },
+      {
         "term": "{Fe}",
         "count": 3
       },
@@ -701,6 +763,10 @@
       },
       {
         "term": "{Co, Ni}",
+        "count": 2
+      },
+      {
+        "term": "{H, Ni, O}",
         "count": 2
       },
       {
@@ -742,19 +808,19 @@
       },
       {
         "term": "O",
-        "count": 17
-      },
-      {
-        "term": "Ni",
-        "count": 14
+        "count": 22
       },
       {
         "term": "H",
-        "count": 13
+        "count": 18
+      },
+      {
+        "term": "Ni",
+        "count": 16
       },
       {
         "term": "Fe",
-        "count": 12
+        "count": 15
       },
       {
         "term": "Cr",
@@ -783,11 +849,19 @@
     ],
     "components": [
       {
+        "term": "hydroxides_oxyhydroxides",
+        "count": 8
+      },
+      {
         "term": "β-CoOOH",
         "count": 4
       },
       {
         "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "FeOOH",
         "count": 3
       },
       {
@@ -804,6 +878,10 @@
       },
       {
         "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "NiOOH",
         "count": 2
       },
       {
@@ -849,18 +927,6 @@
       {
         "term": "Ni",
         "count": 1
-      },
-      {
-        "term": "NiCo Layer Double Hydroxide",
-        "count": 1
-      },
-      {
-        "term": "NiCo LDH/CC",
-        "count": 1
-      },
-      {
-        "term": "NiFe layered double hydroxide",
-        "count": 1
       }
     ],
     "surface_states": [],
@@ -892,6 +958,34 @@
     ]
   },
   "entries": [
+    {
+      "term": "hydroxides_oxyhydroxides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
+      "term": "LDH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
     {
       "term": "β-CoOOH",
       "kind": "unknown_high_value",
@@ -937,9 +1031,23 @@
       ]
     },
     {
+      "term": "FeOOH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Dopant/Modifier",
+        "Surface/Support"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
       "term": "O2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -992,8 +1100,8 @@
     },
     {
       "term": "electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "Reaction Type"
@@ -1020,8 +1128,8 @@
     },
     {
       "term": "NiCoOOH",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "active_sites",
         "Active Site"
@@ -1030,6 +1138,19 @@
       "example_contexts": [
         "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
         "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "NiOOH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
@@ -1047,8 +1168,8 @@
     },
     {
       "term": "oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -1060,8 +1181,8 @@
     },
     {
       "term": "Silver",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "dopants"
@@ -1173,8 +1294,8 @@
     },
     {
       "term": "AgSA",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "single_atoms"
       ],
@@ -1269,8 +1390,8 @@
     },
     {
       "term": "CoOOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1317,8 +1438,8 @@
     },
     {
       "term": "electrocatalysts",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -1329,8 +1450,8 @@
     },
     {
       "term": "Electrochemical",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -1377,8 +1498,8 @@
     },
     {
       "term": "H2O",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],

@@ -1,0 +1,57 @@
+{
+  "schema_version": "2.0",
+  "material_class": "carbon_materials",
+  "updated_at": "2026-07-06T15:24:50.010088+00:00",
+  "summary": {
+    "terms": 1,
+    "known_useful": 0,
+    "unknown": 1
+  },
+  "keyword_inventory": {
+    "modeling_keywords": [
+      {
+        "term": "carbon doping",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "material_kinds": [
+      {
+        "term": "carbon_material",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "carbon doping",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "carbon_or_sac_profile",
+    "elements": [],
+    "host_structures": [],
+    "dopant_or_loaded_species": [],
+    "coordination_environments": [],
+    "single_atom_centers": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "carbon doping",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    }
+  ]
+}

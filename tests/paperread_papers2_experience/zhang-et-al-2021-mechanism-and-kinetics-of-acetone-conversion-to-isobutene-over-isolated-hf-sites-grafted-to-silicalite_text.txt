@@ -1,0 +1,847 @@
+pubs.acs.org/JACS Article
+
+ Mechanism and Kinetics of Acetone Conversion to Isobutene over
+ Isolated Hf Sites Grafted to Silicalite‑1 and SiO2
+ Yanfei Zhang, Liang Qi, Alicia Lund, Peng Lu, and Alexis T. Bell*
+ Cite This: J. Am. Chem. Soc. 2021, 143, 8352−8366 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Isolated hafnium (Hf) sites were prepared on
+ Silicalite-1 and SiO2 and investigated for acetone conversion to
+ isobutene. Characterization by IR, 1H MAS NMR, and UV−vis
+ spectroscopy suggests that Hf atoms are bonded to the support via
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 05:20:22 (UTC).
+
+ three O atoms and have one hydroxyl group, i.e, (SiO)3Hf−OH.
+ In the case of Hf/Silicalite-1, Hf−OH groups hydrogen bond with
+ adjacent Si−OH to form (SiO)3Hf−OH···HO−Si complexes.
+ The turnover frequency for isobutene formation from acetone is
+ 4.5 times faster over Hf/Silicalite-1 than Hf/SiO2. Lewis acidic Hf
+ sites promote the aldol condensation of acetone to produce mesityl
+ oxide (MO), which is the precursor to isobutene. For Hf/SiO2,
+ both Hf sites and Si−OH groups are responsible for the
+ decomposition of MO to isobutene and acetic acid, whereas for Hf/Silicalite-1, the (SiO)3Hf−OH···HO−Si complex is the
+ active site. Measured reaction kinetics show that the rate of isobutene formation over Hf/SiO2 and Hf/Silicalite-1 is nearly second
+ order in acetone partial pressure, suggesting that the rate-limiting step involves formation of the C−C bond between two acetone
+ molecules. The rate expression for isobutene formation predicts a second order dependence in acetone partial pressure at low partial
+ pressures and a decrease in order with increasing acetone partial pressure, in good agreement with experimental observation. The
+ apparent activation energy for isobutene formation from acetone over Hf/SiO2 is 116.3 kJ/mol, while that for Hf/Silicalite-1 is 79.5
+ kJ/mol. The lower activation energy for Hf/Silicalite-1 is attributed to enhanced adsorption of acetone and formation of a C−C
+ bond favored by the H-bonding interaction between Hf−OH and an adjacent Si−OH group.
+
+ 1. INTRODUCTION This reaction is thermodynamically favorable (ΔGo298 = −35
+ kJ/mol) and has a carbon utilization eﬃciency of 88.9%.
+ Isobutene is an important chemical intermediate used to
+ Previous investigations of acetone condensation to isobutene
+ produce a broad range of products. These include octane
+ have focused on the use of Brønsted acid zeolites, e.g., SAPO-
+ blending components for gasoline (e.g., isooctane, methyl-tert-
+ 34, H-MFI and H-BEA, as the catalyst. These studies suggest
+ butyl ether (MTBE), and ethyl-tert-butyl ether (ETBE)), butyl
+ that isobutene is formed by successive aldol condensation and
+ rubber, methyl methacrylate, methacrolein, and acrylics.1−5 self-deoxygenation.10−13 While Brønsted acidic zeolites are
+ The primary sources of isobutene today are steam cracking of demonstrated to be very active for acetone conversion to
+ naphtha, isomerization and dehydrogenation of petroleum- isobutene, low isobutene selectivity and rapid catalyst
+ derived butane, and separation from the butane−butene deactivation due to coking have discouraged their further
+ fraction produced by catalytic cracking of petroleum.5,6 development.
+ However, growing concerns with global warming caused by The use of Lewis acid sites have been examined by a number
+ the combustion of products derived from petroleum have of investigators for reactions involving the formation of C−C
+ motivated the search for routes to isobutene based on biomass bonds via aldol condensation.14−17 Román-Leshkov et al. have
+ as the starting material.7−9 An attractive approach for doing so reported Hf-, Sn-, and Zr-BEA to be active for the cross-aldol
+ is the condensation of acetone, produced by the fermentation condensation of aromatic aldehydes and acetone.18 Li and
+ of glucose to a mixture of acetone, butanol, ethanol (so-called
+ ABE fermentation) or the ketonization of acetic acid. If acetic Received: February 3, 2021
+ acid produced as a byproduct of acetone condensation is Published: May 27, 2021
+ converted back to acetone and CO2, the overall reaction for
+ the synthesis of isobutene from acetone is
+
+ © 2021 American Chemical Society https://doi.org/10.1021/jacs.1c01315
+ 8352 J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+coworkers have reported that 10 wt % Y/BEA (YOx supported solution of HfCl4 with the Hf concentration adjusted to achieve the
+on dealuminated BEA zeolite (DeAlBEA)) is an eﬀective desired metal loadings. Typically, 2 mL of the HfCl4 solution was used
+catalyst for acetic acid conversion to isobutene with 100% per gram of support. After impregnation, the slurry was dried in air at
+conversion and 60% isobutene selectivity.15 Lewis acid sites room temperature for 5 h, then heated to 323 K under ﬂowing He,
+ and held at this temperature for 2 h. This step was followed by further
+have also been proposed as aldol condensation centers for calcination in a muﬄe oven. The sample was heated from room
+producing C6 intermediates over Y2O3 and YOx species temperature to 393 K over a 30 min period, then heated to 823 at 5 K
+supported on DeAlBEA. More recently, Shylesh et al. have min−1 and held at this temperature for 6 h, and ﬁnally cooled to room
+demonstrated C−C bond formation via propanoic acid temperature. The samples prepared are designated as xHf/SiO2 or
+ketonization and acetone aldol condensation to mesityl oxide xHf/Silicalite-1, respectively, where x designates the surface
+(MO) over site-isolated Zr catalyst (Zr/SiO2) containing  concentration of Hf (atoms nm−2).
+Zr−OH sites.19 2.2. Catalyst Characterization. Powder X-ray diﬀraction (XRD)
+ Previous studies have also found that the local environment patterns of Silicalite-1 and Hf supported catalysts were recorded using
+of Lewis acidic metal centers inﬂuence their catalytic a Bruker D8 GADDS diﬀractometer equipped with a Cu Kα target
+ (40 kV and 40 mA) X-ray source. To observe the morphologies of
+performance. For the reaction of acetone to isobutene, Li et Silicalite-1, scanning electron microscopy (SEM) images were
+al. found that the catalytic eﬃciency of Y/SiO2 was much lower acquired using a Thermo Scientiﬁc Helios G4 UC Focused Ion
+than that of Y/DeAlBEA, and Y/Silicalite-1 showed almost no Dual Beam microscope operated with an accelerating voltage of 2 kV
+C−C coupling activity. This much lower activity was ascribed and a probe current of 25pA using a TLD detector. The speciﬁc
+to the weaker interaction of Y species with SiO2 and Silicalite-1 surface areas of all samples were determined by acquiring N2
+compared with DeAlBEA.15 adsorption isotherms at 77 K with a Micrometrics Gemini VII 2390
+ Here, we describe the preparation of isolated Lewis acidic Hf analyzer. The total surface areas were evaluated by applying the
+sites on SiO2 and Silicalite-1. Hf was chosen for these studies Brunauer−Emmet−Teller (BET) equation. Prior to analysis, samples
+rather than Zr or Y for the following reasons.18,20,21 The Lewis were degassed for 6 h at 453 K. The Hf loadings were analyzed with
+ inductively coupled plasma optical emission spectroscopy (ICP-OES)
+acidity of Hf is slightly lower than that of Zr, which should
+ by Galbraith Laboratories, Inc.
+result in a higher isobutene selectivity without signiﬁcant Fourier transform infrared (FTIR) spectra were collected to
+sacriﬁce in activity,20,21 and compared to Y, Hf grafted on silica characterize surface hydroxyl groups using a Thermo Scientiﬁc
+and Silicalite-1 is expected to exhibit higher activity for aldol Nicolet 6700 IR spectrometer equipped with a liquid N2-cooled MCT
+condensation.15,22,23 The catalysts were characterized by XRD, detector. Samples (∼36 mg) were pressed into thin self-supporting
+IR, 1H MAS NMR and UV−vis spectroscopy. The structure of wafers and then transferred to a transmission IR cell equipped with
+the active Hf sites is proposed to be (Si−O)3−Hf−OH for CaF2 windows. Prior to the acquisition of spectra, samples were
+both Hf/SiO2 and Hf/Silicalite-1. In addition, for Hf/Silicalite- pretreated under dry ﬂowing air (Praxair, ultrazero, 100 mL min−1)
+1, the Hf−OH groups H-bond with adjacent Si−OH groups. for 1 h at 773 K to remove impurities and moisture and then cooled
+The inﬂuence of active site structure and local environment to 393 K. Spectra were recorded at 393 K with a resolution of 1 cm−1
+ and an accumulation of 64 scans.
+was investigated for the conversion of acetone to isobutene for The acid properties of Hf/SiO2 and Hf/Silicalite-1 were
+both Hf/SiO2 and Hf/Silicalite-1. The rate of isobutene characterized by FTIR spectroscopy of adsorbed pyridine using a
+formation on Hf/Silicalite-1 was found to be 4.5 times higher Thermo Scientiﬁc Nicolet 6700 IR spectrometer. Prior to the
+than that on Hf/SiO2. The reactions of the intermediates acquisition of spectra, samples were pretreated at 773 K for 1 h in a
+involved in the conversion of acetone to isobutene−diacetone ﬂow of 100 mL min−1 air and then cooled to 393 K to take
+alcohol (DAA), mesityl oxide (MO), and acetic acid were also background scans. FTIR spectra of adsorbed pyridine were recorded
+investigated with the aim of identifying the roles of these by injecting 2 μL of pyridine and then purging the IR cell with He at
+species in the overall reaction pathway. The accumulated 393 K for 20 min to remove any physically adsorbed material.
+information was used to propose a reaction mechanism for the FTIR spectra were collected at a resolution of 4 cm−1 during the
+ reaction of acetone as well as mesityl oxide (MO) over Hf/Silicalite-1.
+conversion of acetone to isobutene over isolated Hf sites. For these experiments, 30 mg of sample was pressed into a thin self-
+ supporting wafer, transferred into the transmission IR cell, and
+2. EXPERIMENTAL SECTION pretreated at 773 K for 1 h in 100 mL min−1 of dry air. Subsequently,
+ 2.1. Catalyst Preparation. Preparation of Hf Grafted Silicalite-1 the sample was purged with 30 mL min−1 of He (Praxair, UHP) and
+and SiO2. The silica support (SiO2) was provided by Silicycle. cooled to 306 K to collect the background spectrum. After that, 2 μL
+Nanosheet-like Silicalite-1 (self-pillared pentasil) was synthesized of acetone was fed onto the catalyst under ﬂowing He (Praxair, UHP,
+following a modiﬁcation of a method reported previously by Zhang et 30 mL min−1), and the spectra were recorded at constant time
+al.24 Tetra(n-butyl) phosphonium hydroxide (TBPOH) (Sigma- intervals. For the reaction of MO, 0.2 μL MO was injected under
+Aldrich, 40%) and fumed silica (Sigma-Aldrich) were used as the similar reaction conditions.
+structure-directing agent and silicon source, respectively. After Prior to carrying out the NMR experiment, all samples were
+crystallization, the as-synthesized material was washed with distilled dehydrated overnight at 353 K under vacuum, and then the material
+water until the pH of the supernatant was lower than 9; the was packed in a 4 mm zirconia rotor inside the glovebox. The rotor
+precipitate was then dried at 343 K in vacuum overnight and calcined was then placed inside a Bruker high resolution dual resonance
+ 1
+at 823 K for 6 h in a muﬄe oven. To ensure complete removal of the H/13C magic angle spinning (MAS) probe that has a 1H frequency of
+residual organic structure-directing agent and decomposed organic 500 MHz. All NMR measurements were recorded with a spinning rate
+moieties, the calcined material was washed twice with a large amount of 10 kHz. The quantitative 1H spectra were acquired using the
+of deionized water at room temperature until the pH of the DEPTH pulse sequence with a recycle delay of 2 s,26 equivalent to
+supernatant was close to 7, then dried at 343 K overnight, and ﬁve times the spin−lattice T1 relaxation, and a radio frequency power
+calcined at 823 K for 6 h.25 of 80 kHz. The spectra were ﬁtted with Dmﬁt software.27
+ Hafnium (Hf) was grafted onto Silicalite-1 and mesoporous SiO2 Ultraviolet−visible (UV−vis) diﬀuse reﬂectance spectra of
+by aqueous impregnation. Prior to introducing Hf, both supports, Silicalite-1, SiO2, and Hf supported samples are collected with a
+SiO2 and Silicalite-1, were dehydrated at 353 K for 6 h in a vacuum Fischer Scientiﬁc Evolution 300 spectrometer equipped with a
+drying oven and then stored in vacuum. Afterward, Hf was introduced Harrick Scientiﬁc Praying Mantis diﬀuse reﬂectance chamber.
+on SiO2 and Silicalite-1 by impregnating the support with aqueous Samples were grounded and dehydrated at 473 K for 20 min in a
+
+ 8353 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Figure 1. (a) FTIR spectra for the hydroxyl stretching region and (b) FTIR spectra following pyridine adsorption of Silicalite-1 and SiO2.
+
+Figure 2. Eﬀect of Hf loading on the FTIR spectra of surface hydroxyl groups and FTIR spectra taken following pyridine adsorption on (a, c) Hf/
+Silicalite-1 and (b, d) Hf/SiO2.
+
+ﬂow of 120 mL min−1 air and then cooled to 303 K to collect spectra. (>99%) were obtained from Sigma-Aldrich. Mesityl oxide (90%,
+Dehydrated BaSO4 was used as a reference. remainder 4-methyl-4-penten-2-one) was purchased from Alfa Aesar.
+ 2.3. Catalyst Evaluation. Catalyst performance was evaluated at Reactions were performed using He as the carrier gas. In a typical
+atmospheric pressure using a 6.35 mm OD quartz reactor, whereas run, a syringe pump (KD Scientiﬁc, Legato 100 series, <5%
+reaction kinetics were determined using a 6.35 mm OD quartz tube ﬂuctuation) was used to supply liquid-phase reactants (i.e., acetone,
+with an expanded section (∼12.7 mm OD). Quartz wool was placed acetone-H2O mixture, diacetone alcohol−H2O mixture, mesityl oxide,
+below the catalyst bed to hold the catalyst in place, and a and nanopure H2O) into a heated port through which He ﬂowed
+ continuously. The product stream was analyzed using an Agilent
+thermocouple was ﬁxed at the center of catalyst bed. Prior to
+ 6890A gas chromatography (GC) equipped with a HP-5 capillary
+initiating reaction, each catalyst was pretreated in ﬂowing air (Praxair, column, an FID, and a liquid N2 cooling system.
+ultrazero, 30 mL min−1) at 823 K for 40 min and then cooled to In the exploration of the eﬀect of water partial pressure on the rate
+reaction temperature and purged with He (Praxair, 99.999%, 20 mL of isobutene formation from acetone, a constant acetone partial
+min−1) for 10 min. All chemicals were obtained commercially and pressure of 1 kPa was cofed with water partial pressure ranging from
+used without further puriﬁcation. Acetone (≥99.9%), 4-hydroxy-4- 20 to 3 kPa, corresponding to steam-to-carbon (S/C) ratios of 6.67 to
+methyl-2-pentanone (diacetone alcohol, 99%), and acetic acid 1. For each combination of acetone/H2O, the rate of isobutene
+
+ 8354 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Figure 3. Diﬀerence spectra obtained by subtracting the spectrum of the catalyst prior to pyridine adsorption from that taken after pyridine
+adsorption for (a) Hf/Silicalite-1 and (b) Hf/SiO2 for diﬀerent Hf loadings. Plots of the integrated area for the band at 1609 cm−1 versus Hf
+loading for (c) Hf/Silicalite-1 and (d) Hf/SiO2.
+
+formation was measured after cofeeding acetone and water for 5 min. pyridine.29,30 By contrast, almost no signal is observed for
+The rate of isobutene formation at 20 kPa of water partial pressure pyridine interaction with SiO2. This suggests that the acidity of
+was then measured again to assess whether catalyst deactivation had silanol groups on SiO2 is weaker than those on Silicalite-1.
+occurred. No catalyst deactivation was detected in these experiments. Hf/Silicalite-1 and Hf/SiO2 samples with diﬀerent Hf
+ loadings were also characterized by FTIR. As shown in Figure
+3. RESULTS AND DISCUSSION 2a and b, a slight intensiﬁcation of the band at 3740 cm−1 for
+ 3.1. Catalyst Characterization. XRD patterns of isolated Si−OH groups was observed for both sets of samples.
+Silicalite-1 as well as Hf/Silicalite-1 with diﬀerent Hf loadings This phenomenon is unexpected considering the consumption
+are shown in Figure S1; Hf/Silicalite-1 exhibit characteristic of Si−OH groups during the introduction of Hf species. A
+peaks at 2θ = 7−10° and 22−25° of MFI zeolites and no plausible explanation for this observation is that Hf−OH
+obvious peaks representing HfO2 for Hf concentration up to groups exhibit a peak at a similar position as that for isolated
+0.56 Hf atoms nm−2, indicating high dispersion of Hf. The Si−OH groups.31
+elemental composition of each sample was analyzed by ICP- FTIR spectra of pyridine adsorbed on Hf/Silicalite-1 and
+OES and are summarized in Table S1. The weight loadings of Hf/SiO2 are shown at Figure 2c and d. For Hf/Silicalite-1, a
+Hf detected closely match the intended metal loadings, band for pyridine interactions with Lewis acid centers and a
+conﬁrming the successful introduction of the metal. Preserva- second band for pyridine interactions with both Brønsted and
+tion of the crystalline structure Silicalite-1 was further Lewis acid centers are observed at 1609 and 1490 cm−1,
+conﬁrmed by the N2 adsorption; only a slight decrease in respectively.30 The intensity of these three bands increases
+the BET surface area and volume were observed for Hf/ with increasing Hf loading up to a loading of 0.28 Hf atoms
+Silicalite-1 with Hf concentration ranging from 0.056 to 0.56 nm−2. It is also notable that the integrated intensity of the band
+Hf atoms nm−2. Additionally, as shown in Table S1, the BET for H-bonded pyridine at 1596 cm−1 increases monotonically
+surface area of Silicalite-1 is 603 m2 g−1, almost twice the value with Hf concentration on Silicalite-1 up to a Hf concentration
+of SiO2 (323 m2 g−1), consistent with its nanosheet-like of 0.28 Hf atoms nm−2 (see Figure S3). Although Hf grafting
+morphology (Figure S2). consumes H-bonded Si−OH groups and, hence, is expected to
+ FTIR spectroscopy was used to characterize the surface O− decrease intensity of the signal at 1596 cm−1, the interaction
+H groups of Silicalite-1 and SiO2. As seen in Figure 1a, both between newly generated Hf−OH group and residual Si−OH
+Silicalite-1 and SiO2 show a signal at around 3740 cm−1 groups leads to the intensiﬁcation of this band; additional
+attributable to isolated Si−OH groups.28 After pyridine evidence for this process is presented in Figures 3 and 4. For
+adsorption, two strong signals appear at 1596 and 1448 cm−1 Hf/SiO2, very similar bands are observed at 1448, 1490, and
+on Silicalite-1 that can be ascribed to hydrogen (H)-bonded 1609 cm−1 after pyridine adsorption, and the intensity of these
+ 8355 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Figure 4. 1H MAS NMR spectra of (a) SiO2, (b) 0.21Hf/SiO2, (c) Silicalite-1, and (d) 0.28Hf/Silicalite-1. Prior to acquiring NMR spectra, each
+sample was dehydrated at 353 K under vacuum.
+
+three bands increases with increasing Hf concentration below area of the band at 1609 cm−1 for Hf/Silicalite-1 is always
+0.52 Hf atoms nm−2. In sharp contrast to what is observed on larger than that for Hf/SiO2 for the same molar concentration
+Silicalite-1, no bands for H-bonded pyridine were detected of Hf.
+over Hf/SiO2 despite the observation of Hf-OH groups in Another interesting feature of the IR spectra of adsorbed
+Figure 3b. Moreover, as shown in Figure S4, the intensity of pyridine is the negative band for hydroxyl vibrations. This
+the band for pyridine interacting with Lewis acid centers on feature in Figure 3a and b provides direct evidence for the
+Hf/SiO2 is weaker than that for Hf/Silicalite-1 containing the interaction of pyridine with hydroxyl groups, either Si−OH
+same number of moles of Hf. Accordingly, Lewis acidic sites and/or Hf−OH. The negative peaks are centered at 3742 and
+are generated via the introduction of Hf. In addition, the 3745 cm−1 for Hf/Silicalite-1 and Hf/SiO2, respectively. For
+intensiﬁcation of band at 1596 cm−1 for Hf/Silicalite-1 with both samples (Figure S5), the integrated negative peak areas
+increasing Hf contents suggests that H-bonding interaction of increase linearly with Hf concentration from 0.056 to 0.28 Hf
+Hf-OH with Si-OH groups is presented. atoms nm−2 for Hf/Silicalite-1, and with Hf concentration
+ The integrated areas of the band at 1609 cm−1 for Hf/ between 0.052 and 0.21 Hf atoms nm−2 for Hf/SiO2,
+Silicalite-1 and Hf/SiO2 are plotted in Figure 3 against the consistent with the linear increase of 1609 cm−1 bands. Such
+surface concentration of Hf. The integrated peak areas are negative peaks are much weaker for either Silicalite-1 or SiO2
+normalized by the intensity of the bands for Si−O−Si because of the weaker interaction between silanol and pyridine
+framework overtones appearing between 1700−2000 cm−1.32 compared with Hf−OH. It has been reported that Zr grafted
+As seen in Figure 3c, the area of the band at 1609 cm−1 for Hf/ on SiO2 and the open Sn sites on dealuminated beta both have
+Silicalite-1 increases linearly up to a Hf concentration of 0.28 M−OH groups. IR spectra of ZrO2 or ZrOx supported on
+Hf atoms nm−2, suggesting the generation of isolated Hf Lewis siliceous materials exhibits Zr−OH bands at 3740−3775
+acid centers in this range. Above 0.28 Hf atoms nm−2, the rate cm−1.31,33,34 Although no information has been reported for
+of increase in intensity decreases, due to the possible Hf−OH, considering the similarity of the electronic structures
+generation of hafnium oxide oligomers and/or nanoclusters. and Lewis acid property of Zr and Hf,18 it is reasonable to
+A similar linear increase in the intensity of the band at 1609 expect Hf−OH signals in a similar range to those found for
+cm−1 is also observed for Hf/SiO2 for Hf concentrations below Zr−OH. As a result, the negative peak is proposed to be
+0.21 Hf atoms nm−2 (Figure 3d), which also indicates isolated associated with either Hf−OH itself or with Hf−OH H-
+Hf sites are present. However, as noted before, the integrated bonded to an adjacent Si−OH. The existence of the latter
+ 8356 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+complex is suggested by the observation of H-bonded pyridine groups because the chemical shifts for Si−OH and Hf−OH
+signals at 1596 cm−1. For Hf/SiO2, the negative hydroxyl peak groups are very similar.
+is attributed to the interaction of pyridine with Hf-OH groups We note further that the position of the signal for Si−OH
+because no signal of pyridine interacting with Hf-OH H- groups H-bonding with Hf−OH groups in Hf/Silicalite-1 is 2.6
+bonded to an adjacent Si-OH group was observed. By contrast, ppm and has a line width of 1.0 ppm compared to that for non-
+for Hf/Silicalite-1, the observation of H-bonded pyridine and H-bonded Si−OH groups which is positioned at 3.2 ppm and
+the broader negative hydroxyl peak both suggest that this peak has a line width of 0.64 ppm. These features for Si−OH groups
+is most likely attributable to the interaction of pyridine with H-bonding with Hf−OH groups are absent from the NMR
+both Hf−OH and Si−OH groups. Based upon the linear spectrum of Hf/SiO2. Together with the intensiﬁcation of H-
+enhancement of the band for pyridine interaction with Lewis bonded pyridine signal observed upon introducing Hf to
+acid sites and with the −OH groups of Hf−OH for both Hf/ Silicalite-1 (Figures 2c and S3), the broadened H-bonded
+Silicalite-1 and Hf/SiO2, we propose that isolated Hf sites with proton signal at 2.6 ppm observed for Hf/Silicalite-1 is
+structure of (SiO)3−Hf−OH are formed over SiO2 and attributed to H-bonding between the hydroxyl group Hf−OH
+Silicalite-1. This interpretation is fully consistent with many and an adjacent Si−OH group.
+previous studies of supported, isolated Lewis acidic The data reported in Figures 4c and d and Figure S6b and
+sites.19,35−38 Such sites have two chemical structures, i.e., Tables S2−S5 were used to evaluate the assumption that Hf is
+closed ((SiO)4−M) and open ((SiO)3−M−OH) sites. bonded to Silicalite-1 via three Si−O−Hf bonds (i.e., (Si−
+Open sites with relatively stronger Lewis acidity are found to O−)3Hf−OH). This assessment begins with recognizing that
+be more active for aldol condensation with respect to closed Silicalite-1 has 3.77 Si−OH groups nm−2 on its surface based
+sites.36,39 on deconvolution of 29Si NMR spectra.25 The data in Table S2
+ 1
+ H MAS NMR spectroscopy was used to further characterize indicate that 62% of these silanol groups are H-bonded, and
+the hydroxyl groups on SiO2, Silicalite-1, and Hf supported on 38% are isolated silanol groups. Only the H-bonded silanol
+both siliceous supports. All NMR spectra were deconvoluted groups are expected to be active in forming (SiO)3Hf−OH
+by ﬁtting them with Dmﬁt software to distinguish the groups, which means that grafting Hf to obtain a loading of
+overlapping peaks. As shown in Figure 4a and c, after 0.24 Hf atoms nm−2 (determined by ICP for 0.28Hf/Silicalite-
+deconvolution, four similar peaks can be identiﬁed for both 1) will consume 0.72 Si−OH nm−2, or 31% of the original
+SiO2 and Silicalite-1. The 1H MAS NMR spectrum of SiO2 inventory of H-bonded silanol groups, 2.34 Si−OH nm−2. This
+shows signals at 0.16, 2.1, 3.0, and 4.6 ppm. The peaks at 2.1 calculation suggests that the intensity of the peak at 2.6−3.2
+ ppm in the 1H NMR spectrum of 0.28Hf/Silicalite-1 should
+and 3.0 ppm are assigned to isolated silanol groups and weakly
+ decrease by 31% relative to that in the spectrum of Silicalite-1.
+H-bonded Si−OH groups, respectively, while the peak at 4.6
+ However, this projection does not recognize that the 1H NMR
+ppm is due to clusters of adsorbed H2O.40−44 The very small
+ shift for the Hf−OH group is virtually the same as that for the
+peak at 0.16 ppm is probably due to some impurity species.
+ Si−OH group. Taking this into account means that the
+Similar peaks for isolated and H-bonded Si−OH groups are
+ projected decrease in the intensity of the 1H NMR peak at
+detected for Silicalite-1 at around 2.1 and 3.2 ppm,
+ 2.6−3.2 ppm should be 20.5%. The latter ﬁgure agrees
+respectively.40,45,46 A signal representative of bulk H2O reasonably well with the observed decrease of 21.8%. A similar
+adsorbed on Si−OH groups is also detected at 4.4 ppm.43 calculation made for 0.21Hf/SiO2 (see the Supporting
+The line width of the signal for H-bonded Si−OH for Information for details) predicts that the peak at 3.0 ppm
+Silicalite-1 is much narrower than that for SiO2 (0.64 vs 1.8), should decrease by 15.6%. While this value is much larger than
+which suggests a relatively uniform distribution of H-bonded that observed, 5.8%, it is still qualitatively consistent. The
+Si−OH groups on the former support. The larger chemical consumption of H-bonded silanol groups upon grafting Hf
+shift for H-bonded Si−OH groups observed for Silicalite-1 onto SiO2 is also evidenced by the loss of intensity in the broad
+compared to SiO2 is evidence for stronger H-bonding band located between 3710 and 3400 cm−1, which shows a
+interaction between Si−OH groups on Silicalite-1. decrease in intensity of about 18.8% upon the introduction of
+ The assignment of 1H NMR signals for grafted Hf−OH 0.18 Hf atoms nm−2 (measured by ICP for 0.21Hf/SiO2
+groups has not been reported previously. Therefore, we looked sample), in better agreement with what is predicted.
+for analogies with the assignment of Zr−OH groups because We would like to note that the 1H NMR signal for H-
+Zr and Hf are both d-block transition metals with similar bonded −OH groups decreases in intensity after Hf is grafted
+electronic structures. The 1H MAS NMR peak observed at 1.8 onto Silicalite-1. This pattern appears to contradict the trends
+ppm for ZrOxHy aerogels has been assigned to terminal Zr− seen in the IR spectra of pyridine adsorbed on Silicalite-1 and
+OH groups.47 Similarly, it has been reported that the 1H MAS Hf/Silicalite-1 (shown in Figures 2c and S3). These spectra
+NMR signal shifts from 1.5 to 1.7 ppm upon incorporation of show that the band at 1596 cm−1 for H-bonded pyridine
+Zr into dealuminated BEA.48 In another example, it has been increases monotonically with Hf concentrations up to 0.28 Hf
+reported that the 1H MAS NMR chemical shift of terminal Zr atoms nm−2. We believe that this apparent discrepancy is
+hydroxyl groups appears at either 1.6 or 1.8 ppm. 49 attributable to the higher IR extinction coeﬃcient for pyridine
+Accordingly, the 1H MAS NMR signal of Hf−OH is proposed interacting with the more acidic H-bonded Hf−OH groups
+to be located between 1.6 and 2.0 ppm, a position similar to than Si−OH groups.50,51 This diﬀerence compensates the
+that for isolated Si−OH groups. For Hf/SiO2, the 1H signal is decrease in intensity of the IR signal for pyridine H-bonded to
+located at 2.0 ppm. By comparison, the 1H chemical shift for Si−OH groups. This interpretation is consistent with our
+SiO2 is 2.1 ppm. We note as well that the intensity of this deduction that three Si−OH groups are consumed for each Hf
+signal increases after grafting Hf. As discussed above, the grafted; hence, the intensity of 1H NMR signal of H-bonded
+chemical shift at 2.0 ppm for Hf/SiO2 could have contributions −OH groups decreases after the introduction of Hf due to the
+from both Hf−OH groups and residual terminal Si−OH decrease of proton density.
+ 8357 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Figure 5. Eﬀect of Hf concentration on the UV−vis spectra of (a) Hf/Silicalite-1 and (b) Hf/SiO2.
+
+ Figure 5 presents UV−vis spectra for SiO2, Silicalite-1, and Scheme 1. Chemical Structure of Hf Isolated Sites in (a)
+Hf supported samples. Silicalite-1 exhibits two absorption Hf/SiO2 and (b) Hf/Silicalite-1
+peaks at ca. 200 and 240 nm, respectively, whereas SiO2
+exhibits a broad absorption peak between 190 and 270 nm.
+These features are attributable to the presence of Si−OH
+groups.52,53 After grafting Hf, the absorption peaks ascribed to
+Si−OH groups in Silicalite-1 and SiO2 lose intensity due to
+their consumption upon introduction of Hf, consistent with
+what is observed by FTIR and 1H NMR spectroscopy. It
+should be noted that although the absorption signal for
+0.11Hf/Silicalite-1 is weak due to the low concentration of carbon (S/C) molar ratio of 5 to alleviate the deactivation of
+grafted Hf, the absorption in the low wavelength region (below the catalyst.5 For all of these experiments, isobutene was the
+210 nm) becomes evident when Hf loading rises to 0.28 atoms dominant product with a carbon selectivity of about 85%,
+nm−2. This feature can be attributed to the introduction of corresponding to 95% of the theoretical selectivity (88.9% on a
+isolated Hf species. The absorption becomes stronger when carbon basis). It is noted that under similar reaction
+the Hf loading increases to 0.56Hf atoms nm−2, at which point conditions, no products were observed for either SiO2 or
+another broad absorption appears at 220−260 nm, which may Silicalite-1.
+be due to the presence of HfOx clusters.54 For Hf/SiO2, signal Figure 6 shows the rates of isobutene formation over Hf/
+overlap between SiO2 support and Hf occurs when the Hf SiO2 and Hf/Silicalite-1 as a function of the surface
+concentrations is below 0.21 Hf atoms nm−2. However, a shift concentration of Hf. The rate of isobutene formation per
+of the absorption peak from high to low wavelength is still gram of catalyst increases linearly with Hf content for Hf/
+observed as the Hf loading increases from 0 to 0.1 and then to Silicalite-1 up to a Hf concentration of 0.28 Hf atoms nm−2,
+ after which it increases but at a much lower rate. Hf/SiO2
+0.21 Hf atoms nm−2. The absorption peak becomes prominent
+ exhibits a similar linear increase in isobutene formation rate
+at an Hf concentration of 0.52 Hf atoms nm−2 and further
+ with Hf content up to 0.21 Hf atoms nm−2 (inset in Figure 6a).
+intensiﬁes for 1.04 Hf atoms nm−2. The photon absorption
+ The rates of isobutene formation normalized per Hf atom, the
+energies for Hf/Silicalite-1 and Hf/SiO2 attributable to ligand-
+ turnover frequency (TOF), are shown in Figure 6b. The TOF
+to-metal charge transfer (LMCT) from O to an isolated for Hf/Silicalite-1 is nearly independent of the Hf concen-
+Hf(IV) are estimated to be around 5.8 and 5.4 eV, respectively, tration up to 0.28 Hf atoms nm−2, and for Hf/SiO2, the TOF is
+much higher than that for bulk HfO2, 4.4 eV.55,56 constant for Hf concentration up to 0.21 Hf atoms nm−2. The
+ In summary, based on the information obtained from IR, the TOF suggests that isolated Hf active sites are created over both
+1
+ H MAS NMR, and the UV−vis spectroscopy of Hf/SiO2 and supports. It is also notable that the TOF for isobutene
+Hf/Silicalite-1, we propose that isolated Hf sites on SiO2 and formation over Hf/Silicalite-1 is about 4.5 times of Hf/SiO2.
+Silicalite-1 are bonded to three O atoms of the support and Considering the similar structure of Hf sites on these two
+one −OH group as shown in Scheme 1. These structures are supports, we attribute this signiﬁcant diﬀerence to diﬀerences
+similar to those proposed previously for isolated Zr dispersed in the local environment of the isolated Hf sites. We note that
+on siliceous supports and characterized by EXAFS, in addition our observations diﬀer from those reported by Li et al., who
+to the techniques used in this study.56,57 We note that for Hf/ observed mild activity over YOx/SiO2 but no activity over
+Silicalite-1, the Hf−OH groups are H-bonded to adjacent Si− YOx/Silicalite-1 for the reaction of acetic acid to isobutene.15
+OH groups. While acetic acid was completely converted to acetone, no
+ 3.2. Acetone Conversion to Isobutene. The reaction of further aldol condensation occurred on YOx/Silicalite-1. The
+acetone to isobutene over Hf/Silicalite-1 and Hf/SiO2 was authors proposed that the diﬀerence in activity for the two
+conducted under diﬀerential reaction conditions (acetone catalysts was due to diﬀerences in the strength of interactions
+conversion <9%). Water was cofed with acetone at a steam-to- between Y species and the supports.
+ 8358 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Figure 6. Rates of isobutene formation measured at 1.57 kPa acetone/He, S/C = 5, and 723 K as a function of the concentration of Hf over Hf/
+Silicalite-1 and Hf/SiO2. (a) Rates normalized per catalyst mass. (b) Rates normalized per moles of Hf.
+
+Figure 7. Dependence of the rates of isobutene formation on the acetone partial pressure measured at 673, 698, and 723 K over (a) 0.11Hf/
+Silicalite-1 and (b) 0.21Hf/SiO2. Reaction conditions: catalyst mass = 20 mg for Hf/Silicalite-1 and 50 mg for Hf/SiO2, total ﬂow rate at STP = 20
+mL/min, PH2O = 15 kPa, the S/C ratio varies between 5 and 12.5.
+
+ Figure 7 illustrates the dependence of the TOF for isobutene
+formation on the acetone partial pressure at diﬀerent
+temperatures, measured under diﬀerential reaction conditions
+(acetone conversion <5%), for both Hf/Silicalite-1 and Hf/
+SiO2. The rates of isobutene formation for both catalysts lie
+between second and ﬁrst order in acetone partial pressure at all
+three temperatures (673, 698, and 723 K), suggesting that a
+bimolecular process is involved in the rate-limiting step.
+ As noted earlier, water vapor is added to the feed stream to
+alleviate catalyst deactivation. The eﬀect of the water partial
+pressure on the TOF for isobutene formation for a ﬁxed
+acetone partial pressure is shown in Figure 8. For 0.21Hf/SiO2,
+the TOF for isobutene decreases by a factor of 2 as the partial
+pressure of water vapor is raised from 3 to 10 kPa but then
+remains constant for a further increase in the partial pressure of
+water vapor. In the case of 0.11Hf/Silicalite-1, the TOF for
+isobutene again decreases with increasing partial pressure but
+becomes constant for water vapor partial pressures above 15 Figure 8. Inﬂuence of water partial pressure on the formation rate of
+kPa. However, in contrast to Hf/SiO2, the TOF decreases by a isobutene from acetone on Hf/Silicalite-1 and Hf/SiO2 catalysts.
+ Reaction conditions: 723 K, PA = 1 kPa, mcat. = 20 mg for 0.11Hf/
+factor of 1.5.
+ Silicalite-1 and 50 mg for 0.21Hf/SiO2.
+ The inﬂuence of water partial pressure on the TOF for
+isobutene formation on supported Hf catalysts with diﬀerent
+Hf loadings was studied further. As seen in Figure S7, similar
+ 8359 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+eﬀects of water partial pressure on the rates of isobutene MO together with water at a S/C ratio of 5 was fed over Hf/
+formation are observed for all of the Hf supported catalysts. Silicalite-1 and Hf/SiO2 as well as the supports at 723 and 573
+The rate of isobutene formation decreases with increasing K. As observed in Figure 9, both Silicalite-1 and SiO2 catalyze
+water partial pressures and then reaches a plateau. The rate of
+isobutene formation decreases by 47% for 0.056Hf/Silicalite-1,
+41% for 0.28Hf/Silicalite-1 and 67% for 0.10Hf/SiO2. Despite
+some small diﬀerence, the inhibition of the rate of isobutene
+formation due to water is approximately independent of the Hf
+loading. Moreover, the TOF for isobutene formation is
+independent of water vapor pressure for catalysts with water
+partial pressures higher than 15 kPa, which agrees well with the
+results in Figure 6.
+ The decrease in the initial rate and the subsequent plateau in
+the rate of isobutene formation suggests the existence of more
+than one kind of Hf site. Considering the abundance of Si−
+OH on the surface of SiO2 and Silicalite-1, generation of small
+numbers of Lewis acid Hf centers interacting with more Si−
+OH groups can be expected. As observed in Figure 6, the rates
+of isobutene formation on Hf sites H-bonded to one Si−OH
+group is 4.5 times higher than that for Hf sites that do not H-
+bond with adjacent Si−OH groups. Consequently, we propose
+that the rates of isobutene formation on Hf sites H-bonding
+with more Si−OH groups on Hf/Silicalite-1 are 5−10 times
+higher than those on Hf sites H-bonding with one Si−OH Figure 9. Product distribution of mesityl oxide conversion over SiO2,
+group. Based on this reasoning, Hf sites that are H-bonded Silicalite-1, and Hf supported samples at 723 K. Catalyst mass = 15
+with multiple Si−OH groups only consist of 7.9−4.1% of the mg, PMO = 0.49 kPa, S/C = 5, total ﬂow rate at STP = 20 mL/min.
+total Hf sites to account for a decrease of 30% isobutene
+formation rate over 0.11Hf/Silicalite-1 as the water partial the conversion of MO to isobutene at 723 K with isobutene as
+pressure increase from 3 to 20 kPa. A similar deduction is also the main product. The catalyst for these reactions is likely the
+made for Hf/SiO2. mildly acidic Si−OH groups on the surface of SiO2 and
+ We hypothesize that such Lewis acid centers may adsorb Silicalite-1. This interpretation is similar to that proposed for
+water much more strongly than Hf sites interacting with only DeAlBEA.15 Silicalite-1 is more active than SiO2 due to the
+one adjacent Si−OH group. The results shown in Figure 8 stronger acidity of its Si−OH groups, as suggested by the
+suggest that water vapor does not inhibit that condensation of presence of H-bonded pyridine bands (1596 and 1448 cm−1)
+acetone to isobutene on the latter sites. For this reason, we do (see Figure 1b).
+not consider inhibition of this reaction nor the ketonization of The conversion of MO is much higher over 0.21Hf/SiO2
+acetic acid, produced as a byproduct of acetone condensation, (>90% at 723 K, Figure 9) than over SiO2. Acetone is the
+in our analysis of the reaction kinetics for acetone dominant product, and the yield of isobutene is not
+condensation (see below). signiﬁcantly enhanced compared with that formed over SiO2.
+ 3.3. Conversion of Reaction Intermediates. Prior Lowering the temperature to 573 K eliminates the formation of
+studies of acetone conversion to isobutene have proposed isobutene, and only acetone is observed (Figure S10). By
+diacetone alcohol (DAA) and mesityl oxide (MO) as possible contrast, much more isobutene is generated at 723 and 573 K
+reaction intermediates.15,58 It has also been reported that the (Figure 9 and Figure S10) over 0.11Hf/Silicalite-1 compared
+acetic acid formed in one to one ratio with isobutene is with Silicalite-1. Acetic acid, the byproduct of MO hydrolysis,
+converted back to acetone by ketonization. For this reason, we is also observed. The formation of acetone over both catalysts
+examined the reactions of DAA, MO, and acetic acid over Hf/ can be ascribed to the hydrolysis of MO (the reverse of the
+SiO2, Hf/Silicalite-1, SiO2, and Silicalite-1. We were partic- reaction that forms MO by the condensation of acetone), for
+ularly interested in establishing whether DAA and MO are which the Gibbs free energy of reaction is −23.8 kJ/mol, a
+possible intermediates along the pathway from acetone to value that is only slightly more endergonic than that for the
+isobutene and acetic acid and whether the rate of acetic acid hydrolysis of MO to form isobutene and acetic acid, −26.5 kJ/
+ketonization is faster than the rate of its formation. mol (Figure S8). Therefore, we suggest that the preferential
+ Complete conversion of DAA occurs when it is fed together formation of acetone vs isobutene from MO over 0.21Hf/SiO2
+with water vapor over Hf/Silicalite-1 and Hf/SiO2 at 723 K. compared to 0.11Hf/Silicalite-1 indicates that the formation of
+The principal products are acetone and a small amount of isobutene on 0.21Hf/SiO2 is limited kinetically. We propose
+isobutene. Interestingly, the distribution of products is nearly that the higher isobutene selectivity of 0.11Hf/Silicalite-1
+identical to that observed when the same concentration of relative to 0.21Hf/SiO2 is due to the moderate Brønsted
+acetone on a carbon basis was used as the reactant, in good acidity of Hf−OH groups that are H-bonded with adjacent Si−
+agreement with previous studies.5,59 The facile decomposition OH groups on Hf/Silicalite-1. However, this kind of Brønsted
+of DAA at 723 K to acetone is fully expected because the acidic sites is not strong enough to protonate pyridine as
+standard-state Gibbs free energy of reaction for this process is demonstrated by the absence of Brønsted acidic pyridine
+−118 kJ/mol, and the enthalpy of reaction is only 6.3 kJ/mol, adsorption band at 1545 cm−1. This interpretation has also
+as presented in Figures S8 and S9. Therefore, very little been suggested in previous studies, which have shown that
+activation is required to promote the decomposition of DAA. moderately Brønsted acidic M−OH···HO−Si sites formed on
+ 8360 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+metal-incorporated zeolites39 are active for the hydrolysis of explains why acetic acid is not observed as a product when
+MO to isobutene and acetic acid.60,61 acetone is used as the reactant.
+ The reaction of acetic acid at 723 K was examined over 3.4. IR Spectroscopy of Absorbed Species. In situ
+0.21Hf/SiO2 and 0.11Hf/Silicalite-1 as well as over each FTIR spectra of acetone and MO reacting on Hf/Silicalite-1
+support (Figure 10). SiO2 and Silicalite-1 exhibit negligible were acquired to gain more insight into the reaction
+ mechanism. As shown in Figure 11a, when acetone is fed as
+ a reactant, a strong peak is observed centered at 1690 cm−1
+ that is characteristic of the vibration of ν(CO) in molecular
+ acetone adsorbed on Lewis acidic Hf.15,58 Due to the overlap
+ of the ν(CO) vibration in acetone, DAA, and MO, it is hard
+ to distinguish the generation of possible C6 intermediates using
+ this feature. However, during the reaction of acetone, a broad
+ peak appears at 1596 cm−1 and strengthens with time. This
+ band can be ascribed to ν(CC) stretching vibrations of MO
+ adsorbed on Hf sites. The assignment of this band to MO is
+ supported by its observation in the spectrum of adsorbed MO,
+ as seen in Figure 11b.15,58,62 Although the enol form of acetone
+ has a structure that is similar to that of MO, the enolization of
+ acetone and subsequent aldol condensation proceed very
+ rapidly, making it very diﬃcult to observe the enol form of
+ acetone.63 The ﬁrst evidence for enolate species has recently
+ been reported in an IR study of acetone conversion on
+ ZnxZryOz. This work clearly demonstrated that the ν(CC)
+Figure 10. Products yields observed during the conversion of acetic infrared stretching vibration of the acetone enolate and MO
+acid over Hf/Silicalite-1 and Hf/SiO2 at 723 K. Catalyst mass = 20 are located at 1517 and 1596 cm−1, respectively.63 Building on
+mg, PAA = 0.5 kPa, STP = 40 mL/min. these ﬁndings, the appearance of a band at 1596 cm−1 for the
+ ν(CC) stretching vibration together with the presence of
+activity for the conversion of acetic acid to acetone. However, bands at 3010 and 2920 cm−1 for ν(C−H) stretching
+both 0.11Hf/Silicalite-1 and 0.21Hf/SiO2 exhibit signiﬁcant vibrations evidence for the formation of MO from acetone at
+rates of acetone formation, 3.76 and 3.18 mmol h−1 g−1, 306 K.15,58,63
+respectively, demonstrating that Lewis acidic Hf sites are the 3.5. Mechanism and Kinetics of Acetone Conversion
+active sites for acetic acid ketonization. Lewis acidic Zr and Y to Isobutene. Scheme 2 illustrates the proposed mechanism
+sites have also been found to be active for the ketonization of for the conversion of acetone to isobutene and acetic acid over
+carboxylic acid.15,19 In addition to acetone, noticeable amounts Hf/Silicalite-1. Reaction begins with the stepwise adsorption of
+of isobutene are generated over Hf-containing catalysts. It is two molecules of acetone onto a Lewis acidic Hf site (Steps I
+also noted that the rate of isobutene formation on 0.11Hf/ and II). Both forms of adsorbed acetone involve a Lewis base-
+Silicalite-1 is about 3.6 times higher than that of 0.21Hf/SiO2, acid interaction of the oxygen atom of the CO group with
+which agrees closely with the relative rates of isobutene the Hf cation. This form of adsorption is supported by DFT
+formation observed when acetone is the reactant. It is also calculations for the interactions of acetone with isolated Zr
+notable that the rates of acetic acid ketonization are 3.4 and species on silica (Zr−OH).19 Further supporting the
+13.9 times the rates of isobutene formation from acetone over proposed form of acetone adsorption we note that the
+0.11Hf/Silicalite-1 and 0.21Hf/SiO2, respectively, which frequency of CO vibrations for acetone shifts from 1740
+
+Figure 11. In situ FTIR spectra taken during the reaction of (a) acetone and (b) mesityl oxide over 0.28Hf/Silicalite-1. 2 μL of acetone or 0.2 μL
+of mesityl oxide was fed with He at a STP ﬂow rate = 30 mL/min.
+
+ 8361 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+Scheme 2. Proposed Reaction Mechanism for Acetone Conversion to Isobutene over Hf/Silicalite-1
+
+Scheme 3. Proposed Reaction Mechanism for Acetic Acid Ketonization over Hf/Silicalite-1
+
+cm−1 in the gas phase to 1690 cm−1 upon absorption on Hf/ with acetone over Lewis acidic metals supported on SiO2,
+Silicalite-1. The next step in the pathway (Step III) is incorporated into zeolite beta, and present on the surface of
+enolization of one of the adsorbed acetone molecules, a ZnxZryOz.18,19,63 Polarization of the CO bond of an
+process that involves the transfer of a proton to the Lewis basic adsorbed acetone via interaction of the nucleophilic oxygen
+O atom of the OH group associated with Hf (Hf−OH). This atom and the electrophilic Hf site acidiﬁes the α-H on one of
+mechanism has been proposed for the aldol condensation of the methyl groups of acetone, thereby facilitating its
+acetone and cross-aldol condensation of aromatic aldehydes abstraction by the basic hydroxyl oxygen on the Hf site to
+ 8362 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+form an enolate intermediate and bound H2O. This step is via an identical reaction pathway and the corresponding
+then followed by nucleophilic attack of the enolate on the reaction mechanism is presented in Scheme S2.
+electrophilic carbonyl carbon of the second adsorbed acetone As noted above, neither MO or acetic acid are observed as
+molecule, resulting in the formation of a C−C bond (Step IV). reaction intermediates, suggesting that these species are rapidly
+The bound water acts as a Brønsted acid. The aldol consumed and, therefore, are not involved in the rate limiting
+condensation intermediate is formed via abstraction of a step along the pathway from acetone to isobutene. More
+proton from bound water, which rapidly dehydrates to produce importantly, the yield of isobutene from MO is much higher
+thermodynamically favored MO (Step VI and VII). This than that of acetone at similar conditions (Figure 9), indicating
+proposal is veriﬁed by the presence of IR signal at 1596 cm−1 a much higher reactivity of MO. Therefore, the rate-limiting
+corresponding to CC vibration in MO adsorbed on Hf sites step for the conversion of acetone to isobutene occurs prior to
+during the reaction of acetone (see Figure 11a). As the formation of MO. Together with the fact that the kinetics
+demonstrated experimentally, the further conversion of of isobutene formation are nearly second order in acetone
+adsorbed MO is rapid because MO is not observed as a stable concentration, we propose that the rate-limiting step involves
+intermediate. We propose that in Step VIII protonation of the the formation of C−C bond, Step IV in Scheme 2. This
+α-carbon of adsorbed MO occurs by attack of the Brønsted conclusion is identical to that reached for the synthesis of MO
+acid Si−OH group that is H-bonded to an adjacent Hf sites from acetone over isolated Zr−OH sites supported on
+and that the hydroxyl H atom on Hf regenerates the Si−OH, silica.19 The rate expression for isobutene formation in that
+resulting in the formation of a carbocation intermediate. This case is given by (see the Supporting Information for a
+intermediate then undergoes C−C cleavage to produce derivation):
+isobutene and acetic acid with the simultaneous addition of a 2
+ KIKIIKIIIkIVPAcet.
+hydroxyl group that transfers from the Hf site to the carbonyl rIB = 2
+ (1 + KIPAcet. + KIKIIPAcet.) (1)
+carbon (Step IX). The acetic acid then either desorbs or
+undergoes ketonization to produce acetone and CO2. The In eq 1, rIB is the rate of isobutene formation per Hf site; KI,
+reaction mechanism envisioned for acetone conversion to KII, and KIII are the equilibrium constants for Step I, II, and III,
+isobutene over Hf/SiO2 is thought to be similar to that shown respectively; kIV is the rate coeﬃcient for Step IV; and PAcet. is
+in Scheme 2. However, for Hf/SiO2 (see Scheme S1), due to the partial pressure of acetone.
+the absence of H-bonding between Hf−OH and an adjacent Eq 1 was ﬁt to the measured rate data by nonlinear least-
+Si−OH group, the O atom of Hf−OH will be less basic and, squares regression. The quality of the ﬁt is very good as can be
+hence, will be less favorable for the enolization step (Step III). judged by the parity plot shown in Figure S11. For both
+This, in turn, will retard C−C formation and, hence, the rate of catalysts, the value of R2 is 0.98. To further test the validity of
+isobutene formation. In addition, the absence of H-bonding the rate expression of isobutene formation, we measured the
+between adjacent Hf−OH and Si−OH groups makes the H of rates of isobutene formation at acetone partial pressure of 3
+Si−OH over Hf/SiO2 less acidic, thereby retarding proto- and 5 kPa at 723 K, and the results are presented in Figure
+nation of the adsorbed MO carbon by comparison to what S12. As shown, the rates of isobutene formation estimated by
+occurs on Hf/Silicalite-1. eq 1 at these conditions deviated from experimental
+ Scheme 3 illustrates the proposed mechanism for ketoniza- observation by no more than 15% at 5 kPa for Hf/SiO2,
+tion of acetic acid over isolated Hf sites on Hf/Silicalite-1. This thereby further demonstrating the reliability of eq 1 and the
+scheme parallels that proposed for the ketonization of ﬁtted parameters.
+propanoic acid on isolated Zr−OH sites supported on The ﬁtted rate parameters for Hf/SiO2 are given in Table 1.
+silica.19 The reaction begins with the adsorption of two acetic The estimated enthalpies for adsorption of the ﬁrst and second
+acid molecules through a Lewis acid−base interaction between
+the nucleophilic carbonyl oxygen of acetic acid and the Table 1. Rate Parameters for Isobutene Formation over Hf/
+electrophilic Hf, as presented in Steps I and II. Polarization of SiO2
+the carbonyl groups makes the α-H of an adsorbed acetic acid KI, KII, KIIIkIV, mol mol
+more acidic and, therefore, the basic hydroxyl oxygen in Hf− rate parameters kPa−1 kPa−1 Hf−1 h−1
+OH can abstract the α-H and form an adsorbed enolized T, K 673 0.1936 0.0931 38
+carboxylic acid and adsorbed H2O (Step III). Subsequent 698 0.1522 0.0778 76
+nucleophilic attack by the α-C of the enolate on to the 723 0.1262 0.0684 158
+electrophilic carbonyl carbon of the second adsorbed acetic entry ﬁrst acetone molecule −34.7
+acid leads to the formation of a carbocation intermediate, ΔHads, kJ/mol
+which contains a new C−C bond (Step IV). The next step is second acetone molecule −25.0
+ ΔHads, kJ/mol
+the abstraction of a proton from the water bounded to Hf sites
+ intrinsic Ea, kJ/mol 116.3
+to the hydroxyl group of this intermediate, followed by
+dehydration to produce an adsorbed β-keto acid (Step V).
+Subsequently, in Step VI, deprotonation and C−C bond molecules of acetone (ΔHads) are −34.7 and −25 kJ/mol,
+cleavage of the β-keto acid intermediate leads to decarbox- respectively. These values are lower than those calculated for
+ylation and formation of an enolized ketone species. After the Zr/SiO2 containing isolated Zr sites, for which the adsorption
+desorption of CO2, the proton abstracted from the β-keto acid enthalpies for the ﬁrst and second molecules of acetone are
+intermediate is transferred to the negatively charged enolized −80 and −75 kJ/mol, respectively.19 The lower adsorption
+ketone carbon, producing adsorbed acetone (Step VIII). enthalpies for Hf compared to Zr is attributed to the lower
+Finally, the desorption of acetone closes the reaction cycle. Lewis acidity of Hf. Consistent with this reasoning, we note
+Ketonization of acetic acid over Hf/SiO2 is envisioned to occur that apparent order in acetone partial pressure is close to zero
+ 8363 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society
+
+ ■
+ pubs.acs.org/JACS Article
+
+for Zr/SiO219 but nearly second order for Hf/SiO2, as reported ASSOCIATED CONTENT
+here. The eﬀective activation energy under conditions of zero
+order dependence on acetone partial pressure on isolated Hf
+ * Supporting Information
+ sı
+
+sites of Hf/SiO2, calculated for KIIIkIV, is 116.3 kJ/mol. The Supporting Information is available free of charge at
+ The ﬁtted rate parameters for isobutene formation over Hf/ https://pubs.acs.org/doi/10.1021/jacs.1c01315.
+Silicalite-1 are presented in Table 2. The enthalpy of acetone
+ Supplemental catalyst characterization (XRD patterns,
+ BET, ICP, SEM, pyridine adsorbed FTIR, 1H NMR)
+Table 2. Rate Parameters for Isobutene Formation over Hf/
+ (Figures S1−S6, Table S1−S5); theoretical deduction of
+Silicalite-1
+ the structure of isolated Hf sites based on 1H NMR;
+ KI, KII, KIIIkIV, mol mol supplemental reaction results (Figures S7, S10); gas-
+ rate constants kPa−1 kPa−1 Hf−1 h−1 phase Gibbs free energy and enthalpy of formation
+ 673 0.547 0.386 70 (Figure S8 and S9); reaction mechanisms of acetone
+ T, K 698 0.421 0.311 118 aldol condensation and acetic acid ketonization on Hf/
+ 723 0.3241 0.2662 187 SiO 2 (Schemes S1 and S2), derivation of rate
+ entry ﬁrst acetone molecule −42.3 expressions, and parity plots comparing the rates of
+ ΔHads, kJ/mol isobutene formation obtained experimentally and
+ second acetone molecule −30.1 estimated from eq 1 (Figures S11 and S12) (PDF)
+ ΔHads, kJ/mol
+
+ ■
+ intrinsic Ea, kJ/mol 79.5
+
+ AUTHOR INFORMATION
+adsorption on Hf/Silicalite-1 is higher than that for Hf/SiO2 Corresponding Author
+due to the stronger acidity of Hf sites of Hf/Silicalite-1, Alexis T. Bell − Chemical Sciences Division, Lawrence Berkeley
+consistent with the conclusion drawn from IR spectra of National Laboratory, Berkeley, California 94720, United
+adsorbed pyridine. The eﬀective activation energy, calculated States; Department of Chemical and Biomolecular
+for KIIIkIV, is 79.5 kJ/mol, which is much lower than that Engineering, University of California, Berkeley, Berkeley,
+obtained for Hf/SiO2 (116.3 kJ/mol). This diﬀerence is California 94720, United States; orcid.org/0000-0002-
+attributed to H-bonding interaction between Hf−OH and 5738-4645; Email: alexbell@berkeley.edu
+adjacent Si−OH on Hf/Silicalite-1, which strengthens the
+nucleophilic oxygen atom of Hf−OH, consequently facilitates Authors
+α-H abstraction from adsorbed acetone, and enhances the Yanfei Zhang − Chemical Sciences Division, Lawrence Berkeley
+aldol condensation of acetone. National Laboratory, Berkeley, California 94720, United
+ States; Department of Chemical and Biomolecular
+4. CONCLUSIONS Engineering, University of California, Berkeley, Berkeley,
+Hf was grafted onto SiO2 and Silicalite-1. Characterization by California 94720, United States
+IR spectroscopy, 1H MAS NMR, and UV−vis spectroscopy Liang Qi − Chemical Sciences Division, Lawrence Berkeley
+indicates that for surface concentration below 0.28 Hf atoms National Laboratory, Berkeley, California 94720, United
+nm−2 for Hf/Silicalite-1 and 0.21 Hf atoms nm−2 for Hf/SiO2, States; Department of Chemical and Biomolecular
+Hf is present as isolated sites bonded to the support as (Si− Engineering, University of California, Berkeley, Berkeley,
+O)3−Hf−OH groups. In the case of Hf/Silicalite-1, the Hf− California 94720, United States
+OH groups H-bond with adjacent Si−OH groups ((Si− Alicia Lund − Chemical Sciences Division, Lawrence Berkeley
+O)3−Hf−OH···HO−Si  ). Both Hf/SiO2 and Hf/Silicalite-1 National Laboratory, Berkeley, California 94720, United
+are active for the conversion of acetone to isobutene. Despite States; Department of Chemical and Biomolecular
+the similarity in chemical structure, the active sites on Hf/ Engineering, University of California, Berkeley, Berkeley,
+Silicalite-1 exhibit a TOF for isobutene formation at 723 K that California 94720, United States
+is 4.5 times that on Hf/SiO2. This diﬀerence is attributed to H- Peng Lu − Department of Chemical and Biomolecular
+bonding interaction between Hf−OH and adjacent Si−OH on Engineering & Institute for NanoBioTechnology, Johns
+Hf/Silicalite-1. Isolated Lewis acidic Hf sites are responsible Hopkins University, Baltimore, Maryland 21218, United
+for the acetone aldol condensation step to form mesityl oxide States
+(MO), which is observed by in situ IR spectra. Studies of the Complete contact information is available at:
+reactions of potential intermediates (DAA and MO) suggest https://pubs.acs.org/10.1021/jacs.1c01315
+that isobutene formation occurs via the hydrolysis of MO,
+catalyzed by Hf sites. Hf−OH groups H-bonded with Si−OH Notes
+groups on Hf/Silicalite-1 exhibits moderate Brønsted acidity The authors declare no competing ﬁnancial interest.
+
+ ■
+and are much more eﬀective for C−C cleavage of MO. During
+this process, one equivalent of acetic acid is generated per
+equivalent of isobutene, and the acetic acid is then rapidly ACKNOWLEDGMENTS
+converted back to acetone via ketonization on the Lewis acidic This work was supported by the Oﬃce of Science, Oﬃce of
+Hf sites. The rate of isobutene formation exhibits close to Basic Energy Sciences of the U.S. Department of Energy under
+second order kinetics both on Hf/SiO2 and Hf/Silicalite-1 for
+the range of acetone partial pressure explored, suggesting that Contract DE-AC02-05CH11231. L. Qi also acknowledges
+the rate-limiting step involves C−C bond formation between support from the Dalian Institute of Chemical Physics, Chinese
+two acetone molecules. Academy of Sciences, People’s Republic of China.
+ 8364 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society
+
+■
+ pubs.acs.org/JACS Article
+
+ REFERENCES Species Characterized with Pair Distribution Function Analysis. Phys.
+ Chem. Chem. Phys. 2018, 20, 7914−7919.
+ (1) Marchionna, M.; Di Girolamo, M.; Patrini, R. Light Olefins
+ (21) De Baerdemaeker, T.; Feyen, M.; Müller, U.; Yilmaz, B.; Xiao,
+Dimerization to High Quality Gasoline Components. Catal. Today
+ F.-S.; Zhang, W.; Yokoi, T.; Bao, X.; Gies, H.; De Vos, D. E.
+2001, 65, 397−403.
+ (2) Collignon, F.; Mariani, M.; Moreno, S.; Remy, M.; Poncelet, G. Bimetallic Zn and Hf on Silica Catalysts for the Conversion of
+Gas Phase Synthesis of MTBE from Methanol and Isobutene over Ethanol to 1,3-Butadiene. ACS Catal. 2015, 5, 3393−3397.
+Dealuminated Zeolites. J. Catal. 1997, 166, 53−66. (22) Wang, C.; Zheng, M.; Li, X.; Li, X.; Zhang, T. Catalytic
+ (3) Ancillotti, F.; Fattore, V. Oxygenate Fuels: Market Expansion Conversion of Ethanol into Butadiene over High Performance
+and Catalytic Aspect of Synthesis. Fuel Process. Technol. 1998, 57, LiZnHf-MFI Zeolite Nanosheets. Green Chem. 2019, 21, 1006−1010.
+163−194. (23) Zhu, Q.; Yin, L.; Ji, K.; Li, C.; Wang, B.; Tan, T. Effect of
+ (4) Mascal, M. Chemicals from Biobutanol: Technologies and Catalyst Structure and Acid−Base Property on the Multiproduct
+Markets. Biofuels, Bioprod. Biorefin. 2012, 6, 483−493. Upgrade of Ethanol and Acetaldehyde to C4 (Butadiene and Butanol)
+ (5) Rorrer, J. E.; Toste, F. D.; Bell, A. T. Mechanism and Kinetics of over the Y−SiO2 Catalysts. ACS Sustainable Chem. Eng. 2020, 8,
+Isobutene Formation from Ethanol and Acetone over ZnxZryOz. ACS 1555−1565.
+Catal. 2019, 9, 10588−10604. (24) Zhang, X.; Liu, D.; Xu, D.; Asahina, S.; Cychosz, K. A.;
+ (6) Bender, M. An Overview of Industrial Processes for the Agrawal, K. V.; Al Wahedi, Y.; Bhan, A.; Al Hashimi, S.; Terasaki, O.
+Production of Olefins−C4 Hydrocarbons. ChemBioEng Rev. 2014, 1, Synthesis of Self-Pillared Zeolite Nanosheets by Repetitive Branching.
+136−147. Science 2012, 336, 1684−1687.
+ (7) Fernández-Morales, J. M.; Castillejos, E.; Asedegbega-Nieto, E.; (25) Guefrachi, Y.; Sharma, G.; Xu, D.; Kumar, G.; Vinter, K. P.;
+Dongil, A. B.; Rodríguez-Ramos, I.; Guerrero-Ruiz, A. Comparative Abdelrahman, O. A.; Li, X.; Alhassan, S.; Dauenhauer, P. J.;
+Study of Different Acidic Surface Structures in Solid Catalysts Applied Navrotsky, A.; Zhang, W.; Tsapatsis, M. Steam-Induced Coarsening
+for the Isobutene Dimerization Reaction. Nanomaterials 2020, 10, of Single-Unit-Cell MFI Zeolite Nanosheets and Its Effect on External
+1235. Surface Bronsted Acid Catalysis. Angew. Chem., Int. Ed. 2020, 59,
+ (8) Mortensen, P. M.; Grunwaldt, J.-D.; Jensen, P. A.; Knudsen, K.; 9579−9585.
+Jensen, A. D. A Review of Catalytic Upgrading of Bio-Oil to Engine (26) Cory, D.; Ritchey, W. Suppression of Signals from the Probe in
+Fuels. Appl. Catal., A 2011, 407, 1−19. Bloch Decay Spectra. J. Magn. Reson. (1969-1992) 1988, 80, 128−
+ (9) Sun, J.; Zhu, K.; Gao, F.; Wang, C.; Liu, J.; Peden, C. H.; Wang,
+ 132.
+Y. Direct Conversion of Bio-Ethanol to Isobutene on Nanosized
+ (27) Massiot, D.; Fayon, F.; Capron, M.; King, I.; Le Calvé, S.;
+ZnxZryOz Mixed Oxides with Balanced Acid−Base Sites. J. Am.
+ Alonso, B.; Durand, J. O.; Bujoli, B.; Gan, Z.; Hoatson, G. Modelling
+Chem. Soc. 2011, 133, 11096−11099.
+ (10) Hirota, Y.; Nakano, Y.; Watanabe, K.; Uchida, Y.; Miyamoto, One- and Two-Dimensional Solid-State NMR Spectra. Magn. Reson.
+M.; Egashira, Y.; Nishiyama, N. Effect of Crystal Size on Acetone Chem. 2002, 40, 70−76.
+Conversion over SAPO-34 Crystals. Catal. Lett. 2012, 142, 464−468. (28) Heitmann, G.; Dahlhoff, G.; Hölderich, W. Catalytically Active
+ (11) Ponomareva, O. A.; Mal’tseva, A. A.; Maerle, A. A.; Rodionova, Sites for the Beckmann Rearrangement of Cyclohexanone Oxime to
+L. I.; Pavlov, V. S.; Dobryakova, I. V.; Belova, M. V.; Ivanova, I. I. ε-Caprolactam. J. Catal. 1999, 186, 12−19.
+Production of Isobutylene from Acetone over Micro−Mesoporous (29) Lanzafame, P.; Barbera, K.; Perathoner, S.; Centi, G.; Aloise, A.;
+Catalysts. Pet. Chem. 2016, 56, 253−258. Migliori, M.; Macario, A.; Nagy, J. B.; Giordano, G. The Role of Acid
+ (12) Herrmann, S.; Iglesia, E. Selective Conversion of Acetone to Sites Induced by Defects in the Etherification of HMF on Silicalite-1
+Isobutene and Acetic Acid on Aluminosilicates: Kinetic Coupling Catalysts. J. Catal. 2015, 330, 558−568.
+between Acid-Catalyzed and Radical-Mediated Pathways. J. Catal. (30) Qi, L.; Zhang, Y.; Conrad, M. A.; Russell, C.; Miller, J. T.; Bell,
+2018, 360, 66−80. A. T. Ethanol Conversion to Butadiene over Isolated Zinc and
+ (13) Hutchings, G. J.; Johnston, P.; Lee, D. F.; Williams, C. D. Yttrium Sites Grafted onto Dealuminated Beta Zeolite. J. Am. Chem.
+Acetone Conversion to Isobutene in High Selectivity Using Zeolite β Soc. 2020, 142, 14674−14687.
+Catalyst. Catal. Lett. 1993, 21, 49−53. (31) Sushkevich, V. L.; Ivanova, I. I.; Tolborg, S.; Taarning, E.
+ (14) Kyriienko, P. I.; Larina, O. V.; Soloviev, S. O.; Orlyk, S. M.; Meerwein−Ponndorf−Verley−Oppenauer Reaction of Crotonalde-
+Calers, C.; Dzwigaj, S. Ethanol Conversion into 1,3-Butadiene by the hyde with Ethanol over Zr-Containing Catalysts. J. Catal. 2014, 316,
+Lebedev Method over MTaSiBEA Zeolites (M = Ag, Cu, Zn). ACS 121−129.
+Sustainable Chem. Eng. 2017, 5, 2075−2083. (32) Phadke, N. M.; Van der Mynsbrugge, J.; Mansoor, E.; Getsoian,
+ (15) Yan, T.; Yang, L.; Dai, W.; Wu, G.; Guan, N.; Hunger, M.; Li, A. B.; Head-Gordon, M.; Bell, A. T. Characterization of Isolated Ga3+
+L. Cascade Conversion of Acetic Acid to Isobutene over Yttrium- Cations in Ga/H-MFI Prepared by Vapor-Phase Exchange of H-MFI
+Modified Siliceous Beta Zeolites. ACS Catal. 2019, 9, 9726−9738. Zeolite with GaCl3. ACS Catal. 2018, 8, 6106−6126.
+ (16) Okumura, K.; Iwasawa, Y. Zirconium Oxides Dispersed on (33) Jung, K. T.; Bell, A. T. An in Situ Infrared Study of Dimethyl
+Silica Derived from Cp2ZrCl2, [(i-PrCp)2ZrH(μ-H)]2, and Zr(OEt)4 Carbonate Synthesis from Carbon Dioxide and Methanol over
+Characterized by X-Ray Absorption Fine Structure and Catalytic
+ Zirconia. J. Catal. 2001, 204, 339−347.
+Ketonization of Acetic Acid. J. Catal. 1996, 164, 440−448.
+ (34) Sushkevich, V. L.; Vimont, A.; Travert, A.; Ivanova, I. I.
+ (17) Hanna, D. G.; Shylesh, S.; Li, Y.-P.; Krishna, S.; Head-Gordon,
+ Spectroscopic Evidence for Open and Closed Lewis Acid Sites in
+M.; Bell, A. T. Experimental and Theoretical Study of n-Butanal Self-
+Condensation over Ti Species Supported on Silica. ACS Catal. 2014, ZrBEA Zeolites. J. Phys. Chem. C 2015, 119, 17633−17639.
+4, 2908−2916. (35) Boronat, M.; Concepción, P.; Corma, A.; Renz, M.; Valencia, S.
+ (18) Lewis, J. D.; Van de Vyver, S.; Roman-Leshkov, Y. Acid-Base Determination of the Catalytically Active Oxidation Lewis Acid Sites
+Pairs in Lewis Acidic Zeolites Promote Direct Aldol Reactions by Soft in Sn-beta Zeolites, and Their Optimisation by the Combination of
+Enolization. Angew. Chem., Int. Ed. 2015, 54, 9835−9838. Theoretical and Experimental Studies. J. Catal. 2005, 234, 111−118.
+ (19) Shylesh, S.; Bettinson, L. A.; Aljahri, A.; Head-Gordon, M.; (36) Sushkevich, V. L.; Palagin, D.; Ivanova, I. I. With Open Arms:
+Bell, A. T. Experimental and Computational Studies of Carbon− Open Sites of ZrBEA Zeolite Facilitate Selective Synthesis of
+Carbon Bond Formation via Ketonization and Aldol Condensation Butadiene from Ethanol. ACS Catal. 2015, 5, 4833−4836.
+over Site-Isolated Zirconium Catalysts. ACS Catal. 2020, 10, 4566− (37) Tang, B.; Dai, W.; Wu, G.; Guan, N.; Li, L.; Hunger, M.
+4579. Improved Postsynthesis Strategy to Sn-Beta Zeolites as Lewis Acid
+ (20) Iida, T.; Ohara, K.; Roman-Leshkov, Y.; Wakihara, T. Zeolites Catalysts for the Ring-opening Hydration of Epoxides. ACS Catal.
+with Isolated-framework and Oligomeric-extraframework Hafnium 2014, 4, 2801−2810.
+
+ 8365 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366
+Journal of the American Chemical Society pubs.acs.org/JACS Article
+
+ (38) Osmundsen, C. M.; Holm, M. S.; Dahl, S.; Taarning, E. Tin- (55) Vargas, M.; Murphy, N.; Ramana, C. Structure and Optical
+Containing Silicates: Structure−Activity Relations. Proc. R. Soc. Properties of Nanocrystalline Hafnium Oxide Thin Films. Opt. Mater.
+London, Ser. A 2012, 468, 2000−2016. 2014, 37, 621−628.
+ (39) Sushkevich, V. L.; Ivanova, I. I.; Yakimov, A. V. Revisiting (56) Chen, S.-Y.; Lee, J.-F.; Cheng, S. Pinacol-Type Rearrangement
+Acidity of SnBEA Catalysts by Combined Application of FTIR Catalyzed by Zr-Incorporated SBA-15. J. Catal. 2010, 270, 196−205.
+Spectroscopy of Different Probe Molecules. J. Phys. Chem. C 2017, (57) Morey, M. S.; Stucky, G. D.; Schwarz, S.; Froba, M. Isomorphic
+121, 11437−11447. Substitution and Postsynthesis Incorporation of Zirconium into
+ (40) Li, Z.; Rieg, C.; Beurer, A.-K.; Benz, M.; Bender, J.; Schneck, MCM-48 Mesoporous Silica. J. Phys. Chem. B 1999, 103, 2037−2041.
+C.; Traa, Y.; Dyballa, M.; Hunger, M. Effect of Aluminum and (58) Li, H.; Sun, J.; Wang, Y. Surface Acetone Reactions on
+Sodium on the Sorption of Water and Methanol in Microporous MFI- ZnxZryOz: A DRIFTS-MS Study. Appl. Catal., A 2019, 573, 22−31.
+Type Zeolites and Mesoporous SBA-15 Materials. Adsorption 2021, (59) Ho, C. R.; Zheng, S.; Shylesh, S.; Bell, A. T. The Mechanism
+ and Kinetics of Methyl Isobutyl Ketone Synthesis from Acetone over
+27, 49−68.
+ Ion-Exchanged Hydroxyapatite. J. Catal. 2018, 365, 174−183.
+ (41) Jiang, Y.; Huang, J.; Dai, W.; Hunger, M. Solid-State Nuclear
+ (60) McAllister, S.; Bailey Jr, W. A.; Bouton, C. The Catalyzed
+Magnetic Resonance Investigations of the Nature, Property, and
+ Cleavage of Diacetone Alcohol and Other Ketols and Unsaturated
+Activity of Acid Sites on Solid Catalysts. Solid State Nucl. Magn. Reson. Ketones. J. Am. Chem. Soc. 1940, 62, 3210−3215.
+2011, 39, 116−141. (61) Crisci, A. J.; Dou, H.; Prasomsri, T.; Román-Leshkov, Y.
+ (42) Omegna, A.; Vasic, M.; Anton van Bokhoven, J.; Pirngruber, Cascade Reactions for the Continuous and Selective Production of
+G.; Prins, R. Dealumination and Realumination of Microcrystalline Isobutene from Bioderived Acetic Acid Over Zinc-Zirconia Catalysts.
+Zeolite Beta: an XRD, FTIR and Quantitative Multinuclear (MQ) ACS Catal. 2014, 4, 4196−4200.
+MAS NMR Study. Phys. Chem. Chem. Phys. 2004, 6, 447−452. (62) Panov, A.; Fripiat, J. Acetone Condensation Reaction on Acid
+ (43) Grünberg, B.; Emmler, T.; Gedat, E.; Shenderovich, I.; Catalysts. J. Catal. 1998, 178, 188−197.
+Findenegg, G. H.; Limbach, H. H.; Buntkowsky, G. Hydrogen (63) Li, H.; Sun, J.; Li, G.; Wu, D.; Wang, Y. Real-time Monitoring
+Bonding of Water Confined in Mesoporous Silica MCM-41 and SBA- of Surface Acetone Enolization and Aldolization. Catal. Sci. Technol.
+15 Studied by 1H Solid-State NMR. Chem. - Eur. J. 2004, 10, 5689− 2020, 10 (4), 935−939.
+5696.
+ (44) Fleischer, U.; Kutzelnigg, W.; Bleiber, A.; Sauer, J. Proton NMR
+Chemical Shift and Intrinsic Acidity of Hydroxyl Groups. Ab Initio
+Calculations on Catalytically Active Sites and Gas-Phase Molecules. J.
+Am. Chem. Soc. 1993, 115, 7833−7838.
+ (45) Hunger, M.; Ernst, S.; Steuernagel, S.; Weitkamp, J. High-Field
+1
+ H MAS NMR Investigations of Acidic and Non-Acidic Hydroxyl
+Groups in Zeolites H-Beta, H-ZSM-5, H-ZSM-58 and H-MCM-22.
+Microporous Mater. 1996, 6, 349−353.
+ (46) Nesterenko, N.; Thibault-Starzyk, F.; Montouillout, V.;
+Yuschenko, V.; Fernandez, C.; Gilson, J.-P.; Fajula, F.; Ivanova, I.
+Accessibility of the Acid Sites in Dealuminated Small-Port Mordenites
+Studied by FTIR of co-Adsorbed Alkylpyridines and CO. Microporous
+Mesoporous Mater. 2004, 71, 157−166.
+ (47) Long, J. W.; Chervin, C. N.; Balow, R. B.; Jeon, S.; Miller, J. B.;
+Helms, M. E.; Owrutsky, J. C.; Rolison, D. R.; Fears, K. P. Zirconia-
+Based Aerogels for Sorption and Degradation of Dimethyl
+Methylphosphonate. Ind. Eng. Chem. Res. 2020, 59, 19584−19592.
+ (48) Tang, B.; Dai, W.; Sun, X.; Wu, G.; Guan, N.; Hunger, M.; Li,
+L. Mesoporous Zr-Beta Zeolites Prepared by A Post-Synthetic
+Strategy As A Robust Lewis Acid Catalyst for the Ring-Opening
+Aminolysis of Epoxides. Green Chem. 2015, 17, 1744−1755.
+ (49) Mogilevsky, G.; Karwacki, C. J.; Peterson, G. W.; Wagner, G.
+W. Surface Hydroxyl Concentration on Zr(OH)4 Quantified by 1H
+MAS NMR. Chem. Phys. Lett. 2011, 511, 384−388.
+ (50) Hadjiivanov, K. Identification and Characterization of Surface
+Hydroxyl Groups by Infrared Spectroscopy. Adv. Catal. 2014, 57, 99−
+318.
+ (51) Datka, J; Kawałek, M; Gora-Marek, K Acid Properties of
+NaKH-ferrierites of Various Exchange Degrees Studied by IR
+Spectroscopy. Appl. Catal., A 2003, 243 (2), 293−299.
+ (52) Rahman, I. A.; Padavettan, V. Synthesis of Silica Nanoparticles
+by Sol-Gel: Size-Dependent Properties, Surface Modification, and
+Applications in Silica-Polymer NanocompositesA Review. J.
+Nanomater. 2012, 132424, 1−15.
+ (53) Qasim, M.; Ananthaiah, J.; Dhara, S.; Paik, P.; Das, D. Synthesis
+and Characterization of Ultra-Fine Colloidal Silica Nanoparticles. Adv.
+Sci., Eng. Med. 2014, 6, 965−973.
+ (54) Gianotti, E.; Raimondi, M. E.; Marchese, L.; Martra, G.;
+Maschmeyer, T.; Seddon, J. M.; Coluccia, S. A Spectroscopic Sudy of
+Group IV Transition-Metal-Incorporated Direct Templated Meso-
+porous Catalysts. Part 2. A Comparison of Ti-, Zr- and Hf-Containing
+Materials. Catal. Lett. 2001, 76, 21−26.
+
+ 8366 https://doi.org/10.1021/jacs.1c01315
+ J. Am. Chem. Soc. 2021, 143, 8352−8366

@@ -1,0 +1,626 @@
+Article
+
+ pubs.acs.org/JPCA
+
+ Conformational Landscape and Torsion−Rotation−Vibration Eﬀects
+ in the Two Conformers of Methyl Vinyl Ketone, a Major Oxidation
+ Product of Isoprene
+ Olena Zakharenko, Roman A. Motiyenko, Juan Ramon Aviles Moreno, and Thérèse R. Huet*
+ Université de Lille, CNRS, UMR 8523PhLAMPhysique des Lasers Atomes et Molécules, F-59000 Lille, France
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Methyl vinyl ketone is the second major oxidation product of isoprene,
+ and as such an important volatile organic compound present in the troposphere. In the
+ present study, quantum chemical calculations coupled to high-resolution millimeter-
+ wave spectroscopy have been performed to characterize the ground and ﬁrst excited
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 05:41:35 (UTC).
+
+ vibrational states of the two stable conformers. Equilibrium structures, internal rotation
+ barriers, and relative energies have been calculated at the MP2 and M062X levels of
+ theory. Experimental molecular parameters have been obtained that model the
+ rotational and torsional structures, including splitting patterns due to the internal
+ rotation of the methyl group. For the most stable antiperiplanar (s-trans) conformer,
+ the set of parameters obtained for the ground state should be useful to further model
+ IR spectra up to room temperature. By combining theoretical and experimental data,
+ we obtained a relative energy value of 164 ± 30 cm−1 in the gas phase between the
+ more stable antiperiplanar and the less stable synperiplanar conformers. Moreover, we
+ compared our system with related molecules for the variation in the barriers of methyl
+ rotors in diﬀerent molecular environments. In addition, the inverse sequence of A and E tunneling substates for the rotational
+ lines of the ﬁrst excited skeletal torsional state and Coriolis-type coupling with methyl torsion have been observed. For the less
+ stable synperiplanar (cis) conformer, molecular parameters for the ground and ﬁrst excited torsional states as well as of the ﬁrst
+ excited skeletal torsional state are presented.
+
+ ■ INTRODUCTION
+ The emissions of volatile organic compounds (VOCs) from
+ The atmospheric oxidation of isoprene and its oxidation
+ products MVK and MAC contribute signiﬁcantly to the
+ anthropogenic and biogenic sources make contributions to air formation of tropospheric ozone (O3) and secondary organic
+ pollution, and thereby have attracted a lot of attention in recent aerosols (SOAs).8,9 These air pollutants can have a profound
+ years. Indeed, the sources of atmospheric VOCs include non- eﬀect on the radiation balance of the earth and human health.
+ methane biogenic emissions from terrestrial ecosystems and the However, SOA eﬀects on climate have not yet been fully
+ ocean (1150 Tg of C/yr) and anthropogenic emissions (142 studied, and we need a better understanding of their sources,
+ Tg of C/yr).1 Methyl vinyl ketone (MVK, butenone, CH3 chemical formation, and physical and chemical characteristics.10
+ C(O)CHCH 2 ), like methacrolein (MAC, H 2 CC- From a physicochemical point of view, an important eﬀort has
+ (CHO)CH3), is a major oxidation product of the important been produced to report on the ﬁrst-generation product yields
+ biogenic volatile organic compound isoprene.2 MVK and MAC from the OH-initiated oxidation of MVK under both low and
+ can also originate from the primary emissions produced from high NO conditions, by combining laboratory experiments and
+ fuel evaporation and combustion in urban areas.3 These species quantum chemistry calculations.11 It is also important to study
+ remaining in the gas phase have short lifetimes and are highly the spectroscopic properties of MVK because they provide an
+ active in atmospheric chemical reactions. Measurements of the unambiguous laboratory tool, especially when more than one
+ ratio of isoprene and its oxidation products, such as MVK/ conformer is energetically relevant. For this purpose, we
+ MAC and [MVK + MAC]/isoprene, were used in many studies recently studied methacrolein in the gas phase.12 As the second
+ to investigate the magnitude and location of sources of isoprene major oxidation product of isoprene, we believe that methyl
+ and its photochemical transformations.4,5 Isoprene is removed vinyl ketone deserves the same interest.
+ from the atmosphere primarily by reaction with OH radicals MVK (CH3COCHCH2) exists as a mixture of two stable
+ during the day and with O3 and NO3 radicals during the conformations with respect to the CC single bond,
+ night.5,6 In areas where isoprene is coming from biogenic antiperiplanar (ap; the two double bonds are trans to each
+ emissions, the oxidation chemistry is destroying isoprene and is
+ producing and destroying MAC and MVK during the day.5 Received: June 28, 2017
+ Tropospheric lifetimes are estimated at 1.7 h for isoprene and Revised: August 8, 2017
+ 8.6 and 6.1 h for MVK and MAC, respectively.7 Published: August 8, 2017
+
+ © 2017 American Chemical Society 6420 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+other) and synperiplanar (sp; the two double bonds are cis to prepared and completed by quantum chemical calculations.
+each other). All atoms are in a plane except for two hydrogens The structure of the two conformers, their relative energy, and
+of the methyl group. The gas-phase spectrum of MVK was the large amplitude motion associated with the methyl top were
+characterized for the ﬁrst time in 1965 by Foster et al. in the characterized, using the ab initio method and density functional
+microwave frequency range (7−33 GHz).13 In this work, Curl theory (DFT). At the end, we do present an accurate and
+and his colleagues identiﬁed the most stable ap conformer coherent set of molecular parameters characterizing the gas-
+(previously called s-trans). The analysis of A−E splittings from phase energy structure of this molecule in its ground and ﬁrst
+the ground state allowed the determination of the value of the excited states, for the two stable conformers.
+barrier to internal rotation of the methyl group as 437(7) cm−1.
+In 1987, the microwave spectrum was measured in the
+frequency range of 26.4−40 GHz by Fantoni et al.,14 evidencing
+ ■ QUANTUM CHEMICAL CALCULATION RESULTS
+ All the calculations were performed using the Gaussian 09
+the two ﬁrst excited states, i.e., the skeletal torsion (νap
+ 27) and the (G09), revision D.01, software package.22 The most stable
+methyl torsion (νap 26) normal modes. For the treatment of geometries, relative energies, and rotation barriers of the methyl
+rovibrational interaction between the two torsions, in ref 14, a group were evaluated. We retained the DFT (M06-2X)23 and
+Hamiltonian based on ﬂexible models was developed. It was the Møller−Plesset second-order theory (MP2)24 with diﬀerent
+shown that satisfactory description of the interaction may be Pople and Dunning basis sets.25
+achieved using the Hamiltonian that contains both kinetic and First, a relaxed potential energy surface (PES) scan (the
+potential energy terms.14 In ref 14, the value of the barrier to geometry is optimized in each point of the scan) of methyl
+internal rotation of the methyl group was determined to be vinyl ketone was performed to characterize the two possible
+slightly smaller, 424.6(2) cm−1. This diﬀerence in barrier conformers. It was carried out at the MP2/6-311++G(2d,2p)
+heights can be explained by diﬀerent methods used in refs 13 level of theory along the O7−C6−C4−C1 dihedral angle (see
+and 14. More recently, the rotational spectrum (7.5−18.5 Figure 1), from 0° to 360° with a step of 5°.
+GHz) of MVK was reinvestigated, using a Fourier transform
+microwave spectrometer coupled to a molecular beam, by
+Wilcox et al.15 The high-resolution spectrum of the sp
+conformer was identiﬁed for the ﬁrst time, in the ground
+state. The values of the barrier to internal rotation of the methyl
+group were determined to be 433.8(1) and 376.6(2) cm−1 for
+the ap and sp conformers, respectively. The components of the
+permanent dipole moment were also calculated (μa = −3.13 D
+and μb = −2.35 D for the ap conformer and μa = 0.66 D and μb
+= 3.19 D for the sp conformer). However, the presence of a
+second stable MVK sp conformer (previously called s-cis) was
+ﬁrst observed by infrared and NMR spectral analysis of the
+vapor, liquid, and solid states.16−18 According to the measure-
+ments of the enthalpies, the ap conformer is more stable. The
+enthalpy diﬀerence between the two conformers for the vapor
+phase was measured by Bowles et al. (198 ± 18 cm−1) and by
+Durig and Little (280 cm−1).18,16 It should be noted that the Figure 1. Relaxed potential energy surface scan of methyl vinyl ketone
+last value was obtained from an eﬀective model, by adjusting at the MP2/6-311++G(2d,2p) level of theory along the O7−C6−C4−
+the experimental data by a torsional potential as a Fourier C1 dihedral angle. The two stable antiperiplanar (ap) and
+cosine series in the internal rotation angle. synperiplanar (sp) conformers are displayed with the a and b principal
+ axes.
+ The geometries and energies of the two MVK conformers
+were also determined by quantum chemical calculations.15,19−21
+The energy diﬀerence between both conformers varies a lot According to the scan results, the sp conformation is less
+depending on the chosen method. The calculations by diﬀerent stable than the ap conformation, with an equilibrium relative
+quantum chemistry methods (B3LYP, MP2, QCISD, CCSD- energy of 229 cm−1. After vibrational zero-point energy (ZPE)
+(T), CASSCF, and others) carried out by Bokareva et al. corrections (harmonic level), the ground states of the two
+illustrate this point.21 The geometrical parameters, the relative conformers are found to be separated by 170 cm−1. In addition,
+energy of the two conformers (−110 to +183 cm−1), and the the Gaussian 0326 (G3) and Gaussian 0427 (G4) methodologies
+barriers to internal rotation (387−461 and 300−356 cm−1 for were applied to obtain more accurate energies. Indeed, the
+the ap and sp conformers, respectively) were obtained. calculated equilibrium energy is corrected in terms of the zero
+ The goal of the present study is to provide a set of accurate point, electronic correlation, and basis size distribution, making
+spectroscopic parameters for the ground state of both these methodologies methods of choice to obtain accurate
+conformers, to permit the future analysis of high-resolution relative energies. As a result, we obtained relative energies
+infrared spectra in the atmospheric window, namely, by using between the higher in energy sp conformer and the lower in
+the combination diﬀerence technique, which allows unambig- energy ap conformer of 167.2 cm−1 (G3), 133.7 cm−1 (G4),
+uous assignments. To this end, an overview of the energy levels and 183.9 cm−1 (MP2/aug-cc-pVTZ). The value calculated at
+populated at room temperature is needed. Therefore, we have the M062X/6-311++G(2df,p) level of theory is 125 cm−1. Our
+recorded the millimeter-wave and terahertz spectra of MVK calculated values clearly indicate that the ap conformer is the
+and performed their analysis with a model taking into account most stable. Moreover, a new experimental relative energy value
+the torsion−rotation eﬀects. All the microwave data from the of 164 ± 30 cm−1 between the ground states was obtained in
+literature were included in our global analysis. The study was the present work (see the next section) to assess the present
+ 6421 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+Figure 2. Equilibrium geometries calculated at the MP2/aug-cc-pVQZ level of theory for the ap and sp conformers of methyl vinyl ketone. Some
+structural parameters are shown (distances in angstroms and angles in degrees).
+
+Table 1. Experimental and Calculated Internal Rotation Barriers (V3 and V6 Terms), Rotational Constants, and Dipole Moment
+Components in the Principal Axis System for the ap and sp Conformers of Methyl Vinyl Ketone at Diﬀerent Levels of Theory
+(DFT and ab Initio)
+ ap-MVK sp-MVK
+ Parameter B3LYPb M062Xb MP2c MP2d Exp. B3LYPb M062Xb MP2c MP2d Exp.
+A (MHz) 8968 9015 8990 9013 8924.9 10267 10333 10200 10245 10220.5
+B (MHz) 4276 4327 4301 4319 4276.8 3994 4030 4023 4037 3996.8
+C (MHz) 2948 2977 2963 2973 2942.9 2927 2952 2937 2948 2926.2
+|μa| (D) 2.6 2.5 2.9 2.9 0.4 0.3 0.5 0.5
+|μb| (D) 2.2 2.2 2.5 2.5 2.9 2.8 3.2 3.1
+|μc| (D) 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+V3 (cm−1) 276.5 469.0 389.1 443.236(78) 307.7 384.7 371.9 385.28(30)
+V3 (cm−1)a 278.5(1.5) 464.0(2.6) 387.7(2.1) 309.4(2.2) 380.7(2.6) 371.2(2.4)
+V6 (cm−1)a −6.5(1.5) −9.2(2.6) −9.2(2.1) −6.5(2.2) −8.1(2.6) −10.6(2.4)
+a
+ All the relative energies are zero point corrected (ZPE, ΔEZPE), except those calculated at the MP2/aug-cc-pVQZ level, which are equilibrium
+relative energies (ΔEe). bFitted values according to the following equation:
+ V3 V
+ V (α) = (1 − cos3α) + 6 (1 − cos6α)
+ 2 2
+c
+ 6-311++G(2df,p) basis set. daug-cc-pVTZ basis set. eaug-cc-pVQZ basis set.
+
+calculated relative energy values. It should be noted that both analysis of the rotational spectrum of MVK. In particular, we
+experimental and theoretical values are in good agreement, calculated the internal rotation constant F associated with the
+except for the value calculated with the B3LYP method, which methyl top torsion, as well as θRAM, the angle between the
+is only 50.2 cm−1. Moreover, we retained the MP2/6-311+ principal and the ρ axis systems, and consequently the
++G(2d,2p) and the G3 and G4 results as being compatible with nondiagonal Dab constant in the ρ axis system (see the section
+the experimental value, taking into account the experimental “Hamiltonian and Spectrum Analysis” for further details).
+uncertainty. We also calculated the rotation barriers of the methyl group
+ Second, equilibrium geometry calculations were performed at for the two conformers. As for methacrolein,12 our method-
+the MP2/aug-cc-pVQZ level of theory. The main structural ology was aimed at calculating the methyl torsion barrier with a
+parameters are shown in Figure 2. The equilibrium structure precision better than 5%. The quadratic synchronous transit
+(Cartesian coordinates) is presented in Table 1S of the (QST3) methodology implemented in G09,28,29 starting from
+Supporting Information. Both conformers present a planar the geometry of two minima and the optimization of a
+skeleton, with all atoms in a plane except two hydrogen atoms transition-state geometry between these minima, was used. At
+of the methyl group (H9 and H10). The equilibrium structures the MP2/aug-cc-pVQZ level of theory, we obtained 389 cm−1
+of the vinyl and methyl groups and of the ketone bond are (ap-MVK) and 372 cm−1 (sp-MVK). Meanwhile, a better result
+similar. In addition to the value of the O7−C6−C4−C1 was obtained for both conformers at the M062X/6-311++
+dihedral angle, the main signiﬁcant diﬀerences in the ap and sp G(2df, p) level, with barrier heights equal to 469 cm−1 (ap-
+conformers are the C6−C4 bond length (1.480 Å versus 1.490 MVK) and 385 cm−1 (sp-MVK). The diﬀerences between the
+Å) and the methylene angle (117.33° versus 118.95°). last calculations and the present experimental values (see Table
+ The structural optimization resulted in sets of rotational 1) are −6% (ap-MVK) and +0.1% (sp-MVK). The calculated
+constants for both conformations. In addition, we used the rotational constants, dipole moments, and barriers to internal
+results of the structural optimizations to calculate some other rotation are summarized in Table 1 and compared to the
+parameters of the molecular Hamiltonian applied for the experimental values.
+ 6422 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+■ EXPERIMENTAL RESULTS
+The sample of MVK (Sigma-Aldrich, 90% purity) was used
+without puriﬁcation. The millimeter-wave spectra were
+recorded in the frequency range between 50 and 650 GHz
+using the Lille spectrometer. Its detailed description can be
+found in the paper by Zakharenko et al.30 Brieﬂy, the
+measurements were carried out at room temperature and at a
+pressure of about 0.015 mbar. The frequency ranges, 50−105,
+150−330, and 400−650 GHz, were covered with solid-state
+multiplied sources. The frequency of a reference source of
+radiation, the Agilent synthesizer (12.5−17.5 GHz), was ﬁrst
+multiplied by 6 and ampliﬁed by an AMC-10 active sextupler
+from Virginia Diodes, Inc. (VDI), providing the output power
+of +15 dBm (∼32 mW) in the W-band range (75−110 GHz).
+This power is high enough to use VDI passive Schottky diode-
+based multipliers (×2, ×3, ×5, ×6) in the next stage of the
+frequency multiplication chain. The estimated uncertainties of
+the measured line frequencies are 30, 50, and 100 kHz
+depending on the S/N ratio, the observed line shape, and the
+frequency range. It should be noted that we observed CH3CN
+transitions in the spectrum, due to impurities. This molecule is
+well studied, and the rotational transition frequencies are
+already precisely measured and known.31 Thus, the presence of
+CH3CN does not inﬂuence our spectral analysis. As shown in
+Figure 3, the spectrum exhibits consecutive series of lines
+associated with the J rotational quantum number values.
+ Due to the tunneling eﬀect, the energy levels are split into
+one sublevel of A symmetry and two degenerated sublevels of E
+symmetry of the C3v symmetry point group describing the
+methyl top. Consequently, transitions are split into two
+components of the same intensity, and torsional−rotational
+lines are labeled A and E. Compared to our previous study of
+methacrolein,12 the presence of two populated conformers of
+MVK leads to higher spectral density. Figure 3. Part of the spectrum showing (a) the series of consecutive
+ groups of lines of MVK according to the J rotational quantum number
+ As done for HONO, the population ratio and the relative values and (b) rotational transitions of the sp conformer of MVK in
+energy can be determined from intensity measurements.32 At the ground and ﬁrst two excited states. νsp 26 and ν27 are the methyl
+ sp
+the Beer−Lambert approximation, the integrated absorption group torsion mode and the asymmetric out-of-plane skeletal torsion
+coeﬃcient αji (cm−2) at temperature T (K) of a line is given by mode of the synperiplanar (sp) conformer, respectively. The rotational
+ lines (label JKaKc) are split due to the internal rotation of the methyl
+ 8π 3 1 N
+ αji = νjĩ (e−hcEi / kT − e−hcEj / kT )Sji top, and are assigned with the A and E labels.
+ 3hc 4πε0 Q (T )
+where Sji is the line strength (calculated using the RAM36 code;
+see the next section), Q(T) is the rovibrational partition containing an internal rotor with high as well as low barriers.37
+function estimated from quantum chemical calculations, N is In particular, A and E symmetry transitions belonging to several
+the number of molecules, ν̃ji is the line wavenumber (cm−1), torsional (vibrational) states are ﬁtted simultaneously, produc-
+and Ei and Ej are the energies of the i or j level with respect to ing a single set of rotational constants. Shortly, the RAM
+the ground state of the considered conformer. A few lines were Hamiltonian can be written as
+retrieved, as illustrated in Figure 4.
+ At room temperature, we obtained a population ratio value HRAM = HR + HCD + HT + Hint
+equal to Nap/Nsp = 2.2 ± 0.3. According to the expression where HR is a rotational Hamiltonian, HCD is the usual
+ ⎛ N sp ⎞ centrifugal distortion Hamiltonian, HT is a torsional Hamil-
+ ΔE = −kT ln⎜ ap ⎟ tonian, and Hint contains higher order torsional−rotational
+ ⎝N ⎠ interaction terms. The Hamiltonian is deﬁned in the so-called
+the population ratio value is associated with a relative energy “ρ axis system” that is related to the abc principal axis system
+value ΔE = 164 ± 30 cm−1 between the vibrational ground via rotation by an angle θRAM about the out-of-plane axis.
+states of the ap and sp conformers. Methyl vinyl ketone is a prolate asymmetric top belonging to
+ Hamiltonian Model and Spectrum Analysis. To carry the Cs symmetry group. The rotational part of the RAM
+out the analysis of the high-resolution millimeter-wave and Hamiltonian is simpliﬁed due to the ab symmetry plane; it is
+terahertz spectra of methyl vinyl ketone, we used the ρ axis written as
+method (RAM)33−35 implemented in the RAM36 code (ρ axis HR = ARAM Ja 2 + BRAM Jb 2 + C RAMJc 2 + Dab(Ja Jb + Jb Ja )
+method for 3- and 6-fold barriers).36 This approach allows a
+physical description of the torsion−rotation eﬀects in molecules The torsional Hamiltonian is written as
+ 6423 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+Figure 4. Portion of the millimeter-wave spectrum displaying the JKaKc = 461,45−451,44, 461,45−452,44, 462,45−451,44, and 462,45−452,44 lines associated
+with the ground states of both sp and ap conformers of MVK. The line intensities are proportional to the number of molecules of each conformer,
+which is related to the relative energy.
+
+Table 2. List of the Molecular Parameters in the ρ Axis System Describing the Torsion−Rotation−Vibration Structure for the ap
+and sp Conformers of Methyl Vinyl Ketone
+ operatora ntrb constantc gsap gssp and νsp
+ 26 = 1 νsp
+ 27 = 1
+ d
+ pα2 220 F 5.49 5.6404(36) 5.6404
+ pαPa 211 ρ 0.030499(21)e 0.0575003(40) 0.058623(12)
+ (1 − cos 3α)/2 220 V3 443.236(78) 385.28(30) 433.992(24)
+ Pa 202 ARAM 0.272537(28) 0.3306563(76) 0.326969(23)
+ Pb 202 BRAM 0.167827(23) 0.1435839(74) 0.145452(24)
+ Pc 202 CRAM 0.09816528(86) 0.0976079417(52) 0.0975417(21)
+ {Pa,Pb} 202 Dab −0.057172(23) −0.045005(16) −0.047515(40)
+ −P4 404 DJ 0.115012(65) × 10−6 0.213621(23) × 10−7 0.20762(11) × 10−7
+ −P2Pa2 404 DJK - 0.4505(48) × 10−7 0.5134(37) × 10−7 0.5145(27) × 10−7
+ −Pa2 404 DK −0.6072(41) × 10−7 0.342952(82) × 10−6 0.36586(39) × 10−6
+ −2P2(Pb2 − Pc2) 404 dJ 0.052285(33) × 10−6 0.050818(12) × 10−7 0.047771(37) × 10−7
+ −{Pa2,(Pb2 − Pc2)} 404 dK 0.05654(22) × 10−6 0.06442(48) × 10−6 0.02464(25) × 10−6
+ P2(1 − cos 3α) 422 V3,J −0.4324(31) × 10−3
+ pa2(1 − cos 3α) 422 V3,K 0.38734(51) × 10−2
+ {Pa,Pb}(1 − cos 3α)/2 422 V3,ab −0.9248(78) × 10−2 −1.910(24) × 10−3 −1.364(24) × 10−2
+ (Pb2 − Pc2)(1 − cos 3α) 422 V3,bc −0.6174(62) × 10−3 −0.3748(24) × 10−2
+ {Pa,(Pb2 − Pc2)}pα/2 413 ρbc 0.1265(13) × 10−5
+ Pa2P2 422 FJ 0.2987(48) × 10−4 −0.368(12) × 10−5
+ pα2(Pb2 − pc2) 422 Fbc 0.1781(44) × 10−4 −0.453(11) × 10−5
+ (sin 3α)(PbPc + PcPb) 422 D3,bc 0.1219(20) × 10−2
+ P6 606 ΦJ 0.777(39) × 10−15
+ P2Pa4 606 ΦKJ 0.2509(62) × 10−12
+ Pa4(Pb2 − Pc2) 606 φK 0.1617(28) × 10−12
+ {Pa,(Pb2 − Pc2)}pα3/2 633 ρm,bc 0.541(13) × 10−8
+ pα2(Pc2 + Pb4) 624 Fb2c2 −0.10335(72) × 10−10
+ θRAM 23.76° f 12.85° 13.82°
+ no. of lines 2410 3068 653
+ rms (MHz) 0.037 0.043 0.039
+ wrms 0.726 0.789 0.882
+a
+ {A,B} = AB + BA. bntr = t + r, where ntr is the total order of the operator, t is the order of the torsional part, and r is the order of the rotational part.
+c
+ Values of the parameters in inverse centimeters, except for ρ, which is unitless, and for θRAM in degrees. dFixed value, calculated at the MP2/aug-cc-
+pVQZ level of theory. eStatistical uncertainties are given in parentheses as 1 standard uncertainty in units of the last digits. fIn the IIl representation.
+
+ V3 V In these expressions, J is the rotational angular momentum, pα
+ HT = F(pα − ρJz )2 + (1 − cos 3α) + 6 (1 − cos 6α)
+ 2 2 is the internal rotation angular momentum conjugate to the
+ torsional angle α. The ﬁtted molecular parameters are the
+ + ...
+ rotational constants ARAM, BRAM, CRAM, and Dab, the internal
+ 6424 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+rotation constant F, the module of the ρ⃗ vector that couples the of the torsion could only be used for the ground state. We
+internal rotation with the global rotation, and the V3 and V6 extracted ﬁve transitions measured by Wilcox et al. from the
+torsional potential function terms for C3v internal rotors. data set because of the large residuals.15 The results of the
+ The particularity of the RAM is the axis system in which the ground-state ﬁt for the ap conformer are presented in Table 2.
+ρ⃗ vector is parallel to the internal z axis. The structure of the ap In the RAM method, the parameters F and V3 are highly
+conformer (see Figure 1) implies that the ρ⃗ vector lies closer to correlated. Usually, in the case of the high barrier to internal
+the principal axis of inertia b and forms with the latter an angle rotation, ground-state data are not suﬃcient to determine
+θRAM of about 24°. Whereas Ir coordinate representation (z = a; satisfactorily both constants. In the present study, the F
+x = b) is usually more appropriate for a prolate asymmetric top, parameter was ﬁxed to the value calculated at the MP2/aug-cc-
+in this case, to keep the conventional order ARAM > BRAM > pVQZ level of theory, as this parameter is less subjected to
+CRAM, the IIl representation (x = a; z = b) was used. For the sp structural variation compared to V3. The set of assigned
+conformer, the usual Ir representation was used, as according to rotational transitions allowed variation and determination of 16
+its structure, the angle between the ρ⃗ vector and the principal molecular parameters, which include rotational constants,
+axis of inertia a is about 13°. At the initial stage of the analysis, centrifugal distortion constants, and several parameters of
+the rotational constants and the dipole moment components internal rotation. It should be noted that the rotational
+previously obtained in the principal axis system were constants in the principal axis system presented in Table 1
+recalculated in the ρ axis system, using a calculated value of were calculated from the rotational constants in the ρ axis
+θRAM. system using the following equations:
+ The analysis of the ground-state rotational spectrum of
+ ARAM cos 2 θRAM − BRAM sin 2 θRAM
+methyl vinyl ketone was carried out in the usual “bootstrap” A=
+manner starting from the results of the initial analysis of the cos 2θRAM
+data obtained in the lower frequency range. The assigned lines
+were added in the least-squares ﬁt by series in Ka quantum −ARAM sin 2 θRAM + BRAM cos2 θRAM
+ B=
+number starting from a pair of R-branch transitions with Ka = 0 cos 2θRAM
+and Ka = 1. New measured transitions allow the improvement
+of the values of the Hamiltonian parameters and provide C = C RAM
+reliable predictions for the higher values of the Ka quantum
+ where θRAM can be calculated from experimental constants as
+numbers. The absorption spectra recorded at room temper-
+ature also contain the rotational transitions belonging to the 1 ⎛ 2Dab ⎞
+lowest excited vibrational states. Thus, in the next step of our θRAM = tan−1⎜ ⎟
+ 2 ⎝ ARAM − BRAM ⎠
+analysis, we attempted to assign these transitions. Vibrational
+excitation does not lead to any considerable variation of the .
+rotational constant values; therefore, the rotational lines in The two ﬁrst excited states of the ap conformer (νap 27 = 1 and
+excited vibrational states typically form a series of satellites νap
+ 26 = 1) are very close in energy and belong to the same
+close to the ground-state lines, and with the intensities irreducible representation A″ of the symmetry point group Cs.
+proportional to the Boltzmann factors of the excited states. Therefore, a c-type Coriolis interaction was suspected to be
+Methyl vinyl ketone has 27 normal modes of vibration. The responsible for the perturbation observed in the νap 26 = 1 state.
+three lowest ones are the asymmetric out-of-plane skeletal To this end, the rotational spectrum associated with the νap 27 = 1
+ −1 −1
+torsion mode (νap 27 = 116 cm , ν27 = 87 cm ), the methyl
+ sp
+ state was analyzed. We observed the corresponding satellite
+group torsion mode (ν26 = 125 cm , ν26 = 121 cm−1), and the
+ ap −1 sp
+ lines close to the ground-state transitions. The A−E splittings
+ −1 sp
+symmetric in-plane skeletal bending mode (νap 25 = 292 cm , ν25 are also much higher compared to those of the ground state.
+ −1
+= 272 cm ). We took as a reference the experimental Moreover, we noticed that the sequence of A and E
+frequencies of vibrations given by Durig and Little for the gas components, and also of rotational lines in the spectrum, is
+phase.16 inversed compared to the typical order of transitions in the
+ ap Conformer. The ground-state analysis was straightfor- ground state. Normally, when there is no coupling between
+ward, and 2410 lines were assigned up to J,Ka = 68, 14. Next, vibrational and torsional modes, the sequence of the A−E
+we predicted the rotational spectrum associated with the ﬁrst energy levels for the vibrational mode should be the same as in
+excited state of methyl torsion νap 26 = 1, on the basis of the set of the ground state (EA < EE). A similar eﬀect of inversed A−E
+parameters obtained from the ﬁt of the ground-state transitions levels was observed in previous studies of molecules with one
+using the RAM36 program (global model). The shift between or two methyl tops.38−41 Coupling between the methyl and
+the predicted and the observed lines was only a few megahertz, skeletal torsion motions was explained by Meyer et al.38,39 in
+making the assignment process rather simple. The splittings kinetic or potential energy terms. Recently, we observed the
+due to internal rotation are not resolved under Doppler-limited same kind of anomalously high and inversed A−E splittings in
+resolution in the ground state for the quantum number Ka = 0, the skeletal torsion state of methacrolein.12
+1. For the same transitions of the νap 26 = 1 state, the splittings are To account for the unusual A−E sequence, the rotational
+much higher and easily distinguishable. The rotational transitions of the νap
+ 27 = 1 state were assigned up to the quantum
+transitions were assigned up to the quantum number Ka < 8. number Ka < 10 as a virtually ﬁrst excited state of the methyl
+However, we could not obtain the ﬁt within the experimental torsional mode, and then separately ﬁtted using the RAM
+accuracy. Adding the νap 26 = 1 state transitions to the existing Hamiltonian. As for the ν26 = 1 state, we could not obtain a ﬁt
+data set leads to an increase of the weighted standard deviation within experimental accuracy; the weighted standard deviation
+of the ﬁt (wrms = 5.7). This fact can be explained by an was 2.5. Local resonances were observed, which is the signature
+interaction between the excited states of the vibrational modes, of a Coriolis-type interaction. A new model required to describe
+as discussed in the next paragraph. Therefore, our global model these excited states is beyond the scope of the present work.
+ 6425 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+Therefore, for the ap conformer of methyl vinyl ketone, a to a large increase of the methyl torsion barrier in propane,
+detailed analysis with a set of molecular parameters was 1353 cm−1,43 compared to acetone, 422.95 cm−1.44
+provided only for the ground state. Another interesting example is to consider methyl ethyl
+ sp Conformer. As for the ap conformer, the ground-state ketone (MEK), in which the acetyl methyl group is attached to
+analysis of the sp conformer was straightforward, and 2716 lines an sp3-hybridized carbon. Conformer I of MEK, which is
+were assigned up to J, Ka = 85, 15. We calculated the structurally similar to the sp conformer of MVK, has a relatively
+predictions for the ﬁrst excited state of methyl torsion νsp 26 = 1 low methyl torsion barrier, V3 = 181.502 cm−1.45 Thus, the
+using the set of parameters obtained from the ground-state ﬁt. barrier height is quite sensitive to changes in the hybridization
+These predictions allowed assignment of 352 rotational of the carbon atom to which the acetyl methyl group is
+transitions in the usual way up to the quantum numbers J, Ka attached. In the case of hydroxyacetone, another example of a
+= 76, 8. New measured transitions were added in the existing molecule with the acetyl methyl group attached to an sp3-
+data set and ﬁtted. The results of the global ﬁt are presented in hybridized carbon, the barrier to internal rotation is even lower,
+Table 2. In the case of the sp conformer, the internal rotation V3 = 65.35 cm−1.46 The reduction of the barrier height is mainly
+barrier is slightly lower compared to that of the ap conformer, due to the internal hydrogen bond between carbonyl oxygen
+and therefore, the V3 and F parameters can be less correlated. and hydroxyl hydrogen that removes electron density from the
+Furthermore, the data set contains the transitions from both carbonyl oxygen.
+the ground state and the ﬁrst excited state of methyl torsion A review of spectroscopic studies of diﬀerent acetic acid
+that allowed variation and determination of the F constant esters (acetates) that contain an acetyl methyl group attached
+without an eﬀect on the determinacy of other parameters. to the oxygen atom is presented in ref 47. These molecules are
+ In the ap conformer of methyl vinyl ketone, the lines of the characterized by a low torsional barrier of the acetyl methyl
+ﬁrst excited state of skeletal torsion νap 27 = 1 are located group. A possible explanation for the low barrier is the
+approximately with the same frequency shift but on the other mesomerism in the acetate anion (CH3COO−) that results in
+side of the ground-state lines compared to the lines of the ﬁrst perfect C2v symmetry of the anion frame and consequently zero
+excited state of methyl torsion. The same situation was V3 contribution to the potential barrier. In acetates, the
+expected for the second conformer of methyl vinyl ketone. molecular frame has no C2v symmetry, but the mesomerism is
+However, in the case of the sp conformer, searching for the νsp 27 still possible and results in the V3 term to the potential barrier
+= 1 state lines was more complicated, because these lines are being between 100 and 150 cm−1.47
+not located in the close proximity of the ground-state lines Low barriers to internal rotation are also characteristic for the
+(Figure 3). After a careful search, 645 transitions were assigned molecules which have the acetyl methyl group attached to the
+up to quantum numbers J, Ka = 69, 15. The A−E splittings in nitrogen atom. In the case of acetamide, the torsional barrier is
+the νap
+ 27 = 1 state are about the same as those of the ground extremely low, about 25 cm−1.48 Assuming that the torsional
+state, as is shown in Figure 3. Considering the normal sequence strain is a result of the interactions between the electron clouds,
+of A−E sublevels, the observed lines of the νap 27 = 1 state were one can notice that putting the nitrogen atom in place of the
+ﬁtted as a virtual ground state, at the experimental accuracy. carbon atom somehow reduces this interaction considerably.
+The results of the ﬁt are shown in the last column of Table 2. This can be explained by the higher electronegativity of the
+The constant F was ﬁxed to the value of the global ﬁt of the nitrogen atom. Thus, the electron density in the molecule is
+ground state and the ﬁrst excited state of the methyl torsion. shifted toward the nitrogen atom and away from the carbonyl C
+
+■ DISCUSSION
+The determined values of barriers to internal rotation of the
+ atom and the amine group hydrogens. Therefore, due to less
+ spatial crowding, the methyl group has a much lower torsional
+ barrier. N-Methylacetamide has a quite low methyl torsion
+methyl top for both conformations of MVK compare well with barrier, 73.5 cm−1, as well.49 The diﬀerence of about 50 cm−1
+previous studies and with most of the quantum chemical between these two examples may result from the steric eﬀect
+calculations performed in this study. Direct comparison with between two molecular groups which are not directly bonded
+the experimental V3 values determined in previous studies may but become too close to each other. The steric strain between
+be rather speculative because of the diﬀerent methods used, and the methyl group and amine group in acetamide is apparently
+diﬀerent data sets of assigned transitions. At the same time, one weaker than that between the two methyl groups of N-
+can compare barrier heights in structurally similar molecules methylacetamide. In addition, the interaction of the methyl
+and see how the molecular structure inﬂuences the potential rotor orbitals and π system of a double bond (CO bond and
+energy of the methyl top. For example, one may consider an C−N partial double bond) may also inﬂuence the methyl
+ torsion barrier height and the conformational structures.50,51
+
+ ■
+eﬀect of the substitution of the carbonyl group by the CH2
+group on the structure and internal rotation of the methyl
+group in 1-butene. The cis conformer of 1-butene is structurally CONCLUSION
+similar to the ap conformer of MVK. However, the barrier to We have presented in this study a detailed characterization of
+methyl torsion in cis-1-butene is signiﬁcantly higher than in ap- spectroscopic properties of the two conformers of methyl vinyl
+MVK, V3,cis = 1680 cm−1.42 These important contributions to ketone. We have obtained a value of the relative energy
+the potential barrier come from the interaction of the methyl between the two conformers in the gas phase (164 ± 30 cm−1)
+hydrogens with the nearest methylene hydrogen atoms. The by combining experimental data and quantum chemistry
+CO double bond length and the distance between the calculations at a high level. The experimental and theoretical
+oxygen atom and hydrogens of the methyl group in MVK are results are for the ﬁrst time in good agreement, and conﬁrm
+larger compared to those of the methylene group in 1-butene. that the ap conformer is more stable than the sp one. We
+Therefore, due to less steric strain, the methyl torsion barrier is noticed that, during the revision of our manuscript,
+lower. The same situation can be seen for acetone and propane; Lindenmaier et al. published the vapor-phase IR spectra of
+the substitution of the carbonyl group by the methylene leads MVK and crotonaldehyde, which are chemical isomers.52
+ 6426 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+Under room temperature conditions, populations of 69% and (4) Peeters, J.; Müller, J.-F. HOx Radical Regeneration in Isoprene
+31% for the ap and sp conformers, respectively, of MVK were Oxidation via Peroxy Radical Isomerisations. II: Experimental
+found, in good agreement with the accurate MW results of the Evidence and Global Impact. Phys. Chem. Chem. Phys. 2010, 12,
+present study. 14227−14235.
+ (5) Cheung, K.; Guo, H.; Ou, J. M.; Simpson, I. J.; Barletta, B.;
+ We have determined the ﬁrst set of molecular parameters
+ Meinardi, S.; Blake, D. R. Diurnal Profiles of Isoprene, Methacrolein
+able to reproduce the experimental spectra of the ground state and Methyl Vinyl Ketone at an Urban Site in Hong Kong. Atmos.
+of the ap and sp conformers of methyl vinyl ketone, at high Environ. 2014, 84, 323−331.
+resolution, from the microwave to the terahertz region, i.e., up (6) Brown, S. S.; Degouw, J. A.; Warneke, C.; Ryerson, T. B.; Dubé,
+to the high J, Ka values observed at room temperature. We also W. P.; Atlas, E.; Weber, R. J.; Peltier, R. E.; Neuman, J. A.; Roberts, J.
+improved the determinacy of the internal rotation barrier V3, M.; et al. Nocturnal Isoprene Oxidation over the Northeast United
+443.236(78) and 384.60(30) cm−1 for the ap and sp States in Summer and its Impact on Reactive Nitrogen Partitioning
+conformers, respectively. These relatively medium barriers and Secondary Organic Aerosol. Atmos. Chem. Phys. 2009, 9, 3027−
+have allowed the A−E splittings in the ground state to be 3042.
+resolved under the Doppler-limited resolution of our (7) Karl, M.; Dorn, H.-P.; Holland, F.; Koppmann, R.; Poppe, D.;
+spectrometer. The analysis of the more stable ap conformer Rupp, L.; Schaub, A.; Wahner, A. Product Study of the Reaction of
+of MVK is limited to the ground state because we found that OH Radicals with Isoprene in the Atmosphere Simulation Chamber
+ SAPHIR. J. Atmos. Chem. 2006, 55, 167−187.
+the ﬁrst excited states are perturbed by Coriolis-type (8) Matsunaga, S. N.; Wiedinmyer, C.; Guenther, A. B.; Orlando, J.
+interactions. For the sp conformer, we performed the joint J.; Karl, T.; Toohey, D. W.; Greenberg, J. P.; Kajii, Y. Isoprene
+analysis of the ground and ﬁrst excited torsional states, and also Oxidation Products Are a Significant Atmospheric Aerosol Compo-
+the analysis of the skeletal mode. For the atmospheric nent. Atmos. Chem. Phys. Discuss. 2005, 5, 11143−11156.
+applications, the set of spectroscopic parameters obtained (9) Fu, Y.; Liao, H. Simulation of the Interannual Variations of
+from the ground-state ﬁt for the two conformers of methyl Biogenic Emissions of Volatile Organic Compounds in China: Impacts
+vinyl ketone will allow the analysis of the infrared spectrum, on Tropospheric Ozone and Secondary Organic Aerosol. Atmos.
+especially in the 600−1600 cm−1 atmospheric window. Environ. 2012, 59, 170−185.
+
+■
+ (10) Jo, D. S.; Park, R. J.; Kim, M. J.; Spracklen, D. V. Effects of
+ ASSOCIATED CONTENT Chemical Aging on Global Secondary Organic Aerosol Using the
+ Volatility Basis Set Approach. Atmos. Environ. 2013, 81, 230−244.
+*
+S Supporting Information (11) Praske, E.; Crounse, J. D.; Bates, K. H.; Kurtén, T.; Kjaergaard,
+The Supporting Information is available free of charge on the H. G.; Wennberg, P. O. Atmospheric Fate of Methyl Vinyl Ketone:
+ACS Publications website at DOI: 10.1021/acs.jpca.7b06360. Peroxy Radical Reactions with NO and HO2. J. Phys. Chem. A 2015,
+ 119, 4562−4572.
+ Equilibrium structure of the ap and sp conformers of (12) Zakharenko, O.; Motiyenko, R. A.; Aviles Moreno, J.-R.; Jabri,
+ MVK and a list of assignments ﬁtted in the current study A.; Kleiner, I.; Huet, T. R. Torsion-Rotation-Vibration Effects in the
+ with an RAM Hamiltonian (PDF) Ground and First Excited States of Methacrolein, a Major Atmospheric
+
+■
+ Oxidation Product of Isoprene. J. Chem. Phys. 2016, 144, 024303.
+ AUTHOR INFORMATION (13) Foster, P. D.; Rao, V. M.; Curl, R. F., Jr. Microwave Spectrum of
+ Methyl Vinyl Ketone. J. Chem. Phys. 1965, 43, 1064−1066.
+Corresponding Author (14) Fantoni, A. C.; Caminati, W.; Meyer, R. Torsional Interactions
+*E-mail: Therese.Huet@univ-lille1.fr. in Methyl Vinyl Ketone. Chem. Phys. Lett. 1987, 133, 27−33.
+ORCID (15) Wilcox, D. S.; Shirar, A. J.; Williams, O. L.; Dian, B. C.
+ Additional Conformer Observed in the Microwave Spectrum of
+Roman A. Motiyenko: 0000-0002-3849-1533 Methyl Vinyl Ketone. Chem. Phys. Lett. 2011, 508, 10−16.
+Thérèse R. Huet: 0000-0001-9104-5156 (16) Durig, J. R.; Little, T. S. Conformational Barriers to Internal
+Notes Rotation and Vibrational Assignment of Methyl Vinyl Ketone. J. Chem.
+The authors declare no competing ﬁnancial interest. Phys. 1981, 75, 3660−3668.
+
+■
+ (17) Oelichmann, H.-J.; Bougeard, D.; Schrader, B. Coupled
+ Calculation of Vibrational Frequencies and Intensities: Part VI. IR
+ ACKNOWLEDGMENTS and Raman Spectra of Crotonaldehyde, Methacrolein and Methyl-
+The present work was funded by the French Agence Nationale Vinylketone. J. Mol. Struct. 1981, 77, 179−194.
+de la Recherche (ANR) “Labex CaPPA” through the (18) Bowles, A. J.; George, W. O.; Maddams, W. F. Conformations of
+Programme d’Investissements d’Avenir (PIA) under Contract Some αβ-Unsaturated Carbonyl Compounds. Part I. Infrared Spectra
+ANR-11-LABX-0005-01, by the Regional Council “Hauts de of Acraldehyde, Crotonaldehyde, Methyl Vinyl Ketone, and Ethyl-
+France”, and by the European Funds for Regional Economic ideneacetone. J. Chem. Soc. B 1969, 0, 810−818.
+Development (FEDER). O.Z. also acknowledges the support of (19) Garcia, J. I.; Mayoral, J. A.; Salvatella, L.; Assfeld, X.; Ruiz-
+ Lopez, M. F. On the Conformational Preferences of α,β-Unsaturated
+CNRS-INP and of CPER IRENI for her Ph.D. thesis.
+
+■
+ Carbonyl Compounds. An Ab Initio Study. J. Mol. Struct.:
+ THEOCHEM 1996, 362, 187−197.
+ REFERENCES (20) Jorgensen, W. L.; Lim, D.; Blake, J. F. Ab Initio Study of Diels-
+ (1) Goldstein, A. H.; Galbally, I. E. Known and Unexplored Organic Alder Reactions of Cyclopentadiene with Ethylene, Isoprene, Cyclo-
+Constituents in the Earth’s Atmosphere. Environ. Sci. Technol. 2007, pentadiene, Acrylonitrile, and Methyl Vinyl Ketone. J. Am. Chem. Soc.
+41, 1514−1521. 1993, 115, 2936−2942.
+ (2) Aschmann, S. M.; Atkinson, R. Formation Yields of Methyl Vinyl (21) Bokareva, O. S.; Bataev, V. A.; Godunov, I. A. Structures and
+Ketone and Methacrolein from the Gas-Phase Reaction of O3 with Conformational Dynamics of Monomethylated Derivatives of
+Isoprene. Environ. Sci. Technol. 1994, 28, 1539−1542. Acrolein: A Quantum-Chemical study. J. Mol. Struct.: THEOCHEM
+ (3) Yokouchi, Y. Seasonal and Diurnal Variation of Isoprene and its 2009, 913, 254−264.
+Reaction Products in a Semi-Rural Area. Atmos. Environ. 1994, 28, (22) Frisch, M. J.; Trucks, G. W.; Schlegel, H. B.; Scuseria, G. E.;
+2651−2658. Robb, M. A.; Cheeseman, J. R.; Scalmani, G.; Barone, V.; Mennucci,
+
+ 6427 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428
+The Journal of Physical Chemistry A Article
+
+B.; Petersson, G. A.; et al. Gaussian 09, revision D.01; Gaussian, Inc.: millimeter Wave Measurements of Acetone. J. Mol. Spectrosc. 2013,
+Wallingford, CT, 2013. 289, 41−49.
+ (23) Zhao, Y.; Truhlar, D. G. The M06 Suite of Density Functionals (45) Nguyen, V. L.; Van, V.; Stahl, W.; Kleiner, I. The Effects of
+for Main Group Thermochemistry, Thermochemical Kinetics, Non- Methyl Internal Rotation and 14N Quadrupole Coupling in the
+covalent Interactions, Excited States, and Transition Elements: Two Microwave Spectra of Two Conformers of N,N-Diethylacetamide. J.
+New Functionals and Systematic Testing of Four M06-Class Chem. Phys. 2014, 140, 214303.
+Functionals and 12 Other Functionals. Theor. Chem. Acc. 2008, 120, (46) Apponi, A. J.; Hoy, J. J.; Halfen, D. T.; Ziurys, L. M.; Brewster,
+215. M. A. Hydroxyacetone (CH3COCH2OH): A Combined Microwave
+ (24) Møller, C.; Plesset, M. S. Note on an Approximation Treatment and Millimeter-Wave Laboratory Study and Associated Astronomical
+for Many-Electron Systems. Phys. Rev. 1934, 46, 618−622. Search. Astrophys. J. 2006, 652, 1787−1795.
+ (25) Dunning, T. H., Jr. Gaussian Basis Sets for Use in Correlated (47) Jabri, A.; Van, V.; Nguyen, H. V. L.; Stahl, W.; Kleiner, I.
+Molecular Calculations. I. The Atoms Boron Through Neon and Probing the Methyl Torsional Barriers of the E and Z Isomers of
+Hydrogen. J. Chem. Phys. 1989, 90, 1007. Butadienyl Acetate by Microwave Spectroscopy. ChemPhysChem 2016,
+ (26) Curtiss, L. A.; Raghavachari, K.; Redfern, P. C.; Rassolov, V.; 17, 2660−2665.
+Pople, J. A. Gaussian-3 (G3) Theory for Molecules Containing First (48) Ilyushin, V. V.; Alekseev, E. A.; Dyubko, S. F.; Kleiner, I.;
+and Second-Row Atoms. J. Chem. Phys. 1998, 109, 7764. Hougen, J. T. Ground and First Excited Torsional States of Acetamide.
+ (27) Curtiss, L. A.; Redfern, P. C.; Raghavachari, K. Gaussian-4 J. Mol. Spectrosc. 2004, 227, 115−139.
+Theory. J. Chem. Phys. 2007, 126, 084108. (49) Ohashi, N.; Hougen, J. T.; Suenram, R. D.; Lovas, F. J.;
+ (28) Peng, C.; Schlegel, H. B. Combining Synchronous Transit and Kawashima, Y.; Fujitake, M.; Pyka, J. Analysis and Fit of the Fourier-
+Quasi-Newton Methods to Find Transition States. Isr. J. Chem. 1993, Transform Microwave Spectrum of the Two-Top Molecule N-
+33, 449−454. Methylacetamide. J. Mol. Spectrosc. 2004, 227, 28−42.
+ (29) Peng, C.; Ayala, P. Y.; Schlegel, H. B.; Frisch, M. J. Using (50) Radom, L.; Riggs, N. Ab initio Studies on Amides: Acetamide,
+Redundant Internal Coordinates to Optimize Equilibrium Geometries N-Methylformamide and N-Methylacetamide. Aust. J. Chem. 1982, 35,
+and Transition States. J. Comput. Chem. 1996, 17, 49−56. 1071−1077.
+ (30) Zakharenko, O.; Motiyenko, R. A.; Margulès, L.; Huet, T. R. (51) Hehre, W. J.; Pople, J. A.; Devaquet, A. J. P. Torsional Potentials
+Terahertz Spectroscopy of Deuterated Formaldehyde Using a of Methyl Rotors Attached to Polar Linkages. J. Am. Chem. Soc. 1976,
+Frequency Multiplication Chain. J. Mol. Spectrosc. 2015, 317, 41−46. 98 (3), 664−668.
+ (31) Cazzoli, G.; Puzzarini, C. The Lamb-Dip Spectrum of (52) Lindenmaier, R.; Williams, S. D.; Sams, R. L.; Johnson, T. J.
+Methylcyanide: Precise Rotational Transition Frequencies and Quantitative Infrared Absorption Spectra and Vibrational Assignments
+Improved Ground-State Rotational Parameters. J. Mol. Spectrosc. of Crotonaldehyde and Methyl Vinyl Ketone Using Gas-Phase Mid-
+2006, 240, 153−163. Infrared, Far-Infrared, and Liquid Raman Spectra: s-cis vs s-trans
+ (32) Sironneau, V.; Flaud, J.-M.; Orphal, J.; Kleiner, I.; Chelin, P. Composition Confirmed via Temperature Studies and ab Initio
+Absolute Line Intensities of HONO and DONO in the Far-Infrared Methods. J. Phys. Chem. A 2017, 121 (6), 1195−1212.
+and Re-Determination of the Energy Difference Between the Trans-
+and Cis-Species of Nitrous Acid. J. Mol. Spectrosc. 2010, 259, 100−104.
+ (33) Kirtman, B. Interactions between Ordinary Vibrations and
+Hindered Internal Rotation. I. Rotational Energies. J. Chem. Phys.
+1962, 37, 2516−2539.
+ (34) Lees, R. M.; Baker, J. G. Torsion−Vibration−Rotation
+Interactions in Methanol. I. Millimeter Wave Spectrum. J. Chem.
+Phys. 1968, 48, 5299−5318.
+ (35) Hougen, J. T.; Kleiner, I.; Godefroid, M. Selection Rules and
+Intensity Calculations for a Cs Asymmetric Top Molecule Containing
+a Methyl Group Internal Rotor. J. Mol. Spectrosc. 1994, 163, 559.
+ (36) Ilyushin, V. V.; Alekseev, E. A.; Dyubko, S. F.; Kleiner, I.;
+Hougen, J. T. Ground and First Excited Torsional States of Acetamide.
+J. Mol. Spectrosc. 2004, 227, 115−139.
+ (37) Kleiner, I. Asymmetric-Top Molecules Containing One Methyl-
+like Internal Rotor: Methods and Codes for Fitting and Predicting
+Spectra. J. Mol. Spectrosc. 2010, 260, 1.
+ (38) Fantoni, A. C.; Caminati, W.; Meyer, R. Torsional Interactions
+in Methyl Vinyl Ketone. Chem. Phys. Lett. 1987, 133, 27−33.
+ (39) Meyer, R.; Bauder, A. Torsional Coupling in Pyruvic Acid. J.
+Mol. Spectrosc. 1982, 94, 136−149.
+ (40) Meyer, R.; Caminati, W.; Hollenstein, H. Torsional Motions in
+Methyl Glycolate. J. Mol. Spectrosc. 1989, 137, 87−103.
+ (41) Kobayashi, K.; Matsui, T.; Mori, N.; Tsunekawa, S.; Ohashi, N.
+The Microwave Spectroscopy of Trans-Ethyl Methyl Ether in the First
+Skeletal Torsionally Excited State. J. Mol. Spectrosc. 2008, 251, 301−
+304.
+ (42) Bell, S.; Drew, B. R.; Guirgis, G. A.; Durig, J. R. The Far Infrared
+Spectrum, Ab Initio Calculations and Conformational Energy
+Differences of 1-Butene. J. Mol. Struct. 2000, 553, 199−219.
+ (43) Engeln, R.; Reuss, J.; Consalvo, D.; van Bladel, J. W. I.; van der
+Avoird, A. Internal Motion of Two-Top Molecules: Propane and
+Dimethylamine. Chem. Phys. Lett. 1990, 170, 206−210.
+ (44) Ilyushin, V. V.; Hougen, J. T. A Fitting Program for Molecules
+with Two Equivalent Methyl Tops and C2v Point-Group Symmetry at
+Equilibrium: Application to Existing Microwave, Millimeter, and Sub-
+
+ 6428 DOI: 10.1021/acs.jpca.7b06360
+ J. Phys. Chem. A 2017, 121, 6420−6428

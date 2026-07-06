@@ -1,14 +1,70 @@
 {
   "schema_version": "2.0",
   "material_class": "defect_engineered_materials",
-  "updated_at": "2026-07-06T15:18:47.672412+00:00",
+  "updated_at": "2026-07-06T15:48:30.310848+00:00",
   "summary": {
-    "terms": 11,
-    "known_useful": 11,
+    "terms": 20,
+    "known_useful": 20,
     "unknown": 0
   },
   "keyword_inventory": {
+    "dopants_modifiers": [
+      {
+        "term": "Mo-Doped",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "of doped",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "co-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Fe-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "N-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ni-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Sn doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Sr-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
     "materials": [
+      {
+        "term": "defect_engineered_materials",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "nitrogen-doped carbon",
         "count": 1,
@@ -19,19 +75,19 @@
     "modeling_keywords": [
       {
         "term": "oxygen vacancy",
-        "count": 12,
+        "count": 15,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
       {
         "term": "vacancy_landscape",
-        "count": 12,
+        "count": 13,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
       },
       {
         "term": "doped_surface",
-        "count": 8,
+        "count": 9,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
       },
@@ -54,10 +110,18 @@
         "research_category": "modeling_tasks"
       }
     ],
+    "supports_surfaces": [
+      {
+        "term": "oxygen vacancy",
+        "count": 15,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
     "surface_states": [
       {
         "term": "oxygen vacancy",
-        "count": 12,
+        "count": 15,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
@@ -90,14 +154,38 @@
   "material_descriptors": {
     "elements": [
       {
+        "term": "Mo",
+        "count": 2
+      },
+      {
         "term": "Sb",
         "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 1
+      },
+      {
+        "term": "N",
+        "count": 1
+      },
+      {
+        "term": "Ni",
+        "count": 1
+      },
+      {
+        "term": "Sn",
+        "count": 1
+      },
+      {
+        "term": "Sr",
+        "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "surface",
-        "count": 9
+        "count": 10
       },
       {
         "term": "carbon_material",
@@ -107,14 +195,38 @@
     "component_compounds": [
       {
         "term": "doped_surface",
-        "count": 8
+        "count": 9
+      },
+      {
+        "term": "Mo-Doped",
+        "count": 2
       },
       {
         "term": "Sb vacancy",
         "count": 2
       },
       {
+        "term": "Fe-doped",
+        "count": 1
+      },
+      {
+        "term": "N-doped",
+        "count": 1
+      },
+      {
+        "term": "Ni-doped",
+        "count": 1
+      },
+      {
         "term": "nitrogen-doped carbon",
+        "count": 1
+      },
+      {
+        "term": "Sn doped",
+        "count": 1
+      },
+      {
+        "term": "Sr-doped",
         "count": 1
       },
       {
@@ -124,8 +236,32 @@
     ],
     "element_sets": [
       {
+        "term": "{Mo}",
+        "count": 2
+      },
+      {
         "term": "{Sb}",
         "count": 2
+      },
+      {
+        "term": "{Fe}",
+        "count": 1
+      },
+      {
+        "term": "{Ni}",
+        "count": 1
+      },
+      {
+        "term": "{N}",
+        "count": 1
+      },
+      {
+        "term": "{Sn}",
+        "count": 1
+      },
+      {
+        "term": "{Sr}",
+        "count": 1
       }
     ]
   },
@@ -133,11 +269,39 @@
     "descriptor_schema": "generic_material_profile",
     "elements": [
       {
+        "term": "Mo",
+        "count": 2
+      },
+      {
         "term": "Sb",
         "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 1
+      },
+      {
+        "term": "N",
+        "count": 1
+      },
+      {
+        "term": "Ni",
+        "count": 1
+      },
+      {
+        "term": "Sn",
+        "count": 1
+      },
+      {
+        "term": "Sr",
+        "count": 1
       }
     ],
     "components": [
+      {
+        "term": "defect_engineered_materials",
+        "count": 11
+      },
       {
         "term": "nitrogen-doped carbon",
         "count": 1
@@ -146,7 +310,7 @@
     "surface_states": [
       {
         "term": "oxygen vacancy",
-        "count": 12
+        "count": 15
       },
       {
         "term": "point defects",
@@ -176,9 +340,10 @@
         "defects",
         "vacancy_models",
         "Defect",
-        "Modeling Keywords"
+        "Modeling Keywords",
+        "Surface/Support"
       ],
-      "count": 12,
+      "count": 15,
       "example_contexts": [
         "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
         "Au/TiO2",
@@ -192,11 +357,25 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 12,
+      "count": 13,
       "example_contexts": [
         "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
         "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
         "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+      ]
+    },
+    {
+      "term": "defect_engineered_materials",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 11,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
@@ -206,11 +385,37 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 8,
+      "count": 9,
       "example_contexts": [
         "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
         "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
         "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "Mo-Doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
+      "term": "of doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "d2ta09361h"
       ]
     },
     {
@@ -239,6 +444,18 @@
       "example_contexts": [
         "d1nr02235k 12885..12895 ++",
         "Antimonene"
+      ]
+    },
+    {
+      "term": "co-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
       ]
     },
     {
@@ -290,6 +507,42 @@
       ]
     },
     {
+      "term": "Fe-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
+      ]
+    },
+    {
+      "term": "N-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges"
+      ]
+    },
+    {
+      "term": "Ni-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "nitrogen-doped carbon",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -299,6 +552,30 @@
       "count": 1,
       "example_contexts": [
         "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
+      ]
+    },
+    {
+      "term": "Sn doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
+      ]
+    },
+    {
+      "term": "Sr-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
       ]
     },
     {

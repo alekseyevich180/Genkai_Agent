@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "borides",
-  "updated_at": "2026-07-06T07:30:22.252465+00:00",
+  "updated_at": "",
   "summary": {
     "terms": 0,
     "known_useful": 0,
@@ -9,12 +9,6 @@
   },
   "keyword_inventory": {},
   "material_descriptors": {},
-  "class_profile": {
-    "descriptor_schema": "generic_material_profile",
-    "elements": [],
-    "components": [],
-    "surface_states": [],
-    "reaction_families": []
-  },
+  "class_profile": {},
   "entries": []
 }

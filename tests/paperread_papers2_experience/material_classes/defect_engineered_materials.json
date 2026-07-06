@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0",
+  "material_class": "defect_engineered_materials",
+  "updated_at": "2026-07-06T15:24:50.012169+00:00",
+  "summary": {
+    "terms": 3,
+    "known_useful": 3,
+    "unknown": 0
+  },
+  "keyword_inventory": {
+    "modeling_keywords": [
+      {
+        "term": "Oxygen vacancy",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "doped_surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "vacancy_landscape",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "Oxygen vacancy",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "material_kinds": [
+      {
+        "term": "surface",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "doped_surface",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [],
+    "components": [],
+    "surface_states": [
+      {
+        "term": "Oxygen vacancy",
+        "count": 2
+      }
+    ],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "Oxygen vacancy",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Defect",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "doped_surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "vacancy_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    }
+  ]
+}

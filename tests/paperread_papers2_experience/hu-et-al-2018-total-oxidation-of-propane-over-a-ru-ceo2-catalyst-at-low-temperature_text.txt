@@ -1,0 +1,591 @@
+Article
+
+ Cite This: Environ. Sci. Technol. 2018, 52, 9531−9541 pubs.acs.org/est
+
+ Total Oxidation of Propane over a Ru/CeO2 Catalyst at Low
+ Temperature
+ Zong Hu,† Zheng Wang,†,‡ Yun Guo,† Li Wang,† Yanglong Guo,† Jinshui Zhang,‡
+ and Wangcheng Zhan*,†
+ †
+ Key Laboratory for Advanced Materials and Research Institute of Industrial Catalysis, School of Chemistry and Molecular
+ Engineering, East China University of Science and Technology, Shanghai 200237, P. R. China
+ ‡
+ State Key Laboratory of Photocatalysis on Energy and Environment, College of Chemistry, Fuzhou University, Fuzhou 350116, P.
+ R. China
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ *
+ S Supporting Information
+
+ ABSTRACT: Ruthenium (Ru) nanoparticles (∼3 nm) with
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 06:06:50 (UTC).
+
+ mass loading ranging from 1.5 to 3.2 wt % are supported on a
+ reducible substrate, cerium dioxide (CeO2, the resultant
+ sample is called Ru/CeO2), for application in the catalytic
+ combustion of propane. Because of the unique electronic
+ conﬁguration of CeO2, a strong metal−support interaction is
+ generated between the Ru nanoparticles and CeO2 to stabilize
+ Ru nanoparticles for oxidation reactions well. In addition, the
+ CeO2 host with high oxygen storage capacity can provide an
+ abundance of active oxygen for redox reactions and thus
+ greatly increases the rates of oxidation reactions or even
+ modiﬁes the redox steps. As a result of such advantages, a
+ remarkably high performance in the total oxidation of propane at low temperature is achieved on Ru/CeO2. This work
+ exempliﬁes a promising strategy for developing robust supported catalysts for short-chain volatile organic compound removal.
+
+ 1. INTRODUCTION mental sustainability and energy utilization. Toward this end,
+ Volatile organic compounds (VOCs) are organic compounds various classes of catalysts, including noble metal-based
+ with boiling points in the range of 50−260 °C and include catalysts, nonnoble metal oxide catalysts, and perovskites,
+ alkanes, aromatics, oleﬁns, alcohols, and halogenated hydro- have been synthesized and examined for VOC removal,
+ carbons. The main sources of VOCs are emissions from thereby greatly enhancing the development of the catalytic
+ industrial processes, automobile exhaust, and household oxidation technique.24−30 Currently, a challenging issue in this
+ products. The release of VOCs into the atmosphere has had area is the identiﬁcation of a robust catalyst for the total
+ strong environmental impacts and severely aﬀected human oxidation of light alkanes (the largest fraction of hydrocarbons
+ health because of the toxicity of these compounds and their in automobile exhausts) at low temperature because such short
+ involvement in the formation of photochemical smog. The carbon chain molecules are both thermally and chemically
+ elimination of VOC pollutants from air is therefore very stable, making them much more diﬃcult to remove than longer
+ important for achieving environmental sustainability and chain molecules. For example, propane, a typical short-chain
+ protecting human health.1−9 However, the removal of VOCs pollutant from liqueﬁed petroleum gas, requires intermediate/
+ is rather challenging because most of these compounds are high reaction temperatures to be activated.31−34 As the use of
+ very stable and often undergo incomplete destruction, propane as a fuel in transport vehicles has recently increased, a
+ producing undesirable byproducts with much higher toxicities catalyst that can perform the total oxidation of propane is
+ than the original compounds rather than harmless decom- essential for controlling this VOC and reducing its impact on
+ position products, e.g., CO2 and H2O.10−17 Thus, the the environment.
+ development of eﬀective removal technologies that conduct Supported Ru catalysts are typical oxidation catalysts that
+ the total oxidation of VOCs is highly desirable. have been extensively applied in various kinds of oxidation
+ Catalytic oxidation is a promising technique for controlling processes, such as CO oxidation,35 alcohol/amine oxida-
+ the emission of VOCs because of its high destruction tion,36−38 and long-chain VOC degradation (e.g., ethyl acetate,
+ eﬃciency, low thermal NOx emission, and moderate operating
+ temperature.18−23 Generally, in this technique, pollution Received: June 24, 2018
+ molecules can be completely oxidized over a catalyst at Revised: July 23, 2018
+ temperatures much lower than those required for thermal Accepted: July 24, 2018
+ oxidation, showing signiﬁcant advantages related to environ- Published: July 24, 2018
+
+ © 2018 American Chemical Society 9531 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 1. Catalytic activity (A) and ln r as a function of 1/T (B) of the Ru/Al2O3-X and Ru/CeO2-X catalysts in the total oxidation of propane.
+The feed gas consisted of 0.2 vol % C3H8−2 vol % O2−97.8 vol % Ar, and the GHSV was 30 000 mL·h−1·gcat−1 for A and 60 000 mL·h−1·gcat−1 for
+B.
+
+ortho-xylene)39−41 and, thus, show signiﬁcant advantages in Supported Ru catalysts were prepared by a well-developed
+oxidation reactions. Recently, Ru nanoparticles were supported deposition-precipitation (DP) method using RuCl3 as the Ru
+on γ-Al2O3 and applied to light alkane combustion.42−45 After precursor. Typically, 0.5 g of support powder was suspended in
+thorough optimization of the catalyst preparation and 50 mL of H2O containing the desired amount of RuCl3, and
+operating conditions, a high activity with a turnover frequency the mixture was ultrasonicated for 15 min and stirred at 25 °C
+(TOF) of 0.0035 s−1 was achieved on Ru/γ-Al2O3 in the total for 15 min to form a suspension. Then, an aqueous NaOH
+oxidation of iso-butane at temperatures as low as 175 °C,46 solution (0.01 M) was added dropwise to the suspension to
+clearly suggesting that supported Ru catalysts are promising change the pH of the mixture to ∼10. After this step, the
+candidates for short-chain VOC removal. However, owing to mixture was further stirred at 25 °C for 3 h, and then the solid
+the chemical inertness of nonreducible Al2O3, the interaction was collected by centrifugation and washed several times with
+between the metal and the support was so poor that it could be deionized water. Finally, the obtained solid sample was dried
+almost ignored, which signiﬁcantly reduced the catalytic under vacuum at 60 °C overnight and then calcined in a 10%
+performance and durability of Ru/γ-Al2O3 in VOC oxidation. H2/Ar mixed atmosphere at 400 °C for 1 h. The resultant
+The metal−support interaction is generally known to be one of samples were denoted Ru/CeO2-X and Ru/Al2O3-X based on
+the most important factors that determine the catalytic the support used, where X is an arbitrary sample number (X =
+properties of supported metal catalysts, as it usually decides 1, 2, 3) that represents the loading amount of Ru. The actual
+the oxidation state of the active metal and the steps involved in content of Ru in the diﬀerent catalysts is listed in Table S1.
+the redox reaction.47,48 In this regard, the generation of 2.2. Catalytic Activity Testing. The catalytic activity of
+adequate interactions between Ru nanoparticles and the the catalyst in the total oxidation of propane was evaluated in a
+support is therefore highly essential for further advancing the ﬁxed-bed reactor containing 200 mg of catalyst at atmospheric
+application of supported Ru catalysts in the total oxidation of pressure, and the feed gas consisted of 0.2 vol % C3H8−2 vol %
+propane at relatively low temperatures. O2−97.8 vol % Ar. The total gas ﬂow rate was 100 mL/min,
+ Cerium dioxide (CeO2) is a reducible support that has been and the corresponding gas hourly space velocity (GHSV) was
+widely used in the preparation of supported catalysts for 30 000 mL·h−1·gcat−1. The temperature of the reaction bed was
+oxidation reactions because of its high oxygen storage capacity ramped up to 300 °C at a heating rate of 2 °C·min−1. The
+and facile Ce4+/Ce3+ redox cycle.49 During oxidation processes, conversion of C3H8 was measured after the catalytic reaction
+CeO2 can provide an abundance of active oxygen for redox by an online gas chromatograph (GC-2060) that was equipped
+reactions and thus greatly increases the rates of oxidation with a ﬂame ionization detector (FID). The C3H8 conversion
+reactions or even modiﬁes the redox steps. Herein, Ru (XC3H8) was calculated by the equation
+nanoparticles were stabilized by CeO2 to create suﬃcient [C H ] − [C H ]
+ XC3H8 = 3 8[inC H ] 3 8 out × 100%, where [C 3 H 8 ] i n and
+metal−support interactions for achieving the total oxidation of 3 8 in
+
+propane. As expected, the Ru nanoparticles and CeO2 worked [C3H8]out are the C3H8 concentrations in the inlet and outlet
+together to catalyze the steps of propane destruction, and thus gas, respectively.
+a remarkably high performance in the total oxidation of
+propane at low temperature was achieved on Ru/CeO2. We 3. RESULTS AND DISCUSSION
+hope that this work will exemplify a promising strategy for
+developing robust supported catalysts for short-chain VOC 3.1. Catalytic Activity of the Catalysts. Figure 1 shows
+removal. the propane conversions over the Ru/CeO2-X catalysts as a
+ function of the reaction temperature, where the Ru/Al2O3-X
+ catalysts were utilized as control samples. As expected, CeO2
+2. MATERIALS AND METHODS and Al2O3 alone showed rather poor activities in the total
+ 2.1. Catalyst Preparation. CeO2 was obtained from the oxidation of propane at temperatures below 300 °C. Once Ru
+direct calcination of Ce(NO)3·6H2O (99.95% metals basis) in was loaded on the CeO2 or Al2O3 support, the catalytic
+air at 500 °C for 8 h, while γ-Al2O3 (99.99% metals basis) was activities improved drastically, which clearly suggests that Ru
+purchased from Aladdin Chemical Co., Ltd. (Shanghai). has intrinsic catalytic properties for propane oxidation. More
+ 9532 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 2. XRD patterns of the (A) Ru/CeO2-X and (B) Ru/Al2O3-X catalysts.
+
+importantly, only CO2 and H2O were produced without any catalysts are shown in Figure 2. The Ru/CeO2-X catalysts
+other byproducts, conﬁrming that this catalytic process was a exhibited the typical diﬀraction peaks of cubic ﬂuorite CeO2
+total oxidation reaction. As a result of the synergic eﬀect of Ru crystals, while all the Ru/Al2O3-X catalysts displayed the
+nanoparticles and CeO2, the Ru/CeO2-X catalysts exhibited diﬀraction peaks of γ-Al2O3. Moreover, no diﬀraction peaks
+much higher catalytic activities than the Ru/Al2O3-X catalysts. corresponding to RuO2 or Ru phases were detected in the
+Furthermore, even when reduced TiO2 oxide was used as the XRD patterns of all the catalysts, meaning that the Ru species
+support, the Ru/CeO2-X catalysts still showed unique catalytic were highly dispersed on the support with small particle sizes
+activity (Figure S1). Owing to the synergic eﬀect of the catalyst or existed in the amorphous states.
+components, the eﬀect of the Ru loading on the catalytic Figures 3 and S4−S7 show the transmission electron
+activity of the Ru/CeO2-X catalysts was not obvious, which is microscopy (TEM) micrographs and corresponding Ru
+diﬀerent from the case of the Ru/Al2O3-X catalysts, where the particle size distributions of the Ru/CeO2-X and Ru/Al2O3-X
+catalytic activity was closely related to the Ru loading. catalysts. Very small Ru nanoparticles were uniformly
+ To further evaluate the extraordinary catalytic performance distributed on both the CeO2 and Al2O3 supports. The lattice
+of the Ru/CeO2-X catalysts, the reaction rate, TOF and spacing of 0.21 nm observed in the magniﬁed images was
+apparent activation energy (Ea) were calculated, and the results assigned to the (101) lattice plane of Ru. The average Ru
+are listed in Table S2 and Figure 1B. It was noted that the particle sizes on both CeO2 and Al2O3 increased with
+reaction rates and TOF of the Ru/CeO2-X catalysts were increasing Ru loading. Interesting, the average Ru particle
+higher than those of the Ru/Al2O3-X catalysts having the same sizes on the Ru/CeO2-X catalysts were relatively smaller than
+Ru content, while the corresponding Ea of the former was those on the Ru/Al2O3-X catalysts having the same Ru loading
+lower than that of the latter. These ﬁndings conﬁrmed that the (Table S1). This should be attributed to the strong metal−
+Ru/CeO2-X catalysts exhibited higher catalytic activities than support interaction between Ru and CeO2. Because of the
+the Ru/Al2O3-X catalysts in the total oxidation of propane. speciﬁc properties of Ce with 4f orbit and the structural
+Furthermore, for both the CeO2- and Al2O3-supported relaxation, the adsorption of metal atom on CeO2 is
+catalysts, the reaction rate and TOF decreased with increasing accompanied by an electron charge transfer between metal
+Ru loading in the catalyst, indicating a decrease in the intrinsic atom and CeO2 surface and, thus, strengthens the interaction
+activity. The same trend was also observed for the Ea of the between metal and CeO2 support50−53
+Ru/CeO2-X catalysts. In contrast, the Ea of the Ru/Al2O3-X Figure S8 shows high-resolution TEM (HRTEM) images
+catalysts decreased with increasing Ru loading, which contra- and fast Fourier transform (FFT) patterns of a Ru nanocrystal
+dicted the trends in the reaction rate and TOF. This ﬁnding in the Ru/CeO2-3 and Ru/Al2O3-3 catalysts. Ru metal is well-
+was due to the compensation eﬀect of the total oxidation of known to become partially oxidized when exposed to air at
+propane on the Ru/Al2O3-X catalysts (Figure S2). ambient temperature, leading to the coverage of Ru nano-
+ To highlight the advanced catalytic performance of the Ru/ crystals with a thin oxide layer,45,46 which was conﬁrmed by
+CeO2 catalysts in the total oxidation of propane, the activity of the following X-ray photoelectron spectroscopy (XPS) results.
+the Ru/CeO2-1 catalyst was compared with that of other Unfortunately, as shown in Figure S8, the thin oxide layer was
+reported catalysts, and the results are listed in Table S3. not observed in the HRTEM images of the Ru nanocrystals of
+Excitingly, the reaction rate and TOF of the Ru/CeO2-1 the Ru/CeO2-3 and Ru/Al2O3-3 catalysts, and the FFT
+catalyst were much higher than those of other supported Ru patterns contained spots corresponding to only the 0.21 nm
+catalysts and even the well-known noble metal-based catalysts lattice fringes [Ru(101)]. This contradiction is due to the
+(e.g., Pt/CeO2, Pt/ZSM-5, Pd/Al2O3, and Au/CoOx). In presence of the amorphous phase of RuOx.
+addition, the Ru/CeO2-1 catalyst was rather robust that the Figure 4A and B shows the Ru 3d XPS spectra of the Ru/
+small Ru nanoparticles have been well stabilized by CeO2 CeO2-X and Ru/Al2O3-X catalysts. All the catalysts exhibited a
+without sintering after propane oxidation reaction (Figure S3 Ru 3d5/2 peak at ∼280 eV and a Ru 3d3/2 peak at ∼284.6 eV.
+and Table S1). These ﬁndings indicate that Ru/CeO2 is a Because the Ru 3d3/2 peak and the C 1s peak at 284.6 eV
+promising catalyst for the total oxidation of propane. overlapped, the Ru 3d5/2 peak at ∼280 eV was employed to
+ 3.2. Characterizations of Catalysts. The X-ray diﬀrac- calculate the atomic ratio of Ru in the diﬀerent valence states.
+tion (XRD) patterns of the Ru/CeO2-X and Ru/Al2O3-X The Ru 3d5/2 peak could be deconvoluted into two peaks for
+ 9533 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 3. TEM images and corresponding Ru particle size distributions (insets) of the (A) Ru/CeO2-1, (B) Ru/CeO2-2, and (C) Ru/CeO2-3
+catalysts.
+
+all the catalysts, and the resulting peaks at approximately 280.2 for the same Ru loadings, the atomic ratios of Run+/Ru0 on the
+and 281.3 eV were assigned to Ru0 and Run+ (0 < n < 4), surfaces of the Ru/CeO2-X catalysts were slightly higher than
+respectively.54−56 Although all the catalysts were reduced those on the surfaces of the Ru/Al2O3-X catalysts. Unlike in
+during the preparation process, positively charged Ru was the series of catalysts with the same support, the Ru particle
+observed in all the catalysts because Ru metal can become size does not suﬃciently explain the diﬀerence between the
+partially oxidized when exposed to air at ambient temperature. atomic ratios of Run+/Ru0 on the surfaces of the Ru/CeO2-X
+As shown in Table S4, the atomic ratios of Run+/Ru0 in both and Ru/CeO2-X catalysts. Although the Ru/CeO2-3 and Ru/
+the Ru/CeO2 and Ru/Al2O 3 catalysts decreased with Al2O3-1 catalysts had nearly the same Ru particle size, large
+increasing Ru loading, which is due to the small size of the diﬀerences were observed in the Run+/Ru0 ratios (28.7% vs
+Ru particle in the catalysts with low contents of Ru (shown in 47.7%). Therefore, the Run+/Ru0 ratios on the surface of the
+Table S1) since small metal nanoparticles have a stronger Ru-supported catalysts are strongly inﬂuenced by the nature of
+aﬃnity for oxygen than larger Ru particles. On the other hand, the support.
+ 9534 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 4. Ru 3d (A, B) and O 1s (C, D) XPS spectra of the Ru/CeO2-X and Ru/Al2O3-X catalysts.
+
+ Based on the discussion of the particle size and the structure an increase in the amount of surface oxygen species on the
+of the Ru active sites, the Ru/CeO2-3 and Ru/Al2O3-2 catalysts CeO2 surface after the introduction of Ru.62 Therefore, the size
+had similar Ru particle sizes and Run+/Ru0 ratios on their of the interface between Ru and the CeO2 support should be a
+surfaces. However, the TOF of the Ru/CeO2-3 catalyst was crucial factor in the formation of oxygen defects. Thus, the
+twice that of the Ru/Al2O3-2 catalyst. Therefore, the high total length of the perimeter of the Ru−CeO2 interface (I0)
+catalytic performance of the Ru/CeO2-X catalysts in the total was calculated, and the results are shown in Table S1. I0
+oxidation of propane can be attributed to the role of the CeO2 decreased with increasing Ru loading in the Ru/CeO2-X
+support and the metal−support interaction between the Ru catalysts, which is consistent with the trend observed for the
+species and CeO2. Oγ/Oα ratio on the surface of the Ru/CeO2-X catalysts. Since
+ 3.3. Interaction between the Ru Species and CeO2. oxygen defects are good sites for oxygen adsorption during
+The O 1s XPS spectra of the Ru/CeO2-X and Ru/Al2O3-X oxidation reactions,63−65 the presence of oxygen defects on the
+catalysts are also shown in Figure 4C and D. The O 1s XPS surface of the Ru/CeO2-X catalysts is beneﬁcial for improving
+spectra of the Ru/Al2O3-X catalysts were similar to that of their catalytic activity in the total oxidation of propane.
+Al2O3 support. One strong peak (Oα) at 531.0 eV and a wide In Figure S9, temperature program reduction of CO (CO-
+shoulder peak (Oβ) at 532.8 eV were detected, which can be TPR) experiments were carried out to demonstrate that the
+mainly attributed to the lattice oxygen and the surface oxygen strong metal−support interaction between Ru and CeO2 is
+from the adsorbed water or hydroxyl species, respectively.57−59 beneﬁcial to activate the oxygen of CeO2 around the interface
+For the CeO2 support and the Ru/CeO2-X catalysts, the O 1s of Ru and CeO2 for oxidation reaction.66,67 As expected, the
+XPS spectra can be deconvoluted into two kinds of oxygen area of the CO-TPR proﬁles for the Ru/CeO2 catalyst (7.7 ×
+species. The one at 529.2 eV (Oα) was attributed to lattice 10−8) was much bigger than that of pure CeO2 (4.96 × 10−8).
+oxygen, while the other one at 531.0 eV (Oγ) was attributed to This observation suggested that more oxygen species
+surface-adsorbed oxygen belonging to defect oxides and/or the participated in CO oxidation on the Ru/CeO2 catalyst during
+contributions from O of RuOx (only in Ru/CeO 2 -X TPR experiment. Thus, the oxygen in CeO2 around the Ru/
+catalysts).40,60,61 Since the content of Ru in the Ru/CeO2-X CeO2 interface was activate due to the interaction between
+catalysts was very low, the ratio between the area of Oα and Oγ RuOx and CeO2, and thus resulted in the increase of CO
+(Oγ/Oα) for the Ru/CeO2-X catalysts was analogous to the consumption.
+amount ratio between surface-adsorbed oxygen belonging to Figure 5A and B shows the O2 temperature-programmed
+defect oxides and the lattice oxygen. As shown in Table S4, the desorption (TPD) spectra of the Ru/CeO2-X and Ru/Al2O3-X
+Oγ/Oα ratio for the Ru/CeO2-X catalysts was higher than that catalysts. Two broad overlapped peaks were observed for the
+for the CeO2 support and decreased with increasing content of Al2 O3 support, i.e., one desorption peak centered at
+Ru in the catalysts. It was reported that oxygen defects can be approximately 400 °C and another at approximately 550 °C;
+produced by the interaction between Ru and CeO2, leading to these peaks were attributed to the desorption of oxygen species
+ 9535 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 5. O2-TPD curves (A, B) and C3H8-TPSR (C, D) of the Ru/CeO2-X and Ru/Al2O3-X catalysts.
+
+from the regular surface and from imperfect or defect regions in the total length (I0) (Table S1) of the Ru−ceria interface
+on the Al2O3 surface, respectively.68 After Ru was introduced that originated from the change in the Ru particle size.
+on Al2O3, no obvious changes in the O2-TPD curves were Figure 5C and D shows the C3H8 temperature-programmed
+observed except for a shift in the desorption peak to a lower surface reaction (TPSR) results for the Ru/CeO2-X and Ru/
+temperature. However, for the CeO2 support, multiple Al2O3-X catalysts. The mass spectrometry (MS) signals of CO2
+overlapping desorption peaks were found between 250 and (m/ = 44) and m/z = 43 were both recorded because CO2 and
+600 °C, and these peaks were assigned to the chemisorbed C3H8 have the same mass number. No surface products were
+oxygen and lattice oxygen of CeO2.32,40 After Ru was detected on the CeO2 and Al2O3 supports, indicating that both
+introduced on CeO2, the O2-TPD curves clearly changed of these supports were nearly inactive in the total oxidation of
+and exhibited a broad overlapping desorption peak at low propane at temperatures <300 °C. After Ru was introduced on
+temperature, accompanying by the increase of the area under CeO2, a positive peak at approximately 220 °C with m/z = 44
+the desorption peak. As shown by XPS (Figure 4C), the was found, and the peak intensity increased with increasing Ru
+interactions between Ru and CeO2 remarkably increase the loading. Since a negative peak was found for m/z = 43, the
+number of oxygen defects, which can adsorb and activate more peak for m/z = 44 was attributed to the total oxidation of
+gaseous oxygen to form easily desorbed oxygen species.40 propane instead of propane desorption from the catalyst.
+Therefore, the amount of desorbed oxygen species on the Ru/ Although a similar situation was also observed for the Ru/
+CeO2-X catalysts was higher than the CeO2 support, and the Al2O3-X catalysts, the amount of CO2 detected on the Ru/
+temperatures of desorption peaks for the Ru/CeO2-X catalysts Al2O3 catalysts was much lower than that detected on the Ru/
+were much lower than that of the Ru/Al2O3-X catalysts. To CeO2 catalysts having the same Ru loading, due to the
+better tell which one of the Ru/CeO2-X can produce O2 fastest presence of surface-adsorbed oxygen on the CeO2 support and
+for oxidation reactions, the ﬁrst derivatives of O2-TPD curves the more active surface lattice oxygen in CeO2 around the Ru/
+were calculated. It was found that the ﬁrst derivatives of those CeO2 interface.
+curves followed the sequence: Ru/CeO2-1 (2.9 × 10−13) > Ru/ CeO2 generally serves as a reservoir for oxygen under
+CeO2-2 (1.41 × 10−13) > Ru/CeO2-3 (1.04 × 10−13), oxidative conditions. Based on the above-mentioned results,
+indicating that the Ru/CeO2-1 catalyst produced O2 faster lattice oxygen and surface-adsorbed oxygen belonging to defect
+than other catalysts. Meanwhile, the area under the broad oxides were present on the surface of the CeO2 support. On
+desorption peak in the O2-TPD curves of the Ru/CeO2-X the other hand, the interaction between Ru and CeO2 can
+catalysts decreased in the order of Ru/CeO2-1 (2.28 × 10−8) > remarkably increase the amount of oxygen defects, which can
+Ru/CeO2-2 (1.95 × 10−8) > Ru/CeO2-3 (1.76 × 10−8) > adsorb and activate gaseous oxygen to form easily desorbed
+CeO2 (1.40 × 10−8), which may be attributed to the decrease oxygen species (shown in the O2-TPD results). At the same
+ 9536 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 6. DRIFT spectra of C3H8 adsorption (0.5 vol % C3H8−99.5 vol % Ar, red line), C3H8 + O2 reaction (0.5 vol % C3H8−5 vol % O2−94.5 vol
+% Ar, blue line) and desorption (Ar, green line) on Al2O3 (A), Ru/Al2O3-1 (B), CeO2 (C), and Ru/CeO2-1 at 200 °C. The feed gas ﬂow rate was
+25 mL/min. All spectra were obtained after the catalysts were exposed to the feed gas for 30 min.
+
+time, the metal−support interaction can activate surface lattice min at 200 °C. Finally, the feed gas was replaced with Ar, and
+oxygen in CeO2 around the Ru/CeO2 interface (the results of all the bands disappeared after purging the catalysts at 200 °C
+CO-TPR in Figure S9). Therefore, the CeO2 support can for 30 min. These results revealed that propane only minimally
+signiﬁcantly improve the catalytic activity of supported Ru adsorbed to the Al2O3 support and that the corresponding total
+catalysts in the total oxidation of propane because of its oxygen oxidation of propane could not occur at 200 °C.
+supply and the metal−support interaction between the Ru For the Ru/Al2O3-X catalysts, after the catalyst was exposed
+species and CeO2. For the Ru/CeO2-X catalysts, as the Ru to feed gas consisting of 0.5 vol % C3H8−99.5 vol % Ar at 200
+loading increased, the total length (I0) of Ru-ceria interface °C for 30 min, bands at 2850−3000 cm−1 were again observed
+decreased, leading to decreases in the amount ratio between (Figures 6B and S10). In addition, multiple bands between
+surface-adsorbed oxygen belonging to defect oxides and the 1300 and 1900 cm−1 appeared. The bands at 1855, 1589, and
+lattice oxygen on the catalyst surface and in the area under the 1457 cm−1 can be attributed to ν(C = O), νas(COO), and
+desorption peak in the O2-TPD curves. As a result, the reaction νs(COO) modes, respectively,69−72 and both the bands at
+rate and TOF of the Ru/CeO2-X catalysts decreased with 1373 and 1392 cm−1 were assigned to δs(CH3).69,70,72 Since
+increasing Ru loading. the latter two bands had the same shape and intensity,
+ 3.4. Reaction Mechanism. To gain deeper insight into the isopropyl groups were concluded to form on the Ru/Al2O3-X
+combined eﬀect between the Ru species and CeO2 in the total catalysts after exposure to the feed gas. In addition, the
+oxidation of propane, in situ diﬀuse reﬂectance infrared Fourier intensity of the band observed at 1855 cm−1 for the Ru/Al2O3-
+transform (DRIFT) spectra were collected to comprehensively X catalysts clearly increased with increasing Ru loading, as
+study the processes of propane adsorption, oxidation, and shown in Figure S10. When the feed gas was replaced with 0.5
+desorption on the Ru/Al2O3-X and Ru/CeO2-X catalysts at vol % C3H8−5 vol % O2−94.5 vol % Ar at 200 °C for 30 min,
+200 °C. As shown in Figure 6A, when the chamber was purged the intensity of the band at 1855 cm−1 decreased, and the
+with feed gas consisting of 0.5 vol % C3H8−99.5 vol % Ar at extent of this decrease was enhanced signiﬁcantly with
+200 °C for 30 min, absorption bands were detected at 2850− increasing Ru loading, indicating that the species containing
+3000 cm−1 for the Al2O3 support; these bands were attributed CO bonds was involved in the total oxidation of propane as
+to the absorption of gaseous propane. The details of this an intermediate. In contrast, the intensities of the bands at
+experiment are shown in Table S5. Subsequently, the feed gas 1589, 1457, 1373, and 1392 cm−1 assigned to isopropyl groups
+was replaced with 0.5 vol % C3H8−5 vol % O2−94.5 vol % Ar, and carboxylate species signiﬁcantly increased due to the
+and no signiﬁcant change was observed after exposure for 30 occurrence of the oxidation reaction. At the desorption stage,
+ 9537 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+Figure 7. Propane oxidation pathways on the Ru/Al2O3 catalyst (A) and the additional reaction pathway on the Ru/CeO2 catalyst (B).
+
+the intensities of the bands at 1589, 1457, 1373, and 1392 propane over the CeO2 support occurred at the terminal group
+cm−1 assigned to the isopropyl groups and carboxylate species of propane instead of isopropyl groups, as was the case with
+remained unchanged. However, the intensity of the band at the Ru/Al2O3-X catalysts. At the desorption stage, only the
+1855 cm−1 decreased, indicating that the intermediate band at 2967 cm−1 assigned to gaseous propane disappeared,
+containing CO bonds was removed during purging. indicating that the partially oxidized species were strongly
+ According to the results mentioned above, it can be bound to the surface of the CeO2 support.
+concluded that propane could adsorb on only the Ru For the Ru/CeO2-X catalysts, after the catalyst was exposed
+nanoparticles on the Ru/Al2O3-X catalysts to form isopropyl to feed gas consisting of 0.5 vol % C3H8 − 99.5 vol % Ar at 200
+groups, and these isopropyl groups were then converted to °C for 30 min, many bands with strong intensities were
+acetone groups. Finally, the species containing acetone groups detected (Figures 6D and S11), and their assignments are
+were decomposed to formate or acetate species, which then listed in Table S5. The presence of bands at 1843 and 1573
+formed the products CO2 and H2O. The reaction diagram for cm−1 revealed that propane could adsorb on the Ru/CeO2-X
+the Ru/Al2O3-X catalysts is shown in Figure 7A, and the catalyst in the same way as on the Ru/Al2O3-X catalyst, i.e., via
+corresponding reaction pathway is as follows.73,74 species containing isopropyl groups. Meanwhile, similar to the
+ Step 1: O2 + Ru → RuOx coadsorption of C3H8 and O2 on the CeO2 support, the
+ presence of other strong bands showed that propane could also
+ adsorb via the terminal group. Furthermore, a band at 1617
+ Step 2: CH3CH 2CH3 + RuOx cm−1 assigned to νas(CC) also appeared after the adsorption
+ → CH3CH(OH)CH3(ads) + RuOy of C3H8 on the Ru/CeO2-X catalysts, indicating the formation
+ of a species containing acrylate groups at the Ru−Ce
+ interface.73 In summary, propane could adsorb on the Ru/
+ Step 3: CH3CH(OH)CH3(ads) + RuOy
+ CeO2-X catalysts through two diﬀerent pathways: one pathway
+ → CH3COCH3(ads) + RuOz + H 2O formed species containing isopropyl groups, while the other
+ formed species containing acrylate groups. When the feed gas
+ Step 4: CH3COCH3(ads) + RuOz was replaced with 0.5 vol % C3H8−5 vol % O2−94.5 vol % Ar,
+ only a slight increase in the intensities of the bands between
+ → CH3COO−(ads) + HCOO−(ads) + RuOz + H 2O 1200 and 1700 cm−1 was observed. These results showed that
+ the oxidation of propane occurred before oxygen was
+ Step 5: CH3COO−(ads) + HCOO−(ads) + RuOz introduced, indicating that the lattice oxygens of CeO2 took
+ part in the reaction. At the desorption stage, the intensities of
+ → CO2 + Ru + H 2O all the bands decreased sharply, indicating that those species
+ easily desorbed.
+ As shown in Figure 6C, when the CeO2 support was exposed
+ According to the results mentioned above, it can be
+to pure propane for 30 min, in addition to the absorption band
+ concluded that for the Ru/CeO2-X catalysts, in addition to
+at 2967 cm−1 assigned to the absorption of gaseous
+ the oxidation of isopropyl groups on the Ru nanoparticles,
+propane,75,76 an absorption band attributed to νas(COO) was
+ propane can also adsorb and be partially oxidized at the Ru-
+observed at 1546 cm−1, indicating that propane reacted with
+ CeO2 interface as species containing acrylate groups, as shown
+the oxygen of the CeO2 support to a certain degree.69−71
+ in Figure 7B. Finally, CO2 and H2O were formed by the
+When the feed gas was replaced with 0.5 vol % C3H8−5 vol %
+ decomposition and further oxidation of the species containing
+O2−94.5 vol % Ar, multiple bands appeared at 2933, 2842,
+ acrylate groups. The additional reaction pathway for the Ru/
+1506, 1466, 1428, 1371, 1355, and 1296 cm−1. The bands at
+ CeO2-X catalysts is as follows.73
+2933 and 2842 cm−1 were assigned to ν(CH2),69,70,75,76 and
+those at 1506, 1466, 1428, 1371, 1355, and 1296 cm−1 were Step 1: 2CH3CH 2CH3 + 7[O−]
+attributed to νas(COO), δas(CH3), νs(COO), δs(CH3),
+δs(CH3), and ν(C−O),69−72 respectively. Therefore, these → 2CH3CH 2COO−(ads) + 3H 2O
+results revealed that unlike in the case of the Al2O3 support,
+propane could be partially oxidized and adsorb to the surface Step 2: CH3CH 2COO−(ads) + [O−]
+of the CeO2 support. Furthermore, the presence of the bands
+assigned to the vibrations of CH2 revealed that the oxidation of → CH 2CHCOO−(ads) + H 2O
+
+ 9538 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+ Step 3: 2CH 2CHCOO−(ads) + 11[O−] → 6CO2 + 3H 2O (4) Zuo, G. M.; Cheng, Z. X.; Chen, H.; Li, G. W.; Miao, T. Study
+ on Photocatalytic Degradation of Several Volatile Organic Com-
+ pounds. J. Hazard. Mater. 2006, 128, 158−163.
+ Step 4: O2 → 2[O−](ceria)
+ (5) Hou, J.; Liu, L.; Li, Y.; Mao, M.; Lv, H.; Zhao, X. Tuning the K+
+ To conclude, a Ru-based catalyst with superior performance Concentration in the Tunnel of OMS-2 Nanorods Leads to a
+in the total oxidation of propane at low temperature has been Significant Enhancement of the Catalytic Activity for Benzene
+ Oxidation. Environ. Sci. Technol. 2013, 47, 13730−13736.
+successfully synthesized. Based on the characterization results, (6) Mao, M. Y.; Li, Y. Z.; Lv, H. Q.; Hou, J. T.; Zeng, M.; Ren, L.;
+this advanced catalytic performance is mainly attributed to the Huang, H.; Zhao, X. J. Efficient UV-vis-IR Light-Driven Thermoca-
+superiority of the CeO2 support and the strong interaction talytic Purification of Benzene on a Pt/CeO2 Nanocomposite
+between the Ru species and CeO2. First, the CeO2 support can Significantly Promoted by Hot Electron-Induced Photoactivation.
+act as a reservoir for oxygen and provide additional sites for Environ. Sci.: Nano 2017, 4, 373−384.
+propane adsorption during the reaction. Second, the strong (7) Hou, J. T.; Li, Y. Z.; Mao, M. Y.; Ren, L.; Zhao, X. J.
+interactions between the Ru species and CeO2 can produce Tremendous Effect of the Morphology of Birnessite-Type Manganese
+oxygen defects on the CeO2 surface that enhance the Oxide Nanostructures on Catalytic Activity. ACS Appl. Mater.
+adsorption of oxygen, and activate the oxygen in CeO2 around Interfaces 2014, 6, 14981−14987.
+the metal−support interface for oxidation reaction. Thus, an (8) Liu, H. H.; Li, Y. Z.; Yang, Y.; Mao, M. Y.; Zeng, M.; Lan, L.;
+eﬃcient reaction pathway is then created for the total oxidation Yun, L.; Zhao, X. J. Highly Efficient UV-Vis-Infrared Catalytic
+ Purification of Benzene on CeMnxOy/TiO2 Nanocomposite, Caused
+of propane at low temperature. We hope that this work will by Its High Thermocatalytic Activity and Strong Absorption in the
+exemplify a promising strategy for developing robust supported Full Solar Spectrum Region. J. Mater. Chem. A 2016, 4, 9890−9899.
+catalysts for short-chain VOC removal.
+
+■
+ (9) Shanbhag, P. V.; Guha, A. K.; Sirkar, K. K. Membrane-Based
+ Integrated Absorption−Oxidation Reactor for Destroying VOCs in
+ ASSOCIATED CONTENT Air. Environ. Sci. Technol. 1996, 30, 3435−3440.
+* Supporting Information
+ S (10) Zhang, S.; You, J.; Kennes, C.; Cheng, Z.; Ye, J.; Chen, D.;
+ Chen, J.; Wang, L. Current Advances of VOCs Degradation by
+The Supporting Information is available free of charge on the
+ Bioelectrochemical Systems: A Review. Chem. Eng. J. 2018, 334,
+ACS Publications website at DOI: 10.1021/acs.est.8b03448. 2625−2637.
+ Catalyst characterization information and reaction (11) Mamaghani, A. H.; Haghighat, F.; Lee, C. S. Photocatalytic
+ kinetics measurement are provided together with the Oxidation Technology for Indoor Environment Air Purification: The
+ State-of-the-Art. Appl. Catal., B 2017, 203, 247−269.
+ catalytic activity data, plots of ln A as a function of Ea, (12) Hou, J.; Li, Y.; Mao, M.; Ren, L.; Zhao, X. Tremendous Effect
+ TEM images, and DRIFT spectra (PDF) of the Morphology of Birnessite-Type Manganese Oxide Nanostruc-
+
+■
+ tures on Catalytic Activity. ACS Appl. Mater. Interfaces 2014, 6,
+ 14981−14987.
+ AUTHOR INFORMATION (13) Fang, S.; Li, Y.; Yang, Y.; Chen, J.; Liu, H.; Zhao, X. Mg-Doped
+Corresponding Author OMS-2 Nanorods: A Highly Efficient Catalyst for Purification of
+*Fax: +86-21-64252923. E-mail: zhanwc@ecust.edu.cn Volatile Organic Compounds with Full Solar Spectrum Irradiation.
+(W.Z.). Environ. Sci.: Nano 2017, 4, 1798−1807.
+ (14) Hou, J.; Li, Y.; Liu, L.; Ren, L.; Zhao, X. Effect of Giant Oxygen
+ORCID Vacancy Defects on the Catalytic Oxidation of OMS-2 Nanorods. J.
+Jinshui Zhang: 0000-0003-4649-6526 Mater. Chem. A 2013, 1, 6736−6741.
+Wangcheng Zhan: 0000-0002-0712-4917 (15) Zeng, M.; Li, Y. Z.; Mao, M. Y.; Bai, J. L.; Ren, L.; Zhao, X. J.
+Notes Synergetic Effect between Photocatalysis on TiO2 and Thermocatal-
+ ysis on CeO2 for Gas-Phase Oxidation of Benzene on TiO2/CeO2
+The authors declare no competing ﬁnancial interest.
+
+■
+ Nanocomposites. ACS Catal. 2015, 5, 3278−3286.
+ (16) Mao, M. Y.; Li, Y. Z.; Hou, J. T.; Zeng, M.; Zhao, X. J.
+ ACKNOWLEDGMENTS Extremely Efficient Full Solar Spectrum Light Driven Thermocatalytic
+Z.H. and W.Z. acknowledge ﬁnancial support from the Activity for the Oxidation of VOCs on OMS-2 Nanorod Catalyst.
+National Key Research and Development Program of China Appl. Catal., B 2015, 174, 496−503.
+(2016YFC0204300) and the Fundamental Research Funds for (17) Lan, L.; Shi, Z. K.; Zhang, Q.; Li, Y. Z.; Yang, Y.; Wu, S. W.;
+ Zhao, X. J. Defects Lead to a Massive Enhancement in the UV-Vis-IR
+the Central Universities (222201717003). Y.G. thanks the
+ Driven Thermocatalytic Activity of Co3O4 Mesoporous Nanorods. J.
+National Natural Science Foundation of China (21571061).
+
+■
+ Mater. Chem. A 2018, 6, 7194−7205.
+ (18) Pan, H.; Jian, Y.; Chen, C.; He, C.; Hao, Z.; Shen, Z.; Liu, H.
+ REFERENCES Sphere-Shaped Mn3O4 Catalyst with Remarkable Low-Temperature
+ (1) Domeño, C.; Rodríguez-Lafuente, Á .; Martos, J.; Bilbao, R.; Activity for Methyl−Ethyl−Ketone Combustion. Environ. Sci. Technol.
+Nerín, C. VOC Removal and Deodorization of Effluent Gases from an 2017, 51, 6288−6297.
+Industrial Plant by Photo-Oxidation, Chemical Oxidation, and (19) Chen, Y.; Tian, G.; Zhou, M.; Huang, Z.; Lu, C.; Hu, P.; Gao,
+Ozonization. Environ. Sci. Technol. 2010, 44, 2585−2591. J.; Zhang, Z.; Tang, X. Catalytic Control of Typical Particulate
+ (2) Li, Y.; Ouyang, S.; Xu, H.; Wang, X.; Bi, Y.; Zhang, Y.; Ye, J. Matters and Volatile Organic Compounds Emissions from Simulated
+Constructing Solid−gas-Interfacial Fenton Reaction over Alkalinized- Biomass Burning. Environ. Sci. Technol. 2016, 50, 5825−5831.
+C3N4 Photocatalyst to Achieve Apparent Quantum Yield of 49% at (20) Wang, R.; Li, J. Effects of Precursor and Sulfation on OMS-2
+420 nm. J. Am. Chem. Soc. 2016, 138, 13289−13297. Catalyst for Oxidation of Ethanol and Acetaldehyde at Low
+ (3) Barakat, T.; Rooke, J. C.; Tidahy, H. L.; Hosseini, M.; Cousin, Temperatures. Environ. Sci. Technol. 2010, 44, 4282−4287.
+R.; Lamonier, J. F.; Giraudon, J. M.; De Weireld, G.; Su, B. L.; Siffert, (21) Sun, P.; Wang, W.; Dai, X.; Weng, X.; Wu, Z. Mechanism Study
+S. Noble-Metal-Based Catalysts Supported on Zeolites and Macro- on Catalytic Oxidation of Chlorobenzene over MnxCe1‑xO2/H-ZSM5
+Mesoporous Metal Oxide Supports for the Total Oxidation of Volatile Catalysts under Dry and Humid Conditions. Appl. Catal., B 2016,
+Organic Compounds. ChemSusChem 2011, 4, 1420−1430. 198, 389−397.
+
+ 9539 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+ (22) Weng, X.; Sun, P.; Long, Y.; Meng, Q.; Wu, Z. Catalytic (40) Huang, H.; Dai, Q. G.; Wang, X. Y. Morphology Effect of Ru/
+Oxidation of Chlorobenzene over MnxCe1−xO2/HZSM-5 Catalysts: A CeO2 Catalysts for the Catalytic Combustion of Chlorobenzene. Appl.
+Study with Practical Implications. Environ. Sci. Technol. 2017, 51, Catal., B 2014, 158, 96−105.
+8057−8066. (41) Aouad, S.; Saab, E.; Abi-Aad, E.; Aboukaïs, A. Study of the Ru/
+ (23) Mao, M. Y.; Lv, H. Q.; Li, Y. Z.; Yang, Y.; Zeng, M.; Li, N.; Ce System in the Oxidation of Carbon Black and Volatile Organic
+Zhao, X. J. Metal Support Interaction in Pt Nanoparticles Partially Compounds. Kinet. Catal. 2007, 48, 835−840.
+Confined in the Mesopores of Microsized Mesoporous CeO2 for (42) Baranowska, K.; Okal, J. Performance and Stability of the Ru−
+Highly Efficient Purification of Volatile Organic Compounds. ACS Re/γ-Al2O3 Catalyst in the Total Oxidation of Propane: Influence of
+Catal. 2016, 6, 418−427. the Order of Impregnation. Catal. Lett. 2016, 146, 72−81.
+ (24) Magureanu, M.; Piroi, D.; Mandache, N. B.; Pârvulescu, V. I.; (43) Baranowska, K.; Okal, J. Bimetallic Ru-Re/γ-Al2O3 Catalysts for
+Pârvulescu, V.; Cojocaru, B.; Cadigan, C.; Richards, R.; Daly, H.; the Catalytic Combustion of Propane: Effect of the Re Addition. Appl.
+Hardacre, C. In situ study of ozone and hybrid plasma Ag−Al Catal., A 2015, 499, 158−167.
+catalysts for the oxidation of toluene: Evidence of the nature of the (44) Okal, J.; Zawadzki, M.; Tylus, W. Microstructure Character-
+active sites. Appl. Catal., B 2011, 104, 84−90. ization and Propane Oxidation over Supported Ru Nanoparticles
+ (25) Xie, S.; Liu, Y.; Deng, J.; Zang, S.; Zhang, Z.; Arandiyan, H.; Synthesized by the Microwave-Polyol Method. Appl. Catal., B 2011,
+Dai, H. Efficient Removal of Methane over Cobalt-Monoxide-Doped 101, 548−559.
+AuPd Nanocatalysts. Environ. Sci. Technol. 2017, 51, 2271−2279. (45) Okal, J.; Zawadzki, M. Influence of Catalyst Pretreatments on
+ (26) Deng, J.; He, S.; Xie, S.; Yang, H.; Liu, Y.; Guo, G.; Dai, H. Propane Oxidation Over Ru/γ-Al2O3. Catal. Lett. 2009, 132, 225−
+Ultralow Loading of Silver Nanoparticles on Mn2O3 Nanowires 234.
+Derived with Molten Salts: A High-Efficiency Catalyst for the (46) Okal, J.; Zawadzki, M. Catalytic Combustion of Butane on Ru/
+Oxidative Removal of Toluene. Environ. Sci. Technol. 2015, 49, γ-Al2O3 Catalysts. Appl. Catal., B 2009, 89, 22−32.
+11089−11095. (47) Zhan, W.; He, Q.; Liu, X.; Guo, Y.; Wang, Y.; Wang, L.; Guo,
+ (27) Xia, Y.; Dai, H.; Jiang, H.; Deng, J.; He, H.; Au, C. T. Y.; Borisevich, A. Y.; Zhang, J.; Lu, G.; Dai, S. A Sacrificial Coating
+Mesoporous Chromia with Ordered Three-Dimensional Structures Strategy Toward Enhancement of Metal-Support Interaction for
+for the Complete Oxidation of Toluene and Ethyl Acetate. Environ. Ultrastable Au Nanocatalysts. J. Am. Chem. Soc. 2016, 138, 16130−
+Sci. Technol. 2009, 43, 8355−8360. 16139.
+ (28) Deng, J.; Dai, H.; Jiang, H.; Zhang, L.; Wang, G.; He, H.; Au, (48) Zhan, W.; Shu, Y.; Sheng, Y.; Zhu, H.; Guo, Y.; Wang, L.; Guo,
+C. T. Hydrothermal Fabrication and Catalytic Properties of Y.; Zhang, J.; Lu, G.; Dai, S. Surfactant-Assisted Stabilization of Au
+La1‑xSrxM1‑yFeyO3 (M = Mn, Co) That Are Highly Active for the Colloids on Solids for Heterogeneous Catalysis. Angew. Chem., Int. Ed.
+Removal of Toluene. Environ. Sci. Technol. 2010, 44, 2618−2623. 2017, 56, 4494−4498.
+ (29) Wang, F.; Dai, H.; Deng, J.; Bai, G.; Ji, K.; Liu, Y. Manganese (49) Zhan, W.; Guo, Y.; Gong, X.; Guo, Y.; Wang, Y.; Lu, G.
+Oxides with Rod-, Wire-, Tube-, and Flower-Like Morphologies: Current Status and Perspectives of Rare Earth Catalytic Materials and
+Highly Effective Catalysts for the Removal of Toluene. Environ. Sci. Catalysis. Chin. J. Catal. 2014, 35, 1238−1250.
+Technol. 2012, 46, 4034−4041. (50) Tosoni, S.; Pacchioni, G. Trends in Adhesion Energies of Gold
+ (30) Zhan, W.; Yang, S.; Zhang, P.; Guo, Y.; Lu, G.; Chisholm, M. on MgO(100), Rutile TiO2(110), and CeO2(111) Surfaces: A
+F.; Dai, S. Incorporating Rich Mesoporosity into a Ceria-Based Comparative DFT Study. J. Phys. Chem. C 2017, 121, 28328−28338.
+Catalyst via Mechanochemistry. Chem. Mater. 2017, 29, 7323−7329. (51) Kozlov, S. M.; Neyman, K. M. Effects of Electron Transfer in
+ (31) Zhu, Z.; Lu, G.; Guo, Y.; Guo, Y.; Zhang, Z.; Wang, Y.; Gong, Model Catalysts Composed of Pt Nanoparticles on CeO2(111)
+X. Q. High Performance and Stability of the Pt-W/ZSM-5 Catalyst for Surface. J. Catal. 2016, 344, 507−514.
+the Total Oxidation of Propane: The Role of Tungsten. (52) Tereshchuk, P.; Freire, R. L. H.; Ungureanu, C. G.; Seminovski,
+ChemCatChem 2013, 5, 2495−2503. Y.; Kiejna, A.; Da Silva, J. L. F. The Role of Charge Transfer in the
+ (32) Hu, Z.; Liu, X. F.; Meng, D. M.; Guo, Y.; Guo, Y. L.; Lu, G. Z. Oxidation State Change of Ce Atoms in the TM13−CeO2(111)
+Effect of Ceria Crystal Plane on the Physicochemical and Catalytic Systems (TM = Pd, Ag, Pt, Au): A DFT + U Investigation. Phys.
+Properties of Pd/Ceria for CO and Propane Oxidation. ACS Catal. Chem. Chem. Phys. 2015, 17, 13520−13530.
+2016, 6, 2265−2279. (53) Nolan, M. Charge Transfer and Formation of Reduced Ce3+
+ (33) Hu, Z.; Qiu, S.; You, Y.; Guo, Y.; Guo, Y.; Wang, L.; Zhan, W.; Upon Adsorption of Metal atoms at the Ceria (110). J. Chem. Phys.
+Lu, G. Hydrothermal Synthesis of NiCeOx Nanosheets and Its 2012, 136, 134703.
+Application to the Total Oxidation of Propane. Appl. Catal., B 2018, (54) Mazzieri, V. XPS, FTIR and TPR Characterization of Ru/Al2O3
+225, 110−120. Catalysts. Appl. Surf. Sci. 2003, 210, 222−230.
+ (34) Zhu, Z.; Lu, G.; Zhang, Z.; Guo, Y.; Guo, Y.; Wang, Y. Highly (55) Wang, F.; Li, C.; Zhang, X.; Wei, M.; Evans, D. G.; Duan, X.
+Active and Stable Co3O4/ZSM-5 Catalyst for Propane Oxidation: Catalytic Behavior of Supported Ru Nanoparticles on the {100},
+Effect of the Preparation Method. ACS Catal. 2013, 3, 1154−1164. {110}, and {111} Facet of CeO2. J. Catal. 2015, 329, 177−186.
+ (35) Joo, S. H.; Park, J. Y.; Renzas, J. R.; Butcher, D. R.; Huang, W.; (56) Mitchell, P. C.; Scott, C. E.; Bonnelle, J.-P.; Grimblot, J. G. Ru/
+Somorjai, G. A. Size Effect of Ruthenium Nanoparticles in Catalytic Alumina and Ru - Mo/Alumina Catalysts: An XPS Study. J. Catal.
+Carbon Monoxide Oxidation. Nano Lett. 2010, 10, 2709−2713. 1987, 107, 482−489.
+ (36) Sreethawong, T.; Sukjit, D.; Ouraipryvan, P.; Schwank, J. W.; (57) Reddy, B. M.; Chowdhury, B.; Reddy, E. P.; Fernández. An
+Chavadej, S. Oxidation of Oxygenated Volatile Organic Compound XPS Study of Dispersion and Chemical State of MoO3 on Al2O3-TiO2
+Over Monometallic and Bimetallic Ru−Au Catalysts. Catal. Lett. Binary Oxide Support. Appl. Catal., A 2001, 213, 279−288.
+2010, 138, 160−170. (58) Yao, H. C.; Yu Yao, Y. F. Ceria in Automotive Exhaust
+ (37) Calzada, L. A.; Collins, S. E.; Han, C. W.; Ortalan, V.; Zanella, Catalysts I. Oxygen Storage. J. Catal. 1984, 86, 254−265.
+R. Synergetic Effect of Bimetallic Au-Ru/TiO2 Catalysts for Complete (59) Zhang, S.; Guo, Y. Y.; Li, X. Y.; Wu, X.; Li, Z. The Double
+Oxidation of Methanol. Appl. Catal., B 2017, 207, 79−92. Peaks and Symmetric Path Phenomena in the Catalytic Activity of
+ (38) Yamaguchi, K.; Mizuno, N. Efficient Heterogeneous Aerobic Pd/Al2O3-TiO2 Catalysts with Different TiO2 Contents. J. Solid State
+Oxidation of Amines by a Supported Ruthenium Catalyst. Angew. Chem. 2018, 262, 335−342.
+Chem., Int. Ed. 2003, 42, 1480−1483. (60) Meng, D.; Zhan, W.; Guo, Y.; Guo, Y.; Wang, L.; Lu, G. A
+ (39) Mitsui, T.; Tsutsui, K.; Matsui, T.; Kikuchi, R.; Eguchi, K. Highly Effective Catalyst of Sm-MnOx for the NH3-SCR of NOx at
+Support Effect on Complete Oxidation of Volatile Organic Low Temperature: Promotional Role of Sm and Its Catalytic
+Compounds over Ru Catalysts. Appl. Catal., B 2008, 81, 56−63. Performance. ACS Catal. 2015, 5, 5973−5983.
+
+ 9540 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541
+Environmental Science & Technology Article
+
+ (61) Meng, D.; Xu, Q.; Jiao, Y.; Guo, Y.; Guo, Y.; Wang, L.; Lu, G.;
+Zhan, W. Spinel Structured CoaMnbOx Mixed Oxide Catalyst for the
+Selective Catalytic Reduction of NOx with NH3. Appl. Catal., B 2018,
+221, 652−663.
+ (62) Dai, Q.; Bai, S.; Wang, Z.; Wang, X.; Lu, G. Catalytic
+Combustion of Chlorobenzene over Ru-Doped Ceria Catalysts. Appl.
+Catal., B 2012, 126, 64−75.
+ (63) Dow, W.-P.; Huang, T.-J. Yttria-Stabilized Zirconia Supported
+Copper Oxide Catalyst: II. Effect of Oxygen Vacancy of Support on
+Catalytic Activity for CO Oxidation. J. Catal. 1996, 160, 171−182.
+ (64) Maeda, Y.; Iizuka, Y.; Kohyama, M. Generation of Oxygen
+Vacancies at a Au/TiO2 Perimeter Interface during CO Oxidation
+Detected by in Situ Electrical Conductance Measurement. J. Am.
+Chem. Soc. 2013, 135, 906−909.
+ (65) Sedjame, H.-J.; Fontaine, C.; Lafaye, G.; Barbier, J., Jr On the
+Promoting Effect of the Addition of Ceria to Platinum Based Alumina
+Catalysts for VOCs Oxidation. Appl. Catal., B 2014, 144, 233−242.
+ (66) Mao, M. Y.; Lv, H. Q.; Li, Y. Z.; Yang, Y.; Zeng, M.; Li, N.;
+Zhao, X. J. Metal Support Interaction in Pt Nanoparticles Partially
+Confined in the Mesopores of Microsized Mesoporous CeO2 for
+Highly Efficient Purification of Volatile Organic Compounds. ACS
+Catal. 2016, 6, 418−427.
+ (67) Mao, M. Y.; Li, Y. Z.; Lv, H. Q.; Hou, J. T.; Zeng, M.; Ren, L.;
+Huang, H.; Zhao, X. J. Efficient UV-vis-IR Light-Driven Thermoca-
+talytic Purification of Benzene on a Pt/CeO2 Nanocomposite
+Significantly Promoted by Hot Electron-Induced Photoactivation.
+Environ. Sci.: Nano 2017, 4, 373−384.
+ (68) Couves, J.; Atkins, M.; Hague, M.; Sakakini, B.; Waugh, K. The
+Activity and Selectivity of Oxygen Atoms Adsorbed on a Ag/α-Al2O3
+Catalyst in Ethene Epoxidation. Catal. Lett. 2005, 99, 45−53.
+ (69) Gerei, S.; Rozhkova, E.; Gorokhovatsky, Y. B. Propylene and
+Oxygen Chemisorption on Cupric Oxide and Cuprous Oxide
+Catalysts. J. Catal. 1973, 28, 341−350.
+ (70) Hoost, T.; Laframboise, K.; Otto, K. Co-Adsorption of Propene
+and Nitrogen Oxides on Cu-ZSM-5: An FTIR Study. Appl. Catal., B
+1995, 7, 79−93.
+ (71) Swislocki, S.; Stowe, K.; Maier, W. F. Catalysts for Selective
+Propane Oxidation in the Presence of Carbon Monoxide: Mechanistic
+Aspects. J. Catal. 2014, 316, 219−230.
+ (72) Chen, L. G.; Zhu, Y. L.; Zheng, H. Y.; Zhang, C. H.; Li, Y. W.
+Aqueous-Phase Hydrodeoxygenation of Propanoic Acid over the Ru/
+ZrO2 and Ru-Mo/ZrO2 Catalysts. Appl. Catal., A 2012, 411, 95−104.
+ (73) Novakova, E. K.; Védrine, J. C.; Derouane, E. G. Propane
+Oxidation on Mo−V−Sb−Nb Mixed Oxide Catalysts: 2. Influence of
+Catalyst Activation Methods on the Reaction Mechanism. J. Catal.
+2002, 211, 235−243.
+ (74) Airaksinen, S. M.; Bañares, M. A.; Krause, A. O. I. In Situ
+Characterisation of Carbon-Containing Species Formed on Chromia/
+Alumina During Propane Dehydrogenation. J. Catal. 2005, 230, 507−
+513.
+ (75) Hasan, M.; Zaki, M.; Pasupulety, L. IR Investigation of the
+Oxidation of Propane and Likely C3 and C2 Products over Group IVB
+Metal Oxide Catalysts. J. Phys. Chem. B 2002, 106, 12747−12756.
+ (76) Wang, B.; Wu, X.; Ran, R.; Si, Z.; Weng, D. Participation of
+Sulfates in Propane Oxidation on Pt/SO24−/CeO2−ZrO2 Catalyst. J.
+Mol. Catal. A: Chem. 2012, 361−362, 98−103.
+
+ 9541 DOI: 10.1021/acs.est.8b03448
+ Environ. Sci. Technol. 2018, 52, 9531−9541

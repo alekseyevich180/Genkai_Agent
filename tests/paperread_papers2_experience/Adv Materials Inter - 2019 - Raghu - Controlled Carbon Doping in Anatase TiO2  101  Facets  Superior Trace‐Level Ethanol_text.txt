@@ -1,0 +1,579 @@
+FULL PAPER
+Titanum Dioxide
+ www.advmatinterfaces.de
+
+Controlled Carbon Doping in Anatase TiO2 (101) Facets:
+Superior Trace-Level Ethanol Gas Sensor Performance
+and Adsorption Kinetics
+Appu Vengattoor Raghu, Karthikeyan K. Karuppanan, and Biji Pullithadathil*
+
+ years, many efforts have been made
+A facile mild thermal decomposition method is adopted to synthesize toward tuning structural and electronic
+carbon-doped TiO2 (C-TiO2)(101) facets for development of highly perfor- properties of metal oxides to reduce the
+ working temperature and enhancing gas
+mance ethanol gas sensor with low power consumption at reducing working
+ sensor performance.[7–16] Metal oxide
+temperature. Controlled carbon doping provides a favorable pathway for semiconductors (MOS) are predominantly
+constructing more oxygen vacancies and active functional groups on the used in solid-state gas sensors which have
+TiO2 surface. The estimation of work functions based on Kelvin probe been widely commercialized owing to its
+force microscopy reveals that there is a significant change in the energy low cost, high sensitivity, fast response/
+ recovery, and simple electronic interfacing.
+band states during controlled carbon doping on TiO2. Both substitutional
+ MOS gas sensors based chemiresistive
+and interstitial carbon doping in TiO2 lattice introduce more surface active sensors have ability to measure and mon-
+sites which significantly enhance the ethanol gas sensing performance itor trace level concentration of hazardous
+(34.8%) compared to undoped TiO2 (8.5%) with rapid response/recovery gases such as NOx, COx, NH3, CH4, H2S,
+time (2 and 2.8 s) at reduced operating temperature (150 °C) and possess and SO2.[17–20] But most of these cases,
+negligible noise to signal ratio. The interfacial reaction mechanism between metal oxide sensors have to be operated
+ at high temperature or under UV irra-
+the ionosorbed species during ethanol gas sensing demonstrates that pres-
+ diation conditions because of their large
+ence of ionosorbed oxygen species and oxygen vacancies formed in the bandgap.[19] Metal oxides usually display
+anatase TiO2 lattice during C-doping is found to have profound roles in the superior catalytic properties toward oxi-
+redox reactions. Carbon doping in TiO2 lattice can be therefore considered dation of reducing gas or volatile organic
+as an effective method for the fabrication of gas sensors with pronounced compounds (VOCs) at high temperature
+ leading to change in depletion layer thick-
+sensing performances at reduced working temperature for real-time
+ ness on the metal oxide surface.[21–25]
+applications. Many studies have demonstrated that
+ metal and nonmetal doping in TiO2 hin-
+ ders the recombination rate of charge car-
+1. Introduction riers by creating or modifying the bandgap with introduction
+ of several sub-bandgap energy levels. Doping with heteroatoms,
+Ethanol (C2H5OH) sensors are extensively used in food quality such as C, N, Cu, Zn, or Ag to TiO2 provides adequate modi-
+monitoring, fermentation industries, breath analyzers, and fications in their chemical and physical properties improving
+monitoring biomedical and chemical processes in chemical the intrinsic ionic conductivity. Recently, nonmetal doping
+industries.[1–6] The trace level detection of ethanol is possible has attracted wider attention rather than the transition metal
+with metal oxides due to the presence of highly active surface doping owing to their increased thermal stability, enhanced
+adsorbed superaxo and peraxo oxygen species. During recent selectivity, sensitivity, and drastic reduction in working temper-
+ ature by simple modifications of additional impurity levels in
+ the bandgap of TiO2.[26–30]
+A. V. Raghu, K. K. Karuppanan, Dr. B. Pullithadathil In general, carbon has inherent advantages, such as sta-
+Nanosensor Laboratory
+PSG Institute of Advanced Studies
+ bility, low cost, sustainable, and ecofriendly preparation.
+Coimbatore 641004, India Carbon doping can lower the bandgap and create oxygen
+E-mail: bijuja123@yahoo.co.in; pbm@psgias.ac.in vacancies, leading to enhanced intrinsic conductivity. The
+Dr. B. Pullithadathil carbon doping in TiO2 causes the CO bonding states lying
+Department of Chemistry below the bottom of the valence band, the carbon lone pair
+PSG College of Technology lies in the middle of the bandgap (above the valence band
+Coimbathore 641004, India
+ minimum) and oxygen vacancies (Ti3+) states exist below the
+ The ORCID identification number(s) for the author(s) of this article
+ can be found under https://doi.org/10.1002/admi.201801714.
+ conduction band minimum. These localized mid-gap states
+ have arisen from the carbon doping, which increases the pos-
+DOI: 10.1002/admi.201801714 sibility of electron transfer within the bandgap leading to the
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (1 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+excitation of excess electrons by surface band bending.[31–35] Ti(C3H7O)4 + H2O + C2H5OH → Ti(C3H7O) 3 (OH) + CH3CH(OH)CH3  (1)
+Therefore, the involvement of carbon doping in TiO2 can
+pave way for the development of low power consumed sensor
+ Ti(C3H7O)3 (OH) + H2O → Ti(OH)4 + 3CH3CH(OH)CH3  (2)
+fabrication (by minimizing the working temperature). Devel-
+opment of gas sensors with less power consumption along
+with tunable selectivity, short response/recovery time is still a Ti(OH)4 (500 °C) → TiO2 (3)
+challenging task. In order to improve the gas sensor proper-
+ties of MOS, metal doping or heterojunction on formation
+has been attempted by many groups. On the other hand, non- Ti(OH)4 + CH4 N 2O → C-TiO2 + 2NH3 + H2O(g) + O2 (g)  (4)
+metal doping by introduction of carbon in TiO2 for gas sensing
+applications has not been extensively studied. In this study, The reaction temperature of TiO2 and carbon-doped TiO2
+we have emphasized the importance of nonmetallic doping to nanoparticles were analyzed by differential scanning calorim-
+reduce the working temperature of gas sensing. Carbon doping etry (DSC) studies,[41] as shown in Figure S1 in the Supporting
+in metal oxides has been reported by various methods, such Information. The Figure S1a in the Supporting Information
+as hydrothermal and microwave synthesis.[31,34,36–40] Among shows the DSC curves of both samples, which revealed the
+these various methods, thermal decomposition of carbon mate- formation of fully decomposed state of urea under 450 °C.
+rials is expected to be an effective method for doping carbon TiO2 anatase to rutile phase transformation was found to
+in metal oxides. Several techniques have been reported so far be occurred around 660 and 680 °C for TiO2 and C40-TiO2,
+for the synthesis of TiO2 (as well as C-TiO2), such as sol–gel respectively. The TiO2 anatase phase stability with respect to
+method, coprecipitation, chemical vapor deposition, and hydro- temperature was checked by first derivative of the resulted
+thermal method, have been employed to prepare doped TiO2 DSC curves.
+nanostructures. The synthesis of carbon-doped TiO2 with better The X-ray diffraction patterns (XRD) of synthesized pure
+crystallinity can be performed under controlled environments, TiO2 and carbon-doped TiO2 nanomaterials are presented in
+which are very expensive and complex to implement them for Figure 1. The peaks were indexed based on JCPDS database
+practical applications. The metal oxides like TiO2 have a wide (89-4203) found to have an anatase tetragonal structure. The
+range of bandgap and high activity toward oxygen chemisorp- peaks observed at 25.63, 37.91, 48.03, 55.06, 62.68, 70.284, and
+tions, which could be beneficial for gas sensors. 75.04 degrees were attributed to the planes of (101), (004), (200),
+ It is understood that controlling carbon doping in TiO2 (211), (204), (220), and (215), which exhibited anatase (space
+could be a favorable pathway for constructing more active func- group: l41/amd, tetragonal symmetry) structure indicating the
+tional groups on the surface, which can effectively enhance its crystalline structure of the TiO2 and carbon-doped TiO2 mate-
+response along with reduction of the working temperature. To rials. Moreover, the lattice constants of TiO2 (a = 0.3785 and
+the best of our knowledge, so far carbon-doped TiO2 has not c = 0.9514 nm), C20-TiO2 (a = 0.3787 and c = 0.9516 nm), C40-TiO2
+been exploited for detection of trace-level volatile organic com- (a = 0.3788 and c = 0.9518 nm), and C60-TiO2 (a = 0.3789 and
+pound sensors. The present study involves a direct and low-cost c = 0.9518 nm) nanoparticles were calculated. The lattice con-
+synthesis of carbon-doped TiO2 by a single-step thermal decom- stants of C-TiO2 nanoparticles were found to be comparatively
+position method for enhancing the trace-level gas sensing larger than that of pure TiO2 due to much higher ionic radius of
+properties toward ethanol. The study suggested that the carbon C4 (0.260 nm) compared to O2− (0.140 nm) and substitution of O
+doped (C-TiO2) exhibited superior gas sensing performance with C leads to an expansion of the lattice.[37] The right shift in
+with high selectivity toward ethanol gas compared to TiO2 the (101) plane (as shown in Figure S2, Supporting Information)
+nanoparticles. The working temperature of the sensor was toward the higher angle confirms successful substitution of O
+reduced from 250 to 150 °C, which is attributed to the specific atoms by C atoms through carbon doping in the TiO2 lattice.
+chemisorbed functional groups resulting from carbon impu- In order to investigate the morphologies and microstruc-
+rities and oxygen vacancies towing to the successful carbon tures of TiO2 and C-TiO2, transmission microscopy (TEM)
+doping. To the best of our knowledge, the clear gas sensing analysis was performed. Figure 2 presents the high resolution
+mechanism of carbon-doped TiO2 has not yet been reported so transmission microscopy (HRTEM) images of pure TiO2 and
+far. This synthetic approach would provide a method which can C-TiO2 which affirms their single crystalline nature. From TEM
+be easily scaled up to produce C-TiO2 nanoparticles. Detailed image analysis, the average particle size of TiO2 nanoparticles
+analysis of the trace-level ethanol gas sensing properties due to was found to be in the range of 15–25 nm. But, the particle
+carbon doping in TiO2 nanoparticles emphasizes their potential size of C-TiO2 gradually decreased with increase in the concen-
+practical applications. tration of urea (12.2 ± 2.1, 10.1 ± 1.5, 6.5 ± 0.5 for C20-TiO2,
+ C40-TiO2, and C60-TiO2, respectively), which is mainly due to
+ the successful formation of TiC bonding that prevents further
+2. Results and Discussion formation of TiOTi. In addition, the lattice spacing of TiO2
+ nanocrystals was calculated to be 0.36 nm from high-resolu-
+The carbon-doped TiO2 materials were synthesized by a single tion TEM images corresponding to the (101) lattice planes of
+step process. In this investigation, anatase TiO2 and carbon- TiO2. The planes observed from selected area electron diffrac-
+doped TiO2 were synthesized via thermal decomposition tion (SAED) patterns of TiO2 and C-TiO2 were indexed based
+method and the mechanism for the formation of carbon-doped on Joint Committee on Powder Diffraction Standards (JCPDS)
+TiO2 can be expressed by Equations (1)–(4). Card No. 89-4203 which is corroborating with the XRD results.
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (2 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Figure 1. XRD patterns of TiO2 and carbon-doped TiO2 with varied carbon loading ratios.
+
+ UV−vis diffuse reflectance spectroscopy was used to cal- pure TiO2. According to the Kubelka−Munk rule, the precise
+culate the optical bandgaps of the synthesized materials. As direct bandgap energies of TiO2 and C-TiO2 could be extracted
+illustrated in Figure S3 in the Supporting Information, an from TAUC plot.[39] As a well-known indirect semiconductor,
+intense absorption in the UV region was observed which was the bandgap energy (Eg) of TiO2 was calculated from the
+related to the intrinsic bandgap absorption of typical anatase intersection of the extrapolated linear portion in the plot of
+TiO2 resulting from the electron transitions from the valence (αhυ)1/2 versus the photon energy (hυ) following the equation;
+band to conduction band (O2p→Ti3d). It also indicates a strong (αhυ)1/2 ∝hυ, where (α) is the optical absorption coefficient
+absorption of carbon-doped TiO2 nanomaterials compared to and linearly proportional to the absorbance (A). As shown in
+
+Figure 2. TEM images of synthesized doped and undoped TiO2. a) Pure TiO2, b) C20-TiO2 c) C40-TiO2, and d) C60-TiO2 (right side images show the
+corresponding HRTEM images of the materials, inset shows the corresponding SAED patterns).
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (3 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Figure 3. Atomic force microscopy (AFM) images (right) and surface potential measurements (left) of a) TiO2, b) C20-TiO2, c) C40-TiO2, and d) C60-TiO2.
+
+Figure S3b in the Supporting Information, the bandgap of TiO2 X-ray photoelectron spectroscopy (XPS) analysis was carried
+is reduced from 3.19 to 2.90, 2.63, and 2.44 eV for C20-TiO2, out to probe the chemical states of TiO2 and C-TiO2 nanopar-
+C40-TiO2, and C60-TiO2, respectively, due to the successful incor- ticles for understanding the effect of carbon doping in TiO2
+poration of carbon atom into the TiO2 lattice. lattice. As shown in Figure 4a, the XPS survey spectra of both
+ AFM and Kelvin probe force microscopy was employed TiO2 and C40-TiO2 clearly indicated the presence of Ti, O, and C
+to study surface potential distribution in the material by elements (C20-TiO2 and C60-TiO2 have been shown in Figure S4,
+approaching a conducting cantilever tip to the sample, wherein Supporting Information). In Figure 4b, two intense symmetric
+an electrostatic force is caused due to the difference between peaks located at binding energies of 458.5 and 464.3 eV in Ti 2p
+their Fermi levels. Interestingly, as displayed in Figure 3a–d. spectra of TiO2 and C40-TiO2 can be ascribed to Ti 2p3/2 and Ti
+during carbon doping, the work function of the TiO2 nanopar- 2p1/2, respectively. The binding energy difference (ΔE) between
+ticles was found to be significantly increased as a function of Ti 2p3/2 and Ti 2p1/2 was about 5.8 eV, indicating that chemical
+dopant concentration. In general, the contact potential differ- state of Ti is predominantly Ti4+. A shift of ≈0.21 eV between
+ence, VCPD is defined as[41] the Ti 2p3/2 peaks of C40-TiO2 and undoped TiO2 (458.75 eV)
+ can be observed from Figure 4b and this shift of Ti 2p toward
+ Φ tip − Φ TiO2 lower binding energy values is mainly because of the lower
+VCPD = (5)
+ −e electronegativity of carbon compared to oxygen, indicating the
+ enhancement of Ti3+ species in carbon-doped TiO2.[31,32,34,42,43]
+where ϕtip and ϕTiO2 are work functions of cantilever tip and To satisfy the requirement of charge equilibrium, the oxygen
+doped and undoped TiO2, and e is charge of the electron. The vacancies must have Ti3+ species in C40-TiO2, thereby the sur-
+VCPD was obtained by varying the VDC until the current is face oxygen vacancies are formed on TiO2 surface. The decon-
+minimized. voluted spectra located at 457.0 eV for Ti2p confirmed the
+ The work function of the doped TiO2 was calculated using formation of Ti3+ by the oxygen vacancies. Figure 4c also indi-
+Equation (5) which shows an increase in work function due cates the formation of Ti3+ which was increased by the addition
+to carbon doping in the TiO2 lattices. The calculated work of carbon atoms into the TiO2.
+functions are 4.23, 4.35, 4.47, and 4.52 eV for undoped TiO2 The quantity of Ti3+ species from Ti 2p spectrum was calcu-
+and C20-TiO2, C40-TiO2, and C60-TiO2, respectively (see the lated to be 8.1%, 14%, 15.4%, and 4.2% for C20-TiO2, C40-TiO2,
+Supporting Information). During carbon doping in TiO2, a part C60-TiO2, and TiO2, respectively. Carbon doping in TiO2 is more
+of the localized C 2p states could be locate at the TiO2 valence favorable for the formation of oxygen vacancies and surface
+band (VB) maximum leading to significant expansion of VB, adsorbed species. The increment of Ti3+ species is not greatly
+while the energy bandgap was shortened.[31–34] On the other affected by limited addition of urea in C40-TiO2 and C60-TiO2
+hand, another part of localized C 2p is lying in the gap near to systems. In contrast, an excess amount of precursor in C60-TiO2
+Fermi level. Electrical conductivity enhancement is attributed to leads to the formation of a secondary phase (graphitic nitride-
+the effects of graphitic carbon and oxygen vacancies associated g-C3N4) as shown in Figure S4 in the Supporting Information.
+with the replacement of both titanium and oxygen atoms by The formation of graphitic nitride in C60-TiO2 was evidenced
+carbon atoms, respectively. Localized mid-gap states have been from the N 1s spectra (as shown in Figure 4d). The N 1s peak
+generated due to the carbon doping which leads to the increase can be deconvoluted into CNC (399.5 eV) and N(C)3
+of work function in TiO2 lattices. (400.5 eV), which are the typical peaks of g-C3N4. Therefore,
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (4 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Figure 4. XPS spectra of TiO2 and C-TiO2: a) full spectrum, b) TiO2, c)C40-TiO2, and d) N1s spectra of doped (C20, C40, and C60) and undoped TiO2.
+
+the results suggest that successful carbon doping in TiO2 lattice the peaks appeared at 285.67 and 288.72 eV for C40-TiO2
+in the form of Ti and O interstitials was achieved without any showed enlarged peak area, which can be assigned to CO
+secondary phase in C40-TiO2. (carbonate-like species) and formation of TiOC (interstitial
+ As can be seen from Figure 4b,c, the O1s spectra of the carbon in the TiO2 lattice) bonds, respectively. Moreover, the
+carbon doped (C40-TiO2) and undoped TiO2 can be resolved high resolution C1s XPS spectrum of C40-TiO2 displayed an
+into three major peaks with binding energies, 530.25, 531.4, additional predominant peak at 280.07 eV corresponding to
+and 532.67 eV. The first peak arises from TiOTi bond (lattice OTiC, substitutional carbon at oxygen sites in TiO2 bond,
+oxygen), and the latter peaks are attributed to the chemically which was completely absent in pristine TiO2. The Gaussian
+adsorbed species, such as hydroxyl (OH) group and COOR simulation spectra C 1s peak ascribed to TiC bond with the
+(H) bond, respectively. After doping, the peaks located at ≈531.0 low binding energy of 281.0 eV showed only a small incre-
+and 531.9 eV can be ascribed to the surface adsorbed oxygen ment in area of the peak for C20-TiO2 (7.2%). The area of
+specious, such as CO, and CO bonds, which are due to spectra located at 281.0 eV for the material C40-TiO2 (10.6%)
+the TiOvac and TiOC bonds, respectively. These observed and C60-TiO2 (12.66%) is increased as compared to C20-TiO2.
+oxygen adsorption peaks were found to be higher in C40-TiO2, The XPS spectra of C 1s, Ti 2p, an O 1s of other concentrations
+which clearly indicated that the carbon dopants enhances of C- TiO2 (C20-TiO2 and C60-TiO2) are shown in Figure S4 in
+adsorption of more oxygen species creating more oxygen vacan- the Supporting Information. Therefore, these results suggested
+cies on TiO2 lattice. Moreover, the peak shift by 0.9 eV is related that urea assisted carbon doping has created large number of
+to the creation of oxygen vacancies which resulted in more substitutional and interstitial carbons on TiO2 lattice which is
+active sites in C-TiO2. But, C60-TiO2 exhibited only minimal more beneficial for enhancing the oxygen vacancies and chem-
+changes upon doping, while excessive addition of urea led to isorbed oxygen species that could provide more active sites for
+the formation of highly conducting graphitic nitride as sec- the gas adsorption and reactions on the surface of gas sensing
+ondary phase. materials.
+ The typical C1s spectra of TiO2 peaks located at 284.18, Figure S5 in the Supporting Information shows the elec-
+285.59, and 288.74 eV can be attributed to the CC, COR(H), trical conductivity (I–V) measurements of TiO2 and C-TiO2.
+and COO or COOR (H) group, respectively.[42] Similarly, The electrical conductivity of TiO2 was dramatically enhanced
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (5 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+during the unique combination of graphitic carbon and oxygen temperature. The plot of ln R versus 1000/T of the doped
+vacancies in TiO2 lattice. But still, the addition of excess carbon and undoped TiO2 nanoparticles is shown in Figure S6a–d
+precursor led to the formation secondary phase (g-C3N4) as in the Supporting Information. The electrical resistance of
+observed from XPS analysis that tremendously increased its the undoped TiO2 nanoparticles was found to be decreasing
+conductivity. slowly within the temperature range of 25–250 °C and rapidly
+ The electrical measurements of the undoped and CTiO2 above 250 °C, implying the existence of two linear regions of
+were performed within the working temperature ranging from operation. The second region with the smaller slope is attrib-
+20 to 500 °C (under air atmosphere) are shown in Figure S6 uted to two factors, such as thermal generation of carriers and
+in the Supporting Information. The electrical measurements oxygen ionosorption, which is leading to the formation of a
+were carried out under controlled atmosphere with a con- charge accumulation layer on the film surface. At lower tem-
+stant flow rate of 500 sccm of synthetic air in a custom made perature, electrons hop from one trap to the other, whereas
+chamber, as shown in Figure 5a. The temperature depend- at high temperature, intrinsic conduction is dominant. The
+ence of electrical resistance of undoped and carbon-doped TiO2 activation energy (Ea) deduced from region-I (lower tem-
+nanoparticle was studied under air and ethanol gas in order to perature) and region-II (higher temperature) was found to be
+determine the thermal bandgap energies and ionization ener- 1.42 and 0.418 eV, respectively. In the case of C-TiO2 nanopar-
+gies of the impurity levels due to intrinsic defects. In order to ticles, the activation energy calculated from the region-I was
+understand the surface reactivity of TiO2 at various tempera- found to be reduced, whereas, it was increased in the region-
+tures, the activation energy of the materials were calculated by II, which is due to the contraction of bandgap and additional
+using Arrhenius plots, as shown in Figure S6 in the Supporting impurity levels originated in energy sates within conductions
+Information (under air atmosphere). In general, the tempera- band. The activation energy transition temperature was reduced
+ture dependence of the electrical resistance of semiconductors to 150 °C for C40-TiO2 nanoparticles and the Arrhenius plot of
+possesses one or more impurity levels and the activation energy the doped and undoped TiO2 nanoparticles under 10 ppm eth-
+is obtained from the Arrhenius equation anol gas atmosphere displayed a drastic variation of activation
+ energy in both low and high temperature regions (Figure S7,
+  Eg   ∆E i  Supporting Information). The activation energy of the undoped
+ + ∑ i = 1R′
+ n
+R (T ) = R0 exp  exp  x2 (6)
+  2K BT   K BT  y 0,i
+ 0, i
+ and carbon-doped TiO2 nanoparticles under ethanol gas
+ atmosphere was calculated according to Equation (6), and the
+ Ea
+ corresponding ∆E1 values were 1.06, 0.865, 0.758, and 0.726 eV
+R = Ae K BT (7) for TiO2, C20-TiO2, C40-TiO2, and C60-TiO2, respectively (Figure S7,
+ Supporting Information). In the region-II, the ionization
+where R is the film resistance, A is a constant, Ea is the energy was varied and the calculated values are 0.689, 1.38,
+activation energy, kB is the Boltzmann constant, and T is the 1.72, and 1.65 eV for TiO2, C20-TiO2, C40-TiO2, and C60-TiO2,
+
+Figure 5. a) Schematic representation of the gas sensor test station used for evaluation of oxygen sensor properties. b) Sensor response of TiO2 and
+C40-TiO2 toward 1 ppm ethanol gas at working temperatures in the range of 50 to 300 °C. c) Time-dependent ethanol gas sensing performances of TiO2
+and C40-TiO2 sensor performances at 150 °C. d) Selectivity of C-TiO2 compared with pristine TiO2 based sensors toward various gases (1 ppm ethanol,
+acetone, ammonia, isoprene, hydrogen sulfide (H2S), nitrogen dioxide (NO2), and disopropyl methyl phosphonate, DMP) at 150 °C.
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (6 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+respectively. The drastic decrease of activation energy at higher lower than that of undoped TiO2. This behavior of structurally
+temperature and energy levels increase was mainly occurred ordered TiC bonds in carbonTiO2 by successful doping is
+due to the conductivity enhancement and bandgap contraction similar to previous reports on titanium carbide materials.[44]
+due to the successful carbon doping. The undoped TiO2 exhib- Hence, the effect of TiC bonds in C40-TiO2 was found to be
+ited a drift in the signal at working temperature of 250 °C, and facilitating the sensing performances with reduced noise to
+the C40-TiO2 nanoparticles showed the drift in activation energy signal ratio.
+at the temperature ≈150 °C. During adsorption of the ethanol, the gas molecules attract
+ An in-house built gas sensor test station was used for the electrons from the n-type undoped and doped TiO2 and thereby
+evaluation of sensor performance which is schematically rep- the resistance decreases. It is well known that the response
+resented in Figure 5a. The effect of temperature on sensor of a semiconductor metal oxide based gas sensor is highly
+responses of both TiO2 and C-TiO2 are plotted in Figure 5b. facilitated by its operating temperature. The resistance was
+The sensitivity of undoped TiO2 nanoparticles was found to decreased while the temperature increased and thermal energy
+be a maximum of 24% at an operating temperature of 250 °C was generally used to accelerate the desorption process of gas
+toward exposure to 1 ppm of ethanol gas. In addition, the sensi- molecules from a sensing materials under inert atmosphere
+tivity of C40-TiO2 exhibited a maximum value of 34% at 150 °C and the thermal activation also could increase the recovery
+(sensitivity, %), which was further used as the optimal oper- rate. The dynamic sensor response toward different concentra-
+ating temperature for C40-TiO2 for further experiments. The tions is shown in Figure 5c which reveals the rapid recovery,
+highly intense signals were observed in C40-TiO2 nanoparticles good recycling stability, and constant base line resistance of the
+during 150 °C, at which the drift in activation energy was also sensor indicating the physisorption process between ethanol
+occurred. This lower resistance due to the high conductivity gas and C40-TiO2 surface. The initial response was started
+of g-C3N4 reduces the change in resistance during gas adsorp- within 0.2 s which indicated the ultrafast sensing due to pres-
+tion. Hence, the role of carbon in TiO2 lattice toward gas sensor ence more abundant active surfaces sites. More specifically,
+characteristics of C60-TiO2 due to the contributions of both compared to undoped TiO2, the response time of C40-TiO2 was
+carbon doping and as well as g-C3N4. reduced from 3.1 to 2.2 s. Similarly, the recovery time also was
+ The C40-TiO2 based sensor response toward ethanol gas was found to be dropped from 5.1 to 2.8 s. The sensor character-
+found to be four times superior to that of undoped TiO2. The istics derived from the dynamic sensor performances such as
+ethanol gas sensor performances of other carbon-doped TiO2 response time and recovery time of undoped and carbon-doped
+(C20-TiO2 and C60-TiO2) are shown in Figure S8a,b, respec- TiO2 (C20-TiO2, C40-TiO2, and C60-TiO2) nanoparticles are sum-
+tively, in the Supporting Information. The sensors based marized in Table S1 in the Supporting Information. Figure 5d
+on conducting materials (C60-TiO2) displayed relatively low shows the highly selectivity of C40-TiO2 toward ethanol com-
+response, where g-C3N4 did not display any noticeable sensi- pared to the reducing and oxidizing gases. The C40-TiO2 based
+tivity enhancement toward ethanol gas. Based on the above gas sensors showed a reduced working temperature and better
+results, the C40-TiO2 based sensor was selected for further sensing performances (in terms of sensitivity, selectivity,
+investigations. response/recovery times, operating temperature, and trace level
+ Generally, the noise to signal ratio (NSR) of sensors are detection limit) as compared to other reported ethanol sensing
+important for employing them for real time gas sensor applica- materials listed in Table S2 in the Supporting Information.
+tions. The NSR values were calculated as 0.0713%, 0.0525%, The operating temperature influences the adsorption
+0.00833%, and 0.0136% for TiO2, C20-TiO2, C40-TiO2, and kinetics of the sensing process which can be elucidated from
+C60-TiO2, respectively. In which, C40-TiO2 displayed a very Elvoich plot. The chemical adsorption kinetics of ethanol gas
+minimal NSR, which could be due to the low electrical resist- on the surface of C40-TiO2 nanoparticles was further evaluated
+ance originated from the structural uniformity of carbon- using Elovich model (Figure 6a). The Elovich model can be
+doped TiO2. The NSR of C40-TiO2 was found to be 8.5 times expressed using the following general formula as[43,45]
+
+Figure 6. a) Elovich plot for ethanol gas adsorption on C40-TiO2 nanoparticles, b) relationship between barrier potential (α) and ethanol concentration
+c) insets: i) indicates the relationship between initial adsorption rate (a′) and ethanol concentration ii) indicates the relationship between temperature
+and ethanol adsorption rate/potential barrier).
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (7 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+ 1 1 (8) other hand, electrons in the conduction band are captured by
+q = 1+ +
+ α ln ( a ′α ) α ln ( t )  the adsorbed oxygen molecules on the surface of the C40-TiO2
+ producing oxygen ions (O−, O2−, and O2−) until the ethanol
+where q is the quantity of gas adsorbed during time t, a′ is gas is exposed. Therefore, the depletion layer width and the
+the initial adsorption rate, and α is a measure of potential energy barrier height further enhance, leading to increase in
+barrier for successive adsorption. These values were derived resistance.
+from Figure 6a, C0 (initial) and Ct (final) are the conduct- In order to identify the nature of the adsorbed species
+ance of C40-TiO2 nanoparticles on ethanol. The linearity in on both TiO2 and C40-TiO2 nanoparticles, the slope of log
+the plot in Figure 6a confirmed the validity of Elovich model (SR) versus log PO(gas) was calculated as shown in Figure 6b.
+(Equation (8)). The sensor based on both undoped and carbon-doped TiO2
+ Figure 6c (inset ii) reveals the temperature-dependent shows the linear response toward various concentration of
+adsorption kinetics which shows that the sensitivity was ini- ethanol gas (Figure 7a) Figure 7b demonstrates the sensing
+tially increased as a function of temperature and further response SR (%) as a function of ethanol concentration
+decreased after critical range of temperature. The initial Pgas at 150 °C, which imply good linearity with the slope of
+adsorption rate was calculated as a function of working tem- 0.56 and 0.67 between log SR (%) and logPgas for both TiO2
+perature (see Figure 6c inset (ii)). The maximum response and C-TiO2 nanoparticles, respectively. In general, the sensing
+and initial adsorption rate of C40-TiO2 nanoparticles were response of metal oxide type gas sensors could be empirically
+observed at 150 °C. During the exposure of 1 ppm ethanol gas, expressed as[46]
+an initial adsorption rate was found to be 9.35 × 10−8 Ω−1 s−1
+at 100 °C, whereas the rate of adsorption was slightly increased SR = K (P )
+ m
+ (13)
+(9.79 × 10−8 Ω−1 s−1) at 150 °C. Further increase in tempera-
+ture (200 °C) resulted in the decrease in adsorption rate where P is the partial pressure of target gas which is propor-
+(9.36 × 10−8 Ω−1 s−1). Moreover, the barrier potential was found tional to the gas concentration, K is a prefactor and m is the
+to be less (7.79 MΩ) at 150 °C, which leads to high initial exponent on P. Typically, the ideal m value of 1 is obtained for
+adsorption rate (9.78 × 10−8 Ω−1 s−1) compared to 100 and the reaction between O− ions and 0.5 for O2− ions in adsorbed
+200 °C (Figure 6b). From these results, it can be concluded that species. The slope value of pristine TiO2 is 0.55 which indicate
+the adsorption rate highly depends on the working temperature that more number of O2− species is adsorbed on the surface.
+and can be directly related to the sensor response. Operating On the other hand, the slope of C40-TiO2 was increased to 0.69
+temperature (150 °C) of C40-TiO2 can accelerate the diffusivity by additional involvement of large number of O− from the sur-
+of the ethanol molecules onto the surface of C-TiO2 leading to face adsorbed oxygen which is mainly induced by the successful
+higher sensitivity. doping of carbon. Figure 7b shows a linear response of both
+ Oxygen molecules were initially adsorbed on the surface of TiO2 and carbon-doped TiO2 nanoparticles. However, C40-TiO2
+the TiO2 and C-TiO2 nanoparticles under air and further they nanoparticles exhibited enhanced sensitivity due to the involve-
+get ionosorbed on oxide ions (O−, O2−, and O2−) by capturing ment of adsorbed species on oxygen vacancies and dopants.
+free electrons from the nanostructures, which leads to the The higher response observed during the increase in tem-
+formation of a thick depletion layer on oxides surface and an perature is due to the activation of adsorbed molecular oxygen
+increase in energy barrier height. During the exposure of eth- and lattice oxygen to form active O2− and O− and mobile O2−
+anol gas, surface adsorbed oxygen species tends to react with species, respectively. This phenomenon continues until cer-
+ethanol molecules which cause the release of trapped elec- tain optimum temperature, beyond which the exothermic gas
+trons. The mechanism could be explained by the following adsorption would be very difficult and gas molecules tend to
+reactions[1,46,47] desorbs.
+ In order to further investigate the existence of oxygen vacan-
+O2 ( gas) → O2 ( ads) (9) cies in C40-TiO2 nanomaterials during the exposure of O2,
+  the resistance of the gas sensor was assessed under air and
+ vacuum at 150 °C. Figure 7c clearly explains that the corre-
+O2 ( ads ) + e − → O2− ( ads ) (10) sponding resistance was reduced under vacuum conditions
+ 
+ due to desorption of adsorbed oxygen (Oads) from the oxygen
+ vacancies (Vo) releasing the electrons to TiO2 nanoparticles. In
+O2− ( ads ) + e − → 2O− ( ads) (11) air, O2 molecules adsorbs on oxygen vacancies and Ti3+ dan-
+ 
+ gling bonds which increase the resistance sensing material.
+ In the case of C40-TiO2 nanoparticles, more adsorbed oxygen
+CH3 CH2 OH + 2O− ( ads ) → CO2 + H2 O + 2e − (12)
+  species adsorb on the carbon atoms and oxygen vacancies
+ which also act as more active sites. Therefore, these results
+ It is suggested from the above reactions that the trapped demonstrate that the amount of the adsorbed oxygen is closely
+electrons are released into TiO2 surface during the interaction related to the electron carrier concentration. The outward
+of ethanol gas. Hence, the carrier concentration and electron charge transfer causes a negative charge causing upward band
+mobility of the sensor material surface increase and the deple- bending (ionosorbed oxygen species) and a reverse charge
+tion layer width and thereby the energy barrier height decrease transfer produced by ethanol exposure on the sensing mate-
+and further the resistance of the sensor decreases. On the rial. These charge transfer enables surface band bending on
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (8 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Figure 7. a) Sensitivity factor versus ethanol concentration from 1 to 5 ppm, b) log (SR) versus log (Pogas) for both TiO2 and C-TiO2 toward 1–5 ppm
+of ethanol gas at 150 °C, c) response (in terms of change in resistance) under air and vacuum for TiO2 and C40-TiO2 at 150 °C, and d) changes in band
+bending (q∆V) with increase in ethanol concentration (1–5 ppm) for both TiO2 and C40-TiO2.
+
+the sensing material surfaces and the drastic variations in In order to further mitigate the gas sensing mechanism of
+the band bending (qΔV) can be calculated from the sensing carbon-doped TiO2 nanoparticles, sensing properties could
+performance of the metal oxides as[43,48] be explained using surface depletion layer model. During the
+ initial exposure of the sensor toward air atmosphere, oxygen
+q∆V = 2K B ⋅ ln (R gas /Rair ) (14) molecules absorb in the oxygen vacancies (VO) of the exposed
+ lattice planes of C40-TiO2. The free electrons from conduc-
+ tion band (O2− and O−) of the sensing materials (Equations (9)
+∆χ = ∆ϕ − q∆V (15) and (10)) tend to decrease the carrier concentration and thereby
+ 
+ the resistance increase. Meanwhile, the creation of oxygen
+where KB is Boltzmann constant, T is the temperature, Rgas is a vacancies by carbon doping and change in the oxidation states
+sensor resistance under gas environment, and Rair is the sensor from 4+ valences of titania (Ti4+) to 3+ valence titania (Ti3+)
+resistance under air environment. The change in band bending, increases the conductivity of the material. These oxygen vacan-
+qΔV was calculated with respect to the sensor response toward cies facilitate the adsorption of oxygen gas molecules from the
+various concentrations of ethanol gas. These two components surroundings. During the gas exposure toward ethanol gas, the
+of the work function (φ) were influenced by the surface reac- O−ads adsorbs ethanol molecules favoring the redox reaction
+tions of the material with the adsorbed gas. of ethanol generating CO2 and H2O (Equation (12)). The free
+ As indicated in Equations (11) and (12), ethanol gas mole­ electrons return to C40-TiO2 nanoparticles which reduce the
+cules mainly interact with ionosorbed O2− rather than the TiO2 resistance reversibly. Upon exposure to ethanol gas, as shown
+surface. This induces a change in the work function (φ), band in Figure 8, the ethanol molecules readily react with O2− on the
+bending (qΔV), and electron affinity (χ) of the sensing mate- surface of doped and undoped TiO2, as per the Equation (10).
+rial. These variations in the band bending (qΔV) can be esti- More electrons from the ionosorbed oxygen can transfer
+mated from the sensing properties of the semiconducting onto the conduction band of TiO2 until the equilibrium was
+materials (Figure 7d). Based on the sensor response values of reached.[49–51] This interface mechanism mainly depends upon
+TiO2 and C40-TiO2, the surface band bending energies were cal- the concentration of gas (ppm level) flowing through the test
+culated according to Equations (14) and (15). It was observed chamber to reach the saturation level of response.
+that C40-TiO2 showed higher surface band bending energy than The carbon doping into TiO2 (both substitutional and inter-
+pristine TiO2 as derived from the graph plotted between surface stitial) lattice can increase the electron carrier concentration,
+band bending and sensor response (S) for TiO2 and C40-TiO2 thereby increasing the adsorbed oxygen that is favorable for
+(Figure 7d). enhancing the gas sensitivity. Due to this synergetic effect, the
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (9 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Figure 8. Schematic representation of a) work function variations with respect to carbon doping, b) ethanol gas sensing on i) pristine TiO2, ii) C40-TiO2,
+iii) adsorption of ethanol gas on C-TiO2 the surface, and iv) physisorption mechanism between ethanol and adsorbed oxygen on the surface c) barrier
+potential changes.
+
+sensitivity of the C40-TiO2 nanoparticles was enhanced as com- properties which are attributed to their super receptor function.
+pared to TiO2 nanoparticles, which is clearly shown in the sche- Significant advantages of carbon doping were studied and iden-
+matic representation (Figure 8). More adsorbed groups were tified as an effective way to improve the gas sensing properties
+associated with carbon-doped TiO2 (Figure 8b,i,ii) rather than by creating oxygen vacancies and active functional groups on
+TiO2 (Figure 8biii,iv), which causes more reduction of band anatase TiO2 surface due the synergetic effect of substitutional
+bending on C-TiO2 (as shown in Figure 8c,d). The results show and interstitial carbon atoms in the lattice. The controlled doping
+that C40-TiO2 possesses enhanced sensitivity toward trace level without secondary phase was found to be advantageous to TiO2
+(1 ppm) ethanol gas with short response (2.2 s) and recovery nanoparticles in terms of increased electron carrier concentration
+(2.8 s) times and a superior selectivity. The incorporation of and increased rate of oxygen adsorption which led to high ethanol
+the heteroatoms of carbon (both substitutional and interstitial gas sensitivity and excellent selectivity at 150 °C. The interface
+carbon atoms) is therefore highly beneficial for the superior mechanisms between the ionosrbed species and ethanol gas and
+sensing performance to ethanol gas and the carbon-doped TiO2 adsorption kinetics of the doped carbon atoms in TiO2 was dem-
+based sensor is useful for future practical applications. onstrated. The activation energy drift was occurred at 250 and
+ 150 °C for undoped TiO2 and carbon-doped TiO2 (C40-TiO2)
+ nanoparticles and maximum sensitivity was observed at the same
+3. Conclusion operating temperature. The controlled carbon doping on TiO2
+ facets could tune the energy band states which was confirmed
+To summarize, a facile thermal decomposition approach was by work-function calculations using Kelvin-probe measurements.
+demonstrated for single step synthesis of carbon doped anatase The insights revealed that the controlled nonmetal doping in
+TiO2 nanoparticles which exhibited excellent ethanol gas sensing TiO2 can be used as an efficient technique for development of
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (10 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+Scheme 1. Preparation pathway of synthesis of C-TiO2 nanoparticles.
+
+high performance ethanol sensors at reduced operating tempera- Keywords
+ture with less noise to signal ratio enabling them as a promising
+ adsorption kinetics, carbon doped TiO2, charge transport, ethanol gas
+sensing platform for futuristic practical electronic applications.
+ sensors, nonmetal doping
+
+ Received: October 29, 2018
+4. Experimental Section Revised: December 14, 2018
+ Materials: Titanium isopropoxide (99.996%, C12H28O4Ti), urea Published online: January 9, 2019
+(99.5%, CH4N2O), and ethanol were used as precursors for the
+synthesis of carbon-doped titanium dioxide. These chemicals (AR grade)
+were procured from Sigma-Aldrich and used without further purification.
+ Synthesis of TiO2 and Carbon-Doped TiO2 Nanoparticles: Carbon- [1] Z. Wang, Z. Tian, D. Han, F. Gu, ACS Appl. Mater. Interfaces 2016,
+doped TiO2 nanoparticles were synthesized by thermal decomposition 8, 5466.
+method. The titanium hydroxide was first synthesized by mixing 20 mL of [2] D. Li, Y. Zhang, D. Liu, S. Yao, F. Liu, B. Wang, P. Sun, Y. Gao,
+titanium isopropoxide in ethanol solution. The resultant powder (≈9.0 g) X. Chuai, G. Lu, CrystEngComm 2016, 18, 8101.
+was pulverized with 1 g of urea using a mortar for 30 min. Subsequently,
+ [3] A. Hussain, A. T. S. Semeano, S. I. C. J. Palma, A. S. Pina, J. Almeida,
+the pulverized powder was subjected to thermal treatment in a quartz
+ B. F. Medrado, A. C. C. S. Pádua, A. L. Carvalho, M. Dionísio,
+crucible under a controlled nitrogen atmosphere in a tubular furnace at
+ R. W. C. Li, H. Gamboa, R. V. Ulijn, J. Gruber, A. C. A. Roque,
+450 °C (heating rate, 10 °C min−1) for 2 h. After the completion of the
+reaction, the powder was washed with distilled water and dried in an Adv. Funct. Mater. 2017, 27, 1700803.
+oven at 80 °C for 8 h. The color of dried powder was changed from white [4] D. Bekermann, A. Gasparotto, D. Barreca, C. Maccato, E. Comini,
+(TiO2) to dark brown (carbon-doped TiO2). The prepared samples are C. Sada, G. Sberveglieri, A. Devi, R. A. Fischer, ACS Appl. Mater.
+represented as TiO2, C20-TiO2, C40-TiO2, and C60-TiO2 corresponding to Interfaces 2012, 4, 928.
+0%, 20%, 40%, and 60% concentrations of the urea added. The detailed [5] M. Chen, H. Wang, J. Hu, Y. Zhang, K. Li, D. Zhang, S. Zhou,
+synthesis procedure has been shown in Scheme 1. The sensor device J. Zhang, Z. Zhu, Q. Liu, Adv. Mater. Interfaces 2019, 6, 1801453.
+fabrication details are described in the Supporting Information. [6] V. Vivekananthan, N. R. Alluri, Y. Purusothaman, A. Chandrasekhar,
+ Characterization Techniques: The structural characterization S. Selvarajan, S.-J. Kim, ACS Appl. Mater. Interfaces 2018, 10, 18650.
+of undoped and carbon-doped TiO2 nanomaterials were analyzed using [7] K. K. Korir, A. Catellani, G. Cicero, J. Phys. Chem. C 2014, 118,
+XRD using a Philips diffractometer (40 kV, 30 mA, Cu Kα radiation with 24533.
+λ = 1.5406 Å) at room temperature over a range of 2θ angles from [8] Y. Wang, L. Liu, C. Meng, Y. Zhou, Z. Gao, X. Li, X. Cao, L. Xu,
+10° to 90°. HRTEM images of the materials were obtained on a JEOL-JEM W. Zhu, Sci. Rep. 2016, 6, 33092.
+2100 system operated at 200 kV using carbon film coated copper grids. [9] J. Liu, X. Wang, Q. Peng, Y. Li, Adv. Mater. 2005, 17, 764.
+XPS (Thermofisher Scientific, UK) of the materials were acquired using Al [10] Z. Q. Zheng, J. D. Yao, B. Wang, G. W. Yang, Sci. Rep. 2015, 5, 1.
+Kα excitation (1486.3 eV). The bandgaps of the prepared materials were [11] K. Xu, L. Yang, Y. Yang, C. Yuan, Phys. Chem. Chem. Phys. 2017, 19,
+studied by using Varian Cary 50 UV–vis spectrophotometer equipped 29601.
+with diffuse reflectance module in the wavelength region, 200–800 nm.
+ [12] D. Zhang, J. Liu, H. Chang, A. Liu, B. Xia, RSC Adv. 2015, 5, 18666.
+ [13] K. Suematsu, K. Watanabe, A. Tou, Y. Sun, K. Shimanoe, Anal.
+ Chem. 2018, 90, 1959.
+Supporting Information [14] P. Hu, G. Du, W. Zhou, J. Cui, J. Lin, H. Liu, D. Liu, J. Wang,
+Supporting Information is available from the Wiley Online Library or S. Chen, ACS Appl. Mater. Interfaces 2010, 2, 3263.
+from the author. [15] G. Chen, S. Ji, H. Li, X. Kang, S. Chang, Y. Wang, G. Yu, J. Lu,
+ J. Claverie, Y. Sang, H. Liu, ACS Appl. Mater. Interfaces 2015, 7,
+ 24950.
+Acknowledgements [16] D. Barreca, G. Carraro, E. Comini, A. Gasparotto, C. Maccato,
+ C. Sada, G. Sberveglieri, E. Tondello, J. Phys. Chem. C 2011, 115,
+The Authors wish to acknowledge the facilities and support provided 10510.
+by the management, PSG Sons and Charities, Coimbatore. The authors
+ [17] J. Zhang, X. Liu, G. Neri, N. Pinna, Adv. Mater. 2016, 28, 795.
+also acknowledge Department of Science & Technology-Science and
+ [18] C. Marichy, N. Pinna, Adv. Mater. Interfaces 2016, 3, 1600335.
+Engineering Research Board (DST-SERB) (Ref: SB/S3/CE/038/2015) for
+ [19] S.-Y. Cho, H.-W. Yoo, J. Y. Kim, W.-B. Jung, M. L. Jin, J.-S. Kim,
+financial support.
+ H.-J. Jeon, H.-T. Jung, Nano Lett. 2016, 16, 4508.
+ [20] Y. Wu, P. Ma, N. Wu, X. Kong, M. Bouvet, X. Li, Y. Chen, J. Jiang,
+ Adv. Mater. Interfaces 2016, 3, 1600253.
+Conflict of Interest [21] A. V. Raghu, K. K. Karuppanan, B. Pullithadathil, ACS Sens. 2018, 3,
+The authors declare no conflict of interest. 1811.
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (11 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim
+ 21967350, 2019, 4, Downloaded from https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.201801714 by University Of Tokyo, Wiley Online Library on [30/11/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com
+ www.advmatinterfaces.de
+
+[22] R. A. Potyrailo, C. Surman, N. Nagraj, A. BurnsChem. Rev. 2011, [37] X. Zhang, J. Qin, R. Hao, L. Wang, X. Shen, R. Yu, S. Limpanart,
+ 111, 7315. M. Ma, R. Liu, J. Phys. Chem. C 2015, 119, 20544.
+[23] Y. Zhu, Y. Zhao, J. Ma, X. Cheng, J. Xie, P. Xu, H. Liu, H. Liu, [38] L. Gao, W. Gan, Z. Qiu, G. Cao, X. Zhan, T. Qiang, J. Li, ACS Appl.
+ H. Zhang, M. Wu, A. A. Elzatahry, A. Alghamdi, Y. Deng, D. Zhao, Nano Mater. 2018, 1, 1766.
+ J. Am. Chem. Soc. 2017, 139, 10365. [39] R. Purbia, R. Borah, S. Paria, Inorg. Chem. 2017, 56, 10107.
+[24] M. D. Sturaro, E. Gaspera, N. Michieli, C. Cantalini, S. M. Emamjomeh, [40] G. Wu, T. Nishikawa, B. Ohtani, A. Chen, Chem. Mater. 2007, 19,
+ M. Guglielmi, A. Martucci, ACS Appl. Mater. Interfaces 2016, 4530.
+ 8, 30440. [41] J. Lu, E. Delamarche, L. Eng, R. Bennewitz, E. Meyer,
+[25] Y.-S. Shim, K. C. Kwon, J. M. Suh, K. S. Choi, Y. G. Song, W. Sohn, H. J. Guntherodt, Langmuir 1999, 15, 8184.
+ S. Choi, K. T. Hong, J.-M. Jeon, S.-P. Hong, S. Kim, S. Y. Kim, [42] K. K. Karuppanan, A. V. Raghu, M. K. Panthalingal, S. Ramanathan,
+ C.-Y. Kang, H. W. Jang, ACS Appl. Mater. Interfaces 2018, 10, 31594. T. Kumaresan, B. Pullithadathil, J. Mater. Chem. A 2018, 6,
+[26] J. Zhang, Z. Qin, D. Zeng, C. Xie, Phys. Chem. Chem. Phys. 2017, 19, 12768.
+ 6313. [43] V. Kiran, S. Sampath, Nanoscale 2013, 5, 10646.
+[27] M. Batzill, U. Diebold, Phys. Chem. Chem. Phys. 2007, 9, 2307. [44] Y. Yang, D. Ni, Y. Yao, Y. Zhong, Y. Ma, J. Yao, RSC Adv. 2015, 5,
+[28] J. Nisar, Z. Topalian, A. De Sarkar, L. Österlund, R. Ahuja, ACS Appl. 93635.
+ Mater. Interfaces 2013, 5, 8516. [45] J. Dhakshinamoorthy, B. Pullithadathil, J. Phys. Chem. C 2016, 120,
+[29] D. P. Kumar, M. I. Song, S. Hong, E. H. Kim, M. Gopannagari, D. A. Reddy, 4087.
+ T. K. Kim, ACS Sustainable Chem. Eng. 2017, 5, 7651. [46] A. Das, B. Venkataramana, D. Partheephan, A. K. Prasad, S. Dhara,
+[30] X. Han, G. Shao, J. Phys. Chem. C 2011, 115, 8274. A. K. Tyagi, Phys. E 2013, 54, 40.
+[31] L. Zhang, M. S. Tse, O. K. Tan, Y. X. Wang, M. Han, J. Mater. Chem. A [47] S. J. Kim, H.-J. Koh, C. E. Ren, O. Kwon, K. Maleski, S.-Y. Cho,
+ 2013, 1, 4497. B. Anasori, C.-K. Kim, Y.-K. Choi, J. Kim, Y. Gogotsi, H.-T. Jung,
+[32] Y. Li, J. Shen, J. Li, S. Liu, D. Yu, R. Xu, W.-F. Fu, X.-J. Lv, ACS Nano. 2018, 12, 986.
+ J. Mater. Chem. A 2017, 5, 7055. [48] P. C. Chou, H. I. Chen, I. P. Liu, C. C. Chen, J. K. Liou, K. S. Hsu,
+[33] C. D. Valentin, G. Pacchioni, A. Selloni, Chem. Mater. 2005, 17, 6656. W. C. Liu, IEEE Sens. J. 2015, 15, 3711.
+[34] V. Kiran, S. Sampath, ACS Appl. Mater. Interfaces 2012, 4, 3818. [49] J. Bai, B. Zhou, Chem. Rev. 2014, 114, 10131.
+[35] J. Graciani, Y. Ortega, J. F. Sanz, Chem. Mater. 2009, 21, 1431. [50] D. Veeran Ponnuvelu, B. Pullithadathil, Microporous Mesoporous
+[36] B. Sambandam, A. Surenjan, L. Philip, T. Pradeep, ACS Sustainable Mater. 2018, 255, 156.
+ Chem. Eng. 2015, 3, 1321. [51] Z. Zhang, J. T. Yates, Chem. Rev. 2012, 112, 5520.
+
+Adv. Mater. Interfaces 2019, 6, 1801714 1801714 (12 of 12) © 2019 WILEY-VCH Verlag GmbH & Co. KGaA, Weinheim

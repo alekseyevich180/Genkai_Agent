@@ -1,0 +1,771 @@
+pubs.acs.org/acscatalysis Research Article
+
+ Enhancing Deep Mineralization and Chlorine Resistance in Methyl
+ Ethyl Ketone Destruction by Taming Synergy of WOx and Pd Sites
+ Chunli Ai, Fan Dang, Jialei Wan, Zeyu Jiang,* Yani Wu, Jicheng Liu, Han Xu, Yadi Wang, Yanfei Jian,
+ Mingjiao Tian, Changwei Chen, Yanke Yu, and Chi He*
+ Cite This: ACS Catal. 2025, 15, 7217−7231 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Accelerating deep oxidation while restraining the hazardous intermediate
+ formation remains a great challenge in oxygenated volatile organic compounds (OVOCs)
+ catalytic purification. Herein, we found that the modulation of electronic metal−support
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 05:46:32 (UTC).
+
+ interactions (EMSIs) in Pd/WOx/Al2O3 catalysts significantly facilitates the deep oxidation of
+ methyl ethyl ketone (MEK) and markedly enhances the CO2 selectivity. Over the Pd/WOx/
+ Al2O3 catalyst, 90% of MEK can be fully oxidized at just 140 °C with a low apparent
+ activation energy (Ea) of 19.65 kJ·mol−1, much superior to that of the commercial Pd/Al2O3
+ catalyst (Ea of 80.81 kJ·mol−1). The EMSIs promote charge redistribution through the unified
+ Pd-WOx sites, which modulates the d-band structure of highly dispersed Pd sites and
+ strengthens the adsorption and activation of reactants. The positively charged Pd2+ species are
+ dominant in activating MEK molecules at low temperatures, and the stretched W−O bonds
+ enhance the activation of lattice oxygen species to participate in subsequent oxidation,
+ ensuring the rapid total oxidation of MEK molecules via the Mars-van Krevelen mechanism.
+ Furthermore, the bifunctional Pd-WOx sites can also facilitate the dissociation of H2O and
+ CH2Cl2 molecules, enhancing the water-vapor and chlorine resistance of the Pd/WOx/Al2O3 catalyst, which expands the potential
+ toward practical applications. This work sheds significant guidance for researchers to engineer efficacious catalysts toward industrial
+ OVOCs deep elimination.
+ KEYWORDS: MEK oxidation, Pd/WOx/Al2O3 catalyst, bifunctional active sites, reactant activation, deep mineralization,
+ chlorine resistance
+
+ 1. INTRODUCTION acetaldehyde, acetone propionic acid, and acetic acid, were
+ Oxygenated volatile organic compounds (OVOCs), emitted in detected over the Pd/ZSM-5 catalyst for the oxidation of
+ large quantities by the chemical industry, possess low boiling MEK.3 As analyzed by Arzamendi et al., acetaldehyde and
+ methyl vinyl ketone are the primary intermediates at low
+ temperatures (<120 °C) and numerous active oxygenated
+ temperatures over the traditional PdOx/Al2O3 catalyst in MEK
+ groups and are a major contributor to the formation of ozone
+ oxidation, with essentially negligible CO2 generation.4 There-
+ and subsequent particulate matter. As a typical OVOC, methyl
+ fore, to boost catalytic efficiency and reduce undesirable
+ ethyl ketone (MEK) is one of the major pollutants discharged
+ byproducts, it is recommended that the efficiency of Pd
+ by pharmaceutical and packaging-printing industries. Sup-
+ catalysts can be enhanced by doping an extra metal oxide
+ ported Pd catalysts are dominating in OVOCs oxidation,
+ species to improve their redox and electron transport capacity.
+ especially for ketone-ester OVOCs oxidation. For instance, Wu
+ Among these, tungsten oxide (WOx) species demonstrate
+ et al. reported that 90% of acetone molecules can be
+ favorable characteristics due to their cost-effectiveness,
+ catalytically oxidized over the Pd@CoO/HSAPO-34 catalyst
+ structurally flexible coordination properties, superior electrical
+ at 240 °C (GHSV = 75,030 mL·g−1·h−1).1 The Pd/CeO2−SP
+ effects, and local coordination structure effects (acidity).5−7
+ catalyst synthesized by Wen et al. exhibited excellent catalytic
+ Zhang et al. showed that the moderate addition of WOx over
+ activity for ethyl acetate oxidation (T90 = 180 °C, WHSV =
+ the W−Pd/Al2O3 catalyst can optimize the ratio of the Pd0/
+ 60,000 mL·g−1·h−1).2 The progress has been achieved, while
+ the challenges surrounding preventing byproduct formation
+ and enhancing stability for Pd-based catalysts are remaining. Received: January 20, 2025
+ Supported Pd-based catalysts are susceptible to producing Revised: March 19, 2025
+ undesired intermediates due to their insufficient redox capacity Accepted: April 11, 2025
+ and difficulty in regulating the electronic structure, leading to Published: April 17, 2025
+ diminished deep oxidation efficiency of ketone-ester OVOCs
+ species. For example, plenty of byproducts, including diacetyl,
+
+ © 2025 American Chemical Society https://doi.org/10.1021/acscatal.5c00528
+ 7217 ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 1. (a) Schematic illustration of catalyst preparation; (b,c) HAADF-STEM images, Pd distribution (inset), and (d) EDS-mapping images of
+the Pd/WOx/Al2O3 catalyst. (e,f) HAADF-STEM images, Pd distribution (insert), and (g) EDS-mapping images of the Pd/Al2O3 catalyst.
+
+PdO active phase, thereby enhancing the selective hydro- instance, the enhanced methanol oxidation reactivity of the
+genation from O2 to H2O2 and hindering hydrogenation/ WO3/Pt/Al2O3 catalyst is attributable to its plentiful oxygen
+decomposition of H2O2.8 Kanai et al. proposed that the weak vacancies and elevated resistance to carbonate accumulation
+acid strength of Brønsted acid sites on WO3/Al2O3 catalyst resulting from the WO3 modification.11 Yu et al. revealed that
+resulted in high durability for glycerol dehydration.9 Yun et al. the WOx/ZrO2 composite could fully oxidize 1,4-dioxane and
+demonstrated that WOx species in the Pd/WOx/Al2O3 catalyst CVOC simultaneously, attributable to the superb oxygen
+increased its electron affinity to promote C�C cleavage in activation ability.12 These findings provide a feasible way to
+benzene and determined the preference for combining promote the catalytic efficiency of supported Pd catalysts at
+individual reaction intermediates of the catalysts.10 low temperatures while enhancing their chlorine resistance.
+ Notably, MEK molecules are inevitably released along with However, the advancement of the Pd-WOx bimetallic system is
+trace amounts of chlorinated volatile organic compounds hindered by the unclear relationship between WOx doping and
+(CVOCs), specifically dichloromethane (DCM), under the its promotional effect on the catalytic oxidation of OVOCs, as
+emission conditions reality of the chemical industries, well as the intrinsic mechanism of enhancement associated
+especially for the pharmaceutical industry11,12 and the printing with WOx species.
+industry.13,14 The presence of dichloromethane can result in In this study, a highly active and stable Pd/WOx/Al2O3
+the deactivation of the Pd species due to chlorine deposition catalyst for the MEK oxidation reaction was synthesized by a
+after C−Cl dissociation during the oxidation reaction.15,16 It is simple two-step strategy. The WOx/Al2O3 nanosheets can well
+noteworthy that the Pd-WOx bimetallic active center has the stabilize the highly dispersed Pd nanoparticles through
+potential capacity to inhibit the adsorption of this toxic optimizing electronic metal−support interactions (EMSIs),
+chlorine-containing species on the active center by modulating which results in electron-rich Pd2+ sites dominating in MEK
+the adsorption and dissociation of methylene chloride. For adsorption and activation. The doped WOx species can
+ 7218 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+promote electron transfer between WOx and Pd through Linghua, China) equipped with a flame ionization detector.
+bridging O atoms, which play a crucial role in the stabilization The detailed methods for evaluating the catalytic performance
+of Pd sites. The EMSIs between Pd and WOx simultaneously are provided in the Supporting Information.
+achieve ultrahigh reactant activation and C−C bond cleavage, 2.4. Mechanism Determination. The reaction mecha-
+ensuring the rapid total oxidation of MEK molecules. nisms for MEK catalytic oxidation over synthesized catalysts
+Furthermore, the bifunctional Pd-WOx active sites can prevent were quantified and determined by in situ DRIFTS and proton
+the coadsorption/poisoning effect of H2O and CH2Cl2 transfer reaction mass spectrometry (PTR-MS). The detailed
+impurities, thereby expanding the scope of its practical procedures of all of these in situ experiments are given in the
+applications. This research presents an encouraging method- Supporting Information.
+ology for industrial OVOC low-temperature deep mineraliza- 2.5. Computational Details. First-principles density
+tion and sheds valuable references for other thermo−catalytic functional theory (DFT) calculations were performed within
+reactions. the generalized gradient approximation using the Perdew−
+ Burke−Ernzerhof (PBE) formulation.17,18 More detailed
+2. MATERIALS AND METHODS parameter settings and models are presented in the Supporting
+ 2.1. Catalyst Preparation. The alumina nanosheet Information.
+(denoted as Al2O3) was prepared through the hydrothermal
+method reported by previous work.7 WOx/Al2O3 supports 3. RESULTS AND DISCUSSION
+were synthesized by an impregnation method. After that, the 3.1. Synthesis Scheme and Structural Property. The
+surface WOx units serve as the nucleation sites for Pd schematic illustration of Pd/WOx/Al2O3 catalyst synthesis is
+precursor stabilizing. For the synthesis of Pd/Al2O3, Pd-WOx/ given in Figure 1a. SEM and TEM images reveal that the
+Al2O3, and Pd/WOx/Al2O3 catalysts, typically 200 mg of Al2O3 prepared Al2O3 support shows a nanosheet-like morphology
+or WOx/Al2O3 was dispersed in 45 mL of deionized water in a with distinct surface roughness (Figure S1). The atomically
+round-bottom flask, followed by 30 min sonication to achieve a dispersed WOx species were then doped on the Al2O3 surface
+homogeneous suspension. Then, the flask was immersed into a through the impregnation method (Figure S2). Following this,
+100 °C oil bath after the pH value of the Al2O3 suspension was Pd species can be stabilized on the WOx/Al2O3 support by a
+adjusted to ∼10 using freshly prepared Na2CO3 solution (0.25 deposition−precipitation method and aggregated into small
+M). Afterward, 5 mL of Pd(NO3)2 solution with various nanoparticles through the Ostwald mechanism during the
+concentrations was added dropwise to the stirring Al2O3 calcination process. The actual metal loadings of the obtained
+suspension and kept at 100 °C for 1 h under continuous catalysts were determined by ICP-OES, as listed in Table S1.
+stirring (except for Pd-WOx/Al2O3, for which 0.034 g of The Pd and W loading contents of the Pd/WOx/Al2O3 catalyst
+ammonium metatungstate was added at the same time). are determined as 0.41 and 6.43 wt %, respectively. The
+Finally, these as-prepared samples were dried under a vacuum specific surface areas of Pd/WO x/Al2O 3 and Pd/Al2O3
+at 60 °C after washing 6 times with deionized water. After catalysts are 161.4 and 170.9 m2·g−1, respectively, and their
+drying, the collected powders were reduced by diluted H2 pore volumes are 0.97−1.08 cm3·g−1 (Figure S3 and Table S2).
+(10% H2/Ar, 100 mL·min−1) at 200 °C for 1 h. The obtained XRD patterns of prepared samples are presented in Figure
+catalysts were denoted as Pd/Al2O3, Pd-WOx/Al2O3, and Pd/ S4. All samples exhibit the characteristic diffraction peaks of
+WOx/Al2O3, respectively. The Pd/Al2O3(IMP) catalyst was Al2O3 (PDF#10-0425), while the diffraction peaks of PdOx
+prepared through the wet-chemistry method (Supporting and WOx can hardly be observed, which indicates that the
+Information).13 PdOx and WOx species are highly dispersed on the surface of
+ 2.2. Catalyst Characterizations. The synthesized cata- the Al2O3 support.19 The initial presence of surface organics on
+lysts were systematically characterized by high-resolution the WOx/Al2O3 overlayer is proposed to be an important
+transmission electron microscopy, high angle dark field obstacle in the formation of Pd-WOx active sites. FTIR spectra
+scanning transmission electron microscopy (HAADF-STEM), of the WOx/Al2O3 composite confirm that the organic groups
+X-ray absorption spectra (XAS), X-ray diffraction (XRD), N2 are completely removed by calcination prior to Pd loading
+sorption isotherms, Fourier transform infrared spectroscopy (Figure S5).
+(FT-IR), inductively coupled plasma optical emission spec- As demonstrated, the electronic states of active sites are
+trometry (ICP-OES), ultraviolet−visible spectroscopy (UV− crucial to their catalytic behaviors. DRIFT spectroscopy with
+vis), X-ray photoelectron spectroscopy (XPS), temperature- CO as the probe was used to investigate the local electronic
+programmed reduction of hydrogen (H2-TPR), temperature- environment of the Pd species. As shown in Figure S6, two
+programmed desorption of O2/MEK/CO2/NH3 (O2-TPD/ bands originating from gaseous CO were observed at 2173 and
+MEK-TPD/CO2-TPD/NH3-TPD), FTIR spectroscopy for 2121 cm−1. After introducing WOx species, the CO adsorption
+pyridine/NH3/CO adsorption (pyridine/NH3/CO-IR), and band (bridged CO) shows a blue shift from 1922 to 1967
+hydrogen and oxygen titration. The detailed procedures are cm−1, suggesting the presence of positively charged Pdδ+
+described in the Supporting Information. species, which can be attributed to the electron back-donation
+ 2.3. Catalytic Activity Evaluation. Activities of the from Pd nanoparticles to WOx species through metal−support
+prepared catalysts for MEK oxidation were evaluated in a interactions.20
+continuous fixed-bed quartz tubular reactor (10 mm, The Pd/WOx/Al2O3 catalyst presents uniformly dispersed
+diameter). The feed gas comprises 800 ppm MEK in air, and Pd nanoparticles, with an average diameter of 3.40 ± 0.2 nm,
+the WHSV is set as 45,000 mL·g−1·h−1. The catalyst bed was as illustrated in Figures 1b−c and S7. The EDS-mapping
+brought to the desired temperature, which was controlled by a images (Figures 1d and S7) identify that the WOx species is
+K-type thermocouple and allowed to equilibrate for 30 min extensively doped and distributed across the two-dimensional
+before online sampling began. The concentration of MEK was Al2O3 surface, which is typically considered to be a monolayer
+measured by an online gas chromatograph (GC-9890B; structure. In contrast, the Pd species in the Pd-WOx/Al2O3
+ 7219 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 2. (a) XANES spectra of prepared catalysts and reference samples at the Pd K-edge; (b) relationships between the white line intensity and
+Pd valence state of prepared catalysts and reference samples; (c) Fourier transforms of the k3-weighted extended X-ray absorption fine structure
+(EXAFS) spectra at R-space; (d) wavelet transforms of these k3-weighted χ (k) signals (contour plots) at the Pd K-edge; (e) Pd 3d and (f) W 4f
+XPS spectra of the prepared catalysts; and (g) O2-TPD profiles, (h) H2-TPR profiles, and (i) NH3-TPD profiles of the synthesized catalysts.
+
+catalyst (Figure S8) are aggregated to form the larger the aggregation of Pd species and modulate the d-band
+nanoparticles with a particle size distribution of 7.07 ± 0.2 structure of highly dispersed Pd sites, therefore dominating in
+nm. Moreover, the WOx species possess local reunites over the the MEK oxidation reaction. For the Pd-WOx/Al2O3 catalyst
+Pd-WOx/Al2O3 catalyst. The observations suggest that the prepared by a one-step wet-chemistry method, the isolated Pd
+WOx/Al2O3 nanosheet is a promising support for dispersing and WOx species are randomly supported on the Al2O3 surface,
+and stabilizing Pd nanoparticles due to the electronic metal− resulting in the aggregation of Pd species during calcination.
+support interactions. In this two-step strategy, the doping of The HAADF-STEM images provide clear evidence for the
+WOx species can greatly improve the electronegativity of the existence of irregular Pd nanoparticles on the Pd/Al2O3
+Al2O3 surface and thereby enhance the stabilization of Pd2+ (Figures 1e−g and S9) and Pd/Al2O3(IMP) catalyst surfaces
+from the Pd(NO3)2·2H2O precursor. During the calcination (Figure S10) that are variable in size.
+process, the bifunctional active sites with strong electronic 3.2. Surface Status, Reducibility, and Acidity. An in-
+metal−support interactions are formed, which greatly prevent depth analysis of the electronic structure of Pd-WOx active
+ 7220 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+sites is crucial for establishing structure−activity relationships. attributed to W 4f 7/2 and W 4f5/2, respectively. The binding
+Herein, we performed X-ray absorption spectroscopy (XAS) energy difference was determined to be 2.0 eV, which are
+studies on the Pd K-edge of representative Pd/WOx/Al2O3 assigned to the oxidized W6+ state.24
+and PdAl2O3 catalysts. From the Pd K-edge X-ray absorption Subsequently, from the O 1s XPS spectra (Figure S12), the
+near-edge structure (XANES) spectra (Figure 2a), it can be peaks at binding energies of 530.4, 531.6, and 533.5 eV are
+interpreted that the absorption edge position of prepared ascribed to the lattice oxygen species, adsorbed oxygen species,
+catalysts is located between those of the Pd foil and PdO, and adsorbed H2O species, respectively. It is notable that the
+suggesting that the oxidation state of Pd species over prepared Olatt/Oads molar ratio significantly increases from 49.8% to
+catalysts is between 0 and +2. Compared with the Pd/Al2O3 52.1% for the Pd-WOx/Al2O3 and Pd/WOx/Al2O3 catalysts,
+sample, the white line of the Pd/WOx/Al2O3 catalyst is more which can be reasonably attributed to the doping of WOx
+intense and closer to the PdO reference sample. By closing species. Furthermore, in order to obtain more detailed
+examinations of the Pd K-edge normalized XANES, relation- information about oxygen vacancies, electron paramagnetic
+ships between the white line intensity and Pd valence state of resonance (EPR) spectroscopy was performed to analyze the
+prepared catalysts and reference samples were determined Ov distribution of the catalysts. As shown in Figure S13, all
+(Figure 2b). The analysis demonstrated the existence of higher samples exhibit different intensities of EPR signals at g = 2.003,
+positively charged Pdδ+ species (δ = 0.55) confined within the which can be identified as the existence of Ov. Among them,
+Pd/WOx/Al2O3 catalyst. Notably, the enhancement of the Pd/WOx/Al2O3 has the weakest EPR signal intensity,
+white line appears to be greater when WOx species are present, indicating that less Ov exists on the surface of catalysts,
+which can be ascribed to the electron donation from Pd to which is in accordance with the O 1s XPS results (Figure
+WOx species through metal−support interactions, resulting in S12).25 The attribution of diverse oxygen species can also be
+sufficient positively charged Pdδ+ species. verified by the O2-TPD profiles, as displayed in Figures 2g and
+ The Fourier-transformed (FT) k3-weighted EXAFS spectra S14. The O2 desorption peaks can be divided into three
+at R-space are subsequently given in Figures 2c and S11, and temperature regions: <250, 250−400, and >400 °C, which are
+two prominent peaks at ∼1.9 and ∼3.0 Å can be attributed to attributed to the physically adsorbed oxygen species (Oads‑phy),
+the Pd−O path and Pd−Pd path, respectively. The the chemically adsorbed oxygen species (Oads‑chem), and the
+coordination number of Pd−O was calculated to be 6 and 4, surface lattice oxygen species (OIatt), respectively. The higher
+with an average path length of 1.89 and 1.95 Å over Pd/WOx/ ratio of adsorbed oxygen species is distinct over Pd/
+Al2O3 and PdAl2O3 catalysts, respectively (Table S3), further Al2O3(IMP) and Pd/Al2O3 catalysts, and the lower content
+substantiating the elevated Pd valence state in the Pd/WOx/ of surface lattice oxygen species is estimated, which leads to the
+Al2O3 catalyst. Moreover, the wavelet transformed (WT) inferior capacity for surface oxygen activation and trans-
+EXAFS oscillations of samples were obtained, providing more formation. In comparison, the doping of WOx species
+detailed information about the R-space and k-space resolutions significantly decreases the desorption temperature of adsorbed
+of the scattering atoms (Figures 2d and S11c). The WT oxygen species and promotes the evolution volume of surface
+EXAFS counter plots of the Pd/WOx/Al2O3 catalyst exhibit a lattice oxygen species (based on desorption area). Among
+maximum at ∼5.56 Å−1 in k-space and ∼1.56 Å in R-space them, the Pd/WOx/Al2O3 catalyst with the highest surface
+attributed to the Pd−O path, similar to those of the first shell lattice oxygen species desorption area is determined to be due
+of PdO, while the counter plots of the Pd/Al2O3 catalyst to its strongest electronic metal−support interactions, which
+exhibit a maximum at ∼7.37 Å−1 in k-space and ∼2.56 Å in R- are crucial for MEK oxidation processes.26
+space attributed to the Pd−Pd path, similar to those of the first The redox properties of the prepared catalysts were
+shell of Pd foil.21 characterized by H2-TPR experiments, as displayed in Figure
+ XPS measurements were also carried out to gain insights 2h. The negative peaks occurring around 80 °C for the
+into the chemical states and surface composition of prepared supported Pd catalysts are attributed to the desorption of weak
+catalysts. As shown in Figure 2e, the Pd 3d peaks located at the hydrogen on Pd particles and the decay of the Pd hydride
+binding energies of 340.28−341.34 and 335.23−335.91 eV are (beta-PdH) formed on the metallic Pd species at ambient
+assigned to the 3d3/2 and 3d5/2 of Pd0 species, respectively. The temperature. Significantly, the negative peak area of the Pd-
+peaks centered at 341.72−343.41 and 337.42−337.77 eV WOx/Al2O3 catalyst is slightly smaller than those of other
+correspond to the 3d 3/2 and 3d 5/2 of Pd 2+ species, catalysts. This phenomenon suggests that the Pd nanoparticles
+respectively.22 A slight shift toward higher binding energy in the Pd-WOx/Al2O3 catalyst possess a WOx overlayer
+can be seen on the Pd/WOx/Al2O3 catalyst, indicating that partially adorning its periphery,27 resulting in the decline of
+more Pd species are positively charged, which can be attributed exposed Pd sites, therefore preventing its oxidation reactivity.
+to its electron donation to the WOx/Al2O3 substrate.23 Moreover, the lower reduction temperature of the active
+Meanwhile, a slight increase of Pd2+/(Pd0+Pd2+) molar ratio components and increased hydrogen consumption enhance the
+was determined over the Pd/WOx/Al2O3 (31.2%) than that of active oxygen supply performance of these components.28
+Pd-WOx /Al2 O 3 (26.5%), Pd/Al2 O 3 (17.4%), and Pd/ Introducing WOx species significantly enhances the intensity of
+Al2O3(IMP) (16.3%) catalysts (Table S1). The positively the reduction peak in the Pd/WOx/Al2O3 catalyst, shifting it to
+charged Pd2+ sites are preferable for MEK adsorption and lower temperatures, primarily attributable to the decrease of
+activation due to the electron-rich C�O group. From the WOx species, in line with the results of the O2-TPD profiles.
+above XANES, EXAFS, and XPS analysis, it is reasonable to The results demonstrate a robust interaction between Pd and
+infer that the Pd sites in the Pd/WOx/Al2O3 catalyst possess WOx species over the Pd/WOx/Al2O3 catalyst.
+superior electronic interactions with the WOx substrate. For Figure S15 displays the UV−vis spectra of the prepared
+the W 4f XPS spectra of the Pd/WOx/Al2O3 and Pd-WOx/ catalysts. Compared with bulk Al2O3, the supported WOx/
+Al2O3 catalysts in Figure 2f, two characteristic peaks at binding Al2O3 catalysts display strong absorption peaks between 200
+energies of 35.53 and 37.64 eV are observed, which can be and 400 nm. Two bands appearing at 205 and 250 nm are
+ 7221 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 3. (a) Catalytic activity, (b) CO2 yield, and (c) Arrhenius plots of the synthesized catalysts for MEK oxidation; (d) MEK-TPD profiles; (e)
+calculated adsorption energies of reactants (O2 and MEK molecules) and optimized adsorption models (inset figure) for Pd/Al2O3 and Pd/WOx/
+Al2O3 catalysts; (f) total density of states (DOS) for Pd/Al2O3 and Pd/WOx/Al2O3 catalysts; and charge density difference of the (g) Pd/Al2O3
+and (h) Pd/WOx/Al2O3 catalysts for the adsorption of MEK and O2 molecules.
+
+assigned to the tungsten trioxide and octahedral polytungstate sites, as evidenced by the stronger peaks at 1444, 1576, 1695,
+species, respectively, while the characteristic band assigned to and 1612 cm−1 after WOx modification (Figure S16a). As the
+WO3 crystals around 400 nm cannot be detected. Further- temperature increases, there is a notable decline of L-acid sites
+more, the UV−vis absorption characteristics intensify pro- over the Pd/WOx/Al2O3 catalyst, which can be attributed to
+gressively with the addition of WOx. The results demonstrate the transformation of the L-acid sites to functional B-acid sites
+that tungsten oxide was effectively disseminated on the Al2O3 (Figure S16b).30 Furthermore, for the NH3-TPD (Figure 2i),
+support, and the Pd/WOx/Al2O3 catalyst exhibited a high the NH3 desorption peaks located in the temperature range of
+capacity for electron transport.29,30 100−250, 250−450, and 450−600 °C can be ascribed to the
+ It has been widely accepted that the acidic properties play a weak-, moderate-, and strong-acid sites, respectively. Notably,
+crucial role in MEK oxidation for supported-Pd catalysts. the amounts of moderate (around 400 °C) and strong (above
+Herein, the Pyridine-IR, NH3-TPD, NH3−IR, and CO2-TPD 500 °C) acid sites significantly increased with the addition of
+were subsequently conducted to explore the surface acidity of WOx species over supported Pd catalysts, which also
+synthesized catalysts. There is a significant increase in L-acid corresponds to the NH3−IR experiment (Figure S17). This
+ 7222 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+is due to the fact that the interactions between Pd and WOx increases with tungsten doping, while there is still a decreasing
+receive extra electrons.31 From the analysis of the CO2-TPD trend observed between 120 and 160 °C. The catalytic
+profiles (Figure S18), it can be concluded that the WOx efficiency of MEK oxidation is decreased as the sequence of
+modification also promotes desorption of the CO2 molecules, Pd/WOx/Al2O3 > Pd-WOx/Al2O3 > Pd/Al2O3 > Pd/
+which can be attributed to abundant B-acid sites. In addition, Al2O3(IMP) and the CO2 yield curves in Figure 3b also
+the sufficient strong acid sites can greatly improve the confirm the deep oxidation capacity sequence of these
+adsorption of MEK molecules and provide sufficient H prepared catalysts in MEK oxidation. It is noteworthy that
+protons to produce HCl with Cl radicals in the presence of the Pd/WOx/Al2O3 catalyst exhibits superb catalytic perform-
+Cl−VOC impurities, therefore inhibiting the formation of ance in comparison to that of Pd-WOx/Al2O3, Pd/Al2O3, and
+polychlorinated byproducts and enhancing the chlorine Pd/Al2O3(IMP) catalysts for MEK oxidation, also identified by
+resistance.32 the calculated reaction rates (Figure S22). Furthermore, the
+ 3.3. Catalytic Performance Evaluation. The synthesized Arrhenius plots (Figure 3c) were determined to compare the
+catalysts were subsequently tested for the catalytic oxidation of apparent activation energy for these catalysts in MEK
+MEK. The Weisz-Prater criterion of all catalysts was oxidation. The results proved that the apparent activation
+determined as Nw‑p < 0.3 (Table S2); therefore, the influence energy of MEK oxidation over the Pd/WOx/Al2O3 (19.65 kJ·
+of internal and external diffusion on catalytic performance can mol−1) catalyst is significantly lower than that of Pd-WOx/
+be ignored. As displayed in Figure 3a, it can be observed that Al2O3 (53.29 kJ·mol−1), Pd/Al2O3 (80.81 kJ·mol−1), and Pd/
+all catalysts exhibit a similar catalytic activity in the RT-100 °C Al2O3(IMP) (84.49 kJ·mol−1), indicating that the bifunctional
+range. Interestingly, the MEK oxidation efficiency obviously Pd-WOx sites are preferable for MEK oxidation.
+declines from 78.56% to 65.77% over the Pd/Al2O3 catalyst In order to ascertain the stability of the Pd/WOx/Al2O3 and
+between 100 and 140 °C, which will slowly rise to 90% at 178 Pd/Al2O3 catalysts, cyclic stability tests were conducted, as
+°C as the temperature increases. The Pd/Al2O3(IMP) catalyst illustrated in Figure S23. The Pd/WOx/Al2O3 catalyst exhibits
+demonstrates an exceptional MEK oxidation efficiency at low remarkable stability in five-cycle tests, with a T90 maintained at
+temperatures achieving 75.21% at 120 °C. Nonetheless, the 180 °C. However, the efficiency of MEK oxidation over the
+MEK conversion efficiency demonstrates a decline with Pd/Al2O3 catalyst is observed to decline from 92.9% to 83.5%
+prolonged heating, resulting in a final conversion of 57.24% at 180 °C. Furthermore, the catalytic performance of Pd/
+at 200 °C. The obvious decline tendency of MEK oxidation WOx/Al2O3 is stable under diverse GHSVs and concentrations
+efficiency detected between 100 and 140 °C over traditional (Figure S24). These findings provide further evidence that
+Pd/Al2 O 3 and Pd/Al 2 O 3 (IMP) catalysts has attracted robust electron transfer through the Pt−O−W moieties
+attention. The investigation into the reason for this markedly enhances the catalytic efficacy of Pd/WOx/Al2O3
+phenomenon and its possible remedies is intriguing, in MEK oxidation.
+particularly given the potential implications for the wider It has been previously demonstrated that the adsorption/
+scientific community. As revealed in Figures S19 and S20, the desorption capability of reactants and reaction products is
+diminished activity of Pd/Al2O3 is largely attributable to the crucial for the OVOCs oxidation.33 The capabilities of reactant
+accumulation of intermediates on the catalyst surface during adsorption over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts were
+MEK oxidation. further investigated by the TPD experiments and theoretical
+ This study ultimately establishes a straightforward two-step calculations. MEK-TPD profiles (Figures 3d and S25) indicate
+strategy for the synthesis of efficient catalysts with bifunctional that the peaks observed below 200 °C are attributed to the
+active sites comprising Pd and WOx species on Al2O3 support desorption of weakly adsorbed MEK, while the peaks in the
+(Pd/WOx/Al2O3). The creatively synthesized bifunctional range of 300−600 °C are ascribed to the desorption of strongly
+active sites surpass the single Pd nanoparticles of traditional adsorbed MEK. It is noteworthy that the desorption peak of
+Pd/Al2O3 catalysts when an optimal quantity of WOx is MEK around 150 °C for WOx-containing is attributed to the
+incorporated (0.4 wt % Pd: 6.4 wt % W). Nevertheless, doping of WOx species. Meanwhile, the Pd species dominate in
+suboptimal outcomes arise from the addition of either strongly adsorbed MEK molecules (the desorption peak area
+insufficient or excessive WOx species (Figure S21). This can of MEK molecules over Pd-supported catalysts is significantly
+be attributed to the fact that an optimal level of WOx enhances higher than that of WOx/Al2O3 and Al2O3 supports). For the
+the Pd2+/Pd0 ratio, facilitates the activation of MEK, and Pd-WOx/Al2O3 catalyst, the smaller desorption peak of
+accelerates the decomposition of intermediates. In spite of this, strongly adsorbed MEK species compared with the Pd/Al2O3
+an excessive amount of WOx not only changes Pd species to sample can be attributed to the partial coverage of Pd particles
+become excessively metallic but also prevents oxygen species by WOx, resulting in inadequate exposure of Pd sites, which
+transformation from being adsorbed onto Pd nanoparticles, may result from the catalyst synthesis processes with random
+which will result in a lower efficiency in MEK oxidation.8 mixing and anchoring of ammonium metatungstate and the Pd
+ Figure 3a illustrates the ignition curves for MEK oxidation precursor. The results of theoretical calculations are presented
+over the prepared catalysts. Pd species demonstrates a greater in Figure 3e−g. A series of potential composite configurations
+propensity for the catalytic oxidation of MEK over the were devised, and the geometries and adsorption free energies
+bifunctional Pd-WOx active site. The Pd/WOx/Al2O3 catalyst of the adsorbed O2, MEK, and O2 + MEK on Pd/WOx/Al2O3
+exhibits superior MEK oxidation efficiency compared to the and Pd/Al2O3 catalysts were ascertained (Figure S26). The
+Pd/Al2O3 catalyst, with a T90 (the temperature at which 90% oxygen adsorption energy varies from −0.3164 (for the Pd site
+of the MEK was oxidized) at only 140 °C. To further elucidate on PdO) to −0.7146 eV (for the W site on Pd-WOx),
+the effect of the two-step strategy on the bifunctional Pd-WOx indicating that Pd/WOx/Al2O3 exhibits a heightened capacity
+active sites, the Pd-WOx/Al2O3 catalyst, which was synthesized to absorb oxygen species. This finding is in accordance with
+in one step by coloading Pd and WOx species simultaneously, the results of the O2-TPD results. The MEK adsorption
+was compared. The activity of the Pd-WOx/Al2O3 catalysts strengthens, as verified by the lower MEK adsorption energy
+ 7223 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 4. In situ DRIFTS of MEK oxidation as a function of temperature over (a) Pd/Al2O3 and (b) Pd/WOx/Al2O3 catalysts; (c) in situ DRIFTS
+of MEK oxidation at 140 °C over Pd/Al2O3 and Pd/WOx/Al2O3 catalysts; PTR-MS profiles of (d) Pd/Al2O3 and (f) Pd/WOx/Al2O3 catalysts
+during MEK oxidation; (e) PTR-MS spectra for Pd/Al2O3 and Pd/WOx/Al2O3 at different temperatures during MEK oxidation; in situ DRIFTS of
+MEK oxidation over (g) Pd/Al2O3 and (h) Pd/WOx/Al2O3 catalysts at various reaction conditions.
+
+(−1.6932 eV) over the Pd/WOx/Al2O3 catalyst (Figure 3e), transferred from the active sites to the adsorbate than that of
+which will in turn promote its low-temperature activation.34 To the Pd/Al2O3 catalyst (0.315 e). The result suggests that
+further elucidate the correlations between the electronic charge transfer within the Pd-WOx structure can enhance the
+structure of catalysts and their catalytic performance for adsorption and activation of MEK and O2 molecules on the
+MEK oxidation, the d-band center (εd) of Pd species was catalyst surface. These results demonstrated that the
+calculated from their d-orbital PDOS. As illustrated in Figure coordinating WOx species can modulate the electronic
+3f, the total DOS for the d-band centers of Pd sites in Pd/ structure of the surface Pd species due to the EMSIs effect,
+WOx/Al2O3 (−1.5312 eV) is lower than that of Pd/Al2O3 and the electronic structure of the active site plays a major role
+(−2.015 eV). Moreover, as illustrated in Figure 3g, the charge in determining the adsorption behaviors of reactants on the
+density difference diagram of Pd-WOx demonstrates a distinct catalyst. The O2 and MEK adsorption capacities of catalysts
+electron transfer from W atoms to adjacent Pd atoms, leading have a positive correlation with their reactivity.
+to a shift in the Pd species toward a negatively charged state. These findings demonstrate that the catalytic performance of
+For the Pd/WOx/Al2O3 catalyst, more electrons (0.507 e) are MEK of supported Pd catalysts is significantly influenced by
+ 7224 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+WOx doping and the preparation methods employed. time, indicating the further production and accumulation of
+Specifically, the Pd/WOx/Al2O3 catalyst, possessing bifunc- intermediates adsorbed on Pd/Al2O3, while this phenomenon
+tional Pd-WOx active sites and prepared via a two-step cannot be determined over the Pd/WOx/Al2O3 catalyst
+method, exhibited the highest catalytic oxidation reactivity. (Figure 4c). Subsequently, PTR-QMS was employed to gain
+Based on the experimental and theoretical results, it is a more comprehensive understanding of the byproducts during
+concluded that a substantial number of hypervalent Pd2+, MEK oxidation. All data were collected under the same
+sufficient acidic sites, and lattice oxygens are pivotal in conditions as kinetic tests. The results of the temperature-
+enhancing the catalytic efficiency of MEK oxidation (Figure programmed oxidation of MEK (40 to 220 °C) over the
+S27). The improved EMSIs on the Pd/WOx/Al2O3 catalyst prepared catalyst are shown in Figures 4d,f, and S31. A gradual
+significantly boost the activation of reactants and in-depth decline in the concentration of MEK is observed with an
+oxidation of intermediates, thus dominating in ketone-ester increasing temperature on all catalysts. Concurrently, the
+OVOCs purification. relative concentrations of HCHO (m/z = 30), CH3CHO (m/z
+ 3.4. Reaction Pathway Determination. To understand = 44), HCOOH (m/z = 46), CH3COCH3 (m/z = 58),
+how these WOx species influence the reaction mechanism of CH3COOH (m/z = 60), CH3COCH = CH2 (m/z = 70),
+MEK oxidation, further experiments were required. In situ CH3CH2CHOHCH3 (m/z = 74), CH3COCOCH3 (m/z =
+DRIFTS were recorded to investigate intermediate species, 86), CH3COCHOHCH3 (m/z = 88), and
+active reaction sites, and the reaction mechanism of MEK CH3CHOHCHOHCH3 (m/z = 90) were found to increase
+catalytic oxidation. As illustrated in Figures 4a,b and S28, the gradually. Subsequently, the intermediates are subjected to
+sharp adsorption bands observed at 1702 cm−1 (C�O), 1370 comparison and determination at selected temperatures by
+cm−1 (C�O), and 3080−2800 cm−1 (−CH3) are assigned to means of PTR-QMS curves (Figure 4e). The results verify that
+gaseous MEK molecules. As the temperature increased, the the CH3COCH3, CH3CHO, and CH3COOH species are the
+intensity of these bands exhibited a gradual decline. The primary intermediates during MEK oxidation, attributed to
+presence of CO2 (2631 and 2331 cm−1) and H2O (3741 cm−1) their markedly elevated concentrations. As the temperature
+species is observed, obtained by MEK oxidation. However, it is gradually increased, the concentration of all intermediates
+noteworthy that the intensity of the CO2 vibration appears at declined, ascribing to their being fully oxidized into CO2 and
+60 °C over the Pd/WOx/Al2O3 catalyst, while the temperature H2O. However, it is noteworthy that the Pd/WOx/Al2O3 and
+is above 140 °C over the Pd/Al2O3 catalyst. Pd-WOx/Al2O3 catalysts exhibit a pronounced enhancement in
+ Notwithstanding the ultimate output of CO2 for all CH 3 COCH 3 generation, whereas there are abundant
+processes, there are notable distinctions in the intermediate CH3COCH = CH2 byproducts over Pd/Al2O3 and Pd/
+pathways. For the Pd/Al2O3 catalyst (Figure 4a), the peak at Al2O3(IMP) catalysts. This reveals that the acetone species is
+1670 cm−1 (C�O) is assigned to the asymmetric stretching of the primary intermediate on bifunctional Pd-WOx active sites,
+acetaldehyde and formaldehyde.33 The band at 1558 cm−1 while the methyl vinyl ketone from 3-hydroxy-2-butanol is the
+(COO−) is related to the symmetrical stretching vibration of primary intermediate on the traditional Pd/Al2O3 catalyst. In
+acetate species.35 The band at 1392 cm−1 shows the symmetric addition, Pd/WOx/Al2O3 and Pd-WOx/Al2O3 catalysts exhibit
+vibrations of C�O species, indicative of intermediates of a pronounced increase in CH3 COOH production, as
+aldehydes or ketones. The peak at 1332 cm−1 is assigned to the evidenced by significantly higher peak concentrations in
+vibration of −CH3 of acetaldehyde and acetic acid. Meanwhile, comparison to those of Pd/Al2O3 and Pd/Al2O3(IMP). This
+the bands at 1477 cm−1 correspond to the vibrations of COO- observation demonstrates that the Pd-WOx active site
+from formic acid. In contrast to the pronounced spike observed markedly facilitates the cleavage of the C−C in MEK
+over Pd/Al2O3, two broad signals are observed between 1300 molecules, resulting in the formation of acetone as an
+and 1800 cm−1 for the Pd/WOx/Al2O3 catalyst (Figure 4b). intermediate, and accelerates its further oxidation into
+The vibrations at 1477 and 1458 cm−1 are attributed to the CH3CHO and CH3COOH, thus facilitating the subsequent
+COO- group of formic acid and formaldehyde species.36 The generation of greater quantities of C2 and C1 intermediates.
+functional groups present at 1612 cm−1 (COO−) and 1392 Moreover, sequential in situ DRIFTS were conducted at 80
+cm−1 (C�O) identify that the acetaldehyde and acetate and 160 °C, with the reaction atmosphere changing between
+functional groups are preferable intermediates.37 It is note- N2 and air, to gain further insight into the role of active oxygen
+worthy that the Pd/WO x /Al 2 O 3 catalyst exhibits the species and surface mechanisms. It is notable that the
+emergence of a new band at 1650 cm−1 at 120 °C, which absorption band of MEK molecules and intermediates is
+undergoes a gradual increase in intensity with an increase in significantly enhanced on the Pd/Al2O3 (Figure 4g) and Pd/
+temperature. This peak is indicative of the stretching vibration Al2O3(IMP) (Figure S32a) catalysts in an air atmosphere,
+of C�O from the intermediate species, which cannot be especially at 160 °C. This phenomenon demonstrates that the
+observed when the reaction is conducted over the Pd/Al2O3 surface-adsorbed oxygen species are dominating in MEK
+catalyst. It can thus be proposed that the Pd/WOx/Al2O3 oxidation over Pd/Al2O3 and Pd/Al2O3(IMP) catalysts.
+catalyst represents an alternative reaction route for MEK Consequently, the reaction primarily proceeds through the
+oxidation, where acetone is the primary intermediate, which Langmuir−Hinshelwood (L−H) mechanism. In the case of the
+differs from that occurring over the Pd/Al2O3 catalyst. Pd/WOx/Al2O3 (Figure 4h) and Pd-WOx/Al2O3 (Figure
+ As illustrated in Figures S29 and S30, the temporal evolution S32b) catalysts, the peaks indicative of the surface-adsorbed
+of intermediates at distinct temperatures exhibits a consid- MEK and carbonate species remain stable when O2 was
+erable degree of variability across multiple catalysts. It is introduced. The results indicate that the oxidation of MEK
+noteworthy that at 140 °C (the temperature at which the MEK over the Pd/WOx/Al2O3 catalyst occurs via the Mars−van
+conversion reached the minimum on Pd/Al2O3 and Pd/ Krevelen (MvK) mechanism, whereby the surface lattice
+Al2O3(IMP) catalysts), the intensity of the peaks at 1300− oxygens are identified as the active oxygen species due to the
+1800 cm−1 increases significantly with increasing exposure Pd-WOx strengthening induced by the strong EMSIs. Given
+ 7225 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 5. (a) CH2Cl2 resistance test of the Pd/WOx/Al2O3 and Pd/Al2O3 catalysts; (b) light-off curves of MEK oxidation with 50 ppm of CH2Cl2
+over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts; in situ DRIFTS of MEK oxidation over (c) Pd/WOx/Al2O3 and (d) Pd/Al2O3 catalysts under
+various reaction conditions; (e) MEK-TPD profiles over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts under MEK and MEK + CH2Cl2; (f) peak area of
+MEK desorption obtained from MEK-TPD profiles; and (g) optimized adsorption models and calculated adsorption energies of MEK and CH2Cl2
+molecules over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts.
+
+the presence of surface intermediates, it is reasonable to exhibit a restoration of their original catalytic capacity, thereby
+conclude that the EMSIs in bifunctional Pd-WOx sites do substantiating the reversibility of the negative effects in MEK
+indeed exert a notable influence on the surface mechanisms oxidation (Figure S33). It is notable that the detrimental effect
+operating for the oxidation reaction. of H2O on the catalytic efficacy of the Pd/WOx/Al2O3 catalyst
+ 3.5. Stability Investigation. Given the common presence is less pronounced than that observed for the Pd/Al2O3
+of H2O and CH2Cl2 molecules among OVOC emission from catalyst. Even when subjected to 10% water vapor, a mere
+industrial sources, it is essential to assess the moisture- and
+ 1.2% decline of MEK conversion can be detected over Pd/
+chlorine-resistance properties of Pd/WOx/Al2O3 and Pd/
+Al2O3 catalysts. As shown in Figures S33, the introduction of WOx/Al2O3, indicating its superb water-vapor resistance. For
+H2O is found to possess a negative effect on the catalytic the Pd/WOx/Al2O3 catalyst, the EMSIs between Pd and WOx
+performance for both catalysts, probably due to the species facilitate the ratio of positively charged Pdδ+ species,
+competitive adsorption between H2O molecules and reactants. dominating in the adsorption of MEK molecules, thereby
+Following the introduction of 2, 5, and 10 vol % H2O for 2 h inhibiting the competitive adsorption between H2O molecules
+and subsequent removal of the water vapor, both catalysts and reactants.
+ 7226 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 6. (a) Pd K-edge XANES spectra, (b) FT EXAFS spectra at the R-space, and (c) WT EXAFS contour plots of fresh and spent Pd/WOx/
+Al2O3 catalysts. (d) Schematic of reaction mechanism for MEK oxidation over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts; (e) energy diagram of
+acetaldehyde to acetic acid oxidation on Pd/WOx/Al2O3 and Pd/Al2O3 catalysts; TS indicates the transition state during acetaldehyde oxidation.
+
+ For the chlorine-resistance test (Figures 5a,b, S34 and S35), Figure S34 illustrates that the MEK conversion of the catalyst
+it is noteworthy that the MEK conversion over Pd/WOx/ remains approximately 52%, with no deactivation observed in
+Al2O3, Pd-WOx/Al2O3, and Pd/Al2O3 catalysts decreases by the Pd/WOx/Al2O3 catalyst (>50%) with the intermittent
+1.2−6.7%, 2.2−9.6%, and 3.7−13.5% when 10, 20, and 50 ppm addition of 50 ppm of CH2Cl2 over a duration of 240 h.
+of CH2Cl2 were introduced for 2 h (Figures 5a and S35a), Furthermore, the Pd/WOx/Al2O3 and Pd/Al2O3 catalysts
+respectively. The original activity of the Pd/WOx/Al2O3 exhibit declines in MEK conversion of roughly 20.1% and
+catalyst is consistently reinstated upon the removal of 40.3% at 140 °C, respectively, when 50 ppm of CH2Cl2 was
+CH2Cl2 from the stream, while the reactivity recovered from introduced for the activity test process (Figure 5b). According
+73.0% to 79.5%, and the Pd/Al2O3 catalyst does not restore its to the above results, the CH2Cl2 resistance of the prepared
+original activity after switching off the CH2Cl2 flow. The Pd/ catalysts is enhanced with the sequence of Pd/Al2O3 < Pd-
+WOx/Al2O3 catalyst subsequently underwent a durability test WOx/Al2O3 < Pd/WOx/Al2O3, which is in line with the
+at 100 °C (T50) with 50 ppm of CH2Cl2 for MEK oxidation. relative content of acid sites (Figure 2i). The sufficient acid
+ 7227 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+sites can promote the dissociation of CH2Cl2 molecules by with bifunctional sites exhibits wide prospects in practical
+breaking the C−Cl bonds and accelerate the formation and applications.
+dissociation of HCl species, thereby preventing the catalysts The changes in the electronic state and coordination
+from being poisoned by •Cl species.38 Moreover, the catalytic structure of Pd sites during the reaction processes were
+oxidation of CH2Cl2 over the Pd/Al2O3 and Pd/WOx/Al2O3 investigated with XAS and XPS spectra. As shown in Figure 6a,
+catalysts has been tested. As displayed in Figure S35b, it can be the white line of the Pd/WOx/Al2O3 (spent) catalyst is close
+observed that the Pd/WOx/Al2O3 is efficient in decomposition to that of Pd/WOx/Al2O3 (fresh), indicating the similar
+at low temperatures. The excellent oxidation capacity, valence state of these supported Pd species. The EXAFS
+facilitated by electron transfer in bifunctional Pd-WOx sites, spectrum of Pd/WOx/Al2O3 (spent) exhibits a slight decrease
+can be assigned as another reason for its superb chlorine- on the Pd−O path and an increase on the Pd−Pd path
+resistance ability. compared with fresh catalyst, which can be attributed to the
+ Sequential in situ DRIFTS were conducted at 80 and 160 °C adsorption of organic matter produced during MEK oxidation
+by changing the reaction atmosphere between MEK and the on Pd species (Figures 6b and S36a,b; Table S3). The WT
+MEK + CH2Cl2 mixture. As illustrated in Figure 5c,d, no EXAFS counter plots of Pd/WOx/Al2O3 (spent) possess a
+notable distinction is observable in the Pd/WOx/Al2O3 catalyst maximum at ∼6.35 Å−1 in the k-space and ∼1.79 Å in the R-
+for the peaks of MEK and the various carbon intermediates space attributed to the Pd−O path, also similar to those of the
+with the introduction of CH2Cl2 species at 80 or 160 °C. first shell of PdO (Figure 6c). These results demonstrate that
+Nevertheless, for the Pd/Al2O3 catalyst, it is evident that the the state of Pd species can be maintained during MEK
+emerging sharp peak at 1677 cm−1 is attributed to the oxidation.40 The oxidation state of Pd in spent Pd/WOx/Al2O3
+acetaldehyde and formaldehyde species on the Pd/Al2O3 was also examined by Pd 3d and W 4f XPS spectra (Figure
+catalyst after introducing CH2Cl2 at 160 °C. The findings S36c,d). A similar molar ratio of Pd2+/(Pd0+Pd2+) was
+suggest that CH2Cl2 poses a minimal effect on the oxidation of determined over Pd/WOx/Al2O3 (spent, 29.3%) and Pd/
+MEK using the Pd/WOx/Al2O3 catalyst. It is important to WOx/Al2O3 (fresh, 31.2%), which further confirmed that the
+acknowledge that there is an adverse effect on the subsequent ratio of Pd2+ species can be maintained in MEK oxidation.
+transformation of intermediates generated during the oxidation It is logical to deduce that the enhanced electronic
+of MEK on Pd/Al2O3, especially at elevated temperatures. interactions with the WOx in the Pd/WOx/Al2O3 catalyst
+ Subsequently, the MEK-TPD-MS profiles were analyzed to significantly contribute to the stability of the electronic state
+investigate the adsorption behavior of MEK and CH2Cl2 and coordination structure of Pd during the reaction.39 Pd
+molecules on Pd/WOx/Al2O3 and Pd/Al2O3 catalysts (Figure
+ species participate in the reversible transition of PdO to Pd0.20
+5e,f). From the integral fitting curve of the desorption peak
+ A redox cycle of Pd can be anticipated under the specified
+area, the results indicate that the existence of CH2Cl2 poses a
+ reaction conditions, which is crucial for the efficacy of MEK
+negligible effect on the MEK adsorption over the Pd/WOx/
+ oxidations. Figure 2d illustrates the presence of both Pd2+ and
+Al2O3 catalyst. However, for the Pd/Al2O3 catalyst, the
+ Pd0 in the fresh sample, with Pd0 likely resulting from the
+desorption peak area of MEK species significantly decreases
+ reduction of Pd2+. The positively charged Pd2+ sites are favored
+when adding an amount of CH2Cl2, attributing to the
+competitive adsorption effect. Correspondingly, the adsorption for MEK adsorption and activation due to the electron-rich
+energies of MEK and CH2Cl2 molecules obtained from DFT C�O group, resulting in a reduction of Pd2+ to Pd upon MEK
+calculations over Pd/WOx/Al2O3 and Pd/Al2O3 catalysts are adsorption. During MEK oxidation, an equivalent quantity of
+given in Figure 5g. For the bifunctional Pd-WOx sites, the Pd was reoxidized to Pd2+, so further substantiating that Pd2+
+EMSIs promote the formation of positively charged Pd2+ species can persist as the actual active site throughout the
+species through the electron back-donation, while the WOx thermal reaction process.
+monolayer is a preferential site for CH2Cl2 adsorption due to 3.6. Proposed Reaction Mechanism. Based on the
+the electronegativity, determined with an Eads of −1.607 eV. conclusions derived from the qualitative and quantitative
+Conversely, both MEK and CH2Cl2 molecules interacted with experiments conducted in this study, we deduced that the
+Pd sites on the Pd/Al2O3 catalyst, leading to a reduced mechanism of MEK oxidation over prepared Pd/WOx/Al2O3
+adsorption capacity of MEK and a corresponding increase in and Pd/Al2O3 catalysts is primarily outlined. Multiple
+Eads (−0.694 eV). structures and reaction paths are considered, and only the
+ It is noteworthy that the Pd/WOx/Al2O3 catalyst demon- most energetically favorable ones are demonstrated here.41 As
+strates a substantially reduced coadsorption energy in illustrated in Figure 6d, the surface of both catalysts shows two
+comparison to its counterpart, Pd/Al2O3, thereby significantly totally different reaction pathways. The MEK molecules are
+facilitating the oxidation of MEK and subsequent mineraliza- initially adsorbed onto the catalyst surface. The monodispersed
+tion. The results of the chemisorption analysis and DFT PdOx nanoparticles serve as the active sites for the activation of
+calculations demonstrate that the incorporation of WOx can MEK molecules. For the Pd/Al2O3 catalyst, MEK undergoes
+substantially augment the adsorption capacity of the catalyst transformation into the 3-hydroxybutan-2-one as an inter-
+for the MEK reactant. This process facilitates the dissociation mediate product with the involvement of surface-adsorbed
+of CH2Cl2 species, thereby promoting the formation of oxygen, which is oxidatively cleaved to form diacetyl and
+intermediates and accelerating the C−C bond activation.39 methyl vinyl ketone intermediates. Subsequently, diacetyl and
+The enhancement of stability also provided corroboration for methyl vinyl ketone groups undergo further oxidation
+the hypothesis that the incorporation of WOx facilitates the processes, producing acetaldehyde and acetic acid species.
+transformation of intermediates within the oxidation process of Then, these intermediates are transformed with the help of
+MEK, thereby enhancing the deep mineralization capacity of Brønsted acid sites, yielding formaldehyde and formic acid
+supported Pd catalysts. Therefore, compared with the species, respectively. The final oxidation step results in the
+traditional Pd/Al2O3 catalysts, the Pd/WOx/Al2O3 catalyst complete oxidation of these compounds to harmless CO2 and
+ 7228 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+H2O. This oxidation process obeys the Langmuir−Hinshel-
+wood (L−H) mechanism.
+ ■
+ *
+ ASSOCIATED CONTENT
+ sı Supporting Information
+ The comprehensive characterization of the Pd/WOx/Al2O3
+catalyst reveals that the incorporation of WOx leads to a The Supporting Information is available free of charge at
+ https://pubs.acs.org/doi/10.1021/acscatal.5c00528.
+notable enhancement in the quantity and strength of the
+neutralizing Brønsted acid sites, which greatly improve the Experimental methods, HAADF-STEM and EDS
+MEK adsorption efficiency (Figure 6d). The adsorbed MEK mapping images, ICP-OES, XRD patterns, N2 sorption
+molecules were subsequently activated over the positively isotherms and pore size distribution, FTIR spectra,
+charged Pd2+ sites through electronic metal−support inter- DRIFT spectra for CO adsorption, XAS, O 1s XPS, EPR,
+actions of bifunctional Pd-WOx sites. Then, the following O2/CO2/MEK-TPD profiles, UV−vis spectra, NH3−IR,
+process involves the C−C cleavage of MEK molecules to catalytic performance comparison, optimized adsorption
+produce acetone, which is facilitated by the protonic donation models, and calculated adsorption energies of reactants
+from the Brønsted acid sites. Subsequently, acetone undergoes (O2 and MEK molecules), water-vapor and CH2Cl2
+a transformation comparable to that of acetaldehyde, which is resistance test, in situ DRIFTS, PTR-MS profiles,
+then converted to acetate. The obtained acetate intermediates structure−performance relationships analysis, the struc-
+then undergo a sequential oxidation, producing formaldehyde tural and chemical properties of the synthesized
+and formic acid, which are converted into CO2 and H2O with catalysts, attribution of the in situ DRIFTS bands of
+the assistance of lattice oxygen. MEK catalytic oxidation, and catalytic oxidation of MEK
+ It is widely accepted that the primary C2 scission products of for reported representative catalysts (PDF)
+MEK are acetaldehyde and acetic acid species. Moreover, the
+continued oxidation of CH 3 CHO intermediates to
+CH3COOH is identified as a potential rate-determining step
+during MEK oxidation. Therefore, DFT calculations were
+ ■ AUTHOR INFORMATION
+ Corresponding Authors
+performed to gain further insight into the promotion Zeyu Jiang − State Key Laboratory of Multiphase Flow in
+mechanism of the Pd/WOx/Al2O3 catalyst in the oxidation Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+of MEK. The formation energy barrier of CH3COOH on the P. R. China; orcid.org/0000-0002-9997-2357;
+surface of the Pd/WOx/Al2O3 catalyst (−0.2082 eV) is Email: jiangzeyu@xjtu.edu.cn
+determined to be much lower than that of the Pd/Al2O3 Chi He − State Key Laboratory of Multiphase Flow in Power
+catalyst (0.4366 eV) (Figure 6e). This finding provides further Engineering, Xi’an Jiaotong University, Xi’an 710049, P. R.
+evidence of the conclusion that the acetaldehyde species is China; National Engineering Laboratory for VOCs Pollution
+more readily converted to acetic acid over the bifunctional Pd- Control Material & Technology, University of Chinese
+WOx sites over the Pd/WOx/Al2O3 catalyst. Subsequently, Academy of Sciences, Beijing 101408, P. R. China;
+acetic acid is generated and undergoes oxidation into harmless orcid.org/0000-0001-6403-1277; Email: chi_he@
+CO2, thereby facilitating the deep oxidation of MEK xjtu.edu.cn
+molecules.
+ Authors
+4. CONCLUSIONS Chunli Ai − State Key Laboratory of Multiphase Flow in
+ Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+In conclusion, the Pd/WOx/Al2O3 catalyst with synergistic Pd- P. R. China
+WOx sites was synthesized through a simple two-step strategy Fan Dang − State Key Laboratory of Multiphase Flow in
+to get over the challenges surrounding activity deterioration Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+resulting from inadequate deep mineralization capacity of Pd P. R. China
+catalysts. Surprisingly, the Pd/WOx/Al2O3 catalyst possesses Jialei Wan − State Key Laboratory of Multiphase Flow in
+adequate Pd2+ species, acidic sites, and oxygen vacancies, Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+demonstrating robust EMSI, capable of converting 90% of 800 P. R. China
+ppm of MEK at merely 140 °C with a low activation energy of Yani Wu − State Key Laboratory of Multiphase Flow in Power
+19.65 kJ·mol−1. Our findings demonstrate that the strong Engineering, Xi’an Jiaotong University, Xi’an 710049, P. R.
+EMSIs of Pd/WOx/Al2O3 can effectively modulate the redox China
+pathway by optimizing the activation and transformation of Jicheng Liu − State Key Laboratory of Multiphase Flow in
+reactants, which also enhances the cleavage of C−C, thereby Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+rendering acetone as the primary intermediate rather than P. R. China
+methyl vinyl ketone. Meanwhile, the stretched W−O band Han Xu − State Key Laboratory of Multiphase Flow in Power
+encourages lattice oxygen species activation to participate in Engineering, Xi’an Jiaotong University, Xi’an 710049, P. R.
+the deep activation of intermediates, which effectively reduces China
+the energy barrier associated with the oxidation of Yadi Wang − State Key Laboratory of Multiphase Flow in
+acetaldehyde to acetic acid. This effectively addresses the Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+issue of insufficient deep mineralization capability of the Pd/ P. R. China
+Al2O3 catalyst. Furthermore, the EMSIs of Pd-WOx bifunc- Yanfei Jian − State Key Laboratory of Multiphase Flow in
+tional sites can also facilitate the dissociation of H2O and Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+CH2Cl2 impurities, thereby expanding the scope of its practical P. R. China; orcid.org/0009-0009-1039-2662
+applications. It is expected that the Pd/WOx/Al2O3 catalyst Mingjiao Tian − State Key Laboratory of Multiphase Flow in
+will be a promising candidate for the low-temperature catalytic Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+oxidation of OVOCs. P. R. China
+ 7229 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ Changwei Chen − School of Geology and Environment, Xi’an Octene and Oleic Acid with H2O2 over Tungsten Oxide Catalysts.
+ University of Science and Technology, Xi’an 710054, P. R. ACS Catal. 2021, 11, 3137−3152.
+ China; orcid.org/0000-0002-6915-5452 (11) Xie, S.; Zhang, X.; Xu, P.; Hatcher, B.; Liu, Y.; Ma, L.; Ehrlich,
+ Yanke Yu − State Key Laboratory of Multiphase Flow in S. N.; Hong, S.; Liu, F. Effect of surface acidity modulation on Pt/
+ Al2O3 single atom catalyst for carbon monoxide oxidation and
+ Power Engineering, Xi’an Jiaotong University, Xi’an 710049,
+ methanol decomposition. Catal. Today 2022, 402, 149−160.
+ P. R. China; orcid.org/0000-0003-4214-8284 (12) Miao, Y.; Johnson, N. W.; Heck, K.; Guo, S.; Powell, C. D.;
+Complete contact information is available at: Phan, T.; Gedalanga, P. B.; Adamson, D. T.; Newell, C. J.; Wong, M.
+https://pubs.acs.org/10.1021/acscatal.5c00528 S.; Mahendra, S. Microbial responses to combined oxidation and
+ catalysis treatment of 1,4-dioxane and co-contaminants in ground-
+Author Contributions water and soil. Front. Environ. Sci. 2018, 12, 2.
+ (13) Dong, C.; Gao, Z.; Li, Y.; Peng, M.; Wang, M.; Xu, Y.; Li, C.;
+All authors participated in the writing process of the Xu, M.; Deng, Y.; Qin, X.; Huang, F.; Wei, X.; Wang, Y.-G.; Liu, H.;
+manuscript. The final manuscript has been approved by all Zhou, W.; Ma, D. Fully exposed palladium cluster catalysts enable
+authors. hydrogen production from nitrogen heterocycles. Nat. Catal. 2022, 5,
+Notes 485−493.
+The authors declare no competing financial interest. (14) You, G.; Liu, H.; Sun, R.; Jin, Z.; Li, J.; Zhou, X.; Lu, S.; Xie, S.
+ Characterizing VOCs emissions of five packaging and printing
+
+■ ACKNOWLEDGMENTS
+This work was financially supported by the National Natural
+ enterprises in China and the emission reduction potential of this
+ industry. J. Cleaner Prod. 2023, 420, 138445.
+ (15) Bi, F.; Zhao, Z.; Yang, Y.; Gao, W.; Liu, N.; Huang, Y.; Zhang,
+Science Foundation of China (22276145, 22406146, X. Chlorine-Coordinated Pd Single Atom Enhanced the Chlorine
+22476157), the National Key R&D Program of China Resistance for Volatile Organic Compound Degradation: Mechanism
+(2022YFB4101500), and the China Postdoctoral Science Study. Environ. Sci. Technol. 2022, 56, 17321−17330.
+ (16) Liu, X.; Chen, L.; Zhu, T.; Ning, R. Catalytic oxidation of
+Foundation (2023M732783). The authors gratefully acknowl-
+ chlorobenzene over noble metals (Pd, Pt, Ru, Rh) and the
+edge the support from the instrumental analysis center of Xi’an distributions of polychlorinated by-products. J. Hazard. Mater.
+Jiaotong University. 2019, 363, 90−98.
+
+■ REFERENCES
+ (1) Wu, Y.; Wang, Y.; Liu, J.; Jiang, Z.; Wan, J.; Wang, J.; Chai, S.;
+ (17) Kresse, G.; Furthmüller, J. Efficient iterative schemes for ab
+ initio total-energy calculations using a plane-wave basis set. Phys. Rev.
+ B 1996, 54, 11169−11186.
+Ai, C.; Dang, F.; Albilali, R.; He, C. Promoting intermediates (18) Kresse, G.; Joubert, D. From ultrasoft pseudopotentials to the
+transformation by boosting H2O dissociation over core-shell Pd@ projector augmented-wave method. Phys. Rev. B 1999, 59, 1758−
+CoO Janus for acetone efficacious oxidation. Appl. Catal. B: Environ. 1775.
+Energy 2024, 354, 124113. (19) Wu, Q.; Yan, J.; Jiang, M.; Dai, Q.; Wu, J.; Ha, M. N.; Ke, Q.;
+ (2) Wen, X.; Li, W.; Yan, J.; Wang, X.; Ren, E.; Shi, Z.; Li, J.; Ding, Wang, X.; Zhan, W. Phosphate-assisted synthesis of ultrathin and
+X.; Mo, S.; Mo, D. Strong Metal−Support Interaction in Pd/CeO2 thermally stable alumina nanosheets as robust Pd support for catalytic
+Promotes the Catalytic Activity of Ethyl Acetate Oxidation. J. Phys. combustion of propane. Appl. Catal. B: Environ. 2021, 286, 119949.
+Chem. C 2022, 126, 1450−1461. (20) Chen, J.; Su, Y.; Meng, Q.; Qian, H.; Shi, L.; Darr, J. A.; Wu, Z.;
+ (3) Yue, L.; He, C.; Zhang, X.; Li, P.; Wang, Z.; Wang, H.; Hao, Z. Weng, X. Palladium Encapsulated by an Oxygen-Saturated TiO2
+Catalytic behavior and reaction routes of MEK oxidation over Pd/ Overlayer for Low-Temperature SO2-Tolerant Catalysis during CO
+ZSM-5 and Pd−Ce/ZSM-5 catalysts. J. Hazard. Mater. 2013, 244− Oxidation. Angew. Chem., Int. Ed. 2023, 62, No. e202310191.
+245, 613−620. (21) Li, W.; Deng, X.; Ma, Y.; Qin, B.; Dang, J.; Wu, G.; Yang, S.; Li,
+ (4) Arzamendi, G.; de la Peña O’Shea, V. A.; Á lvarez-Galván, M. C.; L. Zeolite-Encaged Isolated Palladium Redox Centers toward
+Fierro, J. L. G.; Arias, P. L.; Gandía, L. M. Kinetics and selectivity of Sustainable Wacker-Type Oxidations. J. Am. Chem. Soc. 2024, 146,
+methyl-ethyl-ketone combustion in air over alumina-supported 27600−27609.
+PdOx−MnOx catalysts. J. Catal. 2009, 261, 50−59. (22) Chang, J.; Wang, G.; Chang, X.; Yang, Z.; Wang, H.; Li, B.;
+ (5) Wang, X.-F.; Xu, L.-Y.; Wen, C.-H.; Li, D.-D.; Li, B.; Lu, J.-Q.; Zhang, W.; Kovarik, L.; Du, Y.; Orlovskaya, N.; Xu, B.; Wang, G.;
+Yang, Q.-H.; Luo, M.-F.; Chen, J. WO3 boosted water tolerance of Pt Yang, Y. Interface synergism and engineering of Pd/Co@N-C for
+nanoparticle on SO42‑-ZrO2 for propane oxidation. Appl. Catal. B: direct ethanol fuel cells. Nat. Commun. 2023, 14, 1346.
+Environ. 2023, 338, 123000. (23) Huang, H.; Leung, D. Y. C. Complete Oxidation of
+ (6) Hou, Z.; Dai, L.; Deng, J.; Zhao, G.; Jing, L.; Wang, Y.; Yu, X.; Formaldehyde at Room Temperature Using TiO2 Supported Metallic
+Gao, R.; Tian, X.; Dai, H.; Wang, D.; Liu, Y. Electronically Pd Nanoparticles. ACS Catal. 2011, 1, 348−354.
+Engineering Water Resistance in Methane Combustion with an (24) Liu, Y.; Zou, R.; Chen, Z.; Tu, W.; Xia, R.; Iwuoha, E. I.; Peng,
+Atomically Dispersed Tungsten on PdO Catalyst. Angew. Chem., Int. X. Engineering a Hydrophobic-Hydrophilic Diphase in a Bi2WO6-
+Ed. 2022, 61, No. e202201655. C3N4 Heterojunction for Solar-Powered CO2 Reduction. ACS Catal.
+ (7) Shi, L.; Deng, G.-M.; Li, W.-C.; Miao, S.; Wang, Q.-N.; Zhang, 2024, 14, 138−147.
+W.-P.; Lu, A.-H. Al2O3 Nanosheets Rich in Pentacoordinate Al3+ Ions (25) Liang, Y.; Liu, Y.; Deng, J.; Zhang, K.; Hou, Z.; Zhao, X.;
+Stabilize Pt-Sn Clusters for Propane Dehydrogenation. Angew. Chem., Zhang, X.; Zhang, K.; Wei, R.; Dai, H. Coupled Palladium-Tungsten
+Int. Ed. 2015, 54, 13994−13998. Bimetallic Nanosheets/TiO2 Hybrids with Enhanced Catalytic
+ (8) Zhang, M.; Luo, Y.; Wu, D.; Li, Q.; Xu, H.; Cheng, D. Promoter Activity and Stability for the Oxidative Removal of Benzene. Environ.
+role of tungsten in W-Pd/Al2O3 catalyst for direct synthesis of H2O2: Sci. Technol. 2019, 53, 5926−5935.
+Modification of Pd/PdO ratio. Appl. Catal. A: Gen. 2021, 628, (26) Pei, W.; Yang, K.; Deng, J.; Liu, Y.; Hou, Z.; Wang, J.; Feng, Y.;
+118392. Yu, X.; Dai, H. SO2-tolerant mesoporous iron oxide supported
+ (9) Kanai, R.; Yagi, F.; Omata, K.; Miura, H.; Shishido, T. Acidic bimetallic single atom catalyst for methanol removal. Appl. Catal. B:
+property and gas-phase glycerol-dehydration activity of WO3/Al2O3 Environ. 2023, 335, 122888.
+catalysts. Mol. Catal. 2023, 550, 113588. (27) Hong, Y.-K.; Lee, D.-W.; Eom, H.-J.; Lee, K.-Y. The catalytic
+ (10) Yun, D.; Ayla, E. Z.; Bregante, D. T.; Flaherty, D. W. Reactive activity of Pd/WOx/γ-Al2O3 for hydrodeoxygenation of guaiacol.
+Species and Reaction Pathways for the Oxidative Cleavage of 4- Appl. Catal. B: Environ. 2014, 150−151, 438−445.
+
+ 7230 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ (28) Yang, Y.; Wang, G.; Yang, M.; Yang, H.; Liu, M.; Dang, F. Pt
+modulates the electronic structure of Pd to improve the performance
+of Pd-based catalytic combustion catalyst. Int. J. Hydrogen Energy
+2021, 46, 18391−18400.
+ (29) Zhao, F.; Yi, L.; Deng, R.; You, K.; Song, J.; Jian, J.; Liu, P.; Ai,
+Q.; Luo, H. a. Supported WO3/γ-Al2O3 as bifunctional catalyst for
+liquid-phase highly selective oxidation of cyclohexylamine to cyclo-
+hexanone oxime under solvent-free conditions. Mol. Catal. 2019, 475,
+110494.
+ (30) Guntida, A.; Suriye, K.; Panpranot, J.; Praserthdam, P. Lewis
+acid transformation to Bronsted acid sites over supported tungsten
+oxide catalysts containing different surface WOx structures. Catal.
+Today 2020, 358, 354−369.
+ (31) Ji, Y.; Bai, S.; Xu, D.; Qian, D.; Wu, Z.; Song, Y.; Pace, R.;
+Crocker, M.; Wilson, K.; Lee, A.; Harris, D.; Scapens, D. Pd-promoted
+WO3-ZrO2 for low temperature NOx storage. Appl. Catal. B: Environ.
+2020, 264, 118499.
+ (32) Shen, Z.; Gao, E.; Meng, X.; Xu, J.; Sun, Y.; Zhu, J.; Li, J.; Wu,
+Z.; Wang, W.; Yao, S.; Dai, Q. Mechanistic Insight into Catalytic
+Combustion of Ethyl Acetate on Modified CeO2 Nanobelts:
+Hydrolysis−Oxidation Process and Shielding Effect of Acetates/
+Alcoholates. Environ. Sci. Technol. 2023, 57, 3864−3874.
+ (33) Wang, J.; Dai, L.; Deng, J.; Liu, Y.; Jing, L.; Hao, X.; Pei, W.;
+Yu, X.; Rastegarpanah, A.; Dai, H. An investigation on catalytic
+performance and reaction mechanism of RuMn/meso-TiO2 derived
+from RuMn intermetallic compounds for methyl ethyl ketone
+oxidation. Appl. Catal. B: Environ. 2021, 296, 120361.
+ (34) Guo, M.; Ma, P.; Wei, L.; Wang, J.; Wang, Z.; Zheng, K.;
+Cheng, D.; Liu, Y.; Dai, H.; Guo, G.; Duan, E.; Deng, J. Highly
+Selective Activation of C−H Bond and Inhibition of C−C Bond
+Cleavage by Tuning Strong Oxidative Pd Sites. J. Am. Chem. Soc.
+2023, 145, 11110−11120.
+ (35) Li, L.; Liu, Y.; Deng, J.; Jing, L.; Hou, Z.; Gao, R.; Dai, H. Pt/
+CeMnOx/Diatomite: A Highly Active Catalyst for the Oxidative
+Removal of Toluene and Ethyl Acetate. Catalysts 2023, 13, 676.
+ (36) Liu, X.; Han, Q.; Shi, W.; Zhang, C.; Li, E.; Zhu, T. Catalytic
+oxidation of ethyl acetate over Ru−Cu bimetallic catalysts: Further
+insights into reaction mechanism via in situ FTIR and DFT studies. J.
+Catal. 2019, 369, 482−492.
+ (37) Wang, Z.; Li, S.; Xie, S.; Liu, Y.; Dai, H.; Guo, G.; Deng, J.
+Supported ultralow loading Pt catalysts with high H2O-, CO2-, and
+SO2-resistance for acetone removal. Appl. Catal. A: Gen. 2019, 579,
+106−115.
+ (38) Guo, X.; Li, Z.; Zhou, A.; Shi, Y.; Wang, Y.; Zhou, R. Ce-
+modified USY zeolite catalysts for catalytic oxidation of chlorinated
+VOCs: Effect of the location of CeO2 and its synergistic effect with
+USY zeolite. J. Rare Earth. 2024, 42, 2068−2077.
+ (39) Xia, L.; Jian, Y.; Liu, Q.; Liu, Y.; Wang, J.; Chai, S.; Jing, M.;
+Albilali, R.; He, C. Boosted Light Alkane Deep Oxidation via Metal
+Bond Length Modulation-Induced C−C Bond Preferential Activation.
+Environ. Sci. Technol. 2024, 58, 3472−3482.
+ (40) Eggart, D.; Huang, X.; Zimina, A.; Yang, J.; Pan, Y.; Pan, X.;
+Grunwaldt, J.-D. Operando XAS Study of Pt-Doped CeO2 for the
+Nonoxidative Conversion of Methane. ACS Catal. 2022, 12, 3897−
+3908.
+ (41) McCullagh, E.; McMonagle, J. B.; Hodnett, B. K. Kinetic study
+of the selective oxidation of butan-2-one to diacetyl over vanadium
+phosphorus oxide. Appl. Catal., A 1993, 93, 203−217.
+
+ 7231 https://doi.org/10.1021/acscatal.5c00528
+ ACS Catal. 2025, 15, 7217−7231

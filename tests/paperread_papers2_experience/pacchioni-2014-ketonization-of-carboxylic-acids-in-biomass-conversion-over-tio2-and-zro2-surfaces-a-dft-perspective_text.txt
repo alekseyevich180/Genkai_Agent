@@ -1,0 +1,847 @@
+Review
+
+ pubs.acs.org/acscatalysis
+
+ Ketonization of Carboxylic Acids in Biomass Conversion over TiO2
+ and ZrO2 Surfaces: A DFT Perspective
+ Gianfranco Pacchioni*
+ Dipartimento di Scienza dei Materiali, Università di Milano-Bicocca, Via R. Cozzi, 55, I-20125 Milano, Italy
+
+ ABSTRACT: Carboxylic acids play a fundamental role in the transformation of
+ biomass into liquid fuels and other useful chemicals. In order to reduce the O/C
+ content of biofuels, carboxylic acids need to be decomposed by decarboxylation,
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ dehydroxylation, or decarbonylation unimolecular reactions, or they need to be
+ converted into ketones via complex bimolecular reaction mechanisms.
+ Ketonization, that is, the transformation of carboxylic acids into ketones, carbon
+ dioxide, and water, is promoted by heterogeneous catalysts based on oxide
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 03:22:46 (UTC).
+
+ materials. Among the most active catalysts are titania and zirconia surfaces. In
+ recent years, a large body of experimental data has been complemented by speciﬁc
+ investigations performed with ﬁrst-principles electronic structure calculations based on density functional theory (DFT). In this
+ review, I discuss the present level of understanding of the bonding modes of carboxylic acids (acetic acid in particular) on the
+ TiO2 and ZrO2 surfaces as obtained from DFT calculations. Enolization and ketonization reaction mechanisms determined at the
+ DFT level on TiO2 and ZrO2 surfaces are also discussed, and the results are analyzed in view of the experimental evidence.
+ Finally, the role of supported metal particles, of the redox properties of the oxide catalyst, and the nature of the active sites on the
+ surface of titania and zirconia are discussed.
+ KEYWORDS: density functional theory, carboxylic acids, ketonization, biofuels, TiO2, ZrO2
+
+ 1. INTRODUCTION because it eliminates two oxygens for every carbon atom
+ Lignocellulosic biomass from agriculture and forestry is an removed:
+ important raw material for the production of biofuels.
+ Conversion of lignocellulose into fuels has been attempted
+ by a number of diﬀerent routes but is not simple due to the
+ chemical complexity of lignocellulose, the elevated stability,
+ and the high oxygen content. The production of liquid fuels
+ from lignocellulose requires to decrease the O/C ratio (by The unimolecular decomposition of acetic acid
+ removal of oxygen) and to increase the H/C ratio (by the (CH3COOH), and in general of carboxylic acids, can also
+ addition of hydrogen). The conversion of large volumes of occur via dehydration, leading to the formation of water and a
+ solid biomass to liquids is largely done via pyrolysis,1 a ketene derivative (RR′CCO), reaction 2:
+ process where biomass is treated under inert atmosphere to
+ yield gases, liquids (bio-oil), and a solid residue. Bio-oil
+ contains 15−25% in weight of water, more than 40% in
+ weight of oxygen, and has a very complex composition (up to
+ 400 diﬀerent components have been identiﬁed2). For these
+ reasons the bio-oil is subjected to upgrading treatments3 to
+ improve its physicochemical properties. Catalytic pyrolysis is For acids containing α-hydrogens (i.e., the hydrogen
+ an interesting alternative to convert lignocellulosic biomass bonded to a carbon atom in the α position relative to a
+ into fuels. In recent years, a variety of catalytic treatments, carbonyl group) dehydration may also proceed through a two-
+ based on condensation reactions between oxygen-containing step process in which a hydrogen atom transfers from the α-
+ groups, have been investigated in order to reduce the oxygen
+ carbon to the carbonyl oxygen to form an 1,1-enediol, as
+ content of bio-oil.4
+ Among the components of biofuels are carboxylic acids, shown in reaction 3a. This reaction can be followed by the
+ which play a fundamental role in the transformation of elimination of a water molecule to form a ketene derivative, as
+ biomass.5 The thermal deoxygenation of carboxylic acids is an depicted in reaction 3b:
+ important step in the conversion of biomass into aliphatic
+ hydrocarbons that form the basis of biofuels. Decarboxylation Received: June 9, 2014
+ reaction 1 is a primary decomposition pathway under Revised: July 16, 2014
+ pyrolysis conditions. It represents an ideal conversion process Published: July 18, 2014
+
+ © 2014 American Chemical Society 2874 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+ Table 1. Activity of Various Oxides (10 wt % MOx/SiO2) in
+ Catalytic Conversion of Acetic Acid to Acetone (Adapted
+ from Ref 11)
+ yield of acetone (%)
+ catalyst 573 K 673 K
+ SiO2 2 5
+ When acetic acid is adsorbed on metal oxides, two other B2O3 2 3
+reactions can occur, chemical reduction with formation of MoO3 2 5
+acetaldehyde (CH3CHO), and ketonization which leads to the WO3 2 5
+formation of acetone (CH3COCH3).5 Diﬀerently from P2O5 1 12
+reactions 1−3, unimolecular, ketonization is a bimolecular V2O5 3 21
+process in which two molecules of a carboxylic acid are Bi2O3 10 18
+coupled to produce a symmetric ketone, forming a CO2 and NiO 7
+an H2O molecule during the process,5,6 see reaction 4: Al2O3 0 37
+ CuO 5 39
+ ZnO 6 33
+ PbO 6 76
+ Ketonization of carboxylic acids is a well-known reaction in Cr2O3 1 39
+organic chemistry.7 The mechanisms and the catalysts used Fe2O3 13 59
+for this reaction have been recently summarized and discussed CoO 13 63
+in the excellent review article by Pham et al.8 There are two MgO 7 59
+types of ketonization reactions, bulk ketonization, which Nd2O3 3 61
+occurs via decomposition of carboxylate salts, and surface La2O3 3 87
+ketonization which is catalyzed by oxide surfaces or by MnO2 18 96
+zeolites. Thermodynamically, ketonization is more favorable CdO 6 94
+than dehydration.6 For instance, the dehydration of the acetic CeO2 9 97
+acid to produce ketene (CH2CO) (reactions 2 and 3)
+has an enthalpy of reaction of 32 kcal/mol, whereas the interaction of a molecule adsorbed on the catalyst surface with
+ketonization of acetic acid to produce acetone, reaction 4, has a molecule from the gas phase, although the latter mechanism
+an enthalpy of reaction of only 4 kcal/mol.9 Decarboxylation, involves the interaction of two molecules adsorbed on the
+reaction 1, with formation of CO2 and methane is exothermic catalyst surface and is by far the more generally accepted
+with a ΔH = −10.0 kcal/mol. These values are well mechanism.
+reproduced by high quality quantum chemical calculations.10 Despite the long history of this reaction, the mechanism of
+Finally, decarbonylation, with direct loss of CO and formation ketonization of carboxylic acid is still matter of debate, and no
+of a Cn‑1 alcohol, represents yet another possible mechanisms general consensus has been reached yet. Several proposals
+for decomposition of organic acids. exist in the literature5,6,18,8 and include the following:
+ All these reaction channels are possible, and the selectivity 1. A β-keto acid intermediate (CH3COCH2COOH) forms
+of the reaction depends on various eﬀects. A particularly from two monodentate carboxylates via α-hydrogen
+important role is that of the oxide surface, when the reaction abstraction. The α-hydrogen abstraction of the adsorbed
+occurs on an heterogeneous catalyst.5,6 The unimolecular carboxylate results in formation of an anion which then
+decarboxylation and dehydration reactions (1−3) involve reacts with a neighboring carboxylate or acyl to produce
+bond-scission of individual acetate intermediates on the a β-keto acid. The ketone is formed by decarboxylation
+surface. The availability of oxygen from the metal oxide of this intermediate. Due to the rapid decomposition,
+lattice inﬂuences the selectivity of these reactions: in general, the detection of the β-keto acid intermediate has never
+the less reducible the oxide, the higher the selectivity toward been realized. This mechanism cannot explain the
+dehydration.5 formation of ketones from acids that do not possess any
+ The ketonization reaction 4 is well-known to occur over α-hydrogen atoms but at the moment is the most
+several polycrystalline oxides,11 including γ-Al2O3,12 MgO,13 widely accepted mechanism.
+Fe3O4,14 Fe2O3,14,15 TiO2,15,16 ZrO2,17 and so forth (Table 1). 2. An intermediate forms from two adsorbed molecules of
+Notice that at low temperature (573 K) practically no oxide is carboxylic acid bound to diﬀerent active sites or bound
+active in the conversion of acetic acid to acetone; at 673 K, to the same cation.5,16
+some oxides remain basically inert (e.g., WO3, SiO2), whereas 3. Recently, it has been suggested that an adsorbed
+others are very active with conversion rates close to 100% carboxylic acid can be enolized. In this case, the
+(MnO2, CeO2).11 A more recent analysis of the oxide participation of the α-hydrogen is not via the
+catalysts that promote ketonization of carboxylic acids with abstraction from the basic oxygen of the surface, but
+diﬀerent carbon chains, and of the corresponding yield and it follows a keto−enol tautomerization step that
+selectivity can be found in the review by Renz.18 The converts the surface carboxylate into a surface enolate
+rationalization of the behavior of the diﬀerent oxide surfaces is (intramolecular transfer of the α-hydrogen).22
+not straightforward. Currently, two main mechanisms for 4. Formation of an acid anhydride intermediate
+formation of ketones from carboxylic acids are considered and (CH3CO)2O that loses CO2 to produce the ketone
+are based either on Eley−Rideal19 or on Langmuir−Hinshel- has been proposed to explain the formation of cyclic
+wood concepts.20,21 The former mechanism involves the ketones from dicarboxylic acids.2
+ 2875 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+ 5. A ketene intermediate forms and then reacts with a Fe oxides and MgO are used as catalysts can be quite
+ carboxylate to produce the ketone.12,15 diﬀerent, because their chemical properties are very diﬀerent
+ compared to Ti and Zr oxides. In this respect, the conclusions
+ The mechanistic aspects of this reaction have been of this review cannot be generalized to every type of oxide.
+discussed by Pham et al.8 A ﬁrst observation that emerges
+from this study is the role of α-hydrogen. A large part of the 2. DENSITY FUNCTIONAL THEORY AND THE
+published ketonization studies seem to agree on the required DESCRIPTION OF OXIDE SURFACES
+participation of α-hydrogen. This aspect will be further
+discussed below in connection to some DFT studies. A DFT is the most widely used tool for the calculation of
+second conclusion of the review by Pham et al.8 is connected adsorption and reactions on solids surfaces, including oxides.
+to the role of the oxide support. Adsorption of carboxylic A description of the foundations of DFT or of its various
+ implementations is beyond the scopes of this review, and the
+acids on oxide surfaces gives rise to carboxylate species,
+ reader is referred to more specialized publications.23,24 Here I
+usually bidentate in a bridge position over two surface cations.
+ recall only some basic features and I introduce some of the
+By thermal treatment the adsorbed carboxylates convert into
+ more commonly used forms of exchange-correlations func-
+ketones. On the basis of surface science studies, it has been
+ tionals that will be found in the course of the discussion on
+concluded that an important requirement for ketonization is
+ carboxylic acids adsorption and reaction on oxide surfaces.
+the presence of speciﬁc active sites on the surface: (i)
+ Standard implementations of DFT are based on the Kohn−
+coordinatively unsaturated metal cations/oxygen anions for
+ Sham equations25 and on the use the local density or of the
+the initial deprotonation of carboxylic acids; (ii) the existence
+ generalized gradient approximation (LDA and GGA,
+of surface cations that can bind multiple carboxylates or of respectively) for the exchange-correlation functional. Various
+pairs of adjacent exposed cations for coupling two carboxylate types of GGA functionals are available,26 such as PW91,27
+molecules to produce ketones. PBE,28 and RPBE.29 It is well-known that LDA strongly
+ Experiments performed by Kim and Barteau on titania overestimates bonds and adsorption energies, whereas GGA
+single-crystal surfaces have been very inﬂuential in establishing functionals are in much better agreement with experimental
+one of the widely accepted mechanisms for ketonization.16 data.30 Other problems are inherent to the use of LDA and
+This is one of the few studies performed on this reaction on a GGAs, like for instance the underestimation of band gaps, the
+single crystal surface. Carboxylate ketonization was reported tendency to favor electron delocalization, and the accuracy of
+to occur on the TiO2 (001)−{114} faceted surface,16 which is energy barriers for chemical reactions.
+characterized by the presence of surface cations with two A practical way to improve the description has been
+coordination vacancies. The activity has been ascribed to these proposed about 20 years ago by Becke who suggested to use a
+sites on which a pair of carboxylates are supposed to bind to a portion of the exact Fock exchange in the exchange functional
+common cation:5 in order to minimize the self-interaction error.31 This is the
+ The coordination of adsorbed carboxylates, produced by ﬁrst example of the so-called hybrid functionals, and the
+dissociative adsorption of carboxylic acids, requires the functional is known as B3LYP, where B stays for Becke
+presence of Brønsted basic sites on the surface. Basic sites exchange functional, LYP for the correlation functional of Lee,
+are also required to perform the α-hydrogen abstraction, a key Yang and Parr,32 and 3 is the number of parameters ﬁtted to
+step in the reaction. An adjacent Lewis acid (a coordinatively reproduce the thermochemistry of a given set of molecules.
+unsaturated cation site) is needed to stabilize and activate This approach turned out to be very successful and became
+another carboxylic acid for the coupling reaction. Thus, the rapidly of common use in the quantum chemistry community.
+presence of adjacent Lewis acid and Brønsted basic sites One should notice that very similar results are obtained when
+seems to be the key for the ketonization reaction on oxide the Becke exchange is combined with other correlation parts,
+surfaces. as in the B3PW functional.33 Hybrid functionals have then
+ Pham et al.8 also concluded that the bulk redox ability of been expanded and formulated on a more solid ground. This
+the oxide may correlate with the ketonization activity, because is the case of the PBE034−36 and most recently, HSE37−39
+the redox properties are strongly linked to the acid−base functionals. The application of hybrid functionals to periodic
+properties of the solid and the ability to expose surface systems has been restricted for about a decade to codes based
+cations. This point, and the role of supported metal particles on Gaussian basis sets like the CRYSTAL code.40 In recent
+in the enhancement of the activity of the oxide material, still years, also the community of solid state physicists started to
+need a more detailed analysis at an atomistic level and will be use hybrid functionals after these have been implemented in
+further discussed below (see section 7). plane wave codes.41−44 However, the computational eﬀort to
+ Quantum chemistry, and in particular DFT approaches, can evaluate the Fock exchange under periodic boundary
+complement the abundant experimental information existing conditions using plane waves is about 2 orders of magnitude
+on ketonization reactions. Compared to the large number of that required for a normal GGA calculation, still limiting the
+catalytic studies in this ﬁeld, the number of theoretical use of this approach.
+investigations is surprisingly small. In the following, I will A more pragmatic approach to describe transition metal or
+discuss adsorption modes of carboxylic acids on the surfaces rare-earth oxides is the so-called DFT+U approach. These
+of TiO2 and ZrO2, two oxides commonly used in ketonization systems contain electrons in partially ﬁlled d or f states, which
+reactions. I will analyze in detail some examples of theoretical are localized on particular metal atoms. In the spirit of the
+studies of the reaction mechanism of carboxylic acids on oxide Hubbard model, Anisimov and co-workers45 initially proposed
+surfaces, like enolization and ketonization, and I will consider it as an extension of the LDA approach. In practice, in these
+the role of supported metal particles in the adsorption and DFT(LDA/GGA)+U approaches one identiﬁes a set of
+reaction of carboxylic acids on oxides. It is worth mentioning atomic-like orbitals that are treated with an orbital-dependent
+that the chemistry and the mechanism of the reaction when potential and an associated screened on-site Coulomb and
+ 2876 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Figure 1. Some possible adsorption geometries of acetic acid on (a) TiO2 rutile (110) surface, molecular monodentate structure; (b) TiO2 rutile
+(110) surface, dissociative bidentate bridge structure. Violet (Ti), pink (O), black (C), and white (H). Distances in Å. Adapted from ref 55. (c)
+TiO2 anatase (101) surface, molecular monodentate structure; (d) TiO2 anatase (101) surface, dissociative bidentate bridge structure; (the
+position of dissociated H is not indicated; other structures, not shown, do also exist). Red (surface O); orange (acetate O); blue (Ti); black (C);
+pink (H). Adapted from ref 56.
+
+exchange interaction parameters, U and J, respectively.46 How 3. ADSORPTION OF CARBOXYLIC ACIDS ON TiO2
+to chose the atomic-like orbitals and eﬀective U parameter (U AND ZrO2
+= U −J) is a delicate issue. Recently, Hu and Metiu47 have 3.1. Titania Surfaces. In general, carboxylic acids adsorb
+proposed that if one is interested in the redox properties of an strongly on metal oxides by splitting oﬀ of the acidic
+oxide like TiO2, the U parameter should not be chosen in hydrogen and forming bonds between the carboxylate oxygen
+order to properly reproduce the band gap (this procedure (or oxygens) and a cation (or two cations) of the oxide
+ surface. This strong bond makes carboxylates ideal linker
+usually results in high values of the U term) but rather use U
+ molecules to connect organic functional groups to oxide
+values that provide a good estimate for the energy of surfaces. This approach is widely used to prepare self-
+reduction of TiO2 to Ti2O3. The use of DFT+U is an option assembled monolayers on metal oxides,51 to link visible light-
+only when the cost of running hybrid functional calculations is absorbing dyes to titania for dye-sensitized solar cells,52or to
+beyond the available computational resources. bind organic units to inorganic oxide clusters to form three-
+ Another important aspect, in particular for the study of dimensional organic−inorganic frameworks.53
+molecules adsorbed on oxide surfaces, is that DFT/DFT+U There is general consensus from ﬁrst-principles calculations
+with LDA or GGAs as well as hybrid-DFT do not properly that acetic acid adsorbs dissociatively on the rutile TiO2(110)
+ surface;54,55 on the contrary, there is conﬂicting experimental
+account for van der Waals (vdW) dispersive interactions. In
+ and theoretical evidence for the adsorption of carboxylic acids
+recent years, various approaches which account for vdW on the (101) surface of anatase.56−58 Recent studies suggest a
+forces within the framework of DFT have been proposed (see higher stability of the monodentate associative mode for
+ref 48 and references therein), and their use has considerably anatase TiO2.59−62 The bonding modes of acetic acid on the
+improved the description of molecular chemisorption. surface of rutile TiO2(110) are shown in Figure 1; the oxygen
+ A further step in the search of accurate functionals is atoms of the carboxyl group bind to the surface Ti atoms in
+represented by the M06-L functionals of Zhao and Truhlar,49 either monodentate or bidentate mode55 (these results refer
+which include not only density and its ﬁrst derivative but also to calculations performed at the PW91 level with the
+ CASTEP program 63). The molecular dissociated acid
+the kinetic energy density. Such functionals are called “meta- adsorbed in bridge mode is bound by 31.2 kcal/mol; the
+GGA” and have been shown to improve the description of molecularly bound monodentate complex is only about 2
+thermochemistry and kinetics of reactions occurring on oxide kcal/mol less stable.55 This result alone shows the existence of
+surfaces.50 competing adsorption modes on the titania surface. Further
+ 2877 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+data on the adsorption of carboxylic acids on titania can be
+found in some relevant reviews.64−66
+ Two of the several possible conﬁgurations of acetic acid on
+the (101) anatase surface are shown in Figure 1;56 the
+carboxyl group can bind to the surface Ti atoms in either a
+monodentate or a bidentate mode.55 Notice that a structure
+rotated by 180° was found to be more stable than that shown
+in Figure 1.68 Recent work suggests a new binding mode of
+acetic acid characterized by proton insertion below the ﬁrst
+layer of oxygen atoms.60 Theoretical modeling of formic acid
+on the anatase (101) surface presents conﬂicting pictures
+regarding the predicted stability of the various conformations.
+Some calculations suggest that molecular monodentate is the
+most stable arrangement,67,68 whereas others predict a
+bidentate arrangement.69 Given the similar adsorption
+energies found for mono- and bidentate acetic acid on the Figure 2. Top and side views of the stoichiometric model for the
+rutile TiO2(110) surface, this is not surprising. An important {114}-faceted TiO2(100) surface which shows the 4-fold coordinated
+factor in determining the stability of the bidentate structure Ti atoms that are supposed to bind two carboxylate molecules. Small
+on TiO2 surfaces is the increased separation of the Ti5c sites and large circles represent Ti and O atoms, respectively. Reproduced
+on anatase (101) (3.78 Å) relative to rutile (110) (2.96 Å), with permission from ref 71. Copyright 2008 Elsevier.
+which could result in an increased strain of the bond. Still, a
+recent room temperature STM study of acetic acid adsorption
+on the anatase (101) surface concluded that the most likely
+binding geometry is that of dissociative bidentate between two
+Ti5c sites in the [010] direction.56 The low mobility of the
+acetate at 300 K is comparable with that for the bidentate
+binding of carboxylates on rutile TiO2(110) and supports the active sites for the ketonization because their multiple
+view of a relatively strong interaction with the anatase coordination vacancies allow them to accommodate bonding
+TiO2(101) surface. of the two carboxylate intermediates required for this
+ Thus, one can conclude that there is evidence for a similar bimolecular reaction. So far this idea has not found direct
+binding mode of acetic acid on the most stable surfaces of support from DFT calculations.
+rutile and anatase TiO2. However, although there is consensus Thus, according to the literature, diﬀerent adsorption
+on the formation of a dissociatively adsorbed bidentatate modes are possible for carboxylate species involved in
+carboxylate on rutile, this is still debated for anatase. ketonization reactions. Switching from one form to another
+ So far, only DFT calculations on the interaction of gas- can be important to determine the most favorable mechanism
+phase molecules with the solid oxide surface have been for the reaction and the nature of the transition state formed.
+presented. Recently, papers that overcome this DFT 3.2. Zirconia Surfaces. More limited is the number of
+approximation have been released by including the eﬀect of studies on the adsorption of carboxylic acids on the surface of
+the solvent.60−62 The presence of the solvent inﬂuences the ZrO2.72,73 ZrO2 can exist in at least ﬁve polymorphs.74,75 At
+molecule adsorption modes61 as well as the activation energy room temperature, only the monoclinic structure is stable.
+for adsorption/desorption.59 This is relevant because diﬀerent Around 1480 K, monoclinic zirconia undergoes a transition to
+adsorption modes can inﬂuence the overall reactivity of the a tetragonal phase, further converted at 2650 K into the cubic
+system. ﬂuorite phase.76 The most stable monoclinic polymorph has
+ However, one has to mention that experimental evidence limited practical applications because of the crumbling of the
+for the existence of monodentate carboxylic acids adsorbed on ceramic components commonly observed during cooling from
+TiO2 has also been reported. Pei and Ponec70 examined the tetragonal phase.77 On the contrary, the high-temperature
+adsorption and reaction of acetic acid on TiO2 using FT-IR polymorphs (tetragonal and cubic) exhibit excellent mechan-
+and showed that upon heating to 373−573 K, the IR band ical, thermal, chemical, and dielectric properties.78 The room-
+corresponding to the monodentate species gradually dis- temperature stabilization of high-symmetry polymorphs of
+appeared leaving only the bands associated with strongly ZrO2 is commonly achieved either by transition metal doping
+bound bidentate carboxylates. Because only bidentate or by preparation of nanocrystalline phases.
+carboxylates can be observed at 573 K, the typical All the calculations reported so far on the adsorption and
+temperature at which ketonization starts to occur, they reactivity of carboxylic acids on zirconia have been done on
+suggested that bidentate carboxylates are the species of the monoclinic phase, which is stable at room temperature.
+crucial importance in the catalytic process.70 However, it has been observed that doping zirconia with alkali
+ However, contrary to ref 70, Kim and Barteau16 using TPD metals results in an improved activity in the ketonization
+found that in order to generate ketone two acetate species reaction, and this has been attributed to the stabilization of
+involved in bimolecular ketonization should be coordinated in the tetragonal phase.79 This suggests that DFT studies on the
+a monodentate mode to the same Ti on the {114}-faceted tetragonal phase can also be of interest.
+rutile (100) surface71 (Figure 2, see reaction 5). In particular, Also on ZrO2, the carboxylates bind to Lewis acid sites of
+they suggested that the reaction involves the 4-fold the surface either in monodentate or bidentate conﬁgurations;
+coordinated Ti4+ cations, which are present only on the these latter are generally more stable. It has been proposed
+{114}-faceted surface, and that these Ti4+ cations are the that in the bidentate conﬁguration the bonding can involve
+ 2878 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Figure 3. Interaction modes of a carboxylic acid with Lewis acid sites of the zirconia surface. Adapted from ref 73.
+
+Figure 4. Most favorable structures of lactic acid adsorbed on the (011) surface of monoclinic ZrO2. (a) monodentate mode with O−H
+dissociation (structure III in Figure 3, Eads = 42.9 kcal/mol). (b) Bidentate chelating with O−H dissociation (structure I in Figure 3, Eads = 39.4
+kcal/mol). (c) Bidentate bridging mode with O−H dissociation (Eads = 53.3 kcal/mol). (d) bidentate bridging mode with O−H dissociation
+(structure II in Figure 3, Eads = 62.3 kcal/mol). Reproduced with permission from ref 82. Copyright 2013 Elsevier.
+
+one or two surface cations giving a chelating bidentate adsorption energies of lactates in this conﬁguration depend
+complex (I) or a bridging bidentate conﬁguration (II), as strongly on the surface chosen: 42.8 kcal/mol on ZrO2(011),
+depicted in Figure 3. A distinction of the two species can be 40.0 kcal/mol on ZrO2(101), and 22.5 kcal/mol on
+based on IR spectroscopy. ZrO2(111).82 In all cases, the monodentate structure (III) is
+ Periodic DFT calculations using the VASP code80,81 and less stable than the bidentate bridging form (II). Some of the
+the PBE functional have been performed on the adsorption of optimal structures of lactic acid adsorbed on the (011) surface
+lactic acid (CH3CH(OH)COOH) on various faces of of monoclinic ZrO2 are shown in Figure 4.
+monoclinic ZrO2 by Hammaecher and Paul.82 Lactic acid In general, adsorption on Zr ions with lower coordination
+presents three available atoms for adsorption on m-ZrO2, the leads to stronger adsorption energies. The general trend for
+two oxygen atoms of the carboxyl group and the oxygen atom the lactic acid adsorption mode on (011), (101), and (111)
+of the alcohol group. This leads to several possible binding monoclinic zirconia surfaces is that the bidentate bridging one
+modes and to a wide range of possibilities for dissociative with OH bond dissociation is preferred (two variants of this
+adsorption and further reactivity. It is of some help for the bonding mode have been found).82 These two modes of
+modeling of these systems the fact that the preferred interaction of lactic acid with zirconia are almost equally
+adsorption sites for lactic acid on ZrO2 are the same as for probable, and could potentially lead to diﬀerent reactions
+water.82 The estimated adsorption energies of lactic acid pathways, an eﬀect that may limit a good control of the
+carboxylate species (I), chelating bidentate,82 are 39.5 kcal/ selectivity on these surfaces.
+mol on ZrO2(011), 38.2 kcal/mol on ZrO2(101), and 12.9 The adsorption of acetic, propionic (CH3CH2COOH), and
+kcal/mol on ZrO2(111); carboxylate species (II), bidentate, is isobutyric ((CH3)2C(OH)COOH) acids on the most stable
+bound by 62.2 kcal/mol on ZrO2(011), 55.5 kcal/mol on (iıı),
+ ̅ ̅
+ (ııı), and (ioı) surfaces of monoclinic ZrO2 has been
+ZrO2(101), and 36.4 kcal/mol on ZrO2(111), respectively.82 studied by Ignetchenko72 using a periodic DFT approach at
+It is clear that interaction with two surface Zr cations is always the GGA level (PW91 functional27) and the DMol3
+largely preferred and that the open (011) and (101) surfaces software.84 He found that the relative strength of the various
+bind more strongly. adsorption sites is the same for acids with diﬀerent chain
+ Still, also on ZrO2 formation of monodentate carboxylates, length. Adsorption of carboxylic acids on zirconia closely
+see structures III and IV in Figure 3, has also been suggested.5 resembles that found on rutile (110), (011), and anatase
+An absorption band at 1750 cm−1 corresponds to the (001) surfaces. In particular, a preference for dissociative over
+stretching vibrations of carbonyl groups of these carboxylates. molecular adsorption has been found on all zirconia surfaces
+For instance, acetic acid chemisorption on MgO−SiO2 leads studied. The structure of acetic acid adsorbed on the (111)
+to monodentate acetate with an absorption band at 1747 surface of monoclinic ZrO2 is shown in Figure 5. Here the
+cm−1.83 As mentioned above, the existence of bimolecular acetate fragment is bound in a bidentate bridging mode over
+monodentate species on oxide surfaces, like structure IV in two surface Zr4+ cations with an adsorption energy of about
+Figure 3, has been long considered to be quite relevant for 44 kcal/mol. Notice that this adsorption energy is about 12
+the mechanism of ketonization reactions (see the discussion kcal/mol higher than that obtained for the same bonding
+below).16 conﬁguration and the same functional on TiO2(110).55
+ DFT calculations on monomolecular monodentate adsorp- In the same study,72 it has been found that the arrangement
+tion of lactic acid over ZrO2 demonstrated the possible of two carboxylic acids on the same Zr atom (structure IV in
+formation of conﬁguration (III), Figure 3.82 The computed Figure 3) is highly unfavorable. Despite the fact that a Zr
+ 2879 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+ exponential factors were within a factor of 5 from experi-
+ ment,85 which can be considered as a very good result. This
+ shows what can be done nowadays in terms of chemical
+ accuracy in the calculation of activation barriers and reaction
+ mechanisms for gas-phase reactions involving nontransition
+ elements.
+ The competition between decarboxylation and dehydration
+ was studied for a series of saturated and unsaturated organic
+ acids with 2−4 carbon atoms.85 The enthalpy of reaction
+ (ΔH) for acetic acid decarboxylation, reaction 1, is negative
+ (exothermic), whereas those for dehydration, reactions 2 and
+ 3, are positive (endothermic) (see section 1). Quite
+ challenging is the calculation of activation barriers. The
+ experimental activation energies for the competing decarbox-
+ ylation and dehydration pathways at about 1000 K have been
+ determined some time ago and are 62.0 and 67.5 kcal/mol,
+ respectively.89 Theoretical calculations based on the CASSCF
+ approach reported activation energies of 71.8 kcal/mol for
+ reaction 1, 76.4 kcal/mol for reaction 2, and 73.1 kcal/mol for
+ reaction 3, respectively,90 in good agreement with the
+Figure 5. Acetic acid adsorption on the (111) surface of monoclinic
+ experimental estimates. These values are essentially repro-
+zirconia with H dissociation; acetate adsorbed in bidentate bridging duced by the DFT approach of Clark et al.85 They thus
+mode; H moves to the O2c lattice ion. Reproduced with permission considered competing decomposition pathways for a family of
+from ref 72. Copyright 2011 American Chemical Society. possible saturated and unsaturated C2−C4 acids in order to
+ estimate branching ratios between the decarboxylation and
+ dehydration pathways. The activation energies and predicted
+atom with a double coordinative unsaturation has been
+ kinetic values for acids of importance to biofuels were also
+considered, a signiﬁcant steric repulsion between two alkyl
+ calculated and are summarized in Figure 6.
+groups results in an energy increase. This seems to contrast
+ The computed barrier heights to decarboxylation and
+with the widely accepted concept of the adsorption of two
+ dehydration are similar for saturated acids (about 71 kcal/
+carboxylic acids on the same coordinatively unsaturated metal
+ mol). α,β-Unsaturation lowers the barrier to decarboxylation
+atom in the ketonization mechanism.16 In view of these recent
+computational results, this concept may need to be by about 2 kcal/mol while increasing the barriers to
+reconsidered in a more critical way. dehydration by about 3 kcal/mol. β,γ-Unsaturation results in
+ a small lowering in the barrier height to decarboxylation
+4. REACTIONS OF CARBOXYLIC ACIDS ON TiO2 AND (which became about 70.0 kcal/mol) as well as in the
+ ZrO2 dehydration pathway (reduction from 2 to 5 kcal/mol). In
+ general, the activation barriers for decarboxylation and
+ 4.1. Benchmark Calculations: Gas-Phase Reactivity.
+ dehydration do not seem to change much for diﬀerent
+The complexity of the reactions involved in ketonization
+ carboxylic acids.
+processes is such that at the moment gas-phase reactivity can
+ As mentioned above, the work of Clark et al.85 represents
+be explored in more detail than the reactivity of carboxylic
+acids on the surface of a solid catalyst. Also from the point of probably the most complete theoretical study to predict
+view of the accuracy of the calculations, gas-phase molecular kinetic values for acids of importance in biofuels production.
+reactions can be studied at an higher level of theory than It should be mentioned, however, that this kind of accuracy is
+reactions involving gas/solid or liquid/solid interfaces. diﬃcult to achieve for chemical reactions occurring on solid
+ Very recently, an extensive quantum mechanical study has surfaces.
+been reported to compare activation energies and rate 4.2. Enolization on ZrO2. While several studies exist on
+constants for unimolecular decomposition pathways of the adsorption of carboxylic acids on the surface of TiO2 and
+saturated and unsaturated carboxylic acids that are important ZrO2 (see section section 3), the number of DFT studies on
+in the production of biofuels or as intermediates in the the reactivity of the adsorbed species is rather scarce. This is
+synthesis of biofuels.85 The work was done using the not surprising due to the large number of possible reaction
+Gaussian09 suite of programs86 and the M06-2X hybrid paths that are involved, as discussed above. Once a carboxylic
+meta-GGA functional of Truhlar and Zhao87 with an extended acid is adsorbed on an oxide surface, one of the possible
+basis set. Decarboxylation and dehydration reactions 1−3 reactions is the enolization, i.e. the abstraction of an α-
+were considered, and the energies and structures of all species hydrogen by the basic sites of the surface, Figure 7.
+were calculated and fully optimized. A robust systematic Experimental evidence for the enolization of surface
+search technique was used to optimize all reactant and carboxylates comes from the observation of their α proton
+product conformations.88 The performance of the computa- exchange for deuterium.91 The enolized form of carboxylate,
+tional methods adopted was benchmarked against two well- R2CCOO−, resembles the structure of the so-called “surface
+known chemical decomposition reactions, the dehydration of ketene” proposed as one of the possible intermediates in the
+ethanol and the decomposition of ethyl acetate. The mechanism of carboxylic acid ketonization.12,15 Ignatchenko
+computed activation energies were found to be within 1.5 has studied the enolizaton reaction of carboxylic acids on
+kcal/mol of the experimental values; the Arrhenius pre- three surfaces of monoclinic zirconia by means of DFT
+ 2880 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Figure 6. Potential energy diagram for the decarboxylation (right of vertical axis, A) and dehydration (left of vertical axis, B−D) of some organic
+acids. For the dehydration pathways, the concerted mechanism lies to the right of the dotted line, whereas the stepwise mechanism lies to the
+left. The units of the vertical axis are in kcal/mol. The energies represent the diﬀerence between the reactant and transition state. Each set of
+diﬀerent colored circles represents a separate class of organic acid (e.g., green represents saturated acids). The lettered circles denote reaction
+pathways. The numbered circles represent the following: 0: starting acid; 1: decarboxylation transition state; 2: decarboxylation products; 3:
+dehydration transition state; 4: dehydration products; 5:1,1-enediol formation transition state; 6:1,1-enediol intermediate; 7:1,1-enediol
+dehydration transition state. A cartoon representation of the competing pathways is illustrated, using crotonic acid, at the top of the ﬁgure.
+Reproduced with permission from ref 85. Copyright 2014 American Chemical Society.
+
+calculations,72 using the PW91 functional27 and the DMol3 4.3. Ketonization on ZrO2. Due to the complexity of the
+code,84 Figure 7. chemical process, ketonization reaction mechanisms on oxide
+ First of all, the carboxylic acid adsorbed on the surface surfaces have not been discussed based on DFT calculations
+dissociates with formation of a bidentate bridging carboxylate until very recently. In 2013 Pulido et al. reported an extensive
+and an OH group. Then, a lattice oxygen of the ZrO2 surface and detailed study on the intermolecular ketonic decarbox-
+can readily abstract the hydrogen atom in the α position to ylation of monocarboxylic acids catalyzed by metal oxides.92
+the carboxylic group, Figure 7. Acetic, propionic, and The reaction mechanism of acetone formation over
+isobutyric acids exhibit similar reaction barriers for enolization, monoclinic zirconia was investigated by means of periodic
+in the range 25−33 kcal/mol, depending on the speciﬁc DFT calculations (PW91 functional, VASP code; 80,81
+zirconia surface.72 All studied deprotonation reactions exhibit dispersion interactions have been included by means of the
+a late transition state where the α carbon has a nearly sp2 D3 method93). As discussed above, some controversy exists
+geometry. The geometry of the developing double bond about the reaction mechanism that takes place during ketonic
+center in the enolization reaction becomes increasingly ﬂat as decarboxylation. The classical and widely accepted mechanism
+the reaction progresses from the starting carboxylate to the is the already mentioned formation of a β-keto acid
+transition state and further to the enolized product. intermediate from the abstraction of an α-hydrogen atom
+ In summary, the work of Ignatchenko has shown that (see section 1).8 The performance of alumina, silica, ceria,
+enolization of carboxylic acids occurs on monoclinic zirconia zirconia, and mixed zirconium cerium oxides, in the
+surfaces with a relatively low activation energy barrier, which decarboxylation of decanoic acid into 10-nonadecanone was
+is basically independent of acid branching. The 2-fold ﬁrst investigated experimentally.92 It was concluded that
+coordinated lattice oxygen on the most stable surface of m- monoclinic ZrO2 is a suitable catalyst for the ketonic
+ZrO2 is the preferred basic site for hydrogen abstraction and decarboxylation of carboxylic acids with a wide range of
+enolization of adsorbed carboxylates. molecular weights, from acetic acid to fatty acids. To
+ 2881 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Figure 7. Enolization of acetate on the (111) surface of monoclinic
+zirconia. Top: schematic view of the reaction mechanism; bottom:
+structure of the reactants and intermediates: (a) Acetate adsorption
+in bidentate bridging mode; the dissociated H is attached to the O2c
+lattice ion; (b) Optimized transition state; (c) Enolized acetate.
+Reproduced with permission from ref 72. Copyright 2011 American
+Chemical Society.
+
+understand the ketonic decarboxylation reaction mechanism at
+the molecular scale, the formation of acetone, CO2, and H2O Figure 8. Reaction pathways for ketonic decarboxylation of acetic
+from the decarboxylation of two molecules of acetic acid was acid (R=R′=CH3) over m-ZrO2 following the β-keto acid (bottom)
+investigated at the DFT level on the (111) surface of m-ZrO2, and concerted (top) routes. PW91-D3 reaction and activation (in
+see Figure 8. An impressive number of calculations was italic and with superscript #) energies (in kJ/mol) of each step are
+performed to understand this reaction mechanism as well as shown. Zr and O atoms of the ZrO2 surface are represented by
+other competitive reaction routes, providing in this way a empty (o) or ﬁlled (•) dots, respectively. For the sake of clarity,
+general description from a DFT point of view of the ketonic double bonds and charges are not shown. Reproduced with
+decarboxylation reaction mechanism on m-ZrO2.92 permission from ref 92. Copyright 2013 Wiley-VCH.
+ Several adsorption modes of acetic acid are possible on the
+surface of m-ZrO2, with interaction energies between −16.0 92. The second molecule of acetic acid can be easily
+and −41.1 kcal/mol, in agreement with other studies on this dehydroxylated, leading to the formation of an adsorbed
+system.72 The complex reaction scheme that follows acetic acylium intermediate (step D in Figure 8). At this point, both
+acid adsorption is shown in Figure 8. The pathway A → B → a hydrogen and hydroxyl groups have already been removed
+C → D → E → F → G → H → I shows schematically from the acetic acid molecules and can be combined to form
+ketonic decarboxylation taking place along the β-keto acid a water molecule (step E in Figure 8). After H2O desorption,
+route as computed by DFT. The process starts with the an acetic acid dianion and an acylium intermediate are
+formation of the most stable acetic acid adsorption complex adsorbed on the ZrO2 surface on vicinal positions. Here, the
+with release of 46.2 kcal/mol (193 kJ/mol) and formation of terminal CH2 carbon atom of the dianion attacks the carbon
+an acetate intermediate (barrierless). Then, abstraction of a α- atom of the carbonyl group of the acylium intermediate (step
+hydrogen atom by the surface O2c atom leads to the F in Figure 8), leading to the formation of the β-keto acid
+formation of an acetic acid dianion intermediate (step B in intermediate. This step is exothermic by 22.2 kcal/mol (93
+Figure 8) with an endothermic step (ΔE = 9.3 kcal/mol or 39 kJ/mol) and implies an energy barrier of 13.6 kcal/mol (57
+kJ/mol) and an activation barrier of 17.9 kcal/mol (75 kJ/ kJ/mol). Next, acetone enolate and CO2 can be formed from
+mol). The reaction continues with adsorption of a second the β-keto carboxylate intermediate (step G in Figure 8) by
+molecule of acetic acid near the previously formed dianion breaking of the C−C bond with an endothermic step by 21.0
+(step C in Figure 8). It appears that the vicinity of a kcal/mol (88 kJ/mol) and an activation barrier of 25.8 kcal/
+previously dissociated species favors an associative adsorption mol (108 kJ/mol). It is concluded that this is also the rate-
+of the second molecule, an aspect that is not discussed in ref determining step of the entire β-keto acid route. This result,
+ 2882 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Figure 9. Schematic representation of the reactions of transformation of propionic acid over a Pd4 unsupported catalyst. Reproduced with
+permission from ref 94. Copyright 2011 Springer.
+
+however, is a bit surprising since it is usually accepted that the catalytic deoxygenation, which is often carried out over
+decomposition of the β-keto carboxylate intermediate is rapid supported Pd metal particles. The formation of CO or CO2
+and easy. Indeed, these intermediates have never been implies the cleavage of the C−C bond in R-COOH. This
+observed due to their rapid evolution. The next step (step problem has been studied experimentally for the trans-
+H in Figure 8) consists in the transfer of an adsorbed H atom formation of stearic acid (CH3(CH2)16COOH) on Pd/Al2O3
+to the acetone enolate intermediate, with a nearly catalysts, and the results have been complemented by
+thermoneutral process and a low barrier of 4.1 kcal/mol quantum chemical calculations.94 Here I concentrate on this
+(17 kJ/mol). The catalytic cycle is closed by acetone aspect. The real system was modeled by using a molecule of
+desorption, an endothermic step by 20.1 kcal/mol (84 kJ/ propionic acid as reactant and an unsupported Pd4 cluster to
+mol, see step I in Figure 8). represent the supported metal particle. Since gas-phase Pd4
+ Figure 8 also shows another possible reaction path (see has a tetrahedral shape, this is the geometry adopted for the
+steps J → K → L → M → N) called concerted reaction route Pd nanocluster. The calculations where done at the DFT level
+and an alternative mechanism (steps O → P in Figure 8). The using the PBE exchange-correlation functional28 and the
+calculations show that in both cases the barriers involved are Priroda code.95,96
+higher than for the mechanism based on β-keto acid The use of a gas-phase metal cluster to mimic the behavior
+intermediates discussed above. Thus, the DFT calculations of a supported Pd nanoparticle is not uncommon in
+suggest that ketonic decarboxylation of monocarboxylic acids computational studies, and is based on the assumption that
+and the formation of ketones proceeds predominantly by the oxide support has no role in the reactivity (“inert
+means of the β-keto acid mechanism. This theoretical result is support”). While this may be true in general, it is no longer
+supported also by other experimental evidence.92 Notice that true when the supported metal unit is very small. In this case,
+this reaction path does not imply the adsorption of two in fact, the electron exchange at the interface between the
+carboxylic acids on the same low-coordinated Zr ion, structure metal and the oxide support can signiﬁcantly alter the
+IV in Figure 3, but rather on two diﬀerent Zr ions in chemical properties of the metal particle and can result in a
+neighboring positions. Furthermore, the mechanism has been completely diﬀerent chemical reactivity.97,98 In this case some
+investigated for a regular surface plane of m-ZrO2, thus care is necessary when comparison with experiment is done.
+neglecting the possible role of low-coordinated ions of the The results of the computational work by Berenblyum et
+surface in the reaction. al.94 are summarized in Figure 9 which schematically reports
+ It is interesting to comment at this point on the role of the reactions of transformation of propionic acid over a
+dispersion forces for the reactivity described above. The palladium catalyst. The reaction starts with the adsorption of
+reaction pathways for acetic acid decarboxylation have been the reacting acid molecule on the Pd4 cluster with the
+obtained also at the PW91 level, i.e. without inclusion of coordination to a Pd atom and the simultaneous interaction
+dispersion, and the results can thus be compared to the of one of the two oxygen atoms of RCOOH and the
+PW91-D3 data reported above. The inclusion of intermo- hydrogen atom at the β-carbon (see A1 and A2 in Figure 9).
+lecular dispersion interaction does not change the energy Pd atoms are known to insert into C−H bonds; when this
+proﬁle obtained at the PW91 level. The diﬀerences between occurs the intermediates B1 and B2 can form, Figure 9. This
+calculated PW91 and PW91-D3 activation barriers are at most can be followed by H migration, C1 or C2, followed by C−C
+4 kcal/mol, suggesting a minor role of dispersive interactions, bond scission and formation of adsorbed etylene (D1 or D2)
+at least for this speciﬁc case.92 and further desorption of HCCOH (P1), CO+H2O (P2), or
+ CO2 (P3). The calculations show that the rate-limiting step of
+5. REACTIONS OF CARBOXYLIC ACIDS ON METAL the reaction is the cleavage of C−C bond in the acid
+ CLUSTERS SUPPORTED ON OXIDE SURFACES molecule. From these calculations it was concluded that
+ 5.1. Unsupported Metal Clusters. The conversion of although the decarboxylation reaction is the most favorable in
+fatty acids into fuels and chemical intermediates requires terms of thermodynamics, it is likely that kinetic reasons make
+ 2883 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+decarbonylation dominate during the conversion of acid First, the O−H bond of propionic acid is readily cleaved by
+molecules in the coordination sphere of Pd.94 the bridging O2c sites on the TiO2 surface, resulting in the
+ 5.2. Supported Metal Clusters. Recently, it has been formation of surface propionate intermediates at the Au/TiO2
+found that Au nanoparticles supported on TiO2 are highly interface (bidentate dissociative adsorption). Second, an O2
+selective in activating the C−H bonds at the C2 and C3 molecule is activated at Au−Ti4+ sites at the Au/TiO2
+positions for linear organic acids (propionic and butyric acid) interface and results in the formation of adsorbed atomic
+to form unsaturated carboxylate surface intermediates.99 Using oxygen (Oad) on the Au sites at the Au/TiO2 perimeter. The
+infrared spectroscopy (IR) and DFT calculations, unsaturated resulting adsorbed atomic oxygen migrates on the Au particle
+acrylate (CH2CHCOO −) and crotonate (CH3 CH and acts as a base that can eﬀectively activate the C−H bonds
+CHCOO−) were observed to form from propionic acid and involved in the oxidative dehydrogenation. In fact, a C−H
+butyric acid (CH3CH2CH2COOH), respectively, on a catalyst bond at the Cα position can be activated by the basic Oad
+with about 3 nm diameter Au particles on TiO2 at 400 K. The species bound to Au with an activation barrier of 12.2 kcal/
+high selectivity of Au/TiO2 suggests that the sites and mol and formation of an adsorbed OH group on Au, Figure
+mechanisms for the activation of organic acids are diﬀerent 10. This results in the formation of the CH3CH−COO
+from those active on supported Pd or Pt nanoparticles. species. Then another H abstraction can occur from the OH
+ The mechanism of the reaction has been investigated with group with formation of a water molecule adsorbed on Au
+the help of DFT calculations performed at the DFT+U level and a acrylate adsorbed species (barrier 9.2 kcal/mol), Figure
+using the code VASP80,81 and the PW91 functional.27 In 10. The acrylate is 10.4 kcal/mol more stable than the original
+particular, calculations were carried out to examine the CH3CH2COO/Ti complex because of the formation of the
+mechanism of acrylate formation and to determine the CC double bond and the reduction of the coadsorbed O
+frequencies for adsorbed acrylate and crotonate species in atom to H2O.99
+order to compare them with IR spectroscopic results. The The steps in the catalytic cycle involve activation barriers of
+TiO2 support was simulated by using a rutile TiO2(110) about 7−12 kcal/mol, consistent with the moderate reaction
+supercell. The 3 nm Au particles supported on TiO2 were temperatures (near 400 K) observed experimentally. Fur-
+simulated by a closely packed Au nanorod model anchored to thermore, the work points out the important role of the
+the TiO2 (110) support.99 interface between the oxide surface and the supported metal
+ The experiments and the DFT simulations provide evidence particle in determining the chemistry of the process. This
+that propionate (CH3CH2COO−) dehydrogenates to acrylate aspect has been suggested in several studies, mainly based on
+(CH2CHCOO−) under oxidation conditions. Similarly, DFT calculations,100,101 although direct unambiguous exper-
+butyrate is found to convert into crotonate upon oxidative- imental evidence of the involvement of the metal/oxide
+dehydrogenation on Au/TiO2. The calculated potential energy perimeter of the supported nanoparticle is diﬃcult to obtain.
+proﬁle for the formation of acrylate from propionic acid is
+reported in Figure 10. 6. KETONIZATION MECHANISMS AND THE ROLE OF
+ SUPPORTED METALS
+ The above discussion clearly shows that, while ketonization of
+ carboxylic acids has been known and studied for many years,
+ the details of the reaction mechanism and the rate limiting
+ steps are still under debate. Recent experimental studies by
+ Pham et al.102,103 on Ru/TiO2 catalysts demonstrated that the
+ ketonization rate is consistent with a bimolecular surface
+ reaction mechanism indicating that two molecules of acetic
+ acid are involved in the rate limiting step and the products
+ compete for adsorption on the same type of sites. This
+ contradicts other proposed mechanisms that consider
+ monomolecular steps as rate limiting. For example, formation
+ of a ketene intermediate or abstraction of an Hα atom has
+ been previously proposed to be rate limiting.104
+ A bimolecular rate-limiting step is consistent with the
+Figure 10. Calculated potential energy diagram for the oxidative following mechanisms: (a) direct concerted mechanism of two
+dehydrogenation of propionate at the Au/TiO2 interface to form an surface carboxylate species; (b) a surface carboxylate attacked
+acrylate surface intermediate. Reproduced with permission from ref by a ketene molecule; (c) a carboxylate (or acylium) attacked
+99. Copyright 2014 American Chemical Society. by an enolate species leading to the formation of a β-ketoacid
+
+Figure 11. Proposed mechanism for β-keto acid formation step in ketonization reactions. Reproduced with permission from ref 102. Copyright
+2014 Springer.
+
+ 2884 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+intermediate. As mentioned before, ketonization requires at to the reaction of two carboxylic acids and to the formation of
+least one α-hydrogen atom in the carboxylic acids that a ketone product are a matter of debate. Some ﬁrm points
+participate in the reaction for the formation of enolate species have been established thanks to the work done by several
+or ketene intermediates. This is consistent with mechanisms groups, like for instance the importance of the α-hydrogen
+(b) and (c) but not with the direct concerted mechanism (a). abstraction, the need of pairs of Lewis basic and acid sites on
+Furthermore, the DFT study of Pulido et al.92 discussed the surface of the catalyst, or the role of low-coordinated
+above has shown that the concerted mechanism (a) should be cations. But many other points about the atomistic aspects of
+ruled out because of the high activation barrier and the the reaction and the nature of the active sites remain to be
+preferred route via formation of a β-keto acid. At the understood. In the last 10−15 years, the advent of modern
+moment, also thanks to the results of DFT calculations,92 this electronic structure theory approaches based on the density
+seems the most plausible mechanism (see Figure 11). functional theory has provided additional pieces of informa-
+ The other points that need further discussion are the active tion that turn out to be quite valuable to complement the
+sites involved in the reaction on the surface of TiO2 or ZrO2, experimental data.
+the role of supported metals like Ru, and the redox properties In this respect, high quality calculations can be performed
+of the oxide support. As mentioned in section 1, the nature of for reactions occurring in the gas-phase and both
+the active sites for ketonization has been discussed by Kim thermochemical values and activation barriers can be obtained
+and Barteau16 based on their study of ketonization on single from theory with a high level of accuracy. Calculations
+crystal TiO2. They ascribed the unique activity of the (114) performed on the gas-phase reaction of carboxylic acids have
+surface to the presence of doubly unsaturated Ti cations. It clearly shown that diﬀerent reaction paths are possible with
+has been suggested that prereduction, doping with other similar activation barriers, an eﬀect that can limit severely the
+metals or deposition of metal particles can be a way to create selectivity of the process. This is also why reactions involving
+defects and generate coordinatively unsaturated sites.102 a solid catalyst are of great interest.
+Furthermore, the catalytic activity of powder TiO2 should Modeling surfaces, and in particular transition metal oxide
+increase by these modiﬁcations. For instance, the addition of surfaces, is much more complex that modeling reactions that
+Ru helps to enhance the reducibility of TiO2 and this should involve C−C, C−O, and C−H bond breaking and bond
+result in the easier formation of coordinatively unsaturated formation. The intrinsic nature of transition metal elements,
+Ti3+ sites. A similar eﬀect has been found for ZrO2 where the their complex redox chemistry, the presence of localized
+activity is enhanced by the presence of Zr3+ ions.73,105 electrons in d orbitals, and so forth are all elements that
+ Another important observation, which holds true for both render the use of theory for the study of surface chemical
+TiO2102 and ZrO2,73 is that prereduction in H2 signiﬁcantly reactions less straightforward. Intrinsic limitations in the
+enhances the activity of the catalyst, whereas the activation present formulation of the exchange−correlation functionals
+energies and reaction orders remain unchanged. This leads to used in DFT, like the well-known self-interaction problem,
+the conclusion that the prereduction treatment determines an limit the accuracy of the computed thermodynamic and
+increase of the active sites, without aﬀecting the rate limiting kinetic quantities. On top of this, one has to consider the
+step nor the intrinsic activity of the other active sites. By complexity represented by the surface of an oxide, and the
+studying the EPR signal of Ti3+ species in nonreduced and need to represent this complexity in the models used to study
+prereduced Ru/TiO2/C catalysts, it has been found that a the reaction. Polycrystalline oxides used in catalysis exhibit
+signiﬁcant fraction of Ti3+ species can be formed upon the diﬀerent surface planes, each with a speciﬁc reactivity; they
+reduction treatment.22 Although there is no doubt that expose extended defects like steps, edges, dislocations, grain
+reduction processes in TiO2 and ZrO2 lead to an increase of boundaries, where the reactivity can be very diﬀerent from
+Ti3+ and Zr3+ ions,106,107 and although it is possible that these that of the regular surface planes; they contain signiﬁcant
+species are preferentially located on the surface of the oxides, amounts of point defects like impurity atoms, vacancies,
+their role in the surface chemistry of carboxylic acids and in hydroxyl groups, trapped electrons, among others, which vary
+the ketonization process requires further studies at the considerably in type and number as a function of the
+atomistic level in order to be conﬁrmed. preparation method and they present morphological irregu-
+ There is ample evidence in the literature that the Ti3+ and larities. When prepared in nanostructured forms (ultrathin
+Zr3+ species correspond to localized electrons trapped in the ﬁlms, nanoparticles), oxides possess properties diﬀerent from
+3d or 4d states of the transition metal atom (this is true at the bulk ones due to the low dimensionality of the system.109
+low temperature; at high temperatures, the electrons start to So far, DFT calculations on adsorption and reactions
+become mobile and delocalized). Still, the presence of involving carboxylic acids have been reported only for the
+unpaired electrons in the system, as proven by EPR most common regular surfaces of a few oxides. Among these,
+measurements, can signiﬁcantly alter the reactivity of the TiO2 and ZrO2 have been considered because of their
+surface sites and can even result in a completely diﬀerent importance as practical catalysts. Some very interesting results
+mechanism for the surface reactions (as recently demonstrated have been obtained on these systems, and some ﬁrm points
+for the case of formaldehyde polymerization over (WO3)3 start to emerge from these studies.
+clusters supported on TiO2).108 The role of the reduced Ti3+ First of all, carboxylic acid dissociatively adsorb on the
+and Zr3+ ions in ketonization reactions still needs to be surfaces of rutile TiO2 and zirconia forming a carboxylate unit
+investigated in detail and could lead to rather diﬀerent and an OH group. The bridge bidentate structure where the
+reaction mechanisms. carboxylate fragment interacts simultaneously with two surface
+ Ti4+ or Zr4+ cations seems to be generally preferred, although
+7. CONCLUSIONS in many cases, the monodentate binding mode is only slightly
+Ketonization is a reaction which has been known in organic less stable. The situation is more complex for the (101)
+chemistry for a very long time. Still, the mechanisms that lead anatase surface. Several DFT reports indicate that the
+ 2885 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis
+
+ ■
+ Review
+
+monodentate associative mode is preferred and the question REFERENCES
+of the most stable adsorption mode remains open. Second, (1) Mohan, D.; Pittman, C. U.; Steele, P. H. Energy Fuels 2006, 20,
+the presence of low-coordinated O ions on the surface can 848−889.
+lead to the abstraction of an additional hydrogen atom from (2) Bertero, M.; de la Puente, G.; Sedran, U. Fuel 2012, 95, 263−
+the C atom in α position with respect to the carboxyl group. 271.
+This reaction, with formation of an enolized acetate, Figure 7, (3) Vispute, T. P.; Zhang, H.; Sanna, A.; Xiao, R.; Huber, G. W.
+can be considered as a fundamental step in the subsequent Science 2010, 330, 1222−1227.
+reactivity of the adsorbed species. The reaction can take (4) Shen, W.; Tompsett, G. A.; Xing, R.; Conner, W. C., Jr.; Huber,
+various routes, and only a few of them have been explored so G. W. J. Catal. 2012, 286, 248−259.
+far, in particular for ZrO2 surfaces, due to the large (5) Barteau, M. A. Chem. Rev. 1996, 96, 1413−1430.
+ (6) Rajadurai, S. Catal. Rev.: Sci. Eng. 1994, 36, 385−403.
+computational costs involved. The complexity of the reaction (7) Patai, S. The Chemistry of the Carbonyl Group; Interscience,
+has limited the investigations to the most stable surfaces of London, 1966.
+zirconia. To date, calculations on ketonization reactions have (8) Pham, T. N.; Sooknoi, T.; Crossley, S. P.; Resasco, D. E. ACS
+not been reported for titania surfaces, and also the role of Catal. 2013, 3, 2456−2473.
+extended defects or the presence of excess electrons (Ti3+, (9) Martinez, R.; Huff, M. C.; Barteau, M. A. J. Catal. 2004, 222,
+Zr3+) has not been investigated. 404−409.
+ The reasons why prereduction treatments and metal (10) Nguyen, M. T.; Sengupta, D.; Raspoet, G.; Vanquickenborne,
+deposition result in an increased activity in ketonization L. G. J. Phys. Chem. 1995, 99, 11883−11888.
+processes22 are not entirely clear. In particular, the role of (11) Kijenski, J.; Glinski, M.; Jakubowski, A. Appl. Catal., A 1995,
+supported metal particles (e.g., Ru) remains elusive. In a 128, 209−217.
+ (12) Pestman, R.; Koster, R. M.; van Duijne, A.; Pieterse, J. A. Z.;
+recent DFT study, it was shown that Ru nanoclusters Ponec, V. J. Catal. 1997, 168, 265−272.
+containing up to 10 atoms interact with the (101) surface (13) Sugiyama, S.; Sato, K.; Yamasaki, S.; Kawashiro, K.; Hayashi,
+of anatase TiO2 leading to a partial charge transfer from the H. Catal. Lett. 1992, 14, 127−133.
+metal to the oxide.110 One could speculate that the presence (14) Kuriacose, J. C.; Jewur, S. S. J. Catal. 1977, 50, 330−341.
+of extra charge on the oxide surface can be beneﬁcial for the (15) Pestman, R.; van Duijne, A.; Pieterse, J. A. Z.; Ponec, V. J.
+activation and dissociation of the carboxylic acids. However, it Mol. Catal. A 1995, 103, 175−180.
+is also possible that the metal nanoparticles have only an (16) Kim, K. S.; Barteau, M. A. J. Catal. 1990, 125, 353−375.
+indirect eﬀect, like for instance favoring H2 dissociation in (17) Okumura, K.; Iwasawa, Y. J. Catal. 1996, 164, 440−448.
+prereduction treatments of the catalysts; hydrogen atoms then (18) Renz, M. Eur. J. Org. Chem. 2005, 979−988.
+spill over from the metal particle to the oxide surface where (19) Ignatchenko, A.; Kozliak, E. ACS Catal. 2012, 2, 1555−1562.
+ (20) Yamada, Y.; Segawa, M.; Sato, F.; Kojima, T.; Sato, S. J. Mol.
+they split into protons, adsorbed on the surface O ions, and Catal. A 2011, 346, 79−86.
+electrons that reduce Ti and Zr ions from the +4 to the +3 (21) Nagashima, O.; Sato, S.; Takahashi, R.; Sodesawa, T. J. Mol.
+oxidation state. But one cannot exclude other hypotheses Catal. A 2005, 227, 231−239.
+related to the presence of supported metals: for exampe, they (22) Pham, T. N.; Shi, D.; Sooknoi, T.; Resasco, D. E. J. Catal.
+can stabilize existing defects like anion vacancies or promote 2012, 295, 169−178.
+their migration toward the surface, they can react with the (23) Burke, K. J. Chem. Phys. 2012, 136, 150901.
+oxide support with formation of oxide nanoclusters (e.g., (24) Grimme, S. Wiley Interdiscip. Rev.: Comput. Mol. Sci. 2011, 1,
+RuxOy) or encapsulated core−shell nanoparticles, or they can 211−228.
+induce the diﬀusion and penetration into the oxide material of (25) Kohn, W.; Sham, L. J. Phys. Rev. 1965, 140, 1133−1138.
+individual metal atoms which result in interstitial (or even (26) Perdew, J. P.; Kurth, S. In A Primer in Density Functional
+ Theory; Fiolhais, C., Nogueira, F., Marques, M., Eds.; Springer: Berlin
+substitutional) doping, an eﬀect which is know to alter Heidelberg, 2003; pp 1−55.
+signiﬁcantly the properties of a catalyst.111,112 None of these (27) Perdew, J. P.; Chevary, J. A.; Vosko, S. H.; Jackson, K. A.;
+possibilities has been explored so far, leaving ample space for Pederson, M. R.; Singh, D. J.; Fiolhais, C. Phys. Rev. B 1992, 46,
+future investigations based on DFT studies. 6671−6687.
+
+■ AUTHOR INFORMATION
+Corresponding Author
+ (28) Perdew, J. P.; Burke, K.; Ernzerhof, M. Phys. Rev. Lett. 1996,
+ 77, 3865−3868.
+ (29) Hammer, B.; Hansen, L. B.; Nørskov, J. K. Phys. Rev. B 1999,
+ 59, 7413−7421.
+*E-mail: gianfranco.pacchioni@unimib.it. Tel.: +39-2- (30) Pacchioni, G. J. Chem. Phys. 2008, 128, 182505.
+64485219. (31) Becke, A. D. J. Chem. Phys. 1993, 98, 5648−5652.
+Notes (32) Lee, C. T.; Yang, W. T.; Parr, R. G. Phys. Rev. B 1988, 37,
+The authors declare no competing ﬁnancial interest. 785−789.
+
+■
+ (33) Perdew, J. P.; Wang, Y. Phys. Rev. B 1986, 33, 8800−8802.
+ (34) Perdew, J. P.; Burke, K. J. Chem. Phys. 1996, 105, 9982−9985.
+ ACKNOWLEDGMENTS (35) Adamo, C.; Barone, V. J. Chem. Phys. 1999, 110, 6158−6170.
+I thank D. Serrano and D. E. Resasco for their critical reading (36) Ernzerhof, M.; Scuseria, G. E. J. Chem. Phys. 1999, 110, 5029−
+of the manuscript. This work has been supported by the 5036.
+European Community’s Seventh Framework Programme (37) Heyd, J.; Scuseria, G. E.; Ernzerhof, M. J. Chem. Phys. 2003,
+ 118, 8207−8215.
+FP7/2007-2013 under Grant Agreement n° 604307 (CAS- (38) Heyd, J.; Scuseria, G. E.; Ernzerhof, M. J. Chem. Phys. 2006,
+CATBEL) and by Italian MIUR through the FIRB Project 124, 219906 (E).
+RBAP115AYN “Oxides at the nanoscale: multifunctionality (39) Krukau, A. V.; Vydrov, O. A.; Izmaylov, A. F.; Scuseria, G. E. J.
+and applications”. The support of the COST Action CM1104 Chem. Phys. 2006, 125, 224106.
+“Reducible oxide chemistry, structure and functions” is also (40) Dovesi, R.; Saunders, V. R.; Roetti, C.; Orlando, R.; Zicovich-
+gratefully acknowledged. Wilson, C. M.; Pascale, F.; Civalleri, B.; Doll, K.; Harrison, N. M.;
+
+ 2886 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+Bush, I. J.; D’Arco, Ph.; Llunell, M. CRYSTAL09 User’s Manual; (79) Parida, K.; Mishra, H. K. J. Mol. Catal. A 1999, 139, 73−80.
+University of Torino: Torino, Italy, 2009. (80) Kresse, G.; Hafner, J. Phys. Rev. B 1993, 47, 558−561.
+ (41) Paier, J.; Marsman, M.; Kresse, G. J. Chem. Phys. 2007, 127, (81) Kresse, G.; Furthmüller, J. Phys. Rev. B 1996, 54, 11169−
+024103. 11186.
+ (42) Paier, J.; Marsman, M.; Hummer, K.; Kresse, G.; Gerber, I. C.; (82) Hammaecher, C.; Paul, J.-F. J. Catal. 2013, 300, 174−182.
+Angyan, J. G. J. Chem. Phys. 2006, 124, 154709. (83) Eischens, R. P. Science 1964, 146, 486−493.
+ (43) Paier, J.; Marsman, M.; Hummer, K.; Kresse, G.; Gerber, I. C.; (84) Delley, B. J. Chem. Phys. 2000, 113, 7756−7764.
+Angyan, J. G. J. Chem. Phys. 2006, 125, 249901. (85) Clark, J. M.; Nimlos, M. R.; Robichaud, D. J. J. Phys. Chem. A
+ (44) Todorova, T.; Seitsonen, A. P.; Hutter, J.; Kuo, I. F. W.; 2014, 118, 260−274.
+Mundy, C. J. J. Phys. Chem. B 2006, 110, 3685−3691. (86) Frisch, M. J.; Trucks, G. W.; Schlegel, H. B.; Scuseria, G. E.;
+ (45) Anisimov, V. I.; Aryasetiawan, F.; Lichtenstein, A. I. J. Phys.: Robb, M. A.; Cheeseman, J. R.; Scalmani, G.; Barone, V.; Mennucci,
+Condens. Matter 1997, 9, 767−808. B.; Petersson, G. A.; Nakatsuji, H.; Caricato, M.; Li, X.; Hratchian,
+ (46) Dudarev, S. L.; Botton, G. A.; Savrasov, S. Y.; Humphreys, C. H. P.; Izmaylov, A. F.; Bloino, J.; Zheng, G.; Sonnenberg, J. L.; Hada,
+J.; Sutton, A. P. Phys. Rev. B 1998, 57, 1505−1509. M.; Ehara, M.; Toyota, K.; Fukuda, R.; Hasegawa, J.; Ishida, M.;
+ (47) Hu, Z.; Metiu, H. J. Phys. Chem. C 2011, 115, 5841−5845. Nakajima, T.; Honda, Y.; Kitao, O.; Nakai, H.; Vreven, T.;
+ (48) Marom, N.; Tkatchenko, A.; Rossi, M.; Gobre, V. V.; Hod, O.; Montgomery, J. A., Jr.; Peralta, J. E.; Ogliaro, F.; Bearpark, M.;
+Scheffler, M.; Kronik, L. J. Chem. Theory Comput. 2011, 7, 3944− Heyd, J. J.; Brothers, E.; Kudin, K. N.; Staroverov, V. N.; Kobayashi,
+3951. R.; Normand, J.; Raghavachari, K.; Rendell, A.; Burant, J. C.; Iyengar,
+ (49) Zhao, Y.; Truhlar, D. G. J. Chem. Phys. 2006, 125, 194101. S. S.; Tomasi, J.; Cossi, M.; Rega, N.; Millam, J. M.; Klene, M.;
+ (50) Getsoian, A. B.; Bell, A. T. J. Phys. Chem. C 2013, 117, Knox, J. E.; Cross, J. B.; Bakken, V.; Adamo, C.; Jaramillo, J.;
+25562−25578. Gomperts, R.; Stratmann, R. E.; Yazyev, O.; Austin, A. J.; Cammi, R.;
+ (51) Rahe, P.; Nimmrich, M.; Nefedov, A.; Naboka, M.; Wöll, C.; Pomelli, C.; Ochterski, J. W.; Martin, R. L.; Morokuma, K.;
+Kühnle, A. J. Phys. Chem. C 2009, 113, 17471−17478. Zakrzewski, V. G.; Voth, G. A.; Salvador, P.; Dannenberg, J. J.;
+ (52) Grätzel, M. Nature 2001, 414, 338−344. Dapprich, S.; Daniels, A. D.; Farkas, O.; Foresman, J. B.; Ortiz, J. V.;
+ (53) Yaghi, O. M.; O’Keeffe, M.; Ockwig, N. W.; Chae, H. K.; Cioslowski, J.; Fox, D. J. Gaussian 09, revision B01; Gaussian, Inc.:
+Eddaoudi, M.; Kim, J. Nature 2003, 423, 705−714. Wallingford, CT, 2009.
+ (54) McGill, P. R.; Idriss, H. Surf. Sci. 2008, 602, 3688−3695. (87) Zhao, Y.; Truhlar, D. Theor. Chem. Acc. 2008, 120, 215−241.
+ (55) Ojamaee, L.; Aulin, C.; Pedersen, H.; Kaell, P.-O. J. Colloid (88) Clark, J.; Call, S. T.; Austin, D. E.; Hansen, J. C. J. Phys. Chem.
+Interface Sci. 2006, 296, 71−78. A 2010, 114, 6534−6541.
+ (56) Grinter, D. C.; Nicotra, M.; Thornton, G. J. Phys. Chem. C (89) Bamford, C. H.; Dewar, M. J. S. J. Chem. Soc. 1949, 2877−
+2012, 116, 11643−11651. 2882.
+ (57) Heckel, W.; Elsner, B. A. M.; Schulz, C.; Müller, S. J. Phys. (90) Duan, X.; Page, M. J. Am. Chem. Soc. 1995, 117, 5114−5119.
+Chem. C 2014, 118, 10771−10779. (91) Gonzalez, F.; Munuera, G.; Prieto, J. A. J. Chem. Soc., Faraday
+ (58) Nilsing, M.; Persson, P.; Ojamäe, L. Chem. Phys. Lett. 2005, Trans. 1 1978, 74, 1517−1529.
+415, 375−380. (92) Pulido, A.; Oliver-Tomas, B.; Renz, M.; Boronat, M.; Corma,
+ (59) Sánchez, V. M.; de la Llave, E.; Scherlis, D. A. Langmuir 2011, A. ChemSusChem 2013, 6, 141−151.
+27, 2411−2419. (93) Grimme, S.; Antony, J.; Ehrlich, S.; Krieg, H. J. Chem. Phys.
+ (60) Spreafico, C.; Schiffmann, F.; VandeVondele, J. J. Phys. Chem. 2010, 132, 154104.
+C 2014, 118, 6251−6260. (94) Berenblyum, A. S.; Podoplelova, T. A.; Shamsiev, R. S.;
+ (61) Mosconi, E.; Selloni, A.; De Angelis, F. J. Phys. Chem. C 2012, Katsman, E. A.; Danyushevsky, V. Ya. Petrol. Chem. 2011, 51, 336−
+116, 5932−5940. 341.
+ (62) De Angelis, F.; Fantacci, S.; Gebauer, R. J. Phys. Chem. Lett. (95) Laikov, D. N. Chem. Phys. Lett. 1997, 281, 151−156.
+2011, 2, 813−817. (96) Laikov, D. N.; Ustynyuk, Yu. A. Russ. Chem. Bull. 2005, 54,
+ (63) Milman, V.; Winkler, B.; White, J. A.; Pickard, C. J.; Payne, M. 820−826.
+C.; Akhmatskaya, E. V.; Nobes, R. H. Int. J. Quantum Chem. 2000, (97) Pacchioni, G.; Freund, H. J. Chem. Rev. 2013, 113, 4035−
+77, 895−910. 4072.
+ (64) Diebold, U. Surf. Sci. Rep. 2003, 48, 53−229. (98) Pacchioni, G. Phys. Chem. Chem. Phys. 2013, 15, 1737−1757.
+ (65) Vohs, J. M. Chem. Rev. 2013, 113, 4136−4163. (99) McEntee, M.; Tang, W.; Neurock, M.; Yates, J. T. J. Am.
+ (66) Quah, E. L.; Wilson, J. N.; Idriss, H. Langmuir 2010, 26, Chem. Soc. 2014, 136, 5116−5120.
+6411−6417. (100) Molina, L. M.; Hammer, B. Phys. Rev. Lett. 2003, 90, 206102.
+ (67) Miller, K. L.; Musgrave, C. B.; Falconer, J. L.; Medlin, J. W. J. (101) Sicolo, S.; Giordano, L.; Pacchioni, G. J. Phys. Chem. C 2009,
+Phys. Chem. C 2011, 115, 2738−2749. 113, 10256−10263.
+ (68) Vittadini, A.; Selloni, A.; Rotzinger, F.; Gratzel, M. J. Phys. (102) Pham, T. N.; Shi, D.; Resasco, D. E. Topics Catal. 2014, 57,
+Chem. B 2000, 104, 1300−1306. 706−714.
+ (69) Luschtinetz, R.; Gemming, S.; Seifert, G. Eur. Phys. J. Plus (103) Pham, T. N.; Shi, D.; Resasco, D. E. J. Catal. 2014, 314,
+2011, 126, 98−111. 149−158.
+ (70) Pei, Z.-F.; Ponec, V. Appl. Surf. Sci. 1996, 103, 171−182. (104) Hendren, T. S.; Dooley, K. M. Catal. Today 2003, 85, 333−
+ (71) Ariga, H.; Taniike, T.; Morikawa, H.; Tero, R.; Kondoh, H.; 351.
+Iwasawa, Y. Chem. Phys. Lett. 2008, 454, 350−354. (105) Zaytseva, Yu.A.; Panchenko, V. N.; Simonov, M. N.; Shutilov,
+ (72) Ignatchenko, A. V. J. Phys. Chem. C 2011, 115, 16012−16018. A. A.; Zenkovets, G. A.; Renz, M.; Simakova, I. L.; Parmon, V. N.
+ (73) Panchenko, V. N.; Zaytseva, Yu.A.; Simonov, M. N.; Simakova, Topics Catal. 2013, 56, 846−855.
+I. L.; Paukshtis, E. A. J. Mol. Catal. A 2014, 388−389, 133−140. (106) Di Valentin, C.; Pacchioni, G.; Selloni, A. J. Phys. Chem. C
+ (74) Leger, J. M.; Tomaszewski, P. E.; Atouf, A.; Pereira, A. S. Phys. 2009, 113, 20543−20552.
+Rev. B 1993, 47, 14075. (107) Gionco, C.; Paganini, M. C.; Giamello, E.; Burgess, R.; Di
+ (75) Kisi, E. H.; Howard, C. J. Key Eng. Mater. 1998, 1, 153−154. Valentin, C.; Pacchioni, G. Chem. Mater. 2013, 25, 2243−2253.
+ (76) Dash, L. K.; Vast, N.; Baranek, P.; Cheynet, M.-C.; Reining, L. (108) Di Valentin, C.; Rosa, M.; Pacchioni, G. J. Am. Chem. Soc.
+Phys. Rev. B 2004, 70, 245116. 2012, 134, 14086−14098.
+ (77) Shukla, S.; Seal, S. Int. Mater. Rev. 2005, 50, 45−64. (109) Giordano, L.; Pacchioni, G. Acc. Chem. Res. 2011, 44, 1244−
+ (78) Dwivedi, A.; Cormack, A. N. Philos. Mag. 1990, 61, 1−22. 1252.
+
+ 2887 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888
+ACS Catalysis Review
+
+ (110) Zhang, S. T.; Li, C.-M.; Yan, H.; Wei, M.; Evans, D. G.;
+Duan, X. J. Phys. Chem. C 2014, 118, 3514−3522.
+ (111) McFarland, E. W.; Metiu, H. Chem. Rev. 2013, 113, 4391−
+4427.
+ (112) Shao, X.; Prada, S.; Giordano, L.; Pacchioni, G.; Nilius, N.;
+Freund, H.-J. Angew. Chem., Int. Ed. 2011, 50, 11525−11527.
+
+ 2888 dx.doi.org/10.1021/cs500791w | ACS Catal. 2014, 4, 2874−2888

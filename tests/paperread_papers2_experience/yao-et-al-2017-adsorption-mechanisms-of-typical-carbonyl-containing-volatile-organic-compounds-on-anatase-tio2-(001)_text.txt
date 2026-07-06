@@ -1,0 +1,427 @@
+Article
+
+ pubs.acs.org/JPCC
+
+ Adsorption Mechanisms of Typical Carbonyl-Containing Volatile
+ Organic Compounds on Anatase TiO2 (001) Surface: A DFT
+ Investigation
+ Meijing Yao, Yuemeng Ji, Honghong Wang, Zhimin Ao, Guiying Li, and Taicheng An*
+ Guangzhou Key Laboratory of Environmental Catalysis and Pollution Control, School of Environmental Science and Engineering,
+ Institute of Environmental Health and Pollution Control, Guangdong University of Technology, Guangzhou 510006, China
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: The carbonyl-containing compounds (CCs) are typical volatile organic
+ compounds (VOCs) and ubiquitously present in the environment. Therefore, the adsorption
+ structures and properties of typical CCs on the anatase TiO2 (001) surface were investigated
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 03:56:04 (UTC).
+
+ systematically with density functional theory (DFT) to understand their further catalytic
+ degradation mechanisms. The adsorption mechanisms show that three selected typical CCs,
+ acetaldehyde, acetone, and methyl acetate, can easily be trapped on the anatase TiO2 (001)
+ surface via the interaction between the carbonyl group with Ti5c sites of catalyst surface.
+ Especially for acetaldehyde with the bare carbonyl group and the strongest adsorption energy, it
+ is the most stable on the surface, because the bare carbonyl group can interact with not only the
+ Ti5c atom, but also the O2c atom of the surface. The substituent eﬀect of diﬀerent CCs has less
+ impact on its adsorption models in this studied system and the bare carbonyl group is the key
+ functional group within studied CCs. The Ti5c atoms of anatase TiO2 (001) surface are active
+ sites to trap CCs. Our theoretical results are expected to provide insight into the adsorption
+ mechanisms of these carbonyl-containing VOCs on TiO2 catalyst and also to help understand the further catalytic degradation
+ mechanisms of air pollutants at the molecular level.
+
+ 1. INTRODUCTION studies showed that low molecule weight gaseous CCs such as
+ The carbonyl-containing compounds (CCs) are major formaldehyde, acetaldehyde, propionaldehyde, and acetone can
+ component of the volatile organic compounds (VOCs), also be degraded eﬃciently by TiO2/SiO2 photocatalyst.18
+ which have rich natural and anthropogenic sources. CCs can Although there are a number of reports on the photocatalytic
+ be directly emitted into the atmosphere from vegetation and degradation of CCs, the adsorption and degradation mecha-
+ secondary production of other VOCs.1,2 Therefore, they are nisms are still not suﬃcient. Nevertheless, the adsorption and
+ ubiquitously present in the urban atmosphere.2−5 Meanwhile, desorption models of atoms or molecules on the catalyst
+ they are also closely related to the photochemical air pollution surface are an initial and prerequisite step for various catalytic
+ due to an important role in the formation of photochemical reactions, and studying the adsorption mechanisms of the
+ smog and secondary organic aerosol (SOA).4,6,7 Furthermore, diﬀerent CCs on the catalyst surface can help us to better
+ CCs, particularly with low molecular weight such as form- understand the further photocatalytic mechanisms.
+ aldehyde and acetaldehyde, are toxic and carcinogenic, which In this study, therefore, the adsorption mechanisms of three
+ can irritate the eyes, skin, and nasopharyngeal membranes.7−9 typical CCs on the anatase TiO2 (001) surface are investigated
+ Therefore, the removal of CCs from the atmosphere has been systematically using density functional theory (DFT) calcu-
+ receiving growing scientiﬁc attention due to their profound lations. Anatase is the common natural TiO2 polymorphs, and
+ impacts on air quality and human health. the (001) surface has more unsaturated coordinated Ti and O
+ At present, photocatalytic technology is considered as a atoms than the (101) and (100) surfaces. Some previous
+ green cleaning method with excellent puriﬁcation capability. It studies have proven that it has higher catalytic activity than
+ has received enormous attention for the pollution control of other surfaces due to the eﬀect of surface dangling
+ VOCs in air.10,11 For example, TiO2 used for the photocatalytic bonds.13,19−22 Acetaldehyde, acetone, and methyl acetate are
+ air puriﬁcation is inexpensive and can completely oxidize the typical CCs, and they have same carbonyl functional groups
+ organic pollutants into CO2 and H2O.12,13 Previous researches and can ubiquitously present in urban atmosphere. For
+ reported that the varied forms of TiO2 exhibit diﬀerent example, acetaldehyde is a key component of photochemically
+ photocatalytic activity on the degradation of CCs.14−18 For generated air pollution with a large concentration in the
+ instance, the TiO2 ﬁlm shows much higher photoactivity than
+ Degussa P-25 TiO2 powder for acetaldehyde degradation.16 Received: March 29, 2017
+ Sano et al. utilized Pt loading TiO2 to modify the catalyst to Revised: May 2, 2017
+ oxidate acetaldehyde into CO2 eﬀectively.17 Our previous Published: May 3, 2017
+
+ © 2017 American Chemical Society 13717 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722
+The Journal of Physical Chemistry C Article
+
+troposphere; photolysis of acetone in the troposphere is a ΔEads = (Emol + Esurf ) − Emol/surf (1)
+major source of hydrogen oxide radicals with important
+implications for global tropospheric chemistry; methyl acetate where Emol/surf, Esurf, and Emol are the calculated individual
+is one of typical esters, with profound impacts on air quality energies of the adsorbed species on the surface, a clean surface,
+and human health.7−9 Hence, the adsorption conﬁgurations and a gas-phase molecule, respectively. From the above
+and characteristics of three investigated CCs on anatase TiO2 equation, a positive ΔEads indicates an exothermal process;
+(001) surface is investigated using DFT calculations in this otherwise it indicates an endothermic process which suggests
+work. Accurate electronic calculation including local density of an unstable adsorption structure. The LDOS and CDD were
+states (LDOS) and charge density diﬀerence (CDD) at anatase also calculated to investigate the charge distribution and the
+TiO2 (001) surface is fundamental to understand their local bonding situation between the gas-phase molecules and the
+physical and chemical properties, and in particular, the catalyst surface.
+condition of surface states play a crucial role in the adsorption
+and catalytic performance. Therefore, the LDOS and CDD are 3. RESULTS AND DISCUSSION
+further performed to identify the adsorption properties and 3.1. Anatase TiO2 (001) Surface. The structure of anatase
+mechanisms. Furthermore, acetaldehyde has the simplest TiO2 (001) surface is optimized and presented in Figure 1. It is
+carbonyl group, an aldehyde group, which is not aﬀected by
+other groups, and the carbonyl group in this case is called the
+bare group in this study. For acetone and methyl acetate, the
+carbonyl groups are surrounded by other groups methyl and
+methoxyl groups. Hence, the substituent group eﬀect is also
+considered to understand the nature of the adsorption
+mechanisms of CCs on anatase TiO2 (001) catalyst surface.
+The current results can provide a theoretical basis for the
+photocatalytic degradation of organic pollutants in air.
+
+2. COMPUTATIONAL METHODS
+The calculations were carried out at the DFT plane-wave level
+utilizing the Vienna ab initio simulation package (VASP).23,24 Figure 1. Optimized structures of the (a) side view and (b) top view
+For the treatment of the exchange and correlation, the gradient- of anatase TiO2 (001) surface. Ti and O atoms are labeled as shallow
+ gray and red spheres, respectively. The bond length is Å and the angle
+corrected Perdew−Burke−Ernzerhof (PBE) functional of the is °.
+generalized gradient approximation (GGA) was used.25 Valence
+electrons included the Ti 3s/3p/3d, O 2s/2p, C 2s/2p, and H
+1s shells, and the one-electron wave function was expanded corrugated with coordinated and uncoordinated O atoms as
+using a plane-wave basis set with an energy cutoﬀ of 400 eV. well as uncoordinated Ti atoms: 3-fold coordinated O atom
+Ion−electron interactions were described by the projector (denoted as O3c, the same hereinafter), 2-fold coordinated
+augmented wave (PAW) method.26,27 The calculated bulk bridge site O atom (O2c), and 5-fold coordinated Ti atom
+lattice parameters of anatase TiO2 are a = 3.776 Å, c = 9.486 Å, (Ti5c), respectively. The structures in Figure 1 show that the
+and c/a = 2.512, with a k-point grid of (3 × 2 × 1), which are current results agree well with the published computational
+consistent with the previously reported theoretical data (a = values (1.93 Å of Ti5c−O3c and 1.96 Å of Ti5c−O2c).30 This
+3.776 Å, c = 9.486 Å, c/a = 2.512)13 and experimental results (a indicates that the optimized anatase TiO2 (001) surface
+= 3.785 Å, c = 9.514 Å, c/a = 2.514).28 structure at the current method is reliable. One O2c atom
+ To balance the calculated accuracy and eﬃciency, the (2 × 3) bonds with two adjacent Ti5c atoms to form the Ti5c−O2c−Ti5c
+supercell of anatase TiO2 (001) surface is selected, because it chain along the [010] direction (Figure 1). An obvious surface
+provide an enough big surface to simulate all the adsorption tension is found due to the big bond angle of the Ti5c−O2c−
+patterns of acetaldehyde, acetone, and methyl acetate on Ti5c of 148.7°. The distance between Ti5c and O2c atoms is
+anatase TiO2 (001) surface. In anatase TiO2 (001) surface, the 1.961 Å, which is approximately 0.3 Å longer than the Ti5c−O3c
+periodic slab model are composed of four O−Ti−O layers with bond, implying that the site in Ti5c−O2c bond should more
+(2 × 3) supercell comprising 24 Ti atoms and 48 O atoms on easily to be broken. Thus, O2c and Ti5c atoms are expected to
+the basis of the optimized lattice parameters. All slabs were be the active sites during the adsorption process rather than O3c
+separated by a vacuum spacing of approximately 17 Å, which atoms. According to the above optimized surface structures, all
+guaranteed no interactions between the slabs. The Brillouin possible adsorption mechanisms of three investigated CCs on
+zones were sampled with the chosen (3 × 2 × 1) k-points for anatase TiO2 (001) surface are considered, and the results are
+surface calculations to balance the accuracy and the computing illustrated in Figures 2 and S1−S3. The corresponding
+time. A unit cell of 3.776 × 3.776 × 9.486 Å3 was used for the adsorption energies are listed in Tables 1 and S1−S3.
+calculations on the isolated molecule. The convergence of total 3.2. Adsorption Mechanisms. 3.2.1. Acetaldehyde
+energy during electronic self-consistent iteration process was (ACH). According to the diﬀerent adsorption sites, there are
+considered to be achieved until two iterated steps with energy three types of adsorption modes: OCO−Ti5c mode, O atom in
+diﬀerence less than 1.0 × 10−5 eV. In these slab models, the carbonyl group of acetaldehyde (OCO) adsorbed on surface
+atoms in the bottom two layers of the slab were kept frozen at
+ Ti5C atom; HCO−O2c and HCH3−O2c modes, H atom of
+the optimized bulk positions, while the remaining layers and
+adsorbates were fully relaxed during the calculations. For the carbonyl and methyl group of acetaldehyde (HCO and HCH3)
+sake of discussion, the adsorption energy ΔEads was calculated adsorbed on surface O2C atom. As Figure S1 shows, the O−H
+according to the following equation:29 distance is 2.278 Å in HCO−O2c mode, which is approximately
+ 13718 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722
+The Journal of Physical Chemistry C Article
+
+ slightly stable than HCH3−O2c mode. For OCO−Ti5c mode,
+ four adsorption patterns are found, denoted as Type A_ACH,
+ Type B_ACH, Type C_ACH, and Type D_ACH, respectively.
+ The lowest adsorption energy among the four kinds of OCO−
+ Ti5c adsorption modes is 0.81 eV (Table 1), which is still two
+ times higher than HCO−O2c mode. This indicates that
+ OCO−Ti5c mode is the most stable among three types of
+ adsorption modes, and acetaldehyde preferred to be adsorbed
+ on Ti5c site of anatase TiO2 (001) surface rather than O2c site.
+ The interactions in HCO−O2c and HCH3−O2c modes are not
+ stronger than those in OCO−Ti5c modes. Therefore, the
+ following discussion will focus on the four kinds of OCO−Ti5c
+ modes.
+ In the Type A_ACH, O2c atom is completely pulled out from
+ the surface to form the new CCO−O2c bond with the length of
+ 1.408 Å (Figure 2a). This behavior also makes the Ti5c−O2c
+ bond broken, and the distance becomes to 3.647 Å. The
+ OCO−Ti5c bond is calculated to be 1.830 Å, which is almost
+ the same with the old Ti5c−O2c bond (1.807 Å). The double
+ bond length of CO in acetaldehyde is elongated by 15% and
+ becomes to 1.401 Å (1.219 Å in the gas phase). The case in the
+ Type B_ACH (Figure 2a) is a forming new bond process
+ between OCO atom and adjacent Ti5c atom, and the distance
+ of new bond is 2.194 Å. And there is not a big deformation in
+ acetaldehyde. For example, the CO bond length of
+ acetaldehyde slightly elongates to 1.231 Å, only 1% elongation
+ compared to the gas-phase. As Figure 2a shows, acetaldehyde in
+ the Type C_ACH and the Type D_ACH is not obvious
+ distorted as it is adsorbed on anatase TiO2 (001) surface.
+ However, the lattice structures of catalyst surface in three
+ conﬁgurations are all somewhat distorted. For example, in the
+ Type C_ACH, the surface O2c−Ti5c bond breaks and extends
+ from 1.961 to 3.426 Å, and the new forming bonds are
+ calculated to be 2.046 Å for OCO−Ti5c and 2.178 Å for
+ HCO−O2c, respectively. As discussed above, among the four
+ OCO−Ti5c adsorption modes, only the Type A_ACH has an
+ obvious saddle-like structure due to the large distortion in
+ adsorption sites. The previous studies have also reported similar
+ results, such as in the case of formaldehyde and formic acid on
+ anatase TiO2 (001) surface.21,31 The adsorption energies listed
+ in Table 1 show that the Type A_ACH has the largest
+ adsorption energy, which is approximately 2.5 times larger than
+ other conﬁgurations. It implies that the saddle-like structure
+Figure 2. Optimized geometries of (a) acetaldehyde, (b) acetone and should make the adsorption of acetaldehyde on the catalyst
+(c) methyl acetate on anatase TiO2 (001) surface. C and H atoms of surface stable. Previous experimental studies have proven that
+CCs are labeled as dark gray and blue spheres, respectively. The the most stable adsorption conﬁguration of other CCs shows
+number in parentheses is the original bond length (unit: Å). the similar saddle-like structure just like the Type A_ACH with
+ the highest adsorption energy. The Type A_ACH has an
+Table 1. Calculated Adsorption Energies of CCs on Anatase obvious saddle-like structure due to the large distortion in
+TiO2 (001) Surface (unit: eV) adsorption sites, which is in agreement with the experimental
+ modes Eads (acetaldehyde) Eads (acetone) Eads (methyl acetate)
+ observation. For example, the previous studies have also
+ reported similar results that the most stable adsorption
+ type A 2.30 0.81 0.78
+ conﬁguration characterizes the saddle-like structure, such as
+ type B 0.94 0.86 0.82
+ in the case of formaldehyde and formic acid on anatase TiO2
+ type C 0.81 0.71
+ (001) surface.21,31 The formation of the Type A_ACH is large
+ type D 0.94
+ exothermic process, and some new bonds such as OCO−Ti5c,
+ CCO−O2c, and HCO−O2c are formed, indicating that anatase
+0.2 Å shorter than that in HCH3−O2c mode. Thus, HCO−O2c TiO2 (001) surface can eﬀectively adsorb and capture
+mode is expected to be higher adsorption energy than the acetaldehyde on the surfaces.
+HCH3−O2c mode. The adsorption energies listed in Table S1 3.2.2. Acetone (ACE). For the case of acetone, there are also
+show that the ΔEads of the former is calculated to be 0.44 eV, three types of adsorption modes observed: OCO−Ti5c,
+which is 0.1 eV larger than the latter. Thus, HCO−O2c mode is OCO−O2c and HCH3−O2c. For the OCO−O2c and HCH3−
+ 13719 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722
+The Journal of Physical Chemistry C Article
+
+O2c modes. No obvious structural deformation are observed also little diﬀerent. The Table 1 shows the ΔEads being 0.78 eV
+between acetone and anatase TiO2 (001) surface. The acetone for the Type A_MAC mode and 0.82 eV for the Type B_MAC
+is vertical to the surface and forms bonds via OCO or HCH3 mode.
+atom with O2C atom. As shown in Figure S2, the length of As discussed in the mechanism above, three investigated CCs
+OCO−O2c is 2.788 Å, which is 0.3 Å longer than that of are readily trapped by the Ti5c site of anatase (001) surface,
+HCH3−O2c, implying the slight interaction of OCO with O2c indicating that Ti5c atom is the activity site on the TiO2 (001)
+ surface, in agreement with our previous study that VOCs are
+atoms. This is also agree with the energies listed in Table S2, readily trapped by Ti atom in TiO2 catalyst.29 In addition, the
+where the ΔEads = 0.27 eV of OCO−O2c mode is lower by 0.08 three CCs are all easily adsorbed on the anatase TiO2 (001)
+eV than that of HCH3−O2c mode. For the three kinds of OCO− surface via CO group interaction with Ti5c atoms. Compared
+Ti5c modes, the ΔEads of them are at least twice than those of to the results of three investigated CCs, the bare carbonyl
+OCO−O2c and HCH3−O2c modes (Table 1). Thus, similar group is the key functional group. If H atom in aldehydic group
+results can be drawn from the case of acetone, that is, acetone is is substituted by other group, the adsorption energy rapidly
+readily trapped by the catalyst surface via CO group declines. However, the size of substituent group only aﬀects the
+interaction with Ti5c site. Therefore, we will focus on the number of adsorption mode but do not the adsorption energy.
+most possible adsorption mode of OCO−Ti5c in this section. The CCs with the bare CO group will be more active to be
+ In three OCO−Ti5c modes, acetone adsorbs on anatase adsorbed on the anatase (001) surface, and their adsorption
+TiO2 (001) surface from diﬀerent directions. As shown in modes are more distortion.
+Figure 2b, there is still not an obvious distortion and also no 3.3. Electronic Structures of Adsorption Conﬁgura-
+formation of the saddle-like structure for the three OCO−Ti5c tions. To further understand adsorption properties and
+modes. The largest change is found in the Type A_ACE mechanisms, the LDOS and CDD induced by adsorption are
+conﬁguration, whose O2c atom is pulled out from the surface analyzed. Here, we considered the energetically most favorable
+and the distance of Ti5c−O2c elongate from 1.961 to 3.429 Å. adsorption mechanisms for three investigated CCs. For the
+However, for other two OCO−Ti5c modes, the Type B_ACE LDOS, the overlap peaks of adjacent atoms can directly show
+and Type C_ACE, the length of two Ti5c−O2c bonds are also the interactions between the adjacent atoms. The area of
+extended (2.455 and 2.313 Å), which are 25% and 18% longer overlap peaks between the LDOS of two atoms represents the
+than the initial distance, respectively. As discussed above, the strength of the interaction. As discussed above, this section
+adsorption energies of three OCO−Ti5c modes are expected to mainly focused on the interaction of Ti5c and O2c atoms of
+be little diﬀerence. Table 1 shows that the computed anatase TiO2 (001) surface with CCO and OCO atoms of
+adsorption energies of three modes are 0.81, 0.86, and 0.71 three investigated CCs. The LDOS shown in Figure 3 is taken
+eV, respectively, with small adsorption energies diﬀerence.
+Compared with the structure of acetaldehyde, the carbonyl
+group in acetone is in the middle of two terminal methyl group,
+and thereby there is not the bare CO group. Hence, the bare
+CO group play an important role in adsorption mechanism
+of CCs.
+ 3.2.3. Methyl Acetate (MAC). Due to the ester group in
+MAC, there are four possible types of adsorption modes:
+OCO−Ti5c, Oester−Ti5c, Oester−O2c, and HCH3−O2c. Similar
+with the cases of acetaldehyde and acetone, it is diﬃcult for
+methyl acetate interaction with O2c site to form Oester−O2c and
+HCH3−O2c modes, with the ΔEads of 0.34 and 0.16 eV (Figure
+S3 and Table S3). However, the binding energy of Oester atom Figure 3. Local density of states (LDOS) for (a) clean anatase TiO2
+with Ti5c atom (Oester−Ti5c mode) is 0.32 eV, which is even (001) surface, (b) gas-phase acetaldehyde, (c) gas-phase acetone, and
+smaller than that of Oester atom with O2c atom (Oester−O2c (d) gas-phase methyl acetate. The Fermi energies are set as 0 eV.
+mode). This further conﬁrms that CCs should be trapped by
+the TiO2 surface predominantly via CO group interaction for the top layer interaction surface O2c and Ti5c atoms as well
+with Ti5c site rather than Oester atom. For the OCO−Ti5c as C and O atoms of CO group in CCs. The LDOS of three
+mode, there are only two possible adsorption modes for methyl investigated CCs are also listed in Figure 3b−d as background.
+acetate, labeled as Type A_MAC and Type B_MAC. It can be The CCs gas-phase peaks are all very sharp, typical for a
+found that for the three investigated CCs, the number of kinds molecule. From total DOS of (001) surface and LDOS of
+for OCO−Ti5c mode decreases as the size of substituent group surface interaction O2c species of the slab, the high-energy edge
+numbers increases, from four kinds of acetaldehyde to two of valence band is mainly constituted by states from O2c atoms
+kinds of methyl acetate. on the surfaces and the conduction band is mainly occupied by
+ As shown in Figure 2c, the CO lengths are 1.243 Å for the Ti5c atoms. It indicates that the reactive activity of the catalyst
+Type A_MAC and 1.232 Å for the Type B_MAC, respectively, surface is actually formed mainly by the surface O2c and Ti5c
+which are somewhat longer than the corresponding gas-phase atoms. It is consistent with the analysis from the structure of
+structure (1.220 Å). The Ti5c−O2c distances stretch to 2.930 Å optimized catalysts discussion where the surface O2c and Ti5c
+for the Type A_MAC and 2.456 Å for the Type B_MAC, sites are most active and have the strongest adsorption energy.
+implying that the little change in structure of methyl acetate The LDOS for the adsorption modes of acetaldehyde,
+and the catalyst surface in two OCO−Ti5c adsorption modes. acetone, and methyl acetate are shown in Figures 4 and S4.
+Therefore, the adsorption energies of two adsorption modes are Compared with Figure 3a, the adsorption of acetaldehyde on
+ 13720 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722
+The Journal of Physical Chemistry C Article
+
+ Ti5c atoms, which is in agreement with the results of LDOS.
+ From Figure 5a, acetaldehyde mainly bonds with the surface
+ Ti5c and O2c atoms by covalent interactions, and the
+ interactions between OCO with surface Ti5c atom as well as
+ CCO with surface O2c atoms are relatively strong, indicating
+ the formation of OCO−Ti5c and CCO−O2c bonds. The
+ enhancement of the charge density between OCO and surface
+ Ti5c atoms indicates their interaction strengthen. Vice versa, the
+ interaction between surface O2c with surface Ti5c becomes
+ weak. As a result, the surface O2c atom prefer to form a bond
+ with CCO atom. This is consistent with the results of the
+ optimized adsorption mechanism of the Type A_ACH. Similar
+Figure 4. Local density of states (LDOS) of Type A_ACH: (a) results are drawn from the CDD data of the Type B_ACE and
+adjacent Ti5c atom of anatase TiO2 (001) surface; (b) adjacent O2c Type B_MAC shown in Figure 5b,c. The charge density
+atom of anatase TiO2 (001) surface; (c) CCO atom of acetaldehyde; between OCO with surface Ti5c atoms increases, indicating
+(d) OCO atom of acetaldehyde.
+ that their interaction is strong. In summary, the LDOS and
+ CDD calculations also show that CCs prefer to adsorb on
+anatase TiO2 (001) surface induces the state perturbation of
+ anatase TiO2 (001) surface through the interaction between
+O2c, Ti5c, OCO, and CCO, implying that there is the
+ Ti5c atoms and CO groups.
+formation of the new bonds or the deformation of the original
+bonds. For example, as shown in Figure 4b,c of the O2c and
+ 4. CONCLUSION
+CCO states and Figure 4a,d of the Ti5c and OCO states, the
+strong overlap peak appears in the valence band of −5.5 − −4.8 In this work, the adsorption mechanisms of three typical
+eV, and the weak overlap peak lies in the conduction band of carbonyl-containing VOCs, acetaldehyde, acetone, and methyl
+2−4 eV. It indicates that the strong interaction between CCO acetate, on anatase TiO2 (001) catalyst surface have been
+atom with surface O2c atom and the weak interaction between studied using the ﬁrst-principles calculations. All possible
+OCO atom and surface Ti5c atom. In addition, the states of adsorption structures of acetaldehyde, acetone, and methyl
+OCO is broadened (−5.4 to 0 eV); and the peaks of surface acetate are considered and calculated. From these adsorption
+Ti5c in the conduction band part becomes lower (from −4 to structures, it is can be found that anatase TiO2 (001) surface
+−5.4 eV), indicating a certain degree of electron transfer readily traps CCs mainly via the interaction between carbonyl
+between the two atoms. The LDOS of O2c and OCO atoms group of CCs with Ti5c sites of TiO2 catalyst surface. There are
+are almost the same upon the adsorption, indicating that the four OCO−Ti5c adsorption modes for acetaldehyde, three for
+newly formed Ti5c−OCO bond is identical to the old acetone, and two for methyl acetate, respectively. The
+deformative Ti5c−O2c bond. The current results of LDOS adsorption energy rapidly decreases when the H atom of
+agree with the above discussion in the Adsorption Mechanisms aldehyde group is substituted by other groups. However, the
+section. According to the geometric structures of the Type sizes of substituent group have less impact on the adsorption
+B_ACE of acetone and the Type B_ MAC of methyl acetate energy. The bare carbonyl group is more easily adsorbed on the
+(Figure S4a−d), the newly formed hybrid peaks in the range of anatase TiO2 (001) surface. For example, acetaldehyde with the
+−6 to 0 eV indicates that the interaction between two CCs with bare CO group is calculated to be easily adsorbed on anatase
+the catalyst surface is a little strong, consistent with the newly TiO2 (001) surface via the interaction of CCO with O2c, and
+formed OCO−Ti5c bond of two structures. OCO with Ti5c to form a saddle-like adsorption structure. The
+ The CDD plots shown in Figure 5 indicate the charge structure of the Type A_ACH has the largest adsorption
+redistribution upon adsorption. The CDD is deﬁned as the energy, implying that it is the most stable mode. For acetone
+ and methyl acetate, only OCO−Ti5c bonds are formed. The
+ results from LDOS and CDD further conﬁrm the results of
+ adsorption structures and mechanisms from the view of
+ electronic aspects. All these results indicate that the anatase
+ TiO2 (001) surface can eﬀectively trap CCs and is expected to
+ have a good catalytic activity to CCs.
+
+ ■
+ *
+ ASSOCIATED CONTENT
+ S Supporting Information
+ The Supporting Information is available free of charge on the
+Figure 5. Charge density diﬀerence (CDD) of (a) Type A_ACH, (b) ACS Publications website at DOI: 10.1021/acs.jpcc.7b02964.
+the Type B_ACE, and (c) Type B_MAC.
+ Details of simulations results (PDF).
+
+charge density diﬀerence between the clean surface, gas-phase
+CCs, and the surface with adsorbed CCs. Thus, the eﬀect the
+adsorbed CCs′ interaction with anatase TiO2 (001) surface on
+ ■ AUTHOR INFORMATION
+ Corresponding Author
+charge distribution can be seen from CDD plots analysis. The *Tel.: 86-20-23883536. Fax: 86-20-23883536. E-mail: antc99@
+yellow part means the area gaining electrons, and the blue one gdut.edu.cn.
+represents the area losing electrons. The charge transfer mainly ORCID
+occurs between CCO with surface O2c atoms and OCO with Taicheng An: 0000-0001-6918-8070
+ 13721 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722
+The Journal of Physical Chemistry C Article
+
+Notes (15) Yang, H. G.; Sun, C. H.; Qiao, S. Z.; Zou, J.; Liu, G.; Smith, S.
+The authors declare no competing ﬁnancial interest. C.; Cheng, H. M.; Lu, G. Q. Anatase TiO2 Single Crystals with a Large
+
+■
+ Percentage of Reactive Facets. Nature 2008, 453, 638−41.
+ (16) Sopyan, I.; Watanabe, M.; Murasawa, S.; Hashimoto, K.;
+ ACKNOWLEDGMENTS Fujishima, A. An Efficient TiO2 Thin-Film Photocatalyst Photo-
+This work was ﬁnancially supported by the National Natural catalytic Properties in Gas-Phase Acetaldehyde. J. Photochem. Photo-
+ biol., A 1996, 98, 79−86.
+Science Foundation of China (41425015, 41373102, and (17) Sano, T.; Negishi, N.; Takeuchi, K.; Matsuzawa, S. Degradation
+41675122), Team Project from the Natural Science Foundation of Toluene and Acetaldehyde with Pt-Loaded TiO2 Catalyst and
+of Guangdong Province, China (S2012030006604), and the Parabolic Trough Concentrator. Sol. Energy 2004, 77, 543−552.
+Special Program for Applied Research on Super Computation (18) Zhang, M.; An, T.; Fu, J.; Sheng, G.; Wang, X.; Hu, X.; Ding, X.
+of the NSFC-Guangdong Joint Fund (the second phase), and Photocatalytic Degradation of Mixed Gaseous Carbonyl Compounds
+the National Supercomputing Centre in Guangzhou (NSCC- at Low Level on Adsorptive TiO2/SiO2 Photocatalyst Using a
+GZ), and Science and Technology Program of Guangzhou city Fluidized Bed Reactor. Chemosphere 2006, 64, 423−31.
+(201707010188). (19) Lei, Y.; Niu, F.; Mei, H.; Liu, Q.; Pan, C.; Xiao, W. Adsorption
+
+■
+ and Diffusion Studies of an O Adatom on Anatase Surfaces with First
+ Principles Calculations. Comput. Mater. Sci. 2012, 63, 58−65.
+ REFERENCES (20) Erdogan, R.; Ozbek, O.; Onal, I. A Periodic Dft Study of Water
+ (1) Corrêa, S. M.; Arbilla, G.; Martins, E. M.; Quitério, S. L.; de and Ammonia Adsorption on Anatase TiO2 (001) Slab. Surf. Sci. 2010,
+Souza Guimarães, C.; Gatti, L. V. Five Years of Formaldehyde and 604, 1029−1033.
+ (21) Liu, H.; Wang, X.; Pan, C.; Liew, K. M. First-Principles Study of
+Acetaldehyde Monitoring in the Rio De Janeiro Downtown Area −
+ Formaldehyde Adsorption on TiO2 Rutile (110) and Anatase (001)
+Brazil. Atmos. Environ. 2010, 44, 2302−2308.
+ Surfaces. J. Phys. Chem. C 2012, 116, 8044−8053.
+ (2) Guo, H.; Ling, Z. H.; Cheung, K.; Wang, D. W.; Simpson, I. J.;
+ (22) Sun, T.; Wang, Y.; Zhang, H.; Liu, P.; Zhao, H. Adsorption and
+Blake, D. R. Acetone in the Atmosphere of Hong Kong: Abundance,
+ Oxidation of Oxalic Acid on Anatase TiO2 (001) Surface: A Density
+Sources and Photochemical Precursors. Atmos. Environ. 2013, 65, 80− Functional Theory Study. J. Colloid Interface Sci. 2015, 454, 180−6.
+88. (23) Kresse, G.; Furthmuller, J. Efficiency of Ab-Initio Total Energy
+ (3) Clairotte, M.; Adam, T. W.; Zardini, A. A.; Manfredi, U.; Martini, Calculations for Metals and Semiconductors Using a Plane-Wave Basis
+G.; Krasenbrink, A.; Vicet, A.; Tournié, E.; Astorga, C. Effects of Low Set. Comput. Mater. Sci. 1996, 6, 15−50.
+Temperature on the Cold Start Gaseous Emissions from Light Duty (24) Kresse, G.; Furthmuller, J. Efficient Iterative Schemes for Ab
+Vehicles Fuelled by Ethanol-Blended Gasoline. Appl. Energy 2013, 102, Initio Total-Energy Calculations Using a Plane-Wave Basis Set. Phys.
+44−54. Rev. B: Condens. Matter Mater. Phys. 1996, 54, 11169−11186.
+ (4) Suarez-Bertoa, R.; Zardini, A. A.; Platt, S. M.; Hellebust, S.; (25) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+Pieber, S. M.; El Haddad, I.; Temime-Roussel, B.; Baltensperger, U.; Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868.
+Marchand, N.; Prévôt, A. S. H.; Astorga, C. Primary Emissions and (26) Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the
+Secondary Organic Aerosol Formation from the Exhaust of a Flex-Fuel Projector Augmented-Wave Method. Phys. Rev. B: Condens. Matter
+(Ethanol) Vehicle. Atmos. Environ. 2015, 117, 200−211. Mater. Phys. 1999, 59, 1758−1774.
+ (5) Chen, X.; Feng, L.; Luo, H.; Cheng, H. Analyses on Influencing (27) Blöchl, P. E. Projector Augmented-Wave Method. Phys. Rev. B:
+Factors of Airborne VOCs Pollution in Taxi Cabins. Environ. Sci. Pollut. Condens. Matter Mater. Phys. 1994, 50, 17953−17979.
+Res. 2014, 21, 12868−82. (28) Cromer, D. T.; Herrington, K. The Structures of Anatase and
+ (6) Volkamer, R.; Jimenez, J. L.; San Martini, F.; Dzepina, K.; Zhang, Rutile. J. Am. Chem. Soc. 1955, 77, 4708−4709.
+Q.; Salcedo, D.; Molina, L. T.; Worsnop, D. R.; Molina, M. J. (29) Wang, H. H.; Ji, Y. M.; Chen, J. Y.; Li, G. Y.; An, T. C.
+Secondary Organic Aerosol Formation from Anthropogenic Air Theoretical Investigation on the Adsorption Configuration and •OH-
+Pollution: Rapid and Higher Than Expected. Geophys. Res. Lett. Initiated Photocatalytic Degradation Mechanism of Typical Atmos-
+2006, 33, L17811/1−L17811/4. pheric Vocs Styrene onto (TiO2)n Clusters. Sci. Rep. 2015, 5, 15059.
+ (7) Wang, Y.; Ren, X.; Ji, D.; Zhang, J.; Sun, J.; Wu, F. (30) Arrouvel, C.; Digne, M.; Breysse, M.; Toulhoat, H.; Raybaud, P.
+Characterization of Volatile Organic Compounds in the Urban Area Effects of Morphology on Surface Hydroxyl Concentration: A Dft
+of Beijing from 2000 to 2007. J. Environ. Sci. 2012, 24, 95−101. Comparison of Anatase−TiO2 and Γ-Alumina Catalytic Supports. J.
+ (8) Tong, L.; Liao, X.; Chen, J.; Xiao, H.; Xu, L.; Zhang, F.; Niu, Z.; Catal. 2004, 222, 152−166.
+Yu, J. Pollution Characteristics of Ambient Volatile Organic (31) Gong, X. Q.; Selloni, A.; Vittadini, A. Density Functional
+Compounds (VOCs) in the Southeast Coastal Cities of China. Theory Study of Formic Acid Adsorption on Anatase TiO2 (001)
+Environ. Sci. Pollut. Res. 2013, 20, 2603−15. Geometries, Energetics, and Effects of Coverage, Hydration, and
+ (9) Ho, K. F.; Lee, S. C.; Louie, P. K. K.; Zou, S. C. Seasonal Reconstruction. J. Phys. Chem. B 2006, 110, 2804−2811.
+Variation of Carbonyl Compound Concentrations in Urban Area of
+Hong Kong. Atmos. Environ. 2002, 36, 1259−1265.
+ (10) Henderson, M. A.; Lyubinetsky, I. Molecular-Level Insights into
+Photocatalysis from Scanning Probe Microscopy Studies on TiO2
+(110). Chem. Rev. 2013, 113, 4428−55.
+ (11) Thompson, T. L.; Yates, J. T. Surface Science Studies of the
+Photoactivation of TiO2-New Photochemical Processes. Chem. Rev.
+2006, 106, 4428−4453.
+ (12) Pang, C. L.; Lindsay, R.; Thornton, G. Structure of Clean and
+Adsorbate-Covered Single-Crystal Rutile TiO2 Surfaces. Chem. Rev.
+2013, 113, 3887−948.
+ (13) Tian, F. H.; Wang, X.; Zhao, W.; Zhao, L.; Chu, T.; Yu, S.
+Adsorption of 2-Propanol on Anatase TiO2 (101) and (001) Surfaces:
+A Density Functional Theory Study. Surf. Sci. 2013, 616, 76−84.
+ (14) Diebold, U. The Surface Science of Titanium Dioxide. Surf. Sci.
+Rep. 2003, 48, 53−229.
+
+ 13722 DOI: 10.1021/acs.jpcc.7b02964
+ J. Phys. Chem. C 2017, 121, 13717−13722

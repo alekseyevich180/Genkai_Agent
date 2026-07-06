@@ -1,0 +1,538 @@
+pubs.acs.org/acscatalysis Research Article
+
+ Insight into Selectivity Differences of Glycerol Electro-Oxidation on
+ Pt(111) and Ag(111)
+ Zhe Meng, David Tran, Johan Hjelm, Henrik H. Kristoffersen,* and Jan Rossmeisl
+ Cite This: ACS Catal. 2024, 14, 2455−2462 Read Online
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Electro-oxidation is a way to utilize glycerol, a byproduct of
+ biodiesel production, to produce fuels and feedstock chemicals for the
+ chemical industry. A significant challenge is to get products with high
+ selectivity, so it is desirable to understand the glycerol oxidation mechanisms
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 05:56:59 (UTC).
+
+ in further detail. Using density functional theory calculations, we investigated
+ possible glycerol oxidation intermediates on Pt(111) and Ag(111). We find
+ that the different adsorption preferences of the intermediates on Pt
+ (adsorption via carbon atoms) and Ag (adsorption via oxygen atoms) lead
+ to different preferred reaction pathways, resulting in different products. The
+ reaction pathways on both surfaces involve glyceraldehyde as a key
+ intermediate; however, upon further oxidation, Pt(111) preferentially
+ produces glyceric acid (CH2OH−CHOH−COOH), while on Ag(111) C−C bonds are broken, which leads to the production
+ of glycolaldehyde and formic acid (CH2OH−CHO and HCOOH). These predictions agree well with the experimental outcome of
+ the electro-oxidation of glycerol on Pt and Ag surfaces. Our study therefore provides useful insights for optimizing the selectivity of
+ glycerol oxidation and improving the utilization of glycerol.
+ KEYWORDS: glycerol, oxidation, DFT calculations, selectivity, platinum, silver, electrocatalysis
+
+ 1. INTRODUCTION products is to lower the glycerol concentration. This is shown
+ Glycerol is an abundant byproduct from biodiesel produc- by the two experiments from ref,9 where the first experiment is
+ tion,1−3 which can be converted to sustainable value-added conducted with 0.1 M glycerol and mostly yields glyceric acid,
+ chemicals and fuels via electro-oxidation.4−6 However, addi- and the second experiment is conducted with 1 M glycerol and
+ tional research is required to understand the underlying mostly yields glyceraldehyde.
+ Table 1 further shows that glycerol electro-oxidation on Au
+ reaction mechanisms and optimize the reaction pathways on
+ different electrocatalysts toward the desired products. can give some of the same C3 products as on Pt, i.e., lactic acid
+ In an attempt to understand the underlying reaction and glyceric acid. However, Au can also break C−C bonds,
+ mechanisms, we start by recapping experimental glycerol resulting in noteworthy amounts of C2 (glycolic acid) and C1
+ electro-oxidation product selectivities on different metal (formic acid) products. The simultaneous formation of C3,
+ C2, and C1 reduces the overall glycerol electro-oxidation
+ surfaces and reaction conditions found in the literature
+ selectivity on Au. The last row in Table 1 shows the result of a
+ (Table 1). We present an extended literature data collection
+ glycerol electro-oxidation experiment on Ag. The rate of
+ in Table S2 in the Supporting Information, which contains
+ glycerol electro-oxidation on Ag is quite low, but importantly,
+ experimental data from ref.7−20 Platinum is the most studied
+ the experiment reports very little C3 products and, instead,
+ electrocatalyst for glycerol oxidation, so we can use the Pt data
+ observe C2 (glycolic acid) and C1 (formic acid) products.16
+ in Table 1 to establish a few overall principles. First, increasing
+ This indicates that Ag has a strong preference for C−C bond
+ the electrode potential (vs the reversible hydrogen electrode
+ breaking.22
+ (RHE)) shifts the glycerol oxidation selectivity from weakly to
+ We believe that the C−C bond-breaking preference of Ag
+ strongly oxidized products. More specifically, the dominant
+ compared to Pt is very interesting, especially if it can be
+ products shift from glyceraldehyde (at less than 0.9 V vs RHE)
+ to glyceric acid and tartronic acid (between 0.9 and 1.2 V vs
+ RHE), and finally to formic acid (at 1.44 V vs RHE).7,9,11−13 Received: November 16, 2023
+ The formation of formic acid means that Pt is able to break Revised: January 22, 2024
+ C−C bonds but only under very strong oxidizing conditions.11 Accepted: January 22, 2024
+ Second, when glyceraldehyde is produced under alkaline Published: February 2, 2024
+ conditions, it quickly isomerizes in solution and turns into
+ lactic acid.13,21 Third, another way to favor more oxidized
+
+ © 2024 American Chemical Society https://doi.org/10.1021/acscatal.3c05551
+ 2455 ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Table 1. Experimental Product Selectivities of Electro-Oxidation of Glycerol on Different Metal Catalysts and Reaction
+Conditionsa
+
+a
+ GLAD, glyceraldehyde; LA, lactic acid; GLA, glyceric acid; TA, tartronic acid; GLCA, glycolic acid; FA, formic acid. For better overview, we only
+include product selectivities higher than 10%.
+
+explained by simple surface-specific properties that differ for
+Ag and Pt. In this regard, the following theoretical studies are
+of special relevance. First, the observed Pt product selectivities
+(Table 1) have been rationalized by density functional theory
+(DFT) calculations of glycerol oxidation intermediates on
+Pt(111).23 Second, a recent study found that glycerol adsorbs
+via either a carbon (C*) atom or an oxygen (O*) atom
+depending on the surface in question. Ag prefers glycerol
+adsorption via O*, while Pt prefers glycerol adsorption via C*
+atom.24 Finally, a related study found that the glycerol
+adsorption energy is a good descriptor for the subsequent
+reaction steps.25 Combining the insight from these studies, we
+hypothesize that the difference in the adsorption preference of
+glycerol (and subsequent intermediates) is responsible for the
+difference in glycerol electro-oxidation products. In this paper,
+we therefore investigate the stability of possible glycerol
+electro-oxidation reaction intermediates and products on
+Pt(111) and Ag(111) with DFT calculations. Based on our
+results and the current scientific understanding, we propose the
+main reaction pathways shown in Figure 1 for glycerol electro-
+oxidation on Pt(111) and Ag(111). The first reaction step is Figure 1. Proposed glycerol electro-oxidation pathways on Pt(111)
+glycerol adsorption via a C* atom on Pt(111) and an O* atom and Ag(111).
+on Ag(111). This and all other vertical reaction steps in Figure
+1 release H+ + e− and is therefore electrochemical in nature. agreement with the experimental behavior of Pt (Table 1). On
+The next step produces glyceraldehyde in both cases, even Ag(111), OH forms a bond with the aldehyde C atom, which
+though glycerol adsorbs differently on the two surfaces. As leads to the breaking of a C−C bond and formation of
+mentioned earlier, glyceraldehyde can undergo isomerization glycolaldehyde and formic acid.
+to lactic acid in alkaline solution (not electrochemical);13,21
+however, if glyceraldehyde readsorbs, it will preferably bind via 2. COMPUTATIONAL DETAILS
+the aldehyde C* atom on Pt(111) and via the middle hydroxyl We have used DFT to calculate energies of possible glycerol
+O* atom on Ag(111). The different adsorption configurations electro-oxidation intermediates and products. In our modeling,
+are crucial for how the next electro-oxidation step occurs, the intermediates are adsorbed on metal slabs with 4 × 4 (111)
+specifically the addition of OH. On Pt(111), the C* atom can surface cells and four atomic layer thicknesses. We fix the two
+concertedly break the bond to the surface while simultaneously bottom layers of the slabs to emulate bulk metal and include a
+forming a bond to OH. This produces glyceric acid in good 22 Å distance between metal slabs (periodic images) to avoid
+ 2456 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+interlayer interactions. The atomic structures are set up with reaction step with a free energy correction of ΔGcorr
+ eq 2 = +0.39
+the atomic simulation environment program.26 The DFT eV (details are included in the Supporting Information, Tables
+calculations are carried out with the GPAW program27,28 using S7 and S8). We adopt the same free energy corrections, even
+the revised Perdew−Burke−Ernzerhof exchange-correlation though we study glycerol oxidation instead of methanol
+functional,29 plane-wave basis sets with 400 eV energy cutoff, oxidation, and approximate the free energy differences of the
+and 4 × 4 × 1 Monkhorst−Pack k-point sampling. The atomic adsorbed intermediates ΔGintermediate by eq 5. The neq 1 and
+structures are relaxed to a maximum force of 0.10 eV/Å on meq 2 in eq 5 are the number of eqs 1 and 2 reaction steps
+each atom. Finally, we use the climbing-image nudged elastic needed to convert glycerol to the intermediate in question.
+band (NEB) method30 to obtain activation energies for the corr corr
+formation of glyceric acid and two competing intermediates in Gintermediate = Eintermediate + neq1 Geq1 + meq2 Geq2
+the fourth oxidation step on Pt(111). (5)
+ We consider two types of reactions in order to elucidate the The corrections use gas-phase H2O pressure of 0.0035 MPa,
+glycerol electro-oxidation pathways on Pt(111) and Ag(111). such that the free energy of gas-phase H2O is the same as the
+The first reaction type is dehydrogenation (eq 1), where one free energy of liquid H2O, since liquid H2O is the relevant
+hydrogen is removed from the adsorbate (C3HyOx) resulting in species in room temperature electrochemistry.36 We note that
+a more oxidized glycerol intermediate (C3Hy−1Ox) and the our calculations do not account for solvation of the glycerol
+transfer of H+(aq) to the electrolyte and e− to the circuit. molecule and subsequent reaction intermediates, nor do we
+ C3H y Ox C3Hy 1Ox + H+(aq) + e impose constant potential at the interface. Solvation effects can
+ (1)
+ be especially large, but unfortunately, they are also
+ The second reaction type is the incorporation of OH (eq 2) prohibitively computationally expensive to accurately account
+into the adsorbate, which also results in a more oxidized for.39
+glycerol intermediate (C3Hy+1Ox+1), as well as consumption of The fourth oxidation step incorporates OH into the glycerol
+one liquid H2O molecule and formation of H+(aq) + e−. oxidation intermediates via eq 2 on both Pt(111) and Ag(111).
+ This likely requires that both the OH and the intermediate are
+ C3HyOx + H 2O(l) C3Hy + 1Ox + 1 + H+(aq) + e (2) adsorbed on the surface. This is supported by glycerol electro-
+ oxidation on Au(111), where adsorbed *OH is found to be the
+ Many computational studies have considered hydrogen
+ oxidative species under alkaline conditions.40 In the fourth
+removal starting from glycerol via reaction eq 1,24,25,31−33 while
+ oxidation step, we therefore also consider the free energy of the
+fewer studies have also considered OH addition via reaction eq
+ following *OH formation reaction (eq 6).
+2.23,34,35
+ The H+(aq) and e− species are difficult to model, so we use H 2O(l) * OH + H+(aq) + e (6)
+the computational hydrogen electrode approach (eq 3),36,37
+which connects the free energy of H+(aq) and e− to the free The computed reaction free energy of eq 6 is ΔG = 1.42 eV
+energy of gas-phase H2 and the electrostatic potential at the on Pt(111) at UvsRHE = 0 (using the 0.39 eV free energy
+RHE scale (UvsRHE). correction associated with eq 2). However, we know from
+ 1 experiments that this is erroneous and should be around ΔG =
+ G(H+(aq) + e ) = G(H 2) eUvsRHE 0.76 eV.41 The error is largely due to us neglecting solvation of
+ 2 (3)
+ the *OH species.42 We therefore use experimental insight,
+ We set UvsRHE = 0 throughout the 3 section, but keep in rather than calculations, to set ΔG = 0.76 eV for *OH
+mind that both types of electro-oxidation steps (eqs 1 and 2) formation on Pt(111)43 and use the calculated *OH
+are stabilized by −eUvsRHE when applying UvsRHE > 0. adsorption energy difference between Pt(111) and Ag(111)
+ We calculate the DFT energy differences of the adsorbed to obtain ΔG = 0.48 eV for Ag(111).
+intermediates (ΔEintermediate) in the following way: The DFT calculations and python scripts, which form the
+ basis of this study, are accessible online at https://nano.ku.dk/
+ Eintermediate = Eslab + intermediate Eslab Eglycerol + nH2E H2 english/research/theoretical-electrocatalysis/katladb/glycerol-
+ electro-oxidation.
+ m H2OE H2O (4)
+ In eq 4, Eslab+intermediate and Eslab represent the DFT energy of
+ 3. RESULTS AND DISCUSSION
+the slab with and without adsorbed intermediates, respectively, Glycerol adsorbs electrochemically on metal surfaces by
+while Eglycerol, EH2, and EH2O represent the DFT energies of gas- releasing an H atom in the form of H+ and e−. Following
+ the approach,24,25 we have compared glycerol adsorption free
+ d d
+
+phase glycerol, gas-phase H2, and gas-phase H2O, respectively.
+ energies for adsorption via C* and adsorption via O* and
+nH2 is the total number of produced hydrogen molecules, and
+ d
+
+ present our results in Figure 2. Similar to the previous studies,
+mH2O is the total number of consumed H2O molecules, when
+ d
+
+ we find that Pt(111) and Pd(111) have a preference for
+converting glycerol to the intermediate in question. glycerol adsorption via a C* atom, while Ag(111), Cu(111),
+ The ΔEintermediate values do not include entropy differences, and Ru(111) have a strong preference for glycerol adsorption
+zero-point energy differences, or heating enthalpy differences, via an O* atom. Au(111) equally prefers adsorption via either
+which are needed to convert DFT reaction energies to an O* or C* atom. The preference for O* or C* adsorption is
+reaction-free energies. The size of these effects has been controlled by the electronic structure of the metal in question.
+mapped out in the literature for CH3O* oxidation to The relations between adsorption strength and electronic
+COOH*.38 This oxidation goes through three type eq 1 structure have been extensively studied in the literature, for
+reaction steps with an average free energy correction of ΔGcorr eq 1 instance for *OH and *CH3 in49 and for O* and *CO in.44 It
+= −0.32 eV (standard deviation of 0.06 eV), and one type eq 2 is therefore well established that some metals (e.g., Ag and Cu)
+ 2457 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ We now discuss the oxidation steps shown in Figure 3, one
+ by one. Initially, glycerol is physisorbed on Pt(111) and
+ Ag(111) with adsorption-free energies of 0.04 eV and −0.02
+ eV, respectively, compared to gas-phase glycerol. In the f irst
+ oxidation step, a H atom is removed and glycerol is
+ chemisorbed via a C* atom on Pt(111) and via an O* atom
+ on Ag(111) with adsorption-free energies of 0.37 and 0.50 eV,
+ respectively.
+ We propose that glyceraldehyde (CH2OH−CHOH−CHO)
+ formation by the removal of another H atom is the most facile
+ second oxidation step on both Pt(111) and Ag(111). On
+ Pt(111), two intermediates (ΔG = 0.06 eV, Figure 4a and ΔG
+
+Figure 2. Gibbs free energy difference for glycerol adsorption
+(C3H8O3(g) → C3H7O3* + 1/2H2(g)) via C* adsorption (ΔGC site)
+versus O* adsorption (ΔGO site) on (111) metal surfaces.
+
+prefer adsorption via O* atoms, whereas other metals (e.g., Pt
+and Pd) prefer adsorption via C* atoms. Figure 4. (a,b,c) Most stable C3H6O3 or C3H8O4 intermediates
+ Our hypothesis is that the preference for C* or O* following oxidation of CH2OH−CHOH−*CHOH on Pt(111).
+adsorption on different catalyst surfaces is responsible for (d,e,f) Most stable C3H6O3 or C3H8O4 intermediates following
+glycerol electro-oxidation product selectivity. We test this by oxidation of CH2OH−CHOH−CH2O* on Ag(111). The free
+modeling and comparing glycerol electro-oxidation on energies of the intermediates are in relation to gas-phase glycerol,
+Pt(111), which prefers glycerol adsorption via C*, to electro- H2O(l), and H2(g). We report free energies and structures of all
+oxidation on Ag(111), which prefers glycerol adsorption via studied intermediates in Table S4 of the Supporting Information.
+O*. At every oxidation step, we look for the most stable
+intermediate obtained by reaction eq 1 or reaction eq 2, and = 0.07 eV, Figure 4b) are more stable than glyceraldehyde
+(with a rationalized exception for glyceraldehyde on Pt(111)) (ΔG = 0.14 eV, Figure 4c). These two intermediates remain
+we use this intermediate as the reactant for the next oxidation on the surface and have formed an additional bond to the
+step. This maps out the reaction diagram illustrated in Figure 1 Pt(111) surface by removing a H atom. The additional bond is
+and the free energy landscape shown in Figure 3. Our reaction either a new bond between the middle C atom and the surface
+pathway on Pt(111) is similar to the one presented in ref,23 (Figure 4a), or conversion of the existing bond between the
+which is also based on DFT calculations. end C atom and the surface into a double bond (Figure 4b).
+
+Figure 3. Free energy landscape for glycerol electro-oxidation on Pt(111) and Ag(111). Atom color code, red: O; gray: C; white: H. We highlight
+the potential determining step with a solid black line.
+
+ 2458 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+The fact that glyceraldehyde is observed in experimental
+glycerol electro-oxidation on Pt at ≤0.9 V versus RHE9,11,12
+strongly indicate that the 0.08 eV additional free energy cost
+does not prohibit glyceraldehyde formation. The reason that
+our results do not predict glyceraldehyde formation could be
+kinetic (i.e., glyceraldehyde formation may have the lowest
+activation energy) or because we are missing important effect
+in our calculations, such as competitive adsorption between
+surface intermediates and water molecules45,46 or related to
+free energy differences between adsorbed and solvated
+species.47 On Ag(111), glyceraldehyde is the most stable
+intermediate (Figure 4d) with ΔG = 0.11 eV, which is
+significantly lower than the second (ΔG = 0.83 eV, Figure 4e)
+and third (ΔG = 1.16 eV, Figure 4f) most stable identified
+intermediate.
+ We examine glyceraldehyde readsorption in the third
+oxidation step. Similar to glycerol, glyceraldehyde adsorbs
+differently on the two surfaces when removing one H atom.
+On Pt(111), glyceraldehyde adsorbs via the aldehyde C* atom
+(ΔG = −0.30 eV, Figure 5a). This CH2OH−CHOH−*C�O
+
+Figure 5. (a,b,c) Most stable C3H5O3* intermediates on Pt(111) and
+(d,e,f) most stable C3H5O3* intermediates on Ag(111) following
+oxidation of glyceraldehyde (CH2OH−CHOH−CHO). The free
+energies of the intermediates are in relation to gas-phase glycerol, Figure 6. (a,b,c) Most stable C3H4O3 or C3H6O4 intermediates
+H2O(l), and H2(g). We report the free energies and structures of all following oxidation of CH2OH−CHOH−*C�O (Figure 5a) on
+studied intermediates in Table S5 of the Supporting Information. We Pt(111). The CH2OH−*COH−*C�O intermediate (not shown)
+have not considered formation of C3H7O4* intermediates because this has ΔG = −0.26 eV on Pt(111). The free energies of the
+is an adsorption reaction (of glyceraldehyde). intermediates are in relation to gas-phase glycerol, H2O(l), and
+ H2(g). We report free energies and structures of all studied
+configuration is significantly more stable than adsorption via intermediates in Table S6 of the Supporting Information. NEB
+the middle C* atom (ΔG = 0.20 eV, Figure 5b) and potential energy surfaces for (d) CH2OH−CHOH−*C�O + *OH
+adsorption via the last C* atom (ΔG = 0.39 eV, Figure 5c). → *CHOH−CHOH−*C�O + H2O* (e) CH2OH−CHOH−*C�
+The glyceraldehyde adsorption step is also significantly more O + *OH → CH2OH−CH(OH)2 + *C�O and (f) CH2OH−
+energetically favorable than the initial glycerol adsorption step. CHOH−*C�O + *OH → CH2OH−CHOH−COOH on Pt(111).
+On Ag(111), the most stable intermediate is adsorbed via the Inserts show structures of initial states, transition states, and final
+ states for these reactions.
+middle hydroxyl O* atom (ΔG = 0.62 eV, Figure 5d). This
+CH2OH−CHO*−CHO configuration is only slightly more
+stable than adsorption via the last hydroxyl O* atom (ΔG = oxidation of CH2OH−CHOH−*C�O (Figure 5a). Instead,
+0.65 eV, Figure 5e), but more stable than adsorption via the it is more energetically favorable to remove a H atom from the
+middle C* atom (ΔG = 0.84 eV, Figure 5f). Glyceraldehyde last C atom to form *CHOH−CHOH−*C�O that has an
+adsorption and the initial glycerol adsorption are equally additional bond to the surface (ΔG = −0.28 eV; Figure 6a). It
+energetically costly on Ag(111). is also more energy favorable to react OH with the middle C
+ Finally, we discuss the fourth oxidation step, which is also the atom in CH2OH−CHOH−*C�O, which forms CH2OH−
+last step that we investigated. We find that on Pt(111) CH(OH)2, breaks a C−C bond, and leaves *CO on the
+formation of glyceric acid has the lowest activation energy, surface (ΔG = −0.26 eV, Figure 6b) and to remove a H atom
+explaining the high selectivity toward glyceric acid observed in from the middle C to form CH2OH−*COH−*C�O (ΔG =
+experiments.7,9,13 However, Figure 6 shows that glyceric acid is −0.26 eV, shown in Table S6 of the Supporting Information).
+not the most stable intermediate on Pt(111) following the The formation of glyceric acid by the addition of OH to the
+ 2459 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+aldehyde C* atom is only the fourth most stable intermediate is therefore directly linked to the preference for breaking C−C
+(ΔG = 0.18 eV, Figure 6c). However, NEB calculations show bonds in the intermediates. The formic acid and glycolalde-
+that glyceric acid formation is the most facile reaction because hyde products also fits well with the main experimental
+it has the lowest activation energy. products on Ag (formic acid and glycolic acid),16 given that
+ We started all of the NEB calculations with *OH and glycolaldehyde can probably oxidize further, for instance to
+CH2OH−CHOH-*C�O on the surface. Since we compare glycolic acid. The second and third most stable intermediates
+very similar reactions and are mainly interested in which on Ag(111) have both lost a H atom to form a ketone on the
+reaction has the lower barrier, it is also less problematic that we middle C atom (ΔG = 0.53 eV, Figure 7b), or a new bond is
+do not include solvation and constant potential effects in our formed between the aldehyde C atom and the surface (ΔG =
+NEB calculations. 1.17 eV, Figure 7c).
+ The NEB reaction path from *OH + CH2OH−CHOH- Our results for glycerol electro-oxidation on Pt(111)
+*C�O to *CHOH−CHOH−*C�O + H2O* is shown in indicate that glyceraldehyde can be formed without the
+Figure 6d. We included *OH in the NEB study to more fairly involvement of adsorbed *OH species, since all steps to
+compare with the other NEB reaction paths. However, the glyceraldehyde happen via reaction eq 1. Additionally, the
+obtained reaction path shows that the *OH species does not most costly oxidation step toward glyceraldehyde is adsorption
+facilitate the formation of the *CHOH−CHOH−*C�O of glycerol, which has ΔG = 0.37 eV compared to gas-phase
+intermediate. Instead, the bond between the H atom and the glycerol (Figure 3). It therefore makes sense that glycer-
+last C atom is broken with the help of a surface Pt atom, aldehyde (and lactic acid from glyceraldehyde isomerization)
+forming a C*−Pt bond and transferring the H atom to the are the main products observed on Pt at low electrochemical
+surface. The *OH species then reacts with H* to from H2O*. potentials (≤0.9 V vs RHE).9,11−13 Adsorbed *OH species are
+The activation energy for the reaction is 1.07 eV, which is very required to oxidize glyceraldehyde to glyceric acid. We
+close to the activation energy obtained without the presence of estimate that *OH formation has an ΔG of 0.76 eV (based
+the *OH species on the surface (1.00 eV, Figure S2a in the on experiments), which would make *OH formation the
+Supporting Information). potential determining step in glyceric acid formation. The shift
+ The NEB reaction path from *OH + CH2OH−CHOH- to glyceric acid and tartronic acid observed in experiments
+*C�O to CH2OH−CH(OH)2 and *CO shows that the (between 0.9 and 1.2 V vs RHE) on Pt, therefore fits very well
+addition of *OH to the middle C atom does not happen in a with the potential region where *OH is available on the Pt
+concerted reaction (Figure 6e). Instead, the C−C bond is surface.48
+broken first, which leaves *CO on the surface and only On Ag(111), the 0.52 eV energy difference between
+afterward does *OH react with the middle C atom. The lack of physisorbed and chemisorbed glycerol makes this step
+a concerted reaction results in a large activation energy of 0.96 potential determine (Figure 3), i.e., at 0.52 V vs RHE, the −
+eV. eUvsRHE stabilization from eq 3 makes all steps downhill on
+ Lastly, the formation of glyceric acid by *OH addition to Ag(111) including formation of *OH on the surface. The early
+aldehyde C* atom happens in a concerted reaction, where the potential determining step could be the reason that only very
+C−OH bond is formed at the same time as the C−Pt bond is oxidized products (glycolic acid and formic acid) are reported
+broken (Figure 6f). This results in a small activation energy of in ref 16, while the less stable glycerol chemisorption on
+0.48 eV, even though it has the least stable reaction energy of Ag(111) compared to Pt(111) could be the reason for the low
+the investigated reaction pathways. glycerol electro-oxidation rates on Ag electro-catalysts. At low
+ The most stable intermediate in the fourth oxidation step on potential, glycerol does not adsorb on the Ag(111) surface,
+Ag(111) is the combination of formic acid (HCOOH) and whereas at high potential the glycerol electro-oxidation
+glycolaldehyde (CH2OH−CHO) (Figure 7a), which is formed continues all the way to very oxidized products.
+
+ 4. SUMMARY
+ In this study, we explored the catalytic performance for
+ glycerol electro-oxidation on Pt(111) and Ag(111). The initial
+ glycerol adsorption happens via a C* atom on Pt(111) and an
+ O* atom on Ag(111). We hypothesize that the different
+ adsorption preference is responsible for the different observed
+ glycerol electro-oxidation product selectivity preference on Pt
+ and Ag catalysts, especially the preference of Ag to break C−C
+Figure 7. (a,b,c) Most stable C3H4O3 or C3H6O4 intermediates bonds compared to Pt. We identified the most probable
+following the oxidation of CH2OH−CHO*−CHO (Figure 5d) on oxidation intermediate based on either stability or activation
+Ag(111). The free energies of the intermediates are in relation to gas- energy at every oxidation step and used this intermediate as the
+phase glycerol, H2O(l), and H2(g). We report free energies and reactant for the next oxidation step. We find that glycerol is
+structures of all studied intermediates in Table S6 of the Supporting
+Information.
+ most likely oxidized to glyceraldehyde on both surfaces.
+ Glyceraldehyde also adsorbs via a C* atom on Pt(111) and via
+ an O* atom on Ag(111) followed by OH incorporation in the
+by the reaction between CH2OH−CHO*−CHO (Figure 5d) next oxidation state. Due to the different adsorption
+and *OH. In the reaction, OH forms a bond with the aldehyde configurations, the OH incorporation results in glyceric acid
+C atom, the aldehyde C atom breaks its bond to the middle C (CH2OH−CHOH−COOH) formation on Pt(111) and C−C
+atom forming formic acid, and the middle C atom makes a bond breaking to formic acid (HCOOH) and glycolaldehyde
+double bond with the O* atom forming glycolaldehyde. The (CH2OH−CHO) on Ag(111). The adsorption preference of
+preference of Ag(111) to bind intermediates via the O* atoms Pt(111) and Ag(111) is hereby linked to the glycerol
+ 2460 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+electrooxidation selectivity, in accordance with our hypothesis.
+Our hypothesis, to the extent that it is correct, provides an
+ ■ REFERENCES
+ (1) Yang, F.; Hanna, M. A.; Sun, R. Value-Added Uses for Crude
+important design principle for possible glycerol electro- Glycerol–a Byproduct of Biodiesel Production. Biotechnol. Biofuels
+oxidation catalysts, where the general preference of catalysts 2012, 5, 13.
+for breaking C−C bonds can be assessed without much (2) Ruhal, R.; Aggarwal, S.; Choudhury, B. Suitability of Crude
+computational effort by identifying the preferred glycerol Glycerol Obtained from Biodiesel Waste for the Production of
+adsorption configuration. Our hypothesis is also falsifiable, so Trehalose and Propionic Acid. Green Chem. 2011, 13, 3492−3498.
+we hope that other research groups will test its validity by (3) Leoneti, A. B.; Aragão-Leoneti, V.; de Oliveira, S. V. W. B.
+studying the relations between preferred adsorption config- Glycerol as a by-Product of Biodiesel Production in Brazil:
+urations and glycerol electro-oxidation selectivities on a range Alternatives for the Use of Unrefined Glycerol. Renew. Energy 2012,
+of electrocatalyst surfaces. 45, 138−145.
+ (4) Anitha, M.; Kamarudin, S. K.; Kofli, N. T. The Potential of
+
+■
+*
+ ASSOCIATED CONTENT
+sı Supporting Information
+ Glycerol as a Value-Added Commodity. Chem. Eng. J. 2016, 295,
+ 119−130.
+ (5) Behr, A.; Eilting, J.; Irawadi, K.; Leschinski, J.; Lindner, F.
+The Supporting Information is available free of charge at Improved Utilisation of Renewable Resources: New Important
+https://pubs.acs.org/doi/10.1021/acscatal.3c05551. Derivatives of Glycerol. Green Chem. 2008, 10, 13−30.
+ (6) Hu, X.; Lu, J.; Liu, Y.; Chen, L.; Zhang, X.; Wang, H. Sustainable
+ List of products and their abbreviations in the glycerol Catalytic Oxidation of Glycerol: A Review. Environ. Chem. Lett. 2023,
+ oxidation reaction, productivities and selectivities of 21, 2825−2861.
+ experimental glycerol electro-oxidation reactions with (7) Zhang, Z.; Xin, L.; Li, W. Electrocatalytic Oxidation of Glycerol
+ different metal catalysts and reaction conditions, lists of on Pt/C in Anion-Exchange Membrane Fuel Cell: Cogeneration of
+ all investigated intermediates in the first, second, third, Electricity and Valuable Chemicals. Appl. Catal., B 2012, 119−120,
+ and fourth oxidation step, NEB reaction pathways for 40−48.
+ CH2OH−CHOH−*C�O → *CHOH− (8) Chen, W.; Zhou, Y.; Shen, Y. Product Distribution of Glycerol
+ CHOH−*C�O + H* and CH 2 OH−CHOH− Electro-Oxidation over Platinum-Ceria/Graphene Nanosheet. Electro-
+ chemistry 2019, 87, 30−34.
+ CH2OH → CH2OH−CHOH−*CHOH + H* on
+ (9) Kim, H. J.; Kim, Y.; Lee, D.; Kim, J.-R.; Chae, H.-J.; Jeong, S.-Y.;
+ Pt(111), overview of free energy corrections used to Kim, B.-S.; Lee, J.; Huber, G. W.; Byun, J.; Kim, S.; Han, J.
+ estimate ΔGcorreq 1 and ΔGcorreq 2, and convergence test Coproducing Value-Added Chemicals and Hydrogen with Electro-
+ for the maximum force on each atom used in structure catalytic Glycerol Oxidation Technology: Experimental and Techno-
+ relaxation (PDF) Economic Investigations. ACS Sustainable Chem. Eng. 2017, 5, 6626−
+ 6634.
+
+■ AUTHOR INFORMATION
+Corresponding Author
+ (10) Garcia, A. C.; Birdja, Y. Y.; Tremiliosi-Filho, G.; Koper, M. T.
+ M. Glycerol Electro-Oxidation on Bismuth-Modified Platinum Single
+ Crystals. J. Catal. 2017, 346, 117−124.
+ Henrik H. Kristoffersen − Department of Chemistry, (11) Kwon, Y.; Birdja, Y.; Spanos, I.; Rodriguez, P.; Koper, M. T. M.
+ University of Copenhagen, Copenhagen 2100, Denmark; Highly Selective Electro-Oxidation of Glycerol to Dihydroxyacetone
+ orcid.org/0000-0001-6943-0752; Email: hhk@ on Platinum in the Presence of Bismuth. ACS Catal. 2012, 2, 759−
+ chem.ku.dk 764.
+ (12) Lee, S.; Kim, H. J.; Lim, E. J.; Kim, Y.; Noh, Y.; Huber, G. W.;
+Authors Kim, W. B. Highly Selective Transformation of Glycerol to
+ Zhe Meng − Department of Chemistry, University of Dihydroxyacetone without Using Oxidants by a PtSb/C-Catalyzed
+ Copenhagen, Copenhagen 2100, Denmark Electrooxidation Process. Green Chem. 2016, 18, 2877−2887.
+ (13) Dai, C.; Sun, L.; Liao, H.; Khezri, B.; Webster, R. D.; Fisher, A.
+ David Tran − Department of Energy Conversion and Storage,
+ C.; Xu, Z. J. Electrochemical Production of Lactic Acid from Glycerol
+ Technical University of Denmark, Kgs. Lyngby 2800, Oxidation Catalyzed by AuPt Nanoparticles. J. Catal. 2017, 356, 14−
+ Denmark 21.
+ Johan Hjelm − Department of Energy Conversion and Storage, (14) Qi, J.; Xin, L.; Chadderdon, D. J.; Qiu, Y.; Jiang, Y.; Benipal, N.;
+ Technical University of Denmark, Kgs. Lyngby 2800, Liang, C.; Li, W. Electrocatalytic Selective Oxidation of Glycerol to
+ Denmark; orcid.org/0000-0003-0072-5784 Tartronate on Au/C Anode Catalysts in Anion Exchange Membrane
+ Jan Rossmeisl − Department of Chemistry, University of Fuel Cells with Electricity Cogeneration. Appl. Catal., B 2014, 154−
+ Copenhagen, Copenhagen 2100, Denmark; orcid.org/ 155, 360−368.
+ 0000-0001-7749-6567 (15) Han, J.; Kim, Y.; Jackson, D. H. K.; Jeong, K.-E.; Chae, H.-J.;
+ Lee, K.-Y.; Kim, H. J. Role of Au-TiO2 Interfacial Sites in Enhancing
+Complete contact information is available at: the Electrocatalytic Glycerol Oxidation Performance. Electrochem.
+https://pubs.acs.org/10.1021/acscatal.3c05551 Commun. 2018, 96, 16−21.
+ (16) Thia, L.; Xie, M.; Kim, D.; Wang, X. Ag Containing Porous Au
+Notes Structures as Highly Selective Catalysts for Glycolate and Formate.
+The authors declare no competing financial interest. Catal. Sci. Technol. 2017, 7, 874−881.
+ (17) Guima, K.-E.; Alencar, L. M.; da Silva, G. C.; Trindade, M. A.
+■ ACKNOWLEDGMENTS
+The authors gratefully acknowledge financial support from
+ G.; Martins, C. A. 3D-Printed Electrolyzer for the Conversion of
+ Glycerol into Tartronate on Pd Nanocubes. ACS Sustainable Chem.
+ Eng. 2018, 6, 1202−1207.
+Independent Research Fund Denmark, through grant no 1127- (18) Bambagioni, V.; Bianchini, C.; Marchionni, A.; Filippi, J.; Vizza,
+00372B. Z.M., H.H.K., and J.R. also acknowledge the Danish F.; Teddy, J.; Serp, P.; Zhiani, M. Pd and Pt−Ru Anode
+National Research Foundation Center for High-Entropy Alloy Electrocatalysts Supported on Multi-Walled Carbon Nanotubes and
+Catalysis (CHEAC) DNRF149. Their Use in Passive and Active Direct Alcohol Fuel Cells with an
+
+ 2461 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Anion-Exchange Membrane (Alcohol = Methanol, Ethanol, Glycerol). (33) Garcia, A. C.; Kolb, M. J.; van Nierop y Sanchez, C.; Vos, J.;
+J. Power Sources 2009, 190, 241−251. Birdja, Y. Y.; Kwon, Y.; Tremiliosi-Filho, G.; Koper, M. T. M. Strong
+ (19) Wang, H.; Thia, L.; Li, N.; Ge, X.; Liu, Z.; Wang, X. Pd Impact of Platinum Surface Structure on Primary and Secondary
+Nanoparticles on Carbon Nitride−Graphene for the Selective Electro- Alcohol Oxidation During Electro-Oxidation of Glycerol. ACS Catal.
+Oxidation of Glycerol in Alkaline Solution. ACS Catal. 2015, 5, 2016, 6, 4491−4500.
+3174−3180. (34) Wang, Y.; Zhu, Y.-Q.; Xie, Z.; Xu, S.-M.; Xu, M.; Li, Z.; Ma, L.;
+ (20) Han, J.; Kim, Y.; Kim, H. W.; Jackson, D. H. K.; Lee, D.; Ge, R.; Zhou, H.; Li, Z.; Kong, X.; Zheng, L.; Zhou, J.; Duan, H.
+Chang, H.; Chae, H.-J.; Lee, K.-Y.; Kim, H. J. Effect of Atomic-Layer- Efficient Electrocatalytic Oxidation of Glycerol via Promoted OH*
+Deposited TiO2 on Carbon-Supported Ni Catalysts for Electro- Generation over Single-Atom-Bismuth-Doped Spinel Co3O4. ACS
+catalytic Glycerol Oxidation in Alkaline Media. Electrochem. Commun. Catal. 2022, 12, 12432−12443.
+2017, 83, 46−50. (35) Schlegel, N.; Bagger, A.; Rossmeisl, J.; Arenz, M. Elucidating
+ (21) Kwon, Y.; Schouten, K. J. P.; Koper, M. T. M. Mechanism of the Reaction Pathway of Glucose Electrooxidation to Its Valuable
+the Catalytic Oxidation of Glycerol on Polycrystalline Gold and Products: The Influence of Mass Transport and Electrode Potential
+Platinum Electrodes. ChemCatChem. 2011, 3, 1176−1185. on the Product Distribution. J. Phys. Chem. C 2023, 127, 18609−
+ (22) Gomes, J. F.; Garcia, A. C.; Gasparotto, L. H. S.; de Souza, N. 18618.
+E.; Ferreira, E. B.; Pires, C.; Tremiliosi-Filho, G. Influence of Silver on (36) Rossmeisl, J.; Logadottir, A.; No̷ rskov, J. K. Electrolysis of
+the Glycerol Electro-Oxidation over AuAg/C Catalysts in Alkaline Water on (Oxidized) Metal Surfaces. Chem. Phys. 2005, 319, 178−
+Medium: A Cyclic Voltammetry and in situ FTIR Spectroscopy 184.
+Study. Electrochim. Acta 2014, 144, 361−368. (37) No̷ rskov, J. K.; Rossmeisl, J.; Logadottir, A.; Lindqvist, L.;
+ (23) Yan, H.; Yao, S.; Liang, W.; Feng, X.; Jin, X.; Liu, Y.; Chen, X.; Kitchin, J. R.; Bligaard, T.; Jónsson, H. Origin of the Overpotential for
+Yang, C. Selective Oxidation of Glycerol to Carboxylic Acids on Oxygen Reduction at a Fuel-Cell Cathode. J. Phys. Chem. B 2004, 108,
+Pt(111) in Base-Free Medium: A Periodic Density Functional Theory 17886−17892.
+Investigation. Appl. Surf. Sci. 2019, 497, No. 143661. (38) Peterson, A. A.; Abild-Pedersen, F.; Studt, F.; Rossmeisl, J.;
+ (24) Valter, M.; dos Santos, E. C.; Pettersson, L. G. M.; Hellman, A. No̷ rskov, J. K. How Copper Catalyzes the Electroreduction of Carbon
+Partial Electrooxidation of Glycerol on Close-Packed Transition Dioxide into Hydrocarbon Fuels. Energy Environ. Sci. 2010, 3, 1311−
+Metal Surfaces: Insights from First-Principles Calculations. J. Phys. 1315.
+Chem. C 2020, 124, 17907−17915. (39) Heenen, H. H.; Gauthier, J. A.; Kristoffersen, H. H.; Ludwig,
+ (25) Valter, M.; Santos, E. C. d.; Pettersson, L. G. M.; Hellman, A. T.; Chan, K. Solvation at Metal/Water Interfaces: An Ab Initio
+Selectivity of the First Two Glycerol Dehydrogenation Steps Molecular Dynamics Benchmark of Common Computational
+Determined Using Scaling Relationships. ACS Catal. 2021, 11, Approaches. J. Chem. Phys. 2020, 152, 144703.
+3487−3497. (40) Verma, A. M.; Laverdure, L.; Melander, M. M.; Honkala, K.
+ (26) Hjorth Larsen, A.; Jo̷ rgen Mortensen, J.; Blomqvist, J.; Castelli, Mechanistic Origins of the pH Dependency in Au-Catalyzed Glycerol
+I. E.; Christensen, R.; Dułak, M.; Friis, J.; Groves, M. N.; Hammer, B.; Electro-Oxidation: Insight from First-Principles Calculations. ACS
+Hargus, C.; Hermes, E. D.; Jennings, P. C.; Bjerre Jensen, P.; Catal. 2022, 12, 662−675.
+Kermode, J.; Kitchin, J. R.; Leonhard Kolsbjerg, E.; Kubal, J.; (41) Garcia-Araez, N. Standard Adsorption Gibbs Energy for
+Kaasbjerg, K.; Lysgaard, S.; Bergmann Maronsson, J.; Maxson, T.; Hydrogen, OH, Chloride, and Sulfate on Pt(111): Comparison of
+Olsen, T.; Pastewka, L.; Peterson, A.; Rostgaard, C.; Schio̷ tz, J.; Different Isotherms. J. Phys. Chem. C 2011, 115, 3075−3082.
+Schütt, O.; Strange, M.; Thygesen, K. S.; Vegge, T.; Vilhelmsen, L.; (42) Kristoffersen, H. H.; Vegge, T.; Hansen, H. A. OH formation
+Walter, M.; Zeng, Z.; Jacobsen, K. W. The Atomic Simulation and H2 adsorption at the liquid water−Pt(111) interface. Chem. Sci.
+Environment�a Python Library for Working with Atoms. J. Phys.: 2018, 9, 6912−6921.
+Condens. Matter 2017, 29, 273002. (43) Pedersen, J. K.; Clausen, C. M.; Skjegstad, L. E. J.; Rossmeisl, J.
+ (27) Enkovaara, J.; Rostgaard, C.; Mortensen, J. J.; Chen, J.; Dułak, A Mean-Field Model for Oxygen Reduction Electrocatalytic Activity
+M.; Ferrighi, L.; Gavnholt, J.; Glinsvad, C.; Haikola, V.; Hansen, H. on High-Entropy Alloys. ChemCatChem 2022, 14, No. e202200699.
+A.; Kristoffersen, H. H.; Kuisma, M.; Larsen, A. H.; Lehtovaara, L.; (44) Peterson, A. A.; Grabow, L. C.; Brennan, T. P.; Shong, B.; Ooi,
+Ljungberg, M.; Lopez-Acevedo, O.; Moses, P. G.; Ojanen, J.; Olsen, C.; Wu, D. M.; Li, C. W.; Kushwaha, A.; Medford, A. J.; Mbuga, F.;
+T.; Petzold, V.; Romero, N. A.; Stausholm-Mo̷ ller, J.; Strange, M.; Li, L.; No̷ rskov, J. K. Finite-Size Effects in O and CO Adsorption for
+Tritsaris, G. A.; Vanin, M.; Walter, M.; Hammer, B.; Häkkinen, H.; the Late Transition Metals. Top. Catal. 2012, 55, 1276−1282.
+Madsen, G. K. H.; Nieminen, R. M.; No̷ rskov, J. K.; Puska, M.; (45) Bockris, J. O. M.; Jeng, K. T. In-Situ Studies of Adsorption of
+Rantala, T. T.; Schio̷ tz, J.; Thygesen, K. S.; Jacobsen, K. W. Electronic Organic Compounds on Platinum Electrodes. J. Electroanal. Chem.
+Structure Calculations with GPAW: A Real-Space Implementation of 1992, 330, 541−581.
+ (46) Kristoffersen, H. H.; Chang, J. H. Effect of Competitive
+the Projector Augmented-Wave Method. J. Phys.: Condens. Matter
+ Adsorption at the Interface between Aqueous Electrolyte and Solid
+2010, 22, No. 253202.
+ Electrode. ACS Symp. Ser. 2019, 1331, 225−238.
+ (28) Mortensen, J. J.; Hansen, L. B.; Jacobsen, K. W. Real-Space
+ (47) Akinola, J.; Barth, I.; Goldsmith, B. R.; Singh, N. Adsorption
+Grid Implementation of the Projector Augmented Wave Method.
+ Energies of Oxygenated Aromatics and Organics on Rhodium and
+Phys. Rev. B 2005, 71, No. 035109.
+ Platinum in Aqueous Phase. ACS Catal. 2020, 10, 4929−4941.
+ (29) Hammer, B.; Hansen, L. B.; No̷ rskov, J. K. Improved
+ (48) Marković, N. M.; Gasteiger, H. A.; Ross, P. N. Oxygen
+Adsorption Energetics within Density-Functional Theory Using
+ Reduction on Platinum Low-Index Single-Crystal Surfaces in Alkaline
+Revised Perdew-Burke-Ernzerhof Functionals. Phys. Rev. B 1999, 59,
+ Solution: Rotating Ring DiskPt(hkl) Studies. J. Phys. Chem. 1996,
+7413−7421.
+ 100, 6715−6721.
+ (30) Henkelman, G.; Uberuaga, B. P.; Jónsson, H. A Climbing
+ (49) Montemore, M. M.; Medlin, J. W. Predicting and Comparing
+Image Nudged Elastic Band Method for Finding Saddle Points and
+ C−M and O−M Bond Strengths for Adsorption on Transition Metal
+Minimum Energy Paths. J. Chem. Phys. 2000, 113, 9901−9904.
+ Surfaces. J. Phys. Chem. C 2014, 118, 2666−2672.
+ (31) Liu, B.; Greeley, J. Decomposition Pathways of Glycerol via C−
+H, O−H, and C−C Bond Scission on Pt(111): A Density Functional
+Theory Study. J. Phys. Chem. C 2011, 115, 19702−19709.
+ (32) Valter, M.; Busch, M.; Wickman, B.; Grönbeck, H.; Baltrusaitis,
+J.; Hellman, A. Electrooxidation of Glycerol on Gold in Acidic
+Medium: A Combined Experimental and DFT Study. J. Phys. Chem. C
+2018, 122, 10489−10494.
+
+ 2462 https://doi.org/10.1021/acscatal.3c05551
+ ACS Catal. 2024, 14, 2455−2462

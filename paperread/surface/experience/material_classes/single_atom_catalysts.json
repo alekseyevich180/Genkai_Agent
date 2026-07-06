@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "single_atom_catalysts",
-  "updated_at": "2026-07-06T15:18:47.732640+00:00",
+  "updated_at": "2026-07-06T15:48:30.385043+00:00",
   "summary": {
     "terms": 21,
-    "known_useful": 11,
-    "unknown": 10
+    "known_useful": 14,
+    "unknown": 7
   },
   "keyword_inventory": {
     "active_sites": [
@@ -26,8 +26,8 @@
       {
         "term": "H2O",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Na",
@@ -136,8 +136,8 @@
       {
         "term": "sodium",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "surface",
@@ -156,8 +156,8 @@
       {
         "term": "Electrochemical",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "supports_surfaces": [
@@ -460,8 +460,8 @@
     },
     {
       "term": "Electrochemical",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -472,8 +472,8 @@
     },
     {
       "term": "H2O",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -604,8 +604,8 @@
     },
     {
       "term": "sodium",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],

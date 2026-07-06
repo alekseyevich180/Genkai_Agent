@@ -1,0 +1,523 @@
+Angewandte
+ Research Articles Chemie
+ www.angewandte.org
+
+ How to cite: Angew. Chem. Int. Ed. 2022, 61, e202200763
+ Single-Atom Catalysis International Edition: doi.org/10.1002/anie.202200763
+ German Edition: doi.org/10.1002/ange.202200763
+
+Modulating the Electronic Metal-Support Interactions in Single-Atom
+Pt1 CuO Catalyst for Boosting Acetone Oxidation
+Zeyu Jiang+, Mingjiao Tian+, Meizan Jing+, Shouning Chai, Yanfei Jian, Changwei Chen,
+Mark Douthwaite, Lirong Zheng, Mudi Ma, Weiyu Song, Jian Liu, Jiaguo Yu,* and Chi He*
+
+ Abstract: The development of highly active single-atom catalysts (SACs) and identifying their intrinsic active sites in
+ oxidizing industrial hazardous hydrocarbons are challenging prospects. Tuning the electronic metal-support interactions
+ (EMSIs) is valid for modulating the catalytic performance of SACs. We propose that the modulation of the EMSIs in a
+ Pt1 CuO SAC significantly promotes the activity of the catalyst in acetone oxidation. The EMSIs promote charge
+ redistribution through the unified Pt O Cu moieties, which modulates the d-band structure of atomic Pt sites, and
+ strengthens the adsorption and activation of reactants. The positively charged Pt atoms are superior for activating
+ acetone at low temperatures, and the stretched Cu O bonds facilitate the activation of lattice oxygen atoms to
+ participate in subsequent oxidation. We believe that this work will guide researchers to engineer efficient SACs for
+ application in hydrocarbon oxidation reactions.
+
+Introduction removal.[2, 6] Considering the cost of the active component
+ (Pt), the single-atom catalysts (SACs) with maximum
+The emission of organic hydrocarbons from industry poses a utilization efficiency are very promising in such reactions
+significant hazard to human health and the environment.[1] because of the coordinatively unsaturated nature of the
+The development of technologies to eliminate the emission atomic sites, which favors the activation of organic
+of volatile organic compounds (VOCs) is one of the biggest hydrocarbons.[7] For example, the supported Pt atoms are
+challenges facing the chemical industry in the 21st exceptionally active for methanol oxidation at low
+century.[1b] Oxygenated VOCs (OVOCs) are concerning temperatures.[8] Nevertheless, in-depth analysis of the in-
+because of their high propensity to form ozone and their trinsic mechanisms of SACs is limited by inhomogeneous
+extensive discharge from chemical industries.[2] Acetone, bonding methods and the complicated processes that occur
+containing C=O, C C, and C H bonds, is a typical OVOC, during reactant transformation. Therefore, it is imperative
+which is one of the major pollutants discharged by to design and synthesize SACs with unified coordination
+pharmaceutical and package-printing industries.[3] There- bonds to attain a reliable understanding of why these
+fore, developing a strategy for efficient removal of acetone materials are so effective.[9]
+is of great importance.[4] Catalytic oxidation is a promising Many reports have proven that the tunable electronic
+method to decompose hydrocarbons, at the core of which is structure and unoccupied d state of single atoms renders
+constructing efficient catalysts.[5] Pt-based catalysts have them amenable to interactions with oxide supports.[9a] This is
+been identified as effective materials for hydrocarbon perceived as critical for stabilizing atomic sites and modulat-
+
+[*] Dr. Z. Jiang,+ Dr. M. Tian,+ Prof. S. Chai, Dr. Y. Jian, Dr. C. Chen, Dr. M. Jing,+ Prof. W. Song, Prof. J. Liu
+ Dr. M. Ma, Prof. C. He State Key Laboratory of Heavy Oil Processing,
+ State Key Laboratory of Multiphase Flow in Power Engineering, China University of Petroleum
+ Xi’an Jiaotong University Beijing 102249 (P. R. China)
+ Xi’an 710049, Shaanxi (P. R. China) Prof. M. Douthwaite
+ E-mail: chi_he@xjtu.edu.cn Max Planck-Cardiff Centre on the Fundamentals of Heterogeneous
+ Dr. Z. Jiang+ Catalysis, School of Chemistry, Cardiff University
+ Department of Chemistry, Cardiff, CF10 3AT (UK)
+ National University of Singapore Dr. L. Zheng
+ Singapore 117543 (Singapore) Institute of High Energy Physics,
+ Dr. M. Tian,+ Prof. J. Yu Chinese Academy of Sciences
+ Laboratory of Solar Fuel, Faculty of Materials Science and Beijing 100049 (P. R. China)
+ Chemistry, China University of Geosciences Prof. C. He
+ Wuhan 430074 (P. R. China) National Engineering Laboratory for VOCs Pollution Control
+ E-mail: yujiaguo93@cug.edu.cn Material & Technology, University of Chinese Academy of Sciences
+ Beijing 101408 (P. R. China)
+ [+] These authors contributed equally to this work.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (1 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+ing their properties in catalysts.[10] Numerous studies have barrier is lowered and the rate-limiting step is facilitated.
+focused on tuning the electronic metal-support interactions The general effect of EMSI modulation is not limited to
+(EMSIs) in SACs to promote their catalytic efficiency and acetone oxidation, which is the primary model substrate for
+stability.[11] One such example, by Datye et al.,[12] demon- this study.
+strated that the interactions between Pt atoms and CeO2
+supports could be tuned by thermal restructuring, which
+significantly influenced their catalytic activity for CO Results and Discussion
+oxidation. In a separate study by Tang and co-workers,[7c]
+the electronic structure of a Ag-based SAC was manipu- Structure and Atomic Sites
+lated. The authors revealed that the higher depletion of the
+d electronic state of Ag atoms resulted in strong EMSIs with Three different methods were employed for the synthesis of
+improved reducibility, which facilitated its superb catalytic SACs used herein (Figure 1). Primarily, the microwave-
+activity towards formaldehyde oxidation.[7c] A similar obser- synthesized Cu(OH)x was adopted as the precursor of the
+vation has also been reported in our previous work.[13] The support to stabilize platinum bis(acetylacetonate) in obtain-
+thermally stable Pt1/CeO2 SACs with strong EMSIs were ing the Pt1 (OH)x Cu complex. The Pt1 CuO catalyst was
+constructed through stabilization with oxygen vacancies. synthesized via a calcination process of the aforementioned
+These SACs exhibited an excellent stability for methanol complex to form the unified Pt O Cu bonds. Subsequently,
+oxidation, even after calcination at 800 °C.[13] Pt atoms were supported on CuO via mixed Pt O and
+ A common method employed to strengthen EMSIs is to Pt Cu bonds that were established via a general impregna-
+target the anchoring of single atoms onto vacancies or lattice tion method, forming the Pt1/CuO catalyst. The Pt1@CuO
+fringes. This is a highly efficient method for inducing such sample was formed by doping the Pt species into the bulk of
+interactions but is limited by the specific oxide supports and CuO through an in-situ-doping process.
+can result in undefined coordination structures.[9a] Therefore, The nanorod CuO support exposes a dominant (111)
+it is pertinent to develop a universal method for enhancing facet to disperse Pt atoms, which were identified by high-
+and tuning EMSIs with unified bonding. The surface of resolution transmission electron microscopy (HR-TEM)
+transition metal hydroxides is abundantly populated with images and DFT calculations (Supporting Information,
+-OH species, which could provide suitable anchoring sites Figures S1–S4).[16] As listed in Table S1 (Supporting Infor-
+for coordination with metal atoms through M O(OH) mation), the actual Pt contents of the catalysts was
+interactions.[9a] Examples of EMSIs between Pt and Ni/Fe/ maintained around ca. 0.40 wt %, and the dispersion of Pt
+Cu/Co-based hydroxides have already been developed.[14] species ranged from 64.6 % to 84.5 %. The supported Pt
+ It is known that the electron transfer between Pt species species had a negligible effect on the pore structure of the
+and copper/cuprous oxides can occur readily.[15] Based on CuO support (Figure S5, Table S2). The atomic Pt sites of
+this, and the fact that CuO materials possess well-established the SACs were identified with aberration-corrected scanning
+redox properties (Cu + /Cu2 +), Pt1 CuO could be an interest- transmission electron microscopy (ac-STEM) using Z-con-
+ing catalyst to study EMSIs, through the calcination of trast (Figure 2a; Figure S6), which clearly demonstrated that
+Pt Cu(OH)x precursors. In this situation, the Pt atoms are
+expected to be stabilized by surface hydroxyl groups over
+Cu(OH)x, and the associated EMSIs can be easily modu-
+lated by tuning the unified Pt O bonds. Additionally, the
+rational design of highly active catalysts requires a compre-
+hensive understanding of the structure–activity relationships.
+Hence, it is of great significance to reveal the intrinsic active
+sites and establish a structure–activity relationship for
+EMSI-modulated SACs through persuasive operando exper-
+imental methods.
+ Herein, Pt atoms are anchored onto CuO supports via
+different bonding strategies, resulting in the formation of
+diverse EMSIs. Specifically, a Pt1 CuO catalyst with unified
+Pt O Cu coordination bonds exhibits the strongest EMSIs
+compared to those of the generally supported Pt1/CuO and
+bulk-doping Pt1@CuO samples. The results powerfully
+demonstrate that the modulation of a Pt1 CuO SAC with
+EMSIs significantly promotes the low-temperature activity
+of the catalyst, over which 800 ppm of acetone can be totally
+decomposed at 210 °C with a GHSV of 42 000 h 1. The
+EMSIs facilitate the charge redistribution through electron
+transfer from Pt atoms to CuO supports, which modulates
+the d-band structure of Pt atoms, and strengthens the Figure 1. A description and optimized structure of the synthesized
+adsorption and activation of reactants. Hence, the energy single-atom catalysts.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (2 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+Figure 2. a) Aberration-corrected STEM image of single-atom Pt1 CuO catalyst, scale bar: 1 nm. b) IR spectra of CO adsorption over synthesized
+catalysts. c) R-space spectra from Pt L3-edge EXAFS data of prepared catalysts. d) Pt L3-edge normalized XANES curves of prepared catalysts. e) Pt
+4d5/2, f) Cu 2p, and g) Cu LMM XPS spectra of prepared catalysts.
+
+the isolated Pt atoms are present on the surface of the tered at 1.56–1.58 and 2.53–2.55 Å are assigned to the Pt O
+prepared catalysts.[17] and Pt Cu contributions, respectively. Referring to the Pt
+ Each of the catalysts was subsequently investigated by foil, almost no Pt Pt contribution can be observed over
+infrared spectroscopy (IR), utilizing CO as a probe molecule these single-atom catalysts. Subsequently, the coordination
+(Figure 2b). In the spectra of Pt1 CuO and Pt1/CuO of Pt atoms with Pt O and Pt Cu bonding are included. The
+catalysts, sharp adsorption bands at ca. 2114 cm 1 are Pt1 CuO catalyst exhibits a Pt O coordination number of
+indicative of the CO Pt stretches, associated with the 4.6 � 0.05 with a radial distance of 1.58 � 0.002 Å, and it
+adsorption of CO on the cationic Pt atoms.[18] The band possesses a Pt Cu coordination number of 0.7 � 0.02 with a
+observed at ca. 2067 cm 1 for the Pt1/CuO catalyst can be radial distance of 2.53 � 0.002 Å (Table S4).[1, 2] In compar-
+reasonably assigned to the linearly adsorbed CO molecules ison, the Pt Cu coordination number gradually increases for
+associated with the highly coordinated Pt nanoclusters, Pt1/CuO (1.6 � 0.01) and Pt1@CuO (2.4 � 0.04) catalysts,
+indicating that some tiny Pt clusters are also produced whereas the Pt O coordination number of these catalysts
+during the general impregnation process.[12] Notably, in the declines (from 4.0 � 0.07 to 3.2 � 0.02). The aforementioned
+spectrum of the Pt1@CuO catalyst a significant band at coordination environments compare well to the DFT
+2170 cm 1 is observed, which is indicative of the gaseous CO calculations (Figure S9).
+molecules on the CuO support.[19] The stronger gaseous CO
+adsorption band in this sample is attributed to the
+deficiently buried Pt sites that are doped in the CuO bulk.[20] Electronic Metal-Support Interactions
+Our DFT calculations predict top-adsorbed CO stretching
+frequencies of 2102, 2098, and 2070 cm 1 over Pt1 CuO, Pt1/ An in-depth analysis of the electronic structure on atomic
+CuO, and Pt@CuO SACs, respectively, which are very close sites is crucial for establishing structure–activity
+to experimentally observed locations (Figure S7, relationships.[11c] Therefore, several analyses were conducted
+Table S3).[20b] Additionally, compared with the Pt1 CuO to probe the EMSIs present in these SACs. Firstly, the Pt
+catalyst, the calculated CO vibrational frequencies over Pt1/ L3-edge X-ray absorption near-edge structure (XANES) was
+CuO and Pt@CuO SACs are slightly shifted to lower examined (Figure 2d). In-depth analysis reveals that the
+energies, which can be attributed to the higher coordinated absorption intensity of the synthesized Pt-based SACs is
+Pt atoms from Pt Cu bonds and more Pt0 species.[18b] higher than that observed in the Pt foil, indicating that
+ Subsequently, the detailed coordination structures were positively charged Pt species are present in these SACs.[17, 21]
+analyzed from the curve fitting of the Pt L3-edge extended The white line (WL) exhibited by the Pt1 CuO sample is
+X-ray absorption fine structure (EXAFS), and the corre- notably more intense than that observed over the Pt1/CuO
+sponding specific coordination environment information and Pt1@CuO catalysts, which also shifts to a higher energy
+pertaining to the synthesized single-atom catalysts is dis- region. This observation illustrates that the Pt1 CuO catalyst
+played in Figure 2c and Figure S8. Prominent peaks cen- with unified Pt O Cu moieties gives a higher proportion of
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (3 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+positively charged Pt atoms, likely through electron back Further evidence for the presence of Cu + species in the
+donation from Pt to Cu induced by EMSIs.[22] Pt1 CuO catalyst was acquired by X-ray diffraction (XRD;
+ As the Cu 3p doublet-peaks overlap with the Pt 4f Figure S13). The signals of Cu2O diffraction at 2θ = 36.3°
+curves, Pt 4d5/2 X-ray photoelectron spectroscopy (XPS) and 42.2° can only be found in the Pt1 CuO sample, which is
+spectra were employed to determine the electronic states of less prominent in other patterns. Collectively, the aforemen-
+Pt species in these single-atom catalysts.[23] As shown in tioned results demonstrate that the atomic Pt sites with
+Figure 2e and Figure S10, the peak centered at 312.3 eV is diverse coordination bonds exhibit different interactions
+ascribed to the Pt Cu component, which can only be found with the CuO supports. The Pt1 CuO catalyst, produced
+in the spectrum of the Pt1/CuO sample.[23b] Peaks at binding from the calcination of a Pt1 Cu(OH)x precursor, exhibits
+energies of 314.4 and 317.5 eV are indicative of the metallic the strongest EMSIs. Such interactions promote the charge
+Pt0 and positively charged Ptδ + species, respectively.[15, 23b] redistribution by facilitating the electron donation from Pt
+Notably, the proportion of metallic Pt0 species decreases to CuO in great propensity. The resulting positively charged
+from 67.3 % in the Pt1/CuO sample to 7.5 % in the Pt1 CuO Pt sites are highly efficient in activating organic molecules.
+catalyst (Table S5). This phenomenon suggests that the Pt Meanwhile, the induced charge transfer can also weaken
+atoms donate more electrons to CuO supports through adjacent Cu O bonds (see temperature-programmed reduc-
+enhanced EMSI in the Pt1 CuO catalyst. The Cu 2p and tion experiments in Figure S14), which in-turn facilitates the
+Cu LMM spectra were subsequently investigated to establish activation of lattice oxygen atoms to participate in the
+how these EMSIs influence the valence state of Cu. The oxidation processes, leading to the regeneration of oxygen
+Cu 2p3/2 and 2p1/2 spectra can be fitted into two characteristic vacancies (Figures S15 and S16).[26]
+peaks (Figure 2f, Figure S11).[24] Peaks centered at 932.1 and
+952.0 eV are assigned to the Cu + species, whereas Cu2 +
+species are indicated by dominant peaks centered at 933.6 Catalytic Performance Evaluation
+and 953.7 eV.[25] The proportion of Cu + /(Cu + + Cu2 +) in
+each catalyst was subsequently evaluated quantitatively, To determine the influence of EMSIs on the catalytic
+using the associated Cu LMM spectra (Figure 2g; Fig- performance of SACs, all synthesized materials were
+ure S12).[25b] Accordingly, the ratio of evaluated Cu + species subsequently employed for acetone oxidation (Figure 3;
+decreases from 19.4 %, 13.5 %, and 10.4 %, for the Pt1 CuO, Table S1). As expected, the bare CuO support exhibits a
+Pt1@CuO, and Pt1/CuO catalysts, respectively. The higher comparatively poor activity where none of the acetone can
+proportion of Cu + species present in the Pt1 CuO sample is, be oxidized even at 190 °C. This observation suggests that
+again, ascribed to the strengthened electron back donation the supported Pt species are active sites for acetone
+from Pt sites, in accordance with the changes of the Pt oxidation at low temperatures. The catalytic performance of
+valence state. these materials correlates with the bonding methods be-
+ tween Pt atoms and CuO supports (Figure 3a). The highest
+
+Figure 3. The evaluated a) activity, b) turnover frequency, and c) Arrhenius plots of synthesized catalysts in acetone catalytic oxidation. d) The light-
+off curves of the Pt1 CuO catalyst for the oxidation of typical industrial organic pollutants. e) Stability test of the Pt1 CuO and Pt1/CuO catalysts for
+acetone oxidation under different reaction atmospheres.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (4 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+efficiency is observed over the Pt1 CuO catalyst, where were observed over the Pt1 CuO and Pt1/CuO catalysts,
+800 ppm of acetone can be fully oxidized at just 210 °C respectively, when 1.5 vol.% water vapor was introduced
+(GHSV of 42 000 h 1). The associated initiation temperature into the stream. Interestingly, after the water vapor was
+is below 120 °C. In contrast, the Pt1/CuO and Pt1@CuO removed from the stream, the original activity was restored
+catalysts are inactive for acetone oxidation at 120 °C, where for both catalysts within 90 and 120 min, respectively. A
+90 % of acetone can be decomposed at 234 and 267 °C, similar observation was also made when a 2.0 vol.% CO2
+respectively. Subsequently, the monitored CO2 selectivity mixture was added to the reaction stream. The morphology
+for each catalyst further demonstrated that the Pt1 CuO and Pt species of the spent Pt1 CuO catalyst after the
+catalyst, possessing the strongest EMSIs, is the most efficient stability test were investigated. As displayed in Figure S20a,
+active site for the deep, low-temperature oxidation of the catalyst maintains its regular nanorod morphology.
+acetone (Figure S17). Additionally, the supported Pt sites are atomically dispersed
+ This trend in activity was further evidenced through on the support and no aggregation phenomenon can be
+consideration of the associated turnover frequencies (TOFs; observed (Figure S20b–e). The above stability test results
+Figure 3b). The Pt1 CuO catalyst exhibits the highest TOF imply that the strong EMSIs significantly promote the
+(0.13 s 1) at 170 °C, which is 2.6 and 16.3 times higher than stability of the Pt1 CuO catalyst in acetone oxidation by
+that of the Pt1/CuO (0.05 s 1) and Pt1@CuO (0.008 s 1) restraining the competitive adsorption of reactants and other
+catalysts, respectively. Accordingly, the Arrhenius plots impurities. The enhanced adsorption and activation of active
+were established to determine the activation energy by oxygen species by the Cu2O CuO interface formed through
+utilizing the aforementioned data (Figure 3c). The activation the EMSIs (Figure S13) is considered as another reason for
+energy of the Pt1/CuO (54.32 kJ mol 1) catalyst is substan- the better performance of the Pt1 CuO catalyst in acetone
+tially lower than that determined over the Pt1/CuO oxidation.[24b] Moreover, the better stability of the Pt1 CuO
+(72.96 kJ mol 1) and Pt1@CuO (104.56 kJ mol 1) samples sample can also be ascribed to its abundant surface acid sites
+during acetone oxidation. Notably, the synthesized Pt1 CuO and hydroxyl species (Figures S21 and S22).
+SAC also exhibits superb performance compared to that of
+the PtNPs/CuO and Ptclu/CuO catalysts for acetone oxidation
+(Figure S18). These results further evidence that the strong Surface Mechanism of Acetone Oxidation
+EMSIs through the unified Pt O Cu moieties significantly
+promote the catalytic performance of Pt1 CuO SAC in To understand how these EMSIs influence the surface
+oxidizing acetone. Additionally, when decreasing the Pt mechanism, further experiments were required. First, nu-
+loading content, the single-atom Pt1 CuO, Pt1/CuO, and merous in situ DRIFTS (diffuse reflectance infrared spectro-
+Pt1@CuO catalysts with a lower loading content of 0.2 wt % scopy) were recorded (Figure 4; Figures S23 and S24).
+were synthesized. As illustrated in Figure S19a, the sup- The sharp adsorption bands observed at 1695–1698 cm 1
+ported Pt species are atomically dispersed on all these are assigned to gaseous acetone, which gradually decreased
+catalyst surfaces, and no clusters or nanoparticles can be as the temperature increased (Figure 4a,b).[27] An additional
+detected. When tested for acetone oxidation, the 0.19 wt %
+Pt1 CuO catalyst exhibits better performance than that of
+0.20 wt % Pt1/CuO and 0.19 wt % Pt1@CuO catalysts (Fig-
+ure S19b,c).
+ Importantly, to establish whether this was a universal
+effect, a series of other OVOCs were used as substrates
+(Figure 3d). For each of these additional substrates, the
+currently reported catalysts were also displayed for compar-
+ison, as summarized in Tables S6–S9. The Pt1 CuO catalyst
+is evidently highly active for the catalytic oxidation of typical
+industrial OVOCs, including acetaldehyde (T90 at 140 °C),
+ethanol (T90 at 158 °C), methyl ethyl ketone (T90 at 195 °C),
+and ethyl acetate (T90 at 211 °C). These results indicate that
+the Pt1 CuO SAC with strong EMSIs, is a promising and
+universal catalyst for the oxidation of OVOCs.
+ The stability of SACs is usually an important area of
+concern when employed in thermal reactions. To assess how
+these different EMSIs influence the stability of prepared
+Pt1 CuO and Pt1/CuO SACs, the H2O and CO2 resistances
+of these catalysts were examined between a heating and
+cooling cycle (Figure 3e). For both catalysts, water vapor
+and CO2 were determined to have a negative impact on Figure 4. In situ DRIFTS of acetone oxidation as a function of temper-
+catalytic performance, which is likely ascribed to the ature from 100 to 260 °C over a) Pt1 CuO and b) Pt1/CuO catalysts.
+competitive adsorption between these impurities and reac- In situ DRIFTS of acetone oxidation under various reaction conditions
+tants. Drops in acetone conversion of ca. 5.2 % and 8.5 % at c) 140 °C over Pt1 CuO catalyst and d) 180 °C over Pt1/CuO catalyst.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (5 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+broad adsorption band around 1576–1594 cm 1 can be in these catalysts was required. Primarily, the adsorption
+ascribed to the asymmetric stretching vibration of a νas- and activation of acetone, considered to be the rate-
+(OCO ) species, where its intensity has a positive relation- determining step in this oxidation reaction, was studied by
+ship with the temperature.[28] This band is likely attributed in situ DRIFTS and operando near-ambient pressure XPS
+to the carboxylate species resulting from the cleavage of the (NAP-XPS). The acetone adsorption process was monitored
+C C bonds, followed by combination with the active oxygen by in situ DRIFTS as a function of adsorption equilibrium
+species.[27] Correspondingly, adsorption bands at 1370– times (Figure 5a,b; Figure S25). From 1 to 15 min after
+1372 cm 1 were observed, which correspond to the bridging introducing 800 ppm acetone, the Pt1 CuO catalyst exhib-
+monodentate symmetrical vs( OCO ) mode from the biden- ited the most intense adsorption peak at 1695–1698 cm 1
+tate format species, produced by activating the C=O bonds among these three samples, indicating that it possesses the
+over the Pt sites.[29] Furthermore, the C H bond stretching strongest capacity for acetone adsorption. This property is
+of the surface-adsorbed methyl/methylene ( CH3/ CH2) ascribed to the higher proportion of atomic Ptδ + species
+species dominates the spectra between 1452–1453 cm 1.[30] induced by the strong EMSIs in the Pt1 CuO catalyst
+Interestingly, an adsorption band at ca. 1632 cm 1, indicative (Figure 2e). The electronegativity of carbonyl species in
+of the COH bond from the surface-adsorbed aldehyde acetone molecules allows easy adsorption on the positively
+species, was only observed over the Pt1/CuO sample at a charged Pt atoms (via the C=O bond).
+relatively low temperature (from 140 to 200 °C; Figure 4b).[30] To specifically reveal the active sites for acetone
+This bond will disappear when the temperature reaches activation, operando NAP-XPS was used to probe the
+200 °C, and no such band can be observed over the Pt1 CuO Pt 4d5/2 region of the representative catalysts during acetone
+catalyst. This observation suggests that the aldehyde species oxidation. As determined from previous analyses, the
+is a primary intermediate when reactions are conducted over characteristic peaks around 314.4 and 317.5 eV are indica-
+the Pt1/CuO catalyst. It is hypothesized that the uncoordi- tive of the Pt0 and Ptδ + species, respectively.[15, 23b] For the
+nated carbonyl species bond with the dissociated H atoms Pt1 CuO catalyst (Figure 5c), the ratio of metallic Pt species
+from the CH3 groups when there are insufficient active gradually increases from 7.5 % (fresh sample at RT) to
+oxygen species present. 66.5 % (180 °C with 200 ppm acetone) during investigations.
+ To further probe the occurrence of surface mechanisms, The increased proportion of Pt0 species is correlated with
+sequential in situ DRIFTS was conducted at T20 (the the electron transfer from carbonyl groups to positively
+temperature at which 20 % of acetone is converted), where charged Pt atoms, which we have established occurs during
+the reaction atmosphere was switched between air and N2. the acetone adsorption and activation processes. Interest-
+Notably, for the Pt1 CuO catalyst (Figure 4c), the peaks ingly, the ratio of Pt0 species is partly replenished (to
+indicative of the surface-adsorbed acetone and carbonate 21.1 %) after re-exposure to air atmosphere at room temper-
+species remained unchanged when the air was replaced with ature. These observations demonstrate that the positively
+N2. This suggests that the process of acetone oxidation over charged Pt atoms in the Pt1 CuO catalyst are superior sites
+the Pt1 CuO catalyst proceeds via a Mars–van Krevelen for activating acetone molecules. On the contrary, the
+(MvK) mechanism, where the lattice oxygen atoms are opposite situation is observed over the Pt1/CuO catalyst
+determined as the active oxygen species due to the
+weakening of O Cu bonds induced by the strong EMSIs.[26]
+Notably, the absorption band of acetone molecules is
+significantly strengthened over the Pt1/CuO catalyst after
+introducing a N2 atmosphere, which is restored to the
+original value while the air was refilled to the cavity
+(Figure 4d). This phenomenon reveals that the acetone
+oxidation over the Pt1/CuO catalyst is strongly influenced by
+the presence of adsorbed oxygen species. Therefore, it
+predominantly proceeds via the Langmuir–Hinshelwood (L–
+H) mechanism.[2a] Given that some of the surface intermedi-
+ates are observed, the EMSIs do indeed appear to influence
+the surface mechanisms that take place in this reaction.
+
+Intrinsic Mechanism Determination
+
+We propose that the EMSI modulation of a Pt1 CuO SAC
+dramatically promotes its catalytic efficiency for acetone
+oxidation. The strong EMSIs, which are derived from the
+polarization of the Pt O Cu moieties, facilitate charge Figure 5. In situ DRIFTS of acetone adsorption as a function of time at
+redistribution through electron transfer from Pt atoms to room temperature over a) Pt1 CuO and b) Pt1/CuO catalysts. Oper-
+CuO supports. To further explore this hypothesis, a more ando Pt 4d5/2 NAP-XPS spectra of c) Pt1 CuO and d) Pt1/CuO catalysts
+detailed understanding of the structure–activity relationship obtained from the acetone oxidation process.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (6 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+(Figure 5d). During this analogous experiment, the decline species, while the peaks observed at the binding energies of
+of Pt0 content (from 67.3 % to 50.1 %) is attributed to the 530.9–531.5 and 532.5–533.1 eV are assigned to the surface
+bonding of Pt sites with the O atoms in the reaction, which adsorbed oxygen (Oads) and adsorbed H2O groups,
+implies that the metallic Pt sites in the Pt1/CuO catalyst are respectively.[31] The changes of O 1s curves over the Pt1/CuO
+inclined to activate the surface-adsorbed oxygen atoms catalyst were recorded, simulating the conditions employed
+instead of acetone molecules. in the performance evaluation (Figure 6d). Notably, the
+ Subsequently, 18O isotopic labeling experiments were ratio of Oads species gradually decreased from 49.6 % (fresh
+conducted to monitor how the oxygen species were activated sample) to 17.9 % after exposure to the reactants at 180 °C,
+and consumed during the reaction.[15] As analyzed for the which was almost replenished (34.9 %) by exposure to air at
+Pt1 CuO catalyst (Figure 6a), a signal indicative of the C16O2 room temperature. This observation further confirms that
+species is detected as the temperature reached 111 °C, the active oxygen species formed over the Pt1/CuO catalyst
+significantly lower than that of the C16O18O (123 °C) and during acetone oxidation are primarily derived from the
+C18O2 (183 °C) species. Furthermore, the signature associ- surface-adsorbed oxygen atoms. In comparison, for the
+ated with the C16O2 species reached a maximum value at ca. Pt1 CuO catalyst (Figure 6c) the O 1s NAP-XPS spectra
+239 °C and followed by a drop-off, which was attributed to reveal that the Olatt species are consumed in the reaction,
+the exhaustion of available lattice oxygen species. These which decrease from 71.1 % (fresh sample) to 59.1 %
+results emphasize that the lattice oxygen atoms are critical (120 °C) and 54.6 % (180 °C), and then increased to 66.4 %
+for acetone oxidation over the Pt1 CuO catalyst. The after re-exposure to air at room temperature. This phenom-
+activation of lattice oxygen atoms is ascribed to the stretch enon underlines our above analyses that the strong EMSI in
+of Cu O bonds induced by strong EMSIs, resulting in the Pt1 CuO catalyst will weaken the Cu O bonds and, in-
+reserved oxygen vacancies, which will be refilled by the turn, facilitate the activation of lattice oxygen atoms to
+surface oxygen atoms from the reaction atmosphere. In participate in the oxidation reaction.[26]
+comparison, when the Pt1/CuO catalyst was monitored, The electronic structure and adsorption energy were
+(Figure 6b) no C16O2 signal was observed during this subsequently illustrated by DFT studies. From the charge
+investigation. Instead, only signals indicative of C16O18O and density difference analysis (Figure 7a–c; Figure S26), the
+C18O2 species were observed, initiating at 183 °C and 140 °C, yellow and blue areas represent the increase and decrease of
+respectively. The observations indicate that the surface- charge density, respectively. The cutoff of density-difference
+adsorbed oxygen atoms are responsible for producing the iso-surface is equal to 0.01 electrons Å 3. Distinctly, more
+active oxygen species to oxidize acetone molecules over the intense electron transfer between Pt atoms and CuO
+Pt1/CuO catalyst. supports was observed over the Pt1 CuO catalyst compared
+ The activation and transformation of oxygen species with Pt1/CuO and Pt1@CuO catalysts, resulting in abundant
+over each type of SAC were further evaluated using O 1s positively charged Pt species, in accordance with our
+NAP-XPS spectra (Figure 6c,d). The peaks centered at ca. experimental results. The energy of acetone and O2
+529.5–529.3 eV are indicative of the lattice oxygen (Olatt) adsorption over these SACs was further evaluated (Fig-
+ ure S27). The energy of acetone adsorption over these
+ atomic Ptδ + sites was determined to be 0.98 eV, which is
+ much lower than that of O2 adsorption ( 0.64 eV), indicat-
+ ing that these positively charged Pt atoms in the Pt1 CuO
+ catalyst exist prior to adsorption and activation of acetone
+ molecules. Comparatively, the metallic Pt sites exhibited the
+ higher capacity to adsorb surface oxygen species with an
+
+Figure 6. 18O isotopic labeling experiment in the temperature-pro- Figure 7. Calculated charge density differences (side view) of
+grammed oxidation of acetone over a) Pt1 CuO and b) Pt1/CuO a) Pt1 CuO, b) Pt1/CuO, and c) Pt1@CuO catalysts. d) Proposed
+catalysts. Operando O 1s NAP-XPS spectra of c) Pt1 CuO and d) Pt1/ intrinsic mechanism of acetone oxidation over the EMSI-modulated
+CuO catalysts obtained from the acetone oxidation process. Pt1 CuO catalyst.
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (7 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+adsorption energy of 1.90 eV over the Pt1/CuO sample, R&D Program of Shaanxi Province (2019SF-244,
+which is further confirmed by the O2 TPD (temperature- 2019ZDLSF05-05-02), and the Shaanxi Natural Science
+programmed desorption) results (Figure S28). Fundamental Shaanxi Coal Chemical Joint Fund (2019JLM-
+ Finally, the intrinsic mechanism of acetone oxidation 14). The authors gratefully acknowledge support from the
+over the EMSI-modulated Pt1 CuO catalyst is revealed in K. C. Wong Education Foundation and Institute of High
+an atomic scale (Figure 7d). The strong electronic interac- Energy Physics (CAS) for XANES and EXAFS analyses.
+tions between Pt atoms and CuO supports through the
+unified Pt O Cu coordination bonds facilitate charge trans-
+fer from Pt to Cu, thereby producing abundant positively Conflict of Interest
+charged Pt species. The acetone molecules are adsorbed and
+activated over these atomic Ptδ + sites. Subsequently, the The authors declare no conflict of interest.
+vicinal C C bonds are cleaved, a process which is promoted
+by the electron deficient carbonyl groups, leading to the
+formation of CH3CO* species. Meanwhile, the lattice oxy- Data Availability Statement
+gen atoms around the Pt atoms are activated to dissociate
+O* species, which will combine with CH3CO* to form The data that support the findings of this study are available
+CH3COO* species. Subsequently, the *COO* intermediates in the Supporting Information of this article.
+are produced through α-H abstraction and C C cleavage.
+This formate species is totally decomposed into harmless Keywords: Acetone Oxidation · Electronic Metal-Support
+CO2 and H2O products over the catalyst surface. Accord- Interactions · Intrinsic Mechanism · Single-Atom Catalysts
+ingly, the strong EMSIs between the Pt atoms and CuO
+supports are decisive for this reaction. The EMSIs consist of
+charge redistribution through the unified Pt O Cu coordi- [1] a) J.-H. Park, A. H. Goldstein, J. Timkovsky, S. Fares, R.
+nation bonds, which modulate the d-band structure of the Pt Weber, J. Karlik, R. Holzinger, Science 2013, 341, 643–647;
+atoms and strengthens the adsorption and activation of b) P. Wang, Y. Chen, J. Hu, H. Zhang, Q. Ying, Environ. Sci.
+reactants. Hence, the energy barrier is lowered, and the Technol. 2019, 53, 1404–1412; c) Q. He, S. Tomaz, C. Li, M.
+rate-limiting step is facilitated. Zhu, D. Meidan, M. Riva, A. Laskin, S. S. Brown, C. George,
+ X. Wang, Y. Rudich, Environ. Sci. Technol. 2021, 55, 2878–
+ 2889.
+ [2] a) Z. Jiang, C. He, N. F. Dummer, J. Shi, M. Tian, C. Ma, Z.
+Conclusion Hao, S. H. Taylor, M. Ma, Z. Shen, Appl. Catal. B 2018, 226,
+ 220–233; b) C. He, Z. Jiang, M. Ma, X. Zhang, M. Douthwaite,
+In summary, three analogous catalysts with different EMSIs J.-W. Shi, Z. Hao, ACS Catal. 2018, 8, 4213–4229; c) M. Huang,
+were carefully designed and synthesized. A positive correla- Y. Li, M. Li, J. Zhao, Y. Zhu, C. Wang, V. K. Sharma, Environ.
+tion between the strength of the EMSIs and catalyst Sci. Technol. 2019, 53, 3610–3619.
+performance was observed. Surprisingly, the Pt1 CuO SAC [3] Y. Zheng, Q. Liu, C. Shan, Y. Su, K. Fu, S. Lu, R. Han, C.
+ Song, N. Ji, D. Ma, Environ. Sci. Technol. 2021, 55, 5403–5411.
+with the unified bonding exhibited the strongest EMSI,
+ [4] P. Wu, X. Jin, Y. Qiu, D. Ye, Environ. Sci. Technol. 2021, 55,
+which can fully convert 800 ppm of acetone into CO2 at just 4268–4286.
+210 °C with a low activation energy of 54.32 kJ mol 1. On the [5] C. He, J. Cheng, X. Zhang, M. Douthwaite, S. Pattisson, Z.
+basis of operando methods and DFT studies, the EMSIs Hao, Chem. Rev. 2019, 119, 4471–4568.
+promote electron back donation from Pt to CuO, producing [6] Q. Wang, Y. Li, A. Serrano-Lotina, W. Han, R. Portela, R.
+sufficiently positively charged Pt atoms, which are highly Wang, M. A. Banares, K. L. Yeung, J. Am. Chem. Soc. 2021,
+ 143, 196–205.
+efficient sites in activating acetone at low temperatures.
+ [7] a) Y. Chen, J. Gao, Z. Huang, M. Zhou, J. Chen, C. Li, Z. Ma,
+Meanwhile, the charge redistribution through the unified J. Chen, X. Tang, Environ. Sci. Technol. 2017, 51, 7084–7090;
+Pt O Cu bonds will facilitate the activation of adjacent b) T. Gan, J. Yang, D. Morris, X. Chu, P. Zhang, W. Zhang, Y.
+lattice oxygens to participate in oxidation, leading to the Zou, W. Yan, S. H. Wei, G. Liu, Nat. Commun. 2021, 12, 2741;
+circulation of oxygen vacancies. Ultimately, what this study c) P. Hu, Z. Huang, Z. Amghouz, M. Makkee, F. Xu, F.
+demonstrates is that dramatic increments in catalyst per- Kapteijn, A. Dikhtiarenko, Y. Chen, X. Gu, X. Tang, Angew.
+formance can be acquired simply by promoting EMSIs in Chem. Int. Ed. 2014, 53, 3418–3421; Angew. Chem. 2014, 126,
+ 3486–3489.
+SACs. Herein, we have shown this to be true for Pt1 CuO
+ [8] Z. Jiang, X. Feng, J. Deng, C. He, M. Douthwaite, Y. Yu, J.
+and demonstrated that these enhancements are not limited Liu, Z. Hao, Z. Zhao, Adv. Funct. Mater. 2019, 29, 1902041.
+to a specific substrate. We therefore conclude that such [9] a) R. Lang, X. Du, Y. Huang, X. Jiang, Q. Zhang, Y. Guo, K.
+EMSIs must be considered when studying SACs, as their Liu, B. Qiao, A. Wang, T. Zhang, Chem. Rev. 2020, 120,
+influence on the catalysis is significant. 11986–12043; b) Y. Zhu, S. F. Yuk, J. Zheng, M.-T. Nguyen,
+ M.-S. Lee, J. Szanyi, L. Kovarik, Z. Zhu, M. Balasubramanian,
+ V.-A. Glezakou, J. L. Fulton, J. A. Lercher, R. Rousseau,
+ O. Y. Gutiérrez, J. Am. Chem. Soc. 2021, 143, 5540–5549; c) W.
+Acknowledgements Qu, X. Liu, J. Chen, Y. Dong, X. Tang, Y. Chen, Nat.
+ Commun. 2020, 11, 1532.
+This work was financially supported by the National Natural [10] a) C. T. Campbell, Nat. Chem. 2012, 4, 597–598; b) A. Bruix,
+Science Foundation of China (21922606, 21876139), the Key J. A. Rodriguez, P. J. Ramirez, S. D. Senanayake, J. Evans,
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (8 of 9) © 2022 Wiley-VCH GmbH
+ 15213773, 2022, 28, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/anie.202200763 by University Of Tokyo, Wiley Online Library on [04/08/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Angewandte
+ Research Articles Chemie
+
+ J. B. Park, D. Stacchiola, P. Liu, J. Hrbek, F. Illas, J. Am. Zheng, L. Gu, Y. Wu, Y. Li, J. Am. Chem. Soc. 2019, 141,
+ Chem. Soc. 2012, 134, 8968–8974. 4505–4509.
+[11] a) L. Liu, A. Corma, Chem. Rev. 2018, 118, 4981–5079; b) V. [22] M. Moliner, J. E. Gabay, C. E. Kliewer, R. T. Carr, J. Guzman,
+ Muravev, G. Spezzati, Y.-Q. Su, A. Parastaev, F.-K. Chiang, A. G. L. Casty, P. Serna, A. Corma, J. Am. Chem. Soc. 2016, 138,
+ Longo, C. Escudero, N. Kosinov, E. J. M. Hensen, Nat. Catal. 15743–15750.
+ 2021, 4, 469–478; c) Y. Shi, Z.-R. Ma, Y.-Y. Xiao, Y.-C. Yin, [23] a) I. Khalakhan, M. Vorokhta, X. Xie, L. Piliai, I. Matolínová,
+ W.-M. Huang, Z.-C. Huang, Y.-Z. Zheng, F.-Y. Mu, R. Huang, J. Electron Spectrosc. 2021, 246, 147027; b) L. E. Gómez, B. M.
+ G.-Y. Shi, Y.-Y. Sun, X.-H. Xia, W. Chen, Nat. Commun. 2021, Sollier, M. D. Mizrahi, J. M. Ramallo López, E. E. Miró, A. V.
+ 12, 3021; d) J. Liu, Q. Guan, H. Wu, W. Liu, Y. Lin, Z. Sun, X. Biox, Int. J. Hydrogen Energy 2014, 39, 3719–3729.
+ Ye, X. Zheng, H. Pan, J. Zhu, S. Chen, W. Zhang, S. Wei, J. [24] a) T.-T. Zhuang, Y. Pang, Z.-Q. Liang, Z. Wang, Y. Li, C.-S.
+ Lu, J. Am. Chem. Soc. 2019, 141, 14515–14519; e) L. Wang, C. Tan, J. Li, C. T. Dinh, P. De Luna, P.-L. Hsieh, T. Burdyny,
+ Zhu, M. Xu, C. Zhao, J. Gu, L. Cao, X. Zhang, Z. Sun, S. Wei, H.-H. Li, M. Liu, Y. Wang, F. Li, A. Proppe, A. Johnston, D.-
+ W. Zhou, W.-X. Li, J. Lu, J. Am. Chem. Soc. 2021, 143, 18854– H. Nam, Z.-Y. Wu, Y.-R. Zheng, A. H. Ip, H. Tan, L.-J. Chen,
+ 18858. S.-H. Yu, S. O. Kelley, D. Sinton, E. H. Sargent, Nat. Catal.
+[12] X. I. Pereira-Hernandez, A. DeLaRiva, V. Muravev, D. 2018, 1, 946–951; b) Y. Shi, L. Xu, M. Chen, B. Yang, G.
+ Kunwar, H. Xiong, B. Sudduth, M. Engelhard, L. Kovarik, Cheng, C.-E. Wu, Z. Miao, N. Wang, X. Hu, J. Ind. Eng.
+ E. J. M. Hensen, Y. Wang, A. K. Datye, Nat. Commun. 2019, Chem. 2022, 105, 324–336.
+ 10, 1358. [25] a) N. J. Divins, D. Kordus, J. Timoshenko, I. Sinev, I.
+[13] Z. Jiang, M. Jing, X. Feng, J. Xiong, C. He, M. Douthwaite, L. Zegkinoglou, A. Bergmann, S. W. Chee, S. Widrinna, O.
+ Zheng, W. Song, J. Liu, Z. Qu, Appl. Catal. B 2020, 278, Karslioglu, H. Mistry, M. Lopez Luna, J. Q. Zhong, A. S.
+ 119304. Hoffman, A. Boubnov, J. A. Boscoboinik, M. Heggen, R. E.
+[14] a) X. Song, L. Huang, W. He, C. Liu, F. Hu, Y. Jiang, Z. Sun, Dunin-Borkowski, S. R. Bare, B. R. Cuenya, Nat. Commun.
+ S. Wei, J. Phys. Chem. C 2019, 123, 10907–10916; b) C. Zhang, 2021, 12, 1435; b) Z. Q. Liang, T. T. Zhuang, A. Seifitokaldani,
+ L. Chao, L. Wang, Y. Cheng, Q. Xie, Electrochim. Acta 2020, J. Li, C. W. Huang, C. S. Tan, Y. Li, P. De Luna, C. T. Dinh,
+ 330, 135234; c) G. Chen, Y. Zhao, G. Fu, P. N. Duchesne, L. Y. Hu, Q. Xiao, P. L. Hsieh, Y. Wang, F. Li, R. Quintero-
+ Gu, Y. Zheng, X. Weng, M. Chen, P. Zhang, C. W. Pao, J. F. Bermudez, Y. Zhou, P. Chen, Y. Pang, S. C. Lo, L. J. Chen, H.
+ Lee, N. Zheng, Science 2014, 344, 495–499. Tan, Z. Xu, S. Zhao, D. Sinton, E. H. Sargent, Nat. Commun.
+[15] A. J. Therrien, A. J. R. Hensley, M. D. Marcinkowski, R. 2018, 9, 3828; c) D. Wakerley, S. Lamaison, F. Ozanam, N.
+ Zhang, F. R. Lucci, B. Coughlin, A. C. Schilling, J.-S. McEwen, Menguy, D. Mercier, P. Marcus, M. Fontecave, V. Mougel,
+ E. C. H. Sykes, Nat. Catal. 2018, 1, 192–198. Nat. Mater. 2019, 18, 1222–1227.
+[16] D. Yang, Q. Zhu, C. Chen, H. Liu, Z. Liu, Z. Zhao, X. Zhang, [26] X. Liu, S. Jia, M. Yang, Y. Tang, Y. Wen, S. Chu, J. Wang, B.
+ S. Liu, B. Han, Nat. Commun. 2019, 10, 677. Shan, R. Chen, Nat. Commun. 2020, 11, 4240.
+[17] N. Cheng, S. Stambula, D. Wang, M. N. Banis, J. Liu, A. Riese, [27] Z. Wang, P. Ma, K. Zheng, C. Wang, Y. Liu, H. Dai, C. Wang,
+ B. Xiao, R. Li, T. K. Sham, L. M. Liu, G. A. Botton, X. Sun, H.-C. Hsi, J. Deng, Appl. Catal. B 2020, 274, 118963.
+ Nat. Commun. 2016, 7, 13638. [28] S. Kattel, B. Yan, Y. Yang, J. G. Chen, P. Liu, J. Am. Chem.
+[18] a) H. V. Thang, G. Pacchioni, L. DeRita, P. Christopher, J. Soc. 2016, 138, 12440–12450.
+ Catal. 2018, 367, 104–114; b) H. A. Aleksandrov, K. M. Ney- [29] J. Wang, P. Zhang, J. Li, C. Jiang, R. Yunus, J. Kim, Environ.
+ man, K. I. Hadjiivanovd, G. N. Vayssilov, Phys. Chem. Chem. Sci. Technol. 2015, 49, 12372–12379.
+ Phys. 2016, 18, 22108–22121. [30] J. Guo, C. Lin, C. Jiang, P. Zhang, Appl. Surf. Sci. 2019, 475,
+[19] L. Nie, D. Mei, H. Xiong, B. Peng, Z. Ren, X. I. P. Hernandez, 237–255.
+ A. DeLaRiva, M. Wang, M. H. Engelhard, L. Kovarik, A. K. [31] a) F. Jiang, S. Wang, B. Liu, J. Liu, L. Wang, Y. Xiao, Y. Xu,
+ Datye, Y. Wang, Science 2017, 358, 1419–1423. X. Liu, ACS Catal. 2020, 10, 11493–11509; b) H. Pan, Y. Jian,
+[20] a) L. DeRita, S. Dai, K. Lopez-Zepeda, N. Pham, G. W. C. Chen, C. He, Z. Hao, Z. Shen, H. Liu, Environ. Sci.
+ Graham, X. Pan, P. Christopher, J. Am. Chem. Soc. 2017, 139, Technol. 2017, 51, 6288–6297; c) H. Tan, J. Wang, S. Yu, K.
+ 14150–14165; b) G. Sun, Z.-J. Zhao, R. Mu, S. Zha, L. Li, S. Zhou, Environ. Sci. Technol. 2015, 49, 8675–8682.
+ Chen, K. Zang, J. Luo, Z. Li, S. C. Purdy, A. J. Kropf, J. T.
+ Miller, L. Zeng, J. Gong, Nat. Commun. 2018, 9, 4454; c) Q.
+ Liu, Z. Zhang, Catal. Sci. Technol. 2019, 9, 4821–4834.
+[21] Y. Qu, B. Chen, Z. Li, X. Duan, L. Wang, Y. Lin, T. Yuan, F. Manuscript received: January 15, 2022
+ Zhou, Y. Hu, Z. Yang, C. Zhao, J. Wang, C. Zhao, Y. Hu, G. Accepted manuscript online: March 29, 2022
+ Wu, Q. Zhang, Q. Xu, B. Liu, P. Gao, R. You, W. Huang, L. Version of record online: May 13, 2022
+
+Angew. Chem. Int. Ed. 2022, 61, e202200763 (9 of 9) © 2022 Wiley-VCH GmbH

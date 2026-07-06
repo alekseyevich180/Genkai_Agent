@@ -1,0 +1,484 @@
+Research Article
+﻿ www.advmat.de
+
+Formation and Stabilization of NiOOH by Introducing
+α-FeOOH in LDH: Composite Electrocatalyst for Oxygen
+Evolution and Urea Oxidation Reactions
+Minmin Cai, Qian Zhu, Xiyang Wang, Zhiyu Shao, Lu Yao, Hui Zeng, Xiaofeng Wu,
+Jun Chen, Keke Huang,* and Shouhua Feng
+
+ well-tuned electronic configuration.[4,5]
+NiOOH is considered as the most active intermediate during electrochemical Especially, with an edge-sharing octahe-
+oxidation reaction, however, it is hard to directly synthesize due to high oxida- dral MO6 layer-stacking crystal structure
+tion energy. Herein, theoretical calculations predict that α-FeOOH enables a served as highly active sites, NiFe-based
+ layered double hydroxides (NiFe LDHs)
+decline in formation energy and an improvement in stabilization of NiOOH in
+ exhibited highly remarkable intrinsic elec-
+NiFe-based layered double hydroxide (LDH). Inspiringly, a composite com- trochemical activity.[6,7] Several studies
+posed of α-FeOOH and LDH is well-designed and successfully fabricated in have reported that NiFe LDH is actually
+hydrothermal treatment by adding extra Fe3+ resource, and stable NiOOH is a precatalyst, and it heavily undergoes a
+obtained by the following electro-oxidation method. Benefiting from strong self-reconstruction process in basic solu-
+electron-capturing capability of α-FeOOH, it efficiently promotes charge tion, generating Ni oxyhydroxide (NiOOH)
+ as the active species for OER.[8,9] To begin
+redistribution around the Ni/Fe sites and activates Ni atoms of LDH, veri-
+ with, Alexis et al. characterized the vibra-
+fied by X-ray photoelectron spectra (XPS) and X-ray absorption spectra (XAS). tion mode of NiOOH by in situ Raman
+The d-band center is optimized that balances the absorption and desorption spectra, when Ni–Fe films worked as
+energy, and thus Gibbs free energy barrier is lowered dramatically toward anodes in basic media during the OER.[10]
+oxygen evolution reaction (OER) and urea oxidation reaction (UOR), and Then, some research revealed that NiOOH
+ species is generally recognized as the posi-
+finally showing an outstanding overpotential of 195 mV and a potential of
+ tive reaction species and can provide abun-
+1.35 V at 10 mA cm−2, respectively. This study provides a novel strategy to dant intrinsic catalytic sites for OER.[11–13]
+construct highly efficient catalysts via the introduction of a new phase for Not limited to OER, NiOOH can also effi-
+complex multiple-electron reactions. ciently catalyze the anodic degradation of
+ urea that featured with the more complex
+ six-electron redox process.[14,15] However,
+1. Introduction owing to the instability of the high valence state of Ni (III)
+ which can easily transform into Ni (II), the direct synthesis and
+The development of highly efficient and stable electrocatalysts application of NiOOH have not been realized, unless a high
+is pivotal in facilitating the sluggish kinetics of oxygen evolu- anodic polarization is applied.[16,17] Therefore, it is crucial to
+tion reaction (OER) and urea oxidation reaction (UOR).[1–3] explore synthesis methods to stabilize NiOOH catalyst.
+Among the various non-noble metal electrocatalysts, nickel– Among the multiple regulation methods, surface structure
+iron-based nanomaterials have received considerable atten- reconstruction with the aid of a new phase is widely accepted as
+tion owing to their cost effectiveness, natural abundance, and a controllable approach for synthesizing novel composites with
+
+M. Cai, Q. Zhu, Z. Shao, L. Yao, H. Zeng, X. Wu, K. Huang, S. Feng X. Wang
+State Key Laboratory of Inorganic Synthesis and Preparative Chemistry Department of Mechanical and Mechatronics Engineering Waterloo
+Jilin Provincial International Cooperation Key Laboratory of Advanced Institute for Nanotechnology
+Inorganic Solid Functional Materials Materials Interface Foundry
+College of Chemistry University of Waterloo
+Jilin University Waterloo, Ontario N2L3G1, Canada
+Changchun 130012, China J. Chen
+E-mail: kkhuang@jlu.edu.cn Intelligent Polymer Research Institute
+ Australian Institute for Innovative Materials
+ The ORCID identification number(s) for the author(s) of this article Innovation Campus
+ can be found under https://doi.org/10.1002/adma.202209338. University of Wollongong
+ Squires Way, North Wollongong, NSW 2500, Australia
+DOI: 10.1002/adma.202209338
+
+Adv. Mater. 2023, 35, 2209338 2209338 (1 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+enhanced catalytic performance.[18–20] Recently, NiFe LDHs- Information), indicating that the loss of H atoms in LDH with
+related studies suggested that FeOOH served as a second phase the presence of α-FeOOH was exothermic thermodynamically.
+is capable of harvesting electrons from Ni-based oxides.[21] Chen The loss of H atoms from LDH is a necessary step during the
+et al. proposed that Fe3+ of FeOOH is favorable to interact with conversion to NiOOH. Therefore, it was believed that α-FeOOH
+Ni2+ and form close-connected oxygen bridges (Fe(3+δ)+−O− theoretically contributed to the formation of NiOOH. To reveal
+Ni2+), accelerating electron transfer.[22] Hence, it is expected the inductive effect of FeOOH on the stability of NiOOH, we
+that FeOOH can be used to modulate the electron configura- constructed NiOOH and α-FeOOH/NiOOH models (Figure 1c)
+tion, aiming to raise the intrinsic catalytic performance of the and compared their EH (Equation (S11), Supporting Informa-
+composite. tion). As shown in Figure 1d, the EH of the oxygen sites is rep-
+ Based on the above background, we firstly performed den- resented by the purple circles, and the two rightmost columns
+sity functional theory (DFT) calculations to predict the behavior represent the average values. The average EH of NiOOH was
+of LDH and NiOOH with the presence of α-FeOOH, which −3.18 eV, while the EH of α-FeOOH/NiOOH was −2.92 eV, indi-
+showed that α-FeOOH can promote the formation and sta- cating the NiOOH with α-FeOOH is less prone to reduction
+bilization of NiOOH. Motivated by the DFT predictions, an than pure NiOOH. In brief, the above calculations predicted
+electrocatalyst composed of amorphous NiOOH/FeOOH and that the strong electron-capturing and hydrogen absorption
+α-FeOOH was synthesized using a straightforward hydro- ability, further facilitating the formation and stabilization
+thermal method and a subsequent “diffusion-redeposition” of NiOOH. Inspired by this, we introduced α-FeOOH by a
+approach by electro-oxidation treatment (referred to as NiOOH/ classic hydrothermal approach to obtain LDH and α-FeOOH
+(LDH/α-FeOOH)). Raman spectra showed the generation of composite nanosheets (LDH/α-FeOOH). Subsequently, the
+NiOOH on LDH with the presence of α-FeOOH. In addition, as-prepared LDH/α-FeOOH nanosheets were used as anodes
+the X-ray photoelectron spectra (XPS) and X-ray absorption and operated by linear sweep voltammograms (LSV) scanning
+spectra (XAS) results revealed that the obtained nanocom- in 1.0 m KOH; thereafter, fresh LDH/α-FeOOH decorated with
+posite exhibited strong charge-transfer interactions between amorphous NiOOH/FeOOH was obtained as expected (denoted
+α-FeOOH and LDH, and a rarefied electron density around as NiOOH/(LDH/α-FeOOH)). The fabrication process of the
+the Ni sites. The NiOOH/(LDH/α-FeOOH) exhibited superior NiOOH/(LDH/α-FeOOH) nanosheet composite is illustrated in
+electrocatalytical activity: an ultralow overpotential (195 mV) Figure 1e.
+and potential (1.35 V) at 10 mA cm−2 toward OER and UOR, The crystal structure of the obtained samples were charac-
+respectively. Further, the DFT calculations verified that the well- terized by X-ray power diffraction technique (XRD). As shown
+designed NiOOH/(LDH/α-FeOOH) composite exhibited the in Figure 2a, in addition to the characteristic peaks of LDH
+lowest Gibbs free energy barrier toward OER and UOR. This (PDF#49-0188), the weaker diffraction peak observed at 21°
+study opens the avenue toward the stabilization and enhance- corresponded to the (110) plane of α-FeOOH (PDF#03-0125),
+ment for catalyst by precisely constructing composite with the indicating the successful preparation of LDH/α-FeOOH com-
+introduction of a new phase. posite.[23–25] The XRD pattern of NiOOH/(LDH/α-FeOOH)
+ hardly varies from LDH/α-FeOOH, demonstrating that contin-
+ uous LSV scanning does not induce the structure changes. The
+2. Results and Discussion Raman spectra are illustrated in Figure 2b, further exploring
+ the variation in the surface layer of the materials. Several char-
+DFT calculations were performed to predict the inductive effect acteristic peaks of LDH and LDH/α-FeOOH centered at 460,
+of α-FeOOH on LDH and NiOOH. First, a composite model 520, 537, 570, and 3581–3668 cm−1 are attributed to the A1g
+of LDH/α-FeOOH was constructed (Figure 1a). Bader charge stretching modes of Ni–OH, Ni–O, Fe–O–Fe, Fe–O, and O–H
+analysis (Table S1, Supporting Information) demonstrated vibrations of NiFe hydroxides, respectively.[26,27,28]
+that 0.457 e− transferred from LDH to α-FeOOH, showing the No visible signal of α-FeOOH was observed in the LDH/α-
+ability of FeOOH to absorb electrons. The charge density dif- FeOOH sample, which can be explained from two perspectives:
+ference through the LDH/α-FeOOH (Figure S2, Supporting the low content of α-FeOOH and the subsurface characteri-
+Information) also show the trend. To explore the influence of zation of the detection depth of Raman technology (≈10 nm).
+α-FeOOH on LDH, the average Bader charge variations of Ni Meanwhile, the intensity of –OH significantly broadens in
+and Fe in LDH with or without α-FeOOH were determined LDH/α-FeOOH owing to the presence of α-FeOOH, compared
+(Figure 1b). In LDH/α-FeOOH, there was more charge loss in to LDH. After the electrochemical operation, NiOOH/LDH
+Ni and Fe atoms (−1.25 for Ni and −1.54 for Fe) and less charge distinctly shares the same Raman feature peaks as LDH; how-
+loss occurs (−1.23 for Ni and −1.53 for Fe) in LDH. Therefore, ever, the surface structure of NiOOH/(LDH/α-FeOOH) is com-
+the presence of α-FeOOH allows the cation valence of LDH pletely distinguished from that of LDH/α-FeOOH. The peaks
+to increase. In addition, the hydrogen migration energy (Em) observed at 474 and 575 cm−1 are attributed to the Eg bending
+values at the sites from the LDH to α-FeOOH (Equation (S10), and A1g stretching vibrations of Ni–O of NiOOH, respectively,
+Supporting Information) and the Hydrogenation formation whereas the peaks observed at 571 and 672 cm−1 are assigned
+energy (EH) of the oxygen sites in the α-FeOOH/NiOOH model to the FeOOH in NiOOH/(LDH/α-FeOOH).[21,29] Moreover, the
+(Equation (S11), Supporting Information) were determined, disappearance of the –OH signal owing to the deprotonation
+respectively. The hydrogen migration path is illustrated in effect further reveals that several active species (Ni/FeOOH)
+Figure S3a (Supporting Information), the computed Em at the were generated on the surface of LDH/α-FeOOH. The Raman
+two sites were −0.602 and −0.409 eV (Figure S3b, Supporting spectra also demonstrated that the entire structure exhibits a
+
+Adv. Mater. 2023, 35, 2209338 2209338 (2 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+Figure 1. a) Schematic model of LDH/α-FeOOH. b) The average Bader charge variations of Ni and Fe in LDH. c) Schematic model of α-FeOOH/
+NiOOH. d) The hydrogenation formation energies on the O sites over NiOOH and α-FeOOH/NiOOH. e) Schematic illustration for the formation
+process of NiOOH/(LDH/α-FeOOH) nanosheets.
+
+large disorder, mainly because the presence of α-FeOOH pro- Information and Figure 2e) illustrated the homogeneous distri-
+motes surface reorganization and the formation of rich and bution of Ni, Fe, and O throughout the nanosheets of LDH/
+active NiOOH for electrocatalysis.[30,28] α-FeOOH and NiOOH/(LDH/α-FeOOH). The EDS results
+ Scanning electron microscopy (SEM) images (Figure S5, of the SEM images (Figure S7, Supporting Information) con-
+Supporting Information) showed that the 3D interlaced porous firmed that the relative contents of Fe and Ni remain at a con-
+nanosheets grew vertically and densely in the LDH/α-FeOOH stant level, revealing that the electrochemical procedure did
+and NiOOH/(LDH/α-FeOOH) samples. TEM images of not trigger the heavy migration of metal ions. In addition, ICP
+LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH) validated the test with ten groups of solution after electrochemical operation
+thin nanosheet morphology (Figure S6a, Supporting Infor- was conducted to explore the content of solution metal ions.
+mation and Figure 2c). The high-resolution TEM (HRTEM) As exhibited in Table S2 (Supporting Information), the average
+image of LDH/α-FeOOH illustrated two lattice fringes with value of Ni and Fe atom is 0.00177 and 0.02738 ppm, respec-
+interplanar spacing of 0.25 and 0.21 nm, which are ascribed to tively. The extremely lower leaching concentration of Ni or Fe
+(012) plane of LDH and (140) plane of α-FeOOH (Figure S6b, validates that fewer proportion of metal ions probably migrate
+Supporting Information). After electrochemical treatment, from electrode surface and dissolve into electrolyte. Further-
+NiOOH/(LDH/α-FeOOH) remained the same lattice fringes more, atomic force microscopy (AFM) analysis (Figure 2f and
+without distinction as before, whereas a narrow surface amor- Figure S8, Supporting Information) depicted that the thickness
+phous layer with a thickness of ≈3 nm occurred spontane- of the NiOOH/(LDH/α-FeOOH) nanosheet was ≈5.4 nm, which
+ously, as shown in Figure 2d. Energy-dispersive spectrometry was thinner than that of LDH/α-FeOOH (9.1 nm), suggesting
+(EDS) elemental mapping images (Figure S6d–f, Supporting that the nanosheets became more thinner after oxidization.
+
+Adv. Mater. 2023, 35, 2209338 2209338 (3 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+Figure 2. a) XRD patterns and b) Raman spectra of LDH, LDH/α-FeOOH, NiOOH/LDH, and NiOOH/(LDH/α-FeOOH). c) TEM, d) HRTEM, e) STEM
+and the corresponding mapping images, and f) AFM image of NiOOH/(LDH/α-FeOOH). g) Ni 2p XPS spectra, h) Ni L-edge XAS, i) O K-edge XAS
+(inset: magnified section of O peak Ι) of LDH, LDH/α-FeOOH, and NiOOH/(LDH/α-FeOOH). j) Fourier transform of the k2-weighted EXAFS spectra
+at Ni K-edge and k) Ni K-edge EXAFS of oscillations for LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH).
+
+During the reconstruction process, NiFe LDH served as a sacri- an increase in the scanning period. According to the EDS, ICP
+ficial template for providing a nanosheet framework and active AFM, and HRTEM images, it was deduced that there were two
+metal ions, whereas, α-FeOOH acted as an inductive agent to steps during the growth process of NiOOH/(LDH/α-FeOOH).
+attract charge reorganization regularly, ruled by a subsequent More specifically, metal (Ni/Fe) ions initially migrated to the
+“diffusion-redeposition” path. The thinness of NiOOH/(LDH/ nanosheets surface from LDH/α-FeOOH, resulting in thinner
+α-FeOOH) nanosheets was preferable for the diffusion of metal nanosheets. In the second stage, these outside metal ions
+ions and solution anions. To determine the detailed evolution started to nucleate and grow in the KOH solution, allowing for
+process of LDH/α-FeOOH under a given potential, a series of nanocrystal growth and evolution into a new phase, inducing
+NiOOH/(LDH/α-FeOOH)-X (X denotes the scanning numbers) the amorphous Ni/FeOOH to cover the nanosheets.
+were prepared, and the corresponding HRTEM images are The elemental compositions and surface electronic states
+shown in Figure S9 (Supporting Information). The thickness of LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH) were inves-
+of the outer amorphous layer increased from 0 to 5 nm with tigated through XPS to determine the relationship between
+
+Adv. Mater. 2023, 35, 2209338 2209338 (4 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+the electronic configuration and catalytic performance. As to the covalence of Ni/Fe 4sp and O 2p.[38,39] Notably, the inten-
+depicted in Figure 2g, the high-resolution XPS spectra of Ni sity of peak A in NiOOH/(LDH/α-FeOOH) slightly decreased to
+in LDH, LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH) con- some extent and peak B shifted to a lower energy (∆E = 0.5 eV),
+sisted of two spin-orbit coupling peaks (Ni 2p3/2 and Ni 2p1/2) owing to the enhanced covalence of M–O bonds and the lat-
+and two satellites, which were deconvoluted into Ni2+ and Ni3+. tice oxygen oxidation that results in more active –OO− species,
+Although LDH/α-FeOOH possessed the same chemical states respectively. The obtained XAS results and other character-
+of Ni2+ (855.8 eV) and Ni3+ (857.4 eV) with LDH, Ni 2p peaks in ized results further demonstrated that the electronic states of
+LDH/α-FeOOH exhibited a shift to high energy and the ratio Fe/Ni increase significantly, and the lattice oxygen was highly
+of Ni3+/Ni2+ increased to 1.01 from 0.97 (Table S2, Supporting oxidized.
+Information), owing to the strong inducing effect of α-FeOOH. X-ray absorption near edge structure (XANES) and extended
+In comparison to LDH/α-FeOOH, the Ni 2p peaks of NiOOH/ X-ray absorption fine structure (EXAFS) measurements were
+(LDH/α-FeOOH) shifted significantly and the ratio of Ni3+/Ni2+ conducted to understand changes in the local structural motifs
+increased by 0.87. Most of the Ni3+ originated from the newly of metal elements (Fe/Ni) in LDH/α-FeOOH and NiOOH/
+thin amorphous NiOOH produced during electrochemical oxi- (LDH/α-FeOOH). The edge peak near 8340 eV in the normal-
+dation, which is in perfect agreement with the Raman spectra. ized Ni K-edge XANES (Figure S12a, Supporting Information)
+It is experimentally verified that Ni3+ was regarded as the active has positively shifted for NiOOH/(LDH/α-FeOOH), relative
+reaction site to convert the intermediate (–OO−) into O2, hence to LDH/α-FeOOH, And the intensity of white line peak near
+more Ni3+ elevates the probability for generating O2 at great 8350 eV of NiOOH/(LDH/α-FeOOH) is higher than that of
+extent.[28] In comparison to LDH and LDH/α-FeOOH, the Fe LDH/α-FeOOH. For Fe k-edge of NiOOH/(LDH/α-FeOOH),
+2p peaks of NiOOH/(LDH/α-FeOOH) exhibited a shift to a the edge peak near 7110 eV shifts to higher energy and the
+higher energy and the Fe3+/Fe2+ ratio raised, revealing a higher intensity of white line peak enhances apparently, compared to
+electronic state than that of their counterparts (Figure S10a LDH/α-FeOOH (Figure S12b, Supporting Information). These
+and Table S3, Supporting Information). Herein, Fe2+ and Fe3+ Ni and Fe K-edge XANES spectra demonstrates that valence
+of LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH) nanosheets state of metal ions has been elevated for electro-oxidation oper-
+were derived from LDH and surface-oxidized Fe3+ or α-FeOOH, ation, which is strictly consistent with XPS and Ni/Fe L-edge
+respectively.[28,31,32] Correspondingly, there are three oxygen spe- XAS spectra results. As shown in Figure S11b (Supporting
+cies in LDH, LDH/α-FeOOH and NiOOH/(LDH/α-FeOOH) Information), NiOOH/(LDH/α-FeOOH) and LDH/α-FeOOH
+(Figure S10b, Supporting Information), attributing to highly shared two coordination peaks, ascribed to the Fe–O and Fe–M
+active oxygen species (–O–), hydroxyl group (O–H) and sur- paths, respectively. The peak intensities of Fe–O and Fe–M in
+face water molecule absorbed (H2O) at ≈530, 531, and 532 eV, NiOOH/(LDH/α-FeOOH) declined distinctly and the intensities
+respectively, reflecting the diverse forms of oxygen coordinated of Ni–O and Ni–M in NiOOH/(LDH/α-FeOOH) also increased
+to the metal.[33–35] Moreover, a relative enhancement of –O– (Figure 2j), demonstrating an enhanced local structural dis-
+was exhibited in NiOOH/(LDH/α-FeOOH), indicating that a order after electrochemical oxidation. In comparison to LDH/
+large number of surface lattice oxygen atoms were oxidized. α-FeOOH, the distances of Ni–O and Ni–M paths contracted in
+The above XPS results not only demonstrated the successful NiOOH/(LDH/α-FeOOH), signifying that the oxidation treat-
+inducing effect of α-FeOOH on LDH, but also indicated that ment triggered a distortion in the local coordination environ-
+the redistributed charges put the surface metals (Ni and Fe) in ment of Ni. As further confirmed by the Ni K-edge k3χ data
+an extremely electron-poor environment, coinciding with the of EXAFS oscillations (Figure 2k), oxidizing LDH@FeOOH
+DFT calculations and Raman phenomenon. produced smaller amplitude oscillations, and decreased the
+ To better investigate the surface electronic structure of coordination number of Ni atoms, indicating more defects of
+these catalysts after electrochemical treatment, Ni L-edge, Fe amorphous features in NIOOH/LDH@FeOOH.[38]
+L-edge, and O K-edge XAS spectra were obtained. As shown in A series of NiOOH/(LDH/α-FeOOH)-X samples were char-
+Figure 2h, Ni L-edge XAS spectra are divided into two regions acterized to tailor the variation of composition, valence state
+of interest: the L3-edge near 856 eV and the L2-edge near and hybridization effect, and to probe the surface reconstruc-
+874 eV. The normalized Ni L-edge XAS spectrum of NiOOH/ tion process of LDH/α-FeOOH during oxidation. All XRD pat-
+(LDH/α-FeOOH) exhibited a higher peak intensity than terns (Figure S13a, Supporting Information) exhibited same
+LDH/α-FeOOH and LDH, indicating an increase in the valence patterns ranging from NiOOH/(LDH/α-FeOOH)-5 to NiOOH/
+state and a decrease in the electron density for Ni atoms. (LDH/α-FeOOH)-100, revealing that the electrochemical treat-
+Subsequently, the normalized Fe L-edge XAS spectrum illus- ment does not form any new phase or materials. However, the
+trated in Figure S11a (Supporting Information) also exhibited Raman spectra of NiOOH/(LDH/α-FeOOH)-X distinctly
+a similar result: NiOOH/(LDH/α-FeOOH) possesses a higher changed with an increase in the degree of oxidization, as shown
+peak intensity, demonstrating that the Fe element in NiOOH/ in Figure S13b (Supporting Information). At the beginning of
+(LDH/α-FeOOH) has a lower electron density and higher oxida- the preparation, NiOOH/(LDH/α-FeOOH)-5 exhibited vibra-
+tion state.[36,37] These results were strictly consistent with XPS tion peaks the identical to those of LDH/α-FeOOH, whereas
+results. The normalized O K-edge XAS spectrum was used to the peaks attributed to NiFe hydroxide started to disappear and
+analyze the valence of the metal-oxygen bond as illustrated in novel peaks assigned to Ni/FeOOH occurred abruptly at X = 30.
+Figure 2i. Peak A was assigned to the hybridization of metal 3d In particular, the signal of FeOOH was significantly stronger
+and oxygen 2p, peak B represented the signal of peroxo-like – than that of NiOOH in NiOOH/(LDH/α-FeOOH)-30 because
+OO− species with the O–O bond, whereas peak C was assigned Fe had a lower oxidization potential than Ni. Subsequently, the
+
+Adv. Mater. 2023, 35, 2209338 2209338 (5 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+enhanced intensities of the eg bending vibration and A1g expected. During the preparation of catalyst, the induction of
+stretching vibration of NiIII–O surpassed the usual formation α-FeOOH was further evidenced by the fact that the charge
+speed of FeOOH. This abnormal phenomenon revealed the around the Ni/Fe atoms started to reorganize, and the powerful
+presence of intense electronic transfer between the Ni and Fe electronic interaction between Fe and Ni occurred, resulting in
+atoms in the oxidization process. The XPS spectra of NiOOH/ the formation of NiOOH as quickly as possible. The induced
+(LDH/α-FeOOH)-X samples were illustrated in Figure S14 reconstruction of the composite by α-FeOOH species enhanced
+(Supporting Information) to further explain this special reality. the electrochemical performance of the catalysts. To verify the
+Fe 2p exhibited an initial shift to a higher energy, and main- aforementioned theory related to the structure-performance
+tained negligible migration when X reached 30. In addition, the relationship, the electrocatalytic activity of the samples toward
+parallel tendency can be applied to Ni 2p, demonstrating that the OER was evaluated using a standard three-electrode setup
+the oxidization states of Fe/Ni increased initially and thereafter in 1.0 m KOH. As illustrated in Figure 3a, the LSV polarization
+remained steady for a complete surface reaction. According to curves with IR correction demonstrated that NiOOH/(LDH/
+the calculated ratio of M3+/M2+ (Table S3, Supporting Informa- α-FeOOH) exhibited significantly higher OER activity than the
+tion), the surface content of Fe3+ increased sharply initially and other as-prepared samples. The detected overpotential that
+began to decrease in NiOOH/(LDH/α-FeOOH)-40, however, the reached a geometric current density of 10 mA cm−2 for E-
+proportion of Ni3+ continued to increase at all times until it LDH/α-FeOOH was 195 mV, which was not only lower than
+reached 100%. It was demonstrated that fully oxidized Fe those of NiOOH/LDH (210 mV), E-Ni(OH)2 (340 mV), LDH/
+started to harvest electrons from Ni to balance the charge. The α-FeOOH (270 mV), LDH (265 mV), Ni(OH)2 (350 mV), and Ni
+interaction resulted in that oxidized Fe offers an excellent and foam substrate (320 mV), but superior to the numerous state-
+beneficial platform to facilitate the formation of highly active of-the-art catalysts (Figure S16 and Table S4, Supporting Infor-
+species (NiOOH) for transforming –OO− into O2, which is in mation). The NiOOH/(LDH/α-FeOOH) composite could reach
+accordance with the Raman spectra. At expected, the content of a higher current density than NIOOH/LDH under the same
+lattice oxygen exhibited a same growth trend as that of Ni3+. As potential, which was corroborated by the induction and facilita-
+shown in Figure S14e (Supporting Information), with tion of α-FeOOH. Notably, NiOOH/(LDH/α-FeOOH) required
+increasing scanning cycles, the proportion of the higher oxida- the smaller overpotentials of 230 and 250 mV to deliver current
+tion state of Fe remains a “volcano” type, whereas the Ni L-edge densities of 50 and 100 mA cm−2, respectively (Figure 3b). To
+shows negligible fluctuation for a tough reversibility upon the gain a deeper insight into the influence of the surface content
+oxidization and reduction reaction. Additionally, the hybridiza- of NiOOH on the electrochemical performance, a series of
+tion effect of the metal 3d and oxygen 2p was enhanced as NiOOH/(LDH/α-FeOOH)-X (X = 5, 10, 20, 30, 40, 50, and 100)
+
+Figure 3. Electrochemical performance toward OER: a) Polarization curves of Ni foam, Ni(OH)2, LDH, LDH/α-FeOOH, E-Ni(OH)2, NiOOH/LDH,
+and NiOOH/(LDH/α-FeOOH). b) Summarized overpotentials at J = 50 mA cm−2 and J = 100 mA cm−2 and c) Tafel slopes of Ni foam, Ni(OH)2, LDH,
+LDH/α-FeOOH, E-Ni(OH)2, NiOOH/LDH, and NiOOH(LDH/α-FeOOH). d) Double-layer capacitance, e) normalized Polarization curves (The current
+density is normalized by ECSAs obtained from non-Faradic double-layer capacitance.) and f) electrochemical impedance spectra (EIS) of Ni(OH)2,
+LDH, LDH/α-FeOOH, E-Ni(OH)2, NiOOH/LDH, and NiOOH(LDH/α-FeOOH) at 1.43 V (vs RHE).
+
+Adv. Mater. 2023, 35, 2209338 2209338 (6 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+were immediately tested in a basic solution (Figure S17b, Sup- hydrogen energy still needs to be improved from a commer-
+porting Information). The current density for OER continued cial application perspective. Another facile strategy is anodic
+to rise initially and thereafter started to decline at a scanning UOR for the reduction of the energy input for hydrogen gen-
+cycle of 40, indicating that a suitable proportion of NiOOH cou- eration.[40] The UOR performance of the samples was assessed
+pled with LDH was favorable for elevating the electrochemical using a similar standard three-electrode setup in 1.0 m KOH
+OER activity. Specifically, NiOOH/(LDH/α-FeOOH)-40 with the with 0.33 m urea. In the presence of urea, the onset potential of
+outer amorphous thickness of 3 nm exhibits the superior OER NiOOH/(LDH/α-FeOOH) was negatively shifted compared to
+activity among others (Figure S18, Supporting Information). that in 1.0 m KOH, as shown in Figure 4a. In comparison with
+The observed Tafel slopes of the catalysts (Figure 3c) demon- the LSV curves observed in pure KOH, a lowered potential of
+strated that E-LDH/α-FeOOH had the minimum value (35 mV 90 mV at 50 mA cm−2 was obtained for UOR. For comparison,
+dec−1), firmly implying better catalytic reaction kinetics than the the UOR performance of other as-synthesized samples was also
+other samples. Furthermore, the superior electrochemical determined in 1.0 m KOH with 0.33 M urea. Among these elec-
+activity of NiOOH/(LDH/α-FeOOH) can be attributed to its trodes, the NiOOH/(LDH/α-FeOOH) composite exhibited the
+enlarged electrochemically active surface area (ECSA) and the lowest potentials of 1.35, 1.37, and 1.4. V to reach 10, 50, and
+fast charge-transfer kinetics. In contrast to the other electrodes, 100 mA cm−2, respectively (Figures 4b,c). To uncover the UOR
+the NiOOH/(LDH/α-FeOOH) exhibited the largest non-Faradic dynamics, the corresponding Tafel slopes of all samples were
+double-layer capacitance (Cdl = 8.5 mF cm−2); the enlarged determined and plotted in Figure 4d. The unexpectedly smaller
+active surface area (212.5 cm2) was fully capable of contributing Tafel slope of NiOOH/(LDH/α-FeOOH) extracted from LSV
+significantly to the electrochemical property (Figures 3d and curve was 30.1 mV dec−1, which well ensured a rapid increase
+Figure S19, Supporting Information). Based on the Cdl values, in the current density, that is, favorable kinetics for UOR. As
+the normalized LSV curves obtained by ECSA and the matching shown in Figure 4e, the determined Cdl values of the samples
+Tafel slopes of Ni(OH)2, LDH, LDH/α-FeOOH, E-Ni(OH)2, were 1.6, 2.5, 4.4, and 10.0 mF cm−2, further suggesting that
+NiOOH/LDH and NiOOH/(LDH/α-FeOOH) were presented in NiOOH/(LDH/α-FeOOH) possesses the largest ECSA and more
+Figures 3e and Figure S20b (Supporting Information), respec- exposed active sites in the UOR. Additionally, the EIS spectra
+tively. In addition, NiOOH/(LDH/α-FeOOH) exhibited the recorded at 1.37 V was used to probe the electrode kinetics
+superior inherent catalytic activity and desirable dynamic reac- toward UOR, as shown in Figure 4f. As expected, the NiOOH/
+tion kinetics. The charge-transfer capability of the as-obtained (LDH/α-FeOOH) composite exhibited a smaller charge-transfer
+catalysts was estimated through electrochemical impedance kinetics than those of LDH, LDH/α-FeOOH, and NIOOH/
+spectroscopy (EIS), as illustrated in Figure 3f. The least contact LDH, which was in accord with smallest Tafel slope. The lowest
+and charge-transfer resistances of NiOOH/(LDH/α-FeOOH) potential, lowest Tafel slope, largest ECSA, and smallest charge-
+validated that α-FeOOH changed the charge-transfer ability, transfer resistance demonstrates the superior UOR activity of
+and the surface incorporating NiOOH enhanced the conduc- NiOOH/(LDH/α-FeOOH), which was attributed to the fact that
+tivity to a certain degree. The designed composite (NiOOH/ the NiOOH/(LDH/α-FeOOH) composite has adequate NiOOH
+(LDH/α-FeOOH)) had the largest electrochemically active area, species generated on the LDH and the strong electron interac-
+significant exposure of active sites, and shortest charge and tion between LDH and NiOOH. Therefore, we demonstrated
+mass transfer paths, which exhibited intrinsic activity for pro- that more NiOOH species were capable of serving as highly
+ducing O2 electrochemically. In addition to the electrochemical active sites for the UOR.
+activity, the long-term durability of electrocatalysts plays a vital To gain a deep insight into the catalytic mechanism of
+role in practical commercial applications. In this study, the OER and UOR, a series of calculations were performed. Ini-
+chronoamperometric technique was carried out to estimate the tially, three models of NiOOH, Ni(OH)2, and FeOOH/NiOOH
+stability. The current density of NiOOH/(LDH/α-FeOOH) were constructed, as shown in Figures S24 and S25 (Sup-
+remained at 100 mA cm−2 with inappreciable attenuation porting Information), and Figure 5a, respectively. The reac-
+during the long-term OER tests under s fairly large potential tion energies of samples for the elementary OER steps were
+(Figure S21, Supporting Information). After the long-term sta- determined. Figure 5b illustrated the OER Gibbs free energy
+bility, the corresponding SEM images, XRD pattern and Raman diagrams of NiOOH, Ni(OH)2 and FeOOH/NiOOH. It can
+spectrum were collected in Figure S22 (Supporting Informa- be observed that ΔG*OH in the Ni(OH)2 model was signifi-
+tion). The nanosheets morphology were remained and seldom cantly less than that of the other samples, indicating that the
+tripped off from nickel foam and the crystal structure kept the adsorption of *OH was too strong to conveniently generate
+same before and after OER test. Meanwhile, the Raman feature *O, such that the energy barrier of the rate-determining step
+peaks were in accordance with that of the original, except that was 1.800 eV for Ni(OH)2. The adsorption of *OH in the
+the peak intensity of NiOOH enhanced because Ni2+ continued NiOOH model was slightly weak, resulting in the energy bar-
+to be oxidized under high potential. These results indicate that rier 1.647 eV. For FeOOH/NiOOH, the adsorption of *OH was
+the well-constructed NiOOH/(LDH/α-FeOOH) exhibits supe- the weakest, and the adsorptions of *O and *OOH were also
+rior OER activity and prominent stability, suggesting that the relatively consistent. Hence, FeOOH/NiOOH exhibited the
+NiOOH/(LDH/α-FeOOH) nanosheets have satisfactory and lowest the rate-determining step energy barrier (1.563 eV).
+enormous practical industrial applications in electrochemical The theoretical OER overpotentials for the three models were
+water splitting. also determined (0.417, 0.570, and 0.332 V, respectively), as
+ Despite the excellent performance toward OER of the shown in Figure 5c, and the results were in agreement with
+NiOOH/(LDH/α-FeOOH) composite, the efficient utilization of the overpotentials measured in the experimental LSV curves.
+
+Adv. Mater. 2023, 35, 2209338 2209338 (7 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+Figure 4. Electrochemical performance toward UOR: a) Comparison of Polarization curves in 1.0 m KOH with and without 0.33 m urea, b) polarization
+curves, c) summarized potentials at J = 10, 50, and 100 mA cm−2, d) Tafel slopes, e) double-layer capacitance, and f) EIS spectra of LDH, LDH/FeOOH,
+E-LDH, and E-LDH/FeOOH in 1.0 m KOH with 0.33 m urea.
+
+Thereafter, we analyzed the projected density of states (PDOS) and satisfactory OER performance. We also calculated the
+of Ni 3d orbit at the adsorption site shown in Figure 5d. lattice oxygen-mediated mechanism (LOM) as shown in
+Three PDOS have the similar curve with a continuous DOS Figure S28 (Supporting Information). However, the maximal
+through the Fermi level (E – Ef = 0 eV), showing a metallic free energy barrier are all higher than 2.1 eV (2.127, 2.550,
+character of Ni. It is worth noting that two peaks locate at −5.5 2.172 eV), significantly higher than that in absorbate evolution
+and −3.3 eV arise in PDOS of FeOOH/NiOOH, while PDOS mechanism (AEM), illustrating the preference for AEM rather
+of NiOOH show two lower peaks at −5.6 and −4.4 eV. As for than LOM in the system. In addition, UOR performance of
+PDOS of Ni(OH)2, only a low peak was shown at −4.0 eV. composites was also explored by the DFT calculations. First,
+Therefore, there are more states in relatively low energy, absorption energy of urea in three coordination (bridge coor-
+leading to the lowest d band center of Ni site in FeOOH/ dination, oxygen coordination, nitrogen coordination) was
+NiOOH (εd = −1.77 eV). And d-band centers of the active assessed (Figures S29–S31, Supporting Information).[41,42]
+sites in NiOOH, Ni(OH)2, were −1.32 and −0.84, respectively. The best adsorption mode on NiOOH is oxygen-coordinated
+It is well known that the d-band centers of metal atoms are (−1.15 eV), while on Ni(OH)2 and FeOOH/NiOOH is nitrogen-
+highly correlated with the adsorption of reaction intermedi- coordinated urea (−1.05, −1.25 eV, respectively). Therefore,
+ates, and that higher d-band centers can better overlap with FeOOH/NiOOH possess the most negative adsorption energy,
+the p orbitals of O atoms, resulting in higher adsorption ener- accelerating the urea to absorb on the catalyst. Further, Figure
+gies. Therefore, the d-band center results agree with the Gibbs S32a (Supporting Information) showed the charge density
+free energy plot, indicating that the favorable d-band center difference of urea absorbed on FeOOH/NiOOH, where a sig-
+of Ni can efficiently weaken the adsorption of key intermedi- nificant charge density accumulation and depletion can be
+ates and reduce the theoretical overpotential. The 2D charge observed, indicating a strong adsorption between FeOOH/
+density maps of NiOOH, Ni(OH)2, and FeOOH/NiOOH NiOOH and urea. The Gibbs free energy diagram for the UOR
+were shown in Figures 5e–g, respectively, and the Bader was also shown in Figure S32b (Supporting Information),[43]
+charge variances at their adsorption sites were also marked. in which FeOOH/NiOOH required a 6.382 eV free energy
+It can be observed that the order of their electron loss was increase for the dissociation of the adsorbed CO(NH2)2* to
+FeOOH/NiOOH > NiOOH > Ni(OH)2, which was the reverse CO* and NH* intermediates, whereas NiOOH and Ni(OH)2
+sequence of ΔGmax in the three models. This may be due to remained with higher energy barriers (6.688 and 6.998 eV,
+the fact that Ni on Ni(OH)2 contains more electrons, making respectively), indicating that FeOOH/NiOOH can stabilize
+it easier to donate electrons to *OH to form stronger covalent the CO* and NH* intermediates better than NiOOH and
+bonds, resulting in a higher adsorption energy. In contrast, Ni(OH)2, which is consistent with the polarization curves in
+the FeOOH/NiOOH composite model had fewer electrons Figure 4b. Therefore, the theoretical calculations are in good
+around the Ni active atoms, resulting in weaker adsorption agreement with the experimental data.
+
+Adv. Mater. 2023, 35, 2209338 2209338 (8 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+Figure 5. a) The crystal structure of FeOOH/NiOOH. b) The calculated Gibbs free energy diagram for the four steps of OER over NiOOH, Ni(OH)2 and
+FeOOH/NiOOH (100). The insets are the local crystal structure of FeOOH/NiOOH absorbed with *OH, *O, and *OOH. c) Theoretical Overpotentials
+of NiOOH, Ni(OH)2 and FeOOH/NiOOH composites during OER. d) PDOS of NiOOH, Ni(OH)2 and FeOOH/NiOOH regarding the Ni 3d orbitals.
+The 2D charge density maps of e) NiOOH, f) Ni(OH)2, and g) FeOOH/NiOOH.
+
+3. Conclusions composites by introducing a new phase to modulate the charge
+ distribution, resulting in promoted surface reconstruction.
+In this study, a two-step approach composed of hydrothermal
+treatment and followed electro-oxidation was conducted to
+synthesize NiOOH/(LDH/α-FeOOH) composite. Experimen- Supporting Information
+tally, the presence of α-FeOOH is vitally important for the
+formation and stabilization of NiOOH, as predicted by the Supporting Information is available from the Wiley Online Library or
+initiatory DFT calculations. The charge density around Ni from the author.
+sites of LDH will certainly be bring down by the attraction of
+neighboring α-FeOOH owning to its strong electron-capturing
+and hydrogen-absorption capability. Subsequently, the active
+ Acknowledgements
+NiOOH species was successfully obtained by electro-oxida-
+tion triggered structural reconstruction. Owing to its more M.C. and Q.Z. contributed equally to this work. This study was
+optimal d-band center and the lower Gibbs free energy barrier supported by the National Natural Science Foundation of China (NSFC;
+ 22090044, 21831003, 21621001, 22171102), the Jilin Province Science
+toward OER and UOR, the resultant nanocomposite presents
+ and Technology Development Plan (20200802003GH, 20200801005
+an outstanding catalytic performance with an overpotential of GH, and 20210509035RQ) and the Scientific Research Project in the
+195 mV and a potential of 1.35 V at 10 mA cm−2, respectively. Education Department of Jilin Province. The authors thank BL11B
+We proposed a novel strategy for constructing highly efficient beamline of the Shanghai Synchrotron Radiation Facility (SSRF) for
+
+Adv. Mater. 2023, 35, 2209338 2209338 (9 of 10) © 2022 Wiley-VCH GmbH
+ 15214095, 2023, 7, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/adma.202209338 by Kyushu University, Wiley Online Library on [18/06/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+www.advancedsciencenews.com www.advmat.de
+
+providing the beamtime. This study was supported by the Users with [16] L. Francas, S. Corby, S. Selim, D. Lee, C. A. Mesa, R ̀ . Godin,
+Excellence Program of the Hefei Science Center CAS (2020HSC-UE002). E. Pastor, I. E. L. Stephens, K.-S. Choi, J. R. Durrant, Nat. Commun.
+W.Z. acknowledges the Open Foundation of the State Key Laboratory of 2019, 10, 5208.
+Inorganic Synthesis and Preparative Chemistry. [17] S. Q. Zhang, Z. F. Zhang, Y. M. Si, D. Li, B. F. L. X. Yang, X. Liu,
+ W. L. Dai, S. L. Luo, ACS Nano 2021, 15, 15238.
+ [18] S. L. Li, Z. C. Li, R. G. Ma, C. L. Gao, L. L. Liu, L. P. Hu, J. L. Zhu,
+ T. M. Sun, Y. F. Tang, D. M. Liu, J. C. Wang, Angew. Chem., Int. Ed.
+Conflict of Interest 2021, 60, 3773.
+The authors declare no conflict of interest. [19] M. Kim, B. Lee, H. Ju, S. W. Lee, J. Kim, Adv. Mater. 2019, 31,
+ 1901977.
+ [20] L. Z. Wang, J. Qin, Z. M. Bai, H. M. Qian, Y. Y. Cao, H. M. K. Sari,
+ Y. K. Xi, H. Shan, S. Wang, J. X. Zuo, X. H. Pu, W. B. Li, J. J. Wang,
+Data Availability Statement X. F. Li, Small Struct. 2022, 3, 2100233.
+The data that support the findings of this study are available from the [21] J. D. Chen, F. Zheng, S. J. Zhang, A. Fisher, Y. Zhou, Z. Y. Wang,
+corresponding author upon reasonable request. Y. Y. Li, B. B. Xu, J. T. Li, S. G. Sun, ACS Catal. 2018, 8, 11342.
+ [22] K. Wang, H. F. Du, S. He, L. Liu, K. Yang, J. M. Sun, Y. H. Liu,
+ Z. Z. Du, L. H. Xie, W. Ai, W. Huang, Adv. Mater. 2021, 33,
+ 2005587.
+Keywords [23] Z. Qiu, C.-W. Tai, G. A. Niklasson, T. Edvinsson, Energy Environ. Sci.
+ 2019, 12, 572.
+composite, NiOOH, oxygen evolution reaction, structure reconstruction,
+ [24] Y. D. Xue, Z. S. Fishman, J. A. Röhr, Z. Pan, Y. Wang, C. Zhang,
+urea oxidation reaction, α-FeOOH
+ S. Zheng, Y. Zhang, S. Hu, J. Mater. Chem. A 2018, 6, 21918.
+ Received: October 10, 2022 [25] L. Yang, L. Xie, R. Ge, R. Kong, Z. Liu, G. Du, A. M. Asiri, Y. Yao,
+ Revised: October 11, 2022 Y. Luo, ACS Appl. Mater. Interfaces 2017, 9, 19502.
+ Published online: December 18, 2022 [26] Y. S. Jin, S. L. Huang, X. Yue, H. Y. Du, P. K. Shen, ACS Catal. 2018,
+ 8, 2359;
+ [27] Z. X. Xu, Y. R. Ying, G. G. Zhang, K. Z. Li, Y. Liu, N. Q. Fu, X. Y. Guo,
+ F. Yua, H. T. Huang, J. Mater. Chem. A 2020, 8, 26130.
+ [1] Z. W. Seh, J. Kibsgaard, C. F. Dickens, I. Chorkendorff, J. K. Nørskov, [28] C. J. Hu, Y. F. Hu, C. H. Fan, L. Yang, Y. T. Zhang, H. X. Li, W. Xie,
+ T. F. Jaramillo, Science 2017, 355, 6321. Angew. Chem., Int. Ed. 2021, 60, 19774.
+ [2] X. F. Lu, S. L. Zhang, W. L. Sim, S. Y. Gao, X. W. D. Lou, Angew. [29] K. Y. Zhu, X. F. Zhu, W. S. Yang, Angew. Chem., Int. Ed. 2019, 58,
+ Chem., Int. Ed. 2021, 60, 22885. 1252.
+ [3] L. Han, J. Xu, Y. Huang, W. J. Dong, X. L. Jia, Chin. Chem. Lett. 2021, [30] M. Asnavandi, Y. C. Yin, Y. N. Li, C. H. Sun, C. Zhao, ACS Energy
+ 32, 2263. Lett. 2018, 3, 1515.
+ [4] Z. Y. Shao, Q. Zhu, ; Y. Sun, Y. Zhang, Y. L. Jiang, S. Q. Deng, [31] S. Niu, W.-J. Jiang, Z. X. Wei, T. Tang, J. M. Ma, J.-S. Hu, L.-J. Wan,
+ W. Zhang, K. K. Huang, S. H. Feng, Adv. Mater. 2022, 34, 2110172. J. Am. Chem. Soc. 2019, 141, 7005.
+ [5] Y. Q. Wang, S. Tao, H. Lin, G. P. Wang, K. N. Zhao, R. M. Cai, [32] M. J. Liu, K.-A. Min, B. Han, L. Y. S. Lee, Adv. Energy Mater. 2021,
+ K. W. Tao, C. X. Zhang, M. Z. Sun, J. Hu, B. L. Huang, S. H. Yang, 2101281.
+ Nano Energy 2021, 81, 105606. [33] J. T. Zhang, L. Yu, Y. Chen, X. F. Lu, S. Y. Gao, X. W. D. Lou, Adv.
+ [6] L. Lv, Z. X. Yang, K. Chen, C. D. Wang, Y. J. Xiong, Adv. Energy Mater. Mater. 2020, 32, 1906432.
+ 2019, 9, 201803358. [34] L. J. Yang, H. Li, Y. Yu, Y. Wu, L. Zhang, Appl. Catal. B 2020, 271,
+ [7] Y. Wang, Y. L. Zhu, S. L. Zhao, S. X. She, F. F. Zhang, Y. Chen, 118939.
+ T. Williams, T. Gengenbach, L. H. Zu, H. Y. Mao, W. Zhou, [35] M. Fang, D. Han, W. B. Xu, Y. Shen, Y. M. Lu, P. J. Cao, S. Han,
+ Z. P. Shao, H. T. Wang, J. Tang, D. Y. Zhao, C. Selomulya, Matter W. Y. Xu, D. L. Zhu, W. J. Liu, J. C. Ho, Adv. Energy Mater. 2020, 10,
+ 2020, 3, 2124. 2001059.
+ [8] M. B. Stevens, C. Trang, L. Enman, J. Deng, S. Boettcher, J. Am. [36] Y. G. Cong, Q. Tang, X. Y. Wang, M. L. Liu, J. H. Liu, Z. B. Geng,
+ Chem. Soc. 2017, 139, 11361. R. Cao, X. B. Zhang, W. Zhang, K. K. Huang, S. H. Feng, ACS Catal.
+ [9] M. W. Louie, A. T. Bell, J. Am. Chem. Soc. 2013, 135, 12329. 2019, 9, 11743.
+[10] M. S. Burke, M. G. Kast, L. Trotochaud, A. M. Smith, S. W. Boettcher, [37] A. Grimaud, W. T. Hong, Y. Shao-Horn, J. M. Tarascon, Nat. Mater.
+ J. Am. Chem. Soc. 2015, 137, 3638. 2016, 15, 121.
+[11] S. A. Chala, M.-C. Tsai, B. W. Olbasa, K. Lakshmanan, W.-H. Huang, [38] S. Zhang, S. Q. Gu, Y. Wang, C. Liang, Y. Yu, L. Han, S. Zheng,
+ W.-N. Su, Y.-F. Liao, J.-F. Lee, H. J. Dai, B. J. Hwang, ACS Nano 2021, N. Zhang, X. S. Liu, J. Zhou, J. Li, ACS Catal. 2019, 9, 7389.
+ 15, 14996. [39] C.-F. Li, L.-J. Xie, J.-W. Zhao, L.-F. Gu, H.-B. Tang, L. R. Zheng,
+[12] B. Wu, S. Gong, Y. C. Lin, T. Li, ; A. Y. Chen, M. Y. Zhao, Q. J. Zhang, G.-R. Li, Angew. Chem., Int. Ed. 2022, 61, e202116934.
+ L. Chen, Adv. Mater. 2022, 2108619. [40] L. P. Wang, Y. J. Zhu, Y. Z. Wen, S. Y. Li, C. Y. Cui, F. L. Ni, Y. X. Liu,
+[13] D. W. Chen, L. T. Xu, X. R. Zhu, Y. C. Huang, W. Zhou, D. D. Wang, H. P. Lin, Y. Y. Li, H. S. Peng, B. Zhang, Angew. Chem., Int. Ed. 2021,
+ Y. Y. Zhou, S. Q. Du, Q. L. Li, C. Xie, L. Tao, C. L. Dong, J. L. Liu, 60, 10577.
+ Y. Y. Wang, R. Chen, H. Su, C. Chen, Y. Q. Zou, Y. F. Li, Q. H. Liu, [41] W.-K. Han, J.-X. Wei, K. Xiao, T. Ouyang, X. Peng, S. Zhao, Z.-Q. Liu,
+ S. Y. Wang, Angew. Chem., Int. Ed. 2021, 60, 7297. Angew. Chem., Int. Ed. 2022, 61, e202206050.
+[14] J. N. Li, J. L. Li, T. Liu, L. Chen, Y. F. Li, H. L. Wang, X. R. Chen, [42] W.-K. Han, X.-P. Li, L.-N. Lu, T. Ouyang, K. Xiao, Z.-Q. Liu, Chem.
+ M. Gong, Z.-P. Liu, X. J. Yang, Angew. Chem., Int. Ed. 2021, 60, Commun. 2020, 56, 11038.
+ 26656. [43] A. Kumar, X. Liu, J. Lee, B. Debnath, A. Jadhav, X. Shao, V. Bui,
+[15] C. G. Kuai, Y. Wu, D. Y. Zhang, D. Sokaras, L. Q. Mu, S. Spence, Y. Hwang, Y. Liu, M. Kim, H. Lee, Energy Environ. Sci. 2021, 14,
+ D. Nordlund, F. Lin, X. W. Du, ACS Catal. 2019, 9, 6027. 6494.
+
+Adv. Mater. 2023, 35, 2209338 2209338 (10 of 10) © 2022 Wiley-VCH GmbH

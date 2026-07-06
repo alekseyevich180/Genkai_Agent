@@ -1,22 +1,61 @@
 {
   "schema_version": "2.0",
   "material_class": "perovskites_spinels",
-  "updated_at": "2026-07-06T07:30:22.303293+00:00",
+  "updated_at": "2026-07-06T15:48:30.382169+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
+    "terms": 1,
+    "known_useful": 1,
     "unknown": 0
   },
-  "keyword_inventory": {},
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "perovskites_spinels",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ]
+  },
   "material_descriptors": {},
   "class_profile": {
     "descriptor_schema": "perovskite_spinel_profile",
     "elements": [],
-    "framework_components": [],
-    "a_b_site_related_terms": [],
-    "crystal_or_spacegroup_terms": [],
+    "framework_components": [
+      {
+        "term": "perovskites_spinels",
+        "count": 4
+      }
+    ],
+    "a_b_site_related_terms": [
+      {
+        "term": "perovskites_spinels",
+        "count": 4
+      }
+    ],
+    "crystal_or_spacegroup_terms": [
+      {
+        "term": "perovskites_spinels",
+        "count": 4
+      }
+    ],
     "exposed_surfaces": [],
     "reaction_families": []
   },
-  "entries": []
+  "entries": [
+    {
+      "term": "perovskites_spinels",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
+      ]
+    }
+  ]
 }

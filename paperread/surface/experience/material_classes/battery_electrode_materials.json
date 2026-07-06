@@ -1,13 +1,21 @@
 {
   "schema_version": "2.0",
   "material_class": "battery_electrode_materials",
-  "updated_at": "2026-07-06T15:18:47.665041+00:00",
+  "updated_at": "2026-07-06T15:48:30.303258+00:00",
   "summary": {
-    "terms": 2,
-    "known_useful": 0,
+    "terms": 3,
+    "known_useful": 1,
     "unknown": 2
   },
   "keyword_inventory": {
+    "materials": [
+      {
+        "term": "battery_electrode_materials",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ],
     "modeling_keywords": [
       {
         "term": "photoanode",
@@ -27,11 +35,30 @@
   "class_profile": {
     "descriptor_schema": "generic_material_profile",
     "elements": [],
-    "components": [],
+    "components": [
+      {
+        "term": "battery_electrode_materials",
+        "count": 4
+      }
+    ],
     "surface_states": [],
     "reaction_families": []
   },
   "entries": [
+    {
+      "term": "battery_electrode_materials",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges"
+      ]
+    },
     {
       "term": "photoanode",
       "kind": "unknown_high_value",

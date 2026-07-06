@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-06T15:19:08.625052+00:00",
+  "generated_at": "2026-07-06T15:48:44.152851+00:00",
   "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
   "common": {
     "material_classes": [
@@ -37,15 +37,15 @@
       "electrocatalysts",
       "Electrochemical",
       "energy conversion technologies",
+      "CORR",
       "Electrocatalysis",
       "water splitting",
       "hydrogen production",
       "phase evolution",
-      "Electrocatalytic",
-      "electrocatalytic oxygen evolution reaction",
+      "co oxidation",
+      "co2 reduction",
       "HER",
       "ORR",
-      "energy conversion",
       "Electrocatalytic OER"
     ],
     "element_keywords": [
@@ -60,18 +60,18 @@
       "N",
       "Ti",
       "Ag",
+      "Mo",
       "Sb",
-      "Ni",
       "Fe",
+      "Ni",
+      "Sn",
+      "Sr",
       "Cr",
       "W",
-      "Pd",
-      "V",
-      "Cd",
-      "Rh",
-      "Mo"
+      "V"
     ],
     "support_keywords": [
+      "supported_catalysts",
       "MoS2",
       "carbon supported Ir",
       "carbon supported Pt",
@@ -88,7 +88,9 @@
       "descriptor_schema": "generic_material_profile",
       "top_elements": [],
       "top_element_sets": [],
-      "top_material_terms": [],
+      "top_material_terms": [
+        "battery_electrode_materials"
+      ],
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
@@ -98,7 +100,12 @@
       "profile": {
         "descriptor_schema": "generic_material_profile",
         "elements": [],
-        "components": [],
+        "components": [
+          {
+            "term": "battery_electrode_materials",
+            "count": 4
+          }
+        ],
         "surface_states": [],
         "reaction_families": []
       }
@@ -114,13 +121,7 @@
       "top_active_site_terms": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
-      "profile": {
-        "descriptor_schema": "generic_material_profile",
-        "elements": [],
-        "components": [],
-        "surface_states": [],
-        "reaction_families": []
-      }
+      "profile": {}
     },
     "carbides_mxenes": {
       "descriptor_schema": "generic_material_profile",
@@ -148,6 +149,7 @@
         "{N, O}"
       ],
       "top_material_terms": [
+        "carbides_mxenes",
         "CoPt nanoparticles",
         "Pt nanoparticles",
         "gold nanoparticles",
@@ -158,6 +160,8 @@
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
+        "lattice strain",
+        "Lattice-Strain",
         "Ru"
       ],
       "top_active_site_terms": [],
@@ -215,6 +219,10 @@
           }
         ],
         "components": [
+          {
+            "term": "carbides_mxenes",
+            "count": 21
+          },
           {
             "term": "CoPt nanoparticles",
             "count": 2
@@ -292,6 +300,7 @@
         "{Ru}"
       ],
       "top_material_terms": [
+        "carbon_materials",
         "g-C3N4",
         "Ag/g-C3N4",
         "graphene-like carbon",
@@ -311,7 +320,8 @@
       ],
       "top_state_terms": [],
       "top_dopant_terms": [
-        "Ag"
+        "Ag",
+        "carbon doping"
       ],
       "top_active_site_terms": [],
       "top_reaction_terms": [
@@ -323,11 +333,11 @@
         "elements": [
           {
             "term": "C",
-            "count": 6
+            "count": 7
           },
           {
             "term": "N",
-            "count": 6
+            "count": 7
           },
           {
             "term": "Ag",
@@ -348,8 +358,12 @@
         ],
         "host_structures": [
           {
+            "term": "carbon_materials",
+            "count": 18
+          },
+          {
             "term": "g-C3N4",
-            "count": 3
+            "count": 4
           },
           {
             "term": "Ag/g-C3N4",
@@ -410,6 +424,10 @@
             "count": 2
           },
           {
+            "term": "carbon doping",
+            "count": 2
+          },
+          {
             "term": "Cluster",
             "count": 1
           }
@@ -432,15 +450,30 @@
     "defect_engineered_materials": {
       "descriptor_schema": "generic_material_profile",
       "top_elements": [
-        "Sb"
+        "Mo",
+        "Sb",
+        "Fe",
+        "N",
+        "Ni",
+        "Sn",
+        "Sr"
       ],
       "top_element_sets": [
-        "{Sb}"
+        "{Mo}",
+        "{Sb}",
+        "{Fe}",
+        "{Ni}",
+        "{N}",
+        "{Sn}",
+        "{Sr}"
       ],
       "top_material_terms": [
+        "defect_engineered_materials",
         "nitrogen-doped carbon"
       ],
-      "top_surface_terms": [],
+      "top_surface_terms": [
+        "oxygen vacancy"
+      ],
       "top_state_terms": [
         "oxygen vacancy",
         "point defects",
@@ -448,7 +481,16 @@
         "Defective",
         "defective structure"
       ],
-      "top_dopant_terms": [],
+      "top_dopant_terms": [
+        "Mo-Doped",
+        "of doped",
+        "co-doped",
+        "Fe-doped",
+        "N-doped",
+        "Ni-doped",
+        "Sn doped",
+        "Sr-doped"
+      ],
       "top_active_site_terms": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
@@ -456,11 +498,39 @@
         "descriptor_schema": "generic_material_profile",
         "elements": [
           {
+            "term": "Mo",
+            "count": 2
+          },
+          {
             "term": "Sb",
             "count": 2
+          },
+          {
+            "term": "Fe",
+            "count": 1
+          },
+          {
+            "term": "N",
+            "count": 1
+          },
+          {
+            "term": "Ni",
+            "count": 1
+          },
+          {
+            "term": "Sn",
+            "count": 1
+          },
+          {
+            "term": "Sr",
+            "count": 1
           }
         ],
         "components": [
+          {
+            "term": "defect_engineered_materials",
+            "count": 11
+          },
           {
             "term": "nitrogen-doped carbon",
             "count": 1
@@ -469,7 +539,7 @@
         "surface_states": [
           {
             "term": "oxygen vacancy",
-            "count": 12
+            "count": 15
           },
           {
             "term": "point defects",
@@ -495,7 +565,9 @@
       "descriptor_schema": "generic_material_profile",
       "top_elements": [],
       "top_element_sets": [],
-      "top_material_terms": [],
+      "top_material_terms": [
+        "halides"
+      ],
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
@@ -505,7 +577,12 @@
       "profile": {
         "descriptor_schema": "generic_material_profile",
         "elements": [],
-        "components": [],
+        "components": [
+          {
+            "term": "halides",
+            "count": 3
+          }
+        ],
         "surface_states": [],
         "reaction_families": []
       }
@@ -515,8 +592,8 @@
       "top_elements": [
         "Co",
         "O",
-        "Ni",
         "H",
+        "Ni",
         "Fe",
         "Cr",
         "Au",
@@ -530,25 +607,28 @@
         "{Co}",
         "{Co, H, Ni, O}",
         "{Cr}",
+        "{Fe, H, O}",
         "{Fe}",
         "{O}",
         "{Ag}",
-        "{Au}",
-        "{Co, Cr, Fe}"
+        "{Au}"
       ],
       "top_material_terms": [
+        "hydroxides_oxyhydroxides",
         "β-CoOOH",
+        "FeOOH",
         "Co–Fe–Cr (oxy)Hydroxides",
+        "NiOOH",
         "Silver",
         "CoOOH",
         "hydroxides",
         "layered double hydroxide (LDH)",
-        "NiCo Layer Double Hydroxide",
-        "NiCo LDH/CC",
-        "NiFe layered double hydroxide",
-        "NiFe LDH"
+        "NiCo Layer Double Hydroxide"
       ],
       "top_surface_terms": [
+        "LDH",
+        "FeOOH",
+        "NiOOH",
         "β-CoOOH(0112̅)",
         "Au/NiFe LDH surface",
         "NiCo LDH surface",
@@ -559,6 +639,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [
         "Cr",
+        "FeOOH",
         "Ag",
         "Silver",
         "W",
@@ -590,19 +671,19 @@
           },
           {
             "term": "O",
-            "count": 17
-          },
-          {
-            "term": "Ni",
-            "count": 14
+            "count": 22
           },
           {
             "term": "H",
-            "count": 13
+            "count": 18
+          },
+          {
+            "term": "Ni",
+            "count": 16
           },
           {
             "term": "Fe",
-            "count": 12
+            "count": 15
           },
           {
             "term": "Cr",
@@ -631,11 +712,19 @@
         ],
         "components": [
           {
+            "term": "hydroxides_oxyhydroxides",
+            "count": 8
+          },
+          {
             "term": "β-CoOOH",
             "count": 4
           },
           {
             "term": "Cr",
+            "count": 3
+          },
+          {
+            "term": "FeOOH",
             "count": 3
           },
           {
@@ -652,6 +741,10 @@
           },
           {
             "term": "Fe",
+            "count": 2
+          },
+          {
+            "term": "NiOOH",
             "count": 2
           },
           {
@@ -697,18 +790,6 @@
           {
             "term": "Ni",
             "count": 1
-          },
-          {
-            "term": "NiCo Layer Double Hydroxide",
-            "count": 1
-          },
-          {
-            "term": "NiCo LDH/CC",
-            "count": 1
-          },
-          {
-            "term": "NiFe layered double hydroxide",
-            "count": 1
           }
         ],
         "surface_states": [],
@@ -745,50 +826,50 @@
       "top_elements": [
         "O",
         "Co",
-        "H",
         "Ni",
+        "H",
         "Pt",
         "Fe",
-        "Au",
+        "C",
+        "Ru",
         "Ag",
-        "Pd",
-        "C"
+        "Au"
       ],
       "top_element_sets": [
         "{Co}",
         "{H, O}",
-        "{O}",
-        "{Ni}",
         "{Pt}",
-        "{Pd}",
-        "{Au}",
-        "{Co, O}",
+        "{Ni}",
         "{Fe}",
+        "{O}",
+        "{Pd}",
+        "{Co, O}",
+        "{Au}",
         "{Ag}"
       ],
       "top_material_terms": [
         "Co",
+        "metals_alloys",
+        "nitrides",
         "Ni",
+        "Pt",
         "Fe",
         "Ag",
+        "Cu",
         "Co3O4",
-        "Pt",
-        "Au",
-        "Pd",
-        "Pt(111)",
-        "Bi"
+        "defect_engineered_materials"
       ],
       "top_surface_terms": [
         "Pt(111)",
+        "CuO",
         "Au(100)",
         "Au(111)",
+        "FeOOH",
+        "Heterostructure",
         "Ni(111)",
+        "NiOOH",
         "Pt(335)",
-        "tetrahedral cluster",
-        "UNCD",
-        "β-CoOOH(0112̅)",
-        "(112)-oriented surface of hausmannitene",
-        "Ag(111)"
+        "rutile TiO2"
       ],
       "top_state_terms": [
         "kinks",
@@ -807,19 +888,19 @@
         "Ni",
         "Fe",
         "Ag",
+        "Cu",
         "O",
+        "Ru",
         "Au Nanoparticles",
         "Bi",
-        "Cd",
-        "Ru",
-        "Cr"
+        "Cd"
       ],
       "top_active_site_terms": [
         "Co",
         "Fe",
         "Ag",
-        "Co3+",
         "Au",
+        "Co3+",
         "Rh2O3 sites",
         "bridging Pd-Pd sites",
         "Co site",
@@ -828,15 +909,15 @@
       ],
       "top_reaction_terms": [
         "OER",
+        "CORR",
         "Electrocatalysis",
         "oxygen evolution reaction",
-        "Electrochemical",
         "water splitting",
+        "Electrochemical",
         "hydrogen production",
         "phase evolution",
-        "Electrocatalytic",
-        "electrocatalytic oxygen evolution reaction",
-        "fuel cells"
+        "co oxidation",
+        "co2 reduction"
       ],
       "top_loading_terms": [],
       "profile": {
@@ -844,59 +925,83 @@
         "elements": [
           {
             "term": "O",
-            "count": 133
+            "count": 175
           },
           {
             "term": "Co",
+            "count": 96
+          },
+          {
+            "term": "Ni",
             "count": 79
           },
           {
             "term": "H",
-            "count": 62
-          },
-          {
-            "term": "Ni",
-            "count": 48
+            "count": 73
           },
           {
             "term": "Pt",
-            "count": 34
+            "count": 50
           },
           {
             "term": "Fe",
-            "count": 29
-          },
-          {
-            "term": "Au",
-            "count": 23
-          },
-          {
-            "term": "Ag",
-            "count": 20
-          },
-          {
-            "term": "Pd",
-            "count": 19
+            "count": 46
           },
           {
             "term": "C",
-            "count": 17
+            "count": 30
+          },
+          {
+            "term": "Ru",
+            "count": 26
+          },
+          {
+            "term": "Ag",
+            "count": 25
+          },
+          {
+            "term": "Au",
+            "count": 25
+          },
+          {
+            "term": "Pd",
+            "count": 22
+          },
+          {
+            "term": "Cu",
+            "count": 21
           },
           {
             "term": "Rh",
             "count": 16
           },
           {
-            "term": "Ru",
-            "count": 14
-          },
-          {
             "term": "Bi",
             "count": 13
           },
           {
+            "term": "S",
+            "count": 12
+          },
+          {
             "term": "N",
+            "count": 10
+          },
+          {
+            "term": "Mo",
             "count": 8
+          },
+          {
+            "term": "Sn",
+            "count": 8
+          },
+          {
+            "term": "Ti",
+            "count": 8
+          },
+          {
+            "term": "Zn",
+            "count": 7
           },
           {
             "term": "Cd",
@@ -911,19 +1016,7 @@
             "count": 6
           },
           {
-            "term": "Sn",
-            "count": 6
-          },
-          {
-            "term": "Ti",
-            "count": 6
-          },
-          {
             "term": "Cr",
-            "count": 5
-          },
-          {
-            "term": "Cu",
             "count": 5
           },
           {
@@ -935,15 +1028,19 @@
             "count": 5
           },
           {
-            "term": "Zn",
-            "count": 5
-          },
-          {
             "term": "B",
             "count": 4
           },
           {
             "term": "Ba",
+            "count": 3
+          },
+          {
+            "term": "F",
+            "count": 3
+          },
+          {
+            "term": "K",
             "count": 3
           },
           {
@@ -955,10 +1052,6 @@
             "count": 3
           },
           {
-            "term": "S",
-            "count": 3
-          },
-          {
             "term": "As",
             "count": 2
           },
@@ -967,19 +1060,11 @@
             "count": 2
           },
           {
-            "term": "F",
-            "count": 1
-          },
-          {
             "term": "He",
             "count": 1
           },
           {
             "term": "I",
-            "count": 1
-          },
-          {
-            "term": "K",
             "count": 1
           },
           {
@@ -998,38 +1083,70 @@
         "alloy_components": [
           {
             "term": "Co",
-            "count": 15
+            "count": 25
+          },
+          {
+            "term": "metals_alloys",
+            "count": 21
+          },
+          {
+            "term": "nitrides",
+            "count": 21
           },
           {
             "term": "Ni",
-            "count": 14
+            "count": 20
+          },
+          {
+            "term": "Pt",
+            "count": 20
           },
           {
             "term": "Fe",
-            "count": 12
+            "count": 19
           },
           {
             "term": "Ag",
-            "count": 10
+            "count": 14
+          },
+          {
+            "term": "Cu",
+            "count": 13
+          },
+          {
+            "term": "Co3O4",
+            "count": 11
+          },
+          {
+            "term": "defect_engineered_materials",
+            "count": 11
           },
           {
             "term": "O",
             "count": 10
           },
           {
-            "term": "Co3O4",
-            "count": 8
+            "term": "Ru",
+            "count": 10
           },
           {
-            "term": "Pt",
-            "count": 8
+            "term": "Au",
+            "count": 7
+          },
+          {
+            "term": "RuO2",
+            "count": 7
           },
           {
             "term": "Co3+",
             "count": 6
           },
           {
-            "term": "Au",
+            "term": "NiO",
+            "count": 6
+          },
+          {
+            "term": "Ni3S2",
             "count": 5
           },
           {
@@ -1038,6 +1155,10 @@
           },
           {
             "term": "Pt(111)",
+            "count": 5
+          },
+          {
+            "term": "ZnO",
             "count": 5
           },
           {
@@ -1053,11 +1174,15 @@
             "count": 4
           },
           {
+            "term": "CuO",
+            "count": 4
+          },
+          {
             "term": "Rh2O3",
             "count": 4
           },
           {
-            "term": "Ru",
+            "term": "selenides_tellurides",
             "count": 4
           },
           {
@@ -1075,84 +1200,48 @@
           {
             "term": "Co4+",
             "count": 3
-          },
-          {
-            "term": "CoO",
-            "count": 3
-          },
-          {
-            "term": "Cr",
-            "count": 3
-          },
-          {
-            "term": "Cu",
-            "count": 3
-          },
-          {
-            "term": "Mn",
-            "count": 3
-          },
-          {
-            "term": "Pb",
-            "count": 3
-          },
-          {
-            "term": "Pd4",
-            "count": 3
-          },
-          {
-            "term": "Pd6",
-            "count": 3
-          },
-          {
-            "term": "Pt nanoparticles",
-            "count": 3
-          },
-          {
-            "term": "Rh",
-            "count": 3
-          },
-          {
-            "term": "ZnO",
-            "count": 3
           }
         ],
         "approx_compositions": [
           {
             "term": "Co",
-            "count": 15
+            "count": 25
           },
           {
             "term": "Ni",
-            "count": 14
+            "count": 20
+          },
+          {
+            "term": "Pt",
+            "count": 20
           },
           {
             "term": "Fe",
-            "count": 12
+            "count": 19
           },
           {
             "term": "Ag",
-            "count": 10
+            "count": 14
+          },
+          {
+            "term": "Cu",
+            "count": 13
+          },
+          {
+            "term": "Co3O4",
+            "count": 11
           },
           {
             "term": "O",
             "count": 10
           },
           {
-            "term": "Co3O4",
-            "count": 8
-          },
-          {
-            "term": "Pt",
-            "count": 8
+            "term": "Au",
+            "count": 7
           },
           {
             "term": "Co3+",
             "count": 6
-          },
-          {
-            "term": "Au",
-            "count": 5
           },
           {
             "term": "Pd",
@@ -1184,10 +1273,6 @@
           },
           {
             "term": "Cr",
-            "count": 3
-          },
-          {
-            "term": "Cu",
             "count": 3
           },
           {
@@ -1333,19 +1418,23 @@
             "count": 23
           },
           {
+            "term": "CORR",
+            "count": 21
+          },
+          {
             "term": "Electrocatalysis",
-            "count": 16
+            "count": 18
           },
           {
             "term": "oxygen evolution reaction",
             "count": 8
           },
           {
-            "term": "Electrochemical",
-            "count": 4
+            "term": "water splitting",
+            "count": 7
           },
           {
-            "term": "water splitting",
+            "term": "Electrochemical",
             "count": 4
           },
           {
@@ -1355,6 +1444,14 @@
           {
             "term": "phase evolution",
             "count": 3
+          },
+          {
+            "term": "co oxidation",
+            "count": 2
+          },
+          {
+            "term": "co2 reduction",
+            "count": 2
           },
           {
             "term": "Electrocatalytic",
@@ -1395,18 +1492,6 @@
           {
             "term": "Reaction Mechanism",
             "count": 2
-          },
-          {
-            "term": "(photo)electrocatalysts",
-            "count": 1
-          },
-          {
-            "term": "Catalyst Preparation",
-            "count": 1
-          },
-          {
-            "term": "electrocatalysts",
-            "count": 1
           }
         ]
       }
@@ -1415,7 +1500,9 @@
       "descriptor_schema": "generic_material_profile",
       "top_elements": [],
       "top_element_sets": [],
-      "top_material_terms": [],
+      "top_material_terms": [
+        "mofs_coordination_polymers"
+      ],
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
@@ -1425,7 +1512,12 @@
       "profile": {
         "descriptor_schema": "generic_material_profile",
         "elements": [],
-        "components": [],
+        "components": [
+          {
+            "term": "mofs_coordination_polymers",
+            "count": 1
+          }
+        ],
         "surface_states": [],
         "reaction_families": []
       }
@@ -1457,6 +1549,7 @@
         "{Au}"
       ],
       "top_material_terms": [
+        "nitrides",
         "antimonene",
         "ultrananocrystalline diamond"
       ],
@@ -1582,6 +1675,10 @@
         ],
         "components": [
           {
+            "term": "nitrides",
+            "count": 21
+          },
+          {
             "term": "Ag",
             "count": 3
           },
@@ -1656,10 +1753,6 @@
           {
             "term": "Ti",
             "count": 2
-          },
-          {
-            "term": "V",
-            "count": 2
           }
         ],
         "surface_states": [],
@@ -1696,40 +1789,41 @@
       "top_elements": [
         "O",
         "N",
+        "Ti",
+        "Zr",
         "C",
         "H",
-        "Cr",
         "Mn",
+        "Cr",
         "Cd",
-        "I",
-        "Hg",
-        "K"
+        "I"
       ],
       "top_element_sets": [
+        "{Ti}",
+        "{Zr}",
         "{Cr, O}",
         "{N, O}",
         "{C, Cd, N}",
         "{I, Mn}",
         "{C}",
         "{H, O}",
-        "{H, K, O}",
-        "{H, Na, O}",
-        "{Hg, O}",
-        "{Hg}"
+        "{Mo}",
+        "{Ce}"
       ],
       "top_material_terms": [
+        "surface_functionalized_materials",
+        "Ti",
+        "Zr",
+        "single_atom_catalysts",
         "CdN4C0-gra",
         "Cr2O3",
+        "Mo",
         "CdN0C4-gra",
-        "gold",
-        "Hg",
-        "HgO",
-        "KOH",
-        "Mn3O4",
-        "NaOH",
-        "Noble metal"
+        "Ce",
+        "gold"
       ],
       "top_surface_terms": [
+        "Interface",
         "Cr2O3(001)",
         "Cr2O3(012)"
       ],
@@ -1769,6 +1863,14 @@
             "count": 8
           },
           {
+            "term": "Ti",
+            "count": 7
+          },
+          {
+            "term": "Zr",
+            "count": 6
+          },
+          {
             "term": "C",
             "count": 5
           },
@@ -1777,11 +1879,11 @@
             "count": 5
           },
           {
-            "term": "Cr",
-            "count": 4
+            "term": "Mn",
+            "count": 5
           },
           {
-            "term": "Mn",
+            "term": "Cr",
             "count": 4
           },
           {
@@ -1797,6 +1899,18 @@
             "count": 2
           },
           {
+            "term": "Mo",
+            "count": 2
+          },
+          {
+            "term": "Ce",
+            "count": 1
+          },
+          {
+            "term": "Hf",
+            "count": 1
+          },
+          {
             "term": "K",
             "count": 1
           },
@@ -1807,6 +1921,22 @@
         ],
         "components": [
           {
+            "term": "surface_functionalized_materials",
+            "count": 12
+          },
+          {
+            "term": "Ti",
+            "count": 7
+          },
+          {
+            "term": "Zr",
+            "count": 6
+          },
+          {
+            "term": "single_atom_catalysts",
+            "count": 5
+          },
+          {
             "term": "CdN4C0-gra",
             "count": 2
           },
@@ -1815,7 +1945,15 @@
             "count": 2
           },
           {
+            "term": "Mo",
+            "count": 2
+          },
+          {
             "term": "CdN0C4-gra",
+            "count": 1
+          },
+          {
+            "term": "Ce",
             "count": 1
           },
           {
@@ -1831,6 +1969,10 @@
             "count": 1
           },
           {
+            "term": "Hf",
+            "count": 1
+          },
+          {
             "term": "Hg",
             "count": 1
           },
@@ -1843,6 +1985,10 @@
             "count": 1
           },
           {
+            "term": "Mn",
+            "count": 1
+          },
+          {
             "term": "Mn (III) ions",
             "count": 1
           },
@@ -1852,30 +1998,6 @@
           },
           {
             "term": "morphology: yellow",
-            "count": 1
-          },
-          {
-            "term": "NaOH",
-            "count": 1
-          },
-          {
-            "term": "Noble metal",
-            "count": 1
-          },
-          {
-            "term": "non-precious metal catalysts",
-            "count": 1
-          },
-          {
-            "term": "palladium",
-            "count": 1
-          },
-          {
-            "term": "phase: solid",
-            "count": 1
-          },
-          {
-            "term": "single crystal",
             "count": 1
           }
         ],
@@ -1925,62 +2047,66 @@
       "top_elements": [
         "O",
         "Co",
+        "Ti",
         "H",
         "Ni",
+        "C",
+        "Zr",
         "Fe",
-        "Ti",
-        "Au",
-        "Bi",
-        "Cr",
-        "Ag"
+        "Ce",
+        "Ru"
       ],
       "top_element_sets": [
         "{O}",
+        "{O, Ti}",
         "{Co}",
         "{H, O}",
+        "{C, O}",
         "{Co, O}",
-        "{Ni}",
-        "{O, Ti}",
-        "{Au}",
-        "{Fe}",
-        "{Bi}",
-        "{Cr}"
+        "{O, Zr}",
+        "{Ce, O}",
+        "{O, Ru}",
+        "{Ni, O}"
       ],
       "top_material_terms": [
-        "Co3O4",
-        "TiO2",
-        "Bismuth (Bi)",
-        "Co oxides",
-        "Co–Fe–Cr (oxy)Hydroxides",
-        "NiO",
         "oxides",
+        "TiO2",
+        "ZrO2",
+        "Co3O4",
+        "CeO2",
+        "hydroxides_oxyhydroxides",
         "RuO2",
-        "Silver",
-        "Ag/TiO2"
+        "MnO2",
+        "NiO",
+        "FeOOH"
       ],
       "top_surface_terms": [
-        "Co3O4(001)",
-        "Co3O4(001) surface",
-        "Co3O4(110)",
-        "NiO surface",
-        "oxide surfaces",
-        "RuO2 (110) surface",
-        "rutile TiO2 surface",
-        "TiO2(110)",
-        "transition metal oxide surface"
+        "TiO2",
+        "ZrO2",
+        "CeO2",
+        "Anatase TiO2",
+        "MnO2",
+        "FeOOH",
+        "NiOOH",
+        "oxide surface",
+        "rutile TiO2",
+        "Co3O4(001)"
       ],
       "top_state_terms": [
         "kinks",
+        "oxygen vacancies",
         "steps"
       ],
       "top_dopant_terms": [
         "Ni",
         "Cr",
         "Fe",
+        "FeOOH",
         "Bismuth (Bi)",
         "Silver",
         "W",
-        "Bismuth"
+        "Bismuth",
+        "C"
       ],
       "top_active_site_terms": [
         "Co",
@@ -1998,13 +2124,13 @@
         "OER",
         "oxygen evolution reaction",
         "electrocatalysis",
+        "co2 reduction",
         "Adsorption Test",
+        "breath analyzers",
         "Catalyst Preparation",
         "electrocatalysts",
         "electrocatalytic oxygen evolution reaction",
-        "Electrochemical",
-        "Electrochemical OER",
-        "electrochemical oxidation of water"
+        "Electrochemical"
       ],
       "top_loading_terms": [],
       "profile": {
@@ -2012,30 +2138,50 @@
         "elements": [
           {
             "term": "O",
-            "count": 72
+            "count": 175
           },
           {
             "term": "Co",
+            "count": 38
+          },
+          {
+            "term": "Ti",
             "count": 35
           },
           {
             "term": "H",
-            "count": 20
+            "count": 26
           },
           {
             "term": "Ni",
-            "count": 16
+            "count": 22
+          },
+          {
+            "term": "C",
+            "count": 17
+          },
+          {
+            "term": "Zr",
+            "count": 14
           },
           {
             "term": "Fe",
-            "count": 9
+            "count": 12
           },
           {
-            "term": "Ti",
-            "count": 9
+            "term": "Ce",
+            "count": 10
+          },
+          {
+            "term": "Ru",
+            "count": 8
           },
           {
             "term": "Au",
+            "count": 6
+          },
+          {
+            "term": "Mn",
             "count": 6
           },
           {
@@ -2052,11 +2198,7 @@
           },
           {
             "term": "N",
-            "count": 3
-          },
-          {
-            "term": "Ru",
-            "count": 3
+            "count": 4
           },
           {
             "term": "U",
@@ -2067,18 +2209,50 @@
             "count": 2
           },
           {
-            "term": "C",
+            "term": "I",
             "count": 1
           },
           {
-            "term": "I",
+            "term": "S",
             "count": 1
           }
         ],
         "oxide_components": [
           {
+            "term": "oxides",
+            "count": 21
+          },
+          {
+            "term": "TiO2",
+            "count": 19
+          },
+          {
+            "term": "ZrO2",
+            "count": 14
+          },
+          {
             "term": "Co3O4",
+            "count": 11
+          },
+          {
+            "term": "CeO2",
+            "count": 10
+          },
+          {
+            "term": "hydroxides_oxyhydroxides",
             "count": 8
+          },
+          {
+            "term": "RuO2",
+            "count": 7
+          },
+          {
+            "term": "MnO2",
+            "count": 6
+          },
+          {
+            "term": "NiO",
+            "count": 6
           },
           {
             "term": "Co",
@@ -2089,7 +2263,7 @@
             "count": 4
           },
           {
-            "term": "TiO2",
+            "term": "FeOOH",
             "count": 3
           },
           {
@@ -2101,19 +2275,11 @@
             "count": 2
           },
           {
-            "term": "NiO",
+            "term": "NiOOH",
             "count": 2
           },
           {
             "term": "O",
-            "count": 2
-          },
-          {
-            "term": "oxides",
-            "count": 2
-          },
-          {
-            "term": "RuO2",
             "count": 2
           },
           {
@@ -2141,6 +2307,14 @@
             "count": 1
           },
           {
+            "term": "C-TiO2",
+            "count": 1
+          },
+          {
+            "term": "carbon doping",
+            "count": 1
+          },
+          {
             "term": "Co2+ (d7, high spin)",
             "count": 1
           },
@@ -2162,38 +2336,6 @@
           },
           {
             "term": "cost-effective",
-            "count": 1
-          },
-          {
-            "term": "hydroxides",
-            "count": 1
-          },
-          {
-            "term": "layered double hydroxide (LDH)",
-            "count": 1
-          },
-          {
-            "term": "layered double hydroxides",
-            "count": 1
-          },
-          {
-            "term": "Nickel–Bismuth Oxide",
-            "count": 1
-          },
-          {
-            "term": "NiCo Layer Double Hydroxide",
-            "count": 1
-          },
-          {
-            "term": "NiFe layered double hydroxide",
-            "count": 1
-          },
-          {
-            "term": "normal spinel",
-            "count": 1
-          },
-          {
-            "term": "oxide catalysts",
             "count": 1
           }
         ],
@@ -2241,15 +2383,19 @@
             "count": 2
           },
           {
+            "term": "(101)",
+            "count": 2
+          },
+          {
             "term": "(110)",
             "count": 2
           },
           {
-            "term": "(100)",
-            "count": 1
+            "term": "oxide surface",
+            "count": 2
           },
           {
-            "term": "(101)",
+            "term": "(100)",
             "count": 1
           },
           {
@@ -2285,6 +2431,10 @@
             "count": 1
           },
           {
+            "term": "TiO2(101)",
+            "count": 1
+          },
+          {
             "term": "TiO2(110)",
             "count": 1
           },
@@ -2296,6 +2446,10 @@
         "defect_or_termination_states": [
           {
             "term": "kinks",
+            "count": 2
+          },
+          {
+            "term": "oxygen vacancies",
             "count": 2
           },
           {
@@ -2317,7 +2471,15 @@
             "count": 3
           },
           {
+            "term": "co2 reduction",
+            "count": 2
+          },
+          {
             "term": "Adsorption Test",
+            "count": 1
+          },
+          {
+            "term": "breath analyzers",
             "count": 1
           },
           {
@@ -2361,19 +2523,19 @@
             "count": 1
           },
           {
+            "term": "ethanol gas sensor",
+            "count": 1
+          },
+          {
+            "term": "food quality monitoring",
+            "count": 1
+          },
+          {
             "term": "hydrogen peroxide production",
             "count": 1
           },
           {
             "term": "hydrogen production",
-            "count": 1
-          },
-          {
-            "term": "OER catalysts",
-            "count": 1
-          },
-          {
-            "term": "water electrolysis",
             "count": 1
           }
         ]
@@ -2383,7 +2545,9 @@
       "descriptor_schema": "perovskite_spinel_profile",
       "top_elements": [],
       "top_element_sets": [],
-      "top_material_terms": [],
+      "top_material_terms": [
+        "perovskites_spinels"
+      ],
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
@@ -2393,9 +2557,24 @@
       "profile": {
         "descriptor_schema": "perovskite_spinel_profile",
         "elements": [],
-        "framework_components": [],
-        "a_b_site_related_terms": [],
-        "crystal_or_spacegroup_terms": [],
+        "framework_components": [
+          {
+            "term": "perovskites_spinels",
+            "count": 4
+          }
+        ],
+        "a_b_site_related_terms": [
+          {
+            "term": "perovskites_spinels",
+            "count": 4
+          }
+        ],
+        "crystal_or_spacegroup_terms": [
+          {
+            "term": "perovskites_spinels",
+            "count": 4
+          }
+        ],
         "exposed_surfaces": [],
         "reaction_families": []
       }
@@ -2420,6 +2599,7 @@
         "{Ru}"
       ],
       "top_material_terms": [
+        "phosphides_phosphates",
         "CoPt nanoparticles",
         "copper",
         "phosphides",
@@ -2473,6 +2653,10 @@
         ],
         "components": [
           {
+            "term": "phosphides_phosphates",
+            "count": 16
+          },
+          {
             "term": "CoPt nanoparticles",
             "count": 2
           },
@@ -2519,6 +2703,7 @@
       "top_elements": [],
       "top_element_sets": [],
       "top_material_terms": [
+        "selenides_tellurides",
         "selenides",
         "tellurides"
       ],
@@ -2532,6 +2717,10 @@
         "descriptor_schema": "generic_material_profile",
         "elements": [],
         "components": [
+          {
+            "term": "selenides_tellurides",
+            "count": 4
+          },
           {
             "term": "selenides",
             "count": 1
@@ -2663,12 +2852,13 @@
       ],
       "top_element_sets": [
         "{C, Mo, N, S}",
-        "{Zn}",
-        "{Mo, S}"
+        "{Mo, S}",
+        "{Zn}"
       ],
       "top_material_terms": [
-        "Mo–N/C@MoS2",
-        "sulfides"
+        "sulfides",
+        "MoS2",
+        "Mo–N/C@MoS2"
       ],
       "top_surface_terms": [],
       "top_state_terms": [],
@@ -2688,11 +2878,11 @@
         "elements": [
           {
             "term": "Mo",
-            "count": 3
+            "count": 4
           },
           {
             "term": "S",
-            "count": 3
+            "count": 4
           },
           {
             "term": "C",
@@ -2709,12 +2899,16 @@
         ],
         "components": [
           {
-            "term": "Mo–N/C@MoS2",
+            "term": "sulfides",
+            "count": 22
+          },
+          {
+            "term": "MoS2",
             "count": 2
           },
           {
-            "term": "sulfides",
-            "count": 1
+            "term": "Mo–N/C@MoS2",
+            "count": 2
           }
         ],
         "surface_states": [],
@@ -2753,36 +2947,36 @@
         "H",
         "C",
         "Ag",
-        "Au",
-        "N",
+        "Mo",
         "Ni",
-        "Pt",
-        "Pb",
-        "Co"
+        "N",
+        "S",
+        "Au",
+        "Pt"
       ],
       "top_element_sets": [
         "{H, O}",
         "{Ag}",
-        "{O}",
-        "{Hg, O}",
         "{H}",
+        "{O}",
+        "{Mo}",
+        "{H, K, O}",
+        "{Hg, O}",
         "{Pb}",
         "{Ag, C, N}",
-        "{Au}",
-        "{C, Mo, N, S}",
-        "{C, N}"
+        "{Au}"
       ],
       "top_material_terms": [
+        "supported_catalysts",
         "Ag/g-C3N4",
         "Hg/HgO",
+        "Mo-Ni3S2/NixPy/NF electrode",
         "Mo–N/C@MoS2",
         "Pt10Pb/C",
         "Ag/TiO2",
         "Au/TiO2",
         "Au–Ag/TiO2",
-        "CoO/Co",
-        "NiCo LDH/CC",
-        "Pt/C"
+        "CoO/Co"
       ],
       "top_surface_terms": [
         "Au/NiFe LDH surface",
@@ -2797,7 +2991,9 @@
       "top_state_terms": [],
       "top_dopant_terms": [
         "Ag",
-        "Pb"
+        "Mo",
+        "Pb",
+        "Metal-Support Interactions"
       ],
       "top_active_site_terms": [
         "Ag",
@@ -2809,11 +3005,11 @@
       "top_reaction_terms": [
         "OER",
         "HER",
+        "Electrocatalysis",
         "Electrochemical",
         "ORR",
         "oxygen reduction reaction",
         "Catalyst Preparation",
-        "Electrocatalysis",
         "HOR",
         "Kinetic Characterization",
         "Oxygen Reduction"
@@ -2824,11 +3020,11 @@
         "elements": [
           {
             "term": "O",
-            "count": 33
+            "count": 37
           },
           {
             "term": "H",
-            "count": 20
+            "count": 26
           },
           {
             "term": "C",
@@ -2839,15 +3035,23 @@
             "count": 10
           },
           {
-            "term": "Au",
-            "count": 6
-          },
-          {
-            "term": "N",
-            "count": 6
+            "term": "Mo",
+            "count": 10
           },
           {
             "term": "Ni",
+            "count": 10
+          },
+          {
+            "term": "N",
+            "count": 8
+          },
+          {
+            "term": "S",
+            "count": 8
+          },
+          {
+            "term": "Au",
             "count": 6
           },
           {
@@ -2867,10 +3071,6 @@
             "count": 4
           },
           {
-            "term": "S",
-            "count": 4
-          },
-          {
             "term": "Sn",
             "count": 4
           },
@@ -2883,6 +3083,10 @@
             "count": 3
           },
           {
+            "term": "K",
+            "count": 3
+          },
+          {
             "term": "Na",
             "count": 3
           },
@@ -2891,11 +3095,11 @@
             "count": 2
           },
           {
-            "term": "Fe",
+            "term": "F",
             "count": 2
           },
           {
-            "term": "Mo",
+            "term": "Fe",
             "count": 2
           },
           {
@@ -2919,10 +3123,6 @@
             "count": 1
           },
           {
-            "term": "K",
-            "count": 1
-          },
-          {
             "term": "P",
             "count": 1
           }
@@ -2930,10 +3130,14 @@
         "material_kind": [
           {
             "term": "supported_catalyst",
-            "count": 86
+            "count": 94
           }
         ],
         "support_components": [
+          {
+            "term": "supported_catalysts",
+            "count": 21
+          },
           {
             "term": "MoS2",
             "count": 2
@@ -3021,6 +3225,10 @@
             "count": 6
           },
           {
+            "term": "Mo",
+            "count": 4
+          },
+          {
             "term": "Ag",
             "count": 2
           },
@@ -3057,36 +3265,32 @@
             "count": 2
           },
           {
+            "term": "Mo-doped Ni3S2",
+            "count": 2
+          },
+          {
+            "term": "Mo-doped Ni3S2",
+            "count": 2
+          },
+          {
+            "term": "Mo-doped Ni3S2/NixPy",
+            "count": 2
+          },
+          {
+            "term": "Mo-Ni3S2",
+            "count": 2
+          },
+          {
+            "term": "Mo-Ni3S2/NixPy/NF electrode",
+            "count": 2
+          },
+          {
             "term": "Mo–N",
             "count": 2
           },
           {
             "term": "Mo–N/C@MoS2",
             "count": 2
-          },
-          {
-            "term": "Pt10Pb",
-            "count": 2
-          },
-          {
-            "term": "Pt10Pb/C",
-            "count": 2
-          },
-          {
-            "term": "Sn",
-            "count": 2
-          },
-          {
-            "term": "Sn",
-            "count": 2
-          },
-          {
-            "term": "0.4 wt % sAu",
-            "count": 1
-          },
-          {
-            "term": "Ag",
-            "count": 1
           }
         ],
         "exposed_surfaces": [
@@ -3110,6 +3314,10 @@
             "count": 4
           },
           {
+            "term": "Electrocatalysis",
+            "count": 3
+          },
+          {
             "term": "Electrochemical",
             "count": 3
           },
@@ -3123,10 +3331,6 @@
           },
           {
             "term": "Catalyst Preparation",
-            "count": 1
-          },
-          {
-            "term": "Electrocatalysis",
             "count": 1
           },
           {
@@ -3187,7 +3391,9 @@
       "descriptor_schema": "generic_material_profile",
       "top_elements": [],
       "top_element_sets": [],
-      "top_material_terms": [],
+      "top_material_terms": [
+        "zeolites_silicates"
+      ],
       "top_surface_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
@@ -3197,7 +3403,12 @@
       "profile": {
         "descriptor_schema": "generic_material_profile",
         "elements": [],
-        "components": [],
+        "components": [
+          {
+            "term": "zeolites_silicates",
+            "count": 6
+          }
+        ],
         "surface_states": [],
         "reaction_families": []
       }

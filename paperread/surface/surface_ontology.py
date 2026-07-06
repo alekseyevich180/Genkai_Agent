@@ -329,6 +329,130 @@ PERIODIC_SYMBOLS = {
     "Mc", "Lv", "Ts", "Og",
 }
 
+ELEMENT_NAMES = {
+    "actinium",
+    "aluminium",
+    "aluminum",
+    "americium",
+    "antimony",
+    "argon",
+    "arsenic",
+    "astatine",
+    "barium",
+    "berkelium",
+    "beryllium",
+    "bismuth",
+    "bohrium",
+    "boron",
+    "bromine",
+    "cadmium",
+    "caesium",
+    "calcium",
+    "californium",
+    "carbon",
+    "cerium",
+    "cesium",
+    "chlorine",
+    "chromium",
+    "cobalt",
+    "copernicium",
+    "copper",
+    "curium",
+    "darmstadtium",
+    "dubnium",
+    "dysprosium",
+    "einsteinium",
+    "erbium",
+    "europium",
+    "fermium",
+    "flerovium",
+    "fluorine",
+    "francium",
+    "gadolinium",
+    "gallium",
+    "germanium",
+    "gold",
+    "hafnium",
+    "hassium",
+    "helium",
+    "holmium",
+    "hydrogen",
+    "indium",
+    "iodine",
+    "iridium",
+    "iron",
+    "krypton",
+    "lanthanum",
+    "lawrencium",
+    "lead",
+    "lithium",
+    "livermorium",
+    "lutetium",
+    "magnesium",
+    "manganese",
+    "meitnerium",
+    "mendelevium",
+    "mercury",
+    "molybdenum",
+    "moscovium",
+    "neodymium",
+    "neon",
+    "neptunium",
+    "nickel",
+    "nihonium",
+    "niobium",
+    "nitrogen",
+    "nobelium",
+    "oganesson",
+    "osmium",
+    "oxygen",
+    "palladium",
+    "phosphorus",
+    "platinum",
+    "plutonium",
+    "polonium",
+    "potassium",
+    "praseodymium",
+    "promethium",
+    "protactinium",
+    "radium",
+    "radon",
+    "rhenium",
+    "rhodium",
+    "roentgenium",
+    "rubidium",
+    "ruthenium",
+    "rutherfordium",
+    "samarium",
+    "scandium",
+    "seaborgium",
+    "selenium",
+    "silicon",
+    "silver",
+    "sodium",
+    "strontium",
+    "sulfur",
+    "sulphur",
+    "tantalum",
+    "technetium",
+    "tellurium",
+    "tennessine",
+    "terbium",
+    "thallium",
+    "thorium",
+    "thulium",
+    "tin",
+    "titanium",
+    "tungsten",
+    "uranium",
+    "vanadium",
+    "xenon",
+    "ytterbium",
+    "yttrium",
+    "zinc",
+    "zirconium",
+}
+
 REACTION_ABBREVIATIONS = {
     "OER",
     "HER",
@@ -353,6 +477,57 @@ REACTION_ABBREVIATIONS = {
     "WOR",
     "WGS",
     "RWGS",
+}
+
+COMMON_FORMULA_OR_MOLECULE_TERMS = {
+    "acetone",
+    "ch3oh",
+    "co",
+    "co2",
+    "h2",
+    "h2o",
+    "koh",
+    "no",
+    "o2",
+    "oh",
+    "oh*",
+    "oh−",
+    "water",
+    "formaldehyde",
+    "formic acid",
+    "glycerol",
+    "ethanol",
+    "isobutene",
+    "methanol",
+    "oxygenates",
+    "propane",
+    "volatile organic compound",
+    "volatile organic compounds",
+}
+
+COMMON_REACTION_OR_APPLICATION_TERMS = {
+    "bifunctional electrocatalyst",
+    "bifunctional electrocatalysts",
+    "catalytic mechanism",
+    "co oxidation",
+    "co2 reduction",
+    "condensation",
+    "electrocatalysis",
+    "electrocatalyst",
+    "electrocatalysts",
+    "electrocatalytic",
+    "electrocatalytic oxygen evolution reaction",
+    "electrocatalytic water splitting",
+    "electrochemical",
+    "fuel cell",
+    "fuel cells",
+    "hydrogen production",
+    "ketonization",
+    "oxidation",
+    "oxygen evolution reaction",
+    "oxygen reduction",
+    "oxygen reduction reaction",
+    "water splitting",
 }
 
 MATERIAL_KIND_TOKENS = {
@@ -447,6 +622,27 @@ def is_element_symbol_expression(value: str) -> bool:
     return all(part in PERIODIC_SYMBOLS for part in parts)
 
 
+def is_element_name_expression(value: str) -> bool:
+    cleaned = re.sub(r"\([^)]*\)", "", value).strip().casefold()
+    parts = [part for part in re.split(r"[\s,;/+|&-]+", cleaned) if part]
+    if not parts:
+        return False
+    return all(part in ELEMENT_NAMES for part in parts)
+
+
+def is_material_class_label(value: str) -> bool:
+    return value.strip().casefold() in {material_class.casefold() for material_class in MATERIAL_CLASSES}
+
+
+def is_formula_like_expression(value: str) -> bool:
+    cleaned = value.strip().replace("–", "-").replace("—", "-")
+    if not cleaned:
+        return False
+    if cleaned.casefold() in COMMON_FORMULA_OR_MOLECULE_TERMS:
+        return True
+    return bool(re.fullmatch(r"(?:[A-Z][a-z]?\d*){1,10}(?:[+\-/@](?:[A-Z][a-z]?\d*){1,10})*", cleaned))
+
+
 def is_reaction_abbreviation(value: str) -> bool:
     cleaned = re.sub(r"[^A-Za-z0-9]", "", value).upper()
     return cleaned in REACTION_ABBREVIATIONS
@@ -464,13 +660,21 @@ def is_known_surface_experience_term(value: str) -> bool:
         return True
     if lower in SUPPORTED_MODELING_TASKS:
         return True
+    if is_material_class_label(stripped):
+        return True
     if is_element_symbol_expression(stripped):
+        return True
+    if is_element_name_expression(stripped):
+        return True
+    if is_formula_like_expression(stripped):
         return True
     if is_reaction_abbreviation(stripped):
         return True
     if is_simple_oxidation_state(stripped):
         return True
     if re.fullmatch(r"\(?\d[\d\s-]{1,8}\)?", stripped):
+        return True
+    if lower in COMMON_REACTION_OR_APPLICATION_TERMS:
         return True
     if any(term in lower for term in KNOWN_SURFACE_TERMS | KNOWN_MODELING_TOKENS):
         return True

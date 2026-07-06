@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -21,12 +22,28 @@ install_openai_compat(openai)
 
 
 def chat_completion(prompt: str, model: str | None = None, temperature: float = 0) -> str:
-    response = openai.ChatCompletion.create(
-        model=model or get_model(),
-        messages=[{"role": "user", "content": prompt}],
-        temperature=temperature,
-    )
-    return response.choices[0].message["content"]
+    delays = (5, 15, 45)
+    last_error: Exception | None = None
+    for attempt in range(len(delays) + 1):
+        try:
+            response = openai.ChatCompletion.create(
+                model=model or get_model(),
+                messages=[{"role": "user", "content": prompt}],
+                temperature=temperature,
+            )
+            return response.choices[0].message["content"]
+        except Exception as exc:  # noqa: BLE001 - compatibility wrapper exposes provider-specific errors.
+            last_error = exc
+            error_name = exc.__class__.__name__.lower()
+            error_text = str(exc).lower()
+            retryable = any(
+                token in error_name or token in error_text
+                for token in ("ratelimit", "rate limit", "timeout", "connect", "temporar")
+            )
+            if not retryable or attempt >= len(delays):
+                raise
+            time.sleep(delays[attempt])
+    raise RuntimeError("chat completion failed") from last_error
 
 
 def load_records(input_path: str) -> list[dict[str, Any]]:
@@ -101,4 +118,3 @@ def extract_json_block(text: str) -> Any:
         if match:
             return json.loads(match.group(1))
     raise ValueError("Could not locate a valid JSON block in model output.")
-

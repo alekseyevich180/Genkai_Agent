@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "sulfides",
-  "updated_at": "2026-07-06T15:18:47.734465+00:00",
+  "updated_at": "2026-07-06T15:48:30.386979+00:00",
   "summary": {
     "terms": 14,
-    "known_useful": 6,
-    "unknown": 8
+    "known_useful": 12,
+    "unknown": 2
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -36,19 +36,31 @@
     ],
     "materials": [
       {
-        "term": "Mo–N/C@MoS2",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "term": "sulfides",
+        "count": 22,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
-        "term": "sulfides",
-        "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "term": "MoS2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Mo–N/C@MoS2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "modeling_keywords": [
+      {
+        "term": "MoS2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
       {
         "term": "Reaction Mechanism",
         "count": 2,
@@ -64,20 +76,14 @@
       {
         "term": "catalytic mechanism",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "Electrocatalyst",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "MoS2",
-        "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "reaction mechanisms",
@@ -114,8 +120,8 @@
       {
         "term": "Electrocatalysis",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Zn–Air Batteries",
@@ -129,11 +135,11 @@
     "elements": [
       {
         "term": "Mo",
-        "count": 3
+        "count": 4
       },
       {
         "term": "S",
-        "count": 3
+        "count": 4
       },
       {
         "term": "C",
@@ -151,7 +157,7 @@
     "material_kinds": [
       {
         "term": "sulfide",
-        "count": 8
+        "count": 30
       },
       {
         "term": "supported_catalyst",
@@ -161,7 +167,7 @@
     "component_compounds": [
       {
         "term": "MoS2",
-        "count": 3
+        "count": 4
       },
       {
         "term": "C",
@@ -186,12 +192,12 @@
         "count": 2
       },
       {
-        "term": "{Zn}",
+        "term": "{Mo, S}",
         "count": 2
       },
       {
-        "term": "{Mo, S}",
-        "count": 1
+        "term": "{Zn}",
+        "count": 2
       }
     ]
   },
@@ -200,11 +206,11 @@
     "elements": [
       {
         "term": "Mo",
-        "count": 3
+        "count": 4
       },
       {
         "term": "S",
-        "count": 3
+        "count": 4
       },
       {
         "term": "C",
@@ -221,12 +227,16 @@
     ],
     "components": [
       {
-        "term": "Mo–N/C@MoS2",
+        "term": "sulfides",
+        "count": 22
+      },
+      {
+        "term": "MoS2",
         "count": 2
       },
       {
-        "term": "sulfides",
-        "count": 1
+        "term": "Mo–N/C@MoS2",
+        "count": 2
       }
     ],
     "surface_states": [],
@@ -259,6 +269,21 @@
   },
   "entries": [
     {
+      "term": "sulfides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 22,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
+      ]
+    },
+    {
       "term": "HER",
       "kind": "known_useful",
       "research_category": "adsorption_reaction",
@@ -273,9 +298,23 @@
       ]
     },
     {
+      "term": "MoS2",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo–N/C@MoS2",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "Mo–N/C@MoS2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -341,8 +380,8 @@
     },
     {
       "term": "catalytic mechanism",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -353,8 +392,8 @@
     },
     {
       "term": "Electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -365,20 +404,8 @@
     },
     {
       "term": "Electrocatalyst",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "Modeling Keywords"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "Mo–N/C@MoS2"
-      ]
-    },
-    {
-      "term": "MoS2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],
@@ -397,18 +424,6 @@
       "count": 1,
       "example_contexts": [
         "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
-    },
-    {
-      "term": "sulfides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "materials"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
       ]
     },
     {

@@ -1,29 +1,35 @@
 {
   "schema_version": "2.0",
   "material_class": "metals_alloys",
-  "updated_at": "2026-07-06T15:18:47.678884+00:00",
+  "updated_at": "2026-07-06T15:48:30.319476+00:00",
   "summary": {
-    "terms": 450,
-    "known_useful": 148,
-    "unknown": 302
+    "terms": 501,
+    "known_useful": 262,
+    "unknown": 239
   },
   "keyword_inventory": {
     "active_sites": [
       {
         "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
+        "count": 25,
+        "kind": "known_useful",
         "research_category": "other_useful_information"
       },
       {
         "term": "Fe",
-        "count": 12,
+        "count": 19,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
       {
         "term": "Ag",
-        "count": 10,
+        "count": 14,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Au",
+        "count": 7,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
@@ -32,12 +38,6 @@
         "count": 6,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
-      },
-      {
-        "term": "Au",
-        "count": 5,
-        "kind": "known_useful",
-        "research_category": "surface_materials"
       },
       {
         "term": "Rh2O3 sites",
@@ -72,8 +72,8 @@
       {
         "term": "NiCoOOH",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "Sn",
@@ -198,6 +198,12 @@
     ],
     "adsorbates_reactants": [
       {
+        "term": "Co",
+        "count": 25,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
         "term": "OER",
         "count": 23,
         "kind": "known_useful",
@@ -205,21 +211,21 @@
       },
       {
         "term": "H2O",
-        "count": 17,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "count": 19,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
-        "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
-        "research_category": "other_useful_information"
+        "term": "CO2",
+        "count": 14,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "O2",
         "count": 12,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "O",
@@ -229,21 +235,45 @@
       },
       {
         "term": "H2",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Condensation",
         "count": 6,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "volatile organic compounds",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ketonization",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OH",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "water",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "volatile organic compound",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "*OOH",
@@ -254,14 +284,14 @@
       {
         "term": "CH3OH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "formic acid",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Habs",
@@ -276,6 +306,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "KOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "Na",
         "count": 2,
         "kind": "known_useful",
@@ -284,8 +320,8 @@
       {
         "term": "NO",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "O*",
@@ -296,8 +332,8 @@
       {
         "term": "OH*",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OHads",
@@ -308,14 +344,14 @@
       {
         "term": "OH−",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OOH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "*H2O",
@@ -339,12 +375,6 @@
         "term": "ammonia",
         "count": 1,
         "kind": "unknown_context",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "CO2",
-        "count": 1,
-        "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
@@ -386,8 +416,8 @@
       {
         "term": "hydrogen",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydrogen molecules",
@@ -410,8 +440,8 @@
       {
         "term": "Methanol",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "NiCoOOH*",
@@ -442,8 +472,8 @@
       {
         "term": "Rh2O3",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Rh2O3 sites",
@@ -496,6 +526,12 @@
     ],
     "clusters_single_atoms": [
       {
+        "term": "CO2",
+        "count": 14,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "Single Atom",
         "count": 6,
         "kind": "known_useful",
@@ -514,16 +550,22 @@
         "research_category": "clusters_single_atoms"
       },
       {
+        "term": "Ni2",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
         "term": "Pd4",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pd6",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pt nanoparticles",
@@ -538,16 +580,40 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Co3",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
         "term": "CoO nanocubes",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
+        "term": "Fe2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
         "term": "Ir nanoparticles",
         "count": 2,
         "kind": "known_useful",
         "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Ni3",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Pt1",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ru nanoparticles",
@@ -562,28 +628,64 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Ag17",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
         "term": "Ag4",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "AgSA",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Au2–Ag2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Au4",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Co0",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Co4",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Cu16",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Cu2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Fe3",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Na clusters",
@@ -592,16 +694,58 @@
         "research_category": "clusters_single_atoms"
       },
       {
+        "term": "Ni0",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Pd0",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Pd1",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
         "term": "Pd17",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Pd2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Pt0",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "PtSA",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Rh–Rh2O3-NPs",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Ru0",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "single nickel atoms",
@@ -616,7 +760,19 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "single-atom Pt",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Sn single atoms",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Sn4",
         "count": 1,
         "kind": "known_useful",
         "research_category": "clusters_single_atoms"
@@ -631,25 +787,43 @@
     "compositions": [
       {
         "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
-        "research_category": "other_useful_information"
-      },
-      {
-        "term": "Ni",
-        "count": 14,
+        "count": 25,
         "kind": "known_useful",
         "research_category": "other_useful_information"
       },
       {
+        "term": "Ni",
+        "count": 20,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pt",
+        "count": 20,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Fe",
-        "count": 12,
+        "count": 19,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
       {
         "term": "Ag",
-        "count": 10,
+        "count": 14,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Cu",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co3O4",
+        "count": 11,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
@@ -660,14 +834,8 @@
         "research_category": "adsorption_reaction"
       },
       {
-        "term": "Co3O4",
-        "count": 8,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "Pt",
-        "count": 8,
+        "term": "Au",
+        "count": 7,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
@@ -676,12 +844,6 @@
         "count": 6,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
-      },
-      {
-        "term": "Au",
-        "count": 5,
-        "kind": "known_useful",
-        "research_category": "surface_materials"
       },
       {
         "term": "Pd",
@@ -710,8 +872,8 @@
       {
         "term": "Rh2O3",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Co4+",
@@ -722,20 +884,14 @@
       {
         "term": "CoO",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Cr",
         "count": 3,
         "kind": "known_useful",
         "research_category": "other_useful_information"
-      },
-      {
-        "term": "Cu",
-        "count": 3,
-        "kind": "known_useful",
-        "research_category": "defects_active_sites"
       },
       {
         "term": "Mn",
@@ -764,11 +920,17 @@
       {
         "term": "CoOOH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Fe3+",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Mo-doped Ni3S2/NixPy",
         "count": 2,
         "kind": "known_useful",
         "research_category": "other_useful_information"
@@ -890,8 +1052,8 @@
       {
         "term": "BP",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "bulk materials",
@@ -1094,8 +1256,8 @@
       {
         "term": "oxides",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "perovskite",
@@ -1172,8 +1334,8 @@
       {
         "term": "sulfides",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "tellurides",
@@ -1184,8 +1346,8 @@
       {
         "term": "TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "transition metal oxide",
@@ -1271,33 +1433,45 @@
     "dopants_modifiers": [
       {
         "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
+        "count": 25,
+        "kind": "known_useful",
         "research_category": "other_useful_information"
       },
       {
         "term": "Ni",
-        "count": 14,
+        "count": 20,
         "kind": "known_useful",
         "research_category": "other_useful_information"
       },
       {
         "term": "Fe",
-        "count": 12,
+        "count": 19,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
       {
         "term": "Ag",
-        "count": 10,
+        "count": 14,
         "kind": "known_useful",
         "research_category": "surface_materials"
+      },
+      {
+        "term": "Cu",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "O",
         "count": 10,
         "kind": "known_useful",
         "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Ru",
+        "count": 10,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au Nanoparticles",
@@ -1318,10 +1492,10 @@
         "research_category": "surface_materials"
       },
       {
-        "term": "Ru",
+        "term": "Mo",
         "count": 4,
         "kind": "known_useful",
-        "research_category": "surface_materials"
+        "research_category": "defects_active_sites"
       },
       {
         "term": "Cr",
@@ -1330,10 +1504,10 @@
         "research_category": "other_useful_information"
       },
       {
-        "term": "Cu",
+        "term": "FeOOH",
         "count": 3,
         "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "research_category": "surface_materials"
       },
       {
         "term": "Mn",
@@ -1350,8 +1524,8 @@
       {
         "term": "Bismuth (Bi)",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Hubbard-U correction",
@@ -1362,8 +1536,8 @@
       {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "W",
@@ -1374,8 +1548,20 @@
       {
         "term": "Bismuth",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "co-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Fe-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "N",
@@ -1384,10 +1570,16 @@
         "research_category": "defects_active_sites"
       },
       {
+        "term": "Ni-doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "nitrogen",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "P",
@@ -1406,6 +1598,12 @@
         "count": 1,
         "kind": "unknown_context",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "Sn doped",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       }
     ],
     "facets": [
@@ -1485,45 +1683,93 @@
     "materials": [
       {
         "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
-        "research_category": "other_useful_information"
-      },
-      {
-        "term": "Ni",
-        "count": 14,
+        "count": 25,
         "kind": "known_useful",
         "research_category": "other_useful_information"
       },
       {
+        "term": "metals_alloys",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "nitrides",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ni",
+        "count": 20,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pt",
+        "count": 20,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Fe",
-        "count": 12,
+        "count": 19,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       },
       {
         "term": "Ag",
+        "count": 14,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Cu",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co3O4",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "defect_engineered_materials",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ru",
         "count": 10,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
-        "term": "Co3O4",
-        "count": 8,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "Pt",
-        "count": 8,
+        "term": "Au",
+        "count": 7,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
-        "term": "Au",
+        "term": "RuO2",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiO",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ni3S2",
         "count": 5,
         "kind": "known_useful",
-        "research_category": "surface_materials"
+        "research_category": "modeling_tasks"
       },
       {
         "term": "Pd",
@@ -1538,6 +1784,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "ZnO",
+        "count": 5,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Bi",
         "count": 4,
         "kind": "known_useful",
@@ -1550,13 +1802,19 @@
         "research_category": "surface_materials"
       },
       {
-        "term": "Rh2O3",
+        "term": "CuO",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
-        "term": "Ru",
+        "term": "Rh2O3",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "selenides_tellurides",
         "count": 4,
         "kind": "known_useful",
         "research_category": "surface_materials"
@@ -1582,20 +1840,38 @@
       {
         "term": "CoO",
         "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiFe",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NixPy",
+        "count": 3,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
         "term": "Pd4",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pd6",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pt nanoparticles",
@@ -1608,12 +1884,6 @@
         "count": 3,
         "kind": "known_useful",
         "research_category": "surface_materials"
-      },
-      {
-        "term": "ZnO",
-        "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
       },
       {
         "term": "Ag/g-C3N4",
@@ -1630,8 +1900,8 @@
       {
         "term": "Bismuth (Bi)",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "black phosphorus",
@@ -1660,8 +1930,8 @@
       {
         "term": "CoOOH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "CoPt nanoparticles",
@@ -1688,6 +1958,12 @@
         "research_category": "clusters_single_atoms"
       },
       {
+        "term": "Mo-Ni3S2/NixPy/NF electrode",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Ni(111)",
         "count": 2,
         "kind": "unknown_high_value",
@@ -1700,10 +1976,10 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "NiO",
+        "term": "NiOOH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pd17 clusters",
@@ -1718,22 +1994,22 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Pt1",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Pt10Pb/C",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ru nanoparticles",
         "count": 2,
         "kind": "known_useful",
         "research_category": "clusters_single_atoms"
-      },
-      {
-        "term": "RuO2",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
       },
       {
         "term": "selenides",
@@ -1744,8 +2020,8 @@
       {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "(Ni",
@@ -1756,20 +2032,20 @@
       {
         "term": "Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au–Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Black Phosphorus Nanosheets",
@@ -1798,14 +2074,14 @@
       {
         "term": "CoO/Co",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "copper",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Cu-based",
@@ -1832,6 +2108,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "mofs_coordination_polymers",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Ni(Fe)",
         "count": 1,
         "kind": "unknown_high_value",
@@ -1852,8 +2134,8 @@
       {
         "term": "nickel",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Nickel–Bismuth Oxide",
@@ -1918,14 +2200,14 @@
       {
         "term": "Pt10Ni/C",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "PtBi",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "PtBi alloy",
@@ -1936,8 +2218,8 @@
       {
         "term": "PtPb",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "PtTiMe ternary alloys",
@@ -1954,14 +2236,14 @@
       {
         "term": "Rh–Rh2O3-NPs/C",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "RuOx",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "sAu/NiFe LDH",
@@ -1978,8 +2260,8 @@
       {
         "term": "Tin (Sn)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "transition metal-based catalysts",
@@ -1989,6 +2271,12 @@
       }
     ],
     "modeling_keywords": [
+      {
+        "term": "Co",
+        "count": 25,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
       {
         "term": "OER",
         "count": 23,
@@ -2002,22 +2290,28 @@
         "research_category": "modeling_tasks"
       },
       {
-        "term": "Electrocatalysis",
-        "count": 16,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "Co",
-        "count": 15,
-        "kind": "unknown_high_value",
-        "research_category": "other_useful_information"
-      },
-      {
         "term": "Ni",
-        "count": 14,
+        "count": 20,
         "kind": "known_useful",
         "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pt",
+        "count": 20,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 18,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Co3O4",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "adsorbate_landscape",
@@ -2032,10 +2326,10 @@
         "research_category": "adsorption_reaction"
       },
       {
-        "term": "Co3O4",
-        "count": 8,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "term": "Ru",
+        "count": 10,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "density functional theory",
@@ -2046,14 +2340,14 @@
       {
         "term": "oxygen evolution reaction",
         "count": 8,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
-        "term": "Pt",
-        "count": 8,
+        "term": "water splitting",
+        "count": 7,
         "kind": "known_useful",
-        "research_category": "surface_materials"
+        "research_category": "modeling_tasks"
       },
       {
         "term": "adsorption",
@@ -2074,6 +2368,12 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "NiO",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "single_atom_site",
         "count": 6,
         "kind": "known_useful",
@@ -2086,7 +2386,19 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "Ni3S2",
+        "count": 5,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "Pd",
+        "count": 5,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "ZnO",
         "count": 5,
         "kind": "known_useful",
         "research_category": "surface_materials"
@@ -2110,13 +2422,13 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "Rh2O3",
+        "term": "Mo",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
-        "term": "Ru",
+        "term": "Rh2O3",
         "count": 4,
         "kind": "known_useful",
         "research_category": "surface_materials"
@@ -2132,12 +2444,6 @@
         "count": 4,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
-      },
-      {
-        "term": "water splitting",
-        "count": 4,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
       },
       {
         "term": "β-CoOOH",
@@ -2172,8 +2478,8 @@
       {
         "term": "CoO",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Cr",
@@ -2182,13 +2488,13 @@
         "research_category": "other_useful_information"
       },
       {
-        "term": "phase evolution",
+        "term": "NixPy",
         "count": 3,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
-        "term": "ZnO",
+        "term": "phase evolution",
         "count": 3,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -2204,6 +2510,12 @@
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "bifunctional electrocatalysts",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "black phosphorus",
@@ -2238,8 +2550,8 @@
       {
         "term": "electrocatalyst",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "first-principles calculation",
@@ -2266,6 +2578,12 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "hollow nanorods",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Hubbard-U correction",
         "count": 2,
         "kind": "unknown_high_value",
@@ -2279,12 +2597,6 @@
       },
       {
         "term": "nanoporous",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "NiO",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -2316,14 +2628,14 @@
       {
         "term": "oxygen reduction reaction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "PEC",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "planar deposition",
@@ -2424,8 +2736,8 @@
       {
         "term": "catalytic mechanism",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "charge redistribution",
@@ -2514,8 +2826,8 @@
       {
         "term": "electrocatalytic water splitting",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "electrochemical processes",
@@ -2604,8 +2916,8 @@
       {
         "term": "oxidation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "oxygen adsorption energy",
@@ -2652,8 +2964,8 @@
       {
         "term": "sodium",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "structure",
@@ -2706,34 +3018,40 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "CORR",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "Electrocatalysis",
-        "count": 16,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "count": 18,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "oxygen evolution reaction",
         "count": 8,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "water splitting",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "Electrochemical",
         "count": 4,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "water splitting",
-        "count": 4,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydrogen production",
         "count": 3,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "phase evolution",
@@ -2742,22 +3060,34 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "co oxidation",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "co2 reduction",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "Electrocatalytic",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalytic oxygen evolution reaction",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "fuel cells",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "HER",
@@ -2786,14 +3116,14 @@
       {
         "term": "Oxygen Reduction",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "oxygen reduction reaction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Reaction Mechanism",
@@ -2816,8 +3146,8 @@
       {
         "term": "electrocatalysts",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalytic energy conversion",
@@ -2952,6 +3282,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "nitrogen reduction",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "oxygen evolution reaction (OER)",
         "count": 1,
         "kind": "unknown_context",
@@ -3050,6 +3386,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "CuO",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Au(100)",
         "count": 3,
         "kind": "unknown_high_value",
@@ -3062,13 +3404,37 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Heterostructure",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Ni(111)",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
+        "term": "NiOOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Pt(335)",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "rutile TiO2",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -3082,8 +3448,8 @@
       {
         "term": "UNCD",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "β-CoOOH(0112̅)",
@@ -3339,59 +3705,83 @@
     "elements": [
       {
         "term": "O",
-        "count": 133
+        "count": 175
       },
       {
         "term": "Co",
+        "count": 96
+      },
+      {
+        "term": "Ni",
         "count": 79
       },
       {
         "term": "H",
-        "count": 62
-      },
-      {
-        "term": "Ni",
-        "count": 48
+        "count": 73
       },
       {
         "term": "Pt",
-        "count": 34
+        "count": 50
       },
       {
         "term": "Fe",
-        "count": 29
-      },
-      {
-        "term": "Au",
-        "count": 23
-      },
-      {
-        "term": "Ag",
-        "count": 20
-      },
-      {
-        "term": "Pd",
-        "count": 19
+        "count": 46
       },
       {
         "term": "C",
-        "count": 17
+        "count": 30
+      },
+      {
+        "term": "Ru",
+        "count": 26
+      },
+      {
+        "term": "Ag",
+        "count": 25
+      },
+      {
+        "term": "Au",
+        "count": 25
+      },
+      {
+        "term": "Pd",
+        "count": 22
+      },
+      {
+        "term": "Cu",
+        "count": 21
       },
       {
         "term": "Rh",
         "count": 16
       },
       {
-        "term": "Ru",
-        "count": 14
-      },
-      {
         "term": "Bi",
         "count": 13
       },
       {
+        "term": "S",
+        "count": 12
+      },
+      {
         "term": "N",
+        "count": 10
+      },
+      {
+        "term": "Mo",
         "count": 8
+      },
+      {
+        "term": "Sn",
+        "count": 8
+      },
+      {
+        "term": "Ti",
+        "count": 8
+      },
+      {
+        "term": "Zn",
+        "count": 7
       },
       {
         "term": "Cd",
@@ -3406,19 +3796,7 @@
         "count": 6
       },
       {
-        "term": "Sn",
-        "count": 6
-      },
-      {
-        "term": "Ti",
-        "count": 6
-      },
-      {
         "term": "Cr",
-        "count": 5
-      },
-      {
-        "term": "Cu",
         "count": 5
       },
       {
@@ -3430,15 +3808,19 @@
         "count": 5
       },
       {
-        "term": "Zn",
-        "count": 5
-      },
-      {
         "term": "B",
         "count": 4
       },
       {
         "term": "Ba",
+        "count": 3
+      },
+      {
+        "term": "F",
+        "count": 3
+      },
+      {
+        "term": "K",
         "count": 3
       },
       {
@@ -3450,10 +3832,6 @@
         "count": 3
       },
       {
-        "term": "S",
-        "count": 3
-      },
-      {
         "term": "As",
         "count": 2
       },
@@ -3462,19 +3840,11 @@
         "count": 2
       },
       {
-        "term": "F",
-        "count": 1
-      },
-      {
         "term": "He",
         "count": 1
       },
       {
         "term": "I",
-        "count": 1
-      },
-      {
-        "term": "K",
         "count": 1
       },
       {
@@ -3492,19 +3862,23 @@
     ],
     "material_kinds": [
       {
-        "term": "surface",
-        "count": 68
+        "term": "oxide",
+        "count": 85
       },
       {
-        "term": "oxide",
-        "count": 54
+        "term": "surface",
+        "count": 72
       },
       {
         "term": "hydroxide_oxyhydroxide",
-        "count": 28
+        "count": 33
       },
       {
         "term": "supported_catalyst",
+        "count": 27
+      },
+      {
+        "term": "nitride",
         "count": 23
       },
       {
@@ -3528,57 +3902,73 @@
         "count": 8
       },
       {
-        "term": "nitride",
-        "count": 2
-      },
-      {
         "term": "nanosheet",
         "count": 1
       }
     ],
     "component_compounds": [
       {
-        "term": "H2O",
-        "count": 17
-      },
-      {
         "term": "Co",
-        "count": 16
+        "count": 26
       },
       {
         "term": "Ni",
-        "count": 15
+        "count": 21
       },
       {
-        "term": "Ag",
-        "count": 13
+        "term": "Pt",
+        "count": 21
       },
       {
         "term": "Fe",
-        "count": 12
+        "count": 19
+      },
+      {
+        "term": "H2O",
+        "count": 19
+      },
+      {
+        "term": "Ag",
+        "count": 17
+      },
+      {
+        "term": "CO2",
+        "count": 17
+      },
+      {
+        "term": "Cu",
+        "count": 13
       },
       {
         "term": "O2",
         "count": 12
       },
       {
+        "term": "Co3O4",
+        "count": 11
+      },
+      {
+        "term": "Co3",
+        "count": 10
+      },
+      {
         "term": "O",
         "count": 10
       },
       {
-        "term": "Pt",
-        "count": 9
-      },
-      {
-        "term": "Co3",
-        "count": 8
-      },
-      {
-        "term": "Co3O4",
-        "count": 8
+        "term": "Ru",
+        "count": 10
       },
       {
         "term": "Au",
+        "count": 9
+      },
+      {
+        "term": "H2",
+        "count": 8
+      },
+      {
+        "term": "RuO2",
         "count": 7
       },
       {
@@ -3586,8 +3976,12 @@
         "count": 6
       },
       {
-        "term": "H2",
+        "term": "NiO",
         "count": 6
+      },
+      {
+        "term": "Ni3S2",
+        "count": 5
       },
       {
         "term": "Pd",
@@ -3595,6 +3989,10 @@
       },
       {
         "term": "Pt(111",
+        "count": 5
+      },
+      {
+        "term": "ZnO",
         "count": 5
       },
       {
@@ -3610,11 +4008,19 @@
         "count": 4
       },
       {
-        "term": "Co2",
+        "term": "Co4",
         "count": 4
       },
       {
         "term": "CoO",
+        "count": 4
+      },
+      {
+        "term": "CuO",
+        "count": 4
+      },
+      {
+        "term": "Mo",
         "count": 4
       },
       {
@@ -3627,10 +4033,6 @@
       },
       {
         "term": "Rh2O3 sites",
-        "count": 4
-      },
-      {
-        "term": "Ru",
         "count": 4
       },
       {
@@ -3658,15 +4060,15 @@
         "count": 3
       },
       {
-        "term": "Co4",
-        "count": 3
-      },
-      {
         "term": "Cr",
         "count": 3
       },
       {
-        "term": "Cu",
+        "term": "Fe3",
+        "count": 3
+      },
+      {
+        "term": "FeOOH",
         "count": 3
       },
       {
@@ -3675,6 +4077,14 @@
       },
       {
         "term": "Mn",
+        "count": 3
+      },
+      {
+        "term": "Ni2",
+        "count": 3
+      },
+      {
+        "term": "NiFe",
         "count": 3
       },
       {
@@ -3695,10 +4105,6 @@
       },
       {
         "term": "Rh",
-        "count": 3
-      },
-      {
-        "term": "ZnO",
         "count": 3
       },
       {
@@ -3754,7 +4160,7 @@
         "count": 2
       },
       {
-        "term": "Fe3",
+        "term": "Fe2",
         "count": 2
       },
       {
@@ -3770,7 +4176,23 @@
         "count": 2
       },
       {
+        "term": "KOH",
+        "count": 2
+      },
+      {
+        "term": "Mo-doped Ni3S2",
+        "count": 2
+      },
+      {
+        "term": "Mo-Ni3S2",
+        "count": 2
+      },
+      {
         "term": "Na",
+        "count": 2
+      },
+      {
+        "term": "NF electrode",
         "count": 2
       },
       {
@@ -3779,6 +4201,10 @@
       },
       {
         "term": "Ni1−xFexOOH",
+        "count": 2
+      },
+      {
+        "term": "Ni3",
         "count": 2
       },
       {
@@ -3794,7 +4220,7 @@
         "count": 2
       },
       {
-        "term": "NiO",
+        "term": "NiOOH",
         "count": 2
       },
       {
@@ -3826,6 +4252,10 @@
         "count": 2
       },
       {
+        "term": "Pt1",
+        "count": 2
+      },
+      {
         "term": "Pt10Pb",
         "count": 2
       },
@@ -3842,7 +4272,7 @@
         "count": 2
       },
       {
-        "term": "RuO2",
+        "term": "rutile TiO2",
         "count": 2
       },
       {
@@ -3895,6 +4325,10 @@
       },
       {
         "term": "Ag(111",
+        "count": 1
+      },
+      {
+        "term": "Ag17",
         "count": 1
       },
       {
@@ -3974,6 +4408,10 @@
         "count": 1
       },
       {
+        "term": "Co0",
+        "count": 1
+      },
+      {
         "term": "CO32−",
         "count": 1
       },
@@ -4014,6 +4452,14 @@
         "count": 1
       },
       {
+        "term": "Cu16",
+        "count": 1
+      },
+      {
+        "term": "Cu2",
+        "count": 1
+      },
+      {
         "term": "eg orbital of surface transition metal ions",
         "count": 1
       },
@@ -4031,6 +4477,10 @@
       },
       {
         "term": "Fe)OOH",
+        "count": 1
+      },
+      {
+        "term": "Fe-doped",
         "count": 1
       },
       {
@@ -4142,7 +4592,15 @@
         "count": 1
       },
       {
+        "term": "Ni-doped",
+        "count": 1
+      },
+      {
         "term": "Ni-O-G SACs",
+        "count": 1
+      },
+      {
+        "term": "Ni0",
         "count": 1
       },
       {
@@ -4218,7 +4676,19 @@
         "count": 1
       },
       {
+        "term": "Pd0",
+        "count": 1
+      },
+      {
+        "term": "Pd1",
+        "count": 1
+      },
+      {
         "term": "Pd17",
+        "count": 1
+      },
+      {
+        "term": "Pd2",
         "count": 1
       },
       {
@@ -4239,6 +4709,10 @@
       },
       {
         "term": "Pt-Bi Alloy",
+        "count": 1
+      },
+      {
+        "term": "Pt0",
         "count": 1
       },
       {
@@ -4274,6 +4748,10 @@
         "count": 1
       },
       {
+        "term": "Ru0",
+        "count": 1
+      },
+      {
         "term": "RuO2 (110) surface",
         "count": 1
       },
@@ -4294,7 +4772,19 @@
         "count": 1
       },
       {
+        "term": "single-atom Pt",
+        "count": 1
+      },
+      {
+        "term": "Sn doped",
+        "count": 1
+      },
+      {
         "term": "Sn single atoms",
+        "count": 1
+      },
+      {
+        "term": "Sn4",
         "count": 1
       },
       {
@@ -4373,46 +4863,58 @@
     "element_sets": [
       {
         "term": "{Co}",
-        "count": 38
+        "count": 52
       },
       {
         "term": "{H, O}",
-        "count": 36
+        "count": 38
+      },
+      {
+        "term": "{Pt}",
+        "count": 38
+      },
+      {
+        "term": "{Ni}",
+        "count": 37
+      },
+      {
+        "term": "{Fe}",
+        "count": 27
       },
       {
         "term": "{O}",
         "count": 25
       },
       {
-        "term": "{Ni}",
-        "count": 24
-      },
-      {
-        "term": "{Pt}",
+        "term": "{Pd}",
         "count": 22
       },
       {
-        "term": "{Pd}",
-        "count": 19
+        "term": "{Co, O}",
+        "count": 21
       },
       {
         "term": "{Au}",
-        "count": 18
-      },
-      {
-        "term": "{Co, O}",
-        "count": 18
-      },
-      {
-        "term": "{Fe}",
-        "count": 16
+        "count": 20
       },
       {
         "term": "{Ag}",
-        "count": 14
+        "count": 19
       },
       {
         "term": "{Ru}",
+        "count": 18
+      },
+      {
+        "term": "{Cu}",
+        "count": 17
+      },
+      {
+        "term": "{C, O}",
+        "count": 15
+      },
+      {
+        "term": "{Fe, Ni}",
         "count": 11
       },
       {
@@ -4420,15 +4922,19 @@
         "count": 10
       },
       {
+        "term": "{H}",
+        "count": 10
+      },
+      {
         "term": "{O, Rh}",
         "count": 10
       },
       {
-        "term": "{Fe, Ni}",
+        "term": "{Ni, O}",
         "count": 8
       },
       {
-        "term": "{H}",
+        "term": "{O, Ru}",
         "count": 8
       },
       {
@@ -4440,11 +4946,19 @@
         "count": 6
       },
       {
+        "term": "{O, Zn}",
+        "count": 6
+      },
+      {
+        "term": "{Sn}",
+        "count": 6
+      },
+      {
         "term": "{Bi, Pt}",
         "count": 5
       },
       {
-        "term": "{Cu}",
+        "term": "{Ni, S}",
         "count": 5
       },
       {
@@ -4460,15 +4974,19 @@
         "count": 4
       },
       {
-        "term": "{Ni, O}",
+        "term": "{Cu, O}",
         "count": 4
       },
       {
-        "term": "{O, Zn}",
+        "term": "{Fe, H, O}",
         "count": 4
       },
       {
-        "term": "{Sn}",
+        "term": "{Mo}",
+        "count": 4
+      },
+      {
+        "term": "{O, Ti}",
         "count": 4
       },
       {
@@ -4488,15 +5006,15 @@
         "count": 3
       },
       {
+        "term": "{H, K, O}",
+        "count": 3
+      },
+      {
         "term": "{Mn}",
         "count": 3
       },
       {
         "term": "{Na}",
-        "count": 3
-      },
-      {
-        "term": "{O, Ru}",
         "count": 3
       },
       {
@@ -4520,10 +5038,6 @@
         "count": 2
       },
       {
-        "term": "{C, O}",
-        "count": 2
-      },
-      {
         "term": "{C, Pb, Pt}",
         "count": 2
       },
@@ -4544,11 +5058,19 @@
         "count": 2
       },
       {
-        "term": "{N, O}",
+        "term": "{F, Mo, N, Ni, S}",
         "count": 2
       },
       {
-        "term": "{O, Ti}",
+        "term": "{H, Ni, O}",
+        "count": 2
+      },
+      {
+        "term": "{Mo, Ni, S}",
+        "count": 2
+      },
+      {
+        "term": "{N, O}",
         "count": 2
       },
       {
@@ -4620,15 +5142,7 @@
         "count": 1
       },
       {
-        "term": "{Fe, H, O}",
-        "count": 1
-      },
-      {
         "term": "{Fe, O}",
-        "count": 1
-      },
-      {
-        "term": "{H, K, O}",
         "count": 1
       },
       {
@@ -4682,59 +5196,83 @@
     "elements": [
       {
         "term": "O",
-        "count": 133
+        "count": 175
       },
       {
         "term": "Co",
+        "count": 96
+      },
+      {
+        "term": "Ni",
         "count": 79
       },
       {
         "term": "H",
-        "count": 62
-      },
-      {
-        "term": "Ni",
-        "count": 48
+        "count": 73
       },
       {
         "term": "Pt",
-        "count": 34
+        "count": 50
       },
       {
         "term": "Fe",
-        "count": 29
-      },
-      {
-        "term": "Au",
-        "count": 23
-      },
-      {
-        "term": "Ag",
-        "count": 20
-      },
-      {
-        "term": "Pd",
-        "count": 19
+        "count": 46
       },
       {
         "term": "C",
-        "count": 17
+        "count": 30
+      },
+      {
+        "term": "Ru",
+        "count": 26
+      },
+      {
+        "term": "Ag",
+        "count": 25
+      },
+      {
+        "term": "Au",
+        "count": 25
+      },
+      {
+        "term": "Pd",
+        "count": 22
+      },
+      {
+        "term": "Cu",
+        "count": 21
       },
       {
         "term": "Rh",
         "count": 16
       },
       {
-        "term": "Ru",
-        "count": 14
-      },
-      {
         "term": "Bi",
         "count": 13
       },
       {
+        "term": "S",
+        "count": 12
+      },
+      {
         "term": "N",
+        "count": 10
+      },
+      {
+        "term": "Mo",
         "count": 8
+      },
+      {
+        "term": "Sn",
+        "count": 8
+      },
+      {
+        "term": "Ti",
+        "count": 8
+      },
+      {
+        "term": "Zn",
+        "count": 7
       },
       {
         "term": "Cd",
@@ -4749,19 +5287,7 @@
         "count": 6
       },
       {
-        "term": "Sn",
-        "count": 6
-      },
-      {
-        "term": "Ti",
-        "count": 6
-      },
-      {
         "term": "Cr",
-        "count": 5
-      },
-      {
-        "term": "Cu",
         "count": 5
       },
       {
@@ -4773,15 +5299,19 @@
         "count": 5
       },
       {
-        "term": "Zn",
-        "count": 5
-      },
-      {
         "term": "B",
         "count": 4
       },
       {
         "term": "Ba",
+        "count": 3
+      },
+      {
+        "term": "F",
+        "count": 3
+      },
+      {
+        "term": "K",
         "count": 3
       },
       {
@@ -4793,10 +5323,6 @@
         "count": 3
       },
       {
-        "term": "S",
-        "count": 3
-      },
-      {
         "term": "As",
         "count": 2
       },
@@ -4805,19 +5331,11 @@
         "count": 2
       },
       {
-        "term": "F",
-        "count": 1
-      },
-      {
         "term": "He",
         "count": 1
       },
       {
         "term": "I",
-        "count": 1
-      },
-      {
-        "term": "K",
         "count": 1
       },
       {
@@ -4836,38 +5354,70 @@
     "alloy_components": [
       {
         "term": "Co",
-        "count": 15
+        "count": 25
+      },
+      {
+        "term": "metals_alloys",
+        "count": 21
+      },
+      {
+        "term": "nitrides",
+        "count": 21
       },
       {
         "term": "Ni",
-        "count": 14
+        "count": 20
+      },
+      {
+        "term": "Pt",
+        "count": 20
       },
       {
         "term": "Fe",
-        "count": 12
+        "count": 19
       },
       {
         "term": "Ag",
-        "count": 10
+        "count": 14
+      },
+      {
+        "term": "Cu",
+        "count": 13
+      },
+      {
+        "term": "Co3O4",
+        "count": 11
+      },
+      {
+        "term": "defect_engineered_materials",
+        "count": 11
       },
       {
         "term": "O",
         "count": 10
       },
       {
-        "term": "Co3O4",
-        "count": 8
+        "term": "Ru",
+        "count": 10
       },
       {
-        "term": "Pt",
-        "count": 8
+        "term": "Au",
+        "count": 7
+      },
+      {
+        "term": "RuO2",
+        "count": 7
       },
       {
         "term": "Co3+",
         "count": 6
       },
       {
-        "term": "Au",
+        "term": "NiO",
+        "count": 6
+      },
+      {
+        "term": "Ni3S2",
         "count": 5
       },
       {
@@ -4876,6 +5426,10 @@
       },
       {
         "term": "Pt(111)",
+        "count": 5
+      },
+      {
+        "term": "ZnO",
         "count": 5
       },
       {
@@ -4891,11 +5445,15 @@
         "count": 4
       },
       {
+        "term": "CuO",
+        "count": 4
+      },
+      {
         "term": "Rh2O3",
         "count": 4
       },
       {
-        "term": "Ru",
+        "term": "selenides_tellurides",
         "count": 4
       },
       {
@@ -4913,84 +5471,48 @@
       {
         "term": "Co4+",
         "count": 3
-      },
-      {
-        "term": "CoO",
-        "count": 3
-      },
-      {
-        "term": "Cr",
-        "count": 3
-      },
-      {
-        "term": "Cu",
-        "count": 3
-      },
-      {
-        "term": "Mn",
-        "count": 3
-      },
-      {
-        "term": "Pb",
-        "count": 3
-      },
-      {
-        "term": "Pd4",
-        "count": 3
-      },
-      {
-        "term": "Pd6",
-        "count": 3
-      },
-      {
-        "term": "Pt nanoparticles",
-        "count": 3
-      },
-      {
-        "term": "Rh",
-        "count": 3
-      },
-      {
-        "term": "ZnO",
-        "count": 3
       }
     ],
     "approx_compositions": [
       {
         "term": "Co",
-        "count": 15
+        "count": 25
       },
       {
         "term": "Ni",
-        "count": 14
+        "count": 20
+      },
+      {
+        "term": "Pt",
+        "count": 20
       },
       {
         "term": "Fe",
-        "count": 12
+        "count": 19
       },
       {
         "term": "Ag",
-        "count": 10
+        "count": 14
+      },
+      {
+        "term": "Cu",
+        "count": 13
+      },
+      {
+        "term": "Co3O4",
+        "count": 11
       },
       {
         "term": "O",
         "count": 10
       },
       {
-        "term": "Co3O4",
-        "count": 8
-      },
-      {
-        "term": "Pt",
-        "count": 8
+        "term": "Au",
+        "count": 7
       },
       {
         "term": "Co3+",
         "count": 6
-      },
-      {
-        "term": "Au",
-        "count": 5
       },
       {
         "term": "Pd",
@@ -5022,10 +5544,6 @@
       },
       {
         "term": "Cr",
-        "count": 3
-      },
-      {
-        "term": "Cu",
         "count": 3
       },
       {
@@ -5171,19 +5689,23 @@
         "count": 23
       },
       {
+        "term": "CORR",
+        "count": 21
+      },
+      {
         "term": "Electrocatalysis",
-        "count": 16
+        "count": 18
       },
       {
         "term": "oxygen evolution reaction",
         "count": 8
       },
       {
-        "term": "Electrochemical",
-        "count": 4
+        "term": "water splitting",
+        "count": 7
       },
       {
-        "term": "water splitting",
+        "term": "Electrochemical",
         "count": 4
       },
       {
@@ -5193,6 +5715,14 @@
       {
         "term": "phase evolution",
         "count": 3
+      },
+      {
+        "term": "co oxidation",
+        "count": 2
+      },
+      {
+        "term": "co2 reduction",
+        "count": 2
       },
       {
         "term": "Electrocatalytic",
@@ -5233,22 +5763,32 @@
       {
         "term": "Reaction Mechanism",
         "count": 2
-      },
-      {
-        "term": "(photo)electrocatalysts",
-        "count": 1
-      },
-      {
-        "term": "Catalyst Preparation",
-        "count": 1
-      },
-      {
-        "term": "electrocatalysts",
-        "count": 1
       }
     ]
   },
   "entries": [
+    {
+      "term": "Co",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "materials",
+        "Modeling Keywords",
+        "adsorbates",
+        "Adsorbate/Reactant",
+        "dopants",
+        "Dopant/Modifier",
+        "Active Site",
+        "Material"
+      ],
+      "count": 25,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
+        "Co nanochains"
+      ]
+    },
     {
       "term": "OER",
       "kind": "known_useful",
@@ -5281,57 +5821,45 @@
       ]
     },
     {
-      "term": "H2O",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "CORR",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
-        "adsorbates",
-        "Adsorbate/Reactant",
-        "products",
-        "Product"
+        "Reaction Type"
       ],
-      "count": 17,
+      "count": 21,
       "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
-        "Nickel–Bismuth Oxide",
-        "Ni(Fe)"
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
-      "term": "Electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "term": "metals_alloys",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "Reaction Type",
-        "applications",
-        "modeling_keywords"
+        "Material"
       ],
-      "count": 16,
+      "count": 21,
       "example_contexts": [
-        "Au(111)",
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Black Phosphorus Nanosheets"
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
-      "term": "Co",
-      "kind": "unknown_high_value",
-      "research_category": "other_useful_information",
+      "term": "nitrides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "Composition",
-        "materials",
-        "Modeling Keywords",
-        "adsorbates",
-        "Adsorbate/Reactant",
-        "dopants",
-        "Dopant/Modifier",
-        "Active Site"
+        "Material"
       ],
-      "count": 15,
+      "count": 21,
       "example_contexts": [
-        "NiCo LDH/CC",
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "Co nanochains"
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
@@ -5343,13 +5871,31 @@
         "materials",
         "dopants",
         "Dopant/Modifier",
-        "Modeling Keywords"
+        "Modeling Keywords",
+        "Material"
       ],
-      "count": 14,
+      "count": 20,
       "example_contexts": [
         "NiCo LDH/CC",
         "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
         "Ni(Fe)"
+      ]
+    },
+    {
+      "term": "Pt",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material",
+        "Composition",
+        "Modeling Keywords"
+      ],
+      "count": 20,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "Pt, Ag, Ni(111)",
+        "Pt10Pb/C"
       ]
     },
     {
@@ -5362,9 +5908,10 @@
         "modifiers",
         "Composition",
         "dopants",
-        "Dopant/Modifier"
+        "Dopant/Modifier",
+        "Material"
       ],
-      "count": 12,
+      "count": 19,
       "example_contexts": [
         "NiFe LDH",
         "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
@@ -5372,31 +5919,36 @@
       ]
     },
     {
-      "term": "O2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "H2O",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
-        "Adsorbate/Reactant"
+        "adsorbates",
+        "Adsorbate/Reactant",
+        "products",
+        "Product"
       ],
-      "count": 12,
+      "count": 19,
       "example_contexts": [
-        "Au(111)",
-        "NiCo LDH/CC",
-        "Black Phosphorus Nanosheets"
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "Nickel–Bismuth Oxide",
+        "Ni(Fe)"
       ]
     },
     {
-      "term": "adsorbate_landscape",
+      "term": "Electrocatalysis",
       "kind": "known_useful",
-      "research_category": "modeling_tasks",
+      "research_category": "adsorption_reaction",
       "fields": [
-        "recommended_modeling_tasks"
+        "Reaction Type",
+        "applications",
+        "modeling_keywords"
       ],
-      "count": 10,
+      "count": 18,
       "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
+        "Au(111)",
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Black Phosphorus Nanosheets"
       ]
     },
     {
@@ -5411,11 +5963,102 @@
         "Dopant/Modifier",
         "Material"
       ],
-      "count": 10,
+      "count": 14,
       "example_contexts": [
         "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
         "Ag/TiO2",
         "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
+      ]
+    },
+    {
+      "term": "CO2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant",
+        "Cluster/Single Atom"
+      ],
+      "count": 14,
+      "example_contexts": [
+        "CoO nanocubes",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
+      "term": "Cu",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition",
+        "Dopant/Modifier",
+        "Material"
+      ],
+      "count": 13,
+      "example_contexts": [
+        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "ZnO",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
+      ]
+    },
+    {
+      "term": "O2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 12,
+      "example_contexts": [
+        "Au(111)",
+        "NiCo LDH/CC",
+        "Black Phosphorus Nanosheets"
+      ]
+    },
+    {
+      "term": "Co3O4",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material",
+        "Modeling Keywords",
+        "Composition"
+      ],
+      "count": 11,
+      "example_contexts": [
+        "jp306303y 1..6",
+        "Co3O4",
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "defect_engineered_materials",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 11,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "adsorbate_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 10,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
+        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
       ]
     },
     {
@@ -5438,20 +6081,20 @@
       ]
     },
     {
-      "term": "Co3O4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "Ru",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
-        "Material",
+        "dopants",
         "Modeling Keywords",
-        "Composition"
+        "Material"
       ],
-      "count": 8,
+      "count": 10,
       "example_contexts": [
-        "jp306303y 1..6",
-        "Co3O4",
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+        "rsc_cp_b803956a_auto 3722..3730",
+        "cs3003098 1..8",
+        "Ru nanoparticles"
       ]
     },
     {
@@ -5469,9 +6112,25 @@
       ]
     },
     {
+      "term": "H2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "products",
+        "Product",
+        "Adsorbate/Reactant"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "Nickel–Bismuth Oxide",
+        "Co nanochains"
+      ]
+    },
+    {
       "term": "oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "Modeling Keywords"
@@ -5484,20 +6143,52 @@
       ]
     },
     {
-      "term": "Pt",
+      "term": "Au",
       "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "materials",
-        "Material",
+        "active_sites",
         "Composition",
-        "Modeling Keywords"
+        "Active Site",
+        "Material"
       ],
-      "count": 8,
+      "count": 7,
       "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt, Ag, Ni(111)",
-        "Pt10Pb/C"
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "Au/TiO2",
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "RuO2",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "water splitting",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "applications",
+        "Reaction Type"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++",
+        "acs_nn_nn-2013-00772s 1..10",
+        "cs3003098 1..8"
       ]
     },
     {
@@ -5533,6 +6224,20 @@
       ]
     },
     {
+      "term": "Condensation",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
+      ]
+    },
+    {
       "term": "DFT",
       "kind": "known_useful",
       "research_category": "modeling_tasks",
@@ -5547,19 +6252,19 @@
       ]
     },
     {
-      "term": "H2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "NiO",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "products",
-        "Product",
-        "Adsorbate/Reactant"
+        "materials",
+        "Modeling Keywords",
+        "Material"
       ],
       "count": 6,
       "example_contexts": [
         "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
         "Nickel–Bismuth Oxide",
-        "Co nanochains"
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
       ]
     },
     {
@@ -5591,6 +6296,20 @@
       ]
     },
     {
+      "term": "volatile organic compounds",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
+      ]
+    },
+    {
       "term": "adsorbate",
       "kind": "known_useful",
       "research_category": "modeling_tasks",
@@ -5605,20 +6324,18 @@
       ]
     },
     {
-      "term": "Au",
+      "term": "Ni3S2",
       "kind": "known_useful",
-      "research_category": "surface_materials",
+      "research_category": "modeling_tasks",
       "fields": [
-        "materials",
-        "active_sites",
-        "Composition",
-        "Active Site"
+        "Modeling Keywords",
+        "Material"
       ],
       "count": 5,
       "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au/TiO2",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+        "Mo-Ni3S2/NixPy/NF electrode",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
       ]
     },
     {
@@ -5651,6 +6368,22 @@
         "rsc_cp_b803956a_auto 3722..3730",
         "Pt(111)",
         "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
+      ]
+    },
+    {
+      "term": "ZnO",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
+        "ZnO",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
       ]
     },
     {
@@ -5716,9 +6449,23 @@
       ]
     },
     {
+      "term": "CuO",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
+      ]
+    },
+    {
       "term": "Electrochemical",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -5745,9 +6492,36 @@
       ]
     },
     {
+      "term": "ketonization",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective",
+        "rorrer-et-al-2019-mechanism-and-kinetics-of-isobutene-formation-from-ethanol-and-acetone-over-znxzryoz"
+      ]
+    },
+    {
+      "term": "Mo",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier",
+        "Modeling Keywords"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
       "term": "OH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -5761,8 +6535,8 @@
     },
     {
       "term": "Rh2O3",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Composition",
@@ -5792,19 +6566,17 @@
       ]
     },
     {
-      "term": "Ru",
+      "term": "selenides_tellurides",
       "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
-        "materials",
-        "dopants",
-        "Modeling Keywords"
+        "Material"
       ],
       "count": 4,
       "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "cs3003098 1..8",
-        "Ru nanoparticles"
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
+        "d2ta09361h"
       ]
     },
     {
@@ -5837,8 +6609,8 @@
     },
     {
       "term": "water",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products",
         "Adsorbate/Reactant"
@@ -5848,21 +6620,6 @@
         "d0qi01060j 234..272 ++",
         "Cu-based",
         "(Ni,Fe)OOH"
-      ]
-    },
-    {
-      "term": "water splitting",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
-      "fields": [
-        "modeling_keywords",
-        "applications"
-      ],
-      "count": 4,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "acs_nn_nn-2013-00772s 1..10",
-        "cs3003098 1..8"
       ]
     },
     {
@@ -5973,8 +6730,8 @@
     },
     {
       "term": "CoO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Modeling Keywords",
@@ -6002,24 +6759,23 @@
       ]
     },
     {
-      "term": "Cu",
+      "term": "FeOOH",
       "kind": "known_useful",
-      "research_category": "defects_active_sites",
+      "research_category": "surface_materials",
       "fields": [
-        "dopants",
-        "Composition",
-        "Dopant/Modifier"
+        "Material",
+        "Dopant/Modifier",
+        "Surface/Support"
       ],
       "count": 3,
       "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "ZnO"
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
       "term": "hydrogen production",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -6046,6 +6802,48 @@
       ]
     },
     {
+      "term": "Ni2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
+        "d2ta09361h"
+      ]
+    },
+    {
+      "term": "NiFe",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
+        "d2ta09361h"
+      ]
+    },
+    {
+      "term": "NixPy",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords",
+        "Material"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
+      ]
+    },
+    {
       "term": "Pb",
       "kind": "known_useful",
       "research_category": "defects_active_sites",
@@ -6062,8 +6860,8 @@
     },
     {
       "term": "Pd4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material",
         "clusters"
@@ -6076,8 +6874,8 @@
     },
     {
       "term": "Pd6",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material",
         "clusters"
@@ -6133,18 +6931,17 @@
       ]
     },
     {
-      "term": "ZnO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "volatile organic compound",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
-        "materials",
-        "Material",
-        "Modeling Keywords"
+        "Adsorbate/Reactant"
       ],
       "count": 3,
       "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "ZnO"
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature",
+        "zakharenko-et-al-2017-conformational-landscape-and-torsion-rotation-vibration-effects-in-the-two-conformers-of-methyl",
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
       ]
     },
     {
@@ -6306,9 +7103,21 @@
       ]
     },
     {
+      "term": "bifunctional electrocatalysts",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
       "term": "Bismuth (Bi)",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "dopants"
@@ -6348,8 +7157,8 @@
     },
     {
       "term": "CH3OH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -6389,6 +7198,19 @@
       ]
     },
     {
+      "term": "co oxidation",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
+      ]
+    },
+    {
       "term": "Co oxides",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -6417,6 +7239,19 @@
       ]
     },
     {
+      "term": "co2 reduction",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "Co2+",
       "kind": "known_useful",
       "research_category": "modeling_tasks",
@@ -6427,6 +7262,19 @@
       "count": 2,
       "example_contexts": [
         "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "Co3",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
       ]
     },
     {
@@ -6458,8 +7306,8 @@
     },
     {
       "term": "CoOOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Composition"
@@ -6500,8 +7348,8 @@
     },
     {
       "term": "electrocatalyst",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -6513,8 +7361,8 @@
     },
     {
       "term": "Electrocatalytic",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -6526,8 +7374,8 @@
     },
     {
       "term": "electrocatalytic oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -6535,6 +7383,19 @@
       "example_contexts": [
         "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
         "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "Fe2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "d2ta09361h"
       ]
     },
     {
@@ -6566,8 +7427,8 @@
     },
     {
       "term": "formic acid",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -6580,8 +7441,8 @@
     },
     {
       "term": "fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -6631,6 +7492,31 @@
       "example_contexts": [
         "Nickel–Bismuth Oxide",
         "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Heterostructure",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "hollow nanorods",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
       ]
     },
     {
@@ -6700,6 +7586,42 @@
       "example_contexts": [
         "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
         "RuO2"
+      ]
+    },
+    {
+      "term": "KOH",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Mo-doped Ni3S2/NixPy",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Mo-Ni3S2/NixPy/NF electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
       ]
     },
     {
@@ -6786,9 +7708,22 @@
       ]
     },
     {
+      "term": "Ni3",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "NiCoOOH",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "active_sites",
         "Active Site"
@@ -6800,23 +7735,22 @@
       ]
     },
     {
-      "term": "NiO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "NiOOH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "materials",
-        "Modeling Keywords"
+        "Material",
+        "Surface/Support"
       ],
       "count": 2,
       "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide"
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
       "term": "NO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -6883,8 +7817,8 @@
     },
     {
       "term": "OH*",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "intermediates",
         "adsorbates"
@@ -6911,8 +7845,8 @@
     },
     {
       "term": "OH−",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -6924,8 +7858,8 @@
     },
     {
       "term": "OOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -6950,8 +7884,8 @@
     },
     {
       "term": "Oxygen Reduction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -6963,8 +7897,8 @@
     },
     {
       "term": "oxygen reduction reaction",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "Modeling Keywords"
@@ -6989,8 +7923,8 @@
     },
     {
       "term": "PEC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords",
         "Modeling Keywords"
@@ -7044,9 +7978,22 @@
       ]
     },
     {
+      "term": "Pt1",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
       "term": "Pt10Pb/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -7085,17 +8032,16 @@
       ]
     },
     {
-      "term": "RuO2",
+      "term": "rutile TiO2",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
-        "materials",
-        "Material"
+        "Surface/Support"
       ],
       "count": 2,
       "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
       ]
     },
     {
@@ -7114,8 +8060,8 @@
     },
     {
       "term": "Silver",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "dopants"
@@ -7195,8 +8141,8 @@
     },
     {
       "term": "UNCD",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Surface/Support"
       ],
@@ -7473,8 +8419,8 @@
     },
     {
       "term": "Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -7484,9 +8430,21 @@
       ]
     },
     {
+      "term": "Ag17",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
+      ]
+    },
+    {
       "term": "Ag4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "clusters"
       ],
@@ -7497,8 +8455,8 @@
     },
     {
       "term": "AgSA",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "single_atoms"
       ],
@@ -7569,8 +8527,8 @@
     },
     {
       "term": "Au/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -7581,8 +8539,8 @@
     },
     {
       "term": "Au2–Ag2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "clusters"
       ],
@@ -7593,8 +8551,8 @@
     },
     {
       "term": "Au4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "clusters"
       ],
@@ -7605,8 +8563,8 @@
     },
     {
       "term": "Au–Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -7749,8 +8707,8 @@
     },
     {
       "term": "Bismuth",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "Dopant/Modifier"
       ],
@@ -7773,8 +8731,8 @@
     },
     {
       "term": "BP",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],
@@ -8001,8 +8959,8 @@
     },
     {
       "term": "catalytic mechanism",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -8048,15 +9006,27 @@
       ]
     },
     {
-      "term": "CO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "co-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
-        "Adsorbate/Reactant"
+        "Dopant/Modifier"
       ],
       "count": 1,
       "example_contexts": [
-        "CoO nanocubes"
+        "d2ta09361h"
+      ]
+    },
+    {
+      "term": "Co0",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
       ]
     },
     {
@@ -8144,6 +9114,18 @@
       ]
     },
     {
+      "term": "Co4",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "CoIII-containing species",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -8214,8 +9196,8 @@
     },
     {
       "term": "CoO/Co",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -8238,8 +9220,8 @@
     },
     {
       "term": "copper",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -8294,6 +9276,30 @@
       "count": 1,
       "example_contexts": [
         "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "Cu16",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
+      ]
+    },
+    {
+      "term": "Cu2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
       ]
     },
     {
@@ -8490,8 +9496,8 @@
     },
     {
       "term": "electrocatalysts",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -8550,8 +9556,8 @@
     },
     {
       "term": "electrocatalytic water splitting",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -8777,6 +9783,18 @@
       ]
     },
     {
+      "term": "Fe-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
+      ]
+    },
+    {
       "term": "Fe-free",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -8786,6 +9804,18 @@
       "count": 1,
       "example_contexts": [
         "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Fe3",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
@@ -9042,8 +10072,8 @@
     },
     {
       "term": "hydrogen",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products"
       ],
@@ -9282,8 +10312,8 @@
     },
     {
       "term": "Methanol",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -9302,6 +10332,18 @@
       "count": 1,
       "example_contexts": [
         "ja511559d 1..9"
+      ]
+    },
+    {
+      "term": "mofs_coordination_polymers",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
       ]
     },
     {
@@ -9473,6 +10515,18 @@
       ]
     },
     {
+      "term": "Ni-doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "Ni-O-G SACs",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -9485,9 +10539,21 @@
       ]
     },
     {
+      "term": "Ni0",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
+      ]
+    },
+    {
       "term": "nickel",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -9618,14 +10684,26 @@
     },
     {
       "term": "nitrogen",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "dopants"
       ],
       "count": 1,
       "example_contexts": [
         "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
+      ]
+    },
+    {
+      "term": "nitrogen reduction",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
       ]
     },
     {
@@ -9750,8 +10828,8 @@
     },
     {
       "term": "oxidation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -9762,8 +10840,8 @@
     },
     {
       "term": "oxides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],
@@ -9845,15 +10923,51 @@
       ]
     },
     {
+      "term": "Pd0",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming"
+      ]
+    },
+    {
+      "term": "Pd1",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
+      ]
+    },
+    {
       "term": "Pd17",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "clusters"
       ],
       "count": 1,
       "example_contexts": [
         "acs_nn_nn-2013-00772s 1..10"
+      ]
+    },
+    {
+      "term": "Pd2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming"
       ]
     },
     {
@@ -10073,9 +11187,21 @@
       ]
     },
     {
+      "term": "Pt0",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
       "term": "Pt10Ni/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -10086,8 +11212,8 @@
     },
     {
       "term": "PtBi",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -10122,14 +11248,26 @@
     },
     {
       "term": "PtPb",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
       "count": 1,
       "example_contexts": [
         "PtPb, PtBi"
+      ]
+    },
+    {
+      "term": "PtSA",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
       ]
     },
     {
@@ -10206,8 +11344,8 @@
     },
     {
       "term": "Rh–Rh2O3-NPs",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "clusters"
       ],
@@ -10218,8 +11356,8 @@
     },
     {
       "term": "Rh–Rh2O3-NPs/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -10253,6 +11391,18 @@
       ]
     },
     {
+      "term": "Ru0",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
+      ]
+    },
+    {
       "term": "RuO2 (110) surface",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -10266,8 +11416,8 @@
     },
     {
       "term": "RuOx",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -10409,6 +11559,18 @@
       ]
     },
     {
+      "term": "single-atom Pt",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
+      ]
+    },
+    {
       "term": "singly coordinated sites",
       "kind": "known_useful",
       "research_category": "defects_active_sites",
@@ -10418,6 +11580,18 @@
       "count": 1,
       "example_contexts": [
         "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "Sn doped",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
       ]
     },
     {
@@ -10457,9 +11631,21 @@
       ]
     },
     {
+      "term": "Sn4",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d2ta09361h"
+      ]
+    },
+    {
       "term": "sodium",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],
@@ -10575,8 +11761,8 @@
     },
     {
       "term": "sulfides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],
@@ -10719,8 +11905,8 @@
     },
     {
       "term": "Tin (Sn)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -10731,8 +11917,8 @@
     },
     {
       "term": "TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],

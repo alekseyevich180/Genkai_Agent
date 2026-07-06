@@ -1,0 +1,949 @@
+Article
+
+ pubs.acs.org/JPCC
+
+ Experimental and Theoretical Evidence for the Reactivity of Bound
+ Intermediates in Ketonization of Carboxylic Acids and Consequences
+ of Acid−Base Properties of Oxide Catalysts
+ Shuai Wang and Enrique Iglesia*
+ Department of Chemical and Biomolecular Engineering, University of California at Berkeley, Berkeley, California 94720, United
+ States
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: Ketonization of carboxylic acids on metal
+ oxides enables oxygen removal and the formation of new
+ C−C bonds for increasing the energy density and chemical
+ Downloaded via UNIV OF TOKYO on March 18, 2026 at 05:47:24 (UTC).
+
+ value of biomass-derived streams. Information about the
+ surface coverages and reactivity of various bound species
+ derived from acid reactants and the kinetic relevance of the
+ elementary steps that activate reactants, form C−C bonds, and
+ remove O atoms and how they depend on acid−base
+ properties of surfaces and molecular properties of reactants
+ is required to extend the range of ketonization catalytic
+ practice. Here, we examine such matters for ketonization of
+ C2−C4 carboxylic acids on monoclinic and tetragonal ZrO2 (ZrO2(m), ZrO2(t)) materials that are among the most active and
+ widely used ketonization catalysts by combining kinetic, isotopic, spectroscopic, and theoretical methods. Ketonization turnovers
+ require Zr−O acid−base pairs, and rates, normalized by the number of active sites determined by titration methods during
+ catalysis, are slightly higher on ZrO2(m) than ZrO2(t), but exhibit similar kinetic dependence and the essential absence of isotope
+ eﬀects. These rates and isotope eﬀects are consistent with surfaces nearly saturated with acid-derived species and with kinetically
+ limited C−C bond formation steps involving 1-hydroxy enolates formed via α-C−H cleavage in bound carboxylates and
+ coadsorbed acids; these mechanistic conclusions, but not the magnitude of the rate parameters, are similar to those on anatase
+ TiO2 (TiO2(a)). The forms of bound carboxylic acids at Zr−O pairs become more stable and evolve from molecular acids to
+ dissociated carboxylates as the combined acid and base strength of the Zr and O centers at each type of site pair increases; these
+ binding properties are estimated from DFT-derived NH3 and BF3 aﬃnities. Infrared spectra during ketonization catalysis show
+ that molecularly bound acids and monodentate and bidentate carboxylates coexist on ZrO2(m) because of diversity of Zr−O site
+ pairs that prevails on such surfaces, distinct in coordination and consequently in acid and base strengths, and that monodentate
+ and bidentate carboxylates are the most abundant species on saturated ZrO2 surfaces, consistent with their DFT-derived binding
+ strengths. Theoretical assessments of free energies along the reaction coordinate show that monodentate carboxylates act as
+ precursors to reactive 1-hydroxy enolate intermediates, while strongly bound bidentate carboxylates are unreactive spectators.
+ Higher 1-hydroxy enolate coverages, brought forth by stabilization on the more strongly basic O sites on ZrO2(m), account for
+ the more reactive nature of ZrO2(m) than TiO2(a). These ﬁndings indicate that the elementary steps and site requirements for
+ ketonization of C2−C4 carboxylic acids are similar on M−O site pairs at TiO2 and ZrO2 surfaces, a conclusion that seems general
+ to other metal oxides of comparable acid−base strength.
+
+ 1. INTRODUCTION bound acids to form 1-hydroxy enolates that subsequently
+ Ketonization forms alkanones with the loss of one C atom from couple with another bound acid molecule to form the new C−
+ the two carboxylic acid reactants as CO2 and of three O atoms C bond. This step is mediated by a transition state (TS) that
+ as equimolar amounts of CO2 and H2O.1,2 These reactions lead interacts in a concerted manner with the acid and base centers
+ to the formation of a new C−C bond and increase the energy in metal−oxygen (M−O) site pairs present at oxide
+ density of oxygenates by decreasing their oxygen content.3−7 surfaces.2,3,23 These elementary steps are reminiscent of those
+ Ketonization catalysis occurs over a wide temperature range required for aldol condensation of carbonyl compounds, which
+ (473−673 K) on oxides, such as MgO,8 BaO,9 MnO2,10,11 also occurs on M−O pairs at TiO2 and ZrO2 surfaces;29−31
+ CeO2,12−16 TiO2,17−23 and ZrO2.4,5,22−28 TiO2 and ZrO2 are condensations, however, form α,β-unsaturated carbonyl prod-
+ often reported as the most active, selective, and stable catalysts ucts, via facile dehydration of aldol products, while the products
+ for such reactions.3,23
+ The elementary steps involved in the ketonization of Received: June 19, 2017
+ carboxylic acids on metal oxides involve α-C−H cleavage in Published: July 24, 2017
+
+ © 2017 American Chemical Society 18030 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+formed in ketonization C−C coupling steps must eliminate general implications of the proposed elementary steps and site
+both CO2 and H2O to form stable alkanones.23 Aldol requirements to ketonization catalysis on metal oxides.
+condensation occurs on TiO2 and ZrO2 surfaces that remain C−C bond formation via 1-hydroxy enolate reactions with a
+essentially bare during catalysis, with the consequent formation vicinal bound acid is the sole kinetically relevant step for C2−C4
+of enolates via α-H abstraction as the sole kinetically relevant acids on ZrO2(m) and ZrO2(t). The Zr and O centers on
+step. Enolates then form a C−C bond via reactions with ZrO2(m) exhibit diverse coordinations and acid−base proper-
+another carbonyl in fast and kinetically irrelevant subsequent ties, probed here through DFT-derived binding energies for
+steps.30,31 In contrast, M−O pairs at oxide surfaces are nearly NH3 and BF3 molecules. Acids bind more strongly, and the
+saturated with adsorbed acids at practical ketonization prevalent bound species evolve from molecular to dissociated
+conditions;3,20,23 as a result, ketonization turnovers are limited forms as the combined NH3 and BF3 aﬃnities for Zr and O
+by C−C coupling, instead of 1-hydroxy enolate formation steps. centers increase with a decrease in their coordination. Infrared
+Ketonization rates therefore reﬂect free energy diﬀerences spectra during ketonization catalysis show that bound ethanoic
+between the C−C coupling TS and the most abundant acid molecules (AcOH*) and monodentate and bidentate
+adsorbed intermediates, as suggested by kinetic, isotopic, and carboxylates (AcO*, *AcO*) coexist on ZrO2(m), and that
+theoretical methods for the speciﬁc case of TiO2 surfaces.23 these ZrO2(m) surfaces are nearly saturated with the two
+These free energy diﬀerences depend on the relative stability of carboxylates. Theoretical treatments of proposed ketonization
+these adsorbed precursors and TS structures on M−O pairs, elementary steps discern that AcO* and AcOH* are the
+which reﬂect, in turn, the strength of the acid−base centers in reactive intermediates involved in ketonization turnovers on
+such M−O site pairs. Such properties are inaccessible to direct ZrO2(m), while *AcO* species are unreactive because of their
+assessment by experiments; as a result, their consequences for strong binding at Zr−O site pairs. These theoretical treatments
+reactivity have remained qualitative and supported by also indicate that O atoms that act as stronger basic centers
+inferences from observed trends between ketonization rates account for the higher ketonization reactivity of ZrO2(m) over
+ TiO2(a), because they lead to more stable 1-hydroxy enolates
+and the binding energies of probe molecules.2
+ and thus lower activation barriers for the kinetically relevant
+ The quantitative determination of intrinsic reactivity and
+ C−C bond formation. The quantitative benchmarking of
+activation free energies for ketonization and their benchmark-
+ theory with kinetic and spectroscopic data provides the
+ing against theoretical treatments requires the measurement of
+ mechanistic connections required for accurate descriptors of
+turnover rates and thus an accurate count of the number of reactivity for C−C bond formation reactions on oxides and for
+active sites present on oxides under the conditions of the the consequences of acid−base properties of the M−O site
+catalytic reaction. Such site counts have been recently measured pairs that mediate such reactions.
+from the titration of acid−base pairs during catalysis and the
+number of titrants required for full suppression of reac- 2. METHODS
+tivity.30,31 These measurements have allowed rigorous compar-
+isons of ketonization site reactivity on TiO2 and ZrO2.23 2.1. Catalyst Synthesis and Characterization. The
+ Carboxylic acids bind molecularly on oxides, but also detailed synthesis and characterization protocols for monoclinic
+dissociate at one M−O site pair to form monodentate ZrO2 (ZrO2(m)) and tetragonal ZrO2 (ZrO2(t)) have been
+carboxylates or at two vicinal M−O site pairs to form the reported previously23 and are therefore described only brieﬂy
+ below.
+bidentate analogues.2,3,23 The stability and reactivity of these
+ ZrO2(m) was synthesized by treating an aqueous solution of
+acid-derived species determine their relative coverages and their
+ ZrO(NO3)2 (ZrO(NO3)2·2H2O, 99.5%, Sigma-Aldrich) and
+respective contributions to ketonization turnovers. Kinetic,
+ urea (CO(NH2)2, 99%, Aldrich) within a Teﬂon-lined stainless-
+spectroscopic, and theoretical studies23 show that monodentate
+ steel autoclave at 433 K for 20 h.32 The precipitates were rinsed
+carboxylates prevail as the most abundant surface species with deionized water until the ﬁltrate reached a pH of 7−8; the
+(MASI) during ketonization turnovers and act as reactive sample was then exposed to ambient air at 383 K overnight
+intermediates on anatase TiO2 (TiO2(a)). Bidentate carbox- using a convection oven and then heated in ﬂowing dry air
+ylates, often proposed as the active ketonization intermedi- (1.67 cm3 g−1 s−1, 99.999%, Praxair) from ambient temperature
+ates,2,3 are unreactive spectators, typically present at low to 673 K (at 0.167 K s−1) and held for 4 h.
+coverages on TiO2(a) surfaces. The weaker basic O atoms in ZrO2(t) was prepared by treating an aqueous solution of
+rutile TiO2 (TiO2(r)) relative to TiO2(a) preclude dissociation, ZrOCl2 (ZrOCl2·8H2O, 99.5%, Sigma-Aldrich) in a round-
+leading to bound molecular acids as ketonization intermediates, bottom ﬂask at a pH of 10 set by the addition of 5.0 M NH4OH
+while the short Ti−Ti distances in TiO2(r) (relative to those in (99.99%, Sigma-Aldrich) at 333 K for 4 h.33 The resulting
+TiO2(a)) favor strongly bound bidentate carboxylates, which solids were rinsed with deionized water until the ﬁltrates were
+act as unreactive spectators and preclude the formation of neutral (pH 7−8) and free of Cl− ions examined by 0.2 mmol
+active monodentate species.23 Such stability, prevalence, and cm−3 aqueous AgNO3 (>99.0%, Sigma-Aldrich) solution, and
+reactivity of these types of bound acids remain unexplored and then thermally treated as in the case of ZrO2(m).
+uncertain on ZrO2, the ketonization catalyst most often used in Cu/SiO2 catalysts (∼20% wt Cu), used here together with
+practice.3,23,24 H2 in order to inhibit ZrO2 deactivation during ketonization,23
+ Here, kinetic and isotopic data are combined with in situ were synthesized by homogeneous deposition−precipitation
+infrared spectra and theoretical methods to examine the methods previously reported.30 An aqueous suspension of
+mechanism of ketonization reactions of C2−C4 carboxylic colloidal silica (30 wt %, LUDOX SM-30), Cu(NO 3 ) 2
+acids on monoclinic and tetragonal ZrO2 (ZrO2(m), ZrO2(t)) (Cu(NO3)2·2.5H2O, 99.99%, Sigma-Aldrich), and urea (CO-
+at the near saturation coverages prevalent during catalysis. The (NH2)2, 99%, Aldrich) were treated at 363 K for 20 h; the
+conclusions of this study are compared with those of recent ﬁltered solids were washed with deionized water until the rinse
+studies on TiO2 surfaces23 to illustrate the broad and more solution gave a pH of 7−8, and then treated sequentially in a
+ 18031 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+convection oven at 383 K overnight, in ﬂowing dry air (1.67 spectrometer with a Hg−Cd−Te (MCT) detector. Self-
+cm3 g−1 s−1, 99.999%, Praxair) at 723 K (from ambient supporting ZrO2 wafers (2−5 mg cm−2) were sealed within a
+temperature to 723 at 0.167 K s−1) for 5 h, and in ﬂowing 10% cell equipped with KBr windows and treated in ﬂowing He
+H2/He (5.56 cm3 g−1 s−1, 99.999%, Praxair) at 573 K (from (5.56 cm3 g−1 s−1, 99.999%, Praxair) by heating from ambient
+ambient to 573 at 0.033 K s−1) for 2 h. temperature to 573 K (0.0833 K s−1), holding at 573 K for 2 h,
+ Crystalline phases of all samples were identiﬁed by powder and cooling to 523 K. Liquid ethanoic acid (>99.7%, Sigma-
+X-ray diﬀraction measurements (Cu Kα radiation, λ = 0.15418 Aldrich) was then introduced into the He ﬂow by a syringe
+nm, 40 kV, 40 mA, Bruker D8 Advance).23,30 Exposed acid− pump at molar rates required to achieve the desired acid
+base pairs on ZrO2(m) and ZrO2(t), relevant to both aldol pressure (0.2−1.6 kPa). Spectra were collected in the 4000−
+condensation of carbonyl compound and ketonization of 650 cm−1 range with 2 cm−1 resolution by averaging 64 scans.
+carboxylic acid on these oxides,23 were counted from the 2.4. Density Functional Theory Methods. Periodic
+amount of propanoic acid titrants (C2H5COOH, >99.5%, plane-wave density functional theory (DFT) was used to
+Sigma-Aldrich; 20 Pa) required to fully suppress aldol address the energetics of the elementary steps involved in
+condensation rates of acetone (CH3COCH3, >99%, Fisher; ethanoic acid ketonization on ZrO2(m) surfaces. All DFT
+0.8 kPa) at 453 K. These measured acid−base pair densities for calculations were carried out using the Vienna ab initio
+ZrO2(m) (6.0 nm−2) and ZrO2(t) (5.8 nm−2) were used to simulation package (VASP)34−37 with projector augmented-
+report ketonization rates as turnover rates and calculate wave (PAW) pseudopotentials to describe electron−core
+ketonization free energy barriers.23,30,31 interactions for all atoms (energy cutoﬀ: 400 eV).38,39 The
+ 2.2. Measurements of Carboxylic Acid Ketonization Perdew−Burke−Ernzerhof (PBE) functional was used within
+Rates. ZrO2 samples and 20% wt Cu/SiO2 cocatalysts were the generalized-gradient approximation (GGA)40,41 to describe
+mixed using a mortar and pestle (ZrO2/(Cu/SiO2) = 1/1 exchange and correlation interactions among electrons.
+mass), and were then pressed into wafers, crushed, and sieved Grimme’s D3BJ dispersion corrections42,43 were used at each
+to retain 125−180 μm aggregates. These physical mixtures were energy minimization iteration to account for van der Waals
+loaded within an isothermal packed-bed reactor (1.0 cm i.d.) interactions.
+with plug-ﬂow hydrodynamics and heated in ﬂowing 10% H2/ The (−111) plane, the most stable surface in ZrO2(m)
+He (5.56 cm3 g−1 s−1, 99.999%, Praxair) from ambient crystals,24 was used to simulate bound species and ketonization
+temperature to 543 at 0.0833 K s−1 and held at 543 K for 2 elementary steps. Periodic (−111) slabs of a unit cell
+h before cooling to the desired reaction temperature (503−533 (containing three Zr atoms and seven O atoms on their
+K). outermost surfaces) were constructed from DFT-derived
+ Carboxylic acids (ethanoic acid (CH3COOH, >99.7%, ZrO2(m) bulk structures (P21/c, a = 0.522 nm, b = 0.528
+Sigma-Aldrich), propanoic acid (C2 H 5 COOH, >99.5%, nm, c = 0.539 nm).31 Each unit cell contained four Zr4O8 layers
+Sigma-Aldrich), and butanoic acid (C3H7COOH, >99%, and a vacuum layer of 1.5 nm along the z-direction. The three
+Sigma-Aldrich)) were introduced as liquids using a syringe Zr4O8 layers closest to the surface were relaxed in all energy
+pump (Cole Parmer, 74900 series) and vaporized into H2 and minimization steps, while the bottom layer was held at the
+He ﬂows metered by electronic mass ﬂow controllers (Porter, position in its bulk structure. Energies and forces were
+Inc.). The liquid and gas ﬂow rates were controlled to achieve calculated using a 4 × 4 × 1 Monkhorst-pack sampling k-
+the desired acid and H2 pressures (0.2−3.0 and 20 kPa, point set44 with respective energy and force convergence
+respectively) and to set reactor residence times that kept the criteria of 1 × 10−6 eV and of 0.05 eV Å−1 on each
+conversions of acid reactants below 15%. Transfer lines were unconstrained atom. Dipole and quadrupole corrections45 were
+maintained above 430 K in order to avoid reactant and product used during each optimization step in order to remove any
+condensation. Isotopic eﬀects on ketonization rates for ethanoic artifactual interactions among periodic images along the z-
+acid were examined by using ethanoic acid-d4 (CD3COOD, direction caused by dipoles in vicinal images.
+>99%, Sigma-Aldrich) and D2 (>99%, Praxair) as reactants, Transition state (TS) structures were ﬁrst isolated using the
+instead of the respective species in their protium forms. nudged elastic band (NEB) method46,47 with 8−12 images
+ The components in eﬄuent streams were identiﬁed using along the reaction coordinate between reactant and product
+known standards and mass spectrometry (HP 5972 mass states. Structures with the highest energy along NEB-optimized
+spectrometer). Their concentrations were measured by gas paths were then taken as the starting point for reﬁning the TS
+chromatography (Agilent 6890) using a capillary column search using the Dimer algorithm.48 A single Γ-centered k-point
+(Agilent, HP-1, methyl silicone, 50 m, 0.32 mm ID × 1.05 and a convergence criteria of 1 × 10−4 eV (for electronic
+μm) and a ﬂame ionization detector for carboxylic acids, energies) and 0.1 eV Å−1 (for forces at each unconstrained
+alkanones, and other oxygenates, and using a packed column atom) were used in NEB calculations. Dimer calculations were
+(Porapak-Q, 4.8 m, 80−100 mesh) and a thermal conductivity carried out using the same k-point mesh and the same
+detector for H2, H2O, and CO2. Conversions and selectivities convergence criteria as for stable bound species.
+were calculated on a carbon basis. Ketonization rates were Vibrational analyses were performed for optimized structures
+corrected for mild deactivation23 by periodic rate measure- in order to determine their enthalpies, entropies, and Gibbs free
+ments at a reference condition (1.0 kPa acid reactant, 20 kPa energies.49 Atoms in adsorbed species and at the outermost
+H2, 523 K). These rates are reported as the number of acid ZrO2 layer were allowed to move in frequency calculations,
+molecules converted per ks divided by the number of exposed because relaxation of the other layers in the ZrO2 slab would
+Zr−O pairs measured by the methods described above (Section impose prohibitive computational costs. The contributions to
+2.1). entropies and free energies from low-frequency modes (<60
+ 2.3. Infrared Spectroscopy Measurements. Species cm−1) are inaccurate for weakly bound species in periodic
+bound on ZrO2(m) during ethanoic acid ketonization at 523 VASP models;50 they were replaced by the rotational modes in
+K were detected by infrared spectra using a Nicolet 8700 FT-IR their gaseous analogues (multiplied by 0.70), as indicated by
+ 18032 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+measured enthalpies and entropies for adsorption of gaseous
+molecules on oxides.51
+ The aﬃnity of NH3 (EAA) for Lewis acid centers (LA) is
+deﬁned here as the energy released upon binding of a gaseous
+NH3 molecule on such centers:
+ EAA = E NH3− LA − E LA − E NH3 (1)
+Here, ENH3−LA is the energy of the NH3−LA pair, and ELA and
+ENH3 are those for the noninteracting LA and NH3(g),
+respectively. The aﬃnity of BF3 (EBA) for a Lewis base center
+(LB) was similarly deﬁned:
+ E BA = E BF3 − LB − E LB − E BF3 (2)
+with the analogous deﬁnitions for EBF3−LB, ELB, and EBF3. EAA
+and EBA represent rigorous descriptors of the strength of the
+respective acid and base centers in M−O pairs. The EAA and
+EBA values for the respective Zr and O sites exposed on
+ZrO2(m) (−111) surfaces were assessed using a periodic slab
+model of a unit cell and DFT treatment protocols as described Figure 1. Eﬀects of ethanoic acid pressure on ketonization turnover
+ rates catalyzed by ZrO2 and TiO2 (oxide + 20% wt Cu/SiO2 (1:1
+above. Such EAA and EBA values were also calculated for the Ti mass), 523 K, CH3COOH and 20 kPa H2 for ZrO2(m) (⧫), ZrO2(t)
+and O sites exposed on TiO2(a) (101) surfaces using a periodic (▲), and TiO2(a) (●), CD3COOD and 20 kPa D2 for ZrO2(m) (◊),
+slab model of a 1 × 2 supercell that was constructed and ZrO2(t) (Δ), and TiO2(a) (○)). Dashed lines represent the regressed
+reported in detail elsewhere,23 so as to compare ZrO2(m) and ﬁts to the mechanism-based functional form of eq 3. Turnover rates on
+TiO2(a) surfaces and to assess the consequences of acid−base TiO2(a) are adapted from ref 23.
+properties for ketonization reactivity.
+ ZrO2 than on TiO2(a) (1.43, 1.15, and 0.26 ks−1 on ZrO2(m),
+3. RESULTS AND DISCUSSION ZrO2(t), and TiO2(a), respectively; 523 K, 3.0 kPa ethanoic
+ 3.1. Dependence of Ketonization Rates on the acid; Figure 1). Such diﬀerences in reactivity are likely to reﬂect
+Pressure of Carboxylic Acid Reactants on Monoclinic diﬀerences in the acid−base binding properties and in the
+and Tetragonal ZrO 2 . C 2 −C 4 carboxylic acids distances in metal−oxygen (M−O) site pairs exposed on these
+(CnH2n+1COOH, n = 1−3) formed equimolar mixtures of diﬀerent oxide surfaces. Such binding properties and M−O
+symmetric alkanones (CnH2n+1C(O)CnH2n+1), H2O, and distances are discussed next as descriptors of reactivity in the
+CO2 with carbon selectivities above 95% (at 0−11% acid context of the elementary steps involved and their kinetic
+conversion, 503−533 K) on both monoclinic and tetragonal relevance (Section 3.2) and of the binding properties of ZrO2
+ZrO2 (ZrO2(m), ZrO2(t)), as also reported in previous surfaces based on DFT estimates of the interaction energies of
+studies.23 Ketonization turnover rates of ethanoic acid per probe molecules (Section 3.3).
+exposed Zr−O pair (ZrO2(m) 6.0 nm−2, ZrO2(t) 5.8 nm−2, 3.2. Elementary Steps of Ketonization and Their
+Section 2.1) were proportional to acid pressure at low pressures Kinetic Relevance on ZrO2 and TiO2. Ketonization rates
+(<0.4 kPa) but then reached nearly constant values at higher are accurately described by Langmuirian treatments of
+acid pressures (>2 kPa, 523 K, Figure 1), as also shown on elementary steps occurring at vicinal M−O pairs on TiO223
+anatase TiO2 (TiO2(a)).23 These eﬀects of acid pressure on and ZrO2 (shown below), as depicted in Scheme 1 for ethanoic
+ketonization rates were similar for ethanoic, propanoic, and acid (AcOH) and vicinal Zr−O pairs on ZrO2(m) surfaces.
+butanoic acids at all temperatures (503−533 K) and on both These surfaces, in contrast with TiO2 surfaces, exhibit
+ZrO2(m) (Figure 2) and TiO2(a);23 thus, we conclude that the signiﬁcant diversity in structure and properties.24,31 In Section
+mechanistic features responsible for such a kinetic response are 3.3, the combined DFT-derived NH3 and BF3 aﬃnity values
+common to all these carboxylic acids and to ZrO2 and TiO2 (eqs 1 and 2) at the M and O centers in Zr−O site pairs with
+catalysts. diﬀerent coordination are shown to describe the binding energy
+ Ketonization turnover rates for perdeuterated ethanoic acid of the acid reactants. As these combined aﬃnities increase, the
+(CD3COOD) were similar to those for undeuterated reactants predominant conﬁguration of the bound acids evolves from the
+(CH3COOH) on both ZrO2(m) and ZrO2(t) (rH/rD = 1.1 for molecular form to carboxylates, and their binding at the Zr−O
+both ZrO2(m) and ZrO2(t), 0.2−2.2 kPa, 523 K, Figure 1), as pair becomes stronger. Here, ZrI−OI and ZrII−OII denote the
+also observed on TiO2(a).23 These data indicate that the two vicinal Zr−O pairs (Scheme 1) required to complete
+formation of the C−C bond, instead of the H abstraction step AcOH ketonization turnovers on ZrO2(m). ZrI−OI is the Zr−
+required to form 1-hydroxy enolates, limits ketonization O pair with the highest NH3 and BF3 combined aﬃnity on
+turnovers on ZrO2 surfaces, as is also the case on TiO2(a). ZrO2(m).
+This step involves the reaction between an acid-derived 1- The reactivity data and theoretical treatments below indicate
+hydroxy enolate, present in equilibrium with the gaseous acid that the O−H bond in AcOH dissociates at ZrI−OI pairs to
+reactant, and a vicinal coadsorbed acid molecule.23 Ethanoic form a H atom at the OI site and a monodentate carboxylate
+acid ketonization turnover rates are slightly higher on ZrO2(m) (AcO*) at the ZrI center; in such structures, AcO* is stabilized
+than ZrO2(t) (Figure 1), as also shown in previous studies for by H-bonding interactions with the H atom abstracted from
+the reaction of stearic acid on these two crystalline ZrO2 AcOH (step 1, Scheme 1). In contrast, AcOH remains in its
+phases;4 these ethanoic acid ketonization rates are higher on molecular form (AcOH*) at the ZrII−OII pair, with its carbonyl
+ 18033 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Figure 2. Eﬀects of reactant pressure on ketonization rates for (a) C2−C4 carboxylic acids at 523 K and for (b) ethanoic acid at 503−533 K
+(ZrO2(m) + 20% wt Cu/SiO2 (1:1 mass), 20 kPa H2). Dashed lines represent the regressed ﬁts to the mechanism-based functional form of eq 3.
+
+O atom interacting with the ZrII center and its acidic H atom to very slow but detectable deactivation during ketonization on
+with the OII site (step 2, Scheme 1). ZrO2.
+ The cleavage of the α-C−H bond in adsorbed AcO* at the The similar kinetic rate dependence on acid pressure and the
+ZrI−OI pair forms a proton at the OI site and a 1-hydroxy weak kinetic H/D isotope eﬀects on ZrO2(m) and TiO2(a)
+enolate at the ZrI center (step 3, Scheme 1). Such 1-hydroxy (Figure 1) indicate that 1-hydroxy enolate reactions with
+enolates carry out a nucleophilic attack at coadsorbed AcOH* coadsorbed acids (step 4, Scheme 1) limit ketonization rates on
+species bound at the neighboring ZrII−OII pair on ZrO2(m) to both catalysts, as shown earlier on TiO2(a)23 and below on
+form a new C−C bond (step 4, Scheme 1). This step forms an ZrO2. Such a limiting step in Scheme 1, taken together with
+unstable α-hydroxy γ-carboxy alkoxide, which sequentially ZrI−OI pairs saturated by monodentate carboxylates, with the
+eliminates H2O and CO2 (steps 5−8, Scheme 1) to give the quasiequilibrated nature of steps 2 and 3, and with the lack of
+surface enolate precursor to the ﬁnal alkanone product, which inhibition by ketonization products (Figure S1 of Supporting
+ Information (SI)), leads to the rate equation:
+forms via the reattachment of the proton previously abstracted
+from AcO* in forming the 1-hydroxy enolate (step 9, Scheme ⎯⇀
+ ⎯
+1) and then desorbs as the gaseous alkanone (step 10, Scheme r kK KP
+ = 4 2 3 acid
+1) to complete a catalytic ketonization turnover. [L] 1 + K 2Pacid (3)
+ In addition to the formation of AcO* and AcOH*, AcOH
+molecules can also dissociate on vicinal ZrO pairs to form Here, [L] is the number of active Zr−O site pairs, and Pacid is
+ ⎯⇀
+ ⎯
+bidentate carboxylates (*AcO*). Such species interact with the the acid pressure; kx and Kx denote the forward rate constant
+two Zr centers through each of the two O atoms in *AcO* and and equilibrium constant, respectively, for each step x in
+the cleaved H atom bound at one of the lattice O atoms (step Scheme 1.
+11, Scheme 1). These bidentate carboxylates have been Ketonization rates for all C2−C4 acids on ZrO2(m) are
+previously considered as the reactive ketonization intermedi- accurately described by eq 3 (Figure 2; regressed parameters in
+ates, instead of their monodentate analogues.11−22,24−26 On ⎯⇀
+ ⎯ ⎯⇀
+ ⎯
+
+TiO2(a), kinetic, infrared, and theoretical methods recently Table 1). Measured ( k4 K 3) H/( k4 K 3) D and (K2) H /(K 2) D
+showed that bidentate carboxylates act as unreactive spectators isotopic ratios on ZrO2(m) are 1.2 ± 0.1 and 1.0 ± 0.1,
+that merely block active M−O site pairs,23 as we show here also respectively (523 K), in agreement with the kinetic relevance of
+ the C−C bond formation step (step 4, Scheme 1). These weak
+on ZrO2(m) (Section 3.5). These strongly bound bidentate
+ H/D isotope eﬀects indicate that α-C−H bond cleavage in
+carboxylates exist in quasiequilibrium with traces of gaseous
+ AcO* is equilibrated at ZrI−OI pairs (step 3, Scheme 1), as is
+ketene (H2CCO) and H2O formed via dehydration of also the case for molecular adsorption of AcOH at ZrII−OII
+*AcO* on TiO2(a).23 The presence of H2 and a hydrogenation pairs (step 2, Scheme 1). A kinetically relevant H abstraction
+function, such as dispersed Cu metal particles, at locations step that forms 1-hydroxy enolates would lead to much larger
+within diﬀusion distances from TiO pairs allows the isotope eﬀects, such as those observed in aldol condensation
+continuous scavenging of ketene to acetaldehyde as a reactions that are limited by enolate formation via α-H
+mechanism for the removal of unreactive bidentate carboxylates abstraction (kH/kD = 2.4).30
+from TiO2 surfaces; in doing so, such strategies render TiO2(a) The K2 term in eq 3 reﬂects the free energy for molecular
+catalysts stable during ketonization catalysis.23 The desorption adsorption of carboxylic acids at the ZrII−OII pair (ΔGAcOH*)
+of ketene from ZrO2(m), however, is slower than that from (Scheme 2):
+TiO2(a),23 consistent with its stronger binding, making such
+scavenging less eﬀective and, in contrast with TiO2(a), leading K 2 = exp( −ΔGAcOH */RT ) (4)
+
+ 18034 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Scheme 1. Proposed Elementary Steps for Carboxylic Acid Scheme 2 shows that ΔGAcOH* is given by
+Ketonization on ZrO2(m) Surfaces with Asymmetric Acid−
+ ΔGAcOH * = GAcO *+AcOH * − GAcO * − Gacid
+Base Zr−O Site Pairsa (5)
+ Here, GAcO*+AcOH* is the sum of the free energies for a
+ monodentate carboxylate and a vicinal molecular acid bound at
+ ZrI−OI−ZrII−OII sites, while GAcO* and Gacid are the respective
+ free energies for an isolated monodentate carboxylate at ZrI−
+ OI−ZrII−OII sites and the gaseous carboxylic acid.
+ The measured ΔGAcOH* value on ZrO2(m) is −22 ± 1 kJ
+ mol−1 (523 K, Table 1), and its enthalpy and entropy
+ components (ΔHAcOH*, ΔSAcOH*), determined from the eﬀects
+ of temperature on ΔGAcOH* (503−533 K, Figure 3a), are −89
+ ± 4 kJ mol−1 and −127 ± 7 J mol−1 K−1, respectively. These
+ ΔGAcOH* values reﬂect the adsorption of AcOH at the ZrII-OII
+ pairs according to Scheme 2. Such ΔGAcOH* values become
+ more negative as the alkyl chain length of the acid reactant
+ increases (−22 ± 1 kJ mol−1 for ethanoic acid; −26 ± 2 kJ
+ mol−1 for butanoic acid; 523 K, Table 2), as expected from the
+ more eﬀective van der Waals contacts between the larger acid
+ molecules and the oxide surfaces.
+ ⎯⇀
+ ⎯
+ The k4 K3 term in eq 3 determines the maximum attainable
+ ketonization turnover rates, which occur when AcOH* species
+ ⎯⇀
+ ⎯
+ reach saturation coverages (K2Pacid ≫ 1). This k4 K3 term is
+ determined by the free energy diﬀerence (ΔG⧧CC) between the
+ C−C bond formation transition states (G⧧CC, Scheme 2) and
+ their bimolecular AcO*−AcOH* precursors bound at ZrI−OI−
+ ZrII−OII sites (GAcO*+AcOH*):
+ ⎯⇀
+ ⎯ kBT ⧧
+ k4K3 = exp( −ΔGCC /RT )
+ h (6)
+
+ ⧧ ⧧
+ ΔGCC = GCC − GAcO *+AcOH * (7)
+ Measured ΔG⧧CC values for ZrO2(m) increased slightly from
+ 158 ± 1 kJ mol−1 (ethanoic acid) to 168 ± 1 kJ mol−1
+ (butanoic acid) as the R group in RCOOH varied from H, to
+ CH3 and C2H5 (523 K, Table 1). This trend is expected from
+ steric hindrance at the point of nucleophilic attack, as also
+ found on TiO2 (a) for both ketonization 23 and aldol
+ condensation31 reactions. For ethanoic acid, ΔG⧧CC values are
+ smaller on ZrO2(m) (158 ± 1 kJ mol−1, 523 K, Table 1) than
+ on TiO2(a) (166 ± 1 kJ mol−1),23 consistent with their
+ diﬀerences in turnover rates. The enthalpy component of ΔG⧧CC
+ (ΔH⧧CC) is smaller on ZrO2(m) (117 ± 5 kJ mol−1, Figure 3b)
+ than on TiO2(a) (137 ± 1 kJ mol−1),23 while the respective
+ entropy components of ΔG⧧CC (ΔS⧧CC) are more negative on
+ ZrO2(m) (−79 ± 10 kJ mol−1 K−1 (Figure 3b) vs −56 ± 1 kJ
+ mol−1 K−1 on TiO2(a)23). Thus, the more reactive nature of
+ ZrO2(m) reﬂects more eﬀective enthalpic TS stabilization and
+ more strongly bound (and less mobile) TS structures on
+ ZrO2(m) than on TiO2(a).
+ In what follows, theoretical and spectroscopic methods are
+ used to assess the identity and stability of bound species at
+ acid−base Zr−O site pairs on ZrO2(m) during ketonization
+ catalysis (Sections 3.3 and 3.4), the kinetic relevance of C−C
+ bond formation steps, and the relative coverages and reactivity
+ of acid-derived bound species (Section 3.5). These inquiries
+ illustrate the mechanistic link between the properties of M−O
+a
+ ZrI−OI−ZrII−OII sites represent a catalytically relevant domain site pairs, speciﬁcally the aﬃnity of their acid and base centers,
+prevalently exposed on ZrO2(m), in which the ZrI−OI pair has the and their involvement as binding sites for diﬀerent acid-derived
+highest combined NH3 and BF3 aﬃnity among all Zr−O pairs on species and for concerted interaction with the TS structures
+ZrO2(m). Shown for ethanoic acid as the illustrative example. that mediate C−C bond formation (Section 3.6).
+ 18035 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+ ⎯⇀
+ ⎯
+Table 1. Measured K2, k4 K3, ΔGAcOH*, and ΔG⧧CC Valuesa for Ketonization of C2−C4 Carboxylic Acids at 503−533 K on
+ZrO2(m)b
+ ⎯⇀
+ ⎯
+ reactant T (K) K2 (kPa−1) ΔGAcOH* (kJ mol−1) k4 K3 (10−3 (Zr−O)−1 s−1) ΔG⧧CC (kJ mol−1)
+ CH3COOH 503 4.0 ± 0.6 −25 ± 1 0.57 ± 0.02 157 ± 1
+ 513 2.5 ± 0.2 −24 ± 1 1.1 ± 0.1 157 ± 1
+ 523 1.7 ± 0.5 −22 ± 1 1.6 ± 0.2 158 ± 1
+ 533 1.2 ± 0.2 −21 ± 1 3.0 ± 0.2 159 ± 1
+ CD3COOD 523 1.7 ± 0.5 −22 ± 1 1.5 ± 0.5 159 ± 1
+ C2H5COOH 523 3.1 ± 0.8 −25 ± 2 0.42 ± 0.04 164 ± 1
+ C3H7COOH 523 3.7 ± 1.0 −26 ± 2 0.18 ± 0.01 168 ± 1
+a
+ From regression of all rate data to the functional form of eq 3. bFitted data adopted from Figures 1 and 2.
+
+Scheme 2. Schematic Reaction Coordinate Diagram for Carboxylic Acid Ketonization on ZrO2(m)a
+
+a
+ Shown for ethanoic acid as the illustrative example. Asymmetric ZrI−OI−ZrII−OII sites represent vicinal Zr−O pairs containing Zr and O sites that
+diﬀer in acid and base strengths. ΔGAcOH* is the experimentally accessible free energy change for molecular adsorption of carboxylic acid (eq 4);
+ΔG⧧CC is the experimentally accessible apparent free energy barrier for the C−C bond formation (eq 6), reﬂecting the sum of the free energy
+diﬀerence between a bound 1-hydroxy enolate and a monodentate carboxylate (ΔGe) and the free energy diﬀerence between the C−C bond
+formation transition state and its 1-hydroxy-enolate-acid pair precursor (ΔG⧧CC,t).
+
+ 3.3. Theoretical Assessment of Carboxylic-Acid- derived BF3 aﬃnities (EBA, eq 2) become more negative (0 to
+Derived Species on Monoclinic ZrO2 at Catalytic −162 kJ mol−1) with decreasing O atom coordination (CN 4 to
+Temperatures. The (−111) plane is the prevalent and most 2), as expected from the stronger basicity of coordinatively
+stable exposed surface on ZrO2(m).24 Its structure illustrates unsaturated O anions. The EBA values exponentially averaged52
+the diverse Zr−O site pairs prevalent on ZrO2(m) surfaces as over these distinct O sites on ZrO2(m) (−111) (−153 kJ
+described below. The outermost ZrO2(m) (−111) layer mol−1, Table 2) are more negative than those for the two
+contains three Zr atoms per unit cell (ZrA−ZrC sites, Scheme distinct O atoms exposed at TiO2(a) (101) (−84 kJ mol−1,
+3), each with a lower coordination number (CN) of 6 (Table Table 2), in agreement with the stronger inhibition of acetone
+2) than in bulk ZrO2(m) (CN = 7). These centers have DFT- condensation rates by CO2 on ZrO2(m) than on TiO2(a).31
+derived NH3 aﬃnities (EAA, eq 1) ranging from −95 to −102 kJ These distinct Zr and O sites on ZrO2(m) (−111) (Scheme
+mol−1 (Table 2); this range reﬂects the distinct O atoms 3) inﬂuence the extent of dissociation of acid-derived species,
+connected to these three Zr centers. The EAA values which depends on the sum of the NH3 and BF3 aﬃnities for the
+exponentially averaged over these Zr centers on ZrO2(m) Zr and O atoms in each pair (EAA‑Zr + EBA‑O). The O−H bond
+(−111) (−100 kJ mol−1, Table 2) are less negative than for the in AcOH* lengthens from 0.107 to 0.150 nm as the (EAA‑Zr +
+single Ti center on TiO2(a) (101) (−111 kJ mol−1, Table 2); EBA‑O) values for Zr−O pairs become more negative (−136 to
+such diﬀerences are consistent with the stronger inhibition of −264 kJ mol−1; Figure 4a), indicative of more favorable
+acetone condensation rates by pyridine on ZrO2(m) than on dissociation. For instance, ZrB−Oc and ZrA−Oc pairs (EAA‑Zr +
+TiO2(a).31 EBA‑O −257 and −264 kJ mol−1, respectively, Table 2)
+ Seven distinct O atoms (Oa−Og sites, Scheme 3; CN 2−4, dissociate AcOH* to AcO* and a H atom (Scheme 4a,b), in
+Table 2) are exposed at ZrO2(m) (−111) surfaces. Their DFT- spite of their very diﬀerent Zr−O distances (0.218 vs 0.375
+ 18036 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Figure 3. Measured (a) ΔGAcOH* and (b) ΔG⧧CC for ethanoic acid ketonization on ZrO2(m) as a function of reaction temperature. Dashed lines
+represent linear regression ﬁts (ΔG = ΔH − TΔS); regressed enthalpy and entropy values are shown beside the respective lines.
+
+Table 2. Coordination Numbers (CN), NH3 Aﬃnities (EAA), AcOH can also dissociate at Zr−O−Zr sites (e.g., ZrA−Oc−
+and BF3 Aﬃnities (EBA) for Exposed Atoms on ZrO2(m) ZrB sites) to form a bidentate carboxylate (*AcO*), in which
+(−111) and TiO2(a) (101) Surfaces Shown in Scheme 3 each of its two O atoms is bound to a Zr center and the
+ dissociated hydroxyl H atom interacts with one of the surface O
+ surface site CN EAAa (kJ mol−1) EBAa (kJ mol−1)
+ atoms (Scheme 4d). The O atoms in *AcO* species bound at
+ −102
+ ZrO2(m) (−111) ZrA 6
+ ZrA−Oc−ZrB sites are closer to ZrA than to ZrB (0.225 vs 0.230
+ ZrB 6 −95
+ nm, Scheme 4d), in agreement with its more negative NH3
+ −100
+ ZrC 6
+ aﬃnity (EAA −102 vs −95 kJ mol−1, Table 2).
+ Oa 4 <−1
+ The ΔGads values for *AcO* among all types of Zr−O−Zr
+ Ob 3 −82
+ sites on ZrO2(m) (−111) surfaces range from −85 to −140 kJ
+ Oc 2 −162
+ mol−1 (Table 3; geometry parameters for each DFT-derived
+ Od 3 −44
+ *AcO* shown in Table S1, SI). The most stable *AcO* species
+ Oe 3 −36
+ Of 3 −97
+ bind each of their two O atoms to the ZrA and ZrB sites and the
+ Og 4 <−1
+ H atom to the Oc site (ΔGads −140 kJ mol−1, Table 3), while
+ TiO2(a) (101) Ti 5 −111
+ the least stable *AcO* is connected to the same ZrA and ZrB
+ Oh 2 −87
+ centers but with the H atom at the Od site (ΔGads −85 kJ
+ Oi 3 −31 mol−1, Table 3). This reﬂects the greater basicity of Oc than Ob
+a sites (EBA −162 vs −82 kJ mol−1, Table 2).
+ PBE + D3BJ functionals, PAW.
+ AcOH*, AcO*, and *AcO* species bound on ZrO2(m)
+ surfaces diﬀer in their respective carboxyl (C(O)OH) or
+nm). The H−O bond in AcOH increases from 0.099 nm in carboxylate (C(O)O) stretch modes, all of which appear in
+gaseous species to 0.148−0.150 nm as the acid O atom the 1350−1800 cm−1 wavenumber range (Table 4). Speciﬁ-
+interacts with a ZrB or ZrA center (Zr−O distance: 0.123 nm) cally, DFT-derived frequencies for CO and CO vibrations
+and the H atom in the acid OH group interacts with a surface (νCO and νC−O) in AcOH* are 1610−1646 and 1491−1517
+Oc site (H−O distance: 0.105 nm) (Scheme 4a,b); such cm−1, respectively. The frequencies for the respective
+distances are consistent with the full dissociation of the O−H antisymmetric and symmetric carboxylate vibrations (νCOO,as
+bond in the acid and with H-bonding between the AcO* and and νCOO,s) in AcO* are 1512−1584 and 1392−1408 cm−1.
+OH* that formed. In contrast, AcOH adsorbs on ZrB−Od pairs Such νCOO,as and νCOO,s values for bidentate *AcO* bound at
+of weaker combined NH3 and BF3 aﬃnity (EAA‑Zr + EBA‑O = diverse ZrOZr sites on ZrO2(m) are 1529−1559 and
+−139 kJ mol−1, Table 2) in molecular form (AcOH*, Scheme 1435−1450 cm−1, respectively. These diﬀerent bands for
+4c) with the H−O bond in AcOH* only slightly longer than carboxyl (C(O)OH) and carboxylate (C(O)O) stretch
+that in AcOH(g) (0.109 vs 0.099 nm, Scheme 4c). modes are used next to experimentally conﬁrm the various
+ The adsorption free energies of AcOH-derived bound species types of acid-derived species bound to ZrO2(m) during
+(ΔGads, referenced to a bare ZrO2(m) (−111) surface and a catalytic ketonization catalysis.
+gaseous acid molecule henceforth) also become more negative 3.4. Infrared Assessment of the Relative Coverages of
+from −26 to −101 kJ mol−1 (523 K, 1 bar AcOH henceforth) Acid-Derived Species During Ketonization Catalysis.
+as the combined NH3 and BF3 aﬃnity of the Zr−O pair Figure 5 compares infrared spectra of ZrO2(m) before and
+increases (EAA‑Zr + EBA‑O, from −136 to −264 kJ mol−1, Figure after contact with AcOH (0.2−1.6 kPa) at 523 K. ZrO2(m)
+4b). This trend is consistent with the concerted interactions of samples treated in He at 573 K for 2 h show weak and broad
+such species with the Zr and O atoms in the site pair. bands centered at 1543 and 1448 cm−1 before contact with
+ 18037 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Scheme 3. Structures of ZrO2(m) (−111) and TiO2(a) (101) Surfaces and Respective Metal and Oxygen Centers Exposed on
+Each Unit Cell of These Surfaces
+
+Figure 4. (a) DFT-derived O−H distance in AcOH-derived species bound at a Zr−O pair of ZrO2(m) (−111) surfaces and (b) the respective
+adsorption free energies (ΔGads) as a function of the combined NH3 and BF3 aﬃnity of the Zr−O pair (EAA‑Zr + EBA‑O) (AcO* (⧫), AcOH* (▲);
+PBE+D3BJ, PAW, 523 K, 1 bar AcOH; denotation of the Zr and O sites shown in Scheme 3). Dashed lines represent qualitative trends.
+
+AcOH(g). These bands arise from carbonates formed upon O vibrations in AcOH* of similar infrared absorption cross
+contact with CO2 present in ambient air.53 We surmise that sections (Figure 5). These data indicate that dissociated forms
+these carbonates do not interfere with ketonization catalysis on of ethanoic acid prevail over their molecular analogues on
+ZrO2(m), because of their high stability and low coverages at ZrO2(m). The intensity of the carboxylate bands (AcO* and
+ketonization reaction conditions. Several infrared bands *AcO*) is almost insensitive to the acid pressure within 0.2−
+appeared in the 1300−1800 cm−1 range (1797, 1778, 1684, 1.6 kPa (Figure 5), indicative of nearly saturated coverages by
+1590, 1521, 1460, and 1393 cm−1) upon contact of ZrO2(m) AcO* and *AcO* at AcOH pressures relevant to ketonization
+with 0.2 kPa AcOH at 523 K (Figure 5). The bands at 1797 and catalysis, as also shown by the kinetic analysis in Section 3.2.
+1778 cm−1 correspond to carboxyl vibrations in AcOH(g),54 The overlap between these infrared bands for AcO* and
+and their intensities increase linearly with AcOH pressure *AcO* and the weaker band for AcOH*, however, prevents an
+(0.2−1.6 kPa, Figure S2, SI). The DFT-derived frequencies in accurate determination of AcOH* coverages on ZrO2(m).
+Table 4 indicate that the other bands correspond to vibrations The removal of AcOH(g) from the He stream led to the
+in AcOH* (νCO 1684 cm−1), AcO* (νCOO,as 1590 cm−1; immediate disappearance of the bands for AcOH(g) and
+νCOO,s 1393 cm−1), and *AcO* (νCOO,as 1521 cm−1; νCOO,s AcOH* at 523 K, while those for AcO* and *AcO* decreased
+1460 cm−1). The carboxylate vibrations for AcO* and *AcO* only slightly during a 2 h period (Figure 5). The slow removal
+show similar intensities that are ∼500-fold greater than for C of AcO* and *AcO* from ZrO2(m) surfaces reﬂects their
+ 18038 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Scheme 4. DFT-Derived Adsorption Modes of Ethanoic Acid on Zr−O Site Pairs of ZrO2(m) (−111) Surfaces (PBE+D3BJ,
+PAW)
+
+Table 3. DFT-Derived Adsorption Free Energy (ΔGads) and
+Respective Enthalpy and Entropy Components for Ethanoic
+Acid Adsorption on Zr−O−Zr Sites of ZrO2(m) (−111)
+Surfacesa
+ ΔGads ΔHads
+Zr−O−Zr sitesb (kJ mol−1) (kJ mol−1) ΔSads (J mol−1 K−1)
+ ZrA−Oc−ZrB −140 −236 −184
+ ZrA−Oc−ZrC −129 −228 −188
+ ZrA−Ob−ZrB −85 −186 −194
+a
+ PBE+D3BJ, PAW, *AcO*, 523 K, 1 bar ethanoic acid. bDenotation
+of Zr and O sites shown in Scheme 3.
+
+Table 4. DFT-Derived Vibrational Frequencies for
+Adsorption Modes of Ethanoic Acid on Zr−O Site Pairs of
+ZrO2(m) (−111) Surfacesa
+ vibrational frequency (cm−1) Figure 5. IR spectra of ZrO2(m) with 0.2−1.6 kPa ethanoic acid
+ during ketonization at 523 K (spectra before (---) and after (-·-) the
+ binding sites b
+ mode νCO νCO νCOO,as νCOO,s
+ acid contact shown as reference).
+ ZrBOd AcOH* 1646 1491
+ ZrCOe AcOH* 1610 1517
+ ZrAOc AcO* 1584 1408 The kinetic analysis in Section 3.2 cannot discern the relative
+ ZrBOc AcO* 1583 1392 contributions of AcO* and *AcO* species to C−C bond
+ ZrCOc AcO* 1573 1408 formation without the benchmarking with theory described in
+ ZrBOb AcO* 1512 1398 the next section.
+ ZrCOb AcO* 1523 1395 3.5. Theoretical Assessment of Ketonization Elemen-
+ ZrAOf AcO* 1543 1400 tary Steps and Reactivity of Adsorbed Species on
+ ZrAOcZrB *AcO* 1559 1444 Monoclinic ZrO2 Surfaces. The elementary steps shown in
+ ZrAOcZrC *AcO* 1540 1435 Scheme 1 for ketonization reactions are examined next using
+ ZrAObZrB *AcO* 1529 1450 DFT methods and AcOH as the illustrative reactant on the
+a
+ PBE+D3BJ, PAW, 523 K, 1 bar ethanoic acid. bDenotation of Zr and ZrO2(m) (−111) surfaces that prevail on ZrO2(m) powders.24
+O sites shown in Scheme 3. These methods include Grimme’s D3BJ dispersion correc-
+ tions43 to account for van der Waals interactions among
+ coadsorbed acid reactants, which become signiﬁcant at the near
+strong binding at Zr−O pairs, in contrast with the weak binding saturation coverages evident from kinetic and infrared data
+of AcOH* species, which equilibrate rapidly with AcOH(g). shown above (Table 1 and Figure 5). All calculations are
+ 18039 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Scheme 5. DFT-Derived Structures for Adsorbed Acid Reactants and Transition States Involved in Ketonization of AcO* and
+AcOH* on Zr−O Pairs of ZrO2(m) (−111) Surfaces (PBE+D3BJ, PAW, 2/3ML Acid Coverage)a
+
+a
+ Irrelevant coadsorbed acids are not shown for clarity.
+
+carried out using a unit cell of ZrO2(m) (−111) and two strongly basic O sites are blocked by adsorbed species at such
+AcOH-derived species, corresponding to a fractional surface coverages.
+coverage (θacid) of 2/3ML. Here θacid is deﬁned as the ratio of The cleavage of the α-C−H bond in AcO* leads to the
+adsorbed carboxylic acid molecules (nacid) to exposed Zr−O formation of 1-hydroxy enolates (step 3, Scheme 1). These
+pairs (nZr−O): species then carry out a nucleophilic attack at coadsorbed
+ AcOH* species to form the new C−C bond (step 4, Scheme
+ nacid 1). Scheme 5b shows the DFT-derived transition state (TS) for
+ θacid = (ML)
+ nZr − O (8) α−C−H cleavage in AcO* at the ZrA−Oc pair in the presence
+ of coadsorbed AcOH*. The bonds incipiently cleaved (α-C−H,
+ By these deﬁnitions, the maximum attainable θacid values are 0.147 nm, Scheme 5b) and formed (H−Oc, 0.121 nm) at the
+1 ML for monodentate conﬁgurations (AcO* and AcOH*) and enolization TS are longer than the α-C−H bond in the reactant
+1
+ /2ML for bidentate conﬁgurations (*AcO*). state (0.110 nm) and the fully formed H−Oc bond in the
+ Ketonization steps involving coadsorbed AcO* and AcOH* product state (0.102 nm, Scheme S1, SI), respectively,
+bound at ZrA−Oc−ZrB sites are examined ﬁrst. DFT-optimized consistent with the concerted nature of a TS that occurs at
+structures for AcOH* bound to a ZrB center next to a an intermediate point along the reaction coordinate.
+coadsorbed AcO* species at a ZrA−Oc pair show that the OH The terminal C atom in the 1-hydroxy enolate then attacks
+group in AcOH* H-bonds to one of the carboxylate O atoms in the carboxyl C atom in AcOH* to form a new C−C bond (step
+AcO* (H−O distance 0.156 nm; Scheme 5a), instead of 4, Scheme 1) through a TS with a C−C distance of 0.218 nm
+interacting via H-bonding to a lattice O atom at low acid (Scheme 5c) shorter than the combined van der Waals radii of
+coverages (1/3ML AcOH*, Scheme 4c). Such AcOH* the two C atoms (0.340 nm), but longer than the C−C bond in
+conﬁgurations prevail at acid coverages above 2/3ML, because the product state (0.156 nm, Scheme S1, SI). As in the case of
+ 18040 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Figure 6. DFT-derived free energy reaction coordinate diagram for ketonization of AcO* and AcOH* on ZrO2(m) (−111) surfaces (PBE+D3BJ,
+PAW; 523 K, 1 bar ethanoic acid, 2/3ML acid coverage). All energy values are referenced to an AcO*−AcOH* reactant pair. Only key surface
+intermediates and transition states are shown for clarity. TS(x) and P(x) represent respective transition state and product of step x in Scheme 1.
+
+Table 5. DFT-Derived ΔGAcOH*, ΔG‡CC and Corresponding Enthalpy and Entropy Components and Isotope Eﬀects for
+Ethanoic Acid Ketonization on ZrO2(m) (−111) Surfacesa
+ (K2)H ⎯⇀
+ ⎯
+ ΔH⧧CC ΔS⧧CC ΔG⧧CC
+ ( k4K 3)H
+ enolate acid ΔHAcOH* ΔSAcOH* ΔGAcOH* (K2)D ⎯⇀
+ ⎯
+ donorb donorc (kJ mol−1) (J mol−1 K−1) (kJ mol−1) (kJ mol−1) (J mol−1 K−1) (kJ mol−1) ( k4K 3)D
+
+ AcO* AcOH* −113 −185 −17 127 −42 149 1.0 1.2
+ *AcO* AcOH* −123 −196 −20 203 −56 232 1.0 1.2
+a
+ PBE+D3BJ, PAW, 523 K, 1 bar ethanoic acid, 2/3ML acid coverage. bThe acid reactant that forms 1-hydroxy enolate in the C−C coupling step
+(step 4, Scheme 1). cThe acid reactant that is attacked by the 1-hydroxy enolate in the C−C coupling step (step 4, Scheme 1).
+
+enolate formation, the C−C bond formation TS also involves Scheme 3). The TS that mediates this reprotonation step
+concerted interactions with the Zr and O centers and occurs at involves the incipient cleavage of HOc bonds (0.135 nm)
+an intermediate point along the reaction coordinate. The OH and formation of α-CH bonds (0.130 nm) of similar length
+groups in AcOH* and 1-hydroxy enolate species are H-bonded (Scheme 5f), indicative of Oc sites and terminal C atoms (at the
+to vicinal Oc and Ob sites, respectively (H−O distance: 0.179 CC bond in propen-2-olate) of similar proton aﬃnity.
+and 0.168 nm, Scheme 5c), as also observed on TiO2(a) DFT-derived free energies for all intermediate and TS
+surfaces.23 structures involved in the ketonization elementary steps are
+ A H2O molecule is eliminated from the α-hydroxy γ-carboxy reported in Figure 6 (523 K, 1 bar AcOH, 2/3ML AcOH
+alkoxides formed (step 5, Scheme 1) by intramolecular H- henceforth; enthalpies shown Figure S3, SI). These free
+transfer from its COOH to its OH group, as also observed on energies (referenced to a AcO*−AcOH* reactant pair) are
+TiO2(a) (101) and TiO2(r) (110).23 The H atom lies nearly all positive (Figure 6), indicative of their reduced stability and
+equidistant between the donor and acceptor O atoms at the lower coverages than the AcO*−AcOH* reactant pairs on
+elimination TS (OH distance: 0.122 and 0.120 nm, ZrO2(m) surfaces at ketonization reaction conditions. The C−
+respectively, Scheme 5d), in which the CO bond between C coupling TS (TS(4), Figure 6) exhibits a free energy of 149
+the O atom at the OH group and the α-C atom in the alkoxide kJ mol−1, which is higher than for any intermediates or other
+lengthens from 0.153 nm (in the reactant state, Scheme S1, SI) TS structures along the reaction coordinate. Consequently, this
+to 0.188 nm at the TS. These CO and OH distances C−C coupling step is irreversible, and the sole kinetically
+indicate that the cleavage of CO bond and the formation of relevant elementary step in ketonization reactions of AcO*−
+HO bond for the elimination of H2O from the α-hydroxy γ-
+ AcOH* coadsorbed species on ZrO2(m) (−111) surfaces.
+carboxy alkoxides occur in a concerted manner. The β-keto
+ The formation free energies of the C−C coupling TS from
+carboxylates formed in the H2O elimination step then
+ AcO*−AcOH* reactant pairs (ΔG⧧CC, Scheme 2) determine
+decarboxylate to form propen-2-olate and CO2 (step 7, Scheme ⎯⇀
+ ⎯
+1) via a TS in which the CC bond between the enolate and the kinetic constant k4 K3 in the numerator of the rate equation
+carboxylate moieties in β-keto carboxylates lengthens from (eq 3). DFT-derived ΔG⧧CC values for ethanoic acid reactants
+0.154 nm (in the reactant state, Scheme S1, SI) to 0.255 nm on ZrO2(m) (149 kJ mol−1, Table 5) are similar to those
+(Scheme 5e) at the TS state, concurrently with OCO calculated from measured rates (158 ± 1 kJ mol−1, Table 1), as
+angles in the carboxylate group that increase from 125° at the is the case also for their enthalpy components (127 vs 117 ± 6
+reactant state to 162° at the TS (vs 180° in CO2(g)). The kJ mol−1, Figure 3 and Table 5). DFT-derived and measured
+propen-2-olates formed in the decarboxylation steps are ⎯⇀
+ ⎯ ⎯⇀
+ ⎯
+protonated to acetone by the H atom stranded at the Oc site values for ( k4 K3)H/( k4 K3)D are also in agreement (1.2 vs 1.2 ±
+in the step that cleaves the α-CH bond in AcO* (step 9, 0.1, Tables 1 and 5), thus conﬁrming the sole kinetic relevance
+ 18041 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Scheme 6. Proposed Elementary Steps for Ketonization of *AcO* and AcOH* on ZrO2(m) Surfaces with Asymmetric Acid−
+Base Zr−O Site Pairsa
+
+a
+ ZrI−OI−ZrII−OII−ZrIII−OIII sites represent a catalytically relevant domain exposed on ZrO2(m).
+
+Scheme 7. DFT-Derived Structures for Adsorbed Acid Reactants and Transition States Involved in Ketonization of *AcO* and
+AcOH* on Zr−O Pairs of ZrO2(m) (−111) Surfaces (PBE+D3BJ, PAW, 2/3ML Acid Coverage)a
+
+a
+ Irrelevant coadsorbed acids are not shown for clarity.
+
+of the C−C coupling step (step 4, Scheme 1) in the value of K2 in eq 3. These DFT-derived ΔGAcOH* values on
+ketonization of ethanoic acid on ZrO2(m). ZrO2(m) (−17 kJ mol−1, Table 5), as well as the (K2)H/(K2)D
+ The formation free energy of AcOH* species vicinal to AcO* values (1.0, Table 5), agree well with measured values (−22 ± 1
+species from AcOH(g) (ΔGAcOH*, Scheme 2) determines the kJ mol−1 and 1.0 ± 0.1, Table 2). The enthalpy and entropy
+ 18042 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+Figure 7. DFT-derived free energy reaction coordinate diagram for ketonization of *AcO* and AcOH* on ZrO2(m) (−111) surfaces (PBE+D3BJ,
+PAW; 523 K, 1 bar ethanoic acid, 2/3ML acid coverage). All energy values are referenced to an *AcO*−AcOH* pair. Only key surface intermediates
+and transition states are shown for clarity. TS(x) and P(x) represent the respective transition state and product of step x in Scheme 1, whereas
+TS(x′) and P(x′) represent the respective transition state and product of step x′ in Scheme 6.
+
+components of ΔGAcOH* from DFT are, however, both more carboxylate alkoxides formed from bound 1,1-ene-diolates and
+negative than the measured values (ΔHAcOH* −113 vs −89 ± 4 AcOH* convert to the same α-hydroxy γ-carboxy alkoxide
+kJ mol−1, ΔSAcOH* −185 vs −127 ± 7 kJ mol−1, Figure 3 and derived from AcO*−AcOH* reactants; this reaction involves
+Table 5); these discrepancies reﬂect the stronger binding and the transfer of a proton bound at Od sites to the ZrA-bound O
+less mobile nature of species optimized using Grimme’s D3BJ atom in the α-hydroxy γ-carboxylate alkoxide (Scheme 7d).
+dispersion corrections with PBE functionals.23,42,43 As for the routes mediated by AcO*−AcOH* pairs, the C−
+ Ketonization steps involving coadsorbed *AcO* and AcOH* C coupling TS (TS(3′), Figure 7) for reactions of *AcO*−
+reactants bound at ZrA−Oc−Zrc and ZrB−Oc sites are examined AcOH* pairs exhibits the highest free energy among all species
+next, in order to contrast with AcO*−AcOH* reactions along the reaction coordinate (232 kJ mol−1; referenced to an
+described above and to examine the proposed intermediate *AcO*−AcOH* pair; enthalpies in Figure S4, SI). These free
+role of bidentate carboxylates in ketonization catalysis.11−26 As energies also show that *AcO*−AcOH* pairs are more stable
+for AcO*−AcOH* reactant pairs (Scheme 1), α-H abstraction than other intermediates; the *AcO*−AcOH* free energies are
+in *AcO* by an O site leads to 1,1-ene-diolates (step 2′, the lowest among all intermediates (Figure 7). Thus, C−C
+Scheme 6), which then nucleophilically attack the carboxylic C coupling is the sole kinetically relevant step, and *AcO*−
+atom in AcOH* to form α-hydroxy γ-carboxylate alkoxides AcOH* pairs are the most abundant surface species (MASI).
+(step 3′, Scheme 6). The protonation of the γ-carboxylate Consequently, ketonization rates via *AcO*−AcOH* pairs
+group in such alkoxides leads to α-hydroxy γ-carboxy alkoxides reﬂect the formation free energy of the C−C coupling TS from
+ ⧧
+(step 4′, Scheme 6), which undergo subsequent dehydration, *AcO*−AcOH* pairs (ΔGCC , Figure 7). DFT-derived
+decarboxylation, and protonation steps identical to those that ΔGAcOH* values for *AcO*−AcOH* (−20 kJ mol−1; Table
+mediate AcO*−AcOH* reactions (steps 5−10, Scheme 1). 4) and AcO*−AcOH* (−17 kJ mol−1) pairs are similar, but
+ Scheme 7a shows DFT-derived structures for *AcO* bound ΔG⧧CC values for *AcO*−AcOH* routes are much larger than
+at ZrA and ZrC centers via its two O atoms with its dissociated for those involving AcO*−AcOH* pairs (232 vs 149 kJ mol−1,
+ ⎯⇀
+ ⎯ ⎯⇀
+ ⎯
+H atom at the Oc site and a coadsorbed AcOH* at a ZrA site Table 4). The ( k4 K3)AcO*‑AcOH*/( k4 K3)*AcO*−AcOH* ratio
+with its OH group H-bonded to the same Oc as *AcO* (H−Oc derived from these ΔG‡CC values is 1.9 × 108 (523 K), implying
+distance 0.136 nm). 1,1-Ene-diolates are formed by abstraction that bidentate carboxylates would not contribute to measured
+of the α-H in *AcO* by an Od site (step 2′, Scheme 6); the ketonization rates.
+distances between the α-H atom and the Od site at the α-C−H These DFT-derived free energies show that reactions of
+cleavage TS are longer than those in the product state (0.122 vs AcO* with AcOH* are much more facile than those of *AcO*
+0.102 nm, Scheme 7b), and the α-H−C distance at the TS is and that monodentate AcO* and AcOH* are the reactive
+longer than in the *AcO* reactant state (0.150 vs 0.110 nm, ketonization intermediates and bidentate *AcO* species are
+Scheme 7b), again indicative of the concerted nature of this TS unreactive, because of their strong binding onto Zr−O site
+structure, as also found for the enolization of AcO* at a ZrA− pairs. These conclusions are similar to those reached from
+Oc site pair (Scheme 5b). kinetic, spectroscopic, and theoretical studies on TiO223 and
+ The C−C coupling reactions between 1,1-ene-diolates and seem also applicable to the ketonization of C3 and C4 carboxylic
+coadsorbed AcOH* species are mediated by a TS similar to acids, which exhibit similar kinetic behavior as ethanoic acid on
+that for reactions of 1-hydroxy enolates (derived from AcO*) both ZrO2 (Section 3.1) and TiO223 catalysts.
+with AcOH* (0.229 vs 0.218 nm C−C bond at the TS; 3.6. Consequences of Acid−Base Strength for
+Schemes 5c and 7c), but the 1,1-ene-diolate moiety at the TS is Ketonization Reactivity on Metal Oxides. Ketonization
+bound to ZrA and ZrC centers instead of the single ZrA center of carboxylic acids occurs on ZrO2(m) and TiO2(a) surfaces
+that interacts with the 1-hydroxy enolate. The α-hydroxy γ- nearly saturated by acid-derived bound species via C−C
+ 18043 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+coupling between acid-derived 1-hydroxy as enolates and coadsorbed acids at acid−base metal−oxygen (M−O) site
+coadsorbed acids. Therefore, the ΔG⧧CC term (Scheme 2) pairs that are nearly saturated by carboxylates formed from
+determines the intrinsic ketonization reactivity on acid−base dissociation of adsorbed acids at reaction conditions of
+site pairs of metal oxides. Measured ΔG⧧CC values for AcOH are catalysis. In contrast to the uniform Ti−O site pairs exposed
+158 ± 1 kJ mol−1 on ZrO2(m) (Table 2) and 166 ± 1 kJ mol−1 on TiO2 surfaces, diverse Zr and O sites of diﬀerent
+on TiO2(a)23 at 523 K, consistent with DFT-derived free coordinations and acid/base properties are present on
+energies (149 vs 160 kJ mol−1, Table 5). These values reﬂect monoclinic ZrO2 surfaces, resulting in the coexistence of
+the diﬀerent acid−base properties between ZrO2(m) and molecularly adsorbed acids and monodentate and bidentate
+TiO2(a); ZrO2(m) has stronger basic O sites but weaker Lewis carboxylates on ZrO2 during catalysis. The binding strength and
+acid centers than TiO2(a), evident by site titrations with the dissociation extent of such acid-derived species both
+diﬀerent probe molecules during acetone condensation31 and increase as the combined acid and base strengths for the Zr and
+by DFT assessments with the exposed site pairs on the most O centers at the site pairs increase, which can be appropriately
+stable ZrO2(m) and TiO2(a) surfaces (Section 3.3). described by DFT-derived NH3 and BF3 aﬃnities, respectively.
+ The ΔG⧧CC term is equal to the sum of the free energy Monodentate and bidentate carboxylates are the prevalent
+changes upon formation of 1-hydroxy enolates from AcO* on bound species on monoclinic ZrO2, while the free energy
+M−O site pairs (M = Ti, Zr; ΔGe, Scheme 2) and of the C−C activation barriers for C−C bond formation from the
+coupling TS from its 1-hydroxy-enolate-AcOH* precursors on monodentate carboxylates and coadsorbed acids are much
+ZrO2(m) or 1-hydroxy-enolate-AcO* precursors on TiO2(a) smaller than from the more stable bidentate carboxylates, as a
+(ΔG⧧CC,t, Scheme 2). These two free energies determine the result of energetic penalties to form C−C coupling transition
+steady-state coverages of 1-hydroxy enolates and their intrinsic states along their reaction coordinates. Such free energy C−C
+reactivity for C−C coupling with AcOH* or AcO*, bond formation activation barriers are lower on monoclinic
+respectively. Ketonization turnover rates reﬂect their combined ZrO2 than on anatase TiO2, because the more strongly basic O
+contributions, which, however, cannot be separately extracted sites on the former surfaces lead to more stable 1-hydroxy
+from such data. DFT treatments show that the ΔGe component enolates via their stronger bonds with the H atom abstracted
+in ΔG⧧CC is much smaller on ZrO2(m) than TiO2(a) (85 vs 111 from the α-position in the monodentate carboxylate precursors
+kJ mol−1, 523 K and 1 bar AcOH, Figure 8), but the ΔG⧧CC,t and consequently to smaller activation barriers.
+
+ ■
+ *
+ ASSOCIATED CONTENT
+ S Supporting Information
+ The Supporting Information is available free of charge on the
+ ACS Publications website at DOI: 10.1021/acs.jpcc.7b05987.
+ Space velocity eﬀects for ketonization rates on ZrO2,
+ intensity of infrared bands for gaseous ethanoic acid as a
+ function of the acid pressure, DFT-derived structures for
+ bound acids and ketonization reaction intermediates, and
+ enthalpy reaction coordinate diagrams for ketonization
+ on ZrO2 (PDF)
+
+ ■ AUTHOR INFORMATION
+ Corresponding Author
+ *Fax: + 1 510-642-4778. E-mail: iglesia@berkeley.edu. Phone:
+ + 1 925-323-5559.
+ ORCID
+ Enrique Iglesia: 0000-0003-4109-1001
+Figure 8. DFT-derived ΔG⧧CC values and their ΔGe and ΔGCC,t ⧧
+ Notes
+components for ketonization of ethanoic acid on ZrO2(m) (−111) The authors declare no competing ﬁnancial interest.
+
+ ■
+and TiO2(a) (101) surfaces (PBE+D3BJ, PAW; 523 K, 1 bar ethanoic
+acid). Data of ZrO2(m) are adapted from Figure 6, and data of ACKNOWLEDGMENTS
+TiO2(a) are adapted from ref 23
+ We acknowledge with thanks the ﬁnancial support of this
+ research from BP p.l.c. via the XC2 program at UC-Berkeley.
+component is larger on ZrO2(m) than TiO2(a) (64 vs 49 kJ We are also grateful for the valuable technical advice from Drs.
+mol−1). Therefore, the more reactive nature of ZrO2(m) Eric Doskocil, John Shabaker, Glenn Sunley, and all other
+surfaces arises from higher 1-hydroxy enolate coverages on Zr members involved in the BP XC2 program during this study.
+centers (lower ΔGe), as a result of stronger basic O sites on The Extreme Science and Engineering Discovery Environment
+ZrO2(m), which disfavor the reprotonation of 1-hydroxy (XSEDE) provided the access to computational facilities, which
+enolates to form AcO*. is supported by National Science Foundation (Grant ACI-
+ 1548562).
+
+ ■
+4. CONCLUSIONS
+Ketonization reactions of C2−C4 carboxylic acids on ZrO2 and REFERENCES
+TiO2 surfaces are both kinetically limited by C−C bond (1) Renz, M. Ketonization of Carboxylic Acids by Decarboxylation:
+formation between acid-derived 1-hydroxy enolates and Mechanism and Scope. Eur. J. Org. Chem. 2005, 2005, 979−988.
+
+ 18044 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+ (2) Pham, T. N.; Sooknoi, T.; Crossley, S. P.; Resasco, D. E. (22) Ignatchenko, A. V.; DeRaddo, J. S.; Marino, V. J.; Mercado, A.
+Ketonization of Carboxylic Acids: Mechanisms, Catalysts, and Cross-Selectivity in the Catalytic Ketonization of Carboxylic Acids.
+Implications for Biomass Conversion. ACS Catal. 2013, 3, 2456−2473. Appl. Catal., A 2015, 498, 10−24.
+ (3) Pacchioni, G. Ketonization of Carboxylic Acids in Biomass (23) Wang, S.; Iglesia, E. Experimental and Theoretical Assessment
+Conversion over TiO2 and ZrO2 Surfaces: A DFT Perspective. ACS of the Mechanism and Site Requirements for Ketonization of
+Catal. 2014, 4, 2874−2888. Carboxylic Acids on Oxides. J. Catal. 2017, 345, 183−206.
+ (4) Foraita, S.; Fulton, J. L.; Chase, Z. A.; Vjunov, A.; Xu, P.; Barath, (24) Pulido, A.; Oliver-Tomas, B.; Renz, M.; Boronat, M.; Corma, A.
+E.; Camaioni, D. M.; Zhao, C.; Lercher, J. A. Impact of the Oxygen Ketonic Decarboxylation Reaction Mechanism: A Combined Exper-
+Defects and the Hydrogen Concentration on the Surface of Tetragonal imental and DFT Study. ChemSusChem 2013, 6, 141−151.
+and Monoclinic ZrO2 on the Reduction Rates of Stearic Acid on Ni/ (25) Okumura, K.; Iwasawa, Y. Zirconium Oxides Dispersed on Silica
+ZrO2. Chem. - Eur. J. 2015, 21, 2423−2434. Derived from Cp2ZrCl2, [(i-PrCp)2ZrH(μ-H)]2, and Zr(OEt)4
+ (5) Gaertner, C. A.; Serrano-Ruiz, J. C.; Braden, D. J.; Dumesic, J. A. Characterized by X-Ray Absorption Fine Structure and Catalytic
+Catalytic Coupling of Carboxylic Acids by Ketonization as a Ketonization of Acetic Acid. J. Catal. 1996, 164, 440−448.
+Processing Step in Biomass Conversion. J. Catal. 2009, 266, 71−78. (26) Lee, Y.; Choi, J.-W.; Suh, D. J.; Ha, J.-M.; Lee, C. H.
+ (6) Crisci, A. J.; Dou, H.; Prasomsri, T.; Román-Leshkov, Y. Cascade Ketonization of Hexanoic Acid to Diesel-Blendable 6-Undecanone on
+Reactions for the Continuous and Selective Production of Isobutene the Stable Zirconia Aerogel Catalyst. Appl. Catal., A 2015, 506, 288−
+from Bioderived Acetic Acid over Zinc-Zirconia Catalysts. ACS Catal. 293.
+2014, 4, 4196−4200. (27) Ignatchenko, A. V.; Kozliak, E. I. Distinguishing Enolic and
+ (7) Bond, J. Q.; Upadhye, A. A.; Olcay, H.; Tompsett, G. A.; Jae, J.; Carbonyl Components in the Mechanism of Carboxylic Acid
+Xing, R.; Alonso, D. M.; Wang, D.; Zhang, T.; Kumar, R.; et al. Ketonization on Monoclinic Zirconia. ACS Catal. 2012, 2, 1555−1562.
+Production of Renewable Jet Fuel Range Alkanes and Commodity (28) Tosoni, S.; Pacchioni, G. Acetic Acid Ketonization on
+Chemicals from Integrated Catalytic Processing of Biomass. Energy Tetragonal Zirconia: Role of Surface Reduction. J. Catal. 2016, 344,
+Environ. Sci. 2014, 7, 1500−1523. 465−473.
+ (8) Mekhemer, G. A. H.; Halawy, S. A.; Mohamed, M. A.; Zaki, M. I. (29) Gines, M. J. L.; Iglesia, E. Bifunctional Condensation Reactions
+Ketonization of Acetic Acid Vapour over Polycrystalline Magnesia: In of Alcohols on Basic Oxides Modified by Copper and Potassium. J.
+situ Fourier Transform Infrared Spectroscopy and Kinetic Studies. J. Catal. 1998, 176, 155−172.
+Catal. 2005, 230, 109−122. (30) Wang, S.; Goulas, K.; Iglesia, E. Condensation and Esterification
+ (9) Gliński, M.; Kijeński, J.; Jakubowski, A. Ketones from Reactions of Alkanals, Alkanones, and Alkanols on TiO2: Elementary
+Monocarboxylic Acids: Catalytic Ketonization over Oxide Systems. Steps, Site Requirements, and Synergistic Effects of Bifunctional
+ Strategies. J. Catal. 2016, 340, 302−320.
+Appl. Catal., A 1995, 128, 209−217.
+ (31) Wang, S.; Iglesia, E. Substituent Effects and Molecular
+ (10) Liu, C.; Karim, A. M.; Lebarbier, V. M.; Mei, D.; Wang, Y. Vapor
+ Descriptors of Reactivity in Condensation and Esterification Reactions
+Phase Ketonization of Acetic Acid on Ceria Based Metal Oxides. Top.
+ of Oxygenates on Acid−Base Pairs at TiO2 and ZrO2 Surfaces. J. Phys.
+Catal. 2013, 56, 1782−1789.
+ Chem. C 2016, 120, 21589−21616.
+ (11) Pestman, R.; Koster, R. M.; van Duijne, A.; Pieterse, J. A. Z.;
+ (32) Li, W.; Huang, H.; Li, H.; Zhang, W.; Liu, H. Facile Synthesis of
+Ponec, V. Reactions of Carboxylic Acids on Oxides: 2. Bimolecular
+ Pure Monoclinic and Tetragonal Zirconia Nanoparticles and Their
+Reaction of Aliphatic Acids to Ketones. J. Catal. 1997, 168, 265−272.
+ Phase Effects on the Behavior of Supported Molybdena Catalysts for
+ (12) Dooley, K. M.; Bhat, A. K.; Plaisance, C. P.; Roy, A. D. Ketones
+ Methanol-Selective Oxidation. Langmuir 2008, 24, 8358−8366.
+from Acid Condensation using Supported CeO2 catalysts: Effect of (33) Xie, S.; Iglesia, E.; Bell, A. T. Water-Assisted Tetragonal-to-
+Additives. Appl. Catal., A 2007, 320, 122−133. Monoclinic Phase Transformation of ZrO2 at Low Temperatures.
+ (13) Snell, R. W.; Shanks, B. H. Insights into the Ceria-Catalyzed Chem. Mater. 2000, 12, 2442−2447.
+Ketonization Reaction for Biofuels Applications. ACS Catal. 2013, 3, (34) Kresse, G.; Furthmuller, J. Efficiency of Ab-Initio Total Energy
+783−789. Calculations for Metals and Semiconductors using a Plane-Wave Basis
+ (14) Calaza, F. C.; Chen, T.-L.; Mullins, D. R.; Xu, Y.; Overbury, S. Set. Comput. Mater. Sci. 1996, 6, 15−50.
+H. Reactivity and Reaction Intermediates for Acetic Acid Adsorbed on (35) Kresse, G.; Furthmuller, J. Efficient Iterative Schemes for Ab
+CeO2(1 1 1). Catal. Today 2015, 253, 65−76. Initio Total-Energy Calculations using a Plane-Wave Basis Set. Phys.
+ (15) Hakim, S. H.; Shanks, B. H.; Dumesic, J. A. Catalytic Upgrading Rev. B: Condens. Matter Mater. Phys. 1996, 54, 11169−11186.
+of the Light Fraction of a Simulated Bio-Oil over CeZrOx Catalyst. (36) Kresse, G.; Hafner, J. Ab Initio Molecular Dynamics for Liquid
+Appl. Catal., B 2013, 142−143, 368−376. Metals. Phys. Rev. B: Condens. Matter Mater. Phys. 1993, 47, 558−561.
+ (16) Nagashima, O.; Sato, S.; Takahashi, R.; Sodesawa, T. (37) Kresse, G.; Hafner, J. Ab Initio Molecular-Dynamics Simulation
+Ketonization of Carboxylic Acids over CeO2-Based Composite Oxides. of the Liquid-Metal-Amorphous-Semiconductor Transition in Germa-
+J. Mol. Catal. A: Chem. 2005, 227, 231−239. nium. Phys. Rev. B: Condens. Matter Mater. Phys. 1994, 49, 14251−
+ (17) Martinez, R.; Huff, M. C.; Barteau, M. A. Ketonization of Acetic 14269.
+Acid on Titania-Functionalized Silica Monoliths. J. Catal. 2004, 222, (38) Blöchl, P. E. Projector Augmented-Wave Method. Phys. Rev. B:
+404−409. Condens. Matter Mater. Phys. 1994, 50, 17953−17979.
+ (18) Pestman, R.; van Duijne, A.; Pieterse, J. A. Z.; Ponec, V. The (39) Kresse, G.; Joubert, D. From Ultrasoft Pseudopotentials to the
+Formation of Ketones and Aldehydes from Carboxylic Acids, Projector Augmented-Wave Method. Phys. Rev. B: Condens. Matter
+Structure-Activity Relationship for Two Competitive Reactions. J. Mater. Phys. 1999, 59, 1758−1775.
+Mol. Catal. A: Chem. 1995, 103, 175−180. (40) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+ (19) Pham, T. N.; Shi, D.; Resasco, D. E. Kinetics and Mechanism of Approximation Made Simple. Phys. Rev. Lett. 1996, 77, 3865−3868.
+Ketonization of Acetic Acid on Ru/TiO2 Catalyst. Top. Catal. 2014, (41) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient
+57, 706−714. Approximation Made Simple [Phys. Rev. Lett. 77, 3865 (1996)]. Phys.
+ (20) Pham, T. N.; Shi, D.; Resasco, D. E. Reaction Kinetics and Rev. Lett. 1997, 78, 1396.
+Mechanism of Ketonization of Aliphatic Carboxylic Acids with (42) Wu, X.; Vargas, M. C.; Nayak, S.; Lotrich, V.; Scoles, G.
+Different Carbon Chain Lengths over Ru/TiO2 Catalyst. J. Catal. Towards Extending the Applicability of Density Functional Theory to
+2014, 314, 149−158. Weakly Bound Systems. J. Chem. Phys. 2001, 115, 8748−8757.
+ (21) Hasan, M. A.; Zaki, M. I.; Pasupulety, L. Oxide-Catalyzed (43) Grimme, S.; Ehrlich, S.; Goerigk, L. Effect of the Damping
+Conversion of Acetic Acid into Acetone: An FTIR Spectroscopic Function in Dispersion Corrected Density Functional Theory. J.
+Investigation. Appl. Catal., A 2003, 243, 81−92. Comput. Chem. 2011, 32, 1456−1465.
+
+ 18045 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046
+The Journal of Physical Chemistry C Article
+
+ (44) Monkhorst, H. J.; Pack, J. D. Special Points for Brillouin-Zone
+Integrations. Phys. Rev. B 1976, 13, 5188−5192.
+ (45) Makov, G.; Payne, M. C. Periodic Boundary Conditions in Ab
+Initio Calculations. Phys. Rev. B: Condens. Matter Mater. Phys. 1995, 51,
+4014−4022.
+ (46) Henkelman, G.; Jonsson, H. A. Improved Tangent Estimate in
+the Nudged Elastic Band Method for Finding Minimum Energy Paths
+and Saddle Points. J. Chem. Phys. 2000, 113, 9978−9985.
+ (47) Jonsson, H. A.; Mills, G.; Jacobsen, K. W. Nudged Elastic Band
+Method for Finding Minimum Energy Paths of Transitions; World
+Scientiﬁc, 1998.
+ (48) Henkelman, G.; Jonsson, H. A. A Dimer Method for Finding
+Saddle Points on High Dimensional Potential Surfaces using only First
+Derivatives. J. Chem. Phys. 1999, 111, 7010−7022.
+ (49) McQuarrie, D. A. Statistical Mechanics; University Science
+Books: Sausalito, CA, 2000.
+ (50) Deshlahra, P.; Iglesia, E. Methanol Oxidative Dehydrogenation
+on Oxide Catalysts: Molecular and Dissociative Routes and Hydrogen
+Addition Energies as Descriptors of Reactivity. J. Phys. Chem. C 2014,
+118, 26115−26129.
+ (51) Campbell, C. T.; Sellers, J. R. V. Enthalpies and Entropies of
+Adsorption on Well-Defined Oxide Surfaces: Experimental Measure-
+ments. Chem. Rev. 2013, 113, 4106−4135.
+ (52) Herrmann, S.; Iglesia, E. Elementary Steps in Acetone
+Condensation Reactions Catalyzed by Aluminosilicates with Diverse
+Void Structures. J. Catal. 2017, 346, 134−153.
+ (53) Köck, E.-M.; Kogler, M.; Bielz, T.; Klötzer, B.; Penner, S. In situ
+FT-IR Spectroscopic Study of CO2 and CO Adsorption on Y2O3,
+ZrO2, and Yttria-Stabilized ZrO2. J. Phys. Chem. C 2013, 117, 17666−
+17673.
+ (54) Liao, L.-F.; Lien, C.-F.; Lin, J.-L. FTIR Study of Adsorption and
+Photoreactions of Acetic Acid on TiO2. Phys. Chem. Chem. Phys. 2001,
+3, 3831−3837.
+
+ 18046 DOI: 10.1021/acs.jpcc.7b05987
+ J. Phys. Chem. C 2017, 121, 18030−18046

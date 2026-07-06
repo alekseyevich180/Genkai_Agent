@@ -1,34 +1,46 @@
 {
   "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-07-06T15:18:47.711972+00:00",
+  "updated_at": "2026-07-06T15:48:30.359897+00:00",
   "summary": {
-    "terms": 50,
-    "known_useful": 32,
-    "unknown": 18
+    "terms": 53,
+    "known_useful": 40,
+    "unknown": 13
   },
   "keyword_inventory": {
     "active_sites": [
       {
         "term": "Ag@Sb",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Pt@Sb",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "TM@Sb",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       }
     ],
     "adsorbates_reactants": [
+      {
+        "term": "volatile organic compounds",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "volatile organic compound",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
       {
         "term": "HER",
         "count": 2,
@@ -138,8 +150,8 @@
       {
         "term": "Ag@Sb",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Co",
@@ -186,8 +198,8 @@
       {
         "term": "Pt@Sb",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Ru",
@@ -370,6 +382,12 @@
     ],
     "materials": [
       {
+        "term": "nitrides",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "antimonene",
         "count": 3,
         "kind": "unknown_high_value",
@@ -404,8 +422,8 @@
       {
         "term": "electrocatalysts",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "overpotential (ηOER = 0.48 V",
@@ -472,8 +490,8 @@
       {
         "term": "Electrocatalysis",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "energy conversion",
@@ -599,7 +617,7 @@
     "material_kinds": [
       {
         "term": "nitride",
-        "count": 12
+        "count": 33
       },
       {
         "term": "cluster",
@@ -921,6 +939,10 @@
     ],
     "components": [
       {
+        "term": "nitrides",
+        "count": 21
+      },
+      {
         "term": "Ag",
         "count": 3
       },
@@ -995,10 +1017,6 @@
       {
         "term": "Ti",
         "count": 2
-      },
-      {
-        "term": "V",
-        "count": 2
       }
     ],
     "surface_states": [],
@@ -1030,6 +1048,34 @@
     ]
   },
   "entries": [
+    {
+      "term": "nitrides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 21,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "volatile organic compounds",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
+      ]
+    },
     {
       "term": "Ag",
       "kind": "known_useful",
@@ -1136,9 +1182,23 @@
       ]
     },
     {
+      "term": "volatile organic compound",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature",
+        "zakharenko-et-al-2017-conformational-landscape-and-torsion-rotation-vibration-effects-in-the-two-conformers-of-methyl",
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
+      ]
+    },
+    {
       "term": "Ag@Sb",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition",
         "Active Site"
@@ -1289,8 +1349,8 @@
     },
     {
       "term": "Pt@Sb",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition",
         "Active Site"
@@ -1444,8 +1504,8 @@
     },
     {
       "term": "Electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -1456,8 +1516,8 @@
     },
     {
       "term": "electrocatalysts",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -1600,8 +1660,8 @@
     },
     {
       "term": "TM@Sb",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "Active Site"
       ],

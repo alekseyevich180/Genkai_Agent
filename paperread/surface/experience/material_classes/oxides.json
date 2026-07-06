@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "oxides",
-  "updated_at": "2026-07-06T15:18:47.719510+00:00",
+  "updated_at": "2026-07-06T15:48:30.368826+00:00",
   "summary": {
-    "terms": 147,
-    "known_useful": 51,
-    "unknown": 96
+    "terms": 172,
+    "known_useful": 89,
+    "unknown": 83
   },
   "keyword_inventory": {
     "active_sites": [
@@ -78,8 +78,8 @@
       {
         "term": "NiCoOOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "octahedral Co",
@@ -94,6 +94,12 @@
         "research_category": "defects_active_sites"
       },
       {
+        "term": "surface active sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "Ti",
         "count": 1,
         "kind": "known_useful",
@@ -103,21 +109,21 @@
     "adsorbates_reactants": [
       {
         "term": "O2",
-        "count": 20,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "count": 34,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "H2O",
         "count": 5,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "H2",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "HO*",
@@ -130,6 +136,12 @@
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "NO2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "NO2*",
@@ -162,6 +174,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "C2H5OH",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "CO32−",
         "count": 1,
         "kind": "unknown_high_value",
@@ -176,14 +194,8 @@
       {
         "term": "H2O2",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "NO2",
-        "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "O2*",
@@ -194,14 +206,14 @@
       {
         "term": "OH*",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OH−",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "oxygen-contained intermediates",
@@ -222,14 +234,38 @@
         "count": 2,
         "kind": "known_useful",
         "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ionosorbed oxygen species",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       }
     ],
     "clusters_single_atoms": [
       {
+        "term": "O2",
+        "count": 34,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "CO2",
+        "count": 13,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "NO2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "AgSA",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Cluster",
@@ -248,14 +284,26 @@
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "SO2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "compositions": [
       {
-        "term": "Co3O4",
-        "count": 8,
+        "term": "TiO2",
+        "count": 19,
         "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Co3O4",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Co",
@@ -280,12 +328,6 @@
         "count": 3,
         "kind": "known_useful",
         "research_category": "other_useful_information"
-      },
-      {
-        "term": "TiO2",
-        "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
       },
       {
         "term": "Ag",
@@ -318,6 +360,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "anatase phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Bi02:NiO",
         "count": 1,
         "kind": "unknown_high_value",
@@ -337,6 +385,12 @@
       },
       {
         "term": "bulk phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon doping",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -368,8 +422,8 @@
       {
         "term": "CoOOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "cost-effective",
@@ -452,16 +506,22 @@
         "research_category": "other_useful_information"
       },
       {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "Bismuth (Bi)",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "W",
@@ -472,8 +532,14 @@
       {
         "term": "Bismuth",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "C",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       }
     ],
     "facets": [
@@ -496,6 +562,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "(101)",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
         "term": "(101̅4)",
         "count": 2,
         "kind": "unknown_high_value",
@@ -514,12 +586,6 @@
         "research_category": "surface_structure"
       },
       {
-        "term": "(101)",
-        "count": 1,
-        "kind": "known_useful",
-        "research_category": "surface_structure"
-      },
-      {
         "term": "(111)",
         "count": 1,
         "kind": "known_useful",
@@ -528,22 +594,70 @@
     ],
     "materials": [
       {
-        "term": "Co3O4",
-        "count": 8,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "term": "oxides",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "TiO2",
-        "count": 3,
+        "count": 19,
         "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "ZrO2",
+        "count": 14,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Co3O4",
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "CeO2",
+        "count": 10,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "hydroxides_oxyhydroxides",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "RuO2",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "MnO2",
+        "count": 6,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiO",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Bismuth (Bi)",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Co oxides",
@@ -558,46 +672,40 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "NiO",
+        "term": "NiOOH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "oxides",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "RuO2",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Silver",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au–Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "C-TiO2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "hydroxides",
@@ -639,9 +747,9 @@
     "modeling_keywords": [
       {
         "term": "Co3O4",
-        "count": 8,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "count": 11,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "OER",
@@ -660,6 +768,12 @@
         "count": 6,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
+      },
+      {
+        "term": "NiO",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "adsorbate_landscape",
@@ -686,16 +800,16 @@
         "research_category": "modeling_tasks"
       },
       {
-        "term": "NiO",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
         "term": "octahedral site",
         "count": 2,
         "kind": "known_useful",
         "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "oxygen vacancies",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       },
       {
         "term": "single_atom_site",
@@ -753,6 +867,12 @@
       },
       {
         "term": "electrocatalyst",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "gas sensor",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -852,20 +972,32 @@
       {
         "term": "oxygen evolution reaction",
         "count": 5,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalysis",
         "count": 3,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "co2 reduction",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Adsorption Test",
         "count": 1,
         "kind": "known_useful",
         "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "breath analyzers",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
       },
       {
         "term": "Catalyst Preparation",
@@ -876,20 +1008,20 @@
       {
         "term": "electrocatalysts",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalytic oxygen evolution reaction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Electrochemical",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Electrochemical OER",
@@ -928,6 +1060,18 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "ethanol gas sensor",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "food quality monitoring",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "hydrogen peroxide production",
         "count": 1,
         "kind": "unknown_context",
@@ -936,8 +1080,8 @@
       {
         "term": "hydrogen production",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OER catalysts",
@@ -953,6 +1097,60 @@
       }
     ],
     "supports_surfaces": [
+      {
+        "term": "TiO2",
+        "count": 19,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "ZrO2",
+        "count": 14,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "CeO2",
+        "count": 10,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Anatase TiO2",
+        "count": 6,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "MnO2",
+        "count": 6,
+        "kind": "unknown_high_value",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "FeOOH",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "NiOOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "oxide surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "rutile TiO2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
       {
         "term": "Co3O4(001)",
         "count": 1,
@@ -996,6 +1194,12 @@
         "research_category": "surface_materials"
       },
       {
+        "term": "TiO2(101)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "TiO2(110)",
         "count": 1,
         "kind": "unknown_high_value",
@@ -1016,6 +1220,12 @@
         "research_category": "defects_active_sites"
       },
       {
+        "term": "oxygen vacancies",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "steps",
         "count": 2,
         "kind": "known_useful",
@@ -1027,30 +1237,50 @@
     "elements": [
       {
         "term": "O",
-        "count": 72
+        "count": 175
       },
       {
         "term": "Co",
+        "count": 38
+      },
+      {
+        "term": "Ti",
         "count": 35
       },
       {
         "term": "H",
-        "count": 20
+        "count": 26
       },
       {
         "term": "Ni",
-        "count": 16
+        "count": 22
+      },
+      {
+        "term": "C",
+        "count": 17
+      },
+      {
+        "term": "Zr",
+        "count": 14
       },
       {
         "term": "Fe",
-        "count": 9
+        "count": 12
       },
       {
-        "term": "Ti",
-        "count": 9
+        "term": "Ce",
+        "count": 10
+      },
+      {
+        "term": "Ru",
+        "count": 8
       },
       {
         "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "Mn",
         "count": 6
       },
       {
@@ -1067,11 +1297,7 @@
       },
       {
         "term": "N",
-        "count": 3
-      },
-      {
-        "term": "Ru",
-        "count": 3
+        "count": 4
       },
       {
         "term": "U",
@@ -1082,26 +1308,26 @@
         "count": 2
       },
       {
-        "term": "C",
+        "term": "I",
         "count": 1
       },
       {
-        "term": "I",
+        "term": "S",
         "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "oxide",
-        "count": 77
+        "count": 207
       },
       {
         "term": "hydroxide_oxyhydroxide",
-        "count": 11
+        "count": 24
       },
       {
         "term": "surface",
-        "count": 11
+        "count": 23
       },
       {
         "term": "supported_catalyst",
@@ -1110,6 +1336,14 @@
       {
         "term": "cluster",
         "count": 2
+      },
+      {
+        "term": "carbon_material",
+        "count": 1
+      },
+      {
+        "term": "nitride",
+        "count": 1
       },
       {
         "term": "single_atom_catalyst",
@@ -1123,18 +1357,54 @@
     "component_compounds": [
       {
         "term": "O2",
-        "count": 20
+        "count": 34
+      },
+      {
+        "term": "TiO2",
+        "count": 22
+      },
+      {
+        "term": "oxides",
+        "count": 21
+      },
+      {
+        "term": "CO2",
+        "count": 16
+      },
+      {
+        "term": "ZrO2",
+        "count": 14
       },
       {
         "term": "Co3O4",
+        "count": 11
+      },
+      {
+        "term": "CeO2",
+        "count": 10
+      },
+      {
+        "term": "hydroxides_oxyhydroxides",
         "count": 8
+      },
+      {
+        "term": "RuO2",
+        "count": 7
+      },
+      {
+        "term": "Anatase TiO2",
+        "count": 6
       },
       {
         "term": "Co3",
         "count": 6
       },
       {
-        "term": "TiO2",
+        "term": "MnO2",
+        "count": 6
+      },
+      {
+        "term": "NiO",
         "count": 6
       },
       {
@@ -1158,15 +1428,15 @@
         "count": 3
       },
       {
-        "term": "Co2",
-        "count": 3
-      },
-      {
         "term": "Cr",
         "count": 3
       },
       {
         "term": "Fe",
+        "count": 3
+      },
+      {
+        "term": "FeOOH",
         "count": 3
       },
       {
@@ -1194,7 +1464,11 @@
         "count": 2
       },
       {
-        "term": "NiO",
+        "term": "NiOOH",
+        "count": 2
+      },
+      {
+        "term": "NO2",
         "count": 2
       },
       {
@@ -1206,11 +1480,11 @@
         "count": 2
       },
       {
-        "term": "oxides",
+        "term": "oxide surface",
         "count": 2
       },
       {
-        "term": "RuO2",
+        "term": "rutile TiO2",
         "count": 2
       },
       {
@@ -1251,6 +1525,22 @@
       },
       {
         "term": "Bi05:NiO",
+        "count": 1
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "C-TiO2",
+        "count": 1
+      },
+      {
+        "term": "C2H5OH",
+        "count": 1
+      },
+      {
+        "term": "carbon doping",
         "count": 1
       },
       {
@@ -1358,10 +1648,6 @@
         "count": 1
       },
       {
-        "term": "NO2",
-        "count": 1
-      },
-      {
         "term": "O2*",
         "count": 1
       },
@@ -1402,6 +1688,10 @@
         "count": 1
       },
       {
+        "term": "SO2",
+        "count": 1
+      },
+      {
         "term": "stable chromium oxide",
         "count": 1
       },
@@ -1410,11 +1700,19 @@
         "count": 1
       },
       {
+        "term": "surface active sites",
+        "count": 1
+      },
+      {
         "term": "surface stability",
         "count": 1
       },
       {
         "term": "Ti",
+        "count": 1
+      },
+      {
+        "term": "TiO2(101",
         "count": 1
       },
       {
@@ -1433,7 +1731,11 @@
     "element_sets": [
       {
         "term": "{O}",
-        "count": 24
+        "count": 38
+      },
+      {
+        "term": "{O, Ti}",
+        "count": 30
       },
       {
         "term": "{Co}",
@@ -1444,16 +1746,36 @@
         "count": 15
       },
       {
+        "term": "{C, O}",
+        "count": 14
+      },
+      {
         "term": "{Co, O}",
-        "count": 11
+        "count": 14
+      },
+      {
+        "term": "{O, Zr}",
+        "count": 14
+      },
+      {
+        "term": "{Ce, O}",
+        "count": 10
+      },
+      {
+        "term": "{O, Ru}",
+        "count": 8
+      },
+      {
+        "term": "{Ni, O}",
+        "count": 7
+      },
+      {
+        "term": "{Mn, O}",
+        "count": 6
       },
       {
         "term": "{Ni}",
         "count": 6
-      },
-      {
-        "term": "{O, Ti}",
-        "count": 5
       },
       {
         "term": "{Au}",
@@ -1461,6 +1783,10 @@
       },
       {
         "term": "{Fe}",
+        "count": 4
+      },
+      {
+        "term": "{N, O}",
         "count": 4
       },
       {
@@ -1472,23 +1798,15 @@
         "count": 3
       },
       {
+        "term": "{Fe, H, O}",
+        "count": 3
+      },
+      {
         "term": "{Fe, Ni}",
         "count": 3
       },
       {
         "term": "{H}",
-        "count": 3
-      },
-      {
-        "term": "{N, O}",
-        "count": 3
-      },
-      {
-        "term": "{Ni, O}",
-        "count": 3
-      },
-      {
-        "term": "{O, Ru}",
         "count": 3
       },
       {
@@ -1508,6 +1826,10 @@
         "count": 2
       },
       {
+        "term": "{H, Ni, O}",
+        "count": 2
+      },
+      {
         "term": "{W}",
         "count": 2
       },
@@ -1524,7 +1846,11 @@
         "count": 1
       },
       {
-        "term": "{C, O}",
+        "term": "{C, H, O}",
+        "count": 1
+      },
+      {
+        "term": "{C, O, Ti}",
         "count": 1
       },
       {
@@ -1544,6 +1870,14 @@
         "count": 1
       },
       {
+        "term": "{C}",
+        "count": 1
+      },
+      {
+        "term": "{O, S}",
+        "count": 1
+      },
+      {
         "term": "{Ti}",
         "count": 1
       }
@@ -1554,30 +1888,50 @@
     "elements": [
       {
         "term": "O",
-        "count": 72
+        "count": 175
       },
       {
         "term": "Co",
+        "count": 38
+      },
+      {
+        "term": "Ti",
         "count": 35
       },
       {
         "term": "H",
-        "count": 20
+        "count": 26
       },
       {
         "term": "Ni",
-        "count": 16
+        "count": 22
+      },
+      {
+        "term": "C",
+        "count": 17
+      },
+      {
+        "term": "Zr",
+        "count": 14
       },
       {
         "term": "Fe",
-        "count": 9
+        "count": 12
       },
       {
-        "term": "Ti",
-        "count": 9
+        "term": "Ce",
+        "count": 10
+      },
+      {
+        "term": "Ru",
+        "count": 8
       },
       {
         "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "Mn",
         "count": 6
       },
       {
@@ -1594,11 +1948,7 @@
       },
       {
         "term": "N",
-        "count": 3
-      },
-      {
-        "term": "Ru",
-        "count": 3
+        "count": 4
       },
       {
         "term": "U",
@@ -1609,18 +1959,50 @@
         "count": 2
       },
       {
-        "term": "C",
+        "term": "I",
         "count": 1
       },
       {
-        "term": "I",
+        "term": "S",
         "count": 1
       }
     ],
     "oxide_components": [
       {
+        "term": "oxides",
+        "count": 21
+      },
+      {
+        "term": "TiO2",
+        "count": 19
+      },
+      {
+        "term": "ZrO2",
+        "count": 14
+      },
+      {
         "term": "Co3O4",
+        "count": 11
+      },
+      {
+        "term": "CeO2",
+        "count": 10
+      },
+      {
+        "term": "hydroxides_oxyhydroxides",
         "count": 8
+      },
+      {
+        "term": "RuO2",
+        "count": 7
+      },
+      {
+        "term": "MnO2",
+        "count": 6
+      },
+      {
+        "term": "NiO",
+        "count": 6
       },
       {
         "term": "Co",
@@ -1631,7 +2013,7 @@
         "count": 4
       },
       {
-        "term": "TiO2",
+        "term": "FeOOH",
         "count": 3
       },
       {
@@ -1643,19 +2025,11 @@
         "count": 2
       },
       {
-        "term": "NiO",
+        "term": "NiOOH",
         "count": 2
       },
       {
         "term": "O",
-        "count": 2
-      },
-      {
-        "term": "oxides",
-        "count": 2
-      },
-      {
-        "term": "RuO2",
         "count": 2
       },
       {
@@ -1683,6 +2057,14 @@
         "count": 1
       },
       {
+        "term": "C-TiO2",
+        "count": 1
+      },
+      {
+        "term": "carbon doping",
+        "count": 1
+      },
+      {
         "term": "Co2+ (d7, high spin)",
         "count": 1
       },
@@ -1704,38 +2086,6 @@
       },
       {
         "term": "cost-effective",
-        "count": 1
-      },
-      {
-        "term": "hydroxides",
-        "count": 1
-      },
-      {
-        "term": "layered double hydroxide (LDH)",
-        "count": 1
-      },
-      {
-        "term": "layered double hydroxides",
-        "count": 1
-      },
-      {
-        "term": "Nickel–Bismuth Oxide",
-        "count": 1
-      },
-      {
-        "term": "NiCo Layer Double Hydroxide",
-        "count": 1
-      },
-      {
-        "term": "NiFe layered double hydroxide",
-        "count": 1
-      },
-      {
-        "term": "normal spinel",
-        "count": 1
-      },
-      {
-        "term": "oxide catalysts",
         "count": 1
       }
     ],
@@ -1783,15 +2133,19 @@
         "count": 2
       },
       {
+        "term": "(101)",
+        "count": 2
+      },
+      {
         "term": "(110)",
         "count": 2
       },
       {
-        "term": "(100)",
-        "count": 1
+        "term": "oxide surface",
+        "count": 2
       },
       {
-        "term": "(101)",
+        "term": "(100)",
         "count": 1
       },
       {
@@ -1827,6 +2181,10 @@
         "count": 1
       },
       {
+        "term": "TiO2(101)",
+        "count": 1
+      },
+      {
         "term": "TiO2(110)",
         "count": 1
       },
@@ -1838,6 +2196,10 @@
     "defect_or_termination_states": [
       {
         "term": "kinks",
+        "count": 2
+      },
+      {
+        "term": "oxygen vacancies",
         "count": 2
       },
       {
@@ -1859,7 +2221,15 @@
         "count": 3
       },
       {
+        "term": "co2 reduction",
+        "count": 2
+      },
+      {
         "term": "Adsorption Test",
+        "count": 1
+      },
+      {
+        "term": "breath analyzers",
         "count": 1
       },
       {
@@ -1903,19 +2273,19 @@
         "count": 1
       },
       {
+        "term": "ethanol gas sensor",
+        "count": 1
+      },
+      {
+        "term": "food quality monitoring",
+        "count": 1
+      },
+      {
         "term": "hydrogen peroxide production",
         "count": 1
       },
       {
         "term": "hydrogen production",
-        "count": 1
-      },
-      {
-        "term": "OER catalysts",
-        "count": 1
-      },
-      {
-        "term": "water electrolysis",
         "count": 1
       }
     ]
@@ -1923,14 +2293,15 @@
   "entries": [
     {
       "term": "O2",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products",
         "Product",
-        "Adsorbate/Reactant"
+        "Adsorbate/Reactant",
+        "Cluster/Single Atom"
       ],
-      "count": 20,
+      "count": 34,
       "example_contexts": [
         "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
         "Reaction Mechanism",
@@ -1938,20 +2309,110 @@
       ]
     },
     {
-      "term": "Co3O4",
+      "term": "oxides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 21,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++",
+        "Oxides",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
+      ]
+    },
+    {
+      "term": "TiO2",
       "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Composition",
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 19,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "Au/TiO2",
+        "TiO2"
+      ]
+    },
+    {
+      "term": "ZrO2",
+      "kind": "unknown_high_value",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 14,
+      "example_contexts": [
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
+      ]
+    },
+    {
+      "term": "CO2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 13,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
+      "term": "Co3O4",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material",
         "Modeling Keywords",
         "Composition"
       ],
-      "count": 8,
+      "count": 11,
       "example_contexts": [
         "jp306303y 1..6",
         "Co3O4",
         "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "CeO2",
+      "kind": "unknown_high_value",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 10,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
+      ]
+    },
+    {
+      "term": "hydroxides_oxyhydroxides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
       ]
     },
     {
@@ -1984,6 +2445,21 @@
       ]
     },
     {
+      "term": "RuO2",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Material"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "active site",
       "kind": "known_useful",
       "research_category": "modeling_tasks",
@@ -1998,9 +2474,54 @@
       ]
     },
     {
-      "term": "H2O",
+      "term": "Anatase TiO2",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
+      ]
+    },
+    {
+      "term": "MnO2",
+      "kind": "unknown_high_value",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material",
+        "Surface/Support"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective",
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
+      ]
+    },
+    {
+      "term": "NiO",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials",
+        "Modeling Keywords",
+        "Material"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "Nickel–Bismuth Oxide",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant",
         "adsorbates"
@@ -2014,8 +2535,8 @@
     },
     {
       "term": "oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -2101,8 +2622,8 @@
     },
     {
       "term": "electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "Reaction Type"
@@ -2131,19 +2652,17 @@
       ]
     },
     {
-      "term": "TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "FeOOH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "materials",
-        "Composition",
-        "Material"
+        "Material",
+        "Dopant/Modifier",
+        "Surface/Support"
       ],
       "count": 3,
       "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au/TiO2",
-        "TiO2"
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
       ]
     },
     {
@@ -2184,6 +2703,19 @@
       "example_contexts": [
         "ja405997s 1..10",
         "Co oxides"
+      ]
+    },
+    {
+      "term": "(101)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
       ]
     },
     {
@@ -2242,8 +2774,8 @@
     },
     {
       "term": "Bismuth (Bi)",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "dopants"
@@ -2265,6 +2797,19 @@
       "example_contexts": [
         "ja405997s 1..10",
         "Co oxides"
+      ]
+    },
+    {
+      "term": "co2 reduction",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
       ]
     },
     {
@@ -2309,8 +2854,8 @@
     },
     {
       "term": "H2",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products",
         "Product"
@@ -2364,17 +2909,30 @@
       ]
     },
     {
-      "term": "NiO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "NiOOH",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "materials",
-        "Modeling Keywords"
+        "Material",
+        "Surface/Support"
       ],
       "count": 2,
       "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide"
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "NO2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Product",
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Cr2O3",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
       ]
     },
     {
@@ -2417,37 +2975,48 @@
       ]
     },
     {
-      "term": "oxides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "oxide surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
-        "materials",
-        "Material"
+        "Surface/Support"
       ],
       "count": 2,
       "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "Oxides"
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
       ]
     },
     {
-      "term": "RuO2",
+      "term": "oxygen vacancies",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
-        "materials",
-        "Material"
+        "defects",
+        "modeling_keywords"
       ],
       "count": 2,
       "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "rutile TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
       ]
     },
     {
       "term": "Silver",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "dopants"
@@ -2513,18 +3082,6 @@
     },
     {
       "term": "(100)",
-      "kind": "known_useful",
-      "research_category": "surface_structure",
-      "fields": [
-        "facets"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
-    },
-    {
-      "term": "(101)",
       "kind": "known_useful",
       "research_category": "surface_structure",
       "fields": [
@@ -2645,8 +3202,8 @@
     },
     {
       "term": "Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2657,8 +3214,8 @@
     },
     {
       "term": "AgSA",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "single_atoms"
       ],
@@ -2668,9 +3225,21 @@
       ]
     },
     {
-      "term": "Au/TiO2",
+      "term": "anatase phase",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "Au/TiO2",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2681,8 +3250,8 @@
     },
     {
       "term": "Au–Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2741,14 +3310,26 @@
     },
     {
       "term": "Bismuth",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "Dopant/Modifier"
       ],
       "count": 1,
       "example_contexts": [
         "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "breath analyzers",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
       ]
     },
     {
@@ -2761,6 +3342,54 @@
       "count": 1,
       "example_contexts": [
         "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "C",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "C-TiO2",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "C2H5OH",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "carbon doping",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
       ]
     },
     {
@@ -2921,8 +3550,8 @@
     },
     {
       "term": "CoOOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],
@@ -2993,8 +3622,8 @@
     },
     {
       "term": "electrocatalyst",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -3005,8 +3634,8 @@
     },
     {
       "term": "electrocatalysts",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -3017,8 +3646,8 @@
     },
     {
       "term": "electrocatalytic oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -3029,8 +3658,8 @@
     },
     {
       "term": "Electrochemical",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -3112,6 +3741,18 @@
       ]
     },
     {
+      "term": "ethanol gas sensor",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
       "term": "Fe atoms in NiFe oxyhydroxide",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -3136,6 +3777,30 @@
       ]
     },
     {
+      "term": "food quality monitoring",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "gas sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
       "term": "H*",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -3149,8 +3814,8 @@
     },
     {
       "term": "H2O2",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products"
       ],
@@ -3221,8 +3886,8 @@
     },
     {
       "term": "hydrogen production",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -3241,6 +3906,18 @@
       "count": 1,
       "example_contexts": [
         "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "ionosorbed oxygen species",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorption_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
       ]
     },
     {
@@ -3341,8 +4018,8 @@
     },
     {
       "term": "NiCoOOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "active_sites"
       ],
@@ -3385,18 +4062,6 @@
       "count": 1,
       "example_contexts": [
         "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
-    },
-    {
-      "term": "NO2",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
-      "fields": [
-        "Product"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "Cr2O3"
       ]
     },
     {
@@ -3461,8 +4126,8 @@
     },
     {
       "term": "OH*",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -3473,8 +4138,8 @@
     },
     {
       "term": "OH−",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -3640,6 +4305,18 @@
       ]
     },
     {
+      "term": "SO2",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
+      ]
+    },
+    {
       "term": "space group Fd3̅m",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -3700,6 +4377,18 @@
       ]
     },
     {
+      "term": "surface active sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
       "term": "surface stability",
       "kind": "known_useful",
       "research_category": "modeling_tasks",
@@ -3721,6 +4410,18 @@
       "count": 1,
       "example_contexts": [
         "TiO2"
+      ]
+    },
+    {
+      "term": "TiO2(101)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
       ]
     },
     {

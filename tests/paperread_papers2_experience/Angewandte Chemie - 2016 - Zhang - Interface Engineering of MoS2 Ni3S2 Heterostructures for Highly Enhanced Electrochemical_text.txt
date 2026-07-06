@@ -1,0 +1,374 @@
+Angewandte
+ Zuschriften Chemie
+
+ Deutsche Ausgabe: DOI: 10.1002/ange.201602237
+ Overall Water Splitting Internationale Ausgabe: DOI: 10.1002/anie.201602237
+
+ Interface Engineering of MoS2/Ni3S2 Heterostructures for Highly
+ Enhanced Electrochemical Overall-Water-Splitting Activity
+ Jian Zhang, Tao Wang, Darius Pohl, Bernd Rellinghaus, Renhao Dong, Shaohua Liu,
+ Xiaodong Zhuang, and Xinliang Feng*
+ Abstract: To achieve sustainable production of H2 fuel synergistic chemisorption of both H* and OH¢ intermediates
+ through water splitting, low-cost electrocatalysts for the hydro- on the surface, the HER performance will be improved.
+ gen-evolution reaction (HER) and the oxygen-evolution Similarly, for the OER in an alkaline solution, the chem-
+ reaction (OER) are required to replace Pt and IrO2 catalysts. isorption and dissociation of OH¢ and the yielded intermedi-
+ Herein, for the first time, we present the interface engineering ates (OH*, OOH*, and H+) on the surface of the electro-
+ of novel MoS2/Ni3S2 heterostructures, in which abundant catalysts determine the water-oxidation activity.[6] Therefore,
+ interfaces are formed. For OER, such MoS2/Ni3S2 heterostruc- OER electrocatalysts capable of binding both the oxygen-
+ tures show an extremely low overpotential of ca. 218 mV at containing and hydrogen intermediates are expected to favor
+ 10 mA cm¢2, which is superior to that of the state-of-the-art the water-oxidation reaction. Nevertheless, only the chem-
+ OER electrocatalysts. Using MoS2/Ni3S2 heterostructures as isorption free energy of hydrogen (or oxygen-containing)
+ bifunctional electrocatalysts, an alkali electrolyzer delivers intermediates has been considered for developing HER (or
+ a current density of 10 mA cm¢2 at a very low cell voltage of ca. OER) electrocatalysts thus far.[7]
+ 1.56 V. In combination with DFT calculations, this study Molybdenum-based nanostructures, particularly MoS2,
+ demonstrates that the constructed interfaces synergistically have been extensively investigated as HER electrocatalysts.[8]
+ favor the chemisorption of hydrogen and oxygen-containing Both DFT calculations and experimental investigations
+ intermediates, thus accelerating the overall electrochemical revealed that the undercoordinated Mo-S sites along the
+ water splitting. edges of MoS2 possess high chemisorption capability for
+ hydrogen, analogous to Pt.[9] For OER electrocatalysts earth-
+ To achieve sustainable hydrogen production, electrochem- abundant transition-metal (Fe, Co, and Ni, particularly Ni)-
+ ical and photoelectrochemical water splitting are favorable based sulfides,[10] oxides,[11] hydroxides,[12] layered double
+ strategies benefiting from abundant water resources and hydroxides (LDHs),[13] and phosphates[14] have been explored.
+ giving high-purity H2 production.[1] Electrocatalysts are The undercoordinated metal sites on the surface are pivotal in
+ particularly vital to the hydrogen-evolution reaction (HER) water oxidation because of their outstanding chemisorption
+ and the oxygen-evolution reaction (OER) by lowering the of OH¢ and oxygen-containing intermediates. Therefore,
+ dynamic overpotentials.[2] Currently, Pt is the most efficient integrating the advantages of the HER and OER electro-
+ HER electrocatalyst with a near-zero overpotential, while catalysts to construct novel heterostructures, which possess
+ IrO2 and RuO2 hold the benchmark for OER electrocata- binding affinities to both hydrogen and oxygen-containing
+ lysts.[3] However, the scarcity and high-cost of these noble- intermediates, is extremely beneficial for enhancing the
+ metal-based electrocatalysts considerably impede their large- overall electrochemical water-splitting activity.
+ scale utilization in commercial electrolyzers.[4] For the HER in Herein, for the first time, we present the interface
+ an alkaline solution, the kinetics are determined through engineering of novel MoS2/Ni3S2 heterostructures on nickel
+ a subtle balance between the water dissociation (Volmer step) foam. In the resultant MoS2/Ni3S2 heterostructures, the outer
+ and the subsequent chemisorption of the water-splitting MoS2 nanosheets are decorated on the surface of the inner
+ intermediates (OH¢ and H*) on the surface of the HER Ni3S2 nanoparticles, which generates abundant interfaces.
+ electrocatalyst.[5] Thus, once an electrocatalyst facilitates the Such MoS2/Ni3S2 heterostructures exhibit both highly effi-
+ cient OER and HER activities in 1m KOH solution. In
+ [*] Dr. J. Zhang, Dr. R. Dong, Dr. S. Liu, Dr. X. Zhuang, Prof. X. Feng particular, the OER onset potential of MoS2/Ni3S2 hetero-
+ Center for Advancing Electronics Dresden (cfaed) & Department of structures is as low as around 175 mV, and the OER current
+ Chemistry and Food Chemistry density reaches 10 mA cm¢2 at an overpotential of about
+ Technische Universitt Dresden 218 mV, which is superior to the reported OER electro-
+ 01062 Dresden (Germany)
+ catalysts. Furthermore, utilizing the MoS2/Ni3S2 heterostruc-
+ E-mail: xinliang.feng@tu-dresden.de
+ ture as a bifunctional electrocatalyst, an alkaline electrolyzer
+ Dr. T. Wang
+ with a current density of 10 mA cm¢2 is operated at a low cell
+ Leibniz-Institut fír Katalyse, e.V., Universitt Rostock
+ 18059 Rostock (Germany) voltage of 1.56 V, which is considerably lower than that of the
+ Dr. D. Pohl, Dr. B. Rellinghaus state-of-the-art overall-water-splitting electrocatalysts, such
+ Institute for Metallic Materials, IFW Dresden as NiFe–LDH,[15] NiSe nanowires,[16] Ni2P nanoparticles,[17]
+ 01171 Dresden (Germany) and electrodeposited cobalt-phosphorous-derived films[18]
+ Supporting information for this article can be found under: (cell voltages > 1.6 V). Combined with DFT calculations,
+ http://dx.doi.org/10.1002/anie.201602237. our results suggest that the established interfaces between
+
+6814 Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim Angew. Chem. 2016, 128, 6814 –6819
+ Angewandte
+
+ 15213757, 2016, 23, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ange.201602237 by Kyushu University, Wiley Online Library on [19/08/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Zuschriften Chemie
+
+Ni3S2 and MoS2 as well as the in situ generated interfaces MoS2/Ni3S2 heterostructures were further analyzed through
+between NiO (surface electrochemical oxidation of Ni3S2 the elemental mapping of field-emission SEM (FE-SEM)
+under OER condition) and MoS2 facilitate the synchronous (Figure S6 a–d). Notably, the nickel element was mainly
+chemisorption of hydrogen and oxygen-containing intermedi- distributed over the nanoparticles, whereas molybdenum
+ates, consequently improving the overall electrochemical and sulfur were spread on and around the nanoparticles.
+water-splitting activity. The molar content of MoS2 in MoS2/Ni3S2 heterostructures
+ MoS2/Ni3S2 heterostructures were prepared using a com- was determined to be about 7.8 % through energy-dispersive
+mercial nickel foam (1 × 3 cm2) and (NH4)2MoS4 (40 mg) X-ray spectroscopy (EDX) (Figure S6 e), which is consistent
+through a one-pot solvothermal reaction at 200 8C for 12 h in with the inductively coupled plasma mass spectrometer (ICP-
+15 mL N,N-dimethylformamide (DMF; see Supporting Infor- MS) analysis (ca. 8.0 %). We further peeled off MoS2/Ni3S2
+mation). During the solvothermal reaction, (NH4)2MoS4 not heterostructures from the nickel foam by sonication and
+only served as the precursor of MoS2 nanosheets but also investigated the samples by HRTEM (Figure 1 c, 1 d, S7 and
+provided the sulfur source for the in situ growth of Ni3S2 S8). Lattice fringes with lattice distances of 0.27 and 0.61 nm
+nanoparticles on the nickel foam. The loading amount of corresponded to the (100) and (002) facets of MoS2,
+MoS2/Ni3S2 heterostructures on the nickel foam is approx- respectively, while the lattice distances of 0.40 and 0.28 nm
+imately 9.7 mg cm¢2 ; this value could be controlled by adjust- were ascribed to the (101) and (110) facets of Ni3S2,
+ing the amount of (NH4)2MoS4 in the solution. For instance, respectively. The (002) and (100) facets of MoS2 and the
+the loading weights of MoS2/Ni3S2 heterostructures were neighboring (101) and (110) surfaces of Ni3S2 constitute the
+approximately 5.7 and approximately 13.1 mg cm¢2 when the interfaces in MoS2/Ni3S2 heterostructures. Next, the X-ray
+amounts of (NH4)2MoS4 were 20 and 80 mg, respectively photoelectron spectroscopy (XPS) survey spectrum of MoS2/
+(Figure S1–S3 in the Supporting Information). Ni3S2 demonstrates that the chemical composition of Ni, Mo,
+ As shown in Figure 1 a and the inset, the resulting nickel and S is consistent with the EDX results (Figure S9). For bare
+foam coated with MoS2/Ni3S2 heterostructures has macro- MoS2 nanosheets, the peaks of Mo 3d5/2 and Mo 3d3/2 appear
+porous and free-standing features. The crystalline structure at 228.5 and 231.8 eV, respectively. However, the binding
+and surface composition of the MoS2/Ni3S2 heterostructures energies of Mo 3d5/2 and Mo 3d3/2 in MoS2/Ni3S2 heterostruc-
+were first confirmed through X-ray diffraction (Figure S4) tures shift to 228.6 and 232.2 eV, respectively (Figure 1 e).
+and Raman spectroscopy (Figure S5) studies. To analyze the Similarly, the Ni 2p3/2 signal in the MoS2/Ni3S2 heterostruc-
+as-obtained MoS2/Ni3S2 heterostructures, scanning electron tures exhibits a positive shift of about 0.3 eV relative to that in
+microscopy (SEM) and high-resolution transmission electron the bare Ni3S2 nanoparticles (Figure 1 f). These results
+microscopy (HRTEM) were used. Figure 1 b reveals numer- strongly suggest the existence of strong electronic interactions
+ous heterostructures, which consist of inner Ni3S2 nano- between Ni3S2 and MoS2, which implies the establishment of
+particles and decorated MoS2 nanosheets. The size of the coupling interfaces.
+Ni3S2 nanoparticles was about several hundred nanometers. To evaluate the OER performance of the as-prepared
+The size and thickness of the MoS2 nanosheets were 30–130 MoS2/Ni3S2 heterostructures, a three-electrode configuration
+and 5–15 nm, respectively. The element distributions of the was applied using an Hg/HgO electrode and a Pt rod as the
+ reference and counter electrodes,
+ respectively (Figure S10). The OER
+ activities of the nickel foam, Ni3S2
+ nanoparticles, MoS2 nanosheets,
+ MoS2/Ni3S2 heterostructures, and IrO2
+ were examined through cyclic voltam-
+ metry (CV) at a scan rate of 1 mV s¢1 in
+ a 1m KOH aqueous solution purged
+ with O2 (Figure 2 a). Bare Ni3S2 nano-
+ particles and MoS2 nanosheets exhib-
+ ited OER onset overpotentials of
+ approximately 230 and 280 mV, respec-
+ tively. By contrast, for MoS2/Ni3S2
+ heterostructures, oxygen generation
+ occurred at an extremely low overpo-
+ tential (ca. 175 mV), which is consid-
+ erably lower than that of commercial
+ IrO2 (ca. 250 mV) (Figure S11 and
+ S12). Significantly, the current density
+ of MoS2/Ni3S2 heterostructures reached
+Figure 1. a) and b) scanning electron microscopy and c) and d) high-resolution transmission
+electron microscopy images of MoS2/Ni3S2 heterostructures. High-resolution X-ray photoelectron 10 mA cm¢2 at an extremely low over-
+spectroscopy spectrum of e) Mo 3d and f) Ni 2p. Inset of (a): digital image of nickel foam potential of approximately 218 mV,
+coated with MoS2/Ni3S2 heterostructures. The ringed sections of (b) highlight the MoS2 nano- which outperformed IrO2 (ca.
+sheets. 330 mV) and the NiFe-LDH film (ca.
+
+Angew. Chem. 2016, 128, 6814 –6819 Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.angewandte.de 6815
+ Angewandte
+
+ 15213757, 2016, 23, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ange.201602237 by Kyushu University, Wiley Online Library on [19/08/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Zuschriften Chemie
+
+ The polarization curves in Figure 3 a
+ show that the onset overpotentials of
+ Ni3S2 nanoparticles and MoS2 nano-
+ sheets are approximately 120 and
+ 236 mV, respectively. However, the
+ onset overpotential of the MoS2/Ni3S2
+ heterostructures is substantially lower
+ at around 50 mV, approaching that of
+ the Pt catalyst. At 10 mA cm¢2, the
+ applied overpotential is approxi-
+ mately 110 mV, substantially lower
+ than that of the Ni3S2 nanoparticles
+ (ca. 193 mV), the MoS2 nanosheets
+ (ca. 431 mV), and the recently
+ reported WC nanocrystals on carbon
+ nanotubes (ca. 150 mV),[22] CoP on
+ carbon cloth (ca. 209 mV),[23] MoCx
+ nano-octahedrons (ca. 150 mV),[24]
+ and cobalt-nitrogen-rich carbon
+ nanotubes (ca. 360 mV)[25] (Fig-
+ ures S13,S14). The Tafel slopes of
+ the MoS2/Ni3S2 heterostructures,
+ Ni3S2 nanoparticles, and MoS2 nano-
+ Figure 2. a) CV curves and c) related Tafel slopes of the nickel foam, MoS2 nanosheets, Ni3S2 sheets are around 83, 85, and 308 mV
+ nanoparticles, MoS2/Ni3S2 heterostructures, and IrO2 ; b) OER overpotentials of the MoS2/Ni3S2 per decade, respectively (Figure 3 b).
+ heterostructures and the reported electrocatalysts for comparison at 10 mA cm¢2 ; and d) the long- Such a Tafel slope of the MoS2/Ni3S2
+ term electrochemical OER test of the MoS2/Ni3S2 heterostructures at 10 mA cm¢2. Electrolyte: 1 m heterostructures suggests a combined
+ KOH solution; CV scan rate: 1 mVs¢1.
+ Volmer–Heyrovsky mechanism for
+ hydrogen production.[26] Under
+ 240 mV),[15] (Ln0.5Ba0.5)CoO3¢d per- a cathodic current of 10 mA cm¢2,
+ ovskite (ca. 320 mV),[19] single-crystal
+ Co3O4@CoO (ca. 430 mV),[20] and
+ electrodeposited Co-P film (ca.
+ 300 mV)[19] (Figure 2 b).[10, 21]
+ Figure 2 c illustrates that the Tafel
+ slope of the MoS2/Ni3S2 heterostruc-
+ tures is approximately 88 mV de-
+ cade¢1, which is considerably lower
+ than that of the Ni3S2 nanoparticles
+ (ca. 118 mV decade¢1), the MoS2
+ nanosheets (ca. 166 mV decade¢1),
+ and the nickel foam (ca. 98 mV de-
+ cade¢1). This result strongly suggests
+ that the MoS2/Ni3S2 heterostructures
+ activate water-oxidation reaction
+ kinetics.
+ To assess the electrochemical
+ OER stability of MoS2/Ni3S2 hetero-
+ structures, a long-term water oxida-
+ tion was conducted at 10 mA cm¢2 in
+ 1m KOH media. Figure 2 d illustrates
+ that the MoS2/Ni3S2 heterostructures
+ retained steady OER activity and no
+ noticeable potential augment was
+ observed for more than 10 h of
+ Figure 3. a) Polarization curves and b) corresponding Tafel slopes of the nickel foam, MoS2
+ oxygen release.
+ nanosheets, Ni3S2 nanoparticles, MoS2/Ni3S2 heterostructures, and Pt; c) polarization curves of
+ The HER activities of the as- MoS2/Ni3S2 heterostructures and IrO2-Pt couple in a two-electrode system; and d) durable
+ prepared samples were evaluated in operation of the MoS2/Ni3S2 (lower trace) heterostructures and IrO2-Pt couple (upper trace) at
+ 1m KOH electrolyte purged with N2. 10 mA cm¢2 in an alkaline electrolyzer. Electrolyte: 1 m KOH solution; CV scan rate: 1 mVs¢1.
+
+6816 www.angewandte.de Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim Angew. Chem. 2016, 128, 6814 –6819
+ Angewandte
+
+ 15213757, 2016, 23, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ange.201602237 by Kyushu University, Wiley Online Library on [19/08/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Zuschriften Chemie
+
+there is no noticeable degradation over a 10 h galvanostatic As shown in Figure S20, the reduction and oxidation
+test, which indicates an excellent electrochemical HER peaks of Mod+/Moe+ (e > d  4) in MoS2 nanosheets are
+stability (Figure S15). located at 0.333 and 0.449 V, while the redox reactions of
+ The MoS2/Ni3S2 heterostructures were utilized as a bifunc- Ni2+/Ni3+ in Ni3S2 nanoparticles occur at around 0.254 and
+tional electrocatalyst for overall water splitting in a two- 0.369 V. In contrast, the redox peaks in the MoS2/Ni3S2
+electrode setup in 1m KOH solution (Figure S16). A current heterostructures are centered at about 0.216 and 0.489 V.
+density of 10 mA cm¢2 was delivered at approximately 1.56 V, These results suggest that the fabricated MoS2/Ni3S2 hetero-
+that is, a combined overpotential of about 330 mV for structures offer new water splitting active sites, which are
+electrochemical overall water splitting (Figure 3 c). Fig- endowed with the electrocatalytic properties of both Ni3S2
+ure S17 reveals that the overall water splitting activity of and MoS2. The reduction peak area of MoS2/Ni3S2 hetero-
+the MoS2/Ni3S2 heterostructures is much higher than that of structures is approximately 9.3 and 17.7 times larger than
+the IrO2-Pt couple (ca. 1.7 V) and other recently reported those of the Ni3S2 nanoparticles and MoS2 nanosheets,
+overall water splitting electrocatalysts such as NiFe-LDH (ca. respectively. After the electrochemical OER process at
+1.7 V),[16] NiSe nanowires (ca. 1.63 V),[17] and Ni2P nano- 10 mA cm¢2 for 10 h in 1m KOH solution, the structure of
+ [18]
+particles (ca. 1.63 V). Over a 10 h galvanostatic electrolysis the MoS2/Ni3S2 heterostructures was analyzed by SEM,
+at 10 mA cm¢2, the MoS2/Ni3S2 heterostructures presented an HRTEM, XPS, element mapping and EDX, and XPS
+excellent durability with negligible degradation, which is analyses (Figure S21–S24). Notably, a thin layer of NiO with
+superior to that of the noble metal IrO2-Pt couple (Fig- thickness of approximately 12.6 nm was identified on Ni3S2
+ure 3 d). We further tested the overall electrocatalytic water surface, for which the lattice fringe with a lattice distance of
+splitting performance under an extremely high current 0.21 nm was indexed to be the (010) facet of NiO (Fig-
+density of 500 mA cm¢2. Figure S18 and Movie 1 show that ure S20 c). XPS result in Figure S24 further revealed the
+massive bubbles were rapidly generated on both electrodes at existence of NiO. The formation of NiO is due to the in situ
+an applied voltage of approximately 1.6 V. Such a prominent surface electrochemical oxidation of Ni3S2 during the OER
+performance of the constructed electrolyzer utilizing the process which is in agreement with literature reports; and the
+MoS2/Ni3S2 heterostructures is close to the commercial NiO sites are electrochemically active for the OER pro-
+requirement of a water splitting electrolyzer (voltage cess.[10, 16] Therefore, we consider that the constructed inter-
+ ¢2 [27]
+ 1.55 V at 500 mA cm ).
+ The nature and amount of
+undercoordinated metal sites are
+crucial for the electrochemical
+water splitting. The effects of
+the surface area on OER and
+HER activities of the obtained-
+electrocatalysts were firstly stud-
+ied through electrochemical
+double-layer capacitances (Cdl ;
+Figure S19). As shown in
+Table S1, MoS2/Ni3S2 hetero-
+structures show a larger Cdl
+(15.6 mF) than Ni3S2 nanoparti-
+cles (2.1 mF) and MoS2 nano-
+sheets (8.2 mF). In sharp con-
+trast, for OER (or HER), the
+current density of MoS2/Ni3S2
+heterostructures at 1.53 V (or
+¢0.15 V) reached 94.8 (or
+45) mA cm¢2, which is substan-
+tially higher than those of Ni3S2
+nanoparticles (5.0 mA cm¢2 for
+OER; 4.7 mA cm¢2 for HER)
+and MoS2 nanosheets
+(1.6 mA cm¢2 for OER;
+2.5 mA cm¢2 for HER). Thereby,
+the greatly enhanced water split-
+ting activities of MoS2/Ni3S2 het-
+ Figure 4. a) Chemisorption models of H and OH intermediates on the surfaces of MoS2, Ni3S2, NiO,
+erostructures are mainly attrib-
+ MoS2/Ni3S2 heterostructures (Ni-MoS2 and Mo-Ni3S2 models), and MoS2/NiO heterostructures (Ni-
+uted to the constructed interfa- MoS2 and Mo-NiO models) respectively; b) the proposed mechanisms of the dissociation of H2O, OH,
+ces, rather than the active surface and OOH intermediates on the MoS2/Ni3S2 heterostructures. Yellow = S, green = Ni, blue = Mo,
+areas. white = H, red = O
+
+Angew. Chem. 2016, 128, 6814 –6819 Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.angewandte.de 6817
+ Angewandte
+
+ 15213757, 2016, 23, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ange.201602237 by Kyushu University, Wiley Online Library on [19/08/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Zuschriften Chemie
+
+ faces between the Ni3S2 and MoS2 stably facilitate HER splitting electrocatalysts through interface engineering. The
+ process and the interfaces between the in situ formed NiO as-prepared MoS2/Ni3S2 heterostructures with abundant inter-
+ and MoS2 are favorable for the OER process. faces manifest excellent chemisorption abilities for both
+ To further investigate the role of the constructed inter- hydrogen and oxygen-containing intermediates, leading to
+ faces in electrochemical OER and HER, the MoS2/Ni3S2 outstanding OER and HER electrocatalytic activities in
+ heterostructures with different molar contents of MoS2 have alkaline media. Therefore, the engineering and understanding
+ been synthesized on carbon cloth (see Experimental Section of the interfaces formed provide a favorable direction for
+ in Supporting Information). Figure S25 shows that the OER developing low-cost and high-activity water-splitting electro-
+ and HER overpotentials of the bare Ni3S2 nanoparticles and catalysts, which have potential applications in photochemical,
+ MoS2 nanosheets at 10 mA cm¢2 are approximately 379 and photoelectrochemical, and electrochemical H2 production
+ 421 and 341 and 429 mV, respectively. However, the electro- and CO2 reduction.
+ chemical OER and HER performances of the MoS2/Ni3S2
+ heterostructures are noticeably enhanced. When the molar
+ content of MoS2 is around 8.3 %, the OER and HER Acknowledgements
+ overpotentials of the MoS2/Ni3S2 heterostructures at
+ 10 mA cm¢2 are as low as approximately 330 and 150 mV, This work was financially supported by the ERC Grant on
+ respectively. For comparison, the physically mixed MoS2/ 2DMATER and EC under Graphene Flagship (No. CNECT-
+ Ni3S2 composite (having the same chemical composition as ICT-604391). We also acknowledge the Cfaed (Center for
+ the MoS2/Ni3S2 heterostructures) deliver OER and HER Advancing Electronics Dresden) and the Dresden Center for
+ current densities of 10 mA cm¢2 at overpotentials of about 356 Nanoanalysis (DCN) at TU Dresden.
+ and 199 mV, respectively, which are considerably higher than
+ those of the MoS2/Ni3S2 heterostructures. These results clearly Keywords: electrocatalysts · interface engineering ·
+ show the crucial role of the constructed interfaces between molybdenum disulfide · nickel sulfide · water splitting
+ Ni3S2 and MoS2 as well as the interfaces between NiO and
+ MoS2, which are responsible for the enhanced electrochem- How to cite: Angew. Chem. Int. Ed. 2016, 55, 6702 – 6707
+ ical hydrogen and oxygen evolutions, respectively. Angew. Chem. 2016, 128, 6814 – 6819
+ To clarify the effect of the constructed interfaces on the
+ chemisorption of hydrogen and oxygen-containing intermedi-
+ [1] J. Greeley, T. F. Jaramillo, J. Bonde, I. Chorkendorff, J. K.
+ ates, we utilized DFT to calculate the chemisorption free
+ Norskov, Nat. Mater. 2006, 5, 909 – 913.
+ energies of hydrogen (DGH) and hydroxide (DGOH) on the [2] C. C. L. McCrory, S. Jung, I. M. Ferrer, S. M. Chatman, J. C.
+ (101) surface of Ni3S2, the (010) surface of NiO, and the (002) Peters, T. F. Jaramillo, J. Am. Chem. Soc. 2015, 137, 4347 – 4357.
+ surface of MoS2 (Figure 4 a). Contrary to the chemisorption [3] D. V. Esposito, S. T. Hunt, A. L. Stottlemyer, K. D. Dobson,
+ on the (101) surface of Ni3S2 (DGH = ¢1.81 eV) and (002) B. E. McCandless, R. W. Birkmire, J. G. Chen, Angew. Chem. Int.
+ surface of MoS2 (DGH = ¢2.71 eV), H is prone to adsorb on Ed. 2010, 49, 9859 – 9862; Angew. Chem. 2010, 122, 10055 –
+ the Mo-S edge sites of Ni-doped MoS2 model (denoted as Ni- 10058.
+ [4] K. Zeng, D. Zhang, Prog. Energy Combust. Sci. 2010, 36, 307 –
+ MoS2) because of a lower chemisorption free energy of
+ 326.
+ ¢3.17 eV. As expected, the surface undercoordinated Ni sites [5] R. Subbaraman, D. Tripkovic, D. Strmcnik, K.-C. Chang, M.
+ of Mo-doped Ni3S2 model (denoted as Mo-Ni3S2) have a HO- Uchimura, A. P. Paulikas, V. Stamenkovic, N. M. Markovic,
+ chemisorption energy of ¢2.92 eV, which is lower than the Science 2011, 334, 1256 – 1260.
+ ¢1.68 eV energy of HO-chemisorption on MoS2 and [6] I. C. Man, H. Y. Su, F. Calle-Vallejo, H. A. Hansen, J. I.
+ ¢2.36 eV energy of Ni3S2. The (101) surface of Mo-Ni3S2 Martnez, N. G. Inoglu, J. Kitchin, T. F. Jaramillo, J. K. Nørskov,
+ J. Rossmeisl, ChemCatChem 2011, 3, 1159 – 1165.
+ thus exhibits superior binding activity toward oxygen-con-
+ [7] a) Y. Jiao, Y. Zheng, M. Jaroniec, S. Z. Qiao, Chem. Soc. Rev.
+ taining groups. Moreover, considering the formed interfaces 2015, 44, 2060 – 2086; b) J. Zhang, S. Liu, H. Liang, R. Dong, X.
+ between MoS2 and NiO for OER, the Mo sites of the Mo- Feng, Adv. Mater. 2015, 27, 7426 – 7431; c) H.-W. Liang, S.
+ doped NiO model (Mo-NiO) show a significantly increased Bruller, R. Dong, J. Zhang, X. Feng, K. Mîllen, Nat. Commun.
+ HO-chemisorption energy up to ¢5.12 eV. Accordingly, 2015, 6, 7992 – 7999; d) J. Wang, W. Cui, Q. Liu, Z. Xing, A. M.
+ a HER mechanism on MoS2/Ni3S2 heterostructures and an Asiri, X. Sun, Adv. Mater. 2016, 28, 215 – 230.
+ OER mechanism on MoS2/NiO heterostructures are pro- [8] Y. Yan, B. Xia, Z. Xu, X. Wang, ACS Catal. 2014, 4, 1693 – 1705.
+ [9] T. F. Jaramillo, K. P. Jørgensen, J. Bonde, J. H. Nielsen, S. Horch,
+ posed in Figure 4 b. The constructed interfaces between Ni3S2
+ I. Chorkendorff, Science 2007, 317, 100 – 102.
+ and MoS2 as well as the interfaces between NiO and MoS2 [10] W. Zhou, X.-J. Wu, X. Cao, X. Huang, C. Tan, J. Tian, H. Liu, J.
+ have the advantages of the H-chemisorption of MoS2 and the Wang, H. Zhang, Energy Environ. Sci. 2013, 6, 2921 – 2924.
+ HO-chemisorption of Ni3S2 and NiO. As a result, the Gibbs [11] R. D. L. Smith, M. S. Pr¦vot, R. D. Fagan, Z. Zhang, P. A.
+ free energies of the corresponding intermediates are effi- Sedach, M. K. J. Siu, S. Trudel, C. P. Berlinguette, Science 2013,
+ ciently decreased, facilitating the dissociation of the O¢H 340, 60 – 63.
+ bonds of the H2O molecule and the OH and OOH inter- [12] M. Gao, W. Sheng, Z. Zhuang, Q. Fang, S. Gu, J. Jiang, Y. Yan, J.
+ Am. Chem. Soc. 2014, 136, 7077 – 7084.
+ mediates. Eventually, the OER and HER processes are highly
+ [13] C. Tang, H.-S. Wang, H.-F. Wang, Q. Zhang, G.-L. Tian, J.-Q. Nie,
+ accelerated. F. Wei, Adv. Mater. 2015, 27, 4516 – 4522.
+ In summary, we have presented a novel approach for [14] M. W. Kanan, Y. Surendranath, D. G. Nocera, Chem. Soc. Rev.
+ developing earth-abundant and high-activity overall-water- 2009, 38, 109 – 114.
+
+6818 www.angewandte.de Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim Angew. Chem. 2016, 128, 6814 –6819
+ Angewandte
+
+ 15213757, 2016, 23, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/ange.201602237 by Kyushu University, Wiley Online Library on [19/08/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ Zuschriften Chemie
+
+[15] J. Luo, J.-H. Im, M. T. Mayer, M. Schreier, M. K. Nazeeruddin, Y. Liu, J. Sun, S. Lee, J.-S. Lee, Y. Cui, ACS Cent. Sci. 2015, 1,
+ N.-G. Park, S. D. Tilley, H. J. Fan, M. Grtzel, Science 2014, 345, 244 – 251; e) J. Wang, K. Li, H. - x. Zhong, D. Xu, Z.-l. Wang, Z.
+ 1593 – 1596. Jiang, Z.-j. Wu, X.-b. Zhang, Angew. Chem. Int. Ed. 2015, 54,
+[16] C. Tang, N. Cheng, Z. Pu, W. Xing, X. Sun, Angew. Chem. Int. 10530 – 10534; Angew. Chem. 2015, 127, 10676 – 10680.
+ Ed. 2015, 54, 9351 – 9355; Angew. Chem. 2015, 127, 9483 – 9487. [22] X. Fan, H. Zhou, X. Guo, ACS Nano 2015, 9, 5125 – 5134.
+[17] L.-A. Stern, L. Feng, F. Song, X. Hu, Energy Environ. Sci. 2015, [23] J. Tian, Q. Liu, A. M. Asiri, X. Sun, J. Am. Chem. Soc. 2014, 136,
+ 8, 2347 – 2351. 7587 – 7590.
+[18] N. Jiang, B. You, M. Sheng, Y. Sun, Angew. Chem. Int. Ed. 2015, [24] H. B. Wu, B. Y. Xia, L. Yu, X.-Y. Yu, X. W. Lou, Nat. Commun.
+ 54, 6251 – 6254; Angew. Chem. 2015, 127, 6349 – 6352. 2015, 6, 6512 – 6519.
+[19] A. Grimaud, K. J. May, C. E. Carlton, Y.-L. Lee, M. Risch, W. T. [25] X. Zou, X. Huang, A. Goswami, R. Silva, B. R. Sathe, E.
+ Hong, J. Zhou, Y. Shao-Horn, Nat. Commun. 2013, 4, 2439 – Mikmekov, T. Asefa, Angew. Chem. Int. Ed. 2014, 53, 4372 –
+ 2445. 4376; Angew. Chem. 2014, 126, 4461 – 4465.
+[20] C.-W. Tung, Y.-Y. Hsu, Y.-P. Shen, Y. Zheng, T.-S. Chan, H.-S. [26] M. Gong, W. Zhou, M.-C. Tsai, J. Zhou, M. Guan, M.-C. Lin, B.
+ Sheu, Y.-C. Cheng, H. M. Chen, Nat. Commun. 2015, 6, 8106 – Zhang, Y. Hu, D.-Y. Wang, J. Yang, S. J. Pennycook, B.-J. Hwang,
+ 8114. H. Dai, Nat. Commun. 2014, 5, 4695 – 4700.
+[21] a) F. Song, X. Hu, Nat. Commun. 2014, 5, 4477 – 4485; b) H. [27] X. Lu, C. Zhao, Nat. Commun. 2015, 6, 6616 – 6622.
+ Wang, H.-W. Lee, Y. Deng, Z. Lu, P.-C. Hsu, Y. Liu, D. Lin, Y.
+ Cui, Nat. Commun. 2015, 6, 7261 – 7268; c) L.-L. Feng, G. Yu, Y.
+ Wu, G.-D. Li, H. Li, Y. Sun, T. Asefa, W. Chen, X. Zou, J. Am. Received: March 3, 2016
+ Chem. Soc. 2015, 137, 14023 – 14026; d) W. Chen, H. Wang, Y. Li, Published online: April 21, 2016
+
+Angew. Chem. 2016, 128, 6814 –6819 Ó 2016 Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim www.angewandte.de 6819

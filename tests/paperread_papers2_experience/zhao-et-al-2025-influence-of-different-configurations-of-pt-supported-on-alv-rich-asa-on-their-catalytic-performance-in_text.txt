@@ -1,0 +1,637 @@
+pubs.acs.org/acscatalysis Research Article
+
+ Influence of Different Configurations of Pt Supported on AlV‑Rich
+ ASA on Their Catalytic Performance in Chemoselective
+ Hydrogenation Evaluated by DFT Modeling and Experimental
+ Validation
+ Yutong Zhao,$ Ping Wu,$ Lizhuo Wang, Wenjie Yang, Zichun Wang, Catherine Stampfl, Dedong He,
+ Yongming Luo, Alfons Baiker, Jun Huang,* and Yijiao Jiang*
+ Cite This: ACS Catal. 2025, 15, 13916−13928 Read Online
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ACCESS Metrics & More Article Recommendations *
+ sı Supporting Information
+ Downloaded via UNIV OF TOKYO on August 5, 2025 at 05:54:49 (UTC).
+
+ ABSTRACT: The structure of metal nanocatalysts based on single
+ metal atoms (SA), subnanoclusters (NC), and nanoparticles (NP)
+ plays a vital role in governing their catalytic performance. Here, we
+ investigated the effect of different structural configurations of Pt
+ (PtSA, PtNC, and PtNP) supported on penta-coordinated Al (AlV)-
+ enriched amorphous silica−alumina (ASA) on the selective
+ hydrogenation of aromatic saturated and unsaturated ketones and
+ aldehydes. The predictive information gained by spin-polarized
+ density functional theory (DFT) calculations of the reaction
+ pathways was validated by pertinent catalytic reaction tests. Based
+ on the calculated apparent energy barriers and reaction pathways, a
+ qualitative prediction of the suitability of the different structural
+ configurations of Pt is given for the hydrogenation of specific
+ ketones and aldehydes. For the hydrogenation of aromatic saturated ketones, acetophenone and butyrophenone, the order of the
+ activity is NP > SA > NC. For the saturated aldehydes, benzaldehyde and phenylacetaldehyde, the corresponding order is NP > NC
+ > SA, and for the α,β-unsaturated aldehydes, cinnamaldehyde and benzylideneacetone, it is SA > NC > NP. PtNP favors C�O bond
+ over the C�C bond hydrogenation but exhibits low selectivity to the unsaturated alcohol due to consecutive hydrogenation. The
+ validation of the theoretically predicted results by corresponding experimental tests indicates good qualitative agreement between
+ theoretical and experimental results. The combined strategy based on predictive DFT analysis and experimental validation offers an
+ interesting approach for designing and optimizing catalysts.
+ KEYWORDS: structural configuration, AlV-enriched amorphous silica−alumina, chemoselective hydrogenation,
+ DFT prediction of reaction pathways, reaction energy profiles
+
+ 1. INTRODUCTION chemical and petrochemical industries due to their bifunctional
+ Chemoselective hydrogenation is a vital and desirable strategy activity, with acid reactions on the support and hydrogenation
+ for the fine chemical, pharmaceutical, petrochemical, and taking place on the metal surface.5,6 In addition, the acidic
+ environmental industries.1,2 Due to the sustainability require- support can attract electrons from the metal surface, altering
+ ment in these industries, an increasing number of biomass- the surface electronic structure of the supported metals,5,7
+ derived functional molecules are used as renewable feedstocks, which significantly affects the adsorption and dissociation of
+ which generally contain more oxygen groups than conventional hydrogen on the metal surface, thereby influencing the overall
+ fossil feedstocks. However, the minimal difference in bond reaction process. Amorphous silica−alumina (ASA), the most
+ energy between the reduction of C�C and C�O bonds popular solid acid support for metal catalysts, has surface
+ makes the chemoselective hydrogenation of specific unsatu-
+ rated groups in biomass-derived compounds into value-added
+ chemicals a persistent challenge.3,4 Designing efficient catalysts Received: June 17, 2025
+ for these transformations requires a better understanding of the Revised: July 18, 2025
+ relation between the structural properties of the catalysts and Accepted: July 18, 2025
+ their performance.
+ Solid acid-supported metal catalysts have been previously
+ reported for the hydrogenation of aldehydes and ketones in
+
+ © XXXX American Chemical Society https://doi.org/10.1021/acscatal.5c04163
+ 13916 ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 1. Favorable adsorption configurations (a−c) and the optimal reaction pathways (d) of Aph hydrogenation on PtSA/ASA (red), PtNC/ASA
+(blue), and Pt (111) (black). The relative energies are marked. The asterisk of the molecular structural formula refers to an unsaturated carbon that
+binds to the metal surface after the initial hydrogenation step. The red, gray, white, yellow, and pink balls represent O, C, H, Si, and Al, respectively.
+The celeste blue represents the top layer of Pt atoms, and the light blue represents the Pt atoms below the top layer. The reaction pathways include
+adsorption (light blue area), hydrogenation reactions (pale yellow area), and desorption of the products (gray area). “R” refers to the reactant
+(Aph*+H*+1/2H2(g)), “I” refers to the intermediate, “TS” to the transition states, and “P” to the product.
+
+aluminum sites that significantly affect the dispersion and robust metal−support interaction, exhibit excellent chemo-
+interaction of active metal sites.8 Kwah et al. revealed that the selective hydrogenation of various aromatic aldehydes and
+transition-state penta-coordinated Al (AlV) species on bare ketones.15 Ru nanoparticles (>17 nm) favor the selective
+alumina act as Lewis acid sites to stabilize the single-atom Pt hydrogenation of furfural to furfuryl alcohol.16 These results
+catalyst, thus improving the catalytic activity.9 AlV sites act as are intriguing but still ambiguous regarding the structural
+strong Lewis acids, while neighboring SiOH groups serve as configuration effects of metal nanocatalysts on their catalytic
+Brønsted acids. Together, these sites withdraw electrons from performance and underlying reaction mechanisms.
+supported Pt nanoparticles, ionizing effects that enhance Theoretical studies of reaction mechanisms affecting the
+hydrogenation catalysis. During the synthesis, AlV sites also hydrogenation of biomass-derived compounds are limited. Ide
+act as dynamic anchors, stabilizing Pt atoms via strong support- et al. calculated the hydrogenation of benzalacetone over
+metal interactions. This promotes better Pt dispersion, restricts Pt(111) and Ru(0001) and found that Pt favors the C�O
+nucleation, and yields smaller, more uniform nanoparticles. hydrogenation while Ru exhibits high activity in the C�C
+Additionally, electron withdrawal by both acid sites may fine- hydrogenation.17 Li et al. reported that a synergistic effect
+tune Pt’s d-band structure, optimizing intermediate adsorption. between Pd single atom and cluster can improve the selective
+It is also reported that the highly dispersed isolated Pt atoms hydrogenation of the C�C bond in cinnamaldehyde.18 They
+on the ASA exhibit superior chemoselectivity in the C�O found that cinnamaldehyde is preferentially hydrogenated on
+hydrogenation due to the strong interaction between metal and the single atom, while hydrogen is more favorably dissociated
+surface penta-coordinated Al species, compared to nano- on the cluster. All of these findings indicate that understanding
+particles supported on Al2O3 and SiO2.10 With this in mind, we the effect of the structural configuration of metal nanoparticles
+have investigated the chemoselective hydrogenation on various on solid acid supports is crucial to optimizing their catalytic
+structural configurations of Pt catalysts supported on AlV-rich efficacy in the hydrogenation of specific compounds.
+acid support and attempted to establish guidelines for the Herein, we systematically investigated the effect of the
+design of ASA-supported Pt catalysts used for the chemo- structural configuration of Pt catalysts supported on AlV-rich
+selective hydrogenation of aromatic saturated/unsaturated ASA for the chemoselective hydrogenation of aromatic
+ketones and aldehydes. saturated/unsaturated ketones and aldehydes, combining
+ The metal structural configuration has a significant effect on spin-polarized Density functional theory (DFT) calculations
+the selective hydrogenation of biomass-derived com- of the reaction pathways and their validation by pertinent
+pounds.11,12 It is reported that Pd1/TiO2 displays higher experimental studies. To establish the structural configuration
+conversion (>99.9%) and selectivity (97.4%) than Pdn/TiO2 effects for these reactions, acetophenone (Aph), benzaldehyde
+nanoparticle catalysts in the acetophenone hydrogenation to 1- (BA), and cinnamaldehyde (CAL) were chosen as representa-
+phenylethanol due to the higher H2 dissociation ability of Pd1/ tives of aromatic saturated/unsaturated ketones and aldehydes.
+TiO2.13 Notably, the supported atomic clusters with the size of We theoretically studied the underlying reaction mechanisms
+about 1 nm also showed unique catalytic properties in selective and the reaction energetics (energy profiles and activation
+hydrogenation reactions.14 For instance, catalysts with small barriers) of the chemoselective hydrogenation of unsaturated
+Co clusters anchored on a ZrLa0.2Ox support, characterized by groups (C�O and C�C bonds) over Pt single atoms (PtSA),
+ 13917 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+subnanoclusters (PtNC), and nanoparticles (PtNP) anchored on H2 dissociation exerts a minimal influence on PtSA/ASA
+the ASA support. These Pt-supported catalysts were activity. Accordingly, the reaction pathways of molecular
+successfully synthesized and characterized by various techni- hydrogenation form the primary focus of this study.
+ques. The selective hydrogenation of several other aromatic On PtNC/ASA, adsorption of Aph occurs in three different
+saturated/unsaturated ketones and aldehydes was also modes: adsorption via its C�O bond, via the aromatic ring,
+examined, further corroborating the structural configuration and both (Figures 1b and S3). The most stable mode involves
+effect of Pt predicted by the DFT calculations. Pt atoms at the corner and edge strongly binding with the
+ aromatic ring and the O atom in the C�O bond, with an
+2. RESULTS AND DISCUSSION adsorption energy of −1.62 eV, 0.48, and 0.31 eV lower than
+ 2.1. DFT Calculations. To elucidate the role of the the adsorption modes via the C�O bond and via the aromatic
+structural configuration of supported Pt catalysts in the ring, respectively. During the hydrogenation pathway (blue
+hydrogenation of aromatic aldehydes/ketones, ASA was profile in Figure 1d), when hydrogen is added to the O of the
+selected as a support for Pt single atoms (PtSA/ASA), C�O bond, the initial state RC is first changed into a
+nanoclusters (PtNC/ASA), and nanoparticles (PtNP/ASA). As metastable reactant RC’ via breaking of the Pt−O bond, which
+shown in Figure S1 in the Supporting Information (SI), the is about 0.44 eV higher than the stable reactant RC. And then
+single Pt atoms in the PtSA/ASA, exhibiting a thermal stability the O−H bond formation needs to overcome a 0.52 eV barrier.
+at room temperature, are in an oxidized state with a Bader The energy barrier for the subsequent hydrogen addition to C
+charge of +1.12|e|, while metallic Pt atoms exist in PtNC/ASA of the C�O bond was calculated to be 0.95 eV, which results
+and PtNP/ASA. For simplicity, considering the higher from the breaking of Pt−C and Pt−H bonds and the formation
+prevalence of terrace Pt atoms in comparison to PtNC/ of the C−H bond. The product phE (PC1) strongly adsorbs on
+ASA,19 the Pt (111) surface was used to mimic the active PtNC/ASA through its aromatic ring, with an adsorption energy
+center of PtNP/ASA for hydrogenation reactions. The active of −1.57 eV. Besides, the hydrogenation of the aromatic ring in
+centers of these three catalysts exhibit different electronic and Aph will be suppressed due to the high energy barrier (Figure
+geometric structures, which are likely key factors influencing S5).
+the selective hydrogenation of C�O and C�C bonds. Similar to the Aph adsorption on PtNC/ASA, there are three
+Acetophenone (Aph), benzaldehyde (BA), and cinnamalde- adsorption modes on Pt (111), i.e., PtNP/ASA, as shown in
+hyde (CAL) molecules were selected as the representative Figure 1c. The preferential adsorption occurs on the Pt terrace
+aromatic reactants for the hydrogenation reactions. Aph and exclusively through the benzene ring. The benzene ring of Aph
+BA were used as models for aromatic ketone and aldehyde, is located at the bridge30° (an angle of 30° between the C−C
+respectively, while CAL was used as an aromatic α,β- in the benzene ring and Pt−Pt bonds) site,21,22 and the
+unsaturated aldehyde, featuring both branched C�O and adsorption energy is about −1.33 eV, 0.91, and 0.35 eV lower
+C�C bonds. than the adsorption modes via C�O bond and via both C�O
+ Aph Hydrogenation. Considering the aromatic alcohol 1- bond and aromatic ring, respectively. For C�O hydro-
+phenylethanol (phE), a valuable organic intermediate to genation, our findings indicate that the relative position of the
+produce fragrances and medicines, we focused on the branched C�O of Aph on Pt (111) can affect the activation
+hydrogenation of the carbonyl group in Aph over the three barrier of C�O bond hydrogenation. Taking the most stable
+structurally different Pt catalysts. As depicted in Figure 1, the
+ adsorption configuration as the initial state (RP’ in Figure S7b),
+reaction pathways encompass reactant adsorption, C�O
+ where the C in the C�O bond of Aph is located at the top site
+hydrogenation, and product desorption. The C�O hydro-
+ of Pt (111), the energy barriers of the formation of the O−H
+genation route involves first O−H and then C−H formation.
+ and C−H bonds are 0.39 and 0.96 eV, respectively (Figure
+Detailed configurations, including reactants, intermediates, and
+products, are provided in Figures S2−S6. On the PtSA/ASA, S7). The product PP1 in Figure 1 is strongly adsorbed on the Pt
+limited active sites facilitate the adsorption of Aph via the C� (111) via its aromatic ring at the bridge30° site, with an
+O bond or the C�C bond of the aromatic ring (Figures 1a adsorption energy of −1.21 eV. Alternatively, a metastable
+and S2). The former configuration has a stronger adsorption adsorption configuration (RP in Figure S7b), 0.13 eV higher
+energy (−1.75 eV) than the latter (−0.88 eV), attributed to than that of the most stable one, is formed by moving the most
+the oxidized Pt acting as Lewis acid sites for the favorable C� stable one along the horizontal Pt lattice direction (Figure
+O bond adsorption via its O lone pair.20 The less stable S4c), with an energy barrier of 0.80 eV. Taking the metastable
+adsorption via the C�C bond would correspond to a adsorption state as the initial state, where the C in the C�O
+Boltzmann population of ∼10−14, which indicates that the bond is on the bridge site of Pt (111), the energy barriers for
+hydrogenation of the carbonyl group occurs preferentially. On C�O bond hydrogenation are 0.14 and 0.65 eV, respectively.
+PtSA/ASA (red profile) in Figure 1d, the hydrogen addition to The adsorption energy of product PP’1 in Figure S7(a) is about
+O of the C�O group has an energy barrier (Ea) of 0.93 eV. In −1.51 eV on the Pt (111) via its aromatic ring at the bridge30°
+the subsequent hydrogenation step, the Pt−O (O in C�O) site. To determine the optimal reaction paths at experimental
+bond of the IS1 intermediate needs to be broken to form a Pt− temperature, the Energy Span model23 was employed to
+C (C in C�O) bond (IS1′ intermediate). The IS1′ intermediate compare their apparent energy barriers. The free energy
+is energetically more stable, with an energy of 0.81 eV lower diagram in Figure S7(b) exhibits that the apparent energy
+than that of the IS1 intermediate. Following the formation of barrier of direct hydrogenation is about 0.91 eV, 0.33 eV lower
+the C−H bond requires an energy of 0.36 eV. The desorption than the second path, where a meta-adsorption state of Aph is
+of the product phE would occur with an endothermic energy of taken as the initial state of the hydrogenation reaction. It is
+0.89 eV. It should be noted that the H2 dissociation barrier on concluded that the first reaction path with the most stable
+PtSA/ASA (0.96 eV) is only marginally higher than that for adsorption state as the initial state is the favorable reaction
+C�O hydrogenation (0.93 eV). Given this small difference, path. Besides, compared to C�O hydrogenation, the higher
+ 13918 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 2. Favorable adsorption configurations of BA hydrogenation on PtSA/ASA (a), PtNC/ASA (b), and Pt (111) (c) and their optimal reaction
+pathways (d). The reaction pathways include adsorption (light blue area), hydrogenation reactions (pale yellow area), and desorption of products
+(gray area).
+
+C�C hydrogenation energy barrier inhibits the hydrogenation hydrogenation over the three catalysts. More detailed
+of the aromatic ring in Aph (Figure S5). information about the optimized structures, intermediates,
+ To determine the highest active catalysts at experimental and transition states of the reaction pathways is provided in
+temperature, based on the energy span model, the apparent Figures S11−S13.
+energy was estimated from the free energy diagram (Figures The adsorption of BA occurs preferentially through its C�
+S6−S8) of Aph hydrogenation over the three catalysts at O bond on PtSA/ASA (Figure 2a), with an adsorption energy
+303.15 K. On PtSA/ASA, the TOF-determining transition state of −1.83 eV. The C�O hydrogenation of BA over PtSA/ASA
+(TDTS) is the O−H formation, with the apparent energy has a barrier of 1.01 and 0.71 eV for the formation of the O−H
+barrier of 1.40 eV. On PtNC/ASA, the C−H formation of C� and C−H bonds, respectively. The product, phenyl methanol
+O hydrogenation is the TDTS, and the apparent energy barrier (PM), desorbs from the catalyst, with an endothermic step of
+is about 1.41 eV. However, the apparent energy barrier of the 1.16 eV.
+optimal reaction path on Pt(111) is about 0.91 eV, and the C− On PtNC/ASA, BA is preferentially adsorbed via both
+H formation is the TDTS. The results reveal that PtNP/ASA aromatic ring and C�O bond, with an adsorption energy of
+exhibits the highest activity at 303.15 K. −1.61 eV. The energy barriers for the formation of O−H and
+ In addition, the product phE could either be desorbed from C−H bonds are 0.46 and 0.94 eV, respectively. Similar to the
+the catalysts or further hydrogenated to the saturated alcohol. adsorption of phE on the nanocluster, the aromatic ring of the
+To determine the selectivity of phE at the experimental product PM (PC1 state) strongly binds with the Pt edge atoms
+temperature (303.15 K), the free energy barriers of the further with an adsorption energy of −1.47 eV.
+hydrogenation of phE over the three catalysts were calculated, On Pt (111), the most stable adsorption mode occurs via
+as listed in Figures S9 and S10. The phE on PtSA/ASA is more the aromatic ring of BA, with an adsorption energy of −1.30
+likely to desorb from the substrate due to its adsorption eV. Similar to the Aph hydrogenation on Pt (111), two
+configuration. On PtNC/ASA and Pt(111), the free desorption reaction pathways for C�O hydrogenation of BA are feasible,
+energies are 0.81 and 0.79 eV, 0.34 and 0.28 eV lower than the as shown in Figure S13. Taking the stable adsorption
+free energy barriers of C�C hydrogenation of phE, configuration (Figure S4f) as the initial state where the
+respectively. Our results show that the aromatic alcohol, benzene ring of BA adsorbs on the bridge30° site of Pt (111),
+phE, favors desorption from the three catalysts. the energy barriers are 0.31 and 1.09 eV for the formation of
+ BA Hydrogenation. To examine the effect of the Pt the O−H bond and the C−H bond, respectively. The
+structural configuration on the aldehyde hydrogenation, we adsorption energy of the corresponding product on the
+examined the BA hydrogenation over PtSA/ASA, PtNC/ASA, bridge30° site (PP1′ in Figure S13) is about −1.64 eV.
+and PtNP/ASA. Despite the different lengths of the BA’s side Alternatively, BA could initially diffuse from the bridge30° site
+chain compared to Aph, the favorable adsorption modes, (Figure S4f) to the fcc0° site (Figure S4g), with an energy
+hydrogenation pathways, and intermediate configurations on barrier of 0.60 eV followed by an endothermic reaction of 0.32
+the three catalysts are similar to those observed for Aph eV. Taking the fcc0° adsorption site as the initial state, the
+adsorption. Figure 2 shows the favorable BA adsorption hydrogenation of the C�O bond of BA could overcome the
+configurations and the corresponding reaction pathways for BA energy barriers of 0.23 and 0.46 eV, respectively. The reduced
+ 13919 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 3. (a) Scheme of the hydrogenation routes of CAL. Pathways a1 and b1 refer to the elementary reaction steps of the first hydrogenation,
+and a2 and b2 indicate the second hydrogenation reactions. The asterisk of the molecular structural formula refers to an unsaturated carbon
+bonding to the metal surface. The energy profiles for CAL hydrogenation on PtSA/ASA (b), PtNC/ASA (c), and Pt (111) (d). The reaction
+pathways include adsorption (light blue area), hydrogenation reactions (pale yellow area), and desorption of products (gray area). The optimized
+structures, including reactants, intermediates, and products, are presented.
+
+energy barrier of C−H formation could be attributed to the A closer analysis of BA hydrogenation free energy pathways
+weak adsorption strength of the IP2 intermediate on Pt (111). over the three catalysts reveals that the apparent energy
+ barriers are 1.58 eV with the formation of the O−H as the
+Based on the energy span model, Figure S13 shows that the
+ TDTS on PtSA/ASA, 0.99 eV with the C−H formation as the
+second hydrogenation pathway is energetically favored due to TDDS on PtNC/ASA, and 0.58 eV with the BA diffusion as the
+the low apparent energy barrier (0.58 eV). TDTS on Pt (111), mimicking PtNP/ASA. The activity trend
+ 13920 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+should be PtNP/ASA > PtNC/ASA > PtSA/ASA at experimental C�O and C�C bonds of the branched chain, as well as the
+temperature (303.15 K). For the desorption of the product benzene ring, with an adsorption energy of −1.86 eV. Figure 3c
+PM, as shown in Figures S9 and S10, the lower free desorption shows the energy profiles of chemoselective hydrogenation of
+energies (0.46 eV on PtSA/ASA, 0.72 eV on PtNC/ASA, and CAL to an unsaturated alcohol or saturated aldehyde. The
+0.45 eV on Pt(111)) could improve PM desorption from these initial hydrogen addition to the C of the C�C bond has a
+catalysts. barrier of 0.96 eV, with an exothermic step of 0.37 eV, and the
+ CAL Hydrogenation. To examine the effect of the Pt subsequent hydrogenation of the alkyl intermediate has a
+structural configuration on the chemoselective hydrogenation barrier of 0.73 eV. For the C�O hydrogenation, the energy
+of α,β-unsaturated aromatic aldehyde, as shown in Figure 3a, barrier for the addition of H to the O in the C�O bond is
+we considered the C�O and C�C bond hydrogenation of about 1.09 eV. The subsequent hydrogenation of the alkoxide
+CAL over PtSA/ASA, PtNC/ASA, and Pt (111), respectively. intermediate could conquer a barrier of 0.81 eV. To study the
+The adsorption configurations of these catalysts are shown in high energy barriers of C�O hydrogenation, we employed the
+Figure S2. CAL is adsorbed on PtSA/ASA either via its C�O Lobster program24 to calculate ICOHP to analyze the bond
+bond or its branched C�C bond, with adsorption energies of strength. It is found that the ICOHP values of Pt−O and Pt−C
+−2.02 and −1.64 eV, respectively. Notably, we found that the bonds are −1.10 and −0.72 eV, respectively, which suggests
+surface O atom adjacent to the single Pt atom in the PtSA/ASA that the strong interaction between Pt and O atoms
+has a strong attraction for H ions during CAL hydrogenation. contributes to the higher energy barriers.
+Thus, in the following hydrogenation calculations, we saturated The first steps of C�C and C�O hydrogenations are both
+this surface O atom with H in PtSA/ASA. Notably, the rate-limiting steps, with barriers of 0.96 and 1.09 eV,
+adsorption mode via C�O adsorption on PtSA/ASA still has a respectively. The results indicate that C�C hydrogenation is
+stronger adsorption energy (−2.05 eV) than the mode via C� more favorable than C�O hydrogenation, and consequently,
+C adsorption (−1.93 eV, Figure S2i, k). A Bader charge saturated aldehyde HCAL should be the main product.
+analysis found that the Pt atom possesses +1.08|e| and +0.92|e| However, the difference between the energy barriers of the
+for the adsorption mode via C�O and the mode via C�C, rate-limiting steps is only 0.13 eV, which suggests that product
+which further confirms the strong interaction between Pt and COL might also be formed. The products COL (Pa) and
+the O atoms. HCAL (Pb) are strongly bound to the Pt edge sites via the
+ The reaction pathways for CAL hydrogenation over PtSA/ unsaturated bonds (C�C or C�O) and the aromatic ring,
+ASA are illustrated in Figure 3b. For the C�C hydrogenation, with adsorption energies of 1.28 and 1.32 eV, respectively.
+the adsorption mode via C�O adsorption (Figure S2i) needs Similarly, at experimental temperature (303.15 K), the free
+to change to the mode with C�C adsorption (Figure S2k). desorption energies are 0.50 and 0.48 eV for HCAL and COL
+The hydrogenation of the C�C bond proceeds first by adding on PtNC/ASA, respectively. Since the free desorption energies
+H to the carbon adjacent to the aromatic ring, resulting in the of HCAL and COL are lower than the free energy barriers of
+formation of a C−H−Pt multicenter bond, followed by the C�C and C�O hydrogenation (Figure S14), HCAL and
+formation of a C−H bond. The energy barriers for these steps COL are likely to desorb from the Pt cluster.
+are 0.24 and 0.76 eV, with an endothermic reaction of 0.11 and Figure 3d shows the CAL adsorption and hydrogenation
+0.75 eV, respectively. The subsequent hydrogenation of the pathways over Pt (111). CAL preferentially adsorbs via the
+alkyl intermediate to form the saturated aldehyde has an benzene ring and the C�C bond of the branched chain, where
+energy barrier of 0.17 eV and is mildly exothermic by 0.33 eV. the benzene ring is located at the bridge30° site, with an
+The product hydrocinnamaldehyde (HCAL) directly desorbs adsorption energy of −1.71 eV. The initial hydrogen addition
+with an energy barrier of 0.81 eV. For the C�O hydro- to the O of the C�O exhibits a lower activation energy barrier
+genation over the PtSA/ASA, the activation energies of the of 0.31 eV and the subsequent hydrogenation of the alkoxide
+formation of the O−H and C−H bonds were 1.16 and 0.59 intermediate will therefore conquer an energy barrier of 0.56
+eV, with an endothermic energy of 0.52 eV and an exothermic eV. The C�C hydrogenation could conquer higher energy
+energy of 0.64 eV, respectively. The relatively higher energy barriers of 1.01 and 1.04 eV, respectively, which could be
+barrier of the O−H formation indicates that the pathway of the attributed to the strong Pt−C and Pt−H bonds. The energy
+C�O hydrogenation is kinetically less favorable. The product profile comparison of both pathways in Figure 3d indicates that
+cinnamyl alcohol (COL) is strongly bound to the PtSA/ASA C�O hydrogenation is much more favorable than C�C
+through its C�C bond of the branched chain, with an hydrogenation. However, the product COL (Pa) resulting from
+adsorption energy of −2.06 eV. At experimental temperature C�O hydrogenation is strongly bound to the Pt surface (Eads
+(303.15 K), as shown in Figure S14, the free desorption = −2.05 eV) due to the unsaturated C�C bond, while the
+energies of HCAL and COL are reduced to 0.15 and 1.19 eV, adsorption energy of the product HCAL (Pb) from C�C
+respectively. Comparing the high free desorption energy of hydrogenation is about −1.17 eV. To determine whether the
+COL with the medium free energy barriers of the first step of product is desorbed or continues to undergo hydrogenation at
+C�C hydrogenation (0.52 eV), we found that COL might be 303.15 K, we compared the free desorption energies of HCAL
+readily hydrogenated to hydrocinnamyl alcohol (HCOL) and COL with the free energy barriers of C�C and C�O
+before desorbing. Thus, PtSA/ASA favors the hydrogenation hydrogenation (Figure S14). The free desorption energy of
+of the C�C bond, and HCAL is the main product in the CAL COL is 1.17 eV, higher than the free energy barriers (0.96 and
+hydrogenation. 1.00 eV) of C�O hydrogenation, which indicates the
+ On PtNC/ASA, due to the presence of numerous active edge adsorbed COL could be readily hydrogenated to the saturated
+sites, various adsorption configurations are observed, involving alcohol before desorption. For the adsorbed HCAL on
+the adsorption via a benzene ring, C�O bond, or the Pt(111), comparing the free desorption energy of HCAL
+branched C�C, etc., as illustrated in Figure S3i−l. The (0.40 eV) with the free energy barriers (0.25 and 0.52 eV) of
+favorable adsorption of CAL on PtNC/ASA occurs through the the C�O hydrogenation, HCAL is more likely to desorb from
+ 13921 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 4. 27Al MAS NMR spectra of the fresh PtSA/ASA, PtNC/ASA, and PtNP/ASA catalysts (a), NH3-TPD profiles (b), XRD patterns (c) of the
+reduced catalysts, and HAADF-STEM images of the fresh (d−f) and reduced catalysts (g−i).
+
+the surface. Consequently, though Pt (111) shows a tendency to form HCOL. It should be noted that the medium energy
+to favor the hydrogenation of the C�O bond over the C�C barrier (TS-a2, 1.04 eV) of the rate-limiting step of the C�C
+bond, the further hydrogenation of the C�C bond in the hydrogenation of CAL on Pt (111) suggests that the saturated
+product COL suggests that COL may not be the main product. aldehyde HCAL could also be formed. Thus, Pt (111) shows
+ A detailed analysis of CAL hydrogenation over the three lower selectivity than PtSA/ASA and PtNC/ASA in the C�C
+catalysts shows that PtSA/ASA and PtNC/ASA preferentially hydrogenation forming HCAL. Regarding the activity of the
+activate the C�C hydrogenation and that the HCAL could be C�C hydrogenation at experimental temperature (303.15 K),
+the main product. In contrast, the Pt (111) surface, mimicking the apparent energy barriers are 0.81 eV with the transition of
+PtNP/ASA, displays a higher activity for the C�O hydro- CAL adsorption mode as TDDS on PtSA/ASA, 0.93 eV with
+genation than for C�C hydrogenation in CAL, but strong the first C−H formation as TDDS on PtNC/ASA, and 1.0 eV
+adsorption of the unsaturated alcohol COL on Pt (111) could with the second C−H formation as TDDS on Pt(111),
+improve the further hydrogenation of the C�C bond in COL respectively. Thus, PtSA/ASA exhibits superior activity
+ 13922 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 5. DRIFT spectra of CO adsorption over PtSA/ASA (a), PtNC/ASA (b), and PtNP/ASA (c), EELS spectra (d), and H2-TPR profiles (e) of
+the reduced Pt-loaded catalysts.
+
+performance. In the following section, we present our been reported that AlV species could promote the generation of
+experimental results to validate the theoretical findings Brønsted acid sites by interacting with SiOH groups and
+discussed above. facilitating the catalytic activity of catalysts for chemoselective
+ 2.2. Experimental Studies. To experimentally verify the hydrogenation.29,30 Thereby, a large number of AlV sites on the
+structural configuration effect of the Pt nanocatalysts in the ASA support may be beneficial for stabilizing the Pt species
+chemoselective hydrogenation of aromatic saturated/unsatu- and promoting acidity.
+rated ketones and aldehydes, the AlV-rich ASA-supported Pt The structures of the Pt-loaded ASA samples were identified
+single atom, nanocluster, and nanoparticle catalysts were by the X-ray diffraction (XRD) patterns presented in Figure 4c.
+synthesized and characterized, and their catalytic performances A broad reflection at around 22 ° corresponding to amorphous
+were evaluated. silica is observed. The diffraction peaks at 39.8, 46.3, and 67.5 °
+ Catalyst Characterization. The surface coordination and are ascribed to Pt (111), Pt (200), and Pt (220) (JCPDS 87−
+distribution of Al species on the ASA support and Pt-loaded 0646), respectively, confirming the presence of Pt clusters and
+catalysts were investigated using 27Al magic angle spinning nanoparticles on the reduced PtNC/ASA and PtNP/ASA
+(MAS) NMR spectroscopy as shown in Figure 4a. The samples. Note that virtually no diffraction peaks of Pt are
+corresponding simulation results are summarized in Table S1. discernible in the XRD pattern of PtSA/ASA, suggesting the
+All samples exhibit three peaks at around 52, 28−30, and 0−1 presence of finely dispersed Pt single atoms.
+ppm, ascribed to tetrahedral (AlIV), AlV, and octahedral (AlVI) Due to the XRD detection limitation, the finely dispersed Pt
+coordination, respectively.25 Notably, AlV as the dominant sites were further characterized by high-angle annular dark-
+species (53.9%) exists on the ASA support prepared in this field scanning transmission electron microscopy (HAADF-
+work. With Pt loading, the intensity of the AlV peak decreases STEM). The size distribution of Pt for reduced catalysts is
+in the three Pt-loaded catalysts, along with an increment in AlIV provided in Figure S15. As shown in Figure 4d−i, the fresh and
+and AlVI concentrations. This suggests that the Pt species reduced PtSA/ASA, PtNC/ASA, and PtNP/ASA catalysts were
+might interact with partial AlV-unsaturated sites through the examined by HAADF-TEM to identify the structural
+formation of Al−O−Pt bonds. It has been accepted that AlV configuration and distribution of Pt. Single atoms of Pt,
+species possess defect sites that favor the stabilization of single subnanoclusters, and fine particles are marked with red circles,
+atoms, thereby enhancing the catalytic performance.9,26 blue squares, and yellow hexagons, respectively. The PtSA/ASA
+ Generally, ASA, as an acidic support, contains Lewis acid catalyst contains numerous isolated Pt single atoms (diameter
+sites related to AlVI species and Brønsted acid sites associated <0.5 nm) as shown in Figure 4d,g. With increasing Pt loading,
+with unsaturated AlIV species. The surface acidity of Pt-loaded the coexistence of fewer single atoms and more nanoclusters
+catalysts was studied by NH3-TPD experiments, as shown in with an average diameter of around 1 nm is apparent on PtNC/
+Figure 4b. Two desorption peaks around 160 and 510 °C, ASA, as shown in Figure 4e,h, while nanoclusters and
+which could be attributed to ammonia adsorbed on the Lewis nanoparticles are identified on PtNP/ASA in Figure 4f,i.
+and Brønsted acid sites formed on silica−alumina.27,28 It has Notably, the reduction treatment at 350 °C had no significant
+ 13923 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Table 1. Chemoselective Hydrogenation of Aromatic Saturated/Unsaturated Ketones and Aldehydes over Pt-Loaded ASA
+Catalysts with Different Structural Configurations of Pt
+
+a
+ Reaction conditions: 60 mg of the substrate and 25 mg of reduced catalyst in 6 mL of solvent under 30 oC and 3 bar H2 for 6 h. bMain product
+yield and TOFs calculated at the conversion below 25%. The yield (Qi) of the reactions is defined as Qi = Xi*Si, where Xi and Si are the conversion
+and selectivity of products, respectively. cTOFs trends.
+
+influence on the Pt structural configuration of the catalysts; composed of oxidized Pt species, while larger clusters or
+single Pt atoms still existed on PtSA/ASA and PtNC/ASA metallic Pt NPs exist on the PtNC/ASA and PtNP/ASA
+samples after the reduction process due to the strong catalysts. Al L2,3 edge EELS spectra (∼79 eV) are observed
+interaction between Pt and AlV. at higher energy loss; these peaks also appear slightly shifted
+ Diffuse reflectance infrared Fourier transform spectroscopy toward lower energy loss with increasing Pt particle size. This
+(DRIFTS) using CO as a probe molecule was used to reveal shift could be attributed to the enhanced electron density of Al
+the nature of the supported Pt species. As displayed in Figure in the ASA support after Pt loading. However, the EELS
+5a−c, in the initial state, the CO adsorption peak centered spectra of the Pt N6,7 edge are partially overlapped with that of
+around 2170−2117 cm−1 over the three Pt/ASA catalysts is the Al L2,3 edge and thus are difficult to distinguish.
+assigned to gaseous CO.26 Upon exposure to helium, the The reducibility of all samples was investigated by hydrogen-
+vibrational band of CO at 2083 cm−1, indicative of linear- temperature-programmed reduction (H2-TPR), as shown in
+bonded CO on single Pt atoms, appeared.31,32 Whereas, this Figure 5e. The reduction peaks are centered at about 400 and
+CO band is red-shifted to 2078 and 2075 cm−1 with PtNC/ASA 510 °C for these three catalysts, which can be assigned to the
+and PtNP/ASA, respectively. This is usually ascribed to the reduction of different PtOx species (e.g., Pt2+ and Pt4+) to Pt0.
+appearance of linear-bonded CO at the Pt0 sites, indicating the Combined with27Al MAS NMR results, large numbers of
+existence of metallic Pt on subnanoclusters and fine nano- pentacoordinate AlV sites formed on the ASA support, which
+particles.33,34 The bands at 1950 and 1860 cm−1 arise from the interact with PtOx species to form Pt−O−Al bridges and
+bridged adsorption of CO between two Pt atoms, suggesting account for the formation of reduction peaks at high
+the formation of a dimer or Pt clusters.35 Moreover, the temperatures.37 Furthermore, with smaller Pt particles, the
+relative intensity of the band of linearly bonded CO increases H2 consumption peaks shift to higher temperatures. This
+with Pt loading. Hence, in situ CO−DRIFTS results further demonstrates that the PtOx species are difficult to reduce due
+confirm that isolated Pt atoms exist on the PtSA/ASA sample, to the strong metal−support interaction of PtSA/ASA.38 In
+in line with the HAADF-STEM observations. general, stronger metal−support interaction in the single atom-
+ Electron energy loss spectroscopy (EELS) provides based catalyst results in a higher reduction temperature than
+information about the local electronic structure around that observed for larger clusters or nanoparticles.39 Addition-
+atoms. Figure 5d shows the extracted EELS spectra of the Pt ally, a weak reduction peak around 220 °C appears on PtNC/
+O2,3 edge at around ∼50 eV on the reduced samples.36 With ASA and PtNP/ASA catalysts, indicating that larger bulk PtOx
+the Pt loading, the energy position of the Pt O2,3 edge shifts to exists on these samples.
+a lower energy loss. A previous study reported that a larger Influence of Structural Configuration of Pt on the
+energy loss exhibits an increased oxidation state feature on the Catalytic Performance. It is well-accepted that different Si/
+metal.36 It means that the PtSA/ASA sample is most likely Al ratios affect the surface acidity of the supports, leading to
+ 13924 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Figure 6. Hydrogenation and product distributions of Aph achieved over PtSA/ASA (a), PtNC/ASA (b), PtNP/ASA (c), and reaction pathways (d).
+Reaction conditions: 60 mg of Aph and 25 mg of the reduced catalyst in 6 mL of hexane at 30 °C and 3 bar of H2 for 6 h.
+
+Figure 7. In situ ATR-IR spectra recorded during the hydrogenation of Aph on ASA (a) and PtNP/ASA (b).
+
+differences in the electronic properties of the supported metal Si/Al ratios (95/5, 90/10, 85/15, and 80/20) were prepared
+catalysts. In this work, ASA-supported Pt catalysts with various and tested for BA hydrogenation, as shown in Figure S16.
+ 13925 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Among these catalysts, the Pt-loaded ASA with Si/Al = 85/15 For the hydrogenation of CAL and BDA containing both
+exhibited the highest BA conversion due to its moderate C�O and C�C bonds in a branched chain of the benzene
+amount of acid sites. Thus, to investigate the Pt structural ring, as summarized in entries 13−15 and 16−18 in Table 1,
+configuration effect on the hydrogenation reaction, an ASA the TOFs of PtSA/ASA are significantly higher than those of
+support in PtSA/ASA, PtNC/ASA, and Pt (111) was used with a PtNC/ASA and PtNP/ASA, demonstrating that single Pt atoms
+Si/Al ratio of 85/15. The reusability test of the PtNP/ASA are the most active in the hydrogenation of aromatic
+sample for BA hydrogenation is shown in Figure S17. A unsaturated ketones and aldehydes. The main products are
+noticeable decline in activity was observed after two cycles of the saturated ketone and aldehyde on PtSA/ASA and PtNC/
+experiments, indicating that the active Pt sites might be ASA, consistent with the theoretical predictions. However, the
+partially leached out and oxidized during the tests. Therefore, yield of the saturated aldehyde, hydrocinnamaldehyde, on
+hydrogenation of Aph was chosen as a representative reaction PtNP/ASA is only 8.9%. Combined with the theoretical
+to evaluate the catalytic performance of the Pt-loaded catalysts. calculation, this explains the lower activity of PtNP/ASA in
+ As presented in Table 1, the PtNP/ASA showed the highest the hydrogenation of the C�C bond than that of the C�O
+turnover frequency (TOF) (1.64 × 10−1 s−1) among the three bond in CAL.
+different Pt/ASA catalysts, which is significantly higher than Although the aromatic aldehydes and ketones are the main
+those of PtSA/ASA (1.17 × 10−1 s−1) and PtNC/ASA (0.42 × products in the hydrogenation of α, β-unsaturated aldehydes
+10−1 s−1) with 1-phenylethanol as the predominant product and ketones (entries 13−18) over all of the Pt-loaded catalysts,
+(Figure 6a−c). The observed hydrogenation route (Figure 6d) the underlying reaction mechanisms might be different. For the
+and TOF are consistent with the trends predicted by the DFT reactant CAL, PtSA/ASA and PtNC/ASA exhibit higher
+results, as summarized in Table 1 (last column). activities in the C�C bond than in the C�O hydrogenation
+ To gain deeper insight into the role of Pt under a H2 and produce a significant amount of aromatic aldehyde. While
+atmosphere, in situ attenuated total reflectance-infrared (ATR- the PtNP/ASA preferentially activates the C�O hydrogenation
+IR) spectroscopy was conducted over ASA and PtNP/ASA and the produced unsaturated alcohol can be further
+catalysts using Aph as a probe molecule. In the first step, Aph, hydrogenated to aromatic alcohol, which results in slight
+which was diluted with solvent hexane, was introduced into the differences (less than 10%, Figure S20) in the yields of the
+flow cell loaded with the catalyst sample. As displayed in three products, i.e., unsaturated alcohol, aldehydes, and
+Figure 7a (top), for the pure ASA support, the bands at 1695, saturated alcohol. The TOFs show that PtSA/ASA exhibits
+1357, and 1262 cm−1 can be ascribed to the vibrations of C� the highest activity in the C�C bond hydrogenation.
+O, CH3, and X-sensitive benzene modes, respectively. The Combining the DFT calculations and experimental studies, it
+bands at 1600, 1584, and 1450 cm−1 are due to the C�C can be concluded that the effect of the Pt structural
+stretching vibration of the phenyl group.40,41 After the solvent configuration on the chemoselective hydrogenation of
+was introduced to desorb Aph, most of the signals gradually aromatic molecules depends on the unsaturated groups in
+diminished, as shown in Figure 7a (bottom), which is due to the side chain of the aromatic ring.
+the very weak adsorption of Aph on the ASA sample. In
+contrast, for the Pt-loaded sample, two bands at 1671 and 1275 3. CONCLUSIONS
+cm−1 can still be observed after the desorption of Aph in We explored the influence of the structural configuration of
+Figure 7b (middle). It can be inferred that these adsorption ASA-supported platinum on the chemoselective hydrogenation
+peaks correspond to the C�O stretching vibration and X- of aromatic, saturated and unsaturated ketones and aldehydes,
+sensitive benzene mode of Aph adsorbed on the Pt sites. employing DFT calculations of the reaction energy profiles and
+Subsequently, the solution was saturated with hydrogen (H2) validating the theoretical prediction with pertinent exper-
+and two new bands at 1072 and 1061 cm−1 appeared in the imental studies. Three different structural configurations of Pt/
+spectra (Figure 7b, bottom), which are attributed to the C−O ASA were investigated: single atoms, clusters, and nano-
+stretching vibration of 1-phenylethanol (phE) and 1-cyclo- particles. Their reaction energy profiles and the experimental
+hexylethanol (CE), respectively.40 Consequently, in situ ATR- catalytic behaviors indicate the following activity trends
+IR spectra confirm that the Pt sites serve as the active sites for depending on the structure of the tested ketones and
+the hydrogenation of Aph, and the loading of Pt nanoparticles aldehydes. For the hydrogenation of acetophenone and
+could affect the modes and strengths of Aph adsorption and butyrophenone, TOFs evaluated for substrate conversion
+desorption. <25% follow the sequence NP > SA > NC. For the
+ Finally, the catalytic performances of the PtSA/ASA, PtNC/ hydrogenation of benzaldehyde and phenylacetaldehyde, the
+ASA, and PtNP/ASA catalysts were also evaluated for the corresponding sequence is NP > NC > SA, whereas for
+chemoselective hydrogenation of other aromatic aldehydes and cinnamaldehyde and benzylideneacetone, the sequence is SA >
+ketones, including butyrophenone (Bph), BA, phenylacetalde- NC > NP.
+hyde (PA), CAL, and benzylideneacetone (BDA). The Thus, PtNP exhibits the highest activity for the hydro-
+corresponding conversions, product distributions, and TOFs genation of aromatic saturated ketones and aldehydes, while
+are presented in Figures S18−S21. As shown in Table 1, TOFs PtSA performs best in the activation of the C�C bond in the
+of aromatic ketones (entries 1−6) and aldehydes only hydrogenation of aromatic unsaturated ketones and aldehydes.
+containing a C�O double bond (entries 7−12), achieved Moreover, PtSA and PtNC preferentially activate the C�C bond
+with PtNP/ASA are higher than those obtained with PtSA/ASA of the unsaturated ketones and aldehydes, resulting in
+and PtNC/ASA, and the main product is the corresponding saturated aldehydes as the main products. For the α,β-
+aromatic alcohol, agreeing well with the DFT predictions. The unsaturated aldehydes, C�O bond hydrogenation is favored
+experimental results further confirm that the C�O bond in over PtNP and PtNC, while C�C bond hydrogenation is
+aromatic ketones and aldehydes is favorably hydrogenated to prevalent over PtSA. These findings should enrich the
+yield the aromatic alcohol over all of the Pt-loaded catalysts. understanding of the structural configuration-dependence of
+ 13926 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+Pt-based catalysts in the selective hydrogenation of organic Dedong He − Faculty of Chemical Engineering, Kunming
+aromatic molecules and demonstrate that the theoretical University of Science and Technology, Kunming 650500,
+calculation allows a reliable qualitative prediction of the China; orcid.org/0000-0003-4198-0458
+experimental outcome of the hydrogenations on different Yongming Luo − Faculty of Chemical Engineering, Kunming
+structural configurations of Pt/ASA catalysts. Similar effects University of Science and Technology, Kunming 650500,
+may occur with other acidic supports, such as zeolites and China; orcid.org/0000-0002-9930-261X
+sulfated oxides, where site properties influence metal Alfons Baiker − Institute for Chemical and Bioengineering,
+dispersion. The extent of these effects depends on support ETH Zürich, Zurich CH-8093, Switzerland
+characteristics, such as acidity, redox behavior, and lattice Complete contact information is available at:
+flexibility. Comparative studies are needed to identify general https://pubs.acs.org/10.1021/acscatal.5c04163
+trends across the supports. The study of the reaction energy
+profiles, together with pertinent reaction tests and spectro- Author Contributions
+scopic investigations, offers guidelines for the development of $
+ Y.Z. and P.W. contributed equally.
+improved catalysts for the chemoselective hydrogenation of
+ Notes
+ketones and aldehydes, an important step in the valorization of
+biomass-derived compounds. The authors declare no competing financial interest.
+
+■ ASSOCIATED CONTENT ■ ACKNOWLEDGMENTS
+ This work was supported by the Australian Research Council
+*
+sı Supporting Information
+ Discovery Early Career Research Award (DE190101618),
+The Supporting Information is available free of charge at Discovery Project (DP22002851), Future Fellowship
+https://pubs.acs.org/doi/10.1021/acscatal.5c04163. (FT220100601), and NSFC (Grants No. 22003011).
+ Additional details on computational methods; chem-
+ icals; materials preparation; characterizations; and
+ catalytic hydrogenation tests. Results for PtSA/ASA;
+ ■ REFERENCES
+ (1) Gong, W.; Lin, Y.; Chen, C.; Al-Mamun, M.; Lu, H. S.; Wang,
+ PtNC/ASA; and Pt(111) with different configurations; G.; Zhang, H.; Zhao, H. Nitrogen-doped carbon nanotube confined
+ adsorption energies of various molecules; Pt size Co-Nx sites for selective hydrogenation of biomass-derived
+ distributions; conversion and product distributions; compounds. Adv. Mater. 2019, 31 (11), No. 1808341.
+ reusability tests, and quantification of Al species by (2) Besson, M.; Gallezot, P.; Pinel, C. Conversion of biomass into
+ solid-state NMR are provided (PDF) chemicals over metal catalysts. Chem. Rev. 2014, 114 (3), 1827−1870.
+ (3) Farrar-Tobar, R. A.; Dell’Acqua, A.; Tin, S.; de Vries, J. G. Metal
+ catalyzed selective transfer hydrogenation of α,β-unsaturated carbonyl
+
+■ AUTHOR INFORMATION
+Corresponding Authors
+ compounds to allylic alcohols. Green Chem. 2020, 22, 3323−3357.
+ (4) Lan, X.; Wang, T. Highly selective catalysts for the hydro-
+ genation of unsaturated aldehydes: A Review. ACS Catal. 2020, 10,
+ Jun Huang − Laboratory for Catalysis Engineering, School of 2764−2790.
+ (5) Huang, J.; Jiang, Y.; Van Vegten, N.; Hunger, M.; Baiker, A.
+ Chemical and Biomolecular Engineering, The University of
+ Tuning the support acidity of flame-made Pd/SiO2-Al2O3 catalysts for
+ Sydney, Sydney, New South Wales 2006, Australia; chemoselective hydrogenation. J. Catal. 2011, 281 (2), 352−360.
+ orcid.org/0000-0001-8704-605X; Email: jun.huang@ (6) He, Y.; Fan, J.; Feng, J.; Luo, C.; Yang, P.; Li, D. Pd
+ sydney.edu.au nanoparticles on hydrotalcite as an efficient catalyst for partial
+ Yijiao Jiang − School of Engineering, Macquarie University, hydrogenation of acetylene: Effect of support acidic and basic
+ Sydney, New South Wales 2109, Australia; orcid.org/ properties. J. Catal. 2015, 331, 118−127.
+ 0000-0002-6191-9825; Email: yijiao.jiang@mq.edu.au (7) Wang, Z.; Kim, K.-D.; Zhou, C.; Chen, M.; Maed, N.; Liu, Z.;
+ Shi, J.; Baiker, A.; Hunger, M.; Huang, J. Influence of support acidity
+Authors on the performance of size-confined Pt nanoparticles in the
+ Yutong Zhao − School of Engineering, Macquarie University, chemoselective hydrogenation of acetophenone. Catal. Sci. Technol.
+ Sydney, New South Wales 2109, Australia 2015, 5, 2788−2797.
+ (8) Parapat, R. Y.; Saputra, O. H. I.; Ang, A. P.; Schwarze, M.;
+ Ping Wu − Shenzhen Institute for Quantum Science and Schomacker, A. R. Support effect in the preparation of supported
+ Engineering, Southern University of Science and Technology, metal catalysts via microemulsion. RSC Adv. 2014, 4, 50955−50963.
+ Shenzhen 518055, China; International Quantum Academy, (9) Kwak, J. H.; Hu, J.; Mei, D.; Yi, C.-W.; Kim, D. H.; Peden, C. H.;
+ Shenzhen 518048, China Allard, L. F.; Szanyi, J. Coordinatively unsaturated Al3+ centers as
+ Lizhuo Wang − Laboratory for Catalysis Engineering, School binding sites for active catalyst phases of platinum on γ-Al2O3. Science
+ of Chemical and Biomolecular Engineering, The University of 2009, 325 (5948), 1670−1673.
+ Sydney, Sydney, New South Wales 2006, Australia; (10) Zhao, Y.; Wang, L.; Kochubei, A.; Yang, W.; Xu, H.; Luo, Y.;
+ orcid.org/0000-0002-3370-5037 Baiker, A.; Huang, J.; Wang, Z.; Jiang, Y. Formation and location of Pt
+ Wenjie Yang − Laboratory for Catalysis Engineering, School of single sites induced by pentacoordinated Al species on amorphous
+ Chemical and Biomolecular Engineering, The University of silica-alumina. J. Phys. Chem. Lett. 2021, 12 (10), 2536−2546.
+ (11) Lan, X.; Wang, T. Highly selective catalysts for the
+ Sydney, Sydney, New South Wales 2006, Australia; hydrogenation of unsaturated aldehydes: a review. ACS Catal. 2020,
+ orcid.org/0000-0002-1013-2678 10 (4), 2764−2790.
+ Zichun Wang − School of Engineering, Macquarie University, (12) Deng, M.; Wang, D.; Li, Y. Rational design of catalysts for
+ Sydney, New South Wales 2109, Australia heterogeneous selective hydrogenation of unsaturated aldehydes/
+ Catherine Stampfl − School of Physics, The University of ketones: From nanoparticles to single atoms. Appl. Catal., A 2023,
+ Sydney, Sydney, New South Wales 2006, Australia 666, No. 119423.
+
+ 13927 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928
+ACS Catalysis pubs.acs.org/acscatalysis Research Article
+
+ (13) Guo, G.; Zhang, Y.; Zhang, H.; Zhang, X.; He, X.; Ji, H. (31) Qiao, B.; Wang, A.; Yang, X.; Allard, L. F.; Jiang, Z.; Cui, Y.;
+Selective hydrogenation of aromatic ketone to aromatic alcohol over Liu, J.; Li, J.; Zhang, T. Single-atom catalysis of CO oxidation using
+Pd single-atom catalysts. Ind. Eng. Chem. Res. 2023, 62 (46), 19585− Pt1/FeOx. Nat. Chem. 2011, 3 (8), 634−641.
+19591. (32) Kuo, C.-T.; Lu, Y.; Kovarik, L.; Engelhard, M.; Karim, A. M.
+ (14) Ma, Y.; Xu, G.; Wang, H.; Wang, Y.; Zhang, Y.; Fu, Y. Cobalt Structure sensitivity of acetylene semi-hydrogenation on Pt single
+nanocluster supported on ZrREnOx for the selective hydrogenation of atoms and subnanometer clusters. ACS Catal. 2019, 9 (12), 11030−
+biomass derived aromatic aldehydes and ketones in water. ACS Catal. 11041.
+2018, 8 (2), 1268−1277. (33) DeRita, L.; Dai, S.; Lopez-Zepeda, K.; Pham, N.; Graham, G.
+ (15) Zhang, H.; Zhou, X.; Liu, L.; Lan, F.; Zhao, T.; Qiu, M.; Guan, W.; Pan, X.; Christopher, P. Catalyst architecture for stable single
+Q.; Li, W. Assembling Co clusters via nanosized ZIF-67 sprouted atom dispersion enables site-specific spectroscopic and reactivity
+from CoAl-LDH nanoflower for selective hydrogenation. Appl. Catal., measurements of CO adsorbed to Pt atoms, oxidized Pt clusters, and
+B 2023, 338, No. 123026. metallic Pt clusters on TiO2. J. Am. Chem. Soc. 2017, 139 (40),
+ (16) Durndell, L. J.; Zou, G.; Shangguan, W.; Lee, A. F.; Wilson, K. 14150−14165.
+Structure-reactivity relations in ruthenium catalysed furfural hydro- (34) Zhang, W.; Wang, H.; Jiang, J.; Sui, Z.; Zhu, Y.; Chen, D.;
+genation. ChemCatChem 2019, 11 (16), 3927−3932. Zhou, X. Size dependence of Pt catalysts for propane dehydrogen-
+ (17) Ide, M. S.; Hao, B.; Neurock, M.; Davis, R. J. Mechanistic ation: from atomically dispersed to nanoparticles. ACS Catal. 2020,
+insights on the hydrogenation of α,β-unsaturated ketones and 10 (21), 12932−12942.
+aldehydes to unsaturated alcohols over metal catalysts. ACS Catal. (35) Qiao, B.; Wang, A.; Yang, X.; Allard, L. F.; Jiang, Z.; Cui, Y.;
+2012, 2 (4), 671−683. Liu, J.; Li, J.; Zhang, T. Single-atom catalysis of CO oxidation using
+ (18) Li, X.; Liu, J.; Wu, J.; Zhang, L.; Cao, D.; Cheng, D. Pt1/FeOx. Nat. Chem. 2011, 3, 634−641.
+Constructing a highly active Pd atomically dispersed catalyst for (36) Tan, H.; Verbeeck, J.; Abakumov, A.; Van Tendeloo, G.
+cinnamaldehyde hydrogenation: synergistic catalysis between Pd-N3 Oxidation state and chemical shift investigation in transition metal
+single atoms and fully exposed Pd clusters. ACS Catal. 2024, 14 (4), oxides by EELS. Ultramicroscopy 2012, 116, 24−33.
+2369−2379. (37) Lee, J.; Jang, E. J.; Oh, D. G.; Szanyi, J.; Kwak, J. H.
+ (19) Chen, W.; Ji, J.; Feng, X.; Duan, X.; Qian, G.; Li, P.; Zhou, X.; Morphology and size of Pt on Al2O3: The role of specific metal-
+Chen, D.; Yuan, W. Mechanistic insight into size-dependent activity support interactions between Pt and Al2O3. J. Catal. 2020, 385, 204−
+and durability in Pt/CNT catalyzed hydrolytic dehydrogenation of 212.
+ammonia borane. J. Am. Chem. Soc. 2014, 136 (48), 16736−16739. (38) Yu, C.; Ge, Q.; Xu, H.; Li, W. Effects of Ce addition on the Pt-
+ (20) Luneau, M.; Lim, J. S.; Patel, D. A.; Sykes, E. C. H.; Friend, C. Sn/γ-Al2O3 catalyst for propane dehydrogenation to propylene. Appl.
+M.; Sautet, P. Guidelines to achieving high selectivity for the Catal., A 2006, 315, 58−67.
+hydrogenation of α, β-unsaturated aldehydes with bimetallic and (39) Shi, X.; Lin, Y.; Huang, L.; Sun, Z.; Yang, Y.; Zhou, X.; Vovk,
+dilute alloy catalysts: a review. Chem. Rev. 2020, 120 (23), 12834− E.; Liu, X.; Huang, X.; Sun, M.; et al. Copper catalysts in
+12872. semihydrogenation of acetylene: from single atoms to nanoparticles.
+ (21) Liu, W.; Carrasco, J.; Santra, B.; Michaelides, A.; Scheffler, M.; ACS Catal. 2020, 10 (5), 3495−3504.
+Tkatchenko, A. Benzene adsorbed on metals: Concerted effect of (40) Chen, M.; Maeda, N.; Baiker, A.; Huang, J. Molecular insight
+covalency and van der Waals bonding. Phys. Rev. B 2012, 86 (24), into Pt-catalyzed chemoselective hydrogenation of an aromatic ketone
+No. 245405. by in situ modulation-excitation IR spectroscopy. ACS Catal. 2012, 2
+ (22) Lakshmikanth, K.; Puthiyaparambath, M. F.; Anoop, S.; (9), 2007−2013.
+Chatanathodi, R. Adsorption of benzene on defective Pt surfaces: A (41) Chen, M.; Maeda, N.; Baiker, A.; Huang, J. Hydrogenation of
+DFT study. Surf. Sci. 2022, 716, No. 121959. acetophenone on Pd/silica-alumina catalysts with tunable acidity:
+ (23) Kozuch, S.; Shaik, S. How to Conceptualize Catalytic Cycles? mechanistic insight by in situ ATR-IR spectroscopy. ACS Catal. 2018,
+The Energetic Span Model. Acc. Chem. Res. 2011, 44, 101−110. 8 (7), 6594−6600.
+ (24) Maintz, S.; Deringer, V. L.; Tchougréeff, A. L.; Dronskowski, R.
+LOBSTER: a tool to extract chemical bonding from plane-wave based
+DFT. J. Comput. Chem. 2016, 37, 1030−1035.
+ (25) Wang, Z.; Jiang, Y.; Jin, F.; Stampfl, C.; Hunger, M.; Baiker, A.;
+Huang, J. Strongly enhanced acidity and activity of amorphous silica-
+alumina by formation of pentacoordinated AlV species. J. Catal. 2019,
+372, 1−7.
+ (26) Wang, Z.; Jiang, Y.; Baiker, A.; Huang, J. Pentacoordinated
+aluminum species: New frontier for tailoring acidity-enhanced silica-
+alumina catalysts. Acc. Chem. Res. 2020, 53 (11), 2648−2658.
+ (27) Kim, K. D.; Wang, Z.; Tao, Y.; Ling, H.; Yuan, Y.; Zhou, C.;
+Liu, Z.; Gaborieau, M.; Huang, J.; Yu, A. The comparative effect of
+particle size and support acidity on hydrogenation of aromatic
+ketones. ChemCatChem 2019, 11 (19), 4810−4817.
+ (28) Wang, Z.; Jiang, Y.; Lafon, O.; Trébosc, J.; Kim, K. D.; Stampfl,
+C.; Baiker, A.; Amoureux, J.-P.; Huang, J. Brønsted acid sites based on
+penta-coordinated aluminum species. Nat. Commun. 2016, 7 (1),
+No. 13820.
+ (29) Wang, Z.; Li, T.; Jiang, Y.; Lafon, O.; Liu, Z.; Trébosc, J.;
+Baiker, A.; Amoureux, J.-P.; Huang, J. Acidity enhancement through
+synergy of penta-and tetra-coordinated aluminum species in
+amorphous silica networks. Nat. Commun. 2020, 11 (1), No. 225.
+ (30) Kim, K. D.; Pokhrel, S.; Wang, Z.; Ling, H.; Zhou, C.; Liu, Z.;
+Hunger, M.; Mädler, L.; Huang, J. Tailoring high-performance Pd
+catalysts for chemoselective hydrogenation reactions via optimizing
+the parameters of the double-flame spray pyrolysis. ACS Catal. 2016,
+6 (4), 2372−2381.
+
+ 13928 https://doi.org/10.1021/acscatal.5c04163
+ ACS Catal. 2025, 15, 13916−13928

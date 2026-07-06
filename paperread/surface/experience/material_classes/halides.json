@@ -1,20 +1,49 @@
 {
   "schema_version": "2.0",
   "material_class": "halides",
-  "updated_at": "2026-07-06T07:30:22.264036+00:00",
+  "updated_at": "2026-07-06T15:48:30.312536+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
+    "terms": 1,
+    "known_useful": 1,
     "unknown": 0
   },
-  "keyword_inventory": {},
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "halides",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ]
+  },
   "material_descriptors": {},
   "class_profile": {
     "descriptor_schema": "generic_material_profile",
     "elements": [],
-    "components": [],
+    "components": [
+      {
+        "term": "halides",
+        "count": 3
+      }
+    ],
     "surface_states": [],
     "reaction_families": []
   },
-  "entries": []
+  "entries": [
+    {
+      "term": "halides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
+        "d2ta09361h",
+        "rorrer-et-al-2019-mechanism-and-kinetics-of-isobutene-formation-from-ethanol-and-acetone-over-znxzryoz"
+      ]
+    }
+  ]
 }

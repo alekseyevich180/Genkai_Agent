@@ -1,31 +1,31 @@
 {
   "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-07-06T15:18:47.667038+00:00",
+  "updated_at": "2026-07-06T15:48:30.304613+00:00",
   "summary": {
-    "terms": 42,
-    "known_useful": 15,
-    "unknown": 27
+    "terms": 45,
+    "known_useful": 29,
+    "unknown": 16
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
       {
         "term": "CH3OH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "CO",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "formic acid",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydroxyl species",
@@ -36,23 +36,35 @@
       {
         "term": "Methanol",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "NO",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Water",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "clusters_single_atoms": [
+      {
+        "term": "nanoparticles",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "nanoparticle",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
       {
         "term": "Yes",
         "count": 1,
@@ -84,6 +96,18 @@
     ],
     "dopants_modifiers": [
       {
+        "term": "lattice strain",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Lattice-Strain",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "Ru",
         "count": 1,
         "kind": "known_useful",
@@ -105,6 +129,12 @@
       }
     ],
     "materials": [
+      {
+        "term": "carbides_mxenes",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "CoPt nanoparticles",
         "count": 2,
@@ -138,22 +168,34 @@
       {
         "term": "TiC",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "modeling_keywords": [
       {
+        "term": "nanoparticles",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "nanoparticle",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "electrocatalysis",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalytic",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "active site",
@@ -182,8 +224,8 @@
       {
         "term": "catalytic mechanism",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "catalytic reactions",
@@ -212,26 +254,14 @@
       {
         "term": "electrocatalytic water splitting",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "kinetic characteristics",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
-      },
-      {
-        "term": "nanoparticle",
-        "count": 1,
-        "kind": "known_useful",
-        "research_category": "modeling_tasks"
-      },
-      {
-        "term": "nanoparticles",
-        "count": 1,
-        "kind": "known_useful",
-        "research_category": "modeling_tasks"
       },
       {
         "term": "OER",
@@ -242,8 +272,8 @@
       {
         "term": "oxidation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "theoretical studies",
@@ -256,14 +286,14 @@
       {
         "term": "electrocatalysis",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "electrocatalytic",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "Catalytic Oxidation",
@@ -280,8 +310,8 @@
       {
         "term": "fuel cells",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Shape-dependent electrocatalysis",
@@ -337,7 +367,7 @@
     "material_kinds": [
       {
         "term": "nanoparticle",
-        "count": 10
+        "count": 19
       },
       {
         "term": "sulfide",
@@ -483,6 +513,10 @@
     ],
     "components": [
       {
+        "term": "carbides_mxenes",
+        "count": 21
+      },
+      {
         "term": "CoPt nanoparticles",
         "count": 2
       },
@@ -541,9 +575,53 @@
   },
   "entries": [
     {
+      "term": "carbides_mxenes",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 21,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "nanoparticles",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "Cluster/Single Atom"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "acs_nn_nn-2013-00772s 1..10",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
+      "term": "nanoparticle",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords",
+        "Cluster/Single Atom"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Ru nanoparticles",
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
+      ]
+    },
+    {
       "term": "CH3OH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -556,8 +634,8 @@
     },
     {
       "term": "CO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -584,8 +662,8 @@
     },
     {
       "term": "electrocatalysis",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "modeling_keywords"
@@ -597,8 +675,8 @@
     },
     {
       "term": "electrocatalytic",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords",
         "Reaction Type"
@@ -668,8 +746,8 @@
     },
     {
       "term": "catalytic mechanism",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -752,8 +830,8 @@
     },
     {
       "term": "electrocatalytic water splitting",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -764,8 +842,8 @@
     },
     {
       "term": "formic acid",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -776,8 +854,8 @@
     },
     {
       "term": "fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -847,39 +925,39 @@
       ]
     },
     {
-      "term": "Methanol",
-      "kind": "unknown_high_value",
+      "term": "lattice strain",
+      "kind": "unknown_context",
       "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Lattice-Strain",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Methanol",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
       "count": 1,
       "example_contexts": [
         "Pt nanoparticles"
-      ]
-    },
-    {
-      "term": "nanoparticle",
-      "kind": "known_useful",
-      "research_category": "modeling_tasks",
-      "fields": [
-        "Modeling Keywords"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
-    },
-    {
-      "term": "nanoparticles",
-      "kind": "known_useful",
-      "research_category": "modeling_tasks",
-      "fields": [
-        "modeling_keywords"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
       ]
     },
     {
@@ -896,8 +974,8 @@
     },
     {
       "term": "NO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -920,8 +998,8 @@
     },
     {
       "term": "oxidation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -1016,8 +1094,8 @@
     },
     {
       "term": "TiC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1028,8 +1106,8 @@
     },
     {
       "term": "Water",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],

@@ -1,37 +1,37 @@
 {
   "schema_version": "2.0",
   "material_class": "phosphides_phosphates",
-  "updated_at": "2026-07-06T15:18:47.730287+00:00",
+  "updated_at": "2026-07-06T15:48:30.382506+00:00",
   "summary": {
-    "terms": 27,
-    "known_useful": 7,
-    "unknown": 20
+    "terms": 28,
+    "known_useful": 18,
+    "unknown": 10
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
       {
         "term": "CH3OH",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "CO",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "formic acid",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydrogen",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydroxyl species",
@@ -42,14 +42,14 @@
       {
         "term": "NO",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "water",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "coverage": [
@@ -90,6 +90,12 @@
     ],
     "materials": [
       {
+        "term": "phosphides_phosphates",
+        "count": 16,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "CoPt nanoparticles",
         "count": 2,
         "kind": "known_useful",
@@ -98,8 +104,8 @@
       {
         "term": "copper",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "phosphides",
@@ -118,8 +124,8 @@
       {
         "term": "electrocatalysis",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "adsorbate_landscape",
@@ -148,8 +154,8 @@
       {
         "term": "oxidation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "surface_functionalization",
@@ -162,14 +168,14 @@
       {
         "term": "electrocatalysis",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "fuel cells",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "hydrogen evolution reaction (HER)",
@@ -323,6 +329,10 @@
     ],
     "components": [
       {
+        "term": "phosphides_phosphates",
+        "count": 16
+      },
+      {
         "term": "CoPt nanoparticles",
         "count": 2
       },
@@ -365,9 +375,23 @@
   },
   "entries": [
     {
+      "term": "phosphides_phosphates",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 16,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
       "term": "electrocatalysis",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords",
         "applications"
@@ -380,8 +404,8 @@
     },
     {
       "term": "CH3OH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -394,8 +418,8 @@
     },
     {
       "term": "CO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -446,8 +470,8 @@
     },
     {
       "term": "copper",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -470,8 +494,8 @@
     },
     {
       "term": "formic acid",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -482,8 +506,8 @@
     },
     {
       "term": "fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -506,8 +530,8 @@
     },
     {
       "term": "hydrogen",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products"
       ],
@@ -566,8 +590,8 @@
     },
     {
       "term": "NO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -590,8 +614,8 @@
     },
     {
       "term": "oxidation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -686,8 +710,8 @@
     },
     {
       "term": "water",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "products"
       ],

@@ -1,37 +1,5 @@
 # Unrecognized Surface Terms
 
-## Au2–Ag2
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
-- Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Au4
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
-- Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Ag4
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Ag-Au_on_TiO2_conditions_input_surface_relations.jsonl`
-- Context: On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Ag nanospheres
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`
-- Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## photoelectrochemical
 
 - Status: candidate
@@ -40,10 +8,10 @@
 - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## PEC
+## Ag nanospheres
 
 - Status: candidate
-- Category: modeling_keywords
+- Category: clusters
 - Source: `tests/paperread_batch_experience/Ag-exp_conditions_input_surface_relations.jsonl`
 - Context: Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
@@ -57,14 +25,6 @@
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## g-C3N4
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Ag-exp_conditions_input_table.csv`
-- Context: Ag/g-C3N4
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## PEC
 
 - Status: candidate
 - Category: Modeling Keywords
@@ -112,14 +72,6 @@
 - Context: Au(100)
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## AgSA
-
-- Status: candidate
-- Category: single_atoms
-- Source: `tests/paperread_batch_experience/Ag_CoNiOOH_conditions_input_surface_relations.jsonl`
-- Context: Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## black phosphorus
 
 - Status: candidate
@@ -136,6 +88,14 @@
 - Context: Black Phosphorus Nanosheets
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
+## single-atom Au
+
+- Status: candidate
+- Category: single_atoms
+- Source: `tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
+- Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
 ## Hubbard-U approach
 
 - Status: candidate
@@ -148,14 +108,6 @@
 
 - Status: candidate
 - Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
-- Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## single-atom Au
-
-- Status: candidate
-- Category: single_atoms
 - Source: `tests/paperread_batch_experience/Au_NiFeOOH_conditions_input_surface_relations.jsonl`
 - Context: Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
@@ -184,22 +136,6 @@
 - Context: NiFe LDH
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## electrocatalyst
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Bi-NiO_conditions_input_surface_relations.jsonl`
-- Context: High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## NiO
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Bi-NiO_conditions_input_table.csv`
-- Context: Nickel–Bismuth Oxide
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## electronic structure
 
 - Status: candidate
@@ -224,22 +160,6 @@
 - Context: CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## electrocatalyst
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Cd-DFT_conditions_input_table.csv`
-- Context: CdN4C0-gra
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalyst
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Cd-exp_conditions_input_surface_relations.jsonl`
-- Context: An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## nanoporous
 
 - Status: candidate
@@ -254,22 +174,6 @@
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/Cd-exp_conditions_input_table.csv`
 - Context: Ni(Fe)
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Co nanochains
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
-- Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## CoO nanocubes
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
-- Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## phase evolution
@@ -296,12 +200,20 @@
 - Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## CoO
+## Co nanochains
 
 - Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Co-experiment_conditions_input_table.csv`
-- Context: Co nanochains
+- Category: clusters
+- Source: `tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+- Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## CoO nanocubes
+
+- Status: candidate
+- Category: clusters
+- Source: `tests/paperread_batch_experience/Co-experiment_conditions_input_surface_relations.jsonl`
+- Context: Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## phase evolution
@@ -320,6 +232,14 @@
 - Context: CoO/Co
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
+## monochain CrO3
+
+- Status: candidate
+- Category: modifiers
+- Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
+- Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
 ## five-coordinated Cr5c
 
 - Status: candidate
@@ -332,22 +252,6 @@
 
 - Status: candidate
 - Category: surface_terminations
-- Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
-- Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## catalytic mechanism
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
-- Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## monochain CrO3
-
-- Status: candidate
-- Category: modifiers
 - Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_surface_relations.jsonl`
 - Context: Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
@@ -368,36 +272,12 @@
 - Context: Cr2O3
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Cr2O3
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
-- Context: Cr2O3
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## NO oxidation
 
 - Status: candidate
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/Cr2O3_conditions_input_table.csv`
 - Context: Cr2O3
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
-- Context: d0qi01060j 234..272 ++
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## water splitting
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Cu-exp_conditions_input_surface_relations.jsonl`
-- Context: d0qi01060j 234..272 ++
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## catalyst development
@@ -440,14 +320,6 @@
 - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## electrocatalytic water splitting
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Hg-exp_conditions_input_surface_relations.jsonl`
-- Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## alkaline water electrolysis
 
 - Status: candidate
@@ -456,60 +328,12 @@
 - Context: Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Hg/HgO
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`
-- Context: Hg/HgO
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## alkaline electrolyte
 
 - Status: candidate
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/Hg-exp_conditions_input_table.csv`
 - Context: Hg/HgO
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Mn-exp_conditions_input_surface_relations.jsonl`
-- Context: Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## MoS2
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
-- Context: Mo–N/C@MoS2
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Electrocatalyst
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/MoNCMoS2-exp_conditions_input_table.csv`
-- Context: Mo–N/C@MoS2
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
-- Context: rsc_cp_b803956a_auto 3722..3730
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## oxidation
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Ni_Pt_Ag_metal_DFT_conditions_input_surface_relations.jsonl`
-- Context: rsc_cp_b803956a_auto 3722..3730
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## Full
@@ -550,46 +374,6 @@
 - Category: Coverage
 - Source: `tests/paperread_batch_experience/Pd-DFT_conditions_input_table.csv`
 - Context: Pd4, Pd6, Pd17 clusters
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## oxygen evolution reaction
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Pd-DFT_conditions_input_table.csv`
-- Context: Pd4, Pd6, Pd17 clusters
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Pd4
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
-- Context: acs_nn_nn-2013-00772s 1..10
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Pd6
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
-- Context: acs_nn_nn-2013-00772s 1..10
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Pd17
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
-- Context: acs_nn_nn-2013-00772s 1..10
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Pd-DFT_conditions_trimmed_surface_relations.jsonl`
-- Context: acs_nn_nn-2013-00772s 1..10
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## water oxidation
@@ -656,14 +440,6 @@
 - Context: Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## oxygen reduction reaction
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
-- Context: Pt10Pb/C
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## activation energy
 
 - Status: candidate
@@ -678,14 +454,6 @@
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/Pt-DFT_conditions_input_table.csv`
 - Context: Pt10Pb/C
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Pt_Bi_DFT_conditions_input_surface_relations.jsonl`
-- Context: Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## bimetallic catalysts
@@ -720,22 +488,6 @@
 - Context: Pt-Bi Alloy
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Rh–Rh2O3-NPs
-
-- Status: candidate
-- Category: clusters
-- Source: `tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
-- Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysis
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
-- Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## hydrogen evolution
 
 - Status: candidate
@@ -750,22 +502,6 @@
 - Category: modeling_keywords
 - Source: `tests/paperread_batch_experience/Rh-exp_conditions_input_surface_relations.jsonl`
 - Context: Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Rh2O3
-
-- Status: candidate
-- Category: Adsorption Site
-- Source: `tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
-- Context: Rh–Rh2O3-NPs/C
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Rh2O3
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Rh-exp_conditions_input_table.csv`
-- Context: Rh–Rh2O3-NPs/C
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## Hads
@@ -822,22 +558,6 @@
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/Ru-DFT_conditions_input_table.csv`
 - Context: RuO2
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalytic
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
-- Context: cs3003098 1..8
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## water splitting
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/Ru-Ir-Pt-exp_conditions_input_surface_relations.jsonl`
-- Context: cs3003098 1..8
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## anodic oxidation
@@ -936,22 +656,6 @@
 - Context: Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## ZnO
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/ZnO-DFT_conditions_input_table.csv`
-- Context: ZnO
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## electrocatalysts
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/d1nr02235k_conditions_input_surface_relations.jsonl`
-- Context: d1nr02235k 12885..12895 ++
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## trifunctional
 
 - Status: candidate
@@ -1016,14 +720,6 @@
 - Context: jp306303y 1..6
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Co3O4
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`
-- Context: Co3O4
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## β-CoOOH
 
 - Status: candidate
@@ -1038,14 +734,6 @@
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/importance-of-correlation-in-determining-electrocatalytic-oxygen-evolution-activity-on-cobalt-oxides_conditions_input_table.csv`
 - Context: Co3O4
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## octahedral Co and O ions (B-layer)
-
-- Status: candidate
-- Category: surface_terminations
-- Source: `tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
-- Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## Hubbard U
@@ -1064,12 +752,12 @@
 - Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Co3O4
+## octahedral Co and O ions (B-layer)
 
 - Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_table.csv`
-- Context: Co3O4
+- Category: surface_terminations
+- Source: `tests/paperread_batch_experience/influence-of-fe-and-ni-doping-on-the-oer-performance-at-the-co3o4(001)-surface-insights-from-dft-u-calculations_conditions_input_surface_relations.jsonl`
+- Context: Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## doping
@@ -1192,18 +880,18 @@
 - Context: Combining theory and experiment in electrocatalysis: Insights into materials design
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## electrocatalytic activity
-
-- Status: candidate
-- Category: modeling_keywords
-- Source: `tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
-- Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## single nickel atoms
 
 - Status: candidate
 - Category: single_atoms
+- Source: `tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
+- Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## electrocatalytic activity
+
+- Status: candidate
+- Category: modeling_keywords
 - Source: `tests/paperread_batch_experience/test2_conditions_input_surface_relations.jsonl`
 - Context: High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
@@ -1248,14 +936,6 @@
 - Context: The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## sodium
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/test_conditions_input_table.csv`
-- Context: Sn SAs/G-Na
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## dendrite
 
 - Status: candidate
@@ -1286,5 +966,69 @@
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/theoretical-investigation-of-the-activity-of-cobalt-oxides-for-the-electrochemical-oxidation-of-water_conditions_input_table.csv`
 - Context: Co oxides
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## NixPy
+
+- Status: candidate
+- Category: Modeling Keywords
+- Source: `tests/paperread_papers2_experience/Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow_conditions_input_table.csv`
+- Context: Mo-Ni3S2/NixPy/NF electrode
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## hollow nanorods
+
+- Status: candidate
+- Category: Modeling Keywords
+- Source: `tests/paperread_papers2_experience/Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow_conditions_input_table.csv`
+- Context: Mo-Ni3S2/NixPy/NF electrode
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## carbon doping
+
+- Status: candidate
+- Category: modeling_keywords
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_surface_relations.jsonl`
+- Context: Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## oxygen vacancies
+
+- Status: candidate
+- Category: modeling_keywords
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_surface_relations.jsonl`
+- Context: Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## gas sensor
+
+- Status: candidate
+- Category: modeling_keywords
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_surface_relations.jsonl`
+- Context: Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## ionosorbed oxygen species
+
+- Status: candidate
+- Category: adsorption_sites
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_surface_relations.jsonl`
+- Context: Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## NixPy
+
+- Status: candidate
+- Category: Modeling Keywords
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_table.csv`
+- Context: Mo-Ni3S2/NixPy/NF electrode
+- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
+
+## hollow nanorods
+
+- Status: candidate
+- Category: Modeling Keywords
+- Source: `tests/paperread_papers2_experience/surface_conditions_input_table.csv`
+- Context: Mo-Ni3S2/NixPy/NF electrode
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 

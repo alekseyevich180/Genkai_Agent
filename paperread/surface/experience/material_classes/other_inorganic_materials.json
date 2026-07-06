@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "other_inorganic_materials",
-  "updated_at": "2026-07-06T15:18:47.716081+00:00",
+  "updated_at": "2026-07-06T15:48:30.364351+00:00",
   "summary": {
-    "terms": 44,
-    "known_useful": 7,
-    "unknown": 37
+    "terms": 53,
+    "known_useful": 32,
+    "unknown": 21
   },
   "keyword_inventory": {
     "active_sites": [
@@ -18,8 +18,8 @@
       {
         "term": "Mx-Ny-C",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "active sites",
@@ -50,20 +50,20 @@
       {
         "term": "NO",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "H2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OH*",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "ONOO*",
@@ -80,8 +80,8 @@
       {
         "term": "Oxygen",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "compositions": [
@@ -146,6 +146,30 @@
     ],
     "materials": [
       {
+        "term": "surface_functionalized_materials",
+        "count": 12,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ti",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Zr",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "single_atom_catalysts",
+        "count": 5,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "CdN4C0-gra",
         "count": 2,
         "kind": "unknown_high_value",
@@ -154,8 +178,14 @@
       {
         "term": "Cr2O3",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Mo",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "CdN0C4-gra",
@@ -164,10 +194,22 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Ce",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
         "term": "gold",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Hf",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Hg",
@@ -178,26 +220,32 @@
       {
         "term": "HgO",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "KOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Mn",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Mn3O4",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NaOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Noble metal",
@@ -214,16 +262,16 @@
       {
         "term": "palladium",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "reactions": [
       {
         "term": "Electrocatalysis",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "clean energy technologies",
@@ -234,8 +282,8 @@
       {
         "term": "fuel cells",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "fuel generation",
@@ -264,17 +312,23 @@
       {
         "term": "oxygen evolution reaction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "oxygen reduction reaction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "supports_surfaces": [
+      {
+        "term": "Interface",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "Cr2O3(001)",
         "count": 1,
@@ -300,6 +354,14 @@
         "count": 8
       },
       {
+        "term": "Ti",
+        "count": 7
+      },
+      {
+        "term": "Zr",
+        "count": 6
+      },
+      {
         "term": "C",
         "count": 5
       },
@@ -308,11 +370,11 @@
         "count": 5
       },
       {
-        "term": "Cr",
-        "count": 4
+        "term": "Mn",
+        "count": 5
       },
       {
-        "term": "Mn",
+        "term": "Cr",
         "count": 4
       },
       {
@@ -328,6 +390,18 @@
         "count": 2
       },
       {
+        "term": "Mo",
+        "count": 2
+      },
+      {
+        "term": "Ce",
+        "count": 1
+      },
+      {
+        "term": "Hf",
+        "count": 1
+      },
+      {
         "term": "K",
         "count": 1
       },
@@ -339,16 +413,32 @@
     "material_kinds": [
       {
         "term": "surface",
-        "count": 2
+        "count": 21
       }
     ],
     "component_compounds": [
+      {
+        "term": "surface_functionalized_materials",
+        "count": 12
+      },
+      {
+        "term": "Ti",
+        "count": 7
+      },
+      {
+        "term": "Zr",
+        "count": 6
+      },
       {
         "term": "CdN4C0-gra",
         "count": 2
       },
       {
         "term": "Cr2O3",
+        "count": 2
+      },
+      {
+        "term": "Mo",
         "count": 2
       },
       {
@@ -364,6 +454,10 @@
         "count": 1
       },
       {
+        "term": "Ce",
+        "count": 1
+      },
+      {
         "term": "Cr2O3(001",
         "count": 1
       },
@@ -376,6 +470,10 @@
         "count": 1
       },
       {
+        "term": "Hf",
+        "count": 1
+      },
+      {
         "term": "Hg",
         "count": 1
       },
@@ -385,6 +483,10 @@
       },
       {
         "term": "KOH",
+        "count": 1
+      },
+      {
+        "term": "Mn",
         "count": 1
       },
       {
@@ -430,6 +532,14 @@
     ],
     "element_sets": [
       {
+        "term": "{Ti}",
+        "count": 7
+      },
+      {
+        "term": "{Zr}",
+        "count": 6
+      },
+      {
         "term": "{Cr, O}",
         "count": 4
       },
@@ -454,11 +564,23 @@
         "count": 2
       },
       {
+        "term": "{Mo}",
+        "count": 2
+      },
+      {
+        "term": "{Ce}",
+        "count": 1
+      },
+      {
         "term": "{H, K, O}",
         "count": 1
       },
       {
         "term": "{H, Na, O}",
+        "count": 1
+      },
+      {
+        "term": "{Hf}",
         "count": 1
       },
       {
@@ -475,6 +597,10 @@
       },
       {
         "term": "{Mn, O}",
+        "count": 1
+      },
+      {
+        "term": "{Mn}",
         "count": 1
       },
       {
@@ -495,6 +621,14 @@
         "count": 8
       },
       {
+        "term": "Ti",
+        "count": 7
+      },
+      {
+        "term": "Zr",
+        "count": 6
+      },
+      {
         "term": "C",
         "count": 5
       },
@@ -503,11 +637,11 @@
         "count": 5
       },
       {
-        "term": "Cr",
-        "count": 4
+        "term": "Mn",
+        "count": 5
       },
       {
-        "term": "Mn",
+        "term": "Cr",
         "count": 4
       },
       {
@@ -523,6 +657,18 @@
         "count": 2
       },
       {
+        "term": "Mo",
+        "count": 2
+      },
+      {
+        "term": "Ce",
+        "count": 1
+      },
+      {
+        "term": "Hf",
+        "count": 1
+      },
+      {
         "term": "K",
         "count": 1
       },
@@ -533,6 +679,22 @@
     ],
     "components": [
       {
+        "term": "surface_functionalized_materials",
+        "count": 12
+      },
+      {
+        "term": "Ti",
+        "count": 7
+      },
+      {
+        "term": "Zr",
+        "count": 6
+      },
+      {
+        "term": "single_atom_catalysts",
+        "count": 5
+      },
+      {
         "term": "CdN4C0-gra",
         "count": 2
       },
@@ -541,7 +703,15 @@
         "count": 2
       },
       {
+        "term": "Mo",
+        "count": 2
+      },
+      {
         "term": "CdN0C4-gra",
+        "count": 1
+      },
+      {
+        "term": "Ce",
         "count": 1
       },
       {
@@ -557,6 +727,10 @@
         "count": 1
       },
       {
+        "term": "Hf",
+        "count": 1
+      },
+      {
         "term": "Hg",
         "count": 1
       },
@@ -569,6 +743,10 @@
         "count": 1
       },
       {
+        "term": "Mn",
+        "count": 1
+      },
+      {
         "term": "Mn (III) ions",
         "count": 1
       },
@@ -578,30 +756,6 @@
       },
       {
         "term": "morphology: yellow",
-        "count": 1
-      },
-      {
-        "term": "NaOH",
-        "count": 1
-      },
-      {
-        "term": "Noble metal",
-        "count": 1
-      },
-      {
-        "term": "non-precious metal catalysts",
-        "count": 1
-      },
-      {
-        "term": "palladium",
-        "count": 1
-      },
-      {
-        "term": "phase: solid",
-        "count": 1
-      },
-      {
-        "term": "single crystal",
         "count": 1
       }
     ],
@@ -647,6 +801,76 @@
   },
   "entries": [
     {
+      "term": "surface_functionalized_materials",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 12,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "Interface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Ti",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
+      ]
+    },
+    {
+      "term": "Zr",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
+        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
+        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
+      ]
+    },
+    {
+      "term": "single_atom_catalysts",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
+        "rorrer-et-al-2019-mechanism-and-kinetics-of-isobutene-formation-from-ethanol-and-acetone-over-znxzryoz"
+      ]
+    },
+    {
       "term": "CdN4C0-gra",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -662,8 +886,8 @@
     },
     {
       "term": "Cr2O3",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -690,8 +914,8 @@
     },
     {
       "term": "Electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -702,9 +926,22 @@
       ]
     },
     {
+      "term": "Mo",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
+      ]
+    },
+    {
       "term": "Mx-Ny-C",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "active_sites",
         "Active Site"
@@ -717,8 +954,8 @@
     },
     {
       "term": "NO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates",
         "Adsorbate/Reactant"
@@ -775,6 +1012,18 @@
       "count": 1,
       "example_contexts": [
         "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
+      ]
+    },
+    {
+      "term": "Ce",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
       ]
     },
     {
@@ -851,8 +1100,8 @@
     },
     {
       "term": "fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -875,8 +1124,8 @@
     },
     {
       "term": "gold",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -899,14 +1148,26 @@
     },
     {
       "term": "H2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
       "count": 1,
       "example_contexts": [
         "CdN4C0-gra"
+      ]
+    },
+    {
+      "term": "Hf",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhang-et-al-2021-mechanism-and-kinetics-of-acetone-conversion-to-isobutene-over-isolated-hf-sites-grafted-to-silicalite"
       ]
     },
     {
@@ -923,8 +1184,8 @@
     },
     {
       "term": "HgO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -947,14 +1208,26 @@
     },
     {
       "term": "KOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
       "count": 1,
       "example_contexts": [
         "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
+      ]
+    },
+    {
+      "term": "Mn",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
       ]
     },
     {
@@ -995,8 +1268,8 @@
     },
     {
       "term": "Mn3O4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1031,8 +1304,8 @@
     },
     {
       "term": "NaOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1079,8 +1352,8 @@
     },
     {
       "term": "OH*",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -1115,8 +1388,8 @@
     },
     {
       "term": "Oxygen",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -1127,8 +1400,8 @@
     },
     {
       "term": "oxygen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -1139,8 +1412,8 @@
     },
     {
       "term": "oxygen reduction reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications"
       ],
@@ -1151,8 +1424,8 @@
     },
     {
       "term": "palladium",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],

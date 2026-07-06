@@ -1,0 +1,601 @@
+{
+  "schema_version": "2.0",
+  "material_class": "oxides",
+  "updated_at": "2026-07-06T15:24:50.013676+00:00",
+  "summary": {
+    "terms": 20,
+    "known_useful": 6,
+    "unknown": 14
+  },
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "surface active sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "C2H5OH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ethanol (C2H5OH)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "adsorption_sites": [
+      {
+        "term": "ionosorbed oxygen species",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "C-TiO2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "anatase phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "carbon doping",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "C",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "facets": [
+      {
+        "term": "(101)",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
+    "materials": [
+      {
+        "term": "C-TiO2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "TiO2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "C",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "oxygen vacancies",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "TiO2",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "active site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "gas sensor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "Adsorption Test",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "breath analyzers",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ethanol gas sensor",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "food quality monitoring",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Surface Reaction",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "TiO2(101)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "oxygen vacancies",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "C",
+        "count": 7
+      },
+      {
+        "term": "O",
+        "count": 7
+      },
+      {
+        "term": "Ti",
+        "count": 5
+      },
+      {
+        "term": "H",
+        "count": 2
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "oxide",
+        "count": 5
+      },
+      {
+        "term": "surface",
+        "count": 3
+      },
+      {
+        "term": "carbon_material",
+        "count": 1
+      },
+      {
+        "term": "nitride",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "C",
+        "count": 3
+      },
+      {
+        "term": "C-TiO2",
+        "count": 2
+      },
+      {
+        "term": "TiO2",
+        "count": 2
+      },
+      {
+        "term": "C2H5OH",
+        "count": 1
+      },
+      {
+        "term": "carbon doping",
+        "count": 1
+      },
+      {
+        "term": "Ethanol (C2H5OH",
+        "count": 1
+      },
+      {
+        "term": "surface active sites",
+        "count": 1
+      },
+      {
+        "term": "Surface Reaction",
+        "count": 1
+      },
+      {
+        "term": "TiO2(101",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{C}",
+        "count": 3
+      },
+      {
+        "term": "{O, Ti}",
+        "count": 3
+      },
+      {
+        "term": "{C, H, O}",
+        "count": 2
+      },
+      {
+        "term": "{C, O, Ti}",
+        "count": 2
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "oxide_profile",
+    "elements": [
+      {
+        "term": "C",
+        "count": 7
+      },
+      {
+        "term": "O",
+        "count": 7
+      },
+      {
+        "term": "Ti",
+        "count": 5
+      },
+      {
+        "term": "H",
+        "count": 2
+      }
+    ],
+    "oxide_components": [
+      {
+        "term": "C-TiO2",
+        "count": 2
+      },
+      {
+        "term": "TiO2",
+        "count": 2
+      },
+      {
+        "term": "carbon doping",
+        "count": 1
+      }
+    ],
+    "crystal_or_spacegroup_terms": [],
+    "exposed_surfaces": [
+      {
+        "term": "(101)",
+        "count": 2
+      },
+      {
+        "term": "TiO2(101)",
+        "count": 1
+      }
+    ],
+    "defect_or_termination_states": [
+      {
+        "term": "oxygen vacancies",
+        "count": 2
+      }
+    ],
+    "reaction_families": [
+      {
+        "term": "Adsorption Test",
+        "count": 1
+      },
+      {
+        "term": "breath analyzers",
+        "count": 1
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1
+      },
+      {
+        "term": "ethanol gas sensor",
+        "count": 1
+      },
+      {
+        "term": "food quality monitoring",
+        "count": 1
+      },
+      {
+        "term": "Surface Reaction",
+        "count": 1
+      }
+    ]
+  },
+  "entries": [
+    {
+      "term": "C",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Dopant/Modifier",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics",
+        "TiO2"
+      ]
+    },
+    {
+      "term": "(101)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets",
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics",
+        "TiO2"
+      ]
+    },
+    {
+      "term": "C-TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics",
+        "TiO2"
+      ]
+    },
+    {
+      "term": "oxygen vacancies",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "defects",
+        "modeling_keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "Adsorption Test",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "anatase phase",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "breath analyzers",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "C2H5OH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "carbon doping",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "Catalyst Preparation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "Ethanol (C2H5OH)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "ethanol gas sensor",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "food quality monitoring",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "gas sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "ionosorbed oxygen species",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorption_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "surface active sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    },
+    {
+      "term": "Surface Reaction",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "TiO2(101)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
+      ]
+    }
+  ]
+}

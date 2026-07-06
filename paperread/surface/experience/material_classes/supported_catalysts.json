@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-07-06T15:18:47.735809+00:00",
+  "updated_at": "2026-07-06T15:48:30.388439+00:00",
   "summary": {
-    "terms": 86,
-    "known_useful": 33,
-    "unknown": 53
+    "terms": 94,
+    "known_useful": 65,
+    "unknown": 29
   },
   "keyword_inventory": {
     "active_sites": [
@@ -30,8 +30,8 @@
       {
         "term": "NiCoOOH",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       },
       {
         "term": "Rh2O3 sites",
@@ -42,16 +42,22 @@
     ],
     "adsorbates_reactants": [
       {
+        "term": "H2O",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "OER",
         "count": 6,
         "kind": "known_useful",
         "research_category": "adsorption_reaction"
       },
       {
-        "term": "H2O",
+        "term": "H2",
         "count": 5,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "HER",
@@ -60,16 +66,16 @@
         "research_category": "modeling_tasks"
       },
       {
-        "term": "H2",
-        "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
         "term": "O2",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "KOH",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "ORR",
@@ -92,8 +98,8 @@
       {
         "term": "H2O/OH",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Na",
@@ -110,8 +116,8 @@
       {
         "term": "OH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OH⁻",
@@ -122,14 +128,14 @@
       {
         "term": "OH−",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Zn–Air",
@@ -167,6 +173,12 @@
       },
       {
         "term": "Au",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Mo-doped Ni3S2/NixPy",
         "count": 2,
         "kind": "known_useful",
         "research_category": "other_useful_information"
@@ -240,14 +252,14 @@
       {
         "term": "Rh2O3",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "coverage": [
@@ -284,13 +296,31 @@
         "research_category": "other_useful_information"
       },
       {
+        "term": "Mo",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "Pb",
         "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Metal-Support Interactions",
+        "count": 1,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       }
     ],
     "materials": [
+      {
+        "term": "supported_catalysts",
+        "count": 21,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "Ag/g-C3N4",
         "count": 2,
@@ -300,44 +330,50 @@
       {
         "term": "Hg/HgO",
         "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Mo-Ni3S2/NixPy/NF electrode",
+        "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
         "term": "Mo–N/C@MoS2",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pt10Pb/C",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Au–Ag/TiO2",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "CoO/Co",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiCo LDH/CC",
@@ -354,8 +390,8 @@
       {
         "term": "Pt10Ni/C",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "PtxRu1-x/Ru(0001)",
@@ -366,8 +402,8 @@
       {
         "term": "Rh–Rh2O3-NPs/C",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "sAu/NiFe LDH",
@@ -402,6 +438,12 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "Mo",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "adsorbate",
         "count": 2,
         "kind": "known_useful",
@@ -414,7 +456,19 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "bifunctional electrocatalysts",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "Hg/HgO",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "hollow nanorods",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -422,8 +476,8 @@
       {
         "term": "oxygen reduction reaction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "activation energy",
@@ -452,8 +506,8 @@
       {
         "term": "Electrocatalyst",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "Habs",
@@ -482,8 +536,8 @@
       {
         "term": "PEC",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "planar deposition",
@@ -494,8 +548,8 @@
       {
         "term": "sodium",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "surface",
@@ -518,10 +572,16 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "Electrocatalysis",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
         "term": "Electrochemical",
         "count": 3,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "ORR",
@@ -532,17 +592,11 @@
       {
         "term": "oxygen reduction reaction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Catalyst Preparation",
-        "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "Electrocatalysis",
         "count": 1,
         "kind": "unknown_context",
         "research_category": "unknown_information"
@@ -562,8 +616,8 @@
       {
         "term": "Oxygen Reduction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Zn–Air Batteries",
@@ -627,11 +681,11 @@
     "elements": [
       {
         "term": "O",
-        "count": 33
+        "count": 37
       },
       {
         "term": "H",
-        "count": 20
+        "count": 26
       },
       {
         "term": "C",
@@ -642,15 +696,23 @@
         "count": 10
       },
       {
-        "term": "Au",
-        "count": 6
-      },
-      {
-        "term": "N",
-        "count": 6
+        "term": "Mo",
+        "count": 10
       },
       {
         "term": "Ni",
+        "count": 10
+      },
+      {
+        "term": "N",
+        "count": 8
+      },
+      {
+        "term": "S",
+        "count": 8
+      },
+      {
+        "term": "Au",
         "count": 6
       },
       {
@@ -670,10 +732,6 @@
         "count": 4
       },
       {
-        "term": "S",
-        "count": 4
-      },
-      {
         "term": "Sn",
         "count": 4
       },
@@ -686,6 +744,10 @@
         "count": 3
       },
       {
+        "term": "K",
+        "count": 3
+      },
+      {
         "term": "Na",
         "count": 3
       },
@@ -694,11 +756,11 @@
         "count": 2
       },
       {
-        "term": "Fe",
+        "term": "F",
         "count": 2
       },
       {
-        "term": "Mo",
+        "term": "Fe",
         "count": 2
       },
       {
@@ -722,10 +784,6 @@
         "count": 1
       },
       {
-        "term": "K",
-        "count": 1
-      },
-      {
         "term": "P",
         "count": 1
       }
@@ -733,7 +791,7 @@
     "material_kinds": [
       {
         "term": "supported_catalyst",
-        "count": 33
+        "count": 59
       },
       {
         "term": "surface",
@@ -778,15 +836,23 @@
         "count": 9
       },
       {
+        "term": "H2O",
+        "count": 8
+      },
+      {
         "term": "C",
         "count": 7
       },
       {
-        "term": "H2O",
-        "count": 6
+        "term": "H2",
+        "count": 5
       },
       {
         "term": "Au",
+        "count": 4
+      },
+      {
+        "term": "Mo",
         "count": 4
       },
       {
@@ -795,10 +861,6 @@
       },
       {
         "term": "g-C3N4",
-        "count": 3
-      },
-      {
-        "term": "H2",
         "count": 3
       },
       {
@@ -826,11 +888,27 @@
         "count": 2
       },
       {
+        "term": "KOH",
+        "count": 2
+      },
+      {
+        "term": "Mo-doped Ni3S2",
+        "count": 2
+      },
+      {
+        "term": "Mo-Ni3S2",
+        "count": 2
+      },
+      {
         "term": "MoS2",
         "count": 2
       },
       {
         "term": "Mo–N",
+        "count": 2
+      },
+      {
+        "term": "NF electrode",
         "count": 2
       },
       {
@@ -1009,22 +1087,30 @@
     "element_sets": [
       {
         "term": "{H, O}",
-        "count": 14
+        "count": 16
       },
       {
         "term": "{Ag}",
         "count": 6
       },
       {
+        "term": "{H}",
+        "count": 5
+      },
+      {
         "term": "{O}",
         "count": 5
       },
       {
-        "term": "{Hg, O}",
+        "term": "{Mo}",
+        "count": 4
+      },
+      {
+        "term": "{H, K, O}",
         "count": 3
       },
       {
-        "term": "{H}",
+        "term": "{Hg, O}",
         "count": 3
       },
       {
@@ -1049,6 +1135,14 @@
       },
       {
         "term": "{C, Pb, Pt}",
+        "count": 2
+      },
+      {
+        "term": "{F, Mo, N, Ni, S}",
+        "count": 2
+      },
+      {
+        "term": "{Mo, Ni, S}",
         "count": 2
       },
       {
@@ -1136,10 +1230,6 @@
         "count": 1
       },
       {
-        "term": "{H, K, O}",
-        "count": 1
-      },
-      {
         "term": "{H, Na, O}",
         "count": 1
       },
@@ -1170,11 +1260,11 @@
     "elements": [
       {
         "term": "O",
-        "count": 33
+        "count": 37
       },
       {
         "term": "H",
-        "count": 20
+        "count": 26
       },
       {
         "term": "C",
@@ -1185,15 +1275,23 @@
         "count": 10
       },
       {
-        "term": "Au",
-        "count": 6
-      },
-      {
-        "term": "N",
-        "count": 6
+        "term": "Mo",
+        "count": 10
       },
       {
         "term": "Ni",
+        "count": 10
+      },
+      {
+        "term": "N",
+        "count": 8
+      },
+      {
+        "term": "S",
+        "count": 8
+      },
+      {
+        "term": "Au",
         "count": 6
       },
       {
@@ -1213,10 +1311,6 @@
         "count": 4
       },
       {
-        "term": "S",
-        "count": 4
-      },
-      {
         "term": "Sn",
         "count": 4
       },
@@ -1229,6 +1323,10 @@
         "count": 3
       },
       {
+        "term": "K",
+        "count": 3
+      },
+      {
         "term": "Na",
         "count": 3
       },
@@ -1237,11 +1335,11 @@
         "count": 2
       },
       {
-        "term": "Fe",
+        "term": "F",
         "count": 2
       },
       {
-        "term": "Mo",
+        "term": "Fe",
         "count": 2
       },
       {
@@ -1265,10 +1363,6 @@
         "count": 1
       },
       {
-        "term": "K",
-        "count": 1
-      },
-      {
         "term": "P",
         "count": 1
       }
@@ -1276,10 +1370,14 @@
     "material_kind": [
       {
         "term": "supported_catalyst",
-        "count": 86
+        "count": 94
       }
     ],
     "support_components": [
+      {
+        "term": "supported_catalysts",
+        "count": 21
+      },
       {
         "term": "MoS2",
         "count": 2
@@ -1367,6 +1465,10 @@
         "count": 6
       },
       {
+        "term": "Mo",
+        "count": 4
+      },
+      {
         "term": "Ag",
         "count": 2
       },
@@ -1403,36 +1505,32 @@
         "count": 2
       },
       {
+        "term": "Mo-doped Ni3S2",
+        "count": 2
+      },
+      {
+        "term": "Mo-doped Ni3S2",
+        "count": 2
+      },
+      {
+        "term": "Mo-doped Ni3S2/NixPy",
+        "count": 2
+      },
+      {
+        "term": "Mo-Ni3S2",
+        "count": 2
+      },
+      {
+        "term": "Mo-Ni3S2/NixPy/NF electrode",
+        "count": 2
+      },
+      {
         "term": "Mo–N",
         "count": 2
       },
       {
         "term": "Mo–N/C@MoS2",
         "count": 2
-      },
-      {
-        "term": "Pt10Pb",
-        "count": 2
-      },
-      {
-        "term": "Pt10Pb/C",
-        "count": 2
-      },
-      {
-        "term": "Sn",
-        "count": 2
-      },
-      {
-        "term": "Sn",
-        "count": 2
-      },
-      {
-        "term": "0.4 wt % sAu",
-        "count": 1
-      },
-      {
-        "term": "Ag",
-        "count": 1
       }
     ],
     "exposed_surfaces": [
@@ -1456,6 +1554,10 @@
         "count": 4
       },
       {
+        "term": "Electrocatalysis",
+        "count": 3
+      },
+      {
         "term": "Electrochemical",
         "count": 3
       },
@@ -1469,10 +1571,6 @@
       },
       {
         "term": "Catalyst Preparation",
-        "count": 1
-      },
-      {
-        "term": "Electrocatalysis",
         "count": 1
       },
       {
@@ -1494,6 +1592,36 @@
     ]
   },
   "entries": [
+    {
+      "term": "supported_catalysts",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 21,
+      "example_contexts": [
+        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
+        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
+        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant",
+        "products",
+        "Product"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "Hg/HgO",
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ]
+    },
     {
       "term": "Ag",
       "kind": "known_useful",
@@ -1542,19 +1670,18 @@
       ]
     },
     {
-      "term": "H2O",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "H2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
-        "Adsorbate/Reactant",
-        "products",
-        "Product"
+        "Product",
+        "Adsorbate/Reactant"
       ],
       "count": 5,
       "example_contexts": [
         "Hg/HgO",
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
+        "Rh–Rh2O3-NPs/C",
+        "Mo-Ni3S2/NixPy/NF electrode"
       ]
     },
     {
@@ -1575,9 +1702,35 @@
       ]
     },
     {
+      "term": "Mo",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier",
+        "Modeling Keywords"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Electrocatalysis",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Mo–N/C@MoS2",
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
       "term": "Electrochemical",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -1589,23 +1742,9 @@
       ]
     },
     {
-      "term": "H2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "Product",
-        "Adsorbate/Reactant"
-      ],
-      "count": 3,
-      "example_contexts": [
-        "Hg/HgO",
-        "Rh–Rh2O3-NPs/C"
-      ]
-    },
-    {
       "term": "O2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -1685,6 +1824,18 @@
       ]
     },
     {
+      "term": "bifunctional electrocatalysts",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
       "term": "Cluster",
       "kind": "known_useful",
       "research_category": "clusters_single_atoms",
@@ -1699,8 +1850,8 @@
     },
     {
       "term": "Hg/HgO",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material",
         "Modeling Keywords"
@@ -1711,9 +1862,57 @@
       ]
     },
     {
-      "term": "Mo–N/C@MoS2",
+      "term": "hollow nanorods",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "KOH",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Mo-doped Ni3S2/NixPy",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Mo-Ni3S2/NixPy/NF electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Mo-Ni3S2/NixPy/NF electrode"
+      ]
+    },
+    {
+      "term": "Mo–N/C@MoS2",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -1740,8 +1939,8 @@
     },
     {
       "term": "oxygen reduction reaction",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "applications",
         "Modeling Keywords"
@@ -1754,8 +1953,8 @@
     },
     {
       "term": "Pt10Pb/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -1877,8 +2076,8 @@
     },
     {
       "term": "Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1913,8 +2112,8 @@
     },
     {
       "term": "Au/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1925,8 +2124,8 @@
     },
     {
       "term": "Au–Ag/TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2009,8 +2208,8 @@
     },
     {
       "term": "CoO/Co",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2056,21 +2255,9 @@
       ]
     },
     {
-      "term": "Electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
-      "fields": [
-        "Reaction Type"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "Mo–N/C@MoS2"
-      ]
-    },
-    {
       "term": "Electrocatalyst",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2093,8 +2280,8 @@
     },
     {
       "term": "H2O/OH",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Product"
       ],
@@ -2200,6 +2387,18 @@
       ]
     },
     {
+      "term": "Metal-Support Interactions",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
+      ]
+    },
+    {
       "term": "N-doped C",
       "kind": "known_useful",
       "research_category": "other_useful_information",
@@ -2249,8 +2448,8 @@
     },
     {
       "term": "NiCoOOH",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
       "fields": [
         "Active Site"
       ],
@@ -2273,8 +2472,8 @@
     },
     {
       "term": "OH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -2309,8 +2508,8 @@
     },
     {
       "term": "OH−",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -2321,8 +2520,8 @@
     },
     {
       "term": "OOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -2333,8 +2532,8 @@
     },
     {
       "term": "Oxygen Reduction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Reaction Type"
       ],
@@ -2345,8 +2544,8 @@
     },
     {
       "term": "PEC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2393,8 +2592,8 @@
     },
     {
       "term": "Pt10Ni/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -2429,8 +2628,8 @@
     },
     {
       "term": "Rh2O3",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],
@@ -2453,8 +2652,8 @@
     },
     {
       "term": "Rh–Rh2O3-NPs/C",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2501,8 +2700,8 @@
     },
     {
       "term": "sodium",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2525,8 +2724,8 @@
     },
     {
       "term": "TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Composition"
       ],

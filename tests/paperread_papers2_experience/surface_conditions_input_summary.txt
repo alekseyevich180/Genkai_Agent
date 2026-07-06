@@ -1,0 +1,41 @@
+这次抽到的关键信息包括：
+
+在 surface_conditions_input_table.csv 里：
+
+- C-TiO2
+- TiO2 暴露/涉及晶面 (101)
+- 吸附物/反应物：Ethanol (C2H5OH)
+- 建模关键词：TiO2, C, oxygen vacancy, active site
+
+在 surface_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - C-TiO2
+- 材料参数：
+  - anatase phase
+  - carbon doping
+- 反应参数：
+  - temperature: 150 °C
+- 性能：
+  - enhanced intrinsic conductivity
+  - lower bandgap
+  - high sensitivity
+  - fast response/recovery
+- 表面/晶面：
+  - TiO2(101)
+  - (101)
+- 缺陷/活性位点：
+  - oxygen vacancies
+  - surface active sites
+- 吸附/覆盖度：
+  - C2H5OH
+  - ionosorbed oxygen species
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - carbon doping
+  - oxygen vacancies
+  - gas sensor
+- 推荐建模任务：
+  - doped_surface
+  - vacancy_landscape

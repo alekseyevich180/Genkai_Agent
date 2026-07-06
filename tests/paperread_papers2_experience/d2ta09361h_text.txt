@@ -1,0 +1,819 @@
+Journal of
+ Materials Chemistry A
+ View Article Online
+ PAPER View Journal | View Issue
+
+ Hierarchically porous Ni foam-supported Co and
+ Cite this: J. Mater. Chem. A, 2023, 11,
+ Sn doped Ni3S2 nanosheets for oxygen evolution
+ 5734 reaction electrocatalysts†
+ Won Young An,‡a Hyungwoo Lee,‡b Sung Ryul Choi,a Sungyong Choi,a
+ Hyun-Seok Cho, c Minseok Choib and Jun-Young Park *a
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ To enter the era of a clean and sustainable hydrogen economy, it is crucial to ﬁrst discover non-noble metal
+ electrocatalysts that can be used for oxygen evolution reactions (OER) of water electrolyzers. Herein, we
+ demonstrate highly active and durable Co- and Sn-co-doped Ni3S2 catalysts supported on Ni foam
+ (CoSn-Ni3S2@NF) for the OER in alkaline media. Beneﬁting from the hierarchically porous nanosheet
+ morphology and synergistic strong electron interaction among Co, Sn, and Ni ions, the CoSn-Ni3S2@NF
+ achieves outstanding OER activity in 1 M KOH with a low overpotential of 321 mV at a current density of
+ 0.2 A cm−2. Furthermore, the CoSn-Ni3S2@NF alkaline water electrolysis cell shows a signiﬁcantly high
+ current density of 1.367 A cm−2 at a cell voltage of 2.0 V under 80 °C and 30 wt% KOH condition using
+ a nickel–iron layered double hydroxide for the hydrogen evolution reaction and a Zirfon PERL separator
+ (500 mm). Based on the defect formation energy and electronic structure obtained using density
+ functional theory calculation, the enhanced intrinsic activity of CoSn-Ni3S2@NF can be attributed to the
+ Co and Sn dopants with S vacancies, which increase activation sites (and free electrons) and favorably
+ Received 1st December 2022
+ Accepted 16th February 2023
+ modify the Ni 3d-band center to be closer to the Fermi level. This work not only demonstrates a highly
+ electrocatalytic active OER catalyst for water electrolyzers, but also provides a new design principle that
+ DOI: 10.1039/d2ta09361h
+ can be used for high performance materials by tailoring the electronic structure of transition and post
+ rsc.li/materials-a transition metal ions.
+
+ to the environment and natural resources due to greenhouse
+ Introduction gas emissions. More recently, water electrolysis-based hydrogen
+ Due to the global phenomena of climate change, environmental generation has provided a benecial opportunity to produce
+ pollution, and energy crises, eco-friendly hydrogen is attracting hydrogen gas renewably without aﬀecting nature and natural
+ substantial attention as a next-generation sustainable energy resources.6 Among these, alkaline water electrolysis (AWE) is the
+ carrier.1,2 Hydrogen gas has numerous applications in metal- most industrially mature technology for hydrogen generation
+ lurgy, petrochemical renery, processing foods, and automo- that uses an applied electricity.7 When the direct current is
+ biles, and it is advantageous in various ways, including its high applied to the AWE cells, water is dissociated at the cathode to
+ energy density (120–140 MJ kg−1), the fact that it is the most form H2 through hydrogen evolution reactions (HERs), thus
+ abundant element, and its environmental friendliness.3,4 releasing hydroxide anions (OH−) in alkaline solution (e.g.,
+ Currently, natural gas reforming methods based on fossil fuels potassium hydroxide). The OH− formed in this way crosses
+ using high-temperature steam account for the majority of through the membrane separator and then reacts to form O2 at
+ hydrogen production.5 While gas reforming methods are the the anode by the oxygen evolution reactions (OERs). The OER is
+ cheapest and most common methods, they cause major threats the rate-determining step of AWE cells due to the sluggish
+ kinetics with high overpotential, leading to reduced energy
+ eﬃciency of AWE cells.8–10 In addition, the use of noble metal
+ a
+ HMC, Department of Nanotechnology and Advanced Materials Engineering, Sejong OER electrocatalysts such as IrO2 and RuO2 restricts the large-
+ University, Seoul 05006, Korea. E-mail: jyoung@sejong.ac.kr; Tel: +82 2 3408 3848 scale commercialization of AWE cells.11
+ b
+ Department of Physics, Inha University, Incheon 22212, Korea. E-mail: minseokchoi. Very recently, transition metal chalcogenides (TMCs) based
+ phd@gmail.com on group 16 elements such as sulde, selenide, and telluride
+ c
+ Polymer Electrolyte Fuel Cell Research Center, Hydrogen and Fuel Cell Department,
+ have attracted substantial attention as OER catalysts due to
+ Korea Institute of Energy Research (KIER), Daejeon 34129, Korea
+ their excellent catalytic activity, low price, and good corrosion
+ † Electronic supplementary information (ESI) available. See DOI:
+ https://doi.org/10.1039/d2ta09361h resistance in the alkaline electrolyte.12,13 Among chalcogenide
+ ‡ These authors contributed equally to this work. materials, comprehensive electrochemical analyses coupled
+
+ 5734 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ with theoretical density functional theory (DFT) calculations between 1.7 and 2.4 V.32 In addition, along with the measured
+ have demonstrated that heazlewoodite phase nickel suldes electrochemical OER performances, the results of theoretical
+ (Ni3S2) represent one of the best candidates for OER catalysts DFT calculations. Such as the analysis of the electronic struc-
+ because of their excellent catalytic activity, high electronic tures of Ni3S2 under the doping of transition metal ions, have
+ conductivity, and good stability in alkaline solutions, as they not been systemically investigated and summarized in mecha-
+ benet from the property of covalency between Ni and S and the nistic studies. In particular, although there have been studies
+ 3d orbital electronic structures of Ni.14–16 In particular, hydro- on the eﬀect and mechanism of transition metal doping in
+ thermally synthesized Ni3S2 nanostructured catalysts have Ni3S2-based catalysts to further boost OER catalyst perfor-
+ exhibited similar performance to noble RuO2 catalysts, with mances,33,34 there have been very few mechanistic studies
+ a low overpotential of 187 mV at 10 mA cm−2 in 0.1 M KOH.17 related to the doping of post-transition metals or co-doping
+ However, a facile and reproducible manufacturing process for with transition metals.
+ hierarchically porous nanostructured Ni3S2 should be estab- Herein, further OER improvements to the Ni3S2 catalyst are
+ lished, since nanostructured catalysts have exhibited consider- achieved to take advantage of the feasible benets of the
+ able variations in OER electrochemical performances, even synergistic structures through co-doping of the multi-valent
+ transition metal (e.g., Co2+/3+ and Fe2+/3+) and post-transition
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ within the same catalyst.18 Further, there is great potential in
+ enhancing the OER performance of Ni3S2 catalysts through an metal ions (e.g., Sn4+) into the Ni-site. We also investigate an
+ atomic surface modication strategy with specic elements.19,20 undemanding, scalable, and reproducible synthesis process for
+ An atomic surface modication with specic elements is an hierarchically porous Ni3S2-based materials on nickel foam
+ eﬀective method to further boost the OER property by manip- (Ni3S2@NF), thus enabling the design of highly active, durable,
+ ulating the electronic structure and charge transport kinetics of and cost-eﬀective catalysts in alkaline solutions. Moreover, this
+ electrocatalysts.21,22 Song et al.23 reported Co-doped Ni3S2 hier- result is veried by examining the electronic conguration and
+ archical nanoarrays on NF substrate (Co-Ni3S2@NF) derived oxidation state of co-doped Ni3S2 catalysts critical to their
+ from zeolitic imidazolate frameworks with a trunk-branch activity and stability for the OERs using theoretical DFT calcu-
+ three-dimensional composite structure. The Co-Ni3S2@NF lations. This work demonstrates new perspectives in developing
+ showed a low overpotential of 120 mV at 10 mA cm−2 (1 M KOH) highly electrocatalytic active OER catalysts for AWE cells with
+ for the OER and long-term electrochemical durability in alka- potential applications in the future.
+ line conditions. Yu et al.24 reported that the introduction of Sn
+ element had a signicant eﬀect on the structure and Experimental
+ morphology of Ni3S2 nanosheet arrays on Ni foam via a simple
+ solvothermal synthesis method. The Sn-Ni3S2@NF exhibited Synthesis of transition and post transition metal doped-nickel
+ eﬃcient and durable electrocatalytic hydrogen evolution reac- sulde on Ni foam
+ tion (HER) activity both in acid and alkaline conditions, by Hierarchically porous nickel foam-supported Ni3S2 (Ni3S2@NF)
+ providing more exposed active edges and a shorter electron was synthesized via a simple and scalable hydrothermal
+ transfer path. Jian et al.25 also demonstrated that Ni3S2 nano- synthesis method. To prepare Ni3S2@NF electrocatalysts,
+ sheet doped with Sn grown on NF (Sn-Ni3S2@NF) through 0.6 mmol thiourea (CH4N2S, Alfa Aesar, 99%) was mixed in
+ a hydrothermal procedure had a large current density and high a solution containing 40 mL of de-ionized (DI) water and stirred
+ stability for both the HER and the OER. In another study, Cao for 30 min. Before performing the hydrothermal reaction, the
+ et al.26 synthesized highly active and durable Fe-doped Ni3S2 nickel foam (NF, 1 × 3 cm2 in size) was sonicated in 3 M
+ electrocatalysts in the form of vertically oriented nanosheets hydrochloric acid (Samchun, 35.0–37.0%) for 30 min, then
+ deposited on three-dimensional Ni foam (Fe-Ni3S2@NF) for the cleaned with acetone, ethanol, and de-ionized water for 10 min
+ OER in alkaline media. The introduction of the Fe ions signif- to remove surface impurities. Next, the Ni3S2@NF electro-
+ icantly improved the OER activity of Ni3S2 catalysts (1.54 V at 10 catalysts were synthesized hydrothermally at 160 °C for 4 h in
+ mA cm−2 in 1 M KOH) by increasing the electrochemical surface a stainless-steel autoclave (Ilshin Autoclave, 80 mL Teon-lined
+ area and the water adsorption ability with the formation of Ni– beaker).
+ Fe (oxy)hydroxide. That is, Ni3S2 materials can be used through The transition (e.g., Co, Fe, and Ni) and post transition metal
+ doping of transition metal and post-transition metal ions (e.g., (e.g., Sn)-doped Ni3S2@NF (Co-, CoSn-, CoFe-, and CoNi-
+ Fe, Co, and Sn) to eﬃciently modify the surface electron Ni3S2@NF) catalysts were also prepared via a one-step hydro-
+ distribution of catalysts and tune the surface adsorption of key thermal synthesis method in the same manner as described
+ active intermediates for the OER, which substantially acceler- above for Ni3S2@NF. To synthesize Co-Ni3S2@NF catalysts,
+ ates the charge transfer kinetics and maximizes the utilization 0.3 mmol Co chloride (CoCl2$6H2O, Sigma-Aldrich, 98%)
+ of active sites of catalysts.27–29 precursor and 0.6 mmol thiourea were mixed in a solution
+ However, many studies to this point have focused on containing 40 mL of de-ionized water for 10 min. In the case of
+ performance (overpotential or stability) at low current densities CoSn-, CoFe-, and CoNi-doped Ni3S2@NF, 0.25 mmol Co chlo-
+ of 10 mA cm−2, which is unsatisfactory for practical applica- ride, 0.6 mmol thiourea, and 0.05 mmol Sn chloride (SnCl2-
+ tions.30,31 To secure commercially appropriate hydrogen $2H2O, Alfa Aesar, 98.0–103.0%), Fe chloride (Cl2Fe, Alfa Aesar,
+ production capacity, the typical operational current density of 99.5%), and Ni chloride (Cl2Ni, Alfa Aesar, 98%) were mixed in
+ a water electrolyzer is preferably above 0.2 A cm−2 with a voltage de-ionized water, respectively. Subsequently, the materials were
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5735
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ hydrothermally synthesized at several diﬀerent temperatures saturated 1 M KOH solution using the linear sweep voltammetry
+ (120, 140, and 160 °C) and times (1, 4, and 7 h) in an autoclave. (LSV) method from −0.6 to 0 V at a scan rate of 5 mV s−1.
+ Electrochemical impedance spectroscopy (EIS) measure-
+ Characterization of pristine and metal doped-Ni3S2@NF ments (SP240, BioLogic Science Instruments) were conducted
+ catalysts in the range between 100 mHz and 100 kHz at an applied
+ potential of 1.6 V (amplitude at 10 mV). The resistance factors
+ The crystal structures were analyzed using the X-ray diﬀraction
+ were divided into charge-transport resistance (Rct) and mass-
+ (XRD) technique (Pan Analytical, X'Pert Diﬀractometer) with
+ transport resistance (Rmt) from the tted equivalent circuit
+ ltered Cu-Ka radiation source (l = 1.5406 Å wavelength). The
+ model using EC-Lab soware. The electrochemical active
+ XRD patterns were evaluated through step scanning in the 2q
+ surface area (ECSA) of the catalysts was investigated by dividing
+ range of 20–80° with intervals of 0.02°. To characterize the
+ the double-layer capacitances (Cdl) by the specic capacitance.
+ morphologies and crystalline properties of the catalysts, eld
+ ECSAs were calculated under diﬀerent scan rates of 10, 20, 40,
+ emission scanning electron microscopy (FE-SEM, S-4700 Hita-
+ 60, and 80 mV s−1 from 0.05 to 0.25 V. Durability tests were
+ chi, acceleration voltage of 15 kV) and high-resolution trans-
+ conducted using chronopotentiometry experiments under
+ mission electron microscopy (HR-TEM, JEM-F200, JEOL,
+ a constant current density of 0.2 A cm−2 for 10 and 97 h in O2-
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ acceleration voltage of 200 kV) were conducted with the corre-
+ saturated 1 M KOH solution for the OER.
+ sponding energy-dispersive X-ray spectroscopy (EDX) elemental
+ The electrolysis experiments were conducted with a single
+ mapping images of the component phases.
+ cell zero-gap conguration composed of Ni porous transport
+ The chemical bonding states and electronic structures of the
+ layers and bipolar plates (single serpentine ow eld). The
+ pristine and doped-Ni3S2@NF catalysts were determined by X-
+ Zirfon Perl membrane (Agfa, thickness of 500 mm, for 30 wt%
+ ray photoelectron spectroscopy (XPS, VG Escalab 200i, UK)
+ KOH solution) and alkaline exchange membrane (AEM, Fuma-
+ with an Al Ka X-ray source (hn = 1486.6 eV). The relative atomic
+ sep FAA-3-50, for 1 M KOH solution) were used as separators for
+ concentrations of Ni 2p, Co 2p, Sn 3d, and S 2p were compared
+ the electrolysis tests. The nickel–iron layered double hydroxide
+ using the peak intensities and integrated area ratios of the
+ electrode on the nickel foam (NiFe-LDH@NF) and prepared
+ catalysts. The surface area (Brunauer–Emmet–Teller, BET) of
+ doped-Ni3S2@NF were used as anodic catalysts for the HER and
+ the pristine and doped-Ni3S2@NF catalysts was analyzed with
+ the OER, respectively. The electrode area of the alkaline water
+ a BELSORP-max, BEL instrument while using the N2
+ electrolysis (AWE) cells was 1.65 × 1.65 cm2. The AWE cells were
+ adsorption/desorption isotherms at 77 K. Before the measure-
+ operated at 55 and 80 °C and 30 wt%, and 1 M KOH electrolyte
+ ments, all of the samples were pre-treated at 80 °C for 3 h. The
+ solutions were circulated to the cell electrode at a ow rate of
+ total pore volume was investigated by converting the adsorbed
+ 200–300 ccm. I–V polarization curves were measured by
+ N2 gas amount at a relative pressure (P/P0) of 0.99 to the liquid
+ a potentiostat (Advanced Power system N7970A, Agilent Tech-
+ volume of N2 adsorbate. The Barrett–Joyner–Halenda (BJH)
+ nologies) as a function of the current density. EIS analysis was
+ method was used to calculate the pore size distributions in the
+ performed in the range between 10 mHz and 100 kHz under the
+ micropore range from the adsorption branches of the
+ applied current densities of 0.125, 0.5, and 1 A cm−2.
+ isotherms. The inductively coupled plasma optical emission
+ spectrometry (ICP-OES) experiments were performed with
+ equipment from Spectro (Spectro Arcos II ICP-OES) to analyze Density functional theory calculation
+ the elemental content of catalysts.
+ To address the roles played by Co and Sn doping in catalytic
+ performance, density functional theory (DFT) calculations were
+ Electrochemical measurements of doped-Ni3S2@NF catalysts made using the projector augmented-wave method and the
+ Electrochemical measurements of the electrocatalysts were exchange-correlation functional constructed by the generalized-
+ carried out using a potentiostat/galvanostat VSP (Biologics, gradient-approximation in the Perdew–Burke–Ernzerhof
+ France) with a standard three-electrode system, which uses scheme,35 as implemented in the VASP code.36 A rotationally
+ a Ni3S2@NF-based catalyst as a working electrode (electrode invariant Hubbard + U method37 was applied to Ni 3d (Ueﬀ = 6.2
+ area = 1 × 0.1 cm2), Pt wire as a counter electrode, and Hg/HgO eV) and Co 3d (Ueﬀ = 4.4 eV) states. The electronic wave func-
+ saturated 1 M NaOH as a reference electrode at room temper- tions were described using a plane wave basis set with an energy
+ ature. For the electrochemical measurements, the reversible cut oﬀ of 500 eV. All cell parameters were optimized with
+ hydrogen electrode (RHE) scale was used to convert all of the a residual force cut oﬀ of 0.02 eV Å−1. A ve-atom unit cell and
+ potentials. Prior to electrochemical testing, cyclic voltammetry a 10 × 10 × 10 k-point grid for the Brillouin zone integration
+ (CV) scans were performed from 0.05 to 1.2 V for 50 cycles (scan were used for pristine Ni3S2. To investigate the use of metal
+ rate of 100 mV s−1) in 1 M KOH to clean the surfaces of dopants (i.e., Co and Sn) and its correlation with native defect,
+ Ni3S2@NF-based catalysts and stabilize the current. Oxygen several point defects, Ni vacancy (VNi) and S vacancy (VS), were
+ evolution reaction (OER) activity measurements were achieved considered. To simulate the metal-doped and defective Ni3S2,
+ using CV in O2-saturated 1 M KOH electrolyte solution at a scan 135 atom supercells and 3 × 3 × 3 k-point were employed.
+ rate of 5 mV s−1 between 1.2 and 1.7 V. The overpotentials (h) The defect formation energies (Ef) of the defects with/
+ were ascertained at current densities of 0.1 and 0.2 A cm−2. without metal dopants were evaluated using the following
+ Hydrogen evolution reaction (HER) activity was measured in O2- equation:38
+
+ 5736 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ X
+ Ef ðDÞ ¼ Etot ðDÞ  Etot ðhostÞ þ ni ðmi Þ (1)
+ i
+
+ where Etot(D) is the total energy of the supercells containing
+ a defect (D = VNi and VS). Etot(host) is the total energy of the
+ pristine or metal-doped Ni3S2 supercells. ni is the number of
+ atoms of type i (Ni and S) added to (ni > 0) and/or removed (ni <
+ 0) from the perfect supercell to form the defect. mi is the atomic
+ chemical potential. An extreme case—the Ni-rich (mNi = 1/
+ 4Etot(Ni-metal)) limit—was considered due to the fact that the
+ Ni3S2 sample was experimentally grown on the Ni foam; then,
+ their OER activities were measured. Thus, the S chemical
+ potential mS is equal to 1/2Etot(S2-molecule) + Dm, where
+ 1
+ Dm ¼ ½DHf ðNi3 S2 Þ. Here DHf(Ni3S2) is the formation enthalpy
+ 2
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ of Ni3S2. The d-band center is known to be a promising
+ descriptor for understanding catalytic activities, so the metal d-
+ band center (3d) is examined using the following equation:
+ Ð EF
+ 3rd d3
+ 3d ¼ ÐNEF (2)
+ r d3
+ N d
+
+ where EF represents the Fermi level, rd denotes the density of
+ states projected onto a single metal d orbital, and 3 is the energy
+ width of the d orbital.
+ Fig. 1 Structural and phase analyses of pristine and doped-Ni3S2@NF
+ catalysts using XRD. (a) XRD patterns of Ni3S2@NF and T-Ni3S2@NF (T
+ = Co, CoSn, CoFe, and CoNi) catalysts. (b) Heazlewoodite structure of
+ Result and discussion CoSn-Ni3S2 phase with a space group of R32 (155).
+ Physicochemical characterizations of doped nickel suldes
+ catalysts
+ impurities, as shown in Fig. 1a. Meanwhile, Fig. 1b shows the
+ Hierarchically structured porous pristine (Ni3S2@NF), Co (Co-
+ crystal structure of CoSn-Ni3S2@NF. Heazlewoodite structure
+ Ni3S2@NF), CoSn (CoSn-Ni3S2@NF), CoFe (CoFe-Ni3S2@NF),
+ Ni3S2 was described as a rhombohedral structure, and Ni was
+ and CoNi-doped nickel suldes (CoNi-Ni3S2@NF) catalysts on
+ occupied by a tetrahedral site, which corresponds to the unit
+ nickel foam (NF) substrate were synthesized using a facile one-
+ cell of a = 4.01 Å and a space group of R32 (155).42
+ step hydrothermal method. To realize high OER performance
+ The size and morphology of the pristine and doped-
+ through the synthesis of hierarchically porous nanostructured
+ Ni3S2@NF electrocatalysts were investigated by eld emission
+ catalysts, pristine and doped Ni3S2 were synthesized under
+ scanning electron microscopy (FE-SEM, Fig. 2). Fig. S2† shows
+ various process conditions [synthesis temperatures (120, 140,
+ that the hydrothermal synthesis conditions (temperature and
+ and 160 °C) and holding times (1, 4, and 7 h)]. The crystal
+ holding time) substantially aﬀected the microstructure of the
+ structures and phase purities of the Ni3S2@NF and doped-
+ Co-Ni3S2@NF electrocatalysts. It was found that Co-Ni3S2@NF
+ Ni3S2@NF synthesized at 160 °C for 4 h were characterized
+ through X-ray diﬀraction (XRD) patterns. As displayed in Fig. 1a,
+ aside from the three main peaks indexed to nickel foam, the ve
+ main diﬀraction peaks of pristine (Ni3S2@NF) and Co-doped
+ nickel suldes at 21.8°, 31.1°, 37.8°, 50.1°, and 55.2° were
+ commensurate with those of the heazlewoodite phase of Ni3S2
+ (JCPDS no. 44-1418).39 Moreover, the enlarged portion of 2q (in
+ 30° to 33°) evidently indicates the eﬀect of doping as the
+ diﬀraction peaks shi toward higher (lower) 2q, due to the
+ smaller (larger) ionic radii of Co, Fe, and Sn ions, which are
+ doped at host element Ni2+ site in the four-coordination
+ number, respectively.40 An additional impurity peak of
+ Co3Ni6S8 in Co-Ni3S2@NF was found at 28° (Fig. S1†), which
+ might be attributable to the side reactions of NF and thiourea
+ (CH4N2S) with CoCl2 during the hydrothermal synthesis.41
+ However, in cases of the doping of Sn and Fe for Co-Ni3S2@NF Fig. 2 FE-SEM image of pristine and doped-Ni3S2@NF catalysts. (a)
+ catalysts (synthesized at 160 °C for 4 h), a complete heazle- Ni3S2@NF, (b) Co-Ni3S2@NF, (c) CoSn-Ni3S2@NF, (d) CoFe-Ni3S2@NF,
+ woodite phase was successfully formed with no specic and (e) CoNi-Ni3S2@NF.
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5737
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ synthesized using the hydrothermal method at 160 °C for 4 h dispersive X-ray spectroscopy (EDS) revealed that all of the
+ exhibited the most optimized morphology of hierarchically composed elements (S, Ni, Co, and Sn) were uniformly coated
+ porous and ultrathin nanosheets. Accordingly, CoSn-Ni3S2@NF, on the NF surface (Fig. 3c and S3b†). Fig. 3d shows nitrogen
+ CoFe-Ni3S2@NF, and CoNi-Ni3S2@NF catalysts were prepared adsorption–desorption isotherm results of the pristine and
+ by the same hydrothermal reaction condition at 160 °C and 4 h. doped-Ni3S2@NF electrocatalysts. The gure shows similar BET
+ For the CoSn-, CoFe-, and CoNi-Ni3S2@NF catalysts, randomly surface areas of 4.56, 7.26, 7.66, 6.34, and 7.66 m2 g−1 for
+ interconnected and highly porous nickel suldes akes are Ni3S2@NF, Co-Ni3S2@NF, CoNi-Ni3S2@NF, CoFe-Ni3S2@NF,
+ vertically grown on the NF substrate, as shown in Fig. 2. and CoSn-Ni3S2@NF, respectively. The pore volume and size
+ Fig. 3a and b (Fig. S3a†) shows high resolution-transmission distributions of the catalysts were also calculated from the
+ electron microscopy (HR-TEM) images for the and CoSn- adsorption–desorption isotherms, as shown in Fig. 3e. The
+ Ni3S2@NF (Ni3S2@NF and Co-Ni3S2@NF) arrays. The calculated mean pore diameter and total pore volume of the catalysts were
+ interplanar d-spacing of CoSn-Ni3S2@NF (Ni3S2@NF and Co- 6.2–14.3 nm and 0.011–0.018 cm3 g−1, respectively (Table S1†).
+ Ni3S2@NF) is about 0.287 nm (0.286 and 0.288 nm, respec-
+ tively), which is assigned to the (110) crystal plane of Ni3S2, in
+ Oxygen evolution reaction activity and stability
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ accordance with the XRD results (JCPDS no. 44-1418).43 In the
+ selected area electron diﬀraction (SAED) pattern analyzed at the To investigate the electrochemical performances of Ni3S2@NF,
+ 1] zone axis of the HRTEM image (inset of Fig. 3b), repre-
+ [11 Co–Ni3S2@NF, CoNi-Ni3S2@NF, CoFe-Ni3S2@NF, and CoSn-
+ sentative points located from the center can be identied as Ni3S2@NF, fundamental electrochemical analysis methods
+ (110) and (211) reections of Ni3S2 nanosheets.44 Elemental such as cyclic voltammetry (CV), linear sweep voltammetry
+ mapping images of the CoSn-Ni3S2@NF based on energy- (LSV), electrochemical impedance spectroscopy (EIS) were used.
+
+ Fig. 3 Physicochemical analysis of catalysts. (a) HRTEM image and (b) enlarged image with SAED pattern of CoSn-Ni3S2@NF. The right inset
+ shows an atomic resolution image of yellow dashed box. (c) EDX spectra of each element of CoSn-Ni3S2@NF. (d) Nitrogen adsorption–
+ desorption isotherms and (e) total pore volume and pore size of Ni3S2@NF, Co-Ni3S2@NF, and CoSn-Ni3S2@NF.
+
+ 5738 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ Linear sweep voltammetry (LSV) analysis was conducted in proportions (Fig. S5a†). The Ir/C catalyst was also tested as the
+ a 1 M KOH solution at a scan rate of 5 mV s−1 on a three- gold standard catalyst for OER under the same conditions. As
+ electrode system. IR compensation (85% IR drop compensa- shown in Fig. 4a, CoSn-Ni3S2 is even superior to Ir/C (324 mV).
+ tion) was carried out to consider the inuence of the electrolyte More specically, the h at 0.2 A cm−2 increased in the following
+ solution resistance during the electrochemical test. Fig. S4a† order: CoSn-Ni3S2@NF (1.551 V), CoFe-Ni3S2@NF (1.560 V), Co-
+ shows the OER polarization curves of Co-Ni3S2@NF that was Ni3S2@NF (1.571 V), CoNi-Ni3S2@NF (1.577 V), and Ni3S2@NF
+ synthesized under various hydrothermal conditions (120–160 ° (1.602 V). Namely, doping Co element aﬀects the OER perfor-
+ C for 1–7 h). Co-Ni3S2@NF prepared hydrothermally at 160 °C mance of the Ni3S2 catalyst. It is particularly worth noting that
+ for 4 h exhibited the best OER activity, with a lower over- the OER performance of the catalyst substantially improved
+ potential (h) of 341 mV at 0.2 A cm−2 than the other Co- when Co and Sn were co-doped in Ni3S2, and that the h of 298
+ Ni3S2@NF processed at diﬀerent conditions (120 and 140 °C for and 321 mV were required to deliver the current densities of 0.1
+ 1 and 7 h). Moreover, Co-Ni3S2@NF annealed at 160 °C for 4 h and 0.2 A cm−2, respectively. To inspect the OER kinetic prop-
+ possessed the smallest Tafel slope among all samples with erties of catalysts, Tafel plots derived from polarization curves
+ a value of 97 mV dec−1 (Fig. S4b†), indicating that the hierar- (ohmic resistance correct potential, E–iR vs. log j) are shown in
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ chically porous and Co-Ni3S2@NF nanosheet morphology Fig. 4b. The Tafel slopes of CoSn-Ni3S2@NF, CoFe-Ni3S2@NF,
+ signicantly aﬀected the OER performances (Fig. S2b†). CoNi-Ni3S2@NF, Co-Ni3S2@NF, and Ni3S2@NF on Ni foam for
+ The OER activities of pristine and doped-Ni3S2@NF electro- the OER were 69, 90, 87, 101, and 125 mV dec−1, respectively,
+ catalysts were evaluated in an O2-saturated 1 M KOH solution at indicating that the incorporation of Sn (and Fe) atoms into Co-
+ a scan rate of 5 mV s−1 (Fig. 4a). CoSn-Ni3S2@NF exhibited the Ni3S2 triggers an enhancement in OER performance (Table 1).
+ lowest overpotential of 321 mV at 0.2 A cm−2 for the OER among The Tafel slope of Ir/C from the OER polarization curves was
+ all tested samples. In particular, the best OER activity with the 81 mV dec−1, indicating the excellent OER kinetics of CoSn-
+ lowest h was obtained when the ratio of the amounts of Co and Ni3S2@NF.
+ Sn precursors was 5 : 1 among all samples prepared at diﬀering To assess the scaling-up possibility of water electrolysis, the
+ specic and mass OER activities of the Ni3S2@NF, Co-
+ Ni3S2@NF, and CoSn-Ni3S2@NF catalysts were measured and
+ are shown in Fig. 4c. The specic (mA cmBET−2) and mass
+ activity (A g−1) were normalized by the BET surface area and the
+ mass loading, respectively. The CoSn-Ni3S2@NF achieved an
+ OER specic activity of 20.7 mA cmECSA−2 (and mass activity of
+ 18.7 A g−1) at h = 370 mV (1.6 V vs. RHE), which is ∼6.3 times
+ and ∼3.9 times that of the Ni3S2@NF (4.8 mA cmECSA−2 and
+ 3.0 A g−1) and Co-Ni3S2@NF (7.1 mA cmECSA−2 and 4.8 A g−1),
+ respectively, thus signifying its high feasibility for scalability of
+ electrocatalysts with excellent intrinsic OER activity (Fig. S5b†).
+ More importantly, aer an extensive investigation of the activ-
+ ities of other catalysts, the CoSn-Ni3S2@NF was found to have
+ a smaller h at 0.2 A cm−2 than previously reported NF-based
+ OER electrocatalysts in alkaline media (Fig. 4d).22,28,45–59 The
+ HER catalysis of the Ni3S2@NF, Co-Ni3S2@NF, and CoSn-
+ Ni3S2@NF catalysts was also evaluated together with commer-
+ cial Pt/C in O2-saturated 1.0 M KOH electrolyte using a typical
+ three-electrode system. As shown in the polarization curve and
+ Tafel plots of Fig. S4c and d,† Co-Ni3S2@NF annealed at 160 °C
+ for 4 h exhibits the smallest h (360 mV at 0.4 A cm−2 vs. RHE)
+ and Tafel slope (119 mV dec−1) among all samples, thus con-
+ rming that the porous and nanostructured Co-Ni3S2@NF
+ microstructure played an important role in the HER perfor-
+ mances. Moreover, doping Sn element into the Co-Ni3S2@NF
+ catalyst contributed to signicantly improving the HER perfor-
+ mance; the h of CoSn-Ni3S2@NF at 0.4 A cm−2 is nearly 70 and
+ 40 mV lower than that of Ni3S2@NF and Co– Ni3S2@NF
+ (Fig. S6a†). In addition, CoSn-Ni3S2@NF provides a lower Tafel
+ Fig. 4 Electrochemical properties of catalysts for OER. (a) OER slope of 69 mV dec−1 than those of Ni3S2@NF (151 mV dec−1)
+ polarization curves and (b) Tafel plots of Ni3S2@NF and T-Ni3S2@NF
+ and Co-Ni3S2@NF (119 mV dec−1), thus indicating enhanced
+ with Ir/C@NF. (c) Speciﬁc activities and mass activities of Ni3S2@NF,
+ Co-Ni3S2@NF, and CoSn-Ni3S2@NF. (d) Comparison of h at 0.2 A cm−2 HER kinetics (Fig. S6b†). Further, the CoSn-Ni3S2@NF had
+ for CoSn-Ni3S2@NF with previously reported results for other nickel- a lower h at 0.4 A cm−2 than previously reported NF-based HER
+ based catalysts. electrocatalysts in alkaline media (Fig. S6c†).50,60–65
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5739
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ Table 1 Detailed data on electrochemical properties of pristine and doped-Ni3S2@NF
+
+ h Tafel slope Mass activity Specic activity
+ Catalyst @ 0.2 A cm−2 (V) (mV dec−1) @ 1.6 V (A g−1) @ 1.6 V (mA cmECSA−2) Rct (U cm2) ECSA (cm2)
+
+ Ni3S2@NF 372 125 3.0 4.8 0.24 37.0
+ Co-Ni3S2@NF 341 101 4.8 7.1 0.18 51.5
+ CoNi-Ni3S2@NF 347 87 4.0 5.5 0.18 57.8
+ CoFe-Ni3S2@NF 330 90 6.2 7.8 0.17 64.3
+ CoSn-Ni3S2@NF 321 69 18.7 20.7 0.11 72.3
+
+ In electrolysis cell, the operation stability of OER catalysts is electrocatalysts aer stability test is somewhat diﬀerent from
+ an important factor. The long-term stability of catalysts was that of proportion in the as-prepared sample (Co : Sn : Ni : S =
+ investigated by the applied constant current in a 1 M O2-satu- 2.4 : 1.5 : 83.9 : 12.2), indicating some loss of CoSn-Ni3S2 cata-
+ rated KOH solution. As shown in Fig. 5a, both Co-Ni3S2@NF lysts on the NF during operations. Additional research is need
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ and CoSn-Ni3S2@NF showed stable potential behavior (1.59 and to further improve the stability of Ni3S2@NF-based catalysts.
+ 1.68 V) with small potential changes under chro-
+ nopotentiometry at 0.2 A cm−2 and room temperature for 97 h. Water-splitting cell performances of electrocatalysts
+ In addition, Co-Ni3S2@NF and CoSn-Ni3S2@NF present negli-
+ For industrial applications, AWE cells, which use low-cost
+ gible performance degradations (0.3 and 4.5 mV decrease at 0.2
+ power from renewable energy sources, need to satisfy require-
+ A cm−2) during the cycling test between 1.25 and 1.65 V for 1000
+ ments such as the supply of high current density ($0.2 A cm−2)
+ cycles (scan rate of 200 mV s−1), thus indicating the remarkable
+ at low overpotentials and prolonged durability during oxidizing
+ stability of nickel suldes for OER (Fig. 5b). Moreover, the XRD
+ conditions.66 Single cell tests were performed using a nickel–
+ patterns of Co-Ni3S2@NF and CoSn-Ni3S2@NF show insigni-
+ iron layered double hydroxide (NiFe-LDH) on nickel foam for
+ cant change aer the stability test (cycling test for 1000 cycles
+ the hydrogen evolution reaction (HER, cathode) and OER
+ and chronopotentiometry test for 10 h) compared to those of
+ anodic catalysts with a Zirfon PERL separator (with a thickness
+ pristine samples (Fig. 5c). The FE-SEM observation results also
+ of 500 mm) (Fig. S7a†).67,68 Cell performance tests were con-
+ demonstrate that the morphology of the hierarchically porous
+ ducted at a temperature of 80 °C (55 °C) and a ow rate of
+ CoSn-Ni3S2@NF nanosheets is well maintained aer the OER
+ 30 wt% (1 M) KOH solution equal to 200 ccm (300 ccm).
+ cycle test, whereas the ends of the nanosheets become rounded
+ The I–V polarization characteristics of the electrolysis cells
+ in Co-Ni3S2@NF with a certain degree of agglomeration (Fig. 5d
+ with Ni3S2@NF and CoSn-Ni3S2@NF OER catalysts are shown in
+ and e). However, the ICP-OES results showed that the atomic
+ Fig. 6. As can be seen in Fig. 6a (55 °C and 1 M KOH), a much
+ ratio (Co : Sn : Ni : S = 1.7 : 0.9 : 91.8 : 5.6) of CoSn-Ni3S2@NF
+ higher current density of 0.643 A cm−2 was reached at a cell
+
+ Fig. 5 Long-term stability of OER catalysts. (a) Durability tests of Co-
+ Ni3S2@NF and CoSn-Ni3S2@NF catalysts under 0.2 A cm−2 for 97 h. (b) Fig. 6 Electrochemical results of alkaline water electrolysis cells (with
+ Changes of OER activity curves of catalysts after 1000th cycling test NF, Ni3S2@NF, and CoSn-Ni3S2@NF electrodes). Current–voltage
+ between 1.25 V and 1.65 V. (c) XRD patterns of catalysts before and curves of alkaline cells under (a) 1 M KOH at 55 °C and (b) 30 wt% KOH
+ after durability test. FE-SEM image of (d) Co-Ni3S2@NF and (e) CoSn- solution at 80 °C. EIS curves of alkaline cells at 0.5 A cm−2 under (c) 1 M
+ Ni3S2@NF catalysts after durability test. KOH at 55 °C and (d) 30 wt% KOH solution at 80 °C.
+
+ 5740 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ voltage of 2.0 V for CoSn-Ni3S2@NF cell, compared to those of the
+ NF (0.227 A cm−2) and Ni3S2@NF (0.551 A cm−2) cells, thus
+ indicating the excellent electrocatalytic activity CoSn-Ni3S2@NF
+ for the OER and showing performance comparable to that of the
+ electrolysis cells composed of any metal oxide catalyst that has
+ been reported to date.69,70 In addition, the CoSn-Ni3S2@NF cell
+ showed smaller electrode resistances than the Ni3S2@NF cell, as
+ specied by the slopes of their I–V polarization curves. With
+ increasing current density, the diﬀerence in the cell voltage
+ between CoSn-Ni3S2@NF and Ni3S2@NF (and NF) is more
+ substantial. This result may be attributed to not only the high
+ intrinsic OER activity, but also the eﬀective mass charge transfer.
+ Further, the cell with CoSn-Ni3S2@NF demonstrated signicantly
+ high current densities of 0.7 and 1.367 A cm−2 at cell voltages of
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ 1.8 and 2.0 V under the conditions of 80 °C and 30 wt% KOH
+ (Fig. 6b). Table S2† summarized the electrochemical performance
+ of recent OER catalysts in the electrolysis cells.
+ To diﬀerentiate the resistance components of the cells in Fig. 7 XPS spectra for (a) Ni 2p and (b) Co 2p of the Ni3S2@NF, Co-
+ detail, such as ohmic resistance of solution electrolyte (Rohmic), Ni3S2@NF, and CoSn-Ni3S2@NF catalysts. (c) EIS analysis of Ni3S2@NF,
+ change transfer resistance (Rct), and mass-transfer resistance Co-Ni3S2@NF, and CoSn-Ni3S2@NF catalysts with equivalent circuit
+ (Rmt), electrochemical impedance spectroscopy (EIS) was per- model. (d) Linear plots of double layer charging currents with diﬀerent
+ scan rates (10–80 mV s−1) derived from CV diagrams between 0.1–
+ formed under galvanostatic control at 0.125, 0.5, and 1 A cm−2.
+ 0.2 V (vs. RHE).
+ Fig. 6c and d (Fig. S7b–e†) show complex-plane Nyquist plots of
+ NF, Ni3S2@NF, and CoSn-Ni3S2@NF at 55 °C (1 M KOH) and
+ 80 °C (30 wt% KOH) for the OER. In the EIS spectra, the high-
+ frequency region indicates the Rohmic, which is composed of lower valence Ni2+ by increasing the number of electrons (holes)
+ ionic resistance from the electrolyte and electrical connection. in the Ni3S2 phase to satisfy the electrical neutrality condition.
+ The intermediate- and low-frequency regions represent Rct The same result can be applied in the case of Co ion. The Co
+ (electron and ion transfer) and Rmt (ion adsorption, dissocia- 2p XPS spectra of the Co-Ni3S2@NF and CoSn-Ni3S2@NF exhibit
+ tion, and diﬀusion), respectively.71 CoSn-Ni3S2@NF exhibits the doublet peaks comprised of two spin orbital lines, Co 2p3/2 and
+ lowest Rct of 0.21, 0.07, and 0.06 U cm2 among all the test Co 2p1/2 at ∼780.3 and ∼796.7 eV, respectively, thus indicating
+ samples at 0.125, 0.5, and 1 A cm−2 (55 °C and 1 M KOH the coexistence of Co2+ (∼781.6, ∼797.4 eV) and Co3+ (∼780.6,
+ condition) for the OER, respectively. This conrms that doping ∼796.2 eV) oxidation states on the catalyst (Fig. 7b).73 It should
+ of Sn and Co for Ni3S2@NF catalysts contributed signicantly to be noted that the ratio of Co2+/Co3+ (in Co-Ni3S2) also increased
+ the formation of an eﬀective conducting path for charged ionic/ from 1.04 to 1.30 when co-doped with Sn (CoSn-Ni3S2@NF),
+ electronic species in the OER. which endorses that the incorporation of Co and Sn ions in the
+ Ni3S2 converted the electronic conguration of Ni ions with the
+ formation of a highly defective structure. Interactions of
+ Mechanistic study multivalent Ni and Co ions with diﬀerent electronic structures
+ To identify the decisive factor driving the excellent OER in the heazlewoodite phase could aﬀord plenty of active sites
+ performances of CoSn-Ni3S2@NF, the surface chemical states that are benecial for the OER.74 Fig. S8a† showed Sn 3d peaks
+ and elemental compositions of the catalysts were analyzed by X- of CoSn-Ni3S2@NF. In the XPS spectra for Sn 3d, two peaks of Sn
+ ray photoelectron spectroscopy (XPS). Fig. 7a shows the Ni 2p 3d3/2 and Sn 3d5/2 designate the coexistence of Sn2+ (∼486.0,
+ core level XPS spectra of the Ni3S2@NF, Co-Ni3S2@NF, and ∼494.5 eV) and Sn4+ (∼486.6, ∼495.1 eV) oxidation states, thus
+ CoSn-Ni3S2@NF catalysts. Using mixed Gaussian–Lorentzian indicating that Sn ions were successfully doped into CoSn-
+ tting, the peaks at ∼856.4 and ∼855.2 eV can be assigned to Ni3S2@NF.24 This phenomenon indicates that Sn doping
+ Ni3+ and Ni2+ (2p3/2), respectively, while the peaks at ∼874.2 and changed the oxidation state of Co, resulting in some signi-
+ ∼872.8 eV can be assigned to Ni3+ and Ni2+ (2p1/2), respectively. cantly faster charge transfers in CoSn-Ni3S2@NF. For the S 2p
+ The peaks at 879.4 eV and 861.4 eV can be considered to be XPS spectra of the pristine and doped Ni3S2@NF catalysts
+ satellite peaks of Ni 2p.72 The relative amount of the oxidation (Fig. S8b†), the obtained peaks located at ∼161.6(8) eV and
+ states for Ni ions was assessed from the integrated area ratios of ∼162.9(4) eV respectively corresponded to S 2p3/2 and S 2p1/2,
+ the sub-peaks. Interestingly, the ratio of Ni2+/Ni3+ increased thus revealing the existence of S2− species by bonding of metal–
+ from 0.80 to 0.84 when doped with Co (Co-Ni3S2@NF) in the sulfur.75 In particular, the strong peak at a higher value of
+ heazlewoodite Ni3S2 structure, and it further increased signi- ∼162.4 eV aer doping Sn into the Ni3S2 surface is assigned to
+ cantly to 1.34 in the case that was co-doped with Sn (CoSn- the sulfur with low coordination, implying the generation of
+ Ni3S2@NF). This is because the multivalent Ni ions in Ni3S2 a high density of S vacancies, whereas the peak at ∼161.8 eV can
+ phase can be balanced by modifying higher valence Ni3+ to be considered to be Ni–S bonds.72,76
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5741
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ Electrochemical impedance spectroscopy (EIS) was used in Table 3 Calculated defect formation energy and Ni 3d-band center.
+ a three-electrode cell conguration to examine the fundamental Values in parentheses are responsible for Co 3d band center
+ origin of the high OER activity of CoSn-Ni3S2@NF. As shown in
+ Formation energy
+ Fig. 7c, based on the equivalent circuit model (at 1.6 vs. RHE for (eV) Ni3S2 Co-Ni3S2 Sn-Ni3S2 CoSn-Ni3S2
+ OER), the electrode polarization resistance (Rct + Rmt) values
+ were considerably reduced in the order of Ni3S2@NF (0.24 U VNi 0.785 0.808 −0.105 −0.114
+ cm2) > Co-Ni3S2@NF (0.18 U cm2) > CoSn-Ni3S2@NF (0.11 U VS 1.681 1.952 −1.245 −1.339
+ cm2), thus signifying the benecial eﬀects of the co-doping of Ni 3d-band center (eV) Ni3S2 Co-Ni3S2 Sn-Ni3S2 CoSn-Ni3S2
+ Sn and Co on the charge transfer during the OERs. Fig. 7d
+ shows the measured charging current density (jc) plots as Without vacancies −3.07 −3.03 (−2.39) −3.07 −3.06 (−2.76)
+ a function of scan rates (v = 10–80 mV s−1) in the non-faradaic VNi −3.04 −3.03 (−2.30) −3.07 −3.06 (−2.76)
+ VS −3.00 −3.00 (−2.05) −3.02 −3.02 (−2.59)
+ range (0.05–0.25 vs. RHE) that come from the CV test (Fig. S9†).
+ The double layer capacitance (Cdl) was obtained by calculating
+ the slopes of the jc plots as a function of v (Fig. S9†).77 The Cdl
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ values of Ni3S2@NF, Co-Ni3S2@NF, and CoSn-Ni3S2@NF were
+ energies indicate that Sn and Co co-doping easily generate
+ 4.7, 20.6, and 28.9 mF cm−2, respectively, in 1 M KOH. Further,
+ vacancies in Ni3S2. These results are consistent with the litera-
+ as a critical indicator of catalysts for OER catalytic activity, the
+ ture reporting the improvement of OER activity aer metal
+ electrochemically active surface area (ECSA) of the catalyst was
+ doping. For example, Fe-doped Ni3S2 with rich VS shows
+ determined by Cdl × S/Cs, where Cs and S are the specic
+ a reduced OER energy barrier promoted by both Fe doping and
+ capacitance and surface area of the working electrode, respec-
+ the high content of VS.76 Thus, CoSn-Ni3S2@NF in our experi-
+ tively. The ECSA of CoSn-Ni3S2@NF (72.3 cm2) was much higher
+ ment includes aﬄuently generated vacancies and surface
+ than those of Co-Ni3S2@NF (51.5 cm2) and Ni3S2@NF (37.0
+ oxidation and shows improved OER performance.
+ cm2), therefore demonstrating that co-doping of Co and Sn in
+ Interestingly, Sn and Co co-doping leads to a crossover of the
+ the Ni3S2 has triggered intrinsic OER catalytic activity with more
+ dominant vacancy type. In Ni3S2 and Co-Ni3S2, VNi is more likely
+ eﬀective active sites for charged ionic/electronic species.
+ to form than VS, since Ef(VNi) is calculated to be lower than
+ By combining the experiment and DFT calculations, we
+ Ef(VS). On the other hand, aer co-doping of Sn and Co, the VS
+ attempted to determine the cause of the measured high OER
+ formation is much more pronounced than the VNi formation.
+ activities of metal doped Ni3S2. Our results suggest that this can
+ For example, Ef(VNi) is nearly ten times greater than Ef(VS) in
+ be understood in terms of (i) defect formation and (ii) Ni 3d-
+ CoSn-Ni3S2 (note that, since the calculation of the defect
+ band center. Overall, we nd that two dopants, Co and Sn,
+ formation energy is based on a thermodynamic equilibrium
+ contribute diﬀerently to the OER activity (Table 2); the Co
+ growth environment whereas our experiment is not, the abso-
+ dopant not only becomes an activation site by itself, but it also
+ lute formation energy is less meaningful in our case). Therefore,
+ makes the Ni 3d-band center higher, and the Sn dopant accel-
+ although there may exist a VNi with moderate content, the
+ erates VS formation (that shis upward Ni 3d-band center) while
+ number of electron carriers increases due to a larger content of
+ hardly changing the Ni 3d-band center. Therefore, CoSn co-
+ VS (electron supplier) than that of VNi (hole supplier). This is
+ doping maximizes the OER activities as measured in the
+ consistent with the experimentally observed ratio of Ni2+/Ni3+
+ experiment.
+ (increased from 0.80 in Ni3S2 to 1.34 in CoSn-Ni3S2) and the
+ (i) Defect formation. The vacancy formation, which
+ ratio of Co2+/Co3+ (increased from 1.04 in Co-Ni3S2 to 1.37 in
+ improves the OER performance of oxides and suldes,78 is
+ CoSn-Ni3S2), which possibly result from an increase in electrons
+ sensitive to whether or not metal is doped as well as which type
+ relative to holes. More importantly, the observation of higher
+ of metal is doped. As listed in Table 3, although the calculated
+ (greater) OER activity (VS content than VNi content) of Sn-
+ vacancy formation energies are barely changed with/without Co
+ Ni3S2@NF and CoSn-Ni3S2@NF compared to Co-Ni3S2@NF
+ dopant, those are dramatically reduced aer Sn doping and
+ indicates that VS is more important than VNi in terms of the OER
+ further decrease with CoSn co-doping, possibly due to the fact
+ activity.
+ that the Sn dopant distorts the atomic structure around it
+ (ii) Ni 3d-band center. It is known that the d-band center
+ (Fig. S10†); hence, the doped structure is less stable, thus
+ indicates an increase in the adsorbates when it shis close to
+ leading to easier vacancy formation. The reduced formation
+
+ Table 2 Summary of role of dopant and native defect in catalytic activity of Ni3S2. + indicates the magnitude of positive contribution to the
+ activity
+
+ Contribution Co-Ni3S2 Sn-Ni3S2 CoSn-Ni3S2
+
+ Increasing of activation site +, Co dopant +, VS ++, Co dopant & VS
+ Shi of Ni 3d-band center to EF +, by Co dopant +, by VS (barely changed by Sn) ++, by Co & VS
+ Increasing of electron carriers +, by VS +, by VS
+ Total ++ +++ +++++
+
+ 5742 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ and Ni3S2@NF (372 mV, 125 mV dec−1) catalysts. More impor-
+ tantly, the h of CoSn-Ni3S2@NF at 0.2 A cm−2 was smaller than
+ NF-based OER electrocatalysts that have previously been re-
+ ported, including Ir/C (324 mV, 81 mV dec−1) in alkaline media,
+ which validates that the incorporation of Sn and Co atoms into
+ Ni3S2 triggers OER performance enhancement. In addition,
+ CoSn-Ni3S2@NF presented negligible performance degrada-
+ tions during the constant current (at 0.2 A cm−2 for 10 h) and
+ voltage cycling test between 1.25 and 1.65 V for 1000 cycles, thus
+ indicating remarkable stability for the OER. Further, the CoSn-
+ Ni3S2@NF alkaline water electrolysis cell demonstrated excel-
+ lent polarization characteristics corresponding to a cell voltage
+ of 2.0 V at a current density of 1.367 A cm−2, 80 °C, and 30 wt%
+ KOH condition. Experimental results and DFT calculations
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ revealed that two dopants, Co and Sn, contribute diﬀerently to
+ the OER activity of CoSn-Ni3S2@NF; the Co dopant becomes an
+ activation site and makes the Ni 3d-band center higher, while
+ the Sn dopant contributes to the OER activity by generating
+ Fig. 8 Calculated DOS for (a) Ni3S2, (b) Co-Ni3S2, (c) Sn-Ni3S2−x, and
+ donor-type VS that is an activation site, and it also shis the Ni
+ (d) CoSn-Ni3S2−x. Sn and CoSn-doping leads to VS formation in Ni3S2,
+ and hence (c) and (d) are responsible for the supercells including one 3d-band center upward and closer to the Fermi level. Therefore,
+ VS. Olive and blue dashed lines denote Ni 3d-band center (3d(Ni)) and CoSn co-doping maximizes the OER activities as measured
+ Co 3d-band center (3d(Co)), respectively, and black line indicates Fermi experimentally. This nding provides new possibilities for
+ level. DOS values of Co and Sn components are multiplied by ten for designing high performance transition and post-transition
+ easy visualization.
+ metal suldes electrocatalysts for overall water electrolysis
+ technologies.
+
+ the Fermi level.79 Thus, the d-band centers of Ni3S2, Co-Ni3S2,
+ Sn-Ni3S2, and CoSn-Ni3S2 were estimated using eqn (2). The Author contributions
+ position of the Ni 3d-band center was added in the DOS plot of
+ Won Young An: conceptualization, methodology, investigation,
+ each substance (Fig. 8, S11, and S12†), and the estimated values
+ validation, data acquiring & analysis, visualization, writing –
+ are summarized in Table 3. Our DFT calculations show that Co
+ original dra. Hyungwoo Lee: data curation, soware, data
+ doping and the VS formation shis the Ni 3d-band center
+ acquiring & analysis, writing – original dra. Sung Ryul Choi:
+ upward and closer to the Fermi level. The Co dopant shis the
+ methodology, investigation, validation, data acquiring & anal-
+ Ni 3d-band center upward by 0.04 eV for Co-Ni3S2 and by 0.01 eV
+ ysis. Sungyong Choi: methodology, investigation, validation,
+ for CoSn-Ni3S2 compared to Ni3S2. The impact of the VS
+ data acquiring & analysis. Hyun-Seok Cho: methodology,
+ formation in the Ni 3d-band center is more signicant. The VS
+ resources, supervision, writing – review & editing. Minseok
+ formation shis the Ni 3d-band center upward by 0.07 eV
+ Choi: data curation, soware, supervision, writing – review &
+ (Ni3S2), 0.03 eV (Co-Ni3S2), 0.05 eV (Sn-Ni3S2), and 0.04 eV
+ editing. Jun-Young Park: conceptualization, methodology,
+ (CoSn-Ni3S2). These values are comparable to or even greater
+ funding acquisition, supervision, writing – review & editing.
+ than the reported d-band center shi of the other metal-doped
+ Ni3S2 (e.g., 0.03 eV in Cu-doped Ni3S2/Co3S4 (ref. 80)). On the
+ other hand, the Sn dopant and VNi either have no eﬀect on the Conﬂicts of interest
+ Ni 3d-band center or induce a much smaller change in the Ni
+ 3d-band center than the Co dopant and VS. There are no conicts to declare.
+
+ Conclusions Acknowledgements
+ With the goal of designing a high-performance, durable, and This research was supported by the Basic Science Research
+ cost-eﬀective electrocatalyst, we demonstrated that multi-valent Program through the National Research Foundation of Korea
+ transition metal (Co) and post-transition metal (Sn)-co-doped (NRF) funded by the Ministry of Education (NRF-
+ Ni3S2@NF are highly active and durable for the OERs in alka- 2020R1A6A1A03043435, NRF-2021R1F1A1051716) and Tech-
+ line medium. The hierarchically porous and nanostructured nology Innovation Program (20011633) funded by the Ministry
+ CoSn-Ni3S2@NF catalysts were synthesized via a facile and of Trade, Industry & Energy of (MOTIE) Korea.
+ reproducible hydrothermal synthesis method. CoSn-Ni3S2@NF
+ exhibited better OER activity with a lower h of 321 mV at 0.2 A References
+ cm−2 (Tafel slope of 69 mV dec−1) than the CoFe-Ni3S2@NF
+ (330 mV, 90 mV dec−1), Co-Ni3S2@NF (341 mV, 101 mV dec−1), 1 H. Zhao and Y. Lei, Adv. Energy Mater., 2020, 10, 2001460.
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5743
+ View Article Online
+
+ Journal of Materials Chemistry A Paper
+
+ 2 S. R. Choi, M. Lim, D. Y. Kim, W. Y. An, S. W. Lee, S. Choi, 27 B. Fei, Z. Chen, J. Liu, H. Xu, X. Yan, H. Qing, M. Chen and
+ S. J. Bae, S.-D. Yim and J.-Y. Park, Int. J. Hydrogen Energy, R. Wu, Adv. Energy Mater., 2020, 10, 2001963.
+ 2022, 47, 17379–17392. 28 J.-F. Qin, M. Yang, S. Hou, B. Dong, T.-S. Chen, X. Ma,
+ 3 F. Qureshi, M. Yusuf, H. Kamyab, S. Zaidi, M. J. Khalil, J.-Y. Xie, Y.-N. Zhou, J. Nan and Y.-M. Chai, Appl. Surf. Sci.,
+ M. A. Khan, M. A. Alam, F. Masood, L. Bazli and 2020, 502, 144172.
+ S. Chelliapan, Sustain. Energy Technol. Assessments, 2022, 29 X. Wu, T. Zhang, J. Wei, P. Feng, X. Yan and Y. Tang, Nano
+ 53, 102677. Res., 2020, 13, 2130–2135.
+ 4 S. Singla, N. P. Shetti, S. Basu, K. Mondal and 30 H. Sun, Z. Yan, F. Liu, W. Xu, F. Cheng and J. Chen, Adv.
+ T. M. Aminabhavi, J. Environ. Manage., 2022, 302, 113963. Mater., 2020, 32, 1806326.
+ 5 S. Sadeghi, S. Ghandehariun and M. A. Rosen, Energy, 2020, 31 N. Mahmood, Y. Yao, J. W. Zhang, L. Pan, X. Zhang and
+ 208, 118347. J. J. Zou, Adv. Sci., 2018, 5, 1700464.
+ 6 A. Al-Qahtani, B. Parkinson, K. Hellgardt, N. Shah and 32 N. Chen, S. Y. Paek, J. Y. Lee, J. H. Park, S. Y. Lee and
+ G. Guillen-Gosalbez, Appl. Energy, 2021, 281, 115958. Y. M. Lee, Energy Environ. Sci., 2021, 14, 6338–6348.
+ 7 Z. Y. Yu, Y. Duan, X. Y. Feng, X. Yu, M. R. Gao and S. H. Yu, 33 X. Luo, P. Ji, P. Wang, R. Cheng, D. Chen, C. Lin, J. Zhang,
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ Adv. Mater., 2021, 33, 2007100. J. He, Z. Shi and N. Li, Adv. Energy Mater., 2020, 10, 1903891.
+ 8 E. Fabbri, A. Habereder, K. Waltar, R. Kötz and T. J. Schmidt, 34 L. Ma, K. Zhang, S. Wang, L. Gao, Y. Sun, Q. Liu, J. Guo and
+ Catal. Sci. Technol., 2014, 4, 3800–3821. X. Zhang, Appl. Surf. Sci., 2019, 489, 815–823.
+ 9 Z. Li, X. Wu, X. Jiang, B. Shen, Z. Teng, D. Sun, G. Fu and 35 J. P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett.,
+ Y. Tang, Advanced Powder Materials, 2022, 1, 100020. 1996, 77, 3865.
+ 10 S. Anwar, F. Khan, Y. Zhang and A. Djire, Int. J. Hydrogen 36 G. Kresse and J. Hafner, Phys. Rev. B: Condens. Matter Mater.
+ Energy, 2021, 46, 32284–32317. Phys., 1993, 47, 558.
+ 11 P. Chen and X. Hu, Adv. Energy Mater., 2020, 10, 2002285. 37 S. L. Dudarev, G. A. Botton, S. Y. Savrasov, C. Humphreys and
+ 12 H. M. Amin and U. P. Apfel, Eur. J. Inorg. Chem., 2020, 2020, A. P. Sutton, Phys. Rev. B: Condens. Matter Mater. Phys., 1998,
+ 2679–2690. 57, 1505.
+ 13 X. Wang, X. Huang, W. Gao, Y. Tang, P. Jiang, K. Lan, 38 C. Freysoldt, B. Grabowski, T. Hickel, J. Neugebauer,
+ R. Yang, B. Wang and R. Li, J. Mater. Chem. A, 2018, 6, G. Kresse, A. Janotti and C. G. Van de Walle, Rev. Mod.
+ 3684–3691. Phys., 2014, 86, 253.
+ 14 D. Y. Kim, H. Lee, S. R. Choi, S. Choi, W. Y. An, H.-S. Cho, 39 X. Liu, Y. Li, N. Chen, D. Deng, X. Xing and Y. Wang,
+ M. Choi and J.-Y. Park, J. Alloys Compd., 2022, 914, 165305. Electrochim. Acta, 2016, 213, 730–739.
+ 15 C. Manjunatha, N. Srinivasa, S. Chaitra, M. Sudeep, 40 T. Ai, H. Wang, W. Bao, L. Feng, X. Zou, X. Wei, L. Ding,
+ R. C. Kumar and S. Ashoka, Mater. Today Energy, 2020, 16, Z. Deng and B. Rao, Chem. Eng. J., 2022, 450, 138358.
+ 100414. 41 A. Ashok, A. Kumar, J. Ponraj and S. A. Mansour, Carbon,
+ 16 L. Zeng, K. Sun, X. Wang, Y. Liu, Y. Pan, Z. Liu, D. Cao, 2020, 170, 452–463.
+ Y. Song, S. Liu and C. Liu, Nano Energy, 2018, 51, 26–36. 42 G. Gibbs, R. Downs, C. Prewitt, K. M. Rosso, N. Ross and
+ 17 W. Zhou, X.-J. Wu, X. Cao, X. Huang, C. Tan, J. Tian, H. Liu, D. F. Cox, J. Phys. Chem. B, 2005, 109, 21788–21795.
+ J. Wang and H. Zhang, Energy Environ. Sci., 2013, 6, 2921– 43 Q. Xu, M. Chu, M. Liu, J. Zhang, H. Jiang and C. Li, Chem.
+ 2924. Eng. J., 2021, 411, 128488.
+ 18 Q. Lin, Y. Zhu, Z. Hu, Y. Yin, H.-J. Lin, C.-T. Chen, X. Zhang, 44 B. Wu, H. Qian, Z. Nie, Z. Luo, Z. Wu, P. Liu, H. He, J. Wu,
+ Z. Shao and H. Wang, J. Mater. Chem. A, 2020, 8, 6480–6486. S. Chen and F. Zhang, J. Energy Chem., 2020, 46, 178–186.
+ 19 P. Zhang, Z. Wang, X. Hou, J. Lu, X. Xu, C. Stamp and C. Hu, 45 T. Zhu, L. Zhu, J. Wang and G. W. Ho, J. Mater. Chem. A, 2016,
+ Appl. Catal., A, 2021, 624, 118324. 4, 13916–13922.
+ 20 J.-J. Duan, Z. Han, R.-L. Zhang, J.-J. Feng, L. Zhang, 46 N. R. Chodankar, I. V. Bagal, S. W. Ryu, Y. K. Han and
+ Q.-L. Zhang and A.-J. Wang, J. Colloid Interface Sci., 2021, D. H. Kim, ChemCatChem, 2019, 11, 4256–4261.
+ 588, 248–256. 47 L. Lei, D. Huang, C. Zhang, R. Deng, S. Chen and Z. Li, J.
+ 21 S. R. Choi, J.-I. Lee, H. Park, S. W. Lee, D. Y. Kim, W. Y. An, Catal., 2020, 385, 129–139.
+ J. H. Kim, J. Kim, H.-S. Cho and J.-Y. Park, Chem. Eng. J., 48 Q. Dong, Y. Zhang, Z. Dai, P. Wang, M. Zhao, J. Shao,
+ 2021, 409, 128226. W. Huang and X. Dong, Nano Res., 2018, 11, 1389–1398.
+ 22 Y. Gong, Z. Xu, H. Pan, Y. Lin, Z. Yang and X. Du, J. Mater. 49 X. Li, G.-Q. Han, Y.-R. Liu, B. Dong, X. Shang, W.-H. Hu,
+ Chem. A, 2018, 6, 5098–5106. Y.-M. Chai, Y.-Q. Liu and C.-G. Liu, Electrochim. Acta, 2016,
+ 23 S. Song, Y. Wang, W. Li, P. Tian, S. Zhou, H. Gao, X. Tian and 205, 77–84.
+ J. Zang, J. Alloys Compd., 2020, 827, 154299. 50 D. Zhang, J. Li, J. Luo, P. Xu, L. Wei, D. Zhou, W. Xu and
+ 24 J. Yu, F.-X. Ma, Y. Du, P.-P. Wang, C.-Y. Xu and L. Zhen, D. Yuan, Nanotechnology, 2018, 29, 245402.
+ ChemElectroChem, 2017, 4, 594–600. 51 M. A. R. Anjum, M. D. Bhatt, M. H. Lee and J. S. Lee, Chem.
+ 25 J. Jian, L. Yuan, H. Qi, X. Sun, L. Zhang, H. Li, H. Yuan and Mater., 2018, 30, 8861–8870.
+ S. Feng, ACS Appl. Mater. Interfaces, 2018, 10, 40568–40576. 52 J.-G. Wang, W. Hua, M. Li, H. Liu, M. Shao and B. Wei, ACS
+ 26 G. Zhang, Y.-S. Feng, W.-T. Lu, D. He, C.-Y. Wang, Y.-K. Li, Appl. Mater. Interfaces, 2018, 10, 41237–41245.
+ X.-Y. Wang and F.-F. Cao, ACS Catal., 2018, 8, 5431–5441.
+
+ 5744 | J. Mater. Chem. A, 2023, 11, 5734–5745 This journal is © The Royal Society of Chemistry 2023
+ View Article Online
+
+ Paper Journal of Materials Chemistry A
+
+ 53 Y. Wang, B. Zhang, W. Pan, H. Ma and J. Zhang, 67 Y. Zhu, X. Wang, X. Zhu, Z. Wu, D. Zhao, F. Wang, D. Sun,
+ ChemSusChem, 2017, 10, 4170–4177. Y. Tang, H. Li and G. Fu, Small, 2022, 19, 2206531.
+ 54 J. Li, W. Xu, J. Luo, D. Zhou, D. Zhang, L. Wei, P. Xu and 68 S. Chen, Z. Zheng, Q. Li, H. Wan, G. Chen, N. Zhang, X. Liu
+ D. Yuan, Nano-Micro Lett., 2018, 10, 1–10. and R. Ma, J. Mater. Chem. A, 2023, 11, 1944–1953.
+ 55 C. Du, M. Shang, J. Mao and W. Song, J. Mater. Chem. A, 2017, 69 E. López-Fernández, J. Gil-Rostra, J. P. Espinos,
+ 5, 15940–15949. A. R. González-Elipe, F. Yubero and A. de Lucas-Consuegra,
+ 56 Y. Xiong, L. Xu, C. Jin and Q. Sun, Appl. Catal., B, 2019, 254, J. Power Sources, 2019, 415, 136–144.
+ 329–338. 70 G.-C. Chen, T. H. Wondimu, H.-C. Huang, K.-C. Wang and
+ 57 A. Sivanantham and S. Shanmugam, Appl. Catal., B, 2017, C.-H. Wang, Int. J. Hydrogen Energy, 2019, 44, 10174–10181.
+ 203, 485–493. 71 J. E. Park, S. Y. Kang, S.-H. Oh, J. K. Kim, M. S. Lim,
+ 58 J. Yu, C. Lv, L. Zhao, L. Zhang, Z. Wang and Q. Liu, Adv. C.-Y. Ahn, Y.-H. Cho and Y.-E. Sung, Electrochim. Acta,
+ Mater. Interfaces, 2018, 5, 1701396. 2019, 295, 99–106.
+ 59 Y. Gu, S. Chen, J. Ren, Y. A. Jia, C. Chen, S. Komarneni, 72 F. Lu, M. Zhou, W. Li, Q. Weng, C. Li, Y. Xue, X. Jiang,
+ D. Yang and X. Yao, ACS Nano, 2018, 12, 245–253. X. Zeng, Y. Bando and D. Golberg, Nano Energy, 2016, 26,
+Published on 22 February 2023. Downloaded on 5/2/2024 12:22:23 PM.
+
+ 60 K.-L. Yan, J.-F. Qin, Z.-Z. Liu, B. Dong, J.-Q. Chi, W.-K. Gao, 313–323.
+ J.-H. Lin, Y.-M. Chai and C.-G. Liu, Chem. Eng. J., 2018, 73 J. Feng, Y. Meng, Z. Lian, L. Fang, Z. Long, Y. Li and Y. Song,
+ 334, 922–931. RSC Adv., 2019, 9, 9729–9736.
+ 61 K. S. Bhat and H. Nagaraja, Int. J. Hydrogen Energy, 2018, 43, 74 L. Tang, T. Fan, Z. Chen, J. Tian, H. Guo, M. Peng, F. Zuo,
+ 19851–19863. X. Fu, M. Li and Y. Bu, Chem. Eng. J., 2021, 417, 129324.
+ 62 X. Wang, R. Liu, Y. Zhang, L. Zeng and A. Liu, Appl. Surf. Sci., 75 Z. Li, D. Zhao, C. Xu, J. Ning, Y. Zhong, Z. Zhang, Y. Wang
+ 2018, 456, 164–173. and Y. Hu, Electrochim. Acta, 2018, 278, 33–41.
+ 63 S. Shit, S. Chhetri, W. Jang, N. C. Murmu, H. Koo, P. Samanta 76 S.-C. Sun, F.-X. Ma, Y. Li, L.-W. Dong, H. Liu, C.-M. Jiang,
+ and T. Kuila, ACS Appl. Mater. Interfaces, 2018, 10, 27712– B. Song, L. Zhen and C.-Y. Xu, Sustainable Energy Fuels,
+ 27722. 2020, 4, 3326–3333.
+ 64 L. Zhang, K. Xiong, S. Chen, L. Li, Z. Deng and Z. Wei, J. 77 Y. Liu, X. Liang, L. Gu, Y. Zhang, G.-D. Li, X. Zou and
+ Power Sources, 2015, 274, 114–120. J.-S. Chen, Nat. Commun., 2018, 9, 1–10.
+ 65 J. Lin, H. Wang, X. Zheng, Y. Du, C. Zhao, J. Qi, J. Cao, W. Fei 78 Y. Jia, K. Jiang, H. Wang and X. Yao, Chem, 2019, 5, 1371–
+ and J. Feng, J. Power Sources, 2018, 401, 329–335. 1397.
+ 66 Y. Li, B. Wei, Z. Yu, O. Bondarchuk, A. Araujo, I. Amorim, 79 B. Hammer and J. K. Nørskov, Adv. Catal., 2000, 45, 71–129.
+ N. Zhang, J. Xu, I. C. Neves and L. Liu, ACS Sustainable 80 H. Su, S. Song, S. Li, Y. Gao, L. Ge, W. Song, T. Ma and J. Liu,
+ Chem. Eng., 2020, 8, 10193–10200. Appl. Catal., B, 2021, 293, 120225.
+
+ This journal is © The Royal Society of Chemistry 2023 J. Mater. Chem. A, 2023, 11, 5734–5745 | 5745

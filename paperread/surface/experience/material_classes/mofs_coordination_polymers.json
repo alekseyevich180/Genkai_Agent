@@ -1,20 +1,47 @@
 {
   "schema_version": "2.0",
   "material_class": "mofs_coordination_polymers",
-  "updated_at": "2026-07-06T07:30:22.289861+00:00",
+  "updated_at": "2026-07-06T15:48:30.359528+00:00",
   "summary": {
-    "terms": 0,
-    "known_useful": 0,
+    "terms": 1,
+    "known_useful": 1,
     "unknown": 0
   },
-  "keyword_inventory": {},
+  "keyword_inventory": {
+    "materials": [
+      {
+        "term": "mofs_coordination_polymers",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ]
+  },
   "material_descriptors": {},
   "class_profile": {
     "descriptor_schema": "generic_material_profile",
     "elements": [],
-    "components": [],
+    "components": [
+      {
+        "term": "mofs_coordination_polymers",
+        "count": 1
+      }
+    ],
     "surface_states": [],
     "reaction_families": []
   },
-  "entries": []
+  "entries": [
+    {
+      "term": "mofs_coordination_polymers",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
+      ]
+    }
+  ]
 }

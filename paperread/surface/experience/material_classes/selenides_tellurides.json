@@ -1,14 +1,20 @@
 {
   "schema_version": "2.0",
   "material_class": "selenides_tellurides",
-  "updated_at": "2026-07-06T15:18:47.732336+00:00",
+  "updated_at": "2026-07-06T15:48:30.384681+00:00",
   "summary": {
-    "terms": 2,
-    "known_useful": 0,
+    "terms": 3,
+    "known_useful": 1,
     "unknown": 2
   },
   "keyword_inventory": {
     "materials": [
+      {
+        "term": "selenides_tellurides",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
       {
         "term": "selenides",
         "count": 1,
@@ -29,6 +35,10 @@
     "elements": [],
     "components": [
       {
+        "term": "selenides_tellurides",
+        "count": 4
+      },
+      {
         "term": "selenides",
         "count": 1
       },
@@ -41,6 +51,20 @@
     "reaction_families": []
   },
   "entries": [
+    {
+      "term": "selenides_tellurides",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
+        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
+        "d2ta09361h"
+      ]
+    },
     {
       "term": "selenides",
       "kind": "unknown_high_value",

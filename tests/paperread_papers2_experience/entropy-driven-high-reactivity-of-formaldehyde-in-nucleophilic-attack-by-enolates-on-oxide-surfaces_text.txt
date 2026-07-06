@@ -1,0 +1,639 @@
+Article
+
+ Cite This: J. Am. Chem. Soc. 2018, 140, 775−782 pubs.acs.org/JACS
+
+ Entropy-Driven High Reactivity of Formaldehyde in Nucleophilic
+ Attack by Enolates on Oxide Surfaces
+ Shuai Wang*,†,‡ and Enrique Iglesia*,‡
+ †
+ State Key Laboratory for Physical Chemistry of Solid Surfaces, Collaborative Innovation Center of Chemistry for Energy Materials,
+ and National Engineering Laboratory for Green Chemical Productions of Alcohols-Ethers-Esters, College of Chemistry and
+ Chemical Engineering, Xiamen University, Xiamen 361005, China
+ ‡
+ Department of Chemical and Biomolecular Engineering, University of California, Berkeley, California 94720, United States
+ *
+ S Supporting Information
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+
+ ABSTRACT: CH3OH dehydrogenation on a metal function occurs in tandem with C−C
+ coupling of HCHO with enolates derived from alkanals or alkanones on acid−base pairs
+ at anatase TiO2 surfaces with very high speciﬁcity for nucleophilic attack by enolates on
+ Downloaded via UNIV OF TOKYO on March 17, 2026 at 07:43:09 (UTC).
+
+ HCHO over larger carbonyl molecules. The measured rate constants for enolate coupling
+ with HCHO are >103-fold larger than for its coupling with acetone. Free energies derived
+ from theoretical treatments of reactions between C2−C4 bound enolates and carbonyls
+ show that such speciﬁcity for nucleophilic attack on HCHO reﬂects smaller entropy losses
+ upon formation of the transition state (TS), instead of enthalpic eﬀects caused by weaker
+ steric eﬀects or the stronger electrophilic character of HCHO compared with larger
+ carbonyls. The easier steric access and higher electrophilicity of the carbonyl C atom of
+ HCHO in C−C coupling with enolates are compensated by a later TS and by stronger
+ van der Waals contacts for the corresponding reactions of the larger carbonyls. The
+ preeminence of entropic eﬀects over enthalpic stabilization reﬂects the greater structural
+ organization imposed by surfaces on TS structures compared with similar reactions and
+ structures in gaseous or liquid media. Such organization imposes signiﬁcant entropic penalties that become least consequential
+ for smaller electrophiles, thus enabling highly selective routes for sequential addition of C1 groups at nucleophilic C atoms in co-
+ reactants using HCHO, whether added or formed in situ from CH3OH, as the monomer source. Such entropy-driven speciﬁcity
+ is therefore a unique and unrecognized characteristic of reactions catalyzed by surfaces.
+
+ 1. INTRODUCTION Scheme 1. Self Condensation and Cross Condensation
+ Pathways for Cn Carbonyl Compounds (n = Number of C-
+ Formaldehyde (HCHO) is much more reactive than other
+ Atoms) and HCHO on Anatase TiO2 (with Ag/SiO2 Co-
+ alkanals or alkanones in C−C coupling reactions with
+ Catalysts and Added H2)
+ nucleophiles, such as enolates in aldol condensation1−4 or
+ alkenes in Prins condensation,5,6 making it a monomer of choice
+ in backbone lengthening strategies.7,8 Weaker steric hindrance
+ at CO centers9 and the more electrophilic character of the
+ carbonyl C atom in HCHO10 are often invoked in order to
+ account for this high reactivity, but without explicit experimental
+ or theoretical treatments of kinetic constants or of the enthalpy
+ and entropy components of the relevant activation free energy
+ barriers.
+ Lewis acid−base pairs (metal−oxygen linkages) of moderate
+ strength on TiO2 and ZrO2 show unique reactivity in surface-
+ catalyzed aldol condensations.9,11−14 These reactions are limited
+ by enolate formation steps that cleave α-C−H bonds in carbonyl
+ reactants9,11 and involve subsequent fast nucleophilic attack on
+ co-adsorbed reactants by enolates and H2O elimination to form
+ α,β-unsaturated carbonyls, as well as their hydrogenated
+ products (alkanals, alkanones, and alkanols) when a metal
+ function (Cu,11 Pt,15 Ag used here) and H2 are also present
+ (Scheme 1). HCHO is unable to form enolates because it lacks
+ α-C−H bonds, but it is highly reactive as the electrophile in C− Received: November 5, 2017
+ C bond formation with α-C atoms in bound enolates.1−4 Published: January 3, 2018
+
+ © 2018 American Chemical Society 775 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+Additionally, HCHO can be formed in situ via dehydrogenation Aggregates of these mixtures (125−180 μm), obtained via pressing,
+of CH3OH on metal catalysts (Cu,16 Ag17) present as mixtures crushing, and sieving, were loaded into a quartz tubular ﬂow reactor
+with TiO2 or ZrO2, thus enabling the use of CH3OH here as a C1 (1.0 cm I.D.), treated in ﬂowing 10% H2/He (5.56 cm3 g−1 s−1,
+monomer in carbon chain lengthening reactions that is less 99.999%, Praxair) at 803 K (0.0833 K s−1 from ambient temperature)
+ for 2 h, and then cooled to desired reaction temperature (723−773 K).
+costly and easier-to-handle than HCHO. Liquid acetone (99.9%, Fisher Scientiﬁc) and methanol (HCHO
+ Here, we combine kinetic and theoretical methods to examine precursor, 99.9%, Fisher Scientiﬁc) were introduced into the reactor via
+the C−C coupling reactions of C2−C4 enolates with HCHO and vaporizing into H2 (99.999%, Praxair) and He (99.999%, Praxair) ﬂows,
+with larger carbonyl reactants on anatase TiO2 (TiO2(a)) using and the liquid and gas ﬂow rates were metered via syringe pumps (Cole
+Ag/SiO2 as co-catalysts in experiments in order to convert Parmer, 74900 series) and electronic mass ﬂow controllers (Porter,
+CH3OH to HCHO. The eﬀects of alkyl substituents in carbonyls Inc.), respectively. All transfer lines were kept above 430 K in order to
+on C−C bond formation rates and on the enthalpy and entropy avoid reactant or product condensation.
+components of activation free energy barriers for self- The concentrations of the eﬄuent components were measured by
+condensation and C−C coupling with HCHO (Scheme 1) are gas chromatography (Agilent 6890) using a capillary column (Agilent,
+ HP-1, methyl silicone, 50 m, 0.32 mm I.D. × 1.05 um) connected to a
+assessed using state-of-the-art theoretical treatments, with ﬂame ionization detector and also a packed column (Porapak-Q, 4.8 m,
+acetone-HCHO reactions used as the experimental benchmark. 80−100 mesh) connected to a thermal conductivity detector.
+The uniquely high reactivity of HCHO (relative to larger Conversions and selectivities were reported on a carbon basis. Reaction
+alkanals or alkanones) with a given enolate does not reﬂect a rates were measured periodically at a reference condition (1.0 kPa
+greater enthalpic stabilization of transition states (TS), typically acetone, 5.0 kPa methanol, 10 kPa H2, 773 K) to correct rates for some
+expected for HCHO, which is the stronger electrophile and has a slow deactivation detected at the reaction conditions used in this study.
+sterically less hindered C atom; these expected enthalpic eﬀects 2.3. Computational Methods. Ti5O19H18 clusters (Scheme 2)
+are oﬀset by stronger van der Waals and covalent stabilization of were extracted from TiO2(a) (101) surfaces as described elsewhere.11
+the larger carbonyl molecules by the enolates at the bimolecular
+C−C coupling TS. They reﬂect instead the much smaller Scheme 2. Ti5O19H18 Cluster Model Built Based on the
+entropy loss upon formation of the TS with the smaller Anatase TiO2 (101) Surface Structure
+electrophiles and the preeminent role of entropy on activation
+free energies at the relatively high reaction temperatures
+required for these reactions on oxide surfaces. These entropic
+eﬀects become more preeminent at surfaces which impose a
+greater degree of organization at TS than homogeneous gaseous
+or liquid media.
+
+2. EXPERIMENTAL METHODS
+ 2.1. Catalyst Synthesis and Characterization. Ag/SiO2 co-
+catalysts (ca. 20% wt. Ag) were prepared using homogeneous
+deposition−precipitation methods. AgNO3 (≥99.5%, Sigma-Aldrich;
+5 mmol) and urea (99%, Aldrich; 25 mmol) were dissolved in 50 cm3
+deionized water at ambient temperature. Fumed SiO2 (Cab-O-Sil,
+Sigma-Aldrich; 395 m2 g−1; 2.0 g) was then added into this solution, and
+the pH value of the suspension was adjusted to 2−3 using HNO3
+solutions (0.5 mmol cm−3; 99%, Sigma-Aldrich). This suspension was
+heated to 353 K (at 0.167 K s−1) and held for 20 h under stirring (12
+Hz). The powders were ﬁltered and washed with deionized water until
+the ﬁltrate gave a pH value of 6−7 and then treated in ambient stagnant
+air at 383 K for 24 h and in ﬂowing dry air (1.67 cm3 g−1 s−1, Praxair) at
+1073 K (at 0.033 K s−1) for 2 h. These samples were ﬁnally treated in
+ﬂowing 10% H2/He (5.56 cm3 g−1 s−1, Praxair) by heating to 803 K (at These Ti5O19H18 clusters have been shown to represent adequate
+0.033 K s−1; held for 2 h) and then in ﬂowing 1% O2/He mixtures (0.83 models in assessing the elementary steps and their kinetic relevance in
+cm3 g−1 s−1, Praxair) at ambient temperature for 1 h to passivate the aldol condensations on TiO2(a).9,11 Geometry optimizations of
+samples before exposure to ambient air. Cu/SiO2 co-catalysts (ca. 20% reactants, products, and TS involved in enolate-carbonyl C−C coupling
+wt. Cu) were also prepared using homogeneous deposition− reactions on Ti5O19H18 clusters were carried out using the Berny
+precipitation methods that are described elsewhere in detail.11 geometry algorithm19 as implemented in the Gaussian 09 program.20
+ These Ag/SiO2 and Cu/SiO2 samples were characterized by powder During optimizations, the ﬁve Ti atoms and the three internal O atoms
+X-ray diﬀraction (XRD) (Cu Kα radiation, λ = 0.15418 nm, 40 kV, 40 in Ti5O19H18 clusters were allowed to relax, while all remaining atoms
+mA, Bruker D8 Advance). The mean crystallite size of metal particles in were held ﬁxed in order to preserve the structure of the extended parent
+these samples was determined from the breadth of their most intense anatase surfaces. All calculations were carried out at the hybrid B3LYP
+(111) reﬂections in XRD diﬀractograms (2θ: 38.1° for Ag; 43.3° for functional level of theory21,22 with the Gaussian-type 6-311G(d,p) basis
+Cu) using the Scherrer equation.18 The mean Ag crystallite size of the set for the C, O, and H atoms23,24 and the eﬀective core potential
+Ag/SiO2 catalysts was 15.5 nm, and that for the Cu particles in the Cu/ LANL2DZ basis set for the Ti atoms.25 Wave functions were converged
+SiO2 catalysts was 7.9 nm. to 10−8 Ha with an ultraﬁne grid of 99,590 points for the numerical
+ Anatase TiO2 (TiO2(a), 99.7%, 240 m2 g−1, Alfa Aesar) was used integration; structures were optimized until the root-mean-square force
+here as the condensation catalyst. It was treated at 673 K (0.167 K s−1) was <1.5 × 10−5 Ha Bohr−1. The van der Waals contributions to
+for 3 h in ﬂowing dry air (1.67 cm3 g−1 s−1, 99.999%, Praxair) before use. electronic energies were calculated for all structures using Grimme’s
+The crystalline phase of TiO2(a) was conﬁrmed by XRD. D3BJ dispersion correction26 in each step of the geometry optimization.
+ 2.2. Rates of Acetone-HCHO Condensation Reactions. The overestimation of binding energies brought forth by the basis-
+TiO2(a) and Ag/SiO2 (or Cu/SiO2) co-catalysts were mixed together function overlaps when ﬁnite basis sets are used, known as the basis set
+using a mortar and pestle with a mass ratio that ranged from 1/2−1/8. superposition error, was eliminated using the counterpoise correction
+
+ 776 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+method.27,28 These optimized structures were further examined by sation processes. Therefore, Ag/SiO2 is used in this study as the
+frequency calculations at the same computational level. dehydrogenation co-catalyst with TiO2(a) in eﬀecting the cross
+ Zero-point energies and thermal corrections used to calculate the condensation of acetone-HCHO mixtures, in which CH3OH
+enthalpy and entropy of each structure were determined using DFT- was used as the C1 monomer source to form HCHO in situ.
+derived frequencies with the rigid rotor harmonic oscillator (RRHO)
+approximation.29 A factor of 0.9682 was used to scale these frequencies
+ 3.2. Rates and Selectivities of Acetone-HCHO Con-
+to compensate anharmonicity eﬀects excluded in RRHO treatments.30 densations on Mixtures of Anatase TiO2 and Ag/SiO2
+In addition, the vibrational entropies corresponding to the low- Catalysts. The products formed in acetone-HCHO condensa-
+frequency modes of weakly bound adsorbates (<100 cm−1; listed in tion depend on the coupling rates of acetone-derived propen-2-
+Table S1, Supporting Information (SI)) were calculated using a free- olates with either acetone (to form 4-hydroxy-4-methyl-pentan-
+rotor model, as proposed by Grimme,31,32 because of the signiﬁcant 2-one; self-condensation) or HCHO (to form 4-hydroxy-butan-
+errors in the vibrational entropies derived from RRHO treatments of 2-one; cross-condensation) on TiO2(a). These coupling steps
+such modes.33 The charges of each atom in all reactants, products, and lead to the formation of aldols that subsequently dehydrate and
+TS structures were calculated using the natural bond orbital (NBO) hydrogenate to form methyl isobutyl ketone (C3+3) and butan-2-
+analysis34 that provided the most likely Lewis electronic structure for one (C3+1), respectively (Scheme 3). These larger alkanone
+each molecule or coordination complex, and the properties of chemical
+bonds in these structures were analyzed using the Wiberg bond
+indices.35,36 Scheme 3. Reaction Pathways of Acetone-HCHO
+ Condensations on Physical Mixtures of Anatase TiO2 and
+ Ag/SiO2
+3. RESULTS AND DISCUSSION
+ 3.1. Formation of HCHO via CH3OH Dehydrogenation
+on Cu/SiO2 and Ag/SiO2 Catalysts. Use of CH3OH as a
+precursor to HCHO is favorable over direct introduction of
+HCHO because of the chemical instability, volatility, and
+toxicity of HCHO reactants and the fact that HCHO is available
+only as dilute aqueous solutions (∼60% H2O by volume).
+HCHO can form in situ from CH3OH on a dehydrogenation
+function (e.g., Cu16 and Ag17) and then be scavenged by
+condensation reactions with C2+ alkanals/alkanones in the
+presence of an acid−base function (e.g., anatase TiO 2
+(TiO2(a)), as shown below, thus minimizing HCHO decom-
+position to CO and H2. These tandem dehydrogenation− products can also react further with acetone or HCHO, leading
+condensation processes would also lead to a novel and practical to primary product selectivities that ultimately decrease with
+approach to using methanol as a C1 growth monomer with the increasing residence time. For instance, secondary cross-
+formation of speciﬁc skeletal structures unavailable from condensations between butan-2-one and HCHO produced
+methanol homologation catalyzed by Brønsted acids.6 pentan-3-one (C3+1×2), 3-methylbutan-2-one (C3+1×2), and 2-
+ Cu dehydrogenates CH3OH to HCHO,16 but forms methyl methylpentan-3-one (C3+1×3) (Scheme 3). The selectivity to the
+formate as the predominant product (Figure S1, SI). Ag/SiO2, in primary butan-2-one product decreased from 99% to 83% as the
+contrast, gives HCHO selectivities above 60% (5% CH3OH acetone conversion increased from 1% to 38% (773 K, 1 kPa
+conversion; 773 K, Figure 1), leading to higher prevalent acetone, 5 kPa methanol, 10 kPa H2), while the selectivities to all
+HCHO pressures in these tandem dehydrogenation−conden- secondary cross-condensation products increased (Figure 2).
+ The selectivity to methyl isobutyl ketone (C3+3) remained nearly
+ constant at 1% throughout this acetone conversion range
+ (Figure 2), indicating methyl isobutyl ketone is less reactive than
+ butan-2-one in subsequent coupling reactions with HCHO.
+ The combined rates of self-condensation (rself) and cross-
+ condensation (rcross) increased linearly with acetone pressure,
+ but did not depend on the HCHO pressure, set in these
+ experiments by the CH3OH dehydrogenation function (Figure
+ 3). These data indicate that condensation rates are limited by α-
+ C−H activation steps that form propen-2-olates from acetone
+ on essentially bare TiO2(a) surfaces.11 HCHO (or CH3OH) did
+ not inﬂuence enolate formation rates, because of their low
+ prevalent coverages at Ti−O site pairs. Propen-2-olates react
+ with either acetone or HCHO to form C6 or C4 alkanones via
+ competitive reactions that cause rself to increase more strongly
+ with acetone pressure than rcross; at all conditions, cross-
+ condensation events account for most of the products formed
+ from these enolates (Figure 3a). Faster scavenging of propen-2-
+ olates at higher HCHO pressures renders them unavailable for
+Figure 1. CH3OH reaction selectivity on Ag/SiO2 as a function of self-condensation, leading to rself values that consequently
+CH3OH conversion (varied through changes in reactor residence time; decrease as the HCHO pressure increases (Figure 3b).
+20% wt. Ag/SiO2, 773 K, 5 kPa methanol, 10 kPa H2). Dashed lines The rcross/rself ratios increased linearly with HCHO/acetone
+indicate trends. ratios and were much larger than unity at all conditions and even
+ 777 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+Figure 2. Selectivity of acetone-HCHO condensations as a function of
+acetone conversion (varied through changes in reactor residence time;
+TiO2(a); 20% wt. Ag/SiO2; 1:8 mass ratio; 773 K, 1 kPa acetone, 5 kPa
+methanol, 10 kPa H2). C3+x (x = 1−3) represents the respective
+condensation product using the nomenclature in Scheme 3. Dashed
+lines indicate trends.
+
+at very low HCHO/acetone ratios (Figure 4). The slope of the
+data in Figure 4 reﬂects the ratio of rate constants for
+nucleophilic attack at HCHO and acetone by the bound
+propen-2-olates; this ratio is 1110 ± 40 (773 K), consistent with
+the high reactivity of HCHO relative to acetone. Heuristic
+constructs would typically assign such high reactivity to the less
+crowded nature9 and the more electrophilic character10 of the C
+atom in HCHO compared with the carbonyl C atom in larger
+alkanals or alkanones. Kinetic data and DFT-derived free
+energies are used here to provide these heuristic descriptions
+ Figure 3. Self-condensation (rself, ○) and cross-condensation (rcoss, ◇)
+with a more rigorous mechanistic basis and to show that entropic rates of acetone-HCHO reactions and their sums (▲) as a function of
+eﬀects, instead of the enthalpic considerations implicit in sterics (a) acetone and (b) HCHO pressures (TiO2(a); 20% wt. Ag/SiO2; 1:8
+and electrophilicity, make HCHO the preferred electrophile in mass ratio; 773 K, 10 kPa H2, 0−10 kPa acetone, 5 kPa methanol for
+nucleophilic attack by enolates on catalytic surfaces that impose (a); 1 kPa acetone and 0−10 kPa methanol for (b); <5% acetone
+a level of organization at TS absent in reactions occurring in conversions; HCHO pressures measured in eﬄuent stream). Dashed
+homogeneous gaseous or liquid media.10 lines are regression ﬁts to the function forms of eqs S1−S3 in the SI.
+ 3.3. Kinetic Assessment of the Reactivity of Acetone
+and HCHO in Nucleophilic Attack by Enolates on TiO2 TiO2(a) and monoclinic ZrO2 systems9 that are particularly
+Surfaces. Aldol condensation on TiO2 involves C−C coupling proﬁcient catalysts for aldol condensations.
+of bound enolates, formed in rate-limiting steps, with carbonyl The slope in Figure 4 gives the ki,jKj/ki,iKi ratio when i is
+molecules bound weakly at vicinal Lewis acid centers (Scheme acetone and j is HCHO. This ratio reﬂects the magnitude of
+4).9,11 The rate of C−C bond formation between a bound ΔGi,j−i,i
+ TS
+ , the diﬀerence between the free energy barriers to form a
+enolate (ENi*), derived from reactant i, with a carbonyl C atom C−C bond between propen-2-olate and acetone (ΔGTS i,i , from
+in species j (ri,j) is given by the bound i-derived enolate (ENi*) and a gaseous electrophile i)
+ and to form a C−C bond with HCHO (ΔGTS i,j , from the same
+ ri , j = ki , jKj(ENi*)(*)Pj/(L) (1) bound ENi* and a gaseous electrophile j):
+ ij ΔGiTS y
+ ,j−i,i z
+ = expjjjj− zz
+ z
+ RT zz
+where (*) is the number of unoccupied Ti−O site pairs, (L) is
+ j
+ ki , jKj
+
+ k {
+the total number of such pairs at oxide surfaces, Pj and Kj are the
+respective pressure and adsorption constant of species j, and ki,j ki , iK i (3)
+is the rate constant for ENi*-j coupling. For each i-derived
+enolate, the rate ratio for self (j = i) to cross (j ≠ i) C−C ΔGiTS TS TS
+ , j − i , i = ΔGi , j − ΔGi , i (4)
+
+ ij ki , jKj yz ij Pj yz
+coupling is then given by
+
+ = jjjj zz·jj zz
+ ki , jK j
+
+ zz jj zz
+ ri , j Measured ratios (1110 ± 40, Figure 4) correspond to
+
+ k i , i i { k Pi {
+ ki , iK i
+
+ ri , i k K ΔGi,j−i,i
+ TS
+ values of −45 ± 1 kJ mol−1 for acetone-HCHO reactions
+ (2)
+ on TiO2(a) at 773 K; these values are similar to the DFT-derived
+Eqs 1 and 2 provide general kinetic descriptions for competitive free energies reported below (Section 3.4).
+reactions of enolates with carbonyl molecules at Lewis acid− 3.4. Theoretical Treatments of Nucleophilic Attack at
+base site pairs prevalent on oxide surfaces and speciﬁcally on Carbonyl Compounds by Enolates on TiO2 Surfaces.
+ 778 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+ condensation of the carbonyl compounds,9,11 but the C−C
+ bond order (BOC−C, a measure of the extent to which the C−C
+ bond has formed)35 at the TS is smaller for HCHO than for
+ larger electrophiles for all the C2−C4 enolates examined (e.g.,
+ 0.29 and 0.37 for propen-2-olate couplings with HCHO and
+ acetone, respectively; Table 1); such trends in bond orders are
+ consistent with an earlier TS when HCHO acts as the
+ electrophile. These trends in the location of the TS along the
+ reaction coordinate reﬂect the stronger electrophilic character of
+ the C atom in HCHO compared with the carbonyl C atom in the
+ other reactants. Such trends in electrophilic character are
+ consistent with the more exothermic nature of the reactions of
+ F− or CH3− anions with HCHO compared to those with the
+ carbonyl C atoms in larger reactants (DFT-derived energies for
+ the reactions of these anions with C1−C4 carbonyl molecules in
+ gas phase shown in Table S2). Such reaction energies are
+ essentially unaﬀected by steric eﬀects for these carbonyl species
+Figure 4. Eﬀects of HCHO/acetone molar ratio on cross-condensation because of the small sizes of the F− and CH3− nucleophiles.
+to self-condensation rate ratios (rcross/rself) for acetone-HCHO The eﬀects of alkyl substituents on the enthalpy components
+reactions (TiO2(a); 20% wt. Ag/SiO2; 1:8 mass ratio; 773 K, 0−10 (ΔHTSi,j ) of the activation free energy barriers for C−C coupling
+kPa acetone, 0−10 kPa methanol, 10 kPa H2, <5% acetone conversions; between gaseous carbonyl molecules and enolates bound at
+ TiO2(a) surfaces (ΔGTS i,j ) were examined ﬁrst. Changes in ΔHi,j ,
+HCHO pressures measured in eﬄuent stream). The dashed line TS
+represents a linear regression ﬁt. brought forth by steric and electronic eﬀects of alkyl substituents
+ in carbonyl reactants, have been proposed to determine relative
+Scheme 4. Schematic Reaction Coordinate for C−C reactivity and thus changes in the relative values of ΔGTS i,j .
+ 9,10
+ A
+Coupling of Acetone-Derived Propen-2-olate with HCHO on Born−Haber thermochemical cycle (Scheme 4) is used to
+Ti−O Site Pairsa dissect ΔHTS i,j into enthalpy changes upon structural distortion of
+ bound enolates and carbonyls in forming the TS (ΔHdist i,j ) and as
+ they interact at the TS via van der Waals (ΔHvdW i,j ), covalent
+ (ΔHcov elec
+ i,j ), and electrostatic (ΔHi,j ) forces:
+
+ ΔHiTS dist vdW
+ , j = ΔHi , j + ΔHi , j + ΔHicov elec
+ , j + ΔHi , j (5)
+ The ΔHTS
+ i,j−i,i term in ΔGi,j−i,i (eq 4) can then be expressed as
+ TS
+
+ ΔHiTS dist vdW cov elec
+ , j − i , i = ΔHi , j − i , i + ΔHi , j − i , i + ΔHi , j − i , i + ΔHi , j − i , i
+ (6)
+ where each ΔHXi,j−i,i term (X = dist, vdW, cov, or elec) is given by
+ ΔHiX, j − i , i = ΔHiX, j − ΔHiX, i (7)
+ ΔHi,jdist
+ values depend weakly on temperature and are 29
+
+ approximated here by the corresponding electronic energies:
+ ΔHidist TS TS
+ , j = Ecarbonyl − Ecarbonyl + E EN − E EN (8)
+a
+ The C−C coupling enthalpic barrier from propen-2-olate and
+HCHO(g) (ΔHTS Here ETS and
+ carbonyl ETS
+ are the electronic energies for the bound
+ EN
+ i,j ) reﬂects the combined enthalpies of structural
+distortion of species in the reactant states to form the TS (ΔHdist
+ i,j ) and
+ carbonyl and enolate moieties at the TS, respectively, calculated
+of van der Waals (ΔHvdW cov
+ i,j ), covalent (ΔHi,j ), and electrostatic
+ separately for the gaseous carbonyl compound and the bound
+(ΔHelec
+ i,j ) interactions at the TS relative to their reactant states. enolate using their respective structures at the TS, and Ecarbonyl
+ and EEN are those for the fully relaxed gaseous carbonyl
+ compounds and the fully relaxed bound enolates as described in
+Ti5O19H18 clusters were extracted from TiO2(a) (101) surfaces Section 2.3. ΔHelec
+ i,j values were derived from classical Coulomb
+(Scheme 2). Their ﬁve Ti atoms and the three internal O atoms interactions that assume each atom in the TS structure is a point
+were relaxed during geometry and energy optimizations charge of a magnitude determined using the NBO analysis34
+(Section 2.3). The benchmarking of theory against measured (Section 2.3):
+rates of condensation and esteriﬁcation 9,11 shows that N M
+Ti5O19H18 clusters extracted from TiO2(a) (101) surfaces 1 CxCy
+ ΔHielec
+ ,j = ∑∑
+(Scheme 2) provide adequate models for two-dimensional 4πε0 rxy
+ y=1 x=1 (9)
+TiO2(a) surfaces and for their ability to describe the conﬁne-
+ment of bound species at two-dimensional rigid lattices; such where Cx and Cy represent the charge at the x atom in a bound
+models are used here to estimate ΔGTS i,j−i,i values for HCHO (j) carbonyl moiety with M C atoms and that at the y atom in a
+and C2−C4 carbonyls (i) with enolates derived from the latter bound enolate with N C atoms, respectively, rxy is the distance
+species. DFT-derived TS structures for C−C coupling between between the x and y atoms, and ε0 is the permittivity of free
+HCHO and enolates (Figure S2) resemble those for self- space. Similar to the treatments used for ΔHelec
+ i,j , ΔHi,j
+ vdW
+ values
+ 779 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+ TS TS
+Table 1. DFT-Derived C−C Bond Orders (BOC−C) at the TS, Activation Free Energies (ΔGi,j−i,i ) and Their Enthalpy (ΔHi,j−i,i)
+and Entropy (ΔSTS
+ i,j−i,i) Components, and k K /k K
+ i,j j i,i i Ratios for Condensations of HCHO-C2−4 Carbonyl Mixtures with Diﬀerent
+Enolates on Anatase TiO2a
+ enolate carbonyl ΔHdist
+ i,j−i,i ΔHvdW
+ i,j−i,i ΔHcov
+ i,j−i,i ΔHelec
+ i,j−i,i ΔHTS
+ i,j−i,i ΔSi,j−i,i
+ ads
+ ΔSTS
+ i,j−i,i ΔGTS
+ i,j−i,i ki,jKj/
+ reactant reactant BOC−C (kJ mol−1)b (kJ mol−1)b (kJ mol−1)b (kJ mol−1)b (kJ mol−1) (J mol−1 K−1)c (J mol−1 K−1) (kJ mol−1) ki,iKi
+ethenolate ethanal 0.39 −43 9 24 2 −9 13 12 −18 16
+ HCHO 0.33
+propen-1- propanal 0.42 −72 18 48 −2 −8 20 20 −24 40
+ olate HCHO 0.33
+buten-1- butanal 0.41 −65 19 40 −1 −8 19 18 −21 28
+ olate HCHO 0.32
+propen-2- acetone 0.37 −69 15 45 6 −3 28 51 −43 784
+ olate HCHO 0.29
+but-1-en-2- butanone 0.37 −81 28 36 7 −10 32 44 −44 906
+ olate HCHO 0.29
+but-2-en-2- butanone 0.41 −115 37 51 14 −14 30 53 −55 4929
+ olate HCHO 0.28
+a
+ Ti5O19H18 clusters, B3LYP+D3BJ, 6-311G(d,p) for C, H, and O atoms, LANL2DZ for Ti atoms; 773 K, 1 bar, optimized TS structures in Figure
+S2. bΔHdist
+ i,j−i,i, ΔHi,j−i,i, ΔHi,j−i,i and ΔHi,j−i,i are the components of ΔHi,j−i,i from structural distortion and from van der Waals, covalent, and
+ vdW cov elec TS
+
+electrostatic interactions of the bound enolate and carbonyl moieties at the C−C coupling TS relative to their reactant states (eq 6). cThe
+diﬀerence in entropy changes between gaseous i and j species upon their adsorption at a Ti center on TiO2(a) surfaces (eq 10).
+
+were determined using the two-body interaction potentials consequence, the enthalpic components in ΔGTS i,j−i,i, typically
+implemented in the D3BJ functionals.26 ΔHcov i,j values were given associated with sterics and electrophilicity, are, in fact, not
+by the diﬀerence between ΔHTS i,j and the sum of ΔHi,j , ΔHi,j ,
+ dist elec responsible for the very high reactivity of HCHO in nucleophilic
+and ΔHi,j (eq 5). These DFT-derived individual ΔHi,j values
+ vdW X attack by enolates at Lewis acid−base pairs on oxide surfaces.
+(X = TS, dist, vdW, cov, or elec) for condensations of HCHO- These weak eﬀects of alkyl substituents on ΔHTS i,j shown above
+C2−4 carbonyl mixtures on TiO2(a) are included in Table S3 and render the entropy component (ΔSi,jTS) in ΔGTS i,j critical in
+used here to calculate ΔHXi,j−i,i values (eq 7) for each i−j carbonyl determining the relative values of ΔGTS i,j for each i−j carbonyl
+reactant pair, as described next. reactant pair at temperatures relevant for catalysis. DFT-derived
+ Table 1 shows DFT-derived ΔHXi,j−i,i values for HCHO (j) and ΔSTS
+ i,j−i,i values for HCHO-C2−4 condensation vary between +12
+C2−C4 carbonyls (i) on TiO2(a). ΔHdist i,j−i,i values are negative for
+ and +53 J mol−1 K−1 (Table 1), indicating that activation
+all HCHO-(i) pairs (−43 to −115 kJ mol−1) and become more entropies are less negative when HCHO acts as the electrophile
+negative as the number of C atoms in the molecule i increases. and that they become increasingly negative for larger electro-
+Such trends reﬂect the greater distortion required to form the philes (C2−C4 carbonyls). ΔSTS i,j−i,i values for C−C coupling with
+C−C coupling TS for larger carbonyl nucleophiles in order to enolates derived from alkanals are nearly identical to the
+minimize steric eﬀects upon interaction with a given enolate. diﬀerence in entropies for species i and j (HCHO) upon their
+ΔHvdW −1 respective adsorption at a Ti center in the absence of any co-
+ i,j−i,i values are positive (+9 to +37 kJ mol ), however, ads
+because larger carbonyls establish more eﬀective van der Waals adsorbed species (ΔSi,j−i,i , Table 1):
+contacts with a given enolate. Covalent bonding at the TS is also
+ ΔSiads
+ , j − i , i = Si * − Sj * − Si(g) + Sj(g) (10)
+weaker for HCHO than for larger carbonyls (ΔHcov i,j−i,i: + 24 to
++51 kJ mol−1) for each enolate, even though HCHO is a
+ where Si* and Sj* are the entropies for bound i and j, respectively,
+stronger electrophile. This reﬂects the weaker σ−π* orbital
+ and Si(g) and Sj(g) are those for their gaseous precursors. The
+overlap at a C−C coupling TS structure that occurs signiﬁcantly ΔSTS
+ i,j−i,i values for alkanone-derived enolates are much larger
+earlier along the reaction coordinate for the HCHO-enolate than their ΔSads −1 −1
+ i,j−i,i components (e.g., +28 and +51 J mol K for
+coupling pairs than for C−C coupling of enolates with larger the respective ΔSi,j−i,i and ΔSi,j−i,i values of acetone-derived
+ ads TS
+carbonyl molecules. Such diﬀerences in σ−π* orbital overlap are propen-2-olate, Table 1), because of rotational modes that
+evident from their diﬀerent C−C bond order at the TS (BOC−C, become increasingly hindered as larger alkanones interact with
+Table 1), which correlates linearly with the corresponding the enolate at the C−C coupling TS.
+ΔHcov
+ i,j−i,i value for each reactant pair (Figure S3). These negative ΔHTS i,j−i,i values and positive ΔSi,j−i,i values for
+ TS
+ Electrostatic interactions between the enolate and the reactions of HCHO and C2−C4 alkanals/alkanones with a given
+carbonyl co-reactant depend weakly on the electrophile enolate lead to negative ΔGTS i,j−i,i values at all relevant catalytic
+ −1
+(ΔHeleci,j−i,i: −2 to 14 kJ mol , Table 1), in contrast with van temperatures. For instance, the ΔGTS i,j−i,i value for HCHO-
+der Waals and covalent interactions (ΔHi,j−i,i vdW
+ and ΔHcov i,j−i,i), acetone reactants is −43 kJ mol−1 (773 K; Table 1)
+because carbonyl moieties are nearly neutral at the TS (Table corresponding to ki,jKj/ki,iKi ratios of about 800, in essential
+S3). The overall ΔHi,j−i,iTS
+ values resulting from the combined agreement with measurements (1110 ± 40, Figure 4). The
+eﬀects of distortion and of covalent, electrostatic, and van der kinetic preference for HCHO (as the electrophile) becomes
+Waals interactions vary only slightly (from −3 to −14 kJ mol−1) stronger as temperature increases (Figure 5), because entropy
+for these i−j reactant pairs (Table 1), showing that the steric beneﬁts, brought forth by the strong eﬀects of the size and
+repulsion inherent in forming C−C coupling TS is almost fully structure of the carbonyl reactants on ΔSTS i,j−i,i, become more
+compensated by stronger van der Waals and covalent consequential for the magnitude of the activation free energies at
+interactions of enolates with the larger carbonyls. As a higher temperatures.
+ 780 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+ DFT treatments also show that the more electrophilic nature of
+ HCHO compared with larger carbonyl molecules leads to earlier
+ TS for C−C coupling of bound enolates with HCHO, making
+ the stability of these TS beneﬁt less from the corresponding
+ stronger C−C bond ultimately formed in the products
+ compared with those for larger carbonyl reactants. The enthalpic
+ contribution to the stability of such C−C coupling TS, however,
+ is essentially unaﬀected by the size or electrophilicity of the
+ carbonyl reactants, because the easier steric access and stronger
+ electrophilic character of the carbonyl C atom in smaller
+ reactants are compensated by their weaker van der Waals and
+ covalent interactions with the enolate moiety at TS.
+ Consequently, the relative free energy barriers for the C−C
+ coupling of enolates with diﬀerent carbonyl molecules are
+ determined by the entropic losses upon formation of the bound
+ TS from their gaseous reactant states. These ﬁndings elucidate
+Figure 5. DFT-derived ΔGTS
+ i,j−i,i as a function of temperature for
+ the preeminent role of entropy underpinning the much higher
+condensations of HCHO-C2−4 carbonyl mixtures on anatase TiO2. reactivity of HCHO than larger carbonyl molecules in the
+ nucleophilic attack by enolates on oxide surfaces at catalytically
+ relevant temperatures.
+ The higher reactivity with HCHO is evident for all enolates,
+but the kinetic preference for HCHO becomes stronger for
+larger enolates, as shown by ΔGTS i,j−i,i values that become more
+ ■
+ *
+ ASSOCIATED CONTENT
+ S Supporting Information
+negative as the number of C atoms or the extent of substitution The Supporting Information is available free of charge on the
+in the enolates increases (Figure 5). These trends predominantly ACS Publications website at DOI: 10.1021/jacs.7b11749.
+reﬂect the lower activation entropies when HCHO is the Selectivity of methanol decomposition on Cu/SiO2;
+electrophile instead of enthalpic eﬀects associated with steric derivation of condensation rate equations; DFT-derived
+repulsion or electrophilicity, which are balanced by van der structures for reactants, products, and TS of C−C
+Waals and covalent interactions for the larger electrophiles. Such coupling reactions; DFT-derived frequencies for vibra-
+entropy-driven high reactivity is unique for very small tional modes of carbonyl molecules adsorbed on TiO2;
+electrophiles, such as HCHO, because enthalpic eﬀects prevail
+ descriptors for the electrophilicity of carbonyl com-
+in determining the relative reactivities of C2+ carbonyl reactants
+ pounds; DFT-derived charges and activation enthalpies
+in their nucleophilic attack by a given enolate on TiO2(a)
+ and entropies for C−C coupling TS; descriptors for the
+surfaces.9
+ covalent interactions at C−C coupling TS (PDF)
+
+ ■
+ These entropy-driven kinetic preferences for smaller and
+stronger electrophiles in C−C coupling with enolates on oxide
+surfaces diﬀer from those attributed to weaker repulsive eﬀects AUTHOR INFORMATION
+and to the low LUMO energies in HCHO in the case of Corresponding Authors
+condensation reactions in gaseous or liquid media.10 The *shuaiwang@xmu.edu.cn
+preeminence of entropy eﬀects on surfaces reﬂects the greater *iglesia@berkeley.edu
+extent of “organization” at the TS compared with processes ORCID
+occurring within less restrictive ﬂuid media. The formation of Enrique Iglesia: 0000-0003-4109-1001
+such an “organized” TS imposes entropic penalties in exchange
+ Notes
+for enthalpic stabilization via covalent, electrostatic, and van der
+ The authors declare no competing ﬁnancial interest.
+
+ ■
+Waals interactions. These entropic penalties are least con-
+sequential for the smaller electrophiles when such reactions are ACKNOWLEDGMENTS
+mediated by the more organized TS made possible by the
+directing presence of a catalytic surface. Such consequences The authors acknowledge the ﬁnancial support from BP p.l.c.
+become most relevant at the high temperatures typical of through the XC2 program and the computational resources
+condensation reactions on heterogeneous catalysts. provided by XSEDE and supported by the National Science
+ Foundation (grant ACI-1548562). The authors are also grateful
+4. CONCLUSIONS to Mr. Trenton Otto and Mr. Ari Fischer (University of
+Bifunctional mixtures of anatase TiO2 and Ag/SiO2 are used to California, Berkeley) for their careful proofreading and useful
+ comments about the contents of this manuscript.
+
+ ■
+show the unique reactivity of HCHO (derived in situ from
+CH3OH) in cross-condensations with enolates derived from REFERENCES
+larger carbonyl molecules. The latter co-reactants form enolates
+by kinetically relevant cleavage of their α-C−H bonds at Ti−O (1) Carlini, C.; Flego, C.; Marchionna, M.; Noviello, M.; Galletti, A.
+ M. R.; Sbrana, G.; Basile, F.; Vaccari, A. J. Mol. Catal. A: Chem. 2004,
+acid−base pairs on TiO2 surfaces that remain essentially bare 220, 215−220.
+during catalysis. The preference for HCHO over large carbonyls (2) Carlini, C.; Marchionna, M.; Noviello, M.; Galletti, A. M. R.;
+as electrophiles in nucleophilic attack by a given enolate reﬂects Sbrana, G.; Basile, F.; Vaccari, A. J. Mol. Catal. A: Chem. 2005, 232, 13−
+a lower activation free energy barrier for the C−C coupling step 20.
+on TiO2 surfaces, evidenced from both experiments and (3) Tanner, R.; Gill, P.; Wells, R.; Bailie, J. E.; Kelly, G.; Jackson, S. D.;
+theoretical treatments that account for van der Waals forces. Hutchings, G. J. Phys. Chem. Chem. Phys. 2002, 4, 688−695.
+
+ 781 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
+Journal of the American Chemical Society Article
+
+ (4) Barrett, C. J.; Chheda, J. N.; Huber, G. W.; Dumesic, J. A. Appl.
+Catal., B 2006, 66, 111−118.
+ (5) Ivanova, I.; Sushkevich, V. L.; Kolyagin, Y.; Ordomsky, G. V. V.
+Angew. Chem., Int. Ed. 2013, 52, 12961−12964.
+ (6) Liu, Y.; Mfller, S.; Berger, D.; Jelic, J.; Reuter, K.; Tonigold, M.;
+Sanchez-Sanchez, M.; Lercher, J. A. Angew. Chem., Int. Ed. 2016, 55,
+5723−5726.
+ (7) Okachi, T.; Onaka, M. J. Am. Chem. Soc. 2004, 126, 2306−2307.
+ (8) Van de Vyver, S.; Odermatt, C.; Romero, K.; Prasomsri, T.;
+Román-Leshkov, Y. ACS Catal. 2015, 5, 972−977.
+ (9) Wang, S.; Iglesia, E. J. Phys. Chem. C 2016, 120, 21589−21616.
+ (10) Yamataka, H.; Nagase, S.; Ando, T.; Hanafusa, T. J. Am. Chem.
+Soc. 1986, 108, 601−606.
+ (11) Wang, S.; Goulas, K.; Iglesia, E. J. Catal. 2016, 340, 302−320.
+ (12) Sun, J.; Zhu, K.; Gao, F.; Wang, C.; Liu, J.; Peden, C. H. F.; Wang,
+Y. J. Am. Chem. Soc. 2011, 133, 11096−11099.
+ (13) Sun, J.; Baylon, R. A. L.; Liu, C.; Mei, D.; Martin, K. J.;
+Venkitasubramanian, P.; Wang, Y. J. Am. Chem. Soc. 2016, 138, 507−
+517.
+ (14) An, W. Phys. Chem. Chem. Phys. 2015, 17, 22529−22532.
+ (15) Herrmann, S.; Iglesia, E. J. Catal. 2017, 346, 134−153.
+ (16) Gines, M. J. L.; Iglesia, E. J. Catal. 1998, 176, 155−172.
+ (17) Ren, L.; Dai, W.; Cao, Y.; Li, H.; Fan, K. Chem. Commun. 2003,
+3030−3031.
+ (18) Wang, S.; Zhang, Y.; Liu, H. Chem. - Asian J. 2010, 5, 1100−1111.
+ (19) Li, X.; Frisch, M. J. J. Chem. Theory Comput. 2006, 2, 835−39.
+ (20) Frisch, M. J.; Trucks, G. W.; Schlegel, H. B.; Scuseria, G. E.;
+Robb, M. A.; Cheeseman, J. R.; Scalmani, G.; Barone, V.; Mennucci, B.;
+Petersson, G. A.; Nakatsuji, H.; Caricato, M.; Li, X.; Hratchian, H. P.;
+Izmaylov, A. F.; Bloino, J.; Zheng, G.; Sonnenberg, J. L.; Hada, M.;
+Ehara, M.; Toyota, K.; Fukuda, R.; Hasegawa, J.; Ishida, M.; Nakajima,
+T.; Honda, Y.; Kitao, O.; Nakai, H.; Vreven, T.; Montgomery, J. A., Jr.;
+Peralta, J. E.; Ogliaro, F.; Bearpark, M.; Heyd, J. J.; Brothers, E.; Kudin,
+K. N.; Staroverov, V. N.; Kobayashi, R.; Normand, J.; Raghavachari, K.;
+Rendell, A.; Burant, J. C.; Iyengar, S. S.; Tomasi, J.; Cossi, M.; Rega, N.;
+Millam, M. J.; Klene, M.; Knox, J. E.; Cross, J. B.; Bakken, V.; Adamo,
+C.; Jaramillo, J.; Gomperts, R.; Stratmann, R. E.; Yazyev, O.; Austin, A.
+J.; Cammi, R.; Pomelli, C.; Ochterski, J. W.; Martin, R. L.; Morokuma,
+K.; Zakrzewski, V. G.; Voth, G. A.; Salvador, P.; Dannenberg, J. J.;
+Dapprich, S.; Daniels, A. D.; Farkas, Ö .; Foresman, J. B.; Ortiz, J. V.;
+Cioslowski, J.; Fox, D. J. Gaussian 09, Revision D.01; Gaussian, Inc.:
+Wallingford, CT, 2009.
+ (21) Becke, A. D. J. Chem. Phys. 1993, 98, 5648−5652.
+ (22) Lee, C.; Yang, W.; Parr, R. G. Phys. Rev. B: Condens. Matter Mater.
+Phys. 1988, 37, 785−789.
+ (23) McLean, A. D.; Chandler, G. S. J. Chem. Phys. 1980, 72, 5639−
+5648.
+ (24) Krishnan, R.; Binkley, J. S.; Seeger, R.; Pople, J. A. J. Chem. Phys.
+1980, 72, 650−654.
+ (25) Hay, P. J.; Wadt, W. R. J. Chem. Phys. 1985, 82, 270−283.
+ (26) Grimme, S.; Ehrlich, S.; Goerigk, L. J. Comput. Chem. 2011, 32,
+1456−1465.
+ (27) Boys, S. F.; Bernardi, F. Mol. Phys. 1970, 19, 553−566.
+ (28) Simon, S.; Duran, M.; Dannenberg, J. J. J. Chem. Phys. 1996, 105,
+11024−11031.
+ (29) McQuarrie, D. A. Statistical Mechanics; University Science Books:
+Sausalito, CA, 2000.
+ (30) Merrick, J. P.; Moran, D.; Radom, L. J. Phys. Chem. A 2007, 111,
+11683−11700.
+ (31) Grimme, S. Chem. - Eur. J. 2012, 18, 9955−9964.
+ (32) Hanna, D. G.; Shylesh, S.; Li, Y.-P.; Krishna, S.; Head-Gordon,
+M.; Bell, A. T. ACS Catal. 2014, 4, 2908−2916.
+ (33) Ayala, P. Y.; Schlegel, H. B. J. Chem. Phys. 1998, 108, 2314−2325.
+ (34) Martin, R. L. J. Chem. Phys. 2003, 118, 4775−4777.
+ (35) Wiberg, K. A. Tetrahedron 1968, 24, 1083−1096.
+ (36) Mayer, I. J. Comput. Chem. 2007, 28, 204−221.
+
+ 782 DOI: 10.1021/jacs.7b11749
+ J. Am. Chem. Soc. 2018, 140, 775−782
