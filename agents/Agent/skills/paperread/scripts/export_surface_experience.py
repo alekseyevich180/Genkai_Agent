@@ -15,11 +15,11 @@ if str(REPO_ROOT) not in sys.path:
 
 try:
     from paperread.surface.surface_ontology import (
-        KNOWN_MODELING_TOKENS,
         SUPPORTED_MODELING_TASKS,
+        is_known_surface_experience_term,
     )
 except ImportError:  # pragma: no cover - direct script execution
-    from surface_ontology import KNOWN_MODELING_TOKENS, SUPPORTED_MODELING_TASKS
+    from surface_ontology import SUPPORTED_MODELING_TASKS, is_known_surface_experience_term
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -36,7 +36,6 @@ FIELDS_TO_SCAN = {
     "modifiers",
     "modeling_keywords",
     "recommended_modeling_tasks",
-    "links",
 }
 
 TABLE_COLUMNS_TO_SCAN = {
@@ -122,10 +121,7 @@ def _flatten(value: object) -> list[str]:
 
 
 def _is_known_term(term: str) -> bool:
-    lower = term.lower()
-    if lower in SUPPORTED_MODELING_TASKS:
-        return True
-    return any(token in lower for token in KNOWN_MODELING_TOKENS)
+    return is_known_surface_experience_term(term)
 
 
 def _suggest_action(term: str, category: str) -> str:

@@ -1,13 +1,93 @@
 {
   "schema_version": "2.0",
   "material_class": "phosphides_phosphates",
-  "updated_at": "2026-07-06T07:30:22.304945+00:00",
+  "updated_at": "2026-07-06T15:18:47.730287+00:00",
   "summary": {
-    "terms": 4,
-    "known_useful": 1,
-    "unknown": 3
+    "terms": 27,
+    "known_useful": 7,
+    "unknown": 20
   },
   "keyword_inventory": {
+    "adsorbates_reactants": [
+      {
+        "term": "CH3OH",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CO",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "formic acid",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydrogen",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydroxyl species",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NO",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "water",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "coverage": [
+      {
+        "term": "Full",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "sub-saturation",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "Ru",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "facets": [
+      {
+        "term": "nanoscale single crystal ensemble",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "Pt(111) nanofacets",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
     "materials": [
       {
         "term": "CoPt nanoparticles",
@@ -26,13 +106,87 @@
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "transition metal-based catalysts",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       }
     ],
     "modeling_keywords": [
       {
+        "term": "electrocatalysis",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "adsorbate_landscape",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "catalyst development",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "DFT",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "operando X-ray absorption spectroscopy",
         "count": 1,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "oxidation",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "surface_functionalization",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "electrocatalysis",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "fuel cells",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydrogen evolution reaction (HER)",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydrogen generation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "oxygen evolution reaction (OER)",
+        "count": 1,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       }
     ]
@@ -40,30 +194,98 @@
   "material_descriptors": {
     "elements": [
       {
+        "term": "O",
+        "count": 5
+      },
+      {
+        "term": "C",
+        "count": 4
+      },
+      {
+        "term": "Pt",
+        "count": 3
+      },
+      {
         "term": "Co",
         "count": 2
       },
       {
-        "term": "Pt",
+        "term": "H",
         "count": 2
+      },
+      {
+        "term": "N",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "nanoparticle",
         "count": 2
+      },
+      {
+        "term": "surface",
+        "count": 2
       }
     ],
     "component_compounds": [
       {
+        "term": "CH3OH",
+        "count": 2
+      },
+      {
+        "term": "CO",
+        "count": 2
+      },
+      {
         "term": "CoPt nanoparticles",
         "count": 2
+      },
+      {
+        "term": "NO",
+        "count": 1
+      },
+      {
+        "term": "Pt(111) nanofacets",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
+      },
+      {
+        "term": "surface_functionalization",
+        "count": 1
       }
     ],
     "element_sets": [
       {
+        "term": "{C, H, O}",
+        "count": 2
+      },
+      {
+        "term": "{C, O}",
+        "count": 2
+      },
+      {
         "term": "{Co, Pt}",
         "count": 2
+      },
+      {
+        "term": "{N, O}",
+        "count": 1
+      },
+      {
+        "term": "{Pt}",
+        "count": 1
+      },
+      {
+        "term": "{Ru}",
+        "count": 1
       }
     ]
   },
@@ -71,12 +293,32 @@
     "descriptor_schema": "generic_material_profile",
     "elements": [
       {
+        "term": "O",
+        "count": 5
+      },
+      {
+        "term": "C",
+        "count": 4
+      },
+      {
+        "term": "Pt",
+        "count": 3
+      },
+      {
         "term": "Co",
         "count": 2
       },
       {
-        "term": "Pt",
+        "term": "H",
         "count": 2
+      },
+      {
+        "term": "N",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
       }
     ],
     "components": [
@@ -91,12 +333,79 @@
       {
         "term": "phosphides",
         "count": 1
+      },
+      {
+        "term": "transition metal-based catalysts",
+        "count": 1
       }
     ],
     "surface_states": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "electrocatalysis",
+        "count": 3
+      },
+      {
+        "term": "fuel cells",
+        "count": 1
+      },
+      {
+        "term": "hydrogen evolution reaction (HER)",
+        "count": 1
+      },
+      {
+        "term": "hydrogen generation",
+        "count": 1
+      },
+      {
+        "term": "oxygen evolution reaction (OER)",
+        "count": 1
+      }
+    ]
   },
   "entries": [
+    {
+      "term": "electrocatalysis",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords",
+        "applications"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++",
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "CH3OH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ]
+    },
+    {
+      "term": "CO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
+      ]
+    },
     {
       "term": "CoPt nanoparticles",
       "kind": "known_useful",
@@ -112,6 +421,30 @@
       ]
     },
     {
+      "term": "adsorbate_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "catalyst development",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
       "term": "copper",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -121,6 +454,126 @@
       "count": 1,
       "example_contexts": [
         "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "DFT",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "formic acid",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "fuel cells",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Full",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CoPt nanoparticles"
+      ]
+    },
+    {
+      "term": "hydrogen",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "hydrogen evolution reaction (HER)",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "hydrogen generation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "hydroxyl species",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "nanoscale single crystal ensemble",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "NO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
       ]
     },
     {
@@ -136,11 +589,107 @@
       ]
     },
     {
+      "term": "oxidation",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "oxygen evolution reaction (OER)",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
       "term": "phosphides",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
         "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "Pt(111) nanofacets",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Ru",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "sub-saturation",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CoPt nanoparticles"
+      ]
+    },
+    {
+      "term": "surface_functionalization",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "transition metal-based catalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "water",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products"
       ],
       "count": 1,
       "example_contexts": [

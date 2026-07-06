@@ -1,17 +1,59 @@
 {
   "schema_version": "2.0",
   "material_class": "oxides",
-  "updated_at": "2026-07-06T07:30:22.298285+00:00",
+  "updated_at": "2026-07-06T15:18:47.719510+00:00",
   "summary": {
-    "terms": 36,
-    "known_useful": 6,
-    "unknown": 30
+    "terms": 147,
+    "known_useful": 51,
+    "unknown": 96
   },
   "keyword_inventory": {
     "active_sites": [
       {
+        "term": "Co",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Co3+",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ag",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Au",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
         "term": "Co2+",
         "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Co site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co3+δ",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CoOct (+4)",
+        "count": 1,
         "kind": "unknown_context",
         "research_category": "unknown_information"
       },
@@ -20,12 +62,72 @@
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "Ni reaction sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ni sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "NiCoOOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "octahedral Co",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "singly coordinated sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ti",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       }
     ],
     "adsorbates_reactants": [
       {
         "term": "O2",
-        "count": 15,
+        "count": 20,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "H2O",
+        "count": 5,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "H2",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HO*",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HOO*",
+        "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
@@ -48,7 +150,25 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "CO2",
+        "term": "*OH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "*OOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CO32−",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "H*",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -60,17 +180,369 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "NO2",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "O2*",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OH*",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OH−",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "oxygen-contained intermediates",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       }
     ],
+    "adsorption_sites": [
+      {
+        "term": "octahedral site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "tetrahedral site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "AgSA",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Single Atom",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "single-atom Au",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "Co3O4",
+        "count": 8,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Co3+",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Fe",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "TiO2",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ag",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Au",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "O",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "W",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "0.4 wt % Au loading",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Bi02:NiO",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Bi05:NiO",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "bimetallic",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "bulk phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co2+ (d7, high spin)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co3+ (d6, low spin)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co4+",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "CoIII-containing species",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CoOOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "cost-effective",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Fe-free",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "high reactivity",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "layered double hydroxides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "layered phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "normal spinel",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "space group Fd3̅m",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "spinel phase",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "spinel structure",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "stable chromium oxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "Ni",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Fe",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Bismuth (Bi)",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Silver",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "W",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Bismuth",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "facets": [
+      {
+        "term": "(0001)",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "(001)",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "(0112̅)",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "(101̅4)",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "(110)",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "(100)",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "(101)",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "(111)",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
     "materials": [
       {
         "term": "Co3O4",
-        "count": 7,
+        "count": 8,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "TiO2",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Bismuth (Bi)",
+        "count": 2,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       },
       {
@@ -104,9 +576,9 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "TiO2",
+        "term": "Silver",
         "count": 2,
-        "kind": "unknown_high_value",
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       },
       {
@@ -167,15 +639,51 @@
     "modeling_keywords": [
       {
         "term": "Co3O4",
-        "count": 7,
+        "count": 8,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
       {
+        "term": "OER",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "density functional theory",
+        "count": 7,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "active site",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate_landscape",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
         "term": "Co2+",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "DFT",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "NiO",
@@ -184,7 +692,109 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "octahedral site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "single_atom_site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "tetrahedral site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "active sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Bi",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "DFT+U",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "dispersion interactions",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "dissolution pathways",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "doping",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalyst",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HER",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Hubbard U",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hubbard-U approach",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "metal cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "NiFe oxyhydroxide",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "octahedral sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "overpotential",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -193,6 +803,152 @@
         "term": "oxide",
         "count": 1,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "oxygen evolution",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Quantum Espresso",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "scaling relation",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "surface stability",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "XAS",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "OER",
+        "count": 8,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "oxygen evolution reaction",
+        "count": 5,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalysis",
+        "count": 3,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Adsorption Test",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalysts",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic oxygen evolution reaction",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrochemical OER",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrochemical oxidation of water",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrochemical water splitting",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrode materials",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrolyzer efficiency",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "energy conversion technologies",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydrogen peroxide production",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydrogen production",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OER catalysts",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "water electrolysis",
+        "count": 1,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       }
     ],
@@ -251,93 +1007,171 @@
         "kind": "known_useful",
         "research_category": "surface_materials"
       }
+    ],
+    "surface_states": [
+      {
+        "term": "kinks",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "steps",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
     ]
   },
   "material_descriptors": {
     "elements": [
       {
         "term": "O",
-        "count": 45
+        "count": 72
       },
       {
         "term": "Co",
-        "count": 17
+        "count": 35
+      },
+      {
+        "term": "H",
+        "count": 20
       },
       {
         "term": "Ni",
-        "count": 7
-      },
-      {
-        "term": "Ti",
-        "count": 7
+        "count": 16
       },
       {
         "term": "Fe",
+        "count": 9
+      },
+      {
+        "term": "Ti",
+        "count": 9
+      },
+      {
+        "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "Bi",
         "count": 5
+      },
+      {
+        "term": "Cr",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 4
+      },
+      {
+        "term": "N",
+        "count": 3
       },
       {
         "term": "Ru",
         "count": 3
       },
       {
-        "term": "Ag",
-        "count": 2
+        "term": "U",
+        "count": 3
       },
       {
-        "term": "Au",
-        "count": 2
-      },
-      {
-        "term": "Cr",
-        "count": 2
-      },
-      {
-        "term": "H",
-        "count": 2
-      },
-      {
-        "term": "N",
+        "term": "W",
         "count": 2
       },
       {
         "term": "C",
+        "count": 1
+      },
+      {
+        "term": "I",
         "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "oxide",
-        "count": 64
-      },
-      {
-        "term": "surface",
-        "count": 9
+        "count": 77
       },
       {
         "term": "hydroxide_oxyhydroxide",
-        "count": 8
+        "count": 11
+      },
+      {
+        "term": "surface",
+        "count": 11
       },
       {
         "term": "supported_catalyst",
         "count": 3
+      },
+      {
+        "term": "cluster",
+        "count": 2
+      },
+      {
+        "term": "single_atom_catalyst",
+        "count": 1
+      },
+      {
+        "term": "sulfide",
+        "count": 1
       }
     ],
     "component_compounds": [
       {
         "term": "O2",
-        "count": 15
+        "count": 20
       },
       {
         "term": "Co3O4",
-        "count": 7
+        "count": 8
+      },
+      {
+        "term": "Co3",
+        "count": 6
       },
       {
         "term": "TiO2",
+        "count": 6
+      },
+      {
+        "term": "H2O",
         "count": 5
+      },
+      {
+        "term": "Co",
+        "count": 4
+      },
+      {
+        "term": "Ni",
+        "count": 4
+      },
+      {
+        "term": "Ag",
+        "count": 3
+      },
+      {
+        "term": "Au",
+        "count": 3
       },
       {
         "term": "Co2",
         "count": 3
+      },
+      {
+        "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "Fe",
+        "count": 3
+      },
+      {
+        "term": "Bismuth (Bi",
+        "count": 2
       },
       {
         "term": "Co oxides",
@@ -345,6 +1179,18 @@
       },
       {
         "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 2
+      },
+      {
+        "term": "H2",
+        "count": 2
+      },
+      {
+        "term": "HO*",
+        "count": 2
+      },
+      {
+        "term": "HOO*",
         "count": 2
       },
       {
@@ -356,11 +1202,19 @@
         "count": 2
       },
       {
+        "term": "O",
+        "count": 2
+      },
+      {
         "term": "oxides",
         "count": 2
       },
       {
         "term": "RuO2",
+        "count": 2
+      },
+      {
+        "term": "W",
         "count": 2
       },
       {
@@ -372,15 +1226,39 @@
         "count": 1
       },
       {
-        "term": "Ag",
+        "term": "*OH",
         "count": 1
       },
       {
-        "term": "Au",
+        "term": "*OOH",
+        "count": 1
+      },
+      {
+        "term": "0.4 wt % Au loading",
         "count": 1
       },
       {
         "term": "Au–Ag",
+        "count": 1
+      },
+      {
+        "term": "Bi",
+        "count": 1
+      },
+      {
+        "term": "Bi02:NiO",
+        "count": 1
+      },
+      {
+        "term": "Bi05:NiO",
+        "count": 1
+      },
+      {
+        "term": "Co site",
+        "count": 1
+      },
+      {
+        "term": "CO32−",
         "count": 1
       },
       {
@@ -396,11 +1274,43 @@
         "count": 1
       },
       {
+        "term": "Co4",
+        "count": 1
+      },
+      {
+        "term": "CoIII-containing species",
+        "count": 1
+      },
+      {
+        "term": "CoOOH",
+        "count": 1
+      },
+      {
         "term": "Fe atoms in NiFe oxyhydroxide",
         "count": 1
       },
       {
+        "term": "Fe-free",
+        "count": 1
+      },
+      {
+        "term": "H*",
+        "count": 1
+      },
+      {
         "term": "H2O2",
+        "count": 1
+      },
+      {
+        "term": "Hubbard U",
+        "count": 1
+      },
+      {
+        "term": "Hubbard-U approach",
+        "count": 1
+      },
+      {
+        "term": "hydrogen peroxide production",
         "count": 1
       },
       {
@@ -412,11 +1322,27 @@
         "count": 1
       },
       {
+        "term": "layered double hydroxides",
+        "count": 1
+      },
+      {
+        "term": "Ni reaction sites",
+        "count": 1
+      },
+      {
+        "term": "Ni sites",
+        "count": 1
+      },
+      {
         "term": "Nickel–Bismuth Oxide",
         "count": 1
       },
       {
         "term": "NiCo Layer Double Hydroxide",
+        "count": 1
+      },
+      {
+        "term": "NiCoOOH",
         "count": 1
       },
       {
@@ -432,7 +1358,23 @@
         "count": 1
       },
       {
+        "term": "NO2",
+        "count": 1
+      },
+      {
         "term": "O2*",
+        "count": 1
+      },
+      {
+        "term": "octahedral Co",
+        "count": 1
+      },
+      {
+        "term": "OH*",
+        "count": 1
+      },
+      {
+        "term": "OH−",
         "count": 1
       },
       {
@@ -456,33 +1398,89 @@
         "count": 1
       },
       {
+        "term": "single-atom Au",
+        "count": 1
+      },
+      {
+        "term": "stable chromium oxide",
+        "count": 1
+      },
+      {
+        "term": "surface",
+        "count": 1
+      },
+      {
+        "term": "surface stability",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      },
+      {
         "term": "TiO2(110",
         "count": 1
       },
       {
         "term": "transition metal oxide surface",
         "count": 1
+      },
+      {
+        "term": "U",
+        "count": 1
       }
     ],
     "element_sets": [
       {
         "term": "{O}",
-        "count": 17
-      },
-      {
-        "term": "{Co, O}",
-        "count": 10
+        "count": 24
       },
       {
         "term": "{Co}",
-        "count": 4
+        "count": 18
+      },
+      {
+        "term": "{H, O}",
+        "count": 15
+      },
+      {
+        "term": "{Co, O}",
+        "count": 11
+      },
+      {
+        "term": "{Ni}",
+        "count": 6
       },
       {
         "term": "{O, Ti}",
+        "count": 5
+      },
+      {
+        "term": "{Au}",
         "count": 4
       },
       {
+        "term": "{Fe}",
+        "count": 4
+      },
+      {
+        "term": "{Bi}",
+        "count": 3
+      },
+      {
+        "term": "{Cr}",
+        "count": 3
+      },
+      {
         "term": "{Fe, Ni}",
+        "count": 3
+      },
+      {
+        "term": "{H}",
+        "count": 3
+      },
+      {
+        "term": "{N, O}",
         "count": 3
       },
       {
@@ -494,15 +1492,23 @@
         "count": 3
       },
       {
+        "term": "{U}",
+        "count": 3
+      },
+      {
+        "term": "{Ag}",
+        "count": 2
+      },
+      {
+        "term": "{Bi, Ni, O}",
+        "count": 2
+      },
+      {
         "term": "{Co, Cr, Fe}",
         "count": 2
       },
       {
-        "term": "{H, O}",
-        "count": 2
-      },
-      {
-        "term": "{N, O}",
+        "term": "{W}",
         "count": 2
       },
       {
@@ -522,7 +1528,23 @@
         "count": 1
       },
       {
+        "term": "{Co, H, Ni, O}",
+        "count": 1
+      },
+      {
+        "term": "{Co, H, O}",
+        "count": 1
+      },
+      {
+        "term": "{Co, I}",
+        "count": 1
+      },
+      {
         "term": "{Co, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{Ti}",
         "count": 1
       }
     ]
@@ -532,57 +1554,85 @@
     "elements": [
       {
         "term": "O",
-        "count": 45
+        "count": 72
       },
       {
         "term": "Co",
-        "count": 17
+        "count": 35
+      },
+      {
+        "term": "H",
+        "count": 20
       },
       {
         "term": "Ni",
-        "count": 7
-      },
-      {
-        "term": "Ti",
-        "count": 7
+        "count": 16
       },
       {
         "term": "Fe",
+        "count": 9
+      },
+      {
+        "term": "Ti",
+        "count": 9
+      },
+      {
+        "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "Bi",
         "count": 5
+      },
+      {
+        "term": "Cr",
+        "count": 5
+      },
+      {
+        "term": "Ag",
+        "count": 4
+      },
+      {
+        "term": "N",
+        "count": 3
       },
       {
         "term": "Ru",
         "count": 3
       },
       {
-        "term": "Ag",
-        "count": 2
+        "term": "U",
+        "count": 3
       },
       {
-        "term": "Au",
-        "count": 2
-      },
-      {
-        "term": "Cr",
-        "count": 2
-      },
-      {
-        "term": "H",
-        "count": 2
-      },
-      {
-        "term": "N",
+        "term": "W",
         "count": 2
       },
       {
         "term": "C",
+        "count": 1
+      },
+      {
+        "term": "I",
         "count": 1
       }
     ],
     "oxide_components": [
       {
         "term": "Co3O4",
-        "count": 7
+        "count": 8
+      },
+      {
+        "term": "Co",
+        "count": 4
+      },
+      {
+        "term": "Co3+",
+        "count": 4
+      },
+      {
+        "term": "TiO2",
+        "count": 3
       },
       {
         "term": "Co oxides",
@@ -597,6 +1647,10 @@
         "count": 2
       },
       {
+        "term": "O",
+        "count": 2
+      },
+      {
         "term": "oxides",
         "count": 2
       },
@@ -605,8 +1659,8 @@
         "count": 2
       },
       {
-        "term": "TiO2",
-        "count": 2
+        "term": "0.4 wt % Au loading",
+        "count": 1
       },
       {
         "term": "Ag/TiO2",
@@ -621,11 +1675,47 @@
         "count": 1
       },
       {
+        "term": "Bi02:NiO",
+        "count": 1
+      },
+      {
+        "term": "Bi05:NiO",
+        "count": 1
+      },
+      {
+        "term": "Co2+ (d7, high spin)",
+        "count": 1
+      },
+      {
+        "term": "Co3+ (d6, low spin)",
+        "count": 1
+      },
+      {
+        "term": "Co4+",
+        "count": 1
+      },
+      {
+        "term": "CoIII-containing species",
+        "count": 1
+      },
+      {
+        "term": "CoOOH",
+        "count": 1
+      },
+      {
+        "term": "cost-effective",
+        "count": 1
+      },
+      {
         "term": "hydroxides",
         "count": 1
       },
       {
         "term": "layered double hydroxide (LDH)",
+        "count": 1
+      },
+      {
+        "term": "layered double hydroxides",
         "count": 1
       },
       {
@@ -641,12 +1731,73 @@
         "count": 1
       },
       {
+        "term": "normal spinel",
+        "count": 1
+      },
+      {
         "term": "oxide catalysts",
         "count": 1
       }
     ],
-    "crystal_or_spacegroup_terms": [],
+    "crystal_or_spacegroup_terms": [
+      {
+        "term": "normal spinel",
+        "count": 1
+      },
+      {
+        "term": "normal spinel",
+        "count": 1
+      },
+      {
+        "term": "space group Fd3̅m",
+        "count": 1
+      },
+      {
+        "term": "space group Fd3̅m",
+        "count": 1
+      },
+      {
+        "term": "spinel phase",
+        "count": 1
+      },
+      {
+        "term": "spinel phase",
+        "count": 1
+      },
+      {
+        "term": "spinel structure",
+        "count": 1
+      },
+      {
+        "term": "spinel structure",
+        "count": 1
+      }
+    ],
     "exposed_surfaces": [
+      {
+        "term": "(0001)",
+        "count": 2
+      },
+      {
+        "term": "(001)",
+        "count": 2
+      },
+      {
+        "term": "(110)",
+        "count": 2
+      },
+      {
+        "term": "(100)",
+        "count": 1
+      },
+      {
+        "term": "(101)",
+        "count": 1
+      },
+      {
+        "term": "(111)",
+        "count": 1
+      },
       {
         "term": "Co3O4(001)",
         "count": 1
@@ -684,22 +1835,105 @@
         "count": 1
       }
     ],
-    "defect_or_termination_states": [],
-    "reaction_families": []
+    "defect_or_termination_states": [
+      {
+        "term": "kinks",
+        "count": 2
+      },
+      {
+        "term": "steps",
+        "count": 2
+      }
+    ],
+    "reaction_families": [
+      {
+        "term": "OER",
+        "count": 8
+      },
+      {
+        "term": "oxygen evolution reaction",
+        "count": 5
+      },
+      {
+        "term": "electrocatalysis",
+        "count": 3
+      },
+      {
+        "term": "Adsorption Test",
+        "count": 1
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1
+      },
+      {
+        "term": "electrocatalysts",
+        "count": 1
+      },
+      {
+        "term": "electrocatalytic oxygen evolution reaction",
+        "count": 1
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1
+      },
+      {
+        "term": "Electrochemical OER",
+        "count": 1
+      },
+      {
+        "term": "electrochemical oxidation of water",
+        "count": 1
+      },
+      {
+        "term": "electrochemical water splitting",
+        "count": 1
+      },
+      {
+        "term": "electrode materials",
+        "count": 1
+      },
+      {
+        "term": "electrolyzer efficiency",
+        "count": 1
+      },
+      {
+        "term": "energy conversion technologies",
+        "count": 1
+      },
+      {
+        "term": "hydrogen peroxide production",
+        "count": 1
+      },
+      {
+        "term": "hydrogen production",
+        "count": 1
+      },
+      {
+        "term": "OER catalysts",
+        "count": 1
+      },
+      {
+        "term": "water electrolysis",
+        "count": 1
+      }
+    ]
   },
   "entries": [
     {
       "term": "O2",
-      "kind": "unknown_high_value",
+      "kind": "unknown_context",
       "research_category": "unknown_information",
       "fields": [
         "products",
+        "Product",
         "Adsorbate/Reactant"
       ],
-      "count": 15,
+      "count": 20,
       "example_contexts": [
         "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au(111)",
+        "Reaction Mechanism",
         "NiCo LDH/CC"
       ]
     },
@@ -710,13 +1944,313 @@
       "fields": [
         "materials",
         "Material",
-        "Modeling Keywords"
+        "Modeling Keywords",
+        "Composition"
       ],
-      "count": 7,
+      "count": 8,
       "example_contexts": [
         "jp306303y 1..6",
         "Co3O4",
         "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords",
+        "Reaction Type"
+      ],
+      "count": 8,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide",
+        "Co–Fe–Cr (oxy)hydroxides",
+        "RuO2"
+      ]
+    },
+    {
+      "term": "density functional theory",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 7,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Au/TiO2",
+        "Nickel–Bismuth Oxide",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant",
+        "adsorbates"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "TiO2",
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "oxygen evolution reaction",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "Co",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides",
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "Co3+",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site",
+        "material_parameters",
+        "active_sites"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides",
+        "ja405997s 1..10",
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "Ni",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Dopant/Modifier"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "Co3O4",
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "adsorbate_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "jp306303y 1..6",
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "Cr",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Dopant/Modifier",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications",
+        "Reaction Type"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Nickel–Bismuth Oxide",
+        "Oxides"
+      ]
+    },
+    {
+      "term": "Fe",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "dopants",
+        "Dopant/Modifier"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides",
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Composition",
+        "Material"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
+        "Au/TiO2",
+        "TiO2"
+      ]
+    },
+    {
+      "term": "(0001)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets",
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "ja405997s 1..10",
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "(001)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "(0112̅)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "facets",
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "ja405997s 1..10",
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "(101̅4)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "facets",
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "ja405997s 1..10",
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "(110)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets",
+        "Facet"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2"
+      ]
+    },
+    {
+      "term": "Ag",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Ag/TiO2"
+      ]
+    },
+    {
+      "term": "Au",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Bismuth (Bi)",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "dopants"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
       ]
     },
     {
@@ -735,8 +2269,8 @@
     },
     {
       "term": "Co2+",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "Modeling Keywords",
         "Active Site"
@@ -758,6 +2292,75 @@
       "example_contexts": [
         "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
         "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "DFT",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "H2",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "products",
+        "Product"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "HO*",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "DOI: 10.1002/cctc.201000397",
+        "Oxides"
+      ]
+    },
+    {
+      "term": "HOO*",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "DOI: 10.1002/cctc.201000397",
+        "Oxides"
+      ]
+    },
+    {
+      "term": "kinks",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2"
       ]
     },
     {
@@ -785,6 +2388,32 @@
       "count": 2,
       "example_contexts": [
         "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "O",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "octahedral site",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorption_sites",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "Co3O4"
       ]
     },
     {
@@ -816,17 +2445,106 @@
       ]
     },
     {
-      "term": "TiO2",
-      "kind": "unknown_high_value",
+      "term": "Silver",
+      "kind": "unknown_context",
       "research_category": "unknown_information",
       "fields": [
         "materials",
-        "Material"
+        "dopants"
       ],
       "count": 2,
       "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "TiO2"
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "single_atom_site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "steps",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "defects",
+        "Defect"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
+        "RuO2"
+      ]
+    },
+    {
+      "term": "tetrahedral site",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorption_sites",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "W",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "(100)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "(101)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "(111)",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
       ]
     },
     {
@@ -854,6 +2572,78 @@
       ]
     },
     {
+      "term": "*OH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "*OOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "0.4 wt % Au loading",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "active sites",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "RuO2"
+      ]
+    },
+    {
+      "term": "adsorbate",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
+      "term": "Adsorption Test",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
       "term": "Ag/TiO2",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -863,6 +2653,18 @@
       "count": 1,
       "example_contexts": [
         "Ag/TiO2"
+      ]
+    },
+    {
+      "term": "AgSA",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "single_atoms"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
       ]
     },
     {
@@ -890,15 +2692,159 @@
       ]
     },
     {
-      "term": "CO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "Bi",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
-        "Adsorbate/Reactant"
+        "Modeling Keywords"
       ],
       "count": 1,
       "example_contexts": [
-        "CoO nanocubes"
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "Bi02:NiO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "Bi05:NiO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "bimetallic",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Bismuth",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "bulk phase",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "Catalyst Preparation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Cluster",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au–Ag/TiO2"
+      ]
+    },
+    {
+      "term": "Co site",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "Co2+ (d7, high spin)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "Co3+ (d6, low spin)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "Co3+δ",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "CO32−",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
       ]
     },
     {
@@ -938,6 +2884,234 @@
       ]
     },
     {
+      "term": "Co4+",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "CoIII-containing species",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "CoOct (+4)",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "CoOOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "cost-effective",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "DFT+U",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "dispersion interactions",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "dissolution pathways",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "RuO2"
+      ]
+    },
+    {
+      "term": "doping",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "electrocatalyst",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "electrocatalysts",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "electrocatalytic oxygen evolution reaction",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "Electrochemical",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co3O4"
+      ]
+    },
+    {
+      "term": "Electrochemical OER",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "electrochemical oxidation of water",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "electrochemical water splitting",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "electrode materials",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "electrolyzer efficiency",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "energy conversion technologies",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "Fe atoms in NiFe oxyhydroxide",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -950,6 +3124,30 @@
       ]
     },
     {
+      "term": "Fe-free",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "H*",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
       "term": "H2O2",
       "kind": "unknown_context",
       "research_category": "unknown_information",
@@ -959,6 +3157,78 @@
       "count": 1,
       "example_contexts": [
         "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
+      ]
+    },
+    {
+      "term": "HER",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
+      "term": "high reactivity",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "Hubbard U",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "Hubbard-U approach",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "hydrogen peroxide production",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
+      ]
+    },
+    {
+      "term": "hydrogen production",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
       ]
     },
     {
@@ -986,6 +3256,66 @@
       ]
     },
     {
+      "term": "layered double hydroxides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "layered phase",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "metal cluster",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Ni reaction sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "Ni sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Nickel–Bismuth Oxide"
+      ]
+    },
+    {
       "term": "Nickel–Bismuth Oxide",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1003,6 +3333,18 @@
       "research_category": "unknown_information",
       "fields": [
         "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "NiCoOOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites"
       ],
       "count": 1,
       "example_contexts": [
@@ -1046,6 +3388,30 @@
       ]
     },
     {
+      "term": "NO2",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Cr2O3"
+      ]
+    },
+    {
+      "term": "normal spinel",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
       "term": "O2*",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1055,6 +3421,78 @@
       "count": 1,
       "example_contexts": [
         "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "octahedral Co",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "octahedral sites",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "OER catalysts",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "OH*",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "OH−",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "overpotential",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co3O4"
       ]
     },
     {
@@ -1094,6 +3532,42 @@
       ]
     },
     {
+      "term": "oxygen evolution",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Oxides"
+      ]
+    },
+    {
+      "term": "oxygen-contained intermediates",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Quantum Espresso",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
       "term": "RuO2 (110) surface",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -1118,6 +3592,138 @@
       ]
     },
     {
+      "term": "scaling relation",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Oxides"
+      ]
+    },
+    {
+      "term": "Single Atom",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "single-atom Au",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "single_atoms"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "singly coordinated sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
+      ]
+    },
+    {
+      "term": "space group Fd3̅m",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
+      ]
+    },
+    {
+      "term": "spinel phase",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "ja405997s 1..10"
+      ]
+    },
+    {
+      "term": "spinel structure",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "jp306303y 1..6"
+      ]
+    },
+    {
+      "term": "stable chromium oxide",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Oxides"
+      ]
+    },
+    {
+      "term": "surface stability",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co oxides"
+      ]
+    },
+    {
+      "term": "Ti",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "TiO2"
+      ]
+    },
+    {
       "term": "TiO2(110)",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1139,6 +3745,30 @@
       "count": 1,
       "example_contexts": [
         "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
+      ]
+    },
+    {
+      "term": "water electrolysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
+      ]
+    },
+    {
+      "term": "XAS",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
       ]
     }
   ]

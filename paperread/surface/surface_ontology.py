@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 SUPPORTED_MODELING_TASKS = {
     "vacancy_landscape",
     "adsorbate_landscape",
@@ -58,6 +60,54 @@ KNOWN_SURFACE_TERMS = {
     "reconstructed",
     "metal-support",
     "anchoring",
+    "terrace",
+    "step",
+    "stepped surface",
+    "kink",
+    "edge",
+    "basal plane",
+    "crystal plane",
+    "miller index",
+    "exposed facet",
+    "exposed surface",
+    "clean surface",
+    "surface atom",
+    "surface atoms",
+    "surface cation",
+    "surface oxygen",
+    "subsurface",
+    "surface area",
+    "specific surface area",
+    "roughness",
+    "reconstruction",
+    "surface reconstruction",
+    "surface stability",
+    "surface defect",
+    "surface defects",
+    "dft",
+    "density functional theory",
+    "first-principles",
+    "first principles",
+    "ab initio",
+    "dos",
+    "pdos",
+    "density of states",
+    "bader",
+    "bader charge",
+    "xas",
+    "xafs",
+    "exafs",
+    "xps",
+    "xrd",
+    "sem",
+    "tem",
+    "raman",
+    "ftir",
+    "cv",
+    "lsv",
+    "eis",
+    "reaction mechanism",
+    "reaction mechanisms",
 }
 
 KNOWN_MODELING_TOKENS = {
@@ -101,6 +151,29 @@ KNOWN_MODELING_TOKENS = {
     "monolayer",
     "metal-support",
     "anchoring",
+    "terrace",
+    "step",
+    "kink",
+    "edge",
+    "basal plane",
+    "crystal plane",
+    "miller index",
+    "exposed facet",
+    "exposed surface",
+    "clean surface",
+    "surface atom",
+    "surface atoms",
+    "surface cation",
+    "surface oxygen",
+    "subsurface",
+    "surface area",
+    "specific surface area",
+    "roughness",
+    "reconstruction",
+    "surface reconstruction",
+    "surface stability",
+    "surface defect",
+    "surface defects",
 }
 
 RELATION_FIELDS = [
@@ -251,7 +324,35 @@ PERIODIC_SYMBOLS = {
     "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
     "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy",
     "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb",
-    "Bi", "Po", "At", "Rn",
+    "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf",
+    "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl",
+    "Mc", "Lv", "Ts", "Og",
+}
+
+REACTION_ABBREVIATIONS = {
+    "OER",
+    "HER",
+    "HOR",
+    "ORR",
+    "CO2RR",
+    "CO2R",
+    "CO2ER",
+    "CORR",
+    "NRR",
+    "NO3RR",
+    "NO2RR",
+    "MOR",
+    "EOR",
+    "AOR",
+    "FOR",
+    "FAOR",
+    "GOR",
+    "BOR",
+    "UOR",
+    "CER",
+    "WOR",
+    "WGS",
+    "RWGS",
 }
 
 MATERIAL_KIND_TOKENS = {
@@ -329,14 +430,48 @@ def is_supported_modeling_task(value: str) -> bool:
 
 
 def is_known_surface_term(value: str) -> bool:
-    lower = value.lower()
-    if lower in SUPPORTED_MODELING_TASKS:
-        return True
-    return any(term in lower for term in KNOWN_SURFACE_TERMS)
+    return is_known_surface_experience_term(value)
 
 
 def is_known_modeling_term(value: str) -> bool:
-    lower = value.lower()
+    return is_known_surface_experience_term(value)
+
+
+def is_element_symbol_expression(value: str) -> bool:
+    cleaned = value.strip().strip("{}[]()")
+    if not cleaned:
+        return False
+    parts = [part for part in re.split(r"[\s,;/+|&-]+", cleaned) if part]
+    if not parts:
+        return False
+    return all(part in PERIODIC_SYMBOLS for part in parts)
+
+
+def is_reaction_abbreviation(value: str) -> bool:
+    cleaned = re.sub(r"[^A-Za-z0-9]", "", value).upper()
+    return cleaned in REACTION_ABBREVIATIONS
+
+
+def is_simple_oxidation_state(value: str) -> bool:
+    cleaned = value.strip()
+    return bool(re.fullmatch(r"[A-Z][a-z]?\d*[+-]", cleaned)) and re.sub(r"\d|\+|-", "", cleaned) in PERIODIC_SYMBOLS
+
+
+def is_known_surface_experience_term(value: str) -> bool:
+    stripped = value.strip()
+    lower = stripped.lower()
+    if not stripped:
+        return True
     if lower in SUPPORTED_MODELING_TASKS:
         return True
-    return any(token in lower for token in KNOWN_MODELING_TOKENS)
+    if is_element_symbol_expression(stripped):
+        return True
+    if is_reaction_abbreviation(stripped):
+        return True
+    if is_simple_oxidation_state(stripped):
+        return True
+    if re.fullmatch(r"\(?\d[\d\s-]{1,8}\)?", stripped):
+        return True
+    if any(term in lower for term in KNOWN_SURFACE_TERMS | KNOWN_MODELING_TOKENS):
+        return True
+    return False

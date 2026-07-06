@@ -1,13 +1,255 @@
 {
   "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-07-06T07:30:22.314265+00:00",
+  "updated_at": "2026-07-06T15:18:47.735809+00:00",
   "summary": {
-    "terms": 27,
-    "known_useful": 9,
-    "unknown": 18
+    "terms": 86,
+    "known_useful": 33,
+    "unknown": 53
   },
   "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "Ag",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Au",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Sn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "NiCoOOH",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Rh2O3 sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "OER",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "H2O",
+        "count": 5,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HER",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "H2",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "O2",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "*O",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "*OOH",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "H2O/OH",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Na",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "O",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "OH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OH⁻",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OH−",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Zn–Air",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "Single Atom",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Cluster",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "Ag",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pb",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Au",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Sn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "0.4 wt % sAu",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "1 M KOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "1 M NaOH",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Cr3+/Cr6+ redox",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "g-C3N4",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "N-doped C",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ni",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pt",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Rh",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Rh2O3",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "TiO2",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
     "coverage": [
       {
         "term": "1/3−2/3 monolayer",
@@ -34,6 +276,20 @@
         "research_category": "adsorption_reaction"
       }
     ],
+    "dopants_modifiers": [
+      {
+        "term": "Ag",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Pb",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
     "materials": [
       {
         "term": "Ag/g-C3N4",
@@ -55,12 +311,6 @@
       },
       {
         "term": "Pt10Pb/C",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
-      {
-        "term": "Sn SAs/G-Na",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -98,8 +348,8 @@
       {
         "term": "Pt/C",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pt10Ni/C",
@@ -124,9 +374,39 @@
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "Sn SAs/G-Na",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       }
     ],
     "modeling_keywords": [
+      {
+        "term": "OER",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "active site",
+        "count": 5,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "HER",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
       {
         "term": "Ag/g-C3N4",
         "count": 2,
@@ -138,15 +418,161 @@
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
-      }
-    ],
-    "supports_surfaces": [
+      },
       {
-        "term": "Sn SAs/G",
+        "term": "oxygen reduction reaction",
         "count": 2,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       },
+      {
+        "term": "activation energy",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "alkaline electrolyte",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "dendrite",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "DFT",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Electrocatalyst",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Habs",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hads",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "metal cluster",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "OHads",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PEC",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "planar deposition",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "sodium",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "OER",
+        "count": 6,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "HER",
+        "count": 4,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Electrochemical",
+        "count": 3,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "oxygen reduction reaction",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "HOR",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Kinetic Characterization",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Oxygen Reduction",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Zn–Air Batteries",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
       {
         "term": "Au/NiFe LDH surface",
         "count": 1,
@@ -184,6 +610,12 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Sn SAs/G",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "water/platinum interface",
         "count": 1,
         "kind": "known_useful",
@@ -195,38 +627,50 @@
     "elements": [
       {
         "term": "O",
-        "count": 11
+        "count": 33
+      },
+      {
+        "term": "H",
+        "count": 20
       },
       {
         "term": "C",
+        "count": 12
+      },
+      {
+        "term": "Ag",
         "count": 10
       },
       {
-        "term": "S",
+        "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "N",
+        "count": 6
+      },
+      {
+        "term": "Ni",
         "count": 6
       },
       {
         "term": "Pt",
+        "count": 6
+      },
+      {
+        "term": "Pb",
         "count": 5
       },
       {
-        "term": "Ag",
+        "term": "Co",
         "count": 4
       },
       {
-        "term": "As",
+        "term": "Rh",
         "count": 4
       },
       {
-        "term": "Au",
-        "count": 4
-      },
-      {
-        "term": "N",
-        "count": 4
-      },
-      {
-        "term": "Ni",
+        "term": "S",
         "count": 4
       },
       {
@@ -234,19 +678,19 @@
         "count": 4
       },
       {
-        "term": "H",
-        "count": 3
+        "term": "Ti",
+        "count": 4
       },
       {
         "term": "Hg",
         "count": 3
       },
       {
-        "term": "Ti",
+        "term": "Na",
         "count": 3
       },
       {
-        "term": "Co",
+        "term": "As",
         "count": 2
       },
       {
@@ -258,15 +702,11 @@
         "count": 2
       },
       {
-        "term": "Na",
-        "count": 2
-      },
-      {
-        "term": "Pb",
-        "count": 2
-      },
-      {
         "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "Zn",
         "count": 2
       },
       {
@@ -274,15 +714,19 @@
         "count": 1
       },
       {
+        "term": "Cr",
+        "count": 1
+      },
+      {
         "term": "Ir",
         "count": 1
       },
       {
-        "term": "P",
+        "term": "K",
         "count": 1
       },
       {
-        "term": "Rh",
+        "term": "P",
         "count": 1
       }
     ],
@@ -296,15 +740,23 @@
         "count": 9
       },
       {
+        "term": "oxide",
+        "count": 7
+      },
+      {
         "term": "carbon_material",
-        "count": 5
+        "count": 6
       },
       {
         "term": "hydroxide_oxyhydroxide",
+        "count": 4
+      },
+      {
+        "term": "cluster",
         "count": 3
       },
       {
-        "term": "oxide",
+        "term": "single_atom_catalyst",
         "count": 3
       },
       {
@@ -322,15 +774,31 @@
     ],
     "component_compounds": [
       {
+        "term": "Ag",
+        "count": 9
+      },
+      {
         "term": "C",
         "count": 7
       },
       {
-        "term": "Sn SAs",
+        "term": "H2O",
+        "count": 6
+      },
+      {
+        "term": "Au",
         "count": 4
       },
       {
-        "term": "Ag",
+        "term": "TiO2",
+        "count": 4
+      },
+      {
+        "term": "g-C3N4",
+        "count": 3
+      },
+      {
+        "term": "H2",
         "count": 3
       },
       {
@@ -338,19 +806,15 @@
         "count": 3
       },
       {
-        "term": "TiO2",
+        "term": "O2",
         "count": 3
       },
       {
-        "term": "Au",
-        "count": 2
+        "term": "Pb",
+        "count": 3
       },
       {
-        "term": "g-C3N4",
-        "count": 2
-      },
-      {
-        "term": "G-Na",
+        "term": "Co",
         "count": 2
       },
       {
@@ -370,8 +834,44 @@
         "count": 2
       },
       {
+        "term": "O",
+        "count": 2
+      },
+      {
+        "term": "OH",
+        "count": 2
+      },
+      {
+        "term": "Pt",
+        "count": 2
+      },
+      {
         "term": "Pt10Pb",
         "count": 2
+      },
+      {
+        "term": "Sn",
+        "count": 2
+      },
+      {
+        "term": "Sn SAs",
+        "count": 2
+      },
+      {
+        "term": "*O",
+        "count": 1
+      },
+      {
+        "term": "*OOH",
+        "count": 1
+      },
+      {
+        "term": "1 M KOH",
+        "count": 1
+      },
+      {
+        "term": "1 M NaOH",
+        "count": 1
       },
       {
         "term": "3 monolayer OH*",
@@ -406,11 +906,19 @@
         "count": 1
       },
       {
-        "term": "Co",
+        "term": "CoO",
         "count": 1
       },
       {
-        "term": "CoO",
+        "term": "Cr3",
+        "count": 1
+      },
+      {
+        "term": "Cr6",
+        "count": 1
+      },
+      {
+        "term": "G-Na",
         "count": 1
       },
       {
@@ -418,7 +926,23 @@
         "count": 1
       },
       {
+        "term": "N-doped C",
+        "count": 1
+      },
+      {
+        "term": "Na",
+        "count": 1
+      },
+      {
+        "term": "Ni",
+        "count": 1
+      },
+      {
         "term": "NiCo LDH",
+        "count": 1
+      },
+      {
+        "term": "NiCoOOH",
         "count": 1
       },
       {
@@ -430,19 +954,35 @@
         "count": 1
       },
       {
-        "term": "O",
-        "count": 1
-      },
-      {
         "term": "O coverage",
         "count": 1
       },
       {
-        "term": "Pt",
+        "term": "OH⁻",
+        "count": 1
+      },
+      {
+        "term": "OH−",
+        "count": 1
+      },
+      {
+        "term": "OOH",
         "count": 1
       },
       {
         "term": "Pt10Ni",
+        "count": 1
+      },
+      {
+        "term": "Rh",
+        "count": 1
+      },
+      {
+        "term": "Rh2O3",
+        "count": 1
+      },
+      {
+        "term": "Rh2O3 sites",
         "count": 1
       },
       {
@@ -452,15 +992,43 @@
       {
         "term": "Ru(0001",
         "count": 1
+      },
+      {
+        "term": "surface",
+        "count": 1
+      },
+      {
+        "term": "Zn–Air",
+        "count": 1
+      },
+      {
+        "term": "Zn–Air Batteries",
+        "count": 1
       }
     ],
     "element_sets": [
       {
         "term": "{H, O}",
-        "count": 3
+        "count": 14
+      },
+      {
+        "term": "{Ag}",
+        "count": 6
+      },
+      {
+        "term": "{O}",
+        "count": 5
       },
       {
         "term": "{Hg, O}",
+        "count": 3
+      },
+      {
+        "term": "{H}",
+        "count": 3
+      },
+      {
+        "term": "{Pb}",
         "count": 3
       },
       {
@@ -468,11 +1036,7 @@
         "count": 2
       },
       {
-        "term": "{As, Na, S, Sn}",
-        "count": 2
-      },
-      {
-        "term": "{As, S, Sn}",
+        "term": "{Au}",
         "count": 2
       },
       {
@@ -480,11 +1044,31 @@
         "count": 2
       },
       {
+        "term": "{C, N}",
+        "count": 2
+      },
+      {
         "term": "{C, Pb, Pt}",
         "count": 2
       },
       {
+        "term": "{O, Rh}",
+        "count": 2
+      },
+      {
+        "term": "{Pt}",
+        "count": 2
+      },
+      {
         "term": "{Ru}",
+        "count": 2
+      },
+      {
+        "term": "{Sn}",
+        "count": 2
+      },
+      {
+        "term": "{Zn}",
         "count": 2
       },
       {
@@ -493,6 +1077,14 @@
       },
       {
         "term": "{Ag, O, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{As, Na, S, Sn}",
+        "count": 1
+      },
+      {
+        "term": "{As, S, Sn}",
         "count": 1
       },
       {
@@ -524,7 +1116,19 @@
         "count": 1
       },
       {
+        "term": "{Co, H, Ni, O}",
+        "count": 1
+      },
+      {
         "term": "{Co, O}",
+        "count": 1
+      },
+      {
+        "term": "{Co}",
+        "count": 1
+      },
+      {
+        "term": "{Cr}",
         "count": 1
       },
       {
@@ -532,11 +1136,31 @@
         "count": 1
       },
       {
+        "term": "{H, K, O}",
+        "count": 1
+      },
+      {
+        "term": "{H, Na, O}",
+        "count": 1
+      },
+      {
         "term": "{Ir}",
         "count": 1
       },
       {
-        "term": "{Pt}",
+        "term": "{Na}",
+        "count": 1
+      },
+      {
+        "term": "{Ni}",
+        "count": 1
+      },
+      {
+        "term": "{O, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{Rh}",
         "count": 1
       }
     ]
@@ -546,38 +1170,50 @@
     "elements": [
       {
         "term": "O",
-        "count": 11
+        "count": 33
+      },
+      {
+        "term": "H",
+        "count": 20
       },
       {
         "term": "C",
+        "count": 12
+      },
+      {
+        "term": "Ag",
         "count": 10
       },
       {
-        "term": "S",
+        "term": "Au",
+        "count": 6
+      },
+      {
+        "term": "N",
+        "count": 6
+      },
+      {
+        "term": "Ni",
         "count": 6
       },
       {
         "term": "Pt",
+        "count": 6
+      },
+      {
+        "term": "Pb",
         "count": 5
       },
       {
-        "term": "Ag",
+        "term": "Co",
         "count": 4
       },
       {
-        "term": "As",
+        "term": "Rh",
         "count": 4
       },
       {
-        "term": "Au",
-        "count": 4
-      },
-      {
-        "term": "N",
-        "count": 4
-      },
-      {
-        "term": "Ni",
+        "term": "S",
         "count": 4
       },
       {
@@ -585,19 +1221,19 @@
         "count": 4
       },
       {
-        "term": "H",
-        "count": 3
+        "term": "Ti",
+        "count": 4
       },
       {
         "term": "Hg",
         "count": 3
       },
       {
-        "term": "Ti",
+        "term": "Na",
         "count": 3
       },
       {
-        "term": "Co",
+        "term": "As",
         "count": 2
       },
       {
@@ -609,15 +1245,11 @@
         "count": 2
       },
       {
-        "term": "Na",
-        "count": 2
-      },
-      {
-        "term": "Pb",
-        "count": 2
-      },
-      {
         "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "Zn",
         "count": 2
       },
       {
@@ -625,22 +1257,26 @@
         "count": 1
       },
       {
+        "term": "Cr",
+        "count": 1
+      },
+      {
         "term": "Ir",
         "count": 1
       },
       {
-        "term": "P",
+        "term": "K",
         "count": 1
       },
       {
-        "term": "Rh",
+        "term": "P",
         "count": 1
       }
     ],
     "material_kind": [
       {
         "term": "supported_catalyst",
-        "count": 27
+        "count": 86
       }
     ],
     "support_components": [
@@ -707,9 +1343,29 @@
       {
         "term": "TiO2",
         "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
+      },
+      {
+        "term": "TiO2",
+        "count": 1
       }
     ],
     "loaded_components": [
+      {
+        "term": "Ag",
+        "count": 6
+      },
+      {
+        "term": "Ag",
+        "count": 6
+      },
+      {
+        "term": "Ag",
+        "count": 6
+      },
       {
         "term": "Ag",
         "count": 2
@@ -719,7 +1375,11 @@
         "count": 2
       },
       {
-        "term": "C",
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "Au",
         "count": 2
       },
       {
@@ -727,15 +1387,11 @@
         "count": 2
       },
       {
-        "term": "G",
+        "term": "C",
         "count": 2
       },
       {
         "term": "g-C3N4",
-        "count": 2
-      },
-      {
-        "term": "G-Na",
         "count": 2
       },
       {
@@ -763,31 +1419,19 @@
         "count": 2
       },
       {
-        "term": "Sn SAs",
+        "term": "Sn",
         "count": 2
       },
       {
-        "term": "Sn SAs",
+        "term": "Sn",
         "count": 2
       },
       {
-        "term": "Sn SAs/G-Na",
-        "count": 2
+        "term": "0.4 wt % sAu",
+        "count": 1
       },
       {
         "term": "Ag",
-        "count": 1
-      },
-      {
-        "term": "Ag/TiO2",
-        "count": 1
-      },
-      {
-        "term": "Au",
-        "count": 1
-      },
-      {
-        "term": "Au",
         "count": 1
       }
     ],
@@ -802,9 +1446,218 @@
       }
     ],
     "approx_loadings": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "OER",
+        "count": 6
+      },
+      {
+        "term": "HER",
+        "count": 4
+      },
+      {
+        "term": "Electrochemical",
+        "count": 3
+      },
+      {
+        "term": "ORR",
+        "count": 2
+      },
+      {
+        "term": "oxygen reduction reaction",
+        "count": 2
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 1
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1
+      },
+      {
+        "term": "HOR",
+        "count": 1
+      },
+      {
+        "term": "Kinetic Characterization",
+        "count": 1
+      },
+      {
+        "term": "Oxygen Reduction",
+        "count": 1
+      },
+      {
+        "term": "Zn–Air Batteries",
+        "count": 1
+      }
+    ]
   },
   "entries": [
+    {
+      "term": "Ag",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site",
+        "Dopant/Modifier"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Ag/TiO2",
+        "Ag/g-C3N4",
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type",
+        "Modeling Keywords",
+        "applications",
+        "Adsorbate/Reactant"
+      ],
+      "count": 6,
+      "example_contexts": [
+        "Ag/g-C3N4",
+        "CoO/Co",
+        "Hg/HgO"
+      ]
+    },
+    {
+      "term": "active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "Au/TiO2",
+        "NiCo LDH/CC",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant",
+        "products",
+        "Product"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "Hg/HgO",
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ]
+    },
+    {
+      "term": "HER",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords",
+        "applications",
+        "Adsorbate/Reactant",
+        "Reaction Type"
+      ],
+      "count": 4,
+      "example_contexts": [
+        "Hg/HgO",
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Electrochemical",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "Hg/HgO",
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "H2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product",
+        "Adsorbate/Reactant"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Hg/HgO",
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "O2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "Pt10Pb/C",
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Pb",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition",
+        "Dopant/Modifier"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ]
+    },
+    {
+      "term": "Single Atom",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Au/TiO2",
+        "NiCo LDH/CC",
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "adsorbate",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "Pt10Pb/C"
+      ]
+    },
     {
       "term": "Ag/g-C3N4",
       "kind": "unknown_high_value",
@@ -815,6 +1668,32 @@
       ],
       "count": 2,
       "example_contexts": [
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "Au",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Cluster",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Au–Ag/TiO2",
         "Ag/g-C3N4"
       ]
     },
@@ -846,6 +1725,34 @@
       ]
     },
     {
+      "term": "ORR",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "oxygen reduction reaction",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
+        "Pt10Pb/C"
+      ]
+    },
+    {
       "term": "Pt10Pb/C",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -860,27 +1767,76 @@
       ]
     },
     {
-      "term": "Sn SAs/G",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "Sn",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
-        "surfaces"
-      ],
-      "count": 2,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
-    },
-    {
-      "term": "Sn SAs/G-Na",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "Material"
+        "Composition",
+        "Active Site"
       ],
       "count": 2,
       "example_contexts": [
         "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "*O",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "intermediates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "*OOH",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "intermediates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "0.4 wt % sAu",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "sAu/NiFe LDH"
+      ]
+    },
+    {
+      "term": "1 M KOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Hg/HgO"
+      ]
+    },
+    {
+      "term": "1 M NaOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Hg/HgO"
       ]
     },
     {
@@ -908,6 +1864,18 @@
       ]
     },
     {
+      "term": "activation energy",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt10Pb/C"
+      ]
+    },
+    {
       "term": "Ag/TiO2",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -917,6 +1885,18 @@
       "count": 1,
       "example_contexts": [
         "Ag/TiO2"
+      ]
+    },
+    {
+      "term": "alkaline electrolyte",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Hg/HgO"
       ]
     },
     {
@@ -1004,6 +1984,30 @@
       ]
     },
     {
+      "term": "Catalyst Preparation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "Co",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
       "term": "CoO/Co",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1013,6 +2017,114 @@
       "count": 1,
       "example_contexts": [
         "CoO/Co"
+      ]
+    },
+    {
+      "term": "Cr3+/Cr6+ redox",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
+      ]
+    },
+    {
+      "term": "dendrite",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "DFT",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "Electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Electrocatalyst",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "g-C3N4",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "H2O/OH",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au(111)"
+      ]
+    },
+    {
+      "term": "Habs",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Hads",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
       ]
     },
     {
@@ -1052,6 +2164,78 @@
       ]
     },
     {
+      "term": "HOR",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Kinetic Characterization",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt10Pb/C"
+      ]
+    },
+    {
+      "term": "metal cluster",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
+      "term": "N-doped C",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Na",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "Ni",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
       "term": "NiCo LDH/CC",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1064,9 +2248,141 @@
       ]
     },
     {
-      "term": "Pt/C",
+      "term": "NiCoOOH",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "O",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "OH",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "OHads",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "OH⁻",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "OH−",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Hg/HgO"
+      ]
+    },
+    {
+      "term": "OOH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "Oxygen Reduction",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt10Pb/C"
+      ]
+    },
+    {
+      "term": "PEC",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ag/g-C3N4"
+      ]
+    },
+    {
+      "term": "planar deposition",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "Pt",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt10Pb/C"
+      ]
+    },
+    {
+      "term": "Pt/C",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1100,6 +2416,42 @@
       ]
     },
     {
+      "term": "Rh",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Rh2O3",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
+      "term": "Rh2O3 sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Rh–Rh2O3-NPs/C"
+      ]
+    },
+    {
       "term": "Rh–Rh2O3-NPs/C",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -1124,6 +2476,66 @@
       ]
     },
     {
+      "term": "Sn SAs/G",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
+    },
+    {
+      "term": "Sn SAs/G-Na",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "sodium",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "TiO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Au/TiO2"
+      ]
+    },
+    {
       "term": "water/platinum interface",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -1133,6 +2545,30 @@
       "count": 1,
       "example_contexts": [
         "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Zn–Air",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Zn–Air Batteries",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries"
       ]
     }
   ]

@@ -1,20 +1,14 @@
 {
   "schema_version": "2.0",
   "material_class": "battery_electrode_materials",
-  "updated_at": "2026-07-06T07:30:22.249747+00:00",
+  "updated_at": "2026-07-06T15:18:47.665041+00:00",
   "summary": {
-    "terms": 3,
+    "terms": 2,
     "known_useful": 0,
-    "unknown": 3
+    "unknown": 2
   },
   "keyword_inventory": {
     "modeling_keywords": [
-      {
-        "term": "sodium metal batteries",
-        "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
-      },
       {
         "term": "photoanode",
         "count": 1,
@@ -22,7 +16,7 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "sodium metal battery",
+        "term": "sodium metal batteries",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -39,18 +33,6 @@
   },
   "entries": [
     {
-      "term": "sodium metal batteries",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "modeling_keywords"
-      ],
-      "count": 2,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
-    },
-    {
       "term": "photoanode",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -63,15 +45,15 @@
       ]
     },
     {
-      "term": "sodium metal battery",
+      "term": "sodium metal batteries",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
-        "Modeling Keywords"
+        "modeling_keywords"
       ],
       "count": 1,
       "example_contexts": [
-        "Sn SAs/G-Na"
+        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
       ]
     }
   ]

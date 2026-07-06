@@ -1,18 +1,240 @@
 {
   "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-07-06T07:30:22.291675+00:00",
+  "updated_at": "2026-07-06T15:18:47.711972+00:00",
   "summary": {
-    "terms": 10,
-    "known_useful": 6,
-    "unknown": 4
+    "terms": 50,
+    "known_useful": 32,
+    "unknown": 18
   },
   "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "Ag@Sb",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Pt@Sb",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "TM@Sb",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
     "adsorbates_reactants": [
+      {
+        "term": "HER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
       {
         "term": "ammonia",
         "count": 1,
         "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "Ag",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ir",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pt",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Rh",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Single Atom",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "Ag",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ir",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pt",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Rh",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ag@Sb",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cr",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cu",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Fe",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Mn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "monolayer",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ni",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pt@Sb",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ru",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "subnanometer clusters",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ti",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "V",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Zn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Au)",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "single Sb vacancy",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "TM@Sb (TM = Sc",
+        "count": 1,
+        "kind": "unknown_high_value",
         "research_category": "unknown_information"
       }
     ],
@@ -32,10 +254,118 @@
     ],
     "dopants_modifiers": [
       {
+        "term": "Ag",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ir",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pd",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Pt",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Rh",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cr",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Cu",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Fe",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Mn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ni",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ru",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Ti",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "V",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Zn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Au",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "monochain CrO3",
         "count": 1,
         "kind": "unknown_context",
         "research_category": "unknown_information"
+      },
+      {
+        "term": "Sc",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
       }
     ],
     "materials": [
@@ -61,17 +391,109 @@
       },
       {
         "term": "subnanometer clusters",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "density functional theory",
         "count": 1,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
+      },
+      {
+        "term": "electrocatalysts",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "overpotential (ηOER = 0.48 V",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "single-atom catalyst",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "single_atom_site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "transition metal",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "trifunctional",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ΔG*H",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ηORR = 0.50 V)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "HER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "energy conversion",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "energy storage",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
       }
     ],
     "supports_surfaces": [
       {
         "term": "monolayer",
-        "count": 1,
+        "count": 2,
         "kind": "known_useful",
-        "research_category": "surface_materials"
+        "research_category": "other_useful_information"
       },
       {
         "term": "monometallic cluster",
@@ -90,41 +512,185 @@
   "material_descriptors": {
     "elements": [
       {
+        "term": "Sb",
+        "count": 8
+      },
+      {
+        "term": "Ag",
+        "count": 5
+      },
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "V",
+        "count": 4
+      },
+      {
+        "term": "Cd",
+        "count": 3
+      },
+      {
+        "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "Ir",
+        "count": 3
+      },
+      {
+        "term": "Pd",
+        "count": 3
+      },
+      {
+        "term": "Rh",
+        "count": 3
+      },
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Cu",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Mn",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
         "term": "O",
         "count": 2
       },
       {
-        "term": "Cr",
-        "count": 1
+        "term": "Ru",
+        "count": 2
       },
       {
-        "term": "H",
-        "count": 1
+        "term": "Sc",
+        "count": 2
       },
       {
-        "term": "Sb",
-        "count": 1
+        "term": "Ti",
+        "count": 2
+      },
+      {
+        "term": "Zn",
+        "count": 2
       }
     ],
     "material_kinds": [
       {
         "term": "nitride",
-        "count": 11
-      },
-      {
-        "term": "surface",
-        "count": 3
+        "count": 12
       },
       {
         "term": "cluster",
-        "count": 2
+        "count": 3
       },
       {
         "term": "supported_catalyst",
         "count": 2
+      },
+      {
+        "term": "surface",
+        "count": 2
+      },
+      {
+        "term": "single_atom_catalyst",
+        "count": 1
       }
     ],
     "component_compounds": [
+      {
+        "term": "Ag",
+        "count": 5
+      },
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "Sb",
+        "count": 5
+      },
+      {
+        "term": "Cd",
+        "count": 3
+      },
+      {
+        "term": "Ir",
+        "count": 3
+      },
+      {
+        "term": "Pd",
+        "count": 3
+      },
+      {
+        "term": "Rh",
+        "count": 3
+      },
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Cr",
+        "count": 2
+      },
+      {
+        "term": "Cu",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "Mn",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "Ti",
+        "count": 2
+      },
+      {
+        "term": "V",
+        "count": 2
+      },
+      {
+        "term": "Zn",
+        "count": 2
+      },
       {
         "term": "3 monolayer OH*",
         "count": 1
@@ -134,11 +700,115 @@
         "count": 1
       },
       {
+        "term": "overpotential (ηOER = 0.48 V",
+        "count": 1
+      },
+      {
+        "term": "Sb (TM = Sc",
+        "count": 1
+      },
+      {
         "term": "Sb monolayer",
+        "count": 1
+      },
+      {
+        "term": "Sc",
+        "count": 1
+      },
+      {
+        "term": "single Sb vacancy",
+        "count": 1
+      },
+      {
+        "term": "ΔG*H",
+        "count": 1
+      },
+      {
+        "term": "ηORR = 0.50 V",
         "count": 1
       }
     ],
     "element_sets": [
+      {
+        "term": "{V}",
+        "count": 4
+      },
+      {
+        "term": "{Ag}",
+        "count": 3
+      },
+      {
+        "term": "{Cd}",
+        "count": 3
+      },
+      {
+        "term": "{Ir}",
+        "count": 3
+      },
+      {
+        "term": "{Pd}",
+        "count": 3
+      },
+      {
+        "term": "{Pt}",
+        "count": 3
+      },
+      {
+        "term": "{Rh}",
+        "count": 3
+      },
+      {
+        "term": "{Sb}",
+        "count": 3
+      },
+      {
+        "term": "{Ag, Sb}",
+        "count": 2
+      },
+      {
+        "term": "{Au}",
+        "count": 2
+      },
+      {
+        "term": "{Co}",
+        "count": 2
+      },
+      {
+        "term": "{Cr}",
+        "count": 2
+      },
+      {
+        "term": "{Cu}",
+        "count": 2
+      },
+      {
+        "term": "{Fe}",
+        "count": 2
+      },
+      {
+        "term": "{Mn}",
+        "count": 2
+      },
+      {
+        "term": "{Ni}",
+        "count": 2
+      },
+      {
+        "term": "{Pt, Sb}",
+        "count": 2
+      },
+      {
+        "term": "{Ru}",
+        "count": 2
+      },
+      {
+        "term": "{Ti}",
+        "count": 2
+      },
+      {
+        "term": "{Zn}",
+        "count": 2
+      },
       {
         "term": "{Cr, O}",
         "count": 1
@@ -148,7 +818,15 @@
         "count": 1
       },
       {
-        "term": "{Sb}",
+        "term": "{H}",
+        "count": 1
+      },
+      {
+        "term": "{Sb, Sc}",
+        "count": 1
+      },
+      {
+        "term": "{Sc}",
         "count": 1
       }
     ]
@@ -157,36 +835,216 @@
     "descriptor_schema": "generic_material_profile",
     "elements": [
       {
+        "term": "Sb",
+        "count": 8
+      },
+      {
+        "term": "Ag",
+        "count": 5
+      },
+      {
+        "term": "Pt",
+        "count": 5
+      },
+      {
+        "term": "V",
+        "count": 4
+      },
+      {
+        "term": "Cd",
+        "count": 3
+      },
+      {
+        "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "Ir",
+        "count": 3
+      },
+      {
+        "term": "Pd",
+        "count": 3
+      },
+      {
+        "term": "Rh",
+        "count": 3
+      },
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Cu",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Mn",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
         "term": "O",
         "count": 2
       },
       {
-        "term": "Cr",
-        "count": 1
+        "term": "Ru",
+        "count": 2
       },
       {
-        "term": "H",
-        "count": 1
+        "term": "Sc",
+        "count": 2
       },
       {
-        "term": "Sb",
-        "count": 1
+        "term": "Ti",
+        "count": 2
+      },
+      {
+        "term": "Zn",
+        "count": 2
       }
     ],
     "components": [
+      {
+        "term": "Ag",
+        "count": 3
+      },
       {
         "term": "antimonene",
         "count": 3
       },
       {
-        "term": "ultrananocrystalline diamond",
-        "count": 1
+        "term": "Cd",
+        "count": 3
+      },
+      {
+        "term": "Ir",
+        "count": 3
+      },
+      {
+        "term": "Pd",
+        "count": 3
+      },
+      {
+        "term": "Pt",
+        "count": 3
+      },
+      {
+        "term": "Rh",
+        "count": 3
+      },
+      {
+        "term": "Ag@Sb",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Cr",
+        "count": 2
+      },
+      {
+        "term": "Cu",
+        "count": 2
+      },
+      {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "Mn",
+        "count": 2
+      },
+      {
+        "term": "monolayer",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
+        "term": "Pt@Sb",
+        "count": 2
+      },
+      {
+        "term": "Ru",
+        "count": 2
+      },
+      {
+        "term": "subnanometer clusters",
+        "count": 2
+      },
+      {
+        "term": "Ti",
+        "count": 2
+      },
+      {
+        "term": "V",
+        "count": 2
       }
     ],
     "surface_states": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "HER",
+        "count": 2
+      },
+      {
+        "term": "OER",
+        "count": 2
+      },
+      {
+        "term": "ORR",
+        "count": 2
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1
+      },
+      {
+        "term": "energy conversion",
+        "count": 1
+      },
+      {
+        "term": "energy storage",
+        "count": 1
+      }
+    ]
   },
   "entries": [
+    {
+      "term": "Ag",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
     {
       "term": "antimonene",
       "kind": "unknown_high_value",
@@ -197,6 +1055,316 @@
         "Modeling Keywords"
       ],
       "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Cd",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Ir",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Pd",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Pt",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Rh",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "single_atoms",
+        "Composition"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Ag@Sb",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Co",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Cr",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Cu",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Fe",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "HER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Product"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Mn",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "monolayer",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters",
+        "slab_models"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "Ni",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Product"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "ORR",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Product"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Pt@Sb",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Ru",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "subnanometer clusters",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "acs_nn_nn-2013-00772s 1..10",
+        "Pd4, Pd6, Pd17 clusters"
+      ]
+    },
+    {
+      "term": "Ti",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "V",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++",
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "Zn",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants",
+        "Composition"
+      ],
+      "count": 2,
       "example_contexts": [
         "d1nr02235k 12885..12895 ++",
         "Antimonene"
@@ -239,6 +1407,90 @@
       ]
     },
     {
+      "term": "Au",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "Au)",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "density functional theory",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "Electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "electrocatalysts",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "energy conversion",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "energy storage",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
       "term": "monochain CrO3",
       "kind": "unknown_context",
       "research_category": "unknown_information",
@@ -248,18 +1500,6 @@
       "count": 1,
       "example_contexts": [
         "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
-    },
-    {
-      "term": "monolayer",
-      "kind": "known_useful",
-      "research_category": "surface_materials",
-      "fields": [
-        "slab_models"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
       ]
     },
     {
@@ -275,6 +1515,18 @@
       ]
     },
     {
+      "term": "overpotential (ηOER = 0.48 V",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
       "term": "Sb monolayer",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -287,15 +1539,111 @@
       ]
     },
     {
-      "term": "subnanometer clusters",
+      "term": "Sc",
       "kind": "known_useful",
-      "research_category": "modeling_tasks",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "Single Atom",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "single Sb vacancy",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "single-atom catalyst",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
       "fields": [
         "Modeling Keywords"
       ],
       "count": 1,
       "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "single_atom_site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
+      ]
+    },
+    {
+      "term": "TM@Sb",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "TM@Sb (TM = Sc",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "transition metal",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "trifunctional",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "d1nr02235k 12885..12895 ++"
       ]
     },
     {
@@ -308,6 +1656,30 @@
       "count": 1,
       "example_contexts": [
         "acs_nn_nn-2013-00772s 1..10"
+      ]
+    },
+    {
+      "term": "ΔG*H",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
+      ]
+    },
+    {
+      "term": "ηORR = 0.50 V)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Antimonene"
       ]
     }
   ]

@@ -1,13 +1,39 @@
 {
   "schema_version": "2.0",
   "material_class": "sulfides",
-  "updated_at": "2026-07-06T07:30:22.311724+00:00",
+  "updated_at": "2026-07-06T15:18:47.734465+00:00",
   "summary": {
-    "terms": 6,
-    "known_useful": 0,
-    "unknown": 6
+    "terms": 14,
+    "known_useful": 6,
+    "unknown": 8
   },
   "keyword_inventory": {
+    "adsorbates_reactants": [
+      {
+        "term": "HER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Zn–Air",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
     "materials": [
       {
         "term": "Mo–N/C@MoS2",
@@ -24,7 +50,25 @@
     ],
     "modeling_keywords": [
       {
+        "term": "Reaction Mechanism",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Active Site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
         "term": "catalytic mechanism",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrocatalyst",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -36,15 +80,47 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "reaction mechanism",
+        "term": "reaction mechanisms",
         "count": 1,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "HER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "ORR",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Reaction Mechanism",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       },
       {
-        "term": "reaction mechanisms",
+        "term": "Zn–Air Batteries",
         "count": 1,
-        "kind": "unknown_high_value",
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       }
     ]
@@ -66,12 +142,16 @@
       {
         "term": "N",
         "count": 2
+      },
+      {
+        "term": "Zn",
+        "count": 2
       }
     ],
     "material_kinds": [
       {
         "term": "sulfide",
-        "count": 7
+        "count": 8
       },
       {
         "term": "supported_catalyst",
@@ -90,11 +170,23 @@
       {
         "term": "Mo–N",
         "count": 2
+      },
+      {
+        "term": "Zn–Air",
+        "count": 1
+      },
+      {
+        "term": "Zn–Air Batteries",
+        "count": 1
       }
     ],
     "element_sets": [
       {
         "term": "{C, Mo, N, S}",
+        "count": 2
+      },
+      {
+        "term": "{Zn}",
         "count": 2
       },
       {
@@ -121,6 +213,10 @@
       {
         "term": "N",
         "count": 2
+      },
+      {
+        "term": "Zn",
+        "count": 2
       }
     ],
     "components": [
@@ -134,9 +230,48 @@
       }
     ],
     "surface_states": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "HER",
+        "count": 2
+      },
+      {
+        "term": "OER",
+        "count": 2
+      },
+      {
+        "term": "ORR",
+        "count": 2
+      },
+      {
+        "term": "Reaction Mechanism",
+        "count": 2
+      },
+      {
+        "term": "Electrocatalysis",
+        "count": 1
+      },
+      {
+        "term": "Zn–Air Batteries",
+        "count": 1
+      }
+    ]
   },
   "entries": [
+    {
+      "term": "HER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
     {
       "term": "Mo–N/C@MoS2",
       "kind": "unknown_high_value",
@@ -148,6 +283,59 @@
       "count": 2,
       "example_contexts": [
         "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "ORR",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "applications",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Reaction Mechanism",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Reaction Mechanism"
+      ]
+    },
+    {
+      "term": "Active Site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
         "Mo–N/C@MoS2"
       ]
     },
@@ -164,6 +352,30 @@
       ]
     },
     {
+      "term": "Electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Electrocatalyst",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
       "term": "MoS2",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -176,21 +388,9 @@
       ]
     },
     {
-      "term": "reaction mechanism",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "Modeling Keywords"
-      ],
-      "count": 1,
-      "example_contexts": [
-        "Reaction Mechanism"
-      ]
-    },
-    {
       "term": "reaction mechanisms",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
@@ -209,6 +409,30 @@
       "count": 1,
       "example_contexts": [
         "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "Zn–Air",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Mo–N/C@MoS2"
+      ]
+    },
+    {
+      "term": "Zn–Air Batteries",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries"
       ]
     }
   ]

@@ -1,22 +1,52 @@
 {
   "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-07-06T07:30:22.254305+00:00",
+  "updated_at": "2026-07-06T15:18:47.667038+00:00",
   "summary": {
-    "terms": 20,
-    "known_useful": 9,
-    "unknown": 11
+    "terms": 42,
+    "known_useful": 15,
+    "unknown": 27
   },
   "keyword_inventory": {
-    "active_sites": [
+    "adsorbates_reactants": [
       {
-        "term": "catalytic active site",
-        "count": 1,
-        "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "term": "CH3OH",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       },
       {
-        "term": "catalytic sites",
+        "term": "CO",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "formic acid",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "hydroxyl species",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Methanol",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "NO",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Water",
         "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
@@ -24,45 +54,57 @@
     ],
     "clusters_single_atoms": [
       {
-        "term": "Au Nanoparticles",
-        "count": 3,
-        "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "term": "Yes",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "Ru modified",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "coverage": [
+      {
+        "term": "Full",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       },
       {
-        "term": "Pt nanoparticles",
-        "count": 3,
-        "kind": "known_useful",
-        "research_category": "surface_materials"
-      },
-      {
-        "term": "Ir nanoparticles",
-        "count": 2,
-        "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
-      },
-      {
-        "term": "Ru nanoparticles",
-        "count": 2,
-        "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
+        "term": "sub-saturation",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       }
     ],
     "dopants_modifiers": [
       {
-        "term": "Au Nanoparticles",
-        "count": 3,
+        "term": "Ru",
+        "count": 1,
         "kind": "known_useful",
         "research_category": "defects_active_sites"
       }
     ],
-    "materials": [
+    "facets": [
       {
-        "term": "Pt nanoparticles",
-        "count": 3,
+        "term": "nanoscale single crystal ensemble",
+        "count": 1,
         "kind": "known_useful",
-        "research_category": "surface_materials"
+        "research_category": "surface_structure"
       },
+      {
+        "term": "Pt(111) nanofacets",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
+    "materials": [
       {
         "term": "CoPt nanoparticles",
         "count": 2,
@@ -70,19 +112,25 @@
         "research_category": "surface_materials"
       },
       {
-        "term": "Ir nanoparticles",
+        "term": "Pt nanoparticles",
         "count": 2,
         "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
-      },
-      {
-        "term": "Ru nanoparticles",
-        "count": 2,
-        "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
+        "research_category": "surface_materials"
       },
       {
         "term": "gold nanoparticles",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "Ru nanoparticles",
         "count": 1,
         "kind": "known_useful",
         "research_category": "surface_materials"
@@ -96,10 +144,34 @@
     ],
     "modeling_keywords": [
       {
-        "term": "Au Nanoparticles",
-        "count": 3,
+        "term": "electrocatalysis",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "active site",
+        "count": 1,
         "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate_landscape",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Au nanoparticles",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "catalytic activity",
@@ -120,10 +192,10 @@
         "research_category": "unknown_information"
       },
       {
-        "term": "electrocatalytic",
+        "term": "DFT",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
       },
       {
         "term": "electrocatalytic activity",
@@ -162,9 +234,59 @@
         "research_category": "modeling_tasks"
       },
       {
+        "term": "OER",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "oxidation",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "theoretical studies",
         "count": 1,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "electrocatalysis",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalytic",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Catalytic Oxidation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "catalytic remediation technologies",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "fuel cells",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Shape-dependent electrocatalysis",
+        "count": 1,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       }
     ]
@@ -172,11 +294,19 @@
   "material_descriptors": {
     "elements": [
       {
+        "term": "C",
+        "count": 5
+      },
+      {
+        "term": "O",
+        "count": 5
+      },
+      {
         "term": "Pt",
         "count": 5
       },
       {
-        "term": "Au",
+        "term": "Ru",
         "count": 3
       },
       {
@@ -184,15 +314,19 @@
         "count": 2
       },
       {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
         "term": "Ir",
-        "count": 2
+        "count": 1
       },
       {
-        "term": "Ru",
-        "count": 2
-      },
-      {
-        "term": "C",
+        "term": "N",
         "count": 1
       },
       {
@@ -203,33 +337,61 @@
     "material_kinds": [
       {
         "term": "nanoparticle",
-        "count": 15
+        "count": 10
       },
       {
         "term": "sulfide",
+        "count": 1
+      },
+      {
+        "term": "surface",
         "count": 1
       }
     ],
     "component_compounds": [
       {
-        "term": "Au Nanoparticles",
-        "count": 3
+        "term": "CH3OH",
+        "count": 2
       },
       {
-        "term": "Pt nanoparticles",
-        "count": 3
+        "term": "CO",
+        "count": 2
       },
       {
         "term": "CoPt nanoparticles",
         "count": 2
       },
       {
-        "term": "Ir nanoparticles",
+        "term": "Pt nanoparticles",
         "count": 2
       },
       {
+        "term": "Au nanoparticles",
+        "count": 1
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 1
+      },
+      {
+        "term": "NO",
+        "count": 1
+      },
+      {
+        "term": "Pt(111) nanofacets",
+        "count": 1
+      },
+      {
+        "term": "Ru",
+        "count": 1
+      },
+      {
+        "term": "Ru modified",
+        "count": 1
+      },
+      {
         "term": "Ru nanoparticles",
-        "count": 2
+        "count": 1
       },
       {
         "term": "TiC",
@@ -238,27 +400,39 @@
     ],
     "element_sets": [
       {
-        "term": "{Au}",
+        "term": "{Pt}",
         "count": 3
       },
       {
-        "term": "{Pt}",
+        "term": "{Ru}",
         "count": 3
+      },
+      {
+        "term": "{C, H, O}",
+        "count": 2
+      },
+      {
+        "term": "{C, O}",
+        "count": 2
       },
       {
         "term": "{Co, Pt}",
         "count": 2
       },
       {
-        "term": "{Ir}",
-        "count": 2
-      },
-      {
-        "term": "{Ru}",
-        "count": 2
+        "term": "{Au}",
+        "count": 1
       },
       {
         "term": "{C, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{Ir}",
+        "count": 1
+      },
+      {
+        "term": "{N, O}",
         "count": 1
       }
     ]
@@ -267,11 +441,19 @@
     "descriptor_schema": "generic_material_profile",
     "elements": [
       {
+        "term": "C",
+        "count": 5
+      },
+      {
+        "term": "O",
+        "count": 5
+      },
+      {
         "term": "Pt",
         "count": 5
       },
       {
-        "term": "Au",
+        "term": "Ru",
         "count": 3
       },
       {
@@ -279,15 +461,19 @@
         "count": 2
       },
       {
+        "term": "H",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
         "term": "Ir",
-        "count": 2
+        "count": 1
       },
       {
-        "term": "Ru",
-        "count": 2
-      },
-      {
-        "term": "C",
+        "term": "N",
         "count": 1
       },
       {
@@ -297,23 +483,27 @@
     ],
     "components": [
       {
-        "term": "Pt nanoparticles",
-        "count": 3
-      },
-      {
         "term": "CoPt nanoparticles",
         "count": 2
       },
       {
-        "term": "Ir nanoparticles",
-        "count": 2
-      },
-      {
-        "term": "Ru nanoparticles",
+        "term": "Pt nanoparticles",
         "count": 2
       },
       {
         "term": "gold nanoparticles",
+        "count": 1
+      },
+      {
+        "term": "Ir nanoparticles",
+        "count": 1
+      },
+      {
+        "term": "Ru modified",
+        "count": 1
+      },
+      {
+        "term": "Ru nanoparticles",
         "count": 1
       },
       {
@@ -322,35 +512,60 @@
       }
     ],
     "surface_states": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "electrocatalysis",
+        "count": 2
+      },
+      {
+        "term": "electrocatalytic",
+        "count": 2
+      },
+      {
+        "term": "Catalytic Oxidation",
+        "count": 1
+      },
+      {
+        "term": "catalytic remediation technologies",
+        "count": 1
+      },
+      {
+        "term": "fuel cells",
+        "count": 1
+      },
+      {
+        "term": "Shape-dependent electrocatalysis",
+        "count": 1
+      }
+    ]
   },
   "entries": [
     {
-      "term": "Au Nanoparticles",
-      "kind": "known_useful",
-      "research_category": "defects_active_sites",
+      "term": "CH3OH",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
       "fields": [
-        "Dopant/Modifier",
-        "Cluster/Single Atom",
-        "Modeling Keywords"
+        "adsorbates",
+        "Adsorbate/Reactant"
       ],
-      "count": 3,
+      "count": 2,
       "example_contexts": [
-        "Black Phosphorus Nanosheets"
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
       ]
     },
     {
-      "term": "Pt nanoparticles",
-      "kind": "known_useful",
-      "research_category": "surface_materials",
+      "term": "CO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
       "fields": [
-        "Material",
-        "clusters"
+        "adsorbates",
+        "Adsorbate/Reactant"
       ],
-      "count": 3,
+      "count": 2,
       "example_contexts": [
-        "Pt nanoparticles",
-        "cs3003098 1..8"
+        "rsc_cp_b803956a_auto 3722..3730",
+        "CoPt nanoparticles"
       ]
     },
     {
@@ -368,26 +583,25 @@
       ]
     },
     {
-      "term": "Ir nanoparticles",
-      "kind": "known_useful",
-      "research_category": "clusters_single_atoms",
+      "term": "electrocatalysis",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
       "fields": [
-        "clusters",
-        "Material"
+        "applications",
+        "modeling_keywords"
       ],
       "count": 2,
       "example_contexts": [
-        "cs3003098 1..8",
-        "Ir nanoparticles"
+        "rsc_cp_b803956a_auto 3722..3730"
       ]
     },
     {
-      "term": "Ru nanoparticles",
-      "kind": "known_useful",
-      "research_category": "clusters_single_atoms",
+      "term": "electrocatalytic",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
       "fields": [
-        "clusters",
-        "Material"
+        "modeling_keywords",
+        "Reaction Type"
       ],
       "count": 2,
       "example_contexts": [
@@ -396,15 +610,51 @@
       ]
     },
     {
-      "term": "catalytic active site",
+      "term": "Pt nanoparticles",
       "kind": "known_useful",
-      "research_category": "defects_active_sites",
+      "research_category": "surface_materials",
       "fields": [
-        "active_sites"
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Pt nanoparticles"
+      ]
+    },
+    {
+      "term": "active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
       ],
       "count": 1,
       "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "adsorbate_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Au nanoparticles",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Black Phosphorus Nanosheets"
       ]
     },
     {
@@ -429,6 +679,18 @@
       ]
     },
     {
+      "term": "Catalytic Oxidation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Cr2O3"
+      ]
+    },
+    {
       "term": "catalytic reactions",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -441,27 +703,27 @@
       ]
     },
     {
-      "term": "catalytic sites",
-      "kind": "unknown_high_value",
+      "term": "catalytic remediation technologies",
+      "kind": "unknown_context",
       "research_category": "unknown_information",
       "fields": [
-        "active_sites"
+        "applications"
       ],
       "count": 1,
       "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
+        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
       ]
     },
     {
-      "term": "electrocatalytic",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "term": "DFT",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
       "fields": [
         "modeling_keywords"
       ],
       "count": 1,
       "example_contexts": [
-        "cs3003098 1..8"
+        "rsc_cp_b803956a_auto 3722..3730"
       ]
     },
     {
@@ -501,6 +763,42 @@
       ]
     },
     {
+      "term": "formic acid",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "fuel cells",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Full",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CoPt nanoparticles"
+      ]
+    },
+    {
       "term": "gold nanoparticles",
       "kind": "known_useful",
       "research_category": "surface_materials",
@@ -513,6 +811,30 @@
       ]
     },
     {
+      "term": "hydroxyl species",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Ir nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ir nanoparticles"
+      ]
+    },
+    {
       "term": "kinetic characteristics",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -522,6 +844,18 @@
       "count": 1,
       "example_contexts": [
         "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
+      ]
+    },
+    {
+      "term": "Methanol",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt nanoparticles"
       ]
     },
     {
@@ -549,6 +883,126 @@
       ]
     },
     {
+      "term": "nanoscale single crystal ensemble",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "NO",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "oxidation",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Pt(111) nanofacets",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Ru",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "dopants"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "rsc_cp_b803956a_auto 3722..3730"
+      ]
+    },
+    {
+      "term": "Ru modified",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt nanoparticles"
+      ]
+    },
+    {
+      "term": "Ru nanoparticles",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "Shape-dependent electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Pt nanoparticles"
+      ]
+    },
+    {
+      "term": "sub-saturation",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "CoPt nanoparticles"
+      ]
+    },
+    {
       "term": "theoretical studies",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -570,6 +1024,30 @@
       "count": 1,
       "example_contexts": [
         "cs3003098 1..8"
+      ]
+    },
+    {
+      "term": "Water",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ru nanoparticles"
+      ]
+    },
+    {
+      "term": "Yes",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ru nanoparticles"
       ]
     }
   ]

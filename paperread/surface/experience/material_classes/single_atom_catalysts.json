@@ -1,61 +1,125 @@
 {
   "schema_version": "2.0",
   "material_class": "single_atom_catalysts",
-  "updated_at": "2026-07-06T07:30:22.308927+00:00",
+  "updated_at": "2026-07-06T15:18:47.732640+00:00",
   "summary": {
-    "terms": 8,
-    "known_useful": 6,
-    "unknown": 2
+    "terms": 21,
+    "known_useful": 11,
+    "unknown": 10
   },
   "keyword_inventory": {
     "active_sites": [
       {
-        "term": "nickel single atoms",
+        "term": "Sn",
         "count": 2,
         "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ni atom",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "H2O",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Na",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "clusters_single_atoms": [
       {
-        "term": "Single Atom",
-        "count": 13,
+        "term": "single atom",
+        "count": 5,
         "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
-      },
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "compositions": [
       {
-        "term": "nickel single atoms",
+        "term": "O",
         "count": 2,
         "kind": "known_useful",
-        "research_category": "defects_active_sites"
+        "research_category": "other_useful_information"
       },
       {
-        "term": "Sn single atoms",
+        "term": "Sn",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "C",
         "count": 1,
         "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ni",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "materials": [
       {
         "term": "Ni-O-G SACs",
-        "count": 3,
+        "count": 1,
         "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
         "term": "Sn SAs/G-Na",
-        "count": 2,
+        "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       }
     ],
     "modeling_keywords": [
       {
-        "term": "Single Atom",
-        "count": 13,
+        "term": "single atom",
+        "count": 5,
         "kind": "known_useful",
-        "research_category": "clusters_single_atoms"
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "O",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "active site",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "dendrite",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "metal-oxygen bonding",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "planar deposition",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
       },
       {
         "term": "SAC",
@@ -68,18 +132,38 @@
         "count": 1,
         "kind": "known_useful",
         "research_category": "modeling_tasks"
+      },
+      {
+        "term": "sodium",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "Electrocatalytic OER",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
       }
     ],
     "supports_surfaces": [
       {
-        "term": "Ni-O-G SACs",
-        "count": 3,
-        "kind": "known_useful",
-        "research_category": "surface_materials"
-      },
-      {
         "term": "Sn SAs/G",
-        "count": 2,
+        "count": 1,
         "kind": "unknown_high_value",
         "research_category": "unknown_information"
       }
@@ -88,15 +172,11 @@
   "material_descriptors": {
     "elements": [
       {
-        "term": "Sn",
-        "count": 5
-      },
-      {
-        "term": "As",
+        "term": "O",
         "count": 4
       },
       {
-        "term": "S",
+        "term": "Sn",
         "count": 4
       },
       {
@@ -104,61 +184,121 @@
         "count": 3
       },
       {
-        "term": "O",
-        "count": 3
+        "term": "As",
+        "count": 2
       },
       {
         "term": "Na",
         "count": 2
+      },
+      {
+        "term": "S",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "H",
+        "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "single_atom_catalyst",
-        "count": 21
-      },
-      {
-        "term": "surface",
-        "count": 5
+        "count": 8
       },
       {
         "term": "supported_catalyst",
-        "count": 4
+        "count": 2
+      },
+      {
+        "term": "surface",
+        "count": 2
       }
     ],
     "component_compounds": [
       {
-        "term": "Sn SAs",
-        "count": 4
-      },
-      {
-        "term": "Ni-O-G SACs",
-        "count": 3
-      },
-      {
-        "term": "G-Na",
+        "term": "O",
         "count": 2
       },
       {
-        "term": "Sn single atoms",
+        "term": "Sn",
+        "count": 2
+      },
+      {
+        "term": "Sn SAs",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "G-Na",
+        "count": 1
+      },
+      {
+        "term": "H2O",
+        "count": 1
+      },
+      {
+        "term": "Na",
+        "count": 1
+      },
+      {
+        "term": "Ni",
+        "count": 1
+      },
+      {
+        "term": "Ni atom",
+        "count": 1
+      },
+      {
+        "term": "Ni-O-G SACs",
+        "count": 1
+      },
+      {
+        "term": "surface",
         "count": 1
       }
     ],
     "element_sets": [
       {
-        "term": "{Ni, O}",
-        "count": 3
-      },
-      {
-        "term": "{As, Na, S, Sn}",
+        "term": "{Ni}",
         "count": 2
       },
       {
-        "term": "{As, S, Sn}",
+        "term": "{O}",
         "count": 2
       },
       {
         "term": "{Sn}",
+        "count": 2
+      },
+      {
+        "term": "{As, Na, S, Sn}",
+        "count": 1
+      },
+      {
+        "term": "{As, S, Sn}",
+        "count": 1
+      },
+      {
+        "term": "{C}",
+        "count": 1
+      },
+      {
+        "term": "{H, O}",
+        "count": 1
+      },
+      {
+        "term": "{Na}",
+        "count": 1
+      },
+      {
+        "term": "{Ni, O}",
         "count": 1
       }
     ]
@@ -167,15 +307,11 @@
     "descriptor_schema": "carbon_or_sac_profile",
     "elements": [
       {
-        "term": "Sn",
-        "count": 5
-      },
-      {
-        "term": "As",
+        "term": "O",
         "count": 4
       },
       {
-        "term": "S",
+        "term": "Sn",
         "count": 4
       },
       {
@@ -183,52 +319,215 @@
         "count": 3
       },
       {
-        "term": "O",
-        "count": 3
+        "term": "As",
+        "count": 2
       },
       {
         "term": "Na",
         "count": 2
+      },
+      {
+        "term": "S",
+        "count": 2
+      },
+      {
+        "term": "C",
+        "count": 1
+      },
+      {
+        "term": "H",
+        "count": 1
       }
     ],
     "host_structures": [],
     "dopant_or_loaded_species": [
       {
-        "term": "Single Atom",
-        "count": 13
-      },
-      {
-        "term": "nickel single atoms",
-        "count": 2
-      },
-      {
-        "term": "Sn single atoms",
-        "count": 1
+        "term": "single atom",
+        "count": 5
       }
     ],
     "coordination_environments": [],
     "single_atom_centers": [
       {
         "term": "Sn",
+        "count": 2
+      },
+      {
+        "term": "Ni",
         "count": 1
       }
     ],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "Electrocatalytic OER",
+        "count": 1
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1
+      }
+    ]
   },
   "entries": [
     {
-      "term": "Single Atom",
+      "term": "single atom",
       "kind": "known_useful",
-      "research_category": "clusters_single_atoms",
+      "research_category": "modeling_tasks",
       "fields": [
-        "Cluster/Single Atom",
+        "Modeling Keywords",
+        "Cluster/Single Atom"
+      ],
+      "count": 5,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "NiFe LDH",
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "O",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
         "Modeling Keywords"
       ],
-      "count": 13,
+      "count": 2,
       "example_contexts": [
-        "Sn SAs/G-Na",
-        "Ni-O-G SACs",
-        "Au/TiO2"
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "Sn",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "C",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "dendrite",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "Electrocatalytic OER",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "Electrochemical",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "metal-oxygen bonding",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "Na",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "Ni",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
+      ]
+    },
+    {
+      "term": "Ni atom",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni-O-G SACs"
       ]
     },
     {
@@ -236,48 +535,21 @@
       "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
-        "surfaces",
         "Material"
       ],
-      "count": 3,
+      "count": 1,
       "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
         "Ni-O-G SACs"
       ]
     },
     {
-      "term": "nickel single atoms",
-      "kind": "known_useful",
-      "research_category": "defects_active_sites",
-      "fields": [
-        "active_sites",
-        "single_atoms"
-      ],
-      "count": 2,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
-    },
-    {
-      "term": "Sn SAs/G",
+      "term": "planar deposition",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
-        "surfaces"
+        "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
-    },
-    {
-      "term": "Sn SAs/G-Na",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
-      "fields": [
-        "Material"
-      ],
-      "count": 2,
+      "count": 1,
       "example_contexts": [
         "Sn SAs/G-Na"
       ]
@@ -307,15 +579,51 @@
       ]
     },
     {
-      "term": "Sn single atoms",
-      "kind": "known_useful",
-      "research_category": "clusters_single_atoms",
+      "term": "Sn SAs/G",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
       "fields": [
-        "single_atoms"
+        "surfaces"
       ],
       "count": 1,
       "example_contexts": [
         "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
+      ]
+    },
+    {
+      "term": "Sn SAs/G-Na",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "sodium",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
+      ]
+    },
+    {
+      "term": "surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Sn SAs/G-Na"
       ]
     }
   ]

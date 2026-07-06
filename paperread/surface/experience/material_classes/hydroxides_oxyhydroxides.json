@@ -1,17 +1,41 @@
 {
   "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-07-06T07:30:22.265796+00:00",
+  "updated_at": "2026-07-06T15:18:47.673388+00:00",
   "summary": {
-    "terms": 20,
-    "known_useful": 3,
-    "unknown": 17
+    "terms": 61,
+    "known_useful": 20,
+    "unknown": 41
   },
   "keyword_inventory": {
     "active_sites": [
       {
+        "term": "Fe",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
         "term": "NiCoOOH",
         "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Co2+",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co3+",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "Co3+δ",
+        "count": 1,
         "kind": "unknown_context",
         "research_category": "unknown_information"
       },
@@ -24,9 +48,161 @@
     ],
     "adsorbates_reactants": [
       {
+        "term": "O2",
+        "count": 3,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "CO32−",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "H2O",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "NiCoOOH*",
         "count": 1,
         "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "oxygen-contained intermediates",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "Single Atom",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "AgSA",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "single-atom Au",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ag",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Co",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Fe",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "W",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "0.4 wt % Au loading",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "0.4 wt % sAu",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "bimetallic",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Fe-free",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "layered double hydroxides",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ni",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ag",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Silver",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "W",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "sAu",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "facets": [
+      {
+        "term": "(0112̅)",
+        "count": 1,
+        "kind": "unknown_high_value",
         "research_category": "unknown_information"
       }
     ],
@@ -41,6 +217,12 @@
         "term": "Co–Fe–Cr (oxy)Hydroxides",
         "count": 2,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Silver",
+        "count": 2,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       },
       {
@@ -100,9 +282,125 @@
         "research_category": "unknown_information"
       },
       {
+        "term": "Active site",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "Cr",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "single_atom_site",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "charge redistribution",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "density functional theory",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "DFT",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "dispersion interactions",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Hubbard-U approach",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "interfacial interactions",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
         "term": "NiFe oxyhydroxide",
         "count": 1,
         "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "octahedral sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "XAS",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "electrocatalysis",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "OER",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "oxygen evolution reaction",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "electrocatalysts",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "energy conversion technologies",
+        "count": 1,
+        "kind": "unknown_context",
         "research_category": "unknown_information"
       }
     ],
@@ -149,45 +447,57 @@
     "elements": [
       {
         "term": "Co",
+        "count": 22
+      },
+      {
+        "term": "O",
         "count": 17
       },
       {
         "term": "Ni",
-        "count": 13
+        "count": 14
       },
       {
         "term": "H",
-        "count": 12
-      },
-      {
-        "term": "O",
-        "count": 12
+        "count": 13
       },
       {
         "term": "Fe",
-        "count": 9
+        "count": 12
       },
       {
         "term": "Cr",
-        "count": 2
+        "count": 5
       },
       {
         "term": "Au",
-        "count": 1
+        "count": 3
+      },
+      {
+        "term": "Ag",
+        "count": 2
       },
       {
         "term": "C",
+        "count": 2
+      },
+      {
+        "term": "W",
+        "count": 2
+      },
+      {
+        "term": "U",
         "count": 1
       }
     ],
     "material_kinds": [
       {
         "term": "hydroxide_oxyhydroxide",
-        "count": 26
+        "count": 27
       },
       {
         "term": "oxide",
-        "count": 8
+        "count": 13
       },
       {
         "term": "surface",
@@ -196,6 +506,10 @@
       {
         "term": "supported_catalyst",
         "count": 3
+      },
+      {
+        "term": "single_atom_catalyst",
+        "count": 2
       }
     ],
     "component_compounds": [
@@ -204,7 +518,31 @@
         "count": 4
       },
       {
+        "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "O2",
+        "count": 3
+      },
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
+        "term": "Co3",
+        "count": 2
+      },
+      {
         "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 2
+      },
+      {
+        "term": "Fe",
         "count": 2
       },
       {
@@ -220,8 +558,16 @@
         "count": 2
       },
       {
+        "term": "W",
+        "count": 2
+      },
+      {
         "term": "β-CoOOH(0112̅",
         "count": 2
+      },
+      {
+        "term": "0.4 wt % Au loading",
+        "count": 1
       },
       {
         "term": "Au",
@@ -229,6 +575,14 @@
       },
       {
         "term": "CC",
+        "count": 1
+      },
+      {
+        "term": "Co2",
+        "count": 1
+      },
+      {
+        "term": "CO32−",
         "count": 1
       },
       {
@@ -240,11 +594,31 @@
         "count": 1
       },
       {
+        "term": "Fe-free",
+        "count": 1
+      },
+      {
+        "term": "H2O",
+        "count": 1
+      },
+      {
+        "term": "Hubbard-U approach",
+        "count": 1
+      },
+      {
         "term": "hydroxides",
         "count": 1
       },
       {
         "term": "layered double hydroxide (LDH",
+        "count": 1
+      },
+      {
+        "term": "layered double hydroxides",
+        "count": 1
+      },
+      {
+        "term": "Ni",
         "count": 1
       },
       {
@@ -272,6 +646,10 @@
         "count": 1
       },
       {
+        "term": "single-atom Au",
+        "count": 1
+      },
+      {
         "term": "β-CoOOH(0001",
         "count": 1
       },
@@ -290,8 +668,32 @@
         "count": 6
       },
       {
+        "term": "{Co}",
+        "count": 5
+      },
+      {
         "term": "{Co, H, Ni, O}",
         "count": 3
+      },
+      {
+        "term": "{Cr}",
+        "count": 3
+      },
+      {
+        "term": "{Fe}",
+        "count": 3
+      },
+      {
+        "term": "{O}",
+        "count": 3
+      },
+      {
+        "term": "{Ag}",
+        "count": 2
+      },
+      {
+        "term": "{Au}",
+        "count": 2
       },
       {
         "term": "{Co, Cr, Fe}",
@@ -302,11 +704,31 @@
         "count": 2
       },
       {
+        "term": "{W}",
+        "count": 2
+      },
+      {
         "term": "{Au, Fe, Ni}",
         "count": 1
       },
       {
         "term": "{C, Co, Ni}",
+        "count": 1
+      },
+      {
+        "term": "{C, O}",
+        "count": 1
+      },
+      {
+        "term": "{H, O}",
+        "count": 1
+      },
+      {
+        "term": "{Ni}",
+        "count": 1
+      },
+      {
+        "term": "{U}",
         "count": 1
       }
     ]
@@ -316,34 +738,46 @@
     "elements": [
       {
         "term": "Co",
+        "count": 22
+      },
+      {
+        "term": "O",
         "count": 17
       },
       {
         "term": "Ni",
-        "count": 13
+        "count": 14
       },
       {
         "term": "H",
-        "count": 12
-      },
-      {
-        "term": "O",
-        "count": 12
+        "count": 13
       },
       {
         "term": "Fe",
-        "count": 9
+        "count": 12
       },
       {
         "term": "Cr",
-        "count": 2
+        "count": 5
       },
       {
         "term": "Au",
-        "count": 1
+        "count": 3
+      },
+      {
+        "term": "Ag",
+        "count": 2
       },
       {
         "term": "C",
+        "count": 2
+      },
+      {
+        "term": "W",
+        "count": 2
+      },
+      {
+        "term": "U",
         "count": 1
       }
     ],
@@ -353,11 +787,51 @@
         "count": 4
       },
       {
+        "term": "Cr",
+        "count": 3
+      },
+      {
+        "term": "Ag",
+        "count": 2
+      },
+      {
+        "term": "Co",
+        "count": 2
+      },
+      {
         "term": "Co–Fe–Cr (oxy)Hydroxides",
         "count": 2
       },
       {
+        "term": "Fe",
+        "count": 2
+      },
+      {
+        "term": "Silver",
+        "count": 2
+      },
+      {
+        "term": "W",
+        "count": 2
+      },
+      {
+        "term": "0.4 wt % Au loading",
+        "count": 1
+      },
+      {
+        "term": "0.4 wt % sAu",
+        "count": 1
+      },
+      {
+        "term": "bimetallic",
+        "count": 1
+      },
+      {
         "term": "CoOOH",
+        "count": 1
+      },
+      {
+        "term": "Fe-free",
         "count": 1
       },
       {
@@ -366,6 +840,14 @@
       },
       {
         "term": "layered double hydroxide (LDH)",
+        "count": 1
+      },
+      {
+        "term": "layered double hydroxides",
+        "count": 1
+      },
+      {
+        "term": "Ni",
         "count": 1
       },
       {
@@ -379,18 +861,35 @@
       {
         "term": "NiFe layered double hydroxide",
         "count": 1
-      },
-      {
-        "term": "NiFe LDH",
-        "count": 1
-      },
-      {
-        "term": "sAu/NiFe LDH",
-        "count": 1
       }
     ],
     "surface_states": [],
-    "reaction_families": []
+    "reaction_families": [
+      {
+        "term": "electrocatalysis",
+        "count": 2
+      },
+      {
+        "term": "OER",
+        "count": 2
+      },
+      {
+        "term": "oxygen evolution reaction",
+        "count": 2
+      },
+      {
+        "term": "electrocatalysts",
+        "count": 1
+      },
+      {
+        "term": "Electrochemical",
+        "count": 1
+      },
+      {
+        "term": "energy conversion technologies",
+        "count": 1
+      }
+    ]
   },
   "entries": [
     {
@@ -410,6 +909,74 @@
       ]
     },
     {
+      "term": "Active site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "NiFe LDH",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "Cr",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Dopant/Modifier",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "O2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "NiFe LDH",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "Ag",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "Co",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
       "term": "Co–Fe–Cr (oxy)Hydroxides",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -420,6 +987,34 @@
       "count": 2,
       "example_contexts": [
         "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "electrocatalysis",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications",
+        "Reaction Type"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "NiFe LDH"
+      ]
+    },
+    {
+      "term": "Fe",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site",
+        "Composition"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "NiFe LDH",
         "Co–Fe–Cr (oxy)hydroxides"
       ]
     },
@@ -438,6 +1033,84 @@
       ]
     },
     {
+      "term": "OER",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "oxygen evolution reaction",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts"
+      ]
+    },
+    {
+      "term": "Silver",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "dopants"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Single Atom",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "NiCo LDH/CC",
+        "NiFe LDH"
+      ]
+    },
+    {
+      "term": "single_atom_site",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "W",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
       "term": "β-CoOOH(0112̅)",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -451,11 +1124,143 @@
       ]
     },
     {
+      "term": "(0112̅)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Facet"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "β-CoOOH"
+      ]
+    },
+    {
+      "term": "0.4 wt % Au loading",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "0.4 wt % sAu",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "sAu/NiFe LDH"
+      ]
+    },
+    {
+      "term": "adsorbate",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "AgSA",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "single_atoms"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "Au/NiFe LDH surface",
       "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "bimetallic",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "charge redistribution",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiFe LDH"
+      ]
+    },
+    {
+      "term": "Co2+",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "Co3+",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "Co3+δ",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "CO32−",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
       ],
       "count": 1,
       "example_contexts": [
@@ -475,11 +1280,119 @@
       ]
     },
     {
+      "term": "density functional theory",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "DFT",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "dispersion interactions",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "electrocatalysts",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Electrochemical",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
+      ]
+    },
+    {
+      "term": "energy conversion technologies",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
       "term": "Fe atoms in NiFe oxyhydroxide",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
       "fields": [
         "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Fe-free",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "H2O",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Hubbard-U approach",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
       ],
       "count": 1,
       "example_contexts": [
@@ -499,6 +1412,18 @@
       ]
     },
     {
+      "term": "interfacial interactions",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiFe LDH"
+      ]
+    },
+    {
       "term": "layered double hydroxide (LDH)",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -508,6 +1433,30 @@
       "count": 1,
       "example_contexts": [
         "d0qi01060j 234..272 ++"
+      ]
+    },
+    {
+      "term": "layered double hydroxides",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "Ni",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiCo LDH/CC"
       ]
     },
     {
@@ -607,6 +1556,42 @@
       ]
     },
     {
+      "term": "octahedral sites",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Co–Fe–Cr (oxy)hydroxides"
+      ]
+    },
+    {
+      "term": "oxygen-contained intermediates",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "sAu",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "NiFe LDH"
+      ]
+    },
+    {
       "term": "sAu/NiFe LDH",
       "kind": "unknown_high_value",
       "research_category": "unknown_information",
@@ -616,6 +1601,30 @@
       "count": 1,
       "example_contexts": [
         "sAu/NiFe LDH"
+      ]
+    },
+    {
+      "term": "single-atom Au",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "single_atoms"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
+      ]
+    },
+    {
+      "term": "XAS",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
       ]
     },
     {
