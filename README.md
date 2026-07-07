@@ -12,6 +12,76 @@ This workspace also introduces a paper-reading workflow under `paperread/`. The 
 
 Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.
 
+### Paperread surface workflow
+
+For surface-reaction papers, use the unified `paperread` skill rather than the
+older standalone `ReactionSeek` or `NERRE` entrypoints. The maintained path is:
+
+```text
+PDF or JSON paper text
+-> paperread/surface extraction
+-> condition table, time table, surface relations, summary, ptomodel bridge
+-> material-class experience store
+-> skill-side unknown-term store and surface parameter registry
+```
+
+Run a single paper:
+
+```bash
+python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
+  --input /path/to/paper.pdf \
+  --output-dir paperread_output \
+  --keep-intermediate \
+  --collect-experience
+```
+
+Important paperread outputs:
+
+- `*_table.csv`: reaction and material condition table.
+- `*_time.csv`: normalized time values.
+- `*_surface_relations.jsonl`: structured materials, surfaces, adsorbates,
+  active sites, defects, single atoms, clusters, reactions, and modeling cues.
+- `*_summary.txt`: short human-readable extraction summary.
+- `*_ptomodel.json`: normalized bridge from paper facts to Agent modeling inputs.
+- `paperread/surface/experience/material_classes/*.json`: canonical reusable
+  material-class keyword store.
+- `agents/Agent/skills/paperread/experience/surface_parameter_registry.{json,md}`:
+  reusable vocabulary built from the canonical experience store.
+- `agents/Agent/skills/paperread/experience/unrecognized_surface_terms.jsonl`:
+  unresolved surface-paper terms that may require ontology or workflow updates.
+
+For batch PDF work, always keep intermediates:
+
+```bash
+python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
+  --input /path/to/paper.pdf \
+  --output-dir tests/paperread_papers2_experience \
+  --keep-intermediate \
+  --collect-experience
+```
+
+`--keep-intermediate` preserves `*_text.txt`, `*_sections.json`,
+`*_conditions_input.json`, and `*_relations_input.json`. These files are the
+resume point when API calls fail or rate limits interrupt extraction; continue
+from the generated JSON rather than reparsing the PDF.
+
+Current paperread state from `work_logs/2026-07-07.md`:
+
+- `tests/papers2` has 21 PDFs with local intermediate files generated under
+  `tests/paperread_papers2_experience/`.
+- Formal LLM extraction for most `tests/papers2` PDFs is still incomplete
+  because API calls hit rate limit and authentication failures.
+- A no-API fallback has already scanned those papers for keyword-level
+  material, formula, surface, reaction, support, loading, doping/interface,
+  single-atom, cluster, adsorbate, and reactant cues.
+- The rebuilt canonical material-class store currently contains 1098 terms:
+  634 known useful terms and 464 unknown entries.
+- Skill-side unknown terms were cleaned down to 129 records after filtering
+  element names, material-class labels, common formulas, and common reaction or
+  application words.
+- The latest unknown-term statistics are stored in
+  `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.{json,md}`.
+
 ## Quick start
 ### Linux 安装
 

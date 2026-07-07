@@ -48,6 +48,10 @@ Optional outputs:
 - `*_raw.csv`
   - only when `--save-raw` is enabled
 
+For batch PDF processing, use `--keep-intermediate` by default. It prevents
+temporary output stems from being reused across papers and gives a stable resume
+point when API calls fail, rate limit, or need to be retried later.
+
 ## Scripts
 
 - `surface_ontology.py`
@@ -199,6 +203,89 @@ python -m paperread.surface.collect_experience --relations paper_surface_relatio
 python -m paperread.surface.collect_experience --relations paper_surface_relations.jsonl --table paper_table.csv --write-run-file --write-markdown
 python -m paperread.surface.collect_experience --init-material-classes --output-dir paperread/surface/experience
 ```
+
+## Batch and resume guidance
+
+Recommended batch pattern:
+
+```bash
+python -m paperread.surface.run_surface_pipeline \
+  paper.pdf \
+  --output-dir tests/paperread_papers2_experience \
+  --keep-intermediate \
+  --collect-experience
+```
+
+When a batch is interrupted, inspect the existing output directory before
+rerunning the full pipeline:
+
+- If `*_text.txt` and `*_sections.json` exist, PDF ingestion already succeeded.
+- If `*_conditions_input.json` exists, condition extraction can continue from
+  prepared paper text rather than from the PDF.
+- If `*_relations_input.json` exists, relation extraction can continue from
+  routed abstract/results/discussion text.
+- If `*_table.csv` exists but `*_surface_relations.jsonl` is missing, rerun only
+  the relation stage or collect table-only experience if a temporary API problem
+  blocks relation extraction.
+- If both `*_table.csv` and `*_surface_relations.jsonl` exist, run
+  `collect_experience.py`, rebuild the parameter registry, and export unknown
+  terms instead of rerunning extraction.
+
+The current long-term stores are cumulative and should be treated as canonical:
+
+- `paperread/surface/experience/material_classes/*.json`
+- `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
+- `agents/Agent/skills/paperread/experience/surface_parameter_registry.md`
+- `agents/Agent/skills/paperread/experience/unrecognized_surface_terms.jsonl`
+
+## No-API fallback
+
+If the LLM API is unavailable, keep the extraction work useful by generating
+intermediates first:
+
+```bash
+python -m paperread.surface.ingest_pdf paper.pdf \
+  --output-dir tests/paperread_papers2_experience
+```
+
+The generated `*_text.txt`, `*_sections.json`, `*_conditions_input.json`, and
+`*_relations_input.json` files can later be used for a formal extraction run.
+Local heuristic scans may be used to expand keyword-level material-class
+experience, but they should be labeled as fallback knowledge rather than as
+LLM-level relation/table extraction.
+
+When exporting unknown terms, use formal `*_surface_relations.jsonl` and
+`*_table.csv` outputs as the source. Avoid exporting broad heuristic text-scan
+terms directly to the skill-side unknown store.
+
+## Unknown-term policy
+
+Unknown-term export is intended for terms that may require future prompt,
+ontology, planner, or workflow updates. The exporter filters known generic
+tokens before writing skill experience:
+
+- periodic-table element symbols and English element names
+- common formulas and small molecules such as `O2`, `H2O`, `CO2`, `TiO2`,
+  `ZrO2`, and `CeO2`
+- material-class labels such as `metals_alloys`, `oxides`, and
+  `hydroxides_oxyhydroxides`
+- common reaction abbreviations and names such as `OER`, `HER`, `ORR`,
+  electrocatalysis, oxygen evolution reaction, water splitting, fuel cells, and
+  ketonization
+- generic methods and characterization terms such as `DFT`, density functional
+  theory, density of states, Bader charge, XAS, XPS, XRD, SEM, TEM, Raman,
+  FTIR, CV, LSV, and EIS
+- source metadata fields such as links, citations, and DOI references
+
+Keep specific local structures and modeling cues as learnable terms, for
+example `Fe-N4`, `single-atom Au`, `AgSA`, `Au(111)`, mixed OH/O coverage, and
+other composition, coordination, facet, cluster, or adsorption-state phrases.
+
+As of the 2026-07-07 work log, the cleaned skill-side unknown store contains
+129 records, and the latest summary files are:
+
+- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.json`
+- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.md`
 
 ## Recommended usage pattern
 
