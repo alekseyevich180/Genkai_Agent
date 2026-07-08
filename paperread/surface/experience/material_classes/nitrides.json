@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-07-06T15:48:30.359897+00:00",
+  "updated_at": "2026-07-08T04:31:23.556315+00:00",
   "summary": {
     "terms": 53,
-    "known_useful": 40,
-    "unknown": 13
+    "known_useful": 41,
+    "unknown": 12
   },
   "keyword_inventory": {
     "active_sites": [
@@ -502,8 +502,8 @@
       {
         "term": "energy storage",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "supports_surfaces": [
@@ -1055,12 +1055,7 @@
       "fields": [
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "volatile organic compounds",
@@ -1069,12 +1064,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 6
     },
     {
       "term": "Ag",
@@ -1085,11 +1075,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "antimonene",
@@ -1100,11 +1086,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "Cd",
@@ -1115,11 +1097,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "Ir",
@@ -1130,11 +1108,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "Pd",
@@ -1145,11 +1119,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "Pt",
@@ -1160,11 +1130,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "Rh",
@@ -1175,11 +1141,7 @@
         "single_atoms",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 3
     },
     {
       "term": "volatile organic compound",
@@ -1188,12 +1150,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 3,
-      "example_contexts": [
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature",
-        "zakharenko-et-al-2017-conformational-landscape-and-torsion-rotation-vibration-effects-in-the-two-conformers-of-methyl",
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 3
     },
     {
       "term": "Ag@Sb",
@@ -1203,10 +1160,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Co",
@@ -1216,11 +1170,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Cr",
@@ -1230,11 +1180,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Cu",
@@ -1244,11 +1190,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Fe",
@@ -1258,11 +1200,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "HER",
@@ -1272,11 +1210,7 @@
         "applications",
         "Product"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Mn",
@@ -1286,11 +1220,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "monolayer",
@@ -1300,10 +1230,7 @@
         "material_parameters",
         "slab_models"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 2
     },
     {
       "term": "Ni",
@@ -1313,11 +1240,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "OER",
@@ -1327,11 +1250,7 @@
         "applications",
         "Product"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "ORR",
@@ -1341,11 +1260,7 @@
         "applications",
         "Product"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Pt@Sb",
@@ -1355,10 +1270,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Ru",
@@ -1368,11 +1280,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "subnanometer clusters",
@@ -1382,11 +1290,7 @@
         "material_parameters",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10",
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "Ti",
@@ -1396,11 +1300,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "V",
@@ -1410,11 +1310,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "Zn",
@@ -1424,11 +1320,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "1/3−2/3 monolayer",
@@ -1437,10 +1329,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au(111)"
-      ]
+      "count": 1
     },
     {
       "term": "1/3−2/3 monolayer OH*",
@@ -1449,10 +1338,7 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "ammonia",
@@ -1461,10 +1347,7 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "Au",
@@ -1473,10 +1356,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Au)",
@@ -1485,10 +1365,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "density functional theory",
@@ -1497,10 +1374,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Electrocatalysis",
@@ -1509,10 +1383,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalysts",
@@ -1521,10 +1392,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "energy conversion",
@@ -1533,22 +1401,16 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "energy storage",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "monochain CrO3",
@@ -1557,10 +1419,7 @@
       "fields": [
         "modifiers"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "monometallic cluster",
@@ -1569,10 +1428,7 @@
       "fields": [
         "slab_models"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "overpotential (ηOER = 0.48 V",
@@ -1581,10 +1437,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "Sb monolayer",
@@ -1593,10 +1446,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Sc",
@@ -1605,10 +1455,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Single Atom",
@@ -1617,10 +1464,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "single Sb vacancy",
@@ -1629,10 +1473,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "single-atom catalyst",
@@ -1641,10 +1482,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "single_atom_site",
@@ -1653,10 +1491,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "TM@Sb",
@@ -1665,10 +1500,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "TM@Sb (TM = Sc",
@@ -1677,10 +1509,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "transition metal",
@@ -1689,10 +1518,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "trifunctional",
@@ -1701,10 +1527,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++"
-      ]
+      "count": 1
     },
     {
       "term": "ultrananocrystalline diamond",
@@ -1713,10 +1536,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "ΔG*H",
@@ -1725,10 +1545,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "ηORR = 0.50 V)",
@@ -1737,10 +1554,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     }
   ]
 }

@@ -463,8 +463,8 @@ Oxygen vacancies acted as active sites and methoxy was identified.
                 encoding="utf-8",
             )
             table_path.write_text(
-                "Material,Reaction Type,Modeling Keywords,Cluster/Single Atom\n"
-                "Pt/CeO2,CO oxidation,surface,exsolved nanoparticle\n",
+                "Material,Reaction Type,Loading,Modeling Keywords,Cluster/Single Atom\n"
+                "Pt/CeO2,CO oxidation,1 wt%,surface,exsolved nanoparticle\n",
                 encoding="utf-8",
             )
 
@@ -483,7 +483,10 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertEqual(payload["schema_version"], "2.0")
             self.assertIn("keyword_inventory", payload)
             self.assertIn("material_descriptors", payload)
-            self.assertEqual(payload["material_descriptors"]["elements"][0]["term"], "Pt")
+            self.assertIn(
+                "Pt",
+                [item["term"] for item in payload["material_descriptors"]["elements"]],
+            )
             self.assertIn(
                 {"term": "{Ce, O, Pt}", "count": 2},
                 payload["material_descriptors"]["element_sets"],
@@ -505,6 +508,19 @@ Oxygen vacancies acted as active sites and methoxy was identified.
                 "CeO2",
                 [item["term"] for item in payload["class_profile"]["support_components"]],
             )
+
+    def test_surface_known_term_filter_removes_generic_unknown_noise(self):
+        from paperread.surface.surface_ontology import is_known_surface_experience_term
+
+        self.assertTrue(is_known_surface_experience_term("Full"))
+        self.assertTrue(is_known_surface_experience_term("Yes"))
+        self.assertTrue(is_known_surface_experience_term("electronic structure"))
+        self.assertTrue(is_known_surface_experience_term("Hubbard-U correction"))
+        self.assertTrue(is_known_surface_experience_term("TiO2"))
+        self.assertTrue(is_known_surface_experience_term("electrochemical water splitting"))
+        self.assertFalse(is_known_surface_experience_term("Pt(111)"))
+        self.assertFalse(is_known_surface_experience_term("*OOH"))
+        self.assertFalse(is_known_surface_experience_term("carbon doping"))
 
 
 def json_dumps_for_test(payload: dict) -> str:

@@ -1,0 +1,867 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-08T04:31:58.775025+00:00",
+  "source": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
+  "summary": {
+    "terms": 1098,
+    "known_useful": 697,
+    "unknown": 401
+  },
+  "unknown_entry_count": 401,
+  "unknown_occurrence_count": 478,
+  "unknown_categories_by_occurrence": {
+    "other_unknown": 240,
+    "composite_material_name": 99,
+    "formula_or_composition": 72,
+    "facet_or_miller_index": 40,
+    "structure_or_material_phrase": 19,
+    "reaction_or_application": 8
+  },
+  "unknown_classes_by_entry_count": {
+    "metals_alloys": 207,
+    "oxides": 69,
+    "hydroxides_oxyhydroxides": 27,
+    "supported_catalysts": 27,
+    "other_inorganic_materials": 20,
+    "carbides_mxenes": 12,
+    "nitrides": 12,
+    "carbon_materials": 9,
+    "phosphides_phosphates": 6,
+    "single_atom_catalysts": 6,
+    "battery_electrode_materials": 2,
+    "selenides_tellurides": 2,
+    "sulfides": 2
+  },
+  "unknown_fields_by_entry_count": {
+    "material_parameters": 71,
+    "Modeling Keywords": 60,
+    "Material": 48,
+    "materials": 41,
+    "modeling_keywords": 31,
+    "surfaces": 29,
+    "applications": 25,
+    "adsorbates": 24,
+    "Composition": 24,
+    "intermediates": 14,
+    "Active Site": 11,
+    "Reaction Type": 10,
+    "active_sites": 8,
+    "Coverage": 7,
+    "Surface/Support": 7,
+    "Adsorbate/Reactant": 7,
+    "Dopant/Modifier": 5,
+    "Facet": 5,
+    "adsorption_sites": 4,
+    "products": 4,
+    "single_atoms": 4,
+    "facets": 4,
+    "clusters": 3,
+    "surface_terminations": 3,
+    "Surface Termination": 1,
+    "Cluster/Single Atom": 1,
+    "modifiers": 1,
+    "defects": 1
+  },
+  "top_terms_by_unknown_category": {
+    "composite_material_name": [
+      {
+        "term": "β-CoOOH",
+        "count": 8
+      },
+      {
+        "term": "g-C3N4",
+        "count": 6
+      },
+      {
+        "term": "Co–Fe–Cr (oxy)Hydroxides",
+        "count": 6
+      },
+      {
+        "term": "Anatase TiO2",
+        "count": 6
+      },
+      {
+        "term": "Co oxides",
+        "count": 4
+      },
+      {
+        "term": "Mo-Ni3S2/NixPy/NF electrode",
+        "count": 4
+      },
+      {
+        "term": "rutile TiO2",
+        "count": 4
+      },
+      {
+        "term": "0.4 wt % sAu",
+        "count": 3
+      },
+      {
+        "term": "NiCo Layer Double Hydroxide",
+        "count": 3
+      },
+      {
+        "term": "NiCo LDH/CC",
+        "count": 3
+      },
+      {
+        "term": "NiFe layered double hydroxide",
+        "count": 3
+      },
+      {
+        "term": "sAu/NiFe LDH",
+        "count": 3
+      },
+      {
+        "term": "Sn SAs/G-Na",
+        "count": 3
+      },
+      {
+        "term": "Ru modified",
+        "count": 2
+      },
+      {
+        "term": "carbon cloth",
+        "count": 2
+      },
+      {
+        "term": "graphene-like carbon",
+        "count": 2
+      },
+      {
+        "term": "layered double hydroxide (LDH)",
+        "count": 2
+      },
+      {
+        "term": "NiFe LDH",
+        "count": 2
+      },
+      {
+        "term": "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
+        "count": 2
+      },
+      {
+        "term": "black phosphorus",
+        "count": 2
+      },
+      {
+        "term": "Co nanochains",
+        "count": 2
+      },
+      {
+        "term": "CoO nanocubes",
+        "count": 2
+      },
+      {
+        "term": "Nickel–Bismuth Oxide",
+        "count": 2
+      },
+      {
+        "term": "transition metal-based catalysts",
+        "count": 2
+      },
+      {
+        "term": "Graphene (G)",
+        "count": 1
+      },
+      {
+        "term": "bi-",
+        "count": 1
+      },
+      {
+        "term": "Black Phosphorus Nanosheets",
+        "count": 1
+      },
+      {
+        "term": "Bulk Ir",
+        "count": 1
+      },
+      {
+        "term": "Bulk Pt",
+        "count": 1
+      },
+      {
+        "term": "Bulk Ru",
+        "count": 1
+      }
+    ],
+    "facet_or_miller_index": [
+      {
+        "term": "(0112̅)",
+        "count": 6
+      },
+      {
+        "term": "Pt(111)",
+        "count": 5
+      },
+      {
+        "term": "β-CoOOH(0112̅)",
+        "count": 4
+      },
+      {
+        "term": "Au(100)",
+        "count": 3
+      },
+      {
+        "term": "Au(111)",
+        "count": 3
+      },
+      {
+        "term": "β-CoOOH(0001)",
+        "count": 2
+      },
+      {
+        "term": "Ni(111)",
+        "count": 2
+      },
+      {
+        "term": "Pt(335)",
+        "count": 2
+      },
+      {
+        "term": "Co3O4(001)",
+        "count": 2
+      },
+      {
+        "term": "Co3O4(110)",
+        "count": 2
+      },
+      {
+        "term": "PtxRu1-x/Ru(0001)",
+        "count": 2
+      },
+      {
+        "term": "Ag(111)",
+        "count": 1
+      },
+      {
+        "term": "PtBi(100)",
+        "count": 1
+      },
+      {
+        "term": "Ru(0001)",
+        "count": 1
+      },
+      {
+        "term": "Cr2O3(001)",
+        "count": 1
+      },
+      {
+        "term": "Cr2O3(012)",
+        "count": 1
+      },
+      {
+        "term": "TiO2(101)",
+        "count": 1
+      },
+      {
+        "term": "TiO2(110)",
+        "count": 1
+      }
+    ],
+    "formula_or_composition": [
+      {
+        "term": "Ag/g-C3N4",
+        "count": 6
+      },
+      {
+        "term": "*OOH",
+        "count": 4
+      },
+      {
+        "term": "Co3+δ",
+        "count": 3
+      },
+      {
+        "term": "CO32−",
+        "count": 3
+      },
+      {
+        "term": "Fe-free",
+        "count": 3
+      },
+      {
+        "term": "NixPy",
+        "count": 3
+      },
+      {
+        "term": "Habs",
+        "count": 3
+      },
+      {
+        "term": "Hads",
+        "count": 3
+      },
+      {
+        "term": "OHads",
+        "count": 3
+      },
+      {
+        "term": "HO*",
+        "count": 3
+      },
+      {
+        "term": "HOO*",
+        "count": 3
+      },
+      {
+        "term": "NiCoOOH*",
+        "count": 2
+      },
+      {
+        "term": "Heterostructure",
+        "count": 2
+      },
+      {
+        "term": "Ni1−xFexOOH",
+        "count": 2
+      },
+      {
+        "term": "O*",
+        "count": 2
+      },
+      {
+        "term": "*O",
+        "count": 2
+      },
+      {
+        "term": "*OH",
+        "count": 2
+      },
+      {
+        "term": "H*",
+        "count": 2
+      },
+      {
+        "term": "CdN4C0-gra",
+        "count": 2
+      },
+      {
+        "term": "Cr3c",
+        "count": 2
+      },
+      {
+        "term": "NO2*",
+        "count": 2
+      },
+      {
+        "term": "Lattice-Strain",
+        "count": 1
+      },
+      {
+        "term": "Graphene",
+        "count": 1
+      },
+      {
+        "term": "*H2O",
+        "count": 1
+      },
+      {
+        "term": "Cu-based",
+        "count": 1
+      },
+      {
+        "term": "Cyanide-modified",
+        "count": 1
+      },
+      {
+        "term": "Fe)OOH",
+        "count": 1
+      },
+      {
+        "term": "Ni(Fe)",
+        "count": 1
+      },
+      {
+        "term": "Synthesis",
+        "count": 1
+      },
+      {
+        "term": "CdN0C4-gra",
+        "count": 1
+      }
+    ],
+    "other_unknown": [
+      {
+        "term": "(101̅4)",
+        "count": 4
+      },
+      {
+        "term": "planar deposition",
+        "count": 4
+      },
+      {
+        "term": "hydroxyl species",
+        "count": 3
+      },
+      {
+        "term": "sub-saturation",
+        "count": 3
+      },
+      {
+        "term": "carbon doping",
+        "count": 3
+      },
+      {
+        "term": "0.4 wt % Au loading",
+        "count": 3
+      },
+      {
+        "term": "bimetallic",
+        "count": 3
+      },
+      {
+        "term": "hydroxides",
+        "count": 3
+      },
+      {
+        "term": "oxygen-contained intermediates",
+        "count": 3
+      },
+      {
+        "term": "single-atom Au",
+        "count": 3
+      },
+      {
+        "term": "phase evolution",
+        "count": 3
+      },
+      {
+        "term": "selenides",
+        "count": 3
+      },
+      {
+        "term": "Catalyst Preparation",
+        "count": 3
+      },
+      {
+        "term": "dendrite",
+        "count": 3
+      },
+      {
+        "term": "Sn SAs/G",
+        "count": 3
+      },
+      {
+        "term": "antimonene",
+        "count": 3
+      },
+      {
+        "term": "sodium metal batteries",
+        "count": 2
+      },
+      {
+        "term": "interfacial interactions",
+        "count": 2
+      },
+      {
+        "term": "sAu",
+        "count": 2
+      },
+      {
+        "term": "β-CoOOH(101̅4)",
+        "count": 2
+      },
+      {
+        "term": "11.0%",
+        "count": 2
+      },
+      {
+        "term": "7.9%",
+        "count": 2
+      },
+      {
+        "term": "9.4%",
+        "count": 2
+      },
+      {
+        "term": "nanoporous",
+        "count": 2
+      },
+      {
+        "term": "ammonia",
+        "count": 2
+      },
+      {
+        "term": "Bi02:NiO",
+        "count": 2
+      },
+      {
+        "term": "Bi05:NiO",
+        "count": 2
+      },
+      {
+        "term": "bulk phase",
+        "count": 2
+      },
+      {
+        "term": "catalyst development",
+        "count": 2
+      },
+      {
+        "term": "Co2+ (d7, high spin)",
+        "count": 2
+      }
+    ],
+    "reaction_or_application": [
+      {
+        "term": "Shape-dependent electrocatalysis",
+        "count": 2
+      },
+      {
+        "term": "Catalytic Oxidation",
+        "count": 1
+      },
+      {
+        "term": "catalytic reactions",
+        "count": 1
+      },
+      {
+        "term": "(photo)electrocatalysts",
+        "count": 1
+      },
+      {
+        "term": "anodic oxidation",
+        "count": 1
+      },
+      {
+        "term": "electrocatalytic oxygen evolution",
+        "count": 1
+      },
+      {
+        "term": "NO oxidation",
+        "count": 1
+      }
+    ],
+    "structure_or_material_phrase": [
+      {
+        "term": "hollow nanorods",
+        "count": 4
+      },
+      {
+        "term": "Fe atoms in NiFe oxyhydroxide",
+        "count": 3
+      },
+      {
+        "term": "layered double hydroxides",
+        "count": 3
+      },
+      {
+        "term": "NiFe oxyhydroxide",
+        "count": 3
+      },
+      {
+        "term": "layered phase",
+        "count": 2
+      },
+      {
+        "term": "graphene plane",
+        "count": 1
+      },
+      {
+        "term": "Ag nanospheres",
+        "count": 1
+      },
+      {
+        "term": "mixed (Ni,Fe)oxyhydroxides",
+        "count": 1
+      },
+      {
+        "term": "ultrathin graphene sheets",
+        "count": 1
+      }
+    ]
+  },
+  "top_classes_by_unknown_category": {
+    "composite_material_name": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 33
+      },
+      {
+        "material_class": "hydroxides_oxyhydroxides",
+        "entries": 9
+      },
+      {
+        "material_class": "oxides",
+        "entries": 9
+      },
+      {
+        "material_class": "supported_catalysts",
+        "entries": 8
+      },
+      {
+        "material_class": "carbon_materials",
+        "entries": 4
+      },
+      {
+        "material_class": "nitrides",
+        "entries": 2
+      },
+      {
+        "material_class": "other_inorganic_materials",
+        "entries": 2
+      },
+      {
+        "material_class": "carbides_mxenes",
+        "entries": 1
+      },
+      {
+        "material_class": "phosphides_phosphates",
+        "entries": 1
+      },
+      {
+        "material_class": "single_atom_catalysts",
+        "entries": 1
+      }
+    ],
+    "facet_or_miller_index": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 14
+      },
+      {
+        "material_class": "oxides",
+        "entries": 5
+      },
+      {
+        "material_class": "hydroxides_oxyhydroxides",
+        "entries": 3
+      },
+      {
+        "material_class": "other_inorganic_materials",
+        "entries": 2
+      },
+      {
+        "material_class": "supported_catalysts",
+        "entries": 1
+      }
+    ],
+    "formula_or_composition": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 24
+      },
+      {
+        "material_class": "oxides",
+        "entries": 12
+      },
+      {
+        "material_class": "other_inorganic_materials",
+        "entries": 6
+      },
+      {
+        "material_class": "supported_catalysts",
+        "entries": 6
+      },
+      {
+        "material_class": "hydroxides_oxyhydroxides",
+        "entries": 4
+      },
+      {
+        "material_class": "carbon_materials",
+        "entries": 2
+      },
+      {
+        "material_class": "carbides_mxenes",
+        "entries": 1
+      }
+    ],
+    "other_unknown": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 124
+      },
+      {
+        "material_class": "oxides",
+        "entries": 39
+      },
+      {
+        "material_class": "supported_catalysts",
+        "entries": 11
+      },
+      {
+        "material_class": "nitrides",
+        "entries": 10
+      },
+      {
+        "material_class": "other_inorganic_materials",
+        "entries": 9
+      },
+      {
+        "material_class": "hydroxides_oxyhydroxides",
+        "entries": 8
+      },
+      {
+        "material_class": "carbides_mxenes",
+        "entries": 7
+      },
+      {
+        "material_class": "phosphides_phosphates",
+        "entries": 5
+      },
+      {
+        "material_class": "single_atom_catalysts",
+        "entries": 5
+      },
+      {
+        "material_class": "battery_electrode_materials",
+        "entries": 2
+      },
+      {
+        "material_class": "carbon_materials",
+        "entries": 2
+      },
+      {
+        "material_class": "selenides_tellurides",
+        "entries": 2
+      },
+      {
+        "material_class": "sulfides",
+        "entries": 2
+      }
+    ],
+    "reaction_or_application": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 4
+      },
+      {
+        "material_class": "carbides_mxenes",
+        "entries": 3
+      },
+      {
+        "material_class": "other_inorganic_materials",
+        "entries": 1
+      }
+    ],
+    "structure_or_material_phrase": [
+      {
+        "material_class": "metals_alloys",
+        "entries": 8
+      },
+      {
+        "material_class": "oxides",
+        "entries": 4
+      },
+      {
+        "material_class": "hydroxides_oxyhydroxides",
+        "entries": 3
+      },
+      {
+        "material_class": "carbon_materials",
+        "entries": 1
+      },
+      {
+        "material_class": "supported_catalysts",
+        "entries": 1
+      }
+    ]
+  },
+  "class_summaries": {
+    "battery_electrode_materials": {
+      "terms": 3,
+      "known_useful": 1,
+      "unknown": 2
+    },
+    "borides": {
+      "terms": 0,
+      "known_useful": 0,
+      "unknown": 0
+    },
+    "carbides_mxenes": {
+      "terms": 45,
+      "known_useful": 33,
+      "unknown": 12
+    },
+    "carbon_materials": {
+      "terms": 21,
+      "known_useful": 12,
+      "unknown": 9
+    },
+    "defect_engineered_materials": {
+      "terms": 20,
+      "known_useful": 20,
+      "unknown": 0
+    },
+    "halides": {
+      "terms": 1,
+      "known_useful": 1,
+      "unknown": 0
+    },
+    "hydroxides_oxyhydroxides": {
+      "terms": 65,
+      "known_useful": 38,
+      "unknown": 27
+    },
+    "metals_alloys": {
+      "terms": 501,
+      "known_useful": 294,
+      "unknown": 207
+    },
+    "mofs_coordination_polymers": {
+      "terms": 1,
+      "known_useful": 1,
+      "unknown": 0
+    },
+    "nitrides": {
+      "terms": 53,
+      "known_useful": 41,
+      "unknown": 12
+    },
+    "other_inorganic_materials": {
+      "terms": 53,
+      "known_useful": 33,
+      "unknown": 20
+    },
+    "oxides": {
+      "terms": 172,
+      "known_useful": 103,
+      "unknown": 69
+    },
+    "perovskites_spinels": {
+      "terms": 1,
+      "known_useful": 1,
+      "unknown": 0
+    },
+    "phosphides_phosphates": {
+      "terms": 28,
+      "known_useful": 22,
+      "unknown": 6
+    },
+    "selenides_tellurides": {
+      "terms": 3,
+      "known_useful": 1,
+      "unknown": 2
+    },
+    "single_atom_catalysts": {
+      "terms": 21,
+      "known_useful": 15,
+      "unknown": 6
+    },
+    "sulfides": {
+      "terms": 14,
+      "known_useful": 12,
+      "unknown": 2
+    },
+    "supported_catalysts": {
+      "terms": 94,
+      "known_useful": 67,
+      "unknown": 27
+    },
+    "surface_functionalized_materials": {
+      "terms": 1,
+      "known_useful": 1,
+      "unknown": 0
+    },
+    "zeolites_silicates": {
+      "terms": 1,
+      "known_useful": 1,
+      "unknown": 0
+    }
+  },
+  "notes": {
+    "known_filter": "Terms matching ontology known-term rules are not counted as unknown.",
+    "other_unknown": "Mixed bucket; review manually before promoting terms into ontology or modeling mappings."
+  }
+}

@@ -21,6 +21,10 @@ from paperread.surface.parameter_registry import (
     build_surface_parameter_registry,
 )
 from paperread.surface.run_surface_pipeline import main as run_surface_pipeline_main
+from paperread.surface.unknown_terms import (
+    reclassify_material_class_store,
+    write_unknown_term_statistics,
+)
 
 from export_surface_experience import (
     cmd_add_term as export_add_term,
@@ -140,6 +144,36 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Experience output directory. Defaults to agents/Agent/skills/paperread/experience",
     )
     add_term.add_argument("--dry-run", action="store_true", help="Print record without writing files.")
+
+    reclassify = subparsers.add_parser(
+        "reclassify-material-classes",
+        help="Reapply ontology known-term rules to material_class experience files.",
+    )
+    reclassify.add_argument(
+        "--material-class-dir",
+        default=str(DEFAULT_MATERIAL_CLASS_DIR),
+        help="Directory containing material_classes/*.json files.",
+    )
+
+    unknown_stats = subparsers.add_parser(
+        "summarize-unknown-terms",
+        help="Write unknown-term statistics from material_class experience files.",
+    )
+    unknown_stats.add_argument(
+        "--material-class-dir",
+        default=str(DEFAULT_MATERIAL_CLASS_DIR),
+        help="Directory containing material_classes/*.json files.",
+    )
+    unknown_stats.add_argument(
+        "--output-dir",
+        default="agents/Agent/skills/paperread/experience",
+        help="Output directory for unknown_term_statistics_*.{json,md}.",
+    )
+    unknown_stats.add_argument(
+        "--date-slug",
+        default=None,
+        help="Date slug for output filenames, for example 2026_07_08.",
+    )
     return parser
 
 
@@ -194,6 +228,20 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "add-term":
         result = export_add_term(args)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "reclassify-material-classes":
+        result = reclassify_material_class_store(Path(args.material_class_dir))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+
+    if args.command == "summarize-unknown-terms":
+        result = write_unknown_term_statistics(
+            material_class_dir=Path(args.material_class_dir),
+            output_dir=Path(args.output_dir),
+            date_slug=args.date_slug,
+        )
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
 

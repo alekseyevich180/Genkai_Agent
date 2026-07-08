@@ -275,17 +275,20 @@ tokens before writing skill experience:
 - generic methods and characterization terms such as `DFT`, density functional
   theory, density of states, Bader charge, XAS, XPS, XRD, SEM, TEM, Raman,
   FTIR, CV, LSV, and EIS
+- generic placeholders and broad method/application phrases such as `Full`,
+  `Yes`, electronic structure, Hubbard-U correction, computational methods, and
+  electrochemical water splitting
 - source metadata fields such as links, citations, and DOI references
 
 Keep specific local structures and modeling cues as learnable terms, for
 example `Fe-N4`, `single-atom Au`, `AgSA`, `Au(111)`, mixed OH/O coverage, and
 other composition, coordination, facet, cluster, or adsorption-state phrases.
 
-As of the 2026-07-07 work log, the cleaned skill-side unknown store contains
-129 records, and the latest summary files are:
+As of the 2026-07-08 work log, the cleaned skill-side unknown store contains
+107 records, and the latest summary files are:
 
-- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.json`
-- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.md`
+- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_08.json`
+- `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_08.md`
 
 ## Recommended usage pattern
 

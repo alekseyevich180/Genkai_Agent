@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-07-06T15:48:30.388439+00:00",
+  "updated_at": "2026-07-08T04:31:23.615092+00:00",
   "summary": {
     "terms": 94,
-    "known_useful": 65,
-    "unknown": 29
+    "known_useful": 67,
+    "unknown": 27
   },
   "keyword_inventory": {
     "active_sites": [
@@ -482,8 +482,8 @@
       {
         "term": "activation energy",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "alkaline electrolyte",
@@ -610,8 +610,8 @@
       {
         "term": "Kinetic Characterization",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Oxygen Reduction",
@@ -1599,12 +1599,7 @@
       "fields": [
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "H2O",
@@ -1615,12 +1610,7 @@
         "products",
         "Product"
       ],
-      "count": 7,
-      "example_contexts": [
-        "Hg/HgO",
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 7
     },
     {
       "term": "Ag",
@@ -1631,12 +1621,7 @@
         "Active Site",
         "Dopant/Modifier"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Ag/TiO2",
-        "Ag/g-C3N4",
-        "NiCo LDH/CC"
-      ]
+      "count": 6
     },
     {
       "term": "OER",
@@ -1648,12 +1633,7 @@
         "applications",
         "Adsorbate/Reactant"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Ag/g-C3N4",
-        "CoO/Co",
-        "Hg/HgO"
-      ]
+      "count": 6
     },
     {
       "term": "active site",
@@ -1662,12 +1642,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Au/TiO2",
-        "NiCo LDH/CC",
-        "Mo–N/C@MoS2"
-      ]
+      "count": 5
     },
     {
       "term": "H2",
@@ -1677,12 +1652,7 @@
         "Product",
         "Adsorbate/Reactant"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Hg/HgO",
-        "Rh–Rh2O3-NPs/C",
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 5
     },
     {
       "term": "HER",
@@ -1694,12 +1664,7 @@
         "Adsorbate/Reactant",
         "Reaction Type"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Hg/HgO",
-        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
-        "Mo–N/C@MoS2"
-      ]
+      "count": 4
     },
     {
       "term": "Mo",
@@ -1709,10 +1674,7 @@
         "Dopant/Modifier",
         "Modeling Keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 4
     },
     {
       "term": "Electrocatalysis",
@@ -1721,11 +1683,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Mo–N/C@MoS2",
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 3
     },
     {
       "term": "Electrochemical",
@@ -1734,12 +1692,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 3,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Hg/HgO",
-        "Sn SAs/G-Na"
-      ]
+      "count": 3
     },
     {
       "term": "O2",
@@ -1748,12 +1701,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 3,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Pt10Pb/C",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 3
     },
     {
       "term": "Pb",
@@ -1764,11 +1712,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 3
     },
     {
       "term": "Single Atom",
@@ -1777,12 +1721,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Au/TiO2",
-        "NiCo LDH/CC",
-        "Sn SAs/G-Na"
-      ]
+      "count": 3
     },
     {
       "term": "adsorbate",
@@ -1791,11 +1730,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Pt10Pb/C"
-      ]
+      "count": 2
     },
     {
       "term": "Ag/g-C3N4",
@@ -1805,10 +1740,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "Au",
@@ -1818,10 +1750,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 2
     },
     {
       "term": "bifunctional electrocatalysts",
@@ -1830,10 +1759,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Cluster",
@@ -1842,11 +1768,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Au–Ag/TiO2",
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "Hg/HgO",
@@ -1856,10 +1778,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Hg/HgO"
-      ]
+      "count": 2
     },
     {
       "term": "hollow nanorods",
@@ -1868,10 +1787,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "KOH",
@@ -1880,10 +1796,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Mo-doped Ni3S2/NixPy",
@@ -1892,10 +1805,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Mo-Ni3S2/NixPy/NF electrode",
@@ -1904,10 +1814,7 @@
       "fields": [
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Mo–N/C@MoS2",
@@ -1917,11 +1824,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
-        "Mo–N/C@MoS2"
-      ]
+      "count": 2
     },
     {
       "term": "ORR",
@@ -1931,11 +1834,7 @@
         "applications",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries",
-        "Mo–N/C@MoS2"
-      ]
+      "count": 2
     },
     {
       "term": "oxygen reduction reaction",
@@ -1945,11 +1844,7 @@
         "applications",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 2
     },
     {
       "term": "Pt10Pb/C",
@@ -1959,11 +1854,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 2
     },
     {
       "term": "Sn",
@@ -1973,10 +1864,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 2
     },
     {
       "term": "*O",
@@ -1985,10 +1873,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "*OOH",
@@ -1997,10 +1882,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % sAu",
@@ -2009,10 +1891,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "1 M KOH",
@@ -2021,10 +1900,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Hg/HgO"
-      ]
+      "count": 1
     },
     {
       "term": "1 M NaOH",
@@ -2033,10 +1909,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Hg/HgO"
-      ]
+      "count": 1
     },
     {
       "term": "1/3−2/3 monolayer",
@@ -2045,10 +1918,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au(111)"
-      ]
+      "count": 1
     },
     {
       "term": "1/3−2/3 monolayer OH*",
@@ -2057,22 +1927,16 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "activation energy",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "Ag/TiO2",
@@ -2081,10 +1945,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "alkaline electrolyte",
@@ -2093,10 +1954,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Hg/HgO"
-      ]
+      "count": 1
     },
     {
       "term": "Au/NiFe LDH surface",
@@ -2105,10 +1963,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Au/TiO2",
@@ -2117,10 +1972,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Au–Ag/TiO2",
@@ -2129,10 +1981,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au–Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "BP/Au surface",
@@ -2141,10 +1990,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ir",
@@ -2153,10 +1999,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Pt",
@@ -2165,10 +2008,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ru",
@@ -2177,10 +2017,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "Catalyst Preparation",
@@ -2189,10 +2026,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Co",
@@ -2201,10 +2035,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "CoO/Co",
@@ -2213,10 +2044,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "Cr3+/Cr6+ redox",
@@ -2225,10 +2053,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "dendrite",
@@ -2237,10 +2062,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "DFT",
@@ -2249,10 +2071,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "Electrocatalyst",
@@ -2261,10 +2080,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Mo–N/C@MoS2"
-      ]
+      "count": 1
     },
     {
       "term": "g-C3N4",
@@ -2273,10 +2089,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     },
     {
       "term": "H2O/OH",
@@ -2285,10 +2098,7 @@
       "fields": [
         "Product"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au(111)"
-      ]
+      "count": 1
     },
     {
       "term": "Habs",
@@ -2297,10 +2107,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Hads",
@@ -2309,10 +2116,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Hg/HgO electrode",
@@ -2321,10 +2125,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "High OH or mixed OH/O",
@@ -2333,10 +2134,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au(100)"
-      ]
+      "count": 1
     },
     {
       "term": "high OH or mixed OH/O coverage",
@@ -2345,10 +2143,7 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "HOR",
@@ -2357,22 +2152,16 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Kinetic Characterization",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "metal cluster",
@@ -2381,10 +2170,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Metal-Support Interactions",
@@ -2393,10 +2179,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 1
     },
     {
       "term": "N-doped C",
@@ -2405,10 +2188,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Na",
@@ -2417,10 +2197,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Ni",
@@ -2429,10 +2206,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo LDH/CC",
@@ -2441,10 +2215,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "NiCoOOH",
@@ -2453,10 +2224,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "O",
@@ -2465,10 +2233,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "OH",
@@ -2477,10 +2242,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "OHads",
@@ -2489,10 +2251,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "OH⁻",
@@ -2501,10 +2260,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "OH−",
@@ -2513,10 +2269,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Hg/HgO"
-      ]
+      "count": 1
     },
     {
       "term": "OOH",
@@ -2525,10 +2278,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "Oxygen Reduction",
@@ -2537,10 +2287,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "PEC",
@@ -2549,10 +2296,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     },
     {
       "term": "planar deposition",
@@ -2561,10 +2305,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Pt",
@@ -2573,10 +2314,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "Pt/C",
@@ -2585,10 +2323,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "Pt10Ni/C",
@@ -2597,10 +2332,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "PtxRu1-x/Ru(0001)",
@@ -2609,10 +2341,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Rh",
@@ -2621,10 +2350,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Rh2O3",
@@ -2633,10 +2359,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Rh2O3 sites",
@@ -2645,10 +2368,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Rh–Rh2O3-NPs/C",
@@ -2657,10 +2377,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "sAu/NiFe LDH",
@@ -2669,10 +2386,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G",
@@ -2681,10 +2395,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G-Na",
@@ -2693,10 +2404,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "sodium",
@@ -2705,10 +2413,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "surface",
@@ -2717,10 +2422,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "TiO2",
@@ -2729,10 +2431,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "water/platinum interface",
@@ -2741,10 +2440,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Zn–Air",
@@ -2753,10 +2449,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Mo–N/C@MoS2"
-      ]
+      "count": 1
     },
     {
       "term": "Zn–Air Batteries",
@@ -2765,10 +2458,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Multifunctional Mo–N/C@MoS2 Electrocatalysts for HER, OER, ORR, and Zn–Air Batteries"
-      ]
+      "count": 1
     }
   ]
 }

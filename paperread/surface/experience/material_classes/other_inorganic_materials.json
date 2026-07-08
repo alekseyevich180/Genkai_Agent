@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "other_inorganic_materials",
-  "updated_at": "2026-07-06T15:48:30.364351+00:00",
+  "updated_at": "2026-07-08T04:31:23.563843+00:00",
   "summary": {
     "terms": 53,
-    "known_useful": 32,
-    "unknown": 21
+    "known_useful": 33,
+    "unknown": 20
   },
   "keyword_inventory": {
     "active_sites": [
@@ -300,8 +300,8 @@
       {
         "term": "hydrogen evolution reaction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "NO oxidation",
@@ -807,12 +807,7 @@
       "fields": [
         "Material"
       ],
-      "count": 12,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 12
     },
     {
       "term": "Interface",
@@ -821,12 +816,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 7,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 7
     },
     {
       "term": "Ti",
@@ -835,12 +825,7 @@
       "fields": [
         "Material"
       ],
-      "count": 7,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
-      ]
+      "count": 7
     },
     {
       "term": "Zr",
@@ -849,12 +834,7 @@
       "fields": [
         "Material"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 6
     },
     {
       "term": "single_atom_catalysts",
@@ -863,12 +843,7 @@
       "fields": [
         "Material"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "rorrer-et-al-2019-mechanism-and-kinetics-of-isobutene-formation-from-ethanol-and-acetone-over-znxzryoz"
-      ]
+      "count": 5
     },
     {
       "term": "CdN4C0-gra",
@@ -878,11 +853,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
-        "CdN4C0-gra"
-      ]
+      "count": 2
     },
     {
       "term": "Cr2O3",
@@ -892,11 +863,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
-        "Cr2O3"
-      ]
+      "count": 2
     },
     {
       "term": "Cr3c",
@@ -906,11 +873,7 @@
         "active_sites",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
-        "Cr2O3"
-      ]
+      "count": 2
     },
     {
       "term": "Electrocatalysis",
@@ -919,11 +882,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "CdN4C0-gra",
-        "Noble metal"
-      ]
+      "count": 2
     },
     {
       "term": "Mo",
@@ -932,11 +891,7 @@
       "fields": [
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "Mx-Ny-C",
@@ -946,11 +901,7 @@
         "active_sites",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study",
-        "CdN4C0-gra"
-      ]
+      "count": 2
     },
     {
       "term": "NO",
@@ -960,11 +911,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study",
-        "Cr2O3"
-      ]
+      "count": 2
     },
     {
       "term": "(001)",
@@ -973,10 +920,7 @@
       "fields": [
         "Facet"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cr2O3"
-      ]
+      "count": 1
     },
     {
       "term": "(012)",
@@ -985,10 +929,7 @@
       "fields": [
         "Facet"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cr2O3"
-      ]
+      "count": 1
     },
     {
       "term": "active sites",
@@ -997,10 +938,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "CdN0C4-gra",
@@ -1009,10 +947,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
-      ]
+      "count": 1
     },
     {
       "term": "Ce",
@@ -1021,10 +956,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 1
     },
     {
       "term": "chemically stable",
@@ -1033,10 +965,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "clean energy technologies",
@@ -1045,10 +974,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "Cr2O3(001)",
@@ -1057,10 +983,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "Cr2O3(012)",
@@ -1069,10 +992,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "Cr5c",
@@ -1081,10 +1001,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cr2O3"
-      ]
+      "count": 1
     },
     {
       "term": "electrode",
@@ -1093,10 +1010,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "fuel cells",
@@ -1105,10 +1019,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "fuel generation",
@@ -1117,10 +1028,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "gold",
@@ -1129,10 +1037,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "green hydrogen production",
@@ -1141,10 +1046,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "H2",
@@ -1153,10 +1055,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra"
-      ]
+      "count": 1
     },
     {
       "term": "Hf",
@@ -1165,10 +1064,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhang-et-al-2021-mechanism-and-kinetics-of-acetone-conversion-to-isobutene-over-isolated-hf-sites-grafted-to-silicalite"
-      ]
+      "count": 1
     },
     {
       "term": "Hg",
@@ -1177,10 +1073,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "HgO",
@@ -1189,22 +1082,16 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen evolution reaction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
-      ]
+      "count": 1
     },
     {
       "term": "KOH",
@@ -1213,10 +1100,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "Mn",
@@ -1225,10 +1109,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 1
     },
     {
       "term": "Mn (II) sites",
@@ -1237,10 +1118,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Mn (III) ions",
@@ -1249,10 +1127,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Mn (III) sites",
@@ -1261,10 +1136,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Mn3O4",
@@ -1273,10 +1145,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "morphology: yellow",
@@ -1285,10 +1154,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "N",
@@ -1297,10 +1163,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
-      ]
+      "count": 1
     },
     {
       "term": "NaOH",
@@ -1309,10 +1172,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "NO oxidation",
@@ -1321,10 +1181,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "Noble metal",
@@ -1333,10 +1190,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Noble metal"
-      ]
+      "count": 1
     },
     {
       "term": "non-precious metal catalysts",
@@ -1345,10 +1199,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "OH*",
@@ -1357,10 +1208,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "ONOO*",
@@ -1369,10 +1217,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "OOH*",
@@ -1381,10 +1226,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "Oxygen",
@@ -1393,10 +1235,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Noble metal"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen evolution reaction",
@@ -1405,10 +1244,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen reduction reaction",
@@ -1417,10 +1253,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CdN4C0-gra as efficient trifunctional electrocatalyst for the HER, OER and ORR: A density functional theory study"
-      ]
+      "count": 1
     },
     {
       "term": "palladium",
@@ -1429,10 +1262,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "phase: solid",
@@ -1441,10 +1271,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "single crystal",
@@ -1453,10 +1280,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     }
   ]
 }

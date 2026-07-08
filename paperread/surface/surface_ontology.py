@@ -108,6 +108,18 @@ KNOWN_SURFACE_TERMS = {
     "eis",
     "reaction mechanism",
     "reaction mechanisms",
+    "electronic structure",
+    "computational method",
+    "computational methods",
+    "hubbard u",
+    "hubbard-u approach",
+    "hubbard-u correction",
+    "dispersion interaction",
+    "dispersion interactions",
+    "charge redistribution",
+    "charge transfer",
+    "activation energy",
+    "kinetic characterization",
 }
 
 KNOWN_MODELING_TOKENS = {
@@ -516,18 +528,49 @@ COMMON_REACTION_OR_APPLICATION_TERMS = {
     "electrocatalyst",
     "electrocatalysts",
     "electrocatalytic",
+    "electrocatalytic activity",
+    "electrocatalytic energy conversion",
+    "electrocatalytic mechanism",
+    "electrocatalytic oer",
     "electrocatalytic oxygen evolution reaction",
     "electrocatalytic water splitting",
     "electrochemical",
+    "electrochemical oer",
+    "electrochemical oxidation",
+    "electrochemical oxidation of water",
+    "electrochemical water splitting",
+    "energy conversion technologies",
+    "energy storage",
+    "electrode materials",
+    "electrolyzer efficiency",
     "fuel cell",
     "fuel cells",
+    "hydrogen evolution reaction",
+    "hydrogen evolution reaction (her)",
+    "hydrogen generation",
+    "hydrogen oxidation",
     "hydrogen production",
     "ketonization",
+    "nitrogen reduction",
+    "oer catalysts",
     "oxidation",
     "oxygen evolution reaction",
+    "oxygen evolution reaction (oer)",
     "oxygen reduction",
     "oxygen reduction reaction",
+    "polymer fuel cells",
+    "proton exchange membrane fuel cells",
+    "water oxidation",
     "water splitting",
+}
+
+GENERIC_EXPERIENCE_PLACEHOLDERS = {
+    "full",
+    "yes",
+    "no",
+    "none",
+    "n/a",
+    "not applicable",
 }
 
 MATERIAL_KIND_TOKENS = {
@@ -657,6 +700,8 @@ def is_known_surface_experience_term(value: str) -> bool:
     stripped = value.strip()
     lower = stripped.lower()
     if not stripped:
+        return True
+    if lower in GENERIC_EXPERIENCE_PLACEHOLDERS:
         return True
     if lower in SUPPORTED_MODELING_TASKS:
         return True

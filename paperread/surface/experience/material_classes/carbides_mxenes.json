@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-07-06T15:48:30.304613+00:00",
+  "updated_at": "2026-07-08T04:31:23.479495+00:00",
   "summary": {
     "terms": 45,
-    "known_useful": 29,
-    "unknown": 16
+    "known_useful": 33,
+    "unknown": 12
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -68,8 +68,8 @@
       {
         "term": "Yes",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "compositions": [
@@ -84,8 +84,8 @@
       {
         "term": "Full",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "sub-saturation",
@@ -242,14 +242,14 @@
       {
         "term": "electrocatalytic activity",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrocatalytic OER",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrocatalytic water splitting",
@@ -581,12 +581,7 @@
       "fields": [
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "nanoparticles",
@@ -596,12 +591,7 @@
         "modeling_keywords",
         "Cluster/Single Atom"
       ],
-      "count": 8,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 8
     },
     {
       "term": "nanoparticle",
@@ -611,12 +601,7 @@
         "Modeling Keywords",
         "Cluster/Single Atom"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Ru nanoparticles",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
-      ]
+      "count": 3
     },
     {
       "term": "CH3OH",
@@ -626,11 +611,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "CoPt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "CO",
@@ -640,11 +621,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "CoPt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "CoPt nanoparticles",
@@ -654,11 +631,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "CoPt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "electrocatalysis",
@@ -668,10 +641,7 @@
         "applications",
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 2
     },
     {
       "term": "electrocatalytic",
@@ -681,11 +651,7 @@
         "modeling_keywords",
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "cs3003098 1..8",
-        "Ru nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "Pt nanoparticles",
@@ -694,10 +660,7 @@
       "fields": [
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "active site",
@@ -706,10 +669,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "adsorbate_landscape",
@@ -718,10 +678,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Au nanoparticles",
@@ -730,10 +687,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic activity",
@@ -751,10 +705,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "Catalytic Oxidation",
@@ -763,10 +714,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cr2O3"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic reactions",
@@ -775,10 +723,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "review article"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic remediation technologies",
@@ -787,10 +732,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "DFT",
@@ -799,34 +741,25 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic activity",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic OER",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic water splitting",
@@ -835,10 +768,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "formic acid",
@@ -847,10 +777,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "fuel cells",
@@ -859,22 +786,16 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Full",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoPt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "gold nanoparticles",
@@ -883,10 +804,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxyl species",
@@ -895,10 +813,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Ir nanoparticles",
@@ -907,10 +822,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ir nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "kinetic characteristics",
@@ -919,10 +831,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "lattice strain",
@@ -931,10 +840,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Lattice-Strain",
@@ -943,10 +849,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Methanol",
@@ -955,10 +858,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "nanoscale single crystal ensemble",
@@ -967,10 +867,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "NO",
@@ -979,10 +876,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "OER",
@@ -991,10 +885,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "oxidation",
@@ -1003,10 +894,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Pt(111) nanofacets",
@@ -1015,10 +903,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Ru",
@@ -1027,10 +912,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Ru modified",
@@ -1039,10 +921,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "Ru nanoparticles",
@@ -1051,10 +930,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "Shape-dependent electrocatalysis",
@@ -1063,10 +939,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "sub-saturation",
@@ -1075,10 +948,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoPt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "theoretical studies",
@@ -1087,10 +957,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "TiC",
@@ -1099,10 +966,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "Water",
@@ -1111,22 +975,16 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "Yes",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     }
   ]
 }

@@ -65,7 +65,7 @@ python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline
 resume point when API calls fail or rate limits interrupt extraction; continue
 from the generated JSON rather than reparsing the PDF.
 
-Current paperread state from `work_logs/2026-07-07.md`:
+Current paperread state from `work_logs/2026-07-08.md`:
 
 - `tests/papers2` has 21 PDFs with local intermediate files generated under
   `tests/paperread_papers2_experience/`.
@@ -75,12 +75,12 @@ Current paperread state from `work_logs/2026-07-07.md`:
   material, formula, surface, reaction, support, loading, doping/interface,
   single-atom, cluster, adsorbate, and reactant cues.
 - The rebuilt canonical material-class store currently contains 1098 terms:
-  634 known useful terms and 464 unknown entries.
-- Skill-side unknown terms were cleaned down to 129 records after filtering
-  element names, material-class labels, common formulas, and common reaction or
-  application words.
+  697 known useful terms and 401 unknown entries.
+- Skill-side unknown terms were cleaned down to 107 records after filtering
+  element names, material-class labels, common formulas, placeholders, generic
+  method phrases, and common reaction or application words.
 - The latest unknown-term statistics are stored in
-  `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_07.{json,md}`.
+  `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_08.{json,md}`.
 
 ## Quick start
 ### Linux 安装

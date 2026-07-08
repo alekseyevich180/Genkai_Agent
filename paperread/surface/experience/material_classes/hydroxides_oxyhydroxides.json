@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-07-06T15:48:30.312841+00:00",
+  "updated_at": "2026-07-08T04:31:23.498281+00:00",
   "summary": {
     "terms": 65,
-    "known_useful": 34,
-    "unknown": 31
+    "known_useful": 38,
+    "unknown": 27
   },
   "keyword_inventory": {
     "active_sites": [
@@ -338,8 +338,8 @@
       {
         "term": "charge redistribution",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "density functional theory",
@@ -356,14 +356,14 @@
       {
         "term": "dispersion interactions",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Hubbard-U approach",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "interfacial interactions",
@@ -424,8 +424,8 @@
       {
         "term": "energy conversion technologies",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "supports_surfaces": [
@@ -965,12 +965,7 @@
       "fields": [
         "Material"
       ],
-      "count": 8,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 8
     },
     {
       "term": "LDH",
@@ -979,12 +974,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 4
     },
     {
       "term": "β-CoOOH",
@@ -995,12 +985,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "Co3O4",
-        "β-CoOOH"
-      ]
+      "count": 4
     },
     {
       "term": "Active site",
@@ -1009,12 +994,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "NiFe LDH",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 3
     },
     {
       "term": "Cr",
@@ -1025,10 +1005,7 @@
         "Dopant/Modifier",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 3
     },
     {
       "term": "FeOOH",
@@ -1039,10 +1016,7 @@
         "Dopant/Modifier",
         "Surface/Support"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 3
     },
     {
       "term": "O2",
@@ -1051,12 +1025,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 3,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "NiFe LDH",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 3
     },
     {
       "term": "Ag",
@@ -1066,10 +1035,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 2
     },
     {
       "term": "Co",
@@ -1078,11 +1044,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "Co–Fe–Cr (oxy)Hydroxides",
@@ -1092,11 +1054,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "electrocatalysis",
@@ -1106,11 +1064,7 @@
         "applications",
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "NiFe LDH"
-      ]
+      "count": 2
     },
     {
       "term": "Fe",
@@ -1120,11 +1074,7 @@
         "Active Site",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "NiFe LDH",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "NiCoOOH",
@@ -1134,11 +1084,7 @@
         "active_sites",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "NiCo LDH/CC"
-      ]
+      "count": 2
     },
     {
       "term": "NiOOH",
@@ -1148,10 +1094,7 @@
         "Material",
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 2
     },
     {
       "term": "OER",
@@ -1161,10 +1104,7 @@
         "Reaction Type",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "oxygen evolution reaction",
@@ -1173,11 +1113,7 @@
       "fields": [
         "applications"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts"
-      ]
+      "count": 2
     },
     {
       "term": "Silver",
@@ -1187,10 +1123,7 @@
         "materials",
         "dopants"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "Single Atom",
@@ -1199,11 +1132,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "NiFe LDH"
-      ]
+      "count": 2
     },
     {
       "term": "single_atom_site",
@@ -1212,11 +1141,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "W",
@@ -1226,10 +1151,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "β-CoOOH(0112̅)",
@@ -1238,11 +1160,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 2,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "ja405997s 1..10"
-      ]
+      "count": 2
     },
     {
       "term": "(0112̅)",
@@ -1251,10 +1169,7 @@
       "fields": [
         "Facet"
       ],
-      "count": 1,
-      "example_contexts": [
-        "β-CoOOH"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % Au loading",
@@ -1263,10 +1178,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % sAu",
@@ -1275,10 +1187,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "adsorbate",
@@ -1287,10 +1196,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "AgSA",
@@ -1299,10 +1205,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Au/NiFe LDH surface",
@@ -1311,10 +1214,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic",
@@ -1323,22 +1223,16 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "charge redistribution",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "Co2+",
@@ -1347,10 +1241,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+",
@@ -1359,10 +1250,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+δ",
@@ -1371,10 +1259,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "CO32−",
@@ -1383,10 +1268,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "CoOOH",
@@ -1395,10 +1277,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "density functional theory",
@@ -1407,10 +1286,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "DFT",
@@ -1419,22 +1295,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "dispersion interactions",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalysts",
@@ -1443,10 +1313,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical",
@@ -1455,22 +1322,16 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "energy conversion technologies",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Fe atoms in NiFe oxyhydroxide",
@@ -1479,10 +1340,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Fe-free",
@@ -1491,10 +1349,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "H2O",
@@ -1503,22 +1358,16 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Hubbard-U approach",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxides",
@@ -1527,10 +1376,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "interfacial interactions",
@@ -1539,10 +1385,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "layered double hydroxide (LDH)",
@@ -1551,10 +1394,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "layered double hydroxides",
@@ -1563,10 +1403,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Ni",
@@ -1575,10 +1412,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo Layer Double Hydroxide",
@@ -1587,10 +1421,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo LDH surface",
@@ -1599,10 +1430,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo LDH/CC",
@@ -1611,10 +1439,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "NiCoOOH*",
@@ -1623,10 +1448,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe layered double hydroxide",
@@ -1635,10 +1457,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe LDH",
@@ -1647,10 +1466,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe LDH surface",
@@ -1659,10 +1475,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe oxyhydroxide",
@@ -1671,10 +1484,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "octahedral sites",
@@ -1683,10 +1493,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen-contained intermediates",
@@ -1695,10 +1502,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "sAu",
@@ -1707,10 +1511,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "sAu/NiFe LDH",
@@ -1719,10 +1520,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "single-atom Au",
@@ -1731,10 +1529,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "XAS",
@@ -1743,10 +1538,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "β-CoOOH(0001)",
@@ -1755,10 +1547,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "β-CoOOH(101̅4)",
@@ -1767,10 +1556,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     }
   ]
 }

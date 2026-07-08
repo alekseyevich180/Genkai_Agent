@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "single_atom_catalysts",
-  "updated_at": "2026-07-06T15:48:30.385043+00:00",
+  "updated_at": "2026-07-08T04:31:23.594973+00:00",
   "summary": {
     "terms": 21,
-    "known_useful": 14,
-    "unknown": 7
+    "known_useful": 15,
+    "unknown": 6
   },
   "keyword_inventory": {
     "active_sites": [
@@ -150,8 +150,8 @@
       {
         "term": "Electrocatalytic OER",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Electrochemical",
@@ -377,12 +377,7 @@
         "Modeling Keywords",
         "Cluster/Single Atom"
       ],
-      "count": 5,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "NiFe LDH",
-        "Ni-O-G SACs"
-      ]
+      "count": 5
     },
     {
       "term": "O",
@@ -392,10 +387,7 @@
         "Composition",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 2
     },
     {
       "term": "Sn",
@@ -405,10 +397,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 2
     },
     {
       "term": "active site",
@@ -417,10 +406,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "C",
@@ -429,10 +415,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "dendrite",
@@ -441,22 +424,16 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Electrocatalytic OER",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical",
@@ -465,10 +442,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "H2O",
@@ -477,10 +451,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "metal-oxygen bonding",
@@ -489,10 +460,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Na",
@@ -501,10 +469,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Ni",
@@ -513,10 +478,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Ni atom",
@@ -525,10 +487,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Ni-O-G SACs",
@@ -537,10 +496,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "planar deposition",
@@ -549,10 +505,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "SAC",
@@ -561,10 +514,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Antimonene"
-      ]
+      "count": 1
     },
     {
       "term": "SACs",
@@ -573,10 +523,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G",
@@ -585,10 +532,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G-Na",
@@ -597,10 +541,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "sodium",
@@ -609,10 +550,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "surface",
@@ -621,10 +559,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "oxides",
-  "updated_at": "2026-07-06T15:48:30.368826+00:00",
+  "updated_at": "2026-07-08T04:31:23.574073+00:00",
   "summary": {
     "terms": 172,
-    "known_useful": 89,
-    "unknown": 83
+    "known_useful": 103,
+    "unknown": 69
   },
   "keyword_inventory": {
     "active_sites": [
@@ -296,7 +296,7 @@
       {
         "term": "TiO2",
         "count": 19,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -602,13 +602,13 @@
       {
         "term": "TiO2",
         "count": 19,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
         "term": "ZrO2",
         "count": 14,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -620,7 +620,7 @@
       {
         "term": "CeO2",
         "count": 10,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -638,7 +638,7 @@
       {
         "term": "MnO2",
         "count": 6,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -850,8 +850,8 @@
       {
         "term": "dispersion interactions",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "dissolution pathways",
@@ -886,14 +886,14 @@
       {
         "term": "Hubbard U",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Hubbard-U approach",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "metal cluster",
@@ -1026,38 +1026,38 @@
       {
         "term": "Electrochemical OER",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrochemical oxidation of water",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrochemical water splitting",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrode materials",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrolyzer efficiency",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "energy conversion technologies",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "ethanol gas sensor",
@@ -1086,8 +1086,8 @@
       {
         "term": "OER catalysts",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "water electrolysis",
@@ -1100,19 +1100,19 @@
       {
         "term": "TiO2",
         "count": 19,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
         "term": "ZrO2",
         "count": 14,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
         "term": "CeO2",
         "count": 10,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -1124,7 +1124,7 @@
       {
         "term": "MnO2",
         "count": 6,
-        "kind": "unknown_high_value",
+        "kind": "known_useful",
         "research_category": "surface_materials"
       },
       {
@@ -2301,12 +2301,7 @@
         "Adsorbate/Reactant",
         "Cluster/Single Atom"
       ],
-      "count": 34,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Reaction Mechanism",
-        "NiCo LDH/CC"
-      ]
+      "count": 34
     },
     {
       "term": "oxides",
@@ -2316,16 +2311,11 @@
         "materials",
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "Oxides",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 21
     },
     {
       "term": "TiO2",
-      "kind": "unknown_high_value",
+      "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "materials",
@@ -2333,27 +2323,17 @@
         "Material",
         "Surface/Support"
       ],
-      "count": 19,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au/TiO2",
-        "TiO2"
-      ]
+      "count": 19
     },
     {
       "term": "ZrO2",
-      "kind": "unknown_high_value",
+      "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "Material",
         "Surface/Support"
       ],
-      "count": 14,
-      "example_contexts": [
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
-      ]
+      "count": 14
     },
     {
       "term": "CO2",
@@ -2362,12 +2342,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 13,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 13
     },
     {
       "term": "Co3O4",
@@ -2379,27 +2354,17 @@
         "Modeling Keywords",
         "Composition"
       ],
-      "count": 11,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "Co3O4",
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 11
     },
     {
       "term": "CeO2",
-      "kind": "unknown_high_value",
+      "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "Material",
         "Surface/Support"
       ],
-      "count": 10,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
-      ]
+      "count": 10
     },
     {
       "term": "hydroxides_oxyhydroxides",
@@ -2408,12 +2373,7 @@
       "fields": [
         "Material"
       ],
-      "count": 8,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 8
     },
     {
       "term": "OER",
@@ -2423,12 +2383,7 @@
         "Modeling Keywords",
         "Reaction Type"
       ],
-      "count": 8,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide",
-        "Co–Fe–Cr (oxy)hydroxides",
-        "RuO2"
-      ]
+      "count": 8
     },
     {
       "term": "density functional theory",
@@ -2437,12 +2392,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 7,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 7
     },
     {
       "term": "RuO2",
@@ -2452,12 +2402,7 @@
         "materials",
         "Material"
       ],
-      "count": 7,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 7
     },
     {
       "term": "active site",
@@ -2466,12 +2411,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Au/TiO2",
-        "Nickel–Bismuth Oxide",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 6
     },
     {
       "term": "Anatase TiO2",
@@ -2480,27 +2420,17 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and"
-      ]
+      "count": 6
     },
     {
       "term": "MnO2",
-      "kind": "unknown_high_value",
+      "kind": "known_useful",
       "research_category": "surface_materials",
       "fields": [
         "Material",
         "Surface/Support"
       ],
-      "count": 6,
-      "example_contexts": [
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective",
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 6
     },
     {
       "term": "NiO",
@@ -2511,12 +2441,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 6,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
-      ]
+      "count": 6
     },
     {
       "term": "H2O",
@@ -2526,12 +2451,7 @@
         "Adsorbate/Reactant",
         "adsorbates"
       ],
-      "count": 5,
-      "example_contexts": [
-        "TiO2",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 5
     },
     {
       "term": "oxygen evolution reaction",
@@ -2540,12 +2460,7 @@
       "fields": [
         "applications"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 5
     },
     {
       "term": "Co",
@@ -2555,11 +2470,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "Co3O4"
-      ]
+      "count": 4
     },
     {
       "term": "Co3+",
@@ -2570,12 +2481,7 @@
         "material_parameters",
         "active_sites"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 4
     },
     {
       "term": "Ni",
@@ -2585,12 +2491,7 @@
         "dopants",
         "Dopant/Modifier"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4",
-        "ja405997s 1..10"
-      ]
+      "count": 4
     },
     {
       "term": "adsorbate_landscape",
@@ -2599,12 +2500,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 3,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "jp306303y 1..6",
-        "ja405997s 1..10"
-      ]
+      "count": 3
     },
     {
       "term": "Cr",
@@ -2615,10 +2511,7 @@
         "Dopant/Modifier",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 3
     },
     {
       "term": "electrocatalysis",
@@ -2628,12 +2521,7 @@
         "applications",
         "Reaction Type"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Nickel–Bismuth Oxide",
-        "Oxides"
-      ]
+      "count": 3
     },
     {
       "term": "Fe",
@@ -2644,12 +2532,7 @@
         "dopants",
         "Dopant/Modifier"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4"
-      ]
+      "count": 3
     },
     {
       "term": "FeOOH",
@@ -2660,10 +2543,7 @@
         "Dopant/Modifier",
         "Surface/Support"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 3
     },
     {
       "term": "(0001)",
@@ -2673,11 +2553,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "(001)",
@@ -2686,10 +2562,7 @@
       "fields": [
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "(0112̅)",
@@ -2699,11 +2572,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "(101)",
@@ -2712,11 +2581,7 @@
       "fields": [
         "facets"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 2
     },
     {
       "term": "(101̅4)",
@@ -2726,11 +2591,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "(110)",
@@ -2740,11 +2601,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "Ag",
@@ -2754,10 +2611,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/TiO2"
-      ]
+      "count": 2
     },
     {
       "term": "Au",
@@ -2767,10 +2621,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 2
     },
     {
       "term": "Bismuth (Bi)",
@@ -2780,10 +2631,7 @@
         "materials",
         "dopants"
       ],
-      "count": 2,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 2
     },
     {
       "term": "Co oxides",
@@ -2793,11 +2641,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "co2 reduction",
@@ -2806,11 +2650,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "Co2+",
@@ -2820,10 +2660,7 @@
         "Modeling Keywords",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "Co–Fe–Cr (oxy)Hydroxides",
@@ -2833,11 +2670,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "DFT",
@@ -2846,11 +2679,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "jp306303y 1..6"
-      ]
+      "count": 2
     },
     {
       "term": "H2",
@@ -2860,11 +2689,7 @@
         "products",
         "Product"
       ],
-      "count": 2,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 2
     },
     {
       "term": "HO*",
@@ -2874,11 +2699,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "DOI: 10.1002/cctc.201000397",
-        "Oxides"
-      ]
+      "count": 2
     },
     {
       "term": "HOO*",
@@ -2888,11 +2709,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "DOI: 10.1002/cctc.201000397",
-        "Oxides"
-      ]
+      "count": 2
     },
     {
       "term": "kinks",
@@ -2902,11 +2719,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "NiOOH",
@@ -2916,10 +2729,7 @@
         "Material",
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 2
     },
     {
       "term": "NO2",
@@ -2929,11 +2739,7 @@
         "Product",
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Cr2O3",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 2
     },
     {
       "term": "NO2*",
@@ -2943,10 +2749,7 @@
         "adsorbates",
         "intermediates"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 2
     },
     {
       "term": "O",
@@ -2955,10 +2758,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "octahedral site",
@@ -2968,11 +2768,7 @@
         "adsorption_sites",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "oxide surface",
@@ -2981,11 +2777,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 2
     },
     {
       "term": "oxygen vacancies",
@@ -2995,10 +2787,7 @@
         "defects",
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 2
     },
     {
       "term": "rutile TiO2",
@@ -3007,11 +2796,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 2
     },
     {
       "term": "Silver",
@@ -3021,10 +2806,7 @@
         "materials",
         "dopants"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "single_atom_site",
@@ -3033,11 +2815,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "steps",
@@ -3047,11 +2825,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "tetrahedral site",
@@ -3061,11 +2835,7 @@
         "adsorption_sites",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "W",
@@ -3075,10 +2845,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "(100)",
@@ -3087,10 +2854,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "(111)",
@@ -3099,10 +2863,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "*H2O2",
@@ -3111,10 +2872,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "*O2",
@@ -3123,10 +2881,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "*OH",
@@ -3135,10 +2890,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "*OOH",
@@ -3147,10 +2899,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % Au loading",
@@ -3159,10 +2908,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "active sites",
@@ -3171,10 +2917,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "adsorbate",
@@ -3183,10 +2926,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Adsorption Test",
@@ -3195,10 +2935,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Ag/TiO2",
@@ -3207,10 +2944,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "AgSA",
@@ -3219,10 +2953,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "anatase phase",
@@ -3231,10 +2962,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "Au/TiO2",
@@ -3243,10 +2971,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Au–Ag/TiO2",
@@ -3255,10 +2980,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au–Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Bi",
@@ -3267,10 +2989,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Bi02:NiO",
@@ -3279,10 +2998,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Bi05:NiO",
@@ -3291,10 +3007,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic",
@@ -3303,10 +3016,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Bismuth",
@@ -3315,10 +3025,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "breath analyzers",
@@ -3327,10 +3034,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "bulk phase",
@@ -3339,10 +3043,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "C",
@@ -3351,10 +3052,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "C-TiO2",
@@ -3363,10 +3061,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "C2H5OH",
@@ -3375,10 +3070,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "carbon doping",
@@ -3387,10 +3079,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "Catalyst Preparation",
@@ -3399,10 +3088,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Cluster",
@@ -3411,10 +3097,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au–Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Co site",
@@ -3423,10 +3106,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Co2+ (d7, high spin)",
@@ -3435,10 +3115,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+ (d6, low spin)",
@@ -3447,10 +3124,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+δ",
@@ -3459,10 +3133,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "CO32−",
@@ -3471,10 +3142,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(001)",
@@ -3483,10 +3151,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(001) surface",
@@ -3495,10 +3160,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(110)",
@@ -3507,10 +3169,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Co4+",
@@ -3519,10 +3178,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "CoIII-containing species",
@@ -3531,10 +3187,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "CoOct (+4)",
@@ -3543,10 +3196,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "CoOOH",
@@ -3555,10 +3205,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "cost-effective",
@@ -3567,10 +3214,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "DFT+U",
@@ -3579,22 +3223,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "dispersion interactions",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "dissolution pathways",
@@ -3603,10 +3241,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "doping",
@@ -3615,10 +3250,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalyst",
@@ -3627,10 +3259,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalysts",
@@ -3639,10 +3268,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic oxygen evolution reaction",
@@ -3651,10 +3277,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical",
@@ -3663,82 +3286,61 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical OER",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical oxidation of water",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical water splitting",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "electrode materials",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "electrolyzer efficiency",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "energy conversion technologies",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "ethanol gas sensor",
@@ -3747,10 +3349,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "Fe atoms in NiFe oxyhydroxide",
@@ -3759,10 +3358,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Fe-free",
@@ -3771,10 +3367,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "food quality monitoring",
@@ -3783,10 +3376,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "gas sensor",
@@ -3795,10 +3385,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "H*",
@@ -3807,10 +3394,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "H2O2",
@@ -3819,10 +3403,7 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "HER",
@@ -3831,10 +3412,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "high reactivity",
@@ -3843,34 +3421,25 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "Hubbard U",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Hubbard-U approach",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen peroxide production",
@@ -3879,10 +3448,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen production",
@@ -3891,10 +3457,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxides",
@@ -3903,10 +3466,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "ionosorbed oxygen species",
@@ -3915,10 +3475,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "layered double hydroxide (LDH)",
@@ -3927,10 +3484,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "layered double hydroxides",
@@ -3939,10 +3493,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "layered phase",
@@ -3951,10 +3502,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "metal cluster",
@@ -3963,10 +3511,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Ni reaction sites",
@@ -3975,10 +3520,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "Ni sites",
@@ -3987,10 +3529,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Nickel–Bismuth Oxide",
@@ -3999,10 +3538,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo Layer Double Hydroxide",
@@ -4011,10 +3547,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiCoOOH",
@@ -4023,10 +3556,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe layered double hydroxide",
@@ -4035,10 +3565,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe oxyhydroxide",
@@ -4047,10 +3574,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "NiO surface",
@@ -4059,10 +3583,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "normal spinel",
@@ -4071,10 +3592,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "O2*",
@@ -4083,10 +3601,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "octahedral Co",
@@ -4095,10 +3610,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "octahedral sites",
@@ -4107,22 +3619,16 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "OER catalysts",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "OH*",
@@ -4131,10 +3637,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "OH−",
@@ -4143,10 +3646,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "overpotential",
@@ -4155,10 +3655,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "oxide",
@@ -4167,10 +3664,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Oxides"
-      ]
+      "count": 1
     },
     {
       "term": "oxide catalysts",
@@ -4179,10 +3673,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "DOI: 10.1002/cctc.201000397"
-      ]
+      "count": 1
     },
     {
       "term": "oxide surfaces",
@@ -4191,10 +3682,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "DOI: 10.1002/cctc.201000397"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen evolution",
@@ -4203,10 +3691,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Oxides"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen-contained intermediates",
@@ -4215,10 +3700,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Quantum Espresso",
@@ -4227,10 +3709,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "RuO2 (110) surface",
@@ -4239,10 +3718,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "rutile TiO2 surface",
@@ -4251,10 +3727,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "scaling relation",
@@ -4263,10 +3736,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Oxides"
-      ]
+      "count": 1
     },
     {
       "term": "Single Atom",
@@ -4275,10 +3745,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "single-atom Au",
@@ -4287,10 +3754,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "singly coordinated sites",
@@ -4299,10 +3763,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "SO2",
@@ -4311,10 +3772,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 1
     },
     {
       "term": "space group Fd3̅m",
@@ -4323,10 +3781,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "spinel phase",
@@ -4335,10 +3790,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "spinel structure",
@@ -4347,10 +3799,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "stable chromium oxide",
@@ -4359,10 +3808,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "surface",
@@ -4371,10 +3817,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Oxides"
-      ]
+      "count": 1
     },
     {
       "term": "surface active sites",
@@ -4383,10 +3826,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "surface stability",
@@ -4395,10 +3835,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "Ti",
@@ -4407,10 +3844,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "TiO2(101)",
@@ -4419,10 +3853,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics"
-      ]
+      "count": 1
     },
     {
       "term": "TiO2(110)",
@@ -4431,10 +3862,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "transition metal oxide surface",
@@ -4443,10 +3871,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "water electrolysis",
@@ -4455,10 +3880,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "XAS",
@@ -4467,10 +3889,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     }
   ]
 }

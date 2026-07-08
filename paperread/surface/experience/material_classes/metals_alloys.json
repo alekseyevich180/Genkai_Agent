@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "metals_alloys",
-  "updated_at": "2026-07-06T15:48:30.319476+00:00",
+  "updated_at": "2026-07-08T04:31:23.516223+00:00",
   "summary": {
     "terms": 501,
-    "known_useful": 262,
-    "unknown": 239
+    "known_useful": 294,
+    "unknown": 207
   },
   "keyword_inventory": {
     "active_sites": [
@@ -780,8 +780,8 @@
       {
         "term": "Yes",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "compositions": [
@@ -1402,8 +1402,8 @@
       {
         "term": "Full",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "full coverage",
@@ -1530,8 +1530,8 @@
       {
         "term": "Hubbard-U correction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Silver",
@@ -2418,8 +2418,8 @@
       {
         "term": "electronic structure",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Mo",
@@ -2472,8 +2472,8 @@
       {
         "term": "computational methods",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "CoO",
@@ -2532,8 +2532,8 @@
       {
         "term": "charge transfer",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Co site",
@@ -2586,8 +2586,8 @@
       {
         "term": "Hubbard-U correction",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Ir",
@@ -2664,8 +2664,8 @@
       {
         "term": "activation energy",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "active sites",
@@ -2742,8 +2742,8 @@
       {
         "term": "charge redistribution",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "composition",
@@ -2808,8 +2808,8 @@
       {
         "term": "dispersion interactions",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "dissolution pathways",
@@ -2850,14 +2850,14 @@
       {
         "term": "Hubbard U",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Hubbard-U approach",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "hydrogen evolution",
@@ -2868,8 +2868,8 @@
       {
         "term": "hydrogen oxidation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "interfacial interactions",
@@ -3098,8 +3098,8 @@
       {
         "term": "hydrogen generation",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "nanoscale single crystal ensemble",
@@ -3110,8 +3110,8 @@
       {
         "term": "OER catalysts",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Oxygen Reduction",
@@ -3152,20 +3152,20 @@
       {
         "term": "electrocatalytic energy conversion",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Electrocatalytic mechanism",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Electrocatalytic OER",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrocatalytic oxygen evolution",
@@ -3188,20 +3188,20 @@
       {
         "term": "Electrochemical OER",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Electrochemical oxidation",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrochemical oxidation of water",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Electrochemical study",
@@ -3212,32 +3212,32 @@
       {
         "term": "electrochemical water splitting",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrode materials",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "electrolyzer efficiency",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "energy conversion technologies",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "energy storage",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "energy storage technologies",
@@ -3254,8 +3254,8 @@
       {
         "term": "hydrogen evolution reaction (HER)",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "hydrogen-based renewable energy technologies",
@@ -3266,8 +3266,8 @@
       {
         "term": "Kinetic Characterization",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Layer-by-layer assembly",
@@ -3284,14 +3284,14 @@
       {
         "term": "nitrogen reduction",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "oxygen evolution reaction (OER)",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "PEC water splitting",
@@ -3314,14 +3314,14 @@
       {
         "term": "polymer fuel cells",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "proton exchange membrane fuel cells",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Shape-dependent electrocatalysis",
@@ -3374,8 +3374,8 @@
       {
         "term": "water oxidation",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "supports_surfaces": [
@@ -5782,12 +5782,7 @@
         "Active Site",
         "Material"
       ],
-      "count": 25,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "Co nanochains"
-      ]
+      "count": 25
     },
     {
       "term": "OER",
@@ -5799,12 +5794,7 @@
         "Modeling Keywords",
         "Product"
       ],
-      "count": 23,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Ag/g-C3N4",
-        "Au(111)"
-      ]
+      "count": 23
     },
     {
       "term": "active site",
@@ -5813,12 +5803,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Au/TiO2",
-        "NiCo LDH/CC",
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 21
     },
     {
       "term": "CORR",
@@ -5827,12 +5812,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "metals_alloys",
@@ -5841,12 +5821,7 @@
       "fields": [
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "nitrides",
@@ -5855,12 +5830,7 @@
       "fields": [
         "Material"
       ],
-      "count": 21,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 21
     },
     {
       "term": "Ni",
@@ -5874,12 +5844,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 20,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Ni(Fe)"
-      ]
+      "count": 20
     },
     {
       "term": "Pt",
@@ -5891,12 +5856,7 @@
         "Composition",
         "Modeling Keywords"
       ],
-      "count": 20,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt, Ag, Ni(111)",
-        "Pt10Pb/C"
-      ]
+      "count": 20
     },
     {
       "term": "Fe",
@@ -5911,12 +5871,7 @@
         "Dopant/Modifier",
         "Material"
       ],
-      "count": 19,
-      "example_contexts": [
-        "NiFe LDH",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Ni(Fe)"
-      ]
+      "count": 19
     },
     {
       "term": "H2O",
@@ -5928,12 +5883,7 @@
         "products",
         "Product"
       ],
-      "count": 19,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
-        "Nickel–Bismuth Oxide",
-        "Ni(Fe)"
-      ]
+      "count": 19
     },
     {
       "term": "Electrocatalysis",
@@ -5944,12 +5894,7 @@
         "applications",
         "modeling_keywords"
       ],
-      "count": 18,
-      "example_contexts": [
-        "Au(111)",
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 18
     },
     {
       "term": "Ag",
@@ -5963,12 +5908,7 @@
         "Dopant/Modifier",
         "Material"
       ],
-      "count": 14,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Ag/TiO2",
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 14
     },
     {
       "term": "CO2",
@@ -5978,12 +5918,7 @@
         "Adsorbate/Reactant",
         "Cluster/Single Atom"
       ],
-      "count": 14,
-      "example_contexts": [
-        "CoO nanocubes",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 14
     },
     {
       "term": "Cu",
@@ -5995,12 +5930,7 @@
         "Dopant/Modifier",
         "Material"
       ],
-      "count": 13,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "ZnO",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 13
     },
     {
       "term": "O2",
@@ -6009,12 +5939,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 12,
-      "example_contexts": [
-        "Au(111)",
-        "NiCo LDH/CC",
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 12
     },
     {
       "term": "Co3O4",
@@ -6026,12 +5951,7 @@
         "Modeling Keywords",
         "Composition"
       ],
-      "count": 11,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "Co3O4",
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 11
     },
     {
       "term": "defect_engineered_materials",
@@ -6040,12 +5960,7 @@
       "fields": [
         "Material"
       ],
-      "count": 11,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 11
     },
     {
       "term": "adsorbate_landscape",
@@ -6054,12 +5969,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 10,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 10
     },
     {
       "term": "O",
@@ -6073,12 +5983,7 @@
         "dopants",
         "Modeling Keywords"
       ],
-      "count": 10,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping"
-      ]
+      "count": 10
     },
     {
       "term": "Ru",
@@ -6090,12 +5995,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 10,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "cs3003098 1..8",
-        "Ru nanoparticles"
-      ]
+      "count": 10
     },
     {
       "term": "density functional theory",
@@ -6104,12 +6004,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 8,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction",
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 8
     },
     {
       "term": "H2",
@@ -6120,12 +6015,7 @@
         "Product",
         "Adsorbate/Reactant"
       ],
-      "count": 8,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide",
-        "Co nanochains"
-      ]
+      "count": 8
     },
     {
       "term": "oxygen evolution reaction",
@@ -6135,12 +6025,7 @@
         "applications",
         "Modeling Keywords"
       ],
-      "count": 8,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts"
-      ]
+      "count": 8
     },
     {
       "term": "Au",
@@ -6153,12 +6038,7 @@
         "Active Site",
         "Material"
       ],
-      "count": 7,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au/TiO2",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 7
     },
     {
       "term": "RuO2",
@@ -6168,12 +6048,7 @@
         "materials",
         "Material"
       ],
-      "count": 7,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 7
     },
     {
       "term": "water splitting",
@@ -6184,12 +6059,7 @@
         "applications",
         "Reaction Type"
       ],
-      "count": 7,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "acs_nn_nn-2013-00772s 1..10",
-        "cs3003098 1..8"
-      ]
+      "count": 7
     },
     {
       "term": "adsorption",
@@ -6199,12 +6069,7 @@
         "Modeling Keywords",
         "modeling_keywords"
       ],
-      "count": 6,
-      "example_contexts": [
-        "CdN4C0-gra",
-        "Cr2O3",
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 6
     },
     {
       "term": "Co3+",
@@ -6216,12 +6081,7 @@
         "material_parameters",
         "active_sites"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 6
     },
     {
       "term": "Condensation",
@@ -6230,12 +6090,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 6,
-      "example_contexts": [
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces",
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 6
     },
     {
       "term": "DFT",
@@ -6244,12 +6099,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 6,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 6
     },
     {
       "term": "NiO",
@@ -6260,12 +6110,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 6,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "Nickel–Bismuth Oxide",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
-      ]
+      "count": 6
     },
     {
       "term": "Single Atom",
@@ -6274,12 +6119,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Au/TiO2",
-        "Au(111)",
-        "NiCo LDH/CC"
-      ]
+      "count": 6
     },
     {
       "term": "single_atom_site",
@@ -6288,12 +6128,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 6,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 6
     },
     {
       "term": "volatile organic compounds",
@@ -6302,12 +6137,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 6
     },
     {
       "term": "adsorbate",
@@ -6316,12 +6146,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 5,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Cu-based",
-        "(Ni,Fe)OOH"
-      ]
+      "count": 5
     },
     {
       "term": "Ni3S2",
@@ -6331,12 +6156,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 5
     },
     {
       "term": "Pd",
@@ -6348,12 +6168,7 @@
         "Composition",
         "Modeling Keywords"
       ],
-      "count": 5,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pd",
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 5
     },
     {
       "term": "Pt(111)",
@@ -6363,12 +6178,7 @@
         "surfaces",
         "Material"
       ],
-      "count": 5,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt(111)",
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 5
     },
     {
       "term": "ZnO",
@@ -6379,12 +6189,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 5,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "ZnO",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 5
     },
     {
       "term": "Au Nanoparticles",
@@ -6396,10 +6201,7 @@
         "Cluster/Single Atom",
         "Modeling Keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 4
     },
     {
       "term": "Bi",
@@ -6411,12 +6213,7 @@
         "dopants",
         "Composition"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide",
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study",
-        "Pt-Bi Alloy"
-      ]
+      "count": 4
     },
     {
       "term": "Cd",
@@ -6428,11 +6225,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 4,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Ni(Fe)"
-      ]
+      "count": 4
     },
     {
       "term": "Cluster",
@@ -6441,12 +6234,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Au–Ag/TiO2",
-        "Ag/g-C3N4",
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 4
     },
     {
       "term": "CuO",
@@ -6456,11 +6244,7 @@
         "Material",
         "Surface/Support"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 4
     },
     {
       "term": "Electrochemical",
@@ -6469,27 +6253,17 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 4,
-      "example_contexts": [
-        "NiCo LDH/CC",
-        "Co3O4",
-        "Pt(111)"
-      ]
+      "count": 4
     },
     {
       "term": "electronic structure",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords",
         "modeling_keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide",
-        "RuO2",
-        "review article"
-      ]
+      "count": 4
     },
     {
       "term": "ketonization",
@@ -6498,12 +6272,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 4,
-      "example_contexts": [
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective",
-        "rorrer-et-al-2019-mechanism-and-kinetics-of-isobutene-formation-from-ethanol-and-acetone-over-znxzryoz"
-      ]
+      "count": 4
     },
     {
       "term": "Mo",
@@ -6513,10 +6282,7 @@
         "Dopant/Modifier",
         "Modeling Keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 4
     },
     {
       "term": "OH",
@@ -6526,12 +6292,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 4
     },
     {
       "term": "Rh2O3",
@@ -6543,11 +6304,7 @@
         "Adsorption Site",
         "Modeling Keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 4
     },
     {
       "term": "Rh2O3 sites",
@@ -6559,11 +6316,7 @@
         "Active Site",
         "Adsorption Site"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 4
     },
     {
       "term": "selenides_tellurides",
@@ -6572,12 +6325,7 @@
       "fields": [
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
-        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
-        "d2ta09361h"
-      ]
+      "count": 4
     },
     {
       "term": "surface",
@@ -6586,12 +6334,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Cu-based",
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
-        "Pt(111)"
-      ]
+      "count": 4
     },
     {
       "term": "surface_functionalization",
@@ -6600,12 +6343,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 4
     },
     {
       "term": "water",
@@ -6615,12 +6353,7 @@
         "products",
         "Adsorbate/Reactant"
       ],
-      "count": 4,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "Cu-based",
-        "(Ni,Fe)OOH"
-      ]
+      "count": 4
     },
     {
       "term": "β-CoOOH",
@@ -6631,12 +6364,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "Co3O4",
-        "β-CoOOH"
-      ]
+      "count": 4
     },
     {
       "term": "(0112̅)",
@@ -6646,12 +6374,7 @@
         "Facet",
         "facets"
       ],
-      "count": 3,
-      "example_contexts": [
-        "β-CoOOH",
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 3
     },
     {
       "term": "(100)",
@@ -6661,12 +6384,7 @@
         "Facet",
         "facets"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Au(100)",
-        "Pt-Bi Alloy",
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 3
     },
     {
       "term": "Au(100)",
@@ -6677,12 +6395,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 3,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
-        "Au(111)",
-        "Au(100)"
-      ]
+      "count": 3
     },
     {
       "term": "Au(111)",
@@ -6693,11 +6406,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
-        "Au(111)"
-      ]
+      "count": 3
     },
     {
       "term": "Co4+",
@@ -6707,26 +6416,16 @@
         "Modeling Keywords",
         "material_parameters"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 3
     },
     {
       "term": "computational methods",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "ja511559d 1..9",
-        "review article",
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 3
     },
     {
       "term": "CoO",
@@ -6737,12 +6436,7 @@
         "Modeling Keywords",
         "Composition"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "Co nanochains",
-        "CoO nanocubes"
-      ]
+      "count": 3
     },
     {
       "term": "Cr",
@@ -6753,10 +6447,7 @@
         "Dopant/Modifier",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 3
     },
     {
       "term": "FeOOH",
@@ -6767,10 +6458,7 @@
         "Dopant/Modifier",
         "Surface/Support"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 3
     },
     {
       "term": "hydrogen production",
@@ -6779,12 +6467,7 @@
       "fields": [
         "applications"
       ],
-      "count": 3,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 3
     },
     {
       "term": "Mn",
@@ -6795,11 +6478,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping",
-        "ZnO"
-      ]
+      "count": 3
     },
     {
       "term": "Ni2",
@@ -6808,12 +6487,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
-        "d2ta09361h"
-      ]
+      "count": 3
     },
     {
       "term": "NiFe",
@@ -6822,12 +6496,7 @@
       "fields": [
         "Material"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical",
-        "d2ta09361h"
-      ]
+      "count": 3
     },
     {
       "term": "NixPy",
@@ -6837,11 +6506,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
-      ]
+      "count": 3
     },
     {
       "term": "Pb",
@@ -6852,11 +6517,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 3
     },
     {
       "term": "Pd4",
@@ -6866,11 +6527,7 @@
         "Material",
         "clusters"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters",
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 3
     },
     {
       "term": "Pd6",
@@ -6880,11 +6537,7 @@
         "Material",
         "clusters"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters",
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 3
     },
     {
       "term": "phase evolution",
@@ -6895,11 +6548,7 @@
         "Reaction Type",
         "Modeling Keywords"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "CoO nanocubes"
-      ]
+      "count": 3
     },
     {
       "term": "Pt nanoparticles",
@@ -6909,11 +6558,7 @@
         "Material",
         "clusters"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Pt nanoparticles",
-        "cs3003098 1..8"
-      ]
+      "count": 3
     },
     {
       "term": "Rh",
@@ -6924,11 +6569,7 @@
         "Composition",
         "Adsorption Site"
       ],
-      "count": 3,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 3
     },
     {
       "term": "volatile organic compound",
@@ -6937,12 +6578,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 3,
-      "example_contexts": [
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature",
-        "zakharenko-et-al-2017-conformational-landscape-and-torsion-rotation-vibration-effects-in-the-two-conformers-of-methyl",
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 3
     },
     {
       "term": "(0001)",
@@ -6952,11 +6588,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "(001)",
@@ -6965,10 +6597,7 @@
       "fields": [
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "(101̅4)",
@@ -6978,11 +6607,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "(110)",
@@ -6992,11 +6617,7 @@
         "facets",
         "Facet"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "(111)",
@@ -7006,11 +6627,7 @@
         "Facet",
         "facets"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Au(111)",
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "*OOH",
@@ -7020,11 +6637,7 @@
         "intermediates",
         "adsorbates"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 2
     },
     {
       "term": "11.0%",
@@ -7033,10 +6646,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "7.9%",
@@ -7045,10 +6655,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "9.4%",
@@ -7057,10 +6664,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "adsorption energies",
@@ -7069,11 +6673,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Oxides",
-        "Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "Ag/g-C3N4",
@@ -7083,10 +6683,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "Ba0.5Sr0.5Co0.8Fe0.2O3–d",
@@ -7096,11 +6693,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles",
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 2
     },
     {
       "term": "bifunctional electrocatalysts",
@@ -7109,10 +6702,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Bismuth (Bi)",
@@ -7122,10 +6712,7 @@
         "materials",
         "dopants"
       ],
-      "count": 2,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 2
     },
     {
       "term": "black phosphorus",
@@ -7135,11 +6722,7 @@
         "materials",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 2
     },
     {
       "term": "bridging Pd-Pd sites",
@@ -7149,11 +6732,7 @@
         "active_sites",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10",
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "CH3OH",
@@ -7163,25 +6742,17 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "CoPt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "charge transfer",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "CoO/Co"
-      ]
+      "count": 2
     },
     {
       "term": "Co nanochains",
@@ -7191,11 +6762,7 @@
         "clusters",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "Co nanochains"
-      ]
+      "count": 2
     },
     {
       "term": "co oxidation",
@@ -7204,11 +6771,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 2
     },
     {
       "term": "Co oxides",
@@ -7218,11 +6781,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "Co site",
@@ -7232,11 +6791,7 @@
         "Modeling Keywords",
         "active_sites"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides",
-        "jp306303y 1..6"
-      ]
+      "count": 2
     },
     {
       "term": "co2 reduction",
@@ -7245,11 +6800,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "Co2+",
@@ -7259,10 +6810,7 @@
         "Modeling Keywords",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "Co3",
@@ -7271,11 +6819,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 2
     },
     {
       "term": "composite",
@@ -7284,11 +6828,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 2,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 2
     },
     {
       "term": "CoO nanocubes",
@@ -7298,11 +6838,7 @@
         "clusters",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "CoO nanocubes"
-      ]
+      "count": 2
     },
     {
       "term": "CoOOH",
@@ -7312,11 +6848,7 @@
         "materials",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja405997s 1..10",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "CoPt nanoparticles",
@@ -7326,11 +6858,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "CoPt nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "Co–Fe–Cr (oxy)Hydroxides",
@@ -7340,11 +6868,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)Hydroxides as Efficient Oxygen Evolution Reaction Catalysts",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "electrocatalyst",
@@ -7353,11 +6877,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 2
     },
     {
       "term": "Electrocatalytic",
@@ -7366,11 +6886,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Cu-based",
-        "Ru nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "electrocatalytic oxygen evolution reaction",
@@ -7379,11 +6895,7 @@
       "fields": [
         "applications"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
-        "jp306303y 1..6"
-      ]
+      "count": 2
     },
     {
       "term": "Fe2",
@@ -7392,11 +6904,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "d2ta09361h"
-      ]
+      "count": 2
     },
     {
       "term": "Fe3+",
@@ -7406,11 +6914,7 @@
         "material_parameters",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja511559d 1..9",
-        "(Ni,Fe)OOH"
-      ]
+      "count": 2
     },
     {
       "term": "first-principles calculation",
@@ -7419,11 +6923,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction",
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 2
     },
     {
       "term": "formic acid",
@@ -7433,11 +6933,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pd"
-      ]
+      "count": 2
     },
     {
       "term": "fuel cells",
@@ -7446,11 +6942,7 @@
       "fields": [
         "applications"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 2
     },
     {
       "term": "Habs",
@@ -7460,11 +6952,7 @@
         "intermediates",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 2
     },
     {
       "term": "Hads",
@@ -7474,11 +6962,7 @@
         "adsorbates",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 2
     },
     {
       "term": "HER",
@@ -7488,11 +6972,7 @@
         "Modeling Keywords",
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 2
     },
     {
       "term": "Heterostructure",
@@ -7501,11 +6981,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "hollow nanorods",
@@ -7514,37 +6990,26 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Hubbard-U correction",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modifiers",
         "modeling_keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "ja405997s 1..10"
-      ]
+      "count": 2
     },
     {
       "term": "hydrogen generation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "ja511559d 1..9"
-      ]
+      "count": 2
     },
     {
       "term": "Ir",
@@ -7554,11 +7019,7 @@
         "materials",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "cs3003098 1..8",
-        "Ir nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "Ir nanoparticles",
@@ -7568,11 +7029,7 @@
         "clusters",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "cs3003098 1..8",
-        "Ir nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "kinks",
@@ -7582,11 +7039,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "KOH",
@@ -7595,10 +7048,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Mo-doped Ni3S2/NixPy",
@@ -7607,10 +7057,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Mo-Ni3S2/NixPy/NF electrode",
@@ -7619,10 +7066,7 @@
       "fields": [
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Mo-Ni3S2/NixPy/NF electrode"
-      ]
+      "count": 2
     },
     {
       "term": "Na",
@@ -7632,11 +7076,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
-        "Sn SAs/G-Na"
-      ]
+      "count": 2
     },
     {
       "term": "nanoparticles",
@@ -7645,11 +7085,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "cs3003098 1..8"
-      ]
+      "count": 2
     },
     {
       "term": "nanoporous",
@@ -7659,11 +7095,7 @@
         "modeling_keywords",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media",
-        "Ni(Fe)"
-      ]
+      "count": 2
     },
     {
       "term": "nanoscale single crystal ensemble",
@@ -7673,11 +7105,7 @@
         "facets",
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt(111)"
-      ]
+      "count": 2
     },
     {
       "term": "Ni(111)",
@@ -7687,11 +7115,7 @@
         "surfaces",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt, Ag, Ni(111)"
-      ]
+      "count": 2
     },
     {
       "term": "Ni1−xFexOOH",
@@ -7701,11 +7125,7 @@
         "materials",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja511559d 1..9",
-        "(Ni,Fe)OOH"
-      ]
+      "count": 2
     },
     {
       "term": "Ni3",
@@ -7714,11 +7134,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "NiCoOOH",
@@ -7728,11 +7144,7 @@
         "active_sites",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "NiCo LDH/CC"
-      ]
+      "count": 2
     },
     {
       "term": "NiOOH",
@@ -7742,10 +7154,7 @@
         "Material",
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 2
     },
     {
       "term": "NO",
@@ -7755,11 +7164,7 @@
         "adsorbates",
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt(111)"
-      ]
+      "count": 2
     },
     {
       "term": "O*",
@@ -7768,11 +7173,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 2,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 2
     },
     {
       "term": "octahedral site",
@@ -7782,11 +7183,7 @@
         "adsorption_sites",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "octahedral sites",
@@ -7796,24 +7193,16 @@
         "material_parameters",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "ja511559d 1..9",
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "OER catalysts",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts",
-        "ja405997s 1..10"
-      ]
+      "count": 2
     },
     {
       "term": "OH*",
@@ -7823,11 +7212,7 @@
         "intermediates",
         "adsorbates"
       ],
-      "count": 2,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 2
     },
     {
       "term": "OHads",
@@ -7837,11 +7222,7 @@
         "adsorbates",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst",
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 2
     },
     {
       "term": "OH−",
@@ -7850,11 +7231,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ni(Fe)",
-        "Co oxides"
-      ]
+      "count": 2
     },
     {
       "term": "OOH",
@@ -7863,11 +7240,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping"
-      ]
+      "count": 2
     },
     {
       "term": "ORR",
@@ -7876,11 +7249,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Au(111)",
-        "Pt-Bi Alloy"
-      ]
+      "count": 2
     },
     {
       "term": "Oxygen Reduction",
@@ -7889,11 +7258,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pt10Pb/C",
-        "Pt-Bi Alloy"
-      ]
+      "count": 2
     },
     {
       "term": "oxygen reduction reaction",
@@ -7903,11 +7268,7 @@
         "applications",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 2
     },
     {
       "term": "Pd17 clusters",
@@ -7916,10 +7277,7 @@
       "fields": [
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "PEC",
@@ -7929,11 +7287,7 @@
         "modeling_keywords",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "planar deposition",
@@ -7943,11 +7297,7 @@
         "modeling_keywords",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries",
-        "Sn SAs/G-Na"
-      ]
+      "count": 2
     },
     {
       "term": "point defects",
@@ -7957,11 +7307,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "Pt(335)",
@@ -7971,11 +7317,7 @@
         "surfaces",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730",
-        "Pt(335)"
-      ]
+      "count": 2
     },
     {
       "term": "Pt1",
@@ -7985,10 +7327,7 @@
         "Material",
         "Cluster/Single Atom"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 2
     },
     {
       "term": "Pt10Pb/C",
@@ -7998,11 +7337,7 @@
         "materials",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance",
-        "Pt10Pb/C"
-      ]
+      "count": 2
     },
     {
       "term": "Reaction Mechanism",
@@ -8012,10 +7347,7 @@
         "Reaction Type",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Reaction Mechanism"
-      ]
+      "count": 2
     },
     {
       "term": "Ru nanoparticles",
@@ -8025,11 +7357,7 @@
         "clusters",
         "Material"
       ],
-      "count": 2,
-      "example_contexts": [
-        "cs3003098 1..8",
-        "Ru nanoparticles"
-      ]
+      "count": 2
     },
     {
       "term": "rutile TiO2",
@@ -8038,11 +7366,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "experimental-and-theoretical-evidence-for-the-reactivity-of-bound-intermediates-in-ketonization-of-carboxylic-acids-and",
-        "pacchioni-2014-ketonization-of-carboxylic-acids-in-biomass-conversion-over-tio2-and-zro2-surfaces-a-dft-perspective"
-      ]
+      "count": 2
     },
     {
       "term": "selenides",
@@ -8052,11 +7376,7 @@
         "materials",
         "Composition"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++",
-        "Cu-based"
-      ]
+      "count": 2
     },
     {
       "term": "Silver",
@@ -8066,10 +7386,7 @@
         "materials",
         "dopants"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 2
     },
     {
       "term": "Sn",
@@ -8079,10 +7396,7 @@
         "Composition",
         "Active Site"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 2
     },
     {
       "term": "steps",
@@ -8092,11 +7406,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "surface coverage",
@@ -8106,11 +7416,7 @@
         "modeling_keywords",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
-        "Au(111)"
-      ]
+      "count": 2
     },
     {
       "term": "tetrahedral cluster",
@@ -8120,10 +7426,7 @@
         "material_parameters",
         "slab_models"
       ],
-      "count": 2,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 2
     },
     {
       "term": "tetrahedral site",
@@ -8133,11 +7436,7 @@
         "adsorption_sites",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations",
-        "Co3O4"
-      ]
+      "count": 2
     },
     {
       "term": "UNCD",
@@ -8146,10 +7445,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 2
     },
     {
       "term": "W",
@@ -8159,10 +7455,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 2
     },
     {
       "term": "β-CoOOH(0112̅)",
@@ -8171,11 +7464,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 2,
-      "example_contexts": [
-        "jp306303y 1..6",
-        "ja405997s 1..10"
-      ]
+      "count": 2
     },
     {
       "term": "(101)",
@@ -8184,10 +7473,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "(112)-oriented surface of hausmannitene",
@@ -8196,10 +7482,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "(Ni",
@@ -8208,10 +7491,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "(Ni,Fe)OOH"
-      ]
+      "count": 1
     },
     {
       "term": "(photo)electrocatalysts",
@@ -8220,10 +7500,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping"
-      ]
+      "count": 1
     },
     {
       "term": "*",
@@ -8232,10 +7509,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 1
     },
     {
       "term": "*H2O",
@@ -8244,10 +7518,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "*O",
@@ -8256,10 +7527,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "*OH",
@@ -8268,10 +7536,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % Au loading",
@@ -8280,10 +7545,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "0.4 wt % sAu",
@@ -8292,10 +7554,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "2D material",
@@ -8304,10 +7563,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "3D porous framework",
@@ -8316,10 +7572,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "4th main group element",
@@ -8328,10 +7581,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "A-layer (tetrahedral Co termination)",
@@ -8340,22 +7590,16 @@
       "fields": [
         "Surface Termination"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "activation energy",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "active sites",
@@ -8364,10 +7608,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "adsorbate coverage",
@@ -8376,10 +7617,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "adsorption site",
@@ -8388,10 +7626,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "(Ni,Fe)OOH"
-      ]
+      "count": 1
     },
     {
       "term": "Ag nanospheres",
@@ -8400,10 +7635,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "Ag(111)",
@@ -8412,10 +7644,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Ag/TiO2",
@@ -8424,10 +7653,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Ag17",
@@ -8436,10 +7662,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
-      ]
+      "count": 1
     },
     {
       "term": "Ag4",
@@ -8448,10 +7671,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "AgSA",
@@ -8460,10 +7680,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "ammonia",
@@ -8472,10 +7689,7 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "anodic oxidation",
@@ -8484,10 +7698,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "Atomic Simulation Environment",
@@ -8496,10 +7707,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "atomically thin structure",
@@ -8508,10 +7716,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Au/NiFe LDH surface",
@@ -8520,10 +7725,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Au/TiO2",
@@ -8532,10 +7734,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "Au2–Ag2",
@@ -8544,10 +7743,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "Au4",
@@ -8556,10 +7752,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "Au–Ag/TiO2",
@@ -8568,10 +7761,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au–Ag/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "B-layer (octahedral Co and O ions)",
@@ -8580,10 +7770,7 @@
       "fields": [
         "Surface Termination"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "Ba",
@@ -8592,10 +7779,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "Bader charge analysis",
@@ -8604,10 +7788,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "bi-",
@@ -8616,10 +7797,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "Bi02:NiO",
@@ -8628,10 +7806,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Bi05:NiO",
@@ -8640,10 +7815,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic",
@@ -8652,10 +7824,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic alloy",
@@ -8664,10 +7833,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic catalysts",
@@ -8676,10 +7842,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "bimetallic cluster",
@@ -8688,10 +7851,7 @@
       "fields": [
         "slab_models"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "binding",
@@ -8700,10 +7860,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping"
-      ]
+      "count": 1
     },
     {
       "term": "Bismuth",
@@ -8712,10 +7869,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Black Phosphorus Nanosheets",
@@ -8724,10 +7878,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 1
     },
     {
       "term": "BP",
@@ -8736,10 +7887,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets"
-      ]
+      "count": 1
     },
     {
       "term": "BP/Au surface",
@@ -8748,10 +7896,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "bridging oxygen vacant site",
@@ -8760,10 +7905,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "Bridging Pd-Pd",
@@ -8772,10 +7914,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 1
     },
     {
       "term": "Bulk Ir",
@@ -8784,10 +7923,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Bulk Ir"
-      ]
+      "count": 1
     },
     {
       "term": "bulk material",
@@ -8796,10 +7932,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Bulk Ru"
-      ]
+      "count": 1
     },
     {
       "term": "bulk materials",
@@ -8808,10 +7941,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "bulk phase",
@@ -8820,10 +7950,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "Bulk Pt",
@@ -8832,10 +7959,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Bulk Pt"
-      ]
+      "count": 1
     },
     {
       "term": "Bulk Ru",
@@ -8844,10 +7968,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Bulk Ru"
-      ]
+      "count": 1
     },
     {
       "term": "C",
@@ -8856,10 +7977,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ir",
@@ -8868,10 +7986,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Pt",
@@ -8880,10 +7995,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ru",
@@ -8892,10 +8004,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carrier mobility 1000 cm2 V−1 s−1 at ten-layer thickness",
@@ -8904,10 +8013,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "catalyst",
@@ -8916,10 +8022,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "catalyst development",
@@ -8928,10 +8031,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Catalyst Preparation",
@@ -8940,10 +8040,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic active site",
@@ -8952,10 +8049,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic mechanism",
@@ -8964,10 +8058,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "catalytic sites",
@@ -8976,22 +8067,16 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 1
     },
     {
       "term": "charge redistribution",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "clean surface",
@@ -9000,10 +8085,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "co-doped",
@@ -9012,10 +8094,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "Co0",
@@ -9024,10 +8103,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhao-et-al-2023-boosting-the-catalytic-performance-of-volatile-organic-compound-oxidation-over-platelike-mno2-coalo"
-      ]
+      "count": 1
     },
     {
       "term": "Co2+ (d7, high spin)",
@@ -9036,10 +8112,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+ (d6, low spin)",
@@ -9048,10 +8121,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3+δ",
@@ -9060,10 +8130,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co–Fe–Cr (oxy)hydroxides"
-      ]
+      "count": 1
     },
     {
       "term": "CO32−",
@@ -9072,10 +8139,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(001)",
@@ -9084,10 +8148,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(001) surface",
@@ -9096,10 +8157,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Co3O4(110)",
@@ -9108,10 +8166,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Co4",
@@ -9120,10 +8175,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "CoIII-containing species",
@@ -9132,10 +8184,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "composition",
@@ -9153,10 +8202,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "composition: 1 M NaOH",
@@ -9165,10 +8211,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "computational standard hydrogen electrode",
@@ -9177,10 +8220,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "DOI: 10.1002/cctc.201000397"
-      ]
+      "count": 1
     },
     {
       "term": "CoO surface",
@@ -9189,10 +8229,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "CoO/Co",
@@ -9201,10 +8238,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "CoOct (+4)",
@@ -9213,10 +8247,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "copper",
@@ -9225,10 +8256,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "cost-effective",
@@ -9237,10 +8265,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "covalency",
@@ -9249,10 +8274,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "Cu-based",
@@ -9261,10 +8283,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "Cu-based nanostructures",
@@ -9273,10 +8292,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "Cu16",
@@ -9285,10 +8301,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "entropy-driven-high-reactivity-of-formaldehyde-in-nucleophilic-attack-by-enolates-on-oxide-surfaces"
-      ]
+      "count": 1
     },
     {
       "term": "Cu2",
@@ -9297,10 +8310,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 1
     },
     {
       "term": "Cyanide-modified",
@@ -9309,10 +8319,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt(111)"
-      ]
+      "count": 1
     },
     {
       "term": "d-band",
@@ -9321,10 +8328,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "d-band theory",
@@ -9333,10 +8337,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "defect",
@@ -9345,10 +8346,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "Defective",
@@ -9357,10 +8355,7 @@
       "fields": [
         "Defect"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "defective structure",
@@ -9369,10 +8364,7 @@
       "fields": [
         "defects"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "dendrite",
@@ -9381,10 +8373,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "dendrite-free",
@@ -9393,10 +8382,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "density of states",
@@ -9405,10 +8391,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "DFT+U",
@@ -9417,22 +8400,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "dispersion interactions",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "dissolution pathways",
@@ -9441,10 +8418,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "doping",
@@ -9453,10 +8427,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "edge sites",
@@ -9465,10 +8436,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "eg orbital of surface transition metal ions",
@@ -9477,10 +8445,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "electrically conducting",
@@ -9489,10 +8454,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalysts",
@@ -9501,46 +8463,34 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic energy conversion",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "Electrocatalytic mechanism",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "PtPb, PtBi"
-      ]
+      "count": 1
     },
     {
       "term": "Electrocatalytic OER",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic oxygen evolution",
@@ -9549,10 +8499,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "electrocatalytic water splitting",
@@ -9561,10 +8508,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Accurate Potentials of Hg/HgO Electrodes: Practical Parameters for Reporting Alkaline Water Electrolysis Overpotentials"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical characterization",
@@ -9573,10 +8517,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt(111)"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical conversion",
@@ -9585,46 +8526,34 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical OER",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical oxidation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt(335)"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical oxidation of water",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical processes",
@@ -9633,10 +8562,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 1
     },
     {
       "term": "Electrochemical study",
@@ -9645,46 +8571,34 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pd"
-      ]
+      "count": 1
     },
     {
       "term": "electrochemical water splitting",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "electrode materials",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "electrolyzer efficiency",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "electron transfer",
@@ -9693,34 +8607,25 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "energy conversion technologies",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "energy storage",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "energy storage technologies",
@@ -9729,10 +8634,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "FCC Ag",
@@ -9741,10 +8643,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "Fe atoms in NiFe oxyhydroxide",
@@ -9753,10 +8652,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Fe sites",
@@ -9765,10 +8661,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "Fe)OOH",
@@ -9777,10 +8670,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "(Ni,Fe)OOH"
-      ]
+      "count": 1
     },
     {
       "term": "Fe-doped",
@@ -9789,10 +8679,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "Fe-free",
@@ -9801,10 +8688,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Fe3",
@@ -9813,10 +8697,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 1
     },
     {
       "term": "Fe−O bond distances",
@@ -9825,10 +8706,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "five-coordinated Cr5c",
@@ -9837,10 +8715,7 @@
       "fields": [
         "surface_terminations"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "free energy landscape",
@@ -9849,22 +8724,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 1
     },
     {
       "term": "Full",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoPt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "full coverage",
@@ -9873,10 +8742,7 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "g-C3N4",
@@ -9885,10 +8751,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     },
     {
       "term": "H*",
@@ -9897,10 +8760,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "H+",
@@ -9909,10 +8769,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "hausmannitene",
@@ -9921,10 +8778,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Understanding the electrocatalysis OER and ORR activity of ultrathin spinel Mn3O4"
-      ]
+      "count": 1
     },
     {
       "term": "He",
@@ -9933,10 +8787,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co nanochains"
-      ]
+      "count": 1
     },
     {
       "term": "hexagonal g-C3N4",
@@ -9945,10 +8796,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "high loading",
@@ -9957,10 +8805,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "high OH or mixed OH/O coverage",
@@ -9969,10 +8814,7 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "high reactivity",
@@ -9981,10 +8823,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "high specific surface area",
@@ -9993,10 +8832,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "high surface area",
@@ -10005,10 +8841,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "HO*",
@@ -10017,10 +8850,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Origin of the Overpotential for Oxygen Reduction at a Fuel-Cell Cathode"
-      ]
+      "count": 1
     },
     {
       "term": "HOO*",
@@ -10029,10 +8859,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "HOR",
@@ -10041,34 +8868,25 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Hubbard U",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "Hubbard-U approach",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen",
@@ -10077,10 +8895,7 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen evolution",
@@ -10089,22 +8904,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen evolution reaction (HER)",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen molecules",
@@ -10113,22 +8922,16 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen oxidation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "hydrogen-based renewable energy technologies",
@@ -10137,10 +8940,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxides",
@@ -10149,10 +8949,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxy",
@@ -10161,10 +8958,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "hydroxyl species",
@@ -10173,10 +8967,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "interfacial interactions",
@@ -10185,22 +8976,16 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "Kinetic Characterization",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "Layer-by-layer assembly",
@@ -10209,10 +8994,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Polyaniline fibers"
-      ]
+      "count": 1
     },
     {
       "term": "layered double hydroxides",
@@ -10221,10 +9003,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "layered phase",
@@ -10233,10 +9012,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "low cost",
@@ -10245,10 +9021,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "metal cluster",
@@ -10257,10 +9030,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "metal phase",
@@ -10269,10 +9039,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "metal-oxygen bonding",
@@ -10281,10 +9048,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "metal–oxygen bonding",
@@ -10293,10 +9057,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "metal−air batteries",
@@ -10305,10 +9066,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials"
-      ]
+      "count": 1
     },
     {
       "term": "Methanol",
@@ -10317,10 +9075,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "mixed (Ni,Fe)oxyhydroxides",
@@ -10329,10 +9084,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "mofs_coordination_polymers",
@@ -10341,10 +9093,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "molecular orbital",
@@ -10353,10 +9102,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "mono-",
@@ -10365,10 +9111,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "N",
@@ -10377,10 +9120,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "N-doped C",
@@ -10389,10 +9129,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Na clusters",
@@ -10401,10 +9138,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "nanoporous structure",
@@ -10413,10 +9147,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 1
     },
     {
       "term": "nanostructure",
@@ -10425,10 +9156,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "neighboring Rh sites",
@@ -10437,10 +9165,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "Ni atom",
@@ -10449,10 +9174,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Ni reaction sites",
@@ -10461,10 +9183,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "Ni sites",
@@ -10473,10 +9192,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "Ni surface",
@@ -10485,10 +9201,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 1
     },
     {
       "term": "Ni(Fe)",
@@ -10497,10 +9210,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni(Fe)"
-      ]
+      "count": 1
     },
     {
       "term": "Ni-Cd",
@@ -10509,10 +9219,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-Cd"
-      ]
+      "count": 1
     },
     {
       "term": "Ni-doped",
@@ -10521,10 +9228,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 1
     },
     {
       "term": "Ni-O-G SACs",
@@ -10533,10 +9237,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ni-O-G SACs"
-      ]
+      "count": 1
     },
     {
       "term": "Ni0",
@@ -10545,10 +9246,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow"
-      ]
+      "count": 1
     },
     {
       "term": "nickel",
@@ -10557,10 +9255,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Nickel–Bismuth Oxide",
@@ -10569,10 +9264,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Nickel–Bismuth Oxide"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo Layer Double Hydroxide",
@@ -10581,10 +9273,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo LDH surface",
@@ -10593,10 +9282,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiCo LDH/CC",
@@ -10605,10 +9291,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiCo LDH/CC"
-      ]
+      "count": 1
     },
     {
       "term": "NiCoOOH*",
@@ -10617,10 +9300,7 @@
       "fields": [
         "intermediates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe layered double hydroxide",
@@ -10629,10 +9309,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe LDH",
@@ -10641,10 +9318,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe LDH surface",
@@ -10653,10 +9327,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "NiFe oxyhydroxide",
@@ -10665,10 +9336,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "NiO surface",
@@ -10677,10 +9345,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "nitrogen",
@@ -10689,22 +9354,16 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "nitrogen reduction",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "nitrogen-doped carbon",
@@ -10713,10 +9372,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "noble metal content",
@@ -10725,10 +9381,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "normal spinel",
@@ -10737,10 +9390,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "octahedral Co",
@@ -10749,10 +9399,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "octahedral Co and O ions (B-layer)",
@@ -10761,10 +9408,7 @@
       "fields": [
         "surface_terminations"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "OER intermediates",
@@ -10773,10 +9417,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "OH–",
@@ -10785,10 +9426,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "OH⁻",
@@ -10797,10 +9435,7 @@
       "fields": [
         "Adsorbate/Reactant"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "operando X-ray absorption spectroscopy",
@@ -10809,10 +9444,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "overpotential",
@@ -10821,10 +9453,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co3O4"
-      ]
+      "count": 1
     },
     {
       "term": "oxidation",
@@ -10833,10 +9462,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "oxides",
@@ -10845,10 +9471,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen adsorption energy",
@@ -10857,22 +9480,16 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen evolution reaction (OER)",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "oxygen-contained intermediates",
@@ -10881,10 +9498,7 @@
       "fields": [
         "adsorbates"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "P",
@@ -10893,10 +9507,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Pd clusters",
@@ -10905,10 +9516,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 1
     },
     {
       "term": "Pd-Pd sites",
@@ -10917,10 +9525,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pd4, Pd6, Pd17 clusters"
-      ]
+      "count": 1
     },
     {
       "term": "Pd0",
@@ -10929,10 +9534,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming"
-      ]
+      "count": 1
     },
     {
       "term": "Pd1",
@@ -10941,10 +9543,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
-      ]
+      "count": 1
     },
     {
       "term": "Pd17",
@@ -10953,10 +9552,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "Pd2",
@@ -10965,10 +9561,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming"
-      ]
+      "count": 1
     },
     {
       "term": "PEC water splitting",
@@ -10977,10 +9570,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "perovskite",
@@ -10989,10 +9579,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "phase proportion",
@@ -11001,10 +9588,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "phosphides",
@@ -11013,10 +9597,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "photoanode for OER",
@@ -11025,10 +9606,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "photoelectrochemical",
@@ -11037,10 +9615,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "photoelectrochemical devices",
@@ -11049,10 +9624,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja511559d 1..9"
-      ]
+      "count": 1
     },
     {
       "term": "Polyaniline fibers",
@@ -11061,22 +9633,16 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Polyaniline fibers"
-      ]
+      "count": 1
     },
     {
       "term": "polymer fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "porous Ni-Cd structure",
@@ -11085,10 +9651,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 1
     },
     {
       "term": "Pourbaix diagram",
@@ -11097,10 +9660,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "primarily exposed facet",
@@ -11109,22 +9669,16 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "proton exchange membrane fuel cells",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "Pt bimetallic",
@@ -11133,10 +9687,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt bimetallic"
-      ]
+      "count": 1
     },
     {
       "term": "Pt(111) nanofacets",
@@ -11145,10 +9696,7 @@
       "fields": [
         "facets"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Pt-Bi",
@@ -11157,10 +9705,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "Pt-Bi Alloy",
@@ -11169,10 +9714,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "Pt/C",
@@ -11181,10 +9723,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "Pt0",
@@ -11193,10 +9732,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Angew Chem Int Ed - 2022 - Jiang - Modulating the Electronic Metal‐Support Interactions in Single‐Atom Pt1 CuO Catalyst for"
-      ]
+      "count": 1
     },
     {
       "term": "Pt10Ni/C",
@@ -11205,10 +9741,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Reducing the Activation Energy by Introduction of Pb Atoms to Boost Oxygen Reduction Reaction Performance"
-      ]
+      "count": 1
     },
     {
       "term": "PtBi",
@@ -11217,10 +9750,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "PtPb, PtBi"
-      ]
+      "count": 1
     },
     {
       "term": "PtBi alloy",
@@ -11229,10 +9759,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "PtBi(100)",
@@ -11241,10 +9768,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Strategies to Improve the Oxygen Reduction Reaction Activity on Pt–Bi Bimetallic Catalysts: A Density Functional Theory Study"
-      ]
+      "count": 1
     },
     {
       "term": "PtPb",
@@ -11253,10 +9777,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "PtPb, PtBi"
-      ]
+      "count": 1
     },
     {
       "term": "PtSA",
@@ -11265,10 +9786,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
-      ]
+      "count": 1
     },
     {
       "term": "PtTiMe ternary alloys",
@@ -11277,10 +9795,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "PtxRu1-x/Ru(0001)",
@@ -11289,10 +9804,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Quantum Espresso",
@@ -11301,10 +9813,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "reaction mechanisms",
@@ -11313,10 +9822,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "Rh sites",
@@ -11325,10 +9831,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "Rh2O3 surface",
@@ -11337,10 +9840,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "Rh–Rh2O3-NPs",
@@ -11349,10 +9849,7 @@
       "fields": [
         "clusters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "Rh–Rh2O3-NPs/C",
@@ -11361,10 +9858,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rh–Rh2O3-NPs/C"
-      ]
+      "count": 1
     },
     {
       "term": "Ru modified",
@@ -11373,10 +9867,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "Ru(0001)",
@@ -11385,10 +9876,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "Ru0",
@@ -11397,10 +9885,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 1
     },
     {
       "term": "RuO2 (110) surface",
@@ -11409,10 +9894,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "RuOx",
@@ -11421,10 +9903,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "rutile",
@@ -11433,10 +9912,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "rutile TiO2 surface",
@@ -11445,10 +9921,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "S",
@@ -11457,10 +9930,7 @@
       "fields": [
         "dopants"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "sAu",
@@ -11469,10 +9939,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "sAu/NiFe LDH",
@@ -11481,10 +9948,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "sAu/NiFe LDH"
-      ]
+      "count": 1
     },
     {
       "term": "semiconductor phase",
@@ -11493,10 +9957,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Black Phosphorus Nanosheets Modified with Au Nanoparticles as High Conductivity and High Activity Electrocatalyst for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Shape-dependent electrocatalysis",
@@ -11505,10 +9966,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "single metal atoms",
@@ -11517,10 +9975,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "single Ni atoms",
@@ -11529,10 +9984,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "single nickel atoms",
@@ -11541,10 +9993,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "single-atom Au",
@@ -11553,10 +10002,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Single-Atom Au/NiFe Layered Double Hydroxide Electrocatalyst: Probing the Origin of Activity for Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "single-atom Pt",
@@ -11565,10 +10011,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "zhao-et-al-2025-influence-of-different-configurations-of-pt-supported-on-alv-rich-asa-on-their-catalytic-performance-in"
-      ]
+      "count": 1
     },
     {
       "term": "singly coordinated sites",
@@ -11577,10 +10020,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "Sn doped",
@@ -11589,10 +10029,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G",
@@ -11601,10 +10038,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "Sn SAs/G-Na",
@@ -11613,10 +10047,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Sn single atoms",
@@ -11625,10 +10056,7 @@
       "fields": [
         "single_atoms"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "Sn4",
@@ -11637,10 +10065,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "sodium",
@@ -11649,10 +10074,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "sodium metal batteries",
@@ -11661,10 +10083,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "sp hybridization",
@@ -11673,10 +10092,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "space group Fd3̅m",
@@ -11685,10 +10101,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "spinel phase",
@@ -11697,10 +10110,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "spinel structure",
@@ -11709,10 +10119,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "jp306303y 1..6"
-      ]
+      "count": 1
     },
     {
       "term": "Sr",
@@ -11721,10 +10128,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "structure",
@@ -11742,10 +10146,7 @@
       "fields": [
         "Coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoPt nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "sub-saturation coverage",
@@ -11754,10 +10155,7 @@
       "fields": [
         "coverage"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "sulfides",
@@ -11766,10 +10164,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "surface defects",
@@ -11778,10 +10173,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     },
     {
       "term": "Surface Pourbaix diagrams",
@@ -11790,10 +10182,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt, Ag, Ni(111)"
-      ]
+      "count": 1
     },
     {
       "term": "Surface Reaction",
@@ -11802,10 +10191,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "surface stability",
@@ -11814,10 +10200,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co oxides"
-      ]
+      "count": 1
     },
     {
       "term": "Synthesis",
@@ -11826,10 +10209,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Co nanochains"
-      ]
+      "count": 1
     },
     {
       "term": "tellurides",
@@ -11838,10 +10218,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "tensile strain",
@@ -11850,10 +10227,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt-Bi Alloy"
-      ]
+      "count": 1
     },
     {
       "term": "tensile stress effect",
@@ -11862,10 +10236,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt10Pb/C"
-      ]
+      "count": 1
     },
     {
       "term": "tetrahedral Co termination (A-layer)",
@@ -11874,10 +10245,7 @@
       "fields": [
         "surface_terminations"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Influence of Fe and Ni Doping on the OER Performance at the Co3O4(001) Surface: Insights from DFT+U Calculations"
-      ]
+      "count": 1
     },
     {
       "term": "three-coordinated Cr3c",
@@ -11886,10 +10254,7 @@
       "fields": [
         "surface_terminations"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Insight into Room-Temperature Catalytic Oxidation of Nitric oxide by Cr2O3: A DFT Study"
-      ]
+      "count": 1
     },
     {
       "term": "Ti",
@@ -11898,10 +10263,7 @@
       "fields": [
         "active_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "Tin (Sn)",
@@ -11910,10 +10272,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "TiO2",
@@ -11922,10 +10281,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Au/TiO2"
-      ]
+      "count": 1
     },
     {
       "term": "transition metal",
@@ -11934,10 +10290,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "Transition metal ions",
@@ -11946,10 +10299,7 @@
       "fields": [
         "Active Site"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ba0.5Sr0.5Co0.8Fe0.2O3–d"
-      ]
+      "count": 1
     },
     {
       "term": "transition metal oxide",
@@ -11958,10 +10308,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "A Perovskite Oxide Optimized for Oxygen Evolution Catalysis from Molecular Orbital Principles"
-      ]
+      "count": 1
     },
     {
       "term": "transition metal-based catalysts",
@@ -11970,10 +10317,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d0qi01060j 234..272 ++"
-      ]
+      "count": 1
     },
     {
       "term": "tri-metallic",
@@ -11982,10 +10326,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Cu-based"
-      ]
+      "count": 1
     },
     {
       "term": "ultrathin graphene sheets",
@@ -11994,10 +10335,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "UNCD Si-coated electrode",
@@ -12006,10 +10344,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "acs_nn_nn-2013-00772s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "various ratios of Ag",
@@ -12018,10 +10353,7 @@
       "fields": [
         "material_parameters"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "Voltammetric surface dealloying",
@@ -12030,10 +10362,7 @@
       "fields": [
         "Reaction Type"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Pt bimetallic"
-      ]
+      "count": 1
     },
     {
       "term": "water electrolysis",
@@ -12042,10 +10371,7 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 1
     },
     {
       "term": "water electrolyzers",
@@ -12054,22 +10380,16 @@
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "water oxidation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
-      "count": 1,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation"
-      ]
+      "count": 1
     },
     {
       "term": "water/platinum interface",
@@ -12078,10 +10398,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "rsc_cp_b803956a_auto 3722..3730"
-      ]
+      "count": 1
     },
     {
       "term": "XAS",
@@ -12090,22 +10407,16 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "Yes",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ru nanoparticles"
-      ]
+      "count": 1
     },
     {
       "term": "Zn",
@@ -12114,10 +10425,7 @@
       "fields": [
         "Composition"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ZnO"
-      ]
+      "count": 1
     },
     {
       "term": "ZnO surface",
@@ -12126,10 +10434,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Tailoring the Performance of ZnO for Oxygen Evolution by Effective Transition Metal Doping"
-      ]
+      "count": 1
     },
     {
       "term": "β-CoOOH(0001)",
@@ -12138,10 +10443,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     },
     {
       "term": "β-CoOOH(101̅4)",
@@ -12150,10 +10452,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ja405997s 1..10"
-      ]
+      "count": 1
     }
   ]
 }
