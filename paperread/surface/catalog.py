@@ -1,0 +1,114 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class SurfaceToolSpec:
+    name: str
+    category: str
+    module: str
+    function: str
+    purpose: str
+
+
+SURFACE_TOOL_SPECS: list[SurfaceToolSpec] = [
+    SurfaceToolSpec(
+        name="ingest_pdf",
+        category="ingestion",
+        module="paperread.surface.ingest_pdf",
+        function="ingest_pdf",
+        purpose="Convert PDF text into section JSON and routed condition/relation inputs.",
+    ),
+    SurfaceToolSpec(
+        name="extract_surface_conditions",
+        category="extraction",
+        module="paperread.surface.extract_surface_conditions",
+        function="extract_conditions",
+        purpose="Extract paper conditions into a structured surface table.",
+    ),
+    SurfaceToolSpec(
+        name="extract_surface_relations",
+        category="extraction",
+        module="paperread.surface.extract_surface_relations",
+        function="extract_relations",
+        purpose="Extract materials, surfaces, sites, and reaction relations into JSONL.",
+    ),
+    SurfaceToolSpec(
+        name="standardize_surface_time",
+        category="normalization",
+        module="paperread.surface.standardize_surface_time",
+        function="standardize_time",
+        purpose="Normalize reaction and treatment times into a standardized table.",
+    ),
+    SurfaceToolSpec(
+        name="ptomodel",
+        category="planning",
+        module="paperread.surface.ptomodel",
+        function="generate_ptomodel_output",
+        purpose="Bridge extracted surface information into modeling-task inputs.",
+    ),
+    SurfaceToolSpec(
+        name="run_surface_pipeline",
+        category="workflow",
+        module="paperread.surface.run_surface_pipeline",
+        function="run_pipeline",
+        purpose="Run ingestion, extraction, normalization, and ptomodel generation together.",
+    ),
+    SurfaceToolSpec(
+        name="collect_experience",
+        category="experience",
+        module="paperread.surface.collect_experience",
+        function="collect_experience",
+        purpose="Aggregate known-useful and unknown terms into reusable material-class experience.",
+    ),
+    SurfaceToolSpec(
+        name="build_surface_parameter_registry",
+        category="registry",
+        module="paperread.surface.parameter_registry",
+        function="build_surface_parameter_registry",
+        purpose="Rebuild the reusable parameter vocabulary from canonical material-class store.",
+    ),
+    SurfaceToolSpec(
+        name="summarize_surface_outputs",
+        category="reporting",
+        module="paperread.surface.summarize_surface_outputs",
+        function="write_summary",
+        purpose="Write a human-readable summary of conditions and relations.",
+    ),
+]
+
+
+SURFACE_TOOL_CATEGORIES = [
+    "ingestion",
+    "extraction",
+    "normalization",
+    "planning",
+    "workflow",
+    "experience",
+    "registry",
+    "reporting",
+]
+
+
+def list_surface_tools(category: str | None = None) -> list[SurfaceToolSpec]:
+    if not category:
+        return list(SURFACE_TOOL_SPECS)
+    normalized = category.strip().casefold()
+    return [spec for spec in SURFACE_TOOL_SPECS if spec.category.casefold() == normalized]
+
+
+def render_surface_tool_catalog(category: str | None = None) -> str:
+    specs = list_surface_tools(category)
+    lines = ["Surface tooling catalog", ""]
+    for group in SURFACE_TOOL_CATEGORIES:
+        grouped = [spec for spec in specs if spec.category == group]
+        if not grouped:
+            continue
+        lines.append(f"## {group}")
+        lines.append("")
+        for spec in grouped:
+            lines.append(f"- {spec.name}: {spec.purpose}")
+        lines.append("")
+    return "\n".join(lines).strip() + "\n"
+

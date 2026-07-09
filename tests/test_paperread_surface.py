@@ -11,6 +11,7 @@ import pandas as pd
 from paperread.surface.extract_surface_conditions import extract_conditions
 from paperread.surface.extract_surface_relations import extract_relations
 from paperread.surface.collect_experience import collect_experience
+from paperread.surface.catalog import list_surface_tools, render_surface_tool_catalog
 from paperread.surface.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
 from paperread.surface.ptomodel import build_ptomodel_payload, generate_ptomodel_output
 from paperread.surface.run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
@@ -42,6 +43,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread.surface.ingest_pdf",
             "paperread.surface.run_surface_pipeline",
             "paperread.surface.ptomodel",
+            "paperread.surface.cli",
         ]
         for module in modules:
             with self.subTest(module=module):
@@ -57,6 +59,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "paperread/surface/ingest_pdf.py",
             "paperread/surface/run_surface_pipeline.py",
             "paperread/surface/ptomodel.py",
+            "paperread/surface/cli.py",
         ]
         for script in scripts:
             with self.subTest(script=script):
@@ -591,6 +594,17 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertTrue(is_known_surface_experience_term("carbon doping"))
         self.assertTrue(is_known_surface_experience_term("five-coordinated Cr5c"))
         self.assertTrue(is_known_surface_experience_term("three-coordinated Cr3c"))
+
+    def test_surface_tool_catalog_groups_tools(self):
+        from paperread.surface.catalog import SURFACE_TOOL_CATEGORIES
+
+        self.assertIn("ingestion", SURFACE_TOOL_CATEGORIES)
+        self.assertIn("workflow", SURFACE_TOOL_CATEGORIES)
+        self.assertGreaterEqual(len(list_surface_tools("extraction")), 2)
+        catalog_text = render_surface_tool_catalog()
+        self.assertIn("Surface tooling catalog", catalog_text)
+        self.assertIn("ingestion", catalog_text)
+        self.assertIn("workflow", catalog_text)
 
 
 def json_dumps_for_test(payload: dict) -> str:

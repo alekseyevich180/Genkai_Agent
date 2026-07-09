@@ -16,6 +16,14 @@ Use `run_surface_pipeline.py` when the target is a surface-material reaction
 paper and you want one pass that produces both tabular conditions and
 structured relations. The input can be either JSON text records or a PDF file.
 
+For a single consolidated command line entrypoint, use:
+
+```bash
+python -m paperread.surface --help
+python -m paperread.surface list-tools
+python -m paperread.surface run your_surface_paper.pdf --output-dir paperread/surface/output
+```
+
 ```bash
 python -m paperread.surface.run_surface_pipeline \
   paperread/surface/examples/sample_surface_input.json \
@@ -69,6 +77,11 @@ point when API calls fail, rate limit, or need to be retried later.
   - Automatically generates `*_ptomodel.json` after the extraction stage
   - By default keeps only final outputs to avoid duplicate files
   - Can also collect paperread experience with `--collect-experience`
+
+- `cli.py`
+  - Category-based unified command line entrypoint
+  - `list-tools` shows ingestion / extraction / normalization / planning / workflow / experience / registry / reporting groups
+  - `run` provides the same end-to-end pipeline behind one stable command
 
 - `ptomodel.py`
   - Input:
