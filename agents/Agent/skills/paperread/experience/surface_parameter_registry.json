@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-09T06:35:45.196671+00:00",
+  "generated_at": "2026-07-09T06:45:52.480753+00:00",
   "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
   "common": {
     "material_classes": [
@@ -88,6 +88,17 @@
       "normal spinel",
       "perovskite",
       "anatase"
+    ],
+    "surface_site_keywords": [
+      "carbon cloth, graphene-like carbon |  | ",
+      "oxygen vacancy |  | ",
+      "LDH, FeOOH |  | Fe, NiCoOOH",
+      "Pt(111), CuO | Pt(111), (0112̅) | Co, Fe",
+      "monolayer, monometallic cluster |  | Ag@Sb, Pt@Sb",
+      "Interface, Cr2O3(001) |  | Cr3c, Mx-Ny-C",
+      "TiO2, ZrO2 | (0001), (001) | Co, Co3+",
+      "Sn SAs/G |  | Sn, Ni atom",
+      "Au/NiFe LDH surface, BP/Au surface |  | Ag, Au"
     ]
   },
   "class_profiles": {
@@ -104,6 +115,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -131,6 +143,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -186,6 +199,7 @@
         "Ru"
       ],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [
         "electrocatalysis",
         "electrocatalytic",
@@ -348,6 +362,21 @@
         "carbon doping"
       ],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "carbon cloth",
+            "graphene-like carbon",
+            "carbon supported Ir",
+            "carbon supported Pt"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [],
+          "adsorption_site_terms": [],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
+      ],
       "top_reaction_terms": [
         "OER"
       ],
@@ -518,6 +547,18 @@
         "Sr-doped"
       ],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "oxygen vacancy"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [],
+          "adsorption_site_terms": [],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
+      ],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -601,6 +642,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -684,6 +726,31 @@
         "Co3+",
         "Co3+δ",
         "Fe atoms in NiFe oxyhydroxide"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "LDH",
+            "FeOOH",
+            "NiOOH",
+            "β-CoOOH(0112̅)"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [
+            "Fe",
+            "NiCoOOH",
+            "Co2+",
+            "Co3+"
+          ],
+          "adsorption_site_terms": [
+            "Fe",
+            "NiCoOOH",
+            "Co2+",
+            "Co3+"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "electrocatalysis",
@@ -1099,6 +1166,36 @@
         "Co site",
         "Co2+",
         "Fe3+"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "Pt(111)",
+            "CuO",
+            "Au(100)",
+            "Au(111)"
+          ],
+          "facet_terms": [
+            "Pt(111)",
+            "(0112̅)",
+            "(100)",
+            "Au(100)"
+          ],
+          "active_site_terms": [
+            "Co",
+            "Fe",
+            "Ag",
+            "Au"
+          ],
+          "adsorption_site_terms": [
+            "Co",
+            "Fe",
+            "Ag",
+            "Au"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "OER",
@@ -2246,6 +2343,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -2317,6 +2415,28 @@
         "Ag@Sb",
         "Pt@Sb",
         "TM@Sb"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "monolayer",
+            "monometallic cluster",
+            "Sb monolayer"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [
+            "Ag@Sb",
+            "Pt@Sb",
+            "TM@Sb"
+          ],
+          "adsorption_site_terms": [
+            "Ag@Sb",
+            "Pt@Sb",
+            "TM@Sb"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "HER",
@@ -2583,6 +2703,30 @@
         "Cr5c",
         "Mn (II) sites",
         "Mn (III) sites"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "Interface",
+            "Cr2O3(001)",
+            "Cr2O3(012)"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [
+            "Cr3c",
+            "Mx-Ny-C",
+            "active sites",
+            "Cr5c"
+          ],
+          "adsorption_site_terms": [
+            "Cr3c",
+            "Mx-Ny-C",
+            "active sites",
+            "Cr5c"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "Electrocatalysis",
@@ -3025,6 +3169,36 @@
         "CoOct (+4)",
         "Fe atoms in NiFe oxyhydroxide",
         "Ni reaction sites"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "TiO2",
+            "ZrO2",
+            "CeO2",
+            "Anatase TiO2"
+          ],
+          "facet_terms": [
+            "(0001)",
+            "(001)",
+            "(0112̅)",
+            "(101)"
+          ],
+          "active_site_terms": [
+            "Co",
+            "Co3+",
+            "Ag",
+            "Au"
+          ],
+          "adsorption_site_terms": [
+            "Co",
+            "Co3+",
+            "Ag",
+            "Au"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "OER",
@@ -3866,6 +4040,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -3924,6 +4099,7 @@
         "Ru"
       ],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [
         "electrocatalysis",
         "fuel cells",
@@ -4027,6 +4203,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -4088,6 +4265,24 @@
       "top_active_site_terms": [
         "Sn",
         "Ni atom"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "Sn SAs/G"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [
+            "Sn",
+            "Ni atom"
+          ],
+          "adsorption_site_terms": [
+            "Sn",
+            "Ni atom"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "Electrocatalytic OER",
@@ -4185,6 +4380,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [
         "HER",
         "OER",
@@ -4325,6 +4521,31 @@
         "Sn",
         "NiCoOOH",
         "Rh2O3 sites"
+      ],
+      "top_surface_site_contexts": [
+        {
+          "surface_terms": [
+            "Au/NiFe LDH surface",
+            "BP/Au surface",
+            "carbon supported Ir",
+            "carbon supported Pt"
+          ],
+          "facet_terms": [],
+          "active_site_terms": [
+            "Ag",
+            "Au",
+            "Sn",
+            "NiCoOOH"
+          ],
+          "adsorption_site_terms": [
+            "Ag",
+            "Au",
+            "Sn",
+            "NiCoOOH"
+          ],
+          "site_role_terms": [],
+          "relation": "surface-site association (derived from legacy profile)"
+        }
       ],
       "top_reaction_terms": [
         "OER",
@@ -4695,6 +4916,7 @@
       ],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {
@@ -4729,6 +4951,7 @@
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
+      "top_surface_site_contexts": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
       "profile": {

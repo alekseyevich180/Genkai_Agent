@@ -204,6 +204,9 @@ Run experience collection so repeated terms become statistics:
 - Collect material identity, element composition, material class, surface,
   facet, termination, defect, dopant, active site, adsorbate, coverage,
   cluster, single atom, modifier, reaction, and modeling task keywords.
+- Keep surface-site associations explicit when a paper ties a facet to a site
+  role; metal surfaces often use top/bridge/hollow language, while oxides often
+  use facet plus active-site wording.
 - Store only compact source/context examples; the goal is keyword statistics
   and reusable parameter cues, not a long source list.
 - Send unfamiliar or unmapped terms to this skill's unknown-term experience
@@ -225,15 +228,17 @@ Class-specific reuse rules:
   electrolyte concentrations, and adsorbed species notation such as `*OH`,
   `*O`, `*OOH`, `Hads`, and `OHads`.
 - `supported_catalysts`: track support, loaded species, loading amount,
-  nanoparticle or cluster identity, and exposed support facet.
+  nanoparticle or cluster identity, exposed support facet, and any adsorption
+  site naming that reuses the support surface.
 - `carbon_materials`: track 2D carbon host, doped element, N/O/S coordination,
   vacancy or defect motif, and single-atom center.
 - `metals_alloys`: track alloy elements, high-entropy composition, element
-  ratios, and exposed crystal face.
+  ratios, exposed crystal face, and top/bridge/hollow adsorption-site cues.
 - `oxides`: track oxide formula, polymorph, space group, surface facet,
-  termination, oxygen vacancy, and dopant.
+  termination, oxygen vacancy, dopant, and active-site wording tied to the
+  facet.
 - `perovskites_spinels`: track A/B-site species, substitution, oxygen vacancy,
-  space group, and exposed facet.
+  space group, exposed facet, and site/facet coupling if the paper names both.
 
 When enough repeated evidence exists, use the Agent graph commands to turn
 working memory into durable knowledge:

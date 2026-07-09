@@ -7,6 +7,7 @@
 - Coordination keywords: N/A
 - Loading keywords: N/A
 - Crystal structure keywords: rutile, spinel, normal spinel, perovskite, anatase
+- Surface-site associations: carbon cloth, graphene-like carbon |  | , oxygen vacancy |  | , LDH, FeOOH |  | Fe, NiCoOOH, Pt(111), CuO | Pt(111), (0112̅) | Co, Fe, monolayer, monometallic cluster |  | Ag@Sb, Pt@Sb, Interface, Cr2O3(001) |  | Cr3c, Mx-Ny-C, TiO2, ZrO2 | (0001), (001) | Co, Co3+, Sn SAs/G |  | Sn, Ni atom, Au/NiFe LDH surface, BP/Au surface |  | Ag, Au
 
 ## battery_electrode_materials
 
@@ -19,6 +20,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -33,6 +35,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -47,6 +50,7 @@
 - Top states: N/A
 - Top dopants: lattice strain, Lattice-Strain, Ru
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: electrocatalysis, electrocatalytic, Catalytic Oxidation, catalytic remediation technologies, fuel cells, Shape-dependent electrocatalysis
 - Top loadings: N/A
 
@@ -61,6 +65,7 @@
 - Top states: N/A
 - Top dopants: Ag, carbon doping
 - Top active sites: N/A
+- Surface-site associations: surface=carbon cloth, graphene-like carbon | facet=N/A | active=N/A | adsorption=N/A
 - Top reactions: OER
 - Top loadings: N/A
 
@@ -75,6 +80,7 @@
 - Top states: oxygen vacancy, point defects, Sb vacancy, Defective, defective structure
 - Top dopants: Mo-Doped, of doped, co-doped, Fe-doped, N-doped, Ni-doped, Sn doped, Sr-doped
 - Top active sites: N/A
+- Surface-site associations: surface=oxygen vacancy | facet=N/A | active=N/A | adsorption=N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -89,6 +95,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -103,6 +110,7 @@
 - Top states: N/A
 - Top dopants: Cr, FeOOH, Ag, Silver, W, sAu
 - Top active sites: Fe, NiCoOOH, Co2+, Co3+, Co3+δ, Fe atoms in NiFe oxyhydroxide
+- Surface-site associations: surface=LDH, FeOOH | facet=N/A | active=Fe, NiCoOOH | adsorption=Fe, NiCoOOH
 - Top reactions: electrocatalysis, OER, oxygen evolution reaction, electrocatalysts, Electrochemical, energy conversion technologies
 - Top loadings: N/A
 
@@ -117,6 +125,7 @@
 - Top states: kinks, point defects, steps, A-layer (tetrahedral Co termination), B-layer (octahedral Co and O ions), Defective, defective structure, five-coordinated Cr5c, octahedral Co and O ions (B-layer), tetrahedral Co termination (A-layer)
 - Top dopants: Co, Ni, Fe, Ag, Cu, O, Ru, Au Nanoparticles, Bi, Cd
 - Top active sites: Co, Fe, Ag, Au, Co3+, Rh2O3 sites, bridging Pd-Pd sites, Co site, Co2+, Fe3+
+- Surface-site associations: surface=Pt(111), CuO | facet=Pt(111), (0112̅) | active=Co, Fe | adsorption=Co, Fe
 - Top reactions: OER, CORR, Electrocatalysis, oxygen evolution reaction, water splitting, Electrochemical, hydrogen production, phase evolution, co oxidation, co2 reduction
 - Top loadings: N/A
 
@@ -131,6 +140,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -145,6 +155,7 @@
 - Top states: N/A
 - Top dopants: Ag, Cd, Ir, Pd, Pt, Rh, Co, Cr, Cu, Fe
 - Top active sites: Ag@Sb, Pt@Sb, TM@Sb
+- Surface-site associations: surface=monolayer, monometallic cluster | facet=N/A | active=Ag@Sb, Pt@Sb | adsorption=Ag@Sb, Pt@Sb
 - Top reactions: HER, OER, ORR, Electrocatalysis, energy conversion, energy storage
 - Top loadings: N/A
 
@@ -159,6 +170,7 @@
 - Top states: N/A
 - Top dopants: N
 - Top active sites: Cr3c, Mx-Ny-C, active sites, Cr5c, Mn (II) sites, Mn (III) sites
+- Surface-site associations: surface=Interface, Cr2O3(001) | facet=N/A | active=Cr3c, Mx-Ny-C | adsorption=Cr3c, Mx-Ny-C
 - Top reactions: Electrocatalysis, clean energy technologies, fuel cells, fuel generation, green hydrogen production, hydrogen evolution reaction, NO oxidation, oxygen evolution reaction, oxygen reduction reaction
 - Top loadings: N/A
 
@@ -173,6 +185,7 @@
 - Top states: kinks, oxygen vacancies, steps
 - Top dopants: Ni, Cr, Fe, FeOOH, Bismuth (Bi), Silver, W, Bismuth, C
 - Top active sites: Co, Co3+, Ag, Au, Co2+, Co site, Co3+δ, CoOct (+4), Fe atoms in NiFe oxyhydroxide, Ni reaction sites
+- Surface-site associations: surface=TiO2, ZrO2 | facet=(0001), (001) | active=Co, Co3+ | adsorption=Co, Co3+
 - Top reactions: OER, oxygen evolution reaction, electrocatalysis, co2 reduction, Adsorption Test, breath analyzers, Catalyst Preparation, electrocatalysts, electrocatalytic oxygen evolution reaction, Electrochemical
 - Top loadings: N/A
 
@@ -187,6 +200,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -201,6 +215,7 @@
 - Top states: N/A
 - Top dopants: Ru
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: electrocatalysis, fuel cells, hydrogen evolution reaction (HER), hydrogen generation, oxygen evolution reaction (OER)
 - Top loadings: N/A
 
@@ -215,6 +230,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -229,6 +245,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: Sn, Ni atom
+- Surface-site associations: surface=Sn SAs/G | facet=N/A | active=Sn, Ni atom | adsorption=Sn, Ni atom
 - Top reactions: Electrocatalytic OER, Electrochemical
 - Top loadings: N/A
 
@@ -243,6 +260,7 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: HER, OER, ORR, Reaction Mechanism, Electrocatalysis, Zn–Air Batteries
 - Top loadings: N/A
 
@@ -257,6 +275,7 @@
 - Top states: N/A
 - Top dopants: Ag, Mo, Pb, Metal-Support Interactions
 - Top active sites: Ag, Au, Sn, NiCoOOH, Rh2O3 sites
+- Surface-site associations: surface=Au/NiFe LDH surface, BP/Au surface | facet=N/A | active=Ag, Au | adsorption=Ag, Au
 - Top reactions: OER, HER, Electrocatalysis, Electrochemical, ORR, oxygen reduction reaction, Catalyst Preparation, HOR, Kinetic Characterization, Oxygen Reduction
 - Top loadings: N/A
 
@@ -271,6 +290,7 @@
 - Top states: O-terminated
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A
 
@@ -285,5 +305,6 @@
 - Top states: N/A
 - Top dopants: N/A
 - Top active sites: N/A
+- Surface-site associations: N/A
 - Top reactions: N/A
 - Top loadings: N/A

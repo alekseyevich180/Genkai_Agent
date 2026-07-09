@@ -160,6 +160,10 @@ surface-modeling direction:
     buckets such as materials, surface/support, states, dopants/modifiers,
     active sites, adsorbates/reactants, coverage, clusters/single atoms, and
     reactions. They intentionally avoid long per-paper source lists.
+  - Surface-site associations are tracked explicitly when the paper links a
+    facet to an adsorption site or active site. On metal surfaces this usually
+    means top/bridge/hollow style descriptors; on oxides it usually means facet
+    plus active-site or coordination wording.
   - The canonical experience store can be converted into a reusable parameter
     registry so later extractions can reuse previously learned material,
     loading, coordination, support, and reaction vocabulary.

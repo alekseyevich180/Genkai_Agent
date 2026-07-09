@@ -208,6 +208,17 @@ def build_summary_text(table_csv: str, relations_jsonl: str) -> str:
     else:
         lines.append("  - 未提取")
 
+    site_context_lines = []
+    if surface_items and (active_sites or adsorption_sites):
+        site_context_lines.append(f"  - 表面: {', '.join(surfaces[:3] + facets[:3])}")
+        if active_sites:
+            site_context_lines.append(f"  - active site: {', '.join(active_sites[:3])}")
+        if adsorption_sites:
+            site_context_lines.append(f"  - adsorption site: {', '.join(adsorption_sites[:3])}")
+    if site_context_lines:
+        lines.append("- 表面-位点关联：")
+        lines.extend(site_context_lines)
+
     lines.append("- 团簇/单原子：")
     cluster_items = clusters + single_atoms
     if cluster_items:

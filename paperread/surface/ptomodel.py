@@ -156,6 +156,52 @@ def _infer_site_symbols(active_sites: list[str]) -> list[str]:
     return symbols
 
 
+def _infer_site_roles(*values: list[str]) -> list[str]:
+    joined = " ".join(item.lower() for group in values for item in group)
+    roles: list[str] = []
+    role_patterns = [
+        ("top", ("top", "ontop", "atop")),
+        ("bridge", ("bridge",)),
+        ("hollow", ("hollow",)),
+        ("three_fold", ("three-fold", "three fold", "3-fold", "fcc")),
+        ("four_fold", ("four-fold", "four fold", "4-fold")),
+        ("hcp", ("hcp",)),
+    ]
+    for label, tokens in role_patterns:
+        if any(token in joined for token in tokens):
+            roles.append(label)
+    return roles
+
+
+def _build_surface_site_contexts(
+    materials: list[str],
+    supports: list[str],
+    facets: list[str],
+    active_sites: list[str],
+    adsorption_sites: list[str],
+    surface_indices: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    surface_terms = [item for item in materials + supports if item]
+    facet_terms = [item for item in facets if item]
+    active_terms = [item for item in active_sites if item]
+    adsorption_terms = [item for item in adsorption_sites if item]
+    roles = _infer_site_roles(active_terms, adsorption_terms)
+    contexts: list[dict[str, Any]] = []
+    if surface_terms or facet_terms or active_terms or adsorption_terms or surface_indices:
+        contexts.append(
+            {
+                "surface_terms": surface_terms[:8],
+                "facet_terms": facet_terms[:8],
+                "active_site_terms": active_terms[:8],
+                "adsorption_site_terms": adsorption_terms[:8],
+                "site_role_terms": roles,
+                "surface_indices": surface_indices[:8],
+                "relation": "surface-site-facet association",
+            }
+        )
+    return contexts
+
+
 def _pick_reaction_type(extraction: dict[str, Any], table_row: dict[str, str] | None) -> str | None:
     table_reaction = _clean_scalar((table_row or {}).get("Reaction Type"))
     application_reaction = _first_nonempty(*_flatten_strings(extraction.get("applications")))
@@ -479,6 +525,7 @@ def build_ptomodel_payload(
             for raw, surface_index in zip(raw_facets, normalized_surface_indices)
         ]
         cluster_entries = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
+        adsorption_sites = _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site"))
         cluster_species = [
             {"raw": item, "normalized_species": species}
             for item in cluster_entries
@@ -504,6 +551,14 @@ def build_ptomodel_payload(
             "primary_surface_or_support": _first_nonempty(*supports),
             "facet_set": normalized_facets,
             "loaded_species": [item["normalized_species"] for item in cluster_species],
+            "surface_site_contexts": _build_surface_site_contexts(
+                materials,
+                supports,
+                raw_facets,
+                _to_list(extraction.get("active_sites")) or _to_list((table_row or {}).get("Active Site")),
+                adsorption_sites,
+                [surface_index for surface_index in normalized_surface_indices if surface_index],
+            ),
             "reaction_family": (
                 [_normalize_reaction(reaction_type)]
                 if reaction_type
@@ -549,10 +604,11 @@ def build_ptomodel_payload(
                         else []
                     ),
                     "adsorbates": _to_list(extraction.get("adsorbates")) or _to_list((table_row or {}).get("Adsorbate/Reactant")),
-                    "adsorption_sites": _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site")),
+                    "adsorption_sites": adsorption_sites,
                     "coverage": _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage")),
                     "defects": _to_list(extraction.get("defects")) or _to_list((table_row or {}).get("Defect")),
                     "active_sites": _to_list(extraction.get("active_sites")) or _to_list((table_row or {}).get("Active Site")),
+                    "surface_site_contexts": normalized_mapping["surface_site_contexts"],
                     "modeling_keywords": modeling_keywords,
                 },
                 "normalized_mapping": normalized_mapping,

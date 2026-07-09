@@ -68,6 +68,47 @@ def _top_crystal_structure_terms(items: list[dict[str, Any]], limit: int = 12) -
     return structures
 
 
+def _top_surface_site_contexts(items: list[dict[str, Any]], limit: int = 6) -> list[dict[str, Any]]:
+    contexts = []
+    for item in items[:limit]:
+        if not isinstance(item, dict):
+            continue
+        contexts.append(
+            {
+                "surface_terms": item.get("surface_terms", [])[:4],
+                "facet_terms": item.get("facet_terms", [])[:4],
+                "active_site_terms": item.get("active_site_terms", [])[:4],
+                "adsorption_site_terms": item.get("adsorption_site_terms", [])[:4],
+                "site_role_terms": item.get("site_role_terms", [])[:4],
+                "relation": item.get("relation"),
+            }
+        )
+    return contexts
+
+
+def _fallback_surface_site_contexts(profile: dict[str, Any]) -> list[dict[str, Any]]:
+    surface_terms = list(profile.get("top_surface_terms", [])[:4])
+    facet_terms = [
+        item["term"]
+        for item in profile.get("top_surface_index_mappings", [])[:4]
+        if item.get("term")
+    ]
+    active_site_terms = list(profile.get("top_active_site_terms", [])[:4])
+    adsorption_site_terms = list(profile.get("top_active_site_terms", [])[:4])
+    if not (surface_terms or facet_terms or active_site_terms or adsorption_site_terms):
+        return []
+    return [
+        {
+            "surface_terms": surface_terms,
+            "facet_terms": facet_terms,
+            "active_site_terms": active_site_terms,
+            "adsorption_site_terms": adsorption_site_terms,
+            "site_role_terms": [],
+            "relation": "surface-site association (derived from legacy profile)",
+        }
+    ]
+
+
 def _load_material_class_payloads(material_class_dir: Path) -> dict[str, dict[str, Any]]:
     payloads: dict[str, dict[str, Any]] = {}
     if not material_class_dir.exists():
@@ -100,6 +141,7 @@ def build_surface_parameter_registry(
     common_coordination_terms: list[str] = []
     common_loading_terms: list[str] = []
     common_crystal_structure_terms: list[str] = []
+    common_surface_site_relations: list[str] = []
 
     def extend_unique(target: list[str], values: list[str], limit: int = 20) -> None:
         for value in values:
@@ -112,6 +154,13 @@ def build_surface_parameter_registry(
         profile = payload.get("class_profile", {})
         descriptors = payload.get("material_descriptors", {})
         inventory = payload.get("keyword_inventory", {})
+        surface_site_contexts = profile.get("surface_site_contexts") or _fallback_surface_site_contexts(
+            {
+                "top_surface_terms": _top_terms(inventory.get("supports_surfaces", []), limit=10),
+                "top_surface_index_mappings": profile.get("surface_index_mappings", []),
+                "top_active_site_terms": _top_terms(inventory.get("active_sites", []), limit=10),
+            }
+        )
         class_profiles[material_class] = {
             "descriptor_schema": profile.get("descriptor_schema", "generic_material_profile"),
             "top_elements": _top_terms(descriptors.get("elements", []), limit=10),
@@ -123,6 +172,7 @@ def build_surface_parameter_registry(
             "top_state_terms": _top_terms(inventory.get("surface_states", []), limit=10),
             "top_dopant_terms": _top_terms(inventory.get("dopants_modifiers", []), limit=10),
             "top_active_site_terms": _top_terms(inventory.get("active_sites", []), limit=10),
+            "top_surface_site_contexts": _top_surface_site_contexts(surface_site_contexts, limit=6),
             "top_reaction_terms": _top_terms(profile.get("reaction_families", []), limit=10),
             "top_loading_terms": _top_terms(descriptors.get("approx_loadings", []), limit=10),
             "profile": profile,
@@ -134,6 +184,14 @@ def build_surface_parameter_registry(
         extend_unique(common_coordination_terms, _top_terms(profile.get("coordination_environments", []), limit=10))
         extend_unique(common_loading_terms, _top_terms(descriptors.get("approx_loadings", []), limit=10))
         extend_unique(common_crystal_structure_terms, _top_terms(profile.get("crystal_structure_terms", []), limit=10))
+        extend_unique(
+            common_surface_site_relations,
+            [
+                f"{', '.join(item.get('surface_terms', [])[:2])} | {', '.join(item.get('facet_terms', [])[:2])} | {', '.join(item.get('active_site_terms', [])[:2])}"
+                for item in surface_site_contexts
+                if isinstance(item, dict)
+            ],
+        )
 
     registry = {
         "schema_version": "1.0",
@@ -147,6 +205,7 @@ def build_surface_parameter_registry(
             "coordination_keywords": common_coordination_terms,
             "loading_keywords": common_loading_terms,
             "crystal_structure_keywords": common_crystal_structure_terms,
+            "surface_site_keywords": common_surface_site_relations,
         },
         "class_profiles": class_profiles,
     }
@@ -164,6 +223,7 @@ def build_surface_parameter_registry(
         f"- Coordination keywords: {', '.join(common_coordination_terms[:12]) or 'N/A'}",
         f"- Loading keywords: {', '.join(common_loading_terms[:12]) or 'N/A'}",
         f"- Crystal structure keywords: {', '.join(common_crystal_structure_terms[:12]) or 'N/A'}",
+        f"- Surface-site associations: {', '.join(common_surface_site_relations[:12]) or 'N/A'}",
         "",
     ]
     for material_class, profile in sorted(class_profiles.items()):
@@ -194,6 +254,17 @@ def build_surface_parameter_registry(
                 f"- Top states: {', '.join(profile['top_state_terms']) or 'N/A'}",
                 f"- Top dopants: {', '.join(profile['top_dopant_terms']) or 'N/A'}",
                 f"- Top active sites: {', '.join(profile['top_active_site_terms']) or 'N/A'}",
+                "- Surface-site associations: "
+                + (
+                    "; ".join(
+                        f"surface={', '.join(item.get('surface_terms', [])[:2]) or 'N/A'}"
+                        f" | facet={', '.join(item.get('facet_terms', [])[:2]) or 'N/A'}"
+                        f" | active={', '.join(item.get('active_site_terms', [])[:2]) or 'N/A'}"
+                        f" | adsorption={', '.join(item.get('adsorption_site_terms', [])[:2]) or 'N/A'}"
+                        for item in profile.get("top_surface_site_contexts", [])
+                    )
+                    or "N/A"
+                ),
                 f"- Top reactions: {', '.join(profile['top_reaction_terms']) or 'N/A'}",
                 f"- Top loadings: {', '.join(profile['top_loading_terms']) or 'N/A'}",
                 "",
@@ -232,6 +303,8 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
         lines.append(f"- Common loading expressions: {', '.join(common['loading_keywords'][:limit])}")
     if common.get("crystal_structure_keywords"):
         lines.append(f"- Common crystal/mineral structure keywords: {', '.join(common['crystal_structure_keywords'][:limit])}")
+    if common.get("surface_site_keywords"):
+        lines.append(f"- Common surface-site associations: {', '.join(common['surface_site_keywords'][:limit])}")
 
     for material_class in (
         "supported_catalysts",
@@ -265,6 +338,12 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
             hints.append(f"dopants {', '.join(profile['top_dopant_terms'][:4])}")
         if profile.get("top_active_site_terms"):
             hints.append(f"active sites {', '.join(profile['top_active_site_terms'][:4])}")
+        if profile.get("top_surface_site_contexts"):
+            context_terms = [
+                f"{', '.join(item.get('surface_terms', [])[:2])} -> {', '.join(item.get('active_site_terms', [])[:2]) or ', '.join(item.get('adsorption_site_terms', [])[:2])}"
+                for item in profile["top_surface_site_contexts"][:4]
+            ]
+            hints.append(f"site associations {', '.join(context_terms)}")
         if profile.get("top_reaction_terms"):
             hints.append(f"reactions {', '.join(profile['top_reaction_terms'][:4])}")
         if hints:

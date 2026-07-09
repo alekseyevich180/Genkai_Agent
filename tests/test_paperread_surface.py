@@ -361,6 +361,9 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertEqual(doc_payload["normalized_mapping"]["reaction_family"], ["CO oxidation"])
             self.assertIn("supported_catalysts", doc_payload["selected_information"]["material_classes"])
             self.assertIn("oxides", doc_payload["selected_information"]["material_classes"])
+            self.assertIn("surface_site_contexts", doc_payload["normalized_mapping"])
+            self.assertTrue(doc_payload["normalized_mapping"]["surface_site_contexts"])
+            self.assertIn("site_role_terms", doc_payload["normalized_mapping"]["surface_site_contexts"][0])
             self.assertIn("vacancy_landscape", doc_payload["task_inputs"])
             self.assertEqual(doc_payload["task_inputs"]["adsorbate_landscape"]["coverage"], ["0.25 ML CO"])
             self.assertEqual(
