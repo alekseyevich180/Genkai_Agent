@@ -1,6 +1,8 @@
 
 # Genkai: An agent for materials, chemistry, and simulation.
 
+![Genkai logo theme](assets/images/genkai-logo-only-theme-large.png)
+
 
 ## Agent
 
