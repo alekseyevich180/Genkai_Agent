@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "carbon_materials",
-  "updated_at": "2026-07-06T15:48:30.308383+00:00",
+  "updated_at": "2026-07-09T04:57:34.792237+00:00",
   "summary": {
     "terms": 21,
     "known_useful": 12,
@@ -463,12 +463,7 @@
       "fields": [
         "Material"
       ],
-      "count": 18,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 18
     },
     {
       "term": "g-C3N4",
@@ -480,12 +475,7 @@
         "Modeling Keywords",
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Ag/g-C3N4",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 4
     },
     {
       "term": "Ag",
@@ -495,10 +485,7 @@
         "Composition",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "Ag/g-C3N4",
@@ -508,10 +495,7 @@
         "Material",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "carbon cloth",
@@ -521,11 +505,7 @@
         "surfaces",
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "NiCo LDH/CC"
-      ]
+      "count": 2
     },
     {
       "term": "carbon doping",
@@ -535,11 +515,7 @@
         "modeling_keywords",
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Controlled Carbon Doping in Anatase TiO2 (101) Facets: Superior Trace‐Level Ethanol Gas Sensor Performance and Adsorption Kinetics",
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol"
-      ]
+      "count": 2
     },
     {
       "term": "graphene-like carbon",
@@ -549,11 +525,7 @@
         "materials",
         "Surface/Support"
       ],
-      "count": 2,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction",
-        "Ni-O-G SACs"
-      ]
+      "count": 2
     },
     {
       "term": "OER",
@@ -563,10 +535,7 @@
         "Reaction Type",
         "Modeling Keywords"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 2
     },
     {
       "term": "carbon",
@@ -575,10 +544,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ir",
@@ -587,10 +553,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Pt",
@@ -599,10 +562,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "carbon supported Ru",
@@ -611,10 +571,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "cs3003098 1..8"
-      ]
+      "count": 1
     },
     {
       "term": "Cluster",
@@ -623,10 +580,7 @@
       "fields": [
         "Cluster/Single Atom"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     },
     {
       "term": "g-C3N4 surface",
@@ -635,10 +589,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER"
-      ]
+      "count": 1
     },
     {
       "term": "Graphene",
@@ -647,10 +598,7 @@
       "fields": [
         "Surface/Support"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Sn SAs/G-Na"
-      ]
+      "count": 1
     },
     {
       "term": "Graphene (G)",
@@ -659,10 +607,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "graphene plane",
@@ -671,10 +616,7 @@
       "fields": [
         "adsorption_sites"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     },
     {
       "term": "graphene-like carbon surface",
@@ -683,10 +625,7 @@
       "fields": [
         "surfaces"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "hydrocarbons",
@@ -695,10 +634,7 @@
       "fields": [
         "products"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Combining theory and experiment in electrocatalysis: Insights into materials design"
-      ]
+      "count": 1
     },
     {
       "term": "nitrogen-doped carbon",
@@ -707,10 +643,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "PEC",
@@ -719,10 +652,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     }
   ]
 }

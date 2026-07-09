@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "other_inorganic_materials",
-  "updated_at": "2026-07-08T04:31:23.563843+00:00",
+  "updated_at": "2026-07-09T05:13:19.487859+00:00",
   "summary": {
     "terms": 53,
-    "known_useful": 33,
-    "unknown": 20
+    "known_useful": 35,
+    "unknown": 18
   },
   "keyword_inventory": {
     "active_sites": [
@@ -332,14 +332,14 @@
       {
         "term": "Cr2O3(001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Cr2O3(012)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ]
   },
@@ -759,6 +759,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": [
       {
@@ -978,8 +979,8 @@
     },
     {
       "term": "Cr2O3(001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -987,8 +988,8 @@
     },
     {
       "term": "Cr2O3(012)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],

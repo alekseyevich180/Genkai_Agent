@@ -30,6 +30,44 @@ def _top_terms(items: list[dict[str, Any]], limit: int = 12) -> list[str]:
     ]
 
 
+def _top_surface_index_mappings(items: list[dict[str, Any]], limit: int = 12) -> list[dict[str, Any]]:
+    mappings = []
+    for item in items[:limit]:
+        term = str(item.get("term", "")).strip()
+        software_facet = str(item.get("software_facet", "")).strip()
+        if not term or not software_facet:
+            continue
+        mappings.append(
+            {
+                "term": term,
+                "software_facet": software_facet,
+                "software_miller_index": item.get("software_miller_index", []),
+                "input_notation": item.get("input_notation"),
+                "crystal_system": item.get("crystal_system"),
+                "space_group": item.get("space_group"),
+                "warnings": item.get("warnings", []),
+            }
+        )
+    return mappings
+
+
+def _top_crystal_structure_terms(items: list[dict[str, Any]], limit: int = 12) -> list[dict[str, Any]]:
+    structures = []
+    for item in items[:limit]:
+        term = str(item.get("term", "")).strip()
+        if not term:
+            continue
+        structures.append(
+            {
+                "term": term,
+                "family": item.get("family"),
+                "crystal_system": item.get("crystal_system"),
+                "typical_space_group": item.get("typical_space_group"),
+            }
+        )
+    return structures
+
+
 def _load_material_class_payloads(material_class_dir: Path) -> dict[str, dict[str, Any]]:
     payloads: dict[str, dict[str, Any]] = {}
     if not material_class_dir.exists():
@@ -61,6 +99,7 @@ def build_surface_parameter_registry(
     common_support_terms: list[str] = []
     common_coordination_terms: list[str] = []
     common_loading_terms: list[str] = []
+    common_crystal_structure_terms: list[str] = []
 
     def extend_unique(target: list[str], values: list[str], limit: int = 20) -> None:
         for value in values:
@@ -79,6 +118,8 @@ def build_surface_parameter_registry(
             "top_element_sets": _top_terms(descriptors.get("element_sets", []), limit=10),
             "top_material_terms": _top_terms(inventory.get("materials", []), limit=10),
             "top_surface_terms": _top_terms(inventory.get("supports_surfaces", []), limit=10),
+            "top_surface_index_mappings": _top_surface_index_mappings(profile.get("surface_index_mappings", []), limit=10),
+            "top_crystal_structure_terms": _top_crystal_structure_terms(profile.get("crystal_structure_terms", []), limit=10),
             "top_state_terms": _top_terms(inventory.get("surface_states", []), limit=10),
             "top_dopant_terms": _top_terms(inventory.get("dopants_modifiers", []), limit=10),
             "top_active_site_terms": _top_terms(inventory.get("active_sites", []), limit=10),
@@ -92,6 +133,7 @@ def build_surface_parameter_registry(
         extend_unique(common_support_terms, _top_terms(profile.get("support_components", []), limit=10))
         extend_unique(common_coordination_terms, _top_terms(profile.get("coordination_environments", []), limit=10))
         extend_unique(common_loading_terms, _top_terms(descriptors.get("approx_loadings", []), limit=10))
+        extend_unique(common_crystal_structure_terms, _top_terms(profile.get("crystal_structure_terms", []), limit=10))
 
     registry = {
         "schema_version": "1.0",
@@ -104,6 +146,7 @@ def build_surface_parameter_registry(
             "support_keywords": common_support_terms,
             "coordination_keywords": common_coordination_terms,
             "loading_keywords": common_loading_terms,
+            "crystal_structure_keywords": common_crystal_structure_terms,
         },
         "class_profiles": class_profiles,
     }
@@ -120,6 +163,7 @@ def build_surface_parameter_registry(
         f"- Support keywords: {', '.join(common_support_terms[:12]) or 'N/A'}",
         f"- Coordination keywords: {', '.join(common_coordination_terms[:12]) or 'N/A'}",
         f"- Loading keywords: {', '.join(common_loading_terms[:12]) or 'N/A'}",
+        f"- Crystal structure keywords: {', '.join(common_crystal_structure_terms[:12]) or 'N/A'}",
         "",
     ]
     for material_class, profile in sorted(class_profiles.items()):
@@ -131,6 +175,22 @@ def build_surface_parameter_registry(
                 f"- Top elements: {', '.join(profile['top_elements']) or 'N/A'}",
                 f"- Top materials: {', '.join(profile['top_material_terms']) or 'N/A'}",
                 f"- Top surfaces: {', '.join(profile['top_surface_terms']) or 'N/A'}",
+                "- Crystal structures: "
+                + (
+                    ", ".join(
+                        f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'})"
+                        for item in profile["top_crystal_structure_terms"]
+                    )
+                    or "N/A"
+                ),
+                "- Surface index mappings: "
+                + (
+                    ", ".join(
+                        f"{item['term']} -> {item['software_facet']}"
+                        for item in profile["top_surface_index_mappings"]
+                    )
+                    or "N/A"
+                ),
                 f"- Top states: {', '.join(profile['top_state_terms']) or 'N/A'}",
                 f"- Top dopants: {', '.join(profile['top_dopant_terms']) or 'N/A'}",
                 f"- Top active sites: {', '.join(profile['top_active_site_terms']) or 'N/A'}",
@@ -170,6 +230,8 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
         lines.append(f"- Common elements: {', '.join(common['element_keywords'][:limit])}")
     if common.get("loading_keywords"):
         lines.append(f"- Common loading expressions: {', '.join(common['loading_keywords'][:limit])}")
+    if common.get("crystal_structure_keywords"):
+        lines.append(f"- Common crystal/mineral structure keywords: {', '.join(common['crystal_structure_keywords'][:limit])}")
 
     for material_class in (
         "supported_catalysts",
@@ -187,6 +249,18 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
             hints.append(f"materials {', '.join(profile['top_material_terms'][:4])}")
         if profile.get("top_surface_terms"):
             hints.append(f"surfaces {', '.join(profile['top_surface_terms'][:4])}")
+        if profile.get("top_crystal_structure_terms"):
+            structures = [
+                f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'})"
+                for item in profile["top_crystal_structure_terms"][:4]
+            ]
+            hints.append(f"crystal structures {', '.join(structures)}")
+        if profile.get("top_surface_index_mappings"):
+            mappings = [
+                f"{item['term']} -> {item['software_facet']}"
+                for item in profile["top_surface_index_mappings"][:4]
+            ]
+            hints.append(f"facet mappings {', '.join(mappings)}")
         if profile.get("top_dopant_terms"):
             hints.append(f"dopants {', '.join(profile['top_dopant_terms'][:4])}")
         if profile.get("top_active_site_terms"):

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-08T04:31:58.745905+00:00",
+  "generated_at": "2026-07-09T05:13:28.194131+00:00",
   "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
   "common": {
     "material_classes": [
@@ -81,7 +81,14 @@
       "NiFe LDH surface"
     ],
     "coordination_keywords": [],
-    "loading_keywords": []
+    "loading_keywords": [],
+    "crystal_structure_keywords": [
+      "rutile",
+      "spinel",
+      "normal spinel",
+      "perovskite",
+      "anatase"
+    ]
   },
   "class_profiles": {
     "battery_electrode_materials": {
@@ -92,6 +99,8 @@
         "battery_electrode_materials"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -106,6 +115,7 @@
             "count": 4
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": []
       }
@@ -116,12 +126,21 @@
       "top_element_sets": [],
       "top_material_terms": [],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_reaction_terms": [],
       "top_loading_terms": [],
-      "profile": {}
+      "profile": {
+        "descriptor_schema": "generic_material_profile",
+        "elements": [],
+        "components": [],
+        "crystal_structure_terms": [],
+        "surface_states": [],
+        "reaction_families": []
+      }
     },
     "carbides_mxenes": {
       "descriptor_schema": "generic_material_profile",
@@ -158,6 +177,8 @@
         "TiC"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "lattice strain",
@@ -252,6 +273,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -318,6 +340,8 @@
         "Graphene",
         "graphene-like carbon surface"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "Ag",
@@ -474,6 +498,8 @@
       "top_surface_terms": [
         "oxygen vacancy"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [
         "oxygen vacancy",
         "point defects",
@@ -536,6 +562,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [
           {
             "term": "oxygen vacancy",
@@ -569,6 +596,8 @@
         "halides"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -583,6 +612,7 @@
             "count": 3
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": []
       }
@@ -636,6 +666,8 @@
         "β-CoOOH(0001)",
         "β-CoOOH(101̅4)"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "Cr",
@@ -792,6 +824,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -870,6 +903,166 @@
         "NiOOH",
         "Pt(335)",
         "rutile TiO2"
+      ],
+      "top_surface_index_mappings": [
+        {
+          "term": "Pt(111)",
+          "software_facet": "(111)",
+          "software_miller_index": [
+            1,
+            1,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": null,
+          "space_group": null,
+          "warnings": []
+        },
+        {
+          "term": "(0112̅)",
+          "software_facet": "(012)",
+          "software_miller_index": [
+            0,
+            1,
+            2
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": [
+            "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+          ]
+        },
+        {
+          "term": "(100)",
+          "software_facet": "(100)",
+          "software_miller_index": [
+            1,
+            0,
+            0
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "Au(100)",
+          "software_facet": "(100)",
+          "software_miller_index": [
+            1,
+            0,
+            0
+          ],
+          "input_notation": "miller",
+          "crystal_system": null,
+          "space_group": null,
+          "warnings": []
+        },
+        {
+          "term": "Au(111)",
+          "software_facet": "(111)",
+          "software_miller_index": [
+            1,
+            1,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": null,
+          "space_group": null,
+          "warnings": []
+        },
+        {
+          "term": "(0001)",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(001)",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(101̅4)",
+          "software_facet": "(104)",
+          "software_miller_index": [
+            1,
+            0,
+            4
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(110)",
+          "software_facet": "(110)",
+          "software_miller_index": [
+            1,
+            1,
+            0
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(111)",
+          "software_facet": "(111)",
+          "software_miller_index": [
+            1,
+            1,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        }
+      ],
+      "top_crystal_structure_terms": [
+        {
+          "term": "rutile",
+          "family": "oxide polymorph",
+          "crystal_system": "tetragonal",
+          "typical_space_group": "P4_2/mnm (No. 136)"
+        },
+        {
+          "term": "spinel",
+          "family": "AB2O4 structure type",
+          "crystal_system": "cubic",
+          "typical_space_group": "Fd-3m (No. 227)"
+        },
+        {
+          "term": "normal spinel",
+          "family": "AB2O4 structure type",
+          "crystal_system": "cubic",
+          "typical_space_group": "Fd-3m (No. 227)"
+        },
+        {
+          "term": "perovskite",
+          "family": "ABO3 structure type",
+          "crystal_system": "structure-dependent",
+          "typical_space_group": "varies with distortion and composition"
+        }
       ],
       "top_state_terms": [
         "kinks",
@@ -1290,6 +1483,10 @@
             "count": 5
           },
           {
+            "term": "(0112̅)",
+            "count": 3
+          },
+          {
             "term": "(100)",
             "count": 3
           },
@@ -1310,6 +1507,10 @@
             "count": 2
           },
           {
+            "term": "(101̅4)",
+            "count": 2
+          },
+          {
             "term": "(110)",
             "count": 2
           },
@@ -1323,6 +1524,10 @@
           },
           {
             "term": "Pt(335)",
+            "count": 2
+          },
+          {
+            "term": "β-CoOOH(0112̅)",
             "count": 2
           },
           {
@@ -1352,18 +1557,550 @@
           {
             "term": "Co3O4(001)",
             "count": 1
+          }
+        ],
+        "surface_index_mappings": [
+          {
+            "term": "Pt(111)",
+            "count": 5,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "Pt",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "(0112̅)",
+            "count": 3,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              0,
+              1,
+              1,
+              -2
+            ],
+            "canonical_input_indices": [
+              0,
+              1,
+              -1,
+              2
+            ],
+            "software_miller_index": [
+              0,
+              1,
+              2
+            ],
+            "software_facet": "(012)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": [
+              "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+            ]
+          },
+          {
+            "term": "(100)",
+            "count": 3,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              0
+            ],
+            "software_facet": "(100)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "Au(100)",
+            "count": 3,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              0
+            ],
+            "software_facet": "(100)",
+            "material": "Au",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "Au(111)",
+            "count": 3,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "Au",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "(0001)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(001)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(101̅4)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              1,
+              0,
+              -1,
+              4
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              -1,
+              4
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              4
+            ],
+            "software_facet": "(104)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(110)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(111)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "Ni(111)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "Ni",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "Pt(335)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              3,
+              3,
+              5
+            ],
+            "canonical_input_indices": [
+              3,
+              3,
+              5
+            ],
+            "software_miller_index": [
+              3,
+              3,
+              5
+            ],
+            "software_facet": "(335)",
+            "material": "Pt",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "β-CoOOH(0112̅)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              0,
+              1,
+              1,
+              -2
+            ],
+            "canonical_input_indices": [
+              0,
+              1,
+              -1,
+              2
+            ],
+            "software_miller_index": [
+              0,
+              1,
+              2
+            ],
+            "software_facet": "(012)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": [
+              "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+            ]
+          },
+          {
+            "term": "(101)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              1
+            ],
+            "software_facet": "(101)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(112)-oriented surface of hausmannitene",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              2
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              2
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              2
+            ],
+            "software_facet": "(112)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "Ag(111)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "Ag",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "Co3O4(001)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
           },
           {
             "term": "Co3O4(001) surface",
-            "count": 1
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
           },
           {
             "term": "Co3O4(110)",
-            "count": 1
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
           },
           {
-            "term": "CoO surface",
-            "count": 1
+            "term": "Pt(111) nanofacets",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "Pt",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          }
+        ],
+        "crystal_structure_terms": [
+          {
+            "term": "rutile",
+            "count": 5,
+            "family": "oxide polymorph",
+            "crystal_system": "tetragonal",
+            "typical_space_group": "P4_2/mnm (No. 136)"
+          },
+          {
+            "term": "spinel",
+            "count": 4,
+            "family": "AB2O4 structure type",
+            "crystal_system": "cubic",
+            "typical_space_group": "Fd-3m (No. 227)"
+          },
+          {
+            "term": "normal spinel",
+            "count": 2,
+            "family": "AB2O4 structure type",
+            "crystal_system": "cubic",
+            "typical_space_group": "Fd-3m (No. 227)"
+          },
+          {
+            "term": "perovskite",
+            "count": 2,
+            "family": "ABO3 structure type",
+            "crystal_system": "structure-dependent",
+            "typical_space_group": "varies with distortion and composition"
           }
         ],
         "surface_states": [
@@ -1504,6 +2241,8 @@
         "mofs_coordination_polymers"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -1518,6 +2257,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": []
       }
@@ -1558,6 +2298,8 @@
         "monometallic cluster",
         "Sb monolayer"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "Ag",
@@ -1755,6 +2497,7 @@
             "count": 2
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -1827,6 +2570,8 @@
         "Cr2O3(001)",
         "Cr2O3(012)"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "N"
@@ -2001,6 +2746,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -2091,6 +2837,166 @@
         "oxide surface",
         "rutile TiO2",
         "Co3O4(001)"
+      ],
+      "top_surface_index_mappings": [
+        {
+          "term": "(0001)",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(001)",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(0112̅)",
+          "software_facet": "(012)",
+          "software_miller_index": [
+            0,
+            1,
+            2
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": [
+            "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+          ]
+        },
+        {
+          "term": "(101)",
+          "software_facet": "(101)",
+          "software_miller_index": [
+            1,
+            0,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(101̅4)",
+          "software_facet": "(104)",
+          "software_miller_index": [
+            1,
+            0,
+            4
+          ],
+          "input_notation": "miller_bravais_hkil",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(110)",
+          "software_facet": "(110)",
+          "software_miller_index": [
+            1,
+            1,
+            0
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(100)",
+          "software_facet": "(100)",
+          "software_miller_index": [
+            1,
+            0,
+            0
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "(111)",
+          "software_facet": "(111)",
+          "software_miller_index": [
+            1,
+            1,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": "hexagonal/trigonal",
+          "space_group": "structure-dependent; confirm against the CIF before slab generation",
+          "warnings": []
+        },
+        {
+          "term": "Co3O4(001)",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": null,
+          "space_group": null,
+          "warnings": []
+        },
+        {
+          "term": "Co3O4(001) surface",
+          "software_facet": "(001)",
+          "software_miller_index": [
+            0,
+            0,
+            1
+          ],
+          "input_notation": "miller",
+          "crystal_system": null,
+          "space_group": null,
+          "warnings": []
+        }
+      ],
+      "top_crystal_structure_terms": [
+        {
+          "term": "anatase",
+          "family": "TiO2 polymorph",
+          "crystal_system": "tetragonal",
+          "typical_space_group": "I4_1/amd (No. 141)"
+        },
+        {
+          "term": "spinel",
+          "family": "AB2O4 structure type",
+          "crystal_system": "cubic",
+          "typical_space_group": "Fd-3m (No. 227)"
+        },
+        {
+          "term": "rutile",
+          "family": "oxide polymorph",
+          "crystal_system": "tetragonal",
+          "typical_space_group": "P4_2/mnm (No. 136)"
+        },
+        {
+          "term": "normal spinel",
+          "family": "AB2O4 structure type",
+          "crystal_system": "cubic",
+          "typical_space_group": "Fd-3m (No. 227)"
+        }
       ],
       "top_state_terms": [
         "kinks",
@@ -2341,6 +3247,14 @@
         ],
         "crystal_or_spacegroup_terms": [
           {
+            "term": "anatase phase",
+            "count": 1
+          },
+          {
+            "term": "anatase phase",
+            "count": 1
+          },
+          {
             "term": "normal spinel",
             "count": 1
           },
@@ -2373,6 +3287,36 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [
+          {
+            "term": "anatase",
+            "count": 8,
+            "family": "TiO2 polymorph",
+            "crystal_system": "tetragonal",
+            "typical_space_group": "I4_1/amd (No. 141)"
+          },
+          {
+            "term": "spinel",
+            "count": 4,
+            "family": "AB2O4 structure type",
+            "crystal_system": "cubic",
+            "typical_space_group": "Fd-3m (No. 227)"
+          },
+          {
+            "term": "rutile",
+            "count": 3,
+            "family": "oxide polymorph",
+            "crystal_system": "tetragonal",
+            "typical_space_group": "P4_2/mnm (No. 136)"
+          },
+          {
+            "term": "normal spinel",
+            "count": 2,
+            "family": "AB2O4 structure type",
+            "crystal_system": "cubic",
+            "typical_space_group": "Fd-3m (No. 227)"
+          }
+        ],
         "exposed_surfaces": [
           {
             "term": "(0001)",
@@ -2383,7 +3327,15 @@
             "count": 2
           },
           {
+            "term": "(0112̅)",
+            "count": 2
+          },
+          {
             "term": "(101)",
+            "count": 2
+          },
+          {
+            "term": "(101̅4)",
             "count": 2
           },
           {
@@ -2441,6 +3393,366 @@
           {
             "term": "transition metal oxide surface",
             "count": 1
+          }
+        ],
+        "surface_index_mappings": [
+          {
+            "term": "(0001)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(001)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(0112̅)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              0,
+              1,
+              1,
+              -2
+            ],
+            "canonical_input_indices": [
+              0,
+              1,
+              -1,
+              2
+            ],
+            "software_miller_index": [
+              0,
+              1,
+              2
+            ],
+            "software_facet": "(012)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": [
+              "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+            ]
+          },
+          {
+            "term": "(101)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              1
+            ],
+            "software_facet": "(101)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(101̅4)",
+            "count": 2,
+            "input_notation": "miller_bravais_hkil",
+            "input_indices": [
+              1,
+              0,
+              -1,
+              4
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              -1,
+              4
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              4
+            ],
+            "software_facet": "(104)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(110)",
+            "count": 2,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(100)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              0
+            ],
+            "software_facet": "(100)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "(111)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              1
+            ],
+            "software_facet": "(111)",
+            "material": "β-CoOOH",
+            "crystal_system": "hexagonal/trigonal",
+            "space_group": "structure-dependent; confirm against the CIF before slab generation",
+            "warnings": []
+          },
+          {
+            "term": "Co3O4(001)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "Co3O4(001) surface",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              0,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              0,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              0,
+              0,
+              1
+            ],
+            "software_facet": "(001)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "Co3O4(110)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "Co3O4",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "RuO2 (110) surface",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "RuO2",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "TiO2(101)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              0,
+              1
+            ],
+            "canonical_input_indices": [
+              1,
+              0,
+              1
+            ],
+            "software_miller_index": [
+              1,
+              0,
+              1
+            ],
+            "software_facet": "(101)",
+            "material": "TiO2",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
+          },
+          {
+            "term": "TiO2(110)",
+            "count": 1,
+            "input_notation": "miller",
+            "input_indices": [
+              1,
+              1,
+              0
+            ],
+            "canonical_input_indices": [
+              1,
+              1,
+              0
+            ],
+            "software_miller_index": [
+              1,
+              1,
+              0
+            ],
+            "software_facet": "(110)",
+            "material": "TiO2",
+            "crystal_system": null,
+            "space_group": null,
+            "warnings": []
           }
         ],
         "defect_or_termination_states": [
@@ -2549,6 +3861,8 @@
         "perovskites_spinels"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -2569,13 +3883,10 @@
             "count": 4
           }
         ],
-        "crystal_or_spacegroup_terms": [
-          {
-            "term": "perovskites_spinels",
-            "count": 4
-          }
-        ],
+        "crystal_or_spacegroup_terms": [],
+        "crystal_structure_terms": [],
         "exposed_surfaces": [],
+        "surface_index_mappings": [],
         "reaction_families": []
       }
     },
@@ -2606,6 +3917,8 @@
         "transition metal-based catalysts"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "Ru"
@@ -2673,6 +3986,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -2708,6 +4022,8 @@
         "tellurides"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -2730,6 +4046,7 @@
             "count": 1
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": []
       }
@@ -2764,6 +4081,8 @@
       "top_surface_terms": [
         "Sn SAs/G"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [
@@ -2861,6 +4180,8 @@
         "Mo–N/C@MoS2"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -2911,6 +4232,7 @@
             "count": 2
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": [
           {
@@ -2988,6 +4310,8 @@
         "Sn SAs/G",
         "water/platinum interface"
       ],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [
         "Ag",
@@ -3303,6 +4627,8 @@
             "count": 1
           }
         ],
+        "surface_index_mappings": [],
+        "crystal_structure_terms": [],
         "approx_loadings": [],
         "reaction_families": [
           {
@@ -3362,6 +4688,8 @@
       ],
       "top_material_terms": [],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [
         "O-terminated"
       ],
@@ -3378,6 +4706,7 @@
           }
         ],
         "components": [],
+        "crystal_structure_terms": [],
         "surface_states": [
           {
             "term": "O-terminated",
@@ -3395,6 +4724,8 @@
         "zeolites_silicates"
       ],
       "top_surface_terms": [],
+      "top_surface_index_mappings": [],
+      "top_crystal_structure_terms": [],
       "top_state_terms": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
@@ -3409,6 +4740,7 @@
             "count": 6
           }
         ],
+        "crystal_structure_terms": [],
         "surface_states": [],
         "reaction_families": []
       }

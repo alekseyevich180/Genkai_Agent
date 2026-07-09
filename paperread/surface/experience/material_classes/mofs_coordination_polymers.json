@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "mofs_coordination_polymers",
-  "updated_at": "2026-07-06T15:48:30.359528+00:00",
+  "updated_at": "2026-07-09T05:13:19.470880+00:00",
   "summary": {
     "terms": 1,
     "known_useful": 1,
@@ -27,6 +27,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": []
   },
@@ -38,10 +39,7 @@
       "fields": [
         "Material"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     }
   ]
 }

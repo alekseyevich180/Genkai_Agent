@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "battery_electrode_materials",
-  "updated_at": "2026-07-06T15:48:30.303258+00:00",
+  "updated_at": "2026-07-09T05:13:19.343784+00:00",
   "summary": {
     "terms": 3,
     "known_useful": 1,
@@ -41,6 +41,7 @@
         "count": 4
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": []
   },
@@ -52,12 +53,7 @@
       "fields": [
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite",
-        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges"
-      ]
+      "count": 4
     },
     {
       "term": "photoanode",
@@ -66,10 +62,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Ag/g-C3N4"
-      ]
+      "count": 1
     },
     {
       "term": "sodium metal batteries",
@@ -78,10 +71,7 @@
       "fields": [
         "modeling_keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "The sp Hybridization of Tin Single Atoms for Dendrite‐Free Sodium Metal Batteries"
-      ]
+      "count": 1
     }
   ]
 }

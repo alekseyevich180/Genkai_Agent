@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "defect_engineered_materials",
-  "updated_at": "2026-07-06T15:48:30.310848+00:00",
+  "updated_at": "2026-07-09T05:13:19.364172+00:00",
   "summary": {
     "terms": 20,
     "known_useful": 20,
@@ -307,6 +307,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [
       {
         "term": "oxygen vacancy",
@@ -343,12 +344,7 @@
         "Modeling Keywords",
         "Surface/Support"
       ],
-      "count": 15,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "Au/TiO2",
-        "Ag/g-C3N4"
-      ]
+      "count": 15
     },
     {
       "term": "vacancy_landscape",
@@ -357,12 +353,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 13,
-      "example_contexts": [
-        "On a high photocatalytic activity of high-noble alloys Au–Ag/TiO2 catalysts during oxygen evolution reaction of water oxidation",
-        "The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials",
-        "An active nanoporous Ni(Fe) OER electrocatalyst via selective dissolution of Cd in alkaline media"
-      ]
+      "count": 13
     },
     {
       "term": "defect_engineered_materials",
@@ -371,12 +362,7 @@
       "fields": [
         "Material"
       ],
-      "count": 11,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Advanced Materials - 2022 - Cai - Formation and Stabilization of NiOOH by Introducing  ‐FeOOH in LDH  Composite"
-      ]
+      "count": 11
     },
     {
       "term": "doped_surface",
@@ -385,12 +371,7 @@
       "fields": [
         "recommended_modeling_tasks"
       ],
-      "count": 9,
-      "example_contexts": [
-        "Advances in modifications of Ag/g-C3N4 for stable and effective photoanode for OER",
-        "Atomically Dispersed Silver Atoms Embedded in NiCo Layer Double Hydroxide Boost Oxygen Evolution Reaction",
-        "High-Performance Nickel–Bismuth Oxide Electrocatalysts Applicable to Both the HER and OER in Alkaline Water Electrolysis"
-      ]
+      "count": 9
     },
     {
       "term": "Mo-Doped",
@@ -399,11 +380,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 2
     },
     {
       "term": "of doped",
@@ -412,11 +389,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 2,
-      "example_contexts": [
-        "Adv Materials Inter - 2019 - Raghu - Controlled Carbon Doping in Anatase TiO2  101  Facets  Superior Trace‐Level Ethanol",
-        "d2ta09361h"
-      ]
+      "count": 2
     },
     {
       "term": "point defects",
@@ -426,11 +399,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "A Theoretical Investigation into the Role of Surface Defects for Oxygen Evolution on RuO2",
-        "RuO2"
-      ]
+      "count": 2
     },
     {
       "term": "Sb vacancy",
@@ -440,11 +409,7 @@
         "defects",
         "Defect"
       ],
-      "count": 2,
-      "example_contexts": [
-        "d1nr02235k 12885..12895 ++",
-        "Antimonene"
-      ]
+      "count": 2
     },
     {
       "term": "co-doped",
@@ -453,10 +418,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "defect",
@@ -465,10 +427,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "Defective",
@@ -477,10 +436,7 @@
       "fields": [
         "Defect"
       ],
-      "count": 1,
-      "example_contexts": [
-        "CoO/Co"
-      ]
+      "count": 1
     },
     {
       "term": "defective structure",
@@ -489,10 +445,7 @@
       "fields": [
         "defects"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Controlled Phase Evolution from Co Nanochains to CoO Nanocubes and Their Application as OER Catalysts"
-      ]
+      "count": 1
     },
     {
       "term": "dopant",
@@ -501,10 +454,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "ZnO"
-      ]
+      "count": 1
     },
     {
       "term": "Fe-doped",
@@ -513,10 +463,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "N-doped",
@@ -525,10 +472,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges"
-      ]
+      "count": 1
     },
     {
       "term": "Ni-doped",
@@ -537,10 +481,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Angewandte Chemie - 2016 - Zhang - Interface Engineering of MoS2 Ni3S2 Heterostructures for Highly Enhanced Electrochemical"
-      ]
+      "count": 1
     },
     {
       "term": "nitrogen-doped carbon",
@@ -549,10 +490,7 @@
       "fields": [
         "materials"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Rhodium metal–rhodium oxide (Rh–Rh2O3) nanostructures with Pt-like or better activity towards hydrogen evolution and oxidation reactions (HER, HOR) in acid and base: correlating its HOR/HER activity with hydrogen binding energy and oxophilicity of the catalyst"
-      ]
+      "count": 1
     },
     {
       "term": "Sn doped",
@@ -561,10 +499,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "d2ta09361h"
-      ]
+      "count": 1
     },
     {
       "term": "Sr-doped",
@@ -573,10 +508,7 @@
       "fields": [
         "Dopant/Modifier"
       ],
-      "count": 1,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction"
-      ]
+      "count": 1
     },
     {
       "term": "surface defects",
@@ -585,10 +517,7 @@
       "fields": [
         "Modeling Keywords"
       ],
-      "count": 1,
-      "example_contexts": [
-        "RuO2"
-      ]
+      "count": 1
     }
   ]
 }

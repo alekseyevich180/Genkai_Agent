@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "perovskites_spinels",
-  "updated_at": "2026-07-06T15:48:30.382169+00:00",
+  "updated_at": "2026-07-09T05:13:19.526723+00:00",
   "summary": {
     "terms": 1,
     "known_useful": 1,
@@ -33,13 +33,10 @@
         "count": 4
       }
     ],
-    "crystal_or_spacegroup_terms": [
-      {
-        "term": "perovskites_spinels",
-        "count": 4
-      }
-    ],
+    "crystal_or_spacegroup_terms": [],
+    "crystal_structure_terms": [],
     "exposed_surfaces": [],
+    "surface_index_mappings": [],
     "reaction_families": []
   },
   "entries": [
@@ -50,12 +47,7 @@
       "fields": [
         "Material"
       ],
-      "count": 4,
-      "example_contexts": [
-        "Advanced Materials - 2023 - Hou - Lattice‐Strain Engineering for Heterogenous Electrocatalytic Oxygen Evolution Reaction",
-        "Small - 2021 - Zhang - Advanced Transition Metal‐Based OER Electrocatalysts  Current Status  Opportunities  and Challenges",
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 4
     }
   ]
 }

@@ -211,6 +211,12 @@ Run experience collection so repeated terms become statistics:
 
 Class-specific reuse rules:
 
+- Treat mineral or structure-prototype names as crystal-structure cues, not
+  generic material names. Reuse the surface crystal-structure dictionary for
+  terms such as rutile, anatase, brookite, spinel, normal spinel, inverse
+  spinel, perovskite, fluorite, wurtzite, rocksalt, pyrochlore, delafossite,
+  brucite, and corundum. These terms often imply crystal system, likely space
+  group family, and which facet notation may be meaningful.
 - `supported_catalysts`: track support, loaded species, loading amount,
   nanoparticle or cluster identity, and exposed support facet.
 - `carbon_materials`: track 2D carbon host, doped element, N/O/S coordination,

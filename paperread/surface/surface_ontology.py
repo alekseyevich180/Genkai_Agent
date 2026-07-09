@@ -2,6 +2,11 @@ from __future__ import annotations
 
 import re
 
+try:
+    from .crystal_structures import is_crystal_structure_term
+except ImportError:  # pragma: no cover - direct script execution fallback
+    from crystal_structures import is_crystal_structure_term
+
 SUPPORTED_MODELING_TASKS = {
     "vacancy_landscape",
     "adsorbate_landscape",
@@ -716,6 +721,8 @@ def is_known_surface_experience_term(value: str) -> bool:
     if is_reaction_abbreviation(stripped):
         return True
     if is_simple_oxidation_state(stripped):
+        return True
+    if is_crystal_structure_term(stripped):
         return True
     if re.fullmatch(r"\(?\d[\d\s-]{1,8}\)?", stripped):
         return True

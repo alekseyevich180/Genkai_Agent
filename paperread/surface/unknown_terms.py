@@ -11,11 +11,15 @@ from .collect_experience import (
     _build_class_profile,
     _build_keyword_inventory,
     _build_material_descriptors,
+    _entries_for_fields,
     _compact_class_entry,
     _now,
+    _surface_index_material_context,
 )
 from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
+from .crystal_structures import is_crystal_structure_term
 from .surface_ontology import is_known_surface_experience_term
+from .surface_indices import canonicalize_surface_index
 
 
 DEFAULT_SKILL_EXPERIENCE_DIR = (
@@ -36,7 +40,7 @@ def classify_unknown_term(term: str, fields: list[str] | None = None) -> str:
     stripped = term.strip()
     lower = stripped.casefold()
 
-    if re.search(r"\(\d[\d\s\-]+\)|\(\d+[\u0305\u0304]?\)", stripped):
+    if canonicalize_surface_index(stripped):
         return "facet_or_miller_index"
     if re.fullmatch(r"[*]?[A-Z][A-Za-z0-9+\-−δ*/()]*[*]?", stripped):
         return "formula_or_composition"
@@ -74,18 +78,24 @@ def reclassify_material_class_store(
         material_class = str(payload.get("material_class") or path.stem)
         entries = [dict(entry) for entry in payload.get("entries", []) if isinstance(entry, dict)]
         file_changed = False
+        surface_index_context = _surface_index_material_context(
+            _entries_for_fields(entries, {"materials", "Material", "material_parameters", "Composition"})
+            + _entries_for_fields(entries, {"surfaces", "Surface/Support", "slab_models"})
+        )
 
         for entry in entries:
             total_entries += 1
             term = str(entry.get("term", "")).strip()
             was_kind = str(entry.get("kind", ""))
-            if term and is_known_surface_experience_term(term):
+            surface_index = canonicalize_surface_index(term, material_context=surface_index_context) if term else None
+            crystal_structure = is_crystal_structure_term(term) if term else False
+            if term and (is_known_surface_experience_term(term) or surface_index or crystal_structure):
                 if was_kind != "known_useful":
                     changed_entries += 1
                     file_changed = True
                 entry["kind"] = "known_useful"
                 if not entry.get("research_category") or entry.get("research_category") == "unknown_information":
-                    entry["research_category"] = "other_useful_information"
+                    entry["research_category"] = "surface_structure" if surface_index or crystal_structure else "other_useful_information"
 
         known_count = sum(1 for entry in entries if entry.get("kind") == "known_useful")
         unknown_count = len(entries) - known_count
@@ -107,7 +117,9 @@ def reclassify_material_class_store(
             "entries": [_compact_class_entry(entry) for entry in entries],
         }
 
-        if file_changed or refreshed_payload.get("summary") != payload.get("summary"):
+        comparable_payload = dict(payload)
+        comparable_payload["updated_at"] = refreshed_payload["updated_at"]
+        if file_changed or refreshed_payload != comparable_payload:
             path.write_text(json.dumps(refreshed_payload, ensure_ascii=False, indent=2), encoding="utf-8")
             changed_files.append(str(path))
 

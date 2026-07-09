@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-07-08T04:31:23.498281+00:00",
+  "updated_at": "2026-07-09T05:13:19.374895+00:00",
   "summary": {
     "terms": 65,
-    "known_useful": 38,
-    "unknown": 27
+    "known_useful": 42,
+    "unknown": 23
   },
   "keyword_inventory": {
     "active_sites": [
@@ -208,8 +208,8 @@
       {
         "term": "(0112̅)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ],
     "materials": [
@@ -450,8 +450,8 @@
       {
         "term": "β-CoOOH(0112̅)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Au/NiFe LDH surface",
@@ -474,14 +474,14 @@
       {
         "term": "β-CoOOH(0001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "β-CoOOH(101̅4)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ]
   },
@@ -929,6 +929,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": [
       {
@@ -1155,8 +1156,8 @@
     },
     {
       "term": "β-CoOOH(0112̅)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -1164,8 +1165,8 @@
     },
     {
       "term": "(0112̅)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Facet"
       ],
@@ -1542,8 +1543,8 @@
     },
     {
       "term": "β-CoOOH(0001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -1551,8 +1552,8 @@
     },
     {
       "term": "β-CoOOH(101̅4)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],

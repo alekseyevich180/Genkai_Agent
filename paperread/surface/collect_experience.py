@@ -10,6 +10,7 @@ import re
 from typing import Any, Iterable
 
 try:
+    from .crystal_structures import match_crystal_structure_term
     from .parameter_registry import build_surface_parameter_registry
     from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
     from .surface_ontology import (
@@ -27,7 +28,9 @@ try:
         KEYWORD_BUCKET_RULES,
         is_known_surface_term,
     )
+    from .surface_indices import canonicalize_surface_index
 except ImportError:  # pragma: no cover - direct script execution
+    from crystal_structures import match_crystal_structure_term
     from parameter_registry import build_surface_parameter_registry
     from parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
     from surface_ontology import (
@@ -45,6 +48,7 @@ except ImportError:  # pragma: no cover - direct script execution
         KEYWORD_BUCKET_RULES,
         is_known_surface_term,
     )
+    from surface_indices import canonicalize_surface_index
 
 
 @dataclass
@@ -645,9 +649,50 @@ def _detect_exposed_surfaces(entries: list[dict[str, Any]]) -> list[dict[str, An
     surface_like = []
     for entry in entries:
         term = str(entry.get("term", ""))
-        if re.search(r"\(\d[\d\s-]{1,6}\)", term) or "surface" in term.lower() or "facet" in term.lower():
+        if canonicalize_surface_index(term) or "surface" in term.lower() or "facet" in term.lower():
             surface_like.append(entry)
     return _top_terms(surface_like, limit=20)
+
+
+def _surface_index_material_context(entries: list[dict[str, Any]]) -> str | None:
+    priority_patterns = [
+        (r"β-?coooh|beta-?coooh|coooh", "β-CoOOH"),
+        (r"\bzno\b", "ZnO"),
+        (r"\bru\b", "Ru"),
+    ]
+    text = " ".join(str(entry.get("term", "")) for entry in entries).casefold()
+    for pattern, material in priority_patterns:
+        if re.search(pattern, text):
+            return material
+    return None
+
+
+def _detect_surface_index_mappings(
+    entries: list[dict[str, Any]],
+    material_context: str | None = None,
+) -> list[dict[str, Any]]:
+    mappings: list[dict[str, Any]] = []
+    for entry in _top_terms(entries, limit=50):
+        term = str(entry.get("term", ""))
+        mapping = canonicalize_surface_index(term, material_context=material_context)
+        if not mapping:
+            continue
+        mappings.append(
+            {
+                "term": term,
+                "count": int(entry.get("count", 0)),
+                "input_notation": mapping["input_notation"],
+                "input_indices": mapping["input_indices"],
+                "canonical_input_indices": mapping["canonical_input_indices"],
+                "software_miller_index": mapping["software_miller_index"],
+                "software_facet": mapping["software_facet"],
+                "material": mapping.get("material"),
+                "crystal_system": mapping.get("crystal_system"),
+                "space_group": mapping.get("space_group"),
+                "warnings": mapping.get("warnings", []),
+            }
+        )
+    return mappings[:20]
 
 
 def _detect_spacegroup_terms(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -655,9 +700,31 @@ def _detect_spacegroup_terms(entries: list[dict[str, Any]]) -> list[dict[str, An
     for entry in entries:
         term = str(entry.get("term", ""))
         lowered = term.lower()
-        if any(token in lowered for token in ("space group", "cubic", "tetragonal", "orthorhombic", "monoclinic", "trigonal", "hexagonal", "fluorite", "perovskite", "spinel")):
+        if match_crystal_structure_term(term) or any(token in lowered for token in ("space group", "cubic", "tetragonal", "orthorhombic", "monoclinic", "trigonal", "hexagonal")):
             matched.append(entry)
     return _top_terms(matched, limit=20)
+
+
+def _detect_crystal_structure_terms(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    detected: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        term = str(entry.get("term", ""))
+        match = match_crystal_structure_term(term)
+        if not match:
+            continue
+        key = str(match["term"])
+        current = detected.setdefault(
+            key,
+            {
+                "term": key,
+                "count": 0,
+                "family": match.get("family"),
+                "crystal_system": match.get("crystal_system"),
+                "typical_space_group": match.get("typical_space_group"),
+            },
+        )
+        current["count"] = int(current["count"]) + int(entry.get("count", 0))
+    return sorted(detected.values(), key=lambda item: (-int(item["count"]), str(item["term"])))[:20]
 
 
 def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> dict[str, Any]:
@@ -670,6 +737,8 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
     composition_entries = _entries_for_fields(entries, {"material_parameters", "Composition", "Loading"})
     state_entries = _entries_for_fields(entries, {"surface_terminations", "Surface Termination", "defects", "vacancy_models", "Defect"})
     reaction_entries = _entries_for_fields(entries, {"applications", "Reaction Type"})
+    surface_index_context = _surface_index_material_context(material_entries + support_entries)
+    crystal_structure_terms = _detect_crystal_structure_terms(material_entries + support_entries + composition_entries)
 
     if material_class == "supported_catalysts":
         support_candidates = []
@@ -700,6 +769,8 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
             "support_components": _top_terms(support_candidates, 20),
             "loaded_components": _top_terms(loaded_candidates, 20),
             "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "surface_index_mappings": _detect_surface_index_mappings(facet_entries, surface_index_context),
+            "crystal_structure_terms": crystal_structure_terms,
             "approx_loadings": _build_material_descriptors(composition_entries).get("approx_loadings", []),
             "reaction_families": _top_terms(reaction_entries, 20),
         }
@@ -722,6 +793,8 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
             "alloy_components": _top_terms(material_entries, 30),
             "approx_compositions": _top_terms(composition_entries, 20),
             "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "surface_index_mappings": _detect_surface_index_mappings(facet_entries, surface_index_context),
+            "crystal_structure_terms": crystal_structure_terms,
             "surface_states": _top_terms(state_entries, 20),
             "reaction_families": _top_terms(reaction_entries, 20),
         }
@@ -732,7 +805,9 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
             "elements": _build_material_descriptors(entries).get("elements", []),
             "oxide_components": _top_terms([entry for entry in material_entries if "o" in _normalize_term(str(entry.get("term", "")))], 30),
             "crystal_or_spacegroup_terms": _detect_spacegroup_terms(material_entries + composition_entries),
+            "crystal_structure_terms": crystal_structure_terms,
             "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "surface_index_mappings": _detect_surface_index_mappings(facet_entries, surface_index_context),
             "defect_or_termination_states": _top_terms(state_entries, 20),
             "reaction_families": _top_terms(reaction_entries, 20),
         }
@@ -744,7 +819,9 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
             "framework_components": _top_terms(material_entries, 30),
             "a_b_site_related_terms": _top_terms([entry for entry in material_entries + composition_entries if any(token in str(entry.get("term", "")).lower() for token in ("abo3", "ab2o4", "a-site", "b-site", "perovskite", "spinel"))], 20),
             "crystal_or_spacegroup_terms": _detect_spacegroup_terms(material_entries + composition_entries),
+            "crystal_structure_terms": crystal_structure_terms,
             "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
+            "surface_index_mappings": _detect_surface_index_mappings(facet_entries, surface_index_context),
             "reaction_families": _top_terms(reaction_entries, 20),
         }
 
@@ -752,6 +829,7 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
         "descriptor_schema": "generic_material_profile",
         "elements": _build_material_descriptors(entries).get("elements", []),
         "components": _top_terms(material_entries, 20),
+        "crystal_structure_terms": crystal_structure_terms,
         "surface_states": _top_terms(state_entries, 20),
         "reaction_families": _top_terms(reaction_entries, 20),
     }

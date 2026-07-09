@@ -419,6 +419,50 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             doc_payload = payload["documents"][0]
             self.assertEqual(doc_payload["normalized_mapping"]["reaction_family"], ["OER"])
 
+    def test_surface_indices_use_structure_aware_software_miller_mapping(self):
+        from paperread.surface.surface_indices import canonicalize_surface_index
+
+        zno = canonicalize_surface_index("(10-10)", material_context="ZnO")
+        self.assertEqual(zno["software_facet"], "(100)")
+        self.assertEqual(zno["space_group"], "P6_3mc (No. 186)")
+
+        ru = canonicalize_surface_index("Ru(0001)")
+        self.assertEqual(ru["software_facet"], "(001)")
+        self.assertEqual(ru["space_group"], "P6_3/mmc (No. 194)")
+        self.assertEqual(canonicalize_surface_index("Pt(111")["software_facet"], "(111)")
+
+        coooh = canonicalize_surface_index("β-CoOOH(0112̅)")
+        self.assertEqual(coooh["canonical_input_indices"], [0, 1, -1, 2])
+        self.assertEqual(coooh["software_facet"], "(012)")
+        self.assertTrue(coooh["warnings"])
+
+    def test_ptomodel_outputs_surface_index_mapping_for_four_index_facets(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "title": "beta CoOOH OER",
+                        "extraction": {
+                            "materials": ["β-CoOOH"],
+                            "surfaces": ["β-CoOOH"],
+                            "facets": ["(0112̅)"],
+                            "applications": ["oxygen evolution reaction"],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            payload = build_ptomodel_payload(str(relations_path))
+            doc_payload = payload["documents"][0]
+            self.assertEqual(doc_payload["normalized_mapping"]["facet_set"], ["(012)"])
+            surface_facet = doc_payload["selected_information"]["surface_facets"][0]
+            self.assertEqual(surface_facet["surface_index"]["input_notation"], "miller_bravais_hkil")
+            self.assertEqual(surface_facet["surface_index"]["software_miller_index"], [0, 1, 2])
+
     def test_summary_writer(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             table_path = Path(tmpdir) / "sample_table.csv"
@@ -511,14 +555,21 @@ Oxygen vacancies acted as active sites and methoxy was identified.
 
     def test_surface_known_term_filter_removes_generic_unknown_noise(self):
         from paperread.surface.surface_ontology import is_known_surface_experience_term
+        from paperread.surface.crystal_structures import match_crystal_structure_term
 
         self.assertTrue(is_known_surface_experience_term("Full"))
         self.assertTrue(is_known_surface_experience_term("Yes"))
         self.assertTrue(is_known_surface_experience_term("electronic structure"))
         self.assertTrue(is_known_surface_experience_term("Hubbard-U correction"))
         self.assertTrue(is_known_surface_experience_term("TiO2"))
+        self.assertTrue(is_known_surface_experience_term("rutile"))
+        self.assertTrue(is_known_surface_experience_term("normal spinel"))
+        self.assertEqual(match_crystal_structure_term("rutile TiO2")["typical_space_group"], "P4_2/mnm (No. 136)")
+        self.assertEqual(match_crystal_structure_term("normal spinel")["typical_space_group"], "Fd-3m (No. 227)")
         self.assertTrue(is_known_surface_experience_term("electrochemical water splitting"))
-        self.assertFalse(is_known_surface_experience_term("Pt(111)"))
+        from paperread.surface.surface_indices import is_surface_index_term
+
+        self.assertTrue(is_surface_index_term("Pt(111)"))
         self.assertFalse(is_known_surface_experience_term("*OOH"))
         self.assertFalse(is_known_surface_experience_term("carbon doping"))
 

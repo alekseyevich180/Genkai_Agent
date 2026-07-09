@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-07-08T04:31:23.615092+00:00",
+  "updated_at": "2026-07-09T05:13:19.552641+00:00",
   "summary": {
     "terms": 94,
-    "known_useful": 67,
-    "unknown": 27
+    "known_useful": 68,
+    "unknown": 26
   },
   "keyword_inventory": {
     "active_sites": [
@@ -396,8 +396,8 @@
       {
         "term": "PtxRu1-x/Ru(0001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Rh–Rh2O3-NPs/C",
@@ -1543,6 +1543,8 @@
         "count": 1
       }
     ],
+    "surface_index_mappings": [],
+    "crystal_structure_terms": [],
     "approx_loadings": [],
     "reaction_families": [
       {
@@ -2336,8 +2338,8 @@
     },
     {
       "term": "PtxRu1-x/Ru(0001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "materials"
       ],

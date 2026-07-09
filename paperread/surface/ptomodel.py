@@ -15,6 +15,7 @@ try:
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
+    from .surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
 except ImportError:  # pragma: no cover - direct script execution
     from surface_ontology import (
         EXECUTABLE_TASKS,
@@ -23,6 +24,7 @@ except ImportError:  # pragma: no cover - direct script execution
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
+    from surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
 
 SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
     Path(__file__).resolve().parents[2]
@@ -104,14 +106,8 @@ def _first_nonempty(*values: Any) -> str | None:
     return None
 
 
-def _normalize_facet(raw: str) -> str:
-    text = raw.strip()
-    if not text:
-        return text
-    inner = re.sub(r"[\s,]+", "", text.strip("()[]{}"))
-    if re.fullmatch(r"-?\d{3,4}", inner):
-        return f"({inner})"
-    return text
+def _normalize_facet(raw: str, material_context: str | None = None) -> str:
+    return normalize_surface_facet_for_software(raw, material_context)
 
 
 def _normalize_species(raw: str) -> str | None:
@@ -473,7 +469,15 @@ def build_ptomodel_payload(
         materials = _to_list(extraction.get("materials")) or _to_list((table_row or {}).get("Material"))
         supports = _to_list(extraction.get("surfaces")) or _to_list((table_row or {}).get("Surface/Support"))
         raw_facets = _to_list(extraction.get("facets")) or _to_list((table_row or {}).get("Facet"))
-        normalized_facets = [_normalize_facet(item) for item in raw_facets]
+        material_context = _first_nonempty(*(materials + supports))
+        normalized_surface_indices = [
+            canonicalize_surface_index(item, material_context=material_context)
+            for item in raw_facets
+        ]
+        normalized_facets = [
+            str(surface_index["software_facet"]) if surface_index else _normalize_facet(raw, material_context)
+            for raw, surface_index in zip(raw_facets, normalized_surface_indices)
+        ]
         cluster_entries = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
         cluster_species = [
             {"raw": item, "normalized_species": species}
@@ -520,8 +524,16 @@ def build_ptomodel_payload(
                     "material_classes": material_classes,
                     "supports_or_surfaces": supports,
                     "surface_facets": [
-                        {"raw": raw, "normalized": normalized}
-                        for raw, normalized in zip(raw_facets, normalized_facets)
+                        {
+                            "raw": raw,
+                            "normalized": normalized,
+                            "surface_index": surface_index,
+                        }
+                        for raw, normalized, surface_index in zip(
+                            raw_facets,
+                            normalized_facets,
+                            normalized_surface_indices,
+                        )
                     ],
                     "surface_terminations": _to_list(extraction.get("surface_terminations")) or _to_list((table_row or {}).get("Surface Termination")),
                     "loaded_nanoparticles_or_clusters": cluster_species,

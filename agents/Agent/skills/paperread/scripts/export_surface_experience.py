@@ -18,8 +18,10 @@ try:
         SUPPORTED_MODELING_TASKS,
         is_known_surface_experience_term,
     )
+    from paperread.surface.surface_indices import is_surface_index_term
 except ImportError:  # pragma: no cover - direct script execution
     from surface_ontology import SUPPORTED_MODELING_TASKS, is_known_surface_experience_term
+    from surface_indices import is_surface_index_term
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -121,7 +123,7 @@ def _flatten(value: object) -> list[str]:
 
 
 def _is_known_term(term: str) -> bool:
-    return is_known_surface_experience_term(term)
+    return is_known_surface_experience_term(term) or is_surface_index_term(term)
 
 
 def _suggest_action(term: str, category: str) -> str:

@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "metals_alloys",
-  "updated_at": "2026-07-08T04:31:23.516223+00:00",
+  "updated_at": "2026-07-09T05:13:19.422265+00:00",
   "summary": {
     "terms": 501,
-    "known_useful": 294,
-    "unknown": 207
+    "known_useful": 316,
+    "unknown": 185
   },
   "keyword_inventory": {
     "active_sites": [
@@ -1250,8 +1250,8 @@
       {
         "term": "normal spinel",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "oxides",
@@ -1262,8 +1262,8 @@
       {
         "term": "perovskite",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "phase proportion",
@@ -1286,8 +1286,8 @@
       {
         "term": "rutile",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "semiconductor phase",
@@ -1316,14 +1316,14 @@
       {
         "term": "spinel phase",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "spinel structure",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Sr",
@@ -1610,8 +1610,8 @@
       {
         "term": "(0112̅)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "(100)",
@@ -1634,8 +1634,8 @@
       {
         "term": "(101̅4)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "(110)",
@@ -1780,8 +1780,8 @@
       {
         "term": "Pt(111)",
         "count": 5,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "ZnO",
@@ -1828,14 +1828,14 @@
       {
         "term": "Au(100)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Au(111)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "CoO",
@@ -1966,8 +1966,8 @@
       {
         "term": "Ni(111)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Ni1−xFexOOH",
@@ -1990,8 +1990,8 @@
       {
         "term": "Pt(335)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Pt1",
@@ -2230,8 +2230,8 @@
       {
         "term": "PtxRu1-x/Ru(0001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Rh–Rh2O3-NPs/C",
@@ -2454,14 +2454,14 @@
       {
         "term": "Au(100)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Au(111)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Co4+",
@@ -3382,8 +3382,8 @@
       {
         "term": "Pt(111)",
         "count": 5,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "CuO",
@@ -3394,14 +3394,14 @@
       {
         "term": "Au(100)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Au(111)",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "FeOOH",
@@ -3418,8 +3418,8 @@
       {
         "term": "Ni(111)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "NiOOH",
@@ -3430,14 +3430,14 @@
       {
         "term": "Pt(335)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "rutile TiO2",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "tetrahedral cluster",
@@ -3454,8 +3454,8 @@
       {
         "term": "β-CoOOH(0112̅)",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "(112)-oriented surface of hausmannitene",
@@ -3466,8 +3466,8 @@
       {
         "term": "Ag(111)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Au/NiFe LDH surface",
@@ -3514,8 +3514,8 @@
       {
         "term": "Co3O4(001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Co3O4(001) surface",
@@ -3526,8 +3526,8 @@
       {
         "term": "Co3O4(110)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "CoO surface",
@@ -3568,8 +3568,8 @@
       {
         "term": "PtBi(100)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Rh2O3 surface",
@@ -3580,8 +3580,8 @@
       {
         "term": "Ru(0001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "RuO2 (110) surface",
@@ -3622,14 +3622,14 @@
       {
         "term": "β-CoOOH(0001)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "β-CoOOH(101̅4)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ],
     "surface_states": [
@@ -5561,6 +5561,10 @@
         "count": 5
       },
       {
+        "term": "(0112̅)",
+        "count": 3
+      },
+      {
         "term": "(100)",
         "count": 3
       },
@@ -5581,6 +5585,10 @@
         "count": 2
       },
       {
+        "term": "(101̅4)",
+        "count": 2
+      },
+      {
         "term": "(110)",
         "count": 2
       },
@@ -5594,6 +5602,10 @@
       },
       {
         "term": "Pt(335)",
+        "count": 2
+      },
+      {
+        "term": "β-CoOOH(0112̅)",
         "count": 2
       },
       {
@@ -5623,18 +5635,550 @@
       {
         "term": "Co3O4(001)",
         "count": 1
+      }
+    ],
+    "surface_index_mappings": [
+      {
+        "term": "Pt(111)",
+        "count": 5,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "Pt",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "(0112̅)",
+        "count": 3,
+        "input_notation": "miller_bravais_hkil",
+        "input_indices": [
+          0,
+          1,
+          1,
+          -2
+        ],
+        "canonical_input_indices": [
+          0,
+          1,
+          -1,
+          2
+        ],
+        "software_miller_index": [
+          0,
+          1,
+          2
+        ],
+        "software_facet": "(012)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": [
+          "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+        ]
+      },
+      {
+        "term": "(100)",
+        "count": 3,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          0
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          0
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          0
+        ],
+        "software_facet": "(100)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "Au(100)",
+        "count": 3,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          0
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          0
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          0
+        ],
+        "software_facet": "(100)",
+        "material": "Au",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "Au(111)",
+        "count": 3,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "Au",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "(0001)",
+        "count": 2,
+        "input_notation": "miller_bravais_hkil",
+        "input_indices": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          0,
+          0,
+          1
+        ],
+        "software_facet": "(001)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "(001)",
+        "count": 2,
+        "input_notation": "miller",
+        "input_indices": [
+          0,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          0,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          0,
+          0,
+          1
+        ],
+        "software_facet": "(001)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "(101̅4)",
+        "count": 2,
+        "input_notation": "miller_bravais_hkil",
+        "input_indices": [
+          1,
+          0,
+          -1,
+          4
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          -1,
+          4
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          4
+        ],
+        "software_facet": "(104)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "(110)",
+        "count": 2,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          0
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          0
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          0
+        ],
+        "software_facet": "(110)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "(111)",
+        "count": 2,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "Ni(111)",
+        "count": 2,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "Ni",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "Pt(335)",
+        "count": 2,
+        "input_notation": "miller",
+        "input_indices": [
+          3,
+          3,
+          5
+        ],
+        "canonical_input_indices": [
+          3,
+          3,
+          5
+        ],
+        "software_miller_index": [
+          3,
+          3,
+          5
+        ],
+        "software_facet": "(335)",
+        "material": "Pt",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "β-CoOOH(0112̅)",
+        "count": 2,
+        "input_notation": "miller_bravais_hkil",
+        "input_indices": [
+          0,
+          1,
+          1,
+          -2
+        ],
+        "canonical_input_indices": [
+          0,
+          1,
+          -1,
+          2
+        ],
+        "software_miller_index": [
+          0,
+          1,
+          2
+        ],
+        "software_facet": "(012)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": [
+          "Corrected malformed hexagonal hkil notation; expected i=-(h+k)."
+        ]
+      },
+      {
+        "term": "(101)",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          1
+        ],
+        "software_facet": "(101)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "(112)-oriented surface of hausmannitene",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          2
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          2
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          2
+        ],
+        "software_facet": "(112)",
+        "material": "β-CoOOH",
+        "crystal_system": "hexagonal/trigonal",
+        "space_group": "structure-dependent; confirm against the CIF before slab generation",
+        "warnings": []
+      },
+      {
+        "term": "Ag(111)",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "Ag",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "Co3O4(001)",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          0,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          0,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          0,
+          0,
+          1
+        ],
+        "software_facet": "(001)",
+        "material": "Co3O4",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
       },
       {
         "term": "Co3O4(001) surface",
-        "count": 1
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          0,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          0,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          0,
+          0,
+          1
+        ],
+        "software_facet": "(001)",
+        "material": "Co3O4",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
       },
       {
         "term": "Co3O4(110)",
-        "count": 1
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          0
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          0
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          0
+        ],
+        "software_facet": "(110)",
+        "material": "Co3O4",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
       },
       {
-        "term": "CoO surface",
-        "count": 1
+        "term": "Pt(111) nanofacets",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          1,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          1,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          1,
+          1
+        ],
+        "software_facet": "(111)",
+        "material": "Pt",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      }
+    ],
+    "crystal_structure_terms": [
+      {
+        "term": "rutile",
+        "count": 5,
+        "family": "oxide polymorph",
+        "crystal_system": "tetragonal",
+        "typical_space_group": "P4_2/mnm (No. 136)"
+      },
+      {
+        "term": "spinel",
+        "count": 4,
+        "family": "AB2O4 structure type",
+        "crystal_system": "cubic",
+        "typical_space_group": "Fd-3m (No. 227)"
+      },
+      {
+        "term": "normal spinel",
+        "count": 2,
+        "family": "AB2O4 structure type",
+        "crystal_system": "cubic",
+        "typical_space_group": "Fd-3m (No. 227)"
+      },
+      {
+        "term": "perovskite",
+        "count": 2,
+        "family": "ABO3 structure type",
+        "crystal_system": "structure-dependent",
+        "typical_space_group": "varies with distortion and composition"
       }
     ],
     "surface_states": [
@@ -6172,8 +6716,8 @@
     },
     {
       "term": "Pt(111)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces",
         "Material"
@@ -6368,8 +6912,8 @@
     },
     {
       "term": "(0112̅)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Facet",
         "facets"
@@ -6388,8 +6932,8 @@
     },
     {
       "term": "Au(100)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces",
         "Modeling Keywords",
@@ -6399,8 +6943,8 @@
     },
     {
       "term": "Au(111)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces",
         "Material",
@@ -6601,8 +7145,8 @@
     },
     {
       "term": "(101̅4)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "facets",
         "Facet"
@@ -7109,8 +7653,8 @@
     },
     {
       "term": "Ni(111)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces",
         "Material"
@@ -7311,8 +7855,8 @@
     },
     {
       "term": "Pt(335)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces",
         "Material"
@@ -7361,8 +7905,8 @@
     },
     {
       "term": "rutile TiO2",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Surface/Support"
       ],
@@ -7459,8 +8003,8 @@
     },
     {
       "term": "β-CoOOH(0112̅)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -7639,8 +8183,8 @@
     },
     {
       "term": "Ag(111)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -8143,8 +8687,8 @@
     },
     {
       "term": "Co3O4(001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -8161,8 +8705,8 @@
     },
     {
       "term": "Co3O4(110)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -9385,8 +9929,8 @@
     },
     {
       "term": "normal spinel",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -9574,8 +10118,8 @@
     },
     {
       "term": "perovskite",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -9763,8 +10307,8 @@
     },
     {
       "term": "PtBi(100)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -9799,8 +10343,8 @@
     },
     {
       "term": "PtxRu1-x/Ru(0001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "materials"
       ],
@@ -9871,8 +10415,8 @@
     },
     {
       "term": "Ru(0001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -9907,8 +10451,8 @@
     },
     {
       "term": "rutile",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -10105,8 +10649,8 @@
     },
     {
       "term": "spinel phase",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -10114,8 +10658,8 @@
     },
     {
       "term": "spinel structure",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -10438,8 +10982,8 @@
     },
     {
       "term": "β-CoOOH(0001)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],
@@ -10447,8 +10991,8 @@
     },
     {
       "term": "β-CoOOH(101̅4)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "surfaces"
       ],

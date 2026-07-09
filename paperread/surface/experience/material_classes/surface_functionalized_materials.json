@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "surface_functionalized_materials",
-  "updated_at": "2026-07-06T15:48:30.397785+00:00",
+  "updated_at": "2026-07-09T05:13:19.564793+00:00",
   "summary": {
     "terms": 1,
     "known_useful": 1,
@@ -46,6 +46,7 @@
       }
     ],
     "components": [],
+    "crystal_structure_terms": [],
     "surface_states": [
       {
         "term": "O-terminated",
@@ -62,10 +63,7 @@
       "fields": [
         "surface_terminations"
       ],
-      "count": 1,
-      "example_contexts": [
-        "High‐Valence Nickel Single‐Atom Catalysts Coordinated to Oxygen Sites for Extraordinarily Activating Oxygen Evolution Reaction"
-      ]
+      "count": 1
     }
   ]
 }

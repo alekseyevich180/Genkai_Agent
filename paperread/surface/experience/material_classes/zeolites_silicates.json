@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "zeolites_silicates",
-  "updated_at": "2026-07-06T15:48:30.398075+00:00",
+  "updated_at": "2026-07-09T05:13:19.567219+00:00",
   "summary": {
     "terms": 1,
     "known_useful": 1,
@@ -27,6 +27,7 @@
         "count": 6
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": []
   },
@@ -38,12 +39,7 @@
       "fields": [
         "Material"
       ],
-      "count": 6,
-      "example_contexts": [
-        "Advanced Energy Materials - 2020 - Luo - Interface Engineering of Hierarchical Branched Mo‐Doped Ni3S2 NixPy Hollow",
-        "ai-et-al-2025-enhancing-deep-mineralization-and-chlorine-resistance-in-methyl-ethyl-ketone-destruction-by-taming",
-        "hu-et-al-2018-total-oxidation-of-propane-over-a-ru-ceo2-catalyst-at-low-temperature"
-      ]
+      "count": 6
     }
   ]
 }

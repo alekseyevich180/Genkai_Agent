@@ -48,22 +48,6 @@
 - Context: The Surface Chemistry of Au(111) and Au(100) Electrodes under Oxygen Reduction and Evolution Potentials
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
-## Au(111)
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
-- Context: Au(111)
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
-## Au(100)
-
-- Status: candidate
-- Category: Modeling Keywords
-- Source: `tests/paperread_batch_experience/Ag_Au_metal_conditions_input_table.csv`
-- Context: Au(111)
-- Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
-
 ## High OH or mixed OH/O
 
 - Status: candidate
@@ -669,7 +653,7 @@
 - Status: candidate
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
-- Context: N/A
+- Context: 
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## composition
@@ -677,7 +661,7 @@
 - Status: candidate
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
-- Context: N/A
+- Context: 
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## structure
@@ -685,7 +669,7 @@
 - Status: candidate
 - Category: Modeling Keywords
 - Source: `tests/paperread_batch_experience/nchem.121_conditions_trimmed_table.csv`
-- Context: N/A
+- Context: 
 - Suggested action: Review the term and decide whether to add a prompt keyword, planner mapping, or new surface-modeling workflow.
 
 ## *

@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-07-08T04:31:23.556315+00:00",
+  "updated_at": "2026-07-09T05:13:19.476653+00:00",
   "summary": {
     "terms": 53,
     "known_useful": 41,
@@ -1019,6 +1019,7 @@
         "count": 2
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": [
       {

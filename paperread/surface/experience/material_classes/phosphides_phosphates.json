@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "phosphides_phosphates",
-  "updated_at": "2026-07-08T04:31:23.589665+00:00",
+  "updated_at": "2026-07-09T05:13:19.531161+00:00",
   "summary": {
     "terms": 28,
     "known_useful": 22,
@@ -349,6 +349,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": [
       {

@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-07-08T04:31:23.479495+00:00",
+  "updated_at": "2026-07-09T05:13:19.352344+00:00",
   "summary": {
     "terms": 45,
     "known_useful": 33,
@@ -545,6 +545,7 @@
         "count": 1
       }
     ],
+    "crystal_structure_terms": [],
     "surface_states": [],
     "reaction_families": [
       {
