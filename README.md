@@ -1,6 +1,6 @@
 
 # Genkai: An agent for materials, chemistry, and simulation.
-
+![alt text](assets/images/genkai-logo-only-theme-large.png)
 
 ## Agent
 
@@ -67,20 +67,7 @@ from the generated JSON rather than reparsing the PDF.
 
 Current paperread state from `work_logs/2026-07-08.md`:
 
-- `tests/papers2` has 21 PDFs with local intermediate files generated under
-  `tests/paperread_papers2_experience/`.
-- Formal LLM extraction for most `tests/papers2` PDFs is still incomplete
-  because API calls hit rate limit and authentication failures.
-- A no-API fallback has already scanned those papers for keyword-level
-  material, formula, surface, reaction, support, loading, doping/interface,
-  single-atom, cluster, adsorbate, and reactant cues.
-- The rebuilt canonical material-class store currently contains 1098 terms:
-  697 known useful terms and 401 unknown entries.
-- Skill-side unknown terms were cleaned down to 107 records after filtering
-  element names, material-class labels, common formulas, placeholders, generic
-  method phrases, and common reaction or application words.
-- The latest unknown-term statistics are stored in
-  `agents/Agent/skills/paperread/experience/unknown_term_statistics_2026_07_08.{json,md}`.
+
 
 ## Quick start
 ### Linux 安装
@@ -99,10 +86,42 @@ source .venv/bin/activate
 uv pip install -e .
 uv pip install pytest
 
+# 可选：从 GitHub 安装最新 pymatgen
+uv pip install "git+https://github.com/materialsproject/pymatgen.git"
+
 # 安装前端依赖
 cd web/vite-frontend
 npm install
 cd ../..
+```
+
+### pymatgen 简单调用
+
+激活项目虚拟环境后可以直接在 Python 中使用：
+
+```bash
+source .venv/bin/activate
+python - <<'PY'
+from pymatgen.core import Lattice, Structure
+
+structure = Structure(
+    Lattice.cubic(3.5),
+    ["Si"],
+    [[0, 0, 0]],
+)
+
+print(structure.formula)
+print(structure.lattice.a)
+PY
+```
+
+如果需要读取 CIF/POSCAR 等结构文件：
+
+```python
+from pymatgen.core import Structure
+
+structure = Structure.from_file("structure.cif")
+print(structure.composition.reduced_formula)
 ```
 
 ### Configuration
