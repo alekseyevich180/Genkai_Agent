@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "nitrides",
-  "updated_at": "2026-07-09T05:13:19.476653+00:00",
+  "updated_at": "2026-07-09T06:38:22.122853+00:00",
   "summary": {
     "terms": 53,
-    "known_useful": 41,
-    "unknown": 12
+    "known_useful": 52,
+    "unknown": 1
   },
   "keyword_inventory": {
     "active_sites": [
@@ -62,8 +62,8 @@
       {
         "term": "ammonia",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "clusters_single_atoms": [
@@ -246,8 +246,8 @@
       {
         "term": "TM@Sb (TM = Sc",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "coverage": [
@@ -370,8 +370,8 @@
       {
         "term": "monochain CrO3",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Sc",
@@ -390,22 +390,22 @@
       {
         "term": "antimonene",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "ultrananocrystalline diamond",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "modeling_keywords": [
       {
         "term": "antimonene",
         "count": 3,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "subnanometer clusters",
@@ -428,14 +428,14 @@
       {
         "term": "overpotential (ηOER = 0.48 V",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "single-atom catalyst",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "single_atom_site",
@@ -446,26 +446,26 @@
       {
         "term": "transition metal",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "trifunctional",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "ΔG*H",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "ηORR = 0.50 V)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "reactions": [
@@ -1080,8 +1080,8 @@
     },
     {
       "term": "antimonene",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material",
@@ -1343,8 +1343,8 @@
     },
     {
       "term": "ammonia",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "products"
       ],
@@ -1415,8 +1415,8 @@
     },
     {
       "term": "monochain CrO3",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "modifiers"
       ],
@@ -1433,8 +1433,8 @@
     },
     {
       "term": "overpotential (ηOER = 0.48 V",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1478,8 +1478,8 @@
     },
     {
       "term": "single-atom catalyst",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1505,8 +1505,8 @@
     },
     {
       "term": "TM@Sb (TM = Sc",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Composition"
       ],
@@ -1514,8 +1514,8 @@
     },
     {
       "term": "transition metal",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1523,8 +1523,8 @@
     },
     {
       "term": "trifunctional",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "modeling_keywords"
       ],
@@ -1532,8 +1532,8 @@
     },
     {
       "term": "ultrananocrystalline diamond",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1541,8 +1541,8 @@
     },
     {
       "term": "ΔG*H",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1550,8 +1550,8 @@
     },
     {
       "term": "ηORR = 0.50 V)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],

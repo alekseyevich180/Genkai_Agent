@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "battery_electrode_materials",
-  "updated_at": "2026-07-09T05:13:19.343784+00:00",
+  "updated_at": "2026-07-09T06:30:15.102890+00:00",
   "summary": {
     "terms": 3,
-    "known_useful": 1,
-    "unknown": 2
+    "known_useful": 3,
+    "unknown": 0
   },
   "keyword_inventory": {
     "materials": [
@@ -20,14 +20,14 @@
       {
         "term": "photoanode",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "sodium metal batteries",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ]
   },
@@ -57,8 +57,8 @@
     },
     {
       "term": "photoanode",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
@@ -66,8 +66,8 @@
     },
     {
       "term": "sodium metal batteries",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "modeling_keywords"
       ],

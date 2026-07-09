@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "phosphides_phosphates",
-  "updated_at": "2026-07-09T05:13:19.531161+00:00",
+  "updated_at": "2026-07-09T06:35:38.832094+00:00",
   "summary": {
     "terms": 28,
-    "known_useful": 22,
-    "unknown": 6
+    "known_useful": 28,
+    "unknown": 0
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -36,8 +36,8 @@
       {
         "term": "hydroxyl species",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "NO",
@@ -62,8 +62,8 @@
       {
         "term": "sub-saturation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "dopants_modifiers": [
@@ -110,14 +110,14 @@
       {
         "term": "phosphides",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "transition metal-based catalysts",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "modeling_keywords": [
@@ -136,8 +136,8 @@
       {
         "term": "catalyst development",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "DFT",
@@ -148,8 +148,8 @@
       {
         "term": "operando X-ray absorption spectroscopy",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "oxidation",
@@ -435,8 +435,8 @@
     },
     {
       "term": "catalyst development",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "modeling_keywords"
       ],
@@ -516,8 +516,8 @@
     },
     {
       "term": "hydroxyl species",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -543,8 +543,8 @@
     },
     {
       "term": "operando X-ray absorption spectroscopy",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
@@ -570,8 +570,8 @@
     },
     {
       "term": "phosphides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -597,8 +597,8 @@
     },
     {
       "term": "sub-saturation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Coverage"
       ],
@@ -615,8 +615,8 @@
     },
     {
       "term": "transition metal-based catalysts",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],

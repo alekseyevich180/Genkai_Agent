@@ -1,27 +1,27 @@
 {
   "schema_version": "2.0",
   "material_class": "carbon_materials",
-  "updated_at": "2026-07-09T04:57:34.792237+00:00",
+  "updated_at": "2026-07-09T06:37:40.307963+00:00",
   "summary": {
     "terms": 21,
-    "known_useful": 12,
-    "unknown": 9
+    "known_useful": 21,
+    "unknown": 0
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
       {
         "term": "hydrocarbons",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "adsorption_sites": [
       {
         "term": "graphene plane",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "clusters_single_atoms": [
@@ -36,8 +36,8 @@
       {
         "term": "g-C3N4",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ag",
@@ -56,8 +56,8 @@
       {
         "term": "carbon doping",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ],
     "materials": [
@@ -70,20 +70,20 @@
       {
         "term": "g-C3N4",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ag/g-C3N4",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "graphene-like carbon",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "carbon",
@@ -94,8 +94,8 @@
       {
         "term": "Graphene (G)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "nitrogen-doped carbon",
@@ -108,20 +108,20 @@
       {
         "term": "g-C3N4",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ag/g-C3N4",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "carbon doping",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "OER",
@@ -148,14 +148,14 @@
       {
         "term": "carbon cloth",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "graphene-like carbon",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "carbon supported Ir",
@@ -184,8 +184,8 @@
       {
         "term": "Graphene",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "graphene-like carbon surface",
@@ -467,8 +467,8 @@
     },
     {
       "term": "g-C3N4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Composition",
@@ -489,8 +489,8 @@
     },
     {
       "term": "Ag/g-C3N4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material",
         "Modeling Keywords"
@@ -499,8 +499,8 @@
     },
     {
       "term": "carbon cloth",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "surfaces",
         "Surface/Support"
@@ -509,8 +509,8 @@
     },
     {
       "term": "carbon doping",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "modeling_keywords",
         "Dopant/Modifier"
@@ -519,8 +519,8 @@
     },
     {
       "term": "graphene-like carbon",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Surface/Support"
@@ -593,8 +593,8 @@
     },
     {
       "term": "Graphene",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Surface/Support"
       ],
@@ -602,8 +602,8 @@
     },
     {
       "term": "Graphene (G)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -611,8 +611,8 @@
     },
     {
       "term": "graphene plane",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "adsorption_sites"
       ],
@@ -629,8 +629,8 @@
     },
     {
       "term": "hydrocarbons",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "products"
       ],

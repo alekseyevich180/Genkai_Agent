@@ -217,6 +217,13 @@ Class-specific reuse rules:
   spinel, perovskite, fluorite, wurtzite, rocksalt, pyrochlore, delafossite,
   brucite, and corundum. These terms often imply crystal system, likely space
   group family, and which facet notation may be meaningful.
+- Treat repeated composite material names, variable compositions, and adsorbed
+  intermediate formulae through the surface material vocabulary before adding
+  them to unknown terms. Examples include graphitic carbon nitride (`g-C3N4`),
+  layered double hydroxides (`LDH`, `NiFe LDH`, `NiCo LDH/CC`), black
+  phosphorus, BSCF-type perovskites, `NixPy`, single-atom/support shorthand,
+  electrolyte concentrations, and adsorbed species notation such as `*OH`,
+  `*O`, `*OOH`, `Hads`, and `OHads`.
 - `supported_catalysts`: track support, loaded species, loading amount,
   nanoparticle or cluster identity, and exposed support facet.
 - `carbon_materials`: track 2D carbon host, doped element, N/O/S coordination,

@@ -1,19 +1,19 @@
 {
   "schema_version": "2.0",
   "material_class": "other_inorganic_materials",
-  "updated_at": "2026-07-09T05:13:19.487859+00:00",
+  "updated_at": "2026-07-09T06:35:38.782920+00:00",
   "summary": {
     "terms": 53,
-    "known_useful": 35,
-    "unknown": 18
+    "known_useful": 44,
+    "unknown": 9
   },
   "keyword_inventory": {
     "active_sites": [
       {
         "term": "Cr3c",
         "count": 2,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Mx-Ny-C",
@@ -30,8 +30,8 @@
       {
         "term": "Cr5c",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Mn (II) sites",
@@ -68,14 +68,14 @@
       {
         "term": "ONOO*",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "OOH*",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Oxygen",
@@ -172,8 +172,8 @@
       {
         "term": "CdN4C0-gra",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Cr2O3",
@@ -190,8 +190,8 @@
       {
         "term": "CdN0C4-gra",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Ce",
@@ -250,14 +250,14 @@
       {
         "term": "Noble metal",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "non-precious metal catalysts",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "palladium",
@@ -306,8 +306,8 @@
       {
         "term": "NO oxidation",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "oxygen evolution reaction",
@@ -848,8 +848,8 @@
     },
     {
       "term": "CdN4C0-gra",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "materials",
         "Material"
@@ -868,8 +868,8 @@
     },
     {
       "term": "Cr3c",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "active_sites",
         "Active Site"
@@ -943,8 +943,8 @@
     },
     {
       "term": "CdN0C4-gra",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "materials"
       ],
@@ -997,8 +997,8 @@
     },
     {
       "term": "Cr5c",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Active Site"
       ],
@@ -1177,8 +1177,8 @@
     },
     {
       "term": "NO oxidation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "applications"
       ],
@@ -1186,8 +1186,8 @@
     },
     {
       "term": "Noble metal",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1195,8 +1195,8 @@
     },
     {
       "term": "non-precious metal catalysts",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1213,8 +1213,8 @@
     },
     {
       "term": "ONOO*",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -1222,8 +1222,8 @@
     },
     {
       "term": "OOH*",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],

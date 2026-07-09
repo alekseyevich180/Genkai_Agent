@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "single_atom_catalysts",
-  "updated_at": "2026-07-08T04:31:23.594973+00:00",
+  "updated_at": "2026-07-09T06:35:38.840492+00:00",
   "summary": {
     "terms": 21,
-    "known_useful": 15,
-    "unknown": 6
+    "known_useful": 20,
+    "unknown": 1
   },
   "keyword_inventory": {
     "active_sites": [
@@ -18,8 +18,8 @@
       {
         "term": "Ni atom",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "adsorbates_reactants": [
@@ -80,8 +80,8 @@
       {
         "term": "Sn SAs/G-Na",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "modeling_keywords": [
@@ -106,20 +106,20 @@
       {
         "term": "dendrite",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "metal-oxygen bonding",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "planar deposition",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "SAC",
@@ -419,8 +419,8 @@
     },
     {
       "term": "dendrite",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -455,8 +455,8 @@
     },
     {
       "term": "metal-oxygen bonding",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
@@ -482,8 +482,8 @@
     },
     {
       "term": "Ni atom",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Active Site"
       ],
@@ -500,8 +500,8 @@
     },
     {
       "term": "planar deposition",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -536,8 +536,8 @@
     },
     {
       "term": "Sn SAs/G-Na",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Material"
       ],

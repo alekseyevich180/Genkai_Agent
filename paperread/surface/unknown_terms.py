@@ -18,6 +18,10 @@ from .collect_experience import (
 )
 from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
 from .crystal_structures import is_crystal_structure_term
+from .material_vocabulary import (
+    is_material_vocabulary_term,
+    research_category_for_material_vocabulary,
+)
 from .surface_ontology import is_known_surface_experience_term
 from .surface_indices import canonicalize_surface_index
 
@@ -89,13 +93,19 @@ def reclassify_material_class_store(
             was_kind = str(entry.get("kind", ""))
             surface_index = canonicalize_surface_index(term, material_context=surface_index_context) if term else None
             crystal_structure = is_crystal_structure_term(term) if term else False
-            if term and (is_known_surface_experience_term(term) or surface_index or crystal_structure):
+            material_vocabulary = is_material_vocabulary_term(term) if term else False
+            if term and (is_known_surface_experience_term(term) or surface_index or crystal_structure or material_vocabulary):
                 if was_kind != "known_useful":
                     changed_entries += 1
                     file_changed = True
                 entry["kind"] = "known_useful"
                 if not entry.get("research_category") or entry.get("research_category") == "unknown_information":
-                    entry["research_category"] = "surface_structure" if surface_index or crystal_structure else "other_useful_information"
+                    if surface_index or crystal_structure:
+                        entry["research_category"] = "surface_structure"
+                    elif material_vocabulary:
+                        entry["research_category"] = research_category_for_material_vocabulary(term)
+                    else:
+                        entry["research_category"] = "other_useful_information"
 
         known_count = sum(1 for entry in entries if entry.get("kind") == "known_useful")
         unknown_count = len(entries) - known_count

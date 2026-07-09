@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "sulfides",
-  "updated_at": "2026-07-09T05:13:19.543154+00:00",
+  "updated_at": "2026-07-09T06:35:38.845697+00:00",
   "summary": {
     "terms": 14,
-    "known_useful": 12,
-    "unknown": 2
+    "known_useful": 14,
+    "unknown": 0
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -30,8 +30,8 @@
       {
         "term": "Zn–Air",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "materials": [
@@ -126,8 +126,8 @@
       {
         "term": "Zn–Air Batteries",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ]
   },
@@ -386,8 +386,8 @@
     },
     {
       "term": "Zn–Air",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -395,8 +395,8 @@
     },
     {
       "term": "Zn–Air Batteries",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "applications"
       ],

@@ -4,8 +4,10 @@ import re
 
 try:
     from .crystal_structures import is_crystal_structure_term
+    from .material_vocabulary import is_material_vocabulary_term
 except ImportError:  # pragma: no cover - direct script execution fallback
     from crystal_structures import is_crystal_structure_term
+    from material_vocabulary import is_material_vocabulary_term
 
 SUPPORTED_MODELING_TASKS = {
     "vacancy_landscape",
@@ -555,6 +557,7 @@ COMMON_REACTION_OR_APPLICATION_TERMS = {
     "hydrogen generation",
     "hydrogen oxidation",
     "hydrogen production",
+    "water electrolysis",
     "ketonization",
     "nitrogen reduction",
     "oer catalysts",
@@ -567,6 +570,55 @@ COMMON_REACTION_OR_APPLICATION_TERMS = {
     "proton exchange membrane fuel cells",
     "water oxidation",
     "water splitting",
+    "alkaline water electrolysis",
+    "alkaline electrolyte",
+    "ammonia",
+    "anodic oxidation",
+    "atomic simulation environment",
+    "catalyst development",
+    "catalytic reactions",
+    "computational standard hydrogen electrode",
+    "covalency",
+    "d-band",
+    "d-band theory",
+    "electron transfer",
+    "electrochemistry",
+    "gibbs free energy",
+    "hydrogen evolution",
+    "kinetic characteristics",
+    "operando x-ray absorption spectroscopy",
+    "partial densities of states",
+    "photoanode",
+    "photoelectrochemical",
+    "pourbaix diagram",
+    "quantum espresso",
+    "scaling relation",
+    "tensile stress effect",
+    "catalytic activity",
+    "catalytic remediation technologies",
+    "cost-effective",
+    "dissolution pathways",
+    "doping",
+    "high reactivity",
+    "hydrocarbons",
+    "lattice strain",
+    "metal-oxygen bonding",
+    "ni atom",
+    "octahedral co",
+    "oxygen vacancies",
+    "overpotential",
+    "theoretical studies",
+    "transition metal",
+    "water electrolysis",
+    "zn-air",
+    "zn-air batteries",
+    "2d material",
+    "3d porous framework",
+    "4th main group element",
+    "atomically thin structure",
+    "bulk material",
+    "bulk phase",
+    "b-layer",
 }
 
 GENERIC_EXPERIENCE_PLACEHOLDERS = {
@@ -724,9 +776,19 @@ def is_known_surface_experience_term(value: str) -> bool:
         return True
     if is_crystal_structure_term(stripped):
         return True
+    if is_material_vocabulary_term(stripped):
+        return True
+    if re.fullmatch(r"\d+(?:\.\d+)?\s*%", stripped):
+        return True
+    if re.fullmatch(r"\d+(?:\.\d+)?\s*wt\s*%\s*.*", lower):
+        return True
+    if re.fullmatch(r"\d+(?:\.\d+)?\s*m\s*[a-z]{1,3}oh", lower):
+        return True
     if re.fullmatch(r"\(?\d[\d\s-]{1,8}\)?", stripped):
         return True
     if lower in COMMON_REACTION_OR_APPLICATION_TERMS:
+        return True
+    if lower in GENERIC_REACTION_TYPES:
         return True
     if any(term in lower for term in KNOWN_SURFACE_TERMS | KNOWN_MODELING_TOKENS):
         return True

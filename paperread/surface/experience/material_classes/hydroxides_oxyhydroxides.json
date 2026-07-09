@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "hydroxides_oxyhydroxides",
-  "updated_at": "2026-07-09T05:13:19.374895+00:00",
+  "updated_at": "2026-07-09T06:30:15.136254+00:00",
   "summary": {
     "terms": 65,
-    "known_useful": 42,
-    "unknown": 23
+    "known_useful": 65,
+    "unknown": 0
   },
   "keyword_inventory": {
     "active_sites": [
@@ -36,14 +36,14 @@
       {
         "term": "Co3+δ",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Fe atoms in NiFe oxyhydroxide",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "adsorbates_reactants": [
@@ -56,8 +56,8 @@
       {
         "term": "CO32−",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "H2O",
@@ -68,14 +68,14 @@
       {
         "term": "NiCoOOH*",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "oxygen-contained intermediates",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       }
     ],
     "clusters_single_atoms": [
@@ -94,8 +94,8 @@
       {
         "term": "single-atom Au",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "compositions": [
@@ -132,32 +132,32 @@
       {
         "term": "0.4 wt % Au loading",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "0.4 wt % sAu",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "bimetallic",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Fe-free",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "layered double hydroxides",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Ni",
@@ -200,8 +200,8 @@
       {
         "term": "sAu",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "facets": [
@@ -222,8 +222,8 @@
       {
         "term": "β-CoOOH",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "FeOOH",
@@ -234,8 +234,8 @@
       {
         "term": "Co–Fe–Cr (oxy)Hydroxides",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiOOH",
@@ -258,52 +258,52 @@
       {
         "term": "hydroxides",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "layered double hydroxide (LDH)",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiCo Layer Double Hydroxide",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiCo LDH/CC",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiFe layered double hydroxide",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiFe LDH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "sAu/NiFe LDH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "modeling_keywords": [
       {
         "term": "β-CoOOH",
         "count": 4,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Active site",
@@ -368,14 +368,14 @@
       {
         "term": "interfacial interactions",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "NiFe oxyhydroxide",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "octahedral sites",
@@ -979,8 +979,8 @@
     },
     {
       "term": "β-CoOOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Modeling Keywords",
@@ -1049,8 +1049,8 @@
     },
     {
       "term": "Co–Fe–Cr (oxy)Hydroxides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials",
         "Material"
@@ -1174,8 +1174,8 @@
     },
     {
       "term": "0.4 wt % Au loading",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "material_parameters"
       ],
@@ -1183,8 +1183,8 @@
     },
     {
       "term": "0.4 wt % sAu",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Composition"
       ],
@@ -1219,8 +1219,8 @@
     },
     {
       "term": "bimetallic",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "material_parameters"
       ],
@@ -1255,8 +1255,8 @@
     },
     {
       "term": "Co3+δ",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Active Site"
       ],
@@ -1264,8 +1264,8 @@
     },
     {
       "term": "CO32−",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "adsorbates"
       ],
@@ -1336,8 +1336,8 @@
     },
     {
       "term": "Fe atoms in NiFe oxyhydroxide",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "active_sites"
       ],
@@ -1345,8 +1345,8 @@
     },
     {
       "term": "Fe-free",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "material_parameters"
       ],
@@ -1372,8 +1372,8 @@
     },
     {
       "term": "hydroxides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1381,8 +1381,8 @@
     },
     {
       "term": "interfacial interactions",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1390,8 +1390,8 @@
     },
     {
       "term": "layered double hydroxide (LDH)",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1399,8 +1399,8 @@
     },
     {
       "term": "layered double hydroxides",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "material_parameters"
       ],
@@ -1417,8 +1417,8 @@
     },
     {
       "term": "NiCo Layer Double Hydroxide",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1435,8 +1435,8 @@
     },
     {
       "term": "NiCo LDH/CC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1444,8 +1444,8 @@
     },
     {
       "term": "NiCoOOH*",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "intermediates"
       ],
@@ -1453,8 +1453,8 @@
     },
     {
       "term": "NiFe layered double hydroxide",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "materials"
       ],
@@ -1462,8 +1462,8 @@
     },
     {
       "term": "NiFe LDH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1480,8 +1480,8 @@
     },
     {
       "term": "NiFe oxyhydroxide",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1498,8 +1498,8 @@
     },
     {
       "term": "oxygen-contained intermediates",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -1507,8 +1507,8 @@
     },
     {
       "term": "sAu",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Dopant/Modifier"
       ],
@@ -1516,8 +1516,8 @@
     },
     {
       "term": "sAu/NiFe LDH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Material"
       ],
@@ -1525,8 +1525,8 @@
     },
     {
       "term": "single-atom Au",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "single_atoms"
       ],

@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "carbides_mxenes",
-  "updated_at": "2026-07-09T05:13:19.352344+00:00",
+  "updated_at": "2026-07-09T06:35:38.625020+00:00",
   "summary": {
     "terms": 45,
-    "known_useful": 33,
-    "unknown": 12
+    "known_useful": 45,
+    "unknown": 0
   },
   "keyword_inventory": {
     "adsorbates_reactants": [
@@ -30,8 +30,8 @@
       {
         "term": "hydroxyl species",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Methanol",
@@ -76,8 +76,8 @@
       {
         "term": "Ru modified",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       }
     ],
     "coverage": [
@@ -90,22 +90,22 @@
       {
         "term": "sub-saturation",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "dopants_modifiers": [
       {
         "term": "lattice strain",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "Lattice-Strain",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "Ru",
@@ -218,8 +218,8 @@
       {
         "term": "catalytic activity",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "catalytic mechanism",
@@ -230,8 +230,8 @@
       {
         "term": "catalytic reactions",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "DFT",
@@ -260,8 +260,8 @@
       {
         "term": "kinetic characteristics",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "OER",
@@ -278,8 +278,8 @@
       {
         "term": "theoretical studies",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       }
     ],
     "reactions": [
@@ -298,14 +298,14 @@
       {
         "term": "Catalytic Oxidation",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "catalytic remediation technologies",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "fuel cells",
@@ -316,8 +316,8 @@
       {
         "term": "Shape-dependent electrocatalysis",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ]
   },
@@ -692,8 +692,8 @@
     },
     {
       "term": "catalytic activity",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
@@ -710,8 +710,8 @@
     },
     {
       "term": "Catalytic Oxidation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Reaction Type"
       ],
@@ -719,8 +719,8 @@
     },
     {
       "term": "catalytic reactions",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
@@ -728,8 +728,8 @@
     },
     {
       "term": "catalytic remediation technologies",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "applications"
       ],
@@ -809,8 +809,8 @@
     },
     {
       "term": "hydroxyl species",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "adsorbates"
       ],
@@ -827,8 +827,8 @@
     },
     {
       "term": "kinetic characteristics",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],
@@ -836,8 +836,8 @@
     },
     {
       "term": "lattice strain",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Dopant/Modifier"
       ],
@@ -845,8 +845,8 @@
     },
     {
       "term": "Lattice-Strain",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Dopant/Modifier"
       ],
@@ -917,8 +917,8 @@
     },
     {
       "term": "Ru modified",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Composition"
       ],
@@ -935,8 +935,8 @@
     },
     {
       "term": "Shape-dependent electrocatalysis",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Reaction Type"
       ],
@@ -944,8 +944,8 @@
     },
     {
       "term": "sub-saturation",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Coverage"
       ],
@@ -953,8 +953,8 @@
     },
     {
       "term": "theoretical studies",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "modeling_keywords"
       ],

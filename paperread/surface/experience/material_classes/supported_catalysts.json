@@ -1,11 +1,11 @@
 {
   "schema_version": "2.0",
   "material_class": "supported_catalysts",
-  "updated_at": "2026-07-09T05:13:19.552641+00:00",
+  "updated_at": "2026-07-09T06:37:40.523434+00:00",
   "summary": {
     "terms": 94,
-    "known_useful": 68,
-    "unknown": 26
+    "known_useful": 90,
+    "unknown": 4
   },
   "keyword_inventory": {
     "active_sites": [
@@ -86,14 +86,14 @@
       {
         "term": "*O",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "*OOH",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "H2O/OH",
@@ -140,8 +140,8 @@
       {
         "term": "Zn–Air",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "clusters_single_atoms": [
@@ -192,20 +192,20 @@
       {
         "term": "0.4 wt % sAu",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_structure"
       },
       {
         "term": "1 M KOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "1 M NaOH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Co",
@@ -222,8 +222,8 @@
       {
         "term": "g-C3N4",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "N-doped C",
@@ -278,8 +278,8 @@
       {
         "term": "High OH or mixed OH/O",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "high OH or mixed OH/O coverage",
@@ -324,8 +324,8 @@
       {
         "term": "Ag/g-C3N4",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Hg/HgO",
@@ -336,8 +336,8 @@
       {
         "term": "Mo-Ni3S2/NixPy/NF electrode",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Mo–N/C@MoS2",
@@ -378,8 +378,8 @@
       {
         "term": "NiCo LDH/CC",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "Pt/C",
@@ -408,14 +408,14 @@
       {
         "term": "sAu/NiFe LDH",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "Sn SAs/G-Na",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       }
     ],
     "modeling_keywords": [
@@ -452,8 +452,8 @@
       {
         "term": "Ag/g-C3N4",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "bifunctional electrocatalysts",
@@ -470,8 +470,8 @@
       {
         "term": "hollow nanorods",
         "count": 2,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
       },
       {
         "term": "oxygen reduction reaction",
@@ -488,14 +488,14 @@
       {
         "term": "alkaline electrolyte",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "dendrite",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "DFT",
@@ -512,14 +512,14 @@
       {
         "term": "Habs",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "Hads",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "metal cluster",
@@ -530,8 +530,8 @@
       {
         "term": "OHads",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
       },
       {
         "term": "PEC",
@@ -542,8 +542,8 @@
       {
         "term": "planar deposition",
         "count": 1,
-        "kind": "unknown_high_value",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       },
       {
         "term": "sodium",
@@ -598,8 +598,8 @@
       {
         "term": "Catalyst Preparation",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
       },
       {
         "term": "HOR",
@@ -622,8 +622,8 @@
       {
         "term": "Zn–Air Batteries",
         "count": 1,
-        "kind": "unknown_context",
-        "research_category": "unknown_information"
+        "kind": "known_useful",
+        "research_category": "surface_materials"
       }
     ],
     "supports_surfaces": [
@@ -1736,8 +1736,8 @@
     },
     {
       "term": "Ag/g-C3N4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material",
         "Modeling Keywords"
@@ -1784,8 +1784,8 @@
     },
     {
       "term": "hollow nanorods",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Modeling Keywords"
       ],
@@ -1811,8 +1811,8 @@
     },
     {
       "term": "Mo-Ni3S2/NixPy/NF electrode",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -1870,8 +1870,8 @@
     },
     {
       "term": "*O",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "intermediates"
       ],
@@ -1879,8 +1879,8 @@
     },
     {
       "term": "*OOH",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "intermediates"
       ],
@@ -1888,8 +1888,8 @@
     },
     {
       "term": "0.4 wt % sAu",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
       "fields": [
         "Composition"
       ],
@@ -1897,8 +1897,8 @@
     },
     {
       "term": "1 M KOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Composition"
       ],
@@ -1906,8 +1906,8 @@
     },
     {
       "term": "1 M NaOH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Composition"
       ],
@@ -1951,8 +1951,8 @@
     },
     {
       "term": "alkaline electrolyte",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2023,8 +2023,8 @@
     },
     {
       "term": "Catalyst Preparation",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
       "fields": [
         "Reaction Type"
       ],
@@ -2059,8 +2059,8 @@
     },
     {
       "term": "dendrite",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2086,8 +2086,8 @@
     },
     {
       "term": "g-C3N4",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Composition"
       ],
@@ -2104,8 +2104,8 @@
     },
     {
       "term": "Habs",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2113,8 +2113,8 @@
     },
     {
       "term": "Hads",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2131,8 +2131,8 @@
     },
     {
       "term": "High OH or mixed OH/O",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Coverage"
       ],
@@ -2212,8 +2212,8 @@
     },
     {
       "term": "NiCo LDH/CC",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Material"
       ],
@@ -2248,8 +2248,8 @@
     },
     {
       "term": "OHads",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2302,8 +2302,8 @@
     },
     {
       "term": "planar deposition",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Modeling Keywords"
       ],
@@ -2383,8 +2383,8 @@
     },
     {
       "term": "sAu/NiFe LDH",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Material"
       ],
@@ -2401,8 +2401,8 @@
     },
     {
       "term": "Sn SAs/G-Na",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
       "fields": [
         "Material"
       ],
@@ -2446,8 +2446,8 @@
     },
     {
       "term": "Zn–Air",
-      "kind": "unknown_high_value",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "Adsorbate/Reactant"
       ],
@@ -2455,8 +2455,8 @@
     },
     {
       "term": "Zn–Air Batteries",
-      "kind": "unknown_context",
-      "research_category": "unknown_information",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
       "fields": [
         "applications"
       ],

@@ -556,6 +556,10 @@ Oxygen vacancies acted as active sites and methoxy was identified.
     def test_surface_known_term_filter_removes_generic_unknown_noise(self):
         from paperread.surface.surface_ontology import is_known_surface_experience_term
         from paperread.surface.crystal_structures import match_crystal_structure_term
+        from paperread.surface.material_vocabulary import (
+            is_material_vocabulary_term,
+            research_category_for_material_vocabulary,
+        )
 
         self.assertTrue(is_known_surface_experience_term("Full"))
         self.assertTrue(is_known_surface_experience_term("Yes"))
@@ -566,12 +570,24 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertTrue(is_known_surface_experience_term("normal spinel"))
         self.assertEqual(match_crystal_structure_term("rutile TiO2")["typical_space_group"], "P4_2/mnm (No. 136)")
         self.assertEqual(match_crystal_structure_term("normal spinel")["typical_space_group"], "Fd-3m (No. 227)")
+        self.assertTrue(is_material_vocabulary_term("g-C3N4"))
+        self.assertTrue(is_material_vocabulary_term("NiFe LDH"))
+        self.assertTrue(is_material_vocabulary_term("Ba0.5Sr0.5Co0.8Fe0.2O3–d"))
+        self.assertTrue(is_material_vocabulary_term("*OOH"))
+        self.assertTrue(is_material_vocabulary_term("*H2O2"))
+        self.assertTrue(is_material_vocabulary_term("Cr3c"))
+        self.assertTrue(is_material_vocabulary_term("Pt-Bi Alloy"))
+        self.assertEqual(research_category_for_material_vocabulary("*OOH"), "adsorption_reaction")
+        self.assertEqual(research_category_for_material_vocabulary("Sn SAs/G-Na"), "clusters_single_atoms")
+        self.assertTrue(is_known_surface_experience_term("Synthesis"))
         self.assertTrue(is_known_surface_experience_term("electrochemical water splitting"))
         from paperread.surface.surface_indices import is_surface_index_term
 
         self.assertTrue(is_surface_index_term("Pt(111)"))
-        self.assertFalse(is_known_surface_experience_term("*OOH"))
-        self.assertFalse(is_known_surface_experience_term("carbon doping"))
+        self.assertTrue(is_known_surface_experience_term("*OOH"))
+        self.assertTrue(is_known_surface_experience_term("carbon doping"))
+        self.assertTrue(is_known_surface_experience_term("five-coordinated Cr5c"))
+        self.assertTrue(is_known_surface_experience_term("three-coordinated Cr3c"))
 
 
 def json_dumps_for_test(payload: dict) -> str:
