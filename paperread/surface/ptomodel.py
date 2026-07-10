@@ -147,6 +147,57 @@ def _infer_cluster_structures(cluster_entries: list[str]) -> list[str]:
     return structures
 
 
+def _infer_cluster_atom_count(cluster_entries: list[str]) -> dict[str, Any] | None:
+    for entry in cluster_entries:
+        text = entry.strip()
+        if not text:
+            continue
+        match = re.search(
+            r"\b(?P<element>[A-Z][a-z]?)(?:\s*[-_ ]?\s*)(?P<count>[2-9]\d{0,3})\b",
+            text,
+        )
+        if match:
+            return {
+                "value": int(match.group("count")),
+                "source_term": text,
+                "element": match.group("element"),
+            }
+        match = re.search(r"\b(?P<count>[2-9]\d{0,3})\s*[- ]?atom\b", text, flags=re.IGNORECASE)
+        if match:
+            return {
+                "value": int(match.group("count")),
+                "source_term": text,
+                "element": _normalize_species(text),
+            }
+    return None
+
+
+def _normalize_adsorbate_candidate(raw: str) -> str | None:
+    text = raw.strip()
+    if not text:
+        return None
+    text = text.replace("adsorbed ", "").replace("Adsorbed ", "")
+    text = text.replace("adsorbate ", "").replace("Adsorbate ", "")
+    text = text.strip(" .;:")
+    text = text.replace("*", "")
+    text = re.sub(r"\bads\b", "", text, flags=re.IGNORECASE).strip()
+    if not text:
+        return None
+    return text
+
+
+def _adsorbate_candidates(adsorbates: list[str]) -> list[dict[str, str]]:
+    candidates: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for item in adsorbates:
+        normalized = _normalize_adsorbate_candidate(item)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        candidates.append({"raw": item, "normalized_species": normalized})
+    return candidates
+
+
 def _infer_site_symbols(active_sites: list[str]) -> list[str]:
     symbols: list[str] = []
     for item in active_sites:
@@ -360,6 +411,7 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
         payload["vacancy_models"] = _to_list(extraction.get("vacancy_models"))
     elif task_name == "adsorbate_landscape":
         payload["adsorbates"] = _to_list(extraction.get("adsorbates")) or _to_list((table_row or {}).get("Adsorbate/Reactant"))
+        payload["adsorbate_species"] = _adsorbate_candidates(payload["adsorbates"])
         payload["adsorption_sites"] = _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site"))
         payload["coverage"] = _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage"))
     elif task_name == "surface_cluster_builder":
@@ -369,6 +421,8 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
             for species in (_normalize_species(item) for item in payload["clusters"])
             if species
         ]
+        payload["cluster_atom_count"] = _infer_cluster_atom_count(payload["clusters"])
+        payload["cluster_structures"] = _infer_cluster_structures(payload["clusters"])
     return payload
 
 
@@ -389,15 +443,23 @@ def _build_argument_template(
         value: Any,
         status: str,
         reason: str,
+        confidence: str = "medium",
+        source_field: str | None = None,
+        source_term: str | None = None,
         from_task_inputs: list[str] | None = None,
         from_normalized_mapping: list[str] | None = None,
+        depends_on: list[str] | None = None,
     ) -> None:
         argument_values[parameter_name] = value
         argument_sources[parameter_name] = {
             "status": status,
+            "confidence": confidence,
+            "source_field": source_field,
+            "source_term": source_term,
             "reason": reason,
             "from_task_inputs": from_task_inputs or [],
             "from_normalized_mapping": from_normalized_mapping or [],
+            "depends_on": depends_on or [],
         }
 
     if "task_name" in parameters:
@@ -405,6 +467,7 @@ def _build_argument_template(
             "task_name",
             value=task_name,
             status="auto",
+            confidence="high",
             reason="Executable task name is already selected by ptomodel.",
         )
 
@@ -415,6 +478,9 @@ def _build_argument_template(
                 "site_symbols",
                 value=",".join(site_symbols),
                 status="auto",
+                confidence="high",
+                source_field="active_sites",
+                source_term=task_inputs.get("active_sites", [None])[0],
                 reason="Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
                 from_task_inputs=["active_sites"],
             )
@@ -425,15 +491,33 @@ def _build_argument_template(
                 "cluster_element",
                 value=cluster_species[0],
                 status="auto",
+                confidence="high",
+                source_field="clusters",
+                source_term=(task_inputs.get("clusters") or [None])[0],
                 reason="Cluster species normalized from paper cluster mentions.",
                 from_task_inputs=["cluster_species"],
             )
-        cluster_structures = _infer_cluster_structures(task_inputs.get("clusters", []))
+        cluster_atom_count = task_inputs.get("cluster_atom_count")
+        if cluster_atom_count:
+            mark(
+                "cluster_atoms",
+                value=cluster_atom_count["value"],
+                status="auto",
+                confidence="high",
+                source_field="clusters",
+                source_term=cluster_atom_count["source_term"],
+                reason="Cluster size is explicitly encoded in the cluster formula or phrase.",
+                from_task_inputs=["clusters", "cluster_atom_count"],
+            )
+        cluster_structures = task_inputs.get("cluster_structures", [])
         if cluster_structures:
             mark(
                 "cluster_structures",
                 value=cluster_structures,
                 status="auto",
+                confidence="high",
+                source_field="clusters",
+                source_term=(task_inputs.get("clusters") or [None])[0],
                 reason="Cluster text explicitly mentions crystal-structure keywords.",
                 from_task_inputs=["clusters"],
             )
@@ -443,19 +527,56 @@ def _build_argument_template(
             continue
 
         if parameter_name in {"input", "surface", "molecule", "cluster", "cluster_bulk_file"}:
+            source_field = "surfaces"
+            source_term = _first_nonempty(
+                *(task_inputs.get("surfaces") or []),
+                task_inputs.get("material"),
+            )
+            depends_on = ["slab_generation.surface_structure"]
+            if parameter_name == "input":
+                depends_on = ["slab_generation.surface_structure"]
+            elif parameter_name == "surface":
+                depends_on = ["slab_generation.surface_structure"]
+            elif parameter_name == "molecule":
+                source_field = "adsorbates"
+                source_term = _first_nonempty(
+                    *[
+                        candidate.get("raw")
+                        for candidate in task_inputs.get("adsorbate_species", [])
+                    ],
+                    *(task_inputs.get("adsorbates") or []),
+                )
+                depends_on = ["molecule_structure_file"]
+            elif parameter_name in {"cluster", "cluster_bulk_file"}:
+                source_field = "clusters"
+                source_term = _first_nonempty(*(task_inputs.get("clusters") or []))
+                depends_on = ["surface_cluster_builder.cluster_structure"]
             mark(
                 parameter_name,
                 value=None,
                 status="needs_upstream_artifact",
+                confidence="high",
+                source_field=source_field,
+                source_term=source_term,
                 reason="This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
                 from_task_inputs=["material", "surfaces", "facets"],
                 from_normalized_mapping=["primary_material", "primary_surface_or_support", "facet_set"],
+                depends_on=depends_on,
             )
         elif parameter_name in {"vacancy_counts", "coverage_counts", "adsorption_sites", "active_symbols"}:
+            source_field = {
+                "vacancy_counts": "defects",
+                "coverage_counts": "coverage",
+                "adsorption_sites": "adsorption_sites",
+                "active_symbols": "active_sites",
+            }[parameter_name]
             mark(
                 parameter_name,
                 value=None,
                 status="needs_manual_decision",
+                confidence="medium",
+                source_field=source_field,
+                source_term=_first_nonempty(*(task_inputs.get(source_field) or [])),
                 reason="Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
                 from_task_inputs=["coverage", "adsorption_sites", "active_sites", "defects", "vacancy_models"],
             )
@@ -464,6 +585,9 @@ def _build_argument_template(
                 parameter_name,
                 value=None,
                 status="needs_manual_decision",
+                confidence="medium",
+                source_field="clusters",
+                source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
                 reason="Cluster size mode must be chosen explicitly before invoking the builder.",
                 from_task_inputs=["clusters"],
             )
@@ -475,6 +599,7 @@ def _build_argument_template(
                 parameter_name,
                 value=None,
                 status=default_status,
+                confidence="low",
                 reason="No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
             )
 
@@ -488,8 +613,140 @@ def _build_argument_template(
     return {
         "arguments": argument_values,
         "argument_sources": argument_sources,
+        "parameter_bindings": {
+            name: {
+                "value": argument_values.get(name),
+                **argument_sources[name],
+            }
+            for name in argument_sources
+        },
         "auto_mapped_parameters": auto_mapped,
         "required_missing_parameters": required_missing,
+    }
+
+
+def _build_parameter_correspondence(
+    executable_tasks: list[str],
+    task_inputs: dict[str, dict[str, Any]],
+    normalized_mapping: dict[str, Any],
+) -> dict[str, Any]:
+    links: list[dict[str, Any]] = []
+
+    def add_link(
+        relation: str,
+        *,
+        source_fields: list[str],
+        target_parameters: list[str],
+        status: str,
+        reason: str,
+        source_terms: list[str] | None = None,
+        prerequisite: str | None = None,
+    ) -> None:
+        links.append(
+            {
+                "relation": relation,
+                "source_fields": source_fields,
+                "source_terms": source_terms or [],
+                "target_parameters": target_parameters,
+                "status": status,
+                "prerequisite": prerequisite,
+                "reason": reason,
+            }
+        )
+
+    surface_targets = []
+    if "vacancy_landscape" in executable_tasks:
+        surface_targets.append("vacancy_landscape.input")
+    if "adsorbate_landscape" in executable_tasks:
+        surface_targets.append("adsorbate_landscape.surface")
+    if "surface_cluster_builder" in executable_tasks:
+        surface_targets.append("surface_cluster_builder.surface")
+    if surface_targets:
+        add_link(
+            "shared_surface_structure",
+            source_fields=["materials", "surfaces", "facets", "surface_facets.surface_index"],
+            source_terms=[
+                item
+                for item in [
+                    normalized_mapping.get("primary_material"),
+                    normalized_mapping.get("primary_surface_or_support"),
+                    ", ".join(normalized_mapping.get("facet_set") or []),
+                ]
+                if item
+            ],
+            target_parameters=surface_targets,
+            status="needs_upstream_artifact",
+            prerequisite="slab_generation or user-selected structure file",
+            reason="The same resolved slab or surface structure should feed all downstream tasks that operate on a surface artifact.",
+        )
+
+    ads_inputs = task_inputs.get("adsorbate_landscape", {})
+    adsorbate_species = ads_inputs.get("adsorbate_species", [])
+    if adsorbate_species:
+        add_link(
+            "adsorbate_to_molecule_file",
+            source_fields=["adsorbates", "intermediates"],
+            source_terms=[item["raw"] for item in adsorbate_species],
+            target_parameters=["adsorbate_landscape.molecule"],
+            status="needs_upstream_artifact",
+            prerequisite="molecule structure file selection or generation",
+            reason="Paper adsorbate names identify molecule candidates, but the executable parameter is a structure-file path.",
+        )
+
+    if ads_inputs.get("coverage"):
+        add_link(
+            "coverage_depends_on_surface_and_molecule",
+            source_fields=["coverage"],
+            source_terms=ads_inputs["coverage"],
+            target_parameters=["adsorbate_landscape.coverage_counts"],
+            status="needs_manual_decision",
+            prerequisite="resolved surface supercell and molecule count convention",
+            reason="Coverage text constrains the adsorbate loading but must be converted after the surface cell and adsorbate are fixed.",
+        )
+
+    cluster_inputs = task_inputs.get("surface_cluster_builder", {})
+    cluster_targets = [
+        target
+        for target in [
+            "surface_cluster_builder.cluster_element",
+            "surface_cluster_builder.cluster_atoms",
+            "surface_cluster_builder.cluster_structures",
+        ]
+        if target.split(".")[-1] in {"cluster_element", "cluster_atoms", "cluster_structures"}
+    ]
+    if cluster_inputs.get("clusters"):
+        add_link(
+            "cluster_phrase_to_builder_parameters",
+            source_fields=["clusters", "Cluster/Single Atom"],
+            source_terms=cluster_inputs["clusters"],
+            target_parameters=cluster_targets,
+            status="auto_or_manual_by_parameter",
+            prerequisite=None,
+            reason="Cluster text can directly provide the element, sometimes the atom count, and sometimes the crystal structure keyword.",
+        )
+
+    surface_site_contexts = normalized_mapping.get("surface_site_contexts") or []
+    if surface_site_contexts and "adsorbate_landscape" in executable_tasks:
+        add_link(
+            "active_site_to_adsorption_site_search",
+            source_fields=["active_sites", "adsorption_sites", "surface_site_contexts"],
+            source_terms=surface_site_contexts[0].get("active_site_terms", [])
+            + surface_site_contexts[0].get("adsorption_site_terms", []),
+            target_parameters=["adsorbate_landscape.site_symbols", "adsorbate_landscape.site_group_size"],
+            status="auto_or_manual_by_parameter",
+            prerequisite="resolved surface structure",
+            reason="Active-site labels can seed element-based site detection, while geometry choices remain execution-time decisions.",
+        )
+
+    return {
+        "shared_context": {
+            "primary_material": normalized_mapping.get("primary_material"),
+            "primary_surface_or_support": normalized_mapping.get("primary_surface_or_support"),
+            "facet_set": normalized_mapping.get("facet_set", []),
+            "loaded_species": normalized_mapping.get("loaded_species", []),
+            "reaction_family": normalized_mapping.get("reaction_family", []),
+        },
+        "links": links,
     }
 
 

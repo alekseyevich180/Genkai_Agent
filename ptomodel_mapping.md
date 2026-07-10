@@ -13,7 +13,42 @@
 3. `task_argument_template`  
    把上面的上下文映射到具体建模任务参数。
 
-## 2. 字段对应关系
+## 2. 参数种类左右对照
+
+下面先把两侧参数分开列出。左侧是当前三个已启用建模脚本实际需要的参数种类；右侧是材料论文中当前抽取链路可以收集到的参数种类。
+
+| 建模用途 | 建模脚本 / task | 建模部分需要的参数种类 | 材料论文中能够收集到的参数种类 |
+|---|---|---|---|
+| 表面 O 空位 | `vacancy_landscape` | `input`：结构文件 / slab 文件 | `materials` / `Material`：材料名称 |
+| 表面 O 空位 | `vacancy_landscape` | `vacancy_counts`：空位数量 | `defects` / `Defect`：oxygen vacancy、Vo、缺陷丰富描述 |
+| 表面 O 空位 | `vacancy_landscape` | `z_frac_min` / `z_frac_max`：可选氧原子的 z 分数范围 | `surface_terminations` / `Surface Termination`：表面、subsurface、reduced surface 等空间提示 |
+| 表面 O 空位 | `vacancy_landscape` | `mu_o`：氧化学势 | `reaction_parameters`：气氛、氧分压、温度等可作为人工判断依据 |
+| 表面 O 空位 | `vacancy_landscape` | `samples_per_count`、`seed` | 论文通常不直接给出；属于建模采样策略 |
+| 表面 O 空位 | `vacancy_landscape` | `calculator`、`uma_model`、`device`、`task_name`、`include_d3` | 论文通常不直接给出；属于计算执行配置 |
+| 表面 O 空位 | `vacancy_landscape` | `fmax`、`max_steps` | 论文中的 `reaction_parameters` 或 methods 中可能有 DFT 收敛信息，但当前抽取链路不稳定收集 |
+| 表面 O 空位 | `vacancy_landscape` | `output_dir`、`structure_prefix`、`write_all_structures`、`smoke_test` | 论文不提供；属于工作流输出配置 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `surface`：表面结构文件 | `surfaces` / `Surface/Support`、`slab_models`、`facets` / `Facet` |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `molecule`：吸附分子结构文件 | `adsorbates` / `Adsorbate/Reactant`、`intermediates`、SAMs 或 modifier 分子名 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `site_symbols`：候选吸附位元素 | `active_sites` / `Active Site`：Pt site、Ce site、metal site 等 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `site_group_size`、`site_radius`、`site_z_tolerance`、`max_sites` | `adsorption_sites` / `Adsorption Site`：top、bridge、hollow、monodentate、bidentate 等 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `coverage_counts` | `coverage` / `Coverage`：ML、coverage、coadsorption、saturation coverage |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `patterns`、`random_repeats`、`n_trials_single`、`seed` | 论文通常不直接给出；属于构型搜索策略 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `z_gap_min` / `z_gap_max` | 论文通常不直接给出；可由吸附构型经验人工设定 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `calculator`、`uma_model`、`device`、`task_name`、`include_d3`、`fmax`、`max_steps` | 论文 methods 中可能有计算设置，但当前主要作为执行配置保留 |
+| SAMs / 分子修饰 / 吸附覆盖 | `adsorbate_landscape` | `output_dir`、`structure_prefix`、`smoke_test` | 论文不提供；属于工作流输出配置 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `surface`：可选表面结构文件 | `surfaces` / `Surface/Support`、`slab_models`、`facets` / `Facet` |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_element`：团簇元素 | `clusters` / `Cluster/Single Atom`：Pt cluster、Au nanoparticle 等 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_atoms`：目标原子数 | `clusters` 中的显式尺寸：`Pt13`、13-atom cluster 等 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_structures`：`fcc` / `hcp` / `bcc` | `clusters`、`material_parameters`、`Phase` 中的 fcc/hcp/bcc 或 crystal-structure 描述 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_bulk_file` | 论文通常只给材料名；真实 bulk 文件需要上游结构库或人工选择 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_layers`、`cluster_radius` | `Morphology/Size`、`clusters` 中的粒径、层数、nanoparticle size |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `cluster_a` / `cluster_c` | `material_parameters`、`Phase` 中可能有晶格常数；当前抽取链路不稳定收集 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `fcc_rows`、`fcc_row_profile`、`fcc_max_row_atoms`、`fcc_row_count`、`fcc_stacking_mode`、`fcc_layers` | 论文通常不直接给出；属于团簇构型构造策略 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `hcp_rows`、`hcp_layers`、`bcc_rows`、`bcc_max_row_atoms`、`stack_layers` | 论文通常不直接给出；属于团簇构型构造策略 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `x_frac`、`y_frac`、`z_height`、`phi`、`theta`、`psi` | `active_sites`、`adsorption_sites`、`links` 可提供放置位置语义，但具体数值需人工决定 |
+| 表面负载 / 金属团簇 | `surface_cluster_builder` | `output_dir` | 论文不提供；属于工作流输出配置 |
+
+## 3. 字段对应关系
 
 | 论文抽取字段 | ptomodel 中间字段 | 建模任务 / 参数 | 说明 |
 |---|---|---|---|
@@ -25,7 +60,7 @@
 | `active_sites` | `selected_information.active_sites`，`surface_site_contexts` | `adsorbate_landscape.site_symbols`，`surface_cluster_mlip_search.active_symbols`，`single_atom_site` | 金属表面常对应 top / bridge / hollow 语义，氧化物常对应 active-site 语义。 |
 | `adsorption_sites` | `selected_information.adsorption_sites`，`surface_site_contexts` | `adsorbate_landscape`，`surface_cluster_mlip_search.active_symbols` | 吸附位点，和表面 / 晶面一起看。 |
 | `coverage` | `selected_information.coverage` | `adsorbate_landscape.coverage_counts` | 覆盖度信息。 |
-| `clusters` | `selected_information.loaded_nanoparticles_or_clusters`，`normalized_mapping.loaded_species` | `surface_cluster_builder.cluster_element`，`surface_cluster_builder.cluster_structures` | 团簇 / 纳米粒子 / 负载物种。 |
+| `clusters` | `selected_information.loaded_nanoparticles_or_clusters`，`normalized_mapping.loaded_species` | `surface_cluster_builder.cluster_element`，`surface_cluster_builder.cluster_structures`，`surface_cluster_builder.cluster_atoms` | 团簇 / 纳米粒子 / 负载物种；`Pt13` 这类显式尺寸可对应 `cluster_atoms`。 |
 | `single_atoms` | `selected_information.single_atom_species` | `single_atom_site` | 单原子位点或单原子物种。 |
 | `defects` | `selected_information.defects` | `vacancy_landscape` | 缺陷、空位、氧空位。 |
 | `vacancy_models` | `selected_information.defects`，`task_inputs.vacancy_landscape.vacancy_models` | `vacancy_landscape` | 空位建模语义。 |
@@ -34,7 +69,7 @@
 | `reaction_type` / `applications` | `normalized_mapping.reaction_family` | 各建模任务的语义上下文 | 主要用于判断这是 OER / HER / ORR 等哪一类问题。 |
 | `modeling_keywords` | `selected_information.modeling_keywords` | 作为所有任务的辅助上下文 | 不直接变成参数，但会影响任务选择和提示。 |
 
-## 3. 任务级映射
+## 4. 任务级映射
 
 ### vacancy_landscape
 
@@ -155,7 +190,7 @@
 - 这是将论文中的表面语义转成可建模 slab 的桥接任务；
 - 精确晶面会优先来自 `surface_facets[].surface_index`。
 
-## 4. 新增的表面-位点关联层
+## 5. 新增的表面-位点关联层
 
 现在 `ptomodel` 里增加了 `surface_site_contexts`，用于把同一条证据中的：
 
@@ -173,12 +208,13 @@
 - 氧化物、氢氧化物、单原子体系上更容易解释 `facet + active site`
 - 后续做参数模板时，可以据此判断是“表面位点问题”还是“材料主体问题”
 
-## 5. 当前自动填充规则
+## 6. 当前自动填充规则
 
 已实现的自动填充主要是：
 
 - `active_sites` -> `adsorbate_landscape.site_symbols`
 - `clusters` -> `surface_cluster_builder.cluster_element`
+- `clusters` 中的显式尺寸，如 `Pt13` -> `surface_cluster_builder.cluster_atoms`
 - `clusters` -> `surface_cluster_builder.cluster_structures`
 
 其余参数大多保留为：
@@ -190,7 +226,7 @@
 
 这是为了避免把论文中的语义硬塞成错误的数值参数。
 
-## 6. 备注
+## 7. 备注
 
 这份映射是当前版本的 `ptomodel` 规则总结，不是最终不可变标准。
 当后续补充新的 surface modeling 脚本参数时，这里应同步更新：
@@ -198,4 +234,3 @@
 - `paperread/surface/ptomodel.py`
 - `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
 - `paperread/surface/parameter_registry.py`
-
