@@ -1,0 +1,535 @@
+{
+  "schema_version": "2.0",
+  "material_class": "supported_catalysts",
+  "updated_at": "2026-07-15T06:20:06.850682+00:00",
+  "summary": {
+    "terms": 14,
+    "known_useful": 3,
+    "unknown": 11
+  },
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "Ni(0)",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "2-methylated phenol",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Cyclohexanones",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "p-cresol",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "clusters_single_atoms": [
+      {
+        "term": "nanoparticle",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "3.3 mol%",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ni: 1.38 wt%",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "NaNaph",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "materials": [
+      {
+        "term": "Ni/CeO2-NaNaph",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Ni(OH)x/CeO2",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "nanoparticle",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "active sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "Catalyst Preparation",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Catalyst Regeneration",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Dehydrogenative Aromatisation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "Ni/CeO2-NaNaph",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Ni",
+        "count": 5
+      },
+      {
+        "term": "Ce",
+        "count": 3
+      },
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "H",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "oxide",
+        "count": 3
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 3
+      },
+      {
+        "term": "nanoparticle",
+        "count": 2
+      },
+      {
+        "term": "surface",
+        "count": 2
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
+        "term": "CeO2",
+        "count": 1
+      },
+      {
+        "term": "Ni(0",
+        "count": 1
+      },
+      {
+        "term": "Ni(OH)x",
+        "count": 1
+      },
+      {
+        "term": "Ni: 1.38 wt%",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Ce, Ni, O}",
+        "count": 2
+      },
+      {
+        "term": "{Ni}",
+        "count": 2
+      },
+      {
+        "term": "{Ce, H, Ni, O}",
+        "count": 1
+      }
+    ],
+    "approx_loadings": [
+      {
+        "term": "1.38 wt%",
+        "count": 1
+      },
+      {
+        "term": "3.3 mol%",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "supported_catalyst_profile",
+    "elements": [
+      {
+        "term": "Ni",
+        "count": 5
+      },
+      {
+        "term": "Ce",
+        "count": 3
+      },
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "H",
+        "count": 1
+      }
+    ],
+    "material_kind": [
+      {
+        "term": "supported_catalyst",
+        "count": 14
+      }
+    ],
+    "support_components": [
+      {
+        "term": "CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "CeO2",
+        "count": 1
+      },
+      {
+        "term": "CeO2",
+        "count": 1
+      }
+    ],
+    "loaded_components": [
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
+        "term": "Ni",
+        "count": 2
+      },
+      {
+        "term": "Ni/CeO2-NaNaph",
+        "count": 2
+      },
+      {
+        "term": "Ni(0)",
+        "count": 1
+      },
+      {
+        "term": "Ni(OH)x",
+        "count": 1
+      },
+      {
+        "term": "Ni(OH)x/CeO2",
+        "count": 1
+      },
+      {
+        "term": "Ni: 1.38 wt%",
+        "count": 1
+      }
+    ],
+    "exposed_surfaces": [],
+    "surface_index_mappings": [],
+    "crystal_structure_terms": [],
+    "surface_site_contexts": [
+      {
+        "surface_family": "supported_catalysts",
+        "surface_terms": [
+          {
+            "term": "Ni/CeO2-NaNaph",
+            "count": 2
+          },
+          {
+            "term": "Ni/CeO2-NaNaph",
+            "count": 2
+          },
+          {
+            "term": "Ni(OH)x/CeO2",
+            "count": 1
+          },
+          {
+            "term": "Ni: 1.38 wt%",
+            "count": 1
+          }
+        ],
+        "facet_terms": [
+          {
+            "term": "Ni/CeO2-NaNaph",
+            "count": 2
+          }
+        ],
+        "active_site_terms": [
+          {
+            "term": "Ni(0)",
+            "count": 1
+          }
+        ],
+        "adsorption_site_terms": [],
+        "site_role_terms": [],
+        "relation": "metal-surface site geometry"
+      }
+    ],
+    "approx_loadings": [
+      {
+        "term": "1.38 wt%",
+        "count": 1
+      },
+      {
+        "term": "3.3 mol%",
+        "count": 1
+      }
+    ],
+    "reaction_families": [
+      {
+        "term": "Catalyst Preparation",
+        "count": 1
+      },
+      {
+        "term": "Catalyst Regeneration",
+        "count": 1
+      },
+      {
+        "term": "Dehydrogenative Aromatisation",
+        "count": 1
+      }
+    ]
+  },
+  "entries": [
+    {
+      "term": "nanoparticle",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "Cluster/Single Atom",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Ni/CeO2-NaNaph",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "surfaces",
+        "Material"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "Ni-catalysed acceptorless dehydrogenative aromatisation of cyclohexanones enabled by concerted catalysis specific to supported nanoparticles",
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "2-methylated phenol",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "3.3 mol%",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Loading"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "active sites",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Catalyst Preparation",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni(OH)x/CeO2"
+      ]
+    },
+    {
+      "term": "Catalyst Regeneration",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Cyclohexanones",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Dehydrogenative Aromatisation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "NaNaph",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Ni(0)",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "Ni(OH)x/CeO2",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni(OH)x/CeO2"
+      ]
+    },
+    {
+      "term": "Ni: 1.38 wt%",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    },
+    {
+      "term": "p-cresol",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "Ni/CeO2-NaNaph"
+      ]
+    }
+  ]
+}

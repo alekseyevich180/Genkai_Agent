@@ -24,6 +24,23 @@ python -m paperread.surface list-tools
 python -m paperread.surface run your_surface_paper.pdf --output-dir paperread/surface/output
 ```
 
+PDF runs use one compact job directory by default:
+
+```text
+job/
+  article.json
+  modeling/
+    plan.json
+    checklist.json
+    structures/
+```
+
+`article.json` consolidates extracted paper information. `plan.json` contains
+PToModel task/parameter mappings. `checklist.json` records automatic bindings,
+missing parameters, stable-facet provenance requirements, Materials Project
+inputs, and model-file expectations. Use `--expanded-output` to retain the
+legacy separate CSV/JSONL/TXT files, or `--keep-intermediate` for PDF debugging.
+
 ```bash
 python -m paperread.surface.pipeline.runner \
   paperread/surface/examples/sample_surface_input.json \

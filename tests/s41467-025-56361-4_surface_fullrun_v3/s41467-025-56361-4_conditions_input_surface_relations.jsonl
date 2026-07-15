@@ -1,0 +1,81 @@
+{
+  "id": "surface_relations",
+  "title": "Ni-catalysed acceptorless dehydrogenative aromatisation of cyclohexanones enabled by concerted catalysis specific to supported nanoparticles",
+  "text": "Metal ensembles of nanoparticles exhibit a catalytic performance efﬁciently promotes the desired reaction while enhancing the\ndistinct from that of mononuclear complexes because the sub- stability of the active species5–8.\nstrates and intermediates can be activated or adsorbed on mul- Aromatic compounds are a ubiquitous building block in various\ntiple active sites of the metal nanoparticles in a unique fashion1–4. ﬁelds, and many efforts have been made to establish methodologies\nFor example, in 2021, Ordomsky et al.4 reported a novel strategy for their synthesis. In general, substituted aromatic compounds are\nfor size-dependent selective hydrogenation using molecularly synthesised via classic nucleophilic aromatic substitution (SNAr) or\nimprinted Pd nanoparticle catalysts, which they prepared via electrophilic aromatic substitution (SEAr), but the regioselectivity is\npoisoning of the Pd surface except for positions adsorbed by constrained by the substituents9,10. Although cross-coupling and C–H\ntemplate molecules such as benzene. This selectively catalysed functionalisation have been used to realise regioselective synthesis,\nhydrogenation of aromatic compounds with the same size as the inherent problems remain such as regioselectivity control of pre-\ntemplate molecules. In addition, combining metal nanoparticles functionalisation, generation of toxic (pseudo-)halogenated products\nwith appropriate supports realises a synergistic catalysis that and the requirement for directing groups11–13. As an alternative\n\napproach, in 2011, Stahl et al.14 reported synthesising phenols from aromatisation of cycloalkanes without requiring the aforementioned\nnonaromatic cyclohexanones via Pd-catalysed aerobic dehy- weak C–H bonds based on dual HAT strategy by utilizing photoredox\ndrogenative aromatisation, where the substituents are easily intro- catalysis, but this report did not apply to dehydrogenative aromatisa-\nduced regioselectively in any position by classic organic reactions15. tion of cyclohexanones to afford phenols. Moreover, during the revi-\nSince then, catalytic dehydrogenative aromatisation has been applied sion of this paper, Jin et al.39 reported a decatungstate/cobalt dual\nto synthesising various kinds of substituted aromatic hydrocarbons photoredox catalytic system for acceptorless α,β-dehydrogenation of\nincluding phenols, anilines and ethers (Fig. 1a)16–19. ketones applicable to dehydrogenative aromatisation of cyclohex-\nDehydrogenative aromatisation is classiﬁed into two types: oxi- anones, of which catalytic performance for the dehydrogenative aro-\ndative or acceptorless16–19. Most reports on dehydrogenative aromati- matisation of cyclohexanones without possessing easily cleavable C–H\nsation have been on the oxidative type, which mainly utilised Cu- or Pd- bonds was not sufﬁcient (substantial amounts of cyclohexenone\nbased catalysts or transition-metal-free systems. Research on accep- intermediates remained). Thus, nonprecious-metal catalysts for the\ntorless dehydrogenative aromatisation is scarce despite the high atom acceptorless dehydrogenative aromatisation of cyclohexanones are\neconomy, where H2 is the sole theoretical by-product in the case of not established even using photoredox catalysts, and to our knowl-\n\nprepared catalytic system and to compare it to other catalysts. supports. Only Ni/CeO2-NaNaph exhibited a high catalytic perfor-\nmance to afford 2a with a 74% yield (Table 1, entry 11). Ni catalysts on\nResults other supports such as hydroxyapatite (HAP), ZrO2, TiO2 and Al2O3\nCatalyst characterisation hardly catalysed the reaction (Table 1, entries 13–16). When Ni(cod)2\nNi/CeO2-NaNaph was prepared as described in our previous report and IPr (1,3-bis(2,6-diisopropylphenyl)imidazol-2-ylidene) (Ni-IPr\nwith some modiﬁcations47,48. Brieﬂy, a CeO2-supported Ni hydroxide complex) were used as the catalyst, the dehydrogenation hardly\nprecursor (Ni(OH)x/CeO2) prepared via deposition–precipitation was occurred either (Table 1, entry 17). The solvent was also shown to have\nreduced by sodium naphthalenide (NaNaph) in tetrahydrofuran (THF) a substantial effect, and the yield of 2a was highest when N,N-dime-\nat room temperature (~24 °C) in an Ar atmosphere to afford Ni/CeO2- thylacetamide (DMA) was used as the solvent (Supplementary Table 4).\nNaNaph (Ni: 1.38 wt%). The Ni K-edge X-ray absorption near-edge Dehydrogenative aromatisation of 3,5-dimethylcyclohexanone\nstructure (XANES) spectrum of Ni/CeO2-NaNaph was between those of (1 g) was immediately stopped by hot ﬁltration of Ni/CeO2-NaNaph\nNi foil and Ni(OH)2, which indicates that most Ni species in Ni/CeO2- (Supplementary Fig. 6), and inductively coupled plasma atomic emis-\nNaNaph were zero-valent; according to linear combination ﬁtting sion spectroscopy (ICP-AES) showed that almost no Ni species were in\n(LCF), ~76% of the Ni species were zero-valent (Fig. 2a; Supplementary the ﬁltrate (Ni: 0.21% of the Ni species used for the reaction), which\n\nlike Cs2CO3 and NaOH inhibited this reaction probably because of side decreased both the initial production rate and the ﬁnal yield of 2a\nreactions such as aldol condensation of 1a and decomposition of the (Supplementary Fig. 13, Supplementary Table 5) possibly because of\nsolvent (N,N-dimethylacetamide, DMA) accelerated by strong bases the inhibition effect of residual naphthalene in CeO2-NaNaph and\n(Supplementary Table 6, entries 1–11). Organic bases such as 1,8-dia- because of adsorption of 2a on CeO2-NaNaph conﬁrmed by infrared\nzabicyclo[5.4.0]-7-undecene (DBU), 1,5,7-triazabicyclo[4.4.0]dec-5-ene spectra using the attenuated total reﬂection method (ATR-IR) of the\n(TBD) and 4-dimethylaminopyridine (DMAP) also inhibited this reac- physical mixture catalyst retrieved after the reaction (Supplementary\ntion (Supplementary Table 6, entries 12–14). Considering that aldol Fig. 15). From the above, Ni/CeO2-NaNaph possessed suitable weak\ncondensation byproducts and DMA-derived byproducts were not basicity like Li2CO3 for the promotion of the desired dehydrogenation\nobserved differently from the case of inorganic bases, the preferential without side reactions caused by stronger bases and the addition of\nadsorption of organic bases on the catalyst over 1a is the plausible Li2CO3 can increase the basic sites necessary for the dehydrogenation\nreason for the inhibition. to enhance the production rate of 2a with both the Ni catalyst and\nIn the case of Ni/CeO2-NaNaph, similarly, the addition of Na2CO3 produced 2a almost intact.\nor Li2CO3 accelerated the initial rate of 1a acceptorless dehy- Next, when Ni-IPr complex was used as the catalyst in the presence\n\ndrogenative aromatisation (Supplementary Fig. 13), but the 2a yields of the additives, PhCOOH and Na2CO3 inhibited dehydrogenative\nafter the reactions for 24 h slightly decreased, especially with Na2CO3 aromatisation of 1a, but the 2a yield was slightly improved in the\n(Supplementary Table 5, entries 1–3). The treatment of acetic acid presence of CeO2-NaNaph (Supplementary Table 5, entries 10–13),\n(CH3COOH) after the reaction using Ni/CeO2-NaNaph and Li2CO3 suggesting that CeO2 could play another role in addition to the\nimproved the 2a yield a little whereas the decreased 2a yield with aforementioned base in the present dehydrogenation system. The\nNa2CO3 addition was not improved by the CH3COOH treatment DRIFT spectrum of CO adsorbed on the retrieved CeO2-NaNaph after\n(Supplementary Fig. 14). Therefore, the neutralization reaction the reaction with Ni-IPr complex revealed that slight amounts of Ni(0)\nbetween 2a and Li2CO3 is the possible reason for the slight decrease of species were deposited on CeO2 during the reaction (Supplementary\nthe ﬁnal 2a yield by Li2CO3 and the aforementioned side reactions Fig. 16). Thus, the Ni species immobilized on CeO2 likely functioned as\ncaused by the stronger base Na2CO3 likely decreased the ﬁnal 2a yield. the catalyst to improve the 2a yield. On the other hand, the addition of\nOn the other hand, the addition of CeO2-NaNaph to Ni/CeO2-NaNaph HAP instead of CeO2-NaNaph to the Ni-IPr complex-catalysed 1a\n\nSubstrate scope genated product (7a′) at a ratio of 1:2 immediately after the reaction\nNext, we evaluated the substrate scope of Ni/CeO2-NaNaph for cata- was started due to the disproportionation of 6a on Pd nanoparticles52\nlysing acceptorless dehydrogenative aromatisation of cyclohexanones (Supplementary Fig. 21b), which resulted in a moderate yield of 7a\n(1) to phenols (2) (Fig. 3, 2a–2v from cyclohexanones; see Supple- even after 24 h (Supplementary Fig. 22). Then, Ni/CeO2-NaNaph-cata-\nmentary Table 7 for the detailed information on the by-products in lysed α,β-dehydrogenation of N-alkyl piperidones (10a–10c) was\nsubstrate scope investigation). This catalytic system is applicable to conducted (Fig. 3, 11a–11c), which surprisingly selectively converted 1-\npara-, meta- and ortho-methyl-substituted phenol synthesis (1a–1c). methyl-4-piperidone (10a) into 1-methyl-4(1H)-pyridinone (11a) with\nOther alkyl-substituted cyclohexanones including 4-ethyl- (1 d), an excellent yield via double dehydrogenation of 10a. This reaction has\n4-propyl- (1e), 3,4-dimethyl- (1 f), 3,5-dimethyl- (1 g), 4-tert-butyl-(1 h) not previously been reported. The reactions from 1-methyl-4-\nand 4-cyclohexyl-(1i) ones or non-substituted cyclohexanone (1j) were piperidone with a methyl group at the α-position of the carbonyl\nsuccessfully converted into the corresponding phenols with good to group (10b) and 1-ethyl-4-piperidone (10c) were successful, and they\nmoderate yields. This system could also be applied to the dehy- afforded corresponding double-dehydrogenated products with good\ndrogenative aromatisation of aryl-substituted cyclohexanones (1k, 1 l). yields. Moreover, ﬂavanone (10 d), a kind of β-heteroatom-substituted\n\nsubstrates. substrate, m-cresol (2b) and 3-methylcyclohexanone (1b) were pro-\nSeveral studies have reported on the acceptorless dehydrogena- duced with almost the same yields 10 min after the reaction was star-\ntion of secondary alcohols to afford the corresponding ketones in the ted (Supplementary Fig. 24). Together with the above results on\npresence of supported Ni nanoparticle catalysts50,51, which motivated support effects and our previous reports on acceptorless dehy-\nus to investigate acceptorless dehydrogenative aromatisation of drogenative aromatisation by supported Pd nanoparticle\ncyclohexanols (3) to phenols (2). Cyclohexanol is commercially catalysts21–27,52,53, we propose the following mechanism for the forma-\nobtained as ketone–alcohol (K–A) oil via hydrogenation of benzene tion of phenols from cyclohexanones (Supplementary Fig. 25): (1)\nfollowed by aerobic cyclohexane oxidation. Thus, if H2 formed by cyclohexanones adsorb onto the surface of Ni nanoparticles; (2)\nacceptorless dehydrogenative aromatisation of cyclohexanol is cyclohexanones undergo concerted metalation deprotonation to Ni\nretrieved and used for benzene hydrogenation, then a formal process species with the assistance of Brønsted base sites in CeO2; (3) β-\nof aerobic benzene oxidation to phenol could be constructed21. As hydride elimination takes place to afford cyclohexenones; (4) cyclo-\nexpected, 4-methylcyclohexanol (3a) was successfully converted into hexenones undergo disproportionation to afford phenols and cyclo-\nthe corresponding phenol (2a) with a good yield in the presence of Ni/ hexanones on the surface of the Ni nanoparticles and (5) H2 evolution\nCeO2-NaNaph via dehydrogenation of 3a to 1a followed by dehy- occurs to achieve the catalytic cycle.",
+  "extraction": {
+    "materials": [
+      "Ni",
+      "CeO2",
+      "NaNaph",
+      "HAP",
+      "ZrO2",
+      "TiO2",
+      "Al2O3"
+    ],
+    "material_parameters": [
+      {
+        "composition": "Ni: 1.38 wt%"
+      },
+      {
+        "oxidation_state": "zero-valent Ni"
+      },
+      {
+        "support": "CeO2"
+      }
+    ],
+    "crystal_structure_types": [],
+    "oxide_compositions": [
+      "CeO2"
+    ],
+    "surfaces": [
+      "Ni/CeO2-NaNaph",
+      "CeO2 surface"
+    ],
+    "surface_terminations": [],
+    "slab_models": [],
+    "facets": [],
+    "surface_stability_descriptors": [],
+    "dopants": [],
+    "defects": [],
+    "vacancy_models": [],
+    "active_sites": [
+      "Ni atom"
+    ],
+    "adsorbates": [
+      "cyclohexanones",
+      "phenols"
+    ],
+    "adsorption_sites": [],
+    "coverage": [],
+    "intermediates": [
+      "cyclohexenones"
+    ],
+    "products": [
+      "phenols"
+    ],
+    "clusters": [],
+    "single_atoms": [],
+    "modifiers": [],
+    "properties": [],
+    "reaction_parameters": [
+      {
+        "temperature": "~24 °C"
+      },
+      {
+        "solvent": "THF"
+      },
+      {
+        "atmosphere": "Ar"
+      },
+      {
+        "yield": "74%"
+      }
+    ],
+    "modeling_keywords": [],
+    "recommended_modeling_tasks": [],
+    "applications": [
+      "catalytic dehydrogenative aromatisation"
+    ],
+    "links": []
+  }
+}

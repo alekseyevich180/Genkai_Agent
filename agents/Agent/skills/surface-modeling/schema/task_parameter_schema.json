@@ -74,8 +74,16 @@
       "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
       "parameters": {
         "surface": { "type": "path", "required": false },
+        "surface_formula": { "type": "string", "required": false },
+        "surface_mp_id": { "type": "string", "required": false },
+        "surface_facet": { "type": "miller_index", "required": false },
+        "slab_min_size": { "type": "float", "required": false },
+        "slab_vacuum": { "type": "float", "required": false },
+        "slab_repeat_xy": { "type": "comma_separated_ints", "required": false },
         "cluster_element": { "type": "string", "required": false },
         "cluster_bulk_file": { "type": "path", "required": false },
+        "cluster_from_mp": { "type": "bool", "required": false },
+        "cluster_mp_id": { "type": "string", "required": false },
         "cluster_structures": {
           "type": "string_list",
           "required": false,
@@ -110,6 +118,9 @@
         "output_dir": { "type": "path", "required": false }
       },
       "constraints": [
+        "use at most one of surface, surface_formula, surface_mp_id",
+        "surface loading requires a slab with a vacuum gap; bulk unit cells are rejected",
+        "surface_formula or surface_mp_id requires MP_API_KEY and a resolved stable facet",
         "cluster_element and cluster_bulk_file should provide enough information to resolve a metal species",
         "in generic mode exactly one of cluster_atoms, cluster_layers, cluster_radius should be provided",
         "bcc bridge mode requires bcc_rows, bcc_max_row_atoms, stack_layers",

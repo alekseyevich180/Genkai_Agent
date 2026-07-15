@@ -106,6 +106,17 @@ def _normalize_facet(raw: str, material_context: str | None = None) -> str:
     return normalize_surface_facet_for_software(raw, material_context)
 
 
+def _infer_surface_formula(surface_terms: list[str]) -> str | None:
+    """Extract an explicit oxide formula without guessing from a structure family."""
+    for term in surface_terms:
+        for candidate in re.findall(r"(?:[A-Z][a-z]?\d*){2,}", term):
+            if "O" not in extract_element_symbols(candidate):
+                continue
+            if re.fullmatch(r"(?:[A-Z][a-z]?\d*)+", candidate):
+                return candidate
+    return None
+
+
 def _normalize_species(raw: str) -> str | None:
     text = raw.strip()
     if not text:
@@ -531,11 +542,29 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
         payload["coverage"] = _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage"))
     elif task_name == "surface_cluster_builder":
         payload["clusters"] = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
-        payload["cluster_species"] = [
+        direct_cluster_species = [
             species
             for species in (_normalize_species(item) for item in payload["clusters"])
             if species
         ]
+        payload["cluster_species"] = direct_cluster_species
+        payload["cluster_species_source"] = "clusters" if direct_cluster_species else None
+        if not direct_cluster_species and payload["clusters"]:
+            for source_field, candidates in (
+                ("active_sites", payload["active_sites"]),
+                ("material", [payload["material"]]),
+            ):
+                metals = [
+                    symbol
+                    for candidate in candidates
+                    if candidate
+                    for symbol in extract_element_symbols(candidate, include_material_aliases=False)
+                    if symbol in METAL_SYMBOLS
+                ]
+                if metals:
+                    payload["cluster_species"] = [metals[0]]
+                    payload["cluster_species_source"] = source_field
+                    break
         payload["cluster_atom_count"] = _infer_cluster_atom_count(payload["clusters"])
         payload["cluster_structures"] = _infer_cluster_structures(payload["clusters"])
     return payload
@@ -625,18 +654,48 @@ def _build_argument_template(
                 from_task_inputs=["defects", "vacancy_models", "explicit_vacancy_count"],
             )
     elif task_name == "surface_cluster_builder":
+        surface_formula = _infer_surface_formula(task_inputs.get("surfaces", []))
+        if surface_formula and "surface_formula" in parameters:
+            mark(
+                "surface_formula",
+                value=surface_formula,
+                status="auto",
+                confidence="high",
+                source_field="surfaces",
+                source_term=_first_nonempty(*(task_inputs.get("surfaces") or [])),
+                reason="An explicit oxide formula can retrieve the bulk reference before stable-facet slab generation.",
+                from_task_inputs=["surfaces"],
+            )
         cluster_species = task_inputs.get("cluster_species", [])
         if cluster_species:
+            cluster_species_source = task_inputs.get("cluster_species_source") or "clusters"
             mark(
                 "cluster_element",
                 value=cluster_species[0],
                 status="auto",
-                confidence="high",
-                source_field="clusters",
-                source_term=(task_inputs.get("clusters") or [None])[0],
-                reason="Cluster species normalized from paper cluster mentions.",
-                from_task_inputs=["cluster_species"],
+                confidence="high" if cluster_species_source == "clusters" else "medium",
+                source_field=cluster_species_source,
+                source_term=(task_inputs.get(cluster_species_source) or [None])[0]
+                if isinstance(task_inputs.get(cluster_species_source), list)
+                else task_inputs.get(cluster_species_source),
+                reason=(
+                    "Cluster species normalized from paper cluster mentions."
+                    if cluster_species_source == "clusters"
+                    else "Generic nanoparticle evidence lacks an element; use the explicit metal active-site/material context from the same record."
+                ),
+                from_task_inputs=["cluster_species", cluster_species_source],
             )
+            if "cluster_from_mp" in parameters:
+                mark(
+                    "cluster_from_mp",
+                    value=True,
+                    status="auto",
+                    confidence="high",
+                    source_field="clusters",
+                    source_term=(task_inputs.get("clusters") or [None])[0],
+                    reason="Retrieve the elemental bulk reference and stable crystal family from Materials Project before cluster construction.",
+                    from_task_inputs=["cluster_species"],
+                )
         cluster_atom_count = task_inputs.get("cluster_atom_count")
         if cluster_atom_count:
             mark(
@@ -670,6 +729,7 @@ def _build_argument_template(
             task_name == "surface_cluster_builder"
             and parameter_name == "cluster_bulk_file"
             and argument_values.get("cluster_element")
+            and not argument_values.get("cluster_from_mp")
         ):
             mark(
                 parameter_name,
@@ -680,6 +740,62 @@ def _build_argument_template(
                 source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
                 reason="An explicit cluster element is sufficient for the builder; a bulk file is an optional alternative source of element and lattice data.",
                 from_task_inputs=["cluster_species"],
+            )
+        elif (
+            task_name == "surface_cluster_builder"
+            and parameter_name == "surface"
+            and argument_values.get("surface_formula")
+        ):
+            mark(
+                parameter_name,
+                value=None,
+                status="alternative_not_selected",
+                confidence="high",
+                source_field="surfaces",
+                source_term=_first_nonempty(*(task_inputs.get("surfaces") or [])),
+                reason="The formula selects the Materials Project bulk-to-stable-slab route instead of an existing surface path.",
+                from_task_inputs=["surfaces"],
+            )
+        elif task_name == "surface_cluster_builder" and parameter_name == "surface_facet":
+            facet_set = normalized_mapping.get("facet_set") or []
+            if facet_set:
+                mark(
+                    parameter_name,
+                    value=facet_set[0],
+                    status="auto",
+                    confidence="high",
+                    source_field="facets",
+                    source_term=facet_set[0],
+                    reason="The paper supplies an explicit surface facet.",
+                    from_normalized_mapping=["facet_set"],
+                )
+            else:
+                mark(
+                    parameter_name,
+                    value=None,
+                    status="stable_facet_registry_or_manual",
+                    confidence="medium",
+                    source_field="facets",
+                    source_term=None,
+                    reason="No paper facet is available; resolve from the reviewed stable-facet registry or require explicit input.",
+                    from_normalized_mapping=["facet_set"],
+                    depends_on=["stable_facet_registry"],
+                )
+        elif (
+            task_name == "surface_cluster_builder"
+            and parameter_name == "cluster_bulk_file"
+            and argument_values.get("cluster_from_mp")
+        ):
+            mark(
+                parameter_name,
+                value=None,
+                status="needs_upstream_artifact",
+                confidence="high",
+                source_field="clusters",
+                source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
+                reason="The elemental bulk file will be downloaded from Materials Project at execution time.",
+                from_task_inputs=["cluster_species"],
+                depends_on=["materials_project.cluster_bulk_structure"],
             )
         elif parameter_name in {"input", "surface", "molecule", "cluster", "cluster_bulk_file"}:
             source_field = "surfaces"
@@ -734,6 +850,22 @@ def _build_argument_template(
                 source_term=_first_nonempty(*(task_inputs.get(source_field) or [])),
                 reason="Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
                 from_task_inputs=["coverage", "adsorption_sites", "active_sites", "defects", "vacancy_models"],
+            )
+        elif (
+            task_name == "surface_cluster_builder"
+            and parameter_name == "cluster_structures"
+            and argument_values.get("cluster_from_mp")
+        ):
+            mark(
+                parameter_name,
+                value=None,
+                status="needs_upstream_artifact",
+                confidence="high",
+                source_field="clusters",
+                source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
+                reason="The fcc/hcp/bcc cluster family will be mapped from the selected Materials Project elemental bulk space group.",
+                from_task_inputs=["cluster_species"],
+                depends_on=["materials_project.cluster_bulk_structure"],
             )
         elif parameter_name in {"cluster_atoms", "cluster_layers", "cluster_radius"}:
             selected_size_modes = [

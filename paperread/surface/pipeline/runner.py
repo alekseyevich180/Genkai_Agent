@@ -10,6 +10,7 @@ try:
     from ..extraction.extract_surface_relations import extract_relations
     from ..extraction.ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
     from ..modeling.ptomodel import generate_ptomodel_output
+    from ..modeling.job_bundle import write_compact_job_bundle
     from ..extraction.standardize_surface_time import standardize_time
     from ..extraction.summarize_surface_outputs import write_summary
 except ImportError:  # pragma: no cover - direct script execution
@@ -19,6 +20,7 @@ except ImportError:  # pragma: no cover - direct script execution
     from paperread.surface.extraction.extract_surface_relations import extract_relations
     from paperread.surface.extraction.ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
     from paperread.surface.modeling.ptomodel import generate_ptomodel_output
+    from paperread.surface.modeling.job_bundle import write_compact_job_bundle
     from paperread.surface.extraction.standardize_surface_time import standardize_time
     from paperread.surface.extraction.summarize_surface_outputs import write_summary
 
@@ -102,7 +104,10 @@ def run_pipeline_from_pdf(
     keep_intermediate: bool = False,
     save_raw: bool = False,
     collect_experience_output: bool = False,
+    compact_output: bool = False,
 ) -> dict[str, str]:
+    if compact_output and keep_intermediate:
+        raise ValueError("compact_output and keep_intermediate are mutually exclusive.")
     if keep_intermediate:
         ingestion_outputs = ingest_pdf(input_pdf, output_dir)
         pipeline_outputs = run_pipeline(
@@ -124,7 +129,7 @@ def run_pipeline_from_pdf(
         payloads["relations_payload"],
     )
     try:
-        return run_pipeline(
+        pipeline_outputs = run_pipeline(
             conditions_path,
             output_dir,
             model=model,
@@ -135,6 +140,14 @@ def run_pipeline_from_pdf(
             save_raw=save_raw,
             collect_experience_output=collect_experience_output,
         )
+        if compact_output:
+            return write_compact_job_bundle(
+                output_dir=output_dir,
+                outputs=pipeline_outputs,
+                source_path=input_pdf,
+                cleanup_generated=True,
+            )
+        return pipeline_outputs
     finally:
         tempdir.cleanup()
 
@@ -181,6 +194,16 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Also collect useful and unknown extraction experience into aggregated JSON output.",
     )
+    parser.add_argument(
+        "--compact-output",
+        action="store_true",
+        help="Consolidate paper information, modeling plan, and checklist into one compact job folder.",
+    )
+    parser.add_argument(
+        "--expanded-output",
+        action="store_true",
+        help="Keep the legacy set of separate extraction files.",
+    )
     args = parser.parse_args(argv)
 
     source_path = Path(args.input_source)
@@ -189,6 +212,7 @@ def main(argv: list[str] | None = None) -> int:
         input_format = "pdf" if source_path.suffix.lower() == ".pdf" else "json"
 
     if input_format == "pdf":
+        compact_output = args.compact_output or (not args.expanded_output and not args.keep_intermediate)
         outputs = run_pipeline_from_pdf(
             args.input_source,
             args.output_dir,
@@ -198,6 +222,7 @@ def main(argv: list[str] | None = None) -> int:
             keep_intermediate=args.keep_intermediate,
             save_raw=args.save_raw,
             collect_experience_output=args.collect_experience,
+            compact_output=compact_output,
         )
     else:
         outputs = run_pipeline(

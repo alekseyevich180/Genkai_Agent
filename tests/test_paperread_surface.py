@@ -10,7 +10,10 @@ import pandas as pd
 
 from paperread.surface.core.catalog import list_surface_tools, render_surface_tool_catalog
 from paperread.surface.experience.collect_experience import collect_experience
-from paperread.surface.extraction.extract_surface_conditions import extract_conditions
+from paperread.surface.extraction.extract_surface_conditions import (
+    _reconcile_morphology_and_cluster,
+    extract_conditions,
+)
 from paperread.surface.extraction.extract_surface_relations import extract_relations
 from paperread.surface.extraction.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
 from paperread.surface.extraction.standardize_surface_time import standardize_time
@@ -34,6 +37,14 @@ def _run_command(args: list[str]) -> subprocess.CompletedProcess:
 
 
 class TestPaperreadSurfaceScripts(unittest.TestCase):
+    def test_nanoparticle_morphology_cannot_be_reclassified_as_single_atom(self):
+        row = {
+            "Morphology/Size": "highly dispersed nanoparticle",
+            "Cluster/Single Atom": "Single Atom",
+        }
+        reconciled = _reconcile_morphology_and_cluster(row)
+        self.assertEqual(reconciled["Cluster/Single Atom"], "nanoparticle")
+
     def test_module_entrypoints_show_help(self):
         modules = [
             "paperread.surface.extraction.extract_surface_conditions",
@@ -239,6 +250,26 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertIn("oxygen evolution reaction", relations_payload["surface_relations"]["Text"])
         self.assertLess(len(conditions_payload["surface_conditions"]["Text"]), len(sections["full_text"]))
         self.assertLess(len(relations_payload["surface_relations"]["Text"]), len(sections["full_text"]))
+
+    def test_pdf_section_fallback_keeps_late_methods_from_large_page_paragraphs(self):
+        intro_lines = [
+            "Supported nanoparticles provide surface activity and catalytic performance."
+            for _ in range(90)
+        ]
+        methods_lines = [
+            "Preparation of Ni/CeO2 used sodium naphthalenide in an Ar-filled glovebox.",
+            "Reaction conditions: substrate (0.3 mmol), catalyst (3.3 mol%), DMA (2 mL), Ar (1 atm), 180 °C, 24 h.",
+            "The CeO2-supported Ni nanoparticle surface enabled adsorption on multiple active sites.",
+        ]
+        sections = {"full_text": "\n".join([*intro_lines, *methods_lines])}
+
+        conditions_payload, relations_payload = build_surface_inputs_from_sections("Two-column PDF", sections)
+
+        conditions_text = conditions_payload["surface_conditions"]["Text"]
+        relations_text = relations_payload["surface_relations"]["Text"]
+        self.assertIn("180 °C, 24 h", conditions_text)
+        self.assertIn("Ar-filled glovebox", conditions_text)
+        self.assertIn("multiple active sites", relations_text)
 
     def test_offline_pdf_pipeline_flow(self):
         relation_json = """
@@ -476,6 +507,67 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertEqual(_infer_cluster_atom_count(["Pt13 cluster"])["value"], 13)
         self.assertEqual(_infer_cluster_atom_count(["13-atom Pt cluster"])["value"], 13)
 
+    def test_material_class_short_formula_rules_do_not_match_english_substrings(self):
+        from paperread.surface.modeling.ptomodel import _infer_material_classes
+
+        classes = _infer_material_classes(["CeO2", "Pt13 fcc nanoparticle"])
+        self.assertIn("oxides", classes)
+        self.assertIn("metals_alloys", classes)
+        self.assertNotIn("carbides_mxenes", classes)
+        self.assertIn("carbides_mxenes", _infer_material_classes(["Pt/TiC"]))
+        self.assertIn("oxides", _infer_material_classes(["rutile RuO2"]))
+        zno_classes = _infer_material_classes(["ZnO", "Zn-terminated ZnO(0001) surface"])
+        self.assertIn("oxides", zno_classes)
+        self.assertNotIn("metals_alloys", zno_classes)
+
+    def test_explicit_cluster_count_resolves_exclusive_size_and_bulk_file_alternatives(self):
+        from paperread.surface.modeling.ptomodel import (
+            _build_argument_template,
+            _load_surface_modeling_parameter_schema,
+        )
+
+        template = _build_argument_template(
+            "surface_cluster_builder",
+            {
+                "material": "CeO2",
+                "surfaces": ["CeO2(111)"],
+                "facets": ["(111)"],
+                "clusters": ["Pt13 fcc nanoparticle"],
+                "cluster_species": ["Pt"],
+                "cluster_atom_count": {
+                    "value": 13,
+                    "source_term": "Pt13 fcc nanoparticle",
+                },
+                "cluster_structures": ["fcc"],
+            },
+            {},
+            _load_surface_modeling_parameter_schema(),
+        )
+        bindings = template["parameter_bindings"]
+        self.assertEqual(bindings["cluster_atoms"]["status"], "auto")
+        self.assertEqual(bindings["cluster_layers"]["status"], "alternative_not_selected")
+        self.assertEqual(bindings["cluster_radius"]["status"], "alternative_not_selected")
+        self.assertTrue(bindings["cluster_from_mp"]["value"])
+        self.assertEqual(bindings["cluster_from_mp"]["status"], "auto")
+        self.assertEqual(bindings["cluster_bulk_file"]["status"], "needs_upstream_artifact")
+
+    def test_multidentate_coverage_uses_non_overlapping_site_groups(self):
+        import importlib.util
+
+        script_path = (
+            PROJECT_ROOT
+            / "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py"
+        )
+        spec = importlib.util.spec_from_file_location("adsorbate_landscape_for_test", script_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        groups = [(0, 1), (1, 2), (2, 3), (3, 0), (0, 2)]
+        self.assertEqual(module.maximum_non_overlapping_site_groups(groups), 2)
+        selected = module.solve_non_overlapping_site_groups(groups, count=2)
+        occupied = [site for group_id in selected for site in groups[group_id]]
+        self.assertEqual(len(occupied), len(set(occupied)))
+
     def test_chemical_vocabulary_covers_elements_through_radon_and_common_names(self):
         from paperread.surface.core.chemical_vocabulary import (
             ELEMENTS,
@@ -495,6 +587,57 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         hematite = recognize_material_name("hematite (0001) surface")[0]
         self.assertEqual(hematite["normalized_formula"], "Fe2O3")
         self.assertEqual(hematite["elements"], ["Fe", "O"])
+        self.assertEqual(recognize_material_name("rutile"), [])
+        self.assertEqual(recognize_material_name("rutile RuO2"), [])
+
+    def test_rutile_structure_composition_and_reported_surface_are_stored_separately(self):
+        from paperread.surface.core.crystal_structures import match_crystal_structure_term
+        from paperread.surface.extraction.extract_surface_relations import build_prompt
+
+        rutile = match_crystal_structure_term("rutile RuO2")
+        self.assertEqual(rutile["term"], "rutile")
+        self.assertIn("TiO2", rutile["representative_compositions"])
+        self.assertIn("SnO2", rutile["representative_compositions"])
+        self.assertIn("RuO2", rutile["representative_compositions"])
+        self.assertIn("IrO2", rutile["representative_compositions"])
+
+        prompt = build_prompt("Rutile oxide surfaces", "Rutile RuO2(110) is reported as the most stable surface.")
+        self.assertIn('"crystal_structure_types": []', prompt)
+        self.assertIn('"oxide_compositions": []', prompt)
+        self.assertIn('"surface_stability_descriptors": []', prompt)
+        self.assertIn("Never infer TiO2", prompt)
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "extraction": {
+                            "materials": ["RuO2"],
+                            "crystal_structure_types": ["rutile"],
+                            "oxide_compositions": ["RuO2"],
+                            "surfaces": ["RuO2(110)"],
+                            "facets": ["(110)"],
+                            "surface_stability_descriptors": ["most stable surface"],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            result = collect_experience(str(relations_path), None, tmpdir, stem="rutile")
+            oxide_payload = json.loads(
+                Path(result["material_class_files"]["oxides"]).read_text(encoding="utf-8")
+            )
+            profile = oxide_payload["class_profile"]
+            self.assertEqual(profile["oxide_compositions"][0]["term"], "RuO2")
+            self.assertEqual(profile["crystal_structure_terms"][0]["term"], "rutile")
+            self.assertEqual(profile["surface_index_mappings"][0]["software_facet"], "(110)")
+            self.assertEqual(
+                profile["reported_surface_stability_descriptors"][0]["term"],
+                "most stable surface",
+            )
 
     def test_ptomodel_uses_mineral_and_element_common_names(self):
         with tempfile.TemporaryDirectory() as tmpdir:

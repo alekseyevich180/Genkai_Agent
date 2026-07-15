@@ -49,6 +49,8 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--skip-relations", action="store_true")
     run.add_argument("--keep-intermediate", action="store_true")
     run.add_argument("--collect-experience", action="store_true")
+    run.add_argument("--compact-output", action="store_true")
+    run.add_argument("--expanded-output", action="store_true", help="Keep the legacy set of separate extraction files.")
     _add_common_pipeline_args(run)
 
     conditions = subparsers.add_parser("conditions", help="Extract conditions table from JSON input.")
@@ -111,6 +113,7 @@ def main(argv: list[str] | None = None) -> int:
         if input_format == "auto":
             input_format = "pdf" if source_path.suffix.lower() == ".pdf" else "json"
         if input_format == "pdf":
+            compact_output = args.compact_output or (not args.expanded_output and not args.keep_intermediate)
             outputs = run_pipeline_from_pdf(
                 args.input_source,
                 args.output_dir,
@@ -120,6 +123,7 @@ def main(argv: list[str] | None = None) -> int:
                 keep_intermediate=args.keep_intermediate,
                 save_raw=args.save_raw,
                 collect_experience_output=args.collect_experience,
+                compact_output=compact_output,
             )
         else:
             outputs = run_pipeline(

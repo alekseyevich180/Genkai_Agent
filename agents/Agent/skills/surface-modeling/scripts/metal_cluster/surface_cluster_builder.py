@@ -1,4 +1,5 @@
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -7,7 +8,8 @@ from ase.io import read, write
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parents[1]
-for path in (REPO_ROOT, SCRIPT_DIR):
+SCRIPTS_ROOT = SCRIPT_DIR.parent
+for path in (REPO_ROOT, SCRIPTS_ROOT, SCRIPT_DIR):
     path_text = str(path)
     if path_text not in sys.path:
         sys.path.insert(0, path_text)
@@ -30,6 +32,20 @@ except ModuleNotFoundError:
         resolve_cluster_element,
         resolve_lattice_constants,
     )
+
+from surface.materials_project_slab import (
+    download_stable_surface,
+    fetch_bulk_structure,
+    validate_surface_slab,
+)
+
+
+MP_SPACEGROUP_TO_CLUSTER_STRUCTURE = {
+    "Im-3m": "bcc",
+    "Fm-3m": "fcc",
+    "P6_3/mmc": "hcp",
+    "P63/mmc": "hcp",
+}
 
 
 def place_cluster_on_surface(
@@ -67,7 +83,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Build a metal cluster and optionally build/place it on a surface."
     )
-    parser.add_argument("--surface", type=Path, default=None, help="Optional surface structure file readable by ASE.")
+    parser.add_argument("--surface", type=Path, default=None, help="Existing surface slab file readable by ASE; bulk cells are rejected.")
+    parser.add_argument("--surface_formula", "--surface-formula", dest="surface_formula", default=None, help="Download this bulk formula from Materials Project and generate its stable-facet slab.")
+    parser.add_argument("--surface_mp_id", "--surface-mp-id", dest="surface_mp_id", default=None, help="Download this Materials Project bulk entry and generate its stable-facet slab.")
+    parser.add_argument("--surface_facet", "--surface-facet", dest="surface_facet", default=None, help="Explicit reviewed Miller index; otherwise use the stable-facet registry.")
+    parser.add_argument("--slab_min_size", "--slab-min-size", dest="slab_min_size", type=float, default=12.0)
+    parser.add_argument("--slab_vacuum", "--slab-vacuum", dest="slab_vacuum", type=float, default=15.0)
+    parser.add_argument("--slab_repeat_xy", "--slab-repeat-xy", dest="slab_repeat_xy", default="2,2")
     parser.add_argument("--cluster_element", type=str, default=None, help="Metal element symbol, e.g. Pt.")
     parser.add_argument(
         "--cluster_bulk_file",
@@ -78,10 +100,18 @@ def main() -> None:
     parser.add_argument(
         "--cluster_structures",
         nargs="+",
-        default=["fcc", "hcp", "bcc"],
+        default=None,
         choices=["fcc", "hcp", "bcc"],
         help="Target crystal structures to build.",
     )
+    parser.add_argument(
+        "--cluster_from_mp",
+        "--cluster-from-mp",
+        dest="cluster_from_mp",
+        action="store_true",
+        help="Download the elemental bulk reference from Materials Project and use its stable crystal structure/lattice.",
+    )
+    parser.add_argument("--cluster_mp_id", "--cluster-mp-id", dest="cluster_mp_id", default=None)
     parser.add_argument("--cluster_atoms", type=int, default=None, help="Target atom count for the cluster.")
     parser.add_argument("--cluster_layers", type=int, default=None, help="Number of radial shells to keep.")
     parser.add_argument("--cluster_radius", type=float, default=None, help="Cluster radius in Angstrom (legacy mode).")
@@ -118,6 +148,54 @@ def main() -> None:
     parser.add_argument("--output_dir", type=Path, default=Path("simple_cluster_on_surface_output"))
     args = parser.parse_args()
 
+    surface_source_count = sum(value is not None for value in (args.surface, args.surface_formula, args.surface_mp_id))
+    if surface_source_count > 1:
+        raise ValueError("Use only one of --surface, --surface-formula, or --surface-mp-id.")
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    mp_surface_manifest = None
+    surface_path = args.surface
+    if args.surface_formula or args.surface_mp_id:
+        repeat_xy = tuple(int(item) for item in args.slab_repeat_xy.split(","))
+        if len(repeat_xy) != 2 or min(repeat_xy) < 1:
+            raise ValueError("--slab-repeat-xy requires two positive integers, e.g. 2,2.")
+        mp_surface_manifest = download_stable_surface(
+            args.output_dir / "surface_inputs",
+            formula=args.surface_formula,
+            material_id=args.surface_mp_id,
+            explicit_facet=args.surface_facet,
+            min_slab_size=args.slab_min_size,
+            min_vacuum_size=args.slab_vacuum,
+            repeat_xy=repeat_xy,
+        )
+        surface_path = Path(mp_surface_manifest["files"]["surface_slab"])
+
+    mp_cluster_metadata = None
+    if args.cluster_from_mp or args.cluster_mp_id:
+        if not args.cluster_element and not args.cluster_mp_id:
+            raise ValueError("--cluster-from-mp requires --cluster-element unless --cluster-mp-id is supplied.")
+        cluster_bulk, mp_cluster_metadata = fetch_bulk_structure(
+            formula=args.cluster_element if not args.cluster_mp_id else None,
+            material_id=args.cluster_mp_id,
+        )
+        cluster_bulk_path = args.output_dir / "cluster_bulk_from_materials_project.cif"
+        cluster_bulk.to(filename=str(cluster_bulk_path), fmt="cif")
+        args.cluster_bulk_file = cluster_bulk_path
+        if not args.cluster_element:
+            species = list(cluster_bulk.composition.as_dict())
+            if len(species) != 1:
+                raise ValueError("The selected cluster MP entry is not elemental; provide a reviewed cluster element.")
+            args.cluster_element = species[0]
+        if args.cluster_structures is None:
+            spg = str(mp_cluster_metadata.get("spacegroup_symbol") or "")
+            mapped_structure = MP_SPACEGROUP_TO_CLUSTER_STRUCTURE.get(spg)
+            if not mapped_structure:
+                raise ValueError(f"Cannot map Materials Project space group {spg!r} to fcc/hcp/bcc cluster mode.")
+            args.cluster_structures = [mapped_structure]
+
+    if args.cluster_structures is None:
+        args.cluster_structures = ["fcc", "hcp", "bcc"]
+
     use_bcc_bridge = "bcc" in args.cluster_structures and args.bcc_rows is not None and args.bcc_max_row_atoms is not None
     use_hcp_rows = "hcp" in args.cluster_structures and args.hcp_rows is not None
     use_fcc_rows = (
@@ -140,8 +218,9 @@ def main() -> None:
         raise ValueError("bcc bridge clusters require --stack_layers.")
 
     element = resolve_cluster_element(args.cluster_element, args.cluster_bulk_file)
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    slab = read(args.surface) if args.surface is not None else None
+    slab = read(surface_path) if surface_path is not None else None
+    slab_check = validate_surface_slab(slab) if slab is not None else None
+    generated_files: list[str] = []
 
     size_tag = (
         f"bccrows{args.bcc_rows}_maxrow{args.bcc_max_row_atoms}_L{args.stack_layers}"
@@ -226,11 +305,41 @@ def main() -> None:
             )
             combined_path = prefix.with_name(prefix.name + "_on_surface").with_suffix(".cif")
             write(combined_path, combined)
+            generated_files.append(str(combined_path))
             print(combined_path.name)
         else:
             cluster_path = prefix.with_name(prefix.name + "_cluster").with_suffix(".cif")
             write(cluster_path, cluster)
+            generated_files.append(str(cluster_path))
             print(cluster_path.name)
+
+    manifest = {
+        "schema_version": "1.0",
+        "task": "surface_cluster_builder",
+        "inputs": {
+            "surface": str(surface_path) if surface_path else None,
+            "cluster_element": element,
+            "cluster_structures": args.cluster_structures,
+            "cluster_atoms": args.cluster_atoms,
+            "cluster_layers": args.cluster_layers,
+            "cluster_radius_A": args.cluster_radius,
+        },
+        "materials_project": {
+            "surface": mp_surface_manifest["source"] if mp_surface_manifest else None,
+            "cluster": mp_cluster_metadata,
+            "api_key_persisted": False,
+        },
+        "facet": mp_surface_manifest["facet"] if mp_surface_manifest else {"selection_source": "existing_slab" if slab is not None else None},
+        "checks": {
+            "bulk_used_directly_for_loading": False if slab is not None else None,
+            "surface_is_slab": slab_check,
+            "cluster_size_resolved": args.cluster_atoms is not None or args.cluster_layers is not None or args.cluster_radius is not None,
+        },
+        "files": {"generated_models": generated_files},
+    }
+    manifest_path = args.output_dir / "modeling_manifest.json"
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(manifest_path.name)
 
 
 if __name__ == "__main__":

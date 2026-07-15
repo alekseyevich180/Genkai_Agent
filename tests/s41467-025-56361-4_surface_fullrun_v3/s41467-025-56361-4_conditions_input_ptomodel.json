@@ -1,0 +1,2293 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "tests/s41467-025-56361-4_surface_fullrun_v3/s41467-025-56361-4_conditions_input_surface_relations.jsonl",
+    "table_csv": "tests/s41467-025-56361-4_surface_fullrun_v3/s41467-025-56361-4_conditions_input_table.csv",
+    "summary_txt": "tests/s41467-025-56361-4_surface_fullrun_v3/s41467-025-56361-4_conditions_input_summary.txt",
+    "time_csv": "tests/s41467-025-56361-4_surface_fullrun_v3/s41467-025-56361-4_conditions_input_time.csv"
+  },
+  "surface_modeling_parameter_schema": {
+    "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+    "schema_version": "1.0",
+    "tasks": {
+      "vacancy_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
+        "ptomodel_mapping_role": "oxide surface vacancy modeling input",
+        "parameters": {
+          "input": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "vacancy_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "samples_per_count": {
+            "type": "int",
+            "required": false
+          },
+          "mu_o": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_max": {
+            "type": "float",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "write_all_structures": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "samples_per_count >= 1",
+          "0 <= z_frac_min <= z_frac_max <= 1",
+          "calculator in ['uma', 'none']",
+          "calculator='uma' requires uma_model and device"
+        ]
+      },
+      "adsorbate_landscape": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py",
+        "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "molecule": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "site_symbols": {
+            "type": "string",
+            "required": false
+          },
+          "site_z_tolerance": {
+            "type": "float",
+            "required": false
+          },
+          "max_sites": {
+            "type": "int",
+            "required": false
+          },
+          "site_group_size": {
+            "type": "int",
+            "required": false
+          },
+          "n_trials_single": {
+            "type": "int",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_max": {
+            "type": "float",
+            "required": false
+          },
+          "coverage_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "patterns": {
+            "type": "comma_separated_strings",
+            "required": false
+          },
+          "random_repeats": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "site_group_size >= 1",
+          "coverage_counts values must be within the computed max_adsorbates range",
+          "patterns must be drawn from uniform, clustered, stripe, island, random",
+          "calculator in ['uma', 'none']"
+        ]
+      },
+      "surface_cluster_builder": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py",
+        "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_element": {
+            "type": "string",
+            "required": false
+          },
+          "cluster_bulk_file": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_structures": {
+            "type": "string_list",
+            "required": false,
+            "choices": [
+              "fcc",
+              "hcp",
+              "bcc"
+            ]
+          },
+          "cluster_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_layers": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_radius": {
+            "type": "float",
+            "required": false
+          },
+          "stack_layers": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_rows": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_a": {
+            "type": "float",
+            "required": false
+          },
+          "cluster_c": {
+            "type": "float",
+            "required": false
+          },
+          "fcc_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "fcc_row_profile": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "auto",
+              "custom",
+              "triangle",
+              "hexagon",
+              "trapezoid",
+              "rectangle"
+            ]
+          },
+          "fcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_row_count": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_stacking_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "ABC",
+              "AB"
+            ]
+          },
+          "fcc_layers": {
+            "type": "int",
+            "required": false
+          },
+          "hcp_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "hcp_layers": {
+            "type": "int",
+            "required": false
+          },
+          "x_frac": {
+            "type": "float",
+            "required": false
+          },
+          "y_frac": {
+            "type": "float",
+            "required": false
+          },
+          "z_height": {
+            "type": "float",
+            "required": false
+          },
+          "phi": {
+            "type": "float",
+            "required": false
+          },
+          "theta": {
+            "type": "float",
+            "required": false
+          },
+          "psi": {
+            "type": "float",
+            "required": false
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          }
+        },
+        "constraints": [
+          "cluster_element and cluster_bulk_file should provide enough information to resolve a metal species",
+          "in generic mode exactly one of cluster_atoms, cluster_layers, cluster_radius should be provided",
+          "bcc bridge mode requires bcc_rows, bcc_max_row_atoms, stack_layers",
+          "fcc row mode requires fcc_layers plus fcc_rows or an inferable fcc_row_profile setup",
+          "hcp row mode requires hcp_rows"
+        ]
+      },
+      "surface_cluster_mlip_search": {
+        "script": "agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py",
+        "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "cluster": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "n_trials": {
+            "type": "int",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "checkpoint": {
+            "type": "path_or_null",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "placement_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cell",
+              "active"
+            ]
+          },
+          "active_symbols": {
+            "type": "string_list",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_max": {
+            "type": "float",
+            "required": false
+          },
+          "detach_cutoff": {
+            "type": "float",
+            "required": false
+          },
+          "penalty_energy": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "candidate_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "selection_count": {
+            "type": "int",
+            "required": false
+          },
+          "top_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "top_pick_count": {
+            "type": "int",
+            "required": false
+          },
+          "tail_bin_size": {
+            "type": "int",
+            "required": false
+          },
+          "tail_pick_per_bin": {
+            "type": "int",
+            "required": false
+          },
+          "selection_random_seed": {
+            "type": "int",
+            "required": false
+          }
+        },
+        "constraints": [
+          "placement_mode in ['cell', 'active']",
+          "placement_mode='active' requires active_symbols",
+          "this task requires fairchem-core, torch, and a usable UMA model"
+        ]
+      }
+    }
+  },
+  "summary_excerpt": [
+    "这次抽到的关键信息包括：",
+    "在 s41467-025-56361-4_conditions_input_table.csv 里：",
+    "- Ni/CeO2-NaNaph 在 Ar 气氛下 180 °C、24 h Dehydrogenative Aromatisation",
+    "- Ni: 1.38 wt%",
+    "- 吸附物/反应物：Cyclohexanones",
+    "- 团簇/单原子建模线索：nanoparticle",
+    "- 建模关键词：Ni(0), CeO2, active sites, nanoparticle",
+    "- Ni/CeO2-NaNaph 在 Ar 气氛下 160 °C、24 h Dehydrogenative Aromatisation",
+    "在 s41467-025-56361-4_conditions_input_surface_relations.jsonl 里：",
+    "- 材料：",
+    "- Ni",
+    "- CeO2"
+  ],
+  "documents": [
+    {
+      "id": "surface_relations",
+      "title": "Ni-catalysed acceptorless dehydrogenative aromatisation of cyclohexanones enabled by concerted catalysis specific to supported nanoparticles",
+      "selected_information": {
+        "materials": [
+          "Ni",
+          "CeO2",
+          "NaNaph",
+          "HAP",
+          "ZrO2",
+          "TiO2",
+          "Al2O3"
+        ],
+        "material_classes": [
+          "supported_catalysts",
+          "oxides",
+          "metals_alloys"
+        ],
+        "recognized_material_names": [
+          {
+            "raw": "Ni",
+            "matched_name": null,
+            "normalized_formula": "Ni",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ni"
+            ]
+          },
+          {
+            "raw": "CeO2",
+            "matched_name": null,
+            "normalized_formula": "CeO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ce",
+              "O"
+            ]
+          },
+          {
+            "raw": "NaNaph",
+            "matched_name": null,
+            "normalized_formula": "NaNaph",
+            "kind": "formula_or_element",
+            "elements": [
+              "Na"
+            ]
+          },
+          {
+            "raw": "HAP",
+            "matched_name": null,
+            "normalized_formula": "HAP",
+            "kind": "formula_or_element",
+            "elements": [
+              "H",
+              "P"
+            ]
+          },
+          {
+            "raw": "ZrO2",
+            "matched_name": null,
+            "normalized_formula": "ZrO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Zr",
+              "O"
+            ]
+          },
+          {
+            "raw": "TiO2",
+            "matched_name": null,
+            "normalized_formula": "TiO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ti",
+              "O"
+            ]
+          },
+          {
+            "raw": "Al2O3",
+            "matched_name": null,
+            "normalized_formula": "Al2O3",
+            "kind": "formula_or_element",
+            "elements": [
+              "Al",
+              "O"
+            ]
+          },
+          {
+            "raw": "Ni/CeO2-NaNaph",
+            "matched_name": null,
+            "normalized_formula": "Ni/CeO2-NaNaph",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ni",
+              "Ce",
+              "O",
+              "Na"
+            ]
+          },
+          {
+            "raw": "CeO2 surface",
+            "matched_name": null,
+            "normalized_formula": "CeO2 surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ce",
+              "O"
+            ]
+          },
+          {
+            "raw": "nanoparticle",
+            "matched_name": null,
+            "normalized_formula": "nanoparticle",
+            "kind": "unresolved_name",
+            "elements": []
+          }
+        ],
+        "element_set": [
+          "Ni",
+          "Ce",
+          "O",
+          "Na",
+          "H",
+          "P",
+          "Zr",
+          "Ti",
+          "Al"
+        ],
+        "supports_or_surfaces": [
+          "Ni/CeO2-NaNaph",
+          "CeO2 surface"
+        ],
+        "surface_facets": [],
+        "surface_terminations": [],
+        "loaded_nanoparticles_or_clusters": [],
+        "single_atom_species": [],
+        "reaction_types": [
+          {
+            "raw": "Dehydrogenative Aromatisation",
+            "normalized": "Dehydrogenative Aromatisation"
+          }
+        ],
+        "adsorbates": [
+          "cyclohexanones",
+          "phenols"
+        ],
+        "adsorption_sites": [],
+        "coverage": [],
+        "defects": [],
+        "active_sites": [
+          "Ni atom"
+        ],
+        "surface_site_contexts": [
+          {
+            "surface_terms": [
+              "Ni",
+              "CeO2",
+              "NaNaph",
+              "HAP",
+              "ZrO2",
+              "TiO2",
+              "Al2O3",
+              "Ni/CeO2-NaNaph"
+            ],
+            "facet_terms": [],
+            "active_site_terms": [
+              "Ni atom"
+            ],
+            "adsorption_site_terms": [],
+            "site_role_terms": [],
+            "surface_indices": [],
+            "relation": "surface-site-facet association"
+          }
+        ],
+        "modeling_keywords": [
+          "Ni(0)",
+          "CeO2",
+          "active sites",
+          "nanoparticle"
+        ]
+      },
+      "normalized_mapping": {
+        "primary_material": "Ni",
+        "material_classes": [
+          "supported_catalysts",
+          "oxides",
+          "metals_alloys"
+        ],
+        "recognized_material_names": [
+          {
+            "raw": "Ni",
+            "matched_name": null,
+            "normalized_formula": "Ni",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ni"
+            ]
+          },
+          {
+            "raw": "CeO2",
+            "matched_name": null,
+            "normalized_formula": "CeO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ce",
+              "O"
+            ]
+          },
+          {
+            "raw": "NaNaph",
+            "matched_name": null,
+            "normalized_formula": "NaNaph",
+            "kind": "formula_or_element",
+            "elements": [
+              "Na"
+            ]
+          },
+          {
+            "raw": "HAP",
+            "matched_name": null,
+            "normalized_formula": "HAP",
+            "kind": "formula_or_element",
+            "elements": [
+              "H",
+              "P"
+            ]
+          },
+          {
+            "raw": "ZrO2",
+            "matched_name": null,
+            "normalized_formula": "ZrO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Zr",
+              "O"
+            ]
+          },
+          {
+            "raw": "TiO2",
+            "matched_name": null,
+            "normalized_formula": "TiO2",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ti",
+              "O"
+            ]
+          },
+          {
+            "raw": "Al2O3",
+            "matched_name": null,
+            "normalized_formula": "Al2O3",
+            "kind": "formula_or_element",
+            "elements": [
+              "Al",
+              "O"
+            ]
+          },
+          {
+            "raw": "Ni/CeO2-NaNaph",
+            "matched_name": null,
+            "normalized_formula": "Ni/CeO2-NaNaph",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ni",
+              "Ce",
+              "O",
+              "Na"
+            ]
+          },
+          {
+            "raw": "CeO2 surface",
+            "matched_name": null,
+            "normalized_formula": "CeO2 surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "Ce",
+              "O"
+            ]
+          },
+          {
+            "raw": "nanoparticle",
+            "matched_name": null,
+            "normalized_formula": "nanoparticle",
+            "kind": "unresolved_name",
+            "elements": []
+          }
+        ],
+        "element_set": [
+          "Ni",
+          "Ce",
+          "O",
+          "Na",
+          "H",
+          "P",
+          "Zr",
+          "Ti",
+          "Al"
+        ],
+        "primary_surface_or_support": "Ni/CeO2-NaNaph",
+        "facet_set": [],
+        "loaded_species": [],
+        "surface_site_contexts": [
+          {
+            "surface_terms": [
+              "Ni",
+              "CeO2",
+              "NaNaph",
+              "HAP",
+              "ZrO2",
+              "TiO2",
+              "Al2O3",
+              "Ni/CeO2-NaNaph"
+            ],
+            "facet_terms": [],
+            "active_site_terms": [
+              "Ni atom"
+            ],
+            "adsorption_site_terms": [],
+            "site_role_terms": [],
+            "surface_indices": [],
+            "relation": "surface-site-facet association"
+          }
+        ],
+        "reaction_family": [
+          "Dehydrogenative Aromatisation"
+        ]
+      },
+      "recommended_modeling_tasks": [
+        "adsorbate_landscape",
+        "surface_cluster_builder",
+        "doped_surface",
+        "slab_generation"
+      ],
+      "task_selection": {
+        "selection_order": [
+          "material_class",
+          "research_keywords_and_explicit_fields"
+        ],
+        "material_classes": [
+          "supported_catalysts",
+          "oxides",
+          "metals_alloys"
+        ],
+        "material_compatible_executable_tasks": [
+          "vacancy_landscape",
+          "adsorbate_landscape",
+          "surface_cluster_builder"
+        ],
+        "research_keywords": [
+          "Ni(0)",
+          "CeO2",
+          "active sites",
+          "nanoparticle"
+        ],
+        "keyword_text": "ni(0) ceo2 active sites nanoparticle",
+        "selected_task_evidence": {
+          "adsorbate_landscape": [
+            "cyclohexanones",
+            "phenols",
+            "Cyclohexanones"
+          ],
+          "surface_cluster_builder": [
+            "nanoparticle"
+          ],
+          "doped_surface": [
+            "NaNaph"
+          ],
+          "slab_generation": [
+            "Ni/CeO2-NaNaph",
+            "CeO2 surface",
+            "CeO2"
+          ]
+        },
+        "rejected_recommendations": []
+      },
+      "executable_tasks": [
+        "adsorbate_landscape",
+        "surface_cluster_builder"
+      ],
+      "deferred_tasks": [
+        "doped_surface",
+        "slab_generation"
+      ],
+      "task_inputs": {
+        "adsorbate_landscape": {
+          "material": "Ni",
+          "surfaces": [
+            "Ni/CeO2-NaNaph",
+            "CeO2 surface"
+          ],
+          "facets": [],
+          "active_sites": [
+            "Ni atom"
+          ],
+          "reaction_type": "Dehydrogenative Aromatisation",
+          "adsorbates": [
+            "cyclohexanones",
+            "phenols"
+          ],
+          "adsorbate_species": [
+            {
+              "raw": "cyclohexanones",
+              "normalized_species": "cyclohexanones"
+            },
+            {
+              "raw": "phenols",
+              "normalized_species": "phenols"
+            }
+          ],
+          "adsorption_sites": [],
+          "site_group_size": null,
+          "coverage": []
+        },
+        "surface_cluster_builder": {
+          "material": "Ni",
+          "surfaces": [
+            "Ni/CeO2-NaNaph",
+            "CeO2 surface"
+          ],
+          "facets": [],
+          "active_sites": [
+            "Ni atom"
+          ],
+          "reaction_type": "Dehydrogenative Aromatisation",
+          "clusters": [
+            "nanoparticle"
+          ],
+          "cluster_species": [],
+          "cluster_atom_count": null,
+          "cluster_structures": []
+        }
+      },
+      "parameter_correspondence": {
+        "shared_context": {
+          "primary_material": "Ni",
+          "primary_surface_or_support": "Ni/CeO2-NaNaph",
+          "facet_set": [],
+          "loaded_species": [],
+          "reaction_family": [
+            "Dehydrogenative Aromatisation"
+          ]
+        },
+        "links": [
+          {
+            "relation": "shared_surface_structure",
+            "source_fields": [
+              "materials",
+              "surfaces",
+              "facets",
+              "surface_facets.surface_index"
+            ],
+            "source_terms": [
+              "Ni",
+              "Ni/CeO2-NaNaph"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.surface",
+              "surface_cluster_builder.surface"
+            ],
+            "status": "needs_upstream_artifact",
+            "prerequisite": "slab_generation or user-selected structure file",
+            "reason": "The same resolved slab or surface structure should feed all downstream tasks that operate on a surface artifact."
+          },
+          {
+            "relation": "adsorbate_to_molecule_file",
+            "source_fields": [
+              "adsorbates",
+              "intermediates"
+            ],
+            "source_terms": [
+              "cyclohexanones",
+              "phenols"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.molecule"
+            ],
+            "status": "needs_upstream_artifact",
+            "prerequisite": "molecule structure file selection or generation",
+            "reason": "Paper adsorbate names identify molecule candidates, but the executable parameter is a structure-file path."
+          },
+          {
+            "relation": "cluster_phrase_to_builder_parameters",
+            "source_fields": [
+              "clusters",
+              "Cluster/Single Atom"
+            ],
+            "source_terms": [
+              "nanoparticle"
+            ],
+            "target_parameters": [
+              "surface_cluster_builder.cluster_element",
+              "surface_cluster_builder.cluster_atoms",
+              "surface_cluster_builder.cluster_structures"
+            ],
+            "status": "auto_or_manual_by_parameter",
+            "prerequisite": null,
+            "reason": "Cluster text can directly provide the element, sometimes the atom count, and sometimes the crystal structure keyword."
+          },
+          {
+            "relation": "active_site_to_adsorption_site_search",
+            "source_fields": [
+              "active_sites",
+              "adsorption_sites",
+              "surface_site_contexts"
+            ],
+            "source_terms": [
+              "Ni atom"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.site_symbols",
+              "adsorbate_landscape.site_group_size"
+            ],
+            "status": "auto_or_manual_by_parameter",
+            "prerequisite": "resolved surface structure",
+            "reason": "Active-site labels can seed element-based site detection, while geometry choices remain execution-time decisions."
+          }
+        ]
+      },
+      "task_parameter_schema_refs": {
+        "adsorbate_landscape": {
+          "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+          "task_key": "adsorbate_landscape"
+        },
+        "surface_cluster_builder": {
+          "schema_path": "/home/pj24001724/ku40000345/wu/Genkai_Agent/agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json",
+          "task_key": "surface_cluster_builder"
+        }
+      },
+      "task_argument_template": {
+        "adsorbate_landscape": {
+          "arguments": {
+            "surface": null,
+            "molecule": null,
+            "output_dir": null,
+            "structure_prefix": null,
+            "site_symbols": "Ni",
+            "site_z_tolerance": null,
+            "max_sites": null,
+            "site_group_size": null,
+            "n_trials_single": null,
+            "site_radius": null,
+            "z_gap_min": null,
+            "z_gap_max": null,
+            "coverage_counts": null,
+            "patterns": null,
+            "random_repeats": null,
+            "seed": null,
+            "calculator": null,
+            "uma_model": null,
+            "device": null,
+            "task_name": "adsorbate_landscape",
+            "include_d3": null,
+            "fmax": null,
+            "max_steps": null,
+            "smoke_test": null
+          },
+          "argument_sources": {
+            "task_name": {
+              "status": "auto",
+              "confidence": "high",
+              "source_field": null,
+              "source_term": null,
+              "reason": "Executable task name is already selected by ptomodel.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_symbols": {
+              "status": "auto",
+              "confidence": "high",
+              "source_field": "active_sites",
+              "source_term": "Ni atom",
+              "reason": "Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+              "from_task_inputs": [
+                "active_sites"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "surface": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "Ni/CeO2-NaNaph",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "molecule": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "adsorbates",
+              "source_term": "cyclohexanones",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "molecule_structure_file"
+              ]
+            },
+            "output_dir": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "structure_prefix": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_z_tolerance": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_sites": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_group_size": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "n_trials_single": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_radius": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_min": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_max": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "coverage_counts": {
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "coverage",
+              "source_term": null,
+              "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+              "from_task_inputs": [
+                "coverage",
+                "adsorption_sites",
+                "active_sites",
+                "defects",
+                "vacancy_models"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "patterns": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "random_repeats": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "seed": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "calculator": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "uma_model": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "device": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "include_d3": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fmax": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_steps": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "smoke_test": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "parameter_bindings": {
+            "task_name": {
+              "value": "adsorbate_landscape",
+              "status": "auto",
+              "confidence": "high",
+              "source_field": null,
+              "source_term": null,
+              "reason": "Executable task name is already selected by ptomodel.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_symbols": {
+              "value": "Ni",
+              "status": "auto",
+              "confidence": "high",
+              "source_field": "active_sites",
+              "source_term": "Ni atom",
+              "reason": "Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+              "from_task_inputs": [
+                "active_sites"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "surface": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "Ni/CeO2-NaNaph",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "molecule": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "adsorbates",
+              "source_term": "cyclohexanones",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "molecule_structure_file"
+              ]
+            },
+            "output_dir": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "structure_prefix": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_z_tolerance": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_sites": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_group_size": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "n_trials_single": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_radius": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_min": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_max": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "coverage_counts": {
+              "value": null,
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "coverage",
+              "source_term": null,
+              "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+              "from_task_inputs": [
+                "coverage",
+                "adsorption_sites",
+                "active_sites",
+                "defects",
+                "vacancy_models"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "patterns": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "random_repeats": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "seed": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "calculator": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "uma_model": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "device": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "include_d3": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fmax": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_steps": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "smoke_test": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "auto_mapped_parameters": [
+            "task_name",
+            "site_symbols"
+          ],
+          "required_missing_parameters": [
+            "surface",
+            "molecule"
+          ]
+        },
+        "surface_cluster_builder": {
+          "arguments": {
+            "surface": null,
+            "cluster_element": null,
+            "cluster_bulk_file": null,
+            "cluster_structures": null,
+            "cluster_atoms": null,
+            "cluster_layers": null,
+            "cluster_radius": null,
+            "stack_layers": null,
+            "bcc_rows": null,
+            "bcc_max_row_atoms": null,
+            "cluster_a": null,
+            "cluster_c": null,
+            "fcc_rows": null,
+            "fcc_row_profile": null,
+            "fcc_max_row_atoms": null,
+            "fcc_row_count": null,
+            "fcc_stacking_mode": null,
+            "fcc_layers": null,
+            "hcp_rows": null,
+            "hcp_layers": null,
+            "x_frac": null,
+            "y_frac": null,
+            "z_height": null,
+            "phi": null,
+            "theta": null,
+            "psi": null,
+            "output_dir": null
+          },
+          "argument_sources": {
+            "surface": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "Ni/CeO2-NaNaph",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "cluster_element": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_bulk_file": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "surface_cluster_builder.cluster_structure"
+              ]
+            },
+            "cluster_structures": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_atoms": {
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_layers": {
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_radius": {
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "stack_layers": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "bcc_rows": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "bcc_max_row_atoms": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_a": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_c": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_rows": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_row_profile": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_max_row_atoms": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_row_count": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_stacking_mode": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_layers": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "hcp_rows": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "hcp_layers": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "x_frac": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "y_frac": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_height": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "phi": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "theta": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "psi": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "output_dir": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "parameter_bindings": {
+            "surface": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "Ni/CeO2-NaNaph",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "cluster_element": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_bulk_file": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "surface_cluster_builder.cluster_structure"
+              ]
+            },
+            "cluster_structures": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_atoms": {
+              "value": null,
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_layers": {
+              "value": null,
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_radius": {
+              "value": null,
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "clusters",
+              "source_term": "nanoparticle",
+              "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+              "from_task_inputs": [
+                "clusters"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "stack_layers": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "bcc_rows": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "bcc_max_row_atoms": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_a": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "cluster_c": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_rows": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_row_profile": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_max_row_atoms": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_row_count": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_stacking_mode": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fcc_layers": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "hcp_rows": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "hcp_layers": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "x_frac": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "y_frac": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_height": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "phi": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "theta": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "psi": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "output_dir": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "auto_mapped_parameters": [],
+          "required_missing_parameters": []
+        }
+      }
+    }
+  ],
+  "global_recommended_tasks": [
+    "adsorbate_landscape",
+    "surface_cluster_builder",
+    "doped_surface",
+    "slab_generation"
+  ],
+  "global_executable_tasks": [
+    "adsorbate_landscape",
+    "surface_cluster_builder"
+  ],
+  "global_deferred_tasks": [
+    "doped_surface",
+    "slab_generation"
+  ]
+}

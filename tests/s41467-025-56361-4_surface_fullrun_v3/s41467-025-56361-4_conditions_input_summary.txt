@@ -1,0 +1,49 @@
+这次抽到的关键信息包括：
+
+在 s41467-025-56361-4_conditions_input_table.csv 里：
+
+- Ni/CeO2-NaNaph 在 Ar 气氛下 180 °C、24 h Dehydrogenative Aromatisation
+- Ni: 1.38 wt%
+- 吸附物/反应物：Cyclohexanones
+- 团簇/单原子建模线索：nanoparticle
+- 建模关键词：Ni(0), CeO2, active sites, nanoparticle
+- Ni/CeO2-NaNaph 在 Ar 气氛下 160 °C、24 h Dehydrogenative Aromatisation
+
+在 s41467-025-56361-4_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - Ni
+  - CeO2
+  - NaNaph
+  - HAP
+  - ZrO2
+  - TiO2
+  - Al2O3
+- 材料参数：
+  - Ni: 1.38 wt%
+  - zero-valent Ni
+  - CeO2
+- 反应参数：
+  - ~24 °C
+  - THF
+  - Ar
+  - 74%
+- 性能：
+  - 未提取
+- 表面/晶面：
+  - Ni/CeO2-NaNaph
+  - CeO2 surface
+- 缺陷/活性位点：
+  - Ni atom
+- 吸附/覆盖度：
+  - cyclohexanones
+  - phenols
+- 表面-位点关联：
+  - 表面: Ni/CeO2-NaNaph, CeO2 surface
+  - active site: Ni atom
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - 未提取
+- 推荐建模任务：
+  - 未提取

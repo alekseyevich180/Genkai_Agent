@@ -169,6 +169,28 @@ Supported cluster motifs:
 - `hcp`: spherical atom-count clusters or row-controlled hcp(0001) compact clusters
 - `bcc`: spherical atom-count clusters or bcc(110) bridge clusters
 
+### Materials Project bulk-to-stable-surface route
+
+Set the API key only through the environment. The key is never written to a
+manifest or structure file.
+
+```bash
+export MP_API_KEY="..."
+python agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py \
+  --surface-formula CeO2 \
+  --cluster-element Ni \
+  --cluster-from-mp \
+  --cluster-atoms 13 \
+  --output_dir modeling/structures
+```
+
+This route downloads stable bulk references, resolves the surface facet in the
+order paper/user explicit facet -> reviewed stable-facet registry -> stop for
+manual review, constructs a vacuum-containing slab, and only then places the cluster.
+Direct use of a bulk unit cell as `--surface` is rejected. The output includes
+`modeling_manifest.json` with MP identifiers, facet provenance, structure files,
+assumptions, and slab checks.
+
 ## Surface-Cluster MLIP Search
 
 Script:
