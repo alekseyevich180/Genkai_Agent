@@ -19,6 +19,7 @@ try:
         GENERIC_REACTION_TYPES,
         HIGH_VALUE_FIELDS,
         MATERIAL_CLASS_RULES,
+        material_class_rule_matches,
         MATERIAL_CLASSES,
         MATERIAL_KIND_TOKENS,
         PERIODIC_SYMBOLS,
@@ -40,6 +41,7 @@ except ImportError:  # pragma: no cover - direct script execution
         GENERIC_REACTION_TYPES,
         HIGH_VALUE_FIELDS,
         MATERIAL_CLASS_RULES,
+        material_class_rule_matches,
         MATERIAL_CLASSES,
         MATERIAL_KIND_TOKENS,
         PERIODIC_SYMBOLS,
@@ -252,14 +254,15 @@ def _material_classes_for(value: str, field: str, anchor_material: str = "") -> 
         "applications", "Reaction Type", "adsorbates", "Adsorbate/Reactant",
         "active_sites", "Active Site", "clusters", "single_atoms",
         "Cluster/Single Atom", "dopants", "Dopant/Modifier", "facets", "Facet",
-        "material_parameters", "Composition", "Loading",
+        "material_parameters", "Composition", "Loading", "crystal_structure_types",
+        "oxide_compositions", "surface_stability_descriptors",
     }
     if anchor_material and field in anchor_preferred_fields:
         anchor_lower = _normalize_term(anchor_material)
         anchor_classes = [
             material_class
             for material_class, tokens in MATERIAL_CLASS_RULES
-            if any(token in anchor_lower for token in tokens)
+            if any(material_class_rule_matches(anchor_lower, token) for token in tokens)
         ]
         if anchor_classes:
             return anchor_classes
@@ -268,14 +271,20 @@ def _material_classes_for(value: str, field: str, anchor_material: str = "") -> 
     classes = [
         material_class
         for material_class, tokens in MATERIAL_CLASS_RULES
-        if any(token in lower for token in tokens)
+        if any(material_class_rule_matches(lower, token) for token in tokens)
     ]
+    structure_match = match_crystal_structure_term(value)
+    if structure_match and (
+        structure_match.get("representative_compositions")
+        or "oxide" in str(structure_match.get("family", "")).lower()
+    ) and "oxides" not in classes:
+        classes.append("oxides")
     if not classes and anchor_material:
         anchor_lower = _normalize_term(anchor_material)
         classes = [
             material_class
             for material_class, tokens in MATERIAL_CLASS_RULES
-            if any(token in anchor_lower for token in tokens)
+            if any(material_class_rule_matches(anchor_lower, token) for token in tokens)
         ]
     if classes:
         return classes
@@ -285,6 +294,7 @@ def _material_classes_for(value: str, field: str, anchor_material: str = "") -> 
         "Reaction Type", "adsorbates", "Adsorbate/Reactant", "active_sites",
         "Active Site", "clusters", "single_atoms", "Cluster/Single Atom",
         "dopants", "Dopant/Modifier", "facets", "Facet",
+        "crystal_structure_types", "oxide_compositions", "surface_stability_descriptors",
     } and anchor_material:
         return ["other_inorganic_materials"]
     if field in {"materials", "surfaces", "slab_models", "Material", "Surface/Support", "material_parameters", "Composition", "Loading"}:
@@ -780,6 +790,7 @@ def _detect_crystal_structure_terms(entries: list[dict[str, Any]]) -> list[dict[
                 "family": match.get("family"),
                 "crystal_system": match.get("crystal_system"),
                 "typical_space_group": match.get("typical_space_group"),
+                "representative_compositions": match.get("representative_compositions", []),
             },
         )
         current["count"] = int(current["count"]) + int(entry.get("count", 0))
@@ -788,8 +799,11 @@ def _detect_crystal_structure_terms(entries: list[dict[str, Any]]) -> list[dict[
 
 def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> dict[str, Any]:
     material_entries = _entries_for_fields(entries, {"materials", "Material", "material_parameters", "Composition"})
+    structure_entries = _entries_for_fields(entries, {"crystal_structure_types"})
+    oxide_composition_entries = _entries_for_fields(entries, {"oxide_compositions"})
     support_entries = _entries_for_fields(entries, {"surfaces", "Surface/Support", "slab_models"})
     facet_entries = _entries_for_fields(entries, {"facets", "Facet", "surfaces", "Surface/Support"})
+    surface_stability_entries = _entries_for_fields(entries, {"surface_stability_descriptors"})
     dopant_entries = _entries_for_fields(entries, {"dopants", "Dopant/Modifier", "modifiers"})
     active_site_entries = _entries_for_fields(entries, {"active_sites", "Active Site"})
     adsorption_site_entries = _entries_for_fields(entries, {"adsorption_sites", "Adsorption Site"})
@@ -798,7 +812,9 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
     state_entries = _entries_for_fields(entries, {"surface_terminations", "Surface Termination", "defects", "vacancy_models", "Defect"})
     reaction_entries = _entries_for_fields(entries, {"applications", "Reaction Type"})
     surface_index_context = _surface_index_material_context(material_entries + support_entries)
-    crystal_structure_terms = _detect_crystal_structure_terms(material_entries + support_entries + composition_entries)
+    crystal_structure_terms = _detect_crystal_structure_terms(
+        structure_entries + material_entries + support_entries + composition_entries
+    )
     surface_site_contexts = _build_surface_site_contexts(
         material_class,
         material_entries,
@@ -883,11 +899,13 @@ def _build_class_profile(material_class: str, entries: list[dict[str, Any]]) -> 
             "descriptor_schema": "oxide_profile",
             "elements": _build_material_descriptors(entries).get("elements", []),
             "oxide_components": _top_terms([entry for entry in material_entries if "o" in _normalize_term(str(entry.get("term", "")))], 30),
+            "oxide_compositions": _top_terms(oxide_composition_entries, 30),
             "crystal_or_spacegroup_terms": _detect_spacegroup_terms(material_entries + composition_entries),
             "crystal_structure_terms": crystal_structure_terms,
             "surface_site_contexts": surface_site_contexts,
             "exposed_surfaces": _detect_exposed_surfaces(facet_entries),
             "surface_index_mappings": _detect_surface_index_mappings(facet_entries, surface_index_context),
+            "reported_surface_stability_descriptors": _top_terms(surface_stability_entries, 20),
             "defect_or_termination_states": _top_terms(state_entries, 20),
             "active_site_terms": _top_terms(active_site_entries, 20),
             "reaction_families": _top_terms(reaction_entries, 20),

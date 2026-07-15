@@ -120,7 +120,7 @@
 - Top elements: O, Co, Ni, H, Pt, Fe, C, Ru, Ag, Au
 - Top materials: Co, metals_alloys, nitrides, Ni, Pt, Fe, Ag, Cu, Co3O4, defect_engineered_materials
 - Top surfaces: Pt(111), CuO, Au(100), Au(111), FeOOH, Heterostructure, Ni(111), NiOOH, Pt(335), rutile TiO2
-- Crystal structures: rutile (tetragonal), spinel (cubic), normal spinel (cubic), perovskite (structure-dependent)
+- Crystal structures: rutile (tetragonal; compositions: TiO2, SnO2, RuO2, IrO2, MnO2), spinel (cubic), normal spinel (cubic), perovskite (structure-dependent)
 - Surface index mappings: Pt(111) -> (111), (0112̅) -> (012), (100) -> (100), Au(100) -> (100), Au(111) -> (111), (0001) -> (001), (001) -> (001), (101̅4) -> (104), (110) -> (110), (111) -> (111)
 - Top states: kinks, point defects, steps, A-layer (tetrahedral Co termination), B-layer (octahedral Co and O ions), Defective, defective structure, five-coordinated Cr5c, octahedral Co and O ions (B-layer), tetrahedral Co termination (A-layer)
 - Top dopants: Co, Ni, Fe, Ag, Cu, O, Ru, Au Nanoparticles, Bi, Cd
@@ -180,7 +180,7 @@
 - Top elements: O, Co, Ti, H, Ni, C, Zr, Fe, Ce, Ru
 - Top materials: oxides, TiO2, ZrO2, Co3O4, CeO2, hydroxides_oxyhydroxides, RuO2, MnO2, NiO, FeOOH
 - Top surfaces: TiO2, ZrO2, CeO2, Anatase TiO2, MnO2, FeOOH, NiOOH, oxide surface, rutile TiO2, Co3O4(001)
-- Crystal structures: anatase (tetragonal), spinel (cubic), rutile (tetragonal), normal spinel (cubic)
+- Crystal structures: anatase (tetragonal), spinel (cubic), rutile (tetragonal; compositions: TiO2, SnO2, RuO2, IrO2, MnO2), normal spinel (cubic)
 - Surface index mappings: (0001) -> (001), (001) -> (001), (0112̅) -> (012), (101) -> (101), (101̅4) -> (104), (110) -> (110), (100) -> (100), (111) -> (111), Co3O4(001) -> (001), Co3O4(001) surface -> (001)
 - Top states: kinks, oxygen vacancies, steps
 - Top dopants: Ni, Cr, Fe, FeOOH, Bismuth (Bi), Silver, W, Bismuth, C

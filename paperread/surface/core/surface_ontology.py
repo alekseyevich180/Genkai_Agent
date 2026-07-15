@@ -199,10 +199,13 @@ RELATION_FIELDS = [
     "applications",
     "materials",
     "material_parameters",
+    "crystal_structure_types",
+    "oxide_compositions",
     "surfaces",
     "surface_terminations",
     "slab_models",
     "facets",
+    "surface_stability_descriptors",
     "dopants",
     "defects",
     "vacancy_models",
@@ -240,9 +243,12 @@ TABLE_FIELDS = [
 
 HIGH_VALUE_FIELDS = {
     "material_parameters",
+    "crystal_structure_types",
+    "oxide_compositions",
     "materials",
     "surfaces",
     "facets",
+    "surface_stability_descriptors",
     "defects",
     "vacancy_models",
     "active_sites",
@@ -275,7 +281,10 @@ CATEGORY_RULES = {
         "Surface/Support",
     },
     "surface_structure": {
+        "crystal_structure_types",
+        "oxide_compositions",
         "facets",
+        "surface_stability_descriptors",
         "surface_terminations",
         "Facet",
         "Surface Termination",
@@ -318,8 +327,11 @@ CATEGORY_RULES = {
 KEYWORD_BUCKET_RULES = {
     "materials": {"materials", "Material"},
     "compositions": {"material_parameters", "Composition", "Loading"},
+    "crystal_structure_types": {"crystal_structure_types"},
+    "oxide_compositions": {"oxide_compositions"},
     "supports_surfaces": {"surfaces", "Surface/Support", "slab_models"},
     "facets": {"facets", "Facet"},
+    "surface_stability_descriptors": {"surface_stability_descriptors"},
     "surface_states": {
         "surface_terminations",
         "Surface Termination",
@@ -652,7 +664,7 @@ MATERIAL_CLASS_RULES: list[tuple[str, tuple[str, ...]]] = [
     ("single_atom_catalysts", ("single atom", "single atoms", "single metal atoms", "sac", "sacs", "sa/", "sas/")),
     ("supported_catalysts", ("/", "supported", "support", "anchored", "anchoring", "metal-support")),
     ("metals_alloys", ("alloy", "pt", "pd", "ni", "co", "fe", "cu", "ru", "rh", "ir", "au", "ag", "sn", "zn", "nickel", "tin")),
-    ("oxides", ("oxide", "o2", "ceo2", "tio2", "zro2", "al2o3", "sio2", "feo", "fe2o3", "co3o4", "mno2", "nio")),
+    ("oxides", ("oxide", "zno", "ceo2", "tio2", "sno2", "ruo2", "iro2", "zro2", "al2o3", "sio2", "feo", "fe2o3", "co3o4", "mno2", "nio")),
     ("hydroxides_oxyhydroxides", ("hydroxide", "oxyhydroxide", "ldh", "layered double hydroxide", "niooh", "feooh", "coooh")),
     ("sulfides", ("sulfide", "sulfur", "mos2", "cos", "nis", "fes", "ws2")),
     ("selenides_tellurides", ("selenide", "telluride", "mose2", "wse2", "nise", "cose")),
@@ -671,6 +683,18 @@ MATERIAL_CLASS_RULES: list[tuple[str, tuple[str, ...]]] = [
 ]
 
 MATERIAL_CLASSES = [name for name, _ in MATERIAL_CLASS_RULES] + ["other_inorganic_materials"]
+
+
+def material_class_rule_matches(text: str, rule: str) -> bool:
+    """Match compact symbols/formulas as tokens instead of English substrings."""
+    normalized_text = text.casefold()
+    normalized_rule = rule.casefold()
+    if normalized_rule.isalnum() and len(normalized_rule) <= 4:
+        return re.search(
+            rf"(?<![a-z]){re.escape(normalized_rule)}(?![a-z])",
+            normalized_text,
+        ) is not None
+    return normalized_rule in normalized_text
 
 REACTION_KEYWORDS = [
     ("oxygen evolution reaction", "OER"),

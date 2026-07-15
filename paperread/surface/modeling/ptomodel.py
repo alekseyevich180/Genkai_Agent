@@ -19,6 +19,7 @@ try:
         EXECUTABLE_TASKS,
         GENERIC_REACTION_TYPES,
         MATERIAL_CLASS_RULES,
+        material_class_rule_matches,
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
@@ -35,6 +36,7 @@ except ImportError:  # pragma: no cover - direct script execution
         EXECUTABLE_TASKS,
         GENERIC_REACTION_TYPES,
         MATERIAL_CLASS_RULES,
+        material_class_rule_matches,
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
@@ -288,13 +290,27 @@ def _infer_material_classes(values: list[str]) -> list[str]:
         if item.get("normalized_formula")
     ]
     joined = " ".join(values + normalized_formulas).lower()
-    matches = [name for name, rules in MATERIAL_CLASS_RULES if any(rule in joined for rule in rules)]
+    matches = [
+        name
+        for name, rules in MATERIAL_CLASS_RULES
+        if name != "metals_alloys"
+        if any(material_class_rule_matches(joined, rule) for rule in rules)
+    ]
     element_symbols = {
         symbol
         for item in normalized_materials
         for symbol in item.get("elements", [])
     }
-    if element_symbols.intersection(METAL_SYMBOLS) and "metals_alloys" not in matches:
+    metal_context = any(
+        token in joined
+        for token in ("alloy", "cluster", "nanocluster", "nanoparticle", "single atom")
+    )
+    pure_metal_context = any(normalize_element_name(value) for value in values)
+    if (
+        element_symbols.intersection(METAL_SYMBOLS)
+        and (metal_context or pure_metal_context)
+        and "metals_alloys" not in matches
+    ):
         matches.append("metals_alloys")
     if not matches:
         return ["other_inorganic_materials"]
@@ -650,7 +666,22 @@ def _build_argument_template(
         if parameter_name in argument_sources:
             continue
 
-        if parameter_name in {"input", "surface", "molecule", "cluster", "cluster_bulk_file"}:
+        if (
+            task_name == "surface_cluster_builder"
+            and parameter_name == "cluster_bulk_file"
+            and argument_values.get("cluster_element")
+        ):
+            mark(
+                parameter_name,
+                value=None,
+                status="alternative_not_selected",
+                confidence="high",
+                source_field="clusters",
+                source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
+                reason="An explicit cluster element is sufficient for the builder; a bulk file is an optional alternative source of element and lattice data.",
+                from_task_inputs=["cluster_species"],
+            )
+        elif parameter_name in {"input", "surface", "molecule", "cluster", "cluster_bulk_file"}:
             source_field = "surfaces"
             source_term = _first_nonempty(
                 *(task_inputs.get("surfaces") or []),
@@ -705,16 +736,33 @@ def _build_argument_template(
                 from_task_inputs=["coverage", "adsorption_sites", "active_sites", "defects", "vacancy_models"],
             )
         elif parameter_name in {"cluster_atoms", "cluster_layers", "cluster_radius"}:
-            mark(
-                parameter_name,
-                value=None,
-                status="needs_manual_decision",
-                confidence="medium",
-                source_field="clusters",
-                source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
-                reason="Cluster size mode must be chosen explicitly before invoking the builder.",
-                from_task_inputs=["clusters"],
-            )
+            selected_size_modes = [
+                name
+                for name in ("cluster_atoms", "cluster_layers", "cluster_radius")
+                if argument_values.get(name) is not None
+            ]
+            if selected_size_modes:
+                mark(
+                    parameter_name,
+                    value=None,
+                    status="alternative_not_selected",
+                    confidence="high",
+                    source_field="clusters",
+                    source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
+                    reason=f"The mutually exclusive size mode {selected_size_modes[0]} is already selected.",
+                    from_task_inputs=["clusters"],
+                )
+            else:
+                mark(
+                    parameter_name,
+                    value=None,
+                    status="needs_manual_decision",
+                    confidence="medium",
+                    source_field="clusters",
+                    source_term=_first_nonempty(*(task_inputs.get("clusters") or [])),
+                    reason="Cluster size mode must be chosen explicitly before invoking the builder.",
+                    from_task_inputs=["clusters"],
+                )
         else:
             default_status = "optional_unset"
             if parameter_spec.get("required"):

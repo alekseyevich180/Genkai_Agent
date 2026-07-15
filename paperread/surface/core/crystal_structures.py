@@ -20,6 +20,7 @@ CRYSTAL_STRUCTURE_TERMS: dict[str, dict[str, Any]] = {
         "family": "oxide polymorph",
         "crystal_system": "tetragonal",
         "typical_space_group": "P4_2/mnm (No. 136)",
+        "representative_compositions": ["TiO2", "SnO2", "RuO2", "IrO2", "MnO2"],
         "notes": "Common TiO2, RuO2, MnO2, and SnO2 structure type; often paired with (110).",
     },
     "spinel": {

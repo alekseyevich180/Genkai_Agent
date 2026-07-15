@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from ..core.crystal_structures import match_crystal_structure_term
+
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_MATERIAL_CLASS_DIR = REPO_ROOT / "paperread" / "surface" / "experience" / "material_classes"
@@ -57,12 +59,16 @@ def _top_crystal_structure_terms(items: list[dict[str, Any]], limit: int = 12) -
         term = str(item.get("term", "")).strip()
         if not term:
             continue
+        vocabulary_match = match_crystal_structure_term(term) or {}
         structures.append(
             {
                 "term": term,
                 "family": item.get("family"),
                 "crystal_system": item.get("crystal_system"),
                 "typical_space_group": item.get("typical_space_group"),
+                "representative_compositions": item.get(
+                    "representative_compositions", vocabulary_match.get("representative_compositions", [])
+                ),
             }
         )
     return structures
@@ -166,10 +172,21 @@ def build_surface_parameter_registry(
             "top_elements": _top_terms(descriptors.get("elements", []), limit=10),
             "top_element_sets": _top_terms(descriptors.get("element_sets", []), limit=10),
             "top_material_terms": _top_terms(inventory.get("materials", []), limit=10),
+            "top_oxide_compositions": _top_terms(
+                profile.get("oxide_compositions", inventory.get("oxide_compositions", [])),
+                limit=10,
+            ),
             "top_surface_terms": _top_terms(inventory.get("supports_surfaces", []), limit=10),
             "top_surface_index_mappings": _top_surface_index_mappings(profile.get("surface_index_mappings", []), limit=10),
             "top_crystal_structure_terms": _top_crystal_structure_terms(profile.get("crystal_structure_terms", []), limit=10),
             "top_state_terms": _top_terms(inventory.get("surface_states", []), limit=10),
+            "top_reported_surface_stability_descriptors": _top_terms(
+                profile.get(
+                    "reported_surface_stability_descriptors",
+                    inventory.get("surface_stability_descriptors", []),
+                ),
+                limit=10,
+            ),
             "top_dopant_terms": _top_terms(inventory.get("dopants_modifiers", []), limit=10),
             "top_active_site_terms": _top_terms(inventory.get("active_sites", []), limit=10),
             "top_surface_site_contexts": _top_surface_site_contexts(surface_site_contexts, limit=6),
@@ -234,11 +251,22 @@ def build_surface_parameter_registry(
                 f"- Schema: `{profile['descriptor_schema']}`",
                 f"- Top elements: {', '.join(profile['top_elements']) or 'N/A'}",
                 f"- Top materials: {', '.join(profile['top_material_terms']) or 'N/A'}",
+                *(
+                    [f"- Oxide compositions: {', '.join(profile['top_oxide_compositions'])}"]
+                    if profile["top_oxide_compositions"]
+                    else []
+                ),
                 f"- Top surfaces: {', '.join(profile['top_surface_terms']) or 'N/A'}",
                 "- Crystal structures: "
                 + (
                     ", ".join(
-                        f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'})"
+                        f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'}"
+                        + (
+                            f"; compositions: {', '.join(item['representative_compositions'])}"
+                            if item.get("representative_compositions")
+                            else ""
+                        )
+                        + ")"
                         for item in profile["top_crystal_structure_terms"]
                     )
                     or "N/A"
@@ -252,6 +280,14 @@ def build_surface_parameter_registry(
                     or "N/A"
                 ),
                 f"- Top states: {', '.join(profile['top_state_terms']) or 'N/A'}",
+                *(
+                    [
+                        "- Reported surface-stability terms: "
+                        + ", ".join(profile["top_reported_surface_stability_descriptors"])
+                    ]
+                    if profile["top_reported_surface_stability_descriptors"]
+                    else []
+                ),
                 f"- Top dopants: {', '.join(profile['top_dopant_terms']) or 'N/A'}",
                 f"- Top active sites: {', '.join(profile['top_active_site_terms']) or 'N/A'}",
                 "- Surface-site associations: "
@@ -322,9 +358,17 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
             hints.append(f"materials {', '.join(profile['top_material_terms'][:4])}")
         if profile.get("top_surface_terms"):
             hints.append(f"surfaces {', '.join(profile['top_surface_terms'][:4])}")
+        if profile.get("top_oxide_compositions"):
+            hints.append(f"reported oxide compositions {', '.join(profile['top_oxide_compositions'][:4])}")
         if profile.get("top_crystal_structure_terms"):
             structures = [
-                f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'})"
+                f"{item['term']} ({item.get('crystal_system') or 'structure-dependent'}"
+                + (
+                    f"; compositions: {', '.join(item['representative_compositions'])}"
+                    if item.get("representative_compositions")
+                    else ""
+                )
+                + ")"
                 for item in profile["top_crystal_structure_terms"][:4]
             ]
             hints.append(f"crystal structures {', '.join(structures)}")
@@ -334,6 +378,11 @@ def render_registry_prompt_hint(registry: dict[str, Any], limit: int = 8) -> str
                 for item in profile["top_surface_index_mappings"][:4]
             ]
             hints.append(f"facet mappings {', '.join(mappings)}")
+        if profile.get("top_reported_surface_stability_descriptors"):
+            hints.append(
+                "reported stability terms "
+                + ", ".join(profile["top_reported_surface_stability_descriptors"][:4])
+            )
         if profile.get("top_dopant_terms"):
             hints.append(f"dopants {', '.join(profile['top_dopant_terms'][:4])}")
         if profile.get("top_active_site_terms"):

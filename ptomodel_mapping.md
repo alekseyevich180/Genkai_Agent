@@ -67,6 +67,22 @@
 `normalized_formula`、`kind` 和 `elements`；汇总后的元素写入 `element_set`。
 存在组成歧义的结构类型名称不强制转换成单一化学式。
 
+`rutile` 不直接映射到单一化学式，而是作为独立结构类型保存。其代表组成
+包括 `TiO2`、`SnO2`、`RuO2`、`IrO2` 和 `MnO2`。当前 surface 阶段只做
+文章信息抽取和分类，不根据结构类型推断材料或稳定晶面：
+
+- `crystal_structure_types`：文章明确给出的 `rutile` 等结构类型。
+- `oxide_compositions`：文章明确给出的 `TiO2`、`SnO2`、`RuO2` 等组成。
+- `facets`：文章明确给出的面指数。
+- `surface_stability_descriptors`：文章明确给出的 stable、most stable、
+  lowest-energy、metastable 等稳定性描述。
+- `links`：只有文章明确建立关系时，才记录 composition—structure 和
+  composition—facet—stability 的对应关系。
+
+例如，只出现 `rutile` 时仅保存结构类型；出现“rutile RuO2(110) is the most
+stable surface”时，分别保存 `rutile`、`RuO2`、`(110)` 和 `most stable
+surface`，并用原文支持的 links 连接，不额外补充其他晶面。
+
 | 论文抽取字段 | ptomodel 中间字段 | 建模任务 / 参数 | 说明 |
 |---|---|---|---|
 | `materials` | `normalized_mapping.primary_material` | `vacancy_landscape.input`，`adsorbate_landscape.surface`，`surface_cluster_builder.surface`，`surface_cluster_mlip_search.surface` | 作为主材料或主表面上下文。 |

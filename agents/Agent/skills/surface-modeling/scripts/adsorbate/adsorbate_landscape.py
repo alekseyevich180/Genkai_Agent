@@ -10,6 +10,7 @@ from ase import Atoms
 from ase.calculators.calculator import Calculator, all_changes
 from ase.io import read, write
 from ase.optimize import LBFGS
+from scipy.optimize import Bounds, LinearConstraint, milp
 
 
 CONFIG = {
@@ -343,19 +344,60 @@ def choose_pattern_groups(
     count: int,
     rng: random.Random,
 ) -> list[int]:
-    selected = []
-    occupied_sites = set()
-    for group_id in ordered_pattern_candidates(pattern, positions, rng):
-        group_sites = set(site_groups[group_id])
-        if occupied_sites.isdisjoint(group_sites):
-            selected.append(group_id)
-            occupied_sites.update(group_sites)
-        if len(selected) == count:
-            return selected
-    raise ValueError(
-        f"Could not select {count} non-overlapping site groups for pattern={pattern}. "
-        "Reduce coverage or site group size."
+    order = ordered_pattern_candidates(pattern, positions, rng)
+    rank = {group_id: idx for idx, group_id in enumerate(order)}
+    selected = solve_non_overlapping_site_groups(
+        site_groups,
+        count=count,
+        preference_costs=[float(rank[idx]) for idx in range(len(site_groups))],
     )
+    if len(selected) != count:
+        raise ValueError(
+            f"Could not select {count} non-overlapping site groups for pattern={pattern}. "
+            "Reduce coverage or site group size."
+        )
+    return sorted(selected, key=rank.__getitem__)
+
+
+def solve_non_overlapping_site_groups(
+    site_groups: list[tuple[int, ...]],
+    *,
+    count: int | None = None,
+    preference_costs: list[float] | None = None,
+) -> list[int]:
+    if not site_groups:
+        return []
+    unique_sites = sorted({site for group in site_groups for site in group})
+    site_row = {site: idx for idx, site in enumerate(unique_sites)}
+    incidence = np.zeros((len(unique_sites), len(site_groups)), dtype=float)
+    for group_id, group in enumerate(site_groups):
+        for site in group:
+            incidence[site_row[site], group_id] = 1.0
+
+    constraints = [LinearConstraint(incidence, 0.0, 1.0)]
+    if count is not None:
+        constraints.append(
+            LinearConstraint(np.ones((1, len(site_groups))), float(count), float(count))
+        )
+    objective = (
+        np.asarray(preference_costs, dtype=float)
+        if preference_costs is not None
+        else -np.ones(len(site_groups), dtype=float)
+    )
+    result = milp(
+        c=objective,
+        integrality=np.ones(len(site_groups), dtype=int),
+        bounds=Bounds(0.0, 1.0),
+        constraints=constraints,
+        options={"disp": False},
+    )
+    if not result.success or result.x is None:
+        return []
+    return [idx for idx, value in enumerate(result.x) if value >= 0.5]
+
+
+def maximum_non_overlapping_site_groups(site_groups: list[tuple[int, ...]]) -> int:
+    return len(solve_non_overlapping_site_groups(site_groups))
 
 
 def build_coverage_structure(
@@ -464,7 +506,7 @@ def main() -> int:
     site_indices = get_surface_sites(slab, site_symbols, args.site_z_tolerance, args.max_sites)
     site_groups = build_site_groups(slab, site_indices, args.site_group_size)
     site_group_positions = group_positions(slab, site_groups)
-    max_adsorbates = len(site_indices) // args.site_group_size
+    max_adsorbates = maximum_non_overlapping_site_groups(site_groups)
     coverage_counts = parse_int_list(args.coverage_counts)
     if coverage_counts is None:
         coverage_counts = list(range(1, max_adsorbates + 1))
@@ -553,7 +595,12 @@ def main() -> int:
 
     best = table.iloc[0]
     best_structure = read(best["structure_path"])
-    best_path = args.output_dir / "stable_adsorbate_coverage_structure.cif"
+    best_filename = (
+        "workflow_test_best_candidate.cif"
+        if args.calculator == "none"
+        else "stable_adsorbate_coverage_structure.cif"
+    )
+    best_path = args.output_dir / best_filename
     write(best_path, best_structure)
 
     site_table = pd.DataFrame(
@@ -583,7 +630,8 @@ def main() -> int:
     print(f"Site groups: {args.output_dir / 'adsorption_site_groups.csv'}")
     print(f"CSV: {csv_path}")
     print(f"Plot: {plot_path}")
-    print(f"Stable structure: {best_path}")
+    best_label = "Workflow-test best candidate" if args.calculator == "none" else "Stable structure"
+    print(f"{best_label}: {best_path}")
     print(
         "Best candidate: "
         f"pattern={best['pattern']}, "

@@ -21,10 +21,13 @@ def build_prompt(title: str, text: str) -> str:
     schema = {
         "materials": [],
         "material_parameters": [],
+        "crystal_structure_types": [],
+        "oxide_compositions": [],
         "surfaces": [],
         "surface_terminations": [],
         "slab_models": [],
         "facets": [],
+        "surface_stability_descriptors": [],
         "dopants": [],
         "defects": [],
         "vacancy_models": [],
@@ -55,12 +58,20 @@ Rules:
 - Prefer short normalized phrases.
 - `material_parameters` should capture parameters like composition, phase, morphology, particle size,
   surface area, loading, oxidation state, support, and crystal structure when present.
+- Keep structure type and chemical composition separate. `crystal_structure_types` captures terms
+  such as rutile, anatase, spinel, perovskite, rocksalt, and fluorite. `oxide_compositions` captures
+  explicit oxide formulas or names such as TiO2, SnO2, RuO2, IrO2, and MnO2. Never infer TiO2
+  from `rutile` alone.
 - `surfaces` should capture named surfaces, supports, slab materials, exposed surfaces, and surface
   phrases such as CeO2 surface, TiO2(110), Pt/CeO2, oxide surface, electrode surface, or interface.
 - `surface_terminations` should capture terminations or functionalized surface states such as
   O-terminated, metal-terminated, hydroxylated, sulfurized, nitrided, reduced, oxidized, or reconstructed.
 - `slab_models` should capture explicit slab/model cues such as slab, monolayer, bilayer,
   supercell, surface model, periodic model, exposed facet, or computational surface.
+- `facets` should contain only face indices or explicitly named facets reported by the text.
+  `surface_stability_descriptors` should preserve explicit qualifiers such as stable surface,
+  most stable facet, lowest-energy surface, thermodynamically favored facet, or metastable facet.
+  Do not add a facet merely because it is common for a structure type.
 - `reaction_parameters` should capture parameters like temperature, time, pressure, atmosphere,
   solvent, pH, concentration, gas flow, potential, current density, conversion, selectivity,
   yield, rate, and stability when present.
@@ -78,6 +89,7 @@ Rules:
   doped_surface, surface_functionalization, slab_generation.
 - `links` should be a list of objects with keys: source, relation, target.
 - Good relation examples: has_facet, has_dopant, has_defect, has_active_site,
+  has_crystal_structure, has_oxide_composition, has_stable_facet,
   adsorbs, forms_intermediate, produces, shows_property, used_for, has_material_parameter,
   has_reaction_parameter, has_termination, has_adsorption_site, has_coverage,
   has_cluster, has_single_atom, suggests_modeling_task.

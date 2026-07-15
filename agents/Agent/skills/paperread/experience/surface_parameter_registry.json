@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-09T07:44:46.468916+00:00",
+  "generated_at": "2026-07-15T05:17:24.881674+00:00",
   "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
   "common": {
     "material_classes": [
@@ -109,10 +109,12 @@
       "top_material_terms": [
         "battery_electrode_materials"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -137,10 +139,12 @@
       "top_elements": [],
       "top_element_sets": [],
       "top_material_terms": [],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -189,10 +193,12 @@
         "Ru nanoparticles",
         "TiC"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "lattice strain",
         "Lattice-Strain",
@@ -344,6 +350,7 @@
         "Graphene (G)",
         "nitrogen-doped carbon"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "carbon cloth",
         "graphene-like carbon",
@@ -357,6 +364,7 @@
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Ag",
         "carbon doping"
@@ -524,6 +532,7 @@
         "defect_engineered_materials",
         "nitrogen-doped carbon"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "oxygen vacancy"
       ],
@@ -536,6 +545,7 @@
         "Defective",
         "defective structure"
       ],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Mo-Doped",
         "of doped",
@@ -636,10 +646,12 @@
       "top_material_terms": [
         "halides"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -697,6 +709,7 @@
         "layered double hydroxide (LDH)",
         "NiCo Layer Double Hydroxide"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "LDH",
         "FeOOH",
@@ -711,6 +724,7 @@
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Cr",
         "FeOOH",
@@ -959,6 +973,7 @@
         "Co3O4",
         "defect_engineered_materials"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "Pt(111)",
         "CuO",
@@ -1110,25 +1125,35 @@
           "term": "rutile",
           "family": "oxide polymorph",
           "crystal_system": "tetragonal",
-          "typical_space_group": "P4_2/mnm (No. 136)"
+          "typical_space_group": "P4_2/mnm (No. 136)",
+          "representative_compositions": [
+            "TiO2",
+            "SnO2",
+            "RuO2",
+            "IrO2",
+            "MnO2"
+          ]
         },
         {
           "term": "spinel",
           "family": "AB2O4 structure type",
           "crystal_system": "cubic",
-          "typical_space_group": "Fd-3m (No. 227)"
+          "typical_space_group": "Fd-3m (No. 227)",
+          "representative_compositions": []
         },
         {
           "term": "normal spinel",
           "family": "AB2O4 structure type",
           "crystal_system": "cubic",
-          "typical_space_group": "Fd-3m (No. 227)"
+          "typical_space_group": "Fd-3m (No. 227)",
+          "representative_compositions": []
         },
         {
           "term": "perovskite",
           "family": "ABO3 structure type",
           "crystal_system": "structure-dependent",
-          "typical_space_group": "varies with distortion and composition"
+          "typical_space_group": "varies with distortion and composition",
+          "representative_compositions": []
         }
       ],
       "top_state_terms": [
@@ -1143,6 +1168,7 @@
         "octahedral Co and O ions (B-layer)",
         "tetrahedral Co termination (A-layer)"
       ],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Co",
         "Ni",
@@ -2337,10 +2363,12 @@
       "top_material_terms": [
         "mofs_coordination_polymers"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -2391,6 +2419,7 @@
         "antimonene",
         "ultrananocrystalline diamond"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "monolayer",
         "monometallic cluster",
@@ -2399,6 +2428,7 @@
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Ag",
         "Cd",
@@ -2685,6 +2715,7 @@
         "Ce",
         "gold"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "Interface",
         "Cr2O3(001)",
@@ -2693,6 +2724,7 @@
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "N"
       ],
@@ -2970,6 +3002,7 @@
         "NiO",
         "FeOOH"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "TiO2",
         "ZrO2",
@@ -3121,25 +3154,35 @@
           "term": "anatase",
           "family": "TiO2 polymorph",
           "crystal_system": "tetragonal",
-          "typical_space_group": "I4_1/amd (No. 141)"
+          "typical_space_group": "I4_1/amd (No. 141)",
+          "representative_compositions": []
         },
         {
           "term": "spinel",
           "family": "AB2O4 structure type",
           "crystal_system": "cubic",
-          "typical_space_group": "Fd-3m (No. 227)"
+          "typical_space_group": "Fd-3m (No. 227)",
+          "representative_compositions": []
         },
         {
           "term": "rutile",
           "family": "oxide polymorph",
           "crystal_system": "tetragonal",
-          "typical_space_group": "P4_2/mnm (No. 136)"
+          "typical_space_group": "P4_2/mnm (No. 136)",
+          "representative_compositions": [
+            "TiO2",
+            "SnO2",
+            "RuO2",
+            "IrO2",
+            "MnO2"
+          ]
         },
         {
           "term": "normal spinel",
           "family": "AB2O4 structure type",
           "crystal_system": "cubic",
-          "typical_space_group": "Fd-3m (No. 227)"
+          "typical_space_group": "Fd-3m (No. 227)",
+          "representative_compositions": []
         }
       ],
       "top_state_terms": [
@@ -3147,6 +3190,7 @@
         "oxygen vacancies",
         "steps"
       ],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Ni",
         "Cr",
@@ -4034,10 +4078,12 @@
       "top_material_terms": [
         "perovskites_spinels"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -4091,10 +4137,12 @@
         "phosphides",
         "transition metal-based catalysts"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Ru"
       ],
@@ -4197,10 +4245,12 @@
         "selenides",
         "tellurides"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -4255,12 +4305,14 @@
         "Ni-O-G SACs",
         "Sn SAs/G-Na"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "Sn SAs/G"
       ],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [
         "Sn",
@@ -4374,10 +4426,12 @@
         "MoS2",
         "Mo–N/C@MoS2"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -4496,6 +4550,7 @@
         "Au–Ag/TiO2",
         "CoO/Co"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [
         "Au/NiFe LDH surface",
         "BP/Au surface",
@@ -4509,6 +4564,7 @@
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [
         "Ag",
         "Mo",
@@ -4908,12 +4964,14 @@
         "{O}"
       ],
       "top_material_terms": [],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [
         "O-terminated"
       ],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],
@@ -4945,10 +5003,12 @@
       "top_material_terms": [
         "zeolites_silicates"
       ],
+      "top_oxide_compositions": [],
       "top_surface_terms": [],
       "top_surface_index_mappings": [],
       "top_crystal_structure_terms": [],
       "top_state_terms": [],
+      "top_reported_surface_stability_descriptors": [],
       "top_dopant_terms": [],
       "top_active_site_terms": [],
       "top_surface_site_contexts": [],

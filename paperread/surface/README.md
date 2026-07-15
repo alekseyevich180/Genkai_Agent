@@ -141,7 +141,10 @@ new internal imports should target the owning functional subpackage.
   - Use case: extract materials, surfaces, facets, dopants, defects, adsorbates,
     properties, reaction parameters, material parameters, modeling keywords, and
     their links from abstracts or discussion text.
-  - Additional modeling fields include:
+  - Additional structured extraction fields include:
+    - `crystal_structure_types`: explicitly reported structure labels such as rutile
+    - `oxide_compositions`: explicitly reported oxide formulas such as RuO2 or SnO2
+    - `surface_stability_descriptors`: reported stable/lowest-energy/metastable wording
     - `surface_terminations`
     - `slab_models`
     - `vacancy_models`
@@ -188,9 +191,13 @@ surface-modeling direction:
   - The default long-term experience store is organized by inorganic material
     type rather than by paper.
   - The material-class files emphasize keyword frequencies and descriptor
-    buckets such as materials, surface/support, states, dopants/modifiers,
+    buckets such as materials, crystal-structure types, oxide compositions,
+    reported facets and stability wording, surface/support, states, dopants/modifiers,
     active sites, adsorbates/reactants, coverage, clusters/single atoms, and
     reactions. They intentionally avoid long per-paper source lists.
+  - Structure type, composition, facet, and stability are stored separately.
+    They are linked only when the source text explicitly supports the relation;
+    the extraction stage does not infer a composition or facet from `rutile` alone.
   - Surface-site associations are tracked explicitly when the paper links a
     facet to an adsorption site or active site. On metal surfaces this usually
     means top/bridge/hollow style descriptors; on oxides it usually means facet
