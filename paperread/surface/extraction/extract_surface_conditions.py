@@ -54,6 +54,15 @@ COLUMNS = [
 ]
 
 
+def _reconcile_morphology_and_cluster(row: dict[str, str]) -> dict[str, str]:
+    """Resolve a high-impact contradiction without inventing a particle size."""
+    morphology = str(row.get("Morphology/Size", "")).lower()
+    cluster_kind = str(row.get("Cluster/Single Atom", "")).lower()
+    if "nanoparticle" in morphology and "single atom" in cluster_kind:
+        row["Cluster/Single Atom"] = "nanoparticle"
+    return row
+
+
 def build_prompt(title: str, text: str) -> str:
     registry_hint = render_registry_prompt_hint(load_surface_parameter_registry())
     registry_section = f"\n\n{registry_hint}" if registry_hint else ""
@@ -108,6 +117,7 @@ def extract_conditions(
                 }
             )
             for parsed_row in parse_markdown_table(response, COLUMNS):
+                parsed_row = _reconcile_morphology_and_cluster(parsed_row)
                 parsed_row["Index"] = row_id
                 table_rows.append(parsed_row)
 

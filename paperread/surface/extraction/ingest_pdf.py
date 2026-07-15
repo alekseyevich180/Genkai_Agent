@@ -38,6 +38,13 @@ METHOD_KEYWORDS = (
     "freeze",
     "wash",
     "support electrode",
+    "reaction conditions",
+    "mmol",
+    " mol%",
+    "°c",
+    " atm",
+    "solvent",
+    "glovebox",
 )
 
 RELATION_KEYWORDS = (
@@ -90,36 +97,73 @@ def _paragraphs(text: str) -> list[str]:
     return [part.strip() for part in re.split(r"\n\s*\n", normalize_text(text)) if part.strip()]
 
 
-def _select_relevant_passages(text: str, keywords: tuple[str, ...], max_chars: int = 5000) -> str:
-    paragraphs = _paragraphs(text)
+def _chunk_paragraph(paragraph: str, max_chars: int = 1800) -> list[str]:
+    """Split page-sized PDF paragraphs without discarding their later lines."""
+    if len(paragraph) <= max_chars:
+        return [paragraph]
+
+    chunks: list[str] = []
+    current: list[str] = []
+    current_size = 0
+    for line in paragraph.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        projected = current_size + len(line) + (1 if current else 0)
+        if current and projected > max_chars:
+            chunks.append("\n".join(current))
+            current = []
+            current_size = 0
+        current.append(line)
+        current_size += len(line) + (1 if current_size else 0)
+    if current:
+        chunks.append("\n".join(current))
+    return chunks
+
+
+def _select_relevant_passages(text: str, keywords: tuple[str, ...], max_chars: int = 12000) -> str:
+    paragraphs = [
+        chunk
+        for paragraph in _paragraphs(text)
+        for chunk in _chunk_paragraph(paragraph)
+    ]
     if not paragraphs:
         return normalize_text(text)[:max_chars]
 
-    selected: list[str] = []
-    seen: set[str] = set()
-    total = 0
-
-    for paragraph in paragraphs:
+    candidates: list[tuple[int, int, str]] = []
+    for position, paragraph in enumerate(paragraphs):
         lowered = paragraph.lower()
-        if not any(keyword in lowered for keyword in keywords):
-            continue
+        score = sum(lowered.count(keyword) for keyword in keywords)
+        if score:
+            candidates.append((score, position, paragraph))
+
+    # PDF column extraction often produces page-sized paragraphs. Rank chunks by
+    # evidence density first so Methods/Table passages near the end of a paper are
+    # not crowded out by generic mentions in the introduction, then restore source
+    # order for the model prompt.
+    ranked = sorted(candidates, key=lambda item: (-item[0], item[1]))
+    selected_ranked: list[tuple[int, str]] = []
+    total = 0
+    seen: set[str] = set()
+    for _, position, paragraph in ranked:
         if paragraph in seen:
             continue
-        projected = total + len(paragraph) + (2 if selected else 0)
-        if projected > max_chars and selected:
-            break
+        projected = total + len(paragraph) + (2 if selected_ranked else 0)
+        if projected > max_chars and selected_ranked:
+            continue
         seen.add(paragraph)
-        selected.append(paragraph)
+        selected_ranked.append((position, paragraph))
         total = projected
 
-    if not selected:
-        for paragraph in paragraphs:
-            projected = total + len(paragraph) + (2 if selected else 0)
-            if projected > max_chars and selected:
+    if not selected_ranked:
+        for position, paragraph in enumerate(paragraphs):
+            projected = total + len(paragraph) + (2 if selected_ranked else 0)
+            if projected > max_chars and selected_ranked:
                 break
-            selected.append(paragraph)
+            selected_ranked.append((position, paragraph))
             total = projected
 
+    selected = [paragraph for _, paragraph in sorted(selected_ranked)]
     return "\n\n".join(selected)[:max_chars]
 
 
