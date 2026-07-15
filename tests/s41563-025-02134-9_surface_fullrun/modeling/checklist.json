@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "status": "needs_review",
+  "rules": {
+    "materials_project_api_key": "Read MP_API_KEY from the environment; never persist it.",
+    "surface_loading": "Nanoparticles may only be placed on a vacuum-containing slab, never directly on a bulk unit cell.",
+    "facet_priority": [
+      "paper-explicit facet",
+      "reviewed stable-facet registry",
+      "manual reviewed facet"
+    ],
+    "missing_facet_policy": "Stop when no reviewed stable facet can be resolved."
+  },
+  "tasks": [
+    {
+      "document_id": "surface_relations",
+      "task": "vacancy_landscape",
+      "executable": true,
+      "arguments": {
+        "input": null,
+        "output_dir": null,
+        "structure_prefix": null,
+        "vacancy_counts": null,
+        "samples_per_count": null,
+        "mu_o": null,
+        "z_frac_min": null,
+        "z_frac_max": null,
+        "calculator": null,
+        "smoke_test": null,
+        "uma_model": null,
+        "device": null,
+        "task_name": "vacancy_landscape",
+        "include_d3": null,
+        "fmax": null,
+        "max_steps": null,
+        "seed": null,
+        "write_all_structures": null
+      },
+      "auto_mapped_parameters": [
+        "task_name"
+      ],
+      "review_items": [
+        {
+          "document_id": "surface_relations",
+          "task": "vacancy_landscape",
+          "parameter": "input",
+          "status": "needs_upstream_artifact",
+          "source_term": "Ru/LaOx–SiO2",
+          "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+          "depends_on": [
+            "slab_generation.surface_structure"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "vacancy_landscape",
+          "parameter": "vacancy_counts",
+          "status": "needs_manual_decision",
+          "source_term": "oxygen vacancies",
+          "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "executable": true,
+      "arguments": {
+        "surface": null,
+        "molecule": null,
+        "output_dir": null,
+        "structure_prefix": null,
+        "site_symbols": "Ru",
+        "site_z_tolerance": null,
+        "max_sites": null,
+        "site_group_size": null,
+        "n_trials_single": null,
+        "site_radius": null,
+        "z_gap_min": null,
+        "z_gap_max": null,
+        "coverage_counts": null,
+        "patterns": null,
+        "random_repeats": null,
+        "seed": null,
+        "calculator": null,
+        "uma_model": null,
+        "device": null,
+        "task_name": "adsorbate_landscape",
+        "include_d3": null,
+        "fmax": null,
+        "max_steps": null,
+        "smoke_test": null
+      },
+      "auto_mapped_parameters": [
+        "task_name",
+        "site_symbols"
+      ],
+      "review_items": [
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "surface",
+          "status": "needs_upstream_artifact",
+          "source_term": "Ru/LaOx–SiO2",
+          "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+          "depends_on": [
+            "slab_generation.surface_structure"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "molecule",
+          "status": "needs_upstream_artifact",
+          "source_term": "CH4",
+          "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+          "depends_on": [
+            "molecule_structure_file"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "coverage_counts",
+          "status": "needs_manual_decision",
+          "source_term": null,
+          "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "executable": true,
+      "arguments": {
+        "surface": null,
+        "surface_formula": "SiO2",
+        "surface_mp_id": null,
+        "surface_facet": null,
+        "slab_min_size": null,
+        "slab_vacuum": null,
+        "slab_repeat_xy": null,
+        "cluster_element": "La",
+        "cluster_bulk_file": null,
+        "cluster_from_mp": true,
+        "cluster_mp_id": null,
+        "cluster_structures": null,
+        "cluster_atoms": null,
+        "cluster_layers": null,
+        "cluster_radius": null,
+        "stack_layers": null,
+        "bcc_rows": null,
+        "bcc_max_row_atoms": null,
+        "cluster_a": null,
+        "cluster_c": null,
+        "fcc_rows": null,
+        "fcc_row_profile": null,
+        "fcc_max_row_atoms": null,
+        "fcc_row_count": null,
+        "fcc_stacking_mode": null,
+        "fcc_layers": null,
+        "hcp_rows": null,
+        "hcp_layers": null,
+        "x_frac": null,
+        "y_frac": null,
+        "z_height": null,
+        "phi": null,
+        "theta": null,
+        "psi": null,
+        "output_dir": null
+      },
+      "auto_mapped_parameters": [
+        "surface_formula",
+        "cluster_element",
+        "cluster_from_mp"
+      ],
+      "review_items": [
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "surface_facet",
+          "status": "stable_facet_registry_or_manual",
+          "source_term": null,
+          "reason": "No paper facet is available; resolve from the reviewed stable-facet registry or require explicit input.",
+          "depends_on": [
+            "stable_facet_registry"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "cluster_bulk_file",
+          "status": "needs_upstream_artifact",
+          "source_term": "LaOx clusters",
+          "reason": "The elemental bulk file will be downloaded from Materials Project at execution time.",
+          "depends_on": [
+            "materials_project.cluster_bulk_structure"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "cluster_structures",
+          "status": "needs_upstream_artifact",
+          "source_term": "LaOx clusters",
+          "reason": "The fcc/hcp/bcc cluster family will be mapped from the selected Materials Project elemental bulk space group.",
+          "depends_on": [
+            "materials_project.cluster_bulk_structure"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "cluster_atoms",
+          "status": "needs_manual_decision",
+          "source_term": "LaOx clusters",
+          "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+          "depends_on": []
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "cluster_layers",
+          "status": "needs_manual_decision",
+          "source_term": "LaOx clusters",
+          "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+          "depends_on": []
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "surface_cluster_builder",
+          "parameter": "cluster_radius",
+          "status": "needs_manual_decision",
+          "source_term": "LaOx clusters",
+          "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "doped_surface",
+      "executable": false,
+      "arguments": {},
+      "auto_mapped_parameters": [],
+      "review_items": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "slab_generation",
+      "executable": false,
+      "arguments": {},
+      "auto_mapped_parameters": [],
+      "review_items": []
+    }
+  ],
+  "review_items": [
+    {
+      "document_id": "surface_relations",
+      "task": "vacancy_landscape",
+      "parameter": "input",
+      "status": "needs_upstream_artifact",
+      "source_term": "Ru/LaOx–SiO2",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "slab_generation.surface_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "vacancy_landscape",
+      "parameter": "vacancy_counts",
+      "status": "needs_manual_decision",
+      "source_term": "oxygen vacancies",
+      "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+      "depends_on": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "surface",
+      "status": "needs_upstream_artifact",
+      "source_term": "Ru/LaOx–SiO2",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "slab_generation.surface_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "molecule",
+      "status": "needs_upstream_artifact",
+      "source_term": "CH4",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "molecule_structure_file"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "coverage_counts",
+      "status": "needs_manual_decision",
+      "source_term": null,
+      "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+      "depends_on": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "surface_facet",
+      "status": "stable_facet_registry_or_manual",
+      "source_term": null,
+      "reason": "No paper facet is available; resolve from the reviewed stable-facet registry or require explicit input.",
+      "depends_on": [
+        "stable_facet_registry"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "cluster_bulk_file",
+      "status": "needs_upstream_artifact",
+      "source_term": "LaOx clusters",
+      "reason": "The elemental bulk file will be downloaded from Materials Project at execution time.",
+      "depends_on": [
+        "materials_project.cluster_bulk_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "cluster_structures",
+      "status": "needs_upstream_artifact",
+      "source_term": "LaOx clusters",
+      "reason": "The fcc/hcp/bcc cluster family will be mapped from the selected Materials Project elemental bulk space group.",
+      "depends_on": [
+        "materials_project.cluster_bulk_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "cluster_atoms",
+      "status": "needs_manual_decision",
+      "source_term": "LaOx clusters",
+      "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+      "depends_on": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "cluster_layers",
+      "status": "needs_manual_decision",
+      "source_term": "LaOx clusters",
+      "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+      "depends_on": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "surface_cluster_builder",
+      "parameter": "cluster_radius",
+      "status": "needs_manual_decision",
+      "source_term": "LaOx clusters",
+      "reason": "Cluster size mode must be chosen explicitly before invoking the builder.",
+      "depends_on": []
+    }
+  ],
+  "expected_model_files": {
+    "bulk_reference": "modeling/structures/bulk_from_materials_project.cif",
+    "surface_slab": "modeling/structures/stable_surface_slab.vasp",
+    "supported_nanoparticle": "modeling/structures/*_on_surface.cif",
+    "modeling_manifest": "modeling/structures/modeling_manifest.json"
+  },
+  "files": {
+    "article": "article.json",
+    "modeling_plan": "modeling/plan.json",
+    "structures_directory": "modeling/structures"
+  }
+}

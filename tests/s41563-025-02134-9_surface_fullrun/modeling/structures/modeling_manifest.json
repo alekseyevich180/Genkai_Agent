@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "task": "surface_cluster_builder",
+  "inputs": {
+    "surface": null,
+    "cluster_element": "Ru",
+    "cluster_structures": [
+      "hcp"
+    ],
+    "cluster_atoms": null,
+    "cluster_layers": null,
+    "cluster_radius_A": 7.0
+  },
+  "materials_project": {
+    "surface": null,
+    "cluster": {
+      "material_id": "mp-33",
+      "formula": "Ru",
+      "spacegroup_symbol": "P6_3/mmc",
+      "energy_above_hull_eV_per_atom": 0.0,
+      "is_stable": true,
+      "theoretical": false
+    },
+    "api_key_persisted": false
+  },
+  "facet": {
+    "selection_source": null
+  },
+  "checks": {
+    "bulk_used_directly_for_loading": null,
+    "surface_is_slab": null,
+    "cluster_size_resolved": true
+  },
+  "files": {
+    "generated_models": [
+      "tests/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.cif"
+    ]
+  }
+}
