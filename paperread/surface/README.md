@@ -12,7 +12,7 @@ separate tools.
 
 ## Main workflow
 
-Use `run_surface_pipeline.py` when the target is a surface-material reaction
+Use `pipeline/runner.py` when the target is a surface-material reaction
 paper and you want one pass that produces both tabular conditions and
 structured relations. The input can be either JSON text records or a PDF file.
 
@@ -25,13 +25,13 @@ python -m paperread.surface run your_surface_paper.pdf --output-dir paperread/su
 ```
 
 ```bash
-python -m paperread.surface.run_surface_pipeline \
+python -m paperread.surface.pipeline.runner \
   paperread/surface/examples/sample_surface_input.json \
   --output-dir paperread/surface/output
 ```
 
 ```bash
-python -m paperread.surface.run_surface_pipeline \
+python -m paperread.surface.pipeline.runner \
   your_surface_paper.pdf \
   --output-dir paperread/surface/output
 ```
@@ -60,18 +60,36 @@ For batch PDF processing, use `--keep-intermediate` by default. It prevents
 temporary output stems from being reused across papers and gives a stable resume
 point when API calls fail, rate limit, or need to be retried later.
 
+## Directory layout
+
+```text
+paperread/surface/
+├── core/        # shared API helpers, catalog, ontologies, vocabularies, facet logic
+├── extraction/  # PDF ingestion, condition/relation extraction, time normalization, summaries
+├── experience/  # experience collection, parameter registry, unknown-term management and stores
+├── modeling/    # paper-to-model task and parameter mapping
+├── pipeline/    # end-to-end workflow orchestration
+├── examples/    # small input examples
+├── cli.py       # stable consolidated CLI
+├── __main__.py  # python -m paperread.surface
+└── README.md
+```
+
+The root package exposes commonly used functions lazily for Python callers, but
+new internal imports should target the owning functional subpackage.
+
 ## Scripts
 
-- `surface_ontology.py`
+- `core/surface_ontology.py`
   - Shared task names, material-class rules, keyword buckets, and
     normalization vocabulary used by the surface pipeline and learning tools.
 
-- `ingest_pdf.py`
+- `extraction/ingest_pdf.py`
   - Extracts PDF text with `pdftotext`
   - Reads PDF metadata with `pdfinfo`
   - Splits paper text into sections and prepares condition/relation JSON inputs
 
-- `run_surface_pipeline.py`
+- `pipeline/runner.py`
   - Unified entrypoint for surface-material reaction processing
   - Runs PDF ingestion when needed, then condition extraction, time standardization, and relation extraction
   - Automatically generates `*_ptomodel.json` after the extraction stage
@@ -83,7 +101,7 @@ point when API calls fail, rate limit, or need to be retried later.
   - `list-tools` shows ingestion / extraction / normalization / planning / workflow / experience / registry / reporting groups
   - `run` provides the same end-to-end pipeline behind one stable command
 
-- `ptomodel.py`
+- `modeling/ptomodel.py`
   - Input:
     - `*_surface_relations.jsonl`
     - optional `*_table.csv`
@@ -95,7 +113,7 @@ point when API calls fail, rate limit, or need to be retried later.
     indices, nanoparticle species, material classes, and reaction types so the
     Agent can use them as modeling inputs.
 
-- `extract_surface_conditions.py`
+- `extraction/extract_surface_conditions.py`
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
   - Output:
     - `<prefix>_raw.csv`
@@ -112,12 +130,12 @@ point when API calls fail, rate limit, or need to be retried later.
       coverage, oxygen vacancy, defect, cluster, single atom, modifier, and
       related phrases that can drive downstream structure generation
 
-- `standardize_surface_time.py`
+- `extraction/standardize_surface_time.py`
   - Input: CSV with `Index` and `Time`
   - Output: CSV with standardized time values
   - Use case: normalize annealing, reaction, adsorption, and cycling times.
 
-- `extract_surface_relations.py`
+- `extraction/extract_surface_relations.py`
   - Input: JSON records with `Title`/`title` and `Text`/`Procedure`/`Abstract`
   - Output: JSONL
   - Use case: extract materials, surfaces, facets, dopants, defects, adsorbates,
@@ -146,7 +164,7 @@ surface-modeling direction:
 - `surface_functionalization`
 - `slab_generation`
 
-- `collect_experience.py`
+- `experience/collect_experience.py`
   - Input: `*_surface_relations.jsonl` and/or `*_table.csv`
   - Output:
     - `material_classes/<material_class>.json`: default cumulative keyword
@@ -208,17 +226,15 @@ surface-modeling direction:
 ## Example usage
 
 ```bash
-python -m paperread.surface.run_surface_pipeline paper.json --output-dir paperread/surface/output
-python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output
-python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --keep-intermediate --save-raw
-python -m paperread.surface.run_surface_pipeline paper.pdf --output-dir paperread/surface/output --collect-experience
-python -m paperread.surface.ptomodel --relations paper_surface_relations.jsonl --table paper_table.csv --summary paper_summary.txt --output-dir paperread/surface/output
-python -m paperread.surface.extract_surface_conditions samples.json
-python -m paperread.surface.standardize_surface_time input.csv output.csv
-python -m paperread.surface.extract_surface_relations samples.json
-python -m paperread.surface.collect_experience --relations paper_surface_relations.jsonl --table paper_table.csv
-python -m paperread.surface.collect_experience --relations paper_surface_relations.jsonl --table paper_table.csv --write-run-file --write-markdown
-python -m paperread.surface.collect_experience --init-material-classes --output-dir paperread/surface/experience
+python -m paperread.surface run paper.json --output-dir paperread/surface/output
+python -m paperread.surface run paper.pdf --output-dir paperread/surface/output
+python -m paperread.surface run paper.pdf --output-dir paperread/surface/output --keep-intermediate --save-raw
+python -m paperread.surface run paper.pdf --output-dir paperread/surface/output --collect-experience
+python -m paperread.surface ptomodel paper_surface_relations.jsonl --table-csv paper_table.csv --summary-txt paper_summary.txt --output-dir paperread/surface/output
+python -m paperread.surface conditions samples.json --prefix surface
+python -m paperread.surface time input.csv output.csv
+python -m paperread.surface relations samples.json --output paper_surface_relations.jsonl
+python -m paperread.surface experience --relations paper_surface_relations.jsonl --table paper_table.csv
 ```
 
 ## Batch and resume guidance
@@ -226,7 +242,7 @@ python -m paperread.surface.collect_experience --init-material-classes --output-
 Recommended batch pattern:
 
 ```bash
-python -m paperread.surface.run_surface_pipeline \
+python -m paperread.surface.pipeline.runner \
   paper.pdf \
   --output-dir tests/paperread_papers2_experience \
   --keep-intermediate \
@@ -245,7 +261,7 @@ rerunning the full pipeline:
   the relation stage or collect table-only experience if a temporary API problem
   blocks relation extraction.
 - If both `*_table.csv` and `*_surface_relations.jsonl` exist, run
-  `collect_experience.py`, rebuild the parameter registry, and export unknown
+  `experience/collect_experience.py`, rebuild the parameter registry, and export unknown
   terms instead of rerunning extraction.
 
 The current long-term stores are cumulative and should be treated as canonical:
@@ -261,7 +277,7 @@ If the LLM API is unavailable, keep the extraction work useful by generating
 intermediates first:
 
 ```bash
-python -m paperread.surface.ingest_pdf paper.pdf \
+python -m paperread.surface.extraction.ingest_pdf paper.pdf \
   --output-dir tests/paperread_papers2_experience
 ```
 

@@ -106,7 +106,7 @@ PToModel 应读取并利用：
 - `paperread/surface/experience/material_classes/*.json`
 - `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
 - `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
-- `paperread/surface/surface_ontology.py`
+- `paperread/surface/core/surface_ontology.py`
 
 核心映射规则：
 

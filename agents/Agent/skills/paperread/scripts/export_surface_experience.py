@@ -14,16 +14,16 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 try:
-    from paperread.surface.surface_ontology import (
+    from paperread.surface.core.surface_ontology import (
         SUPPORTED_MODELING_TASKS,
         is_known_surface_experience_term,
     )
-    from paperread.surface.surface_indices import is_surface_index_term
-    from paperread.surface.material_vocabulary import is_material_vocabulary_term
+    from paperread.surface.core.surface_indices import is_surface_index_term
+    from paperread.surface.core.material_vocabulary import is_material_vocabulary_term
 except ImportError:  # pragma: no cover - direct script execution
-    from surface_ontology import SUPPORTED_MODELING_TASKS, is_known_surface_experience_term
-    from surface_indices import is_surface_index_term
-    from material_vocabulary import is_material_vocabulary_term
+    from paperread.surface.core.surface_ontology import SUPPORTED_MODELING_TASKS, is_known_surface_experience_term
+    from paperread.surface.core.surface_indices import is_surface_index_term
+    from paperread.surface.core.material_vocabulary import is_material_vocabulary_term
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]

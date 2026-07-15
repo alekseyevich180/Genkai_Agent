@@ -1,24 +1,26 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 try:
-    from .collect_experience import collect_experience
-    from .extract_surface_conditions import extract_conditions
-    from .extract_surface_relations import extract_relations
-    from .ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
-    from .ptomodel import generate_ptomodel_output
-    from .standardize_surface_time import standardize_time
-    from .summarize_surface_outputs import write_summary
+    from ..experience.collect_experience import collect_experience
+    from ..extraction.extract_surface_conditions import extract_conditions
+    from ..extraction.extract_surface_relations import extract_relations
+    from ..extraction.ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
+    from ..modeling.ptomodel import generate_ptomodel_output
+    from ..extraction.standardize_surface_time import standardize_time
+    from ..extraction.summarize_surface_outputs import write_summary
 except ImportError:  # pragma: no cover - direct script execution
-    from collect_experience import collect_experience
-    from extract_surface_conditions import extract_conditions
-    from extract_surface_relations import extract_relations
-    from ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
-    from ptomodel import generate_ptomodel_output
-    from standardize_surface_time import standardize_time
-    from summarize_surface_outputs import write_summary
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from paperread.surface.experience.collect_experience import collect_experience
+    from paperread.surface.extraction.extract_surface_conditions import extract_conditions
+    from paperread.surface.extraction.extract_surface_relations import extract_relations
+    from paperread.surface.extraction.ingest_pdf import ingest_pdf, ingest_pdf_payloads, write_temp_surface_inputs
+    from paperread.surface.modeling.ptomodel import generate_ptomodel_output
+    from paperread.surface.extraction.standardize_surface_time import standardize_time
+    from paperread.surface.extraction.summarize_surface_outputs import write_summary
 
 
 def run_pipeline(

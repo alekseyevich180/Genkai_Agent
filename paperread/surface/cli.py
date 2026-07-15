@@ -1,26 +1,28 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 try:
-    from .catalog import render_surface_tool_catalog
-    from .collect_experience import collect_experience
-    from .ingest_pdf import ingest_pdf
-    from .parameter_registry import build_surface_parameter_registry
-    from .ptomodel import generate_ptomodel_output
-    from .run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
-    from .standardize_surface_time import standardize_time
-    from .summarize_surface_outputs import write_summary
+    from .core.catalog import render_surface_tool_catalog
+    from .experience.collect_experience import collect_experience
+    from .experience.parameter_registry import build_surface_parameter_registry
+    from .extraction.ingest_pdf import ingest_pdf
+    from .extraction.standardize_surface_time import standardize_time
+    from .extraction.summarize_surface_outputs import write_summary
+    from .modeling.ptomodel import generate_ptomodel_output
+    from .pipeline.runner import run_pipeline, run_pipeline_from_pdf
 except ImportError:  # pragma: no cover - direct script execution fallback
-    from catalog import render_surface_tool_catalog
-    from collect_experience import collect_experience
-    from ingest_pdf import ingest_pdf
-    from parameter_registry import build_surface_parameter_registry
-    from ptomodel import generate_ptomodel_output
-    from run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
-    from standardize_surface_time import standardize_time
-    from summarize_surface_outputs import write_summary
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+    from paperread.surface.core.catalog import render_surface_tool_catalog
+    from paperread.surface.experience.collect_experience import collect_experience
+    from paperread.surface.experience.parameter_registry import build_surface_parameter_registry
+    from paperread.surface.extraction.ingest_pdf import ingest_pdf
+    from paperread.surface.extraction.standardize_surface_time import standardize_time
+    from paperread.surface.extraction.summarize_surface_outputs import write_summary
+    from paperread.surface.modeling.ptomodel import generate_ptomodel_output
+    from paperread.surface.pipeline.runner import run_pipeline, run_pipeline_from_pdf
 
 
 def _add_common_pipeline_args(parser: argparse.ArgumentParser) -> None:
@@ -135,9 +137,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "conditions":
         try:
-            from .extract_surface_conditions import extract_conditions
+            from .extraction.extract_surface_conditions import extract_conditions
         except ImportError:  # pragma: no cover - direct script execution fallback
-            from extract_surface_conditions import extract_conditions
+            from paperread.surface.extraction.extract_surface_conditions import extract_conditions
 
         raw_path, table_path = extract_conditions(args.input_json, args.prefix, model=args.model, save_raw=args.save_raw)
         if raw_path:
@@ -147,9 +149,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "relations":
         try:
-            from .extract_surface_relations import extract_relations
+            from .extraction.extract_surface_relations import extract_relations
         except ImportError:  # pragma: no cover - direct script execution fallback
-            from extract_surface_relations import extract_relations
+            from paperread.surface.extraction.extract_surface_relations import extract_relations
 
         print(extract_relations(args.input_json, args.output, model=args.model))
         return 0

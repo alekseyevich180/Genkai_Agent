@@ -16,63 +16,63 @@ SURFACE_TOOL_SPECS: list[SurfaceToolSpec] = [
     SurfaceToolSpec(
         name="ingest_pdf",
         category="ingestion",
-        module="paperread.surface.ingest_pdf",
+        module="paperread.surface.extraction.ingest_pdf",
         function="ingest_pdf",
         purpose="Convert PDF text into section JSON and routed condition/relation inputs.",
     ),
     SurfaceToolSpec(
         name="extract_surface_conditions",
         category="extraction",
-        module="paperread.surface.extract_surface_conditions",
+        module="paperread.surface.extraction.extract_surface_conditions",
         function="extract_conditions",
         purpose="Extract paper conditions into a structured surface table.",
     ),
     SurfaceToolSpec(
         name="extract_surface_relations",
         category="extraction",
-        module="paperread.surface.extract_surface_relations",
+        module="paperread.surface.extraction.extract_surface_relations",
         function="extract_relations",
         purpose="Extract materials, surfaces, sites, and reaction relations into JSONL.",
     ),
     SurfaceToolSpec(
         name="standardize_surface_time",
         category="normalization",
-        module="paperread.surface.standardize_surface_time",
+        module="paperread.surface.extraction.standardize_surface_time",
         function="standardize_time",
         purpose="Normalize reaction and treatment times into a standardized table.",
     ),
     SurfaceToolSpec(
         name="ptomodel",
         category="planning",
-        module="paperread.surface.ptomodel",
+        module="paperread.surface.modeling.ptomodel",
         function="generate_ptomodel_output",
         purpose="Bridge extracted surface information into modeling-task inputs.",
     ),
     SurfaceToolSpec(
         name="run_surface_pipeline",
         category="workflow",
-        module="paperread.surface.run_surface_pipeline",
+        module="paperread.surface.pipeline.runner",
         function="run_pipeline",
         purpose="Run ingestion, extraction, normalization, and ptomodel generation together.",
     ),
     SurfaceToolSpec(
         name="collect_experience",
         category="experience",
-        module="paperread.surface.collect_experience",
+        module="paperread.surface.experience.collect_experience",
         function="collect_experience",
         purpose="Aggregate known-useful and unknown terms into reusable material-class experience.",
     ),
     SurfaceToolSpec(
         name="build_surface_parameter_registry",
         category="registry",
-        module="paperread.surface.parameter_registry",
+        module="paperread.surface.experience.parameter_registry",
         function="build_surface_parameter_registry",
         purpose="Rebuild the reusable parameter vocabulary from canonical material-class store.",
     ),
     SurfaceToolSpec(
         name="summarize_surface_outputs",
         category="reporting",
-        module="paperread.surface.summarize_surface_outputs",
+        module="paperread.surface.extraction.summarize_surface_outputs",
         function="write_summary",
         purpose="Write a human-readable summary of conditions and relations.",
     ),
@@ -111,4 +111,3 @@ def render_surface_tool_catalog(category: str | None = None) -> str:
             lines.append(f"- {spec.name}: {spec.purpose}")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
-

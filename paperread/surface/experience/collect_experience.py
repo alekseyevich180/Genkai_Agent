@@ -7,13 +7,14 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 import re
+import sys
 from typing import Any, Iterable
 
 try:
-    from .crystal_structures import match_crystal_structure_term
+    from ..core.crystal_structures import match_crystal_structure_term
     from .parameter_registry import build_surface_parameter_registry
     from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
-    from .surface_ontology import (
+    from ..core.surface_ontology import (
         CATEGORY_RULES,
         GENERIC_REACTION_TYPES,
         HIGH_VALUE_FIELDS,
@@ -28,12 +29,13 @@ try:
         KEYWORD_BUCKET_RULES,
         is_known_surface_term,
     )
-    from .surface_indices import canonicalize_surface_index
+    from ..core.surface_indices import canonicalize_surface_index
 except ImportError:  # pragma: no cover - direct script execution
-    from crystal_structures import match_crystal_structure_term
-    from parameter_registry import build_surface_parameter_registry
-    from parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
-    from surface_ontology import (
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from paperread.surface.core.crystal_structures import match_crystal_structure_term
+    from paperread.surface.experience.parameter_registry import build_surface_parameter_registry
+    from paperread.surface.experience.parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
+    from paperread.surface.core.surface_ontology import (
         CATEGORY_RULES,
         GENERIC_REACTION_TYPES,
         HIGH_VALUE_FIELDS,
@@ -48,7 +50,7 @@ except ImportError:  # pragma: no cover - direct script execution
         KEYWORD_BUCKET_RULES,
         is_known_surface_term,
     )
-    from surface_indices import canonicalize_surface_index
+    from paperread.surface.core.surface_indices import canonicalize_surface_index
 
 
 @dataclass

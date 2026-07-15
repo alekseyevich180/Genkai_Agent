@@ -6,11 +6,14 @@ from pathlib import Path
 import pandas as pd
 
 try:
-    from .common import chat_completion, load_records, parse_markdown_table
-    from .parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
+    from ..core.common import chat_completion, load_records, parse_markdown_table
+    from ..experience.parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 except ImportError:  # pragma: no cover - direct script execution
-    from common import chat_completion, load_records, parse_markdown_table
-    from parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from paperread.surface.core.common import chat_completion, load_records, parse_markdown_table
+    from paperread.surface.experience.parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 
 
 COLUMNS = [

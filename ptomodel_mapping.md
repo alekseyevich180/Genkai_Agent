@@ -1,6 +1,6 @@
 # Ptomodel 对应关系
 
-本文档整理 `paperread.surface.ptomodel` 当前已经收集到的已知参数，与后续建模参数之间的对应关系。
+本文档整理 `paperread.surface.modeling.ptomodel` 当前已经收集到的已知参数，与后续建模参数之间的对应关系。
 
 ## 1. 总体分层
 
@@ -50,6 +50,23 @@
 
 ## 3. 字段对应关系
 
+### 元素、矿物名与通俗名称标准化
+
+`ptomodel` 使用 `paperread/surface/core/chemical_vocabulary.py` 统一识别：
+
+- 原子序数 1–86（H–Rn）的元素符号和标准英文名。
+- 论文中仍常见的拼写与旧称，例如 `aluminum/aluminium`、`sulfur/sulphur`、
+  `cesium/caesium`、`tungsten/wolfram`、`mercury/quicksilver`。
+- 元素材料俗名与同素异形体，例如 `graphite`、`graphene`、`diamond`、
+  `black phosphorus`。
+- 有唯一常用组成的矿物名和材料俗名，例如 `hematite -> Fe2O3`、
+  `magnetite -> Fe3O4`、`ceria -> CeO2`、`alumina/corundum -> Al2O3`、
+  `molybdenite -> MoS2`。
+
+原文不会被覆盖。标准化结果写入 `recognized_material_names`，并给出
+`normalized_formula`、`kind` 和 `elements`；汇总后的元素写入 `element_set`。
+存在组成歧义的结构类型名称不强制转换成单一化学式。
+
 | 论文抽取字段 | ptomodel 中间字段 | 建模任务 / 参数 | 说明 |
 |---|---|---|---|
 | `materials` | `normalized_mapping.primary_material` | `vacancy_landscape.input`，`adsorbate_landscape.surface`，`surface_cluster_builder.surface`，`surface_cluster_mlip_search.surface` | 作为主材料或主表面上下文。 |
@@ -70,6 +87,17 @@
 | `modeling_keywords` | `selected_information.modeling_keywords` | 作为所有任务的辅助上下文 | 不直接变成参数，但会影响任务选择和提示。 |
 
 ## 4. 任务级映射
+
+任务选择按两级顺序执行：
+
+1. 先根据 `material_classes` 确定材料上适用的候选建模脚本。例如氧化物、
+   氢氧化物和缺陷材料才进入 `vacancy_landscape` 候选，负载催化剂或金属材料
+   才进入 `surface_cluster_builder` 候选。
+2. 再使用论文的 `modeling_keywords` 和明确抽取字段触发具体任务。材料类别本身
+   不会单独触发任务，`DFT`、`OER` 等通用词也不会被强行解释为空位、吸附或团簇任务。
+
+输出中的 `task_selection` 保存材料候选、研究关键词和每个入选任务的证据，便于检查
+为什么选择了某个脚本。
 
 ### vacancy_landscape
 
@@ -216,6 +244,12 @@
 - `clusters` -> `surface_cluster_builder.cluster_element`
 - `clusters` 中的显式尺寸，如 `Pt13` -> `surface_cluster_builder.cluster_atoms`
 - `clusters` -> `surface_cluster_builder.cluster_structures`
+- `two oxygen vacancies` 等显式数量 -> `vacancy_landscape.vacancy_counts`
+- `monodentate` / `bidentate` / `tridentate` -> `adsorbate_landscape.site_group_size`
+
+每篇文档还会输出 `parameter_correspondence`，将材料/表面、吸附物、覆盖度、团簇和
+活性位字段对应到具体脚本参数。只有值可直译且无单位或构型歧义时才标记为 `auto`；
+结构文件、覆盖度换算以及采样策略仍保留为上游依赖或人工决策。
 
 其余参数大多保留为：
 
@@ -231,6 +265,6 @@
 这份映射是当前版本的 `ptomodel` 规则总结，不是最终不可变标准。
 当后续补充新的 surface modeling 脚本参数时，这里应同步更新：
 
-- `paperread/surface/ptomodel.py`
+- `paperread/surface/modeling/ptomodel.py`
 - `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
-- `paperread/surface/parameter_registry.py`
+- `paperread/surface/experience/parameter_registry.py`

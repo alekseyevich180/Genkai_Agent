@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from paperread.surface.parameter_registry import (
+from paperread.surface.experience.parameter_registry import (
     DEFAULT_MATERIAL_CLASS_DIR,
     DEFAULT_REGISTRY_MARKDOWN_PATH,
     DEFAULT_REGISTRY_PATH,

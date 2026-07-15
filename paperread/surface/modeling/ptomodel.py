@@ -4,52 +4,46 @@ import argparse
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
 try:
-    from .surface_ontology import (
+    from ..core.chemical_vocabulary import (
+        METAL_SYMBOLS,
+        extract_element_symbols,
+        normalize_element_name,
+        normalize_material_terms,
+    )
+    from ..core.surface_ontology import (
         EXECUTABLE_TASKS,
         GENERIC_REACTION_TYPES,
         MATERIAL_CLASS_RULES,
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
-    from .surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
+    from ..core.surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
 except ImportError:  # pragma: no cover - direct script execution
-    from surface_ontology import (
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from paperread.surface.core.chemical_vocabulary import (
+        METAL_SYMBOLS,
+        extract_element_symbols,
+        normalize_element_name,
+        normalize_material_terms,
+    )
+    from paperread.surface.core.surface_ontology import (
         EXECUTABLE_TASKS,
         GENERIC_REACTION_TYPES,
         MATERIAL_CLASS_RULES,
         REACTION_KEYWORDS,
         SUPPORTED_MODELING_TASKS,
     )
-    from surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
+    from paperread.surface.core.surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
 
 SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
-    Path(__file__).resolve().parents[2]
+    Path(__file__).resolve().parents[3]
     / "agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json"
 )
-
-ELEMENT_NAME_TO_SYMBOL = {
-    "platinum": "Pt",
-    "nickel": "Ni",
-    "tin": "Sn",
-    "cobalt": "Co",
-    "iron": "Fe",
-    "copper": "Cu",
-    "ruthenium": "Ru",
-    "rhodium": "Rh",
-    "iridium": "Ir",
-    "gold": "Au",
-    "silver": "Ag",
-    "palladium": "Pd",
-    "zinc": "Zn",
-    "manganese": "Mn",
-    "cerium": "Ce",
-    "titanium": "Ti",
-}
-
 
 def _clean_scalar(value: Any) -> str | None:
     if value is None:
@@ -114,14 +108,11 @@ def _normalize_species(raw: str) -> str | None:
     text = raw.strip()
     if not text:
         return None
-    match = re.search(r"\b([A-Z][a-z]?)(?:\d+)?\b", text)
-    if match:
-        return match.group(1)
-    lowered = text.lower()
-    for name, symbol in ELEMENT_NAME_TO_SYMBOL.items():
-        if name in lowered:
-            return symbol
-    return None
+    exact = normalize_element_name(text)
+    if exact:
+        return exact
+    symbols = extract_element_symbols(text, include_material_aliases=False)
+    return symbols[0] if symbols else None
 
 
 def _normalize_reaction(raw: str) -> str:
@@ -153,17 +144,17 @@ def _infer_cluster_atom_count(cluster_entries: list[str]) -> dict[str, Any] | No
         if not text:
             continue
         match = re.search(
-            r"\b(?P<element>[A-Z][a-z]?)(?:\s*[-_ ]?\s*)(?P<count>[2-9]\d{0,3})\b",
+            r"\b(?P<element>[A-Z][a-z]?)(?:\s*[-_ ]?\s*)(?P<count>[1-9]\d{0,3})\b",
             text,
         )
-        if match:
+        if match and int(match.group("count")) >= 2:
             return {
                 "value": int(match.group("count")),
                 "source_term": text,
                 "element": match.group("element"),
             }
-        match = re.search(r"\b(?P<count>[2-9]\d{0,3})\s*[- ]?atom\b", text, flags=re.IGNORECASE)
-        if match:
+        match = re.search(r"\b(?P<count>[1-9]\d{0,3})\s*[- ]?atom\b", text, flags=re.IGNORECASE)
+        if match and int(match.group("count")) >= 2:
             return {
                 "value": int(match.group("count")),
                 "source_term": text,
@@ -205,6 +196,34 @@ def _infer_site_symbols(active_sites: list[str]) -> list[str]:
         if symbol and symbol not in symbols:
             symbols.append(symbol)
     return symbols
+
+
+def _infer_explicit_count(entries: list[str], noun_pattern: str) -> dict[str, Any] | None:
+    number_words = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6}
+    for entry in entries:
+        match = re.search(
+            rf"\b(?P<count>[1-9]\d*|{'|'.join(number_words)})\s+(?:surface\s+|oxygen\s+)?{noun_pattern}\b",
+            entry,
+            flags=re.IGNORECASE,
+        )
+        if not match:
+            continue
+        raw_count = match.group("count").lower()
+        return {
+            "value": int(raw_count) if raw_count.isdigit() else number_words[raw_count],
+            "source_term": entry,
+        }
+    return None
+
+
+def _infer_site_group_size(adsorption_sites: list[str]) -> dict[str, Any] | None:
+    denticity = (("monodentate", 1), ("bidentate", 2), ("tridentate", 3))
+    for entry in adsorption_sites:
+        lowered = entry.lower()
+        for term, count in denticity:
+            if term in lowered:
+                return {"value": count, "source_term": entry, "term": term}
+    return None
 
 
 def _infer_site_roles(*values: list[str]) -> list[str]:
@@ -262,8 +281,21 @@ def _pick_reaction_type(extraction: dict[str, Any], table_row: dict[str, str] | 
 
 
 def _infer_material_classes(values: list[str]) -> list[str]:
-    joined = " ".join(values).lower()
+    normalized_materials = normalize_material_terms(values)
+    normalized_formulas = [
+        item["normalized_formula"]
+        for item in normalized_materials
+        if item.get("normalized_formula")
+    ]
+    joined = " ".join(values + normalized_formulas).lower()
     matches = [name for name, rules in MATERIAL_CLASS_RULES if any(rule in joined for rule in rules)]
+    element_symbols = {
+        symbol
+        for item in normalized_materials
+        for symbol in item.get("elements", [])
+    }
+    if element_symbols.intersection(METAL_SYMBOLS) and "metals_alloys" not in matches:
+        matches.append("metals_alloys")
     if not matches:
         return ["other_inorganic_materials"]
     return matches
@@ -314,22 +346,63 @@ def _index_table_rows(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     return indexed
 
 
-def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -> list[str]:
-    tasks = []
+def _infer_tasks(
+    extraction: dict[str, Any],
+    table_row: dict[str, str] | None,
+    material_classes: list[str],
+    modeling_keywords: list[str],
+) -> tuple[list[str], dict[str, Any]]:
+    tasks: list[str] = []
+    evidence: dict[str, list[str]] = {}
+    rejected_recommendations: list[dict[str, str]] = []
+
+    def add_task(task: str, *terms: str) -> None:
+        if task not in tasks:
+            tasks.append(task)
+        task_evidence = evidence.setdefault(task, [])
+        for term in terms:
+            if term and term not in task_evidence:
+                task_evidence.append(term)
+
+    keyword_text = " ".join(modeling_keywords).lower()
+    vacancy_material_classes = {
+        "oxides",
+        "hydroxides_oxyhydroxides",
+        "perovskites_spinels",
+        "defect_engineered_materials",
+        "supported_catalysts",
+    }
+    cluster_material_classes = {"supported_catalysts", "metals_alloys"}
+    material_candidates = ["adsorbate_landscape"]
+    if vacancy_material_classes.intersection(material_classes):
+        material_candidates.insert(0, "vacancy_landscape")
+    if cluster_material_classes.intersection(material_classes):
+        material_candidates.append("surface_cluster_builder")
+
     recommended = [
         task
         for task in _flatten_strings(extraction.get("recommended_modeling_tasks"))
         if task in SUPPORTED_MODELING_TASKS
     ]
-    tasks.extend(recommended)
+    for task in recommended:
+        if task in EXECUTABLE_TASKS and task not in material_candidates:
+            rejected_recommendations.append(
+                {
+                    "task": task,
+                    "reason": "The recommended executable task is not compatible with the inferred material classes.",
+                }
+            )
+            continue
+        add_task(task, f"recommended_modeling_tasks:{task}")
 
     defects = " ".join(
         _flatten_strings(extraction.get("defects"))
         + _flatten_strings(extraction.get("vacancy_models"))
         + _flatten_strings((table_row or {}).get("Defect"))
     ).lower()
-    if "vacan" in defects and "vacancy_landscape" not in tasks:
-        tasks.append("vacancy_landscape")
+    vacancy_cues = [item for item in [defects, *modeling_keywords] if "vacan" in item.lower()]
+    if vacancy_cues and "vacancy_landscape" in material_candidates:
+        add_task("vacancy_landscape", *vacancy_cues)
 
     adsorption = (
         _flatten_strings(extraction.get("adsorbates"))
@@ -339,16 +412,29 @@ def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -
         + _flatten_strings((table_row or {}).get("Adsorption Site"))
         + _flatten_strings((table_row or {}).get("Coverage"))
     )
-    if adsorption and "adsorbate_landscape" not in tasks:
-        tasks.append("adsorbate_landscape")
+    adsorption_keyword_cues = [
+        item
+        for item in modeling_keywords
+        if any(token in item.lower() for token in ("adsor", "coverage", "coadsor", "intermediate"))
+    ]
+    if adsorption or adsorption_keyword_cues:
+        add_task("adsorbate_landscape", *(adsorption + adsorption_keyword_cues))
 
     clusters = (
         _flatten_strings(extraction.get("clusters"))
         + _flatten_strings((table_row or {}).get("Cluster/Single Atom"))
     )
     cluster_text = " ".join(clusters).lower()
-    if any(word in cluster_text for word in {"cluster", "nanocluster", "nanoparticle"}) and "surface_cluster_builder" not in tasks:
-        tasks.append("surface_cluster_builder")
+    cluster_keyword_cues = [
+        item
+        for item in modeling_keywords
+        if any(token in item.lower() for token in ("cluster", "nanoparticle", "nanocluster"))
+    ]
+    if (
+        any(word in cluster_text for word in {"cluster", "nanocluster", "nanoparticle"})
+        or cluster_keyword_cues
+    ) and "surface_cluster_builder" in material_candidates:
+        add_task("surface_cluster_builder", *(clusters + cluster_keyword_cues))
 
     singles = (
         _flatten_strings(extraction.get("single_atoms"))
@@ -356,16 +442,16 @@ def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -
         + _flatten_strings((table_row or {}).get("Active Site"))
     )
     single_text = " ".join(singles).lower()
-    if "single atom" in single_text and "single_atom_site" not in tasks:
-        tasks.append("single_atom_site")
+    if "single atom" in single_text:
+        add_task("single_atom_site", *singles)
 
     dopants = _flatten_strings(extraction.get("dopants")) + _flatten_strings((table_row or {}).get("Dopant/Modifier"))
-    if dopants and "doped_surface" not in tasks:
-        tasks.append("doped_surface")
+    if dopants:
+        add_task("doped_surface", *dopants)
 
     terminations = _flatten_strings(extraction.get("surface_terminations")) + _flatten_strings((table_row or {}).get("Surface Termination"))
-    if terminations and "surface_functionalization" not in tasks:
-        tasks.append("surface_functionalization")
+    if terminations:
+        add_task("surface_functionalization", *terminations)
 
     surfaces = (
         _flatten_strings(extraction.get("surfaces"))
@@ -374,10 +460,18 @@ def _infer_tasks(extraction: dict[str, Any], table_row: dict[str, str] | None) -
         + _flatten_strings((table_row or {}).get("Surface/Support"))
         + _flatten_strings((table_row or {}).get("Facet"))
     )
-    if surfaces and "slab_generation" not in tasks:
-        tasks.append("slab_generation")
+    if surfaces:
+        add_task("slab_generation", *surfaces)
 
-    return tasks
+    return tasks, {
+        "selection_order": ["material_class", "research_keywords_and_explicit_fields"],
+        "material_classes": material_classes,
+        "material_compatible_executable_tasks": material_candidates,
+        "research_keywords": modeling_keywords,
+        "keyword_text": keyword_text,
+        "selected_task_evidence": evidence,
+        "rejected_recommendations": rejected_recommendations,
+    }
 
 
 def _load_surface_modeling_parameter_schema() -> dict[str, Any]:
@@ -409,10 +503,15 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
     if task_name == "vacancy_landscape":
         payload["defects"] = _to_list(extraction.get("defects")) or _to_list((table_row or {}).get("Defect"))
         payload["vacancy_models"] = _to_list(extraction.get("vacancy_models"))
+        payload["explicit_vacancy_count"] = _infer_explicit_count(
+            payload["defects"] + payload["vacancy_models"],
+            r"vacanc(?:y|ies)",
+        )
     elif task_name == "adsorbate_landscape":
         payload["adsorbates"] = _to_list(extraction.get("adsorbates")) or _to_list((table_row or {}).get("Adsorbate/Reactant"))
         payload["adsorbate_species"] = _adsorbate_candidates(payload["adsorbates"])
         payload["adsorption_sites"] = _to_list(extraction.get("adsorption_sites")) or _to_list((table_row or {}).get("Adsorption Site"))
+        payload["site_group_size"] = _infer_site_group_size(payload["adsorption_sites"])
         payload["coverage"] = _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage"))
     elif task_name == "surface_cluster_builder":
         payload["clusters"] = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
@@ -483,6 +582,31 @@ def _build_argument_template(
                 source_term=task_inputs.get("active_sites", [None])[0],
                 reason="Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
                 from_task_inputs=["active_sites"],
+            )
+        site_group_size = task_inputs.get("site_group_size")
+        if site_group_size:
+            mark(
+                "site_group_size",
+                value=site_group_size["value"],
+                status="auto",
+                confidence="high",
+                source_field="adsorption_sites",
+                source_term=site_group_size["source_term"],
+                reason="Explicit denticity translates directly to the number of neighboring surface sites used by one adsorbate.",
+                from_task_inputs=["adsorption_sites", "site_group_size"],
+            )
+    elif task_name == "vacancy_landscape":
+        explicit_vacancy_count = task_inputs.get("explicit_vacancy_count")
+        if explicit_vacancy_count:
+            mark(
+                "vacancy_counts",
+                value=str(explicit_vacancy_count["value"]),
+                status="auto",
+                confidence="high",
+                source_field="defects",
+                source_term=explicit_vacancy_count["source_term"],
+                reason="The paper phrase states an explicit vacancy count.",
+                from_task_inputs=["defects", "vacancy_models", "explicit_vacancy_count"],
             )
     elif task_name == "surface_cluster_builder":
         cluster_species = task_inputs.get("cluster_species", [])
@@ -790,9 +914,6 @@ def build_ptomodel_payload(
             if species
         ]
         reaction_type = _pick_reaction_type(extraction, table_row)
-        tasks = _infer_tasks(extraction, table_row)
-        executable_tasks = [task for task in tasks if task in EXECUTABLE_TASKS]
-        deferred_tasks = [task for task in tasks if task not in EXECUTABLE_TASKS]
         modeling_keywords = _to_list(extraction.get("modeling_keywords")) or _to_list((table_row or {}).get("Modeling Keywords"))
         material_classes = _infer_material_classes(
             materials
@@ -802,9 +923,27 @@ def build_ptomodel_payload(
             + _to_list(extraction.get("surface_terminations"))
             + _to_list(extraction.get("defects"))
         )
+        recognized_material_names = normalize_material_terms(materials + supports + cluster_entries)
+        material_element_set = list(
+            dict.fromkeys(
+                symbol
+                for item in recognized_material_names
+                for symbol in item.get("elements", [])
+            )
+        )
+        tasks, task_selection = _infer_tasks(
+            extraction,
+            table_row,
+            material_classes,
+            modeling_keywords,
+        )
+        executable_tasks = [task for task in tasks if task in EXECUTABLE_TASKS]
+        deferred_tasks = [task for task in tasks if task not in EXECUTABLE_TASKS]
         normalized_mapping = {
             "primary_material": _first_nonempty(*materials),
             "material_classes": material_classes,
+            "recognized_material_names": recognized_material_names,
+            "element_set": material_element_set,
             "primary_surface_or_support": _first_nonempty(*supports),
             "facet_set": normalized_facets,
             "loaded_species": [item["normalized_species"] for item in cluster_species],
@@ -834,6 +973,8 @@ def build_ptomodel_payload(
                 "selected_information": {
                     "materials": materials,
                     "material_classes": material_classes,
+                    "recognized_material_names": recognized_material_names,
+                    "element_set": material_element_set,
                     "supports_or_surfaces": supports,
                     "surface_facets": [
                         {
@@ -870,9 +1011,15 @@ def build_ptomodel_payload(
                 },
                 "normalized_mapping": normalized_mapping,
                 "recommended_modeling_tasks": tasks,
+                "task_selection": task_selection,
                 "executable_tasks": executable_tasks,
                 "deferred_tasks": deferred_tasks,
                 "task_inputs": task_inputs,
+                "parameter_correspondence": _build_parameter_correspondence(
+                    executable_tasks,
+                    task_inputs,
+                    normalized_mapping,
+                ),
                 "task_parameter_schema_refs": {
                     task_name: {
                         "schema_path": parameter_schema_registry["schema_path"],

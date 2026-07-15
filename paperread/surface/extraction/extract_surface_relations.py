@@ -5,11 +5,14 @@ import json
 from pathlib import Path
 
 try:
-    from .common import chat_completion, extract_json_block, load_records
-    from .parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
+    from ..core.common import chat_completion, extract_json_block, load_records
+    from ..experience.parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 except ImportError:  # pragma: no cover - direct script execution
-    from common import chat_completion, extract_json_block, load_records
-    from parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+    from paperread.surface.core.common import chat_completion, extract_json_block, load_records
+    from paperread.surface.experience.parameter_registry import load_surface_parameter_registry, render_registry_prompt_hint
 
 
 def build_prompt(title: str, text: str) -> str:

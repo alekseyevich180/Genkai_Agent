@@ -13,15 +13,15 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from paperread.surface.collect_experience import main as collect_experience_main
-from paperread.surface.parameter_registry import (
+from paperread.surface.experience.collect_experience import main as collect_experience_main
+from paperread.surface.experience.parameter_registry import (
     DEFAULT_MATERIAL_CLASS_DIR,
     DEFAULT_REGISTRY_MARKDOWN_PATH,
     DEFAULT_REGISTRY_PATH,
     build_surface_parameter_registry,
 )
-from paperread.surface.run_surface_pipeline import main as run_surface_pipeline_main
-from paperread.surface.unknown_terms import (
+from paperread.surface.pipeline.runner import main as run_surface_pipeline_main
+from paperread.surface.experience.unknown_terms import (
     reclassify_material_class_store,
     write_unknown_term_statistics,
 )

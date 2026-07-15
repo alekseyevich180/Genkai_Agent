@@ -8,15 +8,15 @@ from pathlib import Path
 
 import pandas as pd
 
-from paperread.surface.extract_surface_conditions import extract_conditions
-from paperread.surface.extract_surface_relations import extract_relations
-from paperread.surface.collect_experience import collect_experience
-from paperread.surface.catalog import list_surface_tools, render_surface_tool_catalog
-from paperread.surface.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
-from paperread.surface.ptomodel import build_ptomodel_payload, generate_ptomodel_output
-from paperread.surface.run_surface_pipeline import run_pipeline, run_pipeline_from_pdf
-from paperread.surface.standardize_surface_time import standardize_time
-from paperread.surface.summarize_surface_outputs import write_summary
+from paperread.surface.core.catalog import list_surface_tools, render_surface_tool_catalog
+from paperread.surface.experience.collect_experience import collect_experience
+from paperread.surface.extraction.extract_surface_conditions import extract_conditions
+from paperread.surface.extraction.extract_surface_relations import extract_relations
+from paperread.surface.extraction.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
+from paperread.surface.extraction.standardize_surface_time import standardize_time
+from paperread.surface.extraction.summarize_surface_outputs import write_summary
+from paperread.surface.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
+from paperread.surface.pipeline.runner import run_pipeline, run_pipeline_from_pdf
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -36,13 +36,13 @@ def _run_command(args: list[str]) -> subprocess.CompletedProcess:
 class TestPaperreadSurfaceScripts(unittest.TestCase):
     def test_module_entrypoints_show_help(self):
         modules = [
-            "paperread.surface.extract_surface_conditions",
-            "paperread.surface.standardize_surface_time",
-            "paperread.surface.extract_surface_relations",
-            "paperread.surface.collect_experience",
-            "paperread.surface.ingest_pdf",
-            "paperread.surface.run_surface_pipeline",
-            "paperread.surface.ptomodel",
+            "paperread.surface.extraction.extract_surface_conditions",
+            "paperread.surface.extraction.standardize_surface_time",
+            "paperread.surface.extraction.extract_surface_relations",
+            "paperread.surface.experience.collect_experience",
+            "paperread.surface.extraction.ingest_pdf",
+            "paperread.surface.pipeline.runner",
+            "paperread.surface.modeling.ptomodel",
             "paperread.surface.cli",
         ]
         for module in modules:
@@ -52,13 +52,13 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
 
     def test_direct_script_entrypoints_show_help(self):
         scripts = [
-            "paperread/surface/extract_surface_conditions.py",
-            "paperread/surface/standardize_surface_time.py",
-            "paperread/surface/extract_surface_relations.py",
-            "paperread/surface/collect_experience.py",
-            "paperread/surface/ingest_pdf.py",
-            "paperread/surface/run_surface_pipeline.py",
-            "paperread/surface/ptomodel.py",
+            "paperread/surface/extraction/extract_surface_conditions.py",
+            "paperread/surface/extraction/standardize_surface_time.py",
+            "paperread/surface/extraction/extract_surface_relations.py",
+            "paperread/surface/experience/collect_experience.py",
+            "paperread/surface/extraction/ingest_pdf.py",
+            "paperread/surface/pipeline/runner.py",
+            "paperread/surface/modeling/ptomodel.py",
             "paperread/surface/cli.py",
         ]
         for script in scripts:
@@ -111,9 +111,9 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
         time_table = "| Index | Time |\n|---|---|\n| 1_1 | 120 minutes |\n| 2_1 | N/A |\n"
         with tempfile.TemporaryDirectory() as tmpdir:
             prefix = str(Path(tmpdir) / "surface")
-            with patch("paperread.surface.extract_surface_conditions.chat_completion", return_value=condition_table):
+            with patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table):
                 raw_path, table_path = extract_conditions(str(SAMPLE_INPUT), prefix, model=None)
-            with patch("paperread.surface.standardize_surface_time.chat_completion", return_value=time_table):
+            with patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table):
                 time_path = str(Path(tmpdir) / "surface_time.csv")
                 standardize_time(table_path, time_path, model=None)
 
@@ -168,9 +168,9 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
         )
         time_table = "| Index | Time |\n|---|---|\n| doc1_1 | 120 minutes |\n| doc2_1 | N/A |\n"
         with tempfile.TemporaryDirectory() as tmpdir:
-            with patch("paperread.surface.extract_surface_conditions.chat_completion", return_value=condition_table), \
-                 patch("paperread.surface.standardize_surface_time.chat_completion", return_value=time_table), \
-                 patch("paperread.surface.extract_surface_relations.chat_completion", return_value=relation_json):
+            with patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
+                 patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
+                 patch("paperread.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
                 outputs = run_pipeline(
                     str(SAMPLE_INPUT),
                     tmpdir,
@@ -295,10 +295,10 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             },
         }
         with tempfile.TemporaryDirectory() as tmpdir:
-            with patch("paperread.surface.run_surface_pipeline.ingest_pdf_payloads", return_value=ingestion_payloads), \
-                 patch("paperread.surface.extract_surface_conditions.chat_completion", return_value=condition_table), \
-                 patch("paperread.surface.standardize_surface_time.chat_completion", return_value=time_table), \
-                 patch("paperread.surface.extract_surface_relations.chat_completion", return_value=relation_json):
+            with patch("paperread.surface.pipeline.runner.ingest_pdf_payloads", return_value=ingestion_payloads), \
+                 patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
+                 patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
+                 patch("paperread.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
                 outputs = run_pipeline_from_pdf("dummy.pdf", tmpdir, model=None)
 
             self.assertIn("conditions_csv", outputs)
@@ -377,6 +377,15 @@ Oxygen vacancies acted as active sites and methoxy was identified.
                 doc_payload["task_argument_template"]["surface_cluster_builder"]["arguments"]["cluster_element"],
                 "Pt",
             )
+            self.assertEqual(
+                doc_payload["task_argument_template"]["surface_cluster_builder"]["arguments"]["cluster_atoms"],
+                13,
+            )
+            self.assertEqual(
+                doc_payload["task_selection"]["selection_order"],
+                ["material_class", "research_keywords_and_explicit_fields"],
+            )
+            self.assertTrue(doc_payload["parameter_correspondence"]["links"])
             self.assertIn(
                 "surface",
                 doc_payload["task_argument_template"]["adsorbate_landscape"]["required_missing_parameters"],
@@ -425,8 +434,103 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             doc_payload = payload["documents"][0]
             self.assertEqual(doc_payload["normalized_mapping"]["reaction_family"], ["OER"])
 
+    def test_ptomodel_maps_only_explicit_direct_counts_and_denticity(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "extraction": {
+                            "materials": ["CeO2"],
+                            "surfaces": ["CeO2(111)"],
+                            "defects": ["two oxygen vacancies"],
+                            "adsorbates": ["formate"],
+                            "adsorption_sites": ["bidentate bridge site"],
+                            "modeling_keywords": ["oxygen vacancy", "adsorption mechanism"],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            doc_payload = build_ptomodel_payload(str(relations_path))["documents"][0]
+
+            self.assertEqual(
+                doc_payload["task_argument_template"]["vacancy_landscape"]["arguments"]["vacancy_counts"],
+                "2",
+            )
+            self.assertEqual(
+                doc_payload["task_argument_template"]["adsorbate_landscape"]["arguments"]["site_group_size"],
+                2,
+            )
+            self.assertIn(
+                "vacancy_landscape",
+                doc_payload["task_selection"]["material_compatible_executable_tasks"],
+            )
+
+    def test_ptomodel_maps_both_explicit_cluster_count_phrasings(self):
+        from paperread.surface.modeling.ptomodel import _infer_cluster_atom_count
+
+        self.assertEqual(_infer_cluster_atom_count(["Pt13 cluster"])["value"], 13)
+        self.assertEqual(_infer_cluster_atom_count(["13-atom Pt cluster"])["value"], 13)
+
+    def test_chemical_vocabulary_covers_elements_through_radon_and_common_names(self):
+        from paperread.surface.core.chemical_vocabulary import (
+            ELEMENTS,
+            extract_element_symbols,
+            normalize_element_name,
+            recognize_material_name,
+        )
+
+        self.assertEqual(len(ELEMENTS), 86)
+        self.assertEqual(ELEMENTS[0]["symbol"], "H")
+        self.assertEqual(ELEMENTS[-1]["symbol"], "Rn")
+        self.assertEqual(normalize_element_name("aluminum"), "Al")
+        self.assertEqual(normalize_element_name("wolfram"), "W")
+        self.assertEqual(normalize_element_name("quicksilver"), "Hg")
+        self.assertEqual(extract_element_symbols("Pt/CeO2"), ["Pt", "Ce", "O"])
+        self.assertEqual(extract_element_symbols("adsorbed in pores at high temperature"), [])
+        hematite = recognize_material_name("hematite (0001) surface")[0]
+        self.assertEqual(hematite["normalized_formula"], "Fe2O3")
+        self.assertEqual(hematite["elements"], ["Fe", "O"])
+
+    def test_ptomodel_uses_mineral_and_element_common_names(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            relations_path = Path(tmpdir) / "sample_surface_relations.jsonl"
+            relations_path.write_text(
+                json_dumps_for_test(
+                    {
+                        "id": "doc1",
+                        "extraction": {
+                            "materials": ["hematite"],
+                            "surfaces": ["hematite (0001) surface"],
+                            "defects": ["oxygen vacancy"],
+                            "clusters": ["tungsten cluster"],
+                            "modeling_keywords": ["oxygen vacancy", "metal cluster"],
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            doc_payload = build_ptomodel_payload(str(relations_path))["documents"][0]
+
+            self.assertIn("oxides", doc_payload["normalized_mapping"]["material_classes"])
+            self.assertEqual(doc_payload["normalized_mapping"]["element_set"], ["Fe", "O", "W"])
+            self.assertEqual(
+                doc_payload["normalized_mapping"]["recognized_material_names"][0]["normalized_formula"],
+                "Fe2O3",
+            )
+            self.assertEqual(
+                doc_payload["task_argument_template"]["surface_cluster_builder"]["arguments"]["cluster_element"],
+                "W",
+            )
+
     def test_surface_indices_use_structure_aware_software_miller_mapping(self):
-        from paperread.surface.surface_indices import canonicalize_surface_index
+        from paperread.surface.core.surface_indices import canonicalize_surface_index
 
         zno = canonicalize_surface_index("(10-10)", material_context="ZnO")
         self.assertEqual(zno["software_facet"], "(100)")
@@ -560,9 +664,9 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             )
 
     def test_surface_known_term_filter_removes_generic_unknown_noise(self):
-        from paperread.surface.surface_ontology import is_known_surface_experience_term
-        from paperread.surface.crystal_structures import match_crystal_structure_term
-        from paperread.surface.material_vocabulary import (
+        from paperread.surface.core.surface_ontology import is_known_surface_experience_term
+        from paperread.surface.core.crystal_structures import match_crystal_structure_term
+        from paperread.surface.core.material_vocabulary import (
             is_material_vocabulary_term,
             research_category_for_material_vocabulary,
         )
@@ -587,7 +691,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertEqual(research_category_for_material_vocabulary("Sn SAs/G-Na"), "clusters_single_atoms")
         self.assertTrue(is_known_surface_experience_term("Synthesis"))
         self.assertTrue(is_known_surface_experience_term("electrochemical water splitting"))
-        from paperread.surface.surface_indices import is_surface_index_term
+        from paperread.surface.core.surface_indices import is_surface_index_term
 
         self.assertTrue(is_surface_index_term("Pt(111)"))
         self.assertTrue(is_known_surface_experience_term("*OOH"))
@@ -596,7 +700,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertTrue(is_known_surface_experience_term("three-coordinated Cr3c"))
 
     def test_surface_tool_catalog_groups_tools(self):
-        from paperread.surface.catalog import SURFACE_TOOL_CATEGORIES
+        from paperread.surface.core.catalog import SURFACE_TOOL_CATEGORIES
 
         self.assertIn("ingestion", SURFACE_TOOL_CATEGORIES)
         self.assertIn("workflow", SURFACE_TOOL_CATEGORIES)

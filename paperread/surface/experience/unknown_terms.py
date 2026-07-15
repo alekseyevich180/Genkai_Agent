@@ -17,17 +17,17 @@ from .collect_experience import (
     _surface_index_material_context,
 )
 from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
-from .crystal_structures import is_crystal_structure_term
-from .material_vocabulary import (
+from ..core.crystal_structures import is_crystal_structure_term
+from ..core.material_vocabulary import (
     is_material_vocabulary_term,
     research_category_for_material_vocabulary,
 )
-from .surface_ontology import is_known_surface_experience_term
-from .surface_indices import canonicalize_surface_index
+from ..core.surface_ontology import is_known_surface_experience_term
+from ..core.surface_indices import canonicalize_surface_index
 
 
 DEFAULT_SKILL_EXPERIENCE_DIR = (
-    Path(__file__).resolve().parents[2]
+    Path(__file__).resolve().parents[3]
     / "agents/Agent/skills/paperread/experience"
 )
 
