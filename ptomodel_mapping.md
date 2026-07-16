@@ -48,6 +48,27 @@
 | 表面负载 / 金属团簇 | `surface_cluster_builder` | `x_frac`、`y_frac`、`z_height`、`phi`、`theta`、`psi` | `active_sites`、`adsorption_sites`、`links` 可提供放置位置语义，但具体数值需人工决定 |
 | 表面负载 / 金属团簇 | `surface_cluster_builder` | `output_dir` | 论文不提供；属于工作流输出配置 |
 
+### 关键词对应关系（待细察）
+
+本表仅标注论文关键词、抽取字段和候选建模参数之间的对应关系，不在脚本中固化任务
+顺序或结构传递规则。带有歧义的对应关系需要结合原文语境进一步确认。
+
+| 论文关键词或常见表达 | 优先对应的抽取字段 | 候选建模任务 | 候选参数或作用 | 后续细察重点 |
+|---|---|---|---|---|
+| oxygen vacancy、O vacancy、`V_O`、Vo、oxygen-deficient、reduced surface | `defects`、`vacancy_models`、`surface_terminations` | `vacancy_landscape` | `vacancy_counts`、`z_frac_min`、`z_frac_max` | 区分表面/次表面空位，并确认空位数量是否明确。 |
+| oxygen-rich、oxygen-poor、O chemical potential、oxygen partial pressure | `reaction_parameters`、`surface_terminations` | `vacancy_landscape` | `mu_o` | 论文条件不能直接等同于数值化学势，通常需要人工换算。 |
+| adsorbate、adsorbed、chemisorption、physisorption、intermediate | `adsorbates`、`intermediates` | `adsorbate_landscape` | `molecule` | 确认是稳定吸附物、反应中间体还是气相参照物。 |
+| adsorption site、active site、top、bridge、hollow、atop | `adsorption_sites`、`active_sites` | `adsorbate_landscape` | `site_symbols`、`site_group_size`、`site_radius` | 位点名称需要与具体表面元素和晶面一起判断。 |
+| coverage、monolayer、ML、saturation coverage、coadsorption | `coverage`、`adsorbates` | `adsorbate_landscape` | `coverage_counts` | ML 或百分比覆盖度需要结合表面位点数转换。 |
+| SAM、self-assembled monolayer、surface modifier、functionalization | `modifiers`、`adsorbates`、`modeling_keywords` | `adsorbate_landscape` 或 `surface_functionalization` | `molecule`、`coverage_counts` | 区分吸附覆盖搜索与固定表面功能化模型。 |
+| cluster、nanocluster、nanoparticle、supported particle、loaded metal | `clusters`、`loaded_nanoparticles_or_clusters` | `surface_cluster_builder` | `cluster_element`、`cluster_atoms`、`cluster_radius` | 确认负载物是团簇、纳米颗粒还是单原子。 |
+| `Pt13`、13-atom cluster、subnanometer cluster | `clusters`、`Morphology/Size` | `surface_cluster_builder` | `cluster_atoms`、`cluster_radius` | 优先保留原文明示的原子数；尺寸只作为辅助约束。 |
+| fcc、hcp、bcc、crystal structure、phase | `clusters`、`material_parameters`、`Phase` | `surface_cluster_builder` | `cluster_structures`、`cluster_a`、`cluster_c` | 判断结构描述属于团簇、块体前驱体还是载体材料。 |
+| supported on、deposited on、loaded on、anchored at | `links`、`surfaces`、`active_sites` | `surface_cluster_builder` | `surface`、`x_frac`、`y_frac`、`z_height` | 只有原文明示时才建立负载物—载体—位点关系。 |
+| single atom、isolated atom、SAC、single-atom catalyst | `single_atoms`、`active_sites` | `single_atom_site` | 单原子物种和锚定位点 | 不应仅因出现 metal atom 就判定为单原子催化剂。 |
+| facet、surface plane、Miller index、(111)、(110)、(100) | `facets`、`slab_models`、`surfaces` | `slab_generation` 及各表面任务 | `surface`、`input` | 必须把晶面与对应材料、相和终止面关联起来。 |
+| termination、terminated surface、metal-terminated、oxygen-terminated | `surface_terminations` | `slab_generation`、`surface_functionalization` | 表面终止选择 | 区分化学终止、吸附修饰与缺陷造成的还原表面。 |
+
 ## 3. 字段对应关系
 
 ### 元素、矿物名与通俗名称标准化
