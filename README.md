@@ -12,6 +12,8 @@ Agent is a **skill-based, agentic platform** for computational material science 
 
 This workspace now includes a surface-oriented modeling skill at `agents/Agent/skills/surface-modeling/`. It covers oxide surface vacancy landscapes, adsorbate coverage landscapes, and metal nanocluster placement on surfaces, with fast mock-calculator checks and optional UMA/FAIRChem workflows for production relaxation.
 
+Pretrained MLIP integration is now implemented through the built-in `agents/Agent/skills/mlip/` skill. It connects UMA/FAIR-Chem pretrained interatomic potentials to Genkai PJM GPU jobs, activates the established UMA virtual environment, validates each calculation before submission, and keeps the Python entrypoint, structure inputs, generated results, trajectories, and scheduler log in one self-contained run directory under `mlip/<timestamp>.uma_<task>/`.
+
 This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
 
 Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.
