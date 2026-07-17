@@ -1,0 +1,4 @@
+interface:
+  display_name: "MLIP Calculations"
+  short_description: "Submit UMA MLIP calculations on Genkai"
+  default_prompt: "Use $mlip to prepare and submit an UMA MLIP calculation."
