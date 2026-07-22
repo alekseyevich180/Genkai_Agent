@@ -1,13 +1,77 @@
 ---
 name: mlip
-description: Prepare, validate, and submit UMA/fairchem machine-learning interatomic potential calculations on Genkai with the established PJM launcher and UMA virtual environment. Use for MLIP or UMA structure relaxation, molecular dynamics, energy/force inference, GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
+description: Prepare, validate, and submit MACE or UMA/fairchem machine-learning interatomic potential calculations on Genkai with the established PJM launchers and project-local virtual environments. Use for MLIP, MACE, or UMA structure relaxation, molecular dynamics, energy/force inference, GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
 ---
 
-# MLIP calculations with UMA
+# MLIP calculations with MACE or UMA
 
-Use `scripts/submit_uma_calculation.sh` as the single execution launcher. Keep each calculation self-contained in one run directory so inputs, generated structures, trajectories, logs, and scheduler output remain together.
+Use `scripts/submit_mace_calculation.sh` for MACE and `scripts/submit_uma_calculation.sh` for UMA. Keep each calculation self-contained in one run directory so inputs, generated structures, trajectories, logs, and scheduler output remain together.
 
-## Runtime contract
+## MACE calculations
+
+Use `/home/pj24001724/ku40000345/wu/MACE` as the default MACE runtime. Its bundled generic entrypoint supports MACE-MP single-point energy/force evaluation and atomic/cell relaxation for any ASE-readable structure. It writes every result into `MACE_WORK_DIR`.
+
+Create a self-contained task directory and copy every input into it:
+
+```bash
+ts=$(date +%Y%m%d%H%M%S)
+run_dir="${MATCLAW_SESSION_DIR:-$PWD}/mlip/${ts}.mace_<task>"
+mkdir -p "$run_dir"
+cp POSCAR "$run_dir/"
+```
+
+Validate the calculation without running it:
+
+```bash
+MACE_DRY_RUN=1 \
+MACE_WORK_DIR="$run_dir" \
+MACE_DEVICE=cpu \
+MACE_MODEL=small \
+MACE_PYTHON_ARGS="--input POSCAR --task single-point" \
+bash agents/Agent/skills/mlip/scripts/submit_mace_calculation.sh
+```
+
+For agent tool execution, use `run_skill_script` only for this non-computing dry run:
+
+```text
+run_skill_script(
+  skill_name="mlip",
+  script_name="submit_mace_calculation.sh",
+  args=""
+)
+```
+
+Set `MACE_DRY_RUN=1`, `MACE_WORK_DIR`, and `MACE_PYTHON_ARGS` in the execution environment before calling it. Do not use `run_skill_script` to start a long CPU or GPU calculation.
+
+Submit a GPU task from inside the run directory after the user approves the exact model, task, resources, and command:
+
+```bash
+cd "$run_dir"
+pjsub -o "$run_dir/mace_calc.out" \
+  -x "MACE_WORK_DIR=$run_dir,MACE_DEVICE=cuda,MACE_MODEL=small,MACE_THREADS=40,MACE_PYTHON_ARGS=--input POSCAR --task relax --fmax 0.05 --steps 500" \
+  /absolute/path/to/agents/Agent/skills/mlip/scripts/submit_mace_calculation.sh
+```
+
+Genkai `pjsub -x` variables must be comma-separated. Use `MACE_PYTHON_SCRIPT` to replace the bundled generic entrypoint with a task-specific Python program. Keep simple space-separated arguments in `MACE_PYTHON_ARGS`; use a copied task configuration for complex values.
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `MACE_RUNTIME_DIR` | `/home/pj24001724/ku40000345/wu/MACE` | Shared MACE runtime and caches |
+| `MACE_VENV_DIR` | `$MACE_RUNTIME_DIR/.venv` | Virtual environment to activate |
+| `MACE_PYTHON_BIN` | `$MACE_VENV_DIR/bin/python` | Explicit Python override |
+| `MACE_WORK_DIR` | submission/session directory | Calculation input and output directory |
+| `MACE_PYTHON_SCRIPT` | bundled generic MACE entrypoint | Task-specific Python override |
+| `MACE_PYTHON_ARGS` | empty | Simple space-separated entrypoint arguments |
+| `MACE_MODEL` | `small` | MACE-MP shortcut or checkpoint path |
+| `MACE_DEVICE` | `cuda` | `cpu` or `cuda` |
+| `MACE_THREADS` | `40` | Host-side OpenMP/BLAS thread count |
+| `MACE_DRY_RUN` | `0` | Validate and print without computing when `1` |
+
+Expected single-point outputs are `results.json` and `evaluated.extxyz`. Relaxation additionally writes `relaxed.extxyz`, `optimization.traj`, and `optimization.log`. Report the model, task, device, job ID or local status, absolute run directory, primary outputs, and `mace_calc.out` when submitted through PJM.
+
+## UMA calculations
+
+### UMA runtime contract
 
 - Use `/home/pj24001724/ku40000345/wu/UMA-campare/.venv_uma` by default.
 - Let the launcher activate that environment by setting `VIRTUAL_ENV`, updating `PATH`, and calling its Python executable directly. Do not install packages or create another environment unless the default environment fails validation.
@@ -15,7 +79,7 @@ Use `scripts/submit_uma_calculation.sh` as the single execution launcher. Keep e
 - Keep model downloads disabled by default. Set `UMA_ALLOW_DOWNLOAD=1` only when the requested model is absent and the user has approved network-backed model retrieval.
 - Run CUDA jobs through PJM. Use local execution only for `UMA_DRY_RUN=1` validation.
 
-## Prepare one calculation
+### Prepare one UMA calculation
 
 1. Create a timestamped run directory under the current session/workspace:
 
@@ -29,7 +93,7 @@ Use `scripts/submit_uma_calculation.sh` as the single execution launcher. Keep e
 3. Inspect the Python entrypoint before submission. Confirm that its UMA model, fairchem task name, device, input filenames, convergence settings, and output filenames match the request. Remove any `os.chdir(...)` that redirects output outside `run_dir`.
 4. Treat `run_dir` as both `UMA_WORK_DIR` and the calculation output location. Expected outputs include relaxed structures, energies/forces, trajectories, optimizer/MD logs, and the PJM combined stdout/stderr file.
 
-## Validate before submission
+### Validate UMA before submission
 
 Run the bundled launcher locally in dry-run mode:
 
@@ -54,7 +118,7 @@ run_skill_script(
 
 Set `UMA_DRY_RUN=1`, `UMA_WORK_DIR`, and `UMA_PYTHON_SCRIPT` in the execution environment before calling it. Do not use `run_skill_script` to start a long GPU calculation.
 
-## Submit on Genkai
+### Submit UMA on Genkai
 
 Submit from inside the run directory so the PJM combined log is also created there:
 
@@ -69,7 +133,7 @@ If the Python entrypoint needs command-line arguments, add `UMA_PYTHON_ARGS=<arg
 
 Do not submit until the user has approved the actual calculation command and resource request. The bundled PJM defaults request one GPU in `b-batch` for 72 hours.
 
-## Overrides
+### UMA overrides
 
 | Variable | Default | Purpose |
 |---|---|---|
@@ -84,6 +148,6 @@ Do not submit until the user has approved the actual calculation command and res
 | `UMA_ALLOW_DOWNLOAD` | `0` | Enable model download when set to `1` |
 | `UMA_DRY_RUN` | `0` | Validate and print without computing when set to `1` |
 
-## Completion report
+### UMA completion report
 
 Report the PJM job ID, model/task/device, run status, and absolute `run_dir`. List the primary output files and the combined PJM log at `run_dir/uma_calc.out`. If a calculation fails, preserve the entire run directory and quote the first actionable traceback or scheduler error; do not silently move partial outputs.
