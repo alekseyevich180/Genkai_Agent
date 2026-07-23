@@ -1,11 +1,11 @@
 ---
 name: mlip
-description: Prepare, validate, and submit MACE or UMA/fairchem machine-learning interatomic potential calculations on Genkai with the established PJM launchers and project-local virtual environments. Use for MLIP, MACE, or UMA structure relaxation, molecular dynamics, energy/force inference, GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
+description: Prepare, validate, and submit MACE, DeePMD-kit/DeepMD/DeepModel, or UMA/fairchem machine-learning interatomic potential calculations on Genkai with established PJM launchers and project-local virtual environments. Use for MLIP training, fine-tuning, freezing, compression, testing, structure relaxation, molecular dynamics, energy/force inference, CPU or GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
 ---
 
-# MLIP calculations with MACE or UMA
+# MLIP calculations with MACE, DeepMD, or UMA
 
-Use `scripts/submit_mace_calculation.sh` for MACE and `scripts/submit_uma_calculation.sh` for UMA. Keep each calculation self-contained in one run directory so inputs, generated structures, trajectories, logs, and scheduler output remain together.
+Use `scripts/submit_mace_calculation.sh` for MACE, `scripts/submit_deepmd_calculation.sh` for DeePMD-kit, and `scripts/submit_uma_calculation.sh` for UMA. Keep each calculation self-contained in one run directory so inputs, models, generated structures, trajectories, logs, and scheduler output remain together.
 
 ## MACE calculations
 
@@ -68,6 +68,121 @@ Genkai `pjsub -x` variables must be comma-separated. Use `MACE_PYTHON_SCRIPT` to
 | `MACE_DRY_RUN` | `0` | Validate and print without computing when `1` |
 
 Expected single-point outputs are `results.json` and `evaluated.extxyz`. Relaxation additionally writes `relaxed.extxyz`, `optimization.traj`, and `optimization.log`. Report the model, task, device, job ID or local status, absolute run directory, primary outputs, and `mace_calc.out` when submitted through PJM.
+
+## DeepMD calculations
+
+Use `/home/pj24001724/ku40000345/wu/deepmd_kit` as the runtime source and `/home/pj24001724/ku40000345/wu/deepmd_train` as the established training/workflow source:
+
+- `deepmd_kit/dp_venv` contains the Python 3.12 DeePMD environment and `dp` CLI.
+- `deepmd_kit/deepmd_root/bin/lmp` is the DeepMD-enabled LAMMPS executable.
+- `deepmd_train` contains task inputs, training data, checkpoints, frozen/compressed models, and previously executed PJM workflows.
+
+Do not run `dp_venv/bin/dp` without loading `python/3.12.11`; the venv Python depends on that module's shared libraries. The bundled launcher reproduces `deepmd_kit/use.sh` with an absolute venv path so it does not depend on the caller's `HOME`.
+
+### Prepare and validate a generic DeepMD task
+
+Create a self-contained task directory. Copy the input JSON and any task-specific inputs into it. Inspect every `training_data.systems` and `validation_data.systems` path in the JSON before submission; either stage the referenced data with the task or retain only verified immutable absolute paths.
+
+```bash
+ts=$(date +%Y%m%d%H%M%S)
+run_dir="${MATCLAW_SESSION_DIR:-$PWD}/mlip/${ts}.deepmd_<task>"
+mkdir -p "$run_dir"
+cp input.json "$run_dir/"
+```
+
+Validate the runtime paths and exact command without loading modules or starting a calculation:
+
+```bash
+DEEPMD_DRY_RUN=1 \
+DEEPMD_WORK_DIR="$run_dir" \
+DEEPMD_MODE=dp \
+DEEPMD_BACKEND=tensorflow \
+DEEPMD_COMMAND=train \
+DEEPMD_ARGS="input.json" \
+DEEPMD_REQUIRED_PATHS="input.json" \
+bash agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+```
+
+For agent tool execution, use `run_skill_script` only for this non-computing dry run:
+
+```text
+run_skill_script(
+  skill_name="mlip",
+  script_name="submit_deepmd_calculation.sh",
+  args=""
+)
+```
+
+Set `DEEPMD_DRY_RUN=1`, `DEEPMD_WORK_DIR`, `DEEPMD_MODE`, `DEEPMD_COMMAND`, `DEEPMD_ARGS`, and `DEEPMD_REQUIRED_PATHS` in the execution environment first. Do not use `run_skill_script` to start training or molecular dynamics. A dry run validates paths and command construction but intentionally does not load the Python module or import TensorFlow.
+
+### Submit a generic DeepMD task
+
+Submit only after the user approves the input, backend, resources, restart/init behavior, and exact command:
+
+```bash
+cd "$run_dir"
+pjsub -o "$run_dir/deepmd_calc.out" \
+  -x "DEEPMD_WORK_DIR=$run_dir,DEEPMD_MODE=dp,DEEPMD_BACKEND=tensorflow,DEEPMD_COMMAND=train,DEEPMD_ARGS=input.json,DEEPMD_REQUIRED_PATHS=input.json,DEEPMD_THREADS=15" \
+  /absolute/path/to/agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+```
+
+The launcher defaults to TensorFlow on CPU, matching the executed workflows under `deepmd_train`; its PJM header does not request a GPU. Set `DEEPMD_BACKEND=pytorch`, `jax`, or `paddle`, or add GPU resources, only after validating that backend/device combination in `dp_venv`. After runtime changes, separately run the launcher's non-computing `dp --version` and LAMMPS `-help` checks before submitting a scientific task.
+
+Preview post-training operations as explicit dry-run tasks in the same directory. Submit the approved commands through PJM to execute them:
+
+```bash
+cd "$run_dir"
+
+# Freeze the current checkpoint.
+DEEPMD_DRY_RUN=1 DEEPMD_COMMAND=freeze \
+DEEPMD_ARGS="-o graph.pb" DEEPMD_REQUIRED_PATHS="checkpoint" \
+bash agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+
+# Compress the frozen model.
+DEEPMD_DRY_RUN=1 DEEPMD_COMMAND=compress \
+DEEPMD_ARGS="-i graph.pb -o compress.pb" DEEPMD_REQUIRED_PATHS="graph.pb" \
+bash agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+
+# Test a frozen model against one DeepMD dataset.
+DEEPMD_DRY_RUN=1 DEEPMD_COMMAND=test \
+DEEPMD_ARGS="-m graph.pb -s validation_data -n 40" \
+DEEPMD_REQUIRED_PATHS="graph.pb validation_data" \
+bash agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+
+# Run DeepMD-enabled LAMMPS.
+DEEPMD_DRY_RUN=1 DEEPMD_MODE=lammps \
+DEEPMD_ARGS="-in in.lammps" DEEPMD_REQUIRED_PATHS="in.lammps" \
+bash agents/Agent/skills/mlip/scripts/submit_deepmd_calculation.sh
+```
+
+Use `pjsub` rather than direct login-node execution for long training, testing, or MD jobs.
+
+### Continue the established nnp_train workflow
+
+When the request explicitly targets `/home/pj24001724/ku40000345/wu/deepmd_train/nnp_train`, inspect and use its task-specific `wu_deep.sh` rather than reconstructing its multi-stage logic. It handles training or checkpoint continuation, freeze, compression, per-system testing, optional LAMMPS, and timeout-based resubmission.
+
+Before submitting it, confirm `TRAIN_ID`, `INPUT_NAME`, `BASE_CKPT`, `TRAIN_MODE`, and `DP_TEST_N`. Use `TRAIN_MODE=init` to initialize weights while resetting the step and learning-rate schedule for fine-tuning; use `restart` only to continue the original checkpoint schedule. Its automatic resubmission has previously encountered scheduler-wrapper failures, so inspect the end of the current output before relying on it.
+
+### DeepMD overrides and outputs
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `DEEPMD_RUNTIME_DIR` | `/home/pj24001724/ku40000345/wu/deepmd_kit` | DeepMD runtime, venv, and LAMMPS installation |
+| `DEEPMD_TRAINING_ROOT` | `/home/pj24001724/ku40000345/wu/deepmd_train` | Established training/workflow source |
+| `DEEPMD_VENV_DIR` | `$DEEPMD_RUNTIME_DIR/dp_venv` | DeepMD virtual environment |
+| `DEEPMD_BIN` | `$DEEPMD_VENV_DIR/bin/dp` | DeePMD CLI override |
+| `DEEPMD_LMP_BIN` | `$DEEPMD_RUNTIME_DIR/deepmd_root/bin/lmp` | DeepMD-enabled LAMMPS |
+| `DEEPMD_PYTHON_MODULE` | `python/3.12.11` | Required Genkai Python module |
+| `DEEPMD_WORK_DIR` | submission/session directory | Input and output directory |
+| `DEEPMD_MODE` | `dp` | Run `dp` or `lammps` |
+| `DEEPMD_BACKEND` | `tensorflow` | TensorFlow, PyTorch, JAX, or Paddle backend |
+| `DEEPMD_COMMAND` | `train` | `dp` subcommand |
+| `DEEPMD_ARGS` | empty | Simple whitespace-separated command arguments |
+| `DEEPMD_REQUIRED_PATHS` | empty | Required input files/directories checked before execution |
+| `DEEPMD_THREADS` | `15` | Host thread and TensorFlow pool limit |
+| `DEEPMD_DRY_RUN` | `0` | Validate and print without loading modules or computing |
+
+Depending on `input.json`, expected training outputs include `model.ckpt*`, `checkpoint`, `lcurve.out`, and scheduler logs. Freezing/compression typically produces `graph.pb` and `compress.pb`; testing may produce result tables/logs; LAMMPS produces `log.lammps`, dumps, trajectories, and task-specific summaries. Report the backend, operation, input or checkpoint, job ID/status, absolute run directory, primary outputs, and `deepmd_calc.out`.
 
 ## UMA calculations
 
