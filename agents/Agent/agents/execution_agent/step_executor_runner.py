@@ -37,6 +37,30 @@ _CANCEL_POLL_INTERVAL = 0.5  # seconds
 _SUB_STEP_TIMEOUT = int(os.environ.get("SUB_STEP_TIMEOUT", "3600"))  # seconds
 
 
+def _hydrate_manifest_artifacts(
+    result: StepExecutorResult,
+) -> StepExecutorResult:
+    """Populate contract IDs without replacing legacy artifact file paths."""
+
+    if not result.manifest_path or result.artifact_ids:
+        return result
+    manifest_path = Path(result.manifest_path)
+    if not manifest_path.is_file():
+        logger.warning("Step result manifest does not exist: %s", manifest_path)
+        return result
+    try:
+        from genkai.contracts.run import RunManifest
+
+        manifest = RunManifest.model_validate_json(
+            manifest_path.read_text(encoding="utf-8")
+        )
+    except Exception as exc:
+        logger.warning("Could not read step result manifest %s: %s", manifest_path, exc)
+        return result
+    result.artifact_ids = [artifact.artifact_id for artifact in manifest.artifacts]
+    return result
+
+
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -353,7 +377,9 @@ async def run_step_executor(
     step_result_data = step_state_delta.get("_step_result")
     if step_result_data:
         tool_context.state["_step_result"] = None  # State has no pop(); reset instead
-        result = StepExecutorResult.model_validate(step_result_data)
+        result = _hydrate_manifest_artifacts(
+            StepExecutorResult.model_validate(step_result_data)
+        )
         graph.log_node_complete(
             step_id,
             result.status,

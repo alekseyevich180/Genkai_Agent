@@ -13,6 +13,9 @@ from typing import Dict, List, Optional
 from google.adk.tools.tool_context import ToolContext
 from pydantic import BaseModel, Field, ValidationError, field_validator, model_validator
 
+from genkai.workflow.graph import WorkflowGraph, validate_workflow
+from genkai.workflow.stage import ArtifactRequirement, StageSpec
+
 from ...skill import ALL_SKILLS
 
 logger = logging.getLogger(__name__)
@@ -96,6 +99,18 @@ class GraphNode(BaseModel):
     suggested_skills: List[str] = Field(..., min_items=1)
     status: NodeStatus = Field(default=NodeStatus.pending)
     result: Optional[str] = Field(default=None, description="Brief summary after completion or failure reason")
+    consumes: list[ArtifactRequirement] = Field(default_factory=list)
+    produces: list[ArtifactRequirement] = Field(default_factory=list)
+
+    @field_validator("consumes", "produces", mode="before")
+    @classmethod
+    def _parse_artifact_requirements(cls, values):
+        if isinstance(values, list):
+            return [
+                ArtifactRequirement.parse(value) if isinstance(value, str) else value
+                for value in values
+            ]
+        return values
 
     @field_validator("suggested_skills")
     @classmethod
@@ -157,6 +172,30 @@ class ExecutionGraph(BaseModel):
                 raise ValueError(f"Edge references unknown node: '{edge[1]}'")
         if _has_cycle(list(self.nodes.keys()), self.edges):
             raise ValueError("Graph contains a cycle — ExecutionGraph must be a DAG.")
+        if any(node.consumes or node.produces for node in self.nodes.values()):
+            predecessors: dict[str, list[str]] = {
+                node_id: [] for node_id in self.nodes
+            }
+            for upstream, downstream in self.edges:
+                predecessors[downstream].append(upstream)
+            workflow = WorkflowGraph(
+                stages=[
+                    StageSpec(
+                        stage_id=node_id,
+                        adapter=node.suggested_skills[0],
+                        depends_on=predecessors[node_id],
+                        consumes=node.consumes,
+                        produces=node.produces,
+                    )
+                    for node_id, node in self.nodes.items()
+                ]
+            )
+            report = validate_workflow(workflow)
+            if not report.passed:
+                details = "; ".join(
+                    f"{issue.code}: {issue.message}" for issue in report.errors
+                )
+                raise ValueError(f"Artifact workflow validation failed: {details}")
         return self
 
 
