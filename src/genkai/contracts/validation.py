@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field, computed_field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ValidationIssue(BaseModel):
@@ -23,7 +23,6 @@ class ValidationReport(BaseModel):
     warnings: list[ValidationIssue] = Field(default_factory=list)
     checks: list[ValidationIssue] = Field(default_factory=list)
 
-    @computed_field
     @property
     def passed(self) -> bool:
         return not self.errors

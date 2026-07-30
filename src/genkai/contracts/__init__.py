@@ -18,6 +18,7 @@ from .artifacts import (
     ValidationStatus,
 )
 from .provenance import Provenance
+from .run import RunManifest, StageRecord
 from .validation import ValidationIssue, ValidationReport
 
 __all__ = [
@@ -35,6 +36,8 @@ __all__ = [
     "ModelingPlanArtifact",
     "PaperArtifact",
     "Provenance",
+    "RunManifest",
+    "StageRecord",
     "StructureSetArtifact",
     "ValidationIssue",
     "ValidationReport",
