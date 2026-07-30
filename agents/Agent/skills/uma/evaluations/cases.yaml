@@ -1,0 +1,6 @@
+positive:
+  - prompt: Fine-tune this UMA checkpoint after auditing train, validation, and test splits.
+negative:
+  - prompt: Train a DeepMD model from input.json.
+boundary:
+  - prompt: Use pretrained MACE to relax these candidates without fine-tuning.

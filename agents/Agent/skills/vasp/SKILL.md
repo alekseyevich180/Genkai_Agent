@@ -1,7 +1,9 @@
 ---
 name: vasp
-description: Skills for VASP DFT calculations — input preparation, remote submission to Bohrium, and result collection.
+description: Use when validated structures require VASP input preparation or completed VASP outputs require DFT result collection; do not use dry-run preparation as calculation evidence.
 metadata:
+  maturity: stable
+  domain: compute
   tools:
     - run_bash
     - run_skill_script
@@ -9,6 +11,14 @@ metadata:
   dependent_skills:
     - bohrium
     - dpdisp
+  consumes:
+    - structure-set@1
+    - calculation-input@1
+  produces:
+    - calculation-input@1
+    - calculation-result@1
+  entrypoints:
+    - scripts/vasp_tools.py
   tags:
     - vasp
     - dft
@@ -196,4 +206,3 @@ To override individual tags for a single run without editing the file, use `--in
 ```bash
 --incar_tags '{"ENCUT": 600, "EDIFF": 1e-6}'
 ```
-

@@ -1,11 +1,19 @@
 ---
 name: paperread
-description: Read surface-research PDFs or JSON records and extract structured reaction, material, and modeling information for downstream agent workflows.
+description: Use when a surface-research PDF or prepared article record must be converted into structured literature evidence; do not use for structure generation or model training.
 metadata:
+  maturity: stable
+  domain: literature
   tools:
     - run_skill_script
   dependent_skills:
     - ptomodel
+  consumes:
+    - paper@1
+  produces:
+    - extraction@1
+  entrypoints:
+    - scripts/paperread_tools.py
   tags:
     - paperread
     - pdf

@@ -1,13 +1,23 @@
 ---
 name: surface-modeling
-description: "Build realistic oxide-surface candidates: oxygen-vacancy landscapes, adsorbate coverage landscapes, and metal-cluster-on-surface starting structures using ASE, Optuna, and optional UMA/FAIRChem calculators."
+description: "Use when a reviewed modeling plan requires oxide-surface, vacancy, adsorbate, or supported-cluster structure candidates; do not use for DFT labeling or MLIP training."
 metadata:
+  maturity: stable
+  domain: modeling
   tools:
     - run_python_file
   dependent_skills:
     - atomic-structure
     - structure-conversion
     - vasp
+  consumes:
+    - modeling-plan@1
+  produces:
+    - structure-set@1
+  entrypoints:
+    - scripts/vacancy/vacancy_landscape.py
+    - scripts/adsorbate/adsorbate_landscape.py
+    - scripts/metal_cluster/surface_cluster_builder.py
   tags:
     - surface
     - oxide

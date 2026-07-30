@@ -1,0 +1,6 @@
+positive:
+  - prompt: Prepare VASP inputs for this reviewed structure set.
+negative:
+  - prompt: Infer energies for these structures with pretrained MACE.
+boundary:
+  - prompt: Build a labeled dataset from already collected VASP results.

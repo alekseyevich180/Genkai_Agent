@@ -1,11 +1,19 @@
 ---
 name: ptomodel
-description: Filter and normalize paperread surface-extraction outputs into Agent-ready modeling inputs, including facet equivalence, loaded nanoparticle species, material class, reaction type, and executable modeling task mapping.
+description: Use when structured surface-paper extraction must be normalized into a reviewable modeling plan; do not use to generate structures or run calculations.
 metadata:
+  maturity: stable
+  domain: modeling
   tools:
     - run_skill_script
   dependent_skills:
     - surface-modeling
+  consumes:
+    - extraction@1
+  produces:
+    - modeling-plan@1
+  entrypoints:
+    - scripts/ptomodel_tools.py
   tags:
     - paperread
     - surface

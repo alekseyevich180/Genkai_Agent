@@ -1,0 +1,6 @@
+positive:
+  - prompt: Build CeO2(111) vacancy and hydroxyl adsorption candidates from this plan.
+negative:
+  - prompt: Collect energies and forces from completed VASP OUTCAR files.
+boundary:
+  - prompt: Evaluate these existing structures with pretrained MACE.

@@ -1,6 +1,18 @@
 ---
 name: mace
-description: Run pretrained MACE interatomic-potential inference, energy/force evaluation, and atomic or cell relaxation on Genkai. Use when the user explicitly requests MACE, MACE-MP, a MACE checkpoint, pretrained-potential validation, or MACE structure relaxation. Do not use this skill for DeepMD training or UMA fine-tuning.
+description: Use when structures need pretrained MACE energy, force, or relaxation inference; do not use for DeepMD training or UMA fine-tuning.
+metadata:
+  maturity: stable
+  domain: mlip
+  tools:
+    - run_bash
+  dependent_skills: []
+  consumes:
+    - structure-set@1
+  produces:
+    - calculation-result@1
+  entrypoints:
+    - scripts/submit_mace_calculation.sh
 ---
 
 # MACE calculations on Genkai

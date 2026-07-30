@@ -1,11 +1,20 @@
 ---
 name: deepmd
-description: Prepare, train, restart, freeze, compress, test, and inspect DeePMD-kit Deep Potential models, including DP, DPA-1, and DPA-2, with Genkai or DPDispatcher execution. Use for explicit DeepMD dataset conversion, input.json generation, dp train, checkpoint continuation, graph.pb or compressed-model export, and dp test. Do not use this skill for generic UMA fine-tuning or pretrained MACE inference.
+description: Use when a validated labeled dataset must train, continue, freeze, compress, or test a DeepMD model; do not use for UMA fine-tuning or pretrained MACE inference.
 metadata:
+  maturity: stable
+  domain: mlip
   tools:
     - run_bash
   dependent_skills:
     - dpdisp
+  consumes:
+    - dataset@1
+  produces:
+    - model@1
+    - evaluation@1
+  entrypoints:
+    - scripts/submit_deepmd_training.sh
   tags:
     - deepmd
     - dpa

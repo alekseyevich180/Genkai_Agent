@@ -1,6 +1,21 @@
 ---
 name: uma
-description: Prepare, audit, convert, dry-run, submit, resume, and evaluate UMA or FAIRChem single-task fine-tuning on Genkai. Use for surface or adsorption UMA fine-tuning, ASE-LMDB preparation, train/validation/test leakage checks, fairchem Hydra configuration, uma-s-1p2 checkpoint training, resume.yaml, inference_ckpt.pt, and fine-tuned UMA acceptance testing. Do not use this skill for DeepMD training or MACE inference.
+description: Use when a validated labeled dataset and base UMA checkpoint require single-task fine-tuning, resume, or acceptance evaluation; do not use for DeepMD training or MACE inference.
+metadata:
+  maturity: stable
+  domain: mlip
+  tools:
+    - run_bash
+  dependent_skills: []
+  consumes:
+    - dataset@1
+    - model@1
+  produces:
+    - model@1
+    - evaluation@1
+  entrypoints:
+    - scripts/prepare_uma_finetune_dataset.sh
+    - scripts/submit_uma_finetuning.sh
 ---
 
 # UMA fine-tuning on Genkai
