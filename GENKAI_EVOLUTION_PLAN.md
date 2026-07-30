@@ -1233,3 +1233,134 @@ Level C：900k
 ```
 
 到达某一级预算的 80% 时，先运行该级验收并报告剩余工作，不自动扩大范围。
+
+---
+
+## 15. 2026-07-30 当前实施快照与下一阶段交接
+
+本节用于在后续会话中恢复实际进度。它区分“稳定契约和工作流已经建立”与
+“旧代码已经完成物理迁移”两个不同的完成条件。
+
+### 15.1 当前分支与交付位置
+
+- Task 1–9 的当前实现提交为 `f338263`。
+- GitHub 分支为 `feat/genkai-evolution`，远端跟踪分支为
+  `origin/feat/genkai-evolution`。
+- 主项目目录下的 `Genkai_Evolution/` 是该分支的独立 Git worktree，也是继续
+  开发和验证新版本的位置。
+- 根目录共享 `.venv` 的 `Genkai 2.2.0` editable project 指向
+  `Genkai_Evolution/`；旧 `agent 1.0.0` editable 映射已移除。
+
+### 15.2 第一轮已经完成的范围
+
+第一轮已建立并验证：
+
+1. `src/genkai/contracts/` 的 artifact、provenance、validation 和 run
+   manifest 契约。
+2. `src/genkai/workflow/` 的 stage、artifact-aware DAG 和原子 manifest
+   store。
+3. paperread、PToModel 和 surface modeling 的稳定 facade。
+4. VASP、ASE dataset、MACE、DeepMD 和 UMA 的职责边界与生产门禁。
+5. `genkai-workflow` CLI 和 paper-to-MLIP reference workflow。
+6. 七个核心 skill 的 contract、evaluation 和边界声明。
+7. Agent DAG 的可选 artifact 输入输出以及旧 graph payload 兼容。
+8. clean wheel 中的 Agent package、skill 资源和 CLI 入口。
+
+当前相关回归记录为 `100 passed`、`16 subtests passed`。同时通过两个 CLI
+help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
+安装和 skill 加载检查。仓库级 `pytest -q` 仍被既有
+`tests/test_structure_builder.py` 的缺失模块
+`agent.tools.structure_builder` 阻断；这不是 Task 1–9 回归通过的组成部分。
+
+没有运行真实 VASP、GPU/CUDA、PJM、MACE 科学推理、DeepMD 训练、UMA 微调、
+结构弛豫或分子动力学。dry-run 与 mock 结果不得视为真实科研计算证据。
+
+### 15.3 结构审计结论
+
+用户对新旧目录进行对比后指出顶层结构变化不明显。审计确认：
+
+- 新增的主要物理结构是 `src/genkai/` 及按 contracts、workflow、
+  integrations、skills 和 packaging 分类的新测试。
+- `agents/`、`paperread/`、`start/`、`web/` 和大量旧测试仍保留原位置。
+- 本地 `main` 已包含同一轮实现，因此本地比较 `main` 与
+  `feat/genkai-evolution` 时只剩专用 worktree 的 `.gitignore` 差异；评估演进
+  内容应比较 GitHub `origin/main` 与 `feat/genkai-evolution`。
+
+这是原计划约束的直接结果，而不是已经完成了目录迁移：
+
+1. Global Constraints 禁止一次性大规模搬迁。
+2. Task 4 明确要求 facade “不搬迁原算法”。
+3. Task 7 明确不在该任务迁移尚未稳定的算法。
+4. Milestone E 要求旧入口经过兼容测试和弃用周期后才允许删除。
+
+因此，Task 1–9 可以标记为“library-first 契约和纵向工作流完成”，但不能标记
+为“仓库物理结构收敛完成”。
+
+### 15.4 下一阶段结构方向决策
+
+继续作业前必须选择一个成功标准：
+
+#### 方案 A：兼容优先的结构收敛（推荐）
+
+- 将已经稳定并被多个入口复用的实现逐步迁入 `src/genkai/`。
+- `paperread/` 只保留旧 CLI 和 import compatibility shim。
+- 七个稳定 skill 的 scripts 只保留参数解析、库调用、报告展示和经过 preflight
+  的外部命令启动。
+- 每次只迁移一个领域边界，并使用 characterization test 保证旧入口行为不变。
+
+优点是能形成明显且可持续的新结构，同时控制兼容风险；缺点是需要一个过渡期，
+旧目录不会一次性消失。
+
+#### 方案 B：全新顶层布局
+
+- 重新设计为 `packages/`、`skills/`、`apps/`、`tests/` 和 `docs/` 等顶层
+  目录。
+- 同时修改 packaging、CLI、import path、Docker、Web 和发布流程。
+
+优点是视觉变化最大；缺点是跨系统改动范围和回归风险最高，不适合在缺少完整
+发布兼容测试时直接执行。
+
+#### 方案 C：只整理非核心内容
+
+- 整理根目录文档、测试数据、历史脚本和生成物。
+- 不迁移 paperread、Agent 或 skill 的核心实现。
+
+优点是风险最低；缺点是只改善可读性，不能解决双重业务实现和依赖边界问题。
+
+当前决策状态：**等待用户选择 A、B 或 C**。未确认前不得开始批量移动文件。
+
+### 15.5 方案 A 获批后的建议任务
+
+以下任务仅作为下一阶段入口；正式实施前仍需写设计文档和逐文件计划：
+
+1. **Task 10：建立结构基线和依赖门禁**
+   - 记录顶层目录、Python import、CLI、wheel 内容和 skill entrypoint 基线。
+   - 增加测试，禁止 `src/genkai/` 反向导入 `paperread/` 私有实现或 skill
+     scripts。
+2. **Task 11：迁移 surface literature 内核**
+   - 将稳定 extraction、experience 和 pipeline 业务实现迁入
+     `src/genkai/literature/`。
+   - `paperread.surface` 保留兼容导入与 CLI 转发。
+3. **Task 12：迁移 PToModel 与 surface modeling 内核**
+   - 将稳定规则、schema 和结构准备逻辑迁入 `src/genkai/modeling/`。
+   - 删除 skill scripts 中重复的业务规则，只保留薄入口。
+4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
+   - 统一 adapter 与 launcher contract 的所有权。
+   - 将稳定数据审计放在 `src/genkai/datasets/`，skill 中不保留第二份实现。
+5. **Task 14：重组测试和 fixtures**
+   - 将契约、单元、集成、兼容和外部运行时测试明确分层。
+   - 将大型论文和生成样例从普通测试模块中分离，并记录来源和用途。
+6. **Task 15：根目录与弃用清理**
+   - 在至少一个弃用周期和完整兼容验证后，单独审查可删除的旧模块。
+   - 更新 README、迁移指南、wheel 清单和 work log。
+
+### 15.6 下一次会话恢复顺序
+
+1. 读取本节和 `work_logs/2026-07-30.md` 的“当前演进阶段复核与结构改造交接”。
+2. 确认用户选择的 A/B/C 结构方向。
+3. 审计 `Genkai_Evolution/` 工作树是否干净，并确认
+   `feat/genkai-evolution` 与远端指针。
+4. 按 Superpowers brainstorming 流程写入并审核：
+   `docs/superpowers/specs/2026-07-30-genkai-structure-convergence-design.md`。
+5. 用户批准设计后，再写逐文件 implementation plan；实现阶段采用测试先行，
+   每个迁移边界独立验证和提交。
