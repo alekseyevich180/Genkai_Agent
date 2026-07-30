@@ -35,7 +35,7 @@ def _read_json_records(path: str | None) -> list[dict[str, Any]]:
         return [json.loads(line) for line in text.splitlines() if line.strip()]
 
 
-def _modeling_checklist(plan: dict[str, Any]) -> dict[str, Any]:
+def build_modeling_checklist(plan: dict[str, Any]) -> dict[str, Any]:
     tasks: list[dict[str, Any]] = []
     review_items: list[dict[str, Any]] = []
     for document in plan.get("documents", []):
@@ -93,6 +93,9 @@ def _modeling_checklist(plan: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+_modeling_checklist = build_modeling_checklist
+
+
 def write_compact_job_bundle(
     *,
     output_dir: str,
@@ -129,7 +132,7 @@ def write_compact_job_bundle(
         plan = json.loads(Path(outputs["ptomodel_json"]).read_text(encoding="utf-8"))
     plan_path = modeling_dir / "plan.json"
     plan_path.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
-    checklist = _modeling_checklist(plan)
+    checklist = build_modeling_checklist(plan)
     checklist["files"] = {
         "article": str(article_path.relative_to(outdir)),
         "modeling_plan": str(plan_path.relative_to(outdir)),
