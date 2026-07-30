@@ -224,6 +224,7 @@ __marimo__/
 
 # workspace
 .workspace/
+.worktrees/
 
 # Sever related files
 *.orb
