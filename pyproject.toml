@@ -37,6 +37,11 @@ dependencies = [
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["agent*", "genkai*", "paperread*"]
+exclude = ["tests*"]
+
 [project.scripts]
 agent = "agent.init.start_agent:main"
 genkai-workflow = "genkai.cli:main"

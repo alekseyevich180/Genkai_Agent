@@ -29,6 +29,31 @@ generated LMDB back, and composes the version-matched
 `fairchem-core 2.21.0` Hydra configuration before training handoff. Data,
 reports, configurations, checkpoints and logs remain in the caller's project.
 
+### Library-first workflow core
+
+The stable scientific workflow API now lives under `src/genkai/`. It provides
+versioned artifact/provenance contracts, atomic run manifests, artifact-aware
+DAG validation, surface workflow facades, VASP preparation/result boundaries,
+ASE dataset audits, and separate MACE, DeepMD, and UMA adapters. Existing
+`paperread.surface` and Agent entrypoints remain available during migration.
+
+Initialize and inspect an offline reference run:
+
+```bash
+genkai-workflow init runs/demo \
+  --relations tests/fixtures/paper_to_mlip/minimal_surface_relations.jsonl \
+  --mock-labels tests/fixtures/paper_to_mlip/mock_labels.extxyz \
+  --base-model-uri file:///path/to/read-only/uma-checkpoint.pt
+genkai-workflow inspect --run-root runs/demo
+genkai-workflow preflight --run-root runs/demo --target uma --mode dry-run
+```
+
+This workflow never treats the fixture as DFT evidence: UMA production
+preflight rejects its mock labels, while dry-run records a warning and starts
+no VASP, GPU, PJM, DeepMD, MACE, or UMA process. See
+[`docs/artifact-contracts.md`](docs/artifact-contracts.md) and
+[`docs/skill-development.md`](docs/skill-development.md).
+
 This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
 
 Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.

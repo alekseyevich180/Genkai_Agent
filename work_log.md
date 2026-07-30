@@ -22,6 +22,8 @@
 ## 相关长期文档
 
 - [plan.md](plan.md)：paperread 表面研究建模、经验抽取与 Agent skill 闭环计划。
+- [GENKAI_EVOLUTION_PLAN.md](GENKAI_EVOLUTION_PLAN.md)：library-first
+  artifact、workflow、skill 与 Agent 架构演进计划。
 
 ## 维护约定
 

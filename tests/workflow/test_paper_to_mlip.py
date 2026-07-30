@@ -1,4 +1,6 @@
 from pathlib import Path
+import subprocess
+import sys
 
 from click.testing import CliRunner
 
@@ -88,3 +90,27 @@ def test_cli_preflight_uses_nonzero_exit_for_mock_production(
     assert init.exit_code == 0, init.output
     assert production.exit_code != 0
     assert "mock_labels_not_trainable" in production.output
+
+
+def test_installed_cli_init_resolves_legacy_facade_outside_checkout(
+    tmp_path: Path,
+) -> None:
+    entrypoint = Path(sys.executable).parent / "genkai-workflow"
+    run_root = tmp_path / "run"
+    completed = subprocess.run(
+        [
+            str(entrypoint),
+            "init",
+            str(run_root),
+            "--relations",
+            str((FIXTURE_DIR / "minimal_surface_relations.jsonl").resolve()),
+        ],
+        cwd=tmp_path,
+        text=True,
+        capture_output=True,
+        check=False,
+        env={"PATH": str(Path(sys.executable).parent)},
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    assert (run_root / "manifest.json").is_file()

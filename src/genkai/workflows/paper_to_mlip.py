@@ -256,4 +256,36 @@ def preflight_paper_to_mlip(
         errors.extend(result.validation.errors)
         warnings.extend(result.validation.warnings)
         checks.extend(result.validation.checks)
-    return ValidationReport(errors=errors, warnings=warnings, checks=checks)
+    report = ValidationReport(errors=errors, warnings=warnings, checks=checks)
+    stage_id = f"06_{target}_preflight_{mode.value.replace('-', '_')}"
+    manifest.stages = [
+        stage for stage in manifest.stages if stage.stage_id != stage_id
+    ]
+    input_ids = []
+    if target == "mace":
+        structures = _latest(manifest, "structure-set")
+        if structures is not None:
+            input_ids.append(structures.artifact_id)
+    else:
+        dataset = _latest(manifest, "dataset")
+        if dataset is not None:
+            input_ids.append(dataset.artifact_id)
+    manifest.append_stage(
+        StageRecord(
+            stage_id=stage_id,
+            adapter=f"genkai.mlip.{target}",
+            execution_state=(
+                ExecutionState.PREPARED
+                if report.passed
+                else ExecutionState.BLOCKED
+            ),
+            input_artifact_ids=input_ids,
+            validation=report,
+            metadata={
+                "mode": mode.value,
+                "external_execution_started": False,
+            },
+        )
+    )
+    save_manifest(Path(run_root), manifest)
+    return report

@@ -1,6 +1,26 @@
 # 项目计划
 
-更新时间：2026-07-07
+更新时间：2026-07-30
+
+## 架构演进状态
+
+`GENKAI_EVOLUTION_PLAN.md` 的 Task 1–9 已在 `feat/genkai-evolution` 分支
+实现。原 paperread/PToModel 研究闭环现在映射为正式 artifact stages：
+
+```text
+PaperArtifact
+-> ExtractionArtifact
+-> ModelingPlanArtifact
+-> StructureSetArtifact
+-> CalculationInputArtifact / CalculationResultArtifact
+-> DatasetArtifact
+-> ModelArtifact / EvaluationArtifact
+```
+
+旧 `paperread.surface` 和 Agent graph payload 保持兼容。新的
+`genkai-workflow` 只提供 init、inspect、preflight 和 dry-run；真实 VASP、
+GPU、PJM、DeepMD 训练和 UMA 微调仍需单独授权与科学验收。下文的经验库、
+unknown-term 与 PToModel 映射工作继续作为领域质量改进计划。
 
 ## 当前目标
 
