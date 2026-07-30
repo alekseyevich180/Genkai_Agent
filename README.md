@@ -12,14 +12,22 @@ Agent is a **skill-based, agentic platform** for computational material science 
 
 This workspace now includes a surface-oriented modeling skill at `agents/Agent/skills/surface-modeling/`. It covers oxide surface vacancy landscapes, adsorbate coverage landscapes, and metal nanocluster placement on surfaces, with fast mock-calculator checks and optional UMA/FAIRChem workflows for production relaxation.
 
-Pretrained MLIP integration is now implemented through the built-in `agents/Agent/skills/mlip/` skill. It connects UMA/FAIR-Chem pretrained interatomic potentials to Genkai PJM GPU jobs, activates the established UMA virtual environment, validates each calculation before submission, and keeps the Python entrypoint, structure inputs, generated results, trajectories, and scheduler log in one self-contained run directory under `mlip/<timestamp>.uma_<task>/`.
+MLIP workflows are exposed as three separate built-in skills with explicit
+roles:
 
-The same MLIP skill now supports UMA single-task fine-tuning. It audits
-ASE-readable energy/force/stress labels, detects exact train/validation leakage,
-creates ASE-LMDB and a version-matched Hydra configuration for
-`fairchem-core 2.21.0`, and dry-runs Genkai GPU training or checkpoint resume
-before PJM submission. Fine-tuning datasets, audit reports, configurations,
-checkpoints, and logs remain in the caller's project directory.
+- `agents/Agent/skills/mace/`: pretrained MACE/MACE-MP energy, force and
+  relaxation calculations;
+- `agents/Agent/skills/deepmd/`: DeepMD dataset preparation, training,
+  checkpoint continuation, freezing, compression and testing;
+- `agents/Agent/skills/uma/`: UMA single-task fine-tuning, resume and
+  fine-tuned-model evaluation.
+
+The UMA preparation gate audits ASE-readable energy/force/stress labels and a
+retained test split, rejects severe atomic overlaps and cross-split leakage,
+creates train/validation ASE-LMDB, checks converter failure logs, reads the
+generated LMDB back, and composes the version-matched
+`fairchem-core 2.21.0` Hydra configuration before training handoff. Data,
+reports, configurations, checkpoints and logs remain in the caller's project.
 
 This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
 

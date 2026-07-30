@@ -1,6 +1,6 @@
 ---
 name: deepmd
-description: DeePMD-kit training, finetuning, testing, and model inspection skill. Use this skill whenever training or finetuning a Deep Potential (DP / DPA-1 / DPA-2) model, running model tests, or inspecting model parameters. Training is split into a preparation phase (data conversion + input.json generation, always local) and an execution phase (dp CLI commands, local or via dpdisp skill on hpc or Bohrium).
+description: Prepare, train, restart, freeze, compress, test, and inspect DeePMD-kit Deep Potential models, including DP, DPA-1, and DPA-2, with Genkai or DPDispatcher execution. Use for explicit DeepMD dataset conversion, input.json generation, dp train, checkpoint continuation, graph.pb or compressed-model export, and dp test. Do not use this skill for generic UMA fine-tuning or pretrained MACE inference.
 metadata:
   tools:
     - run_bash
@@ -15,6 +15,43 @@ metadata:
 ---
 
 # DeePMD-kit Skill
+
+## Genkai role boundary
+
+Use DeepMD as the project's training workflow. Route UMA surface-model
+fine-tuning to the separate `uma` skill and pretrained MACE inference to the
+`mace` skill. The Genkai launcher is
+`scripts/submit_deepmd_training.sh`; it reproduces the established
+`/wu/deepmd_kit` runtime and keeps training inputs and outputs in the caller's
+task directory.
+
+Preview a TensorFlow training command without loading modules or training:
+
+```bash
+DEEPMD_DRY_RUN=1 \
+DEEPMD_WORK_DIR="$run_dir" \
+DEEPMD_BACKEND=tensorflow \
+DEEPMD_COMMAND=train \
+DEEPMD_ARGS="input.json" \
+DEEPMD_REQUIRED_PATHS="input.json" \
+bash agents/Agent/skills/deepmd/scripts/submit_deepmd_training.sh
+```
+
+Use `run_skill_script` only for the non-computing dry-run:
+
+```text
+run_skill_script(
+  skill_name="deepmd",
+  script_name="submit_deepmd_training.sh",
+  args=""
+)
+```
+
+For the established `/wu/deepmd_train/nnp_train` continuation pipeline,
+inspect and use its task-specific `wu_deep.sh`. Confirm `TRAIN_ID`,
+`INPUT_NAME`, `BASE_CKPT`, `TRAIN_MODE`, and `DP_TEST_N`; use
+`TRAIN_MODE=init` for a new fine-tuning schedule and `restart` only to continue
+the original schedule.
 
 Training and evaluation are split into two decoupled phases:
 

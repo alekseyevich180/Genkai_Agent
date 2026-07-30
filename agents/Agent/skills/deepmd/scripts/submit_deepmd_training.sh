@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# Generic Genkai PJM launcher for DeePMD-kit training, model operations, or
-# DeepMD-backed LAMMPS calculations.
-# Submit with: pjsub submit_deepmd_calculation.sh
+# Generic Genkai PJM launcher for DeePMD-kit training and model operations.
+# Submit with: pjsub submit_deepmd_training.sh
 
-#PJM -N deepmd_calc
+#PJM -N deepmd_train
 #PJM -L rscgrp=a-pj24001724
 #PJM -L node=1
 #PJM --mpi proc=1
@@ -17,7 +16,6 @@ runtime_dir="${DEEPMD_RUNTIME_DIR:-/home/pj24001724/ku40000345/wu/deepmd_kit}"
 training_root="${DEEPMD_TRAINING_ROOT:-/home/pj24001724/ku40000345/wu/deepmd_train}"
 venv_dir="${DEEPMD_VENV_DIR:-${runtime_dir}/dp_venv}"
 dp_bin="${DEEPMD_BIN:-${venv_dir}/bin/dp}"
-lmp_bin="${DEEPMD_LMP_BIN:-${runtime_dir}/deepmd_root/bin/lmp}"
 python_module="${DEEPMD_PYTHON_MODULE:-python/3.12.11}"
 
 ###############################################################################
@@ -29,8 +27,6 @@ python_module="${DEEPMD_PYTHON_MODULE:-python/3.12.11}"
 # and outputs for one task.
 work_dir="${DEEPMD_WORK_DIR:-${PJM_O_WORKDIR:-${MATCLAW_SESSION_DIR:-${PWD}}}}"
 
-# mode=dp runs the DeePMD CLI. mode=lammps runs the bundled DeepMD LAMMPS.
-mode="${DEEPMD_MODE:-dp}"
 command="${DEEPMD_COMMAND:-train}"
 backend="${DEEPMD_BACKEND:-tensorflow}"
 threads="${DEEPMD_THREADS:-15}"
@@ -107,41 +103,24 @@ case "${backend}" in
         ;;
 esac
 
-case "${mode}" in
-    dp)
-        if [[ ! -x "${dp_bin}" ]]; then
-            echo "ERROR: DeePMD executable does not exist: ${dp_bin}" >&2
-            exit 1
-        fi
-        if [[ -z "${command}" ]]; then
-            echo "ERROR: DEEPMD_COMMAND must not be empty in dp mode" >&2
-            exit 1
-        fi
-        executable="${dp_bin}"
-        run_args=("${backend_args[@]}" "${command}" "${command_args[@]}")
-        ;;
-    lammps)
-        if [[ ! -x "${lmp_bin}" ]]; then
-            echo "ERROR: DeepMD LAMMPS executable does not exist: ${lmp_bin}" >&2
-            exit 1
-        fi
-        executable="${lmp_bin}"
-        run_args=("${command_args[@]}")
-        ;;
-    *)
-        echo "ERROR: DEEPMD_MODE must be dp or lammps, got: ${mode}" >&2
-        exit 1
-        ;;
-esac
+if [[ ! -x "${dp_bin}" ]]; then
+    echo "ERROR: DeePMD executable does not exist: ${dp_bin}" >&2
+    exit 1
+fi
+if [[ -z "${command}" ]]; then
+    echo "ERROR: DEEPMD_COMMAND must not be empty" >&2
+    exit 1
+fi
+executable="${dp_bin}"
+run_args=("${backend_args[@]}" "${command}" "${command_args[@]}")
 
-echo "DeePMD calculation preflight"
+echo "DeePMD training/model-operation preflight"
 echo "  runtime       : ${runtime_dir}"
 echo "  training_root : ${training_root}"
 echo "  python_module : ${python_module}"
 echo "  venv          : ${venv_dir}"
 echo "  work_dir      : ${work_dir}"
 echo "  output_dir    : ${work_dir}"
-echo "  mode          : ${mode}"
 echo "  backend       : ${backend}"
 echo "  command       : ${command}"
 echo "  threads       : ${threads}"

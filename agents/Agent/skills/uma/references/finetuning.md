@@ -101,7 +101,7 @@ UMA_FINETUNE_WORK_DIR="$run_dir" \
 UMA_FINETUNE_TASK=oc25 \
 UMA_FINETUNE_REGRESSION_TASKS=ef \
 UMA_FINETUNE_BASE_MODEL=uma-s-1p2 \
-bash agents/Agent/skills/mlip/scripts/prepare_uma_finetune_dataset.sh
+bash agents/Agent/skills/uma/scripts/prepare_uma_finetune_dataset.sh
 ```
 
 Remove `UMA_FINETUNE_DRY_RUN=1` only after checking the printed paths. The
@@ -147,7 +147,7 @@ UMA_FINETUNE_WORK_DIR="$run_dir" \
 UMA_FINETUNE_CONFIG="$run_dir/data/lmdb/uma_sm_finetune_template.yaml" \
 UMA_FINETUNE_RUN_DIR="$run_dir/runs" \
 UMA_FINETUNE_ARGS="epochs=20 lr=1e-4 batch_size=2 max_neighbors=300" \
-bash agents/Agent/skills/mlip/scripts/submit_uma_finetuning.sh
+bash agents/Agent/skills/uma/scripts/submit_uma_finetuning.sh
 ```
 
 For common overrides, the launcher also accepts
@@ -166,7 +166,7 @@ and exact command, submit from the project directory:
 cd "$run_dir"
 pjsub -o "$run_dir/uma_finetune.out" \
   -x "UMA_FINETUNE_WORK_DIR=$run_dir,UMA_FINETUNE_CONFIG=$run_dir/data/lmdb/uma_sm_finetune_template.yaml,UMA_FINETUNE_RUN_DIR=$run_dir/runs,UMA_FINETUNE_DEVICE=cuda,UMA_FINETUNE_THREADS=40,UMA_FINETUNE_ARGS=epochs=20 lr=1e-4 batch_size=2 max_neighbors=300" \
-  /absolute/path/to/agents/Agent/skills/mlip/scripts/submit_uma_finetuning.sh
+  /absolute/path/to/agents/Agent/skills/uma/scripts/submit_uma_finetuning.sh
 ```
 
 Genkai `pjsub -x` assignments are comma-separated; the Hydra override value
@@ -180,7 +180,7 @@ UMA_FINETUNE_DRY_RUN=1 \
 UMA_FINETUNE_MODE=resume \
 UMA_FINETUNE_WORK_DIR="$run_dir" \
 UMA_FINETUNE_CONFIG="$run_dir/runs/<run>/checkpoints/final/resume.yaml" \
-bash agents/Agent/skills/mlip/scripts/submit_uma_finetuning.sh
+bash agents/Agent/skills/uma/scripts/submit_uma_finetuning.sh
 ```
 
 Do not call `run_skill_script` for conversion, training, resume, or evaluation;

@@ -1,0 +1,4 @@
+interface:
+  display_name: "UMA Fine-tuning"
+  short_description: "Prepare and validate UMA fine-tuning on Genkai"
+  default_prompt: "Use $uma to prepare, audit, and dry-run an UMA fine-tuning workflow on Genkai."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeepMD Training"
+  short_description: "Prepare and run DeepMD training workflows"
+  default_prompt: "Use $deepmd to prepare and validate a DeepMD training workflow on Genkai."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MACE Calculations"
+  short_description: "Run pretrained MACE calculations on Genkai"
+  default_prompt: "Use $mace to prepare and validate a pretrained MACE calculation on Genkai."
