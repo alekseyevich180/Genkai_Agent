@@ -70,4 +70,3 @@ class StageResult(BaseModel):
 class StageAdapter(Protocol):
     def preflight(self) -> ValidationReport:
         """Validate a stage without starting external execution."""
-

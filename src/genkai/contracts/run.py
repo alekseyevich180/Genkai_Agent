@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from .artifacts import ArtifactRef, ExecutionState
+from .artifacts import ArtifactRef, ExecutionState, ExternalResourceRef
 from .validation import ValidationReport
 
 
@@ -37,6 +37,7 @@ class RunManifest(BaseModel):
     updated_at: datetime = Field(default_factory=_now)
     stages: list[StageRecord] = Field(default_factory=list)
     artifacts: list[ArtifactRef] = Field(default_factory=list)
+    external_resources: list[ExternalResourceRef] = Field(default_factory=list)
     validation: ValidationReport = Field(default_factory=ValidationReport)
     metadata: dict[str, object] = Field(default_factory=dict)
 

@@ -39,12 +39,22 @@ _SUB_STEP_TIMEOUT = int(os.environ.get("SUB_STEP_TIMEOUT", "3600"))  # seconds
 
 def _hydrate_manifest_artifacts(
     result: StepExecutorResult,
+    workspace_dir: str | Path,
+    *,
+    stage_id: str | None,
 ) -> StepExecutorResult:
-    """Populate contract IDs without replacing legacy artifact file paths."""
+    """Validate a workspace manifest and derive canonical step output IDs."""
 
-    if not result.manifest_path or result.artifact_ids:
+    if not result.manifest_path:
         return result
-    manifest_path = Path(result.manifest_path)
+    workspace = Path(workspace_dir).resolve()
+    manifest_path = Path(result.manifest_path).resolve()
+    if not manifest_path.is_relative_to(workspace):
+        logger.warning(
+            "Step result manifest is outside authorized workspace: %s", manifest_path
+        )
+        result.artifact_ids = []
+        return result
     if not manifest_path.is_file():
         logger.warning("Step result manifest does not exist: %s", manifest_path)
         return result
@@ -57,7 +67,31 @@ def _hydrate_manifest_artifacts(
     except Exception as exc:
         logger.warning("Could not read step result manifest %s: %s", manifest_path, exc)
         return result
-    result.artifact_ids = [artifact.artifact_id for artifact in manifest.artifacts]
+    known_ids = {artifact.artifact_id for artifact in manifest.artifacts}
+    supplied_unknown = set(result.artifact_ids).difference(known_ids)
+    if supplied_unknown:
+        logger.warning(
+            "Ignoring artifact IDs absent from manifest: %s",
+            ", ".join(sorted(supplied_unknown)),
+        )
+    stage = next(
+        (record for record in reversed(manifest.stages) if record.stage_id == stage_id),
+        None,
+    )
+    if stage is None and manifest.stages:
+        logger.warning(
+            "Manifest has no StageRecord named %s; using the latest stage",
+            stage_id,
+        )
+        stage = manifest.stages[-1]
+    if stage is not None:
+        result.artifact_ids = [
+            artifact_id
+            for artifact_id in stage.output_artifact_ids
+            if artifact_id in known_ids
+        ]
+    else:
+        result.artifact_ids = [artifact.artifact_id for artifact in manifest.artifacts]
     return result
 
 
@@ -378,7 +412,9 @@ async def run_step_executor(
     if step_result_data:
         tool_context.state["_step_result"] = None  # State has no pop(); reset instead
         result = _hydrate_manifest_artifacts(
-            StepExecutorResult.model_validate(step_result_data)
+            StepExecutorResult.model_validate(step_result_data),
+            step_workspace,
+            stage_id=step_id,
         )
         graph.log_node_complete(
             step_id,

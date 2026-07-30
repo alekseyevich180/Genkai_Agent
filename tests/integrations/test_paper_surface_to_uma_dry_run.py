@@ -48,5 +48,7 @@ def test_paper_surface_to_uma_dry_run_preserves_mock_evidence_boundary(
     assert result.evidence_level.value == "mock"
     assert dataset.evidence_level.value == "mock"
     assert result.evidence_level.value != "dft_calculated"
+    assert manifest.external_resources[0].resource_type == "uma-checkpoint"
+    assert "base_model_uri" not in manifest.metadata
     assert manifest.stages[-1].stage_id == "06_uma_preflight_dry_run"
     assert manifest.stages[-1].execution_state.value == "prepared"

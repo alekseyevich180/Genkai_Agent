@@ -269,35 +269,98 @@ def build_dataset(
     split_policy: dict[str, Any],
     run_root: str | Path,
 ) -> DatasetArtifact:
-    """Register a dataset descriptor while preserving the label evidence level."""
+    """Audit on-disk splits and preserve the source label evidence level."""
 
-    root = Path(run_root)
+    root = Path(run_root).resolve()
     manifest = load_manifest(root)
+    source_path = (root / results.path).resolve()
+    source_valid = (
+        source_path.is_relative_to(root)
+        and source_path.is_file()
+        and hashlib.sha256(source_path.read_bytes()).hexdigest() == results.sha256
+        and results.execution_state is ExecutionState.SUCCEEDED
+    )
+    raw_split_dirs = split_policy.get("split_directories")
+    metadata = {
+        key: value
+        for key, value in split_policy.items()
+        if key != "split_directories"
+    }
+    metadata.update(
+        {
+            "train_count": 0,
+            "validation_count": 0,
+            "test_count": 0,
+            "cross_split_leakage": 0,
+            "lmdb_readback": False,
+            "audit_status": "NOT_RUN",
+            "source_integrity_verified": source_valid,
+        }
+    )
+    audit: dict[str, Any] | None = None
+    is_mock = results.evidence_level is EvidenceLevel.MOCK
+    if not is_mock and source_valid and isinstance(raw_split_dirs, dict):
+        required_splits = {"train", "validation", "test"}
+        if required_splits.issubset(raw_split_dirs):
+            resolved_dirs = {
+                name: Path(raw_split_dirs[name])
+                for name in sorted(required_splits)
+            }
+            audit = audit_dataset_splits(
+                resolved_dirs,
+                regression_tasks=str(split_policy.get("regression_tasks", "ef")),
+            )
+            metadata["audit_status"] = audit["status"]
+            metadata["cross_split_leakage"] = audit[
+                "cross_split_exact_duplicates"
+            ]
+            for name in required_splits:
+                key = "validation_count" if name == "validation" else f"{name}_count"
+                metadata[key] = int(audit["splits"][name]["structures"])
+            audited_files = [
+                file
+                for directory in resolved_dirs.values()
+                for file in discover_files(directory)
+            ]
+            metadata["lmdb_readback"] = bool(audited_files) and all(
+                file.suffix == ".lmdb" for file in audited_files
+            )
     path = root / "stages" / "05_dataset" / "dataset.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "schema_version": "1.0",
         "source_result": results.path.as_posix(),
         "evidence_level": results.evidence_level.value,
-        "metadata": split_policy,
+        "metadata": metadata,
+        "audit": audit,
     }
     path.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    is_mock = results.evidence_level is EvidenceLevel.MOCK
+    audit_passed = (
+        not is_mock
+        and source_valid
+        and audit is not None
+        and audit["status"] == "PASS"
+        and results.validation_status is ValidationStatus.PASSED
+    )
     artifact = DatasetArtifact(
         artifact_id=f"{manifest.run_id}:dataset",
         path=path.relative_to(root),
         sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
         producer="genkai.datasets.ase",
         parent_ids=[results.artifact_id],
-        execution_state=ExecutionState.PREPARED,
+        execution_state=(
+            ExecutionState.SUCCEEDED if audit_passed else ExecutionState.PREPARED
+        ),
         evidence_level=results.evidence_level,
         validation_status=(
-            ValidationStatus.NEEDS_REVIEW if is_mock else ValidationStatus.PASSED
+            ValidationStatus.PASSED
+            if audit_passed
+            else ValidationStatus.NEEDS_REVIEW
         ),
-        metadata=split_policy,
+        metadata=metadata,
     )
     manifest.register_artifact(artifact)
     manifest.append_stage(

@@ -126,6 +126,8 @@ def initialize_paper_to_mlip_run(
     *,
     mock_labels: str | Path | None = None,
     base_model_uri: str | None = None,
+    base_model_version: str | None = None,
+    base_model_sha256: str | None = None,
 ) -> None:
     from genkai.literature.surface import run_surface_extraction
     from genkai.modeling.ptomodel import build_modeling_plan
@@ -184,7 +186,14 @@ def initialize_paper_to_mlip_run(
         )
     if base_model_uri:
         manifest = load_manifest(root)
-        manifest.metadata["base_model_uri"] = base_model_uri
+        manifest.external_resources.append(
+            ExternalResourceRef(
+                uri=base_model_uri,
+                resource_type="uma-checkpoint",
+                version=base_model_version,
+                sha256=base_model_sha256,
+            )
+        )
         save_manifest(root, manifest)
 
 
@@ -234,8 +243,15 @@ def preflight_paper_to_mlip(
         elif target == "deepmd":
             result = DeepMDAdapter().prepare_training(dataset, Path(run_root), mode)
         else:
-            uri = manifest.metadata.get("base_model_uri")
-            if not isinstance(uri, str) or not uri:
+            base_model = next(
+                (
+                    resource
+                    for resource in reversed(manifest.external_resources)
+                    if resource.resource_type == "uma-checkpoint"
+                ),
+                None,
+            )
+            if base_model is None:
                 errors.append(
                     ValidationIssue(
                         code="uma_base_model_required",
@@ -245,10 +261,7 @@ def preflight_paper_to_mlip(
             else:
                 result = UmaAdapter().prepare_finetuning(
                     dataset,
-                    ExternalResourceRef(
-                        uri=uri,
-                        resource_type="uma-checkpoint",
-                    ),
+                    base_model,
                     Path(run_root),
                     mode,
                 )

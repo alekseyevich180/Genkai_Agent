@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ase>=3.29.0",
+    "click>=8.1.0",
     "matplotlib>=3.11.0",
     "optuna>=4.9.0",
     "pandas>=3.0.3",
@@ -39,8 +40,24 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
-include = ["agent*", "genkai*", "paperread*"]
+include = ["agent*", "agents*", "genkai*", "paperread*"]
 exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"agents.Agent" = [
+    "agents/*.yaml",
+    "skills/*/SKILL.md",
+    "skills/*/README.md",
+    "skills/*/agents/*.yaml",
+    "skills/*/assets/*",
+    "skills/*/evaluations/*.yaml",
+    "skills/*/examples/*",
+    "skills/*/experience/*",
+    "skills/*/references/*",
+    "skills/*/schema/*",
+    "skills/*/scripts/*",
+    "skills/*/scripts/*/*",
+]
 
 [project.scripts]
 agent = "agent.init.start_agent:main"

@@ -81,6 +81,57 @@ def _write_skill(
             {"sample"},
             "invalid_description_prefix",
         ),
+        (
+            BASE_METADATA.replace("  tools: [run_skill_script]\n", ""),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "missing_tools",
+        ),
+        (
+            BASE_METADATA.replace(
+                "  tools: [run_skill_script]", "  tools: []"
+            ),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "empty_tools",
+        ),
+        (
+            BASE_METADATA.replace("  dependent_skills: []\n", ""),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "missing_dependent_skills",
+        ),
+        (
+            BASE_METADATA.replace("  consumes: [dataset@1]\n", ""),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "missing_consumes",
+        ),
+        (
+            BASE_METADATA.replace("  produces: [model@1]\n", ""),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "missing_produces",
+        ),
+        (
+            BASE_METADATA.replace("  entrypoints: [scripts/run.py]\n", ""),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "missing_entrypoints",
+        ),
+        (
+            BASE_METADATA.replace("stable", "experimental"),
+            "Use when a validated dataset needs model training.",
+            True,
+            {"sample"},
+            "invalid_maturity",
+        ),
     ],
 )
 def test_contract_failures_have_distinct_error_codes(

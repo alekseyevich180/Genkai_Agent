@@ -27,11 +27,15 @@ def main() -> None:
 @click.option("--relations", required=True, type=click.Path(exists=True, path_type=Path))
 @click.option("--mock-labels", type=click.Path(exists=True, path_type=Path))
 @click.option("--base-model-uri")
+@click.option("--base-model-version")
+@click.option("--base-model-sha256")
 def init_command(
     run_root: Path,
     relations: Path,
     mock_labels: Path | None,
     base_model_uri: str | None,
+    base_model_version: str | None,
+    base_model_sha256: str | None,
 ) -> None:
     """Initialize an offline run from saved extraction output."""
 
@@ -42,6 +46,8 @@ def init_command(
         relations,
         mock_labels=mock_labels,
         base_model_uri=base_model_uri,
+        base_model_version=base_model_version,
+        base_model_sha256=base_model_sha256,
     )
     click.echo(str(run_root / "manifest.json"))
 

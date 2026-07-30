@@ -9,7 +9,7 @@ from agents.Agent.agents.execution_agent.step_executor_runner import (
 )
 from agents.Agent.agents.thinking_agent.planning import ExecutionGraph
 from genkai.contracts.artifacts import StructureSetArtifact
-from genkai.contracts.run import RunManifest
+from genkai.contracts.run import RunManifest, StageRecord
 from genkai.workflow.store import save_manifest
 
 
@@ -66,7 +66,69 @@ def test_executor_result_reads_artifact_ids_from_manifest(tmp_path: Path) -> Non
         manifest_path=str(manifest_path),
     )
 
-    hydrated = _hydrate_manifest_artifacts(result)
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id=None)
 
     assert hydrated.artifacts == [str(tmp_path / "legacy-output.cif")]
     assert hydrated.artifact_ids == ["structure-1"]
+
+
+def test_executor_result_does_not_trust_supplied_artifact_ids(
+    tmp_path: Path,
+) -> None:
+    manifest = RunManifest(run_id="agent-run")
+    manifest.register_artifact(
+        StructureSetArtifact(
+            artifact_id="structure-1",
+            path="artifacts/structures.extxyz",
+            sha256="d" * 64,
+            producer="test",
+        )
+    )
+    manifest_path = save_manifest(tmp_path, manifest)
+    result = StepExecutorResult(
+        status="success",
+        concise_summary="created structures",
+        artifact_ids=["fabricated-id"],
+        manifest_path=str(manifest_path),
+    )
+
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id=None)
+
+    assert hydrated.artifact_ids == ["structure-1"]
+
+
+def test_executor_result_uses_latest_stage_outputs(tmp_path: Path) -> None:
+    manifest = RunManifest(run_id="agent-run")
+    manifest.register_artifact(
+        StructureSetArtifact(
+            artifact_id="old-structure",
+            path="artifacts/old.extxyz",
+            sha256="c" * 64,
+            producer="test",
+        )
+    )
+    manifest.register_artifact(
+        StructureSetArtifact(
+            artifact_id="new-structure",
+            path="artifacts/new.extxyz",
+            sha256="d" * 64,
+            producer="test",
+        )
+    )
+    manifest.append_stage(
+        StageRecord(
+            stage_id="surface",
+            adapter="surface",
+            output_artifact_ids=["new-structure"],
+        )
+    )
+    manifest_path = save_manifest(tmp_path, manifest)
+    result = StepExecutorResult(
+        status="success",
+        concise_summary="created structures",
+        manifest_path=str(manifest_path),
+    )
+
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id="agent-node")
+
+    assert hydrated.artifact_ids == ["new-structure"]

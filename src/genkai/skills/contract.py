@@ -13,6 +13,8 @@ from genkai.contracts.validation import ValidationIssue, ValidationReport
 
 
 ARTIFACT_VERSION = re.compile(r"^[a-z][a-z0-9-]*@[1-9]\d*$")
+ALLOWED_MATURITIES = {"stable"}
+ALLOWED_DOMAINS = {"literature", "modeling", "compute", "mlip"}
 
 
 class SkillMetadata(BaseModel):
@@ -78,11 +80,25 @@ def validate_skill_contract(
 ) -> ValidationReport:
     errors: list[ValidationIssue] = []
     metadata = contract.metadata
+    if "dependent_skills" not in metadata.model_fields_set:
+        errors.append(
+            ValidationIssue(
+                code="missing_dependent_skills",
+                message="stable skill metadata requires dependent_skills",
+            )
+        )
     if not metadata.maturity:
         errors.append(
             ValidationIssue(
                 code="missing_maturity",
                 message="stable skill metadata requires maturity",
+            )
+        )
+    elif metadata.maturity not in ALLOWED_MATURITIES:
+        errors.append(
+            ValidationIssue(
+                code="invalid_maturity",
+                message=f"unsupported stable skill maturity: {metadata.maturity}",
             )
         )
     if not metadata.domain:
@@ -92,6 +108,28 @@ def validate_skill_contract(
                 message="stable skill metadata requires domain",
             )
         )
+    elif metadata.domain not in ALLOWED_DOMAINS:
+        errors.append(
+            ValidationIssue(
+                code="invalid_domain",
+                message=f"unsupported stable skill domain: {metadata.domain}",
+            )
+        )
+    for field_name in ("tools", "consumes", "produces", "entrypoints"):
+        if field_name not in metadata.model_fields_set:
+            errors.append(
+                ValidationIssue(
+                    code=f"missing_{field_name}",
+                    message=f"stable skill metadata requires {field_name}",
+                )
+            )
+        elif not getattr(metadata, field_name):
+            errors.append(
+                ValidationIssue(
+                    code=f"empty_{field_name}",
+                    message=f"stable skill metadata requires nonempty {field_name}",
+                )
+            )
     if not contract.description.startswith("Use when"):
         errors.append(
             ValidationIssue(

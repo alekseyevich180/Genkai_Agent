@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from genkai.contracts.artifacts import StructureSetArtifact
+from genkai.contracts.artifacts import ExternalResourceRef, StructureSetArtifact
 from genkai.contracts.run import RunManifest, StageRecord
 from genkai.workflow.store import load_manifest, save_manifest
 
@@ -43,6 +43,28 @@ def test_manifest_rejects_unknown_parent_artifact() -> None:
 
     with pytest.raises(ValueError, match="unknown parent artifact"):
         manifest.register_artifact(_artifact("child", ["missing"]))
+
+
+def test_manifest_round_trip_preserves_typed_external_resources(
+    tmp_path: Path,
+) -> None:
+    manifest = RunManifest(
+        run_id="external-resource-run",
+        external_resources=[
+            ExternalResourceRef(
+                uri="file:///shared/uma.pt",
+                resource_type="uma-checkpoint",
+                version="1.1",
+                sha256="a" * 64,
+            )
+        ],
+    )
+
+    save_manifest(tmp_path, manifest)
+    restored = load_manifest(tmp_path)
+
+    assert restored.external_resources[0].version == "1.1"
+    assert restored.external_resources[0].sha256 == "a" * 64
 
 
 def test_interrupted_atomic_save_preserves_original_manifest(
