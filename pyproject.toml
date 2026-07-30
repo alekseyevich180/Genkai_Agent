@@ -39,6 +39,7 @@ build-backend = "setuptools.build_meta"
 
 [project.scripts]
 agent = "agent.init.start_agent:main"
+genkai-workflow = "genkai.cli:main"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]

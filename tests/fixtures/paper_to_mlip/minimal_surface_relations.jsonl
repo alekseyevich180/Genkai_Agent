@@ -1,0 +1,1 @@
+{"id":"ceo2-oh-1","title":"Hydroxyl adsorption on CeO2(111)","extraction":{"materials":["CeO2"],"surfaces":["CeO2"],"facets":["(111)"],"adsorbates":["*OH"],"adsorption_sites":["Ce top site"],"modeling_keywords":["surface","adsorbate"],"recommended_modeling_tasks":["adsorbate_landscape"]}}
