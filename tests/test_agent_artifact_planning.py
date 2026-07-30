@@ -59,14 +59,23 @@ def test_executor_result_reads_artifact_ids_from_manifest(tmp_path: Path) -> Non
         )
     )
     manifest_path = save_manifest(tmp_path, manifest)
+    manifest.append_stage(
+        StageRecord(
+            stage_id="surface",
+            adapter="surface",
+            output_artifact_ids=["structure-1"],
+        )
+    )
+    manifest_path = save_manifest(tmp_path, manifest)
     result = StepExecutorResult(
         status="success",
         concise_summary="created structures",
         artifacts=[str(tmp_path / "legacy-output.cif")],
         manifest_path=str(manifest_path),
+        manifest_stage_id="surface",
     )
 
-    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id=None)
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path)
 
     assert hydrated.artifacts == [str(tmp_path / "legacy-output.cif")]
     assert hydrated.artifact_ids == ["structure-1"]
@@ -85,14 +94,23 @@ def test_executor_result_does_not_trust_supplied_artifact_ids(
         )
     )
     manifest_path = save_manifest(tmp_path, manifest)
+    manifest.append_stage(
+        StageRecord(
+            stage_id="surface",
+            adapter="surface",
+            output_artifact_ids=["structure-1"],
+        )
+    )
+    manifest_path = save_manifest(tmp_path, manifest)
     result = StepExecutorResult(
         status="success",
         concise_summary="created structures",
         artifact_ids=["fabricated-id"],
         manifest_path=str(manifest_path),
+        manifest_stage_id="surface",
     )
 
-    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id=None)
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path)
 
     assert hydrated.artifact_ids == ["structure-1"]
 
@@ -127,8 +145,45 @@ def test_executor_result_uses_latest_stage_outputs(tmp_path: Path) -> None:
         status="success",
         concise_summary="created structures",
         manifest_path=str(manifest_path),
+        manifest_stage_id="surface",
     )
 
-    hydrated = _hydrate_manifest_artifacts(result, tmp_path, stage_id="agent-node")
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path)
 
     assert hydrated.artifact_ids == ["new-structure"]
+
+
+@pytest.mark.parametrize("manifest_contents", [None, "{not-json"])
+def test_executor_result_replans_when_manifest_is_invalid(
+    tmp_path: Path, manifest_contents: str | None
+) -> None:
+    manifest_path = tmp_path / "manifest.json"
+    if manifest_contents is not None:
+        manifest_path.write_text(manifest_contents, encoding="utf-8")
+    result = StepExecutorResult(
+        status="success",
+        concise_summary="claimed success",
+        artifact_ids=["fabricated-id"],
+        manifest_path=str(manifest_path),
+        manifest_stage_id="surface",
+    )
+
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path)
+
+    assert hydrated.status == "needs_replanning"
+    assert hydrated.artifact_ids == []
+
+
+def test_executor_result_replans_for_artifact_ids_without_manifest(
+    tmp_path: Path,
+) -> None:
+    result = StepExecutorResult(
+        status="success",
+        concise_summary="claimed success",
+        artifact_ids=["fabricated-id"],
+    )
+
+    hydrated = _hydrate_manifest_artifacts(result, tmp_path)
+
+    assert hydrated.status == "needs_replanning"
+    assert hydrated.artifact_ids == []

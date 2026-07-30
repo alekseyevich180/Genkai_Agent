@@ -1,0 +1,58 @@
+import subprocess
+import sys
+import zipfile
+from pathlib import Path
+
+from google.adk.skills import load_skill_from_dir
+
+
+ROOT = Path(__file__).parents[2]
+
+
+def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> None:
+    dist = tmp_path / "dist"
+    completed = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pip",
+            "wheel",
+            "--no-build-isolation",
+            "--no-deps",
+            "--wheel-dir",
+            str(dist),
+            str(ROOT),
+        ],
+        cwd=tmp_path,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert completed.returncode == 0, completed.stderr
+    wheel = next(dist.glob("genkai-*.whl"))
+    extracted = tmp_path / "wheel"
+    with zipfile.ZipFile(wheel) as archive:
+        archive.extractall(extracted)
+
+    source_skills = {
+        path.relative_to(ROOT / "agents" / "Agent" / "skills")
+        for path in (ROOT / "agents" / "Agent" / "skills").rglob("SKILL.md")
+    }
+    wheel_root = extracted / "agents" / "Agent" / "skills"
+    wheel_skills = {
+        path.relative_to(wheel_root)
+        for path in wheel_root.rglob("SKILL.md")
+    }
+    assert wheel_skills == source_skills
+    assert (
+        wheel_root
+        / "uma"
+        / "assets"
+        / "fairchem-core-2.21.0"
+        / "configs"
+        / "uma"
+        / "finetune"
+        / "uma_sm_finetune_template.yaml"
+    ).is_file()
+    for skill_file in sorted(wheel_root.rglob("SKILL.md")):
+        assert load_skill_from_dir(skill_file.parent).name

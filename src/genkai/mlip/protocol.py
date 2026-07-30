@@ -32,14 +32,15 @@ def _route_issue(
     (errors if mode is RunMode.PRODUCTION else warnings).append(issue)
 
 
-def resolve_executable(
+def resolve_launcher(
     configured: str | Path | None,
     environment_variable: str,
+    required_markers: tuple[str, ...],
     mode: RunMode,
     errors: list[ValidationIssue],
     warnings: list[ValidationIssue],
 ) -> str | None:
-    """Resolve an explicitly configured runtime without guessing a launcher."""
+    """Resolve a launcher and verify the environment protocol it implements."""
 
     candidate = str(configured or os.environ.get(environment_variable, "")).strip()
     resolved = shutil.which(candidate) if candidate else None
@@ -53,7 +54,29 @@ def resolve_executable(
             path=candidate or None,
         )
         _route_issue(issue, mode, errors, warnings)
-    return resolved
+        return None
+    launcher = Path(resolved)
+    try:
+        text = launcher.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        text = ""
+    missing = [marker for marker in required_markers if marker not in text]
+    if missing:
+        _route_issue(
+            ValidationIssue(
+                code="runtime_launcher_protocol_mismatch",
+                message=(
+                    "configured launcher does not implement required environment "
+                    "variables: " + ", ".join(missing)
+                ),
+                path=str(launcher),
+            ),
+            mode,
+            errors,
+            warnings,
+        )
+        return None
+    return str(launcher)
 
 
 def artifact_integrity_gate(
@@ -170,6 +193,64 @@ def training_dataset_gate(
             errors,
             warnings,
         )
+    inventory = dataset.metadata.get("split_inventory")
+    if not isinstance(inventory, list) or not inventory:
+        _route_issue(
+            ValidationIssue(
+                code="dataset_split_inventory_required",
+                message="dataset requires a nonempty content-addressed split inventory",
+                path=dataset.path.as_posix(),
+            ),
+            mode,
+            errors,
+            warnings,
+        )
+    else:
+        root = Path(run_root).resolve()
+        for item in inventory:
+            if not isinstance(item, dict):
+                _route_issue(
+                    ValidationIssue(
+                        code="invalid_dataset_split_inventory",
+                        message="split inventory entries must be mappings",
+                    ),
+                    mode,
+                    errors,
+                    warnings,
+                )
+                continue
+            raw_path = item.get("path")
+            expected = item.get("sha256")
+            path = (root / str(raw_path)).resolve()
+            if (
+                not isinstance(raw_path, str)
+                or not path.is_relative_to(root)
+                or not path.is_file()
+            ):
+                _route_issue(
+                    ValidationIssue(
+                        code="dataset_split_file_missing",
+                        message="an inventoried dataset split file is missing",
+                        path=str(path),
+                    ),
+                    mode,
+                    errors,
+                    warnings,
+                )
+            elif (
+                not isinstance(expected, str)
+                or hashlib.sha256(path.read_bytes()).hexdigest() != expected
+            ):
+                _route_issue(
+                    ValidationIssue(
+                        code="dataset_split_hash_mismatch",
+                        message="an inventoried dataset split file changed after audit",
+                        path=str(path),
+                    ),
+                    mode,
+                    errors,
+                    warnings,
+                )
     for key in ("train_count", "validation_count"):
         if int(dataset.metadata.get(key, 0)) <= 0:
             _route_issue(

@@ -53,6 +53,10 @@ class StepExecutorResult(BaseModel):
         default=None,
         description="Path to a Genkai run manifest produced by this step",
     )
+    manifest_stage_id: Optional[str] = Field(
+        default=None,
+        description="StageRecord ID whose outputs were produced by this step",
+    )
     concise_summary: str = Field(
         default="",
         description="Short user-facing paragraph describing what was done",
@@ -89,6 +93,7 @@ When done, call `submit_step_result` with:
 - `artifacts`: list of absolute paths of all generated files
 - `artifact_ids`: artifact IDs when a Genkai manifest was produced
 - `manifest_path`: path to that run manifest, when available
+- `manifest_stage_id`: exact StageRecord ID produced by this step
 - `replan_reason`: why replanning is needed (only when status=needs_replanning, else omit)
 
 If `submit_step_result` returns a validation error, fix the fields and call it again.
@@ -144,6 +149,7 @@ def submit_step_result(
     artifacts: Optional[List[str]] = None,
     artifact_ids: Optional[List[str]] = None,
     manifest_path: Optional[str] = None,
+    manifest_stage_id: Optional[str] = None,
     replan_reason: Optional[str] = None,
 ) -> dict:
     """Submit the result of this step execution.
@@ -158,6 +164,7 @@ def submit_step_result(
         artifacts: Absolute paths of all generated files (empty list if none)
         artifact_ids: IDs already registered in a Genkai run manifest
         manifest_path: Path to the Genkai run manifest, when produced
+        manifest_stage_id: Exact StageRecord ID produced by this step
         replan_reason: Why replanning is needed (only when status=needs_replanning)
     """
     try:
@@ -168,6 +175,7 @@ def submit_step_result(
             artifacts=artifacts or [],
             artifact_ids=artifact_ids or [],
             manifest_path=manifest_path,
+            manifest_stage_id=manifest_stage_id,
             replan_reason=replan_reason,
         )
         tool_context.state["_step_result"] = result.model_dump()

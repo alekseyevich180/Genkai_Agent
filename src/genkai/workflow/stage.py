@@ -65,6 +65,7 @@ class StageResult(BaseModel):
     validation: ValidationReport = Field(default_factory=ValidationReport)
     manifest_path: Path | None = None
     command: list[str] | None = None
+    environment: dict[str, str] = Field(default_factory=dict)
 
 
 class StageAdapter(Protocol):

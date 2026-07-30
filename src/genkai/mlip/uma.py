@@ -19,7 +19,7 @@ from .protocol import (
     RunMode,
     _route_issue,
     artifact_integrity_gate,
-    resolve_executable,
+    resolve_launcher,
     training_dataset_gate,
 )
 
@@ -116,9 +116,49 @@ class UmaAdapter:
             model_report = artifact_integrity_gate(base_model, run_root, mode)
             report.errors.extend(model_report.errors)
             report.warnings.extend(model_report.warnings)
-        executable = resolve_executable(
+        config_path = metadata.get("uma_config_path")
+        config_sha256 = metadata.get("uma_config_sha256")
+        resolved_config: Path | None = None
+        if isinstance(config_path, str):
+            resolved_config = (Path(run_root).resolve() / config_path).resolve()
+        if (
+            resolved_config is None
+            or not resolved_config.is_relative_to(Path(run_root).resolve())
+            or not resolved_config.is_file()
+        ):
+            _route_issue(
+                ValidationIssue(
+                    code="uma_config_required",
+                    message="UMA fine-tuning requires a run-local Hydra config",
+                    path=str(resolved_config) if resolved_config else None,
+                ),
+                mode,
+                report.errors,
+                report.warnings,
+            )
+        elif (
+            not isinstance(config_sha256, str)
+            or hashlib.sha256(resolved_config.read_bytes()).hexdigest()
+            != config_sha256
+        ):
+            _route_issue(
+                ValidationIssue(
+                    code="uma_config_hash_mismatch",
+                    message="UMA fine-tuning config changed after dataset validation",
+                    path=str(resolved_config),
+                ),
+                mode,
+                report.errors,
+                report.warnings,
+            )
+        executable = resolve_launcher(
             self.executable,
-            "GENKAI_UMA_EXECUTABLE",
+            "GENKAI_UMA_LAUNCHER",
+            (
+                "UMA_FINETUNE_WORK_DIR",
+                "UMA_FINETUNE_CONFIG",
+                "UMA_FINETUNE_DRY_RUN",
+            ),
             mode,
             report.errors,
             report.warnings,
@@ -132,15 +172,13 @@ class UmaAdapter:
         )
         return StageResult(
             validation=report,
-            command=[
-                executable,
-                "--dataset",
-                str(Path(run_root) / dataset.path),
-                "--base-model",
-                base_uri,
-                "--output-dir",
-                str(Path(run_root) / "stages" / "06_mlip" / "uma"),
-                "--mode",
-                mode.value,
-            ],
+            command=[executable],
+            environment={
+                "UMA_FINETUNE_WORK_DIR": str(Path(run_root).resolve()),
+                "UMA_FINETUNE_CONFIG": str(resolved_config or ""),
+                "UMA_FINETUNE_DRY_RUN": (
+                    "1" if mode is RunMode.DRY_RUN else "0"
+                ),
+                "GENKAI_UMA_BASE_MODEL_URI": base_uri,
+            },
         )

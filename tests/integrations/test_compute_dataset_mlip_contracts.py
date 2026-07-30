@@ -47,6 +47,7 @@ REQUIRED_DATASET_METADATA = {
     "cross_split_leakage": 0,
     "lmdb_readback": True,
 }
+ROOT = Path(__file__).parents[2]
 
 
 def _structures(
@@ -119,33 +120,192 @@ def _executable(root: Path, name: str) -> Path:
     return path
 
 
-def test_mlip_adapters_enforce_distinct_roles(tmp_path: Path) -> None:
-    structures = _structures(
-        sha256=_write_artifact(tmp_path, "artifacts/structures.extxyz")
+def _launcher(root: Path, name: str, *markers: str) -> Path:
+    path = root / "bin" / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        "#!/bin/sh\n" + "\n".join(f"# {marker}" for marker in markers) + "\n",
+        encoding="utf-8",
     )
+    path.chmod(0o755)
+    return path
+
+
+def test_mlip_adapters_enforce_distinct_roles(tmp_path: Path) -> None:
+    structure_path = tmp_path / "artifacts/structures.extxyz"
+    _write_labeled_structure(structure_path, 0.8)
+    import hashlib
+
+    structures = _structures(
+        sha256=hashlib.sha256(structure_path.read_bytes()).hexdigest()
+    )
+    split_inventory = []
+    for split in ("train", "validation", "test"):
+        relative = f"splits/{split}/data.extxyz"
+        split_inventory.append(
+            {
+                "kind": "source",
+                "split": split,
+                "path": relative,
+                "sha256": _write_artifact(tmp_path, relative, f"{split}\n"),
+            }
+        )
+    config_sha = _write_artifact(
+        tmp_path, "config/uma.yaml", "base_model_name: uma-s-1p1\n"
+    )
+    deepmd_sha = _write_artifact(tmp_path, "config/deepmd.json", "{}\n")
     dataset = _dataset(
         sha256=_write_artifact(tmp_path, "artifacts/dataset.json"),
         audit_status="PASS",
+        split_inventory=split_inventory,
+        uma_config_path="config/uma.yaml",
+        uma_config_sha256=config_sha,
+        deepmd_input_path="config/deepmd.json",
+        deepmd_input_sha256=deepmd_sha,
     )
-    mace = MaceAdapter(_executable(tmp_path, "mace")).prepare_inference(
+    mace = MaceAdapter(
+        _launcher(
+            tmp_path,
+            "mace",
+            "MACE_WORK_DIR",
+            "MACE_PYTHON_ARGS",
+            "MACE_DRY_RUN",
+        )
+    ).prepare_inference(
         structures, tmp_path, RunMode.PRODUCTION
     )
-    deepmd = DeepMDAdapter(_executable(tmp_path, "deepmd")).prepare_training(
+    deepmd = DeepMDAdapter(
+        _launcher(
+            tmp_path,
+            "deepmd",
+            "DEEPMD_WORK_DIR",
+            "DEEPMD_ARGS",
+            "DEEPMD_REQUIRED_PATHS",
+            "DEEPMD_DRY_RUN",
+        )
+    ).prepare_training(
         dataset, tmp_path, RunMode.PRODUCTION
     )
     uma_dataset = dataset.model_copy(
         update={"metadata": {**dataset.metadata, "lmdb_readback": True}}
     )
-    uma = UmaAdapter(_executable(tmp_path, "uma")).prepare_finetuning(
-        uma_dataset, _base_model(tmp_path), tmp_path, RunMode.PRODUCTION
+    uma = UmaAdapter(
+        _launcher(
+            tmp_path,
+            "uma",
+            "UMA_FINETUNE_WORK_DIR",
+            "UMA_FINETUNE_CONFIG",
+            "UMA_FINETUNE_DRY_RUN",
+        )
+    ).prepare_finetuning(
+        uma_dataset, _base_model(tmp_path), tmp_path, RunMode.DRY_RUN
     )
 
     assert mace.validation.passed is True
     assert deepmd.validation.passed is True
     assert uma.validation.passed is True
-    assert mace.command and "mace" in mace.command[0].lower()
-    assert deepmd.command and "deepmd" in deepmd.command[0].lower()
-    assert uma.command and "uma" in uma.command[0].lower()
+    assert mace.command and mace.environment["MACE_PYTHON_ARGS"]
+    assert "--input " in mace.environment["MACE_PYTHON_ARGS"]
+    assert "--structures" not in mace.environment["MACE_PYTHON_ARGS"]
+    assert deepmd.command and deepmd.environment["DEEPMD_REQUIRED_PATHS"]
+    assert uma.command and uma.environment["UMA_FINETUNE_CONFIG"]
+
+
+def test_adapter_specs_pass_established_launcher_dry_runs(tmp_path: Path) -> None:
+    structure_path = tmp_path / "artifacts/structures.extxyz"
+    _write_labeled_structure(structure_path, 0.8)
+    import hashlib
+
+    structures = _structures(
+        sha256=hashlib.sha256(structure_path.read_bytes()).hexdigest()
+    )
+    inventory = []
+    for split in ("train", "validation", "test"):
+        relative = f"splits/{split}/data.extxyz"
+        inventory.append(
+            {
+                "kind": "source",
+                "split": split,
+                "path": relative,
+                "sha256": _write_artifact(tmp_path, relative, f"{split}\n"),
+            }
+        )
+    deepmd_sha = _write_artifact(tmp_path, "config/deepmd.json", "{}\n")
+    uma_sha = _write_artifact(tmp_path, "config/uma.yaml", "{}\n")
+    dataset = _dataset(
+        sha256=_write_artifact(tmp_path, "artifacts/dataset.json"),
+        audit_status="PASS",
+        split_inventory=inventory,
+        deepmd_input_path="config/deepmd.json",
+        deepmd_input_sha256=deepmd_sha,
+        uma_config_path="config/uma.yaml",
+        uma_config_sha256=uma_sha,
+    )
+    launchers = {
+        "mace": ROOT
+        / "agents/Agent/skills/mace/scripts/submit_mace_calculation.sh",
+        "deepmd": ROOT
+        / "agents/Agent/skills/deepmd/scripts/submit_deepmd_training.sh",
+        "uma": ROOT
+        / "agents/Agent/skills/uma/scripts/submit_uma_finetuning.sh",
+    }
+    stages = {
+        "mace": MaceAdapter(launchers["mace"]).prepare_inference(
+            structures, tmp_path, RunMode.DRY_RUN
+        ),
+        "deepmd": DeepMDAdapter(launchers["deepmd"]).prepare_training(
+            dataset, tmp_path, RunMode.DRY_RUN
+        ),
+        "uma": UmaAdapter(launchers["uma"]).prepare_finetuning(
+            dataset, _base_model(), tmp_path, RunMode.DRY_RUN
+        ),
+    }
+
+    mace_runtime = tmp_path / "runtime-mace"
+    mace_python = _executable(mace_runtime, ".venv/bin/python")
+    mace_script = tmp_path / "mace_task.py"
+    mace_script.write_text("", encoding="utf-8")
+    deepmd_runtime = tmp_path / "runtime-deepmd"
+    deepmd_training = tmp_path / "training-deepmd"
+    deepmd_training.mkdir()
+    deepmd_activate = deepmd_runtime / "dp_venv/bin/activate"
+    deepmd_activate.parent.mkdir(parents=True)
+    deepmd_activate.write_text("", encoding="utf-8")
+    deepmd_bin = _executable(deepmd_runtime, "dp_venv/bin/dp")
+    uma_runtime = tmp_path / "runtime-uma"
+    uma_python = _executable(uma_runtime, ".venv_uma/bin/python")
+    uma_fairchem = _executable(uma_runtime, ".venv_uma/bin/fairchem")
+    overrides = {
+        "mace": {
+            "MACE_RUNTIME_DIR": str(mace_runtime),
+            "MACE_PYTHON_BIN": str(mace_python),
+            "MACE_PYTHON_SCRIPT": str(mace_script),
+            "MACE_DEVICE": "cpu",
+        },
+        "deepmd": {
+            "DEEPMD_RUNTIME_DIR": str(deepmd_runtime),
+            "DEEPMD_TRAINING_ROOT": str(deepmd_training),
+            "DEEPMD_BIN": str(deepmd_bin),
+        },
+        "uma": {
+            "UMA_RUNTIME_DIR": str(uma_runtime),
+            "UMA_PYTHON_BIN": str(uma_python),
+            "UMA_FINETUNE_BIN": str(uma_fairchem),
+            "UMA_FINETUNE_DEVICE": "cpu",
+        },
+    }
+    for name, stage in stages.items():
+        assert stage.command is not None
+        completed = subprocess.run(
+            stage.command,
+            cwd=tmp_path,
+            env={**os.environ, **stage.environment, **overrides[name]},
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        assert completed.returncode == 0, completed.stderr
+        assert "DRY RUN PASS" in completed.stdout
 
 
 @pytest.mark.parametrize("adapter_name", ["mace", "deepmd", "uma"])
@@ -202,6 +362,22 @@ def test_production_adapter_requires_verified_executable(tmp_path: Path) -> None
 
     assert result.command is None
     assert "runtime_executable_required" in [
+        issue.code for issue in result.validation.errors
+    ]
+
+
+def test_production_adapter_rejects_executable_without_launcher_protocol(
+    tmp_path: Path,
+) -> None:
+    sha256 = _write_artifact(tmp_path, "artifacts/dataset.json")
+    result = DeepMDAdapter("/bin/true").prepare_training(
+        _dataset(sha256=sha256, audit_status="PASS"),
+        tmp_path,
+        RunMode.PRODUCTION,
+    )
+
+    assert result.command is None
+    assert "runtime_launcher_protocol_mismatch" in [
         issue.code for issue in result.validation.errors
     ]
 
@@ -412,6 +588,23 @@ def test_dataset_build_derives_counts_from_audited_splits(tmp_path: Path) -> Non
     assert dataset.metadata["train_count"] == 1
     assert dataset.metadata["validation_count"] == 1
     assert dataset.metadata["test_count"] == 1
+    assert len(dataset.metadata["split_inventory"]) == 3
+
+    train_file = split_dirs["train"] / "data.extxyz"
+    train_file.write_text("changed\n", encoding="utf-8")
+    preflight = DeepMDAdapter(
+        _launcher(
+            tmp_path,
+            "deepmd",
+            "DEEPMD_WORK_DIR",
+            "DEEPMD_ARGS",
+            "DEEPMD_REQUIRED_PATHS",
+            "DEEPMD_DRY_RUN",
+        )
+    ).prepare_training(dataset, tmp_path, RunMode.PRODUCTION)
+    assert "dataset_split_hash_mismatch" in [
+        issue.code for issue in preflight.validation.errors
+    ]
 
 
 def test_vasp_collection_rejects_preexisting_unparsed_result(

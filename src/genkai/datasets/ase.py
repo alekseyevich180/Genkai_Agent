@@ -264,6 +264,50 @@ def audit_dataset_splits(
     }
 
 
+def _content_inventory(
+    directories: dict[str, Path],
+    root: Path,
+    *,
+    kind: str,
+) -> list[dict[str, str]] | None:
+    inventory: list[dict[str, str]] = []
+    for split, directory in sorted(directories.items()):
+        resolved = Path(directory).resolve()
+        if not resolved.is_relative_to(root):
+            return None
+        for path in discover_files(resolved):
+            inventory.append(
+                {
+                    "kind": kind,
+                    "split": split,
+                    "path": path.relative_to(root).as_posix(),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                }
+            )
+    return inventory
+
+
+def _verify_lmdb_readback(directories: dict[str, Path]) -> dict[str, int] | None:
+    """Read every configured ASE-LMDB split through fairchem when available."""
+
+    try:
+        from fairchem.core.datasets import AseDBDataset
+    except ImportError:
+        return None
+    counts: dict[str, int] = {}
+    try:
+        for split, directory in sorted(directories.items()):
+            dataset = AseDBDataset({"src": str(Path(directory).resolve())})
+            count = len(dataset)
+            if count <= 0:
+                return None
+            dataset[0]
+            counts[split] = count
+    except Exception:
+        return None
+    return counts
+
+
 def build_dataset(
     results: CalculationResultArtifact,
     split_policy: dict[str, Any],
@@ -273,18 +317,31 @@ def build_dataset(
 
     root = Path(run_root).resolve()
     manifest = load_manifest(root)
+    registered_result = next(
+        (
+            artifact
+            for artifact in manifest.artifacts
+            if artifact.artifact_id == results.artifact_id
+        ),
+        None,
+    )
     source_path = (root / results.path).resolve()
     source_valid = (
-        source_path.is_relative_to(root)
+        isinstance(registered_result, CalculationResultArtifact)
+        and registered_result.path == results.path
+        and registered_result.sha256 == results.sha256
+        and registered_result.evidence_level is results.evidence_level
+        and source_path.is_relative_to(root)
         and source_path.is_file()
         and hashlib.sha256(source_path.read_bytes()).hexdigest() == results.sha256
         and results.execution_state is ExecutionState.SUCCEEDED
     )
     raw_split_dirs = split_policy.get("split_directories")
+    raw_lmdb_dirs = split_policy.get("lmdb_directories")
     metadata = {
         key: value
         for key, value in split_policy.items()
-        if key != "split_directories"
+        if key not in {"split_directories", "lmdb_directories"}
     }
     metadata.update(
         {
@@ -295,6 +352,8 @@ def build_dataset(
             "lmdb_readback": False,
             "audit_status": "NOT_RUN",
             "source_integrity_verified": source_valid,
+            "split_inventory": [],
+            "lmdb_readback_counts": {},
         }
     )
     audit: dict[str, Any] | None = None
@@ -303,28 +362,44 @@ def build_dataset(
         required_splits = {"train", "validation", "test"}
         if required_splits.issubset(raw_split_dirs):
             resolved_dirs = {
-                name: Path(raw_split_dirs[name])
+                name: Path(raw_split_dirs[name]).resolve()
                 for name in sorted(required_splits)
             }
-            audit = audit_dataset_splits(
-                resolved_dirs,
-                regression_tasks=str(split_policy.get("regression_tasks", "ef")),
-            )
-            metadata["audit_status"] = audit["status"]
-            metadata["cross_split_leakage"] = audit[
-                "cross_split_exact_duplicates"
-            ]
-            for name in required_splits:
-                key = "validation_count" if name == "validation" else f"{name}_count"
-                metadata[key] = int(audit["splits"][name]["structures"])
-            audited_files = [
-                file
-                for directory in resolved_dirs.values()
-                for file in discover_files(directory)
-            ]
-            metadata["lmdb_readback"] = bool(audited_files) and all(
-                file.suffix == ".lmdb" for file in audited_files
-            )
+            inventory = _content_inventory(resolved_dirs, root, kind="source")
+            if inventory is not None:
+                audit = audit_dataset_splits(
+                    resolved_dirs,
+                    regression_tasks=str(split_policy.get("regression_tasks", "ef")),
+                )
+                metadata["audit_status"] = audit["status"]
+                metadata["cross_split_leakage"] = audit[
+                    "cross_split_exact_duplicates"
+                ]
+                metadata["split_inventory"] = inventory
+                for name in required_splits:
+                    key = (
+                        "validation_count"
+                        if name == "validation"
+                        else f"{name}_count"
+                    )
+                    metadata[key] = int(audit["splits"][name]["structures"])
+    if isinstance(raw_lmdb_dirs, dict) and {"train", "validation"}.issubset(
+        raw_lmdb_dirs
+    ):
+        lmdb_dirs = {
+            name: Path(raw_lmdb_dirs[name]).resolve()
+            for name in sorted(raw_lmdb_dirs)
+        }
+        lmdb_inventory = _content_inventory(lmdb_dirs, root, kind="lmdb")
+        readback_counts = (
+            _verify_lmdb_readback(lmdb_dirs)
+            if lmdb_inventory is not None
+            else None
+        )
+        if lmdb_inventory is not None and readback_counts is not None:
+            metadata["split_inventory"].extend(lmdb_inventory)
+            metadata["lmdb_readback"] = True
+            metadata["lmdb_readback_counts"] = readback_counts
     path = root / "stages" / "05_dataset" / "dataset.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
