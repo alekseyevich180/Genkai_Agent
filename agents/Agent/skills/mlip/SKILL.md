@@ -1,6 +1,6 @@
 ---
 name: mlip
-description: Prepare, validate, and submit MACE, DeePMD-kit/DeepMD/DeepModel, or UMA/fairchem machine-learning interatomic potential calculations on Genkai with established PJM launchers and project-local virtual environments. Use for MLIP training, fine-tuning, freezing, compression, testing, structure relaxation, molecular dynamics, energy/force inference, CPU or GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
+description: Prepare, validate, and submit MACE, DeePMD-kit/DeepMD/DeepModel, or UMA/fairchem machine-learning interatomic potential calculations on Genkai with established PJM launchers and project-local virtual environments. Use for MLIP training, UMA single-task fine-tuning and ASE-LMDB preparation, dataset-label audits, checkpoint resume, freezing, compression, testing, structure relaxation, molecular dynamics, energy/force inference, CPU or GPU calculations, PJM submission, restart preparation, or locating and reporting calculation outputs.
 ---
 
 # MLIP calculations with MACE, DeepMD, or UMA
@@ -266,3 +266,46 @@ Do not submit until the user has approved the actual calculation command and res
 ### UMA completion report
 
 Report the PJM job ID, model/task/device, run status, and absolute `run_dir`. List the primary output files and the combined PJM log at `run_dir/uma_calc.out`. If a calculation fails, preserve the entire run directory and quote the first actionable traceback or scheduler error; do not silently move partial outputs.
+
+## UMA fine-tuning
+
+Read [references/uma-finetuning.md](references/uma-finetuning.md) before preparing
+data, training, resuming, or handing off a fine-tuned UMA checkpoint. It records
+the verified `fairchem-core 2.21.0` interface, project layout, scientific
+decisions, launcher variables, and acceptance checks.
+
+Use this order:
+
+1. Fix one DFT label standard and select one UMA task. The installed
+   `fairchem-core 2.21.0` convenience converter accepts `omol`, `odac`, `oc20`,
+   `oc25`, `omat`, and `omc`, but not `oc22`. Use `oc25` only for internally
+   consistent RPBE+D3 surface/adsorption data. PBE+U oxide data requires a
+   separately maintained and validated `oc22` configuration; never relabel it
+   as `oc25` or bypass the converter check.
+2. Put ASE-readable labeled files under `data/train/` and `data/val/`; keep the
+   independent test set under `data/test/`. For a reaction, explicitly cover
+   reactants, intermediates, products, transition/path images, distorted
+   configurations, clean slabs, and gas-phase references; adsorption candidates
+   alone are not a reaction training set.
+3. Dry-run `scripts/prepare_uma_finetune_dataset.sh`, then run it to audit
+   train/val/test labels and leakage. Distances below the hard rejection
+   threshold stop conversion. The script converts only train/val, then rejects
+   non-empty `*.failed`, reads both ASE-LMDB splits back, and composes the
+   generated trusted Hydra YAML. The installed converter requires
+   `--regression-tasks` (plural) and does not take a test directory.
+4. Inspect the generated YAML, especially task, label set, base model,
+   train/validation paths, epochs or steps, learning rate, batch size,
+   `max_neighbors`, checkpoint cadence, and run directory. Never run an
+   untrusted Hydra YAML because `_target_` entries instantiate Python objects.
+5. Dry-run `scripts/submit_uma_finetuning.sh`. The launcher composes the Hydra
+   configuration and enforces one matching task plus exactly one of `epochs` or
+   `steps`. Submit through PJM only after the user approves the exact data
+   version, model/task, hyperparameters, resources, and command.
+6. Resume by setting `UMA_FINETUNE_MODE=resume` and pointing
+   `UMA_FINETUNE_CONFIG` to the checkpoint's generated `resume.yaml`.
+7. Load `inference_ckpt.pt` with the same UMA task used for fine-tuning, and
+   compare against the original UMA on the untouched test set, target physical
+   properties, relaxation/MD stability, and catastrophic-forgetting subsets.
+
+Use `run_skill_script` only for `UMA_FINETUNE_DRY_RUN=1`; never use it to
+convert a real dataset, train, resume, or evaluate a model.

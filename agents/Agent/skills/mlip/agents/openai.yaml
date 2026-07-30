@@ -1,4 +1,4 @@
 interface:
-  display_name: "MLIP Calculations"
-  short_description: "Prepare MACE, DeepMD, or UMA calculations on Genkai"
-  default_prompt: "Use $mlip to prepare and validate a MACE, DeepMD, or UMA calculation on Genkai."
+  display_name: "MLIP Calculations and Fine-tuning"
+  short_description: "Run MACE, DeepMD, or UMA workflows on Genkai"
+  default_prompt: "Use $mlip to prepare and validate an MLIP calculation or UMA fine-tuning workflow on Genkai."
