@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 import zipfile
@@ -56,3 +57,16 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
     ).is_file()
     for skill_file in sorted(wheel_root.rglob("SKILL.md")):
         assert load_skill_from_dir(skill_file.parent).name
+
+    environment = {**os.environ, "PYTHONPATH": str(extracted)}
+    for module in ("genkai.cli", "agent.init.start_agent", "paperread.surface"):
+        help_result = subprocess.run(
+            [sys.executable, "-m", module, "--help"],
+            cwd=tmp_path,
+            env=environment,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        assert help_result.returncode == 0, help_result.stderr
+        assert "help" in help_result.stdout.lower()
