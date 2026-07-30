@@ -225,6 +225,7 @@ __marimo__/
 # workspace
 .workspace/
 .worktrees/
+/Genkai_Evolution/
 
 # Sever related files
 *.orb
