@@ -112,6 +112,20 @@ class UmaAdapter:
                         report.errors,
                         report.warnings,
                     )
+            else:
+                _route_issue(
+                    ValidationIssue(
+                        code="uma_base_model_file_required",
+                        message=(
+                            "the established UMA launcher requires a verified "
+                            "local checkpoint file"
+                        ),
+                        path=base_model.uri,
+                    ),
+                    mode,
+                    report.errors,
+                    report.warnings,
+                )
         else:
             model_report = artifact_integrity_gate(base_model, run_root, mode)
             report.errors.extend(model_report.errors)
@@ -158,6 +172,8 @@ class UmaAdapter:
                 "UMA_FINETUNE_WORK_DIR",
                 "UMA_FINETUNE_CONFIG",
                 "UMA_FINETUNE_DRY_RUN",
+                "UMA_FINETUNE_BASE_MODEL_PATH",
+                "UMA_FINETUNE_BASE_MODEL_SHA256",
             ),
             mode,
             report.errors,
@@ -170,6 +186,12 @@ class UmaAdapter:
             if isinstance(base_model, ExternalResourceRef)
             else str(Path(run_root) / base_model.path)
         )
+        base_path = (
+            Path(unquote(urlparse(base_uri).path))
+            if isinstance(base_model, ExternalResourceRef)
+            else (Path(run_root) / base_model.path).resolve()
+        )
+        base_sha256 = base_model.sha256 or ""
         return StageResult(
             validation=report,
             command=[executable],
@@ -179,6 +201,7 @@ class UmaAdapter:
                 "UMA_FINETUNE_DRY_RUN": (
                     "1" if mode is RunMode.DRY_RUN else "0"
                 ),
-                "GENKAI_UMA_BASE_MODEL_URI": base_uri,
+                "UMA_FINETUNE_BASE_MODEL_PATH": str(base_path),
+                "UMA_FINETUNE_BASE_MODEL_SHA256": base_sha256,
             },
         )

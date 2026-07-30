@@ -196,6 +196,8 @@ def test_mlip_adapters_enforce_distinct_roles(tmp_path: Path) -> None:
             "UMA_FINETUNE_WORK_DIR",
             "UMA_FINETUNE_CONFIG",
             "UMA_FINETUNE_DRY_RUN",
+            "UMA_FINETUNE_BASE_MODEL_PATH",
+            "UMA_FINETUNE_BASE_MODEL_SHA256",
         )
     ).prepare_finetuning(
         uma_dataset, _base_model(tmp_path), tmp_path, RunMode.DRY_RUN
@@ -209,6 +211,7 @@ def test_mlip_adapters_enforce_distinct_roles(tmp_path: Path) -> None:
     assert "--structures" not in mace.environment["MACE_PYTHON_ARGS"]
     assert deepmd.command and deepmd.environment["DEEPMD_REQUIRED_PATHS"]
     assert uma.command and uma.environment["UMA_FINETUNE_CONFIG"]
+    assert uma.environment["UMA_FINETUNE_BASE_MODEL_PATH"].endswith("uma.pt")
 
 
 def test_adapter_specs_pass_established_launcher_dry_runs(tmp_path: Path) -> None:
@@ -257,7 +260,7 @@ def test_adapter_specs_pass_established_launcher_dry_runs(tmp_path: Path) -> Non
             dataset, tmp_path, RunMode.DRY_RUN
         ),
         "uma": UmaAdapter(launchers["uma"]).prepare_finetuning(
-            dataset, _base_model(), tmp_path, RunMode.DRY_RUN
+            dataset, _base_model(tmp_path), tmp_path, RunMode.DRY_RUN
         ),
     }
 
@@ -306,6 +309,8 @@ def test_adapter_specs_pass_established_launcher_dry_runs(tmp_path: Path) -> Non
         )
         assert completed.returncode == 0, completed.stderr
         assert "DRY RUN PASS" in completed.stdout
+        if name == "uma":
+            assert str(tmp_path / "checkpoints/uma.pt") in completed.stdout
 
 
 @pytest.mark.parametrize("adapter_name", ["mace", "deepmd", "uma"])
@@ -380,6 +385,85 @@ def test_production_adapter_rejects_executable_without_launcher_protocol(
     assert "runtime_launcher_protocol_mismatch" in [
         issue.code for issue in result.validation.errors
     ]
+
+
+def test_uma_rejects_checkpoint_changed_after_identity_capture(
+    tmp_path: Path,
+) -> None:
+    base_model = _base_model(tmp_path)
+    (tmp_path / "checkpoints/uma.pt").write_text("changed\n", encoding="utf-8")
+    result = UmaAdapter().prepare_finetuning(
+        _dataset(audit_status="PASS"),
+        base_model,
+        tmp_path,
+        RunMode.PRODUCTION,
+    )
+
+    assert "uma_base_model_hash_mismatch" in [
+        issue.code for issue in result.validation.errors
+    ]
+
+
+def test_uma_hydra_preflight_asserts_bound_checkpoint_identity(
+    tmp_path: Path,
+) -> None:
+    checkpoint_sha = _write_artifact(
+        tmp_path, "checkpoints/uma.pt", "checkpoint\n"
+    )
+    config = tmp_path / "uma.yaml"
+    config.write_text(
+        "job:\n"
+        "  scheduler: {mode: LOCAL}\n"
+        "  device_type: CPU\n"
+        "  run_dir: runs\n"
+        "epochs: 1\n"
+        "steps: null\n"
+        "base_model_name: uma-s-1p1\n"
+        "train_dataset:\n"
+        "  dataset_configs: {omat: {}}\n"
+        "val_dataset:\n"
+        "  dataset_configs: {omat: {}}\n"
+        "runner:\n"
+        "  train_eval_unit:\n"
+        "    model:\n"
+        "      checkpoint_location: wrong.pt\n",
+        encoding="utf-8",
+    )
+    script = (
+        ROOT
+        / "agents/Agent/skills/uma/scripts/validate_uma_finetune_launch.py"
+    )
+    uma_python = Path(
+        os.environ.get(
+            "GENKAI_UMA_TEST_PYTHON",
+            "/home/pj24001724/ku40000345/wu/UMA-campare/.venv_uma/bin/python",
+        )
+    )
+    if not uma_python.is_file():
+        pytest.skip("configured UMA integration Python is unavailable")
+    checkpoint = tmp_path / "checkpoints/uma.pt"
+    completed = subprocess.run(
+        [
+            str(uma_python),
+            str(script),
+            "--config",
+            str(config),
+            "--mode",
+            "train",
+            "--override",
+            f"runner.train_eval_unit.model.checkpoint_location={checkpoint}",
+            "--expected-checkpoint",
+            str(checkpoint),
+            "--expected-checkpoint-sha256",
+            checkpoint_sha,
+        ],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    assert f"checkpoint : {checkpoint}" in completed.stdout
 
 
 @pytest.mark.parametrize("adapter_name", ["deepmd", "uma"])

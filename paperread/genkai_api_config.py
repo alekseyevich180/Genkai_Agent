@@ -51,7 +51,6 @@ def make_client() -> OpenAI:
 
 def install_openai_compat(openai_module) -> None:
     """Install OpenAI SDK v0-style shims backed by the configured v1+ client."""
-    client = make_client()
     openai_module.api_key = get_api_key()
     if get_base_url():
         openai_module.base_url = get_base_url()
@@ -59,6 +58,7 @@ def install_openai_compat(openai_module) -> None:
     class _ChatCompletion:
         @staticmethod
         def create(**kwargs):
+            client = make_client()
             if not kwargs.get("model"):
                 kwargs["model"] = get_model()
             else:
@@ -73,6 +73,7 @@ def install_openai_compat(openai_module) -> None:
     class _Completion:
         @staticmethod
         def create(**kwargs):
+            client = make_client()
             prompt = kwargs.pop("prompt", "")
             if isinstance(prompt, list):
                 prompt = "\n".join(str(item) for item in prompt)

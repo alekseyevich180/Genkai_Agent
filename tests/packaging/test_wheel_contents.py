@@ -59,6 +59,8 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
         assert load_skill_from_dir(skill_file.parent).name
 
     environment = {**os.environ, "PYTHONPATH": str(extracted)}
+    environment.pop("OPENAI_API_KEY", None)
+    environment.pop("LLM_API_KEY", None)
     for module in ("genkai.cli", "agent.init.start_agent", "paperread.surface"):
         help_result = subprocess.run(
             [sys.executable, "-m", module, "--help"],
