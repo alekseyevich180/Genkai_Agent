@@ -1010,3 +1010,226 @@ Task 1 contracts
 Task 1–3 是平台基础；Task 4–6 形成第一条可运行纵向切片；Task 7 保留并规范
 Skill-first 扩展能力；Task 8–9 最后接入 Agent，避免在核心契约尚未稳定时同时
 修改规划器和领域逻辑。
+
+## 11. 工期与 Token 预算
+
+### 11.1 估算口径
+
+下列估算只包含：
+
+- 代码、测试、兼容层和文档修改；
+- 本地静态检查、单元测试、集成 dry-run；
+- 已保存论文抽取结果的离线回放；
+- MACE、DeepMD、UMA launcher 的非计算 preflight；
+- 每个任务一次实现审查和一次修正循环。
+
+下列工作不计入估算：
+
+- 真实 VASP、GPU、PJM 或其他 scheduler 队列等待；
+- DeepMD 真实训练；
+- UMA 真实微调、resume 或 checkpoint 验收；
+- 外部 LLM 批量论文抽取；
+- 新的反应路径、过渡态、NEB 或无定形结构科学方法开发；
+- 因外部依赖版本变化导致的大规模环境重装。
+
+Token 指 Agent 在阅读代码、生成补丁、分析工具输出、运行测试和修正问题时消耗
+的模型上下文与输出 Token，不代表 GPU、CPU 或 API 计算费用。
+
+### 11.2 为什么完整改造需要较长时间
+
+本计划不是单纯新建目录，而是带兼容约束的渐进迁移，主要成本来自：
+
+1. 现有 `paperread.surface`、Agent CLI、skill 和 JSON 输出不能同时中断；
+2. artifact、manifest、provenance 和 validation 必须先形成稳定契约；
+3. VASP、ASE、DeepMD、UMA、MACE 使用不同格式和运行环境；
+4. mock、dry-run、真实 DFT 和训练结果必须有不可混淆的证据边界；
+5. 稳定逻辑从 skill 提升到库后，旧脚本仍需作为兼容入口；
+6. Agent DAG、skill loader、前端文件路径和旧 session 需要回归检查；
+7. 每个任务都包含失败测试、最小实现、回归测试、文档和独立提交。
+
+因此，直接写出一套新目录很快；证明新旧路径协同且不会产生错误科研状态，才是
+主要时间成本。
+
+### 11.3 按 Task 的保守估算
+
+| Task | 内容 | Agent 活跃时间 | Token |
+|---|---|---:|---:|
+| 1 | Artifact contracts | 2.5–4 小时 | 30k–55k |
+| 2 | RunManifest 与 store | 2–3.5 小时 | 25k–45k |
+| 3 | Artifact-aware DAG | 3–5 小时 | 35k–65k |
+| 4 | paperread/modeling facade | 5–8 小时 | 60k–110k |
+| 5 | VASP/dataset/MLIP adapters | 7–11 小时 | 90k–160k |
+| 6 | paper-to-MLIP workflow CLI | 4–6 小时 | 45k–85k |
+| 7 | Skill contract 与 evaluation | 4–7 小时 | 55k–100k |
+| 8 | Agent DAG 集成 | 5–9 小时 | 70k–130k |
+| 9 | 端到端验收与文档 | 3.5–6 小时 | 45k–80k |
+| **合计** | **完整 Task 1–9** | **36–60 小时** | **455k–830k** |
+
+为依赖差异、旧路径耦合和一次额外修正预留缓冲后，完整预算按：
+
+```text
+时间：35–60 小时活跃实施，约 5–10 个工作日
+Token：500k–900k
+```
+
+如果使用多个 Agent 并行，墙钟时间预计缩短到 3–6 个工作日，但因为重复读取
+上下文和交叉审查，Token 通常增加 20%–40%。
+
+### 11.4 高不确定性任务
+
+估算波动主要来自：
+
+- Task 5：UMA 审计逻辑从 skill 提升到库后的命令行兼容；
+- Task 5：VASP `dpdata` lazy import 对 result collection 的影响；
+- Task 8：新增 artifact 字段对 ADK 序列化、旧 session 和前端的影响；
+- `tests/test_paperread_surface.py` 暴露的隐藏路径依赖；
+- 当前环境中的 ASE、Pydantic、Google ADK 和 FAIRChem 版本差异。
+
+如果其中一项需要重新设计，该任务先停止并形成独立问题记录，不从后续任务预算
+中静默借用时间。
+
+## 12. 三种交付级别
+
+### Level A：架构骨架
+
+范围：
+
+- Task 1 完整完成；
+- Task 2 完成最小 RunManifest 和原子写入；
+- Task 3 完成静态 artifact DAG 校验；
+- 不迁移现有领域代码，不修改 Agent DAG。
+
+预算：
+
+```text
+时间：4–8 小时
+Token：80k–150k
+```
+
+交付结果：
+
+- `src/genkai/` 包可导入；
+- artifact 和 manifest 可 JSON round-trip；
+- workflow 在执行前能发现缺失 artifact 和循环；
+- 现有工作流完全不受影响。
+
+### Level B：快速可用 MVP（推荐）
+
+范围：
+
+- 完成 Level A；
+- Task 4 完成 paperread、PToModel 和 surface modeling facade；
+- Task 5 先完成 VASP prepare、dataset preflight 和 UMA adapter；
+- MACE、DeepMD 在本级只落实协议与角色测试，不迁移其全部内部实现；
+- UMA 继续复用当前已验证脚本，不在本级提升全部审计代码；
+- Task 6 完成离线 `paper -> surface -> mock DFT -> UMA dry-run`；
+- 不执行 Task 7–8，不修改全部 skill，也不修改 Agent DAG。
+
+预算：
+
+```text
+时间：12–24 小时
+Token：200k–400k
+自然时间：约 1–3 个工作日
+```
+
+MVP 验收命令：
+
+```bash
+pytest tests/contracts tests/workflow/test_stage_graph.py tests/integrations/test_surface_facades.py tests/workflow/test_paper_to_mlip.py -v
+python -m paperread.surface --help
+genkai-workflow --help
+```
+
+MVP 必须证明：
+
+- 新库核心存在且不依赖 `agents/Agent/skills/`；
+- 现有 paperread CLI 仍可运行；
+- run manifest 可以追踪 paper、plan、structure、mock result 和 dataset；
+- UMA production preflight 拒绝 mock 数据；
+- UMA dry-run 可以生成计划但不会训练；
+- 没有网络、真实 DFT、GPU 或 PJM 作业。
+
+### Level C：完整生产级改造
+
+范围：
+
+- 完成 Task 1–9；
+- 将稳定数据审计逻辑提升到库；
+- 七个核心 skill 通过 contract 和三类 evaluation；
+- Agent DAG 感知 artifact；
+- 完成兼容、端到端和弃用门禁。
+
+预算：
+
+```text
+时间：35–60 小时活跃实施
+Token：500k–900k
+自然时间：约 5–10 个工作日
+```
+
+Level C 不包含真实科研计算。真实训练与科学验收必须另行估算。
+
+## 13. 推荐分批执行和停止门槛
+
+### Batch 1：契约内核
+
+执行 Task 1–3。
+
+继续条件：
+
+- contract tests 全部通过；
+- manifest 不允许路径逃逸；
+- DAG 能识别类型、版本和循环错误；
+- 现有测试未出现由新包引起的回归。
+
+任一条件失败时，在 Batch 1 内修复，不进入 facade 迁移。
+
+### Batch 2：快速 MVP
+
+执行 Task 4、Task 5 的 MVP 范围和 Task 6。
+
+继续条件：
+
+- paperread 兼容入口通过；
+- artifact chain 可以离线重放；
+- mock 标签无法进入 UMA production；
+- 新 facade 没有复制第二份 PToModel 规则；
+- run 输出全部保留在调用者目录。
+
+完成 Batch 2 后先审查一次架构和实际使用体验，再决定是否进入 Agent 集成。
+
+### Batch 3：Skill 与 Agent
+
+执行 Task 5 剩余范围、Task 7–9。
+
+继续条件：
+
+- MACE、DeepMD、UMA 排他路由测试通过；
+- 七个核心 skill 的 contract 和 evaluation 通过；
+- 旧 Agent graph payload 仍可解析；
+- 完整相关回归通过；
+- 文档明确 dry-run 与真实科研计算的边界。
+
+## 14. Token 控制策略
+
+如果优先控制 Token，采用以下执行规则：
+
+1. 默认单 Agent 顺序执行，不主动并行。
+2. 每个 Batch 使用独立上下文摘要，只加载当前 Task、Global Constraints 和直接
+   依赖文件。
+3. 开发阶段运行目标测试；完整相关回归只在 Milestone 和 Task 9 运行。
+4. 工具输出只保留失败片段、测试汇总和必要 diff，不反复读取大型 fixture。
+5. 每个 Task 完成后提交或形成明确 checkpoint，避免后续重新分析已完成范围。
+6. 如果同一错误连续出现三次，停止重复尝试，记录根因并重新设计该小节。
+7. 不在架构迁移中顺带增加新的科学功能。
+
+推荐 Token 上限：
+
+```text
+Level A：150k
+Level B：400k
+Level C：900k
+```
+
+到达某一级预算的 80% 时，先运行该级验收并报告剩余工作，不自动扩大范围。
