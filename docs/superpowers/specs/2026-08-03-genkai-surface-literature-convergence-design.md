@@ -125,15 +125,19 @@ PDF or JSON
 ```
 
 The migrated literature pipeline does not own PToModel. The old combined
-surface runner is decomposed without changing output semantics:
+surface runner is decomposed at the new ownership boundary:
 
 - `genkai.literature.surface.pipeline` performs literature processing;
-- a workflow-level orchestrator in `genkai.workflows` optionally calls the
-  public `genkai.modeling` facade for PToModel and compact modeling-bundle
-  output;
+- a workflow-level orchestrator in `genkai.workflows` passes the generated
+  relations file to the existing artifact-aware paper-to-MLIP initializer;
 - `genkai-workflow surface run` invokes that workflow-level orchestrator;
 - artifact-aware `genkai-workflow init`, `preflight`, and dry-run behavior
   continues through the existing paper-to-MLIP workflow.
+
+Legacy filename conventions for direct PToModel and compact-bundle output are
+not preserved by the new surface command. The resulting modeling plan,
+checklist, structure candidate, and manifest use the existing run artifact
+layout. This avoids adding reverse imports before Task 12.
 
 The surface CLI group provides the literature commands `list-tools`, `ingest`,
 `run`, `conditions`, `relations`, `time`, `summary`, `experience`, and
@@ -198,8 +202,8 @@ semantics do not change.
 ### 8.3 Workflow and modeling boundary tests
 
 - verify the pure literature pipeline does not import PToModel;
-- verify the workflow-level surface runner can still produce the established
-  combined outputs through `genkai.modeling`;
+- verify the workflow-level surface runner passes the generated relations file
+  into the existing paper-to-MLIP initializer and creates a manifest;
 - retain the saved-extraction -> modeling plan -> structure-candidate artifact
   test;
 - keep PToModel behavior tests while updating only the moved core-helper import
