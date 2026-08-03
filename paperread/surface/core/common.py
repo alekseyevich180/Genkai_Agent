@@ -2,20 +2,12 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 import time
-from pathlib import Path
 from typing import Any
 
 import openai
 
-
-for _parent in Path(__file__).resolve().parents:
-    if (_parent / "genkai_api_config.py").is_file():
-        sys.path.insert(0, str(_parent))
-        break
-
-from genkai_api_config import get_model, install_openai_compat
+from genkai.llm import get_model, install_openai_compat
 
 
 install_openai_compat(openai)

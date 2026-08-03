@@ -1,13 +1,7 @@
 import json
 import openai
-from pathlib import Path
-import sys
 
-for _parent in Path(__file__).resolve().parents:
-    if (_parent / "genkai_api_config.py").is_file():
-        sys.path.insert(0, str(_parent))
-        break
-from genkai_api_config import install_openai_compat
+from genkai.llm import install_openai_compat
 
 install_openai_compat(openai)
 

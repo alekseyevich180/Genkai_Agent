@@ -1,8 +1,4 @@
-"""Shared API configuration for vendored external projects.
-
-This module loads the Genkai Agent API settings from ``agents/Agent/.env`` and
-provides a small compatibility layer for older OpenAI SDK call sites.
-"""
+"""Shared, lazily initialized LLM configuration for Genkai workflows."""
 
 from __future__ import annotations
 
@@ -14,9 +10,17 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-ENV_PATH = PROJECT_ROOT / "agents" / "Agent" / ".env"
-load_dotenv(ENV_PATH, override=False)
+def _find_env_path() -> Path | None:
+    for parent in Path(__file__).resolve().parents:
+        candidate = parent / "agents" / "Agent" / ".env"
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+ENV_PATH = _find_env_path()
+if ENV_PATH is not None:
+    load_dotenv(ENV_PATH, override=False)
 
 
 def _strip_provider_for_openai_client(model: str) -> str:
@@ -50,7 +54,8 @@ def make_client() -> OpenAI:
 
 
 def install_openai_compat(openai_module) -> None:
-    """Install OpenAI SDK v0-style shims backed by the configured v1+ client."""
+    """Install OpenAI SDK v0-style shims backed by the configured v1 client."""
+
     openai_module.api_key = get_api_key()
     if get_base_url():
         openai_module.base_url = get_base_url()
@@ -62,7 +67,9 @@ def install_openai_compat(openai_module) -> None:
             if not kwargs.get("model"):
                 kwargs["model"] = get_model()
             else:
-                kwargs["model"] = _strip_provider_for_openai_client(kwargs["model"])
+                kwargs["model"] = _strip_provider_for_openai_client(
+                    kwargs["model"]
+                )
             response = client.chat.completions.create(**kwargs)
             choices = []
             for choice in response.choices:
@@ -77,7 +84,9 @@ def install_openai_compat(openai_module) -> None:
             prompt = kwargs.pop("prompt", "")
             if isinstance(prompt, list):
                 prompt = "\n".join(str(item) for item in prompt)
-            model = _strip_provider_for_openai_client(kwargs.pop("model", get_model()))
+            model = _strip_provider_for_openai_client(
+                kwargs.pop("model", get_model())
+            )
             stop = kwargs.pop("stop", None)
             allowed = {
                 "temperature",
@@ -86,7 +95,9 @@ def install_openai_compat(openai_module) -> None:
                 "frequency_penalty",
                 "presence_penalty",
             }
-            chat_kwargs = {key: value for key, value in kwargs.items() if key in allowed}
+            chat_kwargs = {
+                key: value for key, value in kwargs.items() if key in allowed
+            }
             if stop is not None:
                 chat_kwargs["stop"] = stop
             response = client.chat.completions.create(
@@ -96,7 +107,9 @@ def install_openai_compat(openai_module) -> None:
             )
             text = response.choices[0].message.content or ""
             logprobs = SimpleNamespace(token_logprobs=None, tokens=None)
-            return SimpleNamespace(choices=[SimpleNamespace(text=text, logprobs=logprobs)])
+            return SimpleNamespace(
+                choices=[SimpleNamespace(text=text, logprobs=logprobs)]
+            )
 
     openai_module.ChatCompletion = _ChatCompletion
     openai_module.Completion = _Completion
