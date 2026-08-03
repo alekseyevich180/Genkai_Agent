@@ -1327,21 +1327,38 @@ help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
 
 优点是风险最低；缺点是只改善可读性，不能解决双重业务实现和依赖边界问题。
 
-当前决策状态：**等待用户选择 A、B 或 C**。未确认前不得开始批量移动文件。
+当前决策状态：**方案 A 已于 2026-08-03 获批并开始执行**。用户进一步确认
+`Genkai_Evolution/` 是专用于新结构的沙盒，不要求保留旧
+`paperread.surface.*` import 或 `python -m paperread.surface` CLI；因此 Task
+10–11 采用完整纵向迁移，不创建 compatibility shim。
 
-### 15.5 方案 A 获批后的建议任务
+### 15.5 方案 A 实施状态
 
-以下任务仅作为下一阶段入口；正式实施前仍需写设计文档和逐文件计划：
+Task 10–11 的设计和逐文件计划已记录在：
 
-1. **Task 10：建立结构基线和依赖门禁**
+- `docs/superpowers/specs/2026-08-03-genkai-surface-literature-convergence-design.md`
+- `docs/superpowers/plans/2026-08-03-genkai-surface-literature-convergence.md`
+
+当前任务状态：
+
+1. **Task 10：建立结构基线和依赖门禁（已完成）**
    - 记录顶层目录、Python import、CLI、wheel 内容和 skill entrypoint 基线。
    - 增加测试，禁止 `src/genkai/` 反向导入 `paperread/` 私有实现或 skill
      scripts。
-2. **Task 11：迁移 surface literature 内核**
+   - 基线见 `docs/structure-baseline.md`，门禁只允许下述 Task 12 技术债：
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.job_bundle.build_modeling_checklist`
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.ptomodel.build_ptomodel_payload`
+2. **Task 11：迁移 surface literature 内核（已完成）**
    - 将稳定 extraction、experience 和 pipeline 业务实现迁入
-     `src/genkai/literature/`。
-   - `paperread.surface` 保留兼容导入与 CLI 转发。
-3. **Task 12：迁移 PToModel 与 surface modeling 内核**
+     `src/genkai/literature/surface/`。
+   - 共享 LLM 配置迁入 `src/genkai/llm.py`，组合入口迁入
+     `src/genkai/workflows/surface_paper.py`。
+   - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
+     脚本改为调用新库。
+   - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
+3. **Task 12：迁移 PToModel 与 surface modeling 内核（待执行）**
    - 将稳定规则、schema 和结构准备逻辑迁入 `src/genkai/modeling/`。
    - 删除 skill scripts 中重复的业务规则，只保留薄入口。
 4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
@@ -1356,11 +1373,10 @@ help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
 
 ### 15.6 下一次会话恢复顺序
 
-1. 读取本节和 `work_logs/2026-07-30.md` 的“当前演进阶段复核与结构改造交接”。
-2. 确认用户选择的 A/B/C 结构方向。
-3. 审计 `Genkai_Evolution/` 工作树是否干净，并确认
-   `feat/genkai-evolution` 与远端指针。
-4. 按 Superpowers brainstorming 流程写入并审核：
-   `docs/superpowers/specs/2026-07-30-genkai-structure-convergence-design.md`。
-5. 用户批准设计后，再写逐文件 implementation plan；实现阶段采用测试先行，
-   每个迁移边界独立验证和提交。
+1. 读取本节、`work_logs/2026-08-03.md` 以及 Task 10–11 设计与实施计划。
+2. 审计 `Genkai_Evolution/` 工作树和 `feat/genkai-evolution` 分支状态。
+3. 从上节记录的两条精确反向依赖开始设计 Task 12，不扩大 allowlist。
+4. 按 brainstorming、逐文件 implementation plan 和测试先行流程迁移
+   PToModel 与 surface modeling 内核。
+5. Task 12 完成前，不把 Task 10–11 的 literature 收敛描述为整个仓库结构收敛
+   已完成。

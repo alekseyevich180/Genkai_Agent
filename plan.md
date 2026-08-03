@@ -1,6 +1,6 @@
 # 项目计划
 
-更新时间：2026-07-30
+更新时间：2026-08-03
 
 ## 架构演进状态
 
@@ -17,14 +17,17 @@ PaperArtifact
 -> ModelArtifact / EvaluationArtifact
 ```
 
-旧 `paperread.surface` 和 Agent graph payload 保持兼容。新的
-`genkai-workflow` 只提供 init、inspect、preflight 和 dry-run；真实 VASP、
-GPU、PJM、DeepMD 训练和 UMA 微调仍需单独授权与科学验收。下文的经验库、
-unknown-term 与 PToModel 映射工作继续作为领域质量改进计划。
+Task 10–11 已完成结构基线、依赖门禁和 surface literature 纵向迁移。
+`genkai.literature.surface` 现在拥有抽取、经验库和纯 literature pipeline，
+`genkai.workflows.surface_paper` 负责连接 PToModel artifact workflow；旧
+`paperread.surface` literature import 和 module CLI 不再保留。Agent graph
+payload 继续兼容。真实 VASP、GPU、PJM、DeepMD 训练和 UMA 微调仍需单独授权
+与科学验收。下文的经验库、unknown-term 与 PToModel 映射工作继续作为领域
+质量改进计划。
 
 ## 当前目标
 
-把 `paperread/surface`、`ptomodel` 和 `surface-modeling` 连接成可复用的
+把 `genkai.literature.surface`、`ptomodel` 和 `surface-modeling` 连接成可复用的
 论文到建模闭环：
 
 ```text
@@ -52,7 +55,7 @@ paperread relations/table
 
 写入目标：
 
-- `paperread/surface/experience/material_classes/*.json`
+- `src/genkai/literature/surface/experience/material_classes/*.json`
 
 每轮合并后必须重建：
 
@@ -123,10 +126,10 @@ unknown-term store 应只保留真正值得后续学习、建模或规则更新�
 
 PToModel 应读取并利用：
 
-- `paperread/surface/experience/material_classes/*.json`
+- `src/genkai/literature/surface/experience/material_classes/*.json`
 - `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
 - `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
-- `paperread/surface/core/surface_ontology.py`
+- `src/genkai/literature/surface/core/surface_ontology.py`
 
 核心映射规则：
 
@@ -214,7 +217,7 @@ PToModel 参数状态必须明确区分：
 - 每轮稳定结果写入 `agents/Agent/skills/paperread/experience/`。
 - 每轮关键结果写入对应日期的 `work_logs/*.md`。
 - 如果 unknown-term 规则、registry 字段或 PToModel 映射规则变化，同步更新
-  `README.md`、`paperread/surface/README.md` 和相关 skill 文档。
+  `README.md`、`src/genkai/literature/surface/` 的模块说明和相关 skill 文档。
 
 ### 全局检查
 
