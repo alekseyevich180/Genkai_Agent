@@ -47,6 +47,9 @@ include = ["agent*", "agents*", "genkai*", "paperread*"]
 exclude = ["tests*"]
 
 [tool.setuptools.package-data]
+"genkai.literature.surface" = [
+    "experience/material_classes/*.json",
+]
 "agents.Agent" = [
     "agents/*.yaml",
     "skills/*/SKILL.md",

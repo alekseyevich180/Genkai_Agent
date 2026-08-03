@@ -58,10 +58,46 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
     for skill_file in sorted(wheel_root.rglob("SKILL.md")):
         assert load_skill_from_dir(skill_file.parent).name
 
+    source_material_classes = {
+        path.name
+        for path in (
+            ROOT
+            / "src"
+            / "genkai"
+            / "literature"
+            / "surface"
+            / "experience"
+            / "material_classes"
+        ).glob("*.json")
+    }
+    wheel_material_classes = {
+        path.name
+        for path in (
+            extracted
+            / "genkai"
+            / "literature"
+            / "surface"
+            / "experience"
+            / "material_classes"
+        ).glob("*.json")
+    }
+    assert len(source_material_classes) == 20
+    assert wheel_material_classes == source_material_classes
+    for name in wheel_material_classes:
+        assert (
+            extracted
+            / "genkai"
+            / "literature"
+            / "surface"
+            / "experience"
+            / "material_classes"
+            / name
+        ).read_text(encoding="utf-8").strip()
+
     environment = {**os.environ, "PYTHONPATH": str(extracted)}
     environment.pop("OPENAI_API_KEY", None)
     environment.pop("LLM_API_KEY", None)
-    for module in ("genkai.cli", "agent.init.start_agent", "paperread.surface"):
+    for module in ("genkai.cli", "agent.init.start_agent"):
         help_result = subprocess.run(
             [sys.executable, "-m", module, "--help"],
             cwd=tmp_path,
@@ -72,3 +108,13 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
         )
         assert help_result.returncode == 0, help_result.stderr
         assert "help" in help_result.stdout.lower()
+    surface_help = subprocess.run(
+        [sys.executable, "-m", "genkai.cli", "surface", "--help"],
+        cwd=tmp_path,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert surface_help.returncode == 0, surface_help.stderr
+    assert "list-tools" in surface_help.stdout

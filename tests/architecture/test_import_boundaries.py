@@ -66,3 +66,16 @@ def test_genkai_reverse_imports_match_task12_allowlist() -> None:
     }
 
     assert find_forbidden_imports(ROOT / "src" / "genkai", allowed) == set()
+
+
+def test_legacy_surface_literature_paths_are_absent() -> None:
+    for relative in (
+        "paperread/surface/core",
+        "paperread/surface/extraction",
+        "paperread/surface/experience",
+        "paperread/surface/pipeline",
+        "paperread/surface/cli.py",
+        "paperread/surface/__main__.py",
+        "paperread/surface/__init__.py",
+    ):
+        assert not (ROOT / relative).exists(), relative
