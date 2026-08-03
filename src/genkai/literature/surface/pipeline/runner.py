@@ -21,11 +21,9 @@ from genkai.literature.surface.extraction.standardize_surface_time import (
 from genkai.literature.surface.extraction.summarize_surface_outputs import (
     write_summary,
 )
-from paperread.surface.modeling.job_bundle import write_compact_job_bundle
-from paperread.surface.modeling.ptomodel import generate_ptomodel_output
 
 
-def run_pipeline(
+def run_literature_pipeline(
     input_json: str,
     output_dir: str,
     model: str | None = None,
@@ -68,16 +66,6 @@ def run_pipeline(
         summary_path = str(outdir / f"{stem}_summary.txt")
         write_summary(results["conditions_csv"], results["relations_jsonl"], summary_path)
         results["summary_txt"] = summary_path
-        results.update(
-            generate_ptomodel_output(
-                relations_jsonl=results["relations_jsonl"],
-                table_csv=results["conditions_csv"],
-                summary_txt=results["summary_txt"],
-                time_csv=results.get("time_csv"),
-                output_dir=str(outdir),
-                stem=stem,
-            )
-        )
 
     if collect_experience_output:
         experience_result = collect_experience(
@@ -95,7 +83,7 @@ def run_pipeline(
     return results
 
 
-def run_pipeline_from_pdf(
+def run_literature_pipeline_from_pdf(
     input_pdf: str,
     output_dir: str,
     model: str | None = None,
@@ -104,13 +92,10 @@ def run_pipeline_from_pdf(
     keep_intermediate: bool = False,
     save_raw: bool = False,
     collect_experience_output: bool = False,
-    compact_output: bool = False,
 ) -> dict[str, str]:
-    if compact_output and keep_intermediate:
-        raise ValueError("compact_output and keep_intermediate are mutually exclusive.")
     if keep_intermediate:
         ingestion_outputs = ingest_pdf(input_pdf, output_dir)
-        pipeline_outputs = run_pipeline(
+        pipeline_outputs = run_literature_pipeline(
             ingestion_outputs["conditions_input_json"],
             output_dir,
             model=model,
@@ -129,7 +114,7 @@ def run_pipeline_from_pdf(
         payloads["relations_payload"],
     )
     try:
-        pipeline_outputs = run_pipeline(
+        pipeline_outputs = run_literature_pipeline(
             conditions_path,
             output_dir,
             model=model,
@@ -140,13 +125,6 @@ def run_pipeline_from_pdf(
             save_raw=save_raw,
             collect_experience_output=collect_experience_output,
         )
-        if compact_output:
-            return write_compact_job_bundle(
-                output_dir=output_dir,
-                outputs=pipeline_outputs,
-                source_path=input_pdf,
-                cleanup_generated=True,
-            )
         return pipeline_outputs
     finally:
         tempdir.cleanup()
@@ -159,7 +137,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("input_source", help="JSON or PDF input file.")
     parser.add_argument(
         "--output-dir",
-        default="paperread/surface/output",
+        default="surface-output",
         help="Directory for generated outputs.",
     )
     parser.add_argument("--model", default=None, help="Optional model override.")
@@ -194,16 +172,6 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Also collect useful and unknown extraction experience into aggregated JSON output.",
     )
-    parser.add_argument(
-        "--compact-output",
-        action="store_true",
-        help="Consolidate paper information, modeling plan, and checklist into one compact job folder.",
-    )
-    parser.add_argument(
-        "--expanded-output",
-        action="store_true",
-        help="Keep the legacy set of separate extraction files.",
-    )
     args = parser.parse_args(argv)
 
     source_path = Path(args.input_source)
@@ -212,8 +180,7 @@ def main(argv: list[str] | None = None) -> int:
         input_format = "pdf" if source_path.suffix.lower() == ".pdf" else "json"
 
     if input_format == "pdf":
-        compact_output = args.compact_output or (not args.expanded_output and not args.keep_intermediate)
-        outputs = run_pipeline_from_pdf(
+        outputs = run_literature_pipeline_from_pdf(
             args.input_source,
             args.output_dir,
             model=args.model,
@@ -222,10 +189,9 @@ def main(argv: list[str] | None = None) -> int:
             keep_intermediate=args.keep_intermediate,
             save_raw=args.save_raw,
             collect_experience_output=args.collect_experience,
-            compact_output=compact_output,
         )
     else:
-        outputs = run_pipeline(
+        outputs = run_literature_pipeline(
             args.input_source,
             args.output_dir,
             model=args.model,

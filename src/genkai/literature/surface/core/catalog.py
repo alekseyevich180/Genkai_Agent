@@ -51,9 +51,9 @@ SURFACE_TOOL_SPECS: list[SurfaceToolSpec] = [
     SurfaceToolSpec(
         name="run_surface_pipeline",
         category="workflow",
-        module="paperread.surface.pipeline.runner",
-        function="run_pipeline",
-        purpose="Run ingestion, extraction, normalization, and ptomodel generation together.",
+        module="genkai.workflows.surface_paper",
+        function="initialize_surface_paper_run",
+        purpose="Run literature extraction and initialize an artifact workflow.",
     ),
     SurfaceToolSpec(
         name="collect_experience",

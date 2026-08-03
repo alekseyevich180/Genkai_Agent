@@ -28,8 +28,11 @@ from genkai.literature.surface.extraction.ingest_pdf import (
 )
 from genkai.literature.surface.extraction.standardize_surface_time import standardize_time
 from genkai.literature.surface.extraction.summarize_surface_outputs import write_summary
+from genkai.literature.surface.pipeline.runner import (
+    run_literature_pipeline as run_pipeline,
+    run_literature_pipeline_from_pdf as run_pipeline_from_pdf,
+)
 from paperread.surface.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
-from paperread.surface.pipeline.runner import run_pipeline, run_pipeline_from_pdf
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -68,7 +71,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "genkai.literature.surface.extraction.extract_surface_relations",
             "genkai.literature.surface.experience.collect_experience",
             "genkai.literature.surface.extraction.ingest_pdf",
-            "paperread.surface.pipeline.runner",
+            "genkai.literature.surface.pipeline.runner",
             "paperread.surface.modeling.ptomodel",
         ]
         for module in modules:
@@ -192,10 +195,9 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("time_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
             self.assertIn("summary_txt", outputs)
-            self.assertIn("ptomodel_json", outputs)
+            self.assertNotIn("ptomodel_json", outputs)
             self.assertIn("experience_material_classes_dir", outputs)
             self.assertTrue(Path(outputs["relations_jsonl"]).is_file())
-            self.assertTrue(Path(outputs["ptomodel_json"]).is_file())
             self.assertTrue(Path(outputs["experience_material_classes_dir"]).is_dir())
             content = Path(outputs["relations_jsonl"]).read_text(encoding="utf-8")
             self.assertIn('"materials": [', content)
@@ -204,10 +206,6 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             self.assertIn("这次抽到的关键信息包括", summary)
             self.assertIn("建模关键词", summary)
             self.assertIn("vacancy_landscape", summary)
-            ptomodel_json = Path(outputs["ptomodel_json"]).read_text(encoding="utf-8")
-            self.assertIn('"global_executable_tasks"', ptomodel_json)
-            self.assertIn('"adsorbate_landscape"', ptomodel_json)
-            self.assertIn('"surface_facets"', ptomodel_json)
 
     def test_pdf_section_routing_helpers(self):
         pdf_text = """
@@ -325,7 +323,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             },
         }
         with tempfile.TemporaryDirectory() as tmpdir:
-            with patch("paperread.surface.pipeline.runner.ingest_pdf_payloads", return_value=ingestion_payloads), \
+            with patch("genkai.literature.surface.pipeline.runner.ingest_pdf_payloads", return_value=ingestion_payloads), \
                  patch("genkai.literature.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
                  patch("genkai.literature.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
                  patch("genkai.literature.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
@@ -334,7 +332,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             self.assertIn("conditions_csv", outputs)
             self.assertIn("relations_jsonl", outputs)
             self.assertIn("summary_txt", outputs)
-            self.assertIn("ptomodel_json", outputs)
+            self.assertNotIn("ptomodel_json", outputs)
 
     def test_ptomodel_filters_key_information_and_normalizes_equivalents(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -854,9 +852,14 @@ Oxygen vacancies acted as active sites and methoxy was identified.
 
     def test_surface_catalog_modules_resolve_from_new_owners(self):
         for spec in list_surface_tools():
-            if spec.category in {"planning", "workflow"}:
+            if spec.category == "planning":
                 continue
-            self.assertTrue(spec.module.startswith("genkai.literature.surface."))
+            expected_prefix = (
+                "genkai.workflows."
+                if spec.category == "workflow"
+                else "genkai.literature.surface."
+            )
+            self.assertTrue(spec.module.startswith(expected_prefix))
             module = importlib.import_module(spec.module)
             self.assertTrue(callable(getattr(module, spec.function)))
 
