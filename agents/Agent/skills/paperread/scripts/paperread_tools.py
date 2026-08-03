@@ -13,15 +13,17 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from paperread.surface.experience.collect_experience import main as collect_experience_main
-from paperread.surface.experience.parameter_registry import (
+from genkai.literature.surface.experience.collect_experience import (
+    main as collect_experience_main,
+)
+from genkai.literature.surface.experience.parameter_registry import (
     DEFAULT_MATERIAL_CLASS_DIR,
     DEFAULT_REGISTRY_MARKDOWN_PATH,
     DEFAULT_REGISTRY_PATH,
     build_surface_parameter_registry,
 )
-from paperread.surface.pipeline.runner import main as run_surface_pipeline_main
-from paperread.surface.experience.unknown_terms import (
+from genkai.literature.surface.pipeline.runner import main as run_surface_pipeline_main
+from genkai.literature.surface.experience.unknown_terms import (
     reclassify_material_class_store,
     write_unknown_term_statistics,
 )
@@ -72,8 +74,11 @@ def _build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--table", help="Path to *_table.csv")
     collect.add_argument(
         "--output-dir",
-        default="paperread/surface/experience",
-        help="Experience output directory. Defaults to paperread/surface/experience",
+        default="src/genkai/literature/surface/experience",
+        help=(
+            "Experience output directory. Defaults to "
+            "src/genkai/literature/surface/experience"
+        ),
     )
     collect.add_argument(
         "--write-run-file",
@@ -92,7 +97,7 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     init_classes.add_argument(
         "--output-dir",
-        default="paperread/surface/experience",
+        default="src/genkai/literature/surface/experience",
         help="Directory where material class files should be initialized.",
     )
 

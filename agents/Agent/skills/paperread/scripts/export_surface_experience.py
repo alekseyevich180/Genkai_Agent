@@ -13,17 +13,14 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-try:
-    from paperread.surface.core.surface_ontology import (
-        SUPPORTED_MODELING_TASKS,
-        is_known_surface_experience_term,
-    )
-    from paperread.surface.core.surface_indices import is_surface_index_term
-    from paperread.surface.core.material_vocabulary import is_material_vocabulary_term
-except ImportError:  # pragma: no cover - direct script execution
-    from paperread.surface.core.surface_ontology import SUPPORTED_MODELING_TASKS, is_known_surface_experience_term
-    from paperread.surface.core.surface_indices import is_surface_index_term
-    from paperread.surface.core.material_vocabulary import is_material_vocabulary_term
+from genkai.literature.surface.core.material_vocabulary import (
+    is_material_vocabulary_term,
+)
+from genkai.literature.surface.core.surface_indices import is_surface_index_term
+from genkai.literature.surface.core.surface_ontology import (
+    SUPPORTED_MODELING_TASKS,
+    is_known_surface_experience_term,
+)
 
 
 SKILL_DIR = Path(__file__).resolve().parents[1]
