@@ -16,7 +16,7 @@ from .collect_experience import (
     _now,
     _surface_index_material_context,
 )
-from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
+from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR, REPO_ROOT
 from ..core.crystal_structures import is_crystal_structure_term
 from ..core.material_vocabulary import (
     is_material_vocabulary_term,
@@ -27,8 +27,7 @@ from ..core.surface_indices import canonicalize_surface_index
 
 
 DEFAULT_SKILL_EXPERIENCE_DIR = (
-    Path(__file__).resolve().parents[3]
-    / "agents/Agent/skills/paperread/experience"
+    REPO_ROOT / "agents/Agent/skills/paperread/experience"
 )
 
 

@@ -1,3 +1,4 @@
+import importlib
 import subprocess
 import sys
 import tempfile
@@ -7,23 +8,38 @@ from unittest.mock import patch
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
-from paperread.surface.core.catalog import list_surface_tools, render_surface_tool_catalog
-from paperread.surface.experience.collect_experience import collect_experience
-from paperread.surface.extraction.extract_surface_conditions import (
+from genkai.literature.surface.core.catalog import list_surface_tools, render_surface_tool_catalog
+from genkai.literature.surface.experience.collect_experience import collect_experience
+from genkai.literature.surface.experience.parameter_registry import (
+    build_surface_parameter_registry,
+)
+from genkai.literature.surface.extraction.extract_surface_conditions import (
     _reconcile_morphology_and_cluster,
     extract_conditions,
 )
-from paperread.surface.extraction.extract_surface_relations import extract_relations
-from paperread.surface.extraction.ingest_pdf import build_surface_inputs_from_sections, infer_title, split_sections
-from paperread.surface.extraction.standardize_surface_time import standardize_time
-from paperread.surface.extraction.summarize_surface_outputs import write_summary
+from genkai.literature.surface.extraction.extract_surface_relations import extract_relations
+from genkai.literature.surface.extraction.ingest_pdf import (
+    build_surface_inputs_from_sections,
+    extract_pdf_text,
+    infer_title,
+    split_sections,
+)
+from genkai.literature.surface.extraction.standardize_surface_time import standardize_time
+from genkai.literature.surface.extraction.summarize_surface_outputs import write_summary
 from paperread.surface.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
 from paperread.surface.pipeline.runner import run_pipeline, run_pipeline_from_pdf
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-SAMPLE_INPUT = PROJECT_ROOT / "paperread" / "surface" / "examples" / "sample_surface_input.json"
+SAMPLE_INPUT = (
+    PROJECT_ROOT
+    / "tests"
+    / "fixtures"
+    / "surface_literature"
+    / "sample_surface_input.json"
+)
 
 
 def _run_command(args: list[str]) -> subprocess.CompletedProcess:
@@ -47,34 +63,17 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
 
     def test_module_entrypoints_show_help(self):
         modules = [
-            "paperread.surface.extraction.extract_surface_conditions",
-            "paperread.surface.extraction.standardize_surface_time",
-            "paperread.surface.extraction.extract_surface_relations",
-            "paperread.surface.experience.collect_experience",
-            "paperread.surface.extraction.ingest_pdf",
+            "genkai.literature.surface.extraction.extract_surface_conditions",
+            "genkai.literature.surface.extraction.standardize_surface_time",
+            "genkai.literature.surface.extraction.extract_surface_relations",
+            "genkai.literature.surface.experience.collect_experience",
+            "genkai.literature.surface.extraction.ingest_pdf",
             "paperread.surface.pipeline.runner",
             "paperread.surface.modeling.ptomodel",
-            "paperread.surface.cli",
         ]
         for module in modules:
             with self.subTest(module=module):
                 result = _run_command([sys.executable, "-m", module, "--help"])
-                self.assertEqual(result.returncode, 0, msg=result.stderr)
-
-    def test_direct_script_entrypoints_show_help(self):
-        scripts = [
-            "paperread/surface/extraction/extract_surface_conditions.py",
-            "paperread/surface/extraction/standardize_surface_time.py",
-            "paperread/surface/extraction/extract_surface_relations.py",
-            "paperread/surface/experience/collect_experience.py",
-            "paperread/surface/extraction/ingest_pdf.py",
-            "paperread/surface/pipeline/runner.py",
-            "paperread/surface/modeling/ptomodel.py",
-            "paperread/surface/cli.py",
-        ]
-        for script in scripts:
-            with self.subTest(script=script):
-                result = _run_command([sys.executable, script, "--help"])
                 self.assertEqual(result.returncode, 0, msg=result.stderr)
 
     def test_offline_conditions_and_time_flow(self):
@@ -122,9 +121,9 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
         time_table = "| Index | Time |\n|---|---|\n| 1_1 | 120 minutes |\n| 2_1 | N/A |\n"
         with tempfile.TemporaryDirectory() as tmpdir:
             prefix = str(Path(tmpdir) / "surface")
-            with patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table):
+            with patch("genkai.literature.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table):
                 raw_path, table_path = extract_conditions(str(SAMPLE_INPUT), prefix, model=None)
-            with patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table):
+            with patch("genkai.literature.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table):
                 time_path = str(Path(tmpdir) / "surface_time.csv")
                 standardize_time(table_path, time_path, model=None)
 
@@ -179,9 +178,9 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
         )
         time_table = "| Index | Time |\n|---|---|\n| doc1_1 | 120 minutes |\n| doc2_1 | N/A |\n"
         with tempfile.TemporaryDirectory() as tmpdir:
-            with patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
-                 patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
-                 patch("paperread.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
+            with patch("genkai.literature.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
+                 patch("genkai.literature.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
+                 patch("genkai.literature.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
                 outputs = run_pipeline(
                     str(SAMPLE_INPUT),
                     tmpdir,
@@ -327,9 +326,9 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         }
         with tempfile.TemporaryDirectory() as tmpdir:
             with patch("paperread.surface.pipeline.runner.ingest_pdf_payloads", return_value=ingestion_payloads), \
-                 patch("paperread.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
-                 patch("paperread.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
-                 patch("paperread.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
+                 patch("genkai.literature.surface.extraction.extract_surface_conditions.chat_completion", return_value=condition_table), \
+                 patch("genkai.literature.surface.extraction.standardize_surface_time.chat_completion", return_value=time_table), \
+                 patch("genkai.literature.surface.extraction.extract_surface_relations.chat_completion", return_value=relation_json):
                 outputs = run_pipeline_from_pdf("dummy.pdf", tmpdir, model=None)
 
             self.assertIn("conditions_csv", outputs)
@@ -569,7 +568,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertEqual(len(occupied), len(set(occupied)))
 
     def test_chemical_vocabulary_covers_elements_through_radon_and_common_names(self):
-        from paperread.surface.core.chemical_vocabulary import (
+        from genkai.literature.surface.core.chemical_vocabulary import (
             ELEMENTS,
             extract_element_symbols,
             normalize_element_name,
@@ -591,8 +590,8 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertEqual(recognize_material_name("rutile RuO2"), [])
 
     def test_rutile_structure_composition_and_reported_surface_are_stored_separately(self):
-        from paperread.surface.core.crystal_structures import match_crystal_structure_term
-        from paperread.surface.extraction.extract_surface_relations import build_prompt
+        from genkai.literature.surface.core.crystal_structures import match_crystal_structure_term
+        from genkai.literature.surface.extraction.extract_surface_relations import build_prompt
 
         rutile = match_crystal_structure_term("rutile RuO2")
         self.assertEqual(rutile["term"], "rutile")
@@ -673,7 +672,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             )
 
     def test_surface_indices_use_structure_aware_software_miller_mapping(self):
-        from paperread.surface.core.surface_indices import canonicalize_surface_index
+        from genkai.literature.surface.core.surface_indices import canonicalize_surface_index
 
         zno = canonicalize_surface_index("(10-10)", material_context="ZnO")
         self.assertEqual(zno["software_facet"], "(100)")
@@ -807,9 +806,9 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             )
 
     def test_surface_known_term_filter_removes_generic_unknown_noise(self):
-        from paperread.surface.core.surface_ontology import is_known_surface_experience_term
-        from paperread.surface.core.crystal_structures import match_crystal_structure_term
-        from paperread.surface.core.material_vocabulary import (
+        from genkai.literature.surface.core.surface_ontology import is_known_surface_experience_term
+        from genkai.literature.surface.core.crystal_structures import match_crystal_structure_term
+        from genkai.literature.surface.core.material_vocabulary import (
             is_material_vocabulary_term,
             research_category_for_material_vocabulary,
         )
@@ -834,7 +833,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertEqual(research_category_for_material_vocabulary("Sn SAs/G-Na"), "clusters_single_atoms")
         self.assertTrue(is_known_surface_experience_term("Synthesis"))
         self.assertTrue(is_known_surface_experience_term("electrochemical water splitting"))
-        from paperread.surface.core.surface_indices import is_surface_index_term
+        from genkai.literature.surface.core.surface_indices import is_surface_index_term
 
         self.assertTrue(is_surface_index_term("Pt(111)"))
         self.assertTrue(is_known_surface_experience_term("*OOH"))
@@ -843,7 +842,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertTrue(is_known_surface_experience_term("three-coordinated Cr3c"))
 
     def test_surface_tool_catalog_groups_tools(self):
-        from paperread.surface.core.catalog import SURFACE_TOOL_CATEGORIES
+        from genkai.literature.surface.core.catalog import SURFACE_TOOL_CATEGORIES
 
         self.assertIn("ingestion", SURFACE_TOOL_CATEGORIES)
         self.assertIn("workflow", SURFACE_TOOL_CATEGORIES)
@@ -852,6 +851,39 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertIn("Surface tooling catalog", catalog_text)
         self.assertIn("ingestion", catalog_text)
         self.assertIn("workflow", catalog_text)
+
+    def test_surface_catalog_modules_resolve_from_new_owners(self):
+        for spec in list_surface_tools():
+            if spec.category in {"planning", "workflow"}:
+                continue
+            self.assertTrue(spec.module.startswith("genkai.literature.surface."))
+            module = importlib.import_module(spec.module)
+            self.assertTrue(callable(getattr(module, spec.function)))
+
+    def test_empty_material_class_store_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with pytest.raises(
+                FileNotFoundError,
+                match="material-class JSON assets",
+            ):
+                build_surface_parameter_registry(material_class_dir=Path(tmpdir))
+
+    def test_pdf_command_failure_identifies_executable_and_source(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            pdf = Path(tmpdir) / "paper.pdf"
+            pdf.write_bytes(b"%PDF")
+            error = subprocess.CalledProcessError(
+                1,
+                ["pdftotext", "-layout", str(pdf), "-"],
+            )
+            with patch(
+                "genkai.literature.surface.extraction.ingest_pdf.subprocess.run",
+                side_effect=error,
+            ):
+                with pytest.raises(subprocess.CalledProcessError) as caught:
+                    extract_pdf_text(str(pdf))
+            self.assertIn("pdftotext", caught.value.cmd)
+            self.assertIn(str(pdf), caught.value.cmd)
 
 
 def json_dumps_for_test(payload: dict) -> str:

@@ -1,16 +1,10 @@
 from __future__ import annotations
 
 import argparse
-import sys
-from pathlib import Path
 
 import pandas as pd
 
-try:
-    from ..core.common import chat_completion, parse_markdown_table
-except ImportError:  # pragma: no cover - direct script execution
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-    from paperread.surface.core.common import chat_completion, parse_markdown_table
+from ..core.common import chat_completion, parse_markdown_table
 
 
 COLUMNS = ["Index", "Time"]

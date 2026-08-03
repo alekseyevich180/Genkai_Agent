@@ -4,43 +4,27 @@ import argparse
 import csv
 import json
 import re
-import sys
 from pathlib import Path
 from typing import Any
 
-try:
-    from ..core.chemical_vocabulary import (
-        METAL_SYMBOLS,
-        extract_element_symbols,
-        normalize_element_name,
-        normalize_material_terms,
-    )
-    from ..core.surface_ontology import (
-        EXECUTABLE_TASKS,
-        GENERIC_REACTION_TYPES,
-        MATERIAL_CLASS_RULES,
-        material_class_rule_matches,
-        REACTION_KEYWORDS,
-        SUPPORTED_MODELING_TASKS,
-    )
-    from ..core.surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
-except ImportError:  # pragma: no cover - direct script execution
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-    from paperread.surface.core.chemical_vocabulary import (
-        METAL_SYMBOLS,
-        extract_element_symbols,
-        normalize_element_name,
-        normalize_material_terms,
-    )
-    from paperread.surface.core.surface_ontology import (
-        EXECUTABLE_TASKS,
-        GENERIC_REACTION_TYPES,
-        MATERIAL_CLASS_RULES,
-        material_class_rule_matches,
-        REACTION_KEYWORDS,
-        SUPPORTED_MODELING_TASKS,
-    )
-    from paperread.surface.core.surface_indices import canonicalize_surface_index, normalize_surface_facet_for_software
+from genkai.literature.surface.core.chemical_vocabulary import (
+    METAL_SYMBOLS,
+    extract_element_symbols,
+    normalize_element_name,
+    normalize_material_terms,
+)
+from genkai.literature.surface.core.surface_indices import (
+    canonicalize_surface_index,
+    normalize_surface_facet_for_software,
+)
+from genkai.literature.surface.core.surface_ontology import (
+    EXECUTABLE_TASKS,
+    GENERIC_REACTION_TYPES,
+    MATERIAL_CLASS_RULES,
+    REACTION_KEYWORDS,
+    SUPPORTED_MODELING_TASKS,
+    material_class_rule_matches,
+)
 
 SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
     Path(__file__).resolve().parents[3]

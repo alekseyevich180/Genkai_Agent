@@ -8,8 +8,15 @@ from typing import Any
 from ..core.crystal_structures import match_crystal_structure_term
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_MATERIAL_CLASS_DIR = REPO_ROOT / "paperread" / "surface" / "experience" / "material_classes"
+def _find_project_root() -> Path:
+    for parent in Path(__file__).resolve().parents:
+        if (parent / "agents" / "Agent").is_dir():
+            return parent
+    return Path.cwd()
+
+
+REPO_ROOT = _find_project_root()
+DEFAULT_MATERIAL_CLASS_DIR = Path(__file__).resolve().parent / "material_classes"
 DEFAULT_REGISTRY_PATH = (
     REPO_ROOT
     / "agents/Agent/skills/paperread/experience/surface_parameter_registry.json"
@@ -138,6 +145,10 @@ def build_surface_parameter_registry(
     output_markdown_path = output_markdown_path or DEFAULT_REGISTRY_MARKDOWN_PATH
 
     payloads = _load_material_class_payloads(material_class_dir)
+    if not payloads:
+        raise FileNotFoundError(
+            f"material-class JSON assets not found: {material_class_dir}"
+        )
     class_profiles: dict[str, Any] = {}
 
     common_material_classes = sorted(payloads)

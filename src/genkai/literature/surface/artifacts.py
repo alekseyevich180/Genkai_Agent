@@ -37,8 +37,8 @@ def run_surface_extraction(
 ) -> ExtractionArtifact:
     """Replay a saved relations JSONL file into a versioned run.
 
-    Network-backed extraction remains available through ``paperread.surface``;
-    this stable facade deliberately requires a saved input for deterministic
+    Network-backed extraction is exposed by ``genkai.literature.surface``;
+    this artifact facade deliberately requires a saved input for deterministic
     workflow replay.
     """
 
@@ -91,7 +91,7 @@ def run_surface_extraction(
         artifact_id=f"{manifest.run_id}:extraction",
         path=extraction_path.relative_to(root),
         sha256=_sha256(extraction_path),
-        producer="paperread.surface",
+        producer="genkai.literature.surface",
         parent_ids=[paper.artifact_id],
         execution_state=ExecutionState.SUCCEEDED,
         evidence_level=EvidenceLevel.PAPER_EXTRACTED,

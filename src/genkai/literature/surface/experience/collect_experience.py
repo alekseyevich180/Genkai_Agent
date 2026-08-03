@@ -7,52 +7,28 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 import re
-import sys
 from typing import Any, Iterable
 
-try:
-    from ..core.crystal_structures import match_crystal_structure_term
-    from .parameter_registry import build_surface_parameter_registry
-    from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
-    from ..core.surface_ontology import (
-        CATEGORY_RULES,
-        GENERIC_REACTION_TYPES,
-        HIGH_VALUE_FIELDS,
-        MATERIAL_CLASS_RULES,
-        material_class_rule_matches,
-        MATERIAL_CLASSES,
-        MATERIAL_KIND_TOKENS,
-        PERIODIC_SYMBOLS,
-        RELATION_FIELDS,
-        SUPPORTED_MODELING_TASKS,
-        TABLE_FIELDS,
-        TRANSITION_OR_SUPPORT_TOKENS,
-        KEYWORD_BUCKET_RULES,
-        is_known_surface_term,
-    )
-    from ..core.surface_indices import canonicalize_surface_index
-except ImportError:  # pragma: no cover - direct script execution
-    sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-    from paperread.surface.core.crystal_structures import match_crystal_structure_term
-    from paperread.surface.experience.parameter_registry import build_surface_parameter_registry
-    from paperread.surface.experience.parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
-    from paperread.surface.core.surface_ontology import (
-        CATEGORY_RULES,
-        GENERIC_REACTION_TYPES,
-        HIGH_VALUE_FIELDS,
-        MATERIAL_CLASS_RULES,
-        material_class_rule_matches,
-        MATERIAL_CLASSES,
-        MATERIAL_KIND_TOKENS,
-        PERIODIC_SYMBOLS,
-        RELATION_FIELDS,
-        SUPPORTED_MODELING_TASKS,
-        TABLE_FIELDS,
-        TRANSITION_OR_SUPPORT_TOKENS,
-        KEYWORD_BUCKET_RULES,
-        is_known_surface_term,
-    )
-    from paperread.surface.core.surface_indices import canonicalize_surface_index
+from ..core.crystal_structures import match_crystal_structure_term
+from ..core.surface_indices import canonicalize_surface_index
+from ..core.surface_ontology import (
+    CATEGORY_RULES,
+    GENERIC_REACTION_TYPES,
+    HIGH_VALUE_FIELDS,
+    KEYWORD_BUCKET_RULES,
+    MATERIAL_CLASS_RULES,
+    MATERIAL_CLASSES,
+    MATERIAL_KIND_TOKENS,
+    PERIODIC_SYMBOLS,
+    RELATION_FIELDS,
+    SUPPORTED_MODELING_TASKS,
+    TABLE_FIELDS,
+    TRANSITION_OR_SUPPORT_TOKENS,
+    is_known_surface_term,
+    material_class_rule_matches,
+)
+from .parameter_registry import DEFAULT_MATERIAL_CLASS_DIR
+from .parameter_registry import build_surface_parameter_registry
 
 
 @dataclass
