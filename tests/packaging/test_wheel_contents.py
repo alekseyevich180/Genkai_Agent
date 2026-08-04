@@ -36,7 +36,7 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
     with zipfile.ZipFile(wheel) as archive:
         names = archive.namelist()
         archive.extractall(extracted)
-    assert not any(name.startswith("paperread/surface/") for name in names)
+    assert not any(name.startswith("paperread/") for name in names)
 
     source_skills = {
         path.relative_to(ROOT / "agents" / "Agent" / "skills")

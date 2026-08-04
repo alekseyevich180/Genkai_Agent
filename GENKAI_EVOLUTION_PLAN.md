@@ -1389,6 +1389,10 @@ Task 10–11 的设计和逐文件计划已记录在：
      不再包含 `paperread/surface/`。
    - 兼容测试与分层回归通过后，Task15 完成；未进行远端推送或外部科研运行。
 
+方案 A 的物理布局收敛补充：独立的 NERRE/ReactionSeek 历史资产已归档到
+`legacy/paperread/`，活动库和 Skill 不再与其共享顶层 owner；wheel package
+discovery 已移除 `paperread*`。
+
 ### 15.6 下一次会话恢复顺序
 
 1. 读取本节、`work_logs/2026-08-04.md` 以及 PToModel 收敛设计与实施计划。

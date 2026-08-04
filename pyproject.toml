@@ -43,7 +43,7 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
-include = ["agent*", "agents*", "genkai*", "paperread*"]
+include = ["agent*", "agents*", "genkai*"]
 exclude = ["tests*"]
 
 [tool.setuptools.package-data]

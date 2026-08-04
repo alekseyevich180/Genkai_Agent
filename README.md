@@ -56,6 +56,9 @@ for provenance and offline-use rules.
 See [`docs/migration.md`](docs/migration.md) for current ownership, deprecated
 paths, and compatibility boundaries.
 
+Historical NERRE and ReactionSeek assets are retained under
+`legacy/paperread/`; they are not active package or workflow owners.
+
 Initialize and inspect an offline reference run:
 
 ```bash

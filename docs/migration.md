@@ -15,7 +15,7 @@
 - New surface tasks should use the canonical module identifiers in
   `src/genkai/modeling/schema/task_parameter_schema.json`.
 - Skill script paths remain supported only as thin CLI compatibility entries.
-- `paperread/NERRE` and `paperread/ReactionSeek` are retained research assets;
+- `legacy/paperread/NERRE` and `legacy/paperread/ReactionSeek` are retained research assets;
   they are not part of the Genkai surface workflow owner migration.
 
 ## Deprecated/generated paths
