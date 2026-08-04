@@ -34,6 +34,8 @@ learning_rate="${UMA_FINETUNE_LR:-}"
 batch_size="${UMA_FINETUNE_BATCH_SIZE:-}"
 max_neighbors="${UMA_FINETUNE_MAX_NEIGHBORS:-}"
 run_id="${UMA_FINETUNE_ID:-}"
+base_model_path="${UMA_FINETUNE_BASE_MODEL_PATH:-}"
+base_model_sha256="${UMA_FINETUNE_BASE_MODEL_SHA256:-}"
 
 case "${mode}" in
     train|resume) ;;
@@ -72,6 +74,24 @@ if [[ ! -f "${config_file}" ]]; then
     echo "ERROR: 微调配置不存在：${config_file}" >&2
     exit 1
 fi
+if [[ -n "${base_model_path}" || -n "${base_model_sha256}" ]]; then
+    if [[ -z "${base_model_path}" || -z "${base_model_sha256}" ]]; then
+        echo "ERROR: UMA checkpoint path and SHA-256 must be provided together" >&2
+        exit 1
+    fi
+    if [[ "${base_model_path}" != /* ]]; then
+        base_model_path="${work_dir}/${base_model_path}"
+    fi
+    if [[ ! -f "${base_model_path}" ]]; then
+        echo "ERROR: verified UMA base checkpoint does not exist: ${base_model_path}" >&2
+        exit 1
+    fi
+    actual_base_model_sha256="$(sha256sum "${base_model_path}" | awk '{print $1}')"
+    if [[ "${actual_base_model_sha256}" != "${base_model_sha256}" ]]; then
+        echo "ERROR: UMA base checkpoint SHA-256 mismatch: ${base_model_path}" >&2
+        exit 1
+    fi
+fi
 if [[ "${run_dir}" != /* ]]; then
     run_dir="${work_dir}/${run_dir}"
 fi
@@ -94,6 +114,11 @@ fi
 if [[ -n "${run_id}" ]]; then
     hydra_args+=("job.run_name=${run_id}")
 fi
+if [[ -n "${base_model_path}" ]]; then
+    hydra_args+=(
+        "runner.train_eval_unit.model.checkpoint_location=${base_model_path}"
+    )
+fi
 if [[ -n "${UMA_FINETUNE_ARGS:-}" ]]; then
     read -r -a extra_hydra_args <<< "${UMA_FINETUNE_ARGS}"
     hydra_args+=("${extra_hydra_args[@]}")
@@ -111,6 +136,12 @@ hydra_check=(
     --config "${config_file}"
     --mode "${mode}"
 )
+if [[ -n "${base_model_path}" ]]; then
+    hydra_check+=(
+        --expected-checkpoint "${base_model_path}"
+        --expected-checkpoint-sha256 "${base_model_sha256}"
+    )
+fi
 for override in "${launch_overrides[@]}"; do
     hydra_check+=(--override "${override}")
 done
@@ -134,7 +165,11 @@ export MKL_NUM_THREADS="${threads}"
 export OPENBLAS_NUM_THREADS="${threads}"
 export NUMEXPR_NUM_THREADS="${threads}"
 
-if [[ "${mode}" == "train" && "${HF_HUB_OFFLINE}" == "1" ]]; then
+if [[
+    "${mode}" == "train"
+    && "${HF_HUB_OFFLINE}" == "1"
+    && -z "${base_model_path}"
+]]; then
     base_model="$(
         sed -n 's/^[[:space:]]*base_model_name:[[:space:]]*//p' "${config_file}" \
             | head -n 1 \
@@ -163,6 +198,7 @@ echo "  config      : ${config_file}"
 echo "  run_dir     : ${run_dir}"
 echo "  python      : ${python_bin}"
 echo "  fairchem    : ${fairchem_bin}"
+echo "  base_model  : ${base_model_path:-configured by YAML}"
 echo "  device      : ${device}"
 echo "  threads     : ${threads}"
 echo "  cache       : ${FAIRCHEM_CACHE_DIR}"

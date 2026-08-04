@@ -4,15 +4,9 @@
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
-
-REPO_ROOT = Path(__file__).resolve().parents[5]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
-from paperread.surface.modeling.ptomodel import main as ptomodel_main
+from genkai.modeling.ptomodel import main as ptomodel_main
 
 
 def _build_parser() -> argparse.ArgumentParser:

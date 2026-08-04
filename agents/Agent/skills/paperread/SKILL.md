@@ -1,11 +1,19 @@
 ---
 name: paperread
-description: Read surface-research PDFs or JSON records and extract structured reaction, material, and modeling information for downstream agent workflows.
+description: Use when a surface-research PDF or prepared article record must be converted into structured literature evidence; do not use for structure generation or model training.
 metadata:
+  maturity: stable
+  domain: literature
   tools:
     - run_skill_script
   dependent_skills:
     - ptomodel
+  consumes:
+    - paper@1
+  produces:
+    - extraction@1
+  entrypoints:
+    - scripts/paperread_tools.py
   tags:
     - paperread
     - pdf
@@ -19,16 +27,17 @@ metadata:
 Use this skill when the task starts from a paper PDF or a prepared JSON text
 record and the agent needs structured outputs instead of a free-form summary.
 
-This skill is the entrypoint for the local `paperread/surface` pipeline and
+This skill is the Agent entrypoint for the local
+`genkai.literature.surface` pipeline and
 its reusable surface-paper experience loop:
 
 ```text
 paper PDF or JSON text
 -> paperread extraction
--> table / time / relations / summary / ptomodel json
+-> table / time / relations / summary
 -> optional experience collection
 -> unknown-term export / parameter registry update
--> downstream ptomodel / surface-modeling or later skill updates
+-> downstream ptomodel / surface-modeling workflow or later skill updates
 ```
 
 ## Script
@@ -73,7 +82,6 @@ Main outputs:
 - `*_time.csv`
 - `*_surface_relations.jsonl`
 - `*_summary.txt`
-- `*_ptomodel.json`
 
 Optional intermediate outputs:
 
@@ -86,8 +94,9 @@ Optional intermediate outputs:
 Use `--keep-intermediate` when debugging extraction quality.
 Use `--save-raw` when raw condition rows are needed.
 
-The pipeline now also writes `*_ptomodel.json`, but the preferred downstream
-entrypoint for this bridge step is the separate `ptomodel` skill.
+This script stops at literature outputs. Use the separate `ptomodel` skill or
+`genkai-workflow surface run` when the task must continue into the artifact
+modeling workflow.
 
 ### Collect Experience From Existing Outputs
 
@@ -106,7 +115,7 @@ useful or unfamiliar material/modeling information for later review.
 
 ```bash
 python scripts/paperread_tools.py init-material-classes \
-  --output-dir paperread/surface/experience
+  --output-dir src/genkai/literature/surface/experience
 ```
 
 ### Export Unknown Terms
@@ -157,8 +166,8 @@ Default outputs:
 - Read `*_surface_relations.jsonl` when the task needs structured entities,
   surfaces, facets, adsorbates, defects, single atoms, clusters, or suggested
   modeling tasks.
-- Read `*_ptomodel.json` when the task should directly continue into
-  `surface-modeling` rather than stopping at literature extraction.
+- Use `genkai-workflow surface run` when the task should create the downstream
+  modeling-plan and structure-candidate artifact chain.
 - Read `*_table.csv` when the task needs preparation or reaction conditions.
 - If paperread extracts unfamiliar terms or unsupported modeling cues, use
   `export-unknown-terms` or `add-term` inside this skill.
@@ -182,7 +191,7 @@ paper PDF / JSON
 Before reading a new batch of papers, prefer existing reusable knowledge over
 starting from a blank prompt:
 
-- Check `paperread/surface/experience/material_classes/*.json` for known
+- Check `src/genkai/literature/surface/experience/material_classes/*.json` for known
   material classes, active sites, adsorbates, dopants, defects, reactions, and
   modeling keywords.
 - Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
@@ -194,7 +203,8 @@ During extraction, preserve structured evidence that can be reused later:
 
 - Keep `*_surface_relations.jsonl` as the main entity and relation record.
 - Keep `*_table.csv` for preparation, reaction, amount, and condition evidence.
-- Keep `*_ptomodel.json` for downstream task mapping.
+- Keep `manifest.json` and artifact payloads when using the workflow-level
+  surface command for downstream task mapping.
 - Use `--collect-experience` whenever the output should improve future
   paper-reading or modeling.
 

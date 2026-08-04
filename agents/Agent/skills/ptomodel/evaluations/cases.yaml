@@ -1,0 +1,6 @@
+positive:
+  - prompt: Convert these extracted CeO2 facet and adsorbate fields into a modeling plan.
+negative:
+  - prompt: Read this PDF and extract its experimental evidence.
+boundary:
+  - prompt: Execute the reviewed vacancy-landscape task and generate structures.

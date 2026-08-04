@@ -395,7 +395,7 @@ DatasetArtifact
   `ValidationStatus`.
 - All later tasks consume these exact types.
 
-- [ ] **Step 1: 写 artifact round-trip 失败测试**
+- [x] **Step 1: 写 artifact round-trip 失败测试**
 
 测试构造一个 `StructureSetArtifact`，写出 JSON，再读回并断言
 `artifact_id`、`parent_ids`、`evidence_level` 和相对路径不变；同时断言绝对
@@ -409,19 +409,19 @@ pytest tests/contracts/test_artifacts.py -v
 
 Expected: FAIL because `genkai.contracts` does not exist.
 
-- [ ] **Step 2: 实现枚举、provenance 和基础 artifact**
+- [x] **Step 2: 实现枚举、provenance 和基础 artifact**
 
 使用 Pydantic discriminated union 定义第 4 节列出的九种 artifact。
 `path` 使用 POSIX 相对路径并拒绝 `..`；`sha256` 必须是 64 位小写十六进制。
 
-- [ ] **Step 3: 实现 validation report**
+- [x] **Step 3: 实现 validation report**
 
 `ValidationReport` 提供
 `errors: list[ValidationIssue]`、`warnings: list[ValidationIssue]`、
 `checks: list[ValidationIssue]` 和只读属性 `passed`；存在 error 时
 `passed` 必须为 `False`。
 
-- [ ] **Step 4: 声明 Pydantic 直接依赖并运行测试**
+- [x] **Step 4: 声明 Pydantic 直接依赖并运行测试**
 
 在 `pyproject.toml` 中加入与当前 Python 3.12 环境兼容的
 `pydantic>=2.12.0`。
@@ -434,7 +434,7 @@ pytest tests/contracts/test_artifacts.py -v
 
 Expected: PASS.
 
-- [ ] **Step 5: 提交独立变更**
+- [x] **Step 5: 提交独立变更**
 
 ```bash
 git add pyproject.toml src/genkai tests/contracts
@@ -457,12 +457,12 @@ git commit -m "feat: add versioned scientific artifact contracts"
   `load_manifest(run_root: Path) -> RunManifest` 和
   `save_manifest(run_root: Path, manifest: RunManifest) -> Path`.
 
-- [ ] **Step 1: 写 manifest 生命周期失败测试**
+- [x] **Step 1: 写 manifest 生命周期失败测试**
 
 测试创建 run、追加 stage、注册 artifact、保存、读回，并验证父 artifact
 必须已存在。另一个测试模拟写入中断，断言原 manifest 不被破坏。
 
-- [ ] **Step 2: 运行测试并确认预期失败**
+- [x] **Step 2: 运行测试并确认预期失败**
 
 ```bash
 pytest tests/contracts/test_run_manifest.py -v
@@ -470,13 +470,13 @@ pytest tests/contracts/test_run_manifest.py -v
 
 Expected: FAIL because `RunManifest` and store functions are absent.
 
-- [ ] **Step 3: 实现 manifest 模型和原子写入**
+- [x] **Step 3: 实现 manifest 模型和原子写入**
 
 `save_manifest` 先写同目录临时文件，执行 `flush` 和 `os.fsync` 后用
 `Path.replace` 替换 `manifest.json`。禁止在 manifest 中登记 run 根目录之外
 的 artifact。
 
-- [ ] **Step 4: 运行契约测试**
+- [x] **Step 4: 运行契约测试**
 
 ```bash
 pytest tests/contracts/test_run_manifest.py tests/contracts/test_artifacts.py -v
@@ -484,7 +484,7 @@ pytest tests/contracts/test_run_manifest.py tests/contracts/test_artifacts.py -v
 
 Expected: PASS.
 
-- [ ] **Step 5: 提交独立变更**
+- [x] **Step 5: 提交独立变更**
 
 ```bash
 git add src/genkai/contracts/run.py src/genkai/workflow tests/contracts
@@ -505,7 +505,7 @@ git commit -m "feat: add reproducible run manifests"
 - Produces: `ArtifactRequirement`, `StageSpec`, `WorkflowGraph`,
   `validate_workflow(graph: WorkflowGraph) -> ValidationReport`.
 
-- [ ] **Step 1: 写 DAG 契约失败测试**
+- [x] **Step 1: 写 DAG 契约失败测试**
 
 覆盖四种情况：
 
@@ -514,7 +514,7 @@ git commit -m "feat: add reproducible run manifests"
 3. schema 主版本不兼容；
 4. DAG 存在循环。
 
-- [ ] **Step 2: 运行测试并确认四类失败可区分**
+- [x] **Step 2: 运行测试并确认四类失败可区分**
 
 ```bash
 pytest tests/workflow/test_stage_graph.py -v
@@ -522,13 +522,13 @@ pytest tests/workflow/test_stage_graph.py -v
 
 Expected: FAIL because workflow graph validation is absent.
 
-- [ ] **Step 3: 实现 StageSpec 和静态 DAG 校验**
+- [x] **Step 3: 实现 StageSpec 和静态 DAG 校验**
 
 每个 stage 明确声明 `consumes`、`produces`、`adapter` 和
 `allows_mock_inputs`。校验器在执行前报告缺失生产者、类型不匹配、版本不兼容
 和循环。
 
-- [ ] **Step 4: 运行 workflow 与 contract 测试**
+- [x] **Step 4: 运行 workflow 与 contract 测试**
 
 ```bash
 pytest tests/contracts tests/workflow -v
@@ -536,7 +536,7 @@ pytest tests/contracts tests/workflow -v
 
 Expected: PASS.
 
-- [ ] **Step 5: 提交独立变更**
+- [x] **Step 5: 提交独立变更**
 
 ```bash
 git add src/genkai/workflow tests/workflow
@@ -564,12 +564,12 @@ git commit -m "feat: validate workflow artifact dependencies"
   `build_surface_candidates(plan, run_root, mode) -> StructureSetArtifact`.
 - Existing `paperread.surface` CLI remains a compatibility caller.
 
-- [ ] **Step 1: 用最小 JSON fixture 写 facade 失败测试**
+- [x] **Step 1: 用最小 JSON fixture 写 facade 失败测试**
 
 fixture 必须覆盖一个明确 `CeO2(111)`、一个 `*OH` 和一个
 `needs_manual_decision` 参数。测试不访问网络、不运行真实计算。
 
-- [ ] **Step 2: 运行测试并记录旧输出基线**
+- [x] **Step 2: 运行测试并记录旧输出基线**
 
 ```bash
 pytest tests/integrations/test_surface_facades.py tests/test_paperread_surface.py -v
@@ -577,18 +577,18 @@ pytest tests/integrations/test_surface_facades.py tests/test_paperread_surface.p
 
 Expected: new facade tests FAIL; existing paperread tests PASS.
 
-- [ ] **Step 3: 实现 facade，不搬迁原算法**
+- [x] **Step 3: 实现 facade，不搬迁原算法**
 
 第一轮 facade 调用现有 `paperread.surface` 函数，将输出包装为 artifact，
 计算 hash，并登记到 manifest。不得复制 PToModel 映射规则。
 
-- [ ] **Step 4: 让 job bundle 写 artifact 引用**
+- [x] **Step 4: 让 job bundle 写 artifact 引用**
 
 保留 `article.json`、`modeling/plan.json` 和 `modeling/checklist.json`，
 并在 manifest 中登记它们；旧字段继续保留，新增字段使用 schema version
 控制。
 
-- [ ] **Step 5: 跑兼容与新契约测试**
+- [x] **Step 5: 跑兼容与新契约测试**
 
 ```bash
 pytest tests/test_paperread_surface.py tests/integrations/test_surface_facades.py -v
@@ -598,7 +598,7 @@ python -m paperread.surface list-tools
 
 Expected: all tests PASS and both CLI commands exit 0.
 
-- [ ] **Step 6: 提交独立变更**
+- [x] **Step 6: 提交独立变更**
 
 ```bash
 git add src/genkai/literature src/genkai/modeling paperread/surface tests/integrations
@@ -631,7 +631,7 @@ git commit -m "feat: expose surface workflow through stable facades"
 - `DeepMDAdapter.prepare_training(dataset: DatasetArtifact, run_root: Path, mode: RunMode) -> StageResult`
 - `UmaAdapter.prepare_finetuning(dataset: DatasetArtifact, base_model: ModelArtifact | ExternalResourceRef, run_root: Path, mode: RunMode) -> StageResult`
 
-- [ ] **Step 1: 写角色边界和证据门禁失败测试**
+- [x] **Step 1: 写角色边界和证据门禁失败测试**
 
 测试必须证明：
 
@@ -641,12 +641,12 @@ git commit -m "feat: expose surface workflow through stable facades"
 - DeepMD/UMA 生产模式拒绝 mock dataset；
 - UMA 拒绝缺失 test split 或存在 split leakage 的数据。
 
-- [ ] **Step 2: 写 VASP 可选依赖失败测试**
+- [x] **Step 2: 写 VASP 可选依赖失败测试**
 
 在没有 `dpdata` 的环境导入 VASP prepare 模块并调用 `--help` 应成功；只有
 需要 `dpdata` 的 collect 子命令才返回明确依赖错误。
 
-- [ ] **Step 3: 运行测试并确认失败原因**
+- [x] **Step 3: 运行测试并确认失败原因**
 
 ```bash
 pytest tests/integrations/test_compute_dataset_mlip_contracts.py -v
@@ -654,17 +654,17 @@ pytest tests/integrations/test_compute_dataset_mlip_contracts.py -v
 
 Expected: FAIL because adapters do not exist and VASP imports `dpdata` eagerly.
 
-- [ ] **Step 4: 实现 adapter preflight 和 lazy import**
+- [x] **Step 4: 实现 adapter preflight 和 lazy import**
 
 adapter 只生成经过验证的 command specification，不自行提交 PJM 作业。
 VASP 中将 `dpdata` 移到实际需要它的函数内，并返回安装建议。
 
-- [ ] **Step 5: 复用现有 UMA 审计，不复制规则**
+- [x] **Step 5: 复用现有 UMA 审计，不复制规则**
 
 将稳定的距离、标签、split leakage 和 LMDB readback 逻辑提升到
 `src/genkai/datasets/`；旧 UMA 脚本改为调用这些函数，并保持原命令行参数。
 
-- [ ] **Step 6: 运行门禁和脚本静态检查**
+- [x] **Step 6: 运行门禁和脚本静态检查**
 
 ```bash
 pytest tests/integrations/test_compute_dataset_mlip_contracts.py -v
@@ -677,7 +677,7 @@ bash -n agents/Agent/skills/uma/scripts/submit_uma_finetuning.sh
 
 Expected: all commands exit 0; no real calculation or training starts.
 
-- [ ] **Step 7: 提交独立变更**
+- [x] **Step 7: 提交独立变更**
 
 ```bash
 git add src/genkai/compute src/genkai/datasets src/genkai/mlip agents/Agent/skills/vasp agents/Agent/skills/uma tests/integrations
@@ -702,23 +702,23 @@ git commit -m "feat: add validated compute dataset and MLIP adapters"
 - `preflight_paper_to_mlip(run_root, target, mode) -> ValidationReport`
 - CLI entrypoint: `genkai-workflow`.
 
-- [ ] **Step 1: 写三种目标路由失败测试**
+- [x] **Step 1: 写三种目标路由失败测试**
 
 断言 MACE 路径在 structure set 后结束；DeepMD 路径需要真实 dataset；UMA
 路径同时需要真实 dataset、base model 和 test split。
 
-- [ ] **Step 2: 写 mock 标签隔离测试**
+- [x] **Step 2: 写 mock 标签隔离测试**
 
 `genkai-workflow preflight --target uma --mode production` 对 mock fixture
 必须退出非零；`--mode dry-run` 可以生成计划，但 report 必须包含
 `mock_labels_not_trainable`。
 
-- [ ] **Step 3: 实现工作流构建和 preflight CLI**
+- [x] **Step 3: 实现工作流构建和 preflight CLI**
 
 CLI 只执行 `init`、`inspect`、`preflight` 和 `run --mode dry-run`。
 真实 DFT、训练或 scheduler submission 仍需通过对应 adapter 和用户明确授权。
 
-- [ ] **Step 4: 声明 CLI 并运行测试**
+- [x] **Step 4: 声明 CLI 并运行测试**
 
 在 `pyproject.toml` 增加：
 
@@ -735,7 +735,7 @@ genkai-workflow --help
 
 Expected: PASS and help exits 0.
 
-- [ ] **Step 5: 提交独立变更**
+- [x] **Step 5: 提交独立变更**
 
 ```bash
 git add pyproject.toml src/genkai/workflows src/genkai/cli.py tests/workflow tests/fixtures/paper_to_mlip
@@ -766,29 +766,29 @@ git commit -m "feat: add artifact-aware paper to MLIP workflow"
 - Required metadata: `maturity`, `domain`, `tools`, `dependent_skills`,
   `consumes`, `produces`, `entrypoints`.
 
-- [ ] **Step 1: 写当前 skill 的 characterization test**
+- [x] **Step 1: 写当前 skill 的 characterization test**
 
 先记录七个核心 skill 能被 ADK 加载、名称唯一，且现有
 `dependent_skills` 均指向真实 skill。
 
-- [ ] **Step 2: 写新 contract 失败测试**
+- [x] **Step 2: 写新 contract 失败测试**
 
 测试缺少 maturity、未知 dependency、无效 artifact version、缺失 entrypoint
 和 description 未以 `Use when` 开头时会给出不同错误码。
 
-- [ ] **Step 3: 实现 YAML frontmatter contract loader**
+- [x] **Step 3: 实现 YAML frontmatter contract loader**
 
 只解析 `SKILL.md` 首个 YAML frontmatter；保留 ADK 原字段，不创建第二份
 manifest。`evaluations/cases.yaml` 至少包含 `positive`、`negative` 和
 `boundary` 三类。
 
-- [ ] **Step 4: 逐个规范七个核心 skill**
+- [x] **Step 4: 逐个规范七个核心 skill**
 
 不在这一任务搬迁尚未稳定的算法；只统一触发描述、角色边界、artifact 声明、
 entrypoint 和 evaluation。MACE、DeepMD、UMA 的排他边界必须进入 boundary
 cases。
 
-- [ ] **Step 5: 运行静态、加载和边界测试**
+- [x] **Step 5: 运行静态、加载和边界测试**
 
 ```bash
 pytest tests/skills/test_builtin_skill_contracts.py tests/skills/test_skill_boundaries.py -v
@@ -797,7 +797,7 @@ python -c "from agents.Agent.skill import load_skills; assert len(load_skills())
 
 Expected: PASS.
 
-- [ ] **Step 6: 提交独立变更**
+- [x] **Step 6: 提交独立变更**
 
 ```bash
 git add src/genkai/skills agents/Agent/skills tests/skills
@@ -823,27 +823,27 @@ git commit -m "feat: standardize stable skill contracts"
   `artifact_ids: list[str]` 和 `manifest_path: str | None`。
 - 旧计划不提供新字段时仍可解析。
 
-- [ ] **Step 1: 写旧计划兼容失败测试**
+- [x] **Step 1: 写旧计划兼容失败测试**
 
 使用当前不含 artifact 字段的 graph payload，断言仍可通过
 `ExecutionGraph` 校验。
 
-- [ ] **Step 2: 写新计划静态拒绝测试**
+- [x] **Step 2: 写新计划静态拒绝测试**
 
 构造一个 UMA 节点直接消费 structure set 的 DAG，断言规划阶段失败并指出
 缺少 dataset 和 base model。
 
-- [ ] **Step 3: 实现可选 artifact 字段和 graph 转换**
+- [x] **Step 3: 实现可选 artifact 字段和 graph 转换**
 
 Agent 现有节点状态机保持不变；仅在提供 artifact 声明时调用
 `src/genkai/workflow/graph.py` 做额外校验。
 
-- [ ] **Step 4: 执行器登记真实产物**
+- [x] **Step 4: 执行器登记真实产物**
 
 当 skill 返回 manifest path 时，执行器从 manifest 读取 artifact IDs；
 普通文件路径继续放在旧 `artifacts` 字段，避免破坏前端展示。
 
-- [ ] **Step 5: 运行 Agent 回归测试**
+- [x] **Step 5: 运行 Agent 回归测试**
 
 ```bash
 pytest tests/test_agent.py tests/test_agent_artifact_planning.py -v
@@ -851,7 +851,7 @@ pytest tests/test_agent.py tests/test_agent_artifact_planning.py -v
 
 Expected: PASS.
 
-- [ ] **Step 6: 提交独立变更**
+- [x] **Step 6: 提交独立变更**
 
 ```bash
 git add agents/Agent tests/test_agent_artifact_planning.py
@@ -876,7 +876,7 @@ git commit -m "feat: make agent plans artifact aware"
 - Produces a complete run manifest ending at UMA training preflight.
 - No network、GPU、PJM、VASP execution or UMA training.
 
-- [ ] **Step 1: 写完整 dry-run 测试**
+- [x] **Step 1: 写完整 dry-run 测试**
 
 链路固定为：
 
@@ -893,7 +893,7 @@ saved paper extraction
 
 测试同时断言 mock result 从未变成 `dft_calculated`。
 
-- [ ] **Step 2: 运行端到端测试**
+- [x] **Step 2: 运行端到端测试**
 
 ```bash
 pytest tests/integrations/test_paper_surface_to_uma_dry_run.py -v
@@ -901,7 +901,7 @@ pytest tests/integrations/test_paper_surface_to_uma_dry_run.py -v
 
 Expected: PASS without external services.
 
-- [ ] **Step 3: 运行完整相关回归**
+- [x] **Step 3: 运行完整相关回归**
 
 ```bash
 pytest tests/contracts tests/workflow tests/integrations tests/skills tests/test_paperread_surface.py tests/test_agent.py -v
@@ -912,13 +912,13 @@ genkai-workflow --help
 
 Expected: all selected tests and commands PASS.
 
-- [ ] **Step 4: 更新文档和真实验证边界**
+- [x] **Step 4: 更新文档和真实验证边界**
 
 `README.md` 描述新库入口和三个 MLIP 角色；`plan.md` 将原
 paperread/PToModel 计划映射到 artifact stages；工作日志记录实际执行过的
 命令，并明确没有运行的真实计算、GPU、PJM 和训练。
 
-- [ ] **Step 5: 检查弃用条件**
+- [x] **Step 5: 检查弃用条件**
 
 只有同时满足以下条件，才在后续版本删除旧实现：
 
@@ -928,7 +928,7 @@ paperread/PToModel 计划映射到 artifact stages；工作日志记录实际执
 4. 至少经过一个带弃用提示的发布周期；
 5. 仓库内没有 skill 直接导入被删除脚本。
 
-- [ ] **Step 6: 执行仓库一致性检查**
+- [x] **Step 6: 执行仓库一致性检查**
 
 ```bash
 git diff --check
@@ -937,7 +937,7 @@ git status --short
 
 Expected: no whitespace errors; status only contains本计划范围内的文件。
 
-- [ ] **Step 7: 提交独立变更**
+- [x] **Step 7: 提交独立变更**
 
 ```bash
 git add README.md plan.md work_log.md work_logs docs tests/integrations
@@ -1233,3 +1233,171 @@ Level C：900k
 ```
 
 到达某一级预算的 80% 时，先运行该级验收并报告剩余工作，不自动扩大范围。
+
+---
+
+## 15. 2026-07-30 当前实施快照与下一阶段交接
+
+本节用于在后续会话中恢复实际进度。它区分“稳定契约和工作流已经建立”与
+“旧代码已经完成物理迁移”两个不同的完成条件。
+
+### 15.1 当前分支与交付位置
+
+- Task 1–9 的当前实现提交为 `f338263`。
+- GitHub 分支为 `feat/genkai-evolution`，远端跟踪分支为
+  `origin/feat/genkai-evolution`。
+- 主项目目录下的 `Genkai_Evolution/` 是该分支的独立 Git worktree，也是继续
+  开发和验证新版本的位置。
+- 根目录共享 `.venv` 的 `Genkai 2.2.0` editable project 指向
+  `Genkai_Evolution/`；旧 `agent 1.0.0` editable 映射已移除。
+
+### 15.2 第一轮已经完成的范围
+
+第一轮已建立并验证：
+
+1. `src/genkai/contracts/` 的 artifact、provenance、validation 和 run
+   manifest 契约。
+2. `src/genkai/workflow/` 的 stage、artifact-aware DAG 和原子 manifest
+   store。
+3. paperread、PToModel 和 surface modeling 的稳定 facade。
+4. VASP、ASE dataset、MACE、DeepMD 和 UMA 的职责边界与生产门禁。
+5. `genkai-workflow` CLI 和 paper-to-MLIP reference workflow。
+6. 七个核心 skill 的 contract、evaluation 和边界声明。
+7. Agent DAG 的可选 artifact 输入输出以及旧 graph payload 兼容。
+8. clean wheel 中的 Agent package、skill 资源和 CLI 入口。
+
+当前相关回归记录为 `100 passed`、`16 subtests passed`。同时通过两个 CLI
+help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
+安装和 skill 加载检查。仓库级 `pytest -q` 仍被既有
+`tests/test_structure_builder.py` 的缺失模块
+`agent.tools.structure_builder` 阻断；这不是 Task 1–9 回归通过的组成部分。
+
+没有运行真实 VASP、GPU/CUDA、PJM、MACE 科学推理、DeepMD 训练、UMA 微调、
+结构弛豫或分子动力学。dry-run 与 mock 结果不得视为真实科研计算证据。
+
+### 15.3 结构审计结论
+
+用户对新旧目录进行对比后指出顶层结构变化不明显。审计确认：
+
+- 新增的主要物理结构是 `src/genkai/` 及按 contracts、workflow、
+  integrations、skills 和 packaging 分类的新测试。
+- `agents/`、`paperread/`、`start/`、`web/` 和大量旧测试仍保留原位置。
+- 本地 `main` 已包含同一轮实现，因此本地比较 `main` 与
+  `feat/genkai-evolution` 时只剩专用 worktree 的 `.gitignore` 差异；评估演进
+  内容应比较 GitHub `origin/main` 与 `feat/genkai-evolution`。
+
+这是原计划约束的直接结果，而不是已经完成了目录迁移：
+
+1. Global Constraints 禁止一次性大规模搬迁。
+2. Task 4 明确要求 facade “不搬迁原算法”。
+3. Task 7 明确不在该任务迁移尚未稳定的算法。
+4. Milestone E 要求旧入口经过兼容测试和弃用周期后才允许删除。
+
+因此，Task 1–9 可以标记为“library-first 契约和纵向工作流完成”，但不能标记
+为“仓库物理结构收敛完成”。
+
+### 15.4 下一阶段结构方向决策
+
+继续作业前必须选择一个成功标准：
+
+#### 方案 A：兼容优先的结构收敛（推荐）
+
+- 将已经稳定并被多个入口复用的实现逐步迁入 `src/genkai/`。
+- `paperread/` 只保留旧 CLI 和 import compatibility shim。
+- 七个稳定 skill 的 scripts 只保留参数解析、库调用、报告展示和经过 preflight
+  的外部命令启动。
+- 每次只迁移一个领域边界，并使用 characterization test 保证旧入口行为不变。
+
+优点是能形成明显且可持续的新结构，同时控制兼容风险；缺点是需要一个过渡期，
+旧目录不会一次性消失。
+
+#### 方案 B：全新顶层布局
+
+- 重新设计为 `packages/`、`skills/`、`apps/`、`tests/` 和 `docs/` 等顶层
+  目录。
+- 同时修改 packaging、CLI、import path、Docker、Web 和发布流程。
+
+优点是视觉变化最大；缺点是跨系统改动范围和回归风险最高，不适合在缺少完整
+发布兼容测试时直接执行。
+
+#### 方案 C：只整理非核心内容
+
+- 整理根目录文档、测试数据、历史脚本和生成物。
+- 不迁移 paperread、Agent 或 skill 的核心实现。
+
+优点是风险最低；缺点是只改善可读性，不能解决双重业务实现和依赖边界问题。
+
+当前决策状态：**方案 A 已于 2026-08-03 获批并开始执行**。用户进一步确认
+`Genkai_Evolution/` 是专用于新结构的沙盒，不要求保留旧
+`paperread.surface.*` import 或 `python -m paperread.surface` CLI；因此 Task
+10–11 采用完整纵向迁移，不创建 compatibility shim。
+
+### 15.5 方案 A 实施状态
+
+Task 10–11 的设计和逐文件计划已记录在：
+
+- `docs/superpowers/specs/2026-08-03-genkai-surface-literature-convergence-design.md`
+- `docs/superpowers/plans/2026-08-03-genkai-surface-literature-convergence.md`
+
+当前任务状态：
+
+1. **Task 10：建立结构基线和依赖门禁（已完成）**
+   - 记录顶层目录、Python import、CLI、wheel 内容和 skill entrypoint 基线。
+   - 增加测试，禁止 `src/genkai/` 反向导入 `paperread/` 私有实现或 skill
+     scripts。
+   - 基线见 `docs/structure-baseline.md`；其中记录的两条 Task 12 技术债已于
+     2026-08-04 的 PToModel 收敛切片移除，当前门禁 allowlist 为空：
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.job_bundle.build_modeling_checklist`
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.ptomodel.build_ptomodel_payload`
+2. **Task 11：迁移 surface literature 内核（已完成）**
+   - 将稳定 extraction、experience 和 pipeline 业务实现迁入
+     `src/genkai/literature/surface/`。
+   - 共享 LLM 配置迁入 `src/genkai/llm.py`，组合入口迁入
+     `src/genkai/workflows/surface_paper.py`。
+   - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
+     脚本改为调用新库。
+   - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
+   - unknown-term export 业务已归属 `src/genkai/literature/surface/experience/`；
+     `paperread` Skill 仅保留 CLI 包装器，不再通过 `sys.path` 注入源码路径。
+3. **Task 12：迁移 PToModel 与 surface modeling 内核（已完成）**
+   - PToModel 映射、modeling checklist 和 canonical task schema 已迁入
+     `src/genkai/modeling/`；旧 `paperread/surface/modeling/` 已删除。
+   - PToModel skill 已改为调用公共库 API 的薄入口，`src/genkai/` 对
+     `paperread` 的两条反向 import 已清零。
+   - vacancy、adsorbate、Materials Project slab、metal-cluster 与 cluster-search
+     算法已迁入 `src/genkai/modeling/surface/`；原 Skill 路径仅保留薄包装器。
+   - canonical task schema 已指向 Genkai 模块入口，离线架构、兼容性与 wheel
+     门禁均已验证；不包含外部科研运行时验证。
+4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
+   - 统一 adapter 与 launcher contract 的所有权，完成 `src/genkai/mlip/launchers.py`
+     注册表并由 MACE/DeepMD/UMA adapter 共同消费。
+   - 稳定数据审计归属 `src/genkai/datasets/`；架构门禁确认 VASP、MACE、DeepMD
+     和 UMA Skill 脚本不复制 artifact/training/dataset gate。
+   - 已完成离线集成回归、Skill `--help`/shell 语法和 wheel 导入验证；未运行
+     外部计算、训练或 scheduler。
+5. **Task 14：重组测试和 fixtures**
+   - 已通过 pytest marker 与目录约定明确契约、单元、集成、兼容和外部运行时测试层。
+   - 兼容性 characterization 测试已迁入 `tests/compatibility/`；外部测试保留在
+     `tests/external/` 并默认排除。
+   - 大型论文和生成样例已迁入 `tests/fixtures/archives/`，来源、用途和离线策略
+     记录在 `tests/fixtures/README.md`。
+   - 离线分层回归已验证；未执行外部运行时测试。
+6. **Task 15：根目录与弃用清理**
+   - 已审查旧 surface owner、兼容 Skill 入口、研究资产和忽略的生成目录；仅
+     删除本地 `build/`/`Genkai.egg-info/` 生成状态，保留仍有用途的研究资产。
+   - 已新增 `docs/migration.md`，更新 README、wheel 门禁和 work log；干净 wheel
+     不再包含 `paperread/surface/`。
+   - 兼容测试与分层回归通过后，Task15 完成；未进行远端推送或外部科研运行。
+
+方案 A 的物理布局收敛补充：独立的 NERRE/ReactionSeek 历史资产已归档到
+`legacy/paperread/`，活动库和 Skill 不再与其共享顶层 owner；wheel package
+discovery 已移除 `paperread*`。
+
+### 15.6 下一次会话恢复顺序
+
+1. 读取本节、`work_logs/2026-08-04.md` 以及 PToModel 收敛设计与实施计划。
+2. 审计 `Genkai_Evolution/` 工作树和 `feat/genkai-evolution` 分支状态。
+3. 复核 Task 12 的离线回归与 wheel 产物，保留外部科研运行时边界。
+4. Task 13–15 按各自设计继续推进；不得将其未开始状态误记为完成。

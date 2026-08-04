@@ -39,12 +39,11 @@ import tempfile
 import traceback
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import time
 import uuid
 
-import dpdata
 import numpy as np
 import yaml
 from ase import Atoms
@@ -63,7 +62,7 @@ def _generate_work_path() -> str:
     return work_path
 
 
-def _dpdata2ase_single(sys: dpdata.System) -> Atoms:
+def _dpdata2ase_single(sys: Any) -> Atoms:
     """Convert a single-frame dpdata System to ase.Atoms."""
     atoms = Atoms(
         symbols=[sys.get_atom_names()[i] for i in sys.get_atom_types()],
@@ -83,6 +82,13 @@ def _dpdata2ase_single(sys: dpdata.System) -> Atoms:
 def _vasp_scf_results(work_dir_ls: List[Path]) -> dict:
     """Collect VASP OUTCAR results into a single extxyz file."""
     try:
+        try:
+            import dpdata
+        except ImportError as exc:
+            raise RuntimeError(
+                "collect_results requires the optional 'dpdata' package; "
+                "install dpdata in the VASP runtime environment"
+            ) from exc
         atoms_ls = []
         for work_dir in work_dir_ls:
             system = dpdata.LabeledSystem(

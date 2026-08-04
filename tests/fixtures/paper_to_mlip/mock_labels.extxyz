@@ -1,0 +1,4 @@
+2
+Lattice="8.0 0.0 0.0 0.0 8.0 0.0 0.0 0.0 8.0" Properties=species:S:1:pos:R:3:forces:R:3 energy=-1.0 pbc="T T T"
+H 0.0 0.0 0.0 0.0 0.0 0.0
+H 0.8 0.0 0.0 0.0 0.0 0.0

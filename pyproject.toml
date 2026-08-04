@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "ase>=3.29.0",
+    "click>=8.1.0",
     "matplotlib>=3.11.0",
     "optuna>=4.9.0",
     "pandas>=3.0.3",
@@ -15,6 +16,7 @@ dependencies = [
     "lbg>=1.2.29",
     "litellm>=1.89.4",
     "periodictable>=2.1.0",
+    "pydantic>=2.12.0",
     "pyyaml>=6.0.3",
     "scipy>=1.18.0",
     "python-dotenv>=1.2.2",
@@ -36,8 +38,49 @@ dependencies = [
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["agent*", "agents*", "genkai*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"genkai.literature.surface" = [
+    "experience/material_classes/*.json",
+]
+"genkai.modeling" = [
+    "schema/*.json",
+]
+"agents.Agent" = [
+    "agents/*.yaml",
+    "skills/*/SKILL.md",
+    "skills/*/README.md",
+    "skills/*/agents/*.yaml",
+    "skills/*/assets/*",
+    "skills/*/evaluations/*.yaml",
+    "skills/*/examples/*",
+    "skills/*/experience/*",
+    "skills/*/references/*",
+    "skills/*/schema/*",
+    "skills/*/scripts/*",
+    "skills/*/scripts/*/*",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: isolated deterministic test",
+    "contract: artifact or API contract test",
+    "integration: offline multi-component test",
+    "compatibility: legacy entrypoint compatibility test",
+    "external: requires external runtime or network and is opt-in",
+]
+addopts = "-m 'not external'"
+
 [project.scripts]
 agent = "agent.init.start_agent:main"
+genkai-workflow = "genkai.cli:main"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]

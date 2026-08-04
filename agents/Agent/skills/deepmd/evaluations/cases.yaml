@@ -1,0 +1,6 @@
+positive:
+  - prompt: Continue DeepMD training from this checkpoint and labeled dataset.
+negative:
+  - prompt: Run pretrained MACE single-point inference on this structure.
+boundary:
+  - prompt: Fine-tune the supplied UMA checkpoint using this ASE-LMDB dataset.

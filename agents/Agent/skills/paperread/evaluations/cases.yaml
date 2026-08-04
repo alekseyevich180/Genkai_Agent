@@ -1,0 +1,6 @@
+positive:
+  - prompt: Extract structured surface evidence from this catalyst paper.
+negative:
+  - prompt: Relax this existing POSCAR with MACE.
+boundary:
+  - prompt: Normalize this already extracted relations JSONL into modeling tasks.

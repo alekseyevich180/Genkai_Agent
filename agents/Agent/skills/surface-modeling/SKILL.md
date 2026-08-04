@@ -1,13 +1,23 @@
 ---
 name: surface-modeling
-description: "Build realistic oxide-surface candidates: oxygen-vacancy landscapes, adsorbate coverage landscapes, and metal-cluster-on-surface starting structures using ASE, Optuna, and optional UMA/FAIRChem calculators."
+description: "Use when a reviewed modeling plan requires oxide-surface, vacancy, adsorbate, or supported-cluster structure candidates; do not use for DFT labeling or MLIP training."
 metadata:
+  maturity: stable
+  domain: modeling
   tools:
     - run_python_file
   dependent_skills:
     - atomic-structure
     - structure-conversion
     - vasp
+  consumes:
+    - modeling-plan@1
+  produces:
+    - structure-set@1
+  entrypoints:
+    - scripts/vacancy/vacancy_landscape.py
+    - scripts/adsorbate/adsorbate_landscape.py
+    - scripts/metal_cluster/surface_cluster_builder.py
   tags:
     - surface
     - oxide
@@ -21,6 +31,9 @@ metadata:
 # Surface Modeling Skill
 
 Use this skill when a task is about oxide surface construction, vacancy sampling, adsorption coverage generation, or metal cluster placement on surfaces. The scripts are adapted from the `Oxidesurface_cluster` project and are intended to make this Agent project surface-focused.
+
+Stable algorithm ownership is under `src/genkai/modeling/surface/`; the script
+paths documented below are thin compatibility entrypoints for Skill callers.
 
 ## Workflow
 
@@ -248,7 +261,7 @@ Before running a modeling script:
 
 - Prefer a `*_ptomodel.json` task argument template when the task comes from a
   paper.
-- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- Check `src/genkai/modeling/schema/task_parameter_schema.json`
   for required arguments and constraints.
 - Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
   for known material class, facet, active-site, adsorbate, dopant, coverage,
@@ -287,7 +300,7 @@ expected types, required-ness, grouping, and constraints.
 
 The machine-readable copy used by `ptomodel` is stored at:
 
-- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- `src/genkai/modeling/schema/task_parameter_schema.json`
 
 ### Oxygen-Vacancy Landscape
 

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 from pathlib import Path
 
 from hydra import compose, initialize_config_dir
@@ -17,6 +18,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--mode", required=True, choices=("train", "resume"))
     parser.add_argument("--override", action="append", default=[])
+    parser.add_argument("--expected-checkpoint", type=Path)
+    parser.add_argument("--expected-checkpoint-sha256")
     return parser.parse_args()
 
 
@@ -43,6 +46,9 @@ def main() -> int:
     base_model = OmegaConf.select(cfg, "base_model_name")
     device = OmegaConf.select(cfg, "job.device_type")
     run_dir = OmegaConf.select(cfg, "job.run_dir")
+    checkpoint_location = OmegaConf.select(
+        cfg, "runner.train_eval_unit.model.checkpoint_location"
+    )
     train_tasks = OmegaConf.select(cfg, "train_dataset.dataset_configs")
     val_tasks = OmegaConf.select(cfg, "val_dataset.dataset_configs")
     if args.mode == "train":
@@ -59,11 +65,32 @@ def main() -> int:
             )
     else:
         train_keys = sorted(train_tasks.keys()) if train_tasks else []
+    if args.expected_checkpoint is not None:
+        expected = args.expected_checkpoint.resolve()
+        if not expected.is_file():
+            raise SystemExit(f"ERROR: expected checkpoint does not exist: {expected}")
+        try:
+            configured = Path(str(checkpoint_location)).resolve()
+        except TypeError as exc:
+            raise SystemExit(
+                "ERROR: composed checkpoint_location is not a direct file path"
+            ) from exc
+        if configured != expected:
+            raise SystemExit(
+                "ERROR: composed checkpoint_location does not match the verified "
+                f"checkpoint: configured={configured}, expected={expected}"
+            )
+        actual_sha256 = hashlib.sha256(expected.read_bytes()).hexdigest()
+        if actual_sha256 != args.expected_checkpoint_sha256:
+            raise SystemExit(
+                f"ERROR: expected checkpoint SHA-256 mismatch: {expected}"
+            )
 
     print("UMA fine-tuning Hydra preflight")
     print(f"  config     : {config}")
     print(f"  mode       : {args.mode}")
     print(f"  base_model : {base_model}")
+    print(f"  checkpoint : {checkpoint_location}")
     print(f"  task       : {train_keys}")
     print(f"  device     : {device}")
     print(f"  run_dir    : {run_dir}")

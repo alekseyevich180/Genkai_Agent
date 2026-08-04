@@ -1,6 +1,6 @@
 # Ptomodel 对应关系
 
-本文档整理 `paperread.surface.modeling.ptomodel` 当前已经收集到的已知参数，与后续建模参数之间的对应关系。
+本文档整理 `genkai.modeling.mapping` 当前已经收集到的已知参数，与后续建模参数之间的对应关系。稳定公共入口为 `genkai.modeling.ptomodel`。
 
 ## 1. 总体分层
 
@@ -73,7 +73,7 @@
 
 ### 元素、矿物名与通俗名称标准化
 
-`ptomodel` 使用 `paperread/surface/core/chemical_vocabulary.py` 统一识别：
+`ptomodel` 使用 `genkai.literature.surface.core.chemical_vocabulary` 统一识别：
 
 - 原子序数 1–86（H–Rn）的元素符号和标准英文名。
 - 论文中仍常见的拼写与旧称，例如 `aluminum/aluminium`、`sulfur/sulphur`、
@@ -302,6 +302,6 @@ surface`，并用原文支持的 links 连接，不额外补充其他晶面。
 这份映射是当前版本的 `ptomodel` 规则总结，不是最终不可变标准。
 当后续补充新的 surface modeling 脚本参数时，这里应同步更新：
 
-- `paperread/surface/modeling/ptomodel.py`
-- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
-- `paperread/surface/experience/parameter_registry.py`
+- `src/genkai/modeling/mapping.py`
+- `src/genkai/modeling/schema/task_parameter_schema.json`
+- `src/genkai/literature/surface/experience/parameter_registry.py`

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_at": "2026-07-15T05:17:24.881674+00:00",
-  "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/paperread/surface/experience/material_classes",
+  "source_material_class_dir": "/home/pj24001724/ku40000345/wu/Genkai_Agent/Genkai_Evolution/src/genkai/literature/surface/experience/material_classes",
   "common": {
     "material_classes": [
       "battery_electrode_materials",

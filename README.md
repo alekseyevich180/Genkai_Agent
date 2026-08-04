@@ -29,9 +29,65 @@ generated LMDB back, and composes the version-matched
 `fairchem-core 2.21.0` Hydra configuration before training handoff. Data,
 reports, configurations, checkpoints and logs remain in the caller's project.
 
-This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
+### Library-first workflow core
 
-Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.
+The stable scientific workflow API now lives under `src/genkai/`. It provides
+versioned artifact/provenance contracts, atomic run manifests, artifact-aware
+DAG validation, surface workflow facades, VASP preparation/result boundaries,
+ASE dataset audits, and separate MACE, DeepMD, and UMA adapters. Existing
+Agent entrypoints now call this library. The removed `paperread.surface`
+literature imports and module CLI are not compatibility targets in this
+evolution workspace. Task 12's PToModel mapping, checklist, canonical
+surface-task schema, and surface structure-generation algorithms now live under
+`src/genkai/modeling/`; the original Skill paths remain thin compatibility
+wrappers.
+
+Task 13 also centralizes compute, dataset, and MLIP launcher contracts under
+`src/genkai/compute/`, `src/genkai/datasets/`, and `src/genkai/mlip/`. Skills
+retain only runtime/CLI orchestration; dataset and artifact gates are shared
+library code.
+
+Tests are organized by tier under `tests/contracts`, `tests/architecture`,
+`tests/modeling`, `tests/integrations`, `tests/compatibility`, and
+`tests/external`. Large paper and generated snapshots live under
+`tests/fixtures/archives/`; see [`tests/fixtures/README.md`](tests/fixtures/README.md)
+for provenance and offline-use rules.
+
+See [`docs/migration.md`](docs/migration.md) for current ownership, deprecated
+paths, and compatibility boundaries.
+
+Historical NERRE and ReactionSeek assets are retained under
+`legacy/paperread/`; they are not active package or workflow owners.
+
+Initialize and inspect an offline reference run:
+
+```bash
+genkai-workflow init runs/demo \
+  --relations tests/fixtures/paper_to_mlip/minimal_surface_relations.jsonl \
+  --mock-labels tests/fixtures/paper_to_mlip/mock_labels.extxyz \
+  --base-model-uri file:///path/to/read-only/uma-checkpoint.pt
+genkai-workflow inspect --run-root runs/demo
+genkai-workflow preflight --run-root runs/demo --target uma --mode dry-run
+```
+
+This workflow never treats the fixture as DFT evidence: UMA production
+preflight rejects its mock labels, while dry-run records a warning and starts
+no VASP, GPU, PJM, DeepMD, MACE, or UMA process. See
+[`docs/artifact-contracts.md`](docs/artifact-contracts.md) and
+[`docs/skill-development.md`](docs/skill-development.md).
+
+The maintained paper-reading implementation lives under
+`src/genkai/literature/surface/`. It can ingest surface-research PDFs or JSON
+text, extract surface materials, reaction/material parameters, adsorbates,
+active sites, defects, single atoms, clusters, and modeling keywords, then
+hand structured relations to the workflow layer.
+
+Extracted useful or unknown information is accumulated by inorganic material
+class under
+`src/genkai/literature/surface/experience/material_classes/`, such as
+`carbon_materials`, `single_atom_catalysts`, `oxides`, and
+`supported_catalysts`, so repeated paper-reading results can improve later
+schema, prompt, planner, and skill updates.
 
 ### Paperread surface workflow
 
@@ -40,8 +96,9 @@ older standalone `ReactionSeek` or `NERRE` entrypoints. The maintained path is:
 
 ```text
 PDF or JSON paper text
--> paperread/surface extraction
--> condition table, time table, surface relations, summary, ptomodel bridge
+-> genkai.literature.surface extraction
+-> condition table, time table, surface relations, summary
+-> genkai.workflows.surface_paper artifact initialization and modeling plan
 -> material-class experience store
 -> skill-side unknown-term store and surface parameter registry
 ```
@@ -49,10 +106,9 @@ PDF or JSON paper text
 Run a single paper:
 
 ```bash
-python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
-  --input /path/to/paper.pdf \
-  --output-dir paperread_output \
-  --keep-intermediate \
+genkai-workflow surface run /path/to/paper.pdf \
+  --run-root paperread_output \
+  --input-format pdf \
   --collect-experience
 ```
 
@@ -63,20 +119,22 @@ Important paperread outputs:
 - `*_surface_relations.jsonl`: structured materials, surfaces, adsorbates,
   active sites, defects, single atoms, clusters, reactions, and modeling cues.
 - `*_summary.txt`: short human-readable extraction summary.
-- `*_ptomodel.json`: normalized bridge from paper facts to Agent modeling inputs.
-- `paperread/surface/experience/material_classes/*.json`: canonical reusable
+- `manifest.json` and artifact payloads: extraction, modeling-plan, and
+  structure-candidate provenance initialized by the workflow layer.
+- `src/genkai/literature/surface/experience/material_classes/*.json`: canonical reusable
   material-class keyword store.
 - `agents/Agent/skills/paperread/experience/surface_parameter_registry.{json,md}`:
   reusable vocabulary built from the canonical experience store.
 - `agents/Agent/skills/paperread/experience/unrecognized_surface_terms.jsonl`:
   unresolved surface-paper terms that may require ontology or workflow updates.
 
-For batch PDF work, always keep intermediates:
+For lower-level batch PDF extraction, the Agent paperread skill can retain
+intermediates without invoking the workflow-level modeling bridge:
 
 ```bash
 python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
   --input /path/to/paper.pdf \
-  --output-dir tests/paperread_papers2_experience \
+  --output-dir tests/fixtures/archives/generated/paperread_papers2_experience \
   --keep-intermediate \
   --collect-experience
 ```

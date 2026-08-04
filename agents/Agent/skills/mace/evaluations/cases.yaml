@@ -1,0 +1,6 @@
+positive:
+  - prompt: Evaluate energies and forces with the pretrained MACE-MP small model.
+negative:
+  - prompt: Train a new DeepMD potential from this labeled dataset.
+boundary:
+  - prompt: Fine-tune a UMA checkpoint on this task-specific dataset.

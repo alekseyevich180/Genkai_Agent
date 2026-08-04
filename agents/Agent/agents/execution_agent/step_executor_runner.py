@@ -37,6 +37,71 @@ _CANCEL_POLL_INTERVAL = 0.5  # seconds
 _SUB_STEP_TIMEOUT = int(os.environ.get("SUB_STEP_TIMEOUT", "3600"))  # seconds
 
 
+def _hydrate_manifest_artifacts(
+    result: StepExecutorResult,
+    workspace_dir: str | Path,
+) -> StepExecutorResult:
+    """Validate a workspace manifest and derive canonical step output IDs."""
+
+    def invalidate(reason: str) -> StepExecutorResult:
+        result.status = "needs_replanning"
+        result.artifact_ids = []
+        result.replan_reason = reason
+        return result
+
+    if not result.manifest_path:
+        if result.artifact_ids:
+            return invalidate("artifact_ids require a validated manifest")
+        return result
+
+    workspace = Path(workspace_dir).resolve()
+    manifest_path = Path(result.manifest_path).resolve()
+    if not manifest_path.is_relative_to(workspace):
+        logger.warning(
+            "Step result manifest is outside authorized workspace: %s", manifest_path
+        )
+        return invalidate("declared manifest is outside the authorized workspace")
+    if not manifest_path.is_file():
+        logger.warning("Step result manifest does not exist: %s", manifest_path)
+        return invalidate("declared manifest does not exist")
+    try:
+        from genkai.contracts.run import RunManifest
+
+        manifest = RunManifest.model_validate_json(
+            manifest_path.read_text(encoding="utf-8")
+        )
+    except Exception as exc:
+        logger.warning("Could not read step result manifest %s: %s", manifest_path, exc)
+        return invalidate("declared manifest is malformed or invalid")
+    known_ids = {artifact.artifact_id for artifact in manifest.artifacts}
+    supplied_unknown = set(result.artifact_ids).difference(known_ids)
+    if supplied_unknown:
+        logger.warning(
+            "Ignoring artifact IDs absent from manifest: %s",
+            ", ".join(sorted(supplied_unknown)),
+        )
+    if not result.manifest_stage_id:
+        return invalidate("declared manifest is missing manifest_stage_id")
+    stage = next(
+        (
+            record
+            for record in manifest.stages
+            if record.stage_id == result.manifest_stage_id
+        ),
+        None,
+    )
+    if stage is None:
+        return invalidate(
+            f"manifest has no StageRecord named {result.manifest_stage_id}"
+        )
+    result.artifact_ids = [
+        artifact_id
+        for artifact_id in stage.output_artifact_ids
+        if artifact_id in known_ids
+    ]
+    return result
+
+
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -353,7 +418,10 @@ async def run_step_executor(
     step_result_data = step_state_delta.get("_step_result")
     if step_result_data:
         tool_context.state["_step_result"] = None  # State has no pop(); reset instead
-        result = StepExecutorResult.model_validate(step_result_data)
+        result = _hydrate_manifest_artifacts(
+            StepExecutorResult.model_validate(step_result_data),
+            step_workspace,
+        )
         graph.log_node_complete(
             step_id,
             result.status,
