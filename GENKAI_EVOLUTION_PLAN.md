@@ -1369,8 +1369,12 @@ Task 10–11 的设计和逐文件计划已记录在：
    - canonical task schema 已指向 Genkai 模块入口，离线架构、兼容性与 wheel
      门禁均已验证；不包含外部科研运行时验证。
 4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
-   - 统一 adapter 与 launcher contract 的所有权。
-   - 将稳定数据审计放在 `src/genkai/datasets/`，skill 中不保留第二份实现。
+   - 统一 adapter 与 launcher contract 的所有权，完成 `src/genkai/mlip/launchers.py`
+     注册表并由 MACE/DeepMD/UMA adapter 共同消费。
+   - 稳定数据审计归属 `src/genkai/datasets/`；架构门禁确认 VASP、MACE、DeepMD
+     和 UMA Skill 脚本不复制 artifact/training/dataset gate。
+   - 已完成离线集成回归、Skill `--help`/shell 语法和 wheel 导入验证；未运行
+     外部计算、训练或 scheduler。
 5. **Task 14：重组测试和 fixtures**
    - 将契约、单元、集成、兼容和外部运行时测试明确分层。
    - 将大型论文和生成样例从普通测试模块中分离，并记录来源和用途。

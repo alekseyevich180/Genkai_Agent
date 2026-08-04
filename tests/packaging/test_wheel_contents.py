@@ -157,6 +157,22 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
         "surface_cluster_mlip_search",
         "vacancy_landscape",
     ]
+    launcher_load = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            (
+                "from genkai.mlip.launchers import LAUNCHER_CONTRACTS; "
+                "assert set(LAUNCHER_CONTRACTS) == {'mace', 'deepmd', 'uma'}"
+            ),
+        ],
+        cwd=tmp_path,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert launcher_load.returncode == 0, launcher_load.stderr
     for module in ("genkai.cli", "agent.init.start_agent"):
         help_result = subprocess.run(
             [sys.executable, "-m", module, "--help"],

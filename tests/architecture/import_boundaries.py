@@ -52,6 +52,23 @@ def find_skill_heavy_imports(skill_root: Path) -> set[ImportRef]:
     return violations
 
 
+def find_skill_contract_violations(skill_root: Path) -> set[ImportRef]:
+    """Find Skill scripts that duplicate stable Genkai gate implementations."""
+    forbidden_names = {
+        "audit_dataset_splits",
+        "artifact_integrity_gate",
+        "training_dataset_gate",
+    }
+    violations: set[ImportRef] = set()
+    for path in skill_root.rglob("*.py"):
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        relative = path.relative_to(skill_root).as_posix()
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name in forbidden_names:
+                violations.add(ImportRef(relative, node.name, None))
+    return violations
+
+
 def _forbidden(module: str) -> bool:
     return module == "paperread" or module.startswith("paperread.") or (
         module == "agents.Agent.skills"

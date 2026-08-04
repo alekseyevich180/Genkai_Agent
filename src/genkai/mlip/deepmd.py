@@ -10,6 +10,7 @@ from genkai.contracts.validation import ValidationIssue
 from genkai.workflow.stage import StageResult
 
 from .protocol import RunMode, _route_issue, training_dataset_gate
+from .launchers import get_launcher_contract
 
 
 class DeepMDAdapter:
@@ -26,6 +27,7 @@ class DeepMDAdapter:
     ) -> StageResult:
         report = training_dataset_gate(dataset, run_root, mode)
         from .protocol import resolve_launcher
+        contract = get_launcher_contract("deepmd")
 
         root = Path(run_root).resolve()
         config_value = dataset.metadata.get("deepmd_input_path")
@@ -67,13 +69,8 @@ class DeepMDAdapter:
             )
         executable = resolve_launcher(
             self.executable,
-            "GENKAI_DEEPMD_LAUNCHER",
-            (
-                "DEEPMD_WORK_DIR",
-                "DEEPMD_ARGS",
-                "DEEPMD_REQUIRED_PATHS",
-                "DEEPMD_DRY_RUN",
-            ),
+            contract.environment_variable,
+            contract.required_markers,
             mode,
             report.errors,
             report.warnings,

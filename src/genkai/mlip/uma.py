@@ -22,6 +22,7 @@ from .protocol import (
     resolve_launcher,
     training_dataset_gate,
 )
+from .launchers import get_launcher_contract
 
 
 class UmaAdapter:
@@ -165,16 +166,11 @@ class UmaAdapter:
                 report.errors,
                 report.warnings,
             )
+        contract = get_launcher_contract("uma")
         executable = resolve_launcher(
             self.executable,
-            "GENKAI_UMA_LAUNCHER",
-            (
-                "UMA_FINETUNE_WORK_DIR",
-                "UMA_FINETUNE_CONFIG",
-                "UMA_FINETUNE_DRY_RUN",
-                "UMA_FINETUNE_BASE_MODEL_PATH",
-                "UMA_FINETUNE_BASE_MODEL_SHA256",
-            ),
+            contract.environment_variable,
+            contract.required_markers,
             mode,
             report.errors,
             report.warnings,

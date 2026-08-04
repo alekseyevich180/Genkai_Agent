@@ -3,6 +3,7 @@ from pathlib import Path
 from tests.architecture.import_boundaries import (
     ImportRef,
     find_forbidden_imports,
+    find_skill_contract_violations,
     find_skill_heavy_imports,
 )
 
@@ -63,6 +64,13 @@ def test_surface_skill_scripts_are_thin_library_wrappers() -> None:
     assert find_skill_heavy_imports(
         ROOT / "agents" / "Agent" / "skills" / "surface-modeling" / "scripts"
     ) == set()
+
+
+def test_compute_and_mlip_skills_do_not_duplicate_library_gates() -> None:
+    for skill in ("vasp", "mace", "deepmd", "uma"):
+        assert find_skill_contract_violations(
+            ROOT / "agents" / "Agent" / "skills" / skill / "scripts"
+        ) == set()
 
 
 def test_legacy_surface_literature_paths_are_absent() -> None:

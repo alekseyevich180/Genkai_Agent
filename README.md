@@ -42,6 +42,11 @@ surface-task schema, and surface structure-generation algorithms now live under
 `src/genkai/modeling/`; the original Skill paths remain thin compatibility
 wrappers.
 
+Task 13 also centralizes compute, dataset, and MLIP launcher contracts under
+`src/genkai/compute/`, `src/genkai/datasets/`, and `src/genkai/mlip/`. Skills
+retain only runtime/CLI orchestration; dataset and artifact gates are shared
+library code.
+
 Initialize and inspect an offline reference run:
 
 ```bash
