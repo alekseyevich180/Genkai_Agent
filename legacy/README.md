@@ -5,6 +5,8 @@ Genkai package owners.
 
 - `legacy/paperread/NERRE/`: historical NERRE experiments and data.
 - `legacy/paperread/ReactionSeek/`: historical reaction-seek experiments.
+- `legacy/paperread/README.md` and `requirements.txt`: historical project notes
+  and dependency references.
 
 Active paper-reading and surface workflows live under
 `agents/Agent/skills/paperread/` and `src/genkai/literature/`. The archived
