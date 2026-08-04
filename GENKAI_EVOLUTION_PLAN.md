@@ -1376,8 +1376,12 @@ Task 10–11 的设计和逐文件计划已记录在：
    - 已完成离线集成回归、Skill `--help`/shell 语法和 wheel 导入验证；未运行
      外部计算、训练或 scheduler。
 5. **Task 14：重组测试和 fixtures**
-   - 将契约、单元、集成、兼容和外部运行时测试明确分层。
-   - 将大型论文和生成样例从普通测试模块中分离，并记录来源和用途。
+   - 已通过 pytest marker 与目录约定明确契约、单元、集成、兼容和外部运行时测试层。
+   - 兼容性 characterization 测试已迁入 `tests/compatibility/`；外部测试保留在
+     `tests/external/` 并默认排除。
+   - 大型论文和生成样例已迁入 `tests/fixtures/archives/`，来源、用途和离线策略
+     记录在 `tests/fixtures/README.md`。
+   - 离线分层回归已验证；未执行外部运行时测试。
 6. **Task 15：根目录与弃用清理**
    - 在至少一个弃用周期和完整兼容验证后，单独审查可删除的旧模块。
    - 更新 README、迁移指南、wheel 清单和 work log。

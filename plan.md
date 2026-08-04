@@ -206,7 +206,7 @@ PToModel 参数状态必须明确区分：
 
 - 修复或确认 `LLM_API_KEY`、`LLM_BASE_URL`、模型名和额度状态。
 - `tests/papers2` 后续不重新解析 PDF，直接基于
-  `tests/paperread_papers2_experience/*_conditions_input.json` 和
+  `tests/fixtures/archives/generated/paperread_papers2_experience/*_conditions_input.json` 和
   `*_relations_input.json` 断点续跑。
 - 每次小批量处理 2-3 篇，避免继续触发限流。
 - 优先补齐 `*_table.csv`、`*_surface_relations.jsonl`、`*_summary.txt` 和

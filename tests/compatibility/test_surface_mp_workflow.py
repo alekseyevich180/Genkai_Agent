@@ -6,14 +6,17 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
+import pytest
 
 from ase.build import bulk, surface
 from pymatgen.core import Lattice, Structure
 
 from genkai.modeling.checklist import write_compact_job_bundle
 
+pytestmark = pytest.mark.compatibility
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 MODULE_PATH = (
     PROJECT_ROOT
     / "agents/Agent/skills/surface-modeling/scripts/surface/materials_project_slab.py"

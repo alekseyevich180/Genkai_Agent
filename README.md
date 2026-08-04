@@ -47,6 +47,12 @@ Task 13 also centralizes compute, dataset, and MLIP launcher contracts under
 retain only runtime/CLI orchestration; dataset and artifact gates are shared
 library code.
 
+Tests are organized by tier under `tests/contracts`, `tests/architecture`,
+`tests/modeling`, `tests/integrations`, `tests/compatibility`, and
+`tests/external`. Large paper and generated snapshots live under
+`tests/fixtures/archives/`; see [`tests/fixtures/README.md`](tests/fixtures/README.md)
+for provenance and offline-use rules.
+
 Initialize and inspect an offline reference run:
 
 ```bash
@@ -122,7 +128,7 @@ intermediates without invoking the workflow-level modeling bridge:
 ```bash
 python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
   --input /path/to/paper.pdf \
-  --output-dir tests/paperread_papers2_experience \
+  --output-dir tests/fixtures/archives/generated/paperread_papers2_experience \
   --keep-intermediate \
   --collect-experience
 ```

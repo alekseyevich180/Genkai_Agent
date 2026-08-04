@@ -10,6 +10,8 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
+pytestmark = pytest.mark.compatibility
+
 from genkai.literature.surface.core.catalog import list_surface_tools, render_surface_tool_catalog
 from genkai.literature.surface.experience.collect_experience import collect_experience
 from genkai.literature.surface.experience.parameter_registry import (
@@ -35,7 +37,7 @@ from genkai.literature.surface.pipeline.runner import (
 from genkai.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SAMPLE_INPUT = (
     PROJECT_ROOT
     / "tests"

@@ -68,6 +68,16 @@ exclude = ["tests*"]
     "skills/*/scripts/*/*",
 ]
 
+[tool.pytest.ini_options]
+markers = [
+    "unit: isolated deterministic test",
+    "contract: artifact or API contract test",
+    "integration: offline multi-component test",
+    "compatibility: legacy entrypoint compatibility test",
+    "external: requires external runtime or network and is opt-in",
+]
+addopts = "-m 'not external'"
+
 [project.scripts]
 agent = "agent.init.start_agent:main"
 genkai-workflow = "genkai.cli:main"
