@@ -1359,13 +1359,15 @@ Task 10–11 的设计和逐文件计划已记录在：
    - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
      脚本改为调用新库。
    - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
-3. **Task 12：迁移 PToModel 与 surface modeling 内核（部分完成）**
+3. **Task 12：迁移 PToModel 与 surface modeling 内核（已完成）**
    - PToModel 映射、modeling checklist 和 canonical task schema 已迁入
      `src/genkai/modeling/`；旧 `paperread/surface/modeling/` 已删除。
    - PToModel skill 已改为调用公共库 API 的薄入口，`src/genkai/` 对
      `paperread` 的两条反向 import 已清零。
-   - ASE、pymatgen、Optuna 与 FAIRChem 结构生成算法仍位于
-     `surface-modeling` skill，作为下一独立切片迁移；Task 12 尚未整体完成。
+   - vacancy、adsorbate、Materials Project slab、metal-cluster 与 cluster-search
+     算法已迁入 `src/genkai/modeling/surface/`；原 Skill 路径仅保留薄包装器。
+   - canonical task schema 已指向 Genkai 模块入口，离线架构、兼容性与 wheel
+     门禁均已验证；不包含外部科研运行时验证。
 4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
    - 统一 adapter 与 launcher contract 的所有权。
    - 将稳定数据审计放在 `src/genkai/datasets/`，skill 中不保留第二份实现。
@@ -1380,8 +1382,5 @@ Task 10–11 的设计和逐文件计划已记录在：
 
 1. 读取本节、`work_logs/2026-08-04.md` 以及 PToModel 收敛设计与实施计划。
 2. 审计 `Genkai_Evolution/` 工作树和 `feat/genkai-evolution` 分支状态。
-3. 为剩余 surface-modeling 算法切片编写独立设计，按 vacancy、adsorbate、
-   metal-cluster、Materials Project slab 和 FAIRChem search 的依赖边界拆分。
-4. 按 brainstorming、逐文件 implementation plan 和测试先行流程逐项迁移，
-   不恢复 `src/genkai -> paperread` allowlist，也不一次性搬迁全部运行时代码。
-5. 剩余算法迁移和薄入口验证完成前，Task 12 保持“部分完成”。
+3. 复核 Task 12 的离线回归与 wheel 产物，保留外部科研运行时边界。
+4. Task 13–15 按各自设计继续推进；不得将其未开始状态误记为完成。

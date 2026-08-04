@@ -1,6 +1,10 @@
 from pathlib import Path
 
-from tests.architecture.import_boundaries import ImportRef, find_forbidden_imports
+from tests.architecture.import_boundaries import (
+    ImportRef,
+    find_forbidden_imports,
+    find_skill_heavy_imports,
+)
 
 
 ROOT = Path(__file__).parents[2]
@@ -53,6 +57,12 @@ def test_exact_allowlist_removes_only_the_named_import(tmp_path: Path) -> None:
 
 def test_genkai_reverse_imports_match_task12_allowlist() -> None:
     assert find_forbidden_imports(ROOT / "src" / "genkai", set()) == set()
+
+
+def test_surface_skill_scripts_are_thin_library_wrappers() -> None:
+    assert find_skill_heavy_imports(
+        ROOT / "agents" / "Agent" / "skills" / "surface-modeling" / "scripts"
+    ) == set()
 
 
 def test_legacy_surface_literature_paths_are_absent() -> None:

@@ -88,6 +88,11 @@ The 2026-08-04 PToModel convergence slice removed both imports and the legacy
 `paperread/surface/modeling/` owner. The architecture gate now uses an empty
 allowlist; this section retains the measured pre-migration baseline.
 
+Task 12 surface-modeling convergence subsequently moved the stable vacancy,
+adsorbate, slab, cluster, and cluster-search implementations into
+`src/genkai/modeling/surface/`. Skill script paths are compatibility wrappers;
+the canonical task schema points to Genkai module entrypoints.
+
 ## CLI baseline
 
 `pyproject.toml` declares:

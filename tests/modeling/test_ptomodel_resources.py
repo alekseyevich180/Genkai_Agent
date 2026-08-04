@@ -23,3 +23,7 @@ def test_canonical_task_schema_is_owned_by_genkai() -> None:
     assert registry["schema_resource"] == (
         "genkai.modeling.schema:task_parameter_schema.json"
     )
+    assert all(
+        task["script"].startswith("genkai.modeling.surface.")
+        for task in registry["tasks"].values()
+    )

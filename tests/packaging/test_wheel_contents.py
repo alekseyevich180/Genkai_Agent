@@ -111,12 +111,17 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
         / "task_parameter_schema.json"
     )
     assert wheel_task_schema.read_bytes() == source_task_schema.read_bytes()
-    assert set(json.loads(wheel_task_schema.read_text())["tasks"]) == {
+    wheel_tasks = json.loads(wheel_task_schema.read_text())["tasks"]
+    assert set(wheel_tasks) == {
         "vacancy_landscape",
         "adsorbate_landscape",
         "surface_cluster_builder",
         "surface_cluster_mlip_search",
     }
+    assert all(
+        task["script"].startswith("genkai.modeling.surface.")
+        for task in wheel_tasks.values()
+    )
 
     environment = {**os.environ, "PYTHONPATH": str(extracted)}
     environment.pop("OPENAI_API_KEY", None)

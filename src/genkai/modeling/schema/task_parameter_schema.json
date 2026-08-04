@@ -4,7 +4,7 @@
   "schema_type": "task_parameter_schema",
   "tasks": {
     "vacancy_landscape": {
-      "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
+      "script": "genkai.modeling.surface.vacancy:main",
       "ptomodel_mapping_role": "oxide surface vacancy modeling input",
       "parameters": {
         "input": { "type": "path", "required": true },
@@ -34,7 +34,7 @@
       ]
     },
     "adsorbate_landscape": {
-      "script": "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py",
+      "script": "genkai.modeling.surface.adsorbate:main",
       "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
       "parameters": {
         "surface": { "type": "path", "required": true },
@@ -70,7 +70,7 @@
       ]
     },
     "surface_cluster_builder": {
-      "script": "agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluster_builder.py",
+      "script": "genkai.modeling.surface.metal_cluster.surface_cluster_builder:main",
       "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
       "parameters": {
         "surface": { "type": "path", "required": false },
@@ -129,7 +129,7 @@
       ]
     },
     "surface_cluster_mlip_search": {
-      "script": "agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py",
+      "script": "genkai.modeling.surface.cluster_search:main",
       "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
       "parameters": {
         "surface": { "type": "path", "required": true },

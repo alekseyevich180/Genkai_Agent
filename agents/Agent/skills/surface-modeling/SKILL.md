@@ -32,6 +32,9 @@ metadata:
 
 Use this skill when a task is about oxide surface construction, vacancy sampling, adsorption coverage generation, or metal cluster placement on surfaces. The scripts are adapted from the `Oxidesurface_cluster` project and are intended to make this Agent project surface-focused.
 
+Stable algorithm ownership is under `src/genkai/modeling/surface/`; the script
+paths documented below are thin compatibility entrypoints for Skill callers.
+
 ## Workflow
 
 1. Obtain or build an oxide surface slab in CIF, VASP/POSCAR, XYZ, or another ASE-readable format.
