@@ -8,6 +8,7 @@
 | `paperread/surface/modeling/*` | `src/genkai/modeling/` | removed; use `genkai.modeling.ptomodel` |
 | `agents/Agent/skills/surface-modeling/scripts/*` algorithms | `src/genkai/modeling/surface/` | thin Skill wrappers retained |
 | VASP/dataset/MLIP stable gates | `src/genkai/compute/`, `src/genkai/datasets/`, `src/genkai/mlip/` | Skill runtime launchers retained |
+| paperread experience export rules | `src/genkai/literature/surface/experience/export_unknown_terms.py` | Skill script is a thin wrapper |
 
 ## Migration rules
 

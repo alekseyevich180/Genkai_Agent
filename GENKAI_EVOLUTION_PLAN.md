@@ -1359,6 +1359,8 @@ Task 10–11 的设计和逐文件计划已记录在：
    - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
      脚本改为调用新库。
    - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
+   - unknown-term export 业务已归属 `src/genkai/literature/surface/experience/`；
+     `paperread` Skill 仅保留 CLI 包装器，不再通过 `sys.path` 注入源码路径。
 3. **Task 12：迁移 PToModel 与 surface modeling 内核（已完成）**
    - PToModel 映射、modeling checklist 和 canonical task schema 已迁入
      `src/genkai/modeling/`；旧 `paperread/surface/modeling/` 已删除。

@@ -5,13 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
-
-
-REPO_ROOT = Path(__file__).resolve().parents[5]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
 
 from genkai.literature.surface.experience.collect_experience import (
     main as collect_experience_main,
@@ -28,7 +22,7 @@ from genkai.literature.surface.experience.unknown_terms import (
     write_unknown_term_statistics,
 )
 
-from export_surface_experience import (
+from genkai.literature.surface.experience.export_unknown_terms import (
     cmd_add_term as export_add_term,
     cmd_export as export_unknown_terms,
 )
