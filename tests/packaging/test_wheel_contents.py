@@ -121,6 +121,37 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
     environment = {**os.environ, "PYTHONPATH": str(extracted)}
     environment.pop("OPENAI_API_KEY", None)
     environment.pop("LLM_API_KEY", None)
+    schema_load = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            (
+                "import json; "
+                "import genkai.modeling.ptomodel as module; "
+                "registry = module._load_surface_modeling_parameter_schema(); "
+                "print(json.dumps({'module': module.__file__, "
+                "'schema_path': registry['schema_path'], "
+                "'tasks': sorted(registry['tasks'])}))"
+            ),
+        ],
+        cwd=tmp_path,
+        env=environment,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert schema_load.returncode == 0, schema_load.stderr
+    loaded_schema = json.loads(schema_load.stdout)
+    assert Path(loaded_schema["module"]).is_relative_to(extracted)
+    assert loaded_schema["schema_path"] == (
+        "genkai.modeling.schema:task_parameter_schema.json"
+    )
+    assert loaded_schema["tasks"] == [
+        "adsorbate_landscape",
+        "surface_cluster_builder",
+        "surface_cluster_mlip_search",
+        "vacancy_landscape",
+    ]
     for module in ("genkai.cli", "agent.init.start_agent"):
         help_result = subprocess.run(
             [sys.executable, "-m", module, "--help"],

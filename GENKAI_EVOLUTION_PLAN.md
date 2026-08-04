@@ -1378,10 +1378,10 @@ Task 10–11 的设计和逐文件计划已记录在：
 
 ### 15.6 下一次会话恢复顺序
 
-1. 读取本节、`work_logs/2026-08-03.md` 以及 Task 10–11 设计与实施计划。
+1. 读取本节、`work_logs/2026-08-04.md` 以及 PToModel 收敛设计与实施计划。
 2. 审计 `Genkai_Evolution/` 工作树和 `feat/genkai-evolution` 分支状态。
-3. 从上节记录的两条精确反向依赖开始设计 Task 12，不扩大 allowlist。
-4. 按 brainstorming、逐文件 implementation plan 和测试先行流程迁移
-   PToModel 与 surface modeling 内核。
-5. Task 12 完成前，不把 Task 10–11 的 literature 收敛描述为整个仓库结构收敛
-   已完成。
+3. 为剩余 surface-modeling 算法切片编写独立设计，按 vacancy、adsorbate、
+   metal-cluster、Materials Project slab 和 FAIRChem search 的依赖边界拆分。
+4. 按 brainstorming、逐文件 implementation plan 和测试先行流程逐项迁移，
+   不恢复 `src/genkai -> paperread` allowlist，也不一次性搬迁全部运行时代码。
+5. 剩余算法迁移和薄入口验证完成前，Task 12 保持“部分完成”。
