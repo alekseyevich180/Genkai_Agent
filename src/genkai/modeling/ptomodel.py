@@ -1,4 +1,4 @@
-"""Stable facade over the existing PToModel mapping implementation."""
+"""Public PToModel API and artifact-aware workflow facade."""
 
 from __future__ import annotations
 
@@ -14,9 +14,17 @@ from genkai.contracts.artifacts import (
     ValidationStatus,
 )
 from genkai.contracts.run import StageRecord
+from genkai.modeling.mapping import (
+    _build_argument_template,
+    _infer_cluster_atom_count,
+    _infer_material_classes,
+    _load_surface_modeling_parameter_schema,
+    build_ptomodel_payload,
+    generate_ptomodel_output,
+    main,
+)
 from genkai.workflow.store import load_manifest, save_manifest
 from paperread.surface.modeling.job_bundle import build_modeling_checklist
-from paperread.surface.modeling.ptomodel import build_ptomodel_payload
 
 
 def _sha256(path: Path) -> str:
@@ -57,7 +65,7 @@ def build_modeling_plan(
         artifact_id=f"{manifest.run_id}:modeling-plan",
         path=plan_path.relative_to(root),
         sha256=_sha256(plan_path),
-        producer="paperread.surface.modeling.ptomodel",
+        producer="genkai.modeling.ptomodel",
         parent_ids=[extraction.artifact_id],
         execution_state=ExecutionState.SUCCEEDED,
         evidence_level=EvidenceLevel.HEURISTIC,
@@ -83,3 +91,7 @@ def build_modeling_plan(
     )
     save_manifest(root, manifest)
     return artifact
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

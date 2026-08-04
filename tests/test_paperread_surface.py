@@ -32,7 +32,7 @@ from genkai.literature.surface.pipeline.runner import (
     run_literature_pipeline as run_pipeline,
     run_literature_pipeline_from_pdf as run_pipeline_from_pdf,
 )
-from paperread.surface.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
+from genkai.modeling.ptomodel import build_ptomodel_payload, generate_ptomodel_output
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -72,7 +72,7 @@ class TestPaperreadSurfaceScripts(unittest.TestCase):
             "genkai.literature.surface.experience.collect_experience",
             "genkai.literature.surface.extraction.ingest_pdf",
             "genkai.literature.surface.pipeline.runner",
-            "paperread.surface.modeling.ptomodel",
+            "genkai.modeling.ptomodel",
         ]
         for module in modules:
             with self.subTest(module=module):
@@ -499,13 +499,13 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             )
 
     def test_ptomodel_maps_both_explicit_cluster_count_phrasings(self):
-        from paperread.surface.modeling.ptomodel import _infer_cluster_atom_count
+        from genkai.modeling.ptomodel import _infer_cluster_atom_count
 
         self.assertEqual(_infer_cluster_atom_count(["Pt13 cluster"])["value"], 13)
         self.assertEqual(_infer_cluster_atom_count(["13-atom Pt cluster"])["value"], 13)
 
     def test_material_class_short_formula_rules_do_not_match_english_substrings(self):
-        from paperread.surface.modeling.ptomodel import _infer_material_classes
+        from genkai.modeling.ptomodel import _infer_material_classes
 
         classes = _infer_material_classes(["CeO2", "Pt13 fcc nanoparticle"])
         self.assertIn("oxides", classes)
@@ -518,7 +518,7 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         self.assertNotIn("metals_alloys", zno_classes)
 
     def test_explicit_cluster_count_resolves_exclusive_size_and_bulk_file_alternatives(self):
-        from paperread.surface.modeling.ptomodel import (
+        from genkai.modeling.ptomodel import (
             _build_argument_template,
             _load_surface_modeling_parameter_schema,
         )

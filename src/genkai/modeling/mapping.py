@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from importlib.resources import files
 import json
 import re
 from pathlib import Path
@@ -26,10 +27,9 @@ from genkai.literature.surface.core.surface_ontology import (
     material_class_rule_matches,
 )
 
-SURFACE_MODELING_PARAMETER_SCHEMA_PATH = (
-    Path(__file__).resolve().parents[3]
-    / "agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json"
-)
+TASK_SCHEMA_PACKAGE = "genkai.modeling.schema"
+TASK_SCHEMA_NAME = "task_parameter_schema.json"
+TASK_SCHEMA_RESOURCE = f"{TASK_SCHEMA_PACKAGE}:{TASK_SCHEMA_NAME}"
 
 def _clean_scalar(value: Any) -> str | None:
     if value is None:
@@ -486,17 +486,20 @@ def _infer_tasks(
 
 
 def _load_surface_modeling_parameter_schema() -> dict[str, Any]:
-    if not SURFACE_MODELING_PARAMETER_SCHEMA_PATH.exists():
-        return {
-            "schema_path": str(SURFACE_MODELING_PARAMETER_SCHEMA_PATH),
-            "schema_version": None,
-            "tasks": {},
-        }
-    payload = json.loads(SURFACE_MODELING_PARAMETER_SCHEMA_PATH.read_text(encoding="utf-8"))
+    resource = files(TASK_SCHEMA_PACKAGE).joinpath(TASK_SCHEMA_NAME)
+    payload = json.loads(resource.read_text(encoding="utf-8"))
+    tasks = payload.get("tasks")
+    if (
+        payload.get("schema_version") != "1.0"
+        or not isinstance(tasks, dict)
+        or not tasks
+    ):
+        raise ValueError("invalid canonical surface-modeling task schema")
     return {
-        "schema_path": str(SURFACE_MODELING_PARAMETER_SCHEMA_PATH),
-        "schema_version": payload.get("schema_version"),
-        "tasks": payload.get("tasks", {}),
+        "schema_path": TASK_SCHEMA_RESOURCE,
+        "schema_resource": TASK_SCHEMA_RESOURCE,
+        "schema_version": payload["schema_version"],
+        "tasks": tasks,
     }
 
 
