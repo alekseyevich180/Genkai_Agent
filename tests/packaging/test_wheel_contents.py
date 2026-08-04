@@ -1,3 +1,4 @@
+import json
 import os
 import subprocess
 import sys
@@ -93,6 +94,29 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
             / "material_classes"
             / name
         ).read_text(encoding="utf-8").strip()
+
+    source_task_schema = (
+        ROOT
+        / "src"
+        / "genkai"
+        / "modeling"
+        / "schema"
+        / "task_parameter_schema.json"
+    )
+    wheel_task_schema = (
+        extracted
+        / "genkai"
+        / "modeling"
+        / "schema"
+        / "task_parameter_schema.json"
+    )
+    assert wheel_task_schema.read_bytes() == source_task_schema.read_bytes()
+    assert set(json.loads(wheel_task_schema.read_text())["tasks"]) == {
+        "vacancy_landscape",
+        "adsorbate_landscape",
+        "surface_cluster_builder",
+        "surface_cluster_mlip_search",
+    }
 
     environment = {**os.environ, "PYTHONPATH": str(extracted)}
     environment.pop("OPENAI_API_KEY", None)

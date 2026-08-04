@@ -107,7 +107,7 @@ paperread outputs
 
 The surface-modeling parameter schema file is:
 
-- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- `src/genkai/modeling/schema/task_parameter_schema.json`
 
 In `*_ptomodel.json`:
 
@@ -160,7 +160,7 @@ Before building a model JSON:
 - Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
   for known surface, material, adsorbate, dopant, active-site, and reaction
   vocabulary.
-- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- Check `src/genkai/modeling/schema/task_parameter_schema.json`
   for executable task names and required argument slots.
 - Prefer known material classes and task names from
   `src/genkai/literature/surface/core/surface_ontology.py`

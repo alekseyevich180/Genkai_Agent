@@ -52,20 +52,7 @@ def test_exact_allowlist_removes_only_the_named_import(tmp_path: Path) -> None:
 
 
 def test_genkai_reverse_imports_match_task12_allowlist() -> None:
-    allowed = {
-        ImportRef(
-            "modeling/ptomodel.py",
-            "paperread.surface.modeling.job_bundle",
-            "build_modeling_checklist",
-        ),
-        ImportRef(
-            "modeling/ptomodel.py",
-            "paperread.surface.modeling.ptomodel",
-            "build_ptomodel_payload",
-        ),
-    }
-
-    assert find_forbidden_imports(ROOT / "src" / "genkai", allowed) == set()
+    assert find_forbidden_imports(ROOT / "src" / "genkai", set()) == set()
 
 
 def test_legacy_surface_literature_paths_are_absent() -> None:
@@ -77,5 +64,6 @@ def test_legacy_surface_literature_paths_are_absent() -> None:
         "paperread/surface/cli.py",
         "paperread/surface/__main__.py",
         "paperread/surface/__init__.py",
+        "paperread/surface/modeling",
     ):
         assert not (ROOT / relative).exists(), relative

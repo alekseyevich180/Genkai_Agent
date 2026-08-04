@@ -50,6 +50,9 @@ exclude = ["tests*"]
 "genkai.literature.surface" = [
     "experience/material_classes/*.json",
 ]
+"genkai.modeling" = [
+    "schema/*.json",
+]
 "agents.Agent" = [
     "agents/*.yaml",
     "skills/*/SKILL.md",

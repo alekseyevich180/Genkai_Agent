@@ -71,7 +71,8 @@ It also owns package-level `__init__.py`, `__main__.py`, `cli.py`, and
 
 ## Reverse dependency baseline
 
-Only two `src/genkai -> paperread` imports exist, both deferred to Task 12:
+At the 2026-08-03 baseline, two `src/genkai -> paperread` imports existed and
+were deferred to Task 12:
 
 ```text
 src/genkai/modeling/ptomodel.py
@@ -79,9 +80,13 @@ src/genkai/modeling/ptomodel.py
   -> paperread.surface.modeling.ptomodel.build_ptomodel_payload
 ```
 
-No `src/genkai -> agents.Agent.skills` Python import exists. Architecture tests
-encode the two entries above as an exact allowlist that cannot grow;
-`src/genkai/literature/` receives no exception.
+No `src/genkai -> agents.Agent.skills` Python import existed. Architecture
+tests encoded the two entries above as an exact allowlist that could not grow;
+`src/genkai/literature/` received no exception.
+
+The 2026-08-04 PToModel convergence slice removed both imports and the legacy
+`paperread/surface/modeling/` owner. The architecture gate now uses an empty
+allowlist; this section retains the measured pre-migration baseline.
 
 ## CLI baseline
 

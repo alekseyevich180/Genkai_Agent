@@ -258,7 +258,7 @@ Before running a modeling script:
 
 - Prefer a `*_ptomodel.json` task argument template when the task comes from a
   paper.
-- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- Check `src/genkai/modeling/schema/task_parameter_schema.json`
   for required arguments and constraints.
 - Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
   for known material class, facet, active-site, adsorbate, dopant, coverage,
@@ -297,7 +297,7 @@ expected types, required-ness, grouping, and constraints.
 
 The machine-readable copy used by `ptomodel` is stored at:
 
-- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- `src/genkai/modeling/schema/task_parameter_schema.json`
 
 ### Oxygen-Vacancy Landscape
 

@@ -37,8 +37,9 @@ DAG validation, surface workflow facades, VASP preparation/result boundaries,
 ASE dataset audits, and separate MACE, DeepMD, and UMA adapters. Existing
 Agent entrypoints now call this library. The removed `paperread.surface`
 literature imports and module CLI are not compatibility targets in this
-evolution workspace; only the Task 12 PToModel implementation remains
-temporarily under `paperread/surface/modeling/`.
+evolution workspace. The Task 12 PToModel mapping, checklist, and canonical
+surface-task schema now live under `src/genkai/modeling/`; migration of the
+larger structure-generation algorithms remains a separate Task 12 slice.
 
 Initialize and inspect an offline reference run:
 

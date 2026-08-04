@@ -1345,7 +1345,8 @@ Task 10–11 的设计和逐文件计划已记录在：
    - 记录顶层目录、Python import、CLI、wheel 内容和 skill entrypoint 基线。
    - 增加测试，禁止 `src/genkai/` 反向导入 `paperread/` 私有实现或 skill
      scripts。
-   - 基线见 `docs/structure-baseline.md`，门禁只允许下述 Task 12 技术债：
+   - 基线见 `docs/structure-baseline.md`；其中记录的两条 Task 12 技术债已于
+     2026-08-04 的 PToModel 收敛切片移除，当前门禁 allowlist 为空：
      - `src/genkai/modeling/ptomodel.py` ->
        `paperread.surface.modeling.job_bundle.build_modeling_checklist`
      - `src/genkai/modeling/ptomodel.py` ->
@@ -1358,9 +1359,13 @@ Task 10–11 的设计和逐文件计划已记录在：
    - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
      脚本改为调用新库。
    - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
-3. **Task 12：迁移 PToModel 与 surface modeling 内核（待执行）**
-   - 将稳定规则、schema 和结构准备逻辑迁入 `src/genkai/modeling/`。
-   - 删除 skill scripts 中重复的业务规则，只保留薄入口。
+3. **Task 12：迁移 PToModel 与 surface modeling 内核（部分完成）**
+   - PToModel 映射、modeling checklist 和 canonical task schema 已迁入
+     `src/genkai/modeling/`；旧 `paperread/surface/modeling/` 已删除。
+   - PToModel skill 已改为调用公共库 API 的薄入口，`src/genkai/` 对
+     `paperread` 的两条反向 import 已清零。
+   - ASE、pymatgen、Optuna 与 FAIRChem 结构生成算法仍位于
+     `surface-modeling` skill，作为下一独立切片迁移；Task 12 尚未整体完成。
 4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
    - 统一 adapter 与 launcher contract 的所有权。
    - 将稳定数据审计放在 `src/genkai/datasets/`，skill 中不保留第二份实现。
