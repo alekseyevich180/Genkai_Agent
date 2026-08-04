@@ -33,7 +33,8 @@ into this ownership change.
 ```text
 src/genkai/modeling/
 ├── __init__.py
-├── ptomodel.py               # artifact-aware facade and stable mapping API
+├── mapping.py                # pure PToModel mapping and JSON generation
+├── ptomodel.py               # public mapping API and artifact-aware facade
 ├── checklist.py              # modeling checklist and compact bundle writer
 ├── schema/
 │   └── task_parameter_schema.json
@@ -56,7 +57,8 @@ documentation points to that source of truth; it does not keep a second copy.
 
 ## 4. Public Interfaces and Data Flow
 
-`genkai.modeling.ptomodel` owns and exports:
+`genkai.modeling.mapping` owns the pure implementation, while
+`genkai.modeling.ptomodel` is the stable public module that owns and exports:
 
 ```python
 build_ptomodel_payload(
