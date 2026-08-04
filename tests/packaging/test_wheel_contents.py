@@ -34,7 +34,9 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
     wheel = next(dist.glob("genkai-*.whl"))
     extracted = tmp_path / "wheel"
     with zipfile.ZipFile(wheel) as archive:
+        names = archive.namelist()
         archive.extractall(extracted)
+    assert not any(name.startswith("paperread/surface/") for name in names)
 
     source_skills = {
         path.relative_to(ROOT / "agents" / "Agent" / "skills")

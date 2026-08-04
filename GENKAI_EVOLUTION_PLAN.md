@@ -1383,8 +1383,11 @@ Task 10–11 的设计和逐文件计划已记录在：
      记录在 `tests/fixtures/README.md`。
    - 离线分层回归已验证；未执行外部运行时测试。
 6. **Task 15：根目录与弃用清理**
-   - 在至少一个弃用周期和完整兼容验证后，单独审查可删除的旧模块。
-   - 更新 README、迁移指南、wheel 清单和 work log。
+   - 已审查旧 surface owner、兼容 Skill 入口、研究资产和忽略的生成目录；仅
+     删除本地 `build/`/`Genkai.egg-info/` 生成状态，保留仍有用途的研究资产。
+   - 已新增 `docs/migration.md`，更新 README、wheel 门禁和 work log；干净 wheel
+     不再包含 `paperread/surface/`。
+   - 兼容测试与分层回归通过后，Task15 完成；未进行远端推送或外部科研运行。
 
 ### 15.6 下一次会话恢复顺序
 

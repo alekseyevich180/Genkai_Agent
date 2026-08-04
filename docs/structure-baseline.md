@@ -102,7 +102,9 @@ agent = agent.init.start_agent:main
 genkai-workflow = genkai.cli:main
 ```
 
-The old surface package separately provides `python -m paperread.surface`.
+The historical baseline recorded `python -m paperread.surface`; that package is
+not present in the clean current wheel. Use `genkai` entrypoints and the
+documented Skill compatibility wrappers instead.
 
 ## Wheel baseline
 

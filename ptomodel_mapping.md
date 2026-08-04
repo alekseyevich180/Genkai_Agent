@@ -73,7 +73,7 @@
 
 ### 元素、矿物名与通俗名称标准化
 
-`ptomodel` 使用 `paperread/surface/core/chemical_vocabulary.py` 统一识别：
+`ptomodel` 使用 `genkai.literature.surface.core.chemical_vocabulary` 统一识别：
 
 - 原子序数 1–86（H–Rn）的元素符号和标准英文名。
 - 论文中仍常见的拼写与旧称，例如 `aluminum/aluminium`、`sulfur/sulphur`、

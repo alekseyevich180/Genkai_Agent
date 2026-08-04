@@ -53,6 +53,9 @@ Tests are organized by tier under `tests/contracts`, `tests/architecture`,
 `tests/fixtures/archives/`; see [`tests/fixtures/README.md`](tests/fixtures/README.md)
 for provenance and offline-use rules.
 
+See [`docs/migration.md`](docs/migration.md) for current ownership, deprecated
+paths, and compatibility boundaries.
+
 Initialize and inspect an offline reference run:
 
 ```bash
