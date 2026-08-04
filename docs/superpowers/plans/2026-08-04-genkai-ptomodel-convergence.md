@@ -41,7 +41,7 @@
 - Produces: `build_ptomodel_payload(...) -> dict[str, Any]`, `generate_ptomodel_output(...) -> dict[str, str]`, and `main(argv: list[str] | None = None) -> int` through `genkai.modeling.ptomodel`.
 - Produces: `_load_surface_modeling_parameter_schema() -> dict[str, Any]` using the packaged canonical JSON resource.
 
-- [ ] **Step 1: Write target-import and package-resource tests**
+- [x] **Step 1: Write target-import and package-resource tests**
 
 Update PToModel imports in `tests/test_paperread_surface.py` to:
 
@@ -78,7 +78,7 @@ def test_canonical_task_schema_is_owned_by_genkai() -> None:
     )
 ```
 
-- [ ] **Step 2: Run the tests and verify RED**
+- [x] **Step 2: Run the tests and verify RED**
 
 Run:
 
@@ -91,7 +91,7 @@ Run:
 Expected: collection fails because the public module does not yet export the
 mapping API and the Genkai-owned schema resource does not exist.
 
-- [ ] **Step 3: Move the implementation and schema without duplication**
+- [x] **Step 3: Move the implementation and schema without duplication**
 
 Move the legacy PToModel implementation to
 `src/genkai/modeling/mapping.py`. Move the schema JSON to
@@ -138,7 +138,7 @@ Update `build_modeling_plan` to use the local public API and set
 guard in the public module so the existing catalog check
 `python -m genkai.modeling.ptomodel --help` continues to exercise the CLI.
 
-- [ ] **Step 4: Run focused mapping tests and verify GREEN**
+- [x] **Step 4: Run focused mapping tests and verify GREEN**
 
 Run:
 
@@ -152,7 +152,7 @@ Run:
 Expected: PASS with the existing hand-checked task mapping and artifact
 assertions unchanged except for the canonical schema resource identifier.
 
-- [ ] **Step 5: Commit the mapping ownership change**
+- [x] **Step 5: Commit the mapping ownership change**
 
 ```bash
 git add src/genkai/modeling tests/modeling tests/test_paperread_surface.py \
@@ -180,7 +180,7 @@ git commit -m "refactor: move ptomodel mapping into genkai"
 - Produces: `build_modeling_checklist(plan: dict[str, Any]) -> dict[str, Any]` and `write_compact_job_bundle(...) -> dict[str, str]` from `genkai.modeling.checklist`.
 - Preserves: `python agents/Agent/skills/ptomodel/scripts/ptomodel_tools.py build ...`.
 
-- [ ] **Step 1: Write target-owner and real-entrypoint tests**
+- [x] **Step 1: Write target-owner and real-entrypoint tests**
 
 Change `tests/test_surface_mp_workflow.py` to import:
 
@@ -194,7 +194,7 @@ relations JSONL row, and assertions check exit code 0 plus the generated
 `sample_ptomodel.json` keys `schema_version`, `documents`, and
 `surface_modeling_parameter_schema`.
 
-- [ ] **Step 2: Run the tests and verify RED**
+- [x] **Step 2: Run the tests and verify RED**
 
 Run:
 
@@ -206,7 +206,7 @@ Run:
 
 Expected: collection fails because `genkai.modeling.checklist` does not exist.
 
-- [ ] **Step 3: Move checklist code and rewire the thin entry**
+- [x] **Step 3: Move checklist code and rewire the thin entry**
 
 Move `paperread/surface/modeling/job_bundle.py` to
 `src/genkai/modeling/checklist.py`. Import `build_modeling_checklist` from that
@@ -219,7 +219,7 @@ from genkai.modeling.ptomodel import main as ptomodel_main
 Remove the now-empty legacy modeling package. Do not copy parsing, mapping, or
 checklist rules into the Skill script.
 
-- [ ] **Step 4: Run the checklist and entrypoint tests and verify GREEN**
+- [x] **Step 4: Run the checklist and entrypoint tests and verify GREEN**
 
 Run:
 
@@ -232,7 +232,7 @@ Run:
 
 Expected: PASS; the real Skill subprocess uses the Genkai-owned implementation.
 
-- [ ] **Step 5: Commit the checklist and thin entry**
+- [x] **Step 5: Commit the checklist and thin entry**
 
 ```bash
 git add src/genkai/modeling agents/Agent/skills/ptomodel/scripts \
@@ -258,14 +258,14 @@ git commit -m "refactor: make ptomodel skill a thin genkai entry"
 - Enforces: `find_forbidden_imports(ROOT / "src" / "genkai", set()) == set()`.
 - Packages: `genkai/modeling/schema/task_parameter_schema.json` in source and wheel.
 
-- [ ] **Step 1: Tighten architecture and wheel tests**
+- [x] **Step 1: Tighten architecture and wheel tests**
 
 Replace the Task 12 allowlist with an empty set and extend the absent-path
 assertion with `paperread/surface/modeling`. Extend the wheel test to compare
 the source schema and extracted-wheel schema byte-for-byte and load its JSON to
 assert the four canonical task names.
 
-- [ ] **Step 2: Run the gates and verify RED**
+- [x] **Step 2: Run the gates and verify RED**
 
 Run:
 
@@ -277,7 +277,7 @@ Run:
 
 Expected: wheel check fails until setuptools package-data includes the schema.
 
-- [ ] **Step 3: Add package data and update canonical paths**
+- [x] **Step 3: Add package data and update canonical paths**
 
 Add to `[tool.setuptools.package-data]`:
 
@@ -291,7 +291,7 @@ Update both Skill documents, README, and the Task 12 status in
 State that only the PToModel slice is complete and the structure-generation
 algorithm slice remains pending.
 
-- [ ] **Step 4: Run gates and related regression and verify GREEN**
+- [x] **Step 4: Run gates and related regression and verify GREEN**
 
 Run:
 
@@ -310,7 +310,7 @@ Run:
 Expected: PASS with no Task 12 reverse-import exception and with the same schema
 content in the source tree and wheel.
 
-- [ ] **Step 5: Commit the closed boundary**
+- [x] **Step 5: Commit the closed boundary**
 
 ```bash
 git add tests/architecture tests/packaging pyproject.toml README.md \
@@ -331,14 +331,14 @@ git commit -m "test: close ptomodel ownership boundary"
 - Records: exact executed commands, counts, warnings, known full-suite boundary,
   and explicit non-executed scientific/runtime validation.
 
-- [ ] **Step 1: Run completion scans**
+- [x] **Step 1: Run completion scans**
 
 Run:
 
 ```bash
 rg -n "paperread\.surface\.modeling|agents/Agent/skills/surface-modeling/schema/task_parameter_schema\.json" \
   src tests agents README.md GENKAI_EVOLUTION_PLAN.md pyproject.toml
-rg -n "TBD|TODO|<implementation-date>" \
+rg -n "TB[D]|TO[D]O|<implementation[-]date>" \
   docs/superpowers/specs/2026-08-04-genkai-ptomodel-convergence-design.md \
   docs/superpowers/plans/2026-08-04-genkai-ptomodel-convergence.md
 git diff --check
@@ -349,7 +349,7 @@ Expected: no legacy production/schema reference, no plan placeholder, no
 whitespace error, and only intended changes before the final documentation
 commit.
 
-- [ ] **Step 2: Run the full related regression once more**
+- [x] **Step 2: Run the full related regression once more**
 
 Run the Task 3 Step 4 command without reusing prior output. Record the exact
 pass/subtest/warning counts. Then run repository collection once:
@@ -361,13 +361,13 @@ pass/subtest/warning counts. Then run repository collection once:
 Record the actual result without treating the known `agent.tools` collection
 boundary as part of the focused pass claim.
 
-- [ ] **Step 3: Write the dated log and index**
+- [x] **Step 3: Write the dated log and index**
 
 Create `work_logs/2026-08-04.md` with scope, commits, moved/deleted ownership,
 fresh verification output, the remaining surface-algorithm slice, and the list
 of external/scientific runs not performed. Add only its link to `work_log.md`.
 
-- [ ] **Step 4: Verify documentation and commit**
+- [x] **Step 4: Verify documentation and commit**
 
 ```bash
 git diff --check
