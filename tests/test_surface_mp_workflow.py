@@ -10,7 +10,7 @@ from unittest.mock import patch
 from ase.build import bulk, surface
 from pymatgen.core import Lattice, Structure
 
-from paperread.surface.modeling.job_bundle import write_compact_job_bundle
+from genkai.modeling.checklist import write_compact_job_bundle
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

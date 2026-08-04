@@ -14,6 +14,7 @@ from genkai.contracts.artifacts import (
     ValidationStatus,
 )
 from genkai.contracts.run import StageRecord
+from genkai.modeling.checklist import build_modeling_checklist
 from genkai.modeling.mapping import (
     _build_argument_template,
     _infer_cluster_atom_count,
@@ -24,7 +25,6 @@ from genkai.modeling.mapping import (
     main,
 )
 from genkai.workflow.store import load_manifest, save_manifest
-from paperread.surface.modeling.job_bundle import build_modeling_checklist
 
 
 def _sha256(path: Path) -> str:
