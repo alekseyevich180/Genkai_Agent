@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "source": {
+    "database": "Materials Project",
+    "material_id": "mp-856",
+    "formula": "SnO2",
+    "spacegroup_symbol": "P4_2/mnm",
+    "energy_above_hull_eV_per_atom": 0.0,
+    "is_stable": true,
+    "theoretical": false
+  },
+  "facet": {
+    "miller_index": [
+      1,
+      0,
+      1
+    ],
+    "selection_source": "explicit",
+    "reason": "Facet was explicitly supplied from paper evidence or user input."
+  },
+  "slab": {
+    "candidate_terminations": 2,
+    "selected_termination_index": 1,
+    "termination_selection": "prefer symmetric slab, then minimum dipole norm, then atom count",
+    "selected_is_symmetric": true,
+    "min_slab_size_A": 12.0,
+    "min_vacuum_size_A": 15.0,
+    "repeat_xy": [
+      2,
+      2
+    ]
+  },
+  "files": {
+    "bulk_structure": "tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif",
+    "surface_slab": "tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/stable_surface_slab.vasp"
+  },
+  "checks": {
+    "api_key_persisted": false,
+    "bulk_used_directly_for_loading": false,
+    "surface_is_slab": {
+      "is_slab": true,
+      "vacuum_gap_A": 20.488477,
+      "required_vacuum_gap_A": 5.0
+    }
+  }
+}

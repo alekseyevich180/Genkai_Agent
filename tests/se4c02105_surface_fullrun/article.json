@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "source": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_surface_relations_compact.jsonl",
+  "title": "se4c02105 1..10",
+  "surface_relations": [
+    {
+      "materials": [
+        "SnO2 nanowires",
+        "PAC12IMI-functionalized SnO2 nanowires",
+        "PAC10CA-functionalized SnO2 nanowires",
+        "PAG3-functionalized SnO2 nanowires"
+      ],
+      "material_parameters": [
+        "rutile SnO2",
+        "nanowire diameter 20-60 nm",
+        "nanowire length of tens of micrometers",
+        "single-crystalline with no significant defects observed"
+      ],
+      "crystal_structure_types": [
+        "rutile"
+      ],
+      "oxide_compositions": [
+        "SnO2"
+      ],
+      "surfaces": [
+        "SnO2 nanowire surface",
+        "SAM-functionalized SnO2 surface",
+        "SiO2/Si-supported SnO2 nanowire sensor"
+      ],
+      "surface_terminations": [
+        "PAC12IMI phosphonic-acid-anchored SAM",
+        "PAC10CA phosphonic-acid-anchored SAM",
+        "PAG3 phosphonic-acid-anchored SAM"
+      ],
+      "slab_models": [],
+      "facets": [
+        "SnO2 (101) plane observed by HRTEM"
+      ],
+      "surface_stability_descriptors": [],
+      "dopants": [],
+      "defects": [],
+      "vacancy_models": [],
+      "active_sites": [
+        "SnO2 nanowire sensing sites",
+        "SAM-free SnO2 adsorption sites"
+      ],
+      "adsorbates": [
+        "H2",
+        "CO",
+        "acetone",
+        "C3F8",
+        "toluene",
+        "CH4",
+        "H2S",
+        "water"
+      ],
+      "adsorption_sites": [
+        "SnO2 surface sites not covered by SAM"
+      ],
+      "coverage": [
+        "self-assembled monolayer with incomplete surface coverage"
+      ],
+      "intermediates": [],
+      "products": [],
+      "clusters": [],
+      "single_atoms": [],
+      "modifiers": [
+        "PAC12IMI",
+        "PAC10CA",
+        "PAG3",
+        "O2 plasma activation"
+      ],
+      "properties": [
+        "PAC12IMI gives acetone-selective responses of 2.54, 3.12, and 3.44 at 10, 30, and 50 ppm",
+        "PAC10CA gives CH4-preferred responses of 1.65, 1.88, and 1.96 at 10, 30, and 50 ppm",
+        "PAG3 gives marginal selectivity with CH4 responses of 1.56, 1.69, and 1.85",
+        "LOD values 380, 690, and 990 ppb for PAC12IMI, PAC10CA, and PAG3",
+        "responses retained after six months"
+      ],
+      "reaction_parameters": [
+        "VLS growth at 900 degC for 5 min under N2 300 sccm and O2 10 sccm",
+        "O2 plasma activation at 200 W, 40 kHz, 0.3 mbar for 10 min",
+        "SAM immersion in 0.2 mM isopropanol solution for 18 h",
+        "gas sensing at 175 degC and total flow 500 sccm",
+        "humidity range 0-90% RH"
+      ],
+      "modeling_keywords": [
+        "SnO2 surface",
+        "SnO2 (101)",
+        "surface functionalization",
+        "self-assembled monolayer",
+        "adsorbate landscape",
+        "SAM coverage",
+        "gas adsorption"
+      ],
+      "recommended_modeling_tasks": [
+        "surface_functionalization",
+        "adsorbate_landscape",
+        "slab_generation"
+      ],
+      "applications": [
+        "selective gas sensing"
+      ],
+      "links": [
+        {
+          "source": "SnO2 nanowire surface",
+          "relation": "has_facet",
+          "target": "(101)"
+        },
+        {
+          "source": "SnO2 nanowire surface",
+          "relation": "has_termination",
+          "target": "phosphonic-acid-anchored SAM"
+        },
+        {
+          "source": "PAC12IMI-functionalized SnO2",
+          "relation": "adsorbs",
+          "target": "acetone"
+        },
+        {
+          "source": "PAC10CA-functionalized SnO2",
+          "relation": "adsorbs",
+          "target": "CH4"
+        },
+        {
+          "source": "SAM-functionalized SnO2",
+          "relation": "suggests_modeling_task",
+          "target": "surface_functionalization"
+        }
+      ]
+    }
+  ]
+}

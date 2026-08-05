@@ -1,0 +1,2510 @@
+{
+  "schema_version": "2.0",
+  "material_class": "oxides",
+  "updated_at": "2026-08-05T02:57:07.906584+00:00",
+  "summary": {
+    "terms": 88,
+    "known_useful": 52,
+    "unknown": 36
+  },
+  "keyword_inventory": {
+    "active_sites": [
+      {
+        "term": "SnO2 nanowire surface",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "activated SnO2 surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "SAM-free SnO2 adsorption sites",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "SnO2 nanowire sensing sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites remain",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ],
+    "adsorbates_reactants": [
+      {
+        "term": "SnO2 nanowires",
+        "count": 3,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "acetone",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "activated SnO2 surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      },
+      {
+        "term": "C3F8",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "CH4",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "CO",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "H2",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "H2S",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "O2 plasma",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "toluene",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "functionalized sensing surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "gas-sensor response",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "O2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "resistance response",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SAM molecules",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Sn vapor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "water",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "adsorption_sites": [
+      {
+        "term": "SnO2 surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "SnO2 surface sites not covered by SAM",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "compositions": [
+      {
+        "term": "PAC10CA",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "SnO2",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "Au 3 nm",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "nanowire diameter 20-60 nm",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "nanowire length of tens of micrometers",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "or PAG3",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Pt 200 nm",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "rutile SnO2",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "single-crystalline with no significant defects observed",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "SnO2 with PAC12IMI",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SnO2/PAC10CA",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "SnO2/PAC12IMI",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "SnO2/PAG3",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "other_useful_information"
+      },
+      {
+        "term": "Ti 50 nm",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "coverage": [
+      {
+        "term": "self-assembled monolayer",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "incomplete coverage",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "incomplete SAM coverage",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "self-assembled monolayer with incomplete surface coverage",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "crystal_structure_types": [
+      {
+        "term": "rutile",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
+    "dopants_modifiers": [
+      {
+        "term": "PAC10CA",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "O2 plasma",
+        "count": 2,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC12IMI",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "PAG3",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "clusters_single_atoms"
+      },
+      {
+        "term": "Au catalyst",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "O2 plasma activation",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ],
+    "facets": [
+      {
+        "term": "(101) plane observed",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "(101) plane observed by HRTEM",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "SnO2 (101) plane observed by HRTEM",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
+    "materials": [
+      {
+        "term": "SnO2 nanowires",
+        "count": 3,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowires",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowires",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowires",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "pristine SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SAM-functionalized SnO2 nanowires",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ],
+    "modeling_keywords": [
+      {
+        "term": "SnO2",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "adsorbate_landscape",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "gas adsorption",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "rutile",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "SAM coverage",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "self-assembled monolayer",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "slab_generation",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "SnO2 surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "surface_functionalization",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "(101)",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorbate landscape",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "adsorption sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "dispersion interaction",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "hydrogen bonding",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "ion-dipole interaction",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "nanowire",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SnO2 (101)",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "surface activation",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "surface functionalization",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      },
+      {
+        "term": "temperature dependence",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "modeling_tasks"
+      }
+    ],
+    "oxide_compositions": [
+      {
+        "term": "SnO2",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      }
+    ],
+    "reactions": [
+      {
+        "term": "selective gas sensing",
+        "count": 2,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Au-catalyzed VLS nanowire growth",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "Gas sensing",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "O2 plasma surface activation",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "Self-assembled monolayer functionalization",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "SnO2 nanowire surface",
+        "count": 3,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "SAM-functionalized SnO2 surface",
+        "count": 2,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SiO2/Si-supported SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      },
+      {
+        "term": "SnO2 nanowire sensing surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "carboxydecyl phosphonic-acid SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "glycol phosphonic-acid SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "O2-plasma-activated surface",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_structure"
+      },
+      {
+        "term": "pristine",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 48
+      },
+      {
+        "term": "Sn",
+        "count": 40
+      },
+      {
+        "term": "C",
+        "count": 6
+      },
+      {
+        "term": "H",
+        "count": 6
+      },
+      {
+        "term": "Au",
+        "count": 4
+      },
+      {
+        "term": "F",
+        "count": 2
+      },
+      {
+        "term": "Pt",
+        "count": 2
+      },
+      {
+        "term": "S",
+        "count": 2
+      },
+      {
+        "term": "Si",
+        "count": 2
+      },
+      {
+        "term": "Ti",
+        "count": 2
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "oxide",
+        "count": 46
+      },
+      {
+        "term": "surface",
+        "count": 24
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 6
+      },
+      {
+        "term": "nitride",
+        "count": 4
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "SnO2",
+        "count": 7
+      },
+      {
+        "term": "SnO2 nanowire surface",
+        "count": 3
+      },
+      {
+        "term": "SnO2 nanowires",
+        "count": 3
+      },
+      {
+        "term": "activated SnO2 surface",
+        "count": 2
+      },
+      {
+        "term": "C3F8",
+        "count": 2
+      },
+      {
+        "term": "CH4",
+        "count": 2
+      },
+      {
+        "term": "CO",
+        "count": 2
+      },
+      {
+        "term": "H2",
+        "count": 2
+      },
+      {
+        "term": "H2S",
+        "count": 2
+      },
+      {
+        "term": "O2 plasma",
+        "count": 2
+      },
+      {
+        "term": "SAM-free SnO2 adsorption sites",
+        "count": 2
+      },
+      {
+        "term": "SAM-functionalized SnO2 surface",
+        "count": 2
+      },
+      {
+        "term": "SiO2",
+        "count": 2
+      },
+      {
+        "term": "SnO2 surface",
+        "count": 2
+      },
+      {
+        "term": "surface_functionalization",
+        "count": 2
+      },
+      {
+        "term": "Au 3 nm",
+        "count": 1
+      },
+      {
+        "term": "Au catalyst",
+        "count": 1
+      },
+      {
+        "term": "Au electrode",
+        "count": 1
+      },
+      {
+        "term": "Au-catalyzed VLS nanowire growth",
+        "count": 1
+      },
+      {
+        "term": "functionalized sensing surface",
+        "count": 1
+      },
+      {
+        "term": "incomplete surface coverage",
+        "count": 1
+      },
+      {
+        "term": "O2",
+        "count": 1
+      },
+      {
+        "term": "O2 plasma activation",
+        "count": 1
+      },
+      {
+        "term": "O2 plasma surface activation",
+        "count": 1
+      },
+      {
+        "term": "O2-plasma-activated surface",
+        "count": 1
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "pristine SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Pt 200 nm",
+        "count": 1
+      },
+      {
+        "term": "rutile SnO2",
+        "count": 1
+      },
+      {
+        "term": "SAM-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "Si substrate",
+        "count": 1
+      },
+      {
+        "term": "Si-supported SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "Sn vapor",
+        "count": 1
+      },
+      {
+        "term": "SnO2 (101",
+        "count": 1
+      },
+      {
+        "term": "SnO2 (101) plane observed by HRTEM",
+        "count": 1
+      },
+      {
+        "term": "SnO2 interface and uncovered SnO2 sites",
+        "count": 1
+      },
+      {
+        "term": "SnO2 nanowire sensing sites",
+        "count": 1
+      },
+      {
+        "term": "SnO2 nanowire sensing surface",
+        "count": 1
+      },
+      {
+        "term": "SnO2 surface sites not covered by SAM",
+        "count": 1
+      },
+      {
+        "term": "surface activation",
+        "count": 1
+      },
+      {
+        "term": "surface functionalization",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      },
+      {
+        "term": "Ti 50 nm",
+        "count": 1
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites",
+        "count": 1
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites remain",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{O, Sn}",
+        "count": 38
+      },
+      {
+        "term": "{O}",
+        "count": 6
+      },
+      {
+        "term": "{Au}",
+        "count": 3
+      },
+      {
+        "term": "{C, F}",
+        "count": 2
+      },
+      {
+        "term": "{C, H}",
+        "count": 2
+      },
+      {
+        "term": "{C, O}",
+        "count": 2
+      },
+      {
+        "term": "{H, S}",
+        "count": 2
+      },
+      {
+        "term": "{H}",
+        "count": 2
+      },
+      {
+        "term": "{Au, O, Pt, Si, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{O, Si, Sn}",
+        "count": 1
+      },
+      {
+        "term": "{Pt}",
+        "count": 1
+      },
+      {
+        "term": "{Sn}",
+        "count": 1
+      },
+      {
+        "term": "{Ti}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "oxide_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 48
+      },
+      {
+        "term": "Sn",
+        "count": 40
+      },
+      {
+        "term": "C",
+        "count": 6
+      },
+      {
+        "term": "H",
+        "count": 6
+      },
+      {
+        "term": "Au",
+        "count": 4
+      },
+      {
+        "term": "F",
+        "count": 2
+      },
+      {
+        "term": "Pt",
+        "count": 2
+      },
+      {
+        "term": "S",
+        "count": 2
+      },
+      {
+        "term": "Si",
+        "count": 2
+      },
+      {
+        "term": "Ti",
+        "count": 2
+      }
+    ],
+    "oxide_components": [
+      {
+        "term": "SnO2",
+        "count": 3
+      },
+      {
+        "term": "SnO2 nanowires",
+        "count": 3
+      },
+      {
+        "term": "nanowire diameter 20-60 nm",
+        "count": 1
+      },
+      {
+        "term": "nanowire length of tens of micrometers",
+        "count": 1
+      },
+      {
+        "term": "or PAG3",
+        "count": 1
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAC10CA-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAC12IMI-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "PAG3-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "pristine SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "rutile SnO2",
+        "count": 1
+      },
+      {
+        "term": "SAM-functionalized SnO2 nanowires",
+        "count": 1
+      },
+      {
+        "term": "single-crystalline with no significant defects observed",
+        "count": 1
+      },
+      {
+        "term": "SnO2 with PAC12IMI",
+        "count": 1
+      },
+      {
+        "term": "SnO2/PAC10CA",
+        "count": 1
+      },
+      {
+        "term": "SnO2/PAC12IMI",
+        "count": 1
+      },
+      {
+        "term": "SnO2/PAG3",
+        "count": 1
+      }
+    ],
+    "oxide_compositions": [
+      {
+        "term": "SnO2",
+        "count": 3
+      }
+    ],
+    "crystal_or_spacegroup_terms": [
+      {
+        "term": "rutile SnO2",
+        "count": 1
+      },
+      {
+        "term": "rutile SnO2",
+        "count": 1
+      }
+    ],
+    "crystal_structure_terms": [
+      {
+        "term": "rutile",
+        "count": 4,
+        "family": "oxide polymorph",
+        "crystal_system": "tetragonal",
+        "typical_space_group": "P4_2/mnm (No. 136)",
+        "representative_compositions": [
+          "TiO2",
+          "SnO2",
+          "RuO2",
+          "IrO2",
+          "MnO2"
+        ]
+      }
+    ],
+    "surface_site_contexts": [
+      {
+        "surface_family": "oxides",
+        "surface_terms": [
+          {
+            "term": "PAC10CA",
+            "count": 3
+          },
+          {
+            "term": "SnO2",
+            "count": 3
+          },
+          {
+            "term": "SnO2 nanowire surface",
+            "count": 3
+          },
+          {
+            "term": "SnO2 nanowires",
+            "count": 3
+          },
+          {
+            "term": "SAM-functionalized SnO2 surface",
+            "count": 2
+          },
+          {
+            "term": "nanowire diameter 20-60 nm",
+            "count": 1
+          },
+          {
+            "term": "nanowire length of tens of micrometers",
+            "count": 1
+          },
+          {
+            "term": "or PAG3",
+            "count": 1
+          },
+          {
+            "term": "PAC10CA-functionalized SnO2 nanowire sensor",
+            "count": 1
+          },
+          {
+            "term": "PAC10CA-functionalized SnO2 nanowires",
+            "count": 1
+          }
+        ],
+        "facet_terms": [
+          {
+            "term": "SnO2 nanowire surface",
+            "count": 3
+          },
+          {
+            "term": "SAM-functionalized SnO2 surface",
+            "count": 2
+          },
+          {
+            "term": "(101) plane observed",
+            "count": 1
+          },
+          {
+            "term": "(101) plane observed by HRTEM",
+            "count": 1
+          },
+          {
+            "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+            "count": 1
+          },
+          {
+            "term": "SiO2/Si-supported SnO2 nanowire sensor",
+            "count": 1
+          },
+          {
+            "term": "SnO2 (101) plane observed by HRTEM",
+            "count": 1
+          },
+          {
+            "term": "SnO2 nanowire sensing surface",
+            "count": 1
+          }
+        ],
+        "active_site_terms": [
+          {
+            "term": "SnO2 nanowire surface",
+            "count": 3
+          },
+          {
+            "term": "activated SnO2 surface",
+            "count": 2
+          },
+          {
+            "term": "SAM-free SnO2 adsorption sites",
+            "count": 2
+          },
+          {
+            "term": "SnO2 nanowire sensing sites",
+            "count": 1
+          },
+          {
+            "term": "uncovered SnO2 adsorption sites",
+            "count": 1
+          },
+          {
+            "term": "uncovered SnO2 adsorption sites remain",
+            "count": 1
+          }
+        ],
+        "adsorption_site_terms": [
+          {
+            "term": "SnO2 surface",
+            "count": 2
+          },
+          {
+            "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+            "count": 1
+          },
+          {
+            "term": "SnO2 surface sites not covered by SAM",
+            "count": 1
+          }
+        ],
+        "site_role_terms": [],
+        "relation": "surface active-site correlation"
+      }
+    ],
+    "exposed_surfaces": [
+      {
+        "term": "SnO2 nanowire surface",
+        "count": 3
+      },
+      {
+        "term": "SAM-functionalized SnO2 surface",
+        "count": 2
+      },
+      {
+        "term": "(101) plane observed",
+        "count": 1
+      },
+      {
+        "term": "(101) plane observed by HRTEM",
+        "count": 1
+      },
+      {
+        "term": "SnO2 (101) plane observed by HRTEM",
+        "count": 1
+      },
+      {
+        "term": "SnO2 nanowire sensing surface",
+        "count": 1
+      }
+    ],
+    "surface_index_mappings": [
+      {
+        "term": "(101) plane observed",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          1
+        ],
+        "software_facet": "(101)",
+        "material": null,
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "(101) plane observed by HRTEM",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          1
+        ],
+        "software_facet": "(101)",
+        "material": null,
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      },
+      {
+        "term": "SnO2 (101) plane observed by HRTEM",
+        "count": 1,
+        "input_notation": "miller",
+        "input_indices": [
+          1,
+          0,
+          1
+        ],
+        "canonical_input_indices": [
+          1,
+          0,
+          1
+        ],
+        "software_miller_index": [
+          1,
+          0,
+          1
+        ],
+        "software_facet": "(101)",
+        "material": "SnO2",
+        "crystal_system": null,
+        "space_group": null,
+        "warnings": []
+      }
+    ],
+    "reported_surface_stability_descriptors": [],
+    "defect_or_termination_states": [
+      {
+        "term": "carboxydecyl phosphonic-acid SAM",
+        "count": 1
+      },
+      {
+        "term": "glycol phosphonic-acid SAM",
+        "count": 1
+      },
+      {
+        "term": "O2-plasma-activated surface",
+        "count": 1
+      },
+      {
+        "term": "pristine",
+        "count": 1
+      }
+    ],
+    "active_site_terms": [
+      {
+        "term": "SnO2 nanowire surface",
+        "count": 3
+      },
+      {
+        "term": "activated SnO2 surface",
+        "count": 2
+      },
+      {
+        "term": "SAM-free SnO2 adsorption sites",
+        "count": 2
+      },
+      {
+        "term": "SnO2 nanowire sensing sites",
+        "count": 1
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites",
+        "count": 1
+      },
+      {
+        "term": "uncovered SnO2 adsorption sites remain",
+        "count": 1
+      }
+    ],
+    "reaction_families": [
+      {
+        "term": "selective gas sensing",
+        "count": 2
+      },
+      {
+        "term": "Au-catalyzed VLS nanowire growth",
+        "count": 1
+      },
+      {
+        "term": "Gas sensing",
+        "count": 1
+      },
+      {
+        "term": "O2 plasma surface activation",
+        "count": 1
+      },
+      {
+        "term": "Self-assembled monolayer functionalization",
+        "count": 1
+      }
+    ]
+  },
+  "entries": [
+    {
+      "term": "PAC10CA",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "modifiers",
+        "Composition",
+        "Dopant/Modifier"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "oxide_compositions",
+        "Composition",
+        "Modeling Keywords"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2 nanowire surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces",
+        "Active Site",
+        "Surface/Support"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2 nanowires",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials",
+        "Material",
+        "Product"
+      ],
+      "count": 3,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "acetone",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "activated SnO2 surface",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site",
+        "Product"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "adsorbate_landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "C3F8",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "CH4",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "CO",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "gas adsorption",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "H2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "H2S",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "O2 plasma",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "PAC12IMI",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "modifiers",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "PAG3",
+      "kind": "known_useful",
+      "research_category": "clusters_single_atoms",
+      "fields": [
+        "modifiers",
+        "Dopant/Modifier"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "rutile",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "crystal_structure_types",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SAM coverage",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SAM-free SnO2 adsorption sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites",
+        "Active Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "SAM-functionalized SnO2 surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces",
+        "Surface/Support"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "selective gas sensing",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "applications",
+        "Reaction Type"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "self-assembled monolayer",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "Coverage"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "slab_generation",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2 surface",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords",
+        "Adsorption Site"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "surface_functionalization",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "recommended_modeling_tasks",
+        "Modeling Keywords"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "toluene",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "adsorbates",
+        "Adsorbate/Reactant"
+      ],
+      "count": 2,
+      "example_contexts": [
+        "se4c02105 1..10",
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "(101)",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "(101) plane observed",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Facet"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "(101) plane observed by HRTEM",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "Facet"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "adsorbate landscape",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "adsorption sites",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "Au 3 nm",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Loading"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "Au catalyst",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Dopant/Modifier"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "Au-catalyzed VLS nanowire growth",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "carboxydecyl phosphonic-acid SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC10CA-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "dispersion interaction",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC10CA-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "functionalized sensing surface",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "Gas sensing",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "gas-sensor response",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "glycol phosphonic-acid SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAG3-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "hydrogen bonding",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAG3-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "incomplete coverage",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "incomplete SAM coverage",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "ion-dipole interaction",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "nanowire",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "nanowire diameter 20-60 nm",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "nanowire length of tens of micrometers",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "O2",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "O2 plasma activation",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "modifiers"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "O2 plasma surface activation",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "O2-plasma-activated surface",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "or PAG3",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "PAC10CA-functionalized SnO2 nanowire sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC10CA-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "PAC10CA-functionalized SnO2 nanowires",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "PAC12IMI-functionalized SnO2 nanowire sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "PAC12IMI-functionalized SnO2 nanowires",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "PAG3-functionalized SnO2 nanowire sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAG3-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "PAG3-functionalized SnO2 nanowires",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "materials"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "pristine",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "pristine SnO2 nanowire sensor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "Pt 200 nm",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Loading"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "resistance response",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Product"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "rutile SnO2",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SAM molecules",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SAM-functionalized SnO2 nanowires",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Material"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorption Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "Self-assembled monolayer functionalization",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Reaction Type"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "self-assembled monolayer with incomplete surface coverage",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "coverage"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "single-crystalline with no significant defects observed",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "material_parameters"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SiO2/Si-supported SnO2 nanowire sensor",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "Sn vapor",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Adsorbate/Reactant"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2 (101)",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SnO2 (101) plane observed by HRTEM",
+      "kind": "known_useful",
+      "research_category": "surface_structure",
+      "fields": [
+        "facets"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SnO2 nanowire sensing sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "active_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SnO2 nanowire sensing surface",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "SnO2 surface sites not covered by SAM",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorption_sites"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "SnO2 with PAC12IMI",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SnO2/PAC10CA",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC10CA-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "SnO2/PAC12IMI",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "SnO2/PAG3",
+      "kind": "known_useful",
+      "research_category": "other_useful_information",
+      "fields": [
+        "Composition"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAG3-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "surface activation",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "surface functionalization",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "modeling_keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "temperature dependence",
+      "kind": "known_useful",
+      "research_category": "modeling_tasks",
+      "fields": [
+        "Modeling Keywords"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "pristine SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "Ti 50 nm",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Loading"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "uncovered SnO2 adsorption sites",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "uncovered SnO2 adsorption sites remain",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Active Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "water",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "adsorbates"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    }
+  ]
+}

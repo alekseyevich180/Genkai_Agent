@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "status": "needs_review",
+  "rules": {
+    "materials_project_api_key": "Read MP_API_KEY from the environment; never persist it.",
+    "surface_loading": "Nanoparticles may only be placed on a vacuum-containing slab, never directly on a bulk unit cell.",
+    "facet_priority": [
+      "paper-explicit facet",
+      "reviewed stable-facet registry",
+      "manual reviewed facet"
+    ],
+    "missing_facet_policy": "Stop when no reviewed stable facet can be resolved."
+  },
+  "tasks": [
+    {
+      "document_id": "surface_relations",
+      "task": "surface_functionalization",
+      "executable": false,
+      "arguments": {},
+      "auto_mapped_parameters": [],
+      "review_items": []
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "executable": true,
+      "arguments": {
+        "surface": null,
+        "molecule": null,
+        "output_dir": null,
+        "structure_prefix": null,
+        "site_symbols": "Sn,S",
+        "site_z_tolerance": null,
+        "max_sites": null,
+        "site_group_size": null,
+        "n_trials_single": null,
+        "site_radius": null,
+        "z_gap_min": null,
+        "z_gap_max": null,
+        "coverage_counts": null,
+        "patterns": null,
+        "random_repeats": null,
+        "seed": null,
+        "calculator": null,
+        "uma_model": null,
+        "device": null,
+        "task_name": "adsorbate_landscape",
+        "include_d3": null,
+        "fmax": null,
+        "max_steps": null,
+        "smoke_test": null
+      },
+      "auto_mapped_parameters": [
+        "task_name",
+        "site_symbols"
+      ],
+      "review_items": [
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "surface",
+          "status": "needs_upstream_artifact",
+          "source_term": "SnO2 nanowire surface",
+          "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+          "depends_on": [
+            "slab_generation.surface_structure"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "molecule",
+          "status": "needs_upstream_artifact",
+          "source_term": "H2",
+          "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+          "depends_on": [
+            "molecule_structure_file"
+          ]
+        },
+        {
+          "document_id": "surface_relations",
+          "task": "adsorbate_landscape",
+          "parameter": "coverage_counts",
+          "status": "needs_manual_decision",
+          "source_term": "self-assembled monolayer with incomplete surface coverage",
+          "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "slab_generation",
+      "executable": false,
+      "arguments": {},
+      "auto_mapped_parameters": [],
+      "review_items": []
+    }
+  ],
+  "review_items": [
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "surface",
+      "status": "needs_upstream_artifact",
+      "source_term": "SnO2 nanowire surface",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "slab_generation.surface_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "molecule",
+      "status": "needs_upstream_artifact",
+      "source_term": "H2",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "molecule_structure_file"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "coverage_counts",
+      "status": "needs_manual_decision",
+      "source_term": "self-assembled monolayer with incomplete surface coverage",
+      "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+      "depends_on": []
+    }
+  ],
+  "expected_model_files": {
+    "bulk_reference": "modeling/structures/bulk_from_materials_project.cif",
+    "surface_slab": "modeling/structures/stable_surface_slab.vasp",
+    "supported_nanoparticle": "modeling/structures/*_on_surface.cif",
+    "modeling_manifest": "modeling/structures/modeling_manifest.json"
+  },
+  "artifact_refs": {
+    "paper": "article.json",
+    "extraction": "stages/01_paperread/extraction.jsonl",
+    "modeling_plan": "modeling/plan.json",
+    "checklist": "modeling/checklist.json"
+  }
+}

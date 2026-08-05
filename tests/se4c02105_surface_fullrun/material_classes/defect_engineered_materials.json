@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0",
+  "material_class": "defect_engineered_materials",
+  "updated_at": "2026-08-05T02:57:07.901510+00:00",
+  "summary": {
+    "terms": 1,
+    "known_useful": 1,
+    "unknown": 0
+  },
+  "keyword_inventory": {
+    "surface_states": [
+      {
+        "term": "no significant defects observed",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "defects_active_sites"
+      }
+    ]
+  },
+  "material_descriptors": {},
+  "class_profile": {
+    "descriptor_schema": "generic_material_profile",
+    "elements": [],
+    "components": [],
+    "crystal_structure_terms": [],
+    "surface_site_contexts": [],
+    "surface_states": [
+      {
+        "term": "no significant defects observed",
+        "count": 1
+      }
+    ],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "no significant defects observed",
+      "kind": "known_useful",
+      "research_category": "defects_active_sites",
+      "fields": [
+        "Defect"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    }
+  ]
+}

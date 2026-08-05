@@ -1,0 +1,92 @@
+这次抽到的关键信息包括：
+
+在 se4c02105_conditions_input_table.csv 里：
+
+- SnO2 nanowires 在 N2/O2 气氛下 900 degC、5 min Au-catalyzed VLS nanowire growth
+- SnO2
+- high surface-to-volume ratio
+- SnO2 nanowires 暴露/涉及晶面 (101) plane observed by HRTEM
+- 吸附物/反应物：Sn vapor; O2，吸附位点 Au-catalyzed growth sites
+- 建模关键词：SnO2; rutile; nanowire; (101); slab_generation
+- 吸附物/反应物：O2 plasma，吸附位点 SnO2 surface
+- 建模关键词：surface activation; surface_functionalization
+- SnO2 with PAC12IMI, PAC10CA, or PAG3
+- 吸附物/反应物：SAM molecules，吸附位点 SnO2 surface; monodentate/bidentate/tridentate PA binding，覆盖度 self-assembled monolayer; incomplete coverage
+- 建模关键词：surface_functionalization; SAM coverage; adsorption sites
+- high surface area
+- pristine SnO2 nanowire sensor 暴露/涉及晶面 (101) plane observed
+- 吸附物/反应物：H2; CO; acetone; C3F8; toluene; CH4; H2S，吸附位点 SnO2 surface
+- 建模关键词：adsorbate_landscape; gas adsorption; temperature dependence
+- SnO2/PAC12IMI
+- 吸附物/反应物：acetone; CH4; toluene，吸附位点 SAM/SnO2 interface and uncovered SnO2 sites，覆盖度 incomplete SAM coverage
+- 建模关键词：surface_functionalization; adsorbate_landscape; ion-dipole interaction
+- SnO2/PAC10CA
+- 吸附物/反应物：CH4; CO; H2; H2S; acetone; C3F8; toluene，吸附位点 SAM/SnO2 interface and uncovered SnO2 sites，覆盖度 incomplete SAM coverage
+- 建模关键词：surface_functionalization; adsorbate_landscape; dispersion interaction
+- SnO2/PAG3
+- 建模关键词：surface_functionalization; adsorbate_landscape; hydrogen bonding
+
+在 se4c02105_conditions_input_surface_relations.jsonl 里：
+
+- 材料：
+  - SnO2 nanowires
+  - PAC12IMI-functionalized SnO2 nanowires
+  - PAC10CA-functionalized SnO2 nanowires
+  - PAG3-functionalized SnO2 nanowires
+- 材料参数：
+  - rutile SnO2
+  - nanowire diameter 20-60 nm
+  - nanowire length of tens of micrometers
+  - single-crystalline with no significant defects observed
+- 反应参数：
+  - VLS growth at 900 degC for 5 min under N2 300 sccm and O2 10 sccm
+  - O2 plasma activation at 200 W, 40 kHz, 0.3 mbar for 10 min
+  - SAM immersion in 0.2 mM isopropanol solution for 18 h
+  - gas sensing at 175 degC and total flow 500 sccm
+  - humidity range 0-90% RH
+- 性能：
+  - PAC12IMI gives acetone-selective responses of 2.54, 3.12, and 3.44 at 10, 30, and 50 ppm
+  - PAC10CA gives CH4-preferred responses of 1.65, 1.88, and 1.96 at 10, 30, and 50 ppm
+  - PAG3 gives marginal selectivity with CH4 responses of 1.56, 1.69, and 1.85
+  - LOD values 380, 690, and 990 ppb for PAC12IMI, PAC10CA, and PAG3
+  - responses retained after six months
+- 表面/晶面：
+  - SnO2 nanowire surface
+  - SAM-functionalized SnO2 surface
+  - SiO2/Si-supported SnO2 nanowire sensor
+  - SnO2 (101) plane observed by HRTEM
+  - PAC12IMI phosphonic-acid-anchored SAM
+  - PAC10CA phosphonic-acid-anchored SAM
+  - PAG3 phosphonic-acid-anchored SAM
+- 缺陷/活性位点：
+  - SnO2 nanowire sensing sites
+  - SAM-free SnO2 adsorption sites
+- 吸附/覆盖度：
+  - H2
+  - CO
+  - acetone
+  - C3F8
+  - toluene
+  - CH4
+  - H2S
+  - water
+  - SnO2 surface sites not covered by SAM
+  - self-assembled monolayer with incomplete surface coverage
+- 表面-位点关联：
+  - 表面: SnO2 nanowire surface, SAM-functionalized SnO2 surface, SiO2/Si-supported SnO2 nanowire sensor, SnO2 (101) plane observed by HRTEM
+  - active site: SnO2 nanowire sensing sites, SAM-free SnO2 adsorption sites
+  - adsorption site: SnO2 surface sites not covered by SAM
+- 团簇/单原子：
+  - 未提取
+- 建模关键词：
+  - SnO2 surface
+  - SnO2 (101)
+  - surface functionalization
+  - self-assembled monolayer
+  - adsorbate landscape
+  - SAM coverage
+  - gas adsorption
+- 推荐建模任务：
+  - surface_functionalization
+  - adsorbate_landscape
+  - slab_generation

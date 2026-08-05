@@ -1,0 +1,1764 @@
+{
+  "schema_version": "1.0",
+  "sources": {
+    "relations_jsonl": "tests/se4c02105_surface_fullrun/stages/01_paperread/extraction.jsonl",
+    "table_csv": null,
+    "summary_txt": null,
+    "time_csv": null
+  },
+  "surface_modeling_parameter_schema": {
+    "schema_path": "genkai.modeling.schema:task_parameter_schema.json",
+    "schema_resource": "genkai.modeling.schema:task_parameter_schema.json",
+    "schema_version": "1.0",
+    "tasks": {
+      "vacancy_landscape": {
+        "script": "genkai.modeling.surface.vacancy:main",
+        "ptomodel_mapping_role": "oxide surface vacancy modeling input",
+        "parameters": {
+          "input": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "vacancy_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "samples_per_count": {
+            "type": "int",
+            "required": false
+          },
+          "mu_o": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_frac_max": {
+            "type": "float",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "write_all_structures": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "samples_per_count >= 1",
+          "0 <= z_frac_min <= z_frac_max <= 1",
+          "calculator in ['uma', 'none']",
+          "calculator='uma' requires uma_model and device"
+        ]
+      },
+      "adsorbate_landscape": {
+        "script": "genkai.modeling.surface.adsorbate:main",
+        "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "molecule": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "structure_prefix": {
+            "type": "string",
+            "required": false
+          },
+          "site_symbols": {
+            "type": "string",
+            "required": false
+          },
+          "site_z_tolerance": {
+            "type": "float",
+            "required": false
+          },
+          "max_sites": {
+            "type": "int",
+            "required": false
+          },
+          "site_group_size": {
+            "type": "int",
+            "required": false
+          },
+          "n_trials_single": {
+            "type": "int",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_gap_max": {
+            "type": "float",
+            "required": false
+          },
+          "coverage_counts": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "patterns": {
+            "type": "comma_separated_strings",
+            "required": false
+          },
+          "random_repeats": {
+            "type": "int",
+            "required": false
+          },
+          "seed": {
+            "type": "int",
+            "required": false
+          },
+          "calculator": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "uma",
+              "none"
+            ]
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "task_name": {
+            "type": "string",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "smoke_test": {
+            "type": "bool",
+            "required": false
+          }
+        },
+        "constraints": [
+          "site_group_size >= 1",
+          "coverage_counts values must be within the computed max_adsorbates range",
+          "patterns must be drawn from uniform, clustered, stripe, island, random",
+          "calculator in ['uma', 'none']"
+        ]
+      },
+      "surface_cluster_builder": {
+        "script": "genkai.modeling.surface.metal_cluster.surface_cluster_builder:main",
+        "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": false
+          },
+          "surface_formula": {
+            "type": "string",
+            "required": false
+          },
+          "surface_mp_id": {
+            "type": "string",
+            "required": false
+          },
+          "surface_facet": {
+            "type": "miller_index",
+            "required": false
+          },
+          "slab_min_size": {
+            "type": "float",
+            "required": false
+          },
+          "slab_vacuum": {
+            "type": "float",
+            "required": false
+          },
+          "slab_repeat_xy": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "cluster_element": {
+            "type": "string",
+            "required": false
+          },
+          "cluster_bulk_file": {
+            "type": "path",
+            "required": false
+          },
+          "cluster_from_mp": {
+            "type": "bool",
+            "required": false
+          },
+          "cluster_mp_id": {
+            "type": "string",
+            "required": false
+          },
+          "cluster_structures": {
+            "type": "string_list",
+            "required": false,
+            "choices": [
+              "fcc",
+              "hcp",
+              "bcc"
+            ]
+          },
+          "cluster_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_layers": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_radius": {
+            "type": "float",
+            "required": false
+          },
+          "stack_layers": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_rows": {
+            "type": "int",
+            "required": false
+          },
+          "bcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "cluster_a": {
+            "type": "float",
+            "required": false
+          },
+          "cluster_c": {
+            "type": "float",
+            "required": false
+          },
+          "fcc_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "fcc_row_profile": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "auto",
+              "custom",
+              "triangle",
+              "hexagon",
+              "trapezoid",
+              "rectangle"
+            ]
+          },
+          "fcc_max_row_atoms": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_row_count": {
+            "type": "int",
+            "required": false
+          },
+          "fcc_stacking_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "ABC",
+              "AB"
+            ]
+          },
+          "fcc_layers": {
+            "type": "int",
+            "required": false
+          },
+          "hcp_rows": {
+            "type": "comma_separated_ints",
+            "required": false
+          },
+          "hcp_layers": {
+            "type": "int",
+            "required": false
+          },
+          "x_frac": {
+            "type": "float",
+            "required": false
+          },
+          "y_frac": {
+            "type": "float",
+            "required": false
+          },
+          "z_height": {
+            "type": "float",
+            "required": false
+          },
+          "phi": {
+            "type": "float",
+            "required": false
+          },
+          "theta": {
+            "type": "float",
+            "required": false
+          },
+          "psi": {
+            "type": "float",
+            "required": false
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          }
+        },
+        "constraints": [
+          "use at most one of surface, surface_formula, surface_mp_id",
+          "surface loading requires a slab with a vacuum gap; bulk unit cells are rejected",
+          "surface_formula or surface_mp_id requires MP_API_KEY and a resolved stable facet",
+          "cluster_element and cluster_bulk_file should provide enough information to resolve a metal species",
+          "in generic mode exactly one of cluster_atoms, cluster_layers, cluster_radius should be provided",
+          "bcc bridge mode requires bcc_rows, bcc_max_row_atoms, stack_layers",
+          "fcc row mode requires fcc_layers plus fcc_rows or an inferable fcc_row_profile setup",
+          "hcp row mode requires hcp_rows"
+        ]
+      },
+      "surface_cluster_mlip_search": {
+        "script": "genkai.modeling.surface.cluster_search:main",
+        "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
+        "parameters": {
+          "surface": {
+            "type": "path",
+            "required": true
+          },
+          "cluster": {
+            "type": "path",
+            "required": true
+          },
+          "output_dir": {
+            "type": "path",
+            "required": false
+          },
+          "n_trials": {
+            "type": "int",
+            "required": false
+          },
+          "fmax": {
+            "type": "float",
+            "required": false
+          },
+          "uma_model": {
+            "type": "string",
+            "required": false
+          },
+          "checkpoint": {
+            "type": "path_or_null",
+            "required": false
+          },
+          "device": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cuda",
+              "cpu"
+            ]
+          },
+          "placement_mode": {
+            "type": "enum",
+            "required": false,
+            "choices": [
+              "cell",
+              "active"
+            ]
+          },
+          "active_symbols": {
+            "type": "string_list",
+            "required": false
+          },
+          "site_radius": {
+            "type": "float",
+            "required": false
+          },
+          "z_min": {
+            "type": "float",
+            "required": false
+          },
+          "z_max": {
+            "type": "float",
+            "required": false
+          },
+          "detach_cutoff": {
+            "type": "float",
+            "required": false
+          },
+          "penalty_energy": {
+            "type": "float",
+            "required": false
+          },
+          "max_steps": {
+            "type": "int",
+            "required": false
+          },
+          "include_d3": {
+            "type": "bool",
+            "required": false
+          },
+          "candidate_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "selection_count": {
+            "type": "int",
+            "required": false
+          },
+          "top_pool_size": {
+            "type": "int",
+            "required": false
+          },
+          "top_pick_count": {
+            "type": "int",
+            "required": false
+          },
+          "tail_bin_size": {
+            "type": "int",
+            "required": false
+          },
+          "tail_pick_per_bin": {
+            "type": "int",
+            "required": false
+          },
+          "selection_random_seed": {
+            "type": "int",
+            "required": false
+          }
+        },
+        "constraints": [
+          "placement_mode in ['cell', 'active']",
+          "placement_mode='active' requires active_symbols",
+          "this task requires fairchem-core, torch, and a usable UMA model"
+        ]
+      }
+    }
+  },
+  "summary_excerpt": [],
+  "documents": [
+    {
+      "id": "surface_relations",
+      "title": "se4c02105 1..10",
+      "selected_information": {
+        "materials": [
+          "SnO2 nanowires",
+          "PAC12IMI-functionalized SnO2 nanowires",
+          "PAC10CA-functionalized SnO2 nanowires",
+          "PAG3-functionalized SnO2 nanowires"
+        ],
+        "material_classes": [
+          "supported_catalysts",
+          "oxides"
+        ],
+        "recognized_material_names": [
+          {
+            "raw": "SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAC12IMI-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAC12IMI-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "C",
+              "I",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAC10CA-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAC10CA-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "C",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAG3-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAG3-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SnO2 nanowire surface",
+            "matched_name": null,
+            "normalized_formula": "SnO2 nanowire surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SAM-functionalized SnO2 surface",
+            "matched_name": null,
+            "normalized_formula": "SAM-functionalized SnO2 surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "S",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SiO2/Si-supported SnO2 nanowire sensor",
+            "matched_name": null,
+            "normalized_formula": "SiO2/Si-supported SnO2 nanowire sensor",
+            "kind": "formula_or_element",
+            "elements": [
+              "Si",
+              "O",
+              "Sn"
+            ]
+          }
+        ],
+        "element_set": [
+          "Sn",
+          "O",
+          "P",
+          "C",
+          "I",
+          "S",
+          "Si"
+        ],
+        "supports_or_surfaces": [
+          "SnO2 nanowire surface",
+          "SAM-functionalized SnO2 surface",
+          "SiO2/Si-supported SnO2 nanowire sensor"
+        ],
+        "surface_facets": [
+          {
+            "raw": "SnO2 (101) plane observed by HRTEM",
+            "normalized": "(101)",
+            "surface_index": {
+              "raw": "SnO2 (101) plane observed by HRTEM",
+              "material": "SnO2",
+              "raw_facet": "(101)",
+              "input_notation": "miller",
+              "input_indices": [
+                1,
+                0,
+                1
+              ],
+              "canonical_input_indices": [
+                1,
+                0,
+                1
+              ],
+              "software_miller_index": [
+                1,
+                0,
+                1
+              ],
+              "software_facet": "(101)",
+              "crystal_system": null,
+              "structure": null,
+              "space_group": null,
+              "surface_note": null,
+              "warnings": []
+            }
+          }
+        ],
+        "surface_terminations": [
+          "PAC12IMI phosphonic-acid-anchored SAM",
+          "PAC10CA phosphonic-acid-anchored SAM",
+          "PAG3 phosphonic-acid-anchored SAM"
+        ],
+        "loaded_nanoparticles_or_clusters": [],
+        "single_atom_species": [],
+        "reaction_types": [
+          {
+            "raw": "selective gas sensing",
+            "normalized": "selective gas sensing"
+          }
+        ],
+        "adsorbates": [
+          "H2",
+          "CO",
+          "acetone",
+          "C3F8",
+          "toluene",
+          "CH4",
+          "H2S",
+          "water"
+        ],
+        "adsorption_sites": [
+          "SnO2 surface sites not covered by SAM"
+        ],
+        "coverage": [
+          "self-assembled monolayer with incomplete surface coverage"
+        ],
+        "defects": [],
+        "active_sites": [
+          "SnO2 nanowire sensing sites",
+          "SAM-free SnO2 adsorption sites"
+        ],
+        "surface_site_contexts": [
+          {
+            "surface_terms": [
+              "SnO2 nanowires",
+              "PAC12IMI-functionalized SnO2 nanowires",
+              "PAC10CA-functionalized SnO2 nanowires",
+              "PAG3-functionalized SnO2 nanowires",
+              "SnO2 nanowire surface",
+              "SAM-functionalized SnO2 surface",
+              "SiO2/Si-supported SnO2 nanowire sensor"
+            ],
+            "facet_terms": [
+              "SnO2 (101) plane observed by HRTEM"
+            ],
+            "active_site_terms": [
+              "SnO2 nanowire sensing sites",
+              "SAM-free SnO2 adsorption sites"
+            ],
+            "adsorption_site_terms": [
+              "SnO2 surface sites not covered by SAM"
+            ],
+            "site_role_terms": [],
+            "surface_indices": [
+              {
+                "raw": "SnO2 (101) plane observed by HRTEM",
+                "material": "SnO2",
+                "raw_facet": "(101)",
+                "input_notation": "miller",
+                "input_indices": [
+                  1,
+                  0,
+                  1
+                ],
+                "canonical_input_indices": [
+                  1,
+                  0,
+                  1
+                ],
+                "software_miller_index": [
+                  1,
+                  0,
+                  1
+                ],
+                "software_facet": "(101)",
+                "crystal_system": null,
+                "structure": null,
+                "space_group": null,
+                "surface_note": null,
+                "warnings": []
+              }
+            ],
+            "relation": "surface-site-facet association"
+          }
+        ],
+        "modeling_keywords": [
+          "SnO2 surface",
+          "SnO2 (101)",
+          "surface functionalization",
+          "self-assembled monolayer",
+          "adsorbate landscape",
+          "SAM coverage",
+          "gas adsorption"
+        ]
+      },
+      "normalized_mapping": {
+        "primary_material": "SnO2 nanowires",
+        "material_classes": [
+          "supported_catalysts",
+          "oxides"
+        ],
+        "recognized_material_names": [
+          {
+            "raw": "SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAC12IMI-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAC12IMI-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "C",
+              "I",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAC10CA-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAC10CA-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "C",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "PAG3-functionalized SnO2 nanowires",
+            "matched_name": null,
+            "normalized_formula": "PAG3-functionalized SnO2 nanowires",
+            "kind": "formula_or_element",
+            "elements": [
+              "P",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SnO2 nanowire surface",
+            "matched_name": null,
+            "normalized_formula": "SnO2 nanowire surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SAM-functionalized SnO2 surface",
+            "matched_name": null,
+            "normalized_formula": "SAM-functionalized SnO2 surface",
+            "kind": "formula_or_element",
+            "elements": [
+              "S",
+              "Sn",
+              "O"
+            ]
+          },
+          {
+            "raw": "SiO2/Si-supported SnO2 nanowire sensor",
+            "matched_name": null,
+            "normalized_formula": "SiO2/Si-supported SnO2 nanowire sensor",
+            "kind": "formula_or_element",
+            "elements": [
+              "Si",
+              "O",
+              "Sn"
+            ]
+          }
+        ],
+        "element_set": [
+          "Sn",
+          "O",
+          "P",
+          "C",
+          "I",
+          "S",
+          "Si"
+        ],
+        "primary_surface_or_support": "SnO2 nanowire surface",
+        "facet_set": [
+          "(101)"
+        ],
+        "loaded_species": [],
+        "surface_site_contexts": [
+          {
+            "surface_terms": [
+              "SnO2 nanowires",
+              "PAC12IMI-functionalized SnO2 nanowires",
+              "PAC10CA-functionalized SnO2 nanowires",
+              "PAG3-functionalized SnO2 nanowires",
+              "SnO2 nanowire surface",
+              "SAM-functionalized SnO2 surface",
+              "SiO2/Si-supported SnO2 nanowire sensor"
+            ],
+            "facet_terms": [
+              "SnO2 (101) plane observed by HRTEM"
+            ],
+            "active_site_terms": [
+              "SnO2 nanowire sensing sites",
+              "SAM-free SnO2 adsorption sites"
+            ],
+            "adsorption_site_terms": [
+              "SnO2 surface sites not covered by SAM"
+            ],
+            "site_role_terms": [],
+            "surface_indices": [
+              {
+                "raw": "SnO2 (101) plane observed by HRTEM",
+                "material": "SnO2",
+                "raw_facet": "(101)",
+                "input_notation": "miller",
+                "input_indices": [
+                  1,
+                  0,
+                  1
+                ],
+                "canonical_input_indices": [
+                  1,
+                  0,
+                  1
+                ],
+                "software_miller_index": [
+                  1,
+                  0,
+                  1
+                ],
+                "software_facet": "(101)",
+                "crystal_system": null,
+                "structure": null,
+                "space_group": null,
+                "surface_note": null,
+                "warnings": []
+              }
+            ],
+            "relation": "surface-site-facet association"
+          }
+        ],
+        "reaction_family": [
+          "selective gas sensing"
+        ]
+      },
+      "recommended_modeling_tasks": [
+        "surface_functionalization",
+        "adsorbate_landscape",
+        "slab_generation"
+      ],
+      "task_selection": {
+        "selection_order": [
+          "material_class",
+          "research_keywords_and_explicit_fields"
+        ],
+        "material_classes": [
+          "supported_catalysts",
+          "oxides"
+        ],
+        "material_compatible_executable_tasks": [
+          "vacancy_landscape",
+          "adsorbate_landscape",
+          "surface_cluster_builder"
+        ],
+        "research_keywords": [
+          "SnO2 surface",
+          "SnO2 (101)",
+          "surface functionalization",
+          "self-assembled monolayer",
+          "adsorbate landscape",
+          "SAM coverage",
+          "gas adsorption"
+        ],
+        "keyword_text": "sno2 surface sno2 (101) surface functionalization self-assembled monolayer adsorbate landscape sam coverage gas adsorption",
+        "selected_task_evidence": {
+          "surface_functionalization": [
+            "recommended_modeling_tasks:surface_functionalization",
+            "PAC12IMI phosphonic-acid-anchored SAM",
+            "PAC10CA phosphonic-acid-anchored SAM",
+            "PAG3 phosphonic-acid-anchored SAM"
+          ],
+          "adsorbate_landscape": [
+            "recommended_modeling_tasks:adsorbate_landscape",
+            "H2",
+            "CO",
+            "acetone",
+            "C3F8",
+            "toluene",
+            "CH4",
+            "H2S",
+            "water",
+            "SnO2 surface sites not covered by SAM",
+            "self-assembled monolayer with incomplete surface coverage",
+            "adsorbate landscape",
+            "SAM coverage",
+            "gas adsorption"
+          ],
+          "slab_generation": [
+            "recommended_modeling_tasks:slab_generation",
+            "SnO2 nanowire surface",
+            "SAM-functionalized SnO2 surface",
+            "SiO2/Si-supported SnO2 nanowire sensor",
+            "SnO2 (101) plane observed by HRTEM"
+          ]
+        },
+        "rejected_recommendations": []
+      },
+      "executable_tasks": [
+        "adsorbate_landscape"
+      ],
+      "deferred_tasks": [
+        "surface_functionalization",
+        "slab_generation"
+      ],
+      "task_inputs": {
+        "adsorbate_landscape": {
+          "material": "SnO2 nanowires",
+          "surfaces": [
+            "SnO2 nanowire surface",
+            "SAM-functionalized SnO2 surface",
+            "SiO2/Si-supported SnO2 nanowire sensor"
+          ],
+          "facets": [
+            "(101)"
+          ],
+          "active_sites": [
+            "SnO2 nanowire sensing sites",
+            "SAM-free SnO2 adsorption sites"
+          ],
+          "reaction_type": null,
+          "adsorbates": [
+            "H2",
+            "CO",
+            "acetone",
+            "C3F8",
+            "toluene",
+            "CH4",
+            "H2S",
+            "water"
+          ],
+          "adsorbate_species": [
+            {
+              "raw": "H2",
+              "normalized_species": "H2"
+            },
+            {
+              "raw": "CO",
+              "normalized_species": "CO"
+            },
+            {
+              "raw": "acetone",
+              "normalized_species": "acetone"
+            },
+            {
+              "raw": "C3F8",
+              "normalized_species": "C3F8"
+            },
+            {
+              "raw": "toluene",
+              "normalized_species": "toluene"
+            },
+            {
+              "raw": "CH4",
+              "normalized_species": "CH4"
+            },
+            {
+              "raw": "H2S",
+              "normalized_species": "H2S"
+            },
+            {
+              "raw": "water",
+              "normalized_species": "water"
+            }
+          ],
+          "adsorption_sites": [
+            "SnO2 surface sites not covered by SAM"
+          ],
+          "site_group_size": null,
+          "coverage": [
+            "self-assembled monolayer with incomplete surface coverage"
+          ]
+        }
+      },
+      "parameter_correspondence": {
+        "shared_context": {
+          "primary_material": "SnO2 nanowires",
+          "primary_surface_or_support": "SnO2 nanowire surface",
+          "facet_set": [
+            "(101)"
+          ],
+          "loaded_species": [],
+          "reaction_family": [
+            "selective gas sensing"
+          ]
+        },
+        "links": [
+          {
+            "relation": "shared_surface_structure",
+            "source_fields": [
+              "materials",
+              "surfaces",
+              "facets",
+              "surface_facets.surface_index"
+            ],
+            "source_terms": [
+              "SnO2 nanowires",
+              "SnO2 nanowire surface",
+              "(101)"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.surface"
+            ],
+            "status": "needs_upstream_artifact",
+            "prerequisite": "slab_generation or user-selected structure file",
+            "reason": "The same resolved slab or surface structure should feed all downstream tasks that operate on a surface artifact."
+          },
+          {
+            "relation": "adsorbate_to_molecule_file",
+            "source_fields": [
+              "adsorbates",
+              "intermediates"
+            ],
+            "source_terms": [
+              "H2",
+              "CO",
+              "acetone",
+              "C3F8",
+              "toluene",
+              "CH4",
+              "H2S",
+              "water"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.molecule"
+            ],
+            "status": "needs_upstream_artifact",
+            "prerequisite": "molecule structure file selection or generation",
+            "reason": "Paper adsorbate names identify molecule candidates, but the executable parameter is a structure-file path."
+          },
+          {
+            "relation": "coverage_depends_on_surface_and_molecule",
+            "source_fields": [
+              "coverage"
+            ],
+            "source_terms": [
+              "self-assembled monolayer with incomplete surface coverage"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.coverage_counts"
+            ],
+            "status": "needs_manual_decision",
+            "prerequisite": "resolved surface supercell and molecule count convention",
+            "reason": "Coverage text constrains the adsorbate loading but must be converted after the surface cell and adsorbate are fixed."
+          },
+          {
+            "relation": "active_site_to_adsorption_site_search",
+            "source_fields": [
+              "active_sites",
+              "adsorption_sites",
+              "surface_site_contexts"
+            ],
+            "source_terms": [
+              "SnO2 nanowire sensing sites",
+              "SAM-free SnO2 adsorption sites",
+              "SnO2 surface sites not covered by SAM"
+            ],
+            "target_parameters": [
+              "adsorbate_landscape.site_symbols",
+              "adsorbate_landscape.site_group_size"
+            ],
+            "status": "auto_or_manual_by_parameter",
+            "prerequisite": "resolved surface structure",
+            "reason": "Active-site labels can seed element-based site detection, while geometry choices remain execution-time decisions."
+          }
+        ]
+      },
+      "task_parameter_schema_refs": {
+        "adsorbate_landscape": {
+          "schema_path": "genkai.modeling.schema:task_parameter_schema.json",
+          "task_key": "adsorbate_landscape"
+        }
+      },
+      "task_argument_template": {
+        "adsorbate_landscape": {
+          "arguments": {
+            "surface": null,
+            "molecule": null,
+            "output_dir": null,
+            "structure_prefix": null,
+            "site_symbols": "Sn,S",
+            "site_z_tolerance": null,
+            "max_sites": null,
+            "site_group_size": null,
+            "n_trials_single": null,
+            "site_radius": null,
+            "z_gap_min": null,
+            "z_gap_max": null,
+            "coverage_counts": null,
+            "patterns": null,
+            "random_repeats": null,
+            "seed": null,
+            "calculator": null,
+            "uma_model": null,
+            "device": null,
+            "task_name": "adsorbate_landscape",
+            "include_d3": null,
+            "fmax": null,
+            "max_steps": null,
+            "smoke_test": null
+          },
+          "argument_sources": {
+            "task_name": {
+              "status": "auto",
+              "confidence": "high",
+              "source_field": null,
+              "source_term": null,
+              "reason": "Executable task name is already selected by ptomodel.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_symbols": {
+              "status": "auto",
+              "confidence": "high",
+              "source_field": "active_sites",
+              "source_term": "SnO2 nanowire sensing sites",
+              "reason": "Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+              "from_task_inputs": [
+                "active_sites"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "surface": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "SnO2 nanowire surface",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "molecule": {
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "adsorbates",
+              "source_term": "H2",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "molecule_structure_file"
+              ]
+            },
+            "output_dir": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "structure_prefix": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_z_tolerance": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_sites": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_group_size": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "n_trials_single": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_radius": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_min": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_max": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "coverage_counts": {
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "coverage",
+              "source_term": "self-assembled monolayer with incomplete surface coverage",
+              "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+              "from_task_inputs": [
+                "coverage",
+                "adsorption_sites",
+                "active_sites",
+                "defects",
+                "vacancy_models"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "patterns": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "random_repeats": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "seed": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "calculator": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "uma_model": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "device": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "include_d3": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fmax": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_steps": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "smoke_test": {
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "parameter_bindings": {
+            "task_name": {
+              "value": "adsorbate_landscape",
+              "status": "auto",
+              "confidence": "high",
+              "source_field": null,
+              "source_term": null,
+              "reason": "Executable task name is already selected by ptomodel.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_symbols": {
+              "value": "Sn,S",
+              "status": "auto",
+              "confidence": "high",
+              "source_field": "active_sites",
+              "source_term": "SnO2 nanowire sensing sites",
+              "reason": "Active-site labels mention concrete element symbols that can seed adsorption-site detection.",
+              "from_task_inputs": [
+                "active_sites"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "surface": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "surfaces",
+              "source_term": "SnO2 nanowire surface",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "slab_generation.surface_structure"
+              ]
+            },
+            "molecule": {
+              "value": null,
+              "status": "needs_upstream_artifact",
+              "confidence": "high",
+              "source_field": "adsorbates",
+              "source_term": "H2",
+              "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+              "from_task_inputs": [
+                "material",
+                "surfaces",
+                "facets"
+              ],
+              "from_normalized_mapping": [
+                "primary_material",
+                "primary_surface_or_support",
+                "facet_set"
+              ],
+              "depends_on": [
+                "molecule_structure_file"
+              ]
+            },
+            "output_dir": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "structure_prefix": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_z_tolerance": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_sites": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_group_size": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "n_trials_single": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "site_radius": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_min": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "z_gap_max": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "coverage_counts": {
+              "value": null,
+              "status": "needs_manual_decision",
+              "confidence": "medium",
+              "source_field": "coverage",
+              "source_term": "self-assembled monolayer with incomplete surface coverage",
+              "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+              "from_task_inputs": [
+                "coverage",
+                "adsorption_sites",
+                "active_sites",
+                "defects",
+                "vacancy_models"
+              ],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "patterns": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "random_repeats": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "seed": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "calculator": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "uma_model": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "device": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "include_d3": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "fmax": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "max_steps": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            },
+            "smoke_test": {
+              "value": null,
+              "status": "optional_unset",
+              "confidence": "low",
+              "source_field": null,
+              "source_term": null,
+              "reason": "No safe paper-to-parameter mapping is available yet; leave for downstream filling.",
+              "from_task_inputs": [],
+              "from_normalized_mapping": [],
+              "depends_on": []
+            }
+          },
+          "auto_mapped_parameters": [
+            "task_name",
+            "site_symbols"
+          ],
+          "required_missing_parameters": [
+            "surface",
+            "molecule"
+          ]
+        }
+      }
+    }
+  ],
+  "global_recommended_tasks": [
+    "surface_functionalization",
+    "adsorbate_landscape",
+    "slab_generation"
+  ],
+  "global_executable_tasks": [
+    "adsorbate_landscape"
+  ],
+  "global_deferred_tasks": [
+    "surface_functionalization",
+    "slab_generation"
+  ]
+}
