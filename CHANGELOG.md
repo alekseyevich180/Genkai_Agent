@@ -2,6 +2,73 @@
 
 <!-- version list -->
 
+## v2.2.0 (2026-08-05)
+
+### Bug Fixes
+
+- Bind production inputs to verified runtimes
+  ([`06ce48f`](https://github.com/alekseyevich180/Genkai_Agent/commit/06ce48f525ad6aba07202b0ebc485b0b0bdc30c7))
+
+- Bind UMA checkpoint and defer API clients
+  ([`f338263`](https://github.com/alekseyevich180/Genkai_Agent/commit/f338263859912e8be2f81cd21e8bd163ca02a1b4))
+
+- Enforce scientific evidence integrity
+  ([`b4666c2`](https://github.com/alekseyevich180/Genkai_Agent/commit/b4666c25e9b796aeef03bd930efe57e0a4fb7d52))
+
+### Chores
+
+- Ignore local worktrees
+  ([`d0cce65`](https://github.com/alekseyevich180/Genkai_Agent/commit/d0cce65035b94cfae3a6348a903f5e76ccc88970))
+
+- Keep evolution snapshot in dedicated folder
+  ([`84fb3c0`](https://github.com/alekseyevich180/Genkai_Agent/commit/84fb3c0072d9213e4887758f4770cd94c8b614ef))
+
+### Documentation
+
+- Clarify full-suite validation boundary
+  ([`c86e35f`](https://github.com/alekseyevich180/Genkai_Agent/commit/c86e35f886cd83d415473cd532ddfebad9d3e6ce))
+
+- Complete library-first workflow migration
+  ([`b478d68`](https://github.com/alekseyevich180/Genkai_Agent/commit/b478d68256dab7759a2cef58f6fb7a852e129f8c))
+
+- Record final evolution verification
+  ([`2389b48`](https://github.com/alekseyevich180/Genkai_Agent/commit/2389b48e3910c18e85b5988d6066d73b559c397a))
+
+- Record structure convergence handoff
+  ([`4c1a966`](https://github.com/alekseyevich180/Genkai_Agent/commit/4c1a966c0fe67132e4f38f6a0599805c0a236d60))
+
+### Features
+
+- Add artifact-aware paper to MLIP workflow
+  ([`66d3796`](https://github.com/alekseyevich180/Genkai_Agent/commit/66d3796e059983379f7c1254d8bce3192db8a9a5))
+
+- Add reproducible run manifests
+  ([`56855f8`](https://github.com/alekseyevich180/Genkai_Agent/commit/56855f834f0d7bff285b4654ecb9b713452e0a86))
+
+- Add validated compute dataset and MLIP adapters
+  ([`607db14`](https://github.com/alekseyevich180/Genkai_Agent/commit/607db14599e753688e4ddb858cf7ff1c94773a05))
+
+- Add versioned scientific artifact contracts
+  ([`bfcb9d4`](https://github.com/alekseyevich180/Genkai_Agent/commit/bfcb9d43eba9fcc8165cedec231766af5d2861d6))
+
+- Expose surface workflow through stable facades
+  ([`bc97a8a`](https://github.com/alekseyevich180/Genkai_Agent/commit/bc97a8a305759c887c32f7f38645d89d74ae1b01))
+
+- Make agent plans artifact aware
+  ([`c3a4bac`](https://github.com/alekseyevich180/Genkai_Agent/commit/c3a4baca1dfbe3b556b1e899aed01dd5392c31d5))
+
+- Standardize stable skill contracts
+  ([`e41a2cf`](https://github.com/alekseyevich180/Genkai_Agent/commit/e41a2cf68066f9bd4bbe50139dddbb42608f0e6a))
+
+- Validate workflow artifact dependencies
+  ([`2fae7f8`](https://github.com/alekseyevich180/Genkai_Agent/commit/2fae7f80c7a5a44fa35191c21dc82de275229d23))
+
+### Testing
+
+- Verify clean wheel cli entrypoints
+  ([`defe7a7`](https://github.com/alekseyevich180/Genkai_Agent/commit/defe7a7d00ad89fdc1bb2cb5f6026528bfa9baf9))
+
+
 ## v2.0.0 (2026-06-29)
 
 ### Features
