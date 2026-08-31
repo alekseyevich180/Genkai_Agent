@@ -40,7 +40,8 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
 - `work_logs/`：按日期记录实际工作与验证边界；`work_log.md` 仅作索引。
 
 详细所有权和弃用边界见 `docs/migration.md`。Harness 的任务用法见
-`docs/harness-engineering.md`。
+`docs/harness-engineering.md`；从 8 月 5 日计划恢复简单日常任务时，使用
+`docs/daily-agent-work-guide.md`。
 
 ## 架构规则
 
