@@ -416,7 +416,26 @@ python -m pytest tests -v
 `tests/test_structure_builder.py` 目前依赖已经不存在的
 `agent.tools.structure_builder` 模块。因此，在恢复该模块或删除此测试前，
 完整测试套件无法全部通过。当前 `.github/workflows/test.yml` 中的 GitHub
-Actions 仅在推送和拉取请求时运行 `tests/test_agent.py`。
+Actions 在推送和拉取请求时运行 Harness CI 门禁，包括 Agent 导入、测试分层、架构
+边界和公共 CLI 帮助检查。
+
+### Development Harness
+
+开始修改仓库前请阅读根目录 [`AGENTS.md`](AGENTS.md)。项目专用的任务定义、分级
+验证、科学计算授权边界、失败恢复和完成报告方法见
+[`docs/harness-engineering.md`](docs/harness-engineering.md)。
+
+常用检查：
+
+```bash
+python scripts/check_harness.py doctor   # 静态项目与文档契约
+python scripts/check_harness.py quick    # 测试分层和架构门禁
+python scripts/check_harness.py ci       # 与 GitHub Actions 相同
+python scripts/check_harness.py package  # wheel 和 package data
+```
+
+这些命令要求已经激活 Python 3.12+ 的项目环境。完整测试仍保留上文说明的
+`agent.tools.structure_builder` 收集阻塞，局部或 CI 门禁通过不等于完整测试通过。
 
 ## Skills
 Agent follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/Agent/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.

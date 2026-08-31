@@ -1334,10 +1334,8 @@ help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
 
 ### 15.5 方案 A 实施状态
 
-Task 10–11 的设计和逐文件计划已记录在：
-
-- `docs/superpowers/specs/2026-08-03-genkai-surface-literature-convergence-design.md`
-- `docs/superpowers/plans/2026-08-03-genkai-surface-literature-convergence.md`
+Task 10–11 的历史 superpower 设计和逐文件计划已于 2026-08-31 按要求从
+`docs/` 清理；下方实施状态和 `docs/structure-baseline.md` 保留当前可用的事实记录。
 
 当前任务状态：
 
@@ -1401,3 +1399,49 @@ discovery 已移除 `paperread*`。
 2. 审计 `Genkai_Evolution/` 工作树和 `feat/genkai-evolution` 分支状态。
 3. 复核 Task 12 的离线回归与 wheel 产物，保留外部科研运行时边界。
 4. Task 13–15 按各自设计继续推进；不得将其未开始状态误记为完成。
+
+
+
+  【目标】
+  修复或实现什么。
+
+  【验收标准】
+  1. 可观察的结果一
+  2. 可观察的结果二
+  3. 添加或更新测试
+
+  【保持不变】
+  - 现有公共接口
+  - artifact 数据格式
+  - 与任务无关的模块
+
+  【允许修改】
+  - src/genkai/...
+  - tests/...
+
+  【执行权限】
+  - 是否允许网络或在线 LLM
+  - 是否允许 Materials Project
+  - 是否允许 VASP、GPU/PJM、MLIP、训练或 MD
+  - 是否允许 commit、push
+
+  请先调查当前实现和测试，找到最小修改位置。
+  实施后运行相应验证，并逐项报告验收证据。
+
+  例如：
+
+  【目标】
+  修复 surface workflow 在空 relations 输入下产生无效 manifest 的问题。
+
+  【验收标准】
+  1. 空输入返回明确错误
+  2. 不写入不完整 manifest
+  3. 正常输入行为保持不变
+  4. 添加回归测试
+
+  【允许修改】
+  - src/genkai/workflows/
+  - tests/workflow/
+
+  【执行权限】
+  只允许离线测试，不允许网络、LLM、VASP、MLIP 或 PJM。

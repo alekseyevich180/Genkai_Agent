@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout code
@@ -19,11 +20,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Install project and test tooling
         run: |
           python -m pip install --upgrade pip
-          pip install -e .
-          pip install pytest
+          python -m pip install -e .
+          python -m pip install pytest
 
-      - name: Run Agent import tests
-        run: python -m pytest tests/test_agent.py -v
+      - name: Run Harness CI gate
+        run: python scripts/check_harness.py ci
