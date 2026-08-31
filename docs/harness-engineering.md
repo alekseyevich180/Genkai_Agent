@@ -59,7 +59,7 @@ Skills
 uv venv .venv --python 3.12
 source .venv/bin/activate
 uv pip install -e .
-uv pip install pytest
+uv pip install pytest pip setuptools wheel
 ```
 
 不要复用未知状态的父目录或其他 worktree 虚拟环境。激活后确认：
@@ -359,7 +359,8 @@ MLIP、训练、MD、GPU/PJM。无法从证据唯一确定的参数必须阻断�
 
 1. 运行 `python --version`；
 2. 确认当前解释器来自本仓库 `.venv`；
-3. 重新执行 `uv pip install -e .` 和 `uv pip install pytest`；
+3. 重新执行 `uv pip install -e .` 和
+   `uv pip install pytest pip setuptools wheel`；
 4. 先运行 `doctor`，再运行测试。
 
 不要把环境失败修改成业务代码补丁。

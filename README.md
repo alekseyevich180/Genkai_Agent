@@ -163,7 +163,7 @@ source .venv/bin/activate
 
 # 以可编辑模式安装 Agent，并安装测试工具
 uv pip install -e .
-uv pip install pytest
+uv pip install pytest pip setuptools wheel
 
 # 可选：从 GitHub 安装最新 pymatgen
 uv pip install "git+https://github.com/materialsproject/pymatgen.git"

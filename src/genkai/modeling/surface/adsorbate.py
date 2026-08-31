@@ -1,7 +1,9 @@
 import argparse
+from dataclasses import dataclass
 import io
 import random
 from pathlib import Path
+from typing import Literal
 
 import numpy as np
 import optuna
@@ -53,6 +55,41 @@ CONFIG = {
         "max_steps": 0,
     },
 }
+
+
+@dataclass(frozen=True)
+class AdsorbateLandscapeConfig:
+    surface: Path
+    molecule: Path
+    output_dir: Path
+    site_symbols: str
+    coverage_counts: str | None
+    patterns: str = "uniform,clustered,random"
+    structure_prefix: str = "ads"
+    site_z_tolerance: float = 1.2
+    max_sites: int | None = None
+    site_group_size: int = 1
+    n_trials_single: int = 60
+    site_radius: float = 1.0
+    z_gap_min: float = 1.4
+    z_gap_max: float = 3.5
+    random_repeats: int = 5
+    seed: int = 42
+    calculator: Literal["none", "uma"] = "none"
+    uma_model: str = "uma-s-1p2"
+    device: Literal["cuda", "cpu"] = "cuda"
+    task_name: str = "omat"
+    include_d3: bool = False
+    fmax: float = 0.05
+    max_steps: int = 0
+
+
+@dataclass(frozen=True)
+class AdsorbateLandscapeResult:
+    structure_paths: tuple[Path, ...]
+    csv_path: Path
+    plot_path: Path
+    best_candidate_path: Path
 
 
 class AdsorptionTestCalculator(Calculator):
@@ -459,40 +496,10 @@ def plot_adsorbate_landscape(table: pd.DataFrame, output_path: Path) -> None:
     plt.close(fig)
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Construct adsorbate coverage landscapes using UMA and Optuna.")
-    parser.add_argument("--surface", type=Path, default=Path(CONFIG["surface"]))
-    parser.add_argument("--molecule", type=Path, default=Path(CONFIG["molecule"]))
-    parser.add_argument("--output-dir", type=Path, default=Path(CONFIG["output_dir"]))
-    parser.add_argument("--structure-prefix", type=str, default=CONFIG["structure_prefix"])
-    parser.add_argument("--site-symbols", type=str, default=CONFIG["site_symbols"])
-    parser.add_argument("--site-z-tolerance", type=float, default=CONFIG["site_z_tolerance"])
-    parser.add_argument("--max-sites", type=int, default=CONFIG["max_sites"])
-    parser.add_argument("--site-group-size", type=int, default=CONFIG["site_group_size"])
-    parser.add_argument("--n-trials-single", type=int, default=CONFIG["n_trials_single"])
-    parser.add_argument("--site-radius", type=float, default=CONFIG["site_radius"])
-    parser.add_argument("--z-gap-min", type=float, default=CONFIG["z_gap_min"])
-    parser.add_argument("--z-gap-max", type=float, default=CONFIG["z_gap_max"])
-    parser.add_argument("--coverage-counts", type=str, default=CONFIG["coverage_counts"])
-    parser.add_argument("--patterns", type=str, default=CONFIG["patterns"])
-    parser.add_argument("--random-repeats", type=int, default=CONFIG["random_repeats"])
-    parser.add_argument("--seed", type=int, default=CONFIG["seed"])
-    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "none"])
-    parser.add_argument("--uma-model", type=str, default=CONFIG["uma_model"])
-    parser.add_argument("--device", type=str, default=CONFIG["device"], choices=["cuda", "cpu"])
-    parser.add_argument("--task-name", type=str, default=CONFIG["task_name"])
-    parser.add_argument("--include-d3", action="store_true", default=CONFIG["include_d3"])
-    parser.add_argument("--fmax", type=float, default=CONFIG["fmax"])
-    parser.add_argument("--max-steps", type=int, default=CONFIG["max_steps"])
-    parser.add_argument("--smoke-test", action="store_true")
-    args = parser.parse_args()
-
-    if args.smoke_test:
-        for key, value in CONFIG["smoke_test"].items():
-            if key == "output_dir":
-                value = Path(value)
-            setattr(args, key, value)
-
+def run_adsorbate_landscape(
+    config: AdsorbateLandscapeConfig,
+) -> AdsorbateLandscapeResult:
+    args = config
     args.output_dir.mkdir(parents=True, exist_ok=True)
     structures_dir = args.output_dir / "structures"
     structures_dir.mkdir(parents=True, exist_ok=True)
@@ -548,6 +555,7 @@ def main() -> int:
     write(args.output_dir / "single_adsorbate_best.cif", single_best)
 
     rows = []
+    structure_paths: list[Path] = []
     structure_id = 0
     for count in coverage_counts:
         for pattern in patterns:
@@ -561,6 +569,7 @@ def main() -> int:
                 structure_id += 1
                 structure_path = structures_dir / f"{args.structure_prefix}_{structure_id}.cif"
                 write(structure_path, structure)
+                structure_paths.append(structure_path)
                 rows.append(
                     {
                         "structure_id": structure_id,
@@ -639,6 +648,52 @@ def main() -> int:
         f"coverage={best['coverage']:.6f}, "
         f"E_ads/N={best['E_ads_per_molecule_eV']:.8f} eV"
     )
+    return AdsorbateLandscapeResult(
+        structure_paths=tuple(structure_paths),
+        csv_path=csv_path,
+        plot_path=plot_path,
+        best_candidate_path=best_path,
+    )
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Construct adsorbate coverage landscapes using UMA and Optuna.")
+    parser.add_argument("--surface", type=Path, default=Path(CONFIG["surface"]))
+    parser.add_argument("--molecule", type=Path, default=Path(CONFIG["molecule"]))
+    parser.add_argument("--output-dir", type=Path, default=Path(CONFIG["output_dir"]))
+    parser.add_argument("--structure-prefix", type=str, default=CONFIG["structure_prefix"])
+    parser.add_argument("--site-symbols", type=str, default=CONFIG["site_symbols"])
+    parser.add_argument("--site-z-tolerance", type=float, default=CONFIG["site_z_tolerance"])
+    parser.add_argument("--max-sites", type=int, default=CONFIG["max_sites"])
+    parser.add_argument("--site-group-size", type=int, default=CONFIG["site_group_size"])
+    parser.add_argument("--n-trials-single", type=int, default=CONFIG["n_trials_single"])
+    parser.add_argument("--site-radius", type=float, default=CONFIG["site_radius"])
+    parser.add_argument("--z-gap-min", type=float, default=CONFIG["z_gap_min"])
+    parser.add_argument("--z-gap-max", type=float, default=CONFIG["z_gap_max"])
+    parser.add_argument("--coverage-counts", type=str, default=CONFIG["coverage_counts"])
+    parser.add_argument("--patterns", type=str, default=CONFIG["patterns"])
+    parser.add_argument("--random-repeats", type=int, default=CONFIG["random_repeats"])
+    parser.add_argument("--seed", type=int, default=CONFIG["seed"])
+    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "none"])
+    parser.add_argument("--uma-model", type=str, default=CONFIG["uma_model"])
+    parser.add_argument("--device", type=str, default=CONFIG["device"], choices=["cuda", "cpu"])
+    parser.add_argument("--task-name", type=str, default=CONFIG["task_name"])
+    parser.add_argument("--include-d3", action="store_true", default=CONFIG["include_d3"])
+    parser.add_argument("--fmax", type=float, default=CONFIG["fmax"])
+    parser.add_argument("--max-steps", type=int, default=CONFIG["max_steps"])
+    parser.add_argument("--smoke-test", action="store_true")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _build_parser().parse_args(argv)
+    if args.smoke_test:
+        for key, value in CONFIG["smoke_test"].items():
+            if key == "output_dir":
+                value = Path(value)
+            setattr(args, key, value)
+    del args.smoke_test
+    run_adsorbate_landscape(AdsorbateLandscapeConfig(**vars(args)))
     return 0
 
 
