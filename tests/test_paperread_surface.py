@@ -386,9 +386,17 @@ Oxygen vacancies acted as active sites and methoxy was identified.
                 summary_txt=str(summary_path),
             )
 
-            self.assertEqual(payload["global_executable_tasks"], ["vacancy_landscape", "adsorbate_landscape", "surface_cluster_builder"])
-            self.assertEqual(payload["global_deferred_tasks"], ["single_atom_site", "surface_functionalization", "slab_generation"])
+            self.assertEqual(
+                payload["global_executable_tasks"],
+                ["vacancy_landscape", "adsorbate_landscape", "surface_cluster_builder", "slab_generation"],
+            )
+            self.assertEqual(payload["global_deferred_tasks"], ["single_atom_site", "surface_functionalization"])
             doc_payload = payload["documents"][0]
+            slab_bindings = doc_payload["task_argument_template"]["slab_generation"]["parameter_bindings"]
+            self.assertEqual(slab_bindings["facet"]["value"], "(111)")
+            self.assertEqual(slab_bindings["facet"]["status"], "auto")
+            self.assertEqual(slab_bindings["formula"]["value"], "CeO2")
+            self.assertEqual(slab_bindings["bulk"]["status"], "alternative_not_selected")
             self.assertEqual(doc_payload["normalized_mapping"]["primary_material"], "Pt/CeO2")
             self.assertEqual(doc_payload["normalized_mapping"]["facet_set"], ["(111)"])
             self.assertEqual(doc_payload["normalized_mapping"]["loaded_species"], ["Pt"])
@@ -616,6 +624,34 @@ Oxygen vacancies acted as active sites and methoxy was identified.
             template = _build_argument_template(task, {"surfaces": ["CeO2(111)"]}, {}, schema)
             self.assertIsNone(template["arguments"]["task_name"], task)
             self.assertNotIn("task_name", template["auto_mapped_parameters"], task)
+
+    def test_ptomodel_slab_generation_template_maps_formula_facet_or_requests_bulk(self):
+        from paperread.surface.modeling.ptomodel import (
+            _build_argument_template,
+            _load_surface_modeling_parameter_schema,
+        )
+
+        schema = _load_surface_modeling_parameter_schema()
+        metal = _build_argument_template(
+            "slab_generation",
+            {"material": "Pt nanoparticles", "surfaces": ["Pt(111)"], "facets": ["(111)"]},
+            {"facet_set": ["(111)"]},
+            schema,
+        )["parameter_bindings"]
+        self.assertEqual(metal["formula"]["value"], "Pt")
+        self.assertEqual(metal["facet"]["value"], "(111)")
+        self.assertEqual(metal["facet"]["confidence"], "high")
+        self.assertIsNone(metal["task_name"]["value"])
+
+        unknown = _build_argument_template(
+            "slab_generation",
+            {"material": "MOF-derived carbon", "surfaces": ["N-doped carbon"]},
+            {},
+            schema,
+        )["parameter_bindings"]
+        self.assertIsNone(unknown["formula"]["value"])
+        self.assertEqual(unknown["bulk"]["status"], "needs_upstream_artifact")
+        self.assertEqual(unknown["facet"]["status"], "stable_facet_registry_or_manual")
 
     def test_ptomodel_does_not_map_oxide_cluster_to_metal_element(self):
         from paperread.surface.modeling.ptomodel import _build_task_inputs, _loaded_species

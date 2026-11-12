@@ -1,132 +1,72 @@
+"""Materials Project bulk -> stable-facet slab.
+
+Thin skill entry over ``genkai.modeling.slab``. This script only fetches the
+bulk reference from Materials Project; facet resolution, conventional-cell
+handling, termination selection, fixed layers and validation live in the
+library. Registry names are re-exported for existing callers.
+"""
+
 from __future__ import annotations
 
 import argparse
 import json
 import os
-import re
-from dataclasses import dataclass
+import sys
 from pathlib import Path
 from typing import Any
 
-import numpy as np
 from ase import Atoms
 from ase.io import read as ase_read
-from mp_api.client import MPRester
-from pymatgen.core import Composition, Structure
-from pymatgen.core.surface import SlabGenerator
-from pymatgen.io.ase import AseAtomsAdaptor
+from pymatgen.core import Structure
 
-
-STABLE_FACETS_BY_FORMULA: dict[str, tuple[int, ...]] = {
-    "CeO2": (1, 1, 1),
-    "TiO2": (1, 1, 0),
-    "SnO2": (1, 1, 0),
-    "RuO2": (1, 1, 0),
-    "IrO2": (1, 1, 0),
-}
-
-# Space group -> {stoichiometry signature: facet}. The signature is the sorted
-# tuple of reduced element amounts, e.g. (1,) for elements, (1, 1) for AB and
-# (1, 2) for AB2; ``None`` matches any composition. Fm-3m hosts prototypes with
-# different stable facets, so it is split: fcc metals and fluorite/antifluorite
-# AB2 expose (111), whereas rock-salt AB oxides (MgO, NiO, CoO) expose the
-# non-polar (100); their (111) is polar. Other Fm-3m compositions (double
-# perovskites, Heusler alloys, ...) are not registered and require review.
-STABLE_FACETS_BY_SPACEGROUP: dict[str, dict[tuple[int, ...] | None, tuple[int, ...]]] = {
-    "Fm-3m": {
-        (1,): (1, 1, 1),
-        (1, 1): (1, 0, 0),
-        (1, 2): (1, 1, 1),
-    },
-    "Im-3m": {None: (1, 1, 0)},
-    "P6_3/mmc": {None: (0, 0, 1)},
-    "P63/mmc": {None: (0, 0, 1)},
-    "P4_2/mnm": {None: (1, 1, 0)},
-    "P42/mnm": {None: (1, 1, 0)},
-}
-
-STRUCTURE_FAMILY_LABELS: dict[tuple[str, tuple[int, ...] | None], str] = {
-    ("Fm-3m", (1,)): "fcc element",
-    ("Fm-3m", (1, 1)): "rock-salt AB",
-    ("Fm-3m", (1, 2)): "fluorite/antifluorite AB2",
-}
-
-
-@dataclass(frozen=True)
-class FacetResolution:
-    miller_index: tuple[int, ...]
-    source: str
-    reason: str
-
-
-def canonical_formula(formula: str) -> str:
-    return Composition(formula).reduced_formula
-
-
-def stoichiometry_signature(formula: str) -> tuple[int, ...] | None:
-    """Sorted reduced integer amounts, e.g. MgO -> (1, 1), CeO2 -> (1, 2)."""
-    amounts = Composition(formula).reduced_composition.get_el_amt_dict().values()
-    if any(abs(amount - round(amount)) > 1e-6 for amount in amounts):
-        return None
-    return tuple(sorted(int(round(amount)) for amount in amounts))
-
-
-def parse_miller_index(value: str | tuple[int, ...] | list[int]) -> tuple[int, ...]:
-    if isinstance(value, (tuple, list)):
-        values = tuple(int(item) for item in value)
-    else:
-        tokens = re.findall(r"-?\d+", value)
-        values = tuple(int(item) for item in tokens)
-    if len(values) == 4:
-        h, k, i, ell = values
-        if h + k + i != 0:
-            raise ValueError(f"Invalid Miller-Bravais index: {value!r}")
-        values = (h, k, ell)
-    if len(values) != 3 or not any(values):
-        raise ValueError(f"Invalid Miller index: {value!r}")
-    return values
-
-
-def resolve_stable_facet(
-    formula: str,
-    spacegroup_symbol: str | None,
-    explicit_facet: str | tuple[int, ...] | list[int] | None = None,
-) -> FacetResolution:
-    if explicit_facet is not None:
-        return FacetResolution(
-            parse_miller_index(explicit_facet),
-            "explicit",
-            "Facet was explicitly supplied from paper evidence or user input.",
-        )
-
-    normalized_formula = canonical_formula(formula)
-    if normalized_formula in STABLE_FACETS_BY_FORMULA:
-        facet = STABLE_FACETS_BY_FORMULA[normalized_formula]
-        return FacetResolution(
-            facet,
-            "stable_facet_registry",
-            f"Registered commonly stable facet for {normalized_formula}.",
-        )
-
-    normalized_spg = (spacegroup_symbol or "").replace(" ", "")
-    signature = stoichiometry_signature(normalized_formula)
-    for symbol, facets_by_signature in STABLE_FACETS_BY_SPACEGROUP.items():
-        if normalized_spg != symbol.replace(" ", ""):
-            continue
-        for key in (signature, None):
-            if key in facets_by_signature:
-                family = STRUCTURE_FAMILY_LABELS.get((symbol, key))
-                family_text = f" ({family})" if family else ""
-                return FacetResolution(
-                    facets_by_signature[key],
-                    "structure_family_registry",
-                    f"Facet selected from the registered structure family {spacegroup_symbol}{family_text}.",
-                )
-
-    raise ValueError(
-        f"No stable facet is registered for {normalized_formula} ({spacegroup_symbol or 'unknown space group'}). "
-        "Provide --surface-facet from paper evidence or a reviewed surface-stability source."
+try:
+    from genkai.modeling.slab import (
+        STABLE_FACETS_BY_FORMULA,
+        STABLE_FACETS_BY_SPACEGROUP,
+        STRUCTURE_FAMILY_LABELS,
+        FacetResolution,
+        SlabSettings,
+        build_slab,
+        canonical_formula,
+        parse_miller_index,
+        resolve_stable_facet,
+        stoichiometry_signature,
+        vacuum_gap_angstrom,
+        write_slab_outputs,
     )
+except ModuleNotFoundError:  # source checkout without an installed package
+    _REPO_ROOT = Path(__file__).resolve().parents[6]
+    sys.path[:0] = [str(_REPO_ROOT / "src"), str(_REPO_ROOT)]
+    from genkai.modeling.slab import (
+        STABLE_FACETS_BY_FORMULA,
+        STABLE_FACETS_BY_SPACEGROUP,
+        STRUCTURE_FAMILY_LABELS,
+        FacetResolution,
+        SlabSettings,
+        build_slab,
+        canonical_formula,
+        parse_miller_index,
+        resolve_stable_facet,
+        stoichiometry_signature,
+        vacuum_gap_angstrom,
+        write_slab_outputs,
+    )
+
+__all__ = [
+    "STABLE_FACETS_BY_FORMULA",
+    "STABLE_FACETS_BY_SPACEGROUP",
+    "STRUCTURE_FAMILY_LABELS",
+    "FacetResolution",
+    "build_stable_slab",
+    "canonical_formula",
+    "download_stable_surface",
+    "fetch_bulk_structure",
+    "parse_miller_index",
+    "resolve_stable_facet",
+    "stoichiometry_signature",
+    "vacuum_gap_angstrom",
+    "validate_surface_slab",
+]
 
 
 def _document_value(document: Any, name: str, default: Any = None) -> Any:
@@ -161,6 +101,8 @@ def fetch_bulk_structure(
     if not key:
         raise RuntimeError("Materials Project access requires the MP_API_KEY environment variable.")
 
+    from mp_api.client import MPRester
+
     fields = [
         "material_id",
         "formula_pretty",
@@ -193,10 +135,16 @@ def fetch_bulk_structure(
     return structure, metadata
 
 
-def _slab_rank(slab: Any) -> tuple[bool, float, int]:
-    symmetric = bool(slab.is_symmetric())
-    dipole = np.asarray(getattr(slab, "dipole", [0.0, 0.0, 0.0]), dtype=float)
-    return (not symmetric, float(np.linalg.norm(dipole)), len(slab))
+def _settings(
+    min_slab_size: float,
+    min_vacuum_size: float,
+    repeat_xy: tuple[int, int] | None,
+) -> SlabSettings:
+    return SlabSettings(
+        min_slab_size=min_slab_size,
+        min_vacuum_size=min_vacuum_size,
+        repeat_xy=tuple(int(value) for value in repeat_xy) if repeat_xy else None,
+    )
 
 
 def build_stable_slab(
@@ -205,42 +153,15 @@ def build_stable_slab(
     *,
     min_slab_size: float = 12.0,
     min_vacuum_size: float = 15.0,
-    repeat_xy: tuple[int, int] = (2, 2),
-) -> tuple[Any, dict[str, Any]]:
-    generator = SlabGenerator(
-        initial_structure=bulk_structure,
-        miller_index=miller_index,
-        min_slab_size=min_slab_size,
-        min_vacuum_size=min_vacuum_size,
-        center_slab=True,
-        in_unit_planes=False,
-        primitive=True,
-        reorient_lattice=True,
+    repeat_xy: tuple[int, int] | None = (2, 2),
+) -> tuple[Atoms, dict[str, Any]]:
+    """Slab for an explicit facet; returns ASE atoms (bottom fixed) and the library manifest."""
+    result = build_slab(
+        bulk_structure,
+        facet=miller_index,
+        settings=_settings(min_slab_size, min_vacuum_size, repeat_xy),
     )
-    slabs = generator.get_slabs(symmetrize=False)
-    if not slabs:
-        raise ValueError(f"No slabs could be generated for facet {miller_index}.")
-    selected_index, selected = min(enumerate(slabs), key=lambda item: _slab_rank(item[1]))
-    repeated = selected * (int(repeat_xy[0]), int(repeat_xy[1]), 1)
-    metadata = {
-        "candidate_terminations": len(slabs),
-        "selected_termination_index": selected_index,
-        "termination_selection": "prefer symmetric slab, then minimum dipole norm, then atom count",
-        "selected_is_symmetric": bool(selected.is_symmetric()),
-        "min_slab_size_A": min_slab_size,
-        "min_vacuum_size_A": min_vacuum_size,
-        "repeat_xy": list(repeat_xy),
-    }
-    return repeated, metadata
-
-
-def vacuum_gap_angstrom(atoms: Atoms) -> float:
-    if len(atoms) == 0:
-        return 0.0
-    scaled_z = np.mod(atoms.get_scaled_positions(wrap=True)[:, 2], 1.0)
-    ordered = np.sort(scaled_z)
-    fractional_gaps = np.diff(np.r_[ordered, ordered[0] + 1.0])
-    return float(fractional_gaps.max() * np.linalg.norm(atoms.cell.array[2]))
+    return result.atoms, result.manifest()
 
 
 def validate_surface_slab(atoms_or_path: Atoms | str | Path, min_vacuum_gap: float = 5.0) -> dict[str, Any]:
@@ -268,49 +189,67 @@ def download_stable_surface(
     api_key: str | None = None,
     min_slab_size: float = 12.0,
     min_vacuum_size: float = 15.0,
-    repeat_xy: tuple[int, int] = (2, 2),
+    repeat_xy: tuple[int, int] | None = (2, 2),
 ) -> dict[str, Any]:
     outdir = Path(output_dir)
     outdir.mkdir(parents=True, exist_ok=True)
     bulk, mp_metadata = fetch_bulk_structure(formula=formula, material_id=material_id, api_key=api_key)
-    facet = resolve_stable_facet(
-        mp_metadata["formula"],
-        mp_metadata.get("spacegroup_symbol"),
-        explicit_facet,
-    )
-    slab, slab_metadata = build_stable_slab(
+    result = build_slab(
         bulk,
-        facet.miller_index,
-        min_slab_size=min_slab_size,
-        min_vacuum_size=min_vacuum_size,
-        repeat_xy=repeat_xy,
+        facet=explicit_facet,
+        settings=_settings(min_slab_size, min_vacuum_size, repeat_xy),
+        formula=mp_metadata["formula"],
+        spacegroup_symbol=mp_metadata.get("spacegroup_symbol"),
     )
 
     bulk_path = outdir / "bulk_from_materials_project.cif"
-    slab_path = outdir / "stable_surface_slab.vasp"
     bulk.to(filename=str(bulk_path), fmt="cif")
-    slab.to(filename=str(slab_path), fmt="poscar")
+    slab_manifest = write_slab_outputs(result, outdir, prefix="stable_surface_slab")
+    slab_path = slab_manifest["files"]["surface_slab"]
     slab_check = validate_surface_slab(slab_path)
     manifest = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "source": {"database": "Materials Project", **mp_metadata},
-        "facet": {
-            "miller_index": list(facet.miller_index),
-            "selection_source": facet.source,
-            "reason": facet.reason,
+        "facet": slab_manifest["facet"],
+        "slab": {
+            **slab_manifest["slab"],
+            "selected_termination": slab_manifest["selected_termination"],
+            "candidate_terminations": len(slab_manifest["terminations"]),
+            "termination_selection": "non-polar, stoichiometric, symmetric, then fewest atoms",
+            "settings": slab_manifest["settings"],
         },
-        "slab": slab_metadata,
-        "files": {"bulk_structure": str(bulk_path), "surface_slab": str(slab_path)},
+        "files": {
+            "bulk_structure": str(bulk_path),
+            "surface_slab": slab_path,
+            "surface_slab_extxyz": slab_manifest["files"]["surface_slab_extxyz"],
+            "bulk_conventional": slab_manifest["files"]["bulk_conventional"],
+            "slab_manifest": slab_manifest["files"]["slab_manifest"],
+        },
         "checks": {
             "api_key_persisted": False,
             "bulk_used_directly_for_loading": False,
+            "bulk_converted_to_conventional_cell": True,
             "surface_is_slab": slab_check,
+            "validation_passed": result.validation.passed,
+            "validation": result.validation.model_dump(),
         },
     }
     manifest_path = outdir / "surface_manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     manifest["files"]["surface_manifest"] = str(manifest_path)
+    if not result.validation.passed:
+        codes = ", ".join(issue.code for issue in result.validation.errors)
+        raise RuntimeError(f"Generated slab failed validation ({codes}); see {manifest_path}.")
     return manifest
+
+
+def parse_repeat_xy(text: str) -> tuple[int, int] | None:
+    if text.strip().lower() == "auto":
+        return None
+    repeat_xy = tuple(int(item) for item in text.split(","))
+    if len(repeat_xy) != 2 or min(repeat_xy) < 1:
+        raise ValueError("--repeat-xy requires 'auto' or two positive integers, e.g. 2,2.")
+    return repeat_xy  # type: ignore[return-value]
 
 
 def main() -> int:
@@ -318,15 +257,12 @@ def main() -> int:
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--formula")
     source.add_argument("--material-id")
-    parser.add_argument("--surface-facet", default=None, help="Explicit Miller index, e.g. 1,1,1 or 0,0,0,1.")
+    parser.add_argument("--surface-facet", default=None, help="Explicit Miller index, e.g. 111, 1,1,1 or 0,0,0,1.")
     parser.add_argument("--min-slab-size", type=float, default=12.0)
     parser.add_argument("--min-vacuum-size", type=float, default=15.0)
-    parser.add_argument("--repeat-xy", default="2,2")
+    parser.add_argument("--repeat-xy", default="2,2", help="Two integers such as 2,2, or 'auto' for >= 8 A widths.")
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
-    repeat_xy = tuple(int(item) for item in args.repeat_xy.split(","))
-    if len(repeat_xy) != 2 or min(repeat_xy) < 1:
-        raise ValueError("--repeat-xy requires two positive integers, e.g. 2,2.")
     result = download_stable_surface(
         args.output_dir,
         formula=args.formula,
@@ -334,7 +270,7 @@ def main() -> int:
         explicit_facet=args.surface_facet,
         min_slab_size=args.min_slab_size,
         min_vacuum_size=args.min_vacuum_size,
-        repeat_xy=repeat_xy,
+        repeat_xy=parse_repeat_xy(args.repeat_xy),
     )
     print(result["files"]["surface_slab"])
     print(result["files"]["surface_manifest"])

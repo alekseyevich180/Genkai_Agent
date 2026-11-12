@@ -3,6 +3,38 @@
   "skill_name": "surface-modeling",
   "schema_type": "task_parameter_schema",
   "tasks": {
+    "slab_generation": {
+      "script": "agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py",
+      "ptomodel_mapping_role": "bulk-to-slab surface construction input",
+      "parameters": {
+        "bulk": { "type": "path", "required": false, "description": "Bulk crystal file; one of bulk, formula, material_id" },
+        "formula": { "type": "string", "required": false, "description": "Materials Project formula for the bulk reference" },
+        "material_id": { "type": "string", "required": false },
+        "facet": { "type": "string", "required": false, "description": "Miller index in the conventional cell, e.g. (111)" },
+        "max_index": { "type": "int", "required": false },
+        "calculator": { "type": "enum", "required": false, "choices": ["none", "emt", "uma"] },
+        "uma_model": { "type": "string", "required": false },
+        "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
+        "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
+        "relax_steps": { "type": "int", "required": false },
+        "fmax": { "type": "float", "required": false },
+        "min_slab_size": { "type": "float", "required": false },
+        "min_vacuum_size": { "type": "float", "required": false },
+        "min_lateral_size": { "type": "float", "required": false },
+        "repeat_xy": { "type": "string", "required": false },
+        "fixed_fraction": { "type": "float", "required": false },
+        "fixed_layers": { "type": "int", "required": false },
+        "output_dir": { "type": "path", "required": false },
+        "prefix": { "type": "string", "required": false }
+      },
+      "constraints": [
+        "exactly one of bulk, formula, material_id must be provided",
+        "the bulk is converted to the conventional standard cell before Miller indices are applied",
+        "without facet, calculator='none' uses the reviewed stable-facet registry and stops when no entry exists",
+        "calculator in ['emt', 'uma'] ranks facets up to max_index by surface energy (Wulff area fraction)",
+        "0 <= fixed_fraction < 1"
+      ]
+    },
     "vacancy_landscape": {
       "script": "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py",
       "ptomodel_mapping_role": "oxide surface vacancy modeling input",

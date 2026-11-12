@@ -119,6 +119,28 @@ def _infer_surface_formula(surface_terms: list[str]) -> str | None:
     return None
 
 
+def _infer_slab_formula(task_inputs: dict[str, Any]) -> tuple[str | None, str | None]:
+    """Bulk formula for slab generation and the field it came from.
+
+    Prefers an explicit oxide formula in the surface terms, then an explicit
+    single element such as "Pt(111)" or a material named "Pt". Mixed systems
+    such as "Pt/CeO2" are resolved through the support formula only.
+    """
+    surfaces = task_inputs.get("surfaces") or []
+    formula = _infer_surface_formula(surfaces)
+    if formula:
+        return formula, "surfaces"
+    for source_field, terms in (("surfaces", surfaces), ("material", [task_inputs.get("material")])):
+        for term in terms:
+            if not term:
+                continue
+            head = re.split(r"[\s(]", str(term).strip(), maxsplit=1)[0]
+            element = normalize_element_name(head)
+            if element:
+                return element, source_field
+    return None, None
+
+
 def _normalize_species(raw: str) -> str | None:
     text = raw.strip()
     if not text:
@@ -437,7 +459,9 @@ def _infer_tasks(
         "supported_catalysts",
     }
     cluster_material_classes = {"supported_catalysts", "metals_alloys"}
-    material_candidates = ["adsorbate_landscape"]
+    # Any crystalline material can be cut into a slab, so slab generation is
+    # never rejected on material-class grounds.
+    material_candidates = ["adsorbate_landscape", "slab_generation"]
     if vacancy_material_classes.intersection(material_classes):
         material_candidates.insert(0, "vacancy_landscape")
     if cluster_material_classes.intersection(material_classes):
@@ -770,6 +794,77 @@ def _build_argument_template(
                 source_term=(task_inputs.get("clusters") or [None])[0],
                 reason="Cluster text explicitly mentions crystal-structure keywords.",
                 from_task_inputs=["clusters"],
+            )
+
+    if task_name == "slab_generation":
+        facet_set = list(
+            dict.fromkeys(normalized_mapping.get("facet_set") or task_inputs.get("facets") or [])
+        )
+        if facet_set:
+            several = len(facet_set) > 1
+            mark(
+                "facet",
+                value=facet_set[0],
+                status="auto",
+                confidence="medium" if several else "high",
+                source_field="facets",
+                source_term=facet_set[0],
+                reason=(
+                    "The paper supplies an explicit surface facet."
+                    + (" Several facets are reported; confirm the one of the modeled surface." if several else "")
+                ),
+                from_normalized_mapping=["facet_set"],
+            )
+        else:
+            mark(
+                "facet",
+                value=None,
+                status="stable_facet_registry_or_manual",
+                confidence="medium",
+                source_field="facets",
+                reason=(
+                    "No paper facet is available; rank facets by computed surface energy "
+                    "(calculator emt/uma) or use the reviewed stable-facet registry."
+                ),
+                depends_on=["stable_facet_registry_or_surface_energy"],
+            )
+        slab_formula, formula_source = _infer_slab_formula(task_inputs)
+        source_term = _first_nonempty(*(task_inputs.get("surfaces") or []), task_inputs.get("material"))
+        if slab_formula:
+            mark(
+                "formula",
+                value=slab_formula,
+                status="auto",
+                confidence="high",
+                source_field=formula_source,
+                source_term=source_term,
+                reason="An explicit formula retrieves the Materials Project bulk reference before slab generation.",
+                from_task_inputs=[formula_source or "surfaces"],
+            )
+            for alternative in ("bulk", "material_id"):
+                mark(
+                    alternative,
+                    value=None,
+                    status="alternative_not_selected",
+                    confidence="high",
+                    source_field=formula_source,
+                    source_term=source_term,
+                    reason="The formula selects the Materials Project bulk route instead.",
+                )
+        else:
+            mark(
+                "bulk",
+                value=None,
+                status="needs_upstream_artifact",
+                confidence="high",
+                source_field="surfaces",
+                source_term=source_term,
+                reason=(
+                    "No unambiguous bulk formula is stated; provide a bulk crystal file "
+                    "or a Materials Project id."
+                ),
+                from_task_inputs=["material", "surfaces"],
+                depends_on=["bulk_structure_file"],
             )
 
     for parameter_name, parameter_spec in parameters.items():

@@ -15,11 +15,14 @@ metadata:
   produces:
     - structure-set@1
   entrypoints:
+    - scripts/surface/slab_generation.py
     - scripts/vacancy/vacancy_landscape.py
     - scripts/adsorbate/adsorbate_landscape.py
     - scripts/metal_cluster/surface_cluster_builder.py
   tags:
     - surface
+    - slab
+    - pymatgen
     - oxide
     - adsorption
     - oxygen-vacancy
@@ -34,7 +37,7 @@ Use this skill when a task is about oxide surface construction, vacancy sampling
 
 ## Workflow
 
-1. Obtain or build an oxide surface slab in CIF, VASP/POSCAR, XYZ, or another ASE-readable format.
+1. Build the surface slab from a bulk crystal with `scripts/surface/slab_generation.py` (pymatgen; see below), or supply an existing slab in CIF, VASP/POSCAR, XYZ, or another ASE-readable format.
 2. Generate realistic modified surfaces:
    - oxygen vacancies with `scripts/vacancy/vacancy_landscape.py`
    - adsorbate coverage structures with `scripts/adsorbate/adsorbate_landscape.py`
@@ -60,6 +63,56 @@ Optional for real MLIP relaxation:
 - `torch`
 - `fairchem-core`
 - `ase.calculators.dftd3` and a D3 executable when `--include-d3` is used
+
+## Slab Generation From Bulk (pymatgen)
+
+Script (thin entry over `genkai.modeling.slab`):
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py   --bulk CeO2_bulk.cif   --output-dir modeling/slab
+```
+
+The bulk can also come from Materials Project with `--formula CeO2` or
+`--material-id mp-20194` (requires `MP_API_KEY`). A slab passed as `--bulk` is
+rejected.
+
+What the generator does:
+
+1. Converts the bulk to the conventional standard cell, so Miller indices mean
+   what papers mean. Materials Project often returns primitive cells, where
+   `(1,0,0)` of an fcc primitive basis is a conventional `{111}` plane.
+2. Resolves the facet: `--facet` (paper or user) -> surface-energy ranking when
+   `--calculator emt|uma` (Wulff area fraction over facets up to
+   `--max-index`) -> reviewed stable-facet registry -> stop for manual review.
+3. Enumerates all terminations with pymatgen `SlabGenerator` and prefers
+   non-polar, stoichiometric, symmetric ones. Polarity is evaluated with guessed
+   oxidation states.
+4. Makes `c` orthogonal to the surface, tiles laterally to `--min-lateral-size`
+   (default 8 A perpendicular width), fixes layers below `--fixed-fraction`
+   (default 0.5) or the bottom `--fixed-layers`, and tags atoms
+   (0 = fixed subsurface, 1 = free surface region).
+5. Validates vacuum, interatomic distances, lateral size, polarity and
+   stoichiometry; the script exits with code 2 when validation fails.
+
+Rank facets by surface energy with UMA (or `--calculator emt` for EMT metals):
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py   --bulk Pt_bulk.cif --calculator uma --uma-model uma-s-1p2 --task-name omat   --device cuda --max-index 2 --relax-steps 100 --output-dir modeling/slab
+```
+
+Surface energies use `gamma = (E_slab - N * e_bulk) / (2A)` and are defined only
+for stoichiometric terminations; non-stoichiometric terminations need chemical
+potentials and are not ranked. MLIP surface energies are screening values, not
+DFT evidence.
+
+Main outputs:
+
+- `slab.vasp`: POSCAR with selective dynamics for fixed atoms
+- `slab.extxyz`: same structure with tags and constraints
+- `bulk_conventional.cif`
+- `slab_manifest.json`: facet source, all terminations, screening table,
+  geometry, settings and validation report
+- `run_config.json`
 
 ## Oxygen-Vacancy Landscape
 
@@ -198,7 +251,11 @@ python agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluste
 
 This route downloads stable bulk references, resolves the surface facet in the
 order paper/user explicit facet -> reviewed stable-facet registry -> stop for
-manual review, constructs a vacuum-containing slab, and only then places the cluster.
+manual review, constructs a vacuum-containing slab with the same
+`genkai.modeling.slab` generator (conventional cell, termination checks, fixed
+bottom half), and only then places the cluster. The default `--slab-repeat-xy`
+stays `2,2`; check `slab.lateral_widths_A` in the surface manifest before placing
+large clusters.
 Direct use of a bulk unit cell as `--surface` is rejected. The output includes
 `modeling_manifest.json` with MP identifiers, facet provenance, structure files,
 assumptions, and slab checks.
@@ -300,6 +357,43 @@ expected types, required-ness, grouping, and constraints.
 The machine-readable copy used by `ptomodel` is stored at:
 
 - `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+
+### Slab Generation
+
+```json
+{
+  "script": "agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py",
+  "task_key": "slab_generation",
+  "ptomodel_mapping_role": "bulk-to-slab surface construction input",
+  "parameters": {
+    "bulk": { "type": "path", "required": false },
+    "formula": { "type": "string", "required": false },
+    "material_id": { "type": "string", "required": false },
+    "facet": { "type": "string", "required": false },
+    "max_index": { "type": "int", "required": false },
+    "calculator": { "type": "enum", "required": false, "choices": ["none", "emt", "uma"] },
+    "uma_model": { "type": "string", "required": false },
+    "task_name": { "type": "string", "required": false },
+    "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
+    "relax_steps": { "type": "int", "required": false },
+    "fmax": { "type": "float", "required": false },
+    "min_slab_size": { "type": "float", "required": false },
+    "min_vacuum_size": { "type": "float", "required": false },
+    "min_lateral_size": { "type": "float", "required": false },
+    "repeat_xy": { "type": "string", "required": false },
+    "fixed_fraction": { "type": "float", "required": false },
+    "fixed_layers": { "type": "int", "required": false },
+    "output_dir": { "type": "path", "required": false },
+    "prefix": { "type": "string", "required": false }
+  },
+  "constraints": [
+    "exactly one of bulk, formula, material_id must be provided",
+    "without facet, calculator='none' uses the reviewed stable-facet registry and stops when no entry exists",
+    "calculator in ['emt', 'uma'] ranks facets up to max_index by surface energy",
+    "0 <= fixed_fraction < 1"
+  ]
+}
+```
 
 ### Oxygen-Vacancy Landscape
 

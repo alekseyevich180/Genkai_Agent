@@ -20,6 +20,7 @@ SUPPORTED_MODELING_TASKS = {
 }
 
 EXECUTABLE_TASKS = {
+    "slab_generation",
     "vacancy_landscape",
     "adsorbate_landscape",
     "surface_cluster_builder",

@@ -84,6 +84,8 @@ The JSON should prioritize:
   single-atom catalyst, defect-engineered material
 - reaction type normalization such as `CO oxidation` or `OER`
 - supported modeling task mapping for:
+  - `slab_generation` (paper facet -> `facet`; explicit oxide formula or single
+    element -> `formula`; otherwise a bulk file is requested)
   - `vacancy_landscape`
   - `adsorbate_landscape`
   - `surface_cluster_builder`
