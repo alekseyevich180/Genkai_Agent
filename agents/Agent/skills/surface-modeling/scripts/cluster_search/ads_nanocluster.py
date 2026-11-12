@@ -1,5 +1,6 @@
 import argparse
 import io
+import json
 import random
 import sys
 from collections import Counter
@@ -46,9 +47,15 @@ def format_symbol_counts(atoms: Atoms) -> str:
     return ", ".join(f"{symbol}:{counts[symbol]}" for symbol in sorted(counts))
 
 
-def build_calculator(uma_model: str, device: str, include_d3: bool, checkpoint: Path | None = None):
+def build_calculator(
+    uma_model: str,
+    device: str,
+    include_d3: bool,
+    checkpoint: Path | None = None,
+    task_name: str = "oc22",
+):
     model_ref = str(checkpoint) if checkpoint is not None else uma_model
-    calc = FAIRChemCalculator.from_model_checkpoint(model_ref, task_name="oc22", device=device)
+    calc = FAIRChemCalculator.from_model_checkpoint(model_ref, task_name=task_name, device=device)
 
     if include_d3:
         from ase.calculators.dftd3 import DFTD3
@@ -74,6 +81,14 @@ def get_opt_energy(
         optimizer = LBFGS(atoms, logfile=None)
     optimizer.run(fmax=fmax, steps=max_steps)
     return atoms.get_total_energy()
+
+
+def write_run_config(output_dir: Path, args: argparse.Namespace) -> Path:
+    """Record the calculator settings (model, UMA task head, device) used for this run."""
+    config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
+    path = output_dir / "run_config.json"
+    path.write_text(json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return path
 
 
 def atoms_to_json(atoms: Atoms) -> str:
@@ -373,6 +388,12 @@ def main():
     parser.add_argument("--fmax", type=float, default=1e-4)
     parser.add_argument("--uma_model", type=str, default="uma-s-1p2")
     parser.add_argument("--checkpoint", type=Path, default=None)
+    parser.add_argument(
+        "--task_name",
+        type=str,
+        default="oc22",
+        help="UMA task head passed to FAIRChemCalculator; it must be supported by the selected model.",
+    )
     parser.add_argument("--device", type=str, default="cuda", choices=["cuda", "cpu"])
     parser.add_argument(
         "--placement_mode",
@@ -404,7 +425,15 @@ def main():
     if args.placement_mode == "active" and not args.active_symbols:
         raise ValueError("--placement_mode active requires --active_symbols.")
 
-    CALCULATOR = build_calculator(args.uma_model, args.device, args.include_d3, args.checkpoint)
+    write_run_config(args.output_dir, args)
+    print(f"UMA model: {args.checkpoint or args.uma_model}, task: {args.task_name}, device: {args.device}")
+    CALCULATOR = build_calculator(
+        args.uma_model,
+        args.device,
+        args.include_d3,
+        args.checkpoint,
+        task_name=args.task_name,
+    )
     input_surface = read(args.surface)
     input_cluster = read(args.cluster)
 

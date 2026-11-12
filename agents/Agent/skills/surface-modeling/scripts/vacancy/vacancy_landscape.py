@@ -1,5 +1,6 @@
 import argparse
 import itertools
+import json
 import math
 import random
 from pathlib import Path
@@ -56,6 +57,14 @@ class CompositionTestCalculator(Calculator):
         energy = -4.0 * symbols.count("Ce") - 2.0 * symbols.count("O")
         self.results["energy"] = float(energy)
         self.results["forces"] = np.zeros((len(symbols), 3), dtype=float)
+
+
+def write_run_config(output_dir: Path, args: argparse.Namespace) -> Path:
+    """Record the calculator settings (model, UMA task head, device) used for this run."""
+    config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
+    path = output_dir / "run_config.json"
+    path.write_text(json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return path
 
 
 def build_calculator(calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool):
@@ -249,6 +258,7 @@ def main() -> int:
         raise ValueError("--z-frac-min and --z-frac-max must satisfy 0 <= min <= max <= 1")
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    write_run_config(args.output_dir, args)
     structures_dir = args.output_dir / "structures"
     structures_dir.mkdir(parents=True, exist_ok=True)
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePath, PurePosixPath
 from typing import Annotated, Any, Literal, Union
 
 from pydantic import (
@@ -62,7 +62,9 @@ class _ArtifactBase(BaseModel):
     @field_validator("path", mode="before")
     @classmethod
     def validate_run_relative_path(cls, value: object) -> str:
-        raw = str(value)
+        # Path objects carry their own separator semantics (WindowsPath uses
+        # "\\"), so normalise them; only raw strings must already be POSIX.
+        raw = value.as_posix() if isinstance(value, PurePath) else str(value)
         if "\\" in raw:
             raise ValueError("artifact paths must use POSIX separators")
         path = PurePosixPath(raw)

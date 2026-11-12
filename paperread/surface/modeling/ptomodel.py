@@ -607,12 +607,19 @@ def _build_argument_template(
         }
 
     if "task_name" in parameters:
+        # The script argument ``task_name`` selects the FAIRChem/UMA task head
+        # (omat, oc20, ...). It is unrelated to the PToModel task key, and
+        # passing a key such as "vacancy_landscape" makes the calculator fail.
         mark(
             "task_name",
-            value=task_name,
-            status="auto",
+            value=None,
+            status="optional_unset",
             confidence="high",
-            reason="Executable task name is already selected by ptomodel.",
+            reason=(
+                "UMA task head for the calculator (for example omat or oc20); "
+                "choose it together with uma_model at execution time. It is not "
+                "the PToModel task key."
+            ),
         )
 
     if task_name == "adsorbate_landscape":

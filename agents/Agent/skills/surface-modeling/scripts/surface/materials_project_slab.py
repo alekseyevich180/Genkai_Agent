@@ -25,13 +25,30 @@ STABLE_FACETS_BY_FORMULA: dict[str, tuple[int, ...]] = {
     "IrO2": (1, 1, 0),
 }
 
-STABLE_FACETS_BY_SPACEGROUP: dict[str, tuple[int, ...]] = {
-    "Fm-3m": (1, 1, 1),
-    "Im-3m": (1, 1, 0),
-    "P6_3/mmc": (0, 0, 1),
-    "P63/mmc": (0, 0, 1),
-    "P4_2/mnm": (1, 1, 0),
-    "P42/mnm": (1, 1, 0),
+# Space group -> {stoichiometry signature: facet}. The signature is the sorted
+# tuple of reduced element amounts, e.g. (1,) for elements, (1, 1) for AB and
+# (1, 2) for AB2; ``None`` matches any composition. Fm-3m hosts prototypes with
+# different stable facets, so it is split: fcc metals and fluorite/antifluorite
+# AB2 expose (111), whereas rock-salt AB oxides (MgO, NiO, CoO) expose the
+# non-polar (100); their (111) is polar. Other Fm-3m compositions (double
+# perovskites, Heusler alloys, ...) are not registered and require review.
+STABLE_FACETS_BY_SPACEGROUP: dict[str, dict[tuple[int, ...] | None, tuple[int, ...]]] = {
+    "Fm-3m": {
+        (1,): (1, 1, 1),
+        (1, 1): (1, 0, 0),
+        (1, 2): (1, 1, 1),
+    },
+    "Im-3m": {None: (1, 1, 0)},
+    "P6_3/mmc": {None: (0, 0, 1)},
+    "P63/mmc": {None: (0, 0, 1)},
+    "P4_2/mnm": {None: (1, 1, 0)},
+    "P42/mnm": {None: (1, 1, 0)},
+}
+
+STRUCTURE_FAMILY_LABELS: dict[tuple[str, tuple[int, ...] | None], str] = {
+    ("Fm-3m", (1,)): "fcc element",
+    ("Fm-3m", (1, 1)): "rock-salt AB",
+    ("Fm-3m", (1, 2)): "fluorite/antifluorite AB2",
 }
 
 
@@ -44,6 +61,14 @@ class FacetResolution:
 
 def canonical_formula(formula: str) -> str:
     return Composition(formula).reduced_formula
+
+
+def stoichiometry_signature(formula: str) -> tuple[int, ...] | None:
+    """Sorted reduced integer amounts, e.g. MgO -> (1, 1), CeO2 -> (1, 2)."""
+    amounts = Composition(formula).reduced_composition.get_el_amt_dict().values()
+    if any(abs(amount - round(amount)) > 1e-6 for amount in amounts):
+        return None
+    return tuple(sorted(int(round(amount)) for amount in amounts))
 
 
 def parse_miller_index(value: str | tuple[int, ...] | list[int]) -> tuple[int, ...]:
@@ -84,13 +109,19 @@ def resolve_stable_facet(
         )
 
     normalized_spg = (spacegroup_symbol or "").replace(" ", "")
-    for symbol, facet in STABLE_FACETS_BY_SPACEGROUP.items():
-        if normalized_spg == symbol.replace(" ", ""):
-            return FacetResolution(
-                facet,
-                "structure_family_registry",
-                f"Facet selected from the registered structure family {spacegroup_symbol}.",
-            )
+    signature = stoichiometry_signature(normalized_formula)
+    for symbol, facets_by_signature in STABLE_FACETS_BY_SPACEGROUP.items():
+        if normalized_spg != symbol.replace(" ", ""):
+            continue
+        for key in (signature, None):
+            if key in facets_by_signature:
+                family = STRUCTURE_FAMILY_LABELS.get((symbol, key))
+                family_text = f" ({family})" if family else ""
+                return FacetResolution(
+                    facets_by_signature[key],
+                    "structure_family_registry",
+                    f"Facet selected from the registered structure family {spacegroup_symbol}{family_text}.",
+                )
 
     raise ValueError(
         f"No stable facet is registered for {normalized_formula} ({spacegroup_symbol or 'unknown space group'}). "

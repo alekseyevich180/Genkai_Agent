@@ -1,5 +1,6 @@
 import argparse
 import io
+import json
 import random
 from pathlib import Path
 
@@ -8,6 +9,7 @@ import optuna
 import pandas as pd
 from ase import Atoms
 from ase.calculators.calculator import Calculator, all_changes
+from ase.geometry import find_mic
 from ase.io import read, write
 from ase.optimize import LBFGS
 from scipy.optimize import Bounds, LinearConstraint, milp
@@ -79,6 +81,14 @@ class AdsorptionTestCalculator(Calculator):
                     energy += 0.01 * np.exp(-(distance / 4.0) ** 2)
         self.results["energy"] = float(energy)
         self.results["forces"] = np.zeros((len(symbols), 3), dtype=float)
+
+
+def write_run_config(output_dir: Path, args: argparse.Namespace) -> Path:
+    """Record the calculator settings (model, UMA task head, device) used for this run."""
+    config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
+    path = output_dir / "run_config.json"
+    path.write_text(json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return path
 
 
 def build_calculator(calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool):
@@ -171,14 +181,46 @@ def build_site_groups(slab: Atoms, site_indices: list[int], group_size: int) -> 
     site_positions = slab.positions[site_indices]
     groups = set()
     for local_idx, site_index in enumerate(site_indices):
-        distances = np.linalg.norm(site_positions - site_positions[local_idx], axis=1)
+        vectors = minimum_image_vectors(slab, site_positions - site_positions[local_idx])
+        distances = np.linalg.norm(vectors, axis=1)
         nearest = np.argsort(distances)[:group_size]
         groups.add(tuple(sorted(site_indices[int(i)] for i in nearest)))
     return sorted(groups)
 
 
+def minimum_image_vectors(slab: Atoms, vectors: np.ndarray) -> np.ndarray:
+    """Return displacement vectors under the in-plane minimum-image convention.
+
+    The third cell vector is treated as the surface normal (vacuum direction)
+    and is never imaged, matching the z-up convention used by this script.
+    """
+    vectors = np.asarray(vectors, dtype=float)
+    pbc = np.array(slab.pbc, dtype=bool)
+    pbc[2] = False
+    if not pbc.any():
+        return vectors
+    mic_vectors, _ = find_mic(vectors, slab.cell, pbc=pbc)
+    return mic_vectors
+
+
 def group_positions(slab: Atoms, site_groups: list[tuple[int, ...]]) -> np.ndarray:
-    return np.array([slab.positions[list(group)].mean(axis=0) for group in site_groups])
+    """Centroid of each site group, unwrapped across periodic boundaries."""
+    centers = []
+    for group in site_groups:
+        positions = slab.positions[list(group)]
+        anchor = positions[0]
+        unwrapped = anchor + minimum_image_vectors(slab, positions - anchor)
+        centers.append(unwrapped.mean(axis=0))
+    return np.array(centers)
+
+
+def lateral_distance_matrix(slab: Atoms, positions: np.ndarray) -> np.ndarray:
+    """Pairwise in-plane distances between points using the minimum image."""
+    points = np.asarray(positions, dtype=float).copy()
+    points[:, 2] = 0.0
+    deltas = (points[None, :, :] - points[:, None, :]).reshape(-1, 3)
+    distances = np.linalg.norm(minimum_image_vectors(slab, deltas), axis=1)
+    return distances.reshape(len(points), len(points))
 
 
 def center_molecule(molecule: Atoms) -> Atoms:
@@ -494,6 +536,7 @@ def main() -> int:
             setattr(args, key, value)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    write_run_config(args.output_dir, args)
     structures_dir = args.output_dir / "structures"
     structures_dir.mkdir(parents=True, exist_ok=True)
 
