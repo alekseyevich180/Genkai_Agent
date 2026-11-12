@@ -101,6 +101,8 @@ E_vac = E_defect - E_clean + m * mu_O
 
 For physical runs, set `--calculator uma --uma-model uma-s-1p2 --device cuda` and choose `--mu-o` consistently with the oxygen chemical-potential reference.
 
+`--task-name` is the UMA task head passed to `FAIRChemCalculator` (default `omat`; the cluster search below uses `--task_name`, default `oc22`). Choose it deliberately for the system and check that the selected model exposes it. Every script writes `run_config.json` to its output directory with the calculator, model, task head and device actually used.
+
 ## Adsorbate Coverage Landscape
 
 Script:
@@ -319,7 +321,7 @@ The machine-readable copy used by `ptomodel` is stored at:
     "smoke_test": { "type": "bool", "required": false },
     "uma_model": { "type": "string", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
-    "task_name": { "type": "string", "required": false },
+    "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
     "include_d3": { "type": "bool", "required": false },
     "fmax": { "type": "float", "required": false },
     "max_steps": { "type": "int", "required": false },
@@ -362,7 +364,7 @@ The machine-readable copy used by `ptomodel` is stored at:
     "calculator": { "type": "enum", "required": false, "choices": ["uma", "none"] },
     "uma_model": { "type": "string", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
-    "task_name": { "type": "string", "required": false },
+    "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
     "include_d3": { "type": "bool", "required": false },
     "fmax": { "type": "float", "required": false },
     "max_steps": { "type": "int", "required": false },
@@ -445,6 +447,7 @@ The machine-readable copy used by `ptomodel` is stored at:
     "n_trials": { "type": "int", "required": false },
     "fmax": { "type": "float", "required": false },
     "uma_model": { "type": "string", "required": false },
+    "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
     "checkpoint": { "type": "path_or_null", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
     "placement_mode": { "type": "enum", "required": false, "choices": ["cell", "active"] },
