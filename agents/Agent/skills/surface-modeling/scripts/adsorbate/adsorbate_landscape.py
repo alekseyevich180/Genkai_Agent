@@ -305,22 +305,36 @@ def run_single_adsorbate_search(
     }
 
 
-def farthest_site_selection(site_xy: np.ndarray, count: int) -> list[int]:
+def _pairwise_or_euclidean(site_xy: np.ndarray, pairwise: np.ndarray | None) -> np.ndarray:
+    if pairwise is not None:
+        return np.asarray(pairwise, dtype=float)
+    return np.linalg.norm(site_xy[:, None, :] - site_xy[None, :, :], axis=2)
+
+
+def farthest_site_selection(
+    site_xy: np.ndarray,
+    count: int,
+    pairwise: np.ndarray | None = None,
+) -> list[int]:
+    """Greedy farthest-point order; pass ``pairwise`` minimum-image distances for periodic slabs."""
+    distance_matrix = _pairwise_or_euclidean(site_xy, pairwise)
     selected = [int(np.argmin(np.linalg.norm(site_xy - site_xy.mean(axis=0), axis=1)))]
     while len(selected) < count:
-        distances = np.full(len(site_xy), np.inf)
-        for idx in selected:
-            distances = np.minimum(distances, np.linalg.norm(site_xy - site_xy[idx], axis=1))
+        distances = distance_matrix[:, selected].min(axis=1)
         distances[selected] = -np.inf
         selected.append(int(np.argmax(distances)))
     return selected
 
 
-def clustered_site_selection(site_xy: np.ndarray, count: int) -> list[int]:
+def clustered_site_selection(
+    site_xy: np.ndarray,
+    count: int,
+    pairwise: np.ndarray | None = None,
+) -> list[int]:
+    distance_matrix = _pairwise_or_euclidean(site_xy, pairwise)
     center = site_xy.mean(axis=0)
     start = int(np.argmin(np.linalg.norm(site_xy - center, axis=1)))
-    distances = np.linalg.norm(site_xy - site_xy[start], axis=1)
-    return [int(i) for i in np.argsort(distances)[:count]]
+    return [int(i) for i in np.argsort(distance_matrix[start])[:count]]
 
 
 def stripe_site_selection(site_xy: np.ndarray, count: int) -> list[int]:
@@ -345,14 +359,15 @@ def choose_pattern_sites(
     site_positions: np.ndarray,
     count: int,
     rng: random.Random,
+    pairwise: np.ndarray | None = None,
 ) -> list[int]:
     site_xy = site_positions[:, :2]
     if count > len(site_positions):
         raise ValueError(f"Requested {count} adsorbates but only {len(site_positions)} sites are available.")
     if pattern == "uniform":
-        return farthest_site_selection(site_xy, count)
+        return farthest_site_selection(site_xy, count, pairwise)
     if pattern == "clustered":
-        return clustered_site_selection(site_xy, count)
+        return clustered_site_selection(site_xy, count, pairwise)
     if pattern == "stripe":
         return stripe_site_selection(site_xy, count)
     if pattern == "island":
@@ -362,12 +377,17 @@ def choose_pattern_sites(
     raise ValueError(f"Unknown pattern: {pattern}")
 
 
-def ordered_pattern_candidates(pattern: str, positions: np.ndarray, rng: random.Random) -> list[int]:
+def ordered_pattern_candidates(
+    pattern: str,
+    positions: np.ndarray,
+    rng: random.Random,
+    pairwise: np.ndarray | None = None,
+) -> list[int]:
     site_xy = positions[:, :2]
     if pattern == "uniform":
-        return farthest_site_selection(site_xy, len(positions))
+        return farthest_site_selection(site_xy, len(positions), pairwise)
     if pattern == "clustered":
-        return clustered_site_selection(site_xy, len(positions))
+        return clustered_site_selection(site_xy, len(positions), pairwise)
     if pattern == "stripe":
         return stripe_site_selection(site_xy, len(positions))
     if pattern == "island":
@@ -385,8 +405,9 @@ def choose_pattern_groups(
     site_groups: list[tuple[int, ...]],
     count: int,
     rng: random.Random,
+    pairwise: np.ndarray | None = None,
 ) -> list[int]:
-    order = ordered_pattern_candidates(pattern, positions, rng)
+    order = ordered_pattern_candidates(pattern, positions, rng, pairwise)
     rank = {group_id: idx for idx, group_id in enumerate(order)}
     selected = solve_non_overlapping_site_groups(
         site_groups,
@@ -549,6 +570,7 @@ def main() -> int:
     site_indices = get_surface_sites(slab, site_symbols, args.site_z_tolerance, args.max_sites)
     site_groups = build_site_groups(slab, site_indices, args.site_group_size)
     site_group_positions = group_positions(slab, site_groups)
+    site_group_distances = lateral_distance_matrix(slab, site_group_positions)
     max_adsorbates = maximum_non_overlapping_site_groups(site_groups)
     coverage_counts = parse_int_list(args.coverage_counts)
     if coverage_counts is None:
@@ -596,7 +618,14 @@ def main() -> int:
         for pattern in patterns:
             repeats = args.random_repeats if pattern == "random" else 1
             for repeat in range(1, repeats + 1):
-                selected_groups = choose_pattern_groups(pattern, site_group_positions, site_groups, count, rng)
+                selected_groups = choose_pattern_groups(
+                    pattern,
+                    site_group_positions,
+                    site_groups,
+                    count,
+                    rng,
+                    pairwise=site_group_distances,
+                )
                 structure = build_coverage_structure(slab, molecule, site_groups, selected_groups, placement)
                 e_total = optimize_energy(structure, calculator, args.fmax, args.max_steps)
                 e_ads_total = e_total - e_slab - count * e_mol

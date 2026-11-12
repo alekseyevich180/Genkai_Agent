@@ -44,6 +44,19 @@ class TestMaterialsProjectSurfaceWorkflow(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "No stable facet is registered"):
             mp_slab.resolve_stable_facet("SiO2", "P3_121")
 
+    def test_fm3m_family_fallback_depends_on_prototype(self):
+        # Rock-salt AB oxides expose the non-polar (100); their (111) is polar.
+        for formula in ("MgO", "NiO", "CoO"):
+            resolution = mp_slab.resolve_stable_facet(formula, "Fm-3m")
+            self.assertEqual(resolution.miller_index, (1, 0, 0), formula)
+            self.assertEqual(resolution.source, "structure_family_registry")
+            self.assertIn("rock-salt", resolution.reason)
+        self.assertEqual(mp_slab.resolve_stable_facet("Pt", "Fm-3m").miller_index, (1, 1, 1))
+        self.assertEqual(mp_slab.resolve_stable_facet("ZrO2", "Fm-3m").miller_index, (1, 1, 1))
+        # Fm-3m compositions without a registered prototype stop for review.
+        with self.assertRaisesRegex(ValueError, "No stable facet is registered"):
+            mp_slab.resolve_stable_facet("Cu2MnAl", "Fm-3m")
+
     def test_bulk_cell_is_rejected_and_vacuum_slab_is_accepted(self):
         copper = bulk("Cu", "fcc", a=3.6)
         with self.assertRaisesRegex(ValueError, "bulk unit cell"):

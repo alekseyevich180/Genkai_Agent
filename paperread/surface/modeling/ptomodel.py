@@ -10,6 +10,7 @@ from typing import Any
 
 try:
     from ..core.chemical_vocabulary import (
+        ELEMENT_BY_SYMBOL,
         METAL_SYMBOLS,
         extract_element_symbols,
         normalize_element_name,
@@ -27,6 +28,7 @@ try:
 except ImportError:  # pragma: no cover - direct script execution
     sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
     from paperread.surface.core.chemical_vocabulary import (
+        ELEMENT_BY_SYMBOL,
         METAL_SYMBOLS,
         extract_element_symbols,
         normalize_element_name,
@@ -126,6 +128,41 @@ def _normalize_species(raw: str) -> str | None:
         return exact
     symbols = extract_element_symbols(text, include_material_aliases=False)
     return symbols[0] if symbols else None
+
+
+_ELEMENT_SYMBOL_ALTERNATION = "|".join(sorted(ELEMENT_BY_SYMBOL, key=len, reverse=True))
+_FORMULA_PIECE = re.compile(rf"({_ELEMENT_SYMBOL_ALTERNATION})(?:\d+(?:\.\d+)?|[xyzδ])?")
+_FORMULA_WORD = re.compile(rf"(?:(?:{_ELEMENT_SYMBOL_ALTERNATION})(?:\d+(?:\.\d+)?|[xyzδ])?)+")
+
+
+def _compound_formula_tokens(text: str) -> list[str]:
+    """Words that parse as a multi-element formula, e.g. LaOx, CeO2 or PtNi."""
+    tokens: list[str] = []
+    for word in re.findall(r"[A-Za-z0-9.δ]+", text):
+        if not word[0].isupper() or not _FORMULA_WORD.fullmatch(word):
+            continue
+        elements = {match.group(1) for match in _FORMULA_PIECE.finditer(word)}
+        if len(elements) >= 2 and word not in tokens:
+            tokens.append(word)
+    return tokens
+
+
+def _metal_cluster_species(raw: str) -> str | None:
+    """Element of an elemental metal cluster; None for oxide, alloy or other compound clusters.
+
+    ``surface_cluster_builder`` only builds single-element metal clusters, so a
+    term such as "LaOx clusters" must not collapse to its first symbol "La".
+    """
+    if _compound_formula_tokens(raw):
+        return None
+    species = _normalize_species(raw)
+    return species if species in METAL_SYMBOLS else None
+
+
+def _loaded_species(raw: str) -> str | None:
+    """Normalized loaded species, keeping compound formulas (LaOx) intact."""
+    compounds = _compound_formula_tokens(raw)
+    return compounds[0] if compounds else _normalize_species(raw)
 
 
 def _normalize_reaction(raw: str) -> str:
@@ -544,8 +581,11 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
         payload["clusters"] = _to_list(extraction.get("clusters")) or _to_list((table_row or {}).get("Cluster/Single Atom"))
         direct_cluster_species = [
             species
-            for species in (_normalize_species(item) for item in payload["clusters"])
+            for species in (_metal_cluster_species(item) for item in payload["clusters"])
             if species
+        ]
+        payload["non_elemental_cluster_terms"] = [
+            item for item in payload["clusters"] if _compound_formula_tokens(item)
         ]
         payload["cluster_species"] = direct_cluster_species
         payload["cluster_species_source"] = "clusters" if direct_cluster_species else None
@@ -688,7 +728,11 @@ def _build_argument_template(
                 reason=(
                     "Cluster species normalized from paper cluster mentions."
                     if cluster_species_source == "clusters"
-                    else "Generic nanoparticle evidence lacks an element; use the explicit metal active-site/material context from the same record."
+                    else (
+                        "Cluster mentions name no elemental metal (generic wording or a compound "
+                        "such as an oxide cluster); use the explicit metal active-site/material "
+                        "context from the same record."
+                    )
                 ),
                 from_task_inputs=["cluster_species", cluster_species_source],
             )
@@ -1097,7 +1141,7 @@ def build_ptomodel_payload(
         cluster_species = [
             {"raw": item, "normalized_species": species}
             for item in cluster_entries
-            for species in [_normalize_species(item)]
+            for species in [_loaded_species(item)]
             if species
         ]
         reaction_type = _pick_reaction_type(extraction, table_row)

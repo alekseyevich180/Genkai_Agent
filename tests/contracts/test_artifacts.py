@@ -1,4 +1,4 @@
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pytest
 from pydantic import ValidationError
@@ -46,6 +46,26 @@ def test_artifact_rejects_paths_outside_run(path: str) -> None:
         StructureSetArtifact(
             artifact_id="structure-1",
             path=path,
+            sha256=SHA256,
+            producer="surface-modeling",
+        )
+
+
+def test_artifact_accepts_platform_path_objects_but_not_backslash_strings() -> None:
+    windows_relative = PureWindowsPath("stages", "01_paperread", "extraction.jsonl")
+
+    artifact = StructureSetArtifact(
+        artifact_id="structure-1",
+        path=windows_relative,
+        sha256=SHA256,
+        producer="surface-modeling",
+    )
+
+    assert artifact.path.as_posix() == "stages/01_paperread/extraction.jsonl"
+    with pytest.raises(ValidationError):
+        StructureSetArtifact(
+            artifact_id="structure-1",
+            path="stages\\01_paperread\\extraction.jsonl",
             sha256=SHA256,
             producer="surface-modeling",
         )

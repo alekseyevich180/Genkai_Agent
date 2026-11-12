@@ -568,6 +568,109 @@ Oxygen vacancies acted as active sites and methoxy was identified.
         occupied = [site for group_id in selected for site in groups[group_id]]
         self.assertEqual(len(occupied), len(set(occupied)))
 
+    def test_adsorbate_sites_and_uniform_pattern_respect_periodic_boundaries(self):
+        import importlib.util
+
+        import numpy as np
+        from ase.build import fcc111
+
+        script_path = (
+            PROJECT_ROOT
+            / "agents/Agent/skills/surface-modeling/scripts/adsorbate/adsorbate_landscape.py"
+        )
+        spec = importlib.util.spec_from_file_location("adsorbate_landscape_pbc_test", script_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        slab = fcc111("Pt", size=(4, 4, 3), vacuum=10.0)
+        nn = 3.92 / np.sqrt(2.0)
+        sites = module.get_surface_sites(slab, ["Pt"], 1.2, None)
+        self.assertEqual(len(sites), 16)
+
+        # Two-site groups must be nearest neighbours, including across the cell edge.
+        groups = module.build_site_groups(slab, sites, 2)
+        centers = module.group_positions(slab, groups)
+        for group, center in zip(groups, centers):
+            pair = module.minimum_image_vectors(slab, slab.positions[group[1]] - slab.positions[group[0]])
+            self.assertAlmostEqual(float(np.linalg.norm(pair)), nn, places=2)
+            # The centroid sits on the bridge, not in the middle of the cell.
+            for site in group:
+                offset = module.minimum_image_vectors(slab, slab.positions[site] - center)
+                self.assertAlmostEqual(float(np.linalg.norm(offset[:2])), nn / 2.0, places=2)
+
+        # "uniform" coverage of 4 sites on a 4x4 cell is the 2x2 sublattice.
+        site_positions = slab.positions[sites]
+        pairwise = module.lateral_distance_matrix(slab, site_positions)
+        selected = module.farthest_site_selection(site_positions[:, :2], 4, pairwise)
+        min_separation = min(pairwise[i, j] for i in selected for j in selected if i != j)
+        self.assertGreater(min_separation, 2.0 * nn - 0.05)
+
+    def test_ptomodel_never_copies_task_key_into_uma_task_name(self):
+        from paperread.surface.modeling.ptomodel import (
+            _build_argument_template,
+            _load_surface_modeling_parameter_schema,
+        )
+
+        schema = _load_surface_modeling_parameter_schema()
+        for task in ("vacancy_landscape", "adsorbate_landscape"):
+            template = _build_argument_template(task, {"surfaces": ["CeO2(111)"]}, {}, schema)
+            self.assertIsNone(template["arguments"]["task_name"], task)
+            self.assertNotIn("task_name", template["auto_mapped_parameters"], task)
+
+    def test_ptomodel_does_not_map_oxide_cluster_to_metal_element(self):
+        from paperread.surface.modeling.ptomodel import _build_task_inputs, _loaded_species
+
+        task_inputs = _build_task_inputs(
+            "surface_cluster_builder",
+            {
+                "materials": ["Ru"],
+                "surfaces": ["Ru/LaOx–SiO2", "SiO2"],
+                "active_sites": ["Ru–LaOx interface"],
+                "clusters": ["LaOx clusters"],
+            },
+            None,
+        )
+        self.assertEqual(task_inputs["cluster_species"], ["Ru"])
+        self.assertEqual(task_inputs["cluster_species_source"], "active_sites")
+        self.assertEqual(task_inputs["non_elemental_cluster_terms"], ["LaOx clusters"])
+        self.assertEqual(_loaded_species("LaOx clusters"), "LaOx")
+        self.assertEqual(_loaded_species("Pt13 cluster"), "Pt")
+
+    def test_vacancy_script_records_calculator_run_config(self):
+        script_path = (
+            PROJECT_ROOT / "agents/Agent/skills/surface-modeling/scripts/vacancy/vacancy_landscape.py"
+        )
+        surface_path = PROJECT_ROOT / "agents/Agent/skills/surface-modeling/examples/CeO2 (1 1 1).cif"
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_dir = Path(tmpdir) / "vacancy"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(script_path),
+                    "--input",
+                    str(surface_path),
+                    "--vacancy-counts",
+                    "1",
+                    "--samples-per-count",
+                    "1",
+                    "--calculator",
+                    "none",
+                    "--max-steps",
+                    "0",
+                    "--output-dir",
+                    str(output_dir),
+                ],
+                cwd=PROJECT_ROOT,
+                capture_output=True,
+                text=True,
+                timeout=120,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            config = json.loads((output_dir / "run_config.json").read_text(encoding="utf-8"))
+            self.assertEqual(config["calculator"], "none")
+            self.assertEqual(config["task_name"], "omat")
+            self.assertEqual(config["uma_model"], "uma-s-1p2")
+
     def test_chemical_vocabulary_covers_elements_through_radon_and_common_names(self):
         from paperread.surface.core.chemical_vocabulary import (
             ELEMENTS,
