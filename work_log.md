@@ -9,8 +9,8 @@
   分支。
 - 2026-11-13：SAGE 第一步 structure-only 执行器已实现
   （`genkai-workflow surface execute`，2026-08-05 计划 Task 2），见
-  [2026-11-13](work_logs/2026-11-13.md) 的“SAGE 第一步”。下一步是空位 runner 和
-  “空位表面 + 吸附”链式任务；继续前按
+  [2026-11-13](work_logs/2026-11-13.md) 的“SAGE 第一步”。当前方向是构建复杂表面
+  （暂不考虑吸附），从同一日志的“复杂表面构建：可用脚本与库盘点”开始；继续前按
   [Agent 简单日常工作指南](docs/daily-agent-work-guide.md) 准备单任务说明，
   不直接扩大到网络、LLM 或科学计算。
 
