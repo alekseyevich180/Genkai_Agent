@@ -76,6 +76,13 @@ no VASP, GPU, PJM, DeepMD, MACE, or UMA process. See
 [`docs/artifact-contracts.md`](docs/artifact-contracts.md) and
 [`docs/skill-development.md`](docs/skill-development.md).
 
+To turn a run's modeling plan into real structures (geometry only, no energy
+model), run `genkai-workflow surface execute --run-root RUN` first to list the
+inputs that the paper cannot determine, then supply them, for example
+`--bulk SnO2.cif --surface-facet "(110)" --molecule-name NO2 --coverage-counts 1,2`.
+The result is a `structures.extxyz` structure set; see the surface-modeling
+skill for the rules.
+
 The maintained paper-reading implementation lives under
 `src/genkai/literature/surface/`. It can ingest surface-research PDFs or JSON
 text, extract surface materials, reaction/material parameters, adsorbates,

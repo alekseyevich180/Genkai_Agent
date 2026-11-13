@@ -8,6 +8,7 @@ evidence of a completed scientific calculation.
 | `paper_to_mlip/` | Minimal hand-authored contract fixture | workflow/MLIP dry-run tests | offline only |
 | `surface_facade/` | Small hand-authored surface structures | surface facade tests | offline only |
 | `surface_literature/` | Curated compact JSON/JSONL examples | literature tests | offline only |
+| `surface_execution/sno2_sam_gas_relations.jsonl` | Copy of the se4c02105 (SnO2 nanowire SAM gas sensor, ACS Sensors 2025) saved extraction; produced with mocked LLM responses grounded in the PDF text, see `tests/se4c02105_surface_fullrun/mocked_extraction_provenance.json` | structure-only executor tests | offline only |
 | `archives/papers/` | Repository-tracked paper PDFs retained for compatibility fixtures | compatibility tests and manual review | never fetched during pytest |
 | `archives/generated/` | Repository-tracked generated paper/experience snapshots (`paperread_batch_experience`, `paperread_papers2_experience`, and surface full-run directories) | compatibility/reference checks | never regenerated during pytest |
 

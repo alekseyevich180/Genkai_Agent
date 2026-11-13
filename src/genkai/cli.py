@@ -164,6 +164,98 @@ def surface_run(
         click.echo(path)
 
 
+def _split_csv(value: str | None) -> tuple[str, ...] | None:
+    if not value:
+        return None
+    return tuple(item.strip() for item in value.split(",") if item.strip())
+
+
+@surface_group.command("execute")
+@click.option("--run-root", required=True, type=click.Path(exists=True, file_okay=False, path_type=Path))
+@click.option("--surface", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Reviewed slab file; skips slab generation.")
+@click.option("--bulk", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Local bulk crystal used to cut the slab.")
+@click.option("--surface-formula", help="Bulk formula for the Materials Project route (overrides the plan).")
+@click.option("--surface-facet", help="Confirmed exposed facet in the conventional cell, e.g. (110).")
+@click.option("--use-facet-registry", is_flag=True, help="Accept the reviewed stable-facet registry when the paper gives no exposed facet.")
+@click.option("--allow-materials-project", is_flag=True, help="Allow downloading the bulk from Materials Project (network, MP_API_KEY).")
+@click.option("--molecule", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Adsorbate structure file.")
+@click.option("--molecule-name", help="Built-in gas molecule, e.g. NO2, NH3, H2S, CO, H2, acetone, ethanol.")
+@click.option("--coverage-counts", help="Comma-separated adsorbate counts, e.g. 1,2.")
+@click.option("--site-symbols", help="Comma-separated adsorption-site elements, e.g. Sn.")
+@click.option("--patterns", help="Comma-separated coverage patterns (uniform, clustered, stripe, island, random).")
+@click.option("--random-repeats", type=int, help="Structures per coverage for the random pattern.")
+@click.option("--document-id", help="Plan document to execute when the plan has several.")
+@click.option("--tasks", help="Comma-separated plan tasks to execute (default: all executable).")
+@click.option("--seed", type=int, default=42, show_default=True)
+def surface_execute(
+    run_root: Path,
+    surface: Path | None,
+    bulk: Path | None,
+    surface_formula: str | None,
+    surface_facet: str | None,
+    use_facet_registry: bool,
+    allow_materials_project: bool,
+    molecule: Path | None,
+    molecule_name: str | None,
+    coverage_counts: str | None,
+    site_symbols: str | None,
+    patterns: str | None,
+    random_repeats: int | None,
+    document_id: str | None,
+    tasks: str | None,
+    seed: int,
+) -> None:
+    """Generate structures for a run's modeling plan (structure-only, no energy model)."""
+
+    from genkai.modeling.surface.executor import (
+        SurfaceExecutionBlocked,
+        SurfaceExecutionOverrides,
+        execute_surface_plan,
+    )
+
+    manifest = load_manifest(run_root)
+    plan = next(
+        (artifact for artifact in reversed(manifest.artifacts) if artifact.artifact_type == "modeling-plan"),
+        None,
+    )
+    if plan is None:
+        raise click.ClickException("The run has no modeling-plan artifact; run `genkai-workflow init` first.")
+    try:
+        counts = tuple(int(item) for item in _split_csv(coverage_counts) or ())
+    except ValueError as exc:
+        raise click.BadParameter("use integers such as 1,2", param_hint="--coverage-counts") from exc
+    overrides = SurfaceExecutionOverrides(
+        surface=surface,
+        bulk=bulk,
+        surface_formula=surface_formula,
+        surface_facet=surface_facet,
+        use_facet_registry=use_facet_registry,
+        allow_materials_project=allow_materials_project,
+        molecule=molecule,
+        molecule_name=molecule_name,
+        coverage_counts=counts or None,
+        site_symbols=_split_csv(site_symbols),
+        patterns=_split_csv(patterns),
+        random_repeats=random_repeats,
+        seed=seed,
+        document_id=document_id,
+        tasks=_split_csv(tasks),
+    )
+    try:
+        artifact = execute_surface_plan(plan, run_root, overrides)
+    except SurfaceExecutionBlocked as exc:
+        click.echo("Blocked: these inputs must be supplied or confirmed:", err=True)
+        for key, reason in exc.missing.items():
+            click.echo(f"  - {key}: {reason}", err=True)
+        raise SystemExit(2) from exc
+    click.echo(f"structures: {run_root / artifact.path}")
+    click.echo(f"report: {run_root / artifact.metadata['execution_report']}")
+    click.echo(
+        f"frames: {artifact.metadata['structure_count']} {artifact.metadata['roles']} "
+        f"validation={artifact.validation_status.value}"
+    )
+
+
 @surface_group.command("conditions")
 @click.argument("input_json", type=click.Path(exists=True, path_type=Path))
 @click.option("--prefix", required=True, type=click.Path(path_type=Path))

@@ -117,6 +117,43 @@ Main outputs:
   geometry, settings and validation report
 - `run_config.json`
 
+## Executing A Modeling Plan (structure-only)
+
+Use this after a run has a PToModel plan, e.g. from a saved extraction:
+
+```bash
+genkai-workflow init runs/sno2 --relations saved_surface_relations.jsonl
+genkai-workflow surface execute --run-root runs/sno2      # lists what is still missing
+genkai-workflow surface execute --run-root runs/sno2 \
+  --bulk SnO2_bulk.cif --surface-facet "(110)" \
+  --molecule-name NO2 --coverage-counts 1,2 --site-symbols Sn
+```
+
+The executor (`genkai.modeling.surface.executor.execute_surface_plan`) builds
+the slab, runs the registered tasks (currently `adsorbate_landscape`) with
+`calculator="none"` and `max_steps=0`, and registers one
+`stages/03_surface_structures*/structures.extxyz` as the run's latest
+`StructureSetArtifact` (frame 0 is the clean slab; fixed atoms and tags are
+kept). Rules:
+
+- It never guesses: a slab or bulk source, a confirmed exposed facet, the gas
+  molecule and integer coverages must be supplied; otherwise it exits with code
+  2 and lists each missing input without touching the manifest. XRD/HRTEM
+  lattice planes are not accepted as exposed facets; `--use-facet-registry`
+  explicitly accepts the reviewed registry facet.
+- Slab sources: `--surface` (reviewed slab) > `--bulk` (local bulk crystal) >
+  the plan formula from Materials Project, only with `--allow-materials-project`.
+- Built-in gases (ASE G2 geometries): H2, O2, O3, H2O, CO, CO2, NO, NO2, NH3,
+  H2S, SO2, CH4, CH3OH, C2H5OH (ethanol), HCHO (formaldehyde), CH3CHO, CH3COCH3
+  (acetone), C6H6; other adsorbates need `--molecule FILE`.
+- Plan site symbols absent from the slab are dropped and reported; exact
+  duplicates are removed; candidates with overlapping atoms are excluded and
+  mark the set `needs_review`.
+- Output structures are unrelaxed geometric candidates (evidence `heuristic`);
+  mock placement energies stay in `adsorbate_landscape/runner.log` and are not
+  results. Tasks without a structure-only runner (vacancy, clusters,
+  SAM/functionalization, doping) are reported as skipped.
+
 ## Oxygen-Vacancy Landscape
 
 Script:

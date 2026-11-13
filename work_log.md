@@ -7,10 +7,12 @@
 - 2026-11-13：`feat/genkai-evolution` 已并入 `main`，形成检查点 tag
   `sage-checkpoint-0`，详见 [2026-11-13](work_logs/2026-11-13.md)。`main` 是唯一开发
   分支。
-- 下一次继续 PDF 到自动建模执行层（SAGE）时，先完整读取
-  [2026-08-05](work_logs/2026-08-05.md) 的 Task 2 和停止条件，按
-  [Agent 简单日常工作指南](docs/daily-agent-work-guide.md) 准备单任务说明后再实施，
-  不直接扩大到 workflow、网络或科学计算。
+- 2026-11-13：SAGE 第一步 structure-only 执行器已实现
+  （`genkai-workflow surface execute`，2026-08-05 计划 Task 2），见
+  [2026-11-13](work_logs/2026-11-13.md) 的“SAGE 第一步”。下一步是空位 runner 和
+  “空位表面 + 吸附”链式任务；继续前按
+  [Agent 简单日常工作指南](docs/daily-agent-work-guide.md) 准备单任务说明，
+  不直接扩大到网络、LLM 或科学计算。
 
 ## 日志文件
 

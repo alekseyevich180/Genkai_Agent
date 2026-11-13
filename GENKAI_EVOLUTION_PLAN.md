@@ -1401,8 +1401,10 @@ discovery 已移除 `paperread*`。
 历史参考。
 
 1. 读取 `work_logs/2026-11-13.md`：检查点包含的内容、验证结果和未验证边界。
-2. 后续 SAGE（气体传感器表面自动建模）工作从 `work_logs/2026-08-05.md` 的 Task 2
-   （structure-only 执行器）继续；`slab_generation` 现已可执行，可作为执行器的上游任务。
+2. SAGE（气体传感器表面自动建模）：`work_logs/2026-08-05.md` 的 Task 2
+   （structure-only 执行器）已于 2026-11-13 实现为
+   `genkai.modeling.surface.executor` 与 `genkai-workflow surface execute`；下一步是
+   空位 runner 和“空位表面 + 吸附”链式任务。
 3. 保持外部科研运行时边界：未经授权不运行 VASP、UMA、GPU/PJM 或在线 LLM。
 
 

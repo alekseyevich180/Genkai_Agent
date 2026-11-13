@@ -111,6 +111,22 @@ def test_bottom_is_fixed_tagged_and_cell_is_wide_enough() -> None:
     assert set(np.flatnonzero(layered.atoms.get_tags() == 0)) == set(np.concatenate(layers[:2]))
 
 
+def test_tilted_facets_are_wrapped_in_plane_without_changing_geometry() -> None:
+    # Wurtzite (10-10) gets a tilted c that orthogonalization leaves as a staircase.
+    zno = Structure.from_spacegroup(
+        "P6_3mc", Lattice.hexagonal(3.25, 5.207), ["Zn", "O"], [[1 / 3, 2 / 3, 0], [1 / 3, 2 / 3, 0.3825]]
+    )
+    result = build_slab(zno, facet="(10-10)")
+    atoms = result.atoms
+
+    in_plane = atoms.get_scaled_positions(wrap=False)[:, :2]
+    assert in_plane.min() >= -1e-9 and in_plane.max() < 1.0
+    distances = atoms.get_all_distances(mic=True)
+    np.fill_diagonal(distances, np.inf)
+    assert np.isclose(distances.min(), 1.974, atol=0.01)  # bulk Zn-O bond, no overlap
+    assert result.validation.passed
+
+
 def test_surface_energy_screening_selects_the_wulff_dominant_facet() -> None:
     result = build_slab(fcc("Cu", 3.61), energy_fn=energy_function_from_calculator(EMT()))
 

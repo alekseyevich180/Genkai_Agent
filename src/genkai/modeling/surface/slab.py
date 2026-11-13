@@ -595,7 +595,12 @@ def finalize_slab(candidate: SlabCandidate, settings: SlabSettings) -> tuple[Ato
     slab.remove_oxidation_states()
     slab = slab.get_orthogonal_c_slab()
     repeats = lateral_repeats(slab, settings)
-    atoms = _plain_atoms(slab).repeat((repeats[0], repeats[1], 1))
+    atoms = _plain_atoms(slab)
+    # Orthogonalizing c keeps Cartesian positions, which leaves tilted facets as a
+    # "staircase" outside the cell. Wrapping in-plane only is physically identical
+    # under periodic boundaries and keeps z (and thus layers and vacuum) unchanged.
+    atoms.wrap(pbc=[True, True, False])
+    atoms = atoms.repeat((repeats[0], repeats[1], 1))
 
     layers = atomic_layers(atoms.positions[:, 2], settings.layer_tolerance)
     fixed = _fixed_indices(atoms, layers, settings)
