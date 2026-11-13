@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "execution_state": "prepared",
+  "source_structure_set": "stages/03_surface_modeling/candidates.json",
+  "calculation": "vasp",
+  "submission": null,
+  "note": "Input preparation only; VASP and scheduler were not run."
+}

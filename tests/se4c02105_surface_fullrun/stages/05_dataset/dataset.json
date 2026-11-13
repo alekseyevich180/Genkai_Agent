@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "source_result": "stages/04_dft/mock-results.extxyz",
+  "evidence_level": "mock",
+  "metadata": {
+    "label_source": "mock",
+    "energy_unit": "eV",
+    "force_unit": "eV/angstrom",
+    "stress_unit": "eV/angstrom^3",
+    "electronic_structure_method": "mock",
+    "functional": "not_applicable",
+    "pseudopotential_family": "not_applicable",
+    "split_strategy": "fixture",
+    "train_count": 0,
+    "validation_count": 0,
+    "test_count": 0,
+    "cross_split_leakage": 0,
+    "lmdb_readback": false,
+    "audit_status": "NOT_RUN",
+    "source_integrity_verified": true,
+    "split_inventory": [],
+    "lmdb_readback_counts": {}
+  },
+  "audit": null
+}

@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import urlparse
+from urllib.request import url2pathname
 
 import hashlib
 
@@ -22,6 +23,16 @@ from .protocol import (
     resolve_launcher,
     training_dataset_gate,
 )
+from .launchers import get_launcher_contract
+
+
+def _file_uri_path(uri: str) -> Path:
+    """Local path of a ``file://`` URI on POSIX and Windows.
+
+    ``Path(unquote(urlparse(uri).path))`` yields ``\\C:\\...`` on Windows, which
+    is not a valid path; ``url2pathname`` handles drive letters and unquoting.
+    """
+    return Path(url2pathname(urlparse(uri).path))
 
 
 class UmaAdapter:
@@ -85,7 +96,7 @@ class UmaAdapter:
                 )
             parsed = urlparse(base_model.uri)
             if parsed.scheme == "file":
-                checkpoint = Path(unquote(parsed.path))
+                checkpoint = _file_uri_path(base_model.uri)
                 if not checkpoint.is_file():
                     _route_issue(
                         ValidationIssue(
@@ -165,16 +176,11 @@ class UmaAdapter:
                 report.errors,
                 report.warnings,
             )
+        contract = get_launcher_contract("uma")
         executable = resolve_launcher(
             self.executable,
-            "GENKAI_UMA_LAUNCHER",
-            (
-                "UMA_FINETUNE_WORK_DIR",
-                "UMA_FINETUNE_CONFIG",
-                "UMA_FINETUNE_DRY_RUN",
-                "UMA_FINETUNE_BASE_MODEL_PATH",
-                "UMA_FINETUNE_BASE_MODEL_SHA256",
-            ),
+            contract.environment_variable,
+            contract.required_markers,
             mode,
             report.errors,
             report.warnings,
@@ -187,7 +193,7 @@ class UmaAdapter:
             else str(Path(run_root) / base_model.path)
         )
         base_path = (
-            Path(unquote(urlparse(base_uri).path))
+            _file_uri_path(base_uri)
             if isinstance(base_model, ExternalResourceRef)
             else (Path(run_root) / base_model.path).resolve()
         )

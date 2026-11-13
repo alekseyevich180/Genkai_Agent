@@ -1,0 +1,390 @@
+{
+  "schema_version": "2.0",
+  "material_class": "supported_catalysts",
+  "updated_at": "2026-08-05T02:57:07.919178+00:00",
+  "summary": {
+    "terms": 9,
+    "known_useful": 3,
+    "unknown": 6
+  },
+  "keyword_inventory": {
+    "adsorption_sites": [
+      {
+        "term": "monodentate/bidentate/tridentate PA binding",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      },
+      {
+        "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "SiO2/Si-supported SnO2 nanowire sensor",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "surface_materials"
+      }
+    ],
+    "surface_states": [
+      {
+        "term": "imidazolium/dodecyl phosphonic-acid SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC10CA phosphonic-acid-anchored SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAC12IMI phosphonic-acid-anchored SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "PAG3 phosphonic-acid-anchored SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      },
+      {
+        "term": "phosphonic-acid-anchored SAM",
+        "count": 1,
+        "kind": "unknown_context",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "Si",
+        "count": 2
+      },
+      {
+        "term": "Sn",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "supported_catalyst",
+        "count": 9
+      },
+      {
+        "term": "oxide",
+        "count": 3
+      },
+      {
+        "term": "surface",
+        "count": 3
+      },
+      {
+        "term": "nitride",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "SiO2",
+        "count": 2
+      },
+      {
+        "term": "Au electrode",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Si substrate",
+        "count": 1
+      },
+      {
+        "term": "Si-supported SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "SnO2 interface and uncovered SnO2 sites",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Au, O, Pt, Si, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{O, Si, Sn}",
+        "count": 1
+      },
+      {
+        "term": "{O, Sn}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "supported_catalyst_profile",
+    "elements": [
+      {
+        "term": "O",
+        "count": 3
+      },
+      {
+        "term": "Si",
+        "count": 2
+      },
+      {
+        "term": "Sn",
+        "count": 2
+      },
+      {
+        "term": "Au",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "material_kind": [
+      {
+        "term": "supported_catalyst",
+        "count": 9
+      }
+    ],
+    "support_components": [
+      {
+        "term": "Si-supported SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "Si-supported SnO2 nanowire sensor",
+        "count": 1
+      },
+      {
+        "term": "SiO2",
+        "count": 1
+      },
+      {
+        "term": "SiO2",
+        "count": 1
+      }
+    ],
+    "loaded_components": [
+      {
+        "term": "Au electrode",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Si substrate with Ti",
+        "count": 1
+      },
+      {
+        "term": "SiO2",
+        "count": 1
+      },
+      {
+        "term": "SiO2",
+        "count": 1
+      }
+    ],
+    "exposed_surfaces": [],
+    "surface_index_mappings": [],
+    "crystal_structure_terms": [],
+    "surface_site_contexts": [
+      {
+        "surface_family": "supported_catalysts",
+        "surface_terms": [
+          {
+            "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+            "count": 1
+          },
+          {
+            "term": "SiO2/Si-supported SnO2 nanowire sensor",
+            "count": 1
+          }
+        ],
+        "facet_terms": [
+          {
+            "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+            "count": 1
+          },
+          {
+            "term": "SiO2/Si-supported SnO2 nanowire sensor",
+            "count": 1
+          }
+        ],
+        "active_site_terms": [],
+        "adsorption_site_terms": [
+          {
+            "term": "monodentate/bidentate/tridentate PA binding",
+            "count": 1
+          },
+          {
+            "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+            "count": 1
+          }
+        ],
+        "site_role_terms": [],
+        "relation": "metal-surface site geometry"
+      }
+    ],
+    "approx_loadings": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "imidazolium/dodecyl phosphonic-acid SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "monodentate/bidentate/tridentate PA binding",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorption Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "PAC10CA phosphonic-acid-anchored SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "surface_terminations"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "PAC12IMI phosphonic-acid-anchored SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "surface_terminations"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "PAG3 phosphonic-acid-anchored SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "surface_terminations"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    },
+    {
+      "term": "phosphonic-acid-anchored SAM",
+      "kind": "unknown_context",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface Termination"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SAM-functionalized SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SAM/SnO2 interface and uncovered SnO2 sites",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorption Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "PAC12IMI-functionalized SnO2 nanowire sensor"
+      ]
+    },
+    {
+      "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SiO2/Si-supported SnO2 nanowire sensor",
+      "kind": "known_useful",
+      "research_category": "surface_materials",
+      "fields": [
+        "surfaces"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "se4c02105 1..10"
+      ]
+    }
+  ]
+}

@@ -35,6 +35,9 @@ metadata:
 
 Use this skill when a task is about oxide surface construction, vacancy sampling, adsorption coverage generation, or metal cluster placement on surfaces. The scripts are adapted from the `Oxidesurface_cluster` project and are intended to make this Agent project surface-focused.
 
+Stable algorithm ownership is under `src/genkai/modeling/surface/`; the script
+paths documented below are thin compatibility entrypoints for Skill callers.
+
 ## Workflow
 
 1. Build the surface slab from a bulk crystal with `scripts/surface/slab_generation.py` (pymatgen; see below), or supply an existing slab in CIF, VASP/POSCAR, XYZ, or another ASE-readable format.
@@ -66,7 +69,7 @@ Optional for real MLIP relaxation:
 
 ## Slab Generation From Bulk (pymatgen)
 
-Script (thin entry over `genkai.modeling.slab`):
+Script (thin entry over `genkai.modeling.surface.slab`):
 
 ```bash
 python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py   --bulk CeO2_bulk.cif   --output-dir modeling/slab
@@ -252,7 +255,7 @@ python agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluste
 This route downloads stable bulk references, resolves the surface facet in the
 order paper/user explicit facet -> reviewed stable-facet registry -> stop for
 manual review, constructs a vacuum-containing slab with the same
-`genkai.modeling.slab` generator (conventional cell, termination checks, fixed
+`genkai.modeling.surface.slab` generator (conventional cell, termination checks, fixed
 bottom half), and only then places the cluster. The default `--slab-repeat-xy`
 stays `2,2`; check `slab.lateral_widths_A` in the surface manifest before placing
 large clusters.
@@ -317,7 +320,7 @@ Before running a modeling script:
 
 - Prefer a `*_ptomodel.json` task argument template when the task comes from a
   paper.
-- Check `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- Check `src/genkai/modeling/schema/task_parameter_schema.json`
   for required arguments and constraints.
 - Check `agents/Agent/skills/paperread/experience/surface_parameter_registry.json`
   for known material class, facet, active-site, adsorbate, dopant, coverage,
@@ -356,7 +359,7 @@ expected types, required-ness, grouping, and constraints.
 
 The machine-readable copy used by `ptomodel` is stored at:
 
-- `agents/Agent/skills/surface-modeling/schema/task_parameter_schema.json`
+- `src/genkai/modeling/schema/task_parameter_schema.json`
 
 ### Slab Generation
 

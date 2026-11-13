@@ -1,0 +1,128 @@
+Index,Title,Passage,Summary
+surface_conditions_1,se4c02105 1..10,"Downloaded from http://pubs.acs.org/ascefj/article-pdf/10/2/741/42358812/se4c02105.pdf by UNIV OF TOKYO user on 05 August 2026
+conducted (Figure S1). Figure S1a shows the FTIR-ATR
+bounded on the SnO2 NW surfaces, TGA measurements were
+obtained from 30° to 900 °C under 40 sccm of N2 and 10 sccm results of the SAM-functionalized SnO2 NWs to verify the
+of O2 to resemble an air atmosphere. Further chemical analysis SAM molecules binding on the SnO2 surfaces. For the pristine
+on the chemical states and binding energies were conducted by SnO2 NWs, no distinguishable organic footprint peaks are
+XPS (KAlpha, Thermo Scientific) with an Al Kα X-ray source observed in the FTIR spectrum. However, organic footprint
+(hν = 1486.6 eV). BET (ASAP 2020, Micromeritics) peaks are clearly observed after SAM functionalization. As all
+determined the surface area of the SnO2 NWs. three molecules contain a phosphonic acid (PA) anchoring
+Gas-Sensing Measurements. All gas-sensing experiments group, a broad IR absorption band from 1000 to 1200 cm−1,
+were performed with a lab-made customized gas-sensing representing the overlapping of P−O and P�O stretching
+system, as reported previously.21 Briefly, the gas chamber vibrations, was observed in all three spectra.33−35 This
+was installed in a quartz tube furnace, and the sensing overlapping is originated from the multiple binding modes of
+temperature was controlled in the range of 25−350 °C. Mass the PA group on the metal oxide surface, as three different
+flow controllers (MFCs) were used to control the gas binding reactions�monodentate, bidentate, and tridentate�
+concentrations by modulating the ratios of dry air and sensing could exist simultaneously.36 Furthermore, asymmetric C−H
+
+gases. Dry air was purchased from Daeduk Gas Co., Korea, vibrations near 2960 cm−1, symmetric C−H vibrations near
+consisting of 21% O2 and 79% N2, with negligible humidity 2860 and 2930 cm−1, and C−H scissoring vibrations near 1460
+(purity: 99.999%). All sample gases, namely, hydrogen (H2), cm−1, were observed in the spectra, supporting the presence of
+carbon monoxide (CO), acetone (C3H6O), octafluoropropane
+−CH2− moieties in the SAM molecules. In addition to the
+(C3F8), toluene (C7H8), methane (CH4), and hydrogen sulfide
+(H2S), were prepared at different concentrations and mixed common footprint vibrational signals, distinctive vibrations
+with the dry gas and target gases. In all cases, the total flow of were observed for each molecule. For PAG3, a symmetric C−O
+the gas mixtures was set to 500 sccm. A Keithley Series 2400 vibration at 1254 cm−1 from the glycol chain was present, while
+source meter was used to measure the gas sensor resistance strong C�O stretching vibrations at 1635 cm−1 from the
+under a continuous flow of either air (Ra) or the target gas carboxylic acid functional group in PAC10CA, C�N stretching
+(Rg). Using the measured resistance values, the sensor vibrations at 1546 cm−1, and N−H stretching vibrations at
+responses were derived as ratios of Ra to Rg. For the humidity 3145 cm−1 from the imidazolium group in PAC12IMI were
+study, dry and humid air (RH 0−90%, measured at 20 °C) observed. In addition, XPS measurements confirmed the
+flowed to the sensor chamber at an operating temperature of presence of P 2p signals from the SAM-functionalized SnO2
+175 °C. The temperature and RH were measured using an RH NWs (Figures S2−S4), while these were not observed for the
+
+probe before implementing these conditions in the sensor pristine SnO2 NWs (Figure S5). These results clearly indicate
+chamber. At 100% RH, dry air (0% RH) flowed into a glass that the surfaces of the SnO2 NWs were successfully
+beaker, filled with water, to generate water-saturated air functionalized to exhibit different surface chemistries for each
+bubbles. These generated bubbles were then mixed with dry air SAM molecule.
+(0% RH) to obtain the desired RH values. The ratios of 100% To confirm the amount of SAM molecules bound to the
+RH air to dry air for achieving 30%, 60%, and 90% RH values surface of the SnO2 NWs, TGA measurements were
+were 3:7, 3:2, and 9:1, respectively. The response time (τres) performed. The TGA profile of the pristine SnO2 NWs
+was defined as the time taken for the resistance to reach 90% of
+showed negligible weight loss (∼0.8%), indicating that the
+its final value after the target gas was introduced, while the
+surface of the SnO2 NW was an organic-free state. In contrast,
+recovery time (τrec) was defined as the time taken for the
+resistance to reach 90% of its initial value after the target gas the TGA profiles of PAG3, PAC10CA, and PAC12IMI started to
+flow was stopped. show a noticeable weight loss from 185 °C, which continued
+upon heating to 550 °C, and saturated thereafter (Figure S1b).
+■ RESULTS AND DISCUSSION
+Characterization of SnO2 NWs and SAM-Function-
+These TGA results of the SAM-functionalized SnO2 NWs
+indicate that the organic SAM molecules started to decompose
+alized Surfaces. Figure 1 shows the SEM and TEM images as from 185 °C and were completely removed above 550 °C. The
+well as selected area electron diffraction (SAED) pattern of the weight loss value was measured in the temperature range of
+
+SnO2 NW-based gas sensor device. As shown in Figure 1a,b, 100−600 °C, to avoid possible mass contribution from the
+the length of few tens of micrometer SnO2 NWs with an remaining solvent; the weight losses were 6.38%, 7.12%, and
+average diameter of 55 nm are selectively synthesized on the 8.27% for the PAG3-, PAC10CA-, and PAC12IMI-functionalized
+gas sensor electrode, creating a NW junction between the SnO2 NWs, respectively. To determine the number of SAM
+electrodes. In addition, as shown in the TEM images (Figure molecules on the SnO2 NW surface, the grafting densities
+1c), smooth and even surfaces with diameters ranging from 20 (GDs) were calculated as follows:37
+743 https://doi.org/10.1021/acssensors.4c02105
+ACS Sens. 2025, 10, 741−750
+
+SAM-Induced Gas Selectivity of SnO2 NW-Based Gas resistance curves. Figures S8a and S9a show the dynamic
+Sensors. To determine the optimal sensing temperature of the resistance curves of the PAC10CA-functionalized sensor and
+SnO2 NW-based gas sensor, the sensing performance of PAG3-functionalized sensor, respectively. Both sensors were
+pristine SnO2 NWs for CH4 was evaluated. Figure S6 shows exposed to 10, 30, and 50 ppm of CH4 gas at various
+the dynamic resistance curves of the pristine SnO2 NW-based temperatures from RT to 200 °C. As shown in Figures S8a and
+gas sensors in 10, 30, and 50 ppm of CH4 gas at various S9a, both sensors exhibit n-type behavior along with good
+sensing temperatures, ranging from room temperature (RT; 25 recovery of the sensing signal. Figure 2e,g shows the baseline
+°C) to 350 °C. In all cases, the resistance decreased when CH4 resistances and sensor responses of the PAC10CA- and PAG3-
+gas was injected into the gas chamber. CH4 is known to be a functionalized sensors to different gas concentrations of CH4
+reducing gas, which donates electrons upon adsorption to the as a function of the sensing temperature. Similar to the
+surface.38 The reduced resistance of the SnO2 NWs upon PAC12IMI-functionalized sensor, the baseline resistances of the
+
+Downloaded from http://pubs.acs.org/ascefj/article-pdf/10/2/741/42358812/se4c02105.pdf by UNIV OF TOKYO user on 05 August 2026
+exposure to CH4 gas revealed the n-type nature of the SnO2 PAC10CA- and PAG3-functionalized sensors are 0.19 MΩ and
+NWs. Moreover, up to 100 °C, there was no effective response 0.08 MΩ, respectively. These results further support the
+observed upon gas exposure. To gain better insight, the aforementioned mechanism of passivation of the SnO2 NW
+baseline resistance is depicted and the temperature-dependent surfaces. Moreover, the baseline resistances for both sensors
+response of CH4 exposure at different concentrations is plotted gradually decreased upon heating the sensors to 175 °C, and
+in Figure 2a. The baseline resistance decreases as the sensing further temperature increases led to increased baseline
+temperature increases, demonstrating the semiconducting resistance, indicating the presence of SAM molecules on the
+nature of the sensors. An increase in the sensing temperature SnO2 NW surfaces. As revealed from the TGA profiles in
+led to more electrons jumping to the conduction band of Figure S1b, the removal of the SAM molecules from the
+SnO2, which in turn caused the overall resistance of the sensor surfaces commences at temperatures above 185 °C. As the
+to decrease. Furthermore, the sensing response toward CH4 main aim of this study was the investigation of the effect of the
+gradually increased as the sensing temperature increased up to chemical structures on the selective gas-sensing behavior of
+300 °C, and thereafter, the sensing response started to SAM-functionalized SnO2 NW surfaces, SAM-functionalized
+decrease. Under the low-temperature regime, i.e., below 175 SnO2 NWs were not measured at temperatures above 200 °C.
+
+°C, the sensor response was low due to the insufficient energy Hence, a fixed sensing temperature of 175 °C was used for
+of the gas to overcome the adsorption barrier. However, at further selective sensing studies to better compare the chemical
+higher temperatures, the adsorption and desorption rates both structural influence on the gas-sensing behavior of the SnO2
+increase. Moreover, at the optimal sensing temperature, i.e., NWs.
+300 °C, the maximum net adsorption is observed. With a To determine the selective gas-sensing behavior of the
+further increase in the temperature, i.e., above 300 °C, the pristine SnO2 NWs, the sensor was exposed to various gases,
+desorption rate increases above the adsorption rate, and thus, and the corresponding response behaviors are plotted in
+the sensor response decreases. Figures 2b and S6b. Similar to the response to CH4 gas, the
+Similarly, sensing performances were measured for all three sensor responses toward different gases, such as CO, C3H6O,
+SAM-functionalized SnO2 NW sensors, i.e., PAC12IMI-, H2, H2S, C3F8, and C7H8, exhibit similar values, indicating that
+PAC10CA-, and PAG3-functionalized sensors, to define the the pristine SnO2 NWs do not possess gas-selective responses.
+optimal sensing temperatures, ranging from RT to 200 °C. To study the sensor selectivity upon different SAM
+Figure S7a shows the dynamic resistance curves of PAC12IMI functionalization, the PAC12IMI-, PAC10CA-, and PAG3-
+on the SnO2 NW gas sensor exposed to 10, 30, and 50 ppm of functionalized sensors were exposed to various gases at 175
+C3H6O gas at various temperatures. The resistance decreases °C (Figures S7b, S8b, and S9b), and their corresponding
+
+°C. A further increase in the temperature led to an increase in such as CO, H2, H2S, C3H6O, C3F8, and C7H8, decreased to
+the baseline resistance. This increase in the baseline resistance 1.55, 1.35, 1.25, 1.33, 1.32, and 1.33, respectively. Although the
+could also be considered evidence of the presence of SAM PAC10CA-functionalized sensor showed preferred sensing
+molecules on the SnO2 NW surface, as the SAM molecules behavior for CH4 gas, the selective response was not as
+started to decompose after 185 °C (shown in TGA profiles in pronounced as that for the other gas molecules, and therefore,
+Figure S1b). Similar to the PAC12IMI-functionalized sensor, the selectivity was decreased. For the PAG3-functionalized
+the PAC10CA- and PAG3-functionalized sensors showed the sensor, the gas-selective response decreased further. As shown
+same tendency for the baseline resistance and dynamic in its dynamic resistance curves at 175 °C (Figure S9b) and
+745 https://doi.org/10.1021/acssensors.4c02105
+ACS Sens. 2025, 10, 741−750","| Reaction Type | Material | Composition | Phase | Morphology/Size | Surface Area | Surface/Support | Facet | Surface Termination | Active Site | Defect | Dopant/Modifier | Adsorbate/Reactant | Adsorption Site | Coverage | Cluster/Single Atom | Feed/Concentration | Atmosphere | Pressure | Gas Flow | Solvent | pH | Temperature | Time | Loading | Potential/Bias | Current Density | Product | Conversion | Selectivity | Yield | Rate/Activity | Stability/Cycles | Modeling Keywords |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Au-catalyzed VLS nanowire growth | SnO2 nanowires | SnO2 | rutile | tens of micrometers long; 20-60 nm diameter | high surface-to-volume ratio | SiO2/Si substrate with Ti/Pt/Au electrode | (101) plane observed by HRTEM | N/A | SnO2 nanowire surface | no significant defects observed | Au catalyst | Sn vapor; O2 | Au-catalyzed growth sites | N/A | N/A | Sn powder (99.9%) | N2/O2 | N/A | N2 300 sccm; O2 10 sccm | N/A | N/A | 900 degC | 5 min | Ti 50 nm; Pt 200 nm; Au 3 nm | N/A | N/A | SnO2 nanowires | N/A | N/A | N/A | N/A | N/A | SnO2; rutile; nanowire; (101); slab_generation |
+| O2 plasma surface activation | SnO2 nanowires | SnO2 | rutile | nanowires | N/A | SnO2 nanowire surface | N/A | O2-plasma-activated surface | activated SnO2 surface | N/A | O2 plasma | O2 plasma | SnO2 surface | N/A | N/A | 200 W; 40 kHz | O2 plasma | 0.3 mbar | N/A | N/A | N/A | N/A | 10 min | N/A | N/A | N/A | activated SnO2 surface | N/A | N/A | N/A | N/A | N/A | surface activation; surface_functionalization |
+| Self-assembled monolayer functionalization | SAM-functionalized SnO2 nanowires | SnO2 with PAC12IMI, PAC10CA, or PAG3 | rutile | 20-60 nm nanowires | N/A | SnO2 nanowire surface | N/A | phosphonic-acid-anchored SAM | uncovered SnO2 adsorption sites remain | N/A | PAC12IMI; PAC10CA; PAG3 | SAM molecules | SnO2 surface; monodentate/bidentate/tridentate PA binding | self-assembled monolayer; incomplete coverage | N/A | 0.2 mM each SAM | N/A | N/A | N/A | isopropanol | N/A | N/A | 18 h | N/A | N/A | N/A | functionalized sensing surface | N/A | molecule-dependent gas selectivity | N/A | N/A | stable after six months | surface_functionalization; SAM coverage; adsorption sites |
+| Gas sensing | pristine SnO2 nanowire sensor | SnO2 | rutile | nanowire bundle | high surface area | SnO2 nanowire sensing surface | (101) plane observed | pristine | SAM-free SnO2 adsorption sites | N/A | N/A | H2; CO; acetone; C3F8; toluene; CH4; H2S | SnO2 surface | N/A | N/A | 10, 30, and 50 ppm | dry air (21% O2, 79% N2) | N/A | total 500 sccm | N/A | N/A | 25-350 degC; optimum 300 degC for CH4 | N/A | N/A | N/A | N/A | resistance response | N/A | limited gas selectivity | N/A | Ra/Rg response | N/A | adsorbate_landscape; gas adsorption; temperature dependence |
+| Selective gas sensing | PAC12IMI-functionalized SnO2 nanowire sensor | SnO2/PAC12IMI | rutile | 20-60 nm nanowires | N/A | SAM-functionalized SnO2 surface | N/A | imidazolium/dodecyl phosphonic-acid SAM | uncovered SnO2 adsorption sites | N/A | PAC12IMI | acetone; CH4; toluene | SAM/SnO2 interface and uncovered SnO2 sites | incomplete SAM coverage | N/A | 10, 30, and 50 ppm | dry or humid air | N/A | total 500 sccm | N/A | N/A | 175 degC | N/A | N/A | N/A | N/A | gas-sensor response | N/A | acetone-selective; responses 2.54, 3.12, 3.44 | N/A | LOD 380 ppb | six months; three cycles | surface_functionalization; adsorbate_landscape; ion-dipole interaction |
+| Selective gas sensing | PAC10CA-functionalized SnO2 nanowire sensor | SnO2/PAC10CA | rutile | 20-60 nm nanowires | N/A | SAM-functionalized SnO2 surface | N/A | carboxydecyl phosphonic-acid SAM | uncovered SnO2 adsorption sites | N/A | PAC10CA | CH4; CO; H2; H2S; acetone; C3F8; toluene | SAM/SnO2 interface and uncovered SnO2 sites | incomplete SAM coverage | N/A | 10, 30, and 50 ppm | dry or humid air | N/A | total 500 sccm | N/A | N/A | 175 degC | N/A | N/A | N/A | N/A | gas-sensor response | N/A | CH4-preferred; responses 1.65, 1.88, 1.96 | N/A | LOD 690 ppb | six months; three cycles | surface_functionalization; adsorbate_landscape; dispersion interaction |
+| Selective gas sensing | PAG3-functionalized SnO2 nanowire sensor | SnO2/PAG3 | rutile | 20-60 nm nanowires | N/A | SAM-functionalized SnO2 surface | N/A | glycol phosphonic-acid SAM | uncovered SnO2 adsorption sites | N/A | PAG3 | CH4; CO; H2; H2S; acetone; C3F8; toluene | SAM/SnO2 interface and uncovered SnO2 sites | incomplete SAM coverage | N/A | 10, 30, and 50 ppm | dry or humid air | N/A | total 500 sccm | N/A | N/A | 175 degC | N/A | N/A | N/A | N/A | gas-sensor response | N/A | marginal selectivity; CH4 responses 1.56, 1.69, 1.85 | N/A | LOD 990 ppb | six months; three cycles | surface_functionalization; adsorbate_landscape; hydrogen bonding |"

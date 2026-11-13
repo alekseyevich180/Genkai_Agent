@@ -17,6 +17,7 @@ from .protocol import (
     artifact_integrity_gate,
     resolve_launcher,
 )
+from .launchers import get_launcher_contract
 
 
 class MaceAdapter:
@@ -137,10 +138,11 @@ class MaceAdapter:
                 report.errors,
                 report.warnings,
             )
+        contract = get_launcher_contract("mace")
         executable = resolve_launcher(
             self.executable,
-            "GENKAI_MACE_LAUNCHER",
-            ("MACE_WORK_DIR", "MACE_PYTHON_ARGS", "MACE_DRY_RUN"),
+            contract.environment_variable,
+            contract.required_markers,
             mode,
             report.errors,
             report.warnings,

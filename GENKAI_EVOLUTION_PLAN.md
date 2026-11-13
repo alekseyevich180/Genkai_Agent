@@ -1327,40 +1327,126 @@ help、`paperread.surface list-tools`、launcher `bash -n`、clean-wheel
 
 优点是风险最低；缺点是只改善可读性，不能解决双重业务实现和依赖边界问题。
 
-当前决策状态：**等待用户选择 A、B 或 C**。未确认前不得开始批量移动文件。
+当前决策状态：**方案 A 已于 2026-08-03 获批并开始执行**。用户进一步确认
+`Genkai_Evolution/` 是专用于新结构的沙盒，不要求保留旧
+`paperread.surface.*` import 或 `python -m paperread.surface` CLI；因此 Task
+10–11 采用完整纵向迁移，不创建 compatibility shim。
 
-### 15.5 方案 A 获批后的建议任务
+### 15.5 方案 A 实施状态
 
-以下任务仅作为下一阶段入口；正式实施前仍需写设计文档和逐文件计划：
+Task 10–11 的历史 superpower 设计和逐文件计划已于 2026-08-31 按要求从
+`docs/` 清理；下方实施状态和 `docs/structure-baseline.md` 保留当前可用的事实记录。
 
-1. **Task 10：建立结构基线和依赖门禁**
+当前任务状态：
+
+1. **Task 10：建立结构基线和依赖门禁（已完成）**
    - 记录顶层目录、Python import、CLI、wheel 内容和 skill entrypoint 基线。
    - 增加测试，禁止 `src/genkai/` 反向导入 `paperread/` 私有实现或 skill
      scripts。
-2. **Task 11：迁移 surface literature 内核**
+   - 基线见 `docs/structure-baseline.md`；其中记录的两条 Task 12 技术债已于
+     2026-08-04 的 PToModel 收敛切片移除，当前门禁 allowlist 为空：
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.job_bundle.build_modeling_checklist`
+     - `src/genkai/modeling/ptomodel.py` ->
+       `paperread.surface.modeling.ptomodel.build_ptomodel_payload`
+2. **Task 11：迁移 surface literature 内核（已完成）**
    - 将稳定 extraction、experience 和 pipeline 业务实现迁入
-     `src/genkai/literature/`。
-   - `paperread.surface` 保留兼容导入与 CLI 转发。
-3. **Task 12：迁移 PToModel 与 surface modeling 内核**
-   - 将稳定规则、schema 和结构准备逻辑迁入 `src/genkai/modeling/`。
-   - 删除 skill scripts 中重复的业务规则，只保留薄入口。
+     `src/genkai/literature/surface/`。
+   - 共享 LLM 配置迁入 `src/genkai/llm.py`，组合入口迁入
+     `src/genkai/workflows/surface_paper.py`。
+   - 旧 surface literature import 和 module CLI 已删除；Agent paperread skill
+     脚本改为调用新库。
+   - wheel 显式包含全部 20 个 canonical material-class JSON 资源。
+   - unknown-term export 业务已归属 `src/genkai/literature/surface/experience/`；
+     `paperread` Skill 仅保留 CLI 包装器，不再通过 `sys.path` 注入源码路径。
+3. **Task 12：迁移 PToModel 与 surface modeling 内核（已完成）**
+   - PToModel 映射、modeling checklist 和 canonical task schema 已迁入
+     `src/genkai/modeling/`；旧 `paperread/surface/modeling/` 已删除。
+   - PToModel skill 已改为调用公共库 API 的薄入口，`src/genkai/` 对
+     `paperread` 的两条反向 import 已清零。
+   - vacancy、adsorbate、Materials Project slab、metal-cluster 与 cluster-search
+     算法已迁入 `src/genkai/modeling/surface/`；原 Skill 路径仅保留薄包装器。
+   - canonical task schema 已指向 Genkai 模块入口，离线架构、兼容性与 wheel
+     门禁均已验证；不包含外部科研运行时验证。
 4. **Task 13：收敛 compute、dataset 与 MLIP 入口**
-   - 统一 adapter 与 launcher contract 的所有权。
-   - 将稳定数据审计放在 `src/genkai/datasets/`，skill 中不保留第二份实现。
+   - 统一 adapter 与 launcher contract 的所有权，完成 `src/genkai/mlip/launchers.py`
+     注册表并由 MACE/DeepMD/UMA adapter 共同消费。
+   - 稳定数据审计归属 `src/genkai/datasets/`；架构门禁确认 VASP、MACE、DeepMD
+     和 UMA Skill 脚本不复制 artifact/training/dataset gate。
+   - 已完成离线集成回归、Skill `--help`/shell 语法和 wheel 导入验证；未运行
+     外部计算、训练或 scheduler。
 5. **Task 14：重组测试和 fixtures**
-   - 将契约、单元、集成、兼容和外部运行时测试明确分层。
-   - 将大型论文和生成样例从普通测试模块中分离，并记录来源和用途。
+   - 已通过 pytest marker 与目录约定明确契约、单元、集成、兼容和外部运行时测试层。
+   - 兼容性 characterization 测试已迁入 `tests/compatibility/`；外部测试保留在
+     `tests/external/` 并默认排除。
+   - 大型论文和生成样例已迁入 `tests/fixtures/archives/`，来源、用途和离线策略
+     记录在 `tests/fixtures/README.md`。
+   - 离线分层回归已验证；未执行外部运行时测试。
 6. **Task 15：根目录与弃用清理**
-   - 在至少一个弃用周期和完整兼容验证后，单独审查可删除的旧模块。
-   - 更新 README、迁移指南、wheel 清单和 work log。
+   - 已审查旧 surface owner、兼容 Skill 入口、研究资产和忽略的生成目录；仅
+     删除本地 `build/`/`Genkai.egg-info/` 生成状态，保留仍有用途的研究资产。
+   - 已新增 `docs/migration.md`，更新 README、wheel 门禁和 work log；干净 wheel
+     不再包含 `paperread/surface/`。
+   - 兼容测试与分层回归通过后，Task15 完成；未进行远端推送或外部科研运行。
+
+方案 A 的物理布局收敛补充：独立的 NERRE/ReactionSeek 历史资产已归档到
+`legacy/paperread/`，活动库和 Skill 不再与其共享顶层 owner；wheel package
+discovery 已移除 `paperread*`。
 
 ### 15.6 下一次会话恢复顺序
 
-1. 读取本节和 `work_logs/2026-07-30.md` 的“当前演进阶段复核与结构改造交接”。
-2. 确认用户选择的 A/B/C 结构方向。
-3. 审计 `Genkai_Evolution/` 工作树是否干净，并确认
-   `feat/genkai-evolution` 与远端指针。
-4. 按 Superpowers brainstorming 流程写入并审核：
-   `docs/superpowers/specs/2026-07-30-genkai-structure-convergence-design.md`。
-5. 用户批准设计后，再写逐文件 implementation plan；实现阶段采用测试先行，
-   每个迁移边界独立验证和提交。
+2026-11-13 起，`feat/genkai-evolution` 的结构收敛（Task 10–15）已 squash 合并进
+`main`，并与 `main` 上的正确性修复和 pymatgen 切面整合为检查点 tag
+`sage-checkpoint-0`。`main` 是唯一开发分支；`Genkai_Evolution/` 工作树和 feat 分支只作
+历史参考。
+
+1. 读取 `work_logs/2026-11-13.md`：检查点包含的内容、验证结果和未验证边界。
+2. 后续 SAGE（气体传感器表面自动建模）工作从 `work_logs/2026-08-05.md` 的 Task 2
+   （structure-only 执行器）继续；`slab_generation` 现已可执行，可作为执行器的上游任务。
+3. 保持外部科研运行时边界：未经授权不运行 VASP、UMA、GPU/PJM 或在线 LLM。
+
+
+
+  【目标】
+  修复或实现什么。
+
+  【验收标准】
+  1. 可观察的结果一
+  2. 可观察的结果二
+  3. 添加或更新测试
+
+  【保持不变】
+  - 现有公共接口
+  - artifact 数据格式
+  - 与任务无关的模块
+
+  【允许修改】
+  - src/genkai/...
+  - tests/...
+
+  【执行权限】
+  - 是否允许网络或在线 LLM
+  - 是否允许 Materials Project
+  - 是否允许 VASP、GPU/PJM、MLIP、训练或 MD
+  - 是否允许 commit、push
+
+  请先调查当前实现和测试，找到最小修改位置。
+  实施后运行相应验证，并逐项报告验收证据。
+
+  例如：
+
+  【目标】
+  修复 surface workflow 在空 relations 输入下产生无效 manifest 的问题。
+
+  【验收标准】
+  1. 空输入返回明确错误
+  2. 不写入不完整 manifest
+  3. 正常输入行为保持不变
+  4. 添加回归测试
+
+  【允许修改】
+  - src/genkai/workflows/
+  - tests/workflow/
+
+  【执行权限】
+  只允许离线测试，不允许网络、LLM、VASP、MLIP 或 PJM。

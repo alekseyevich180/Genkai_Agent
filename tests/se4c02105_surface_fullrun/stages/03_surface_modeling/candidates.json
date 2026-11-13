@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "dry-run",
+  "execution_state": "prepared",
+  "source_plan": "modeling/plan.json",
+  "tasks": [
+    "adsorbate_landscape"
+  ],
+  "manual_decisions": [
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "surface",
+      "status": "needs_upstream_artifact",
+      "source_term": "SnO2 nanowire surface",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "slab_generation.surface_structure"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "molecule",
+      "status": "needs_upstream_artifact",
+      "source_term": "H2",
+      "reason": "This parameter requires a real structure file produced or selected downstream; the paper only provides semantic context.",
+      "depends_on": [
+        "molecule_structure_file"
+      ]
+    },
+    {
+      "document_id": "surface_relations",
+      "task": "adsorbate_landscape",
+      "parameter": "coverage_counts",
+      "status": "needs_manual_decision",
+      "source_term": "self-assembled monolayer with incomplete surface coverage",
+      "reason": "Paper evidence narrows the context but does not uniquely determine this numeric or execution-time selection.",
+      "depends_on": []
+    }
+  ],
+  "structures": [],
+  "note": "Candidate commands are prepared; no modeling script was executed."
+}

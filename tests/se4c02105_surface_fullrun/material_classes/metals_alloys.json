@@ -1,0 +1,160 @@
+{
+  "schema_version": "2.0",
+  "material_class": "metals_alloys",
+  "updated_at": "2026-08-05T02:57:07.903580+00:00",
+  "summary": {
+    "terms": 2,
+    "known_useful": 1,
+    "unknown": 1
+  },
+  "keyword_inventory": {
+    "adsorption_sites": [
+      {
+        "term": "Au-catalyzed growth sites",
+        "count": 1,
+        "kind": "known_useful",
+        "research_category": "adsorption_reaction"
+      }
+    ],
+    "supports_surfaces": [
+      {
+        "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+        "count": 1,
+        "kind": "unknown_high_value",
+        "research_category": "unknown_information"
+      }
+    ]
+  },
+  "material_descriptors": {
+    "elements": [
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "O",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Si",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "material_kinds": [
+      {
+        "term": "oxide",
+        "count": 1
+      },
+      {
+        "term": "supported_catalyst",
+        "count": 1
+      },
+      {
+        "term": "surface",
+        "count": 1
+      }
+    ],
+    "component_compounds": [
+      {
+        "term": "Au electrode",
+        "count": 1
+      },
+      {
+        "term": "Au-catalyzed growth sites",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Si substrate",
+        "count": 1
+      },
+      {
+        "term": "SiO2",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "element_sets": [
+      {
+        "term": "{Au, O, Pt, Si, Ti}",
+        "count": 1
+      },
+      {
+        "term": "{Au}",
+        "count": 1
+      }
+    ]
+  },
+  "class_profile": {
+    "descriptor_schema": "alloy_profile",
+    "elements": [
+      {
+        "term": "Au",
+        "count": 2
+      },
+      {
+        "term": "O",
+        "count": 1
+      },
+      {
+        "term": "Pt",
+        "count": 1
+      },
+      {
+        "term": "Si",
+        "count": 1
+      },
+      {
+        "term": "Ti",
+        "count": 1
+      }
+    ],
+    "alloy_components": [],
+    "approx_compositions": [],
+    "exposed_surfaces": [],
+    "surface_index_mappings": [],
+    "crystal_structure_terms": [],
+    "surface_states": [],
+    "reaction_families": []
+  },
+  "entries": [
+    {
+      "term": "Au-catalyzed growth sites",
+      "kind": "known_useful",
+      "research_category": "adsorption_reaction",
+      "fields": [
+        "Adsorption Site"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    },
+    {
+      "term": "SiO2/Si substrate with Ti/Pt/Au electrode",
+      "kind": "unknown_high_value",
+      "research_category": "unknown_information",
+      "fields": [
+        "Surface/Support"
+      ],
+      "count": 1,
+      "example_contexts": [
+        "SnO2 nanowires"
+      ]
+    }
+  ]
+}

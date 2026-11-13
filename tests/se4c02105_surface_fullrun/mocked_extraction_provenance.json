@@ -1,0 +1,19 @@
+{
+  "source_pdf": "tests/se4c02105.pdf",
+  "llm_mode": "mocked_after_provider_retirement",
+  "provider_error": "410 github_models_retirement_brownout",
+  "scientific_calculation_executed": false,
+  "notes": "Deterministic mock responses were grounded in the PDF text and used only to exercise downstream code paths.",
+  "outputs": {
+    "text_path": "tests/se4c02105_surface_fullrun/se4c02105_text.txt",
+    "sections_path": "tests/se4c02105_surface_fullrun/se4c02105_sections.json",
+    "conditions_input_json": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input.json",
+    "relations_input_json": "tests/se4c02105_surface_fullrun/se4c02105_relations_input.json",
+    "raw_csv": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_raw.csv",
+    "conditions_csv": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_table.csv",
+    "time_csv": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_time.csv",
+    "relations_jsonl": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_surface_relations.jsonl",
+    "summary_txt": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_summary.txt",
+    "experience_material_classes_dir": "tests/se4c02105_surface_fullrun/material_classes"
+  }
+}

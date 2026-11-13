@@ -240,3 +240,6 @@ POT_GGA_PAW_PBE/
 # Front end
 web/vite-frontend/dist/
 web/vite-frontend/node_modules/
+
+# Process core dumps (core.<host>.<pid>); never commit them
+core.*.[0-9]*

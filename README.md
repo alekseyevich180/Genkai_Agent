@@ -35,7 +35,29 @@ The stable scientific workflow API now lives under `src/genkai/`. It provides
 versioned artifact/provenance contracts, atomic run manifests, artifact-aware
 DAG validation, surface workflow facades, VASP preparation/result boundaries,
 ASE dataset audits, and separate MACE, DeepMD, and UMA adapters. Existing
-`paperread.surface` and Agent entrypoints remain available during migration.
+Agent entrypoints now call this library. The removed `paperread.surface`
+literature imports and module CLI are not compatibility targets in this
+evolution workspace. Task 12's PToModel mapping, checklist, canonical
+surface-task schema, and surface structure-generation algorithms now live under
+`src/genkai/modeling/`; the original Skill paths remain thin compatibility
+wrappers.
+
+Task 13 also centralizes compute, dataset, and MLIP launcher contracts under
+`src/genkai/compute/`, `src/genkai/datasets/`, and `src/genkai/mlip/`. Skills
+retain only runtime/CLI orchestration; dataset and artifact gates are shared
+library code.
+
+Tests are organized by tier under `tests/contracts`, `tests/architecture`,
+`tests/modeling`, `tests/integrations`, `tests/compatibility`, and
+`tests/external`. Large paper and generated snapshots live under
+`tests/fixtures/archives/`; see [`tests/fixtures/README.md`](tests/fixtures/README.md)
+for provenance and offline-use rules.
+
+See [`docs/migration.md`](docs/migration.md) for current ownership, deprecated
+paths, and compatibility boundaries.
+
+Historical NERRE and ReactionSeek assets are retained under
+`legacy/paperread/`; they are not active package or workflow owners.
 
 Initialize and inspect an offline reference run:
 
@@ -54,9 +76,18 @@ no VASP, GPU, PJM, DeepMD, MACE, or UMA process. See
 [`docs/artifact-contracts.md`](docs/artifact-contracts.md) and
 [`docs/skill-development.md`](docs/skill-development.md).
 
-This workspace also introduces a paper-reading workflow under `paperread/`. The `paperread/surface/` toolkit can ingest surface-research PDFs or JSON text, extract surface materials, reaction/material parameters, adsorbates, active sites, defects, single atoms, clusters, and modeling keywords, then summarize the results for downstream modeling.
+The maintained paper-reading implementation lives under
+`src/genkai/literature/surface/`. It can ingest surface-research PDFs or JSON
+text, extract surface materials, reaction/material parameters, adsorbates,
+active sites, defects, single atoms, clusters, and modeling keywords, then
+hand structured relations to the workflow layer.
 
-Paperread now includes experience collection for surface research. Extracted useful or unknown information is accumulated by inorganic material class under `paperread/surface/experience/material_classes/`, such as `carbon_materials`, `single_atom_catalysts`, `oxides`, and `supported_catalysts`, so repeated paper-reading results can improve later schema, prompt, planner, and skill updates.
+Extracted useful or unknown information is accumulated by inorganic material
+class under
+`src/genkai/literature/surface/experience/material_classes/`, such as
+`carbon_materials`, `single_atom_catalysts`, `oxides`, and
+`supported_catalysts`, so repeated paper-reading results can improve later
+schema, prompt, planner, and skill updates.
 
 ### Paperread surface workflow
 
@@ -65,8 +96,9 @@ older standalone `ReactionSeek` or `NERRE` entrypoints. The maintained path is:
 
 ```text
 PDF or JSON paper text
--> paperread/surface extraction
--> condition table, time table, surface relations, summary, ptomodel bridge
+-> genkai.literature.surface extraction
+-> condition table, time table, surface relations, summary
+-> genkai.workflows.surface_paper artifact initialization and modeling plan
 -> material-class experience store
 -> skill-side unknown-term store and surface parameter registry
 ```
@@ -74,10 +106,9 @@ PDF or JSON paper text
 Run a single paper:
 
 ```bash
-python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
-  --input /path/to/paper.pdf \
-  --output-dir paperread_output \
-  --keep-intermediate \
+genkai-workflow surface run /path/to/paper.pdf \
+  --run-root paperread_output \
+  --input-format pdf \
   --collect-experience
 ```
 
@@ -88,20 +119,22 @@ Important paperread outputs:
 - `*_surface_relations.jsonl`: structured materials, surfaces, adsorbates,
   active sites, defects, single atoms, clusters, reactions, and modeling cues.
 - `*_summary.txt`: short human-readable extraction summary.
-- `*_ptomodel.json`: normalized bridge from paper facts to Agent modeling inputs.
-- `paperread/surface/experience/material_classes/*.json`: canonical reusable
+- `manifest.json` and artifact payloads: extraction, modeling-plan, and
+  structure-candidate provenance initialized by the workflow layer.
+- `src/genkai/literature/surface/experience/material_classes/*.json`: canonical reusable
   material-class keyword store.
 - `agents/Agent/skills/paperread/experience/surface_parameter_registry.{json,md}`:
   reusable vocabulary built from the canonical experience store.
 - `agents/Agent/skills/paperread/experience/unrecognized_surface_terms.jsonl`:
   unresolved surface-paper terms that may require ontology or workflow updates.
 
-For batch PDF work, always keep intermediates:
+For lower-level batch PDF extraction, the Agent paperread skill can retain
+intermediates without invoking the workflow-level modeling bridge:
 
 ```bash
 python agents/Agent/skills/paperread/scripts/paperread_tools.py surface-pipeline \
   --input /path/to/paper.pdf \
-  --output-dir tests/paperread_papers2_experience \
+  --output-dir tests/fixtures/archives/generated/paperread_papers2_experience \
   --keep-intermediate \
   --collect-experience
 ```
@@ -130,7 +163,7 @@ source .venv/bin/activate
 
 # 以可编辑模式安装 Agent，并安装测试工具
 uv pip install -e .
-uv pip install pytest
+uv pip install pytest pip setuptools wheel
 
 # 可选：从 GitHub 安装最新 pymatgen
 uv pip install "git+https://github.com/materialsproject/pymatgen.git"
@@ -380,10 +413,29 @@ python -m pytest \
 python -m pytest tests -v
 ```
 
-`tests/test_structure_builder.py` 目前依赖已经不存在的
-`agent.tools.structure_builder` 模块。因此，在恢复该模块或删除此测试前，
-完整测试套件无法全部通过。当前 `.github/workflows/test.yml` 中的 GitHub
-Actions 仅在推送和拉取请求时运行 `tests/test_agent.py`。
+完整测试需要安装 `pyproject.toml` 中的全部依赖（包括 `google-adk` 与
+`know-do-graph`）。依赖从未存在模块 `agent.tools.structure_builder` 的旧测试
+`tests/test_structure_builder.py` 已于 2026-11-13 删除，不再阻塞测试收集。当前
+`.github/workflows/test.yml` 中的 GitHub Actions 在推送和拉取请求时运行 Harness CI
+门禁，包括 Agent 导入、测试分层、架构边界和公共 CLI 帮助检查。
+
+### Development Harness
+
+开始修改仓库前请阅读根目录 [`AGENTS.md`](AGENTS.md)。项目专用的任务定义、分级
+验证、科学计算授权边界、失败恢复和完成报告方法见
+[`docs/harness-engineering.md`](docs/harness-engineering.md)。
+
+常用检查：
+
+```bash
+python scripts/check_harness.py doctor   # 静态项目与文档契约
+python scripts/check_harness.py quick    # 测试分层和架构门禁
+python scripts/check_harness.py ci       # 与 GitHub Actions 相同
+python scripts/check_harness.py package  # wheel 和 package data
+```
+
+这些命令要求已经激活 Python 3.12+ 的项目环境。局部或 CI 门禁通过不等于完整测试
+通过，涉及科学结果的修改仍需运行 `python -m pytest tests`。
 
 ## Skills
 Agent follows a modular design principle: skills are text files that define metadata, procedures and workflows. Some skills may require specialized tools (configured by `$PROJECT/agents/Agent/tools.py`), and some of them, e.g. tools for DFT calculations, may be hosted on MCP servers.

@@ -1,0 +1,835 @@
+{
+  "run_id": "se4c02105_surface_fullrun",
+  "schema_version": "1.0",
+  "created_at": "2026-08-05T02:57:54.590455Z",
+  "updated_at": "2026-08-05T02:58:34.213709Z",
+  "stages": [
+    {
+      "stage_id": "01_paperread",
+      "adapter": "genkai.literature.surface",
+      "execution_state": "succeeded",
+      "input_artifact_ids": [],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:paper",
+        "se4c02105_surface_fullrun:extraction"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "02_ptomodel",
+      "adapter": "genkai.modeling.ptomodel",
+      "execution_state": "succeeded",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:extraction"
+      ],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:modeling-plan"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "03_surface_modeling",
+      "adapter": "genkai.modeling.surface",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:modeling-plan"
+      ],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:structure-set"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "04_dft_prepare",
+      "adapter": "genkai.compute.vasp",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:structure-set"
+      ],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:vasp-input"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "04_dft_mock",
+      "adapter": "genkai.workflows.paper_to_mlip",
+      "execution_state": "succeeded",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:vasp-input"
+      ],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:mock-result"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "05_dataset",
+      "adapter": "genkai.datasets.ase",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:mock-result"
+      ],
+      "output_artifact_ids": [
+        "se4c02105_surface_fullrun:dataset"
+      ],
+      "validation": {
+        "errors": [],
+        "warnings": [],
+        "checks": []
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {}
+    },
+    {
+      "stage_id": "06_mace_preflight_dry_run",
+      "adapter": "genkai.mlip.mace",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:structure-set"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [],
+        "warnings": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "mace_structure_read_failed",
+            "message": "ASE could not read structure file: Does not resemble ASE JSON database",
+            "path": "/home/pj24001724/ku40000345/wu/Genkai_Evolution/tests/se4c02105_surface_fullrun/stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "empty_structure_set",
+            "message": "MACE inference requires at least one structure",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "mace_single_input_required",
+            "message": "the established MACE launcher accepts exactly one ASE-readable input file per command",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_MACE_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "dry-run",
+        "external_execution_started": false
+      }
+    },
+    {
+      "stage_id": "06_deepmd_preflight_dry_run",
+      "adapter": "genkai.mlip.deepmd",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:dataset"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [],
+        "warnings": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "mock_labels_not_trainable",
+            "message": "mock labels cannot be used for production model training",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_audit_required",
+            "message": "production training requires a passed file-derived dataset audit",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_split_inventory_required",
+            "message": "dataset requires a nonempty content-addressed split inventory",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_train_count_required",
+            "message": "production training requires a nonempty train_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_validation_count_required",
+            "message": "production training requires a nonempty validation_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "deepmd_input_required",
+            "message": "DeepMD training requires a run-local input JSON",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_DEEPMD_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "dry-run",
+        "external_execution_started": false
+      }
+    },
+    {
+      "stage_id": "06_uma_preflight_dry_run",
+      "adapter": "genkai.mlip.uma",
+      "execution_state": "prepared",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:dataset"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [],
+        "warnings": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "mock_labels_not_trainable",
+            "message": "mock labels cannot be used for production model training",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_audit_required",
+            "message": "production training requires a passed file-derived dataset audit",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_split_inventory_required",
+            "message": "dataset requires a nonempty content-addressed split inventory",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_train_count_required",
+            "message": "production training requires a nonempty train_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_validation_count_required",
+            "message": "production training requires a nonempty validation_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "uma_test_split_required",
+            "message": "UMA fine-tuning requires an independent test split",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "uma_lmdb_readback_required",
+            "message": "UMA fine-tuning requires successful ASE-LMDB readback",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "uma_base_model_identity_required",
+            "message": "UMA production requires base checkpoint version and SHA-256",
+            "path": "file:///mock/uma-s-1p2.pt",
+            "context": {}
+          },
+          {
+            "code": "uma_base_model_missing",
+            "message": "UMA base checkpoint file does not exist",
+            "path": "/mock/uma-s-1p2.pt",
+            "context": {}
+          },
+          {
+            "code": "uma_config_required",
+            "message": "UMA fine-tuning requires a run-local Hydra config",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_UMA_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "dry-run",
+        "external_execution_started": false
+      }
+    },
+    {
+      "stage_id": "06_mace_preflight_production",
+      "adapter": "genkai.mlip.mace",
+      "execution_state": "blocked",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:structure-set"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "mace_structure_read_failed",
+            "message": "ASE could not read structure file: Does not resemble ASE JSON database",
+            "path": "/home/pj24001724/ku40000345/wu/Genkai_Evolution/tests/se4c02105_surface_fullrun/stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "empty_structure_set",
+            "message": "MACE inference requires at least one structure",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "mace_single_input_required",
+            "message": "the established MACE launcher accepts exactly one ASE-readable input file per command",
+            "path": "stages/03_surface_modeling/candidates.json",
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_MACE_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "warnings": [],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "production",
+        "external_execution_started": false
+      }
+    },
+    {
+      "stage_id": "06_deepmd_preflight_production",
+      "adapter": "genkai.mlip.deepmd",
+      "execution_state": "blocked",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:dataset"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "mock_labels_not_trainable",
+            "message": "mock labels cannot be used for production model training",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_audit_required",
+            "message": "production training requires a passed file-derived dataset audit",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_split_inventory_required",
+            "message": "dataset requires a nonempty content-addressed split inventory",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_train_count_required",
+            "message": "production training requires a nonempty train_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_validation_count_required",
+            "message": "production training requires a nonempty validation_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "deepmd_input_required",
+            "message": "DeepMD training requires a run-local input JSON",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_DEEPMD_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "warnings": [],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "production",
+        "external_execution_started": false
+      }
+    },
+    {
+      "stage_id": "06_uma_preflight_production",
+      "adapter": "genkai.mlip.uma",
+      "execution_state": "blocked",
+      "input_artifact_ids": [
+        "se4c02105_surface_fullrun:dataset"
+      ],
+      "output_artifact_ids": [],
+      "validation": {
+        "errors": [
+          {
+            "code": "artifact_not_validated",
+            "message": "production inputs must have validation_status=passed",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "artifact_not_succeeded",
+            "message": "production inputs must have execution_state=succeeded",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "mock_labels_not_trainable",
+            "message": "mock labels cannot be used for production model training",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_audit_required",
+            "message": "production training requires a passed file-derived dataset audit",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "dataset_split_inventory_required",
+            "message": "dataset requires a nonempty content-addressed split inventory",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_train_count_required",
+            "message": "production training requires a nonempty train_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "nonempty_validation_count_required",
+            "message": "production training requires a nonempty validation_count",
+            "path": "stages/05_dataset/dataset.json",
+            "context": {}
+          },
+          {
+            "code": "uma_test_split_required",
+            "message": "UMA fine-tuning requires an independent test split",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "uma_lmdb_readback_required",
+            "message": "UMA fine-tuning requires successful ASE-LMDB readback",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "uma_base_model_identity_required",
+            "message": "UMA production requires base checkpoint version and SHA-256",
+            "path": "file:///mock/uma-s-1p2.pt",
+            "context": {}
+          },
+          {
+            "code": "uma_base_model_missing",
+            "message": "UMA base checkpoint file does not exist",
+            "path": "/mock/uma-s-1p2.pt",
+            "context": {}
+          },
+          {
+            "code": "uma_config_required",
+            "message": "UMA fine-tuning requires a run-local Hydra config",
+            "path": null,
+            "context": {}
+          },
+          {
+            "code": "runtime_executable_required",
+            "message": "configure an executable with GENKAI_UMA_LAUNCHER; the adapter will not guess an external runtime",
+            "path": null,
+            "context": {}
+          }
+        ],
+        "warnings": [],
+        "checks": [
+          {
+            "code": "workflow_contracts_valid",
+            "message": "all workflow artifact dependencies are satisfiable",
+            "path": null,
+            "context": {}
+          }
+        ]
+      },
+      "started_at": null,
+      "finished_at": null,
+      "metadata": {
+        "mode": "production",
+        "external_execution_started": false
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "se4c02105_surface_fullrun:paper",
+      "schema_version": "1.0",
+      "path": "article.json",
+      "sha256": "55e8d7f3b80ac2495be30bdbdd035bacd0cbb627f81a571bd7435db4376ed6a0",
+      "producer": "genkai.literature.surface",
+      "parent_ids": [],
+      "execution_state": "succeeded",
+      "evidence_level": "paper_extracted",
+      "validation_status": "passed",
+      "metadata": {
+        "source_uri": "tests/se4c02105_surface_fullrun/se4c02105_conditions_input_surface_relations_compact.jsonl"
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.591162Z"
+      },
+      "artifact_type": "paper"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:extraction",
+      "schema_version": "1.0",
+      "path": "stages/01_paperread/extraction.jsonl",
+      "sha256": "d18cfe9a9fece7d499d55e1fd84c4857c12b1f01f499406659f5a0faf9f16b43",
+      "producer": "genkai.literature.surface",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:paper"
+      ],
+      "execution_state": "succeeded",
+      "evidence_level": "paper_extracted",
+      "validation_status": "passed",
+      "metadata": {
+        "record_count": 1
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.591668Z"
+      },
+      "artifact_type": "extraction"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:modeling-plan",
+      "schema_version": "1.0",
+      "path": "modeling/plan.json",
+      "sha256": "74cb8cb36ad6275fcefc3ecfb350e00bb94d35545f7c75dc41344d153fe364e9",
+      "producer": "genkai.modeling.ptomodel",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:extraction"
+      ],
+      "execution_state": "succeeded",
+      "evidence_level": "heuristic",
+      "validation_status": "needs_review",
+      "metadata": {
+        "checklist_path": "modeling/checklist.json",
+        "review_item_count": 3
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.631265Z"
+      },
+      "artifact_type": "modeling-plan"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:structure-set",
+      "schema_version": "1.0",
+      "path": "stages/03_surface_modeling/candidates.json",
+      "sha256": "9dec97b8d9ed953ba1a4190d4e2377710a0b64e1c916bac2172aea709c422343",
+      "producer": "genkai.modeling.surface",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:modeling-plan"
+      ],
+      "execution_state": "prepared",
+      "evidence_level": "heuristic",
+      "validation_status": "needs_review",
+      "metadata": {
+        "structure_count": 0,
+        "mode": "dry-run",
+        "contains_command_plan_only": true
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.639171Z"
+      },
+      "artifact_type": "structure-set"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:vasp-input",
+      "schema_version": "1.0",
+      "path": "stages/04_dft/input-plan.json",
+      "sha256": "6392aed8598b70d2dda8c7ff0ef6762d320e705b805bd2f5daf433269b341414",
+      "producer": "genkai.compute.vasp",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:structure-set"
+      ],
+      "execution_state": "prepared",
+      "evidence_level": "heuristic",
+      "validation_status": "needs_review",
+      "metadata": {
+        "scheduler_submitted": false,
+        "calculation_dirs": []
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.645735Z"
+      },
+      "artifact_type": "calculation-input"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:mock-result",
+      "schema_version": "1.0",
+      "path": "stages/04_dft/mock-results.extxyz",
+      "sha256": "cbeca295747f996ee432c6e01763e41e8646195f8a0aad2bac143e51d6174e88",
+      "producer": "genkai.workflows.paper_to_mlip",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:vasp-input"
+      ],
+      "execution_state": "succeeded",
+      "evidence_level": "mock",
+      "validation_status": "needs_review",
+      "metadata": {
+        "label_source": "mock fixture"
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.652495Z"
+      },
+      "artifact_type": "calculation-result"
+    },
+    {
+      "artifact_id": "se4c02105_surface_fullrun:dataset",
+      "schema_version": "1.0",
+      "path": "stages/05_dataset/dataset.json",
+      "sha256": "46494cda283f9abf98db6dc8c52eefde1c7a1266c7906e538fa347d7119f878a",
+      "producer": "genkai.datasets.ase",
+      "parent_ids": [
+        "se4c02105_surface_fullrun:mock-result"
+      ],
+      "execution_state": "prepared",
+      "evidence_level": "mock",
+      "validation_status": "needs_review",
+      "metadata": {
+        "label_source": "mock",
+        "energy_unit": "eV",
+        "force_unit": "eV/angstrom",
+        "stress_unit": "eV/angstrom^3",
+        "electronic_structure_method": "mock",
+        "functional": "not_applicable",
+        "pseudopotential_family": "not_applicable",
+        "split_strategy": "fixture",
+        "train_count": 0,
+        "validation_count": 0,
+        "test_count": 0,
+        "cross_split_leakage": 0,
+        "lmdb_readback": false,
+        "audit_status": "NOT_RUN",
+        "source_integrity_verified": true,
+        "split_inventory": [],
+        "lmdb_readback_counts": {}
+      },
+      "provenance": {
+        "source": null,
+        "software": null,
+        "software_version": null,
+        "parameters": {},
+        "environment": {},
+        "created_at": "2026-08-05T02:57:54.660013Z"
+      },
+      "artifact_type": "dataset"
+    }
+  ],
+  "external_resources": [
+    {
+      "uri": "file:///mock/uma-s-1p2.pt",
+      "resource_type": "uma-checkpoint",
+      "version": "mock-not-for-training",
+      "sha256": null,
+      "read_only": true
+    }
+  ],
+  "validation": {
+    "errors": [],
+    "warnings": [],
+    "checks": []
+  },
+  "metadata": {}
+}

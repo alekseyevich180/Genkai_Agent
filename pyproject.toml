@@ -44,10 +44,16 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src", "."]
-include = ["agent*", "agents*", "genkai*", "paperread*"]
+include = ["agent*", "agents*", "genkai*"]
 exclude = ["tests*"]
 
 [tool.setuptools.package-data]
+"genkai.literature.surface" = [
+    "experience/material_classes/*.json",
+]
+"genkai.modeling" = [
+    "schema/*.json",
+]
 "agents.Agent" = [
     "agents/*.yaml",
     "skills/*/SKILL.md",
@@ -62,6 +68,16 @@ exclude = ["tests*"]
     "skills/*/scripts/*",
     "skills/*/scripts/*/*",
 ]
+
+[tool.pytest.ini_options]
+markers = [
+    "unit: isolated deterministic test",
+    "contract: artifact or API contract test",
+    "integration: offline multi-component test",
+    "compatibility: legacy entrypoint compatibility test",
+    "external: requires external runtime or network and is opt-in",
+]
+addopts = "-m 'not external'"
 
 [project.scripts]
 agent = "agent.init.start_agent:main"

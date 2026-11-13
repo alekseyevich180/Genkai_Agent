@@ -2,15 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
-
-REPO_ROOT = Path(__file__).resolve().parents[5]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
-from paperread.surface.experience.parameter_registry import (
+from genkai.literature.surface.experience.parameter_registry import (
     DEFAULT_MATERIAL_CLASS_DIR,
     DEFAULT_REGISTRY_MARKDOWN_PATH,
     DEFAULT_REGISTRY_PATH,
