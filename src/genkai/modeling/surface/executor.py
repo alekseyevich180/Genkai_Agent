@@ -519,6 +519,9 @@ def _materialize_slab(
         bulk, metadata = bulk_provider(formula=slab_plan["formula"])
         formula, spacegroup = metadata.get("formula"), metadata.get("spacegroup_symbol")
         source = {"type": "materials_project", **metadata}
+    # A facet typed by the user refers to the user's bulk cell; paper and registry
+    # facets (and any Materials Project cell) use the conventional standard setting.
+    miller_basis = "auto" if slab_plan.get("facet_source") == "override" and slab_plan["mode"] == "bulk" else "conventional"
     try:
         result = build_slab(
             bulk,
@@ -526,6 +529,7 @@ def _materialize_slab(
             settings=SlabSettings(),
             formula=formula,
             spacegroup_symbol=spacegroup,
+            miller_basis=miller_basis,
         )
     except ValueError as exc:
         raise SurfaceExecutionBlocked({"surface_facet": str(exc)}) from exc
@@ -540,6 +544,7 @@ def _materialize_slab(
         "facet": manifest["facet"]["miller_index"],
         "facet_source": slab_plan.get("facet_source"),
         "facet_selection": manifest["facet"]["selection_source"],
+        "miller_basis": manifest["facet"]["miller_basis"],
         "selected_termination": manifest["selected_termination"],
         "geometry": manifest["slab"],
     }

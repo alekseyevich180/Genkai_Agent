@@ -72,7 +72,9 @@ Optional for real MLIP relaxation:
 Script (thin entry over `genkai.modeling.surface.slab`):
 
 ```bash
-python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py   --bulk CeO2_bulk.cif   --output-dir modeling/slab
+python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py \
+  --bulk my_bulk.cif --facet "(110)" \
+  --output-dir modeling/slab
 ```
 
 The bulk can also come from Materials Project with `--formula CeO2` or
@@ -81,26 +83,37 @@ rejected.
 
 What the generator does:
 
-1. Converts the bulk to the conventional standard cell, so Miller indices mean
-   what papers mean. Materials Project often returns primitive cells, where
-   `(1,0,0)` of an fcc primitive basis is a conventional `{111}` plane.
+1. Interprets `--facet` in the right cell (`--miller-basis`, default `auto`):
+   the input cell as given, so an index typed for a non-standard setting (e.g.
+   monoclinic WO3 in P2_1/n) keeps its meaning; a primitive cell of a centered
+   lattice is converted to the conventional standard cell, as papers use it
+   (`(1,0,0)` of an fcc primitive basis is a conventional `{111}` plane).
+   Registry, surface-energy and Materials Project facets always use the
+   conventional standard cell. The choice and reason are printed and stored in
+   `slab_manifest.json` (`facet.miller_basis`).
 2. Resolves the facet: `--facet` (paper or user) -> surface-energy ranking when
    `--calculator emt|uma` (Wulff area fraction over facets up to
    `--max-index`) -> reviewed stable-facet registry -> stop for manual review.
 3. Enumerates all terminations with pymatgen `SlabGenerator` and prefers
    non-polar, stoichiometric, symmetric ones. Polarity is evaluated with guessed
    oxidation states.
-4. Makes `c` orthogonal to the surface, tiles laterally to `--min-lateral-size`
-   (default 8 A perpendicular width), fixes layers below `--fixed-fraction`
-   (default 0.5) or the bottom `--fixed-layers`, and tags atoms
-   (0 = fixed subsurface, 1 = free surface region).
-5. Validates vacuum, interatomic distances, lateral size, polarity and
+4. Makes `c` orthogonal to the surface, wraps atoms into the cell in-plane,
+   tiles laterally to `--min-lateral-size` (default 8 A perpendicular width),
+   fixes layers below `--fixed-fraction` (default 0.5) or the bottom
+   `--fixed-layers`, and tags atoms (0 = fixed subsurface, 1 = free surface
+   region).
+5. Places the slab at the bottom of the cell, `--bottom-margin` (default 0.5 A)
+   above it, with all vacuum above the top surface; `--slab-position center`
+   splits the vacuum instead.
+6. Validates vacuum, interatomic distances, lateral size, polarity and
    stoichiometry; the script exits with code 2 when validation fails.
 
 Rank facets by surface energy with UMA (or `--calculator emt` for EMT metals):
 
 ```bash
-python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py   --bulk Pt_bulk.cif --calculator uma --uma-model uma-s-1p2 --task-name omat   --device cuda --max-index 2 --relax-steps 100 --output-dir modeling/slab
+python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py \
+  --bulk Pt_bulk.cif --calculator uma --uma-model uma-s-1p2 --task-name omat \
+  --device cuda --max-index 2 --relax-steps 100 --output-dir modeling/slab
 ```
 
 Surface energies use `gamma = (E_slab - N * e_bulk) / (2A)` and are defined only
@@ -193,6 +206,12 @@ E_vac = E_defect - E_clean + m * mu_O
 ```
 
 For physical runs, set `--calculator uma --uma-model uma-s-1p2 --device cuda` and choose `--mu-o` consistently with the oxygen chemical-potential reference.
+
+The `--z-frac-min/--z-frac-max` window is a fraction of the cell height, so it
+depends on where the slab sits. Slabs from `slab_generation` sit at the bottom
+of the cell: select top-surface oxygen with
+`z_frac_min = (z_top_O - 1.0 A) / c`, using the top oxygen height of the slab,
+not the 0.5-1.0 window of the centered example above.
 
 `--task-name` is the UMA task head passed to `FAIRChemCalculator` (default `omat`; the cluster search below uses `--task_name`, default `oc22`). Choose it deliberately for the system and check that the selected model exposes it. Every script writes `run_config.json` to its output directory with the calculator, model, task head and device actually used.
 

@@ -192,10 +192,18 @@ class SlabSettings:
     layer_tolerance: float = 0.3
     min_interatomic_distance: float = 0.7
     symprec: float = 0.1
+    # "bottom": lowest atom at ``bottom_margin`` above the cell bottom, all vacuum
+    # above the slab; "center": vacuum split above and below.
+    slab_position: str = "bottom"
+    bottom_margin: float = 0.5
 
     def __post_init__(self) -> None:
         if self.min_slab_size <= 0 or self.min_vacuum_size <= 0 or self.min_lateral_size <= 0:
             raise ValueError("Slab, vacuum and lateral sizes must be positive.")
+        if self.slab_position not in ("bottom", "center"):
+            raise ValueError("slab_position must be 'bottom' or 'center'.")
+        if not 0.0 <= self.bottom_margin < self.min_vacuum_size:
+            raise ValueError("bottom_margin must satisfy 0 <= bottom_margin < min_vacuum_size.")
         if not 0.0 <= self.fixed_fraction < 1.0:
             raise ValueError("fixed_fraction must satisfy 0 <= fixed_fraction < 1.")
         if self.fixed_layers is not None and self.fixed_layers < 0:
@@ -214,6 +222,8 @@ class SlabSettings:
             "layer_tolerance_A": self.layer_tolerance,
             "min_interatomic_distance_A": self.min_interatomic_distance,
             "symprec": self.symprec,
+            "slab_position": self.slab_position,
+            "bottom_margin_A": self.bottom_margin,
         }
 
 
@@ -288,6 +298,9 @@ class SlabBuildResult:
     validation: ValidationReport
     geometry: dict[str, Any]
     settings: SlabSettings
+    cut_cell: Structure | None = None
+    miller_basis: str = "conventional_standard"
+    miller_basis_reason: str = ""
 
     def manifest(self) -> dict[str, Any]:
         return {
@@ -305,6 +318,9 @@ class SlabBuildResult:
                 "miller_index": list(self.facet.miller_index),
                 "selection_source": self.facet.source,
                 "reason": self.facet.reason,
+                "miller_basis": self.miller_basis,
+                "miller_basis_reason": self.miller_basis_reason,
+                "cut_cell": _describe_lattice(self.cut_cell if self.cut_cell is not None else self.bulk),
             },
             "facet_screening": self.screening.summary() if self.screening else None,
             "selected_termination": self.selected.summary(),
@@ -349,6 +365,62 @@ def conventional_bulk(structure: Structure, symprec: float = 0.1, max_gap: float
     return SpacegroupAnalyzer(plain, symprec=symprec).get_conventional_standard_structure()
 
 
+MILLER_BASES = ("auto", "conventional", "input")
+
+
+def _same_lattice(first: Any, second: Any, length_tol: float = 0.02, angle_tol: float = 0.5) -> bool:
+    return bool(
+        np.allclose(first.abc, second.abc, atol=length_tol)
+        and np.allclose(first.angles, second.angles, atol=angle_tol)
+    )
+
+
+def _describe_lattice(structure: Structure) -> str:
+    a, b, c = structure.lattice.abc
+    alpha, beta, gamma = structure.lattice.angles
+    return f"a={a:.3f} b={b:.3f} c={c:.3f} A, alpha={alpha:.1f} beta={beta:.1f} gamma={gamma:.1f}"
+
+
+def select_cut_cell(
+    bulk: Structure,
+    conventional: Structure,
+    *,
+    facet_given: bool,
+    miller_basis: str = "auto",
+) -> tuple[Structure, str, str]:
+    """Cell whose axes define the Miller index, its label and the reason.
+
+    ``auto``: registry/screening facets and primitive cells of centered lattices
+    use the conventional standard cell (the convention of papers); otherwise the
+    input cell is used as given, so a Miller index typed for a non-standard
+    setting (e.g. monoclinic WO3 in P2_1/n) keeps its meaning.
+    """
+    if miller_basis not in MILLER_BASES:
+        raise ValueError(f"miller_basis must be one of {', '.join(MILLER_BASES)}.")
+    plain = bulk.copy()
+    plain.remove_oxidation_states()
+    if not facet_given:
+        return conventional, "conventional_standard", (
+            "Registry and surface-energy facets refer to the conventional standard cell."
+        )
+    if miller_basis == "conventional":
+        return conventional, "conventional_standard", "Requested: the Miller index refers to the conventional standard cell."
+    if miller_basis == "input":
+        return plain, "input_cell", "Requested: the Miller index refers to the input cell as given."
+    if len(plain) < len(conventional):
+        return conventional, "conventional_standard", (
+            f"The input is a primitive cell ({len(plain)} atoms; conventional cell {len(conventional)}), so the "
+            "Miller index is interpreted in the conventional standard cell, as in papers."
+        )
+    if len(plain) == len(conventional) and _same_lattice(plain.lattice, conventional.lattice):
+        return conventional, "conventional_standard", "The input cell matches the conventional standard cell."
+    return plain, "input_cell", (
+        f"The input cell ({_describe_lattice(plain)}) differs from the conventional standard cell "
+        f"({_describe_lattice(conventional)}); the Miller index is interpreted in the input cell as given. "
+        "Use miller_basis='conventional' for the standard setting."
+    )
+
+
 def _with_oxidation_states(structure: Structure) -> tuple[Structure, bool]:
     """Decorate with oxidation states so slab polarity can be evaluated.
 
@@ -374,7 +446,7 @@ def enumerate_terminations(
     miller_index: Sequence[int],
     settings: SlabSettings,
 ) -> list[SlabCandidate]:
-    """All distinct terminations of one facet. ``bulk`` must be the conventional cell."""
+    """All distinct terminations of one facet; ``bulk`` is the cell whose axes define the Miller index."""
     miller = parse_miller_index(miller_index)
     decorated, polarity_known = _with_oxidation_states(bulk)
     generator = SlabGenerator(
@@ -602,6 +674,17 @@ def finalize_slab(candidate: SlabCandidate, settings: SlabSettings) -> tuple[Ato
     atoms.wrap(pbc=[True, True, False])
     atoms = atoms.repeat((repeats[0], repeats[1], 1))
 
+    # c is the surface normal here, so z positions map directly onto the cell height.
+    cell_height = float(np.linalg.norm(atoms.cell.array[2]))
+    z_values = atoms.positions[:, 2]
+    if settings.slab_position == "bottom":
+        shift = settings.bottom_margin - float(z_values.min())
+    else:
+        shift = 0.5 * cell_height - 0.5 * float(z_values.min() + z_values.max())
+    atoms.translate([0.0, 0.0, shift])
+    z_bottom = float(atoms.positions[:, 2].min())
+    z_top = float(atoms.positions[:, 2].max())
+
     layers = atomic_layers(atoms.positions[:, 2], settings.layer_tolerance)
     fixed = _fixed_indices(atoms, layers, settings)
     tags = np.ones(len(atoms), dtype=int)
@@ -623,6 +706,9 @@ def finalize_slab(candidate: SlabCandidate, settings: SlabSettings) -> tuple[Ato
         "surface_area_A2": round(area, 4),
         "thickness_A": round(float(np.ptp(atoms.positions[:, 2])), 4),
         "vacuum_gap_A": round(vacuum_gap_angstrom(atoms), 4),
+        "slab_position": settings.slab_position,
+        "vacuum_below_A": round(z_bottom, 4),
+        "vacuum_above_A": round(cell_height - z_top, 4),
         "n_layers": len(layers),
         "n_fixed_atoms": len(fixed),
         "fixed_policy": (
@@ -752,16 +838,24 @@ def build_slab(
     max_index: int = 1,
     formula: str | None = None,
     spacegroup_symbol: str | None = None,
+    miller_basis: str = "auto",
 ) -> SlabBuildResult:
     """Build a validated slab from a bulk crystal.
 
     Facet order: explicit ``facet`` -> surface-energy screening when
     ``energy_fn`` is given -> reviewed registry -> ``ValueError`` for manual
     review. With an explicit facet and ``energy_fn``, terminations are ranked
-    by surface energy.
+    by surface energy. ``miller_basis`` decides which cell's axes the explicit
+    facet refers to (see :func:`select_cut_cell`).
     """
     settings = settings or SlabSettings()
     conventional = conventional_bulk(bulk, settings.symprec)
+    cut_cell, basis, basis_reason = select_cut_cell(
+        bulk,
+        conventional,
+        facet_given=facet is not None,
+        miller_basis=miller_basis,
+    )
     screening: FacetScreening | None = None
 
     if facet is not None:
@@ -788,9 +882,9 @@ def build_slab(
     if screening is not None and miller in screening.candidates:
         candidates = screening.candidates[miller]
     else:
-        candidates = enumerate_terminations(conventional, miller, settings)
+        candidates = enumerate_terminations(cut_cell, miller, settings)
         if energy_fn is not None:
-            bulk_energy = bulk_energy_per_atom(conventional, energy_fn)
+            bulk_energy = bulk_energy_per_atom(cut_cell, energy_fn)
             for candidate in candidates:
                 assign_surface_energy(candidate, energy_fn, bulk_energy)
         candidates.sort(key=SlabCandidate.sort_key)
@@ -808,6 +902,9 @@ def build_slab(
         validation=validation,
         geometry=geometry,
         settings=settings,
+        cut_cell=cut_cell,
+        miller_basis=basis,
+        miller_basis_reason=basis_reason,
     )
 
 
@@ -841,6 +938,11 @@ def write_slab_outputs(
         "bulk_conventional": str(bulk_path),
         "slab_manifest": str(manifest_path),
     }
+    if result.miller_basis == "input_cell" and result.cut_cell is not None:
+        # The facet was cut in the user's own cell; keep that cell next to the slab.
+        cut_cell_path = outdir / "bulk_cut_cell.cif"
+        result.cut_cell.to(filename=str(cut_cell_path), fmt="cif")
+        manifest["files"]["bulk_cut_cell"] = str(cut_cell_path)
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest
 
@@ -917,6 +1019,27 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--repeat-xy", default="auto", help="'auto' (from --min-lateral-size) or two integers.")
     parser.add_argument("--fixed-fraction", type=float, default=0.5, help="Fix layers below this fraction of the thickness.")
     parser.add_argument("--fixed-layers", type=int, default=None, help="Fix this many bottom layers instead.")
+    parser.add_argument(
+        "--slab-position",
+        choices=["bottom", "center"],
+        default="bottom",
+        help="bottom: slab at the cell bottom with all vacuum above (default); center: vacuum on both sides.",
+    )
+    parser.add_argument(
+        "--bottom-margin",
+        type=float,
+        default=0.5,
+        help="Gap in A between the cell bottom and the lowest atom for --slab-position bottom.",
+    )
+    parser.add_argument(
+        "--miller-basis",
+        choices=list(MILLER_BASES),
+        default="auto",
+        help=(
+            "Cell whose axes define --facet. auto: the input cell as given, except primitive cells of centered "
+            "lattices, which use the conventional standard cell; conventional; input."
+        ),
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--prefix", default="slab")
     return parser
@@ -931,6 +1054,8 @@ def main(argv: list[str] | None = None) -> int:
         repeat_xy=_parse_repeat_xy(args.repeat_xy),
         fixed_fraction=args.fixed_fraction,
         fixed_layers=args.fixed_layers,
+        slab_position=args.slab_position,
+        bottom_margin=args.bottom_margin,
     )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     run_config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
@@ -961,6 +1086,8 @@ def main(argv: list[str] | None = None) -> int:
         max_index=args.max_index,
         formula=formula,
         spacegroup_symbol=spacegroup,
+        # Materials Project facets come from papers, which use the standard setting.
+        miller_basis=args.miller_basis if args.bulk is not None else "conventional",
     )
     energy_model = None
     if calculator is not None:
@@ -983,8 +1110,9 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     selected = manifest["selected_termination"]
-    print(f"Bulk: {manifest['bulk']['formula']} ({manifest['bulk']['spacegroup_symbol']}, conventional cell)")
+    print(f"Bulk: {manifest['bulk']['formula']} ({manifest['bulk']['spacegroup_symbol']})")
     print(f"Facet: {manifest['facet']['miller_index']} via {manifest['facet']['selection_source']}")
+    print(f"Miller basis: {manifest['facet']['miller_basis']} - {manifest['facet']['miller_basis_reason']}")
     if manifest["facet_screening"]:
         for row in manifest["facet_screening"]["facets"]:
             print(
@@ -997,7 +1125,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     print(
         f"Slab: {manifest['slab']['n_atoms']} atoms, repeat {manifest['slab']['repeat_xy']}, "
-        f"{manifest['slab']['n_fixed_atoms']} fixed, vacuum {manifest['slab']['vacuum_gap_A']} A"
+        f"{manifest['slab']['n_fixed_atoms']} fixed; placed at the {manifest['slab']['slab_position']}, "
+        f"vacuum below {manifest['slab']['vacuum_below_A']} A / above {manifest['slab']['vacuum_above_A']} A"
     )
     for issue in result.validation.warnings:
         print(f"WARNING [{issue.code}] {issue.message}")

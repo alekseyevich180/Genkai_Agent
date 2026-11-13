@@ -111,6 +111,62 @@ def test_bottom_is_fixed_tagged_and_cell_is_wide_enough() -> None:
     assert set(np.flatnonzero(layered.atoms.get_tags() == 0)) == set(np.concatenate(layers[:2]))
 
 
+def test_slab_sits_at_the_bottom_with_all_vacuum_above_by_default() -> None:
+    result = build_slab(fcc("Pt", 3.92), facet="111")
+    z = result.atoms.positions[:, 2]
+    height = result.atoms.cell.array[2, 2]
+
+    assert np.isclose(z.min(), 0.5)  # default bottom margin
+    assert result.geometry["slab_position"] == "bottom"
+    assert np.isclose(result.geometry["vacuum_below_A"], 0.5)
+    assert np.isclose(result.geometry["vacuum_above_A"], height - z.max(), atol=1e-3)
+    assert result.geometry["vacuum_above_A"] >= 14.5
+    assert result.validation.passed
+
+    flush = build_slab(fcc("Pt", 3.92), facet="111", settings=SlabSettings(bottom_margin=0.0))
+    assert np.isclose(flush.atoms.positions[:, 2].min(), 0.0)
+
+    centered = build_slab(fcc("Pt", 3.92), facet="111", settings=SlabSettings(slab_position="center"))
+    assert abs(centered.geometry["vacuum_below_A"] - centered.geometry["vacuum_above_A"]) < 0.01
+
+
+def _axis_permuted_rutile() -> Structure:
+    """Rutile SnO2 written with its 4-fold axis along a: a non-standard setting."""
+    standard = Structure.from_spacegroup(
+        "P4_2/mnm", Lattice.tetragonal(4.737, 3.186), ["Sn", "O"], [[0, 0, 0], [0.3057, 0.3057, 0]]
+    )
+    return Structure(
+        Lattice.orthorhombic(3.186, 4.737, 4.737),
+        [site.specie for site in standard],
+        [[z, x, y] for x, y, z in standard.frac_coords],
+    )
+
+
+def test_miller_index_refers_to_the_input_cell_for_non_standard_settings(tmp_path: Path) -> None:
+    permuted = _axis_permuted_rutile()
+
+    as_given = build_slab(permuted, facet="(100)")
+    assert as_given.miller_basis == "input_cell"
+    # (100) of the permuted cell is the square (001) plane of standard rutile.
+    assert np.allclose(sorted(as_given.selected.slab.lattice.abc[:2]), [4.737, 4.737], atol=1e-3)
+    files = write_slab_outputs(as_given, tmp_path)["files"]
+    assert Path(files["bulk_cut_cell"]).is_file()
+
+    standard = build_slab(permuted, facet="(100)", miller_basis="conventional")
+    assert standard.miller_basis == "conventional_standard"
+    assert np.allclose(sorted(standard.selected.slab.lattice.abc[:2]), [3.186, 4.737], atol=1e-3)
+
+
+def test_primitive_input_with_explicit_facet_uses_the_conventional_cell() -> None:
+    primitive = SpacegroupAnalyzer(rock_salt_mgo()).get_primitive_standard_structure()
+
+    result = build_slab(primitive, facet="(100)")
+
+    assert result.miller_basis == "conventional_standard"
+    assert "primitive cell" in result.miller_basis_reason
+    assert all(layer == {"Mg", "O"} for layer in layer_symbols(result.atoms))  # true {100}
+
+
 def test_tilted_facets_are_wrapped_in_plane_without_changing_geometry() -> None:
     # Wurtzite (10-10) gets a tilted c that orthogonalization leaves as a staircase.
     zno = Structure.from_spacegroup(
@@ -200,4 +256,6 @@ def test_cli_ranks_facets_with_emt_and_writes_outputs(tmp_path: Path) -> None:
     assert manifest["facet"]["miller_index"] == [1, 1, 1]
     assert manifest["energy_model"]["calculator"] == "emt"
     assert manifest["facet_evidence_level"] == "heuristic"
+    assert manifest["slab"]["slab_position"] == "bottom"
+    assert manifest["slab"]["vacuum_below_A"] == 0.5
     assert (output_dir / "slab.vasp").exists() and (output_dir / "run_config.json").exists()

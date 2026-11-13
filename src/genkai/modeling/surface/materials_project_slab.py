@@ -165,6 +165,8 @@ def download_stable_surface(
         settings=_settings(min_slab_size, min_vacuum_size, repeat_xy),
         formula=mp_metadata["formula"],
         spacegroup_symbol=mp_metadata.get("spacegroup_symbol"),
+        # Facets on this route come from papers or the registry: standard setting.
+        miller_basis="conventional",
     )
 
     bulk_path = outdir / "bulk_from_materials_project.cif"
