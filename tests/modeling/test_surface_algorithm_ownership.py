@@ -14,6 +14,11 @@ def test_surface_algorithm_modules_have_library_owners() -> None:
         "genkai.modeling.surface.metal_cluster.hcp",
         "genkai.modeling.surface.metal_cluster.cluster_builder",
         "genkai.modeling.surface.metal_cluster.surface_cluster_builder",
+        "genkai.modeling.surface.structure_io",
+        "genkai.modeling.surface.sites",
+        "genkai.modeling.surface.substrate",
+        "genkai.modeling.surface.sam",
+        "genkai.modeling.surface.amorphous_overlayer",
     )
     for name in modules:
         module = importlib.import_module(name)
