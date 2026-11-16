@@ -590,7 +590,17 @@ def main(argv: list[str] | None = None) -> int:
     output_root = args.output_dir or Path(tempfile.mkdtemp(prefix="genkai_modeling_smoke_"))
     output_root = output_root.resolve()
     output_root.mkdir(parents=True, exist_ok=True)
-    print(f"Profile {args.profile}; {len(cases)} case(s); output {output_root}")
+    not_selected = [case.case_id for case in CASES if case not in cases]
+    selection = {
+        "only": args.only,
+        "skip": args.skip,
+        "selected": len(cases),
+        "total": len(CASES),
+        "not_selected": not_selected,
+    }
+    print(f"Profile {args.profile}; {len(cases)} of {len(CASES)} case(s) selected; output {output_root}")
+    if not_selected:
+        print(f"Not selected (--only/--skip): {', '.join(not_selected)}")
     results = []
     for case in cases:
         print(f"-> {case.case_id} ...", end="", flush=True)
@@ -602,6 +612,7 @@ def main(argv: list[str] | None = None) -> int:
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "profile": args.profile,
         "enabled": sorted(enabled),
+        "selection": selection,
         "scientific_calculation": args.profile == "server",
         "note": (
             "local profile: structure generation only (calculator none, max_steps 0); "
@@ -622,7 +633,10 @@ def main(argv: list[str] | None = None) -> int:
         notes = "; ".join(record.get("notes", []))
         print(f"{record['case_id']:36s} {record['method']:24s} {record['status']:6s} {record.get('seconds', 0):7.1f}  {notes[:110]}")
     summary = report["summary"]
-    print(f"\nPASS {summary['PASS']}  WARN {summary['WARN']}  FAIL {summary['FAIL']}  SKIP {summary['SKIP']}")
+    print(f"\nPASS {summary['PASS']}  WARN {summary['WARN']}  FAIL {summary['FAIL']}  SKIP {summary['SKIP']}"
+          f"  (ran {len(cases)} of {len(CASES)} cases)")
+    if not_selected:
+        print(f"Not selected (--only/--skip), so not in this table: {', '.join(not_selected)}")
     print(f"Report: {report_path}")
     failed = summary["FAIL"] > 0 or (args.strict and summary["WARN"] > 0)
     return 1 if failed else 0

@@ -54,5 +54,9 @@ def test_one_case_runs_end_to_end_and_gated_cases_are_skipped(tmp_path) -> None:
     status = {case["case_id"]: case["status"] for case in report["cases"]}
     assert status == {"slab_sno2_101": "PASS", "slab_sno2_materials_project": "SKIP"}
     assert report["scientific_calculation"] is False
+    # Cases left out by --only/--skip are recorded, so a partial table is not mistaken for a full run.
+    selection = report["selection"]
+    assert selection["selected"] == 2 and selection["total"] == len(smoke.CASES)
+    assert "ald_full_asno2_on_sno2" in selection["not_selected"]
     frame = report["cases"][0]["structures"]["frames"][0]
     assert frame["n_fixed"] > 0 and frame["vacuum_gap_A"] >= 5.0
