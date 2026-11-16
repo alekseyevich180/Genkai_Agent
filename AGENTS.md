@@ -33,8 +33,10 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
   - `modeling/`：PToModel、checklist、schema 与表面建模算法。
     `modeling/surface/` 包括切面（`slab.py`）、吸附、空位、团簇、structure-only
     执行器（`executor.py`），以及 2026-11-16 新增的 SAM（`sam.py`）、ALD 非晶覆盖层
-    （`amorphous_overlayer.py`）和它们共用的 `substrate.py`、`sites.py`（按配位找表面位点）、
-    `structure_io.py`（结构文件约定）。SAM 与 ALD 目前是独立 CLI，尚未注册进执行器。
+    （`amorphous_overlayer.py`，全覆盖膜可用晶格匹配或切割加接缝修复两种方式）、纯非晶表面
+    （`amorphous_slab.py`），和它们共用的 `substrate.py`（会自动规范化 c 轴倾斜的 slab）、
+    `sites.py`（按配位找表面位点）、`structure_io.py`（结构文件约定）。SAM、ALD、非晶表面
+    目前是独立 CLI，尚未注册进执行器。
   - `compute/`、`datasets/`、`mlip/`：计算、数据集和 MLIP 边界。
 - `agents/Agent/`：Agent 运行时、内置 agents 和 skills。
 - `agents/Agent/skills/`：薄入口、运行说明、决策逻辑和实验性能力。
@@ -166,9 +168,10 @@ python scripts/check_harness.py full
 ```
 
 表面建模冒烟测试（2026-11-16 起）：用仓库中已有的结构，通过真实入口逐一调用全部建模方式
-（切面、空位、吸附、团簇、执行器、SAM、ALD），检查结构能否生成、可读、无原子重叠、有真空层和
-固定原子。默认 `local` 档只生成结构（`calculator=none`），本机约 2.5 分钟；UMA 团簇搜索和
-Materials Project 用例默认 SKIP。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
+（切面、空位、吸附、团簇、执行器、SAM、ALD、纯非晶表面，共 26 个用例），检查结构能否生成、
+可读、无原子重叠、有真空层和固定原子。默认 `local` 档只生成结构（`calculator=none`），本机约
+3 分钟，当前基线为 PASS 23 / WARN 1 / FAIL 0 / SKIP 2；UMA 团簇搜索和 Materials Project 用例
+默认 SKIP。用 `--only`/`--skip` 时，未选中的用例会在输出和报告的 `selection` 中列出。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
 计算的服务器上运行。
 
 ```bash

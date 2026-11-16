@@ -21,6 +21,9 @@
   把 SAM 注册进 structure-only 执行器。
 - 2026-11-16：新增 `scripts/run_modeling_smoke.py`，用仓库已有结构跑全部建模方式
   （本机 PASS 18 / WARN 1 / FAIL 0 / SKIP 2），见同日日志“表面建模冒烟测试脚本”。
+- 2026-11-16：新增纯非晶表面（`scripts/amorphous/amorphous_slab.py`）；ALD 全覆盖膜无法晶格匹配时
+  改为切割并修复接缝；c 轴倾斜的旧 slab 自动规范化。冒烟 26 个用例 PASS 23 / WARN 1 /
+  FAIL 0 / SKIP 2，见同日日志“非晶部分改进”。
 
 ## 日志文件
 

@@ -21,6 +21,7 @@ metadata:
     - scripts/metal_cluster/surface_cluster_builder.py
     - scripts/sam/sam_builder.py
     - scripts/ald/ald_overlayer.py
+    - scripts/amorphous/amorphous_slab.py
   tags:
     - surface
     - slab
@@ -51,6 +52,7 @@ paths documented below are thin compatibility entrypoints for Skill callers.
    - adsorbate coverage structures with `scripts/adsorbate/adsorbate_landscape.py`
    - SAM-functionalized surfaces with `scripts/sam/sam_builder.py`
    - ALD-modified surfaces (amorphous film or island) with `scripts/ald/ald_overlayer.py`
+   - pure amorphous surfaces with `scripts/amorphous/amorphous_slab.py`
 3. Build isolated metal clusters or cluster-on-surface starting structures with `scripts/metal_cluster/surface_cluster_builder.py`.
 4. Search surface-cluster adsorption geometries with `scripts/cluster_search/ads_nanocluster.py` when UMA/FAIRChem is available.
 5. Use the `vasp` skill for DFT refinement or MLIP training label preparation.
@@ -284,7 +286,11 @@ reviewed stable-facet registry. The selection source is recorded as
 - Inputs default to CIF; any ASE-readable format works and `--*-format` forces
   one (an extension-less POSCAR falls back to the VASP reader).
 - Slab files without constraints (every CIF) get the bottom fixed again with
-  the slab-generator rule; the manifest records `constraints_source`.
+  the slab-generator rule (by height when the slab has no discrete layers,
+  e.g. amorphous slabs); the manifest records `constraints_source`.
+- Slabs whose c is not normal to the surface (older MP routes) are rotated so
+  a, b lie in the xy plane and c is replaced by its normal component; bonded
+  distances are unchanged and the manifest records `cell_normalized`.
 - Molecule CIFs are unwrapped, so molecules split across cell faces are whole.
 - Outputs: one extxyz with all frames (frame 0 = clean slab), a JSON manifest,
   and `exports/` (CIF by default, `--export cif,vasp`; POSCAR is unsorted so
@@ -349,10 +355,16 @@ python agents/Agent/skills/surface-modeling/scripts/ald/ald_overlayer.py \
 
 - `--amorphous` must be a periodic amorphous bulk cell (generated elsewhere,
   e.g. by melt-quench); slabs or clusters are rejected.
-- Full coverage matches the in-plane cells with pymatgen ZSL, strains the
-  amorphous supercell affinely onto the slab supercell (`--max-strain`,
-  `--max-area`; no mirror images), so the film is periodic without seams, then
-  cuts a `--thickness` window placed `--interface-gap` above the slab.
+- Full coverage, `--film-fit auto` (default): first try `strain` - match the
+  in-plane cells with pymatgen ZSL and strain the amorphous supercell affinely
+  onto the slab supercell (`--max-strain`, `--max-area`; no mirror images), so
+  the film is periodic without seams. If no match exists (e.g. hexagonal
+  CeO2(111) or Ru(0001) against a square amorphous cell) use `cut`: a randomly
+  rotated tiling of the amorphous cell is cut to the slab cell and atoms closer
+  than 0.85 x the shortest same-pair distance of the amorphous bulk across the
+  cell boundaries are removed (`seam_atoms_removed`). `--film-fit strain`
+  refuses instead of cutting. Either way a `--thickness` window is placed
+  `--interface-gap` above the slab.
 - Partial coverage cuts a connected hemisphere-like island (`--island-atoms` or
   `--island-radius`) and enlarges the slab until the island is at least
   `--island-separation` from its periodic images. Run once per facet that
@@ -363,6 +375,32 @@ python agents/Agent/skills/surface-modeling/scripts/ald/ald_overlayer.py \
   cut are removed and counted.
 - No relaxation or annealing: interfaces are starting points for an authorized
   MLIP/DFT relaxation or melt-quench.
+
+## Pure Amorphous Surface
+
+Script (thin entry over `genkai.modeling.surface.amorphous_slab`):
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_slab.py \
+  --amorphous a-SnO2.cif --thickness 8 --samples 3 --output-dir a_sno2_surface
+
+# use one cut as the substrate of another builder
+python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
+  --surface a_sno2_surface/amorphous_slab_000.extxyz --molecule acid.cif \
+  --binding-mode bidentate --counts 1,2 --output-dir sam_on_a_sno2
+```
+
+- The in-plane cell is an integer supercell of the amorphous cell itself
+  (`--min-lateral-size` or `--repeat-xy`), so the slab is exactly periodic
+  without strain or seams; a tilted amorphous c is handled in Cartesian space.
+- `--samples N` cuts N different windows along the normal, i.e. N different
+  amorphous surfaces. Isolated atoms left by the cut are removed and counted.
+- The bottom `--fixed-fraction` of the thickness is fixed (tags 0/1); vacuum
+  `--vacuum` is added above. Each sample is written as
+  `amorphous_slab_NNN.extxyz` (ready for `--surface`) plus a combined file.
+- The manifest reports composition against the bulk (cut slabs are usually
+  off-stoichiometric; not corrected), density of the cut window and the number
+  of exposed undercoordinated cations. Nothing is relaxed.
 
 ## Metal Cluster And Surface-Cluster Construction
 
