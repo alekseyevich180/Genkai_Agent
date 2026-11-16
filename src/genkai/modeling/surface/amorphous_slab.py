@@ -82,8 +82,12 @@ def _min_ratio(atoms: Atoms) -> float | None:
 
 
 def build_amorphous_slab(
-    amorphous: Atoms, settings: AmorphousSlabSettings, rng: np.random.Generator
+    amorphous: Atoms,
+    settings: AmorphousSlabSettings,
+    rng: np.random.Generator,
+    z0: float | None = None,
 ) -> tuple[Atoms, dict[str, Any]]:
+    """Cut one slab; ``z0`` fixes the window start along the normal (default: random)."""
     bulk = standardize_cell(amorphous)
     a_vec, b_vec, c_vec = bulk.cell.array
     layer_height = float(c_vec[2])  # a and b lie in the xy plane, so c_z is the normal height
@@ -97,7 +101,7 @@ def build_amorphous_slab(
     # Cartesian positions keep the true geometry even for a tilted c; z is the normal coordinate.
     cartesian = block.get_positions(wrap=True)
     z = cartesian[:, 2]
-    z0 = float(rng.uniform(0.0, layer_height))
+    z0 = float(rng.uniform(0.0, layer_height)) if z0 is None else float(z0) % layer_height
     window = (z >= z0) & (z < z0 + settings.thickness)
     s1, s2 = block.cell.array[0], block.cell.array[1]
     positions = cartesian[window].copy()

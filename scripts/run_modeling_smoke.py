@@ -94,14 +94,15 @@ class Context:
     device: str
     uma_model: str
     enabled: set[str]
+    uma_task: str = "omat"
 
     @property
     def server(self) -> bool:
         return self.profile == "server"
 
-    def uma_args(self, style: str = "dash") -> list[str]:
+    def uma_args(self, style: str = "dash", flag: str = "--calculator") -> list[str]:
         sep = "-" if style == "dash" else "_"
-        return ["--calculator", "uma", "--device", self.device, f"--uma{sep}model", self.uma_model]
+        return [flag, "uma", "--device", self.device, f"--uma{sep}model", self.uma_model, f"--task{sep}name", self.uma_task]
 
 
 @dataclass
@@ -200,19 +201,74 @@ def cluster_case(extra: list[str]) -> Callable[[Context, Path], list[list[str]]]
     return build
 
 
+CLUSTER_SELECTION = ["--selection_count", "2", "--top_pool_size", "4", "--top_pick_count", "2", "--tail_pick_per_bin", "0"]
+
+
 def cluster_search_case(ctx: Context, out: Path) -> list[list[str]]:
-    return [
-        py(
-            skill("cluster_search/ads_nanocluster.py"),
-            "--surface", path("ceo2_111_slab"),
-            "--cluster", path("ru7_cluster"),
-            "--output_dir", out / "cluster_search",
-            "--n_trials", "20",
-            "--max_steps", "50",
-            "--device", ctx.device,
-            "--uma_model", ctx.uma_model,
-        )
-    ]
+    cmd = py(
+        skill("cluster_search/ads_nanocluster.py"),
+        "--surface", path("ceo2_111_slab"),
+        "--cluster", path("ru7_cluster"),
+        "--output_dir", out / "cluster_search",
+        "--n_trials", "20" if ctx.server else "8",
+        "--max_steps", "50",
+        "--seed", "1",
+        *CLUSTER_SELECTION,
+    )
+    cmd += ctx.uma_args("underscore") if ctx.server else ["--calculator", "none"]
+    return [cmd]
+
+
+def island_search_case(ctx: Context, out: Path) -> list[list[str]]:
+    """ALD island cut from a-TiO2 -> Optuna placement with tilt on the clean SnO2 slab."""
+    ald = py(
+        skill("ald/ald_overlayer.py"), "--bulk", path("sno2_bulk"), "--amorphous", path("a_tio2"),
+        "--coverage", "partial", "--island-atoms", "20", "--export", "none", "--output-dir", out / "ald",
+    )
+    search = py(
+        skill("cluster_search/ads_nanocluster.py"),
+        "--surface", out / "ald" / "substrate_slab.extxyz",
+        "--cluster", out / "ald" / "islands" / "island_000.extxyz",
+        "--placement_shape", "input", "--max_tilt", "60",
+        "--n_trials", "20" if ctx.server else "8", "--max_steps", "50", "--seed", "1",
+        "--output_dir", out / "search",
+        *CLUSTER_SELECTION,
+    )
+    search += ctx.uma_args("underscore") if ctx.server else ["--calculator", "none"]
+    return [ald, search]
+
+
+def sam_search_case(ctx: Context, out: Path) -> list[list[str]]:
+    cmd = py(
+        skill("sam/sam_search.py"), "--bulk", path("sno2_bulk"), "--molecule", path("butanoic_acid"),
+        "--binding-mode", "monodentate", "--n-trials", "8", "--top-k", "2", "--coverage-counts", "1,2",
+        "--output-dir", out / "sam_search",
+    )
+    if ctx.server:
+        cmd += ctx.uma_args(flag="--search-calculator")
+    else:
+        cmd += ["--screen-steps", "2", "--max-steps", "2"]
+    return [cmd]
+
+
+def amorphous_screen_case(kind: str) -> Callable[[Context, Path], list[list[str]]]:
+    def build(ctx: Context, out: Path) -> list[list[str]]:
+        if kind == "surfaces":
+            cmd = py(skill("amorphous/amorphous_screen.py"), "surfaces", "--amorphous", path("a_tio2"),
+                     "--periods", "2", "--samples", "3", "--output-dir", out / "screen")
+            flag = "--calculator"
+        else:
+            cmd = py(skill("amorphous/amorphous_screen.py"), "interface", "--bulk", path("sno2_bulk"),
+                     "--amorphous", path("a_tio2"), "--thickness", "5", "--n-matches", "2", "--n-trials", "4",
+                     "--output-dir", out / "screen")
+            flag = "--search-calculator"
+        if ctx.server:
+            cmd += ctx.uma_args(flag=flag)
+        else:
+            cmd += ["--max-steps", "2"] + (["--screen-steps", "2"] if kind == "interface" else [])
+        return [cmd]
+
+    return build
 
 
 def executor_case(blocked: bool) -> Callable[[Context, Path], list[list[str]]]:
@@ -318,9 +374,14 @@ CASES: list[Case] = [
     Case("cluster_ru13_hcp_on_ceo2", "surface_cluster_builder", "Ru13 hcp (lattice from Ru bulk) on CeO2(111)",
          ("ceo2_111_slab", "ru_bulk"), cluster_case(["--cluster_bulk_file", path("ru_bulk"), "--cluster_structures", "hcp"]),
          ("cluster/*_on_surface.cif",), contains=("Ru",)),
-    Case("cluster_search_ru7_on_ceo2", "cluster_search", "UMA/Optuna placement search of Ru7 on CeO2(111)",
-         ("ceo2_111_slab", "ru7_cluster"), cluster_search_case, ("cluster_search/**/*.cif",),
-         requires=("uma",), contains=("Ru",)),
+    Case("cluster_search_ru7_on_ceo2", "cluster_search",
+         "Optuna placement search of Ru7 on CeO2(111) (mock locally, UMA on the server)",
+         ("ceo2_111_slab", "ru7_cluster"), cluster_search_case, ("cluster_search/mlip_output/0*_trial_*.cif",),
+         contains=("Ru",), min_structures=2),
+    Case("island_search_atio2_on_sno2", "cluster_search",
+         "ALD a-TiO2 island -> Optuna placement with tilt on the clean SnO2 slab (chained)",
+         ("sno2_bulk", "a_tio2"), island_search_case, ("search/mlip_output/0*_trial_*.cif",),
+         contains=("Ti",), min_structures=2),
     Case("executor_sno2_no2", "surface_execute", "paper plan -> SnO2(110) slab + NO2 coverage 1,2 (genkai.cli)",
          ("gas_relations", "sno2_bulk"), executor_case(blocked=False),
          ("run/stages/03_surface_structures/structures.extxyz",), contains=("N",), min_structures=3, fixed=True),
@@ -383,6 +444,18 @@ CASES: list[Case] = [
     Case("amorphous_slab_tio2", "amorphous_slab", "pure amorphous TiO2 surface, 10 A, 2x2 in-plane",
          ("a_tio2",), amorphous_slab_case("a_tio2", ["--thickness", "10", "--repeat-xy", "2,2"]),
          ("amorphous/amorphous_slab_structures.extxyz",), contains=("Ti",), fixed=True),
+    Case("sam_search_sno2_butanoic", "sam_search",
+         "Optuna over anchored placements of butanoic acid on SnO2(110), then coverage 2 by copying",
+         ("sno2_bulk", "butanoic_acid"), sam_search_case, ("sam_search/sam_search_structures.extxyz",),
+         contains=("C",), min_structures=4, fixed=True),
+    Case("amorphous_screen_surfaces_tio2", "amorphous_screen",
+         "a-TiO2: relax bulk, cut 3 stoichiometric 2-period surfaces, rank by surface energy",
+         ("a_tio2",), amorphous_screen_case("surfaces"), ("screen/amorphous_surfaces_ranked.extxyz",),
+         contains=("Ti",), min_structures=3),
+    Case("amorphous_screen_interface_atio2_on_sno2", "amorphous_screen",
+         "a-TiO2 film on SnO2(110): 2 lattice matches x Optuna (shift, gap), rank by adhesion",
+         ("sno2_bulk", "a_tio2"), amorphous_screen_case("interface"), ("screen/amorphous_interfaces_ranked.extxyz",),
+         contains=("Ti",), min_structures=2, fixed=True),
 ]
 
 
@@ -597,6 +670,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--enable", default="", help="Extra capabilities, e.g. 'network' for Materials Project cases.")
     parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda", help="UMA device for --profile server.")
     parser.add_argument("--uma-model", default="uma-s-1p2")
+    parser.add_argument(
+        "--uma-task",
+        default="omat",
+        help="UMA task head for --profile server (fairchem 2.7.1: omol, omat, odac, oc20, oc25, omc).",
+    )
     parser.add_argument("--only", default=None, help="Comma-separated case-id prefixes or method names.")
     parser.add_argument("--skip", default=None, help="Comma-separated case-id prefixes or method names to leave out.")
     parser.add_argument("--output-dir", type=Path, default=None, help="Default: a new folder in the system temp directory.")
@@ -611,7 +689,7 @@ def main(argv: list[str] | None = None) -> int:
     enabled = {item.strip() for item in args.enable.split(",") if item.strip()}
     if args.profile == "server":
         enabled.add("uma")
-    ctx = Context(profile=args.profile, device=args.device, uma_model=args.uma_model, enabled=enabled)
+    ctx = Context(profile=args.profile, device=args.device, uma_model=args.uma_model, enabled=enabled, uma_task=args.uma_task)
     cases = select_cases(args.only, args.skip)
     if args.list:
         for case in cases:

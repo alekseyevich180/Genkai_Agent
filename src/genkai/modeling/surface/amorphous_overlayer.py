@@ -652,6 +652,8 @@ def run_overlayer(
     all_frames = [clean, *frames]
 
     structures_path = write_frames(outdir / "ald_structures.extxyz", all_frames)
+    # Single-frame clean slab (same supercell), e.g. the --surface of cluster_search for an island.
+    substrate_path = write_frames(outdir / "substrate_slab.extxyz", [clean])
     exported = export_frames(all_frames, outdir / "exports", "ald", export) if export else []
     manifest = {
         "schema_version": "1.0",
@@ -686,6 +688,7 @@ def run_overlayer(
         "samples": samples,
         "files": {
             "structures": structures_path.as_posix(),
+            "substrate_slab": substrate_path.as_posix(),
             "exports": [p.as_posix() for p in exported],
             "islands": [s["island_file"] for s in samples if "island_file" in s],
         },

@@ -147,14 +147,48 @@ class SurfaceScreenSettings:
     min_lateral_size: float = 8.0
     both_sides_free: bool = True
     relax_cell: bool = True
+    window_scan: int = 48  # cut positions scanned over one period to find connected, stoichiometric windows
 
     def __post_init__(self) -> None:
         if (self.periods is None) == (self.thickness is None):
             raise OverlayerBuildError("Give exactly one of periods or thickness.")
+        if self.window_scan < 1:
+            raise OverlayerBuildError("window_scan must be >= 1.")
         if self.periods is not None and self.periods < 1:
             raise OverlayerBuildError("periods must be >= 1.")
         if self.samples < 1:
             raise OverlayerBuildError("samples must be >= 1.")
+
+
+def select_windows(
+    bulk: Atoms,
+    slab_settings: AmorphousSlabSettings,
+    period: float,
+    scan: int,
+    samples: int,
+    rng: np.random.Generator,
+) -> list[float]:
+    """Cut positions whose window leaves no isolated atom (so nothing is deleted), evenly spread.
+
+    Distinct windows are identified by the cut composition and atom count; if
+    fewer clean windows than requested exist, the remaining samples are taken
+    from the other windows and flagged later as non-stoichiometric if needed.
+    """
+    clean: list[tuple[float, tuple]] = []
+    other: list[tuple[float, tuple]] = []
+    seen: set[tuple] = set()
+    for z0 in np.linspace(0.0, period, scan, endpoint=False):
+        slab, cut = build_amorphous_slab(bulk, slab_settings, rng, z0=float(z0))
+        signature = (len(slab), tuple(np.round(np.sort(slab.positions[:, 2]), 2)[:: max(1, len(slab) // 8)]))
+        if signature in seen:
+            continue
+        seen.add(signature)
+        (clean if cut["isolated_atoms_removed"] == 0 else other).append((float(z0), signature))
+    pool = clean if len(clean) >= samples else clean + other
+    if not pool:
+        return [float(rng.uniform(0.0, period)) for _ in range(samples)]
+    picks = np.linspace(0, len(pool) - 1, min(samples, len(pool))).round().astype(int)
+    return [pool[int(k)][0] for k in sorted(set(picks.tolist()))]
 
 
 def screen_surfaces(
@@ -179,10 +213,11 @@ def screen_surfaces(
         fixed_fraction=0.0 if settings.both_sides_free else 0.5,
     )
     rng = np.random.default_rng(model.seed)
+    windows = select_windows(relaxed_bulk, slab_settings, period, settings.window_scan, settings.samples, rng)
     rows: list[dict[str, Any]] = []
     frames: list[Atoms] = []
-    for sample in range(settings.samples):
-        slab, cut = build_amorphous_slab(relaxed_bulk, slab_settings, rng)
+    for sample, z0 in enumerate(windows):
+        slab, cut = build_amorphous_slab(relaxed_bulk, slab_settings, rng, z0=z0)
         if settings.both_sides_free:
             slab.set_constraint()
             slab.set_tags(np.ones(len(slab), dtype=int))
@@ -451,6 +486,7 @@ def _build_parser() -> argparse.ArgumentParser:
     surfaces.add_argument("--min-lateral-size", type=float, default=8.0)
     surfaces.add_argument("--fix-bottom", action="store_true", help="Fix the bottom half instead of relaxing both faces.")
     surfaces.add_argument("--no-cell-relax", action="store_true", help="Relax bulk positions only.")
+    surfaces.add_argument("--window-scan", type=int, default=48, help="Cut positions scanned per period for connected windows.")
     surfaces.add_argument("--uma-model", default="uma-s-1p2")
     surfaces.add_argument("--task-name", default="omat")
     surfaces.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
@@ -489,6 +525,7 @@ def main(argv: list[str] | None = None) -> int:
                 min_lateral_size=args.min_lateral_size,
                 both_sides_free=not args.fix_bottom,
                 relax_cell=not args.no_cell_relax,
+                window_scan=args.window_scan,
             )
             manifest = screen_surfaces(args.amorphous, settings, model, args.output_dir,
                                        amorphous_format=args.amorphous_format, export=parse_export(args.export))
