@@ -145,8 +145,24 @@ python scripts/check_harness.py package
 python scripts/check_harness.py full
 ```
 
-当前完整测试有一个已知收集阻塞：`tests/test_structure_builder.py` 导入已经不存在的
-`agent.tools.structure_builder`。在该测试被迁移、恢复或删除前，不能把局部通过报告成
+旧的收集阻塞 `tests/test_structure_builder.py`（导入从未存在的
+`agent.tools.structure_builder`）已于 2026-11-13 删除。当前已知基线（2026-11-16，
+Windows + Python 3.11）：
+
+- 3 个测试假设 Linux 环境而失败：
+  `tests/integrations/test_compute_dataset_mlip_contracts.py` 中的
+  `test_adapter_specs_pass_established_launcher_dry_runs`、
+  `test_production_adapter_rejects_executable_without_launcher_protocol`
+  （直接执行 bash 启动脚本或 `/bin/true`），以及
+  `tests/workflow/test_paper_to_mlip.py::test_installed_cli_init_resolves_legacy_facade_outside_checkout`
+  （要求已安装 `genkai-workflow` CLI）；
+- 未安装 `google-adk`、`know-do-graph` 时，`tests/packaging/`、
+  `tests/skills/test_builtin_skill_contracts.py`、`tests/test_agent_artifact_planning.py`
+  和 `tests/test_kdg_*.py` 在收集阶段失败，`tests/test_agent.py` 的 9 个导入测试失败；
+- 未安装 genkai 包时如用 `PYTHONPATH` 运行，必须使用绝对路径，否则在临时目录启动子进程的
+  测试会找不到 `genkai`。
+
+尚未在 Linux + Python 3.12 上完成 `full` 复核；在此之前，局部通过不能报告成
 “完整测试通过”。
 
 前端开发与构建：
@@ -238,7 +254,8 @@ python -m pytest -m external path/to/test.py -v
 1. 保存完整错误和实际命令。
 2. 判断失败发生在环境、收集、导入、契约、算法、打包还是外部运行时。
 3. 先运行更小的确定性复现，不通过扩大修改范围来绕过问题。
-4. 区分任务引入的失败与仓库已有基线，例如当前 structure builder 收集阻塞。
+4. 区分任务引入的失败与仓库已有基线，例如上文列出的 Linux 环境假设测试和缺少可选依赖导致的
+   收集失败。
 5. 修复后重跑最小复现，再按风险升级验证。
 6. 无法继续时记录恢复入口、已经排除的原因和仍需的外部条件。
 

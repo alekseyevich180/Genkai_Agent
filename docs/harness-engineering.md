@@ -252,8 +252,8 @@ python scripts/check_harness.py package
 python scripts/check_harness.py full
 ```
 
-当前已知 `tests/test_structure_builder.py` 仍导入不存在的
-`agent.tools.structure_builder`，因此全量收集会失败。报告时必须同时写出：
+旧的 `tests/test_structure_builder.py` 收集阻塞已于 2026-11-13 删除。当前已知基线（Linux
+环境假设测试、缺少 `google-adk`/`know-do-graph` 时的收集失败）见 `AGENTS.md`。报告时必须同时写出：
 
 - 哪些目标或分层测试通过；
 - 全量测试是否尝试；
@@ -367,7 +367,7 @@ MLIP、训练、MD、GPU/PJM。无法从证据唯一确定的参数必须阻断�
 
 ### 测试收集失败
 
-先区分已知的 `agent.tools.structure_builder` 阻塞与新错误。运行目标测试确认任务本身，
+先区分 `AGENTS.md` 列出的已知基线与新错误。运行目标测试确认任务本身，
 但最终报告必须保留全量边界，不能隐藏收集失败。
 
 ### 入口迁移失败
@@ -457,7 +457,7 @@ log，不扩张 `AGENTS.md`。
 
 - 仓库尚未配置统一的 Python formatter、lint 和静态类型检查；
 - CI 的最低门禁不等于完整默认测试或 wheel 检查；
-- 完整默认测试仍有 structure builder 收集阻塞；
+- 完整默认测试尚未在 Linux + Python 3.12 上复核，Windows 上有 3 个 Linux 环境假设失败；
 - external 层没有统一可在所有环境执行的真实运行测试；
 - 前端目前有 build 命令，但没有独立 lint 或测试脚本。
 

@@ -125,8 +125,8 @@ python scripts/check_harness.py ci
 python scripts/check_harness.py package
 ```
 
-完整测试当前仍有 `tests/test_structure_builder.py` 的既有收集阻塞。局部测试通过不能写成
-“完整测试通过”。
+`tests/test_structure_builder.py` 的旧收集阻塞已于 2026-11-13 删除；当前已知基线（Linux
+环境假设测试、缺少可选依赖的收集失败）见 `AGENTS.md`。局部测试通过不能写成“完整测试通过”。
 
 ## 5. 必须停止的情况
 
