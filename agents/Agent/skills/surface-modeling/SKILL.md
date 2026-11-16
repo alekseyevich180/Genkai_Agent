@@ -22,6 +22,8 @@ metadata:
     - scripts/sam/sam_builder.py
     - scripts/ald/ald_overlayer.py
     - scripts/amorphous/amorphous_slab.py
+    - scripts/sam/sam_search.py
+    - scripts/amorphous/amorphous_screen.py
   tags:
     - surface
     - slab
@@ -53,6 +55,10 @@ paths documented below are thin compatibility entrypoints for Skill callers.
    - SAM-functionalized surfaces with `scripts/sam/sam_builder.py`
    - ALD-modified surfaces (amorphous film or island) with `scripts/ald/ald_overlayer.py`
    - pure amorphous surfaces with `scripts/amorphous/amorphous_slab.py`
+   - energy-based (MLIP) screening: SAM placements and coverage with
+     `scripts/sam/sam_search.py`, amorphous surfaces and amorphous/crystal
+     interfaces with `scripts/amorphous/amorphous_screen.py`, islands with
+     `scripts/cluster_search/ads_nanocluster.py`
 3. Build isolated metal clusters or cluster-on-surface starting structures with `scripts/metal_cluster/surface_cluster_builder.py`.
 4. Search surface-cluster adsorption geometries with `scripts/cluster_search/ads_nanocluster.py` when UMA/FAIRChem is available.
 5. Use the `vasp` skill for DFT refinement or MLIP training label preparation.
@@ -489,7 +495,87 @@ Main outputs:
 - `output_nanocluster/mlip_output/XX_trial_YYY.cif`
 - `output_nanocluster/vasp/*.vasp`
 
-This is a production MLIP entry point. Unlike the vacancy and adsorbate landscape scripts, it imports `torch` and `fairchem-core` at startup and does not provide a mock-calculator mode.
+This is a production MLIP entry point (`--calculator uma`, default). Since
+2026-11-16 it also has:
+
+- `--calculator none`: mock contact score with zero forces, for local workflow
+  tests only (energies have no physical meaning).
+- `--task_name` is checked against the installed fairchem before the model is
+  loaded; the default `oc22` does not exist in fairchem 2.7.1 (heads: omol,
+  omat, odac, oc20, oc25, omc), so pass one explicitly there.
+- `--fixed_fraction 0.5`: slabs without FixAtoms (CIF) get the bottom fixed
+  before the relaxations; 0 disables.
+- `--max_tilt DEG`: also samples a tilt (and its direction) of the cluster, so
+  the face that points down is searched (irregular or amorphous clusters).
+- `--placement_shape input`: place the cluster as supplied (e.g. an amorphous
+  island) while the reference energy still comes from the relaxed isolated
+  cluster.
+- `--min_vacuum 10`: c is lengthened before the slab relaxation so the highest
+  possible cluster keeps this vacuum to the next slab image.
+- `--seed`: reproducible Optuna sampling.
+
+## MLIP Screening Layer (SAM, Amorphous Surfaces, Interfaces, Islands)
+
+Energy model choice is shared (`genkai.modeling.surface.calculators`):
+`none` (mock, local tests), `emt` (a few metals with H/C/N/O) or `uma` (real
+MLIP; needs authorization). Compare only energies from the same model, task
+head and settings, including the references; MLIP values are screening
+estimates, not DFT evidence. The vacancy and adsorbate scripts also accept
+`--fixed-fraction` (default 0.5) so CIF slabs do not relax as a whole.
+
+SAM energy search (`scripts/sam/sam_search.py`, `genkai.modeling.surface.sam_search`):
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/sam/sam_search.py \
+  --bulk SnO2.cif --molecule acid.cif --binding-mode bidentate \
+  --search-calculator uma --task-name <head> --device cuda \
+  --n-trials 40 --top-k 3 --coverage-counts 1,2,3 --output-dir sam_search
+```
+
+- References: E_slab (bottom fixed), E_mol (isolated, in a box), E_H2.
+  E_ads(n) = E_total - E_slab - n E_mol (+ 1/2 E_H2 per removed acidic H).
+- Stage 1: Optuna over the anchored parameters (site group, tilt, azimuth) of
+  the chosen binding mode; each trial = geometric placement + `--screen-steps`
+  relaxation; trials whose designed anchor/OH bonds break are penalized.
+- Stage 2: `--top-k` distinct trials are fully relaxed and ranked.
+- Coverage: the best relaxed molecule (with its transferred H) is copied by
+  translation onto translation-equivalent site groups (sites and 4.5 A
+  surroundings must match), then the whole layer is relaxed. Amorphous or
+  low-symmetry surfaces have no equivalent sites and are refused.
+
+Amorphous screening (`scripts/amorphous/amorphous_screen.py`, `genkai.modeling.surface.amorphous_screen`):
+
+```bash
+# case 1: pure amorphous surfaces ranked by surface energy
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_screen.py surfaces \
+  --amorphous a-SnO2.cif --periods 2 --samples 6 --calculator uma --task-name <head> --output-dir a_surfaces
+# case 2: full amorphous film on a crystal, ranked by adhesion
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_screen.py interface \
+  --bulk SnO2.cif --amorphous a-TiO2.cif --thickness 6 --n-matches 3 --n-trials 20 \
+  --search-calculator uma --task-name <head> --output-dir a_interface
+```
+
+- `surfaces`: the amorphous bulk is relaxed (positions + cell) to get
+  eps_bulk; windows of whole periods are scanned and only cuts that delete no
+  isolated atom are kept (stoichiometric); each slab is (optionally annealed
+  and) relaxed. gamma = (E - N eps_bulk)/2A with both faces free (default),
+  or the fixed-bottom formula with `--fix-bottom`. Non-stoichiometric cuts get
+  no gamma.
+- `interface`: candidates are the best lattice matches (strained, seamless) or
+  random rotations of a cut film when no match exists; per candidate Optuna
+  searches the in-plane shift and the gap with short relaxations; the best is
+  (optionally annealed, `--anneal-steps`) and fully relaxed. Candidates differ
+  in atom count, so they are ranked by W_adh = (E_substrate + E_film -
+  E_interface)/A.
+
+Case 3, amorphous island on a crystal: `ald_overlayer.py --coverage partial`
+writes `islands/island_NNN.extxyz` and `substrate_slab.extxyz`; then
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanocluster.py \
+  --surface ald/substrate_slab.extxyz --cluster ald/islands/island_000.extxyz \
+  --placement_shape input --max_tilt 60 --calculator uma --task_name <head> --output_dir island_search
+```
 
 ## Practical Guidance
 

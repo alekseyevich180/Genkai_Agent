@@ -148,6 +148,26 @@ def test_interface_search_ranks_candidates_by_adhesion(tmp_path, sno2_110) -> No
         assert frame.positions[film, 2].min() > frame.positions[~film, 2].max()
 
 
+def test_cluster_search_makes_room_above_the_slab_for_large_clusters(tmp_path) -> None:
+    from genkai.modeling.surface import cluster_search
+    from genkai.modeling.surface.slab import vacuum_gap_angstrom
+
+    particle = ROOT / "tests/fixtures/archives/generated/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.xyz"
+    slab_file = EXAMPLES / "CeO2 (1 1 1).cif"  # c = 24.7 A, too short for a ~12 A tall particle plus gap
+    code = cluster_search.main(
+        [
+            "--surface", str(slab_file), "--cluster", str(particle), "--calculator", "none", "--n_trials", "4",
+            "--seed", "2", "--selection_count", "2", "--top_pool_size", "4", "--top_pick_count", "2",
+            "--tail_pick_per_bin", "0", "--min_vacuum", "10", "--output_dir", str(tmp_path),
+        ]
+    )
+    assert code == 0
+    for path in (tmp_path / "mlip_output").glob("0*_trial_*.cif"):
+        structure = read(path)
+        assert structure.cell.lengths()[2] > 24.8
+        assert vacuum_gap_angstrom(structure) >= 10.0 - 1e-6
+
+
 def test_island_files_feed_the_cluster_placement_search(tmp_path, sno2_110) -> None:
     from genkai.modeling.surface import cluster_search
 

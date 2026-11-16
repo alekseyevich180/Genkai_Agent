@@ -99,13 +99,39 @@ def get_geometric_center(atoms: Atoms) -> np.ndarray:
     return np.mean(atoms.positions, axis=0)
 
 
+def ensure_headroom(slab: Atoms, needed_height: float) -> tuple[Atoms, bool]:
+    """Lengthen c (keeping its direction) so the cell is at least ``needed_height`` tall along z."""
+    cell = slab.cell.array.copy()
+    height = float(cell[2, 2])
+    if height >= needed_height:
+        return slab, False
+    cell[2] = cell[2] * (needed_height / height)
+    slab.set_cell(cell, scale_atoms=False)
+    return slab, True
+
+
 def load_slab(
-    surface_path: Path, calculator, fmax: float, max_steps: int | None, fixed_fraction: float = 0.5
+    surface_path: Path,
+    calculator,
+    fmax: float,
+    max_steps: int | None,
+    fixed_fraction: float = 0.5,
+    headroom: float = 0.0,
 ) -> tuple[Atoms, float]:
+    """Read, fix the bottom if needed, make room above the slab, then relax (all before any trial).
+
+    ``headroom`` is the space needed above the slab top (largest gap + cluster
+    diameter + vacuum); without it a large cluster can approach the periodic
+    image of the slab bottom.
+    """
     from .substrate import ensure_fixed_bottom
 
     slab, source = ensure_fixed_bottom(read(surface_path), fixed_fraction)
     print(f"Slab constraints: {source}")
+    if headroom > 0:
+        slab, extended = ensure_headroom(slab, float(slab.positions[:, 2].max()) + headroom)
+        if extended:
+            print(f"Cell lengthened along c to {slab.cell.array[2, 2]:.2f} A (z) for the cluster and vacuum.")
     energy = get_opt_energy(slab, calculator, fmax=fmax, opt_mode="normal", max_steps=max_steps)
     return slab, energy
 
@@ -455,6 +481,12 @@ def main(argv: list[str] | None = None):
     parser.add_argument("--site_radius", type=float, default=2.5)
     parser.add_argument("--z_min", type=float, default=1.5, help="Minimum initial cluster-surface gap in Angstrom.")
     parser.add_argument("--z_max", type=float, default=4.5, help="Maximum initial cluster-surface gap in Angstrom.")
+    parser.add_argument(
+        "--min_vacuum",
+        type=float,
+        default=10.0,
+        help="Vacuum kept above the highest possible cluster position; c is lengthened before the slab relaxation.",
+    )
     parser.add_argument("--detach_cutoff", type=float, default=6.0)
     parser.add_argument("--penalty_energy", type=float, default=1e6)
     parser.add_argument("--max_steps", type=int, default=200)
@@ -493,8 +525,17 @@ def main(argv: list[str] | None = None):
     input_surface = read(args.surface)
     input_cluster = read(args.cluster)
 
+    centred = input_cluster.positions - input_cluster.positions.mean(axis=0)
+    diameter = 2.0 * float(np.linalg.norm(centred, axis=1).max()) if len(input_cluster) > 1 else 0.0
     print(f"Loading and relaxing surface: {args.surface}")
-    slab, e_slab = load_slab(args.surface, CALCULATOR, args.fmax, args.max_steps, args.fixed_fraction)
+    slab, e_slab = load_slab(
+        args.surface,
+        CALCULATOR,
+        args.fmax,
+        args.max_steps,
+        args.fixed_fraction,
+        headroom=args.z_max + diameter + args.min_vacuum,
+    )
     print(f"Surface symbols: {format_symbol_counts(slab)}")
     print(f"Relaxed slab energy: {e_slab:.6f} eV")
 

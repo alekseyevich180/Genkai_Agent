@@ -77,7 +77,7 @@ INPUTS: dict[str, tuple[Path, str]] = {
     ),
     "ru7_cluster": (
         ARCHIVES / "s41563-025-02134-9_surface_fullrun" / "modeling" / "structures" / "Ru_hcp_r7.xyz",
-        "Ru7 hcp cluster",
+        "hcp Ru nanoparticle, radius 7 A (file name r7 = radius, not 7 atoms)",
     ),
     "a_sno2": (ROOT / "tests" / "amorphous" / "SnO2", "amorphous SnO2, 48 atoms (extension-less POSCAR)"),
     "a_tio2": (ROOT / "tests" / "amorphous" / "TiO2.vasp", "amorphous TiO2, 48 atoms"),
@@ -375,7 +375,7 @@ CASES: list[Case] = [
          ("ceo2_111_slab", "ru_bulk"), cluster_case(["--cluster_bulk_file", path("ru_bulk"), "--cluster_structures", "hcp"]),
          ("cluster/*_on_surface.cif",), contains=("Ru",)),
     Case("cluster_search_ru7_on_ceo2", "cluster_search",
-         "Optuna placement search of Ru7 on CeO2(111) (mock locally, UMA on the server)",
+         "Optuna placement search of an r = 7 A Ru particle on CeO2(111) (mock locally, UMA on the server)",
          ("ceo2_111_slab", "ru7_cluster"), cluster_search_case, ("cluster_search/mlip_output/0*_trial_*.cif",),
          contains=("Ru",), min_structures=2),
     Case("island_search_atio2_on_sno2", "cluster_search",

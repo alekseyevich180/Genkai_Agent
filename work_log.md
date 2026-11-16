@@ -25,6 +25,9 @@
   改为切割并修复接缝；c 轴倾斜的旧 slab 自动规范化。冒烟 26 个用例 PASS 23 / WARN 1 /
   FAIL 0 / SKIP 2，见同日日志“非晶部分改进”。
 - 2026-11-16：测试脚本控制命令（冒烟全部 / 只测非晶 / pytest / 手动生成）速查见同日日志“测试脚本控制命令（速查）”。
+- 2026-11-16：MLIP 筛选层：`calculators.py`、SAM 能量搜索（`scripts/sam/sam_search.py`）、
+  非晶表面和界面筛选（`scripts/amorphous/amorphous_screen.py`）、团簇搜索的倾斜、输入形状和真空加高，
+  旧脚本自动固定底层。仅用模拟计算器验证，未运行 UMA。见同日日志“MLIP 筛选层实现”。
 
 ## 日志文件
 

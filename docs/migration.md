@@ -9,6 +9,7 @@
 | `agents/Agent/skills/surface-modeling/scripts/*` algorithms | `src/genkai/modeling/surface/` | thin Skill wrappers retained |
 | Materials Project slab facet/termination logic | `src/genkai/modeling/surface/slab.py` | `materials_project_slab` and the `slab_generation` Skill call it; Miller indices refer to the conventional cell |
 | (new, 2026-11-16) SAM, ALD amorphous-overlayer and pure amorphous-surface builders | `src/genkai/modeling/surface/sam.py`, `amorphous_overlayer.py`, `amorphous_slab.py`; shared `substrate.py`, `sites.py`, `structure_io.py` | Skill scripts `scripts/sam/sam_builder.py`, `scripts/ald/ald_overlayer.py` and `scripts/amorphous/amorphous_slab.py` are thin wrappers; not yet registered in the structure-only executor |
+| (new, 2026-11-16) MLIP screening layer | `src/genkai/modeling/surface/calculators.py`, `sam_search.py`, `amorphous_screen.py`; island search stays in `cluster_search.py` | Skill scripts `scripts/sam/sam_search.py` and `scripts/amorphous/amorphous_screen.py` are thin wrappers; `calculator=none` is a mock for local tests |
 | VASP/dataset/MLIP stable gates | `src/genkai/compute/`, `src/genkai/datasets/`, `src/genkai/mlip/` | Skill runtime launchers retained |
 | paperread experience export rules | `src/genkai/literature/surface/experience/export_unknown_terms.py` | Skill script is a thin wrapper |
 
