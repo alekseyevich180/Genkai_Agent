@@ -74,6 +74,18 @@ agents/Agent/skills
 - `tests/contracts/` 检查 artifact 和 manifest 行为；
 - `scripts/check_harness.py` 检查项目地图、pyproject、CI 和分级验证入口。
 
+### 结构文件约定（2026-11-16 起，适用于新的建模代码）
+
+- 用户输入默认 CIF；读取入口保留 ASE 可读的其他格式。输入只在入口读取一次。
+- 同一进程内传递 `ase.Atoms`，与 pymatgen 之间用 `AseAtomsAdaptor` 在内存中转换，
+  不经过临时文件。
+- 阶段之间和 artifact 的结构文件使用 extxyz：保留 `FixAtoms`（`move_mask`）、tags、
+  自定义逐原子数组和多帧。元数据写入 JSON manifest，不放在 extxyz 的 info 里
+  （例如 `"110"` 会被读回为整数）。
+- CIF 只作导出：会丢失固定原子、tags 和 info，跨边界原子会被折回晶胞，ASE 读取也慢。
+- 导出 POSCAR 时不要排序，或在 manifest 中记录排序映射。注意：现有 `slab.py` 使用
+  `sort=True`，同目录 `slab.vasp` 与 `slab.extxyz` 的原子顺序不同，不能混用原子索引。
+
 ## 开始任务前
 
 1. 阅读本文件和目标目录下更具体的规则。
