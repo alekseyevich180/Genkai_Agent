@@ -32,45 +32,41 @@
 
 ## 2. 安装
 
-需要 Python 3.12 或更高版本。下面的命令都在仓库根目录运行。
+需要 Python 3.11 或更高版本（推荐 3.12）。下面使用的是只含建模部分的 `SAGE` 分支。
 
-### 2.1 获取代码
-
-请向维护者获取仓库地址或代码压缩包，用 `git clone` 下载，或者直接解压。
-
-### 2.2 创建环境（Linux、WSL、超算登录节点）
+### 2.1 获取代码并安装（Linux、WSL、超算登录节点）
 
 ```bash
-uv venv .venv --python 3.12
+git clone -b SAGE --single-branch https://github.com/alekseyevich180/Genkai_Agent.git SAGE
+cd SAGE
+./install.sh
 source .venv/bin/activate
 ```
 
-如果没有 `uv`，可以改用 `python3.12 -m venv .venv`，后面的 `uv pip` 也换成 `pip`。
+`install.sh` 会在仓库内创建 `.venv`，安装建模依赖和测试工具，然后检查 `genkai-surface` 并跑一组快速测试。
+有 `uv` 时用 `uv`，没有时用 `pip`。常用选项：
 
-### 2.3 创建环境（Windows PowerShell）
+| 选项 | 作用 |
+| --- | --- |
+| `--mlip` | 另外安装 fairchem-core（UMA），用于 MLIP 测试 |
+| `--torch-index-url URL` | 先从指定源安装与服务器 CUDA 匹配的 torch |
+| `--system-site-packages` | 让环境能看到集群模块提供的包（如预装的 torch） |
+| `--python PY` | 指定 Python 解释器 |
+| `--dry-run` | 只显示将要执行的命令 |
+
+全部选项见 `./install.sh --help`。
+
+### 2.2 Windows 电脑
+
+`install.sh` 也可以在 Git Bash 里运行。没有 Git Bash 时，在 PowerShell 中手动安装：
 
 ```powershell
-uv venv .venv --python 3.12
+py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
+pip install -e ".[test]"
 ```
 
-### 2.4 安装
-
-两种方式选一种：
-
-```bash
-# 方式 A：完整安装（同时安装 Agent、Web 界面等全部依赖，体积大）
-uv pip install -e .
-
-# 方式 B：只用建模（推荐给只生成结构的使用者）
-uv pip install --no-deps -e .
-uv pip install ase pymatgen numpy scipy optuna pandas matplotlib pydantic pyyaml
-```
-
-方式 B 的依赖清单来自建模代码的实际导入，但还没有在全新环境中从头安装验证过。
-如果运行时提示缺少某个包，请用 `uv pip install 包名` 补上，并告诉维护者。
-
-### 2.5 确认安装成功
+### 2.3 确认安装成功
 
 ```bash
 genkai-surface methods

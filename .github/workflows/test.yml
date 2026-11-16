@@ -1,15 +1,19 @@
-name: Test
+name: SAGE tests
 
+# The SAGE branch keeps only the surface-modeling part of Genkai. This workflow installs it with
+# install.sh (pip path, no MLIP) and runs the offline checks; UMA runs are not part of CI.
 on:
   push:
+    branches:
+      - SAGE
   pull_request:
     branches:
-      - main
+      - SAGE
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
 
     steps:
       - name: Checkout code
@@ -20,11 +24,14 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install project and test tooling
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -e .
-          python -m pip install pytest
+      - name: Install with install.sh
+        run: ./install.sh --python python --installer pip
 
-      - name: Run Harness CI gate
-        run: python scripts/check_harness.py ci
+      - name: Tests
+        run: .venv/bin/python -m pytest -q
+
+      - name: Example job files
+        run: .venv/bin/genkai-surface run --quiet examples/surface_jobs/*.yaml
+
+      - name: Modeling smoke test (mock calculator)
+        run: .venv/bin/python scripts/run_modeling_smoke.py --output-dir "$RUNNER_TEMP/smoke"

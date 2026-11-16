@@ -1,3 +1,0 @@
-# ── Working directory for prepared job directories ──────────────────────────
-# All job dirs created by ase_deepmd_tools.py will be written here.
-work_dir: ase_deepmd

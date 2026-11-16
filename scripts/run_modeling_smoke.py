@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Smoke-test every surface-modeling method on structures shipped in this repository.
 
-Each case calls the real entry point (skill script or ``genkai.cli``) in a
+Each case calls the real entry point (skill script or ``python -m genkai.modeling.surface.jobs``) in a
 subprocess, then reads every produced structure with ASE and checks that it is
 non-empty, free of overlapping atoms, has vacuum (slabs), keeps fixed atoms
 (extxyz/POSCAR outputs) and contains the expected elements.
@@ -83,10 +83,6 @@ INPUTS: dict[str, tuple[Path, str]] = {
     ),
     "a_sno2": (ROOT / "tests" / "amorphous" / "SnO2", "amorphous SnO2, 48 atoms (extension-less POSCAR)"),
     "a_tio2": (ROOT / "tests" / "amorphous" / "TiO2.vasp", "amorphous TiO2, 48 atoms"),
-    "gas_relations": (
-        ROOT / "tests" / "fixtures" / "surface_execution" / "sno2_sam_gas_relations.jsonl",
-        "saved extraction of the SnO2 SAM gas-sensor paper (offline)",
-    ),
 }
 
 
@@ -273,23 +269,6 @@ def amorphous_screen_case(kind: str) -> Callable[[Context, Path], list[list[str]
     return build
 
 
-def executor_case(blocked: bool) -> Callable[[Context, Path], list[list[str]]]:
-    def build(ctx: Context, out: Path) -> list[list[str]]:
-        run = out / "run"
-        init = py("-m", "genkai.cli", "init", run, "--relations", path("gas_relations"))
-        execute = py("-m", "genkai.cli", "surface", "execute", "--run-root", run)
-        if not blocked:
-            execute += [
-                "--bulk", path("sno2_bulk"),
-                "--surface-facet", "(110)",
-                "--molecule-name", "NO2",
-                "--coverage-counts", "1,2",
-            ]
-        return [init, execute]
-
-    return build
-
-
 def sam_case(substrate: list[str], molecule: str | None, extra: list[str]) -> Callable[[Context, Path], list[list[str]]]:
     def build(ctx: Context, out: Path) -> list[list[str]]:
         molecule_path = path(molecule) if molecule else str(out / "inputs" / "CH3SH.xyz")
@@ -407,11 +386,6 @@ CASES: list[Case] = [
          "ALD a-TiO2 island -> Optuna placement with tilt on the clean SnO2 slab (chained)",
          ("sno2_bulk", "a_tio2"), island_search_case, ("search/mlip_output/0*_trial_*.cif",),
          contains=("Ti",), min_structures=2),
-    Case("executor_sno2_no2", "surface_execute", "paper plan -> SnO2(110) slab + NO2 coverage 1,2 (genkai.cli)",
-         ("gas_relations", "sno2_bulk"), executor_case(blocked=False),
-         ("run/stages/03_surface_structures/structures.extxyz",), contains=("N",), min_structures=3, fixed=True),
-    Case("executor_blocks_unreviewed_plan", "surface_execute", "plan without reviewed inputs must be blocked (exit 2)",
-         ("gas_relations",), executor_case(blocked=True), expect_exit=2, expect_message="surface_facet"),
     Case("sam_sno2_butanoic_monodentate", "sam", "butanoic acid, monodentate, counts 1,2 on the most stable SnO2 facet",
          ("sno2_bulk", "butanoic_acid"),
          sam_case(by_path("sno2_bulk"), "butanoic_acid", ["--binding-mode", "monodentate", "--counts", "1,2"]),
