@@ -260,6 +260,7 @@ class SamFrameResult:
     min_contact_ratio: float | None = None
     min_nonbonded_contact_ratio: float | None = None
     intermolecular: dict[str, float] | None = None
+    designed: list[tuple[int, int]] = field(default_factory=list)  # (atom, partner) designed bonds, frame indices
 
     def summary(self, area_A2: float) -> dict[str, Any]:
         placed = len(self.molecules)
@@ -483,8 +484,15 @@ class SamBuilder:
             order.append(int(np.argmax(distance)))
         return order
 
-    def place(self, env: Atoms, group: tuple[int, ...], rng: np.random.Generator) -> tuple[np.ndarray, list, float, float] | None:
+    def place(
+        self,
+        env: Atoms,
+        group: tuple[int, ...],
+        rng: np.random.Generator,
+        axis_target: np.ndarray | None = None,
+    ) -> tuple[np.ndarray, list, float, float] | None:
         """Best rigid placement of the template on ``group``; ``None`` if it fails the checks."""
+        axis_target = self.axis_target if axis_target is None else axis_target
         template = self.template
         anchors_t = [self.template_map.index(a) for a in self.bonded_anchors]
         anchor_centroid = template.positions[anchors_t].mean(axis=0)
@@ -527,13 +535,13 @@ class SamBuilder:
             for a, k in assignment:
                 excluded[a, site_images[k]] = True
             place, objective = _placement_objective_factory(
-                local, threshold, bonds, axis_local, self.axis_target, cloud, excluded, origin
+                local, threshold, bonds, axis_local, axis_target, cloud, excluded, origin
             )
-            base = _rotation_aligning(axis_local, self.axis_target)
+            base = _rotation_aligning(axis_local, axis_target)
             height = max(d0 for _, _, d0 in bonds)
             for start in range(self.settings.n_starts):
                 spin = 2.0 * np.pi * start / self.settings.n_starts + rng.uniform(-0.2, 0.2)
-                rotation = Rotation.from_rotvec(self.axis_target * spin) * base
+                rotation = Rotation.from_rotvec(axis_target * spin) * base
                 x0 = np.concatenate([rotation.as_rotvec(), [0.0, 0.0, height]])
                 result = minimize(objective, x0, method="L-BFGS-B", options={"maxiter": 400})
                 if best is None or result.fun < best[0]:
@@ -599,85 +607,89 @@ class SamBuilder:
                 report.append({"hydrogen": hydrogen, "from_anchor": anchor, "action": "removed_no_acceptor"})
         return new_h, report
 
-    def build(self, count: int) -> SamFrameResult:
-        rng_py = random.Random(self.settings.seed)
-        rng_np = np.random.default_rng(self.settings.seed)
+    def _new_state(self) -> dict[str, Any]:
         frame = self.substrate.copy()
-        n_slab = len(frame)
         # Room above the slab before any minimum-image contact check, so a long
         # molecule is never folded back onto the slab bottom through c.
         extent = 2.0 * float(np.linalg.norm(self.template.positions - self.template.positions.mean(axis=0), axis=1).max())
         cell = frame.cell.array.copy()
         cell[2] = [0.0, 0.0, max(cell[2, 2], float(frame.positions[:, 2].max()) + extent + self.settings.vacuum_above)]
         frame.set_cell(cell)
-        fragment = np.zeros(n_slab, dtype=int)
-        role = np.zeros(n_slab, dtype=int)
-        used_sites: set[int] = set()
-        used_acceptors: set[int] = set()
-        designed: list[tuple[int, int]] = []
-        result = SamFrameResult(requested_count=count, atoms=None)
-        max_attempts = 4 * count + 10
-        for group_id in self._order_groups(rng_py):
-            if len(result.molecules) == count or result.attempts >= max_attempts:
-                break
-            group = self.groups[group_id]
-            if used_sites & set(group):
-                continue
-            result.attempts += 1
-            placed = self.place(frame, group, rng_np)
-            if placed is None:
-                result.rejections["no_solution"] = result.rejections.get("no_solution", 0) + 1
-                continue
-            positions, bonds, deviation, tilt = placed
-            if deviation > self.settings.bond_tolerance:
-                result.rejections["bond_fit"] = result.rejections.get("bond_fit", 0) + 1
-                continue
-            molecule = self.template.copy()
-            molecule.set_positions(positions)
-            trial = frame + molecule
-            fragment_id = len(result.molecules) + 1
-            trial_fragment = np.concatenate([fragment, np.full(len(molecule), fragment_id)])
-            if (ratio := _min_contact_ratio(trial, trial_fragment)) is not None and ratio < CLASH_FRACTION:
-                result.rejections["overlap"] = result.rejections.get("overlap", 0) + 1
-                continue
-            anchor_positions = {a: positions[self.template_map.index(a)] for a in self.bonded_anchors}
-            new_h, h_report = self._transfer_hydrogens(trial, anchor_positions, used_acceptors)
-            offset = len(frame)
-            for bond in bonds:
-                designed.append((offset + self.template_map.index(bond["anchor_atom"]), bond["site_index"]))
-            transferred = [entry for entry in h_report if entry["action"] == "transferred"]
-            for k, entry in enumerate(transferred):
-                designed.append((len(trial) + k, entry["acceptor_O"]))
-            if new_h:
-                trial = trial + Atoms(["H"] * len(new_h), positions=new_h)
-            anchor_flags = np.full(len(molecule), 2)
-            for a in self.bonded_anchors:
-                anchor_flags[self.template_map.index(a)] = 1
-            frame = trial
-            fragment = np.concatenate([trial_fragment, np.full(len(new_h), fragment_id)])
-            role = np.concatenate([role, anchor_flags, np.full(len(new_h), 3)])
-            used_sites.update(group)
-            result.molecules.append(
-                PlacedMolecule(
-                    fragment_id=fragment_id,
-                    site_group=tuple(int(i) for i in group),
-                    bonds=bonds,
-                    tilt_deg=round(tilt, 2),
-                    h_handling=h_report,
-                    max_bond_deviation_A=round(deviation, 4),
-                )
+        n_slab = len(frame)
+        return {
+            "frame": frame,
+            "n_slab": n_slab,
+            "fragment": np.zeros(n_slab, dtype=int),
+            "role": np.zeros(n_slab, dtype=int),
+            "used_sites": set(),
+            "used_acceptors": set(),
+            "designed": [],
+        }
+
+    def _try_add(
+        self,
+        state: dict[str, Any],
+        group: tuple[int, ...],
+        rng: np.random.Generator,
+        result: SamFrameResult,
+        axis_target: np.ndarray | None = None,
+    ) -> bool:
+        """Place one molecule on ``group``; update ``state`` and ``result`` on success."""
+        result.attempts += 1
+        placed = self.place(state["frame"], group, rng, axis_target)
+        if placed is None:
+            result.rejections["no_solution"] = result.rejections.get("no_solution", 0) + 1
+            return False
+        positions, bonds, deviation, tilt = placed
+        if deviation > self.settings.bond_tolerance:
+            result.rejections["bond_fit"] = result.rejections.get("bond_fit", 0) + 1
+            return False
+        frame = state["frame"]
+        molecule = self.template.copy()
+        molecule.set_positions(positions)
+        trial = frame + molecule
+        fragment_id = len(result.molecules) + 1
+        trial_fragment = np.concatenate([state["fragment"], np.full(len(molecule), fragment_id)])
+        if (ratio := _min_contact_ratio(trial, trial_fragment)) is not None and ratio < CLASH_FRACTION:
+            result.rejections["overlap"] = result.rejections.get("overlap", 0) + 1
+            return False
+        anchor_positions = {a: positions[self.template_map.index(a)] for a in self.bonded_anchors}
+        new_h, h_report = self._transfer_hydrogens(trial, anchor_positions, state["used_acceptors"])
+        offset = len(frame)
+        for bond in bonds:
+            state["designed"].append((offset + self.template_map.index(bond["anchor_atom"]), bond["site_index"]))
+        transferred = [entry for entry in h_report if entry["action"] == "transferred"]
+        for k, entry in enumerate(transferred):
+            state["designed"].append((len(trial) + k, entry["acceptor_O"]))
+        if new_h:
+            trial = trial + Atoms(["H"] * len(new_h), positions=new_h)
+        anchor_flags = np.full(len(molecule), 2)
+        for a in self.bonded_anchors:
+            anchor_flags[self.template_map.index(a)] = 1
+        state["frame"] = trial
+        state["fragment"] = np.concatenate([trial_fragment, np.full(len(new_h), fragment_id)])
+        state["role"] = np.concatenate([state["role"], anchor_flags, np.full(len(new_h), 3)])
+        state["used_sites"].update(group)
+        result.molecules.append(
+            PlacedMolecule(
+                fragment_id=fragment_id,
+                site_group=tuple(int(i) for i in group),
+                bonds=bonds,
+                tilt_deg=round(tilt, 2),
+                h_handling=h_report,
+                max_bond_deviation_A=round(deviation, 4),
             )
-        if len(result.molecules) < count:
-            result.error = (
-                f"Placed {len(result.molecules)} of {count} molecules ({result.attempts} site groups tried, "
-                f"{len(self.groups)} available); lower the count, change tilt/binding mode, or enlarge the cell."
-            )
-            return result
-        frame = self._finalize(frame, fragment, role, n_slab)
+        )
+        return True
+
+    def _complete(self, state: dict[str, Any], result: SamFrameResult) -> SamFrameResult:
+        frame = self._finalize(state["frame"], state["fragment"], state["role"], state["n_slab"])
+        count = len(result.molecules)
         result.atoms = frame
-        result.min_contact_ratio = _min_contact_ratio(frame, fragment)
-        result.min_nonbonded_contact_ratio = _min_contact_ratio(frame, fragment, designed)
-        result.intermolecular = _intermolecular_contacts(frame, fragment)
+        result.designed = list(state["designed"])
+        result.min_contact_ratio = _min_contact_ratio(frame, state["fragment"])
+        result.min_nonbonded_contact_ratio = _min_contact_ratio(frame, state["fragment"], state["designed"])
+        result.intermolecular = _intermolecular_contacts(frame, state["fragment"])
         frame.info.update(
             {
                 "task": "surface_functionalization",
@@ -690,6 +702,44 @@ class SamBuilder:
             }
         )
         return result
+
+    def build(self, count: int) -> SamFrameResult:
+        """Place ``count`` molecules on site groups in pattern order (first group that fits)."""
+        rng_py = random.Random(self.settings.seed)
+        rng_np = np.random.default_rng(self.settings.seed)
+        state = self._new_state()
+        result = SamFrameResult(requested_count=count, atoms=None)
+        max_attempts = 4 * count + 10
+        for group_id in self._order_groups(rng_py):
+            if len(result.molecules) == count or result.attempts >= max_attempts:
+                break
+            group = self.groups[group_id]
+            if state["used_sites"] & set(group):
+                continue
+            self._try_add(state, group, rng_np, result)
+        if len(result.molecules) < count:
+            result.error = (
+                f"Placed {len(result.molecules)} of {count} molecules ({result.attempts} site groups tried, "
+                f"{len(self.groups)} available); lower the count, change tilt/binding mode, or enlarge the cell."
+            )
+            return result
+        return self._complete(state, result)
+
+    def assemble(self, placements: Sequence[tuple[tuple[int, ...], float, float]], seed: int | None = None) -> SamFrameResult:
+        """Place one molecule per explicit (site group, tilt deg, azimuth deg); no fallback groups."""
+        rng_np = np.random.default_rng(self.settings.seed if seed is None else seed)
+        state = self._new_state()
+        result = SamFrameResult(requested_count=len(placements), atoms=None)
+        for group, tilt, azimuth in placements:
+            if state["used_sites"] & set(group):
+                result.error = f"Site group {tuple(group)} shares sites with an earlier molecule."
+                return result
+            axis = target_axis(tilt, azimuth, self.substrate.cell.array)
+            if not self._try_add(state, tuple(group), rng_np, result, axis):
+                reason = ", ".join(result.rejections) or "placement failed"
+                result.error = f"Could not place a molecule on site group {tuple(group)} ({reason})."
+                return result
+        return self._complete(state, result)
 
     def _finalize(self, frame: Atoms, fragment: np.ndarray, role: np.ndarray, n_slab: int) -> Atoms:
         fixed = fixed_indices(self.substrate)

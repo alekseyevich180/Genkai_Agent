@@ -74,6 +74,10 @@ def build_calculator(calculator_name: str, uma_model: str, device: str, task_nam
     import torch
     from fairchem.core import FAIRChemCalculator, pretrained_mlip
 
+    from .calculators import validate_uma_task
+
+    validate_uma_task(task_name)
+
     torch.set_float32_matmul_precision("medium")
     torch.backends.cuda.matmul.allow_tf32 = True
 
@@ -244,6 +248,12 @@ def main() -> int:
     parser.add_argument("--max-steps", type=int, default=CONFIG["max_steps"])
     parser.add_argument("--seed", type=int, default=CONFIG["seed"])
     parser.add_argument("--write-all-structures", action="store_true", default=CONFIG["write_all_structures"])
+    parser.add_argument(
+        "--fixed-fraction",
+        type=float,
+        default=0.5,
+        help="Fix atoms below this fraction of the slab thickness when the input has no FixAtoms (CIF); 0 disables.",
+    )
     args = parser.parse_args()
 
     if args.smoke_test:
@@ -263,7 +273,10 @@ def main() -> int:
     structures_dir.mkdir(parents=True, exist_ok=True)
 
     rng = random.Random(args.seed)
-    clean = read(args.input)
+    from .substrate import ensure_fixed_bottom
+
+    clean, constraint_source = ensure_fixed_bottom(read(args.input), args.fixed_fraction)
+    print(f"Slab constraints: {constraint_source}")
     all_o_indices = oxygen_indices(clean)
     o_indices = oxygen_indices(clean, z_frac_min=args.z_frac_min, z_frac_max=args.z_frac_max)
     vacancy_counts = parse_vacancy_counts(args.vacancy_counts, len(o_indices))

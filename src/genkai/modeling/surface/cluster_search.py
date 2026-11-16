@@ -51,6 +51,9 @@ def build_calculator(
     import torch
     from fairchem.core import FAIRChemCalculator
 
+    from .calculators import validate_uma_task
+
+    validate_uma_task(task_name)  # fail before loading the model (fairchem 2.7.1 has no oc22)
     torch.set_float32_matmul_precision("medium")
     torch.backends.cuda.matmul.allow_tf32 = True
     model_ref = str(checkpoint) if checkpoint is not None else uma_model
@@ -96,8 +99,13 @@ def get_geometric_center(atoms: Atoms) -> np.ndarray:
     return np.mean(atoms.positions, axis=0)
 
 
-def load_slab(surface_path: Path, calculator, fmax: float, max_steps: int | None) -> tuple[Atoms, float]:
-    slab = read(surface_path)
+def load_slab(
+    surface_path: Path, calculator, fmax: float, max_steps: int | None, fixed_fraction: float = 0.5
+) -> tuple[Atoms, float]:
+    from .substrate import ensure_fixed_bottom
+
+    slab, source = ensure_fixed_bottom(read(surface_path), fixed_fraction)
+    print(f"Slab constraints: {source}")
     energy = get_opt_energy(slab, calculator, fmax=fmax, opt_mode="normal", max_steps=max_steps)
     return slab, energy
 
@@ -131,9 +139,20 @@ def load_cluster(
     calculator,
     fmax: float,
     max_steps: int | None,
+    placement_shape: str = "relaxed",
 ) -> tuple[Atoms, float]:
-    cluster = read(cluster_path)
-    energy = get_opt_energy(cluster, calculator, fmax=fmax, max_steps=max_steps)
+    """Reference energy of the fully relaxed isolated cluster, and the shape to place.
+
+    ``placement_shape="input"`` places the cluster as supplied (e.g. an amorphous
+    island cut from a bulk, which can deform strongly when relaxed alone in
+    vacuum); the reference energy is still that of the relaxed isolated cluster.
+    """
+    supplied = read(cluster_path)
+    supplied.set_constraint()
+    relaxed = supplied.copy()
+    energy = get_opt_energy(relaxed, calculator, fmax=fmax, max_steps=max_steps)
+    cluster = relaxed if placement_shape == "relaxed" else supplied
+    cluster.calc = None
     cluster.positions -= get_geometric_center(cluster)
     return cluster, energy
 
@@ -180,12 +199,20 @@ def place_cluster_on_slab(
     site_radius: float,
     z_min: float,
     z_max: float,
+    max_tilt: float = 0.0,
 ) -> Atoms:
     placed = cluster.copy()
     geometric_center = get_geometric_center(placed)
     bottom_normal = estimate_bottom_plane_normal(placed)
     spin_angle = trial.suggest_float("spin_angle", -180.0, 180.0)
     placed.rotate(spin_angle, v=bottom_normal, center=geometric_center)
+    if max_tilt > 0.0:
+        # Which face points down matters for irregular (e.g. amorphous) clusters:
+        # tilt by up to max_tilt degrees about an in-plane axis of random direction.
+        tilt = trial.suggest_float("tilt", 0.0, max_tilt)
+        tilt_azimuth = np.radians(trial.suggest_float("tilt_azimuth", 0.0, 360.0))
+        axis = [float(np.cos(tilt_azimuth)), float(np.sin(tilt_azimuth)), 0.0]
+        placed.rotate(tilt, v=axis, center=geometric_center)
 
     slab_top_z = float(np.max(slab.positions[:, 2]))
     if placement_mode == "active":
@@ -231,6 +258,7 @@ def objective(trial: optuna.Trial) -> float:
     penalty_energy = float(trial.study.user_attrs["penalty_energy"])
     max_steps = int(trial.study.user_attrs["max_steps"])
     fmax = float(trial.study.user_attrs["fmax"])
+    max_tilt = float(trial.study.user_attrs.get("max_tilt", 0.0))
 
     placed_cluster = place_cluster_on_slab(
         cluster=cluster,
@@ -241,6 +269,7 @@ def objective(trial: optuna.Trial) -> float:
         site_radius=site_radius,
         z_min=z_min,
         z_max=z_max,
+        max_tilt=max_tilt,
     )
 
     combined = slab + placed_cluster
@@ -366,7 +395,7 @@ def export_selected_candidates(
         write(vasp_dir / f"{index}.vasp", structure, format="vasp", direct=True, sort=True, vasp5=True)
 
 
-def main():
+def main(argv: list[str] | None = None):
     global CALCULATOR
 
     import optuna
@@ -380,13 +409,39 @@ def main():
     parser.add_argument("--output_dir", type=Path, default=Path("output_nanocluster"))
     parser.add_argument("--n_trials", type=int, default=100)
     parser.add_argument("--fmax", type=float, default=1e-4)
+    parser.add_argument(
+        "--calculator",
+        choices=["uma", "none"],
+        default="uma",
+        help="uma: real MLIP search (needs authorization); none: mock contact score for workflow tests only.",
+    )
     parser.add_argument("--uma_model", type=str, default="uma-s-1p2")
     parser.add_argument("--checkpoint", type=Path, default=None)
     parser.add_argument(
         "--task_name",
         type=str,
         default="oc22",
-        help="UMA task head passed to FAIRChemCalculator; it must be supported by the selected model.",
+        help="UMA task head passed to FAIRChemCalculator; checked against the installed fairchem before loading "
+        "(fairchem 2.7.1 has omol, omat, odac, oc20, oc25, omc - no oc22).",
+    )
+    parser.add_argument(
+        "--fixed_fraction",
+        type=float,
+        default=0.5,
+        help="Fix slab atoms below this fraction of the thickness when the file has no FixAtoms (CIF); 0 disables.",
+    )
+    parser.add_argument(
+        "--max_tilt",
+        type=float,
+        default=0.0,
+        help="Also search a tilt of the cluster up to this angle (deg) about a random in-plane axis; 0 = spin only.",
+    )
+    parser.add_argument(
+        "--placement_shape",
+        choices=["relaxed", "input"],
+        default="relaxed",
+        help="Shape placed on the slab: the relaxed isolated cluster, or the input as supplied (amorphous islands). "
+        "The reference energy always comes from the relaxed isolated cluster.",
     )
     parser.add_argument("--device", type=str, default="cuda", choices=["cuda", "cpu"])
     parser.add_argument(
@@ -411,7 +466,8 @@ def main():
     parser.add_argument("--tail_bin_size", type=int, default=10)
     parser.add_argument("--tail_pick_per_bin", type=int, default=1)
     parser.add_argument("--selection_random_seed", type=int, default=42)
-    args = parser.parse_args()
+    parser.add_argument("--seed", type=int, default=None, help="Optuna sampler seed (default: random).")
+    args = parser.parse_args(argv)
 
     args.active_symbols = normalize_symbols(args.active_symbols)
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -420,19 +476,25 @@ def main():
         raise ValueError("--placement_mode active requires --active_symbols.")
 
     write_run_config(args.output_dir, args)
-    print(f"UMA model: {args.checkpoint or args.uma_model}, task: {args.task_name}, device: {args.device}")
-    CALCULATOR = build_calculator(
-        args.uma_model,
-        args.device,
-        args.include_d3,
-        args.checkpoint,
-        task_name=args.task_name,
-    )
+    if args.calculator == "none":
+        from .calculators import MOCK_NOTE, ContactMockCalculator
+
+        print(f"WARNING {MOCK_NOTE}")
+        CALCULATOR = ContactMockCalculator()
+    else:
+        print(f"UMA model: {args.checkpoint or args.uma_model}, task: {args.task_name}, device: {args.device}")
+        CALCULATOR = build_calculator(
+            args.uma_model,
+            args.device,
+            args.include_d3,
+            args.checkpoint,
+            task_name=args.task_name,
+        )
     input_surface = read(args.surface)
     input_cluster = read(args.cluster)
 
     print(f"Loading and relaxing surface: {args.surface}")
-    slab, e_slab = load_slab(args.surface, CALCULATOR, args.fmax, args.max_steps)
+    slab, e_slab = load_slab(args.surface, CALCULATOR, args.fmax, args.max_steps, args.fixed_fraction)
     print(f"Surface symbols: {format_symbol_counts(slab)}")
     print(f"Relaxed slab energy: {e_slab:.6f} eV")
 
@@ -450,8 +512,9 @@ def main():
         calculator=CALCULATOR,
         fmax=args.fmax,
         max_steps=args.max_steps,
+        placement_shape=args.placement_shape,
     )
-    print(f"Cluster atom count: {len(cluster)}")
+    print(f"Cluster atom count: {len(cluster)} (placed shape: {args.placement_shape})")
     print(f"Cluster symbols: {format_symbol_counts(cluster)}")
     print(f"Relaxed cluster energy: {e_cluster:.6f} eV")
 
@@ -462,7 +525,9 @@ def main():
     write(structure_output_dir / "initial_surface.cif", input_surface)
     write(structure_output_dir / "initial_cluster.cif", input_cluster)
 
-    study = optuna.create_study(direction="minimize")
+    sampler = optuna.samplers.TPESampler(seed=args.seed) if args.seed is not None else None
+    study = optuna.create_study(direction="minimize", sampler=sampler)
+    study.set_user_attr("max_tilt", args.max_tilt)
     study.set_user_attr("slab", atoms_to_json(slab))
     study.set_user_attr("E_slab", e_slab)
     study.set_user_attr("cluster", atoms_to_json(cluster))
@@ -507,6 +572,7 @@ def main():
 
     print(f"Selected MLIP structures written to {structure_output_dir}")
     print(f"VASP inputs written to {vasp_dir}")
+    return 0
 
 
 if __name__ == "__main__":

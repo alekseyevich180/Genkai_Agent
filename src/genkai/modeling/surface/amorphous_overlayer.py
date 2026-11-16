@@ -179,6 +179,17 @@ class FilmMatch:
 
 def match_film_lattice(substrate: Atoms, amorphous: Atoms, max_strain: float, max_area: float) -> FilmMatch:
     """Smallest in-plane supercell pair whose affine map has |strain| <= max_strain (no mirroring)."""
+    matches = film_lattice_matches(substrate, amorphous, max_strain, max_area)
+    if not matches:
+        raise OverlayerBuildError(
+            f"No in-plane supercell match between slab and amorphous cell within {max_strain:.1%} strain and "
+            f"{max_area:.0f} A^2; raise --max-strain or --max-area."
+        )
+    return matches[0]
+
+
+def film_lattice_matches(substrate: Atoms, amorphous: Atoms, max_strain: float, max_area: float) -> list[FilmMatch]:
+    """All distinct proper (non-mirrored) matches, smallest area then smallest strain first."""
     from pymatgen.analysis.interfaces.zsl import ZSLGenerator
 
     sv = substrate.cell.array[:2]
@@ -191,7 +202,7 @@ def match_film_lattice(substrate: Atoms, amorphous: Atoms, max_strain: float, ma
         max_length_tol=max_strain,
         max_angle_tol=max_strain,
     )
-    best: FilmMatch | None = None
+    found: dict[tuple[int, ...], FilmMatch] = {}
     for match in generator(fv, sv):
         film_sl = np.asarray(match.film_sl_vectors, dtype=float)
         sub_sl = np.asarray(match.substrate_sl_vectors, dtype=float)
@@ -212,18 +223,9 @@ def match_film_lattice(substrate: Atoms, amorphous: Atoms, max_strain: float, ma
         if max(abs(s) for s in strains) > max_strain + 1e-9:
             continue
         area = abs(float(np.linalg.det(sub_vectors)))
-        candidate = FilmMatch(ts, tf, strains, area)
-        if best is None or (round(area, 3), max(map(abs, strains))) < (
-            round(best.area_A2, 3),
-            max(map(abs, best.principal_strains)),
-        ):
-            best = candidate
-    if best is None:
-        raise OverlayerBuildError(
-            f"No in-plane supercell match between slab and amorphous cell within {max_strain:.1%} strain and "
-            f"{max_area:.0f} A^2; raise --max-strain or --max-area."
-        )
-    return best
+        key = tuple(int(v) for v in np.concatenate([ts.ravel(), tf.ravel()]))
+        found.setdefault(key, FilmMatch(ts, tf, strains, area))
+    return sorted(found.values(), key=lambda m: (round(m.area_A2, 3), max(map(abs, m.principal_strains))))
 
 
 def pair_reference_distances(bulk: Atoms) -> dict[tuple[str, str], float]:
@@ -616,6 +618,9 @@ def run_overlayer(
                 frames.append(frame)
     else:
         islands = [_cut_island(amorphous, settings, rng) for _ in range(settings.samples)]
+        for sample, (island, cut_report) in enumerate(islands):
+            # The isolated island, for an energy-based placement search (cluster_search --cluster).
+            cut_report["island_file"] = write_frames(outdir / "islands" / f"island_{sample:03d}.extxyz", [island]).as_posix()
         diameter = max(lateral_diameter(island) for island, _ in islands)
         repeats = repeats_for_width(substrate.atoms, diameter + settings.island_separation + 2.0 * settings.interface_gap)
         slab = substrate.atoms.repeat((repeats[0], repeats[1], 1))
@@ -679,7 +684,11 @@ def run_overlayer(
         "lattice": match_record,
         "settings": asdict(settings),
         "samples": samples,
-        "files": {"structures": structures_path.as_posix(), "exports": [p.as_posix() for p in exported]},
+        "files": {
+            "structures": structures_path.as_posix(),
+            "exports": [p.as_posix() for p in exported],
+            "islands": [s["island_file"] for s in samples if "island_file" in s],
+        },
         "validation": {"warnings": [i.model_dump() for i in substrate.warnings], "issues": issues, "notes": notes},
         "conventions": {
             "tags": "0 = fixed subsurface, 1 = free slab, 2 = amorphous overlayer",

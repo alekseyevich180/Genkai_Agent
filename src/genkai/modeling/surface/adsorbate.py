@@ -84,6 +84,8 @@ class AdsorbateLandscapeConfig:
     include_d3: bool = False
     fmax: float = 0.05
     max_steps: int = 0
+    # Fix the slab bottom when the surface file has no FixAtoms (e.g. CIF); 0 disables.
+    fixed_fraction: float = 0.5
 
 
 @dataclass(frozen=True)
@@ -127,6 +129,9 @@ def build_calculator(calculator_name: str, uma_model: str, device: str, task_nam
     import torch
     from fairchem.core import FAIRChemCalculator, pretrained_mlip
 
+    from .calculators import validate_uma_task
+
+    validate_uma_task(task_name)
     torch.set_float32_matmul_precision("medium")
     torch.backends.cuda.matmul.allow_tf32 = True
 
@@ -572,7 +577,10 @@ def run_adsorbate_landscape(
     site_symbols = parse_symbols(args.site_symbols)
     patterns = parse_patterns(args.patterns)
 
-    slab = read(args.surface)
+    from .substrate import ensure_fixed_bottom
+
+    slab, constraint_source = ensure_fixed_bottom(read(args.surface), args.fixed_fraction)
+    print(f"Slab constraints: {constraint_source}")
     molecule = read(args.molecule)
     site_indices = get_surface_sites(slab, site_symbols, args.site_z_tolerance, args.max_sites)
     site_groups = build_site_groups(slab, site_indices, args.site_group_size)
@@ -753,6 +761,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--include-d3", action="store_true", default=CONFIG["include_d3"])
     parser.add_argument("--fmax", type=float, default=CONFIG["fmax"])
     parser.add_argument("--max-steps", type=int, default=CONFIG["max_steps"])
+    parser.add_argument(
+        "--fixed-fraction",
+        type=float,
+        default=0.5,
+        help="Fix slab atoms below this fraction of the thickness when the file has no FixAtoms (CIF); 0 disables.",
+    )
     parser.add_argument("--smoke-test", action="store_true")
     return parser
 

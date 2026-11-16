@@ -175,6 +175,21 @@ def apply_slab_convention(atoms: Atoms, settings: SlabSettings) -> tuple[Atoms, 
     return slab, source
 
 
+def ensure_fixed_bottom(atoms: Atoms, fixed_fraction: float = 0.5) -> tuple[Atoms, str]:
+    """Keep constraints from the file; otherwise fix the slab bottom before an MLIP relaxation.
+
+    The older vacancy, adsorbate and cluster-search scripts read slabs with
+    ``ase.io.read``; CIF files carry no ``FixAtoms``, so without this the whole
+    slab (both surfaces) would relax. ``fixed_fraction <= 0`` disables it.
+    """
+    if fixed_indices(atoms):
+        return atoms, "file"
+    if fixed_fraction <= 0:
+        return atoms, "none (disabled)"
+    fixed_slab, source = apply_slab_convention(atoms, SlabSettings(fixed_fraction=fixed_fraction))
+    return fixed_slab, source
+
+
 def supercell_in_plane(atoms: Atoms, matrix: Any) -> Atoms:
     """In-plane supercell from a 2x2 integer matrix, keeping tags and FixAtoms."""
     transform = np.asarray(matrix, dtype=int).reshape(2, 2)
