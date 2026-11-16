@@ -178,7 +178,10 @@ python scripts/check_harness.py full
 python scripts/run_modeling_smoke.py --list
 python scripts/run_modeling_smoke.py                      # 报告写入 <输出目录>/smoke_report.json
 python scripts/run_modeling_smoke.py --only sam,ald       # 按方法名或用例前缀筛选
+python scripts/run_modeling_smoke.py --only amorphous,ald,sam_on_amorphous   # 只测非晶相关（10 个用例）
 ```
+
+各子集的命令和基线速查见 `work_logs/2026-11-16.md` 的“测试脚本控制命令（速查）”。
 
 当前已知 WARN：`adsorbate_sno2_101_ketone`。旧吸附脚本放置多个分子时不检查分子之间的重叠，
 大分子在小晶胞上会出现 0.51 Å 的 C…H 接触。
