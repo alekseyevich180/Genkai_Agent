@@ -55,6 +55,12 @@ paths documented below are thin compatibility entrypoints for Skill callers.
 4. Search surface-cluster adsorption geometries with `scripts/cluster_search/ads_nanocluster.py` when UMA/FAIRChem is available.
 5. Use the `vasp` skill for DFT refinement or MLIP training label preparation.
 
+`python scripts/run_modeling_smoke.py` (repository root) runs every method above on
+structures shipped in the repository and checks the generated structures; see
+`--list` for the cases. Note that `--smoke-test` of the adsorbate and vacancy
+scripts replaces `--output-dir` with a fixed folder in the current directory;
+the smoke script passes `--calculator none --max-steps 0` explicitly instead.
+
 The vacancy and adsorbate scripts support `--calculator none` or `--smoke-test` for fast local workflow validation. Use `--calculator uma` only when `fairchem-core`, PyTorch, and the target UMA model are available.
 
 ## Dependencies

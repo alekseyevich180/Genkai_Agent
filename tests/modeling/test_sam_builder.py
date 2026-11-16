@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -113,6 +114,17 @@ def test_thiolate_in_fcc_hollow_on_au111(tmp_path, inputs) -> None:
             assert all(b["distance_A"] == pytest.approx(b["target_A"], abs=0.1) for b in placed["bonds"])
             assert placed["tilt_deg"] == pytest.approx(30.0, abs=3.0)
             assert classify_hollow(substrate.atoms, placed["site_group"]) == "fcc"
+
+
+def test_thin_slab_without_bulk_like_interior_falls_back_to_exposed_sites(tmp_path) -> None:
+    # The skill example is two O-Ce-O trilayers: every Ce is 7-fold, none is "undercoordinated".
+    example = Path(__file__).resolve().parents[2] / "agents/Agent/skills/surface-modeling/examples"
+    substrate = prepare_substrate(surface=example / "CeO2 (1 1 1).cif")
+    result = run_sam(substrate, example / "4-acid.vasp", SamSettings("bidentate", coverage_counts=(1,)), tmp_path)
+    assert result.manifest["binding"]["site_selection"].startswith("exposed only")
+    assert result.manifest["validation"]["warnings"][-1]["code"] == "sites_not_undercoordinated"
+    (placed,) = result.manifest["builds"][0]["molecules"]
+    assert [b["site_symbol"] for b in placed["bonds"]] == ["Ce", "Ce"]
 
 
 def test_density_is_converted_to_an_integer_count(tmp_path, inputs, sno2_substrate) -> None:

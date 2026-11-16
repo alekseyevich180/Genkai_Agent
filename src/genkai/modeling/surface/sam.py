@@ -392,10 +392,21 @@ class SamBuilder:
         if missing:
             raise SamBuildError(f"Site element(s) {', '.join(missing)} are not present in the slab.")
         self.sites = find_surface_sites(substrate, self.site_symbols, depth=settings.surface_depth)
+        self.site_selection = "exposed and undercoordinated"
+        if not self.sites:
+            # The reference coordination is the slab maximum; in a slab too thin to have a
+            # bulk-like interior (e.g. two CeO2(111) trilayers, every Ce 7-fold) nothing looks
+            # undercoordinated, so fall back to exposed atoms and say so.
+            self.sites = find_surface_sites(
+                substrate, self.site_symbols, depth=settings.surface_depth, undercoordinated_only=False
+            )
+            self.site_selection = (
+                "exposed only: no atom is undercoordinated relative to the slab maximum "
+                "(slab may be too thin for a bulk-like reference coordination)"
+            )
         if not self.sites:
             raise SamBuildError(
-                f"No exposed undercoordinated {'/'.join(self.site_symbols)} atom found in the top "
-                f"{settings.surface_depth} A of the slab."
+                f"No exposed {'/'.join(self.site_symbols)} atom found in the top {settings.surface_depth} A of the slab."
             )
         self.max_span = settings.max_span if settings.max_span is not None else self._default_span()
         self.groups = self._site_groups()
@@ -793,6 +804,8 @@ def run_sam(
     structures_path = write_frames(outdir / "sam_structures.extxyz", frames)
     exported = export_frames(frames, outdir / "exports", "sam", export) if export else []
     warnings = [issue.model_dump() for issue in substrate.warnings]
+    if builder.site_selection.startswith("exposed only"):
+        warnings.append({"code": "sites_not_undercoordinated", "message": builder.site_selection})
     failed = [report for report in frame_reports if report["error"]]
     manifest = {
         "schema_version": "1.0",
@@ -819,6 +832,7 @@ def run_sam(
             "sites_per_molecule": builder.n_sites,
             "single_anchor_atom": builder.single_atom,
             "site_symbols": builder.site_symbols,
+            "site_selection": builder.site_selection,
             "candidate_sites": [site.summary() for site in builder.sites],
             "site_groups_available": len(builder.groups),
             "max_span_A": round(builder.max_span, 4),

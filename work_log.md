@@ -19,6 +19,8 @@
 - 2026-11-16：已实现 SAM 构建器（`scripts/sam/sam_builder.py`）和 ALD 非晶覆盖层构建器
   （`scripts/ald/ald_overlayer.py`），见同日日志“SAM 与 ALD 复杂表面脚本：实现”。下一步是
   把 SAM 注册进 structure-only 执行器。
+- 2026-11-16：新增 `scripts/run_modeling_smoke.py`，用仓库已有结构跑全部建模方式
+  （本机 PASS 18 / WARN 1 / FAIL 0 / SKIP 2），见同日日志“表面建模冒烟测试脚本”。
 
 ## 日志文件
 

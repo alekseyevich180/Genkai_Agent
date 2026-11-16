@@ -165,6 +165,21 @@ python scripts/check_harness.py package
 python scripts/check_harness.py full
 ```
 
+表面建模冒烟测试（2026-11-16 起）：用仓库中已有的结构，通过真实入口逐一调用全部建模方式
+（切面、空位、吸附、团簇、执行器、SAM、ALD），检查结构能否生成、可读、无原子重叠、有真空层和
+固定原子。默认 `local` 档只生成结构（`calculator=none`），本机约 2.5 分钟；UMA 团簇搜索和
+Materials Project 用例默认 SKIP。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
+计算的服务器上运行。
+
+```bash
+python scripts/run_modeling_smoke.py --list
+python scripts/run_modeling_smoke.py                      # 报告写入 <输出目录>/smoke_report.json
+python scripts/run_modeling_smoke.py --only sam,ald       # 按方法名或用例前缀筛选
+```
+
+当前已知 WARN：`adsorbate_sno2_101_ketone`。旧吸附脚本放置多个分子时不检查分子之间的重叠，
+大分子在小晶胞上会出现 0.51 Å 的 C…H 接触。
+
 旧的收集阻塞 `tests/test_structure_builder.py`（导入从未存在的
 `agent.tools.structure_builder`）已于 2026-11-13 删除。当前已知基线（2026-11-16，
 Windows + Python 3.11）：
@@ -250,6 +265,8 @@ python -m pytest -m external path/to/test.py -v
 - 相关目录测试和集成测试
 - `python scripts/check_harness.py quick`
 - 相关 CLI `--help` 或离线 dry-run
+- 修改 `src/genkai/modeling/surface/` 或 surface-modeling 入口时，运行
+  `python scripts/run_modeling_smoke.py`，并报告 PASS/WARN/FAIL/SKIP 数量
 
 ### Level 3：项目
 
