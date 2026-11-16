@@ -1,6 +1,6 @@
 ---
 name: surface-modeling
-description: "Use when a reviewed modeling plan requires oxide-surface, vacancy, adsorbate, or supported-cluster structure candidates; do not use for DFT labeling or MLIP training."
+description: "Use when a reviewed modeling plan requires oxide-surface, vacancy, adsorbate, SAM-functionalized, ALD amorphous-overlayer, or supported-cluster structure candidates; do not use for DFT labeling or MLIP training."
 metadata:
   maturity: stable
   domain: modeling
@@ -19,6 +19,8 @@ metadata:
     - scripts/vacancy/vacancy_landscape.py
     - scripts/adsorbate/adsorbate_landscape.py
     - scripts/metal_cluster/surface_cluster_builder.py
+    - scripts/sam/sam_builder.py
+    - scripts/ald/ald_overlayer.py
   tags:
     - surface
     - slab
@@ -27,6 +29,9 @@ metadata:
     - adsorption
     - oxygen-vacancy
     - nanocluster
+    - self-assembled-monolayer
+    - ALD
+    - amorphous
     - MLIP
     - ASE
 ---
@@ -44,6 +49,8 @@ paths documented below are thin compatibility entrypoints for Skill callers.
 2. Generate realistic modified surfaces:
    - oxygen vacancies with `scripts/vacancy/vacancy_landscape.py`
    - adsorbate coverage structures with `scripts/adsorbate/adsorbate_landscape.py`
+   - SAM-functionalized surfaces with `scripts/sam/sam_builder.py`
+   - ALD-modified surfaces (amorphous film or island) with `scripts/ald/ald_overlayer.py`
 3. Build isolated metal clusters or cluster-on-surface starting structures with `scripts/metal_cluster/surface_cluster_builder.py`.
 4. Search surface-cluster adsorption geometries with `scripts/cluster_search/ads_nanocluster.py` when UMA/FAIRChem is available.
 5. Use the `vasp` skill for DFT refinement or MLIP training label preparation.
@@ -258,6 +265,98 @@ Energy descriptor:
 ```text
 E_ads = (E_total - E_slab - N * E_mol) / N
 ```
+
+## Shared Substrate And File Conventions (SAM and ALD builders)
+
+Both builders take the substrate from `--surface SLAB` (a reviewed slab) or
+`--bulk BULK` (cut by `genkai.modeling.surface.slab`). Without `--facet` the
+most stable facet is used: surface-energy ranking with `--calculator emt|uma`
+(EMT suits some metals only; UMA needs explicit authorization), otherwise the
+reviewed stable-facet registry. The selection source is recorded as
+`substrate.facet_source` in the manifest.
+
+- Inputs default to CIF; any ASE-readable format works and `--*-format` forces
+  one (an extension-less POSCAR falls back to the VASP reader).
+- Slab files without constraints (every CIF) get the bottom fixed again with
+  the slab-generator rule; the manifest records `constraints_source`.
+- Molecule CIFs are unwrapped, so molecules split across cell faces are whole.
+- Outputs: one extxyz with all frames (frame 0 = clean slab), a JSON manifest,
+  and `exports/` (CIF by default, `--export cif,vasp`; POSCAR is unsorted so
+  indices match the extxyz). Tags: 0 fixed slab, 1 free slab, 2 added atoms.
+- Every structure is unrelaxed (`evidence_level: heuristic`); no energy model
+  runs. Exit code 2 means blocked or partially failed; read the manifest.
+
+## SAM-Functionalized Surface
+
+Script (thin entry over `genkai.modeling.surface.sam`):
+
+```bash
+python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
+  --bulk SnO2.cif --molecule PAC12IMI.cif \
+  --anchor-kind phosphonic --binding-mode bidentate --counts 1,2 \
+  --output-dir sam_sno2
+
+python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
+  --bulk Au.cif --facet 111 --molecule dodecanethiol.cif \
+  --binding-mode fcc --counts 1,3 --tilt 30 --output-dir sam_au
+```
+
+- Anchor groups are detected from bonding: phosphonic acid (P with three
+  terminal O and one C), carboxylic acid, thiol. A molecule with several groups
+  (e.g. PAC10CA) is blocked until `--anchor-kind` chooses one; `--anchor-atoms`
+  (0-based indices) overrides detection.
+- Binding modes are user choices: phosphonic `monodentate|bidentate|tridentate`,
+  carboxylic `monodentate|bidentate`, thiol `top|bridge|hollow|fcc|hcp`.
+  Bonding O atoms are taken H-bearing first; a thiol S bonds to every atom of
+  its site.
+- Sites are exposed, undercoordinated surface atoms found by coordination
+  (e.g. Sn5c on rutile (110), every top atom of Au(111)); `--site-symbols`
+  restricts them. Modes the surface cannot host are blocked, e.g. tridentate on
+  rutile (110) has no three Sn5c within reach.
+- Acidic H (`--acidic-h auto`): moved to an exposed surface O as OH (bridging O
+  first) on O-containing surfaces, removed on metals (thiolate); `keep` leaves
+  it on the molecule.
+- Coverage: `--counts 1,2,4` (one frame each) or `--density X` molecules/nm^2
+  (rounded; the achieved density is recorded). Molecules use disjoint site
+  groups; requests above the geometric capacity are reported as failed counts.
+- Placement is a rigid-body fit of anchor-site bond lengths (covalent radii sum
+  or `--bond-length`), tilt/azimuth and contact avoidance. The manifest lists
+  every bond distance, tilt, H action and `min_nonbonded_contact_ratio`.
+- Paper graft densities are not model coverages: on SnO2(110) the Sn5c density
+  is about 4.7 nm^-2 and a bidentate SAM holds at most half of that.
+
+## ALD-Modified Surface (Amorphous Overlayer)
+
+Script (thin entry over `genkai.modeling.surface.amorphous_overlayer`):
+
+```bash
+# Full coverage: continuous amorphous film
+python agents/Agent/skills/surface-modeling/scripts/ald/ald_overlayer.py \
+  --bulk SnO2.cif --amorphous a-Al2O3.cif --coverage full --thickness 6 \
+  --output-dir ald_full
+
+# Partial coverage: amorphous island on one facet (default: most stable facet)
+python agents/Agent/skills/surface-modeling/scripts/ald/ald_overlayer.py \
+  --bulk SnO2.cif --facet 101 --amorphous a-Al2O3.cif --coverage partial \
+  --island-atoms 40 --samples 3 --output-dir ald_island_101
+```
+
+- `--amorphous` must be a periodic amorphous bulk cell (generated elsewhere,
+  e.g. by melt-quench); slabs or clusters are rejected.
+- Full coverage matches the in-plane cells with pymatgen ZSL, strains the
+  amorphous supercell affinely onto the slab supercell (`--max-strain`,
+  `--max-area`; no mirror images), so the film is periodic without seams, then
+  cuts a `--thickness` window placed `--interface-gap` above the slab.
+- Partial coverage cuts a connected hemisphere-like island (`--island-atoms` or
+  `--island-radius`) and enlarges the slab until the island is at least
+  `--island-separation` from its periodic images. Run once per facet that
+  carries islands; the manifest reports footprint fraction and image gap.
+- `--samples N` gives N different cuts. Cut films and islands are usually
+  off-stoichiometric; `composition` reports the anion/cation ratio against the
+  amorphous bulk and is never corrected silently. Isolated atoms left by the
+  cut are removed and counted.
+- No relaxation or annealing: interfaces are starting points for an authorized
+  MLIP/DFT relaxation or melt-quench.
 
 ## Metal Cluster And Surface-Cluster Construction
 

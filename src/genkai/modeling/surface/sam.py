@@ -71,7 +71,8 @@ SINGLE_ATOM_ANCHORS = {"thiol"}
 ACIDIC_H_POLICIES = ("auto", "transfer", "remove", "keep")
 PATTERNS = ("uniform", "clustered", "random")
 CLASH_FRACTION = 0.6  # same rejection rule as the structure-only executor
-CONTACT_OFFSET_A = 0.4  # soft repulsion below r_i + r_j + offset during placement
+CONTACT_OFFSET_A = 0.4  # molecule-slab soft repulsion below r_i + r_j + offset (covalent radii)
+VDW_CONTACT_FRACTION = 0.8  # molecule-molecule soft repulsion below 0.8 x van der Waals radii sum
 
 
 class SamBuildError(ValueError):
@@ -258,6 +259,7 @@ class SamFrameResult:
     error: str | None = None
     min_contact_ratio: float | None = None
     min_nonbonded_contact_ratio: float | None = None
+    intermolecular: dict[str, float] | None = None
 
     def summary(self, area_A2: float) -> dict[str, Any]:
         placed = len(self.molecules)
@@ -269,6 +271,7 @@ class SamFrameResult:
             "rejections": dict(self.rejections),
             "min_contact_ratio": self.min_contact_ratio,
             "min_nonbonded_contact_ratio": self.min_nonbonded_contact_ratio,
+            "min_intermolecular_distance_A": self.intermolecular,
             "error": self.error,
             "n_atoms": len(self.atoms) if self.atoms is not None else None,
             "molecules": [molecule.summary() for molecule in self.molecules],
@@ -323,19 +326,24 @@ def _environment_cloud(
     return np.vstack(points), np.concatenate(owners)
 
 
+def _vdw_radii(numbers: np.ndarray) -> np.ndarray:
+    from ase.data.vdw import vdw_radii
+
+    radii = np.array([vdw_radii[z] for z in numbers], dtype=float)
+    fallback = covalent_radii[numbers] + 0.8
+    return np.where(np.isnan(radii), fallback, radii)
+
+
 def _placement_objective_factory(
     local: np.ndarray,
-    mol_radii: np.ndarray,
+    threshold: np.ndarray,
     bonds: list[tuple[int, np.ndarray, float]],
     axis_local: np.ndarray,
     axis_target: np.ndarray,
     cloud: np.ndarray,
-    cloud_radii: np.ndarray,
     excluded: np.ndarray,
     origin: np.ndarray,
 ):
-    threshold = mol_radii[:, None] + cloud_radii[None, :] + CONTACT_OFFSET_A
-
     def place(x: np.ndarray) -> np.ndarray:
         return Rotation.from_rotvec(x[:3]).apply(local) + origin + x[3:]
 
@@ -478,8 +486,15 @@ class SamBuilder:
         origin = sites.mean(axis=0)
         mol_radius = float(np.linalg.norm(local, axis=1).max())
         cloud, owners = _environment_cloud(env, origin, mol_radius + 3.0, z_min=float(sites[:, 2].min()) - 3.0)
-        cloud_radii = covalent_radii[env.numbers[owners]]
-        mol_radii = covalent_radii[template.numbers]
+        # Slab atoms repel with covalent radii (+offset); earlier molecules with van der Waals radii.
+        covalent_threshold = (
+            covalent_radii[template.numbers][:, None] + covalent_radii[env.numbers[owners]][None, :] + CONTACT_OFFSET_A
+        )
+        vdw_threshold = VDW_CONTACT_FRACTION * (
+            _vdw_radii(template.numbers)[:, None] + _vdw_radii(env.numbers[owners])[None, :]
+        )
+        is_molecule = owners >= len(self.substrate)
+        threshold = np.where(is_molecule[None, :], vdw_threshold, covalent_threshold)
         anchor_symbols = template.get_chemical_symbols()
 
         site_images = []
@@ -501,7 +516,7 @@ class SamBuilder:
             for a, k in assignment:
                 excluded[a, site_images[k]] = True
             place, objective = _placement_objective_factory(
-                local, mol_radii, bonds, axis_local, self.axis_target, cloud, cloud_radii, excluded, origin
+                local, threshold, bonds, axis_local, self.axis_target, cloud, excluded, origin
             )
             base = _rotation_aligning(axis_local, self.axis_target)
             height = max(d0 for _, _, d0 in bonds)
@@ -651,6 +666,7 @@ class SamBuilder:
         result.atoms = frame
         result.min_contact_ratio = _min_contact_ratio(frame, fragment)
         result.min_nonbonded_contact_ratio = _min_contact_ratio(frame, fragment, designed)
+        result.intermolecular = _intermolecular_contacts(frame, fragment)
         frame.info.update(
             {
                 "task": "surface_functionalization",
@@ -676,6 +692,22 @@ class SamBuilder:
         cell[2] = [0.0, 0.0, max(float(self.substrate.cell.array[2, 2]), needed)]
         frame.set_cell(cell)
         return frame
+
+
+def _intermolecular_contacts(atoms: Atoms, fragments: np.ndarray) -> dict[str, float] | None:
+    """Shortest H-H, C-C and overall distances between different molecules (minimum image)."""
+    molecules = fragments > 0
+    if len(set(fragments[molecules].tolist())) < 2:
+        return None
+    distances = atoms.get_all_distances(mic=True)
+    symbols = np.array(atoms.get_chemical_symbols())
+    pair = (fragments[:, None] != fragments[None, :]) & molecules[:, None] & molecules[None, :]
+    report = {"any": round(float(distances[pair].min()), 4)}
+    for a, b in (("H", "H"), ("C", "C")):
+        mask = pair & (symbols[:, None] == a) & (symbols[None, :] == b)
+        if mask.any():
+            report[f"{a}-{b}"] = round(float(distances[mask].min()), 4)
+    return report
 
 
 def _min_contact_ratio(

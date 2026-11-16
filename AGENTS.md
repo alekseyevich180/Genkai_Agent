@@ -31,10 +31,16 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
   - `workflows/` 和 `workflow/`：工作流编排与图验证。
   - `literature/`：论文读取和表面科学信息抽取。
   - `modeling/`：PToModel、checklist、schema 与表面建模算法。
+    `modeling/surface/` 包括切面（`slab.py`）、吸附、空位、团簇、structure-only
+    执行器（`executor.py`），以及 2026-11-16 新增的 SAM（`sam.py`）、ALD 非晶覆盖层
+    （`amorphous_overlayer.py`）和它们共用的 `substrate.py`、`sites.py`（按配位找表面位点）、
+    `structure_io.py`（结构文件约定）。SAM 与 ALD 目前是独立 CLI，尚未注册进执行器。
   - `compute/`、`datasets/`、`mlip/`：计算、数据集和 MLIP 边界。
 - `agents/Agent/`：Agent 运行时、内置 agents 和 skills。
 - `agents/Agent/skills/`：薄入口、运行说明、决策逻辑和实验性能力。
 - `tests/`：按 contract、architecture、unit、integration、compatibility、external 分层。
+  `tests/amorphous/` 存放用户提供的非晶测试结构（a-SnO2 无扩展名 POSCAR、a-TiO2.vasp），
+  ALD 测试依赖它们。
 - `docs/`：架构迁移、artifact 契约、Skill 开发和 Harness 指南。
 - `scripts/`：可重复执行的仓库检查。
 - `legacy/paperread/`：只读历史研究资产，不是活动包或工作流所有者。
@@ -75,6 +81,8 @@ agents/Agent/skills
 - `scripts/check_harness.py` 检查项目地图、pyproject、CI 和分级验证入口。
 
 ### 结构文件约定（2026-11-16 起，适用于新的建模代码）
+
+实现位于 `genkai.modeling.surface.structure_io`，新代码应直接调用它。
 
 - 用户输入默认 CIF；读取入口保留 ASE 可读的其他格式。输入只在入口读取一次。
 - 同一进程内传递 `ase.Atoms`，与 pymatgen 之间用 `AseAtomsAdaptor` 在内存中转换，

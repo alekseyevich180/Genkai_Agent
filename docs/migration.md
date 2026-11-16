@@ -8,6 +8,7 @@
 | `paperread/surface/modeling/*` | `src/genkai/modeling/` | removed; use `genkai.modeling.ptomodel` |
 | `agents/Agent/skills/surface-modeling/scripts/*` algorithms | `src/genkai/modeling/surface/` | thin Skill wrappers retained |
 | Materials Project slab facet/termination logic | `src/genkai/modeling/surface/slab.py` | `materials_project_slab` and the `slab_generation` Skill call it; Miller indices refer to the conventional cell |
+| (new, 2026-11-16) SAM and ALD amorphous-overlayer builders | `src/genkai/modeling/surface/sam.py`, `amorphous_overlayer.py`; shared `substrate.py`, `sites.py`, `structure_io.py` | Skill scripts `scripts/sam/sam_builder.py` and `scripts/ald/ald_overlayer.py` are thin wrappers; not yet registered in the structure-only executor |
 | VASP/dataset/MLIP stable gates | `src/genkai/compute/`, `src/genkai/datasets/`, `src/genkai/mlip/` | Skill runtime launchers retained |
 | paperread experience export rules | `src/genkai/literature/surface/experience/export_unknown_terms.py` | Skill script is a thin wrapper |
 

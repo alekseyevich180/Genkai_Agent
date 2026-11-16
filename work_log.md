@@ -16,6 +16,9 @@
 - 2026-11-16：查询了空位、预吸附 O/OH/H2O、贵金属团簇、SAM 四类组件的位置与缺口，
   并把 `AGENTS.md` 中的测试基线更新为实测结果，见 [2026-11-16](work_logs/2026-11-16.md)。
   约定：每次工作同步更新 `AGENTS.md`。
+- 2026-11-16：已实现 SAM 构建器（`scripts/sam/sam_builder.py`）和 ALD 非晶覆盖层构建器
+  （`scripts/ald/ald_overlayer.py`），见同日日志“SAM 与 ALD 复杂表面脚本：实现”。下一步是
+  把 SAM 注册进 structure-only 执行器。
 
 ## 日志文件
 

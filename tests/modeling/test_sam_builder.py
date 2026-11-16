@@ -102,6 +102,10 @@ def test_thiolate_in_fcc_hollow_on_au111(tmp_path, inputs) -> None:
     result = run_sam(substrate, inputs / "CH3SH.cif", settings, tmp_path)
     assert result.manifest["binding"]["acidic_h_policy"] == "remove"
     assert result.manifest["molecule"]["deposited_formula"] == "CH3S"
+    dense = result.manifest["builds"][-1]
+    assert dense["placed_count"] == 3
+    # Molecule-molecule repulsion uses van der Waals radii, so chains do not interpenetrate.
+    assert dense["min_intermolecular_distance_A"]["H-H"] >= 1.8
     for build in result.manifest["builds"]:
         assert build["error"] is None
         for placed in build["molecules"]:

@@ -100,7 +100,8 @@ GAS_MOLECULE_ALIASES: dict[str, str] = {
 
 UNSUPPORTED_TASK_REASONS: dict[str, str] = {
     "surface_functionalization": (
-        "No reviewed SAM/functional-group builder exists; supply functionalized structures manually."
+        "Not registered for plan execution; build SAM structures with the standalone builder "
+        "(genkai.modeling.surface.sam, skill script scripts/sam/sam_builder.py)."
     ),
     "single_atom_site": "Single-atom site construction is not implemented.",
     "doped_surface": "Dopant substitution is not implemented in structure-only mode.",
