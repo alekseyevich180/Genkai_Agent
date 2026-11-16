@@ -1,0 +1,8 @@
+# 示例 2：在 CeO2(111) slab 上去掉 1 个或 2 个 O 原子
+# 结果：examples/surface_jobs/runs/02_vacancy_ceo2/structures/*.cif
+# 注意：同目录 CSV 和图里的能量是模拟值，只使用结构文件。
+
+method: vacancy
+input: '../../agents/Agent/skills/surface-modeling/examples/CeO2 (1 1 1).cif'
+vacancy_counts: [1, 2]
+samples_per_count: 3

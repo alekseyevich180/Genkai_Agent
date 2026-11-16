@@ -1,0 +1,20 @@
+# 示例 6：一个文件里写两个 ALD 任务（jobs 列表，按顺序运行）
+#   第 1 个：5 Å 非晶 TiO2 膜全覆盖 SnO2 最稳定晶面
+#   第 2 个：30 个原子的非晶 SnO2 岛，部分覆盖 SnO2(101)
+# 结果：examples/surface_jobs/runs/06_ald_full/ 与 runs/06_ald_partial/
+
+jobs:
+  - method: ald
+    output: runs/06_ald_full
+    bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    amorphous: ../../tests/amorphous/TiO2.vasp
+    coverage: full
+    thickness: 5
+
+  - method: ald
+    output: runs/06_ald_partial
+    bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    facet: "101"
+    amorphous: ../../tests/amorphous/SnO2      # 无扩展名的 POSCAR，会自动按 VASP 格式读取
+    coverage: partial
+    island_atoms: 30

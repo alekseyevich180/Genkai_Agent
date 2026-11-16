@@ -59,7 +59,7 @@ def get_geometric_center(atoms: Atoms):
     return atoms.positions.mean(axis=0)
 
 
-def main() -> None:
+def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Build a metal cluster and optionally build/place it on a surface."
     )
@@ -126,7 +126,11 @@ def main() -> None:
     parser.add_argument("--theta", type=float, default=0.0, help="Euler rotation theta in degrees.")
     parser.add_argument("--psi", type=float, default=0.0, help="Euler rotation psi in degrees.")
     parser.add_argument("--output_dir", type=Path, default=Path("simple_cluster_on_surface_output"))
-    args = parser.parse_args()
+    return parser
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = _build_parser().parse_args(argv)
 
     surface_source_count = sum(value is not None for value in (args.surface, args.surface_formula, args.surface_mp_id))
     if surface_source_count > 1:

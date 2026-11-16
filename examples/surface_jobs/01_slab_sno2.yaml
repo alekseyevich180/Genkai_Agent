@@ -1,0 +1,10 @@
+# 示例 1：从 SnO2 块体切出 (110) 面
+# 运行：genkai-surface run examples/surface_jobs/01_slab_sno2.yaml
+# 结果：examples/surface_jobs/runs/01_slab_sno2/slab.extxyz（另有 slab.cif、slab.vasp）
+
+method: slab
+description: 金红石 SnO2 (110) slab，示例
+bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+facet: "110"            # 不写 facet 时，SnO2 会按内置稳定晶面表选 (110)
+min_slab_size: 12       # slab 至少 12 Å 厚
+min_vacuum_size: 15     # 上方 15 Å 真空

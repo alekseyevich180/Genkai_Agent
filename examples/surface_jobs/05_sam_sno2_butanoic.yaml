@@ -1,0 +1,9 @@
+# 示例 5：丁酸以单齿方式锚定在 SnO2 最稳定晶面上，每个晶胞 1 个和 2 个分子
+# 结果：examples/surface_jobs/runs/05_sam_sno2_butanoic/sam_structures.extxyz（每个分子数一帧）
+
+method: sam
+bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+# 不写 facet：SnO2 按内置稳定晶面表选 (110)
+molecule: ../../agents/Agent/skills/surface-modeling/examples/4-acid.vasp
+binding_mode: monodentate
+counts: [1, 2]

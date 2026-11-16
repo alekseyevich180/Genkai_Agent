@@ -175,7 +175,7 @@ def test_wheel_contains_every_tracked_skill_and_nested_asset(tmp_path: Path) -> 
         check=False,
     )
     assert launcher_load.returncode == 0, launcher_load.stderr
-    for module in ("genkai.cli", "agent.init.start_agent"):
+    for module in ("genkai.cli", "agent.init.start_agent", "genkai.modeling.surface.jobs"):
         help_result = subprocess.run(
             [sys.executable, "-m", module, "--help"],
             cwd=tmp_path,

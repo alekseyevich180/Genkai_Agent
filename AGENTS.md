@@ -41,13 +41,21 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
     Optuna + 平移复制覆盖度）、`amorphous_screen.py`（非晶表面能排序、非晶/晶体界面粘附能搜索），
     岛状负载用 `cluster_search.py`（`--max_tilt`、`--placement_shape input`、`--min_vacuum`）。
     vacancy、adsorbate、cluster_search 对没有 FixAtoms 的输入（CIF）会自动固定底层。
+    面向其他使用者的统一入口是 `jobs.py`（console script `genkai-surface`，2026-11-16）：
+    读 YAML 任务文件，按参数表和各方法自己的 `_build_parser()` 校验，在子进程里调用方法，
+    检查输出结构并写 `manifest.json`。只开放 slab、vacancy、adsorbate、cluster、sam、ald、
+    amorphous_slab 七种结构生成，计算器锁定为 none，能量筛选和 Materials Project 不开放。
+    结构检查（`frame_metrics`、`read_frames`）归 `structure_io.py`，冒烟脚本也用它。
   - `compute/`、`datasets/`、`mlip/`：计算、数据集和 MLIP 边界。
 - `agents/Agent/`：Agent 运行时、内置 agents 和 skills。
 - `agents/Agent/skills/`：薄入口、运行说明、决策逻辑和实验性能力。
 - `tests/`：按 contract、architecture、unit、integration、compatibility、external 分层。
   `tests/amorphous/` 存放用户提供的非晶测试结构（a-SnO2 无扩展名 POSCAR、a-TiO2.vasp），
   ALD 测试依赖它们。
-- `docs/`：架构迁移、artifact 契约、Skill 开发和 Harness 指南。
+- `docs/`：架构迁移、artifact 契约、Skill 开发和 Harness 指南；
+  `docs/surface-modeling-user-guide.md` 是写给其他使用者的表面建模手册。
+- `examples/surface_jobs/`：`genkai-surface` 的示例任务文件，只用仓库里已有的结构；
+  运行结果写到该目录的 `runs/`，已加入 `.gitignore`。
 - `scripts/`：可重复执行的仓库检查。
 - `legacy/paperread/`：只读历史研究资产，不是活动包或工作流所有者。
 - `web/vite-frontend/`：Vite 前端。
@@ -172,10 +180,10 @@ python scripts/check_harness.py full
 ```
 
 表面建模冒烟测试（2026-11-16 起）：用仓库中已有的结构，通过真实入口逐一调用全部建模方式
-（切面、空位、吸附、团簇放置与搜索、执行器、SAM、SAM 能量搜索、ALD、纯非晶表面、非晶能量筛选，
-共 30 个用例），检查结构能否生成、可读、无原子重叠、有真空层和固定原子。默认 `local` 档只用
-模拟计算器（`calculator=none`，能量无物理意义），本机约 5 分钟，当前基线为 PASS 28 / WARN 1 /
-FAIL 0 / SKIP 1（Materials Project 用例）。`--profile server --uma-task <任务头>` 改用 UMA，尚未
+（切面、空位、吸附、团簇放置与搜索、执行器、SAM、SAM 能量搜索、ALD、纯非晶表面、非晶能量筛选、
+`genkai-surface` 任务文件入口，共 31 个用例），检查结构能否生成、可读、无原子重叠、有真空层和固定原子。
+默认 `local` 档只用模拟计算器（`calculator=none`，能量无物理意义），本机约 5 分钟，当前基线为
+PASS 29 / WARN 1 / FAIL 0 / SKIP 1（Materials Project 用例）。`--profile server --uma-task <任务头>` 改用 UMA，尚未
 验证。用 `--only`/`--skip` 时，未选中的用例会在输出和报告的 `selection` 中列出。电脑休眠会让
 单个用例超时，结果需重跑核对。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
 计算的服务器上运行。
@@ -184,10 +192,22 @@ FAIL 0 / SKIP 1（Materials Project 用例）。`--profile server --uma-task <�
 python scripts/run_modeling_smoke.py --list
 python scripts/run_modeling_smoke.py                      # 报告写入 <输出目录>/smoke_report.json
 python scripts/run_modeling_smoke.py --only sam,ald       # 按方法名或用例前缀筛选
-python scripts/run_modeling_smoke.py --only amorphous,ald,sam_on_amorphous   # 只测非晶相关（10 个用例）
+python scripts/run_modeling_smoke.py --only amorphous,ald,sam_on_amorphous   # 只测非晶相关（12 个用例）
 ```
 
 各子集的命令和基线速查见 `work_logs/2026-11-16.md` 的“测试脚本控制命令（速查）”。
+
+给其他使用者的入口 `genkai-surface`（2026-11-16 起，等价于 `python -m genkai.modeling.surface.jobs`）
+的用法见 `docs/surface-modeling-user-guide.md`。修改表面建模方法的命令行参数时，要同步 `jobs.py`
+里的参数表；`tests/modeling/test_surface_jobs.py` 会检查两边是否一致，并检查示例任务文件仍然有效：
+
+```bash
+python -m genkai.modeling.surface.jobs check examples/surface_jobs/*.yaml   # 10 个任务应全部通过
+python -m genkai.modeling.surface.jobs run --quiet examples/surface_jobs/*.yaml   # 本机约 80 秒，PASS 10
+```
+
+本机没有 `wheel` 包，离线无法做可编辑安装，所以 `genkai-surface` 命令本身尚未在本机验证；
+入口目标可以导入，`--help` 正常。
 
 当前已知 WARN：`adsorbate_sno2_101_ketone`。旧吸附脚本放置多个分子时不检查分子之间的重叠，
 大分子在小晶胞上会出现 0.51 Å 的 C…H 接触。

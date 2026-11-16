@@ -163,3 +163,41 @@ def write_manifest(path: str | Path, data: dict[str, Any]) -> Path:
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(json_ready(data), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return target
+
+
+# ---------------------------------------------------------------------------
+# Output checks shared by scripts/run_modeling_smoke.py and the job runner
+# ---------------------------------------------------------------------------
+
+CLASH_RATIO = 0.6  # d / (r_i + r_j) below this means overlapping atoms (executor rule)
+MIN_VACUUM_A = 5.0
+
+
+def read_frames(path: str | Path) -> list[Atoms]:
+    """Read every frame of an output file (extension-less files are tried as POSCAR)."""
+    try:
+        frames = read(path, index=":")
+    except Exception:
+        frames = read(path, index=":", format="vasp")
+    return frames if isinstance(frames, list) else [frames]
+
+
+def frame_metrics(atoms: Atoms) -> dict[str, Any]:
+    """Atom count, formula, smallest contact ratio, largest vacuum gap along c and fixed-atom count."""
+    from ase.constraints import FixAtoms
+
+    periodic = bool(atoms.pbc.any()) and atoms.cell.rank == 3
+    metrics: dict[str, Any] = {"n_atoms": len(atoms), "formula": atoms.get_chemical_formula(mode="hill")}
+    if len(atoms) > 1:
+        distances = atoms.get_all_distances(mic=periodic)
+        radii = covalent_radii[atoms.numbers]
+        ratio = distances / (radii[:, None] + radii[None, :])
+        np.fill_diagonal(ratio, np.inf)
+        metrics["min_contact_ratio"] = round(float(ratio.min()), 4)
+    if periodic:
+        height = float(np.linalg.norm(atoms.cell.array[2]))
+        z = np.sort(np.mod(atoms.get_scaled_positions(wrap=True)[:, 2], 1.0))
+        gaps = np.diff(np.concatenate([z, [z[0] + 1.0]])) * height
+        metrics["vacuum_gap_A"] = round(float(gaps.max()), 3)
+    metrics["n_fixed"] = sum(len(c.get_indices()) for c in atoms.constraints if isinstance(c, FixAtoms))
+    return metrics

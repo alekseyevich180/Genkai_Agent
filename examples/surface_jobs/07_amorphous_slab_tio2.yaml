@@ -1,0 +1,7 @@
+# 示例 7：从非晶 TiO2 块体切出 10 Å 厚的纯非晶表面，切 2 个不同位置
+# 结果：examples/surface_jobs/runs/07_amorphous_slab_tio2/amorphous_slab_structures.extxyz
+
+method: amorphous_slab
+amorphous: ../../tests/amorphous/TiO2.vasp
+thickness: 10
+samples: 2

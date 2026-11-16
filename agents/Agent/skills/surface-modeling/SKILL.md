@@ -577,6 +577,30 @@ python agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanoclust
   --placement_shape input --max_tilt 60 --calculator uma --task_name <head> --output_dir island_search
 ```
 
+## Job Files For Other Users (`genkai-surface`)
+
+People who do not work on the code use one command and a YAML job file instead of the
+per-method CLIs above. The owner is `genkai.modeling.surface.jobs` (console script
+`genkai-surface`, same as `python -m genkai.modeling.surface.jobs`); the user guide is
+`docs/surface-modeling-user-guide.md` and runnable examples are in `examples/surface_jobs/`.
+
+```bash
+genkai-surface methods                    # open methods; `methods sam` lists every key
+genkai-surface template sam -o job.yaml   # commented template
+genkai-surface check job.yaml             # validate only
+genkai-surface run job.yaml               # run, check structures, write manifest.json
+```
+
+- Open methods: `slab`, `vacancy`, `adsorbate`, `cluster`, `sam`, `ald`, `amorphous_slab`
+  (structure generation only). The runner appends `--calculator=none` (and `--max-steps=0`
+  or `--relax-steps=0` where they exist); job keys for energy models or Materials Project are
+  rejected. `sam_search`, `amorphous_screen` and `cluster_search` are not reachable yet.
+- Each job file key maps to one CLI flag through the option table in `jobs.py`; defaults
+  and choices come from the method's own `_build_parser()`. When a method CLI changes,
+  update the table; `tests/modeling/test_surface_jobs.py` fails on unknown flags.
+- Every run writes `manifest.json` (`RunManifest`, one `StructureSetArtifact` per structure
+  file, evidence `heuristic`), `job_resolved.yaml` and `run.log` into the job's output.
+
 ## Practical Guidance
 
 - Prefer `--smoke-test` before a real UMA run to validate input paths, atom symbols, site selection, output directories, and plotting.

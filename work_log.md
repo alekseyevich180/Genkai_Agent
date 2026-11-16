@@ -28,6 +28,9 @@
 - 2026-11-16：MLIP 筛选层：`calculators.py`、SAM 能量搜索（`scripts/sam/sam_search.py`）、
   非晶表面和界面筛选（`scripts/amorphous/amorphous_screen.py`）、团簇搜索的倾斜、输入形状和真空加高，
   旧脚本自动固定底层。仅用模拟计算器验证，未运行 UMA。见同日日志“MLIP 筛选层实现”。
+- 2026-11-16：给其他使用者的入口 `genkai-surface`（YAML 任务文件，只生成结构）、使用手册
+  `docs/surface-modeling-user-guide.md` 和示例 `examples/surface_jobs/`；冒烟 31 个用例 PASS 29 / WARN 1 /
+  SKIP 1。见同日日志“给其他使用者的建模入口”。
 
 ## 日志文件
 

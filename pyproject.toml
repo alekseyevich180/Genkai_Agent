@@ -82,6 +82,7 @@ addopts = "-m 'not external'"
 [project.scripts]
 agent = "agent.init.start_agent:main"
 genkai-workflow = "genkai.cli:main"
+genkai-surface = "genkai.modeling.surface.jobs:main"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]

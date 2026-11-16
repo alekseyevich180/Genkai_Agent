@@ -58,6 +58,7 @@ PROFILE_TESTS = {
 ENTRYPOINT_HELP = (
     ("-m", "genkai.cli", "--help"),
     ("-m", "genkai.cli", "surface", "--help"),
+    ("-m", "genkai.modeling.surface.jobs", "--help"),
     ("-m", "agent.init.start_agent", "--help"),
 )
 
@@ -99,6 +100,7 @@ def _check_pyproject() -> None:
     expected_scripts = {
         "agent": "agent.init.start_agent:main",
         "genkai-workflow": "genkai.cli:main",
+        "genkai-surface": "genkai.modeling.surface.jobs:main",
     }
     for name, target in expected_scripts.items():
         if scripts.get(name) != target:

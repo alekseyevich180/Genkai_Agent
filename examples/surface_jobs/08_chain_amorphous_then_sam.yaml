@@ -1,0 +1,17 @@
+# 示例 8：串联两个任务：先切纯非晶 SnO2 表面，再在它上面放丁酸 SAM
+# 第 2 个任务的 surface 指向第 1 个任务的输出文件；check 时它还不存在，会提示“由前面的任务生成”。
+# 如果第 1 个任务失败，同一文件里后面的任务会被跳过。
+
+jobs:
+  - method: amorphous_slab
+    output: runs/08_chain/amorphous
+    amorphous: ../../tests/amorphous/SnO2
+    thickness: 8
+    export: none
+
+  - method: sam
+    output: runs/08_chain/sam
+    surface: runs/08_chain/amorphous/amorphous_slab_000.extxyz
+    molecule: ../../agents/Agent/skills/surface-modeling/examples/4-acid.vasp
+    binding_mode: bidentate
+    counts: [1]

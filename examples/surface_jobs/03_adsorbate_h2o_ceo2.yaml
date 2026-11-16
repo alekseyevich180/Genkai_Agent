@@ -1,0 +1,11 @@
+# 示例 3：在 CeO2(111) 的 Ce 位点上放 1 个或 2 个 H2O
+# 结果：examples/surface_jobs/runs/03_adsorbate_h2o_ceo2/structures/*.cif
+
+method: adsorbate
+surface: '../../agents/Agent/skills/surface-modeling/examples/CeO2 (1 1 1).cif'
+molecule: ../../agents/Agent/skills/surface-modeling/examples/H2O.xyz
+site_symbols: Ce
+coverage_counts: [1, 2]
+patterns: [uniform, random]
+random_repeats: 1
+n_trials_single: 8

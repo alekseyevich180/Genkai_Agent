@@ -207,7 +207,7 @@ def plot_landscape(table: pd.DataFrame, output_path: Path) -> None:
     plt.close(fig)
 
 
-def main() -> int:
+def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Construct an oxygen-vacancy energy landscape from an oxide-surface CIF using UMA."
     )
@@ -254,7 +254,11 @@ def main() -> int:
         default=0.5,
         help="Fix atoms below this fraction of the slab thickness when the input has no FixAtoms (CIF); 0 disables.",
     )
-    args = parser.parse_args()
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _build_parser().parse_args(argv)
 
     if args.smoke_test:
         for key, value in CONFIG["smoke_test"].items():

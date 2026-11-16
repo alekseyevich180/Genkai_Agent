@@ -53,8 +53,10 @@ EXAMPLES = ROOT / "agents" / "Agent" / "skills" / "surface-modeling" / "examples
 SE4 = ROOT / "tests" / "se4c02105_surface_fullrun" / "automatic_modeling"
 ARCHIVES = ROOT / "tests" / "fixtures" / "archives" / "generated"
 
-CLASH_RATIO = 0.6  # d / (r_i + r_j) below this means overlapping atoms (executor rule)
-MIN_VACUUM_A = 5.0
+if str(SRC) not in sys.path:  # the checks below live in the library; works without an install too
+    sys.path.insert(0, str(SRC))
+
+from genkai.modeling.surface.structure_io import CLASH_RATIO, MIN_VACUUM_A, frame_metrics, read_frames  # noqa: E402
 
 # Structures already in the repository: key -> (path, description).
 INPUTS: dict[str, tuple[Path, str]] = {
@@ -340,6 +342,29 @@ def write_methanethiol(case_dir: Path) -> dict[str, str]:
     return {"CH3SH.xyz": "ase.build.molecule('CH3SH') (G2 reference geometry)"}
 
 
+def write_job_file(case_dir: Path) -> dict[str, str]:
+    """Two chained jobs for genkai-surface: pure amorphous SnO2 slab -> bidentate butanoic acid on it."""
+    (case_dir / "job.yaml").write_text(
+        "jobs:\n"
+        "  - method: amorphous_slab\n"
+        "    output: runs/amorphous\n"
+        f"    amorphous: '{INPUTS['a_sno2'][0].as_posix()}'\n"
+        "    thickness: 8\n"
+        "  - method: sam\n"
+        "    output: runs/sam\n"
+        "    surface: runs/amorphous/amorphous_slab_000.extxyz\n"
+        f"    molecule: '{INPUTS['butanoic_acid'][0].as_posix()}'\n"
+        "    binding_mode: bidentate\n"
+        "    counts: [1]\n",
+        encoding="utf-8",
+    )
+    return {"job.yaml": "two-job genkai-surface file written by the smoke script"}
+
+
+def job_file_case(ctx: Context, out: Path) -> list[list[str]]:
+    return [py("-m", "genkai.modeling.surface.jobs", "run", "--quiet", out / "job.yaml")]
+
+
 def by_path(key: str) -> list[str]:
     return ["--bulk", path(key)] if key.endswith("_bulk") else ["--surface", path(key)]
 
@@ -456,44 +481,16 @@ CASES: list[Case] = [
          "a-TiO2 film on SnO2(110): 2 lattice matches x Optuna (shift, gap), rank by adhesion",
          ("sno2_bulk", "a_tio2"), amorphous_screen_case("interface"), ("screen/amorphous_interfaces_ranked.extxyz",),
          contains=("Ti",), min_structures=2, fixed=True),
+    Case("job_file_amorphous_then_sam", "surface_jobs",
+         "genkai-surface job file: amorphous SnO2 slab -> bidentate butanoic acid on it (chained, structure only)",
+         ("a_sno2", "butanoic_acid"), job_file_case, ("runs/sam/sam_structures.extxyz",),
+         contains=("C",), min_structures=2, fixed=True, prepare=write_job_file),
 ]
 
 
 # ---------------------------------------------------------------------------
 # Structure checks
 # ---------------------------------------------------------------------------
-
-
-def read_frames(file: Path) -> list[Any]:
-    from ase.io import read
-
-    try:
-        frames = read(file, index=":")
-    except Exception:
-        frames = read(file, index=":", format="vasp")
-    return frames if isinstance(frames, list) else [frames]
-
-
-def frame_metrics(atoms: Any) -> dict[str, Any]:
-    import numpy as np
-    from ase.constraints import FixAtoms
-    from ase.data import covalent_radii
-
-    periodic = bool(atoms.pbc.any()) and atoms.cell.rank == 3
-    metrics: dict[str, Any] = {"n_atoms": len(atoms), "formula": atoms.get_chemical_formula(mode="hill")}
-    if len(atoms) > 1:
-        distances = atoms.get_all_distances(mic=periodic)
-        radii = covalent_radii[atoms.numbers]
-        ratio = distances / (radii[:, None] + radii[None, :])
-        np.fill_diagonal(ratio, np.inf)
-        metrics["min_contact_ratio"] = round(float(ratio.min()), 4)
-    if periodic:
-        height = float(np.linalg.norm(atoms.cell.array[2]))
-        z = np.sort(np.mod(atoms.get_scaled_positions(wrap=True)[:, 2], 1.0))
-        gaps = np.diff(np.concatenate([z, [z[0] + 1.0]])) * height
-        metrics["vacuum_gap_A"] = round(float(gaps.max()), 3)
-    metrics["n_fixed"] = sum(len(c.get_indices()) for c in atoms.constraints if isinstance(c, FixAtoms))
-    return metrics
 
 
 def count_element(file: Path, element: str) -> int:

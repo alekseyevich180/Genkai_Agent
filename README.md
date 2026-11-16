@@ -12,6 +12,8 @@ Agent is a **skill-based, agentic platform** for computational material science 
 
 This workspace now includes a surface-oriented modeling skill at `agents/Agent/skills/surface-modeling/`. It covers oxide surface vacancy landscapes, adsorbate coverage landscapes, and metal nanocluster placement on surfaces, with fast mock-calculator checks and optional UMA/FAIRChem workflows for production relaxation.
 
+**表面建模给其他使用者：** 用 `genkai-surface` 命令和一个 YAML 任务文件生成切面、氧空位、分子吸附、金属团簇、SAM、ALD 非晶覆盖层和纯非晶表面结构（目前只生成结构，不计算能量）。见 [表面建模使用手册](docs/surface-modeling-user-guide.md) 和 [示例任务文件](examples/surface_jobs/)。
+
 MLIP workflows are exposed as three separate built-in skills with explicit
 roles:
 
