@@ -20,9 +20,13 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
 - 如果子目录以后出现更具体的 `AGENTS.md`，以距离目标文件最近的规则为准。
 - 用户的明确要求优先于本文件；如果用户要求会扩大到网络、GPU、调度器或外部系统，
   必须先确认授权边界。
-- `main` 是唯一开发分支：2026-11-13 起，`feat/genkai-evolution` 的结构收敛已并入
+- `main` 是完整平台的开发分支：2026-11-13 起，`feat/genkai-evolution` 的结构收敛已并入
   `main`（检查点 tag `sage-checkpoint-0`），旧 `Genkai_Evolution/` 工作树只作历史参考。
   只在当前仓库工作区写入。
+- `SAGE` 分支（2026-11-16，按用户要求创建，已推送到 origin）由 main 的 `4c7b0bc` 精简而来，
+  只保留表面建模和 MLIP 筛选层，带 `install.sh`，用于在服务器上做 MLIP 测试；它有自己的
+  `AGENTS.md`。**不要把 SAGE 合并进 main**（精简提交会删除 main 的大部分内容）；两边同步建模代码时，
+  用 `git cherry-pick` 或按路径检出（如 `git checkout main -- src/genkai/modeling`）。
 
 ## 项目结构
 

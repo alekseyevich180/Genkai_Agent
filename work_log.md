@@ -31,6 +31,7 @@
 - 2026-11-16：给其他使用者的入口 `genkai-surface`（YAML 任务文件，只生成结构）、使用手册
   `docs/surface-modeling-user-guide.md` 和示例 `examples/surface_jobs/`；冒烟 31 个用例 PASS 29 / WARN 1 /
   SKIP 1。见同日日志“给其他使用者的建模入口”。
+- 2026-11-16：创建并推送 `SAGE` 分支（只含建模 + MLIP 筛选，带 `install.sh`；CI 通过），见同日日志“创建 SAGE 分支”。
 
 ## 日志文件
 
