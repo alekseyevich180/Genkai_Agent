@@ -94,6 +94,32 @@ def check_slab_cell(atoms: Atoms) -> None:
         )
 
 
+def orient_slab_cell(atoms: Atoms) -> tuple[Atoms, bool]:
+    """Rotate a slab so a, b lie in the xy plane and replace c by its normal component.
+
+    Slabs from older generators (e.g. Materials Project routes before the slab
+    module) keep a tilted c vector. With vacuum along c, using the component of
+    c along the surface normal instead is the same operation as pymatgen's
+    ``get_orthogonal_c_slab``: atoms move only by a rigid rotation and in-plane
+    wrapping, so every bonded distance is unchanged.
+    """
+    cell = atoms.cell.array
+    if np.abs(cell[2, :2]).max() <= 1e-4 and np.abs(cell[:2, 2]).max() <= 1e-4:
+        return atoms.copy(), False
+    a, b, c = cell
+    if np.linalg.det(cell) < 0:  # left-handed: swap a and b so a x b points along c
+        a, b = b, a
+    normal = np.cross(a, b)
+    normal /= np.linalg.norm(normal)
+    e1 = a / np.linalg.norm(a)
+    rotation = np.vstack([e1, np.cross(normal, e1), normal])
+    slab = atoms.copy()
+    slab.set_cell(np.vstack([rotation @ a, rotation @ b, [0.0, 0.0, float(c @ normal)]]), scale_atoms=False)
+    slab.set_positions(atoms.get_positions() @ rotation.T)
+    slab.wrap(pbc=[True, True, False])
+    return slab, True
+
+
 def make_slab_contiguous(atoms: Atoms, bottom_margin: float = 0.5) -> Atoms:
     """Shift atoms along z only if the slab straddles the cell top/bottom."""
     slab = atoms.copy()
@@ -115,6 +141,13 @@ def make_slab_contiguous(atoms: Atoms, bottom_margin: float = 0.5) -> Atoms:
     return slab
 
 
+def fixed_below_fraction(atoms: Atoms, fraction: float) -> list[int]:
+    """Indices of atoms below ``fraction`` of the slab thickness (z)."""
+    z = atoms.positions[:, 2]
+    cutoff = z.min() + fraction * (z.max() - z.min())
+    return [int(i) for i in np.flatnonzero(z < cutoff - 1e-8)]
+
+
 def apply_slab_convention(atoms: Atoms, settings: SlabSettings) -> tuple[Atoms, str]:
     """Ensure tags 0/1 match FixAtoms; fix the slab bottom if no constraint exists."""
     slab = atoms.copy()
@@ -129,6 +162,11 @@ def apply_slab_convention(atoms: Atoms, settings: SlabSettings) -> tuple[Atoms, 
             if settings.fixed_layers is not None
             else f"layers below {settings.fixed_fraction:.2f} of the slab thickness"
         )
+        if not fixed and len(layers) < 2 and len(slab) > 1:
+            # Amorphous slabs have no discrete layers (every z gap is below the
+            # layer tolerance); fix by height instead.
+            fixed = fixed_below_fraction(slab, settings.fixed_fraction)
+            source = f"reapplied: atoms below {settings.fixed_fraction:.2f} of the slab thickness (no discrete layers)"
         if fixed:
             slab.set_constraint(FixAtoms(indices=fixed))
     tags = np.ones(len(slab), dtype=int)
@@ -198,9 +236,20 @@ def prepare_substrate(
     if surface is not None:
         path = Path(surface)
         atoms, used = read_structure(path, surface_format)
+        atoms, normalized = orient_slab_cell(atoms)
         check_slab_cell(atoms)
         atoms = make_slab_contiguous(atoms)
         atoms, constraint_source = apply_slab_convention(atoms, settings)
+        if normalized:
+            warnings.append(
+                ValidationIssue(
+                    code="slab_cell_normalized",
+                    message=(
+                        "The slab was rotated so a and b lie in the xy plane and c was replaced by its component "
+                        "along the surface normal; bonded distances are unchanged."
+                    ),
+                )
+            )
         if facet is not None:
             warnings.append(
                 ValidationIssue(
@@ -216,6 +265,7 @@ def prepare_substrate(
             "facet": None,
             "facet_source": "slab_file",
             "constraints_source": constraint_source,
+            "cell_normalized": normalized,
         }
     else:
         path = Path(bulk)  # type: ignore[arg-type]

@@ -2,10 +2,14 @@
 
 Two coverages, both cut from a user-supplied periodic amorphous bulk cell:
 
-* ``full`` - a continuous amorphous film. The in-plane cells of slab and film
-  are matched with pymatgen's ZSL algorithm, the amorphous supercell is
-  affinely strained onto the slab supercell (so the film stays periodic
-  without seams), a window of the requested thickness is cut and placed at
+* ``full`` - a continuous amorphous film. ``film_fit="strain"``: the in-plane
+  cells of slab and film are matched with pymatgen's ZSL algorithm and the
+  amorphous supercell is affinely strained onto the slab supercell, so the film
+  stays periodic without seams. ``film_fit="cut"``: a randomly rotated tiling
+  of the amorphous cell is cut to the slab cell and atoms that end up too close
+  across the periodic boundaries are removed (works for any cell, e.g.
+  hexagonal facets). ``auto`` (default) uses ``strain`` when a match exists and
+  ``cut`` otherwise. A window of the requested thickness is placed at
   ``interface_gap`` above the slab.
 * ``partial`` - an amorphous island on one facet (sub-monolayer ALD: only a
   few facets carry islands). A connected, hemisphere-like cluster of a given
@@ -47,7 +51,9 @@ from .substrate import (
 )
 
 COVERAGES = ("full", "partial")
+FILM_FITS = ("auto", "strain", "cut")
 CLASH_FRACTION = 0.6
+SEAM_FRACTION = 0.85  # cut films: no pair closer than 0.85 x the shortest same-pair distance in the bulk
 AMU_PER_A3_TO_G_PER_CM3 = 1.66053906660
 
 
@@ -69,10 +75,13 @@ class OverlayerSettings:
     samples: int = 1
     seed: int = 42
     vacuum_above: float = 15.0
+    film_fit: str = "auto"
 
     def __post_init__(self) -> None:
         if self.coverage not in COVERAGES:
             raise OverlayerBuildError(f"coverage must be one of {', '.join(COVERAGES)}.")
+        if self.film_fit not in FILM_FITS:
+            raise OverlayerBuildError(f"film_fit must be one of {', '.join(FILM_FITS)}.")
         if self.coverage == "full":
             if self.thickness is None or self.thickness <= 0:
                 raise OverlayerBuildError("Full coverage needs a positive film thickness (A).")
@@ -217,7 +226,42 @@ def match_film_lattice(substrate: Atoms, amorphous: Atoms, max_strain: float, ma
     return best
 
 
-def _remove_isolated(atoms: Atoms, pbc_in_plane: bool) -> tuple[Atoms, int]:
+def pair_reference_distances(bulk: Atoms) -> dict[tuple[str, str], float]:
+    """Shortest distance of every element pair in the periodic amorphous bulk."""
+    distances = bulk.get_all_distances(mic=True)
+    np.fill_diagonal(distances, np.inf)
+    symbols = np.array(bulk.get_chemical_symbols())
+    reference: dict[tuple[str, str], float] = {}
+    for a in sorted(set(symbols)):
+        for b in sorted(set(symbols)):
+            block = distances[np.ix_(symbols == a, symbols == b)]
+            if block.size and np.isfinite(block).any():
+                reference[(a, b)] = float(block[np.isfinite(block)].min())
+    return reference
+
+
+def repair_seams(
+    film: Atoms, reference: dict[tuple[str, str], float], fraction: float = SEAM_FRACTION
+) -> tuple[Atoms, int]:
+    """Remove atoms closer than ``fraction`` x the bulk pair distance (minimum image), worst first."""
+    current = film.copy()
+    removed = 0
+    while len(current) > 1:
+        distances = current.get_all_distances(mic=True)
+        np.fill_diagonal(distances, np.inf)
+        symbols = current.get_chemical_symbols()
+        limits = np.array(
+            [[fraction * reference.get((a, b), 0.0) for b in symbols] for a in symbols]
+        )
+        violations = distances < limits
+        if not violations.any():
+            break
+        del current[int(np.argmax(violations.sum(axis=1)))]
+        removed += 1
+    return current, removed
+
+
+def remove_isolated(atoms: Atoms, pbc_in_plane: bool) -> tuple[Atoms, int]:
     """Drop atoms with no bonded neighbour (fragments of the cut), repeating until stable."""
     removed = 0
     current = atoms.copy()
@@ -296,13 +340,17 @@ def build_film(
     transform[:2, :2] = match.film_matrix
     transform[2, 2] = nz
     block = make_supercell(amorphous, transform)
-    scaled = block.get_scaled_positions(wrap=True)
-    height = nz * layer_height
-    z = scaled[:, 2] * height
+    s1, s2 = slab.cell.array[0], slab.cell.array[1]
+    # Affine map: film supercell vectors -> slab supercell vectors, film normal -> z. Applying it to
+    # Cartesian positions keeps a tilted amorphous c consistent (no artificial shear).
+    f1, f2 = block.cell.array[0], block.cell.array[1]
+    source = np.column_stack([f1, f2, film_normal])
+    target = np.column_stack([s1, s2, [0.0, 0.0, 1.0]])
+    mapped = (target @ np.linalg.inv(source) @ block.get_positions(wrap=True).T).T
+    z = mapped[:, 2] - mapped[:, 2].min()
     z0 = float(rng.uniform(0.0, layer_height))
     window = (z >= z0) & (z < z0 + thickness)
-    s1, s2 = slab.cell.array[0], slab.cell.array[1]
-    positions = scaled[window, :1] * s1 + scaled[window, 1:2] * s2
+    positions = mapped[window].copy()
     positions[:, 2] = z[window] - z0
     film = Atoms(
         [s for s, keep in zip(block.get_chemical_symbols(), window) if keep],
@@ -310,15 +358,79 @@ def build_film(
         cell=[s1, s2, [0.0, 0.0, thickness + 10.0]],
         pbc=[True, True, False],
     )
-    film, removed = _remove_isolated(film, pbc_in_plane=True)
+    film.wrap(pbc=[True, True, False])
+    film, removed = remove_isolated(film, pbc_in_plane=True)
     if not len(film):
         raise OverlayerBuildError("The cut film is empty; increase the thickness.")
     frame, contact = _assemble(slab, film, settings)
     area = surface_area(slab)
     report = {
+        "film_fit": "strain",
         "z_window_start_A": round(z0, 4),
         "thickness_A": thickness,
         "isolated_atoms_removed": removed,
+        "film_density_g_cm3": round(density_g_cm3(film, area * thickness), 4),
+        "composition": composition_report(film, amorphous),
+        "interface_gap_A": settings.interface_gap,
+        "min_interface_contact_ratio": round(contact, 4) if contact is not None else None,
+    }
+    return frame, report
+
+
+def build_film_cut(
+    slab: Atoms,
+    amorphous: Atoms,
+    reference: dict[tuple[str, str], float],
+    settings: OverlayerSettings,
+    rng: np.random.Generator,
+) -> tuple[Atoms, dict[str, Any]]:
+    """Film for any slab cell: cut a randomly rotated amorphous tiling, then repair the periodic seams."""
+    from scipy.spatial.transform import Rotation
+
+    thickness = float(settings.thickness)  # type: ignore[arg-type]
+    s1, s2 = slab.cell.array[0], slab.cell.array[1]
+    corners = np.array([[0.0, 0.0], s1[:2], s2[:2], (s1 + s2)[:2]])
+    extent = corners.max(axis=0) - corners.min(axis=0)
+    span = float(extent.sum() + thickness + 4.0)  # covers the box diagonal after any rotation
+    volume = float(amorphous.get_volume())
+    cell = amorphous.cell.array
+    widths = [volume / np.linalg.norm(np.cross(cell[(i + 1) % 3], cell[(i + 2) % 3])) for i in range(3)]
+    block = amorphous.repeat([int(np.ceil(span / w)) + 1 for w in widths])
+    block.wrap()
+    centre = 0.5 * block.cell.array.sum(axis=0)
+    rotation = Rotation.random(random_state=int(rng.integers(0, 2**31 - 1)))
+    local = rotation.apply(block.get_positions() - centre)
+    xy = local[:, :2] + 0.5 * (s1 + s2)[:2]
+    fractional = np.linalg.solve(np.array([s1[:2], s2[:2]]).T, xy.T).T
+    keep = (
+        (fractional >= 0.0).all(axis=1)
+        & (fractional < 1.0).all(axis=1)
+        & (local[:, 2] >= -0.5 * thickness)
+        & (local[:, 2] < 0.5 * thickness)
+    )
+    positions = fractional[keep, :1] * s1 + fractional[keep, 1:2] * s2
+    positions[:, 2] = local[keep, 2] + 0.5 * thickness
+    film = Atoms(
+        [s for s, k in zip(block.get_chemical_symbols(), keep) if k],
+        positions=positions,
+        cell=[s1, s2, [0.0, 0.0, thickness + 10.0]],
+        pbc=[True, True, False],
+    )
+    cut_atoms = len(film)
+    film, seam_removed = repair_seams(film, reference)
+    film, isolated = remove_isolated(film, pbc_in_plane=True)
+    if not len(film):
+        raise OverlayerBuildError("The cut film is empty; increase the thickness.")
+    frame, contact = _assemble(slab, film, settings)
+    area = surface_area(slab)
+    report = {
+        "film_fit": "cut",
+        "rotation_quaternion": [round(v, 6) for v in rotation.as_quat()],
+        "thickness_A": thickness,
+        "atoms_in_cut": cut_atoms,
+        "seam_atoms_removed": seam_removed,
+        "seam_rule": f"no pair closer than {SEAM_FRACTION} x its shortest distance in the amorphous bulk",
+        "isolated_atoms_removed": isolated,
         "film_density_g_cm3": round(density_g_cm3(film, area * thickness), 4),
         "composition": composition_report(film, amorphous),
         "interface_gap_A": settings.interface_gap,
@@ -466,16 +578,42 @@ def run_overlayer(
     rng = np.random.default_rng(settings.seed)
     samples: list[dict[str, Any]] = []
     frames: list[Atoms] = []
-    match_record = None
+    match_record: dict[str, Any] | None = None
+    notes: list[str] = []
 
     if settings.coverage == "full":
-        match = match_film_lattice(substrate.atoms, amorphous, settings.max_strain, settings.max_area)
-        match_record = match.summary()
-        slab = supercell_in_plane(substrate.atoms, match.substrate_matrix)
-        for sample in range(settings.samples):
-            frame, report = build_film(slab, amorphous, match, settings, rng)
-            samples.append({"sample": sample, **report})
-            frames.append(frame)
+        match: FilmMatch | None = None
+        no_match_reason = None
+        if settings.film_fit in ("auto", "strain"):
+            try:
+                match = match_film_lattice(substrate.atoms, amorphous, settings.max_strain, settings.max_area)
+            except OverlayerBuildError as exc:
+                if settings.film_fit == "strain":
+                    raise
+                no_match_reason = str(exc)
+        if match is not None:
+            match_record = {"film_fit": "strain", **match.summary()}
+            slab = supercell_in_plane(substrate.atoms, match.substrate_matrix)
+            for sample in range(settings.samples):
+                frame, report = build_film(slab, amorphous, match, settings, rng)
+                samples.append({"sample": sample, **report})
+                frames.append(frame)
+        else:
+            slab = substrate.atoms
+            reference = pair_reference_distances(amorphous)
+            match_record = {
+                "film_fit": "cut",
+                "reason": no_match_reason or "film_fit=cut requested",
+                "pair_reference_distances_A": {f"{a}-{b}": round(d, 4) for (a, b), d in reference.items()},
+            }
+            notes.append(
+                "Film cut without lattice matching: atoms too close across the periodic cell boundaries were "
+                "removed (see seam_atoms_removed); the film is less uniform there than a strained film."
+            )
+            for sample in range(settings.samples):
+                frame, report = build_film_cut(slab, amorphous, reference, settings, rng)
+                samples.append({"sample": sample, **report})
+                frames.append(frame)
     else:
         islands = [_cut_island(amorphous, settings, rng) for _ in range(settings.samples)]
         diameter = max(lateral_diameter(island) for island, _ in islands)
@@ -542,7 +680,7 @@ def run_overlayer(
         "settings": asdict(settings),
         "samples": samples,
         "files": {"structures": structures_path.as_posix(), "exports": [p.as_posix() for p in exported]},
-        "validation": {"warnings": [i.model_dump() for i in substrate.warnings], "issues": issues},
+        "validation": {"warnings": [i.model_dump() for i in substrate.warnings], "issues": issues, "notes": notes},
         "conventions": {
             "tags": "0 = fixed subsurface, 1 = free slab, 2 = amorphous overlayer",
             "fragment_id": "0 = slab, 1 = overlayer",
@@ -571,6 +709,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--interface-gap", type=float, default=2.0, help="Gap between the slab top and the overlayer bottom (A).")
     parser.add_argument("--max-strain", type=float, default=0.05, help="Largest in-plane strain of the amorphous film.")
     parser.add_argument("--max-area", type=float, default=600.0, help="Largest matched in-plane supercell area (A^2).")
+    parser.add_argument(
+        "--film-fit",
+        choices=FILM_FITS,
+        default="auto",
+        help="Full coverage: strain (lattice match, seamless), cut (any cell, seams repaired), auto (strain, else cut).",
+    )
     parser.add_argument("--samples", type=int, default=1, help="Different cuts of the amorphous bulk (one frame each).")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--export", default="cif", help="Comma-separated export formats (cif, vasp) or 'none'.")
@@ -595,6 +739,7 @@ def main(argv: list[str] | None = None) -> int:
             max_strain=args.max_strain,
             max_area=args.max_area,
             samples=args.samples,
+            film_fit=args.film_fit,
             seed=args.seed,
         )
         substrate = substrate_from_args(args)
@@ -613,7 +758,11 @@ def main(argv: list[str] | None = None) -> int:
     substrate_record = manifest["substrate"]
     print(f"Substrate: {substrate_record['formula']} facet={substrate_record.get('facet')} via {substrate_record['facet_source']}")
     print(f"Amorphous: {manifest['amorphous']['formula']} ({manifest['amorphous']['density_g_cm3']} g/cm^3), coverage {settings.coverage}")
-    print(f"Lattice: {manifest['lattice']}")
+    lattice = dict(manifest["lattice"] or {})
+    lattice.pop("pair_reference_distances_A", None)
+    print(f"Lattice: {lattice}")
+    for note in manifest["validation"]["notes"]:
+        print(f"NOTE {note}")
     for sample in manifest["samples"]:
         comp = sample["composition"]
         print(f"  sample {sample['sample']}: {comp['formula']} (anion/cation {comp['anion_to_cation_ratio']} vs "

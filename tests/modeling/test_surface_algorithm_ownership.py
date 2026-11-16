@@ -19,6 +19,7 @@ def test_surface_algorithm_modules_have_library_owners() -> None:
         "genkai.modeling.surface.substrate",
         "genkai.modeling.surface.sam",
         "genkai.modeling.surface.amorphous_overlayer",
+        "genkai.modeling.surface.amorphous_slab",
     )
     for name in modules:
         module = importlib.import_module(name)

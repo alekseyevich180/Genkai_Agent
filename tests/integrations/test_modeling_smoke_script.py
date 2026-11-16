@@ -36,6 +36,7 @@ def test_every_case_uses_existing_repository_structures_and_entry_points() -> No
         "surface_execute",
         "sam",
         "ald_overlayer",
+        "amorphous_slab",
     }
     ctx = smoke.Context(profile="local", device="cpu", uma_model="uma-s-1p2", enabled=set())
     for case in smoke.CASES:

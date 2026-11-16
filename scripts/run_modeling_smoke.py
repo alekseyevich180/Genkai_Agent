@@ -253,6 +253,26 @@ def ald_case(substrate: list[str], extra: list[str]) -> Callable[[Context, Path]
     return build
 
 
+def amorphous_slab_case(amorphous: str, extra: list[str]) -> Callable[[Context, Path], list[list[str]]]:
+    def build(ctx: Context, out: Path) -> list[list[str]]:
+        return [py(skill("amorphous/amorphous_slab.py"), "--amorphous", path(amorphous), "--output-dir", out / "amorphous", *extra)]
+
+    return build
+
+
+def sam_on_amorphous_case(ctx: Context, out: Path) -> list[list[str]]:
+    slab = amorphous_slab_case("a_sno2", ["--thickness", "8"])(ctx, out)[0]
+    sam = py(
+        skill("sam/sam_builder.py"),
+        "--surface", out / "amorphous" / "amorphous_slab_000.extxyz",
+        "--molecule", path("butanoic_acid"),
+        "--binding-mode", "bidentate",
+        "--counts", "1",
+        "--output-dir", out / "sam",
+    )
+    return [slab, sam]
+
+
 def write_methanethiol(case_dir: Path) -> dict[str, str]:
     """No thiol molecule file exists in the repository; take CH3SH from ASE's built-in G2 set."""
     from ase.build import molecule
@@ -318,10 +338,13 @@ CASES: list[Case] = [
          ("ru_bulk",),
          sam_case(by_path("ru_bulk"), None, ["--binding-mode", "fcc", "--counts", "1,2", "--tilt", "30"]),
          ("sam/sam_structures.extxyz",), contains=("S",), min_structures=3, fixed=True, prepare=write_methanethiol),
-    Case("sam_rejects_tilted_c_slab", "sam", "legacy slab with c not normal to the surface must be blocked (exit 2)",
+    Case("sam_on_legacy_tilted_slab", "sam", "butanoic acid on the legacy SnO2(101) slab (tilted c, normalized automatically)",
          ("sno2_101_legacy_slab", "butanoic_acid"),
          sam_case(by_path("sno2_101_legacy_slab"), "butanoic_acid", ["--binding-mode", "monodentate", "--counts", "1"]),
-         expect_exit=2, expect_message="surface normal"),
+         ("sam/sam_structures.extxyz",), contains=("C",), min_structures=2, fixed=True),
+    Case("sam_on_amorphous_sno2_slab", "sam", "pure amorphous SnO2 slab -> butanoic acid bidentate on it (chained)",
+         ("a_sno2", "butanoic_acid"), sam_on_amorphous_case,
+         ("sam/sam_structures.extxyz",), contains=("C",), min_structures=2, fixed=True),
     Case("ald_full_asno2_on_sno2", "ald_overlayer", "6 A amorphous SnO2 film on the most stable SnO2 facet",
          ("sno2_bulk", "a_sno2"),
          ald_case(by_path("sno2_bulk"), ["--amorphous", path("a_sno2"), "--coverage", "full", "--thickness", "6"]),
@@ -339,11 +362,27 @@ CASES: list[Case] = [
          ("ceo2_111_slab", "a_tio2"),
          ald_case(by_path("ceo2_111_slab"), ["--amorphous", path("a_tio2"), "--coverage", "partial", "--island-atoms", "24"]),
          ("ald/ald_structures.extxyz",), contains=("Ti",), min_structures=2, fixed=True),
-    Case("ald_full_rejects_unmatched_lattice", "ald_overlayer",
-         "hexagonal CeO2(111) vs square a-TiO2 cell: no match within 5% / 600 A^2 must be blocked (exit 2)",
+    Case("ald_full_atio2_on_ceo2_cut", "ald_overlayer",
+         "hexagonal CeO2(111) vs square a-TiO2 cell: no lattice match -> cut film with repaired seams",
          ("ceo2_111_slab", "a_tio2"),
          ald_case(by_path("ceo2_111_slab"), ["--amorphous", path("a_tio2"), "--coverage", "full", "--thickness", "5"]),
+         ("ald/ald_structures.extxyz",), contains=("Ti",), min_structures=2, fixed=True),
+    Case("ald_full_strain_only_blocks_unmatched", "ald_overlayer",
+         "--film-fit strain on CeO2(111) + a-TiO2 must be blocked (exit 2)",
+         ("ceo2_111_slab", "a_tio2"),
+         ald_case(by_path("ceo2_111_slab"), ["--amorphous", path("a_tio2"), "--coverage", "full", "--thickness", "5",
+                                             "--film-fit", "strain"]),
          expect_exit=2, expect_message="No in-plane supercell match"),
+    Case("ald_partial_atio2_on_legacy_slab", "ald_overlayer", "30-atom amorphous TiO2 island on the legacy tilted SnO2(101) slab",
+         ("sno2_101_legacy_slab", "a_tio2"),
+         ald_case(by_path("sno2_101_legacy_slab"), ["--amorphous", path("a_tio2"), "--coverage", "partial", "--island-atoms", "30"]),
+         ("ald/ald_structures.extxyz",), contains=("Ti",), min_structures=2, fixed=True),
+    Case("amorphous_slab_sno2", "amorphous_slab", "pure amorphous SnO2 surface, 8 A, 2 different cuts",
+         ("a_sno2",), amorphous_slab_case("a_sno2", ["--thickness", "8", "--samples", "2"]),
+         ("amorphous/amorphous_slab_structures.extxyz",), contains=("Sn",), min_structures=2, fixed=True),
+    Case("amorphous_slab_tio2", "amorphous_slab", "pure amorphous TiO2 surface, 10 A, 2x2 in-plane",
+         ("a_tio2",), amorphous_slab_case("a_tio2", ["--thickness", "10", "--repeat-xy", "2,2"]),
+         ("amorphous/amorphous_slab_structures.extxyz",), contains=("Ti",), fixed=True),
 ]
 
 

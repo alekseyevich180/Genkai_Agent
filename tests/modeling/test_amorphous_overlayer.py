@@ -86,9 +86,13 @@ def test_invalid_overlayer_inputs_are_rejected(tmp_path, substrates) -> None:
     substrates["SnO2"].atoms.write(slab_file)
     with pytest.raises(OverlayerBuildError, match="empty gap"):
         run_overlayer(substrates["SnO2"], slab_file, OverlayerSettings("full", thickness=5.0), tmp_path / "x")
+    # Only an explicit strain fit refuses; the default (auto) falls back to a cut film.
     with pytest.raises(OverlayerBuildError, match="No in-plane supercell match"):
         run_overlayer(
-            substrates["SnO2"], A_SNO2, OverlayerSettings("full", thickness=5.0, max_strain=0.001, max_area=150.0), tmp_path / "y"
+            substrates["SnO2"],
+            A_SNO2,
+            OverlayerSettings("full", thickness=5.0, max_strain=0.001, max_area=150.0, film_fit="strain"),
+            tmp_path / "y",
         )
 
 
