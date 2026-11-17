@@ -15,6 +15,7 @@ from genkai.literature.surface.core.chemical_vocabulary import (
     normalize_element_name,
     normalize_material_terms,
 )
+from genkai.literature.surface.core.records import read_relation_records
 from genkai.literature.surface.core.surface_indices import (
     canonicalize_surface_index,
     normalize_surface_facet_for_software,
@@ -452,21 +453,7 @@ def _infer_material_classes(values: list[str]) -> list[str]:
 
 def _load_relations(relations_jsonl: str) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    content = Path(relations_jsonl).read_text(encoding="utf-8").strip()
-    if not content:
-        return rows
-
-    decoder = json.JSONDecoder()
-    index = 0
-    length = len(content)
-    while index < length:
-        while index < length and content[index].isspace():
-            index += 1
-        if index >= length:
-            break
-        payload, index = decoder.raw_decode(content, index)
-        if not isinstance(payload, dict):
-            continue
+    for payload in read_relation_records(relations_jsonl):
         extraction = payload.get("extraction", payload)
         rows.append(
             {
@@ -482,17 +469,54 @@ def _load_relations(relations_jsonl: str) -> list[dict[str, Any]]:
 def _load_table(table_csv: str | None) -> list[dict[str, str]]:
     if not table_csv:
         return []
-    with open(table_csv, "r", encoding="utf-8", newline="") as handle:
+    with open(table_csv, "r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
 
 
-def _index_table_rows(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
-    indexed: dict[str, dict[str, str]] = {}
+def _index_table_rows(
+    rows: list[dict[str, str]],
+    document_ids: list[str],
+) -> dict[str, list[dict[str, str]]]:
+    """Associate paragraph IDs with documents, never by position in a batch."""
+    indexed: dict[str, list[dict[str, str]]] = {key: [] for key in document_ids}
     for row in rows:
         key = _first_nonempty(row.get("Index"), row.get("id"), row.get("ID"))
-        if key:
-            indexed[key] = row
+        matches = [
+            doc for doc in indexed
+            if key and (key == doc or re.fullmatch(re.escape(doc) + r"_\d+", key))
+        ]
+        matched = matches[0] if len(matches) == 1 else None
+        # The PDF ingester has a known pair of routing IDs for one paper.
+        # Do not generalize this compatibility case to arbitrary documents.
+        if (
+            matched is None
+            and document_ids == ["surface_relations"]
+            and key
+            and re.fullmatch(r"surface_conditions_\d+", key)
+        ):
+            matched = "surface_relations"
+        if matched is not None:
+            indexed[matched].append(row)
     return indexed
+
+
+def _merge_condition_rows(
+    rows: list[dict[str, str]],
+) -> tuple[dict[str, str], dict[str, list[str]]]:
+    """Use non-conflicting condition values; retain every row and conflict."""
+    values: dict[str, list[str]] = {}
+    for row in rows:
+        for field, raw in row.items():
+            value = _clean_scalar(raw)
+            if field in {"Index", "id", "ID"} or value is None:
+                continue
+            entries = values.setdefault(field, [])
+            if value not in entries:
+                entries.append(value)
+    return (
+        {field: entries[0] for field, entries in values.items() if len(entries) == 1},
+        {field: entries for field, entries in values.items() if len(entries) > 1},
+    )
 
 
 def _infer_tasks(
@@ -1262,15 +1286,18 @@ def build_ptomodel_payload(
     parameter_schema_registry = _load_surface_modeling_parameter_schema()
     relation_rows = _load_relations(relations_jsonl)
     table_rows = _load_table(table_csv)
-    table_index = _index_table_rows(table_rows)
+    document_ids = [
+        _first_nonempty(row.get("id")) or f"doc_{idx}"
+        for idx, row in enumerate(relation_rows, start=1)
+    ]
+    table_index = _index_table_rows(table_rows, document_ids)
     documents: list[dict[str, Any]] = []
 
     for idx, relation_row in enumerate(relation_rows, start=1):
         extraction = relation_row["extraction"]
-        relation_id = _first_nonempty(relation_row.get("id")) or f"doc_{idx}"
-        table_row = table_index.get(relation_id)
-        if table_row is None and idx <= len(table_rows):
-            table_row = table_rows[idx - 1]
+        relation_id = document_ids[idx - 1]
+        condition_rows = table_index[relation_id]
+        table_row, condition_conflicts = _merge_condition_rows(condition_rows)
 
         materials = _to_list(extraction.get("materials")) or _to_list((table_row or {}).get("Material"))
         supports = _to_list(extraction.get("surfaces")) or _to_list((table_row or {}).get("Surface/Support"))
@@ -1349,6 +1376,9 @@ def build_ptomodel_payload(
             {
                 "id": relation_id,
                 "title": relation_row.get("title"),
+                "condition_rows": condition_rows,
+                "condition_conflicts": condition_conflicts,
+                "conditions_unmatched": bool(table_rows and not condition_rows),
                 "selected_information": {
                     "materials": materials,
                     "material_classes": material_classes,

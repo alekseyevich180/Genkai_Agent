@@ -33,7 +33,11 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
 - `src/genkai/`：稳定、可复用的工作流与科学领域实现。
   - `contracts/`：artifact 与 run manifest 契约。
   - `workflows/` 和 `workflow/`：工作流编排与图验证。
-  - `literature/`：论文读取和表面科学信息抽取。
+  - `literature/`：论文读取和表面科学信息抽取。2026-11-17 修复关系 JSONL 契约；
+    `surface/core/records.py` 负责 artifact、PToModel 与 compact bundle 共用的历史格式读取。
+    `surface run` 自动传递条件 CSV，`genkai-workflow init --conditions` 支持离线重放；
+    条件表在运行目录保存快照与哈希，多行冲突和文档 ID 无法匹配的情况进入 checklist。
+    两个入口仍为 prepare-only，未接入七类方法的统一自动调度。
   - `modeling/`：PToModel、checklist、schema 与表面建模算法。
     `modeling/surface/` 包括切面（`slab.py`）、吸附、空位、团簇、structure-only
     执行器（`executor.py`），以及 2026-11-16 新增的 SAM（`sam.py`）、ALD 非晶覆盖层
@@ -235,6 +239,12 @@ Windows + Python 3.11）：
 
 尚未在 Linux + Python 3.12 上完成 `full` 复核；在此之前，局部通过不能报告成
 “完整测试通过”。
+
+2026-11-17 已用本地 Python 3.12.11 创建项目 `.venv`，从缓存安装 pytest；
+doctor 和 quick 通过。完整项目依赖的离线安装因缺少缓存失败，此 `.venv` 尚不能
+用于完整运行：ci 因缺少 google-adk 失败，package/full 在收集阶段受缺少依赖阻塞。
+本次论文输入修复的功能回归使用原有 Python 3.11.9 环境；具体命令和边界见
+`work_logs/2026-11-17.md`。不得把部分初始化的 `.venv` 当成已经完成安装的环境。
 
 前端开发与构建：
 

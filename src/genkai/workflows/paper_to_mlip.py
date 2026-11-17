@@ -124,6 +124,7 @@ def initialize_paper_to_mlip_run(
     run_root: str | Path,
     relations: str | Path,
     *,
+    conditions_csv: str | Path | None = None,
     mock_labels: str | Path | None = None,
     base_model_uri: str | None = None,
     base_model_version: str | None = None,
@@ -134,7 +135,7 @@ def initialize_paper_to_mlip_run(
     from genkai.modeling.surface import build_surface_candidates
 
     root = Path(run_root)
-    extraction = run_surface_extraction(relations, root)
+    extraction = run_surface_extraction(relations, root, conditions_csv=conditions_csv)
     plan = build_modeling_plan(extraction, root)
     structures = build_surface_candidates(plan, root, mode="dry-run")
     if mock_labels is not None:

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import hashlib
 import json
-import shutil
 from pathlib import Path
+from typing import Any
 
 from genkai.contracts.artifacts import (
     EvidenceLevel,
@@ -15,6 +15,7 @@ from genkai.contracts.artifacts import (
     ValidationStatus,
 )
 from genkai.contracts.run import RunManifest, StageRecord
+from genkai.literature.surface.core.records import read_relation_records
 from genkai.workflow.store import load_manifest, save_manifest
 
 
@@ -34,29 +35,47 @@ def _manifest(run_root: Path) -> RunManifest:
 def run_surface_extraction(
     request: str | Path,
     run_root: str | Path,
+    *,
+    conditions_csv: str | Path | None = None,
 ) -> ExtractionArtifact:
     """Replay a saved relations JSONL file into a versioned run.
 
     Network-backed extraction is exposed by ``genkai.literature.surface``;
     this artifact facade deliberately requires a saved input for deterministic
-    workflow replay.
+    workflow replay. Legacy pretty JSON is normalized to JSONL. An optional
+    condition table is snapshotted with a run-relative path and SHA-256 in the
+    extraction metadata, so later planning does not depend on the input file.
     """
 
     source = Path(request)
     if not source.is_file():
         raise FileNotFoundError(source)
-    records = [
-        json.loads(line)
-        for line in source.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
+    records = read_relation_records(source)
     if not records:
         raise ValueError("saved surface extraction contains no records")
+    source_hash = _sha256(source)
+    conditions_data = (
+        Path(conditions_csv).read_bytes() if conditions_csv is not None else None
+    )
 
     root = Path(run_root)
     extraction_path = root / "stages" / "01_paperread" / "extraction.jsonl"
     extraction_path.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, extraction_path)
+    extraction_path.write_text(
+        "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records),
+        encoding="utf-8",
+    )
+    metadata: dict[str, Any] = {
+        "record_count": len(records), "source_sha256": source_hash,
+    }
+    if conditions_data is not None:
+        conditions_path = extraction_path.with_name("conditions.csv")
+        conditions_path.write_bytes(conditions_data)
+        metadata["conditions_table"] = {
+            "path": conditions_path.relative_to(root).as_posix(),
+            "sha256": hashlib.sha256(conditions_data).hexdigest(),
+            "source_uri": str(conditions_csv),
+        }
 
     article_path = root / "article.json"
     article_path.write_text(
@@ -96,7 +115,7 @@ def run_surface_extraction(
         execution_state=ExecutionState.SUCCEEDED,
         evidence_level=EvidenceLevel.PAPER_EXTRACTED,
         validation_status=ValidationStatus.PASSED,
-        metadata={"record_count": len(records)},
+        metadata=metadata,
     )
     manifest.register_artifact(paper)
     manifest.register_artifact(extraction)

@@ -50,5 +50,7 @@ def initialize_surface_paper_run(
     relations = outputs.get("relations_jsonl")
     if not relations:
         raise ValueError("surface workflow requires relation extraction")
-    initialize_paper_to_mlip_run(root, Path(relations))
+    initialize_paper_to_mlip_run(
+        root, Path(relations), conditions_csv=outputs.get("conditions_csv"),
+    )
     return {**outputs, "manifest": str(root / "manifest.json")}

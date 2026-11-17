@@ -6,6 +6,8 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+from genkai.literature.surface.core.records import read_relation_records
+
 
 REVIEW_STATUSES = {
     "needs_manual_decision",
@@ -25,20 +27,33 @@ def _read_csv(path: str | None) -> list[dict[str, str]]:
 def _read_json_records(path: str | None) -> list[dict[str, Any]]:
     if not path or not Path(path).exists():
         return []
-    text = Path(path).read_text(encoding="utf-8").strip()
-    if not text:
-        return []
-    try:
-        payload = json.loads(text)
-        return payload if isinstance(payload, list) else [payload]
-    except json.JSONDecodeError:
-        return [json.loads(line) for line in text.splitlines() if line.strip()]
+    return read_relation_records(path)
 
 
 def build_modeling_checklist(plan: dict[str, Any]) -> dict[str, Any]:
     tasks: list[dict[str, Any]] = []
     review_items: list[dict[str, Any]] = []
     for document in plan.get("documents", []):
+        for parameter, values in document.get("condition_conflicts", {}).items():
+            review_items.append({
+                "document_id": document.get("id"),
+                "task": "conditions",
+                "parameter": parameter,
+                "status": "needs_manual_decision",
+                "source_term": values,
+                "reason": "Multiple condition rows report different values; select the relevant experimental procedure before using this field.",
+                "depends_on": [],
+            })
+        if document.get("conditions_unmatched"):
+            review_items.append({
+                "document_id": document.get("id"),
+                "task": "conditions",
+                "parameter": "document_id",
+                "status": "needs_manual_decision",
+                "source_term": None,
+                "reason": "No condition row matches this document; CSV row order is not evidence of a document association.",
+                "depends_on": [],
+            })
         templates = document.get("task_argument_template", {})
         for task_name in document.get("recommended_modeling_tasks", []):
             template = templates.get(task_name, {})

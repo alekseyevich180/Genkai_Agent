@@ -25,6 +25,11 @@ def main() -> None:
 @main.command("init")
 @click.argument("run_root", type=click.Path(path_type=Path))
 @click.option("--relations", required=True, type=click.Path(exists=True, path_type=Path))
+@click.option(
+    "--conditions",
+    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    help="Saved experimental-condition CSV to include in the modeling plan.",
+)
 @click.option("--mock-labels", type=click.Path(exists=True, path_type=Path))
 @click.option("--base-model-uri")
 @click.option("--base-model-version")
@@ -32,6 +37,7 @@ def main() -> None:
 def init_command(
     run_root: Path,
     relations: Path,
+    conditions: Path | None,
     mock_labels: Path | None,
     base_model_uri: str | None,
     base_model_version: str | None,
@@ -44,6 +50,7 @@ def init_command(
     initialize_paper_to_mlip_run(
         run_root,
         relations,
+        conditions_csv=conditions,
         mock_labels=mock_labels,
         base_model_uri=base_model_uri,
         base_model_version=base_model_version,

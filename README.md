@@ -121,6 +121,23 @@ genkai-workflow surface run /path/to/paper.pdf \
   --collect-experience
 ```
 
+The workflow passes both relations and experimental conditions to PToModel.
+To replay saved extraction without an LLM or PDF tools:
+
+```bash
+python -m genkai.cli init runs/paper_replay \
+  --relations /path/to/paper_surface_relations.jsonl \
+  --conditions /path/to/paper_table.csv
+```
+
+`--conditions` is optional. The CSV is copied into the run and recorded with a
+SHA-256; later planning reads that snapshot. Condition rows are matched by document
+ID, including the extractor's `<document_id>_<paragraph_number>` indices. Conflicting
+values and unmatched documents are listed in `modeling/checklist.json` for review.
+Both `init` and `surface run` still prepare a plan with zero generated structures;
+structure generation requires the separate `surface execute` command and resolved
+inputs. See [artifact contracts](docs/artifact-contracts.md) for the saved formats.
+
 Important paperread outputs:
 
 - `*_table.csv`: reaction and material condition table.

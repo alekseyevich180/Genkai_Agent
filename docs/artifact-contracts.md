@@ -37,3 +37,45 @@ Incompatible artifact changes increment the schema major version. Consumers
 declare requirements such as `dataset@1`; the workflow validator rejects
 missing producers, wrong artifact types, incompatible majors, and cycles before
 external execution.
+
+## Saved literature inputs
+
+Relation extraction writes one JSON object per line. The shared reader in
+`genkai.literature.surface.core.records` also accepts historical concatenated,
+pretty-printed JSON objects and JSON arrays. Artifact ingestion validates the
+whole input, writes canonical JSONL to `stages/01_paperread/extraction.jsonl`,
+and records the original file's hash as `metadata.source_sha256`. The artifact's
+own `sha256` always describes the canonical run-local file.
+
+`run_surface_extraction(..., conditions_csv=...)` optionally copies the condition
+CSV to `stages/01_paperread/conditions.csv`. Its reference is stored on the
+`ExtractionArtifact` and propagated to the `ModelingPlanArtifact`:
+
+```json
+{
+  "conditions_table": {
+    "path": "stages/01_paperread/conditions.csv",
+    "sha256": "<SHA-256 of the saved CSV bytes>",
+    "source_uri": "<original CSV path>"
+  }
+}
+```
+
+PToModel verifies that the path stays inside the run and that the hash matches
+before writing a plan. `plan.json.sources` uses run-relative relation/condition
+paths in artifact-backed runs. The standalone mapping API continues to use its
+supplied input paths. Existing runs without a condition reference remain supported.
+
+Condition rows match exact document IDs or `<document_id>_<paragraph_number>`.
+The single-paper PDF route also recognizes its historical `surface_conditions_N`
+and `surface_relations` ID pair. Other unmatched IDs never fall back to row order.
+Each document preserves `condition_rows`; only non-conflicting values are used as
+fallbacks when relation fields are absent. `condition_conflicts` and
+`conditions_unmatched` produce `conditions` review items in the checklist. These
+are planning review items, not a new execution task or a claim that an experiment
+has been reproduced. Selecting among experimental procedures remains a review step.
+
+`genkai-workflow init RUN --relations RELATIONS --conditions TABLE` supports
+offline replay. `surface run` forwards its extracted condition CSV automatically.
+Neither entrypoint automatically executes structure generation or scientific
+calculations.

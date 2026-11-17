@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from genkai.contracts.artifacts import (
     EvidenceLevel,
@@ -38,7 +38,26 @@ def build_modeling_plan(
     root = Path(run_root)
     manifest = load_manifest(root)
     source = root / extraction.path
-    payload = build_ptomodel_payload(str(source))
+    conditions = extraction.metadata.get("conditions_table")
+    table_path = None
+    if conditions is not None:
+        relative = PurePosixPath(conditions["path"])
+        table_path = root / relative
+        if (
+            relative.is_absolute()
+            or ".." in relative.parts
+            or "\\" in conditions["path"]
+            or not table_path.resolve().is_relative_to(root.resolve())
+        ):
+            raise ValueError("Condition table path must remain inside the run root")
+        if _sha256(table_path) != conditions["sha256"]:
+            raise ValueError("Condition table SHA-256 does not match the extraction artifact")
+    payload = build_ptomodel_payload(
+        str(source), table_csv=str(table_path) if table_path else None,
+    )
+    payload["sources"]["relations_jsonl"] = extraction.path.as_posix()
+    if conditions is not None:
+        payload["sources"]["table_csv"] = conditions["path"]
 
     modeling_dir = root / "modeling"
     modeling_dir.mkdir(parents=True, exist_ok=True)
@@ -77,6 +96,7 @@ def build_modeling_plan(
         metadata={
             "checklist_path": checklist_path.relative_to(root).as_posix(),
             "review_item_count": len(checklist["review_items"]),
+            **({"conditions_table": conditions} if conditions is not None else {}),
         },
     )
     manifest.register_artifact(artifact)

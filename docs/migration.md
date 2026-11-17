@@ -13,6 +13,7 @@
 | (new, 2026-11-16) job-file interface for other users | `src/genkai/modeling/surface/jobs.py` (console script `genkai-surface`); output checks `frame_metrics`/`read_frames` moved from `scripts/run_modeling_smoke.py` into `structure_io.py` | runs the method modules above in a subprocess; option table only, no second copy of any algorithm; user guide `docs/surface-modeling-user-guide.md` |
 | VASP/dataset/MLIP stable gates | `src/genkai/compute/`, `src/genkai/datasets/`, `src/genkai/mlip/` | Skill runtime launchers retained |
 | paperread experience export rules | `src/genkai/literature/surface/experience/export_unknown_terms.py` | Skill script is a thin wrapper |
+| Saved relation JSON parsing in the modeling/artifact hand-off | `src/genkai/literature/surface/core/records.py` | shared by artifact ingestion, PToModel mapping and compact bundles; reads legacy pretty JSON, while new extraction and run snapshots use one record per line |
 
 ## Migration rules
 

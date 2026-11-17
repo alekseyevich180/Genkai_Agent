@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import inspect
+import csv
+import importlib
+import json
 from pathlib import Path
 
 import pytest
@@ -9,6 +12,7 @@ from click.testing import CliRunner
 from genkai.cli import main
 from genkai.literature.surface.pipeline import runner as literature_runner
 from genkai.workflows import surface_paper
+from genkai.workflow.store import load_manifest
 
 
 def test_literature_pipeline_stops_before_modeling(
@@ -128,3 +132,34 @@ def test_surface_cli_lists_new_commands_without_legacy_ptomodel() -> None:
     assert "ptomodel" not in help_result.output
     assert catalog_result.exit_code == 0, catalog_result.output
     assert "Surface tooling catalog" in catalog_result.output
+
+
+def test_real_extraction_outputs_reach_prepare_plan_with_conditions(monkeypatch, tmp_path):
+    """Only LLM replies are mocked; the writer, workflow and artifacts are real."""
+    conditions_module = importlib.import_module("genkai.literature.surface.extraction.extract_surface_conditions")
+    relations_module = importlib.import_module("genkai.literature.surface.extraction.extract_surface_relations")
+    time_module = importlib.import_module("genkai.literature.surface.extraction.standardize_surface_time")
+    columns = conditions_module.COLUMNS
+    values = {"Material": "CeO2", "Surface/Support": "CeO2", "Facet": "(111)", "Time": "2 h"}
+    table = "\n".join([
+        "| " + " | ".join(columns) + " |",
+        "| " + " | ".join("---" for _ in columns) + " |",
+        "| " + " | ".join(values.get(column, "N/A") for column in columns) + " |",
+    ])
+    monkeypatch.setattr(conditions_module, "chat_completion", lambda *a, **k: table)
+    monkeypatch.setattr(relations_module, "chat_completion", lambda *a, **k: '{"adsorbates":["CO"]}')
+    monkeypatch.setattr(time_module, "chat_completion", lambda *a, **k: '| Index | Time |\n|---|---|\n| paper_1 | 120 minutes |')
+    source = tmp_path / "input.json"
+    source.write_text(json.dumps({"paper": {"Title": "CO on ceria", "Text": "CeO2(111), 2 h."}}), encoding="utf-8")
+    root = tmp_path / "run"
+    surface_paper.initialize_surface_paper_run(source, root)
+
+    manifest = load_manifest(root)
+    plan = json.loads((root / "modeling/plan.json").read_text(encoding="utf-8"))
+    assert plan["documents"][0]["selected_information"]["materials"] == ["CeO2"]
+    assert plan["documents"][0]["normalized_mapping"]["facet_set"] == ["(111)"]
+    assert manifest.artifacts[-1].execution_state.value == "prepared"
+    assert manifest.artifacts[-1].metadata["structure_count"] == 0
+    extraction = next(a for a in manifest.artifacts if a.artifact_type == "extraction")
+    with (root / extraction.metadata["conditions_table"]["path"]).open(encoding="utf-8", newline="") as handle:
+        assert list(csv.DictReader(handle))[0]["Material"] == "CeO2"

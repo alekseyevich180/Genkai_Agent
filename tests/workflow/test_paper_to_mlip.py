@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import subprocess
 import sys
 
@@ -6,6 +7,7 @@ from click.testing import CliRunner
 
 from genkai.cli import main
 from genkai.mlip.protocol import RunMode
+from genkai.workflow.store import load_manifest
 from genkai.workflows.paper_to_mlip import (
     build_paper_to_mlip_graph,
     initialize_paper_to_mlip_run,
@@ -14,6 +16,21 @@ from genkai.workflows.paper_to_mlip import (
 
 
 FIXTURE_DIR = Path(__file__).parents[1] / "fixtures" / "paper_to_mlip"
+
+
+def test_cli_init_accepts_saved_conditions_and_keeps_prepare_semantics(tmp_path):
+    relations = tmp_path / "relations.jsonl"
+    relations.write_text('{"id":"a","extraction":{"adsorbates":["CO"]}}\n', encoding="utf-8")
+    conditions = tmp_path / "table.csv"
+    conditions.write_text("Index,Material,Facet\na_1,CeO2,(111)\n", encoding="utf-8")
+    root = tmp_path / "run"
+    result = CliRunner().invoke(main, [
+        "init", str(root), "--relations", str(relations), "--conditions", str(conditions),
+    ])
+    assert result.exit_code == 0, result.output
+    plan = json.loads((root / "modeling/plan.json").read_text(encoding="utf-8"))
+    assert plan["documents"][0]["selected_information"]["materials"] == ["CeO2"]
+    assert load_manifest(root).artifacts[-1].execution_state.value == "prepared"
 
 
 def test_target_graphs_have_distinct_mlip_routes() -> None:
