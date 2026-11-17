@@ -197,7 +197,7 @@ def test_cluster_search_exposes_uma_task_head() -> None:
     from genkai.modeling.surface import cluster_search
 
     parameter = inspect.signature(cluster_search.build_calculator).parameters["task_name"]
-    assert parameter.default == "oc22"
+    assert parameter.default == "omat"
     completed = subprocess.run(
         [sys.executable, str(SKILL_SCRIPTS / "cluster_search/ads_nanocluster.py"), "--help"],
         cwd=PROJECT_ROOT,

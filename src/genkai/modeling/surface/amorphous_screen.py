@@ -25,7 +25,7 @@ Case 3 (amorphous island on a crystal) uses ``amorphous_overlayer`` (island
 files) and ``cluster_search`` (Optuna placement with tilt and an MLIP).
 
 ``calculator="none"`` is a mock (no physical meaning) for local workflow
-tests; ``uma`` is a real MLIP calculation and needs authorization. MLIP values
+tests; ``uma``/``mace`` is a real MLIP calculation and needs authorization. MLIP values
 are screening estimates, not DFT evidence.
 """
 
@@ -51,7 +51,17 @@ from .amorphous_overlayer import (
     pair_reference_distances,
 )
 from .amorphous_slab import AmorphousSlabSettings, build_amorphous_slab, standardize_cell
-from .calculators import CALCULATORS, MOCK_NOTE, anneal, build_calculator, evidence_for, is_mock, relax
+from .calculators import (
+    CALCULATORS,
+    MOCK_NOTE,
+    add_mace_arguments,
+    anneal,
+    build_calculator,
+    evidence_for,
+    is_mock,
+    relax,
+    resolve_mace_model,
+)
 from .structure_io import export_frames, read_structure, sha256_of, write_frames, write_manifest
 from .substrate import (
     Substrate,
@@ -77,8 +87,12 @@ class ModelSettings:
     anneal_steps: int = 0
     anneal_temperature: float = 600.0
     seed: int = 42
+    mace_model: str | None = None
+    mace_dtype: str = "float32"
 
     def __post_init__(self) -> None:
+        if self.calculator == "mace":
+            self.mace_model = resolve_mace_model(self.mace_model)
         if self.calculator not in CALCULATORS:
             raise OverlayerBuildError(f"calculator must be one of {', '.join(CALCULATORS)}.")
 
@@ -89,6 +103,8 @@ class ModelSettings:
             task_name=self.task_name,
             device=self.device,
             include_d3=self.include_d3,
+            mace_model=self.mace_model,
+            mace_dtype=self.mace_dtype,
         )
 
 
@@ -445,7 +461,7 @@ def search_interface(
 
 def _add_model_arguments(parser: argparse.ArgumentParser, prefix: str = "") -> None:
     parser.add_argument(f"--{prefix}calculator", dest="model_calculator", choices=CALCULATORS, default="none",
-                        help="none = mock (workflow tests only); uma = real MLIP (needs authorization).")
+                        help="none = mock (workflow tests only); uma/mace = real MLIP (needs authorization).")
     parser.add_argument("--include-d3", action="store_true")
     parser.add_argument("--fmax", type=float, default=0.05)
     parser.add_argument("--max-steps", type=int, default=200)
@@ -463,6 +479,8 @@ def _model_from_args(args: argparse.Namespace) -> ModelSettings:
         task_name=args.task_name,
         device=args.device,
         include_d3=args.include_d3,
+        mace_model=args.mace_model,
+        mace_dtype=args.mace_dtype,
         fmax=args.fmax,
         max_steps=args.max_steps,
         anneal_steps=args.anneal_steps,
@@ -490,6 +508,7 @@ def _build_parser() -> argparse.ArgumentParser:
     surfaces.add_argument("--uma-model", default="uma-s-1p2")
     surfaces.add_argument("--task-name", default="omat")
     surfaces.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
+    add_mace_arguments(surfaces)
     _add_model_arguments(surfaces)
 
     interface = commands.add_parser("interface", help="Case 2: full amorphous film on a crystal, searched by shift and gap.")

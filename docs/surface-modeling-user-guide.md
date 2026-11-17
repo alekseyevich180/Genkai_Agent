@@ -17,17 +17,17 @@
 
 用户输入的结构默认是 CIF，也可以用 POSCAR、XYZ、extxyz 等 ASE 能读取的格式。
 
-**目前只生成结构，不计算能量。** 生成的是未弛豫的几何结构，用作后续 DFT 或 MLIP 计算的初始结构。
-计算器固定为 `none`。空位和吸附方法会顺带输出能量表格和图，其中的能量是模拟值，没有物理意义。
+**不启用 MLIP 时只生成结构。** 原有任务默认生成未弛豫的几何结构，用作后续计算的初始结构。
+模拟计算器输出的能量没有物理意义。
 
-下面这些功能暂未开放：
+安装脚本会生成 MLIP 配置与任务文件，以下方法也已支持 YAML 入口：
 
 - SAM 能量搜索（`sam_search`）；
-- 非晶表面能排序和界面搜索（`amorphous_screen`）；
+- 非晶表面能排序（`amorphous_surfaces`）和界面搜索（`amorphous_interface`）；
 - 团簇或非晶岛的负载位置搜索（`cluster_search`）；
-- 从 Materials Project 下载结构。
 
-前三项需要 UMA，要等服务器上的基准测试完成后再开放。Materials Project 需要联网和 API 密钥，
+在 `genkai.yaml` 登记已有 MACE / UMA，在任务中写 `mlip: default` 或配置名称即可调用，
+完整步骤见 [MACE / UMA 接口](mlip-interfaces.md)。Materials Project 需要联网和 API 密钥，
 请先自己下载 CIF 文件，再作为 `bulk` 输入。
 
 ## 2. 安装
@@ -48,13 +48,24 @@ source .venv/bin/activate
 
 | 选项 | 作用 |
 | --- | --- |
-| `--mlip` | 另外安装 fairchem-core（UMA），用于 MLIP 测试 |
-| `--torch-index-url URL` | 先从指定源安装与服务器 CUDA 匹配的 torch |
+| `--mace-python PATH --mace-model PATH` | 连接用户已安装的 MACE 和本地模型 |
+| `--uma-python PATH` | 连接用户已安装的 UMA |
+| `--configure-only` | 修改环境路径后重新准备项目依赖，不安装 MLIP |
+| `--non-interactive` | 自动检测，不交互提问 |
 | `--system-site-packages` | 让环境能看到集群模块提供的包（如预装的 torch） |
 | `--python PY` | 指定 Python 解释器 |
 | `--dry-run` | 只显示将要执行的命令 |
 
 全部选项见 `./install.sh --help`。
+
+脚本不安装 MLIP、PyTorch、CUDA 或模型；它创建独立项目环境复用已有后端。
+安装后可直接使用 `./genkai`，无需激活环境：
+
+```bash
+./genkai doctor
+./genkai check tasks/sam_search.yaml
+./genkai run tasks/sam_search.yaml
+```
 
 ### 2.2 Windows 电脑
 
@@ -64,6 +75,7 @@ source .venv/bin/activate
 py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -e ".[test]"
+genkai-surface setup
 ```
 
 ### 2.3 确认安装成功
@@ -129,7 +141,8 @@ counts: [1, 2]
 - 多个数可以写成列表 `[1, 2]`，也可以写成 `1, 2`。
 - 行首加 `#` 表示注释；不写的参数使用默认值。
 - 文件请保存为 UTF-8 编码。
-- `calculator`、`device`、`uma_model`、`formula` 等涉及能量计算或联网的参数不能写，写了会报错并说明原因。
+- 计算器、设备、模型统一写入 `genkai.yaml`，任务只用 `mlip: default` 或配置名称选择。
+  `formula` 等联网参数仍不开放；请提供本地结构。
 
 ### 4.3 一个文件写多个任务，或把任务串联起来
 
@@ -196,7 +209,8 @@ CIF 不保存固定原子信息。
 
 空位和吸附方法的输出目录里还有一些文件名带 stable、relaxed、best 的 CIF（如 `stable_vacancy_structure.cif`、
 `surface_relaxed.cif`、`single_adsorbate_best.cif`），以及能量表格和图。它们来自这两个脚本的能量计算流程。
-目前计算器固定为 `none`，这些文件要么没有弛豫，要么是按模拟能量挑出来的，文件名不代表真实结果。
+未启用 MLIP 时，计算器为 `none`，这些文件要么没有弛豫，要么按模拟能量挑选。
+启用 MLIP 后使用真实预测能量；具体模型、环境、计算参数和证据级别记录在 `manifest.json`。
 请只使用 `structures/` 里的结构。
 
 屏幕上的检查结果：

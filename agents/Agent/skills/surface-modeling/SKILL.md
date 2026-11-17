@@ -234,7 +234,7 @@ of the cell: select top-surface oxygen with
 `z_frac_min = (z_top_O - 1.0 A) / c`, using the top oxygen height of the slab,
 not the 0.5-1.0 window of the centered example above.
 
-`--task-name` is the UMA task head passed to `FAIRChemCalculator` (default `omat`; the cluster search below uses `--task_name`, default `oc22`). Choose it deliberately for the system and check that the selected model exposes it. Every script writes `run_config.json` to its output directory with the calculator, model, task head and device actually used.
+`--task-name` is the UMA task head passed to `FAIRChemCalculator` (default `omat`; the cluster search below uses `--task_name`, also default `omat`). Choose it deliberately for the system and check that the selected model exposes it. Every script writes `run_config.json` to its output directory with the calculator, model, task head and device actually used.
 
 ## Adsorbate Coverage Landscape
 
@@ -500,9 +500,8 @@ This is a production MLIP entry point (`--calculator uma`, default). Since
 
 - `--calculator none`: mock contact score with zero forces, for local workflow
   tests only (energies have no physical meaning).
-- `--task_name` is checked against the installed fairchem before the model is
-  loaded; the default `oc22` does not exist in fairchem 2.7.1 (heads: omol,
-  omat, odac, oc20, oc25, omc), so pass one explicitly there.
+- `--task_name` defaults to `omat` and is checked against the installed fairchem
+  before the model is loaded. The head must still be validated for the target system.
 - `--fixed_fraction 0.5`: slabs without FixAtoms (CIF) get the bottom fixed
   before the relaxations; 0 disables.
 - `--max_tilt DEG`: also samples a tilt (and its direction) of the cluster, so
@@ -516,12 +515,26 @@ This is a production MLIP entry point (`--calculator uma`, default). Since
 
 ## MLIP Screening Layer (SAM, Amorphous Surfaces, Interfaces, Islands)
 
+End users configure existing environments once with `./install.sh` and `genkai.yaml`,
+then use `./genkai check/run tasks/<method>.yaml`. Job files select a profile with
+`mlip: default` or its name; they do not repeat backend paths or edit scripts.
+The installer never installs MLIPs, PyTorch, CUDA or models. YAML methods now include
+`sam_search`, `amorphous_surfaces`, `amorphous_interface` and `cluster_search`;
+`slab`, `vacancy`, `adsorbate` opt into energies by selecting a profile.
+See [the user configuration guide](../../../../docs/mlip-interfaces.md).
+
 Energy model choice is shared (`genkai.modeling.surface.calculators`):
-`none` (mock, local tests), `emt` (a few metals with H/C/N/O) or `uma` (real
+`none` (mock, local tests), `emt` (a few metals with H/C/N/O), `mace` or `uma` (real
 MLIP; needs authorization). Compare only energies from the same model, task
 head and settings, including the references; MLIP values are screening
 estimates, not DFT evidence. The vacancy and adsorbate scripts also accept
 `--fixed-fraction` (default 0.5) so CIF slabs do not relax as a whole.
+
+All energy entry points now support MACE with `--mace-model` (or `MACE_MODEL`)
+and `--mace-dtype float32|float64`. SAM and interface searches select it with
+`--search-calculator mace`; other energy entry points use `--calculator mace`.
+The checkpoint is local and no UMA task head is needed for MACE. Server launchers,
+Python APIs and examples are documented in [MACE / UMA interfaces](../../../../docs/mlip-interfaces.md).
 
 SAM energy search (`scripts/sam/sam_search.py`, `genkai.modeling.surface.sam_search`):
 
@@ -683,7 +696,9 @@ The machine-readable copy used by `ptomodel` is stored at:
     "material_id": { "type": "string", "required": false },
     "facet": { "type": "string", "required": false },
     "max_index": { "type": "int", "required": false },
-    "calculator": { "type": "enum", "required": false, "choices": ["none", "emt", "uma"] },
+    "calculator": { "type": "enum", "required": false, "choices": ["none", "emt", "uma", "mace"] },
+    "mace_model": { "type": "path", "required": false },
+    "mace_dtype": { "type": "enum", "required": false, "choices": ["float32", "float64"] },
     "uma_model": { "type": "string", "required": false },
     "task_name": { "type": "string", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
@@ -701,7 +716,7 @@ The machine-readable copy used by `ptomodel` is stored at:
   "constraints": [
     "exactly one of bulk, formula, material_id must be provided",
     "without facet, calculator='none' uses the reviewed stable-facet registry and stops when no entry exists",
-    "calculator in ['emt', 'uma'] ranks facets up to max_index by surface energy",
+    "calculator in ['emt', 'uma', 'mace'] ranks facets up to max_index by surface energy",
     "0 <= fixed_fraction < 1"
   ]
 }
@@ -723,7 +738,9 @@ The machine-readable copy used by `ptomodel` is stored at:
     "mu_o": { "type": "float", "required": false },
     "z_frac_min": { "type": "float", "required": false },
     "z_frac_max": { "type": "float", "required": false },
-    "calculator": { "type": "enum", "required": false, "choices": ["uma", "none"] },
+    "calculator": { "type": "enum", "required": false, "choices": ["uma", "mace", "none"] },
+    "mace_model": { "type": "path", "required": false },
+    "mace_dtype": { "type": "enum", "required": false, "choices": ["float32", "float64"] },
     "smoke_test": { "type": "bool", "required": false },
     "uma_model": { "type": "string", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
@@ -737,8 +754,8 @@ The machine-readable copy used by `ptomodel` is stored at:
   "constraints": [
     "samples_per_count >= 1",
     "0 <= z_frac_min <= z_frac_max <= 1",
-    "calculator in ['uma', 'none']",
-    "calculator='uma' 时才真正需要 uma_model 和 device"
+    "calculator in ['uma', 'mace', 'none']",
+    "calculator='uma' 使用 uma_model 和 device；calculator='mace' 使用本地 mace_model 或 MACE_MODEL"
   ]
 }
 ```
@@ -767,7 +784,9 @@ The machine-readable copy used by `ptomodel` is stored at:
     "patterns": { "type": "comma_separated_strings", "required": false },
     "random_repeats": { "type": "int", "required": false },
     "seed": { "type": "int", "required": false },
-    "calculator": { "type": "enum", "required": false, "choices": ["uma", "none"] },
+    "calculator": { "type": "enum", "required": false, "choices": ["uma", "mace", "none"] },
+    "mace_model": { "type": "path", "required": false },
+    "mace_dtype": { "type": "enum", "required": false, "choices": ["float32", "float64"] },
     "uma_model": { "type": "string", "required": false },
     "device": { "type": "enum", "required": false, "choices": ["cuda", "cpu"] },
     "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
@@ -780,7 +799,7 @@ The machine-readable copy used by `ptomodel` is stored at:
     "site_group_size >= 1",
     "coverage_counts 中每个值必须在 1 到 max_adsorbates 之间",
     "patterns 由 uniform, clustered, stripe, island, random 组成",
-    "calculator in ['uma', 'none']"
+    "calculator in ['uma', 'mace', 'none']"
   ]
 }
 ```
@@ -852,6 +871,9 @@ The machine-readable copy used by `ptomodel` is stored at:
     "output_dir": { "type": "path", "required": false },
     "n_trials": { "type": "int", "required": false },
     "fmax": { "type": "float", "required": false },
+    "calculator": { "type": "enum", "required": false, "choices": ["uma", "mace", "none"] },
+    "mace_model": { "type": "path", "required": false },
+    "mace_dtype": { "type": "enum", "required": false, "choices": ["float32", "float64"] },
     "uma_model": { "type": "string", "required": false },
     "task_name": { "type": "string", "required": false, "description": "FAIRChem UMA task head such as omat or oc20; not the PToModel task key" },
     "checkpoint": { "type": "path_or_null", "required": false },
@@ -876,7 +898,7 @@ The machine-readable copy used by `ptomodel` is stored at:
   "constraints": [
     "placement_mode in ['cell', 'active']",
     "placement_mode='active' 时必须提供 active_symbols",
-    "该脚本默认依赖 fairchem-core, torch 和 UMA 模型，不提供 calculator='none' 的假跑模式"
+    "真实计算需要所选的 MACE 或 UMA 环境及模型；calculator='none' 仅用于流程测试"
   ]
 }
 ```

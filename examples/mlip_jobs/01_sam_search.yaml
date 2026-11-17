@@ -1,0 +1,9 @@
+method: sam_search
+mlip: default  # 改为 mace、uma 或 genkai.yaml 中的配置名称
+surface: ../../agents/Agent/skills/surface-modeling/examples/CeO2 (1 1 1).cif
+molecule: ../../agents/Agent/skills/surface-modeling/examples/4-acid.vasp
+binding_mode: monodentate
+n_trials: 10
+top_k: 2
+coverage_counts: [1, 2]
+output: runs/sam_search

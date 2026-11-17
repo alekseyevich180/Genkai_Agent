@@ -13,9 +13,9 @@ local (default)
     network, GPU, UMA, VASP or Materials Project. Energies printed by the mock
     calculators are meaningless and are not checked.
 server (prepared, not validated on a workstation)
-    The same cases with ``--calculator uma`` wherever a method supports it
-    (vacancy, adsorbate, most-stable-facet ranking), plus the UMA-only cluster
-    search. Needs fairchem-core, the UMA model and a GPU (``--device cuda``).
+    The same cases using UMA or MACE wherever a method supports energy
+    screening (select with ``--calculator``). Needs the selected MLIP runtime
+    and model; a GPU is recommended (``--device cuda``).
     Run it only where real calculations are authorized.
 
 Cases that need Materials Project run only with ``--enable network`` (and
@@ -93,14 +93,24 @@ class Context:
     uma_model: str
     enabled: set[str]
     uma_task: str = "omat"
+    calculator: str = "uma"
+    mace_model: str | None = None
+    mace_dtype: str = "float32"
 
     @property
     def server(self) -> bool:
         return self.profile == "server"
 
-    def uma_args(self, style: str = "dash", flag: str = "--calculator") -> list[str]:
+    def mlip_args(self, style: str = "dash", flag: str = "--calculator") -> list[str]:
         sep = "-" if style == "dash" else "_"
-        return [flag, "uma", "--device", self.device, f"--uma{sep}model", self.uma_model, f"--task{sep}name", self.uma_task]
+        args = [flag, self.calculator, "--device", self.device]
+        if self.calculator == "mace":
+            args += ["--mace-dtype", self.mace_dtype]
+            if self.mace_model:
+                args += ["--mace-model", self.mace_model]
+        else:
+            args += [f"--uma{sep}model", self.uma_model, f"--task{sep}name", self.uma_task]
+        return args
 
 
 @dataclass
@@ -145,7 +155,7 @@ def slab_case(bulk: str, facet: str | None = None) -> Callable[[Context, Path], 
         if facet:
             cmd += ["--facet", facet]
         elif ctx.server:
-            cmd += ctx.uma_args()  # most stable facet by UMA surface energy instead of the registry
+            cmd += ctx.mlip_args()  # most stable facet by MLIP surface energy
         return [cmd]
 
     return build
@@ -159,7 +169,7 @@ def vacancy_case(ctx: Context, out: Path) -> list[list[str]]:
         "--vacancy-counts", "1,2",
         "--samples-per-count", "3",
     )
-    cmd += ctx.uma_args() if ctx.server else ["--calculator", "none", "--max-steps", "0"]
+    cmd += ctx.mlip_args() if ctx.server else ["--calculator", "none", "--max-steps", "0"]
     return [cmd]
 
 
@@ -176,7 +186,7 @@ def adsorbate_case(surface: str, molecule: str, site_symbols: str) -> Callable[[
             "--random-repeats", "1",
         )
         if ctx.server:
-            cmd += ctx.uma_args()
+            cmd += ctx.mlip_args()
         else:
             cmd += ["--calculator", "none", "--max-steps", "0", "--n-trials-single", "8"]
         return [cmd]
@@ -213,7 +223,7 @@ def cluster_search_case(ctx: Context, out: Path) -> list[list[str]]:
         "--seed", "1",
         *CLUSTER_SELECTION,
     )
-    cmd += ctx.uma_args("underscore") if ctx.server else ["--calculator", "none"]
+    cmd += ctx.mlip_args("underscore") if ctx.server else ["--calculator", "none"]
     return [cmd]
 
 
@@ -232,7 +242,7 @@ def island_search_case(ctx: Context, out: Path) -> list[list[str]]:
         "--output_dir", out / "search",
         *CLUSTER_SELECTION,
     )
-    search += ctx.uma_args("underscore") if ctx.server else ["--calculator", "none"]
+    search += ctx.mlip_args("underscore") if ctx.server else ["--calculator", "none"]
     return [ald, search]
 
 
@@ -243,7 +253,7 @@ def sam_search_case(ctx: Context, out: Path) -> list[list[str]]:
         "--output-dir", out / "sam_search",
     )
     if ctx.server:
-        cmd += ctx.uma_args(flag="--search-calculator")
+        cmd += ctx.mlip_args(flag="--search-calculator")
     else:
         cmd += ["--screen-steps", "2", "--max-steps", "2"]
     return [cmd]
@@ -261,7 +271,7 @@ def amorphous_screen_case(kind: str) -> Callable[[Context, Path], list[list[str]
                      "--output-dir", out / "screen")
             flag = "--search-calculator"
         if ctx.server:
-            cmd += ctx.uma_args(flag=flag)
+            cmd += ctx.mlip_args(flag=flag)
         else:
             cmd += ["--max-steps", "2"] + (["--screen-steps", "2"] if kind == "interface" else [])
         return [cmd]
@@ -274,7 +284,7 @@ def sam_case(substrate: list[str], molecule: str | None, extra: list[str]) -> Ca
         molecule_path = path(molecule) if molecule else str(out / "inputs" / "CH3SH.xyz")
         cmd = py(skill("sam/sam_builder.py"), *substrate, "--molecule", molecule_path, "--output-dir", out / "sam", *extra)
         if ctx.server and "--bulk" in substrate and "--facet" not in extra:
-            cmd += ctx.uma_args()
+            cmd += ctx.mlip_args()
         return [cmd]
 
     return build
@@ -284,7 +294,7 @@ def ald_case(substrate: list[str], extra: list[str]) -> Callable[[Context, Path]
     def build(ctx: Context, out: Path) -> list[list[str]]:
         cmd = py(skill("ald/ald_overlayer.py"), *substrate, "--output-dir", out / "ald", *extra)
         if ctx.server and "--bulk" in substrate and "--facet" not in extra:
-            cmd += ctx.uma_args()
+            cmd += ctx.mlip_args()
         return [cmd]
 
     return build
@@ -637,9 +647,12 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=__doc__.split("Examples", 1)[1] if __doc__ and "Examples" in __doc__ else None,
     )
     parser.add_argument("--profile", choices=["local", "server"], default="local",
-                        help="local: structure generation only (default); server: UMA calculations (not validated locally).")
+                        help="local: structure generation only (default); server: real MLIP calculations.")
+    parser.add_argument("--calculator", choices=["uma", "mace"], default="uma", help="MLIP for --profile server.")
+    parser.add_argument("--mace-model", default=os.environ.get("MACE_MODEL"))
+    parser.add_argument("--mace-dtype", choices=["float32", "float64"], default="float32")
     parser.add_argument("--enable", default="", help="Extra capabilities, e.g. 'network' for Materials Project cases.")
-    parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda", help="UMA device for --profile server.")
+    parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda", help="MLIP device for --profile server.")
     parser.add_argument("--uma-model", default="uma-s-1p2")
     parser.add_argument(
         "--uma-task",
@@ -659,8 +672,11 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     enabled = {item.strip() for item in args.enable.split(",") if item.strip()}
     if args.profile == "server":
-        enabled.add("uma")
-    ctx = Context(profile=args.profile, device=args.device, uma_model=args.uma_model, enabled=enabled, uma_task=args.uma_task)
+        enabled.add(args.calculator)
+    ctx = Context(
+        profile=args.profile, device=args.device, uma_model=args.uma_model, enabled=enabled,
+        uma_task=args.uma_task, calculator=args.calculator, mace_model=args.mace_model, mace_dtype=args.mace_dtype,
+    )
     cases = select_cases(args.only, args.skip)
     if args.list:
         for case in cases:
@@ -699,6 +715,7 @@ def main(argv: list[str] | None = None) -> int:
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "profile": args.profile,
+        "calculator": args.calculator if args.profile == "server" else "none",
         "enabled": sorted(enabled),
         "selection": selection,
         "scientific_calculation": args.profile == "server",
@@ -706,7 +723,7 @@ def main(argv: list[str] | None = None) -> int:
             "local profile: structure generation only (calculator none, max_steps 0); "
             "any energies printed by the scripts are mock values"
             if args.profile == "local"
-            else "server profile: UMA calculations requested"
+            else f"server profile: {args.calculator.upper()} calculations requested"
         ),
         "environment": environment_info(),
         "summary": {s: sum(r["status"] == s for r in results) for s in ("PASS", "WARN", "FAIL", "SKIP")},

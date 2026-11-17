@@ -246,3 +246,10 @@ core.*.[0-9]*
 
 # genkai-surface example outputs (examples/surface_jobs/runs/)
 examples/surface_jobs/runs/
+
+# Per-user MLIP configuration, isolated project runtimes and generated task files
+/genkai.yaml
+/.genkai/
+/genkai
+/tasks/
+/examples/mlip_jobs/runs/

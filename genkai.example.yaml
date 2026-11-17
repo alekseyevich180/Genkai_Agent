@@ -1,0 +1,28 @@
+# 复制为 genkai.yaml，或运行 ./install.sh 让安装向导自动生成。
+# 只登记用户已经安装的 MLIP；安装脚本不安装 MLIP、PyTorch、CUDA 或模型。
+version: 1
+default: mace
+profiles:
+  mace:
+    backend: mace
+    python: /path/to/mace/env/bin/python
+    model: /path/to/trusted/model.model
+    device: cuda
+    dtype: float32
+    # MACE 模型是 Python 对象；仅对自己信任的本地检查点启用此加载选项。
+    env:
+      TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD: '1'
+    settings:
+      fmax: 0.05
+      max_steps: 200
+      screen_steps: 20
+      relax_steps: 0
+  uma:
+    backend: uma
+    python: /path/to/uma/env/bin/python
+    model: uma-s-1p2  # 也可填本地 .pt 检查点路径
+    task: omat       # 具体体系需要自行验证任务头
+    device: cuda
+# 如果需要先激活环境，可在对应配置中加 launcher: [/path/to/start.sh]。
+# start.sh 应执行传入的命令，例如 conda activate 之后 exec "$@"。
+# 密钥使用启动进程的环境变量；不要写入本文件。

@@ -9,10 +9,20 @@ usage() {
     cat <<'EOF'
 Usage: ./install.sh [options]
 
-  (no options)              modeling + tests: structure generation with the mock calculator
-  --mlip                    also install fairchem-core (UMA) for the MLIP screening tests
-  --torch-index-url URL     install torch from this index first, matching the server CUDA,
-                            e.g. https://download.pytorch.org/whl/cu121 (use with --mlip)
+  (no options)              install Genkai, detect existing MLIPs, generate config and task files
+  --configure-only          reuse Genkai; update configuration/project runtime dependencies only
+  --config FILE             MLIP configuration file (default: genkai.yaml next to this script)
+  --mace-python PATH        Python of an already installed MACE environment
+  --mace-model PATH         local MACE checkpoint
+  --mace-launcher PATH      optional environment activation wrapper
+  --uma-python PATH         Python of an already installed UMA environment
+  --uma-model NAME_OR_PATH  UMA model name or local checkpoint (default: uma-s-1p2)
+  --uma-launcher PATH       optional environment activation wrapper
+  --default-mlip mace|uma   default MLIP profile
+  --device cpu|cuda         default device of newly configured profiles (default: cuda)
+  --non-interactive         accept detected environments; never prompt
+  --skip-prepare            write config/tasks without preparing MLIP project dependencies
+  --mlip                    compatibility alias: connect existing MLIPs; never install them
   --materials-project       also install mp-api (downloads from Materials Project; needs MP_API_KEY)
   --python PY               interpreter for the venv (default: python3.12, python3.11, python3, python)
   --venv DIR                venv location (default: .venv next to this script)
@@ -26,17 +36,21 @@ Usage: ./install.sh [options]
 
 Examples
   ./install.sh
-  ./install.sh --mlip --torch-index-url https://download.pytorch.org/whl/cu121
-  ./install.sh --mlip --system-site-packages      # reuse a torch provided by the cluster module
+  ./install.sh --mace-python /path/to/env/bin/python --mace-model /path/to/model.model
+  ./install.sh --uma-python /path/to/env/bin/python --default-mlip uma
+
+This script never installs MLIPs, PyTorch, CUDA or models. Install your MLIP yourself first.
+Genkai creates separate project runtimes that inherit the installed backend.
 EOF
 }
 
 PYTHON=""
 VENV=""
 INSTALLER="auto"
-MLIP=0
+CONFIGURE_ONLY=0
+CONFIG=""
+SETUP_ARGS=()
 MATERIALS_PROJECT=0
-TORCH_INDEX=""
 SYSTEM_SITE=0
 NO_BUILD_ISOLATION=0
 OFFLINE=0
@@ -48,9 +62,14 @@ while [[ $# -gt 0 ]]; do
         --python) PYTHON="${2:?--python needs a value}"; shift 2 ;;
         --venv) VENV="${2:?--venv needs a value}"; shift 2 ;;
         --installer) INSTALLER="${2:?--installer needs a value}"; shift 2 ;;
-        --mlip) MLIP=1; shift ;;
+        --mlip) shift ;;
+        --configure-only) CONFIGURE_ONLY=1; shift ;;
+        --config) CONFIG="${2:?--config needs a value}"; shift 2 ;;
+        --mace-python|--mace-model|--mace-launcher|--uma-python|--uma-model|--uma-launcher|--default-mlip|--device)
+            SETUP_ARGS+=("$1" "${2:?option needs a value}"); shift 2 ;;
+        --non-interactive|--skip-prepare) SETUP_ARGS+=("$1"); shift ;;
         --materials-project) MATERIALS_PROJECT=1; shift ;;
-        --torch-index-url) TORCH_INDEX="${2:?--torch-index-url needs a value}"; shift 2 ;;
+        --torch-index-url) echo "ERROR: MLIP/PyTorch installation is no longer part of install.sh. Configure your existing environment with --mace-python or --uma-python." >&2; exit 2 ;;
         --system-site-packages) SYSTEM_SITE=1; shift ;;
         --no-build-isolation) NO_BUILD_ISOLATION=1; shift ;;
         --offline) OFFLINE=1; shift ;;
@@ -63,6 +82,7 @@ done
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV="${VENV:-$ROOT/.venv}"
+CONFIG="${CONFIG:-$ROOT/genkai.yaml}"
 
 run() {
     echo "+ $*" >&2
@@ -103,12 +123,8 @@ case "$INSTALLER" in
 esac
 
 extras="test"
-if [[ $MLIP -eq 1 ]]; then extras="$extras,mlip"; fi
 if [[ $MATERIALS_PROJECT -eq 1 ]]; then extras="$extras,materials-project"; fi
 
-if [[ -n "$TORCH_INDEX" && $MLIP -eq 0 ]]; then
-    echo "NOTE: --torch-index-url only matters together with --mlip; installing torch anyway." >&2
-fi
 
 echo "SAGE install"
 echo "  checkout : $ROOT"
@@ -124,6 +140,9 @@ case "$(uname -s)" in
     *) BIN="$VENV/bin"; VPY="$BIN/python"; ROOT_ARG="$ROOT" ;;
 esac
 
+if [[ $CONFIGURE_ONLY -eq 1 && ! -x "$VPY" && $DRY_RUN -eq 0 ]]; then
+    die "Genkai is not installed in $VENV; run ./install.sh first"
+fi
 if [[ -x "$VPY" ]]; then
     echo "Reusing the existing virtual environment $VENV"
 else
@@ -150,10 +169,9 @@ pip_install() {
 }
 
 # --- packages ----------------------------------------------------------------
-if [[ -n "$TORCH_INDEX" ]]; then
-    pip_install torch --index-url "$TORCH_INDEX"
+if [[ $CONFIGURE_ONLY -eq 0 ]]; then
+    pip_install -e "$ROOT_ARG[$extras]"
 fi
-pip_install -e "$ROOT_ARG[$extras]"
 
 # --- check -------------------------------------------------------------------
 if [[ $SKIP_CHECK -eq 0 && $DRY_RUN -eq 0 ]]; then
@@ -163,36 +181,23 @@ if [[ $SKIP_CHECK -eq 0 && $DRY_RUN -eq 0 ]]; then
     "$VPY" -c 'import genkai, importlib.metadata as m; print("  genkai", m.version("genkai"), "from", genkai.__file__)'
     (cd "$ROOT" && "$VPY" -m pytest -q -p no:cacheprovider tests/modeling/test_surface_jobs.py) \
         || die "the quick test failed; see the output above"
-    if [[ $MLIP -eq 1 ]]; then
-        "$VPY" - <<'EOF' || die "fairchem-core is not importable"
-import importlib.metadata as m
-
-import torch
-
-from genkai.modeling.surface.calculators import available_uma_tasks
-
-print("  fairchem-core", m.version("fairchem-core"), "| torch", torch.__version__,
-      "| CUDA available:", torch.cuda.is_available())
-tasks = available_uma_tasks()
-print("  UMA task heads:", ", ".join(tasks) if tasks else "none found")
-print("  No UMA model was downloaded or loaded. The first UMA run downloads the checkpoint from")
-print("  Hugging Face, which usually needs an accepted model licence and HF_TOKEN (or `hf auth login` / `huggingface-cli login`).")
-EOF
-    fi
 fi
+
+# The setup command only inherits existing backends and installs Genkai's base dependencies.
+[[ $OFFLINE -eq 1 ]] && SETUP_ARGS+=(--offline)
+[[ $NO_BUILD_ISOLATION -eq 1 ]] && SETUP_ARGS+=(--no-build-isolation)
+[[ $SKIP_CHECK -eq 1 ]] && SETUP_ARGS+=(--skip-check)
+if [[ ! -t 0 || ! -t 1 ]]; then SETUP_ARGS+=(--non-interactive); fi
+run "$VPY" -m genkai.modeling.surface.setup --config "$CONFIG" --installer "$INSTALLER" ${SETUP_ARGS[@]+"${SETUP_ARGS[@]}"}
 
 cat <<EOF
 
 Done. Next steps:
-  source "$BIN/activate"
-  genkai-surface methods                                   # what can be built
-  genkai-surface run examples/surface_jobs/05_sam_sno2_butanoic.yaml
-  python scripts/run_modeling_smoke.py                     # all methods, mock calculator (~5 min)
-  python -m pytest -q                                      # tests
+  $ROOT/genkai methods
+  $ROOT/genkai doctor                                      # check MLIP profiles, no model loading
+  Edit $CONFIG and tasks/<method>.yaml, then:
+  $ROOT/genkai check tasks/<method>.yaml
+  $ROOT/genkai run tasks/<method>.yaml
+
+No MLIP, PyTorch, CUDA or model was installed. Existing user task files were preserved.
 EOF
-if [[ $MLIP -eq 1 ]]; then
-    cat <<'EOF'
-MLIP (only where real calculations are authorized; choose the UMA task head first):
-  python scripts/run_modeling_smoke.py --profile server --device cuda --uma-task <task head>
-EOF
-fi

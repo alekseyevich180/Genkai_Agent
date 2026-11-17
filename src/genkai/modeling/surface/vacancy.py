@@ -67,29 +67,19 @@ def write_run_config(output_dir: Path, args: argparse.Namespace) -> Path:
     return path
 
 
-def build_calculator(calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool):
+def build_calculator(
+    calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool,
+    *, mace_model: str | None = None, mace_dtype: str = "float32",
+):
     if calculator_name == "none":
         return CompositionTestCalculator()
 
-    import torch
-    from fairchem.core import FAIRChemCalculator, pretrained_mlip
+    from .calculators import build_calculator as build_energy_model
 
-    from .calculators import validate_uma_task
-
-    validate_uma_task(task_name)
-
-    torch.set_float32_matmul_precision("medium")
-    torch.backends.cuda.matmul.allow_tf32 = True
-
-    predictor = pretrained_mlip.get_predict_unit(uma_model, device=device)
-    calc = FAIRChemCalculator(predictor, task_name=task_name)
-
-    if include_d3:
-        from ase.calculators.dftd3 import DFTD3
-
-        calc = DFTD3(dft=calc)
-
-    return calc
+    return build_energy_model(
+        calculator_name, uma_model=uma_model, device=device, task_name=task_name,
+        include_d3=include_d3, mace_model=mace_model, mace_dtype=mace_dtype,
+    )
 
 
 def optimize_energy(atoms: Atoms, calculator, fmax: float, max_steps: int | None) -> float:
@@ -234,7 +224,10 @@ def _build_parser() -> argparse.ArgumentParser:
         default=CONFIG["z_frac_max"],
         help="Maximum fractional z for selectable O sites.",
     )
-    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "none"])
+    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "mace", "none"])
+    from .calculators import add_mace_arguments
+
+    add_mace_arguments(parser)
     parser.add_argument(
         "--smoke-test",
         action="store_true",
@@ -271,6 +264,10 @@ def main(argv: list[str] | None = None) -> int:
     if not 0.0 <= args.z_frac_min <= args.z_frac_max <= 1.0:
         raise ValueError("--z-frac-min and --z-frac-max must satisfy 0 <= min <= max <= 1")
 
+    if args.calculator == "mace":
+        from .calculators import resolve_mace_model
+
+        args.mace_model = resolve_mace_model(args.mace_model)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     write_run_config(args.output_dir, args)
     structures_dir = args.output_dir / "structures"
@@ -296,10 +293,15 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Calculator: {args.calculator}")
     if args.calculator == "uma":
         print(f"UMA model: {args.uma_model}, task: {args.task_name}, device: {args.device}")
+    elif args.calculator == "mace":
+        print(f"MACE model: {args.mace_model}, dtype: {args.mace_dtype}, device: {args.device}")
     else:
         print("Using mock calculator: energies are simulated and only valid for workflow testing.")
 
-    calculator = build_calculator(args.calculator, args.uma_model, args.device, args.task_name, args.include_d3)
+    calculator = build_calculator(
+        args.calculator, args.uma_model, args.device, args.task_name, args.include_d3,
+        mace_model=args.mace_model, mace_dtype=args.mace_dtype,
+    )
 
     clean_relaxed = clean.copy()
     clean_energy = optimize_energy(clean_relaxed, calculator, args.fmax, args.max_steps)

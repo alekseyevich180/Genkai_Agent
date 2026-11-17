@@ -18,7 +18,7 @@ are compared on equal terms. Copying needs translation-equivalent sites
 (crystalline facets); amorphous surfaces have none and need a search per site.
 
 ``calculator="none"`` uses a mock contact score (no physical meaning) so the
-pipeline can be tested locally; ``uma`` is a real MLIP calculation and needs
+pipeline can be tested locally; ``uma``/``mace`` is a real MLIP calculation and needs
 authorization. MLIP energies are screening values, not DFT evidence.
 """
 
@@ -44,6 +44,7 @@ from .calculators import (
     is_mock,
     molecule_in_box,
     relax,
+    resolve_mace_model,
 )
 from .sam import (
     ACIDIC_H_POLICIES,
@@ -82,8 +83,12 @@ class SamSearchSettings:
     task_name: str = "omat"
     device: str = "cuda"
     include_d3: bool = False
+    mace_model: str | None = None
+    mace_dtype: str = "float32"
 
     def __post_init__(self) -> None:
+        if self.calculator == "mace":
+            self.mace_model = resolve_mace_model(self.mace_model)
         if self.calculator not in CALCULATORS:
             raise SamBuildError(f"calculator must be one of {', '.join(CALCULATORS)}.")
         if self.n_trials < 1 or self.top_k < 1:
@@ -218,6 +223,8 @@ def run_sam_search(
         task_name=search.task_name,
         device=search.device,
         include_d3=search.include_d3,
+        mace_model=search.mace_model,
+        mace_dtype=search.mace_dtype,
     )
     notes: list[str] = [MOCK_NOTE] if is_mock(search.calculator) else []
 
@@ -492,7 +499,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "--search-calculator",
         choices=CALCULATORS,
         default="none",
-        help="Energy model of the search (uses --uma-model/--task-name/--device). none = mock, workflow tests only.",
+        help="Search energy model: UMA (--uma-model/--task-name) or MACE (--mace-model); none = mock.",
     )
     parser.add_argument("--include-d3", action="store_true")
     parser.add_argument("--n-trials", type=int, default=30)
@@ -536,6 +543,8 @@ def main(argv: list[str] | None = None) -> int:
             task_name=args.task_name,
             device=args.device,
             include_d3=args.include_d3,
+            mace_model=args.mace_model,
+            mace_dtype=args.mace_dtype,
         )
         substrate = substrate_from_args(args)
         result = run_sam_search(

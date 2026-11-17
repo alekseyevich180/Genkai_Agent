@@ -1,0 +1,8 @@
+method: amorphous_interface
+mlip: default
+bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+amorphous: ../../tests/amorphous/TiO2.vasp
+thickness: 5
+n_matches: 2
+n_trials: 10
+output: runs/amorphous_interface

@@ -16,6 +16,11 @@ from ase.io import read, write
 from ase.optimize import LBFGS
 from scipy.optimize import Bounds, LinearConstraint, milp
 
+from .calculators import (
+    add_mace_arguments,
+    build_calculator as build_energy_model,
+    resolve_mace_model,
+)
 
 CONFIG = {
     # Input/output
@@ -77,7 +82,7 @@ class AdsorbateLandscapeConfig:
     z_gap_max: float = 3.5
     random_repeats: int = 5
     seed: int = 42
-    calculator: Literal["none", "uma"] = "none"
+    calculator: Literal["none", "uma", "mace"] = "none"
     uma_model: str = "uma-s-1p2"
     device: Literal["cuda", "cpu"] = "cuda"
     task_name: str = "omat"
@@ -86,6 +91,12 @@ class AdsorbateLandscapeConfig:
     max_steps: int = 0
     # Fix the slab bottom when the surface file has no FixAtoms (e.g. CIF); 0 disables.
     fixed_fraction: float = 0.5
+    mace_model: str | None = None
+    mace_dtype: str = "float32"
+
+    def __post_init__(self) -> None:
+        if self.calculator == "mace":
+            object.__setattr__(self, "mace_model", resolve_mace_model(self.mace_model))
 
 
 @dataclass(frozen=True)
@@ -122,28 +133,17 @@ class AdsorptionTestCalculator(Calculator):
         self.results["forces"] = np.zeros((len(symbols), 3), dtype=float)
 
 
-def build_calculator(calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool):
+def build_calculator(
+    calculator_name: str, uma_model: str, device: str, task_name: str, include_d3: bool,
+    *, mace_model: str | None = None, mace_dtype: str = "float32",
+):
     if calculator_name == "none":
         return AdsorptionTestCalculator()
 
-    import torch
-    from fairchem.core import FAIRChemCalculator, pretrained_mlip
-
-    from .calculators import validate_uma_task
-
-    validate_uma_task(task_name)
-    torch.set_float32_matmul_precision("medium")
-    torch.backends.cuda.matmul.allow_tf32 = True
-
-    predictor = pretrained_mlip.get_predict_unit(uma_model, device=device)
-    calc = FAIRChemCalculator(predictor, task_name=task_name)
-
-    if include_d3:
-        from ase.calculators.dftd3 import DFTD3
-
-        calc = DFTD3(dft=calc)
-
-    return calc
+    return build_energy_model(
+        calculator_name, uma_model=uma_model, device=device, task_name=task_name,
+        include_d3=include_d3, mace_model=mace_model, mace_dtype=mace_dtype,
+    )
 
 
 def optimize_energy(atoms: Atoms, calculator, fmax: float, max_steps: int | None) -> float:
@@ -607,10 +607,15 @@ def run_adsorbate_landscape(
     print(f"Calculator: {args.calculator}")
     if args.calculator == "none":
         print("Using mock calculator: energies are simulated and only valid for workflow testing.")
+    elif args.calculator == "mace":
+        print(f"MACE model: {args.mace_model}, dtype: {args.mace_dtype}, device: {args.device}")
     else:
         print(f"UMA model: {args.uma_model}, task: {args.task_name}, device: {args.device}")
 
-    calculator = build_calculator(args.calculator, args.uma_model, args.device, args.task_name, args.include_d3)
+    calculator = build_calculator(
+        args.calculator, args.uma_model, args.device, args.task_name, args.include_d3,
+        mace_model=args.mace_model, mace_dtype=args.mace_dtype,
+    )
     e_slab = optimize_energy(slab, calculator, args.fmax, args.max_steps)
     e_mol = optimize_energy(molecule, calculator, args.fmax, args.max_steps)
     write(args.output_dir / "surface_relaxed.cif", slab)
@@ -737,7 +742,7 @@ def run_adsorbate_landscape(
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Construct adsorbate coverage landscapes using UMA and Optuna.")
+    parser = argparse.ArgumentParser(description="Construct adsorbate coverage landscapes using MACE/UMA and Optuna.")
     parser.add_argument("--surface", type=Path, default=Path(CONFIG["surface"]))
     parser.add_argument("--molecule", type=Path, default=Path(CONFIG["molecule"]))
     parser.add_argument("--output-dir", type=Path, default=Path(CONFIG["output_dir"]))
@@ -754,7 +759,8 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--patterns", type=str, default=CONFIG["patterns"])
     parser.add_argument("--random-repeats", type=int, default=CONFIG["random_repeats"])
     parser.add_argument("--seed", type=int, default=CONFIG["seed"])
-    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "none"])
+    parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "mace", "none"])
+    add_mace_arguments(parser)
     parser.add_argument("--uma-model", type=str, default=CONFIG["uma_model"])
     parser.add_argument("--device", type=str, default=CONFIG["device"], choices=["cuda", "cpu"])
     parser.add_argument("--task-name", type=str, default=CONFIG["task_name"])

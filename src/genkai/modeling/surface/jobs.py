@@ -12,10 +12,9 @@ file instead of learning each method's command line. This module
   checks overlaps, vacuum and fixed atoms, and writes ``manifest.json``
   (:class:`genkai.contracts.run.RunManifest`) next to the outputs.
 
-Only structure generation is open. Energy models (UMA/EMT), Materials Project
-downloads and the energy-screening methods (``sam_search``, ``amorphous_screen``,
-``cluster_search``) cannot be reached from a job file yet; keys that would
-enable them are rejected with an explanation.
+Existing jobs stay structure-only. An explicit ``mlip`` profile enables energy
+calculations in the Python environment configured in genkai.yaml. Dedicated
+search methods select the default profile. Materials Project stays offline.
 
 Job files are read with PyYAML's ``BaseLoader`` so every scalar stays a string
 and is converted by the option table: ``facet: 0001`` stays ``"0001"`` and
@@ -36,7 +35,7 @@ import re
 import subprocess
 import sys
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
@@ -44,10 +43,12 @@ from typing import Any, Iterable, TextIO
 
 import yaml
 
+from .mlip_config import MlipConfigError, MlipProfile, find_config, load_config, probe_profile
+
 PROG = "genkai-surface"
 STRUCTURE_ONLY_NOTE = "只生成未弛豫的结构，没有计算能量（calculator 固定为 none）。"
 UNSET_STRINGS = {"", "null", "Null", "NULL", "~"}
-JOB_KEYS = ("method", "output", "description")
+JOB_KEYS = ("method", "output", "description", "mlip", "config")
 
 
 # ---------------------------------------------------------------------------
@@ -94,6 +95,11 @@ class Method:
     groups: tuple[Group, ...] = ()
     locked: tuple[str, ...] = ()
     notes: tuple[str, ...] = ()
+    calculator_flag: str | None = None
+    requires_mlip: bool = False
+    subcommand: str | None = None
+    style: str = "dash"
+    fixed_expected: bool = True
 
     def option(self, key: str) -> Option:
         return next(option for option in self.options if option.key == key)
@@ -159,6 +165,7 @@ _register(Method(
     outputs=("slab.extxyz",),
     locked=("--calculator=none", "--relax-steps=0"),
     notes=("不写 facet 时按内置稳定晶面表选择，不计算表面能；表里没有的材料会停下并提示，请写 facet。",),
+    calculator_flag="--calculator",
 ))
 
 _register(Method(
@@ -183,6 +190,7 @@ _register(Method(
         "stable_vacancy_structure.cif 是按模拟能量挑的，clean_relaxed.cif 没有弛豫：文件名里的 stable、relaxed 在这里不成立。",
         "z_frac 按整个晶胞高度计算；slab 放在晶胞底部时，表层原子的 z 通常远小于 1。",
     ),
+    calculator_flag="--calculator",
 ))
 
 _register(Method(
@@ -215,6 +223,7 @@ _register(Method(
         "*_relaxed.cif 没有弛豫，*best*.cif 是按模拟能量挑的：文件名里的 relaxed、best 在这里不成立。",
         "放置多个分子时不检查分子之间的重叠，大分子在小晶胞上可能出现原子过近（检查结果标为 WARN）。",
     ),
+    calculator_flag="--calculator",
 ))
 
 _register(Method(
@@ -348,17 +357,126 @@ _register(Method(
     notes=("只做几何切割，结构未弛豫。",),
 ))
 
+RELAX_OPTIONS = (
+    Option("fmax", "--fmax", "float", "弛豫的力收敛阈值（eV/Å）；默认读取 MLIP 配置"),
+    Option("max_steps", "--max-steps", "int", "弛豫步数上限；0 为单点计算，默认读取 MLIP 配置"),
+)
+SEARCH_STEPS = Option("screen_steps", "--screen-steps", "int", "每个搜索候选的短弛豫步数")
+
+# Existing structure-generation methods opt into energies with just mlip: <profile>.
+for _name in ("slab", "vacancy", "adsorbate"):
+    _method = METHODS[_name]
+    _extra = (
+        (Option("fmax", "--fmax", "float", "弛豫力阈值（eV/Å）"),
+         Option("relax_steps", "--relax-steps", "int", "每次求能量前的弛豫步数；默认 0"),
+         Option("max_index", "--max-index", "int", "晶面排序的最高 Miller 指数"))
+        if _name == "slab" else RELAX_OPTIONS
+    )
+    if _name == "vacancy":
+        _extra += (Option("mu_o", "--mu-o", "float", "氧化学势参考（eV），真实空位能计算时请自行确定"),)
+    METHODS[_name] = replace(_method, options=(*_method.options, *_extra))
+
+_register(Method(
+    name="sam_search", title="SAM 能量搜索", summary="锚定参数搜索、短弛豫、精排与覆盖度计算",
+    module="genkai.modeling.surface.sam_search", calculator_flag="--search-calculator", requires_mlip=True,
+    options=(
+        *SUBSTRATE_OPTIONS,
+        Option("molecule", "--molecule", "path", "SAM 分子文件", required=True, example="<分子.xyz>"),
+        Option("binding_mode", "--binding-mode", "str", "结合方式，例如 monodentate", required=True, example="monodentate"),
+        Option("molecule_format", "--molecule-format", "str", "分子格式"),
+        Option("anchor_kind", "--anchor-kind", "str", "锚定基团类型"),
+        Option("anchor_atoms", "--anchor-atoms", "ints", "锚定原子序号（从 0 开始）"),
+        Option("site_symbols", "--site-symbols", "words", "锚定表面元素"),
+        Option("acidic_h", "--acidic-h", "str", "酸性 H 的处理方式"),
+        Option("bond_length", "--bond-length", "float", "锚定键长（Å）"),
+        Option("max_span", "--max-span", "float", "同组锚定位点的最大跨度（Å）"),
+        Option("n_trials", "--n-trials", "int", "搜索候选数"),
+        Option("top_k", "--top-k", "int", "最终弛豫的候选数"),
+        Option("max_tilt", "--max-tilt", "float", "最大倾角（度）"),
+        Option("coverage_counts", "--coverage-counts", "ints", "覆盖度分子数，例如 [1, 2]"),
+        Option("binding_tolerance", "--binding-tolerance", "float", "锚定键容差（Å）"),
+        *RELAX_OPTIONS, SEARCH_STEPS, SEED, EXPORT,
+    ),
+    groups=(SUBSTRATE_GROUP,), output_flag="--output-dir", outputs=("sam_search_structures.extxyz",),
+    locked=("--calculator=none",), notes=("真实能量来自所选 MLIP 配置；需验证模型适用性。",),
+))
+
+ANNEAL_OPTIONS = (
+    Option("anneal_steps", "--anneal-steps", "int", "退火 MD 步数；默认 0（关闭）"),
+    Option("anneal_temperature", "--anneal-temperature", "float", "退火温度（K）"),
+    Option("no_cell_relax", "--no-cell-relax", "bool", "true 时只弛豫原子，不弛豫块体晶胞"),
+)
+_register(Method(
+    name="amorphous_surfaces", title="非晶表面能筛选", summary="弛豫块体和多个非晶表面，按表面能排序",
+    module="genkai.modeling.surface.amorphous_screen", subcommand="surfaces",
+    calculator_flag="--calculator", requires_mlip=True, fixed_expected=False,
+    options=(
+        Option("amorphous", "--amorphous", "path", "非晶块体文件", required=True, example="<非晶块体.vasp>"),
+        Option("amorphous_format", "--amorphous-format", "str", "非晶块体格式"),
+        Option("periods", "--periods", "int", "厚度包含的完整周期数"),
+        Option("thickness", "--thickness", "float", "指定厚度（Å），与 periods 最多填一个"),
+        Option("samples", "--samples", "int", "表面样本数"),
+        Option("vacuum", "--vacuum", "float", "真空厚度（Å）"),
+        Option("min_lateral_size", "--min-lateral-size", "float", "面内最小宽度（Å）"),
+        Option("fix_bottom", "--fix-bottom", "bool", "true 为固定底层，默认两侧自由"),
+        *RELAX_OPTIONS, *ANNEAL_OPTIONS, SEED, EXPORT,
+    ),
+    groups=(Group(("periods", "thickness"), "at_most_one", "厚度：periods 与 thickness 最多写一个"),),
+    output_flag="--output-dir", outputs=("amorphous_surfaces_ranked.extxyz",),
+))
+_register(Method(
+    name="amorphous_interface", title="非晶/晶体界面能搜索", summary="搜索非晶膜的平移和界面间距，按粘附能排序",
+    module="genkai.modeling.surface.amorphous_screen", subcommand="interface",
+    calculator_flag="--search-calculator", requires_mlip=True,
+    options=(
+        *SUBSTRATE_OPTIONS,
+        Option("amorphous", "--amorphous", "path", "非晶块体文件", required=True, example="<非晶块体.vasp>"),
+        Option("amorphous_format", "--amorphous-format", "str", "非晶块体格式"),
+        Option("thickness", "--thickness", "float", "膜厚（Å）"),
+        Option("film_fit", "--film-fit", "str", "成膜方式 auto、strain 或 cut"),
+        Option("n_matches", "--n-matches", "int", "晶格匹配候选数"),
+        Option("n_rotations", "--n-rotations", "int", "旋转切割候选数"),
+        Option("n_trials", "--n-trials", "int", "每个界面的搜索次数"),
+        Option("gap_min", "--gap-min", "float", "界面最小间距（Å）"),
+        Option("gap_max", "--gap-max", "float", "界面最大间距（Å）"),
+        Option("max_strain", "--max-strain", "float", "最大应变"),
+        Option("max_area", "--max-area", "float", "最大面内面积（Å²）"),
+        *RELAX_OPTIONS, SEARCH_STEPS, *ANNEAL_OPTIONS, SEED, EXPORT,
+    ),
+    groups=(SUBSTRATE_GROUP,), output_flag="--output-dir", outputs=("amorphous_interfaces_ranked.extxyz",),
+    locked=("--calculator=none",),
+))
+_register(Method(
+    name="cluster_search", title="团簇/非晶岛负载搜索", summary="为预制团簇或岛搜索负载位置并弛豫",
+    module="genkai.modeling.surface.cluster_search", calculator_flag="--calculator", requires_mlip=True, style="underscore",
+    options=(
+        Option("surface", "--surface", "path", "基底 slab", required=True, example="<slab.cif>"),
+        Option("cluster", "--cluster", "path", "预制团簇或岛", required=True, example="<团簇.xyz>"),
+        *(Option(key, "--" + key, kind, help) for key, kind, help in (
+            ("n_trials", "int", "搜索次数"), ("max_steps", "int", "弛豫步数上限"),
+            ("fmax", "float", "力收敛阈值（eV/Å）"), ("fixed_fraction", "float", "基底底部固定比例"),
+            ("max_tilt", "float", "最大倾角（度）"), ("placement_shape", "str", "input 保留输入形状，relaxed 使用弛豫形状"),
+            ("placement_mode", "str", "cell 或 active"), ("active_symbols", "words", "活性位点元素"),
+            ("z_min", "float", "最小间距（Å）"), ("z_max", "float", "最大间距（Å）"),
+            ("min_vacuum", "float", "最小真空（Å）"), ("selection_count", "int", "输出构型数"),
+            ("top_pool_size", "int", "最低能候选池大小"), ("top_pick_count", "int", "最低能输出数"),
+            ("tail_pick_per_bin", "int", "每个其余能量区间的输出数"), ("seed", "int", "随机种子"),
+        ) if key != "active_symbols"),
+        Option("active_symbols", "--active_symbols", "words", "活性位点元素", nargs=True),
+    ), output_flag="--output_dir", outputs=("mlip_output/[0-9]*_trial_*.cif",),
+))
+
 NOT_OPEN = (
-    ("sam_search", "SAM 锚定参数与覆盖度的能量搜索", "需要 UMA，等服务器基准测试后开放"),
-    ("amorphous_screen", "非晶表面能排序、非晶/晶体界面粘附能搜索", "需要 UMA，等服务器基准测试后开放"),
-    ("cluster_search", "团簇或非晶岛的 Optuna 负载位置搜索", "需要 UMA，等服务器基准测试后开放"),
+    ("amorphous_screen", "非晶筛选", "请用 amorphous_surfaces 或 amorphous_interface"),
     ("Materials Project", "按化学式下载块体结构", "需要联网和 MP_API_KEY；请先下载 CIF 再用 bulk"),
 )
 
 ENERGY_KEYS = {
     "calculator", "search_calculator", "uma_model", "task_name", "device", "include_d3", "fmax",
     "max_steps", "relax_steps", "screen_steps", "checkpoint", "mu_o", "max_index", "smoke_test",
+    "mace_model", "mace_dtype",
 }
+TASK_ENERGY_KEYS = {"fmax", "max_steps", "relax_steps", "screen_steps", "mu_o", "max_index", "anneal_steps", "anneal_temperature", "no_cell_relax"}
 NETWORK_KEYS = {"formula", "material_id", "surface_formula", "surface_mp_id", "cluster_from_mp", "cluster_mp_id"}
 RESERVED_KEYS = {"output_dir": "输出目录请用 output 指定"}
 
@@ -386,6 +504,12 @@ class Job:
     raw: dict[str, Any]
     output: Path
     description: str | None = None
+    profile: MlipProfile | None = None
+    runtime_info: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def calculator(self) -> str:
+        return self.profile.backend if self.profile else "none"
 
     @property
     def label(self) -> str:
@@ -483,6 +607,10 @@ def _convert(option: Option, value: Any, base: Path) -> Any:
             raise ValueError(f"需要数字，写的是 {text!r}") from None
     if option.kind == "str":
         return text
+    if option.kind == "bool":
+        if text.lower() not in {"true", "false"}:
+            raise ValueError("需要 true 或 false")
+        return text.lower() == "true"
     if option.kind == "facet":
         if isinstance(value, list):
             try:
@@ -517,7 +645,7 @@ def _convert(option: Option, value: Any, base: Path) -> Any:
 
 def _blocked_reason(key: str) -> str | None:
     if key in ENERGY_KEYS:
-        return f"{key} 不能设置：这个界面目前只开放结构生成，计算器固定为 none（不算能量）"
+        return f"{key} 需要启用 MLIP；计算器与模型参数请集中写入 genkai.yaml，任务里用 mlip: default 或配置名称选择。"
     if key in NETWORK_KEYS:
         return f"{key} 不能设置：这个界面目前不联网下载结构，请提供本地结构文件"
     if key in RESERVED_KEYS:
@@ -530,7 +658,9 @@ def _default_output(source: Path, index: int | None, method: str) -> Path:
     return (base if index is None else base / f"{index + 1:02d}_{method}").resolve()
 
 
-def _parse_job(source: Path, index: int | None, mapping: dict[str, Any]) -> tuple[Job | None, list[str]]:
+def _parse_job(
+    source: Path, index: int | None, mapping: dict[str, Any], config_path: Path | None = None,
+) -> tuple[Job | None, list[str]]:
     problems: list[str] = []
     data = {str(key).strip().replace("-", "_"): value for key, value in mapping.items()}
     method_name = data.get("method")
@@ -547,12 +677,32 @@ def _parse_job(source: Path, index: int | None, mapping: dict[str, Any]) -> tupl
         return None, [f"未知的方法 {method_name!r}{hint}（可用：{', '.join(METHODS)}）"]
 
     base = source.parent
+    profile = None
+    selection = data.get("mlip", "default" if method.requires_mlip else "none")
+    if not isinstance(selection, str):
+        problems.append("mlip 需要配置名称，例如 mace、uma、default 或 none。")
+    elif selection.strip().lower() not in {"none", "null", "", "~"}:
+        if method.calculator_flag is None:
+            problems.append(f"{method.name} 是几何生成方法；请使用 sam_search、amorphous_surfaces、amorphous_interface 或 cluster_search 进行能量筛选。")
+        else:
+            explicit = config_path
+            if explicit is None and not _unset(data.get("config")):
+                if not isinstance(data["config"], str):
+                    problems.append("config 必须是配置文件路径。")
+                else:
+                    explicit = (base / Path(os.path.expanduser(data["config"]))).absolute()
+            try:
+                profile = load_config(find_config(source, explicit)).select(selection.strip())
+            except MlipConfigError as exc:
+                problems.append(str(exc))
+    elif method.requires_mlip:
+        problems.append(f"{method.name} 需要 MLIP 配置；请填写 mlip: default 或已配置的名称。")
     values: dict[str, Any] = {}
     raw: dict[str, Any] = {}
     for key, value in data.items():
         if key in JOB_KEYS:
             continue
-        blocked = _blocked_reason(key)
+        blocked = None if key in method.keys and (key not in ENERGY_KEYS or profile is not None) else _blocked_reason(key)
         if blocked:
             problems.append(blocked)
             continue
@@ -592,20 +742,20 @@ def _parse_job(source: Path, index: int | None, mapping: dict[str, Any]) -> tupl
     description = None if _unset(description) else str(description).strip()
     if problems:
         return None, problems
-    job = Job(source, index, method, values, raw, output, description)
+    job = Job(source, index, method, values, raw, output, description, profile)
     parser_problem = _parser_problem(job)
     if parser_problem:
         return None, [f"参数检查未通过：{parser_problem}"]
     return job, []
 
 
-def load_job_file(path: str | Path) -> list[Job]:
+def load_job_file(path: str | Path, *, config_path: Path | None = None) -> list[Job]:
     """Parse and validate one job file (a single job or a ``jobs:`` list)."""
     source = Path(path).resolve()
     jobs: list[Job] = []
     problems: list[str] = []
     for index, mapping in _load_documents(source):
-        job, issues = _parse_job(source, index, mapping)
+        job, issues = _parse_job(source, index, mapping, config_path)
         prefix = "" if index is None else f"第 {index + 1} 个任务："
         problems.extend(prefix + issue for issue in issues)
         if job is not None:
@@ -625,8 +775,12 @@ def load_job_file(path: str | Path) -> list[Job]:
 
 @lru_cache(maxsize=None)
 def method_parser(name: str) -> argparse.ArgumentParser:
-    module = importlib.import_module(METHODS[name].module)
-    return module._build_parser()
+    method = METHODS[name]
+    parser = importlib.import_module(method.module)._build_parser()
+    if method.subcommand:
+        subparsers = next(action for action in parser._actions if isinstance(action, argparse._SubParsersAction))
+        return subparsers.choices[method.subcommand]
+    return parser
 
 
 def _actions(name: str) -> dict[str, argparse.Action]:
@@ -654,18 +808,30 @@ def _pad(text: str, width: int, right: bool = False) -> str:
 
 def build_argv(job: Job) -> list[str]:
     """Method CLI arguments for a job, with the locked structure-only settings appended."""
-    argv: list[str] = []
+    argv: list[str] = [job.method.subcommand] if job.method.subcommand else []
     for option in job.method.options:
         if option.key not in job.values:
             continue
         value = job.values[option.key]
-        if isinstance(value, list) and option.nargs:
+        if option.kind == "bool":
+            if value:
+                argv.append(option.flag)
+        elif isinstance(value, list) and option.nargs:
             argv += [option.flag, *(_format(item) for item in value)]
         elif isinstance(value, list):
             argv.append(f"{option.flag}={','.join(_format(item) for item in value)}")
         else:
             argv.append(f"{option.flag}={_format(value)}")
-    argv += list(job.method.locked)
+    locked = list(job.method.locked)
+    if job.profile:
+        # Leave --calculator=none intact when it controls only substrate preparation.
+        replaced = {job.method.calculator_flag, "--max-steps", "--relax-steps"}
+        locked = [value for value in locked if value.partition("=")[0] not in replaced]
+        argv += job.profile.calculator_args(job.method.calculator_flag or "--calculator", job.method.style)
+        for key, value in job.profile.settings.items():
+            if key in job.method.keys and key not in job.values:
+                argv.append(f"{job.method.option(key).flag}={value}")
+    argv += locked
     argv.append(f"{job.method.output_flag}={_format(job.output)}")
     return argv
 
@@ -674,7 +840,8 @@ def _parser_problem(job: Job) -> str | None:
     buffer = io.StringIO()
     try:
         with contextlib.redirect_stderr(buffer):
-            method_parser(job.method.name).parse_args(build_argv(job))
+            argv = build_argv(job)
+            method_parser(job.method.name).parse_args(argv[1:] if job.method.subcommand else argv)
     except SystemExit as exc:
         if exc.code:
             lines = [line for line in buffer.getvalue().splitlines() if "error:" in line]
@@ -692,6 +859,8 @@ def _yaml_value(option: Option, value: Any) -> str:
         return ""
     if isinstance(value, Path):
         return value.as_posix()
+    if option.kind == "bool":
+        return str(value).lower()
     if option.kind in {"ints", "floats", "words"} and not (option.allow_auto and value == "auto"):
         items = _items(value) if isinstance(value, str) else [str(item) for item in value]
         return "[" + ", ".join(items) + "]"
@@ -729,9 +898,10 @@ def render_template(name: str) -> str:
         f"# 检查：{PROG} check 本文件      运行：{PROG} run 本文件",
         "# 规则：相对路径以本文件所在目录为准；Windows 路径用正斜杠 /（或单引号括起来）；",
         "#       晶面写成带引号的字符串（\"110\"）或列表（[1, 1, 0]）；去掉行首的 # 让该行生效。",
-        f"# {STRUCTURE_ONLY_NOTE}",
+        "# mlip 选择 genkai.yaml 中的环境和模型；none 只生成结构。",
         "",
         f"method: {method.name}",
+        f"mlip: {'default' if method.requires_mlip else 'none'}  # 改为 mace、uma 或配置中的名称即可接入 MLIP",
         f"output: runs/{method.name}          # 输出目录（相对本文件）；目录必须是空的，除非 run 时加 --overwrite",
         "# description: 备注，会记进 manifest.json",
         "",
@@ -756,7 +926,7 @@ def render_template(name: str) -> str:
     for option in method.options:
         if option.suggested:
             lines.append(entry(option, option.example or "", True))
-    lines += ["", "# ---- 可选（后面的值是默认值）----"]
+    lines += ["", "# ---- 可选（弛豫默认读取 genkai.yaml；显式填写以下参数可覆盖）----"]
     for group in method.groups:
         if group.mode == "at_most_one":
             lines.append(f"# {group.help}")
@@ -773,12 +943,12 @@ def render_template(name: str) -> str:
 
 
 def describe_methods(stream: TextIO = sys.stdout) -> None:
-    print("可用的建模方法（只生成结构，不计算能量）：\n", file=stream)
+    print("可用的建模方法（结构生成 / 配置化 MLIP 筛选）：\n", file=stream)
     for method in METHODS.values():
         required = [o.key for o in method.options if o.required] + [
             "/".join(g.keys) for g in method.groups if g.mode in {"one", "any"}
         ]
-        print(f"  {method.name:<15s} {method.title}", file=stream)
+        print(f"  {method.name:<21s} {method.title}" + (" [需要 MLIP 配置]" if method.requires_mlip else ""), file=stream)
         print(f"  {'':<15s} {method.summary}", file=stream)
         print(f"  {'':<15s} 必填：{', '.join(required)}", file=stream)
     print("\n暂未开放：", file=stream)
@@ -791,6 +961,8 @@ def describe_methods(stream: TextIO = sys.stdout) -> None:
 def describe_method(name: str, stream: TextIO = sys.stdout) -> None:
     method = METHODS[name]
     print(f"{method.name}：{method.title}\n{method.summary}\n", file=stream)
+    if method.calculator_flag:
+        print("  mlip                 genkai.yaml 中的配置名称；default 使用默认配置。\n", file=stream)
     grouped = {key: group for group in method.groups for key in group.keys}
     for option in method.options:
         if option.required:
@@ -805,7 +977,7 @@ def describe_method(name: str, stream: TextIO = sys.stdout) -> None:
         print("\n组合规则：", file=stream)
         for group in method.groups:
             print(f"  - {group.help}", file=stream)
-    print("\n固定设置（不能修改）：" + (" ".join(method.locked) if method.locked else "无（纯几何方法）"), file=stream)
+    print("\n未启用 MLIP 时的固定设置（启用后自动切换）：" + (" ".join(method.locked) if method.locked else "无"), file=stream)
     print("主要输出：" + ", ".join(method.outputs), file=stream)
     for note in method.notes:
         print(f"注意：{note}", file=stream)
@@ -883,7 +1055,7 @@ def _check_outputs(job: Job, since: float = 0.0) -> tuple[str, list[str], list[F
         if check.min_vacuum_A is not None and check.min_vacuum_A < MIN_VACUUM_A:
             status = "WARN"
             messages.append(f"{relative}：真空层只有 {check.min_vacuum_A} Å（< {MIN_VACUUM_A} Å）")
-        if keeps_constraints and not all(fixed):
+        if keeps_constraints and (job.method.fixed_expected or job.values.get("fix_bottom", False)) and not all(fixed):
             status = "WARN"
             messages.append(f"{relative}：有结构没有固定原子")
         records.append({"path": relative, "frames": metrics, "file": file})
@@ -892,6 +1064,9 @@ def _check_outputs(job: Job, since: float = 0.0) -> tuple[str, list[str], list[F
 
 def _write_resolved_job(job: Job) -> Path:
     data: dict[str, Any] = {"method": job.method.name}
+    if job.profile:
+        data["mlip"] = job.profile.name
+        data["config"] = str(job.profile.config_path)
     if job.description:
         data["description"] = job.description
     data["output"] = job.output.as_posix()
@@ -899,7 +1074,7 @@ def _write_resolved_job(job: Job) -> Path:
         data[key] = value.as_posix() if isinstance(value, Path) else value
     header = (
         f"# {PROG} 实际运行的任务（来源：{job.source.as_posix()}；路径已展开为绝对路径）\n"
-        f"# 固定设置：{' '.join(job.method.locked) or '无'}\n"
+        f"# 固定设置：{' '.join(a for a in build_argv(job) if a in job.method.locked) or '无'}\n"
     )
     target = job.output / "job_resolved.yaml"
     target.write_text(header + yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
@@ -925,21 +1100,31 @@ def _write_manifest(
     run_id = f"{job.method.name}-{started_at.strftime('%Y%m%dT%H%M%SZ')}"
     producer = f"{PROG}:{job.method.name}"
     environment = _environment()
+    if job.profile:
+        environment.update({f"mlip_{key}": str(value) for key, value in job.runtime_info.items() if isinstance(value, (str, int, float))})
     parameters = json_ready(job.values)
     inputs = [
         {"key": key, "path": path.as_posix(), "sha256": sha256_of(path) if path.is_file() else None}
         for key, path in job.input_paths()
     ]
     ok = result.status in {"PASS", "WARN"}
+    calculating = job.profile is not None
+    mode = "energy-screening" if calculating else "structure-only"
+    note = f"使用配置 {job.profile.name}（{job.calculator}）的能量筛选；结果适用性需另行验证。" if calculating else STRUCTURE_ONLY_NOTE
+    from .calculators import evidence_for
+
+    evidence = EvidenceLevel(evidence_for(job.calculator)) if calculating else EvidenceLevel.HEURISTIC
     manifest = RunManifest(run_id=run_id, metadata=json_ready({
         "tool": PROG,
         "method": job.method.name,
         "job_file": job.source.as_posix(),
         "description": job.description,
-        "mode": "structure-only",
-        "calculator": "none",
-        "energies_available": False,
-        "note": STRUCTURE_ONLY_NOTE,
+        "mode": mode,
+        "calculator": job.calculator,
+        "energies_available": calculating and ok,
+        "mlip": job.profile.public_settings() if job.profile else None,
+        "runtime": job.runtime_info,
+        "note": note,
     }))
     artifact_ids: list[str] = []
     if ok:
@@ -951,12 +1136,12 @@ def _write_manifest(
                 sha256=sha256_of(path),
                 producer=producer,
                 execution_state=ExecutionState.SUCCEEDED,
-                evidence_level=EvidenceLevel.HEURISTIC,
+                evidence_level=evidence,
                 validation_status=ValidationStatus.PASSED if result.status == "PASS" else ValidationStatus.NEEDS_REVIEW,
                 metadata=json_ready({
-                    "mode": "structure-only",
-                    "calculator": "none",
-                    "energies_available": False,
+                    "mode": mode,
+                    "calculator": job.calculator,
+                    "energies_available": calculating,
                     "frame_count": len(record["frames"]),
                     "frames": record["frames"],
                 }),
@@ -988,11 +1173,11 @@ def _write_manifest(
             "seconds": result.seconds,
             "inputs": inputs,
             "parameters": parameters,
-            "locked": list(job.method.locked),
+            "locked": [a for a in build_argv(job) if a in job.method.locked],
             "log": "run.log",
             "resolved_job": "job_resolved.yaml",
             "status": result.status,
-            "notes": list(job.method.notes),
+            "notes": [] if calculating else list(job.method.notes),
         }),
     ))
     return save_manifest(job.output, manifest)
@@ -1003,6 +1188,11 @@ def run_job(job: Job, *, overwrite: bool = False, quiet: bool = False, stream: T
     missing = [f"{key}: {path}" for key, path in job.input_paths() if not path.is_file()]
     if missing:
         return JobResult(job, "FAIL", messages=["输入文件不存在：" + "；".join(missing)])
+    if job.profile:
+        try:
+            job.runtime_info = probe_profile(job.profile, _package_root())
+        except MlipConfigError as exc:
+            return JobResult(job, "FAIL", messages=[str(exc)])
     if _directory_has_content(job.output) and not overwrite:
         return JobResult(job, "FAIL", messages=[
             f"输出目录 {job.output} 已有内容；请换一个 output，删除该目录，或在 run 时加 --overwrite（旧文件不会被删除）"
@@ -1011,11 +1201,11 @@ def run_job(job: Job, *, overwrite: bool = False, quiet: bool = False, stream: T
     _write_resolved_job(job)
     argv = build_argv(job)
     command = [
-        sys.executable, "-c",
+        *(job.profile.command() if job.profile else [sys.executable]), "-c",
         "import importlib, sys; sys.exit(importlib.import_module(sys.argv[1]).main(sys.argv[2:]))",
         job.method.module, *argv,
     ]
-    env = dict(os.environ)
+    env = job.profile.environment(_package_root()) if job.profile else dict(os.environ)
     env["PYTHONPATH"] = os.pathsep.join(filter(None, [str(_package_root()), env.get("PYTHONPATH")]))
     env.update({"MPLBACKEND": "Agg", "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"})
     started_at = datetime.now(timezone.utc)
@@ -1084,12 +1274,12 @@ def expand_paths(paths: Iterable[Path]) -> list[Path]:
     return expanded
 
 
-def _load_all(paths: Iterable[Path], stream: TextIO) -> list[Job] | None:
+def _load_all(paths: Iterable[Path], stream: TextIO, config_path: Path | None = None) -> list[Job] | None:
     jobs: list[Job] = []
     failed = False
     for path in expand_paths(paths):
         try:
-            jobs.extend(load_job_file(path))
+            jobs.extend(load_job_file(path, config_path=config_path))
         except JobFileError as error:
             _print_problems(error, stream)
             failed = True
@@ -1112,21 +1302,34 @@ def _print_result(result: JobResult, stream: TextIO) -> None:
     for message in result.messages:
         print(f"    ! {message}", file=stream)
     if result.status in {"PASS", "WARN"}:
-        print(f"    说明：{STRUCTURE_ONLY_NOTE}", file=stream)
-        for note in result.job.method.notes:
+        note = f"使用 MLIP 配置 {result.job.profile.name}（{result.job.calculator}）。" if result.job.profile else STRUCTURE_ONLY_NOTE
+        print(f"    说明：{note}", file=stream)
+        for note in (() if result.job.profile else result.job.method.notes):
             print(f"    说明：{note}", file=stream)
     if result.manifest is not None:
         print(f"    记录：{result.manifest}（运行输出见同目录 run.log）", file=stream)
 
 
-def command_check(paths: list[Path], stream: TextIO) -> int:
-    jobs = _load_all(paths, stream)
+def command_check(paths: list[Path], stream: TextIO, *, config_path: Path | None = None) -> int:
+    jobs = _load_all(paths, stream, config_path)
     if jobs is None:
         return 2
     planned: list[Path] = []
     missing = 0
+    checked_profiles: dict[tuple[Path, str], str | None] = {}
     for job in jobs:
         absent = []
+        if job.profile:
+            key = (job.profile.config_path, job.profile.name)
+            if key not in checked_profiles:
+                try:
+                    probe_profile(job.profile, _package_root())
+                    checked_profiles[key] = None
+                except MlipConfigError as exc:
+                    checked_profiles[key] = str(exc)
+            if checked_profiles[key]:
+                absent.append(f"    ! {checked_profiles[key]}")
+                missing += 1
         for key, path in job.input_paths():
             if path.is_file():
                 continue
@@ -1151,8 +1354,8 @@ def command_check(paths: list[Path], stream: TextIO) -> int:
     return 0
 
 
-def command_run(paths: list[Path], *, overwrite: bool, quiet: bool, stream: TextIO) -> int:
-    jobs = _load_all(paths, stream)
+def command_run(paths: list[Path], *, overwrite: bool, quiet: bool, stream: TextIO, config_path: Path | None = None) -> int:
+    jobs = _load_all(paths, stream, config_path)
     if jobs is None:
         print("没有运行任何任务。请先修改任务文件（可用 check 命令检查）。", file=stream)
         return 2
@@ -1185,18 +1388,24 @@ EPILOG = f"""\
   {PROG} check sam_job.yaml            只检查，不运行
   {PROG} run sam_job.yaml              运行；结果在任务文件里写的 output 目录
 
-{STRUCTURE_ONLY_NOTE}
+原有任务不设置 mlip 时只生成结构；能量筛选通过 genkai.yaml 选择已经安装的 MLIP。
 """
 
 
 def build_parser() -> argparse.ArgumentParser:
+    from .setup import add_setup_arguments
+
     parser = argparse.ArgumentParser(
         prog=PROG,
-        description="Genkai 表面建模：用 YAML 任务文件生成表面结构。",
+        description="Genkai 表面建模：用 YAML 任务文件生成结构或调用已配置的 MLIP 筛选。",
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     commands = parser.add_subparsers(dest="command", required=True, metavar="命令")
+    setup = commands.add_parser("setup", help="连接已有 MLIP，准备配置与任务文件（不安装 MLIP）")
+    add_setup_arguments(setup)
+    doctor = commands.add_parser("doctor", help="检查已配置的 MLIP 环境和模型路径，不加载模型")
+    doctor.add_argument("--config", type=Path)
     methods = commands.add_parser("methods", help="列出可用的建模方法；加方法名查看该方法的全部参数")
     methods.add_argument("name", nargs="?", choices=list(METHODS), help="方法名")
     template = commands.add_parser("template", help="生成某个方法的任务文件模板")
@@ -1205,8 +1414,10 @@ def build_parser() -> argparse.ArgumentParser:
     template.add_argument("--force", action="store_true", help="文件已存在时覆盖")
     check = commands.add_parser("check", help="只检查任务文件，不运行")
     check.add_argument("job_files", nargs="+", type=Path, metavar="任务文件")
+    check.add_argument("--config", type=Path, help="MLIP 配置文件（默认自动查找 genkai.yaml）")
     run = commands.add_parser("run", help="运行任务文件（可以一次给多个）")
     run.add_argument("job_files", nargs="+", type=Path, metavar="任务文件")
+    run.add_argument("--config", type=Path, help="MLIP 配置文件（默认自动查找 genkai.yaml）")
     run.add_argument("--overwrite", action="store_true", help="允许写入已有内容的输出目录（旧文件不会被删除）")
     run.add_argument("--quiet", action="store_true", help="不显示方法本身的运行输出（仍写入 run.log）")
     return parser
@@ -1220,6 +1431,23 @@ def main(argv: list[str] | None = None) -> int:
                 reconfigure(errors="replace")
     args = build_parser().parse_args(argv)
     stream = sys.stdout
+    if args.command == "setup":
+        from .setup import run_setup
+
+        return run_setup(args)
+    if args.command == "doctor":
+        try:
+            config = load_config(find_config(Path.cwd() / "job.yaml", args.config))
+            if not config.profiles:
+                print("没有启用 MLIP；请编辑 genkai.yaml 或运行 ./install.sh --configure-only。", file=stream)
+                return 2
+            for profile in config.profiles.values():
+                probe_profile(profile, _package_root())
+                print(f"[通过] {profile.name}：{profile.backend}，{profile.device}（未加载模型）", file=stream)
+            return 0
+        except MlipConfigError as exc:
+            print(f"检查未通过：{exc}", file=stream)
+            return 2
     if args.command == "methods":
         if args.name:
             describe_method(args.name, stream)
@@ -1239,9 +1467,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"已写入 {args.output}。修改必填项后运行：{PROG} check {args.output}", file=stream)
         return 0
     if args.command == "check":
-        return command_check(args.job_files, stream)
+        return command_check(args.job_files, stream, config_path=args.config)
     try:
-        return command_run(args.job_files, overwrite=args.overwrite, quiet=args.quiet, stream=stream)
+        return command_run(args.job_files, overwrite=args.overwrite, quiet=args.quiet, stream=stream, config_path=args.config)
     except KeyboardInterrupt:
         print(file=stream)
         print("已中断；当前任务的输出目录里保留了 run.log 和 manifest.json。", file=stream)

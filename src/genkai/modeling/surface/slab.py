@@ -969,20 +969,19 @@ def load_bulk(path: str | Path) -> Structure:
         return AseAtomsAdaptor.get_structure(read(path))
 
 
-def build_energy_calculator(name: str, uma_model: str, task_name: str, device: str) -> Any:
-    """ASE calculator for surface energies: ``none`` -> None, ``emt`` or ``uma``."""
+def build_energy_calculator(
+    name: str, uma_model: str, task_name: str, device: str,
+    *, mace_model: str | None = None, mace_dtype: str = "float32",
+) -> Any:
+    """ASE surface-energy calculator; ``none`` keeps geometry-only facet selection."""
     if name == "none":
         return None
-    if name == "emt":
-        from ase.calculators.emt import EMT
+    from .calculators import build_calculator
 
-        return EMT()
-    if name != "uma":
-        raise ValueError(f"Unknown calculator {name!r}; choose none, emt or uma.")
-    from fairchem.core import FAIRChemCalculator, pretrained_mlip
-
-    predictor = pretrained_mlip.get_predict_unit(uma_model, device=device)
-    return FAIRChemCalculator(predictor, task_name=task_name)
+    return build_calculator(
+        name, uma_model=uma_model, task_name=task_name, device=device,
+        mace_model=mace_model, mace_dtype=mace_dtype,
+    )
 
 
 def _parse_repeat_xy(text: str) -> tuple[int, int] | None:
@@ -995,6 +994,8 @@ def _parse_repeat_xy(text: str) -> tuple[int, int] | None:
 
 
 def _build_parser() -> argparse.ArgumentParser:
+    from .calculators import CALCULATORS, add_mace_arguments
+
     parser = argparse.ArgumentParser(description="Build a validated surface slab from a bulk crystal.")
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--bulk", type=Path, help="Bulk crystal file readable by pymatgen or ASE (CIF, POSCAR, ...).")
@@ -1004,11 +1005,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-index", type=int, default=1, help="Highest Miller index ranked by surface energy.")
     parser.add_argument(
         "--calculator",
-        choices=["none", "emt", "uma"],
+        choices=CALCULATORS,
         default="none",
         help="Energy model for surface-energy ranking; 'none' uses the reviewed facet registry.",
     )
     parser.add_argument("--uma-model", default="uma-s-1p2")
+    add_mace_arguments(parser)
     parser.add_argument("--task-name", default="omat", help="UMA task head used for bulk and slab energies.")
     parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
     parser.add_argument("--relax-steps", type=int, default=0, help="LBFGS steps before each energy (0 = static).")
@@ -1072,7 +1074,14 @@ def main(argv: list[str] | None = None) -> int:
         source = {"type": "materials_project", **metadata}
         formula, spacegroup = metadata["formula"], metadata.get("spacegroup_symbol")
 
-    calculator = build_energy_calculator(args.calculator, args.uma_model, args.task_name, args.device)
+    if args.calculator == "mace":
+        from .calculators import resolve_mace_model
+
+        args.mace_model = resolve_mace_model(args.mace_model)
+    calculator = build_energy_calculator(
+        args.calculator, args.uma_model, args.task_name, args.device,
+        mace_model=args.mace_model, mace_dtype=args.mace_dtype,
+    )
     energy_fn = (
         energy_function_from_calculator(calculator, relax_steps=args.relax_steps, fmax=args.fmax)
         if calculator is not None
@@ -1095,12 +1104,15 @@ def main(argv: list[str] | None = None) -> int:
             "calculator": args.calculator,
             "uma_model": args.uma_model if args.calculator == "uma" else None,
             "task_name": args.task_name if args.calculator == "uma" else None,
+            "mace_model": args.mace_model if args.calculator == "mace" else None,
+            "mace_dtype": args.mace_dtype if args.calculator == "mace" else None,
+            "device": args.device,
             "relax_steps": args.relax_steps,
             "fmax": args.fmax,
         }
     facet_evidence = FACET_EVIDENCE.get(
         result.facet.source,
-        "mlip_predicted" if args.calculator == "uma" else "heuristic",
+        "mlip_predicted" if args.calculator in ("uma", "mace") else "heuristic",
     )
     manifest = write_slab_outputs(
         result,

@@ -32,6 +32,8 @@
   与 `facade.py`，MLIP 筛选层 `calculators.py`、`sam_search.py`、`amorphous_screen.py`、`cluster_search.py`，
   任务文件入口 `jobs.py`（console script `genkai-surface`），Materials Project 读取 `materials_project_slab.py`
   （需要联网，可选依赖 `mp-api`）。
+- `modeling/surface/mlip_config.py`：统一 MLIP 配置、运行环境选择与无模型环境检查；
+  `setup.py`：安装向导、独立项目依赖环境、配置和任务生成。面向使用者统一走 `./genkai` / `genkai-surface`。
 - `src/genkai/modeling/`：PToModel（`mapping.py`、`ptomodel.py`、`checklist.py`、`schema/`）。
 - `src/genkai/contracts/`、`src/genkai/workflow/`：artifact、`RunManifest`、阶段图和清单存储。
 - `src/genkai/literature/surface/`：只保留 `artifacts.py`（读取已保存的抽取结果）和 `core/` 词表。
@@ -64,8 +66,9 @@
 ## 安装与验证
 
 ```bash
-./install.sh                 # 结构生成 + 测试
-./install.sh --mlip          # 另装 fairchem-core（UMA）
+./install.sh                 # 安装项目，连接使用者已安装的 MLIP，生成配置/任务；不安装 MLIP 或 PyTorch
+./install.sh --configure-only # 修改环境路径后重新准备项目依赖，保留配置和任务文件
+./genkai doctor              # 无模型环境检查
 source .venv/bin/activate
 python -m pytest -q
 python scripts/run_modeling_smoke.py
@@ -74,7 +77,7 @@ python -m genkai.modeling.surface.jobs check examples/surface_jobs/*.yaml
 
 用 `python -m pytest`（不是 `pytest`）运行测试：`tests/architecture` 需要仓库根目录在 `sys.path` 里。
 
-当前基线（2026-11-16，本机 Windows + Python 3.11，所装 genkai 为 `2.2.0+sage`）：
+历史基线（2026-11-16，本机 Windows + Python 3.11，所装 genkai 为 `2.2.0+sage`）：
 
 - `python -m pytest -q`：114 passed。
 - 冒烟：29 个用例，PASS 27 / WARN 1 / FAIL 0 / SKIP 1。WARN 是旧吸附脚本放置多个分子时不检查分子间重叠
@@ -83,6 +86,22 @@ python -m genkai.modeling.surface.jobs check examples/surface_jobs/*.yaml
 - 本机无法联网，`install.sh` 的完整安装由 CI（Ubuntu + Python 3.12，pip 路径）验证。
 
 ## MLIP 测试规则
+
+- MACE / UMA 公共接口与本机独立环境的调用方法见 `docs/mlip-interfaces.md`；
+  `genkai.yaml` 集中配置环境与模型；任务 YAML 用 `mlip` 选择配置。
+  旧任务默认 structure-only；slab/vacancy/adsorbate 可显式启用 MLIP，
+  sam_search/amorphous_surfaces/amorphous_interface/cluster_search 已开放 YAML 入口。
+  安装脚本不得安装 MLIP、PyTorch、CUDA 或下载模型；只为已有后端准备独立项目依赖环境，
+  使用源环境版本约束，并保留使用者配置与任务文件。
+  `scripts/mlip-python.sh` 也读取同一个配置，不得重新加入本机专属环境路径。
+- 2026-11-17 服务器验证：MACE 环境离线测试 131 passed / 1 skipped，UMA 环境 132 passed，
+  两者各有 2 个 external 用例默认不运行。模拟冒烟 PASS 27 / WARN 1 / FAIL 0 / SKIP 1；
+  WARN 为已有吸附示例重叠，SKIP 为 Materials Project 联网项。
+  获准通过 Slurm 在 RTX 3080 上运行两个 Cu 原胞单点接口测试，MACE 和 UMA 各 1 passed。
+  详见 `work_logs/2026-11-17.md`；未执行真实表面搜索和 DFT 精度验证。
+- 同日配置化用户入口的最终基线：普通安装环境 166 passed / 1 skipped / 2 external deselected；
+  安装脚本实际自动发现两个后端，11 个生成任务和 4 个筛选示例检查通过，重复配置保留文件校验值；
+  模拟冒烟仍为 PASS 27 / WARN 1 / FAIL 0 / SKIP 1。真实单点在安装步骤之外独立验证。
 
 - UMA、DFT、MD、GPU 和调度器作业只在获准做真实计算的环境里运行；不要在没有授权时自动扩展。
 - 先确定 UMA 任务头（用少量 DFT 单点对比），并确认所装 fairchem 支持它；`calculators.validate_uma_task`

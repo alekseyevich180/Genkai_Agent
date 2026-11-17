@@ -22,6 +22,8 @@ dependencies = [
 [project.optional-dependencies]
 # UMA through FAIRChem for the MLIP screening layer; brings in torch.
 mlip = ["fairchem-core>=2.7.1"]
+# MACE is a separate extra so existing UMA/MACE environments can stay independent.
+mace = ["mace-torch>=0.3.16"]
 # Downloading bulk crystals from Materials Project (needs network and MP_API_KEY).
 materials-project = ["mp-api>=0.46.0"]
 test = ["pytest>=8.0"]

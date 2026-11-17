@@ -10,13 +10,18 @@
 * ``uma`` - a FAIRChem UMA model. The task head is checked against the
   installed fairchem version before the model is loaded (fairchem 2.7.1 has
   omol, omat, odac, oc20, oc25 and omc; no oc22).
+* ``mace`` - a local MACE checkpoint through its ASE calculator. The model
+  must be supplied with ``mace_model`` or the ``MACE_MODEL`` environment variable.
 
-Running ``uma`` is a real MLIP calculation and needs explicit authorization
-(see AGENTS.md); the builders default to ``none``.
+Running ``uma`` or ``mace`` is a real MLIP calculation and needs explicit
+authorization (see AGENTS.md).
 """
 
 from __future__ import annotations
 
+import argparse
+import os
+from pathlib import Path
 from typing import Any
 
 import numpy as np
@@ -24,8 +29,31 @@ from ase import Atoms
 from ase.calculators.calculator import Calculator, all_changes
 from ase.data import covalent_radii
 
-CALCULATORS = ("none", "emt", "uma")
+CALCULATORS = ("none", "emt", "uma", "mace")
 MOCK_NOTE = "calculator=none: mock contact score, energies have no physical meaning"
+
+
+def resolve_mace_model(model: str | Path | None = None) -> str:
+    """Resolve an explicit local checkpoint; never download a model implicitly."""
+    value = model or os.environ.get("MACE_MODEL")
+    if not value:
+        raise ValueError("MACE needs a local checkpoint: set --mace-model or MACE_MODEL.")
+    path = Path(value).expanduser().resolve()
+    if not path.is_file():
+        raise FileNotFoundError(f"MACE checkpoint does not exist: {path}")
+    return str(path)
+
+
+def add_mace_arguments(parser: argparse.ArgumentParser) -> None:
+    """Shared options, including aliases for the older underscore-style CLI."""
+    parser.add_argument(
+        "--mace-model", "--mace_model", default=os.environ.get("MACE_MODEL"),
+        help="Local MACE checkpoint (or set MACE_MODEL); no automatic download.",
+    )
+    parser.add_argument(
+        "--mace-dtype", "--mace_dtype", choices=("float32", "float64"), default="float32",
+        help="MACE inference precision (default: float32).",
+    )
 
 
 class ContactMockCalculator(Calculator):
@@ -85,6 +113,8 @@ def build_calculator(
     device: str = "cuda",
     include_d3: bool = False,
     checkpoint: str | None = None,
+    mace_model: str | Path | None = None,
+    mace_dtype: str = "float32",
 ) -> Calculator:
     if name == "none":
         return ContactMockCalculator()
@@ -92,16 +122,31 @@ def build_calculator(
         from ase.calculators.emt import EMT
 
         return EMT()
-    if name != "uma":
+    if name not in ("uma", "mace"):
         raise ValueError(f"Unknown calculator {name!r}; choose from {', '.join(CALCULATORS)}.")
-    validate_uma_task(task_name)
-    from fairchem.core import FAIRChemCalculator, pretrained_mlip
-
-    if checkpoint:
-        calc: Calculator = FAIRChemCalculator.from_model_checkpoint(checkpoint, task_name=task_name, device=device)
+    if name == "mace":
+        if checkpoint:
+            raise ValueError("--checkpoint is for UMA; use --mace-model for MACE.")
+        model_path = resolve_mace_model(mace_model)
+        if mace_dtype not in ("float32", "float64"):
+            raise ValueError("mace_dtype must be float32 or float64.")
+        try:
+            from mace.calculators import MACECalculator
+        except ImportError as exc:
+            raise ImportError("MACE is unavailable in this Python environment; use the MACE launcher or install Genkai[mace].") from exc
+        calc: Calculator = MACECalculator(model_paths=model_path, device=device, default_dtype=mace_dtype)
     else:
-        predictor = pretrained_mlip.get_predict_unit(uma_model, device=device)
-        calc = FAIRChemCalculator(predictor, task_name=task_name)
+        validate_uma_task(task_name)
+        try:
+            from fairchem.core import FAIRChemCalculator, pretrained_mlip
+        except ImportError as exc:
+            raise ImportError("UMA is unavailable in this Python environment; use the UMA launcher or install Genkai[mlip].") from exc
+        if checkpoint or Path(uma_model).is_file():
+            checkpoint = checkpoint or uma_model
+            calc = FAIRChemCalculator.from_model_checkpoint(checkpoint, task_name=task_name, device=device)
+        else:
+            predictor = pretrained_mlip.get_predict_unit(uma_model, device=device)
+            calc = FAIRChemCalculator(predictor, task_name=task_name)
     if include_d3:
         from ase.calculators.dftd3 import DFTD3
 
@@ -142,7 +187,7 @@ def is_mock(name: str) -> bool:
 
 
 def evidence_for(name: str) -> str:
-    return {"none": "mock", "emt": "empirical_potential", "uma": "mlip_predicted"}[name]
+    return {"none": "mock", "emt": "empirical_potential", "uma": "mlip_predicted", "mace": "mlip_predicted"}[name]
 
 
 def molecule_in_box(molecule: Atoms, padding: float = 12.0) -> Atoms:

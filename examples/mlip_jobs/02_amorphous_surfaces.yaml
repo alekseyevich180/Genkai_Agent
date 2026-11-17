@@ -1,0 +1,6 @@
+method: amorphous_surfaces
+mlip: default
+amorphous: ../../tests/amorphous/TiO2.vasp
+periods: 2
+samples: 3
+output: runs/amorphous_surfaces

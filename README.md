@@ -4,7 +4,7 @@ SAGE（An AI agent for automated atomistic surface modeling in gas sensor resear
 Genkai 中的表面建模部分：
 
 - 切面、氧空位、分子吸附、金属团簇、SAM、ALD 非晶覆盖层、纯非晶表面，共 7 种结构生成方法；
-- MLIP 筛选层：SAM 锚定搜索、非晶表面与界面筛选、团簇或岛的负载位置搜索，通过 FAIRChem 调用 UMA。
+- MLIP 筛选层：切面、空位、吸附、SAM、非晶表面与界面、团簇或岛的筛选，支持 MACE 和 UMA。
 
 Agent 运行时、Web 界面、论文抽取（LLM）、MLIP 训练适配器和其他 Skill 不在这个分支上，需要时请到 `main` 分支。
 这个分支用来在服务器上加入和运行 MLIP 测试。
@@ -17,40 +17,63 @@ Agent 运行时、Web 界面、论文抽取（LLM）、MLIP 训练适配器和�
 git clone -b SAGE --single-branch https://github.com/alekseyevich180/Genkai_Agent.git SAGE
 cd SAGE
 
-./install.sh                 # 结构生成和测试（模拟计算器，不需要 GPU）
-./install.sh --mlip          # 另外安装 fairchem-core（UMA），用于 MLIP 测试
-./install.sh --mlip --torch-index-url https://download.pytorch.org/whl/cu121   # 指定与服务器 CUDA 匹配的 torch
+./install.sh                 # 安装 Genkai，自动检测/引导连接已有 MLIP，生成配置和任务文件
 ./install.sh --help          # 全部选项
 ```
 
 脚本在仓库内创建 `.venv`，以可编辑方式安装当前检出的代码，所以 `git pull` 后不用重新安装；
-依赖有变化时再运行一次即可。安装前会检查 Python 版本，安装后会检查 `genkai-surface` 命令、
-运行一组快速测试；加 `--mlip` 时还会列出 UMA 任务头和 CUDA 是否可用，但不会下载或加载模型。
+依赖有变化时再运行一次即可。**MLIP、PyTorch、CUDA 和模型由使用者自行安装，安装脚本不安装这些内容。**
+脚本会检测已有的 MACE / UMA 环境，也可手动输入 Python 与模型路径；为每个后端准备独立的
+项目运行环境，并生成 `genkai.yaml`、`tasks/*.yaml` 和 `./genkai` 命令。安装时不运行真实计算。
+
+没有自动找到环境时，也可一步指定：
 
 ```bash
-source .venv/bin/activate
+./install.sh --mace-python /path/to/mace/bin/python --mace-model /path/to/model.model
+# 或：./install.sh --uma-python /path/to/uma/bin/python --default-mlip uma
+# 无人值守：加 --non-interactive；已有配置会保留。
 ```
 
 ## 使用
 
 ```bash
-genkai-surface methods                       # 可用的建模方法
-genkai-surface template sam -o my_sam.yaml   # 生成任务文件模板
-genkai-surface check my_sam.yaml             # 只检查
-genkai-surface run my_sam.yaml               # 运行
-genkai-surface run examples/surface_jobs/*.yaml   # 自带示例
+./genkai doctor                             # 检查 MLIP 配置，不加载模型
+./genkai methods                            # 可用的方法
+./genkai check tasks/sam_search.yaml         # 修改参数文件后先检查
+./genkai run tasks/sam_search.yaml           # 运行
 ```
 
 任务文件写法、输出说明和常见问题见 [表面建模使用手册](docs/surface-modeling-user-guide.md)。
-`genkai-surface` 只做结构生成（计算器固定为 none）。MLIP 筛选目前通过各方法自己的命令行运行，
-见 [SKILL.md](agents/Agent/skills/surface-modeling/SKILL.md) 的 “MLIP Screening Layer” 一节。
+普通使用者只需要改两个位置，不需要改任何 Python 或 shell 脚本：
+
+1. `genkai.yaml`：集中填写已有 MLIP 的 Python、模型路径/名称、设备和默认配置，格式见
+   [genkai.example.yaml](genkai.example.yaml)。更换 Python 环境后重跑 `./install.sh --configure-only`。
+2. `tasks/<方法>.yaml`：填写输入结构、搜索参数以及 `mlip: default` / `mace` / `uma`。
+   更换模型或切换后端，只修改配置或任务中的 `mlip` 名称即可。
+
+```yaml
+method: sam_search
+mlip: default
+surface: /path/to/slab.extxyz
+molecule: /path/to/acid.xyz
+binding_mode: monodentate
+n_trials: 10
+coverage_counts: [1, 2]
+output: runs/my_sam
+```
+
+`sam_search`、`amorphous_surfaces`、`amorphous_interface`、`cluster_search` 自动使用所选配置；
+`slab`、`vacancy`、`adsorbate` 可加 `mlip: <名称>` 启用能量计算。不启用 MLIP 的旧任务仍只生成结构。
+可复用的筛选任务见 [examples/mlip_jobs](examples/mlip_jobs)，配置与安装详解见
+[MACE / UMA 接口](docs/mlip-interfaces.md)。`genkai-surface` 仍可在激活 `.venv` 后直接使用。
 
 ## 测试
 
 ```bash
-python -m pytest -q                          # 单元、契约和集成测试（不需要网络和 GPU）
-python scripts/run_modeling_smoke.py         # 用仓库里的结构逐一调用全部方法（模拟计算器，约 5 分钟）
-python scripts/run_modeling_smoke.py --profile server --device cuda --uma-task <任务头>   # 改用 UMA
+.venv/bin/python -m pytest -q                          # 离线测试，不需要 GPU
+.venv/bin/python scripts/run_modeling_smoke.py         # 全部建模方法，模拟计算器
+# 真实 UMA 测试在获准计算的节点上运行：
+bash scripts/mlip-python.sh uma scripts/run_modeling_smoke.py --profile server --device cuda --uma-task <任务头>
 ```
 
 运行 UMA 前请注意：
@@ -72,6 +95,7 @@ python scripts/run_modeling_smoke.py --profile server --device cuda --uma-task <
 | `src/genkai/literature/surface/` | 只保留建模用到的词表和读取已保存抽取结果的函数 |
 | `agents/Agent/skills/surface-modeling/` | 各方法的薄入口脚本、Skill 说明和示例结构 |
 | `examples/surface_jobs/` | `genkai-surface` 示例任务文件 |
+| `genkai.example.yaml`、`examples/mlip_jobs/` | MLIP 配置格式与能量筛选任务示例 |
 | `scripts/run_modeling_smoke.py` | 建模冒烟测试 |
 | `tests/` | 测试和测试用结构 |
 | `AGENTS.md` | 在这个分支上工作的规则 |

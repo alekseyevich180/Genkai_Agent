@@ -63,3 +63,21 @@ def test_one_case_runs_end_to_end_and_gated_cases_are_skipped(tmp_path) -> None:
     assert "ald_full_asno2_on_sno2" in selection["not_selected"]
     frame = report["cases"][0]["structures"]["frames"][0]
     assert frame["n_fixed"] > 0 and frame["vacuum_gap_A"] >= 5.0
+
+
+def test_server_mace_commands_reach_all_energy_entrypoints(tmp_path) -> None:
+    smoke = _load()
+    ctx = smoke.Context(
+        profile="server", device="cpu", uma_model="unused", enabled=set(),
+        calculator="mace", mace_model="local.model", mace_dtype="float64",
+    )
+    methods = set()
+    for case in smoke.CASES:
+        for command in case.commands(ctx, tmp_path):
+            if "mace" not in command:
+                continue
+            methods.add(case.method)
+            assert command[command.index("--mace-model") + 1] == "local.model"
+            assert command[command.index("--mace-dtype") + 1] == "float64"
+            assert "--uma-model" not in command and "--uma_model" not in command
+    assert {"slab_generation", "vacancy_landscape", "adsorbate_landscape", "cluster_search", "sam_search", "amorphous_screen"} <= methods

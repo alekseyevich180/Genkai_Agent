@@ -46,25 +46,16 @@ def build_calculator(
     device: str,
     include_d3: bool,
     checkpoint: Path | None = None,
-    task_name: str = "oc22",
+    task_name: str = "omat",
+    *, calculator_name: str = "uma", mace_model: str | None = None, mace_dtype: str = "float32",
 ):
-    import torch
-    from fairchem.core import FAIRChemCalculator
+    from .calculators import build_calculator as build_energy_model
 
-    from .calculators import validate_uma_task
-
-    validate_uma_task(task_name)  # fail before loading the model (fairchem 2.7.1 has no oc22)
-    torch.set_float32_matmul_precision("medium")
-    torch.backends.cuda.matmul.allow_tf32 = True
-    model_ref = str(checkpoint) if checkpoint is not None else uma_model
-    calc = FAIRChemCalculator.from_model_checkpoint(model_ref, task_name=task_name, device=device)
-
-    if include_d3:
-        from ase.calculators.dftd3 import DFTD3
-
-        calc = DFTD3(dft=calc)
-
-    return calc
+    return build_energy_model(
+        calculator_name, uma_model=uma_model, device=device, task_name=task_name,
+        include_d3=include_d3, checkpoint=str(checkpoint) if checkpoint is not None else None,
+        mace_model=mace_model, mace_dtype=mace_dtype,
+    )
 
 
 def get_opt_energy(
@@ -421,12 +412,7 @@ def export_selected_candidates(
         write(vasp_dir / f"{index}.vasp", structure, format="vasp", direct=True, sort=True, vasp5=True)
 
 
-def main(argv: list[str] | None = None):
-    global CALCULATOR
-
-    import optuna
-    import pandas as pd
-
+def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Search stable adsorption structures for a prebuilt cluster on a surface using Optuna."
     )
@@ -437,16 +423,19 @@ def main(argv: list[str] | None = None):
     parser.add_argument("--fmax", type=float, default=1e-4)
     parser.add_argument(
         "--calculator",
-        choices=["uma", "none"],
+        choices=["uma", "mace", "none"],
         default="uma",
-        help="uma: real MLIP search (needs authorization); none: mock contact score for workflow tests only.",
+        help="uma/mace: real MLIP search; none: mock contact score for workflow tests only.",
     )
     parser.add_argument("--uma_model", type=str, default="uma-s-1p2")
+    from .calculators import add_mace_arguments
+
+    add_mace_arguments(parser)
     parser.add_argument("--checkpoint", type=Path, default=None)
     parser.add_argument(
         "--task_name",
         type=str,
-        default="oc22",
+        default="omat",
         help="UMA task head passed to FAIRChemCalculator; checked against the installed fairchem before loading "
         "(fairchem 2.7.1 has omol, omat, odac, oc20, oc25, omc - no oc22).",
     )
@@ -499,8 +488,21 @@ def main(argv: list[str] | None = None):
     parser.add_argument("--tail_pick_per_bin", type=int, default=1)
     parser.add_argument("--selection_random_seed", type=int, default=42)
     parser.add_argument("--seed", type=int, default=None, help="Optuna sampler seed (default: random).")
-    args = parser.parse_args(argv)
+    return parser
 
+
+def main(argv: list[str] | None = None):
+    global CALCULATOR
+
+    import optuna
+    import pandas as pd
+
+    args = _build_parser().parse_args(argv)
+
+    if args.calculator == "mace":
+        from .calculators import resolve_mace_model
+
+        args.mace_model = resolve_mace_model(args.mace_model)
     args.active_symbols = normalize_symbols(args.active_symbols)
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -514,13 +516,19 @@ def main(argv: list[str] | None = None):
         print(f"WARNING {MOCK_NOTE}")
         CALCULATOR = ContactMockCalculator()
     else:
-        print(f"UMA model: {args.checkpoint or args.uma_model}, task: {args.task_name}, device: {args.device}")
+        if args.calculator == "mace":
+            print(f"MACE model: {args.mace_model}, dtype: {args.mace_dtype}, device: {args.device}")
+        else:
+            print(f"UMA model: {args.checkpoint or args.uma_model}, task: {args.task_name}, device: {args.device}")
         CALCULATOR = build_calculator(
             args.uma_model,
             args.device,
             args.include_d3,
             args.checkpoint,
             task_name=args.task_name,
+            calculator_name=args.calculator,
+            mace_model=args.mace_model,
+            mace_dtype=args.mace_dtype,
         )
     input_surface = read(args.surface)
     input_cluster = read(args.cluster)

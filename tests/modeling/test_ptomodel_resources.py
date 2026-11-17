@@ -28,3 +28,12 @@ def test_canonical_task_schema_is_owned_by_genkai() -> None:
         task["script"].startswith("genkai.modeling.surface.")
         for task in registry["tasks"].values()
     )
+
+
+def test_energy_task_schemas_expose_mace_parameters() -> None:
+    registry = _load_surface_modeling_parameter_schema()
+    for name in ("slab_generation", "vacancy_landscape", "adsorbate_landscape", "surface_cluster_mlip_search"):
+        parameters = registry["tasks"][name]["parameters"]
+        assert "mace" in parameters["calculator"]["choices"]
+        assert parameters["mace_model"]["type"] == "path"
+        assert parameters["mace_dtype"]["choices"] == ["float32", "float64"]

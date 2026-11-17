@@ -6,9 +6,11 @@ import io
 import json
 import re
 import time
+import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 from genkai.contracts.run import RunManifest
 from genkai.modeling.surface import jobs
@@ -29,6 +31,7 @@ PLACEHOLDER_FILES = {
     "input": CEO2_SLAB,
     "molecule": BUTANOIC,
     "amorphous": A_TIO2,
+    "cluster": ROOT / "tests/fixtures/archives/generated/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.xyz",
 }
 
 
@@ -45,7 +48,7 @@ def _problems(path: Path) -> list[str]:
 
 
 def test_option_tables_match_the_method_parsers() -> None:
-    blocked = jobs.ENERGY_KEYS | jobs.NETWORK_KEYS
+    blocked = (jobs.ENERGY_KEYS - jobs.TASK_ENERGY_KEYS) | jobs.NETWORK_KEYS
     for name, method in jobs.METHODS.items():
         flags = jobs.method_parser(name)._option_string_actions
         for option in method.options:
@@ -68,7 +71,13 @@ def test_every_template_validates_once_placeholders_are_filled(tmp_path: Path, n
 
     filled = re.sub(r"^(\w+): <[^>]+>", fill, text, flags=re.MULTILINE)
     assert "<" not in "".join(line.split("#", 1)[0] for line in filled.splitlines())
-    [job] = load_job_file(_job(tmp_path, filled))
+    checkpoint = tmp_path / "interface-only.model"
+    checkpoint.touch()
+    config = tmp_path / "genkai.yaml"
+    config.write_text(yaml.safe_dump({"version": 1, "default": "mace", "profiles": {
+        "mace": {"python": sys.executable, "model": str(checkpoint)},
+    }}), encoding="utf-8")
+    [job] = load_job_file(_job(tmp_path, filled), config_path=config)
     argv = build_argv(job)
     assert job.output == (tmp_path / "runs" / name).resolve()
     assert all(locked in argv for locked in jobs.METHODS[name].locked)
@@ -116,7 +125,7 @@ def test_invalid_jobs_report_every_problem_with_guidance(tmp_path: Path) -> None
     ))
     problems = "\n".join(_problems(path))
     assert "binding_mod" in problems and "binding_mode" in problems  # typo with a suggestion
-    assert "只开放结构生成" in problems  # energy model locked
+    assert "genkai.yaml" in problems  # calculator details belong to the shared configuration
     assert "不联网" in problems  # Materials Project locked
     assert "二选一" in problems and "bulk, surface" in problems
     assert "需要 2 个数" in problems
@@ -124,7 +133,7 @@ def test_invalid_jobs_report_every_problem_with_guidance(tmp_path: Path) -> None
     assert "缺少必填项 binding_mode" in problems
 
     assert "amorphous_slab" in "\n".join(_problems(_job(tmp_path, "method: amorphus_slab\n", "typo.yaml")))
-    assert "暂未开放" in "\n".join(_problems(_job(tmp_path, "method: sam_search\n", "closed.yaml")))
+    assert "缺少必填项 molecule" in "\n".join(_problems(_job(tmp_path, "method: sam_search\n", "search.yaml")))
     windows = _job(tmp_path, 'method: slab\nbulk: "C:\\Users\\me\\SnO2.cif"\n', "windows.yaml")
     assert "正斜杠" in "\n".join(_problems(windows))
 
@@ -165,7 +174,7 @@ def test_example_job_files_are_valid() -> None:
     out = io.StringIO()
     assert command_check(files, out) == 0, out.getvalue()
     methods = {job.method.name for path in files for job in load_job_file(path)}
-    assert methods == set(jobs.METHODS)
+    assert methods == {name for name, method in jobs.METHODS.items() if not method.requires_mlip}
     # Windows shells pass "*.yaml" through unexpanded; the CLI expands it itself.
     assert jobs.expand_paths([JOB_EXAMPLES / "*.yaml"]) == files
 
@@ -233,3 +242,18 @@ def test_methods_and_template_commands(tmp_path: Path, capsys) -> None:
     assert "coverage: full" in target.read_text(encoding="utf-8")
     assert main(["template", "ald", "-o", str(target)]) == 1  # no silent overwrite
     assert main(["template", "ald", "-o", str(target), "--force"]) == 0
+
+
+def test_cluster_output_check_includes_the_tenth_ranked_candidate(tmp_path):
+    from ase import Atoms
+    from ase.io import write
+
+    output = tmp_path / "mlip_output"
+    output.mkdir()
+    structure = Atoms("Cu2", positions=[[0, 0, 1], [0, 0, 3]], cell=[8, 8, 20], pbc=True)
+    for index in range(1, 11):
+        write(output / f"{index:02d}_trial_001.cif", structure)
+    job = jobs.Job(tmp_path / "job.yaml", None, jobs.METHODS["cluster_search"], {}, {}, tmp_path)
+    status, _, checks, records = jobs._check_outputs(job)
+    assert status in {"PASS", "WARN"}
+    assert len(checks) == len(records) == 10

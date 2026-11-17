@@ -26,6 +26,7 @@ from ase.constraints import FixAtoms
 
 from genkai.contracts.validation import ValidationIssue
 
+from .calculators import CALCULATORS, add_mace_arguments, resolve_mace_model
 from .slab import (
     FACET_EVIDENCE,
     SlabSettings,
@@ -241,6 +242,8 @@ def prepare_substrate(
     fmax: float = 0.05,
     max_index: int = 1,
     miller_basis: str = "auto",
+    mace_model: str | None = None,
+    mace_dtype: str = "float32",
 ) -> Substrate:
     """Load a reviewed slab, or cut the explicit/most stable facet from a bulk crystal."""
     if (surface is None) == (bulk is None):
@@ -288,12 +291,19 @@ def prepare_substrate(
         energy_model = None
         energy_fn = None
         if calculator != "none":
-            calc = build_energy_calculator(calculator, uma_model, task_name, device)
+            if calculator == "mace":
+                mace_model = resolve_mace_model(mace_model)
+            calc = build_energy_calculator(
+                calculator, uma_model, task_name, device, mace_model=mace_model, mace_dtype=mace_dtype,
+            )
             energy_fn = energy_function_from_calculator(calc, relax_steps=relax_steps, fmax=fmax)
             energy_model = {
                 "calculator": calculator,
                 "uma_model": uma_model if calculator == "uma" else None,
                 "task_name": task_name if calculator == "uma" else None,
+                "mace_model": mace_model if calculator == "mace" else None,
+                "mace_dtype": mace_dtype if calculator == "mace" else None,
+                "device": device,
                 "relax_steps": relax_steps,
                 "fmax": fmax,
             }
@@ -322,7 +332,7 @@ def prepare_substrate(
             "facet_source": result.facet.source,
             "facet_reason": result.facet.reason,
             "facet_evidence": FACET_EVIDENCE.get(
-                result.facet.source, "mlip_predicted" if calculator == "uma" else "heuristic"
+                result.facet.source, "mlip_predicted" if calculator in ("uma", "mace") else "heuristic"
             ),
             "miller_basis": manifest["facet"]["miller_basis"],
             "facet_screening": manifest["facet_screening"],
@@ -380,12 +390,13 @@ def add_substrate_arguments(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument(
         "--calculator",
-        choices=["none", "emt", "uma"],
+        choices=CALCULATORS,
         default="none",
-        help="Energy model for most-stable-facet ranking (emt: some metals only; uma needs explicit authorization).",
+        help="Energy model for facet ranking (emt: some metals only; uma/mace: real MLIP).",
     )
     parser.add_argument("--max-index", type=int, default=1)
     parser.add_argument("--uma-model", default="uma-s-1p2")
+    add_mace_arguments(parser)
     parser.add_argument("--task-name", default="omat")
     parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
     parser.add_argument("--min-slab-size", type=float, default=12.0)
@@ -420,4 +431,6 @@ def substrate_from_args(args: argparse.Namespace) -> Substrate:
         task_name=args.task_name,
         device=args.device,
         max_index=args.max_index,
+        mace_model=args.mace_model,
+        mace_dtype=args.mace_dtype,
     )

@@ -1,0 +1,9 @@
+method: cluster_search
+mlip: default
+surface: ../../agents/Agent/skills/surface-modeling/examples/CeO2 (1 1 1).cif
+cluster: ../../tests/fixtures/archives/generated/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.xyz
+n_trials: 10
+selection_count: 3
+top_pick_count: 3
+tail_pick_per_bin: 0
+output: runs/cluster_search

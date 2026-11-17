@@ -32,6 +32,7 @@ class EvidenceLevel(str, Enum):
     PAPER_EXTRACTED = "paper_extracted"
     HEURISTIC = "heuristic"
     MOCK = "mock"
+    EMPIRICAL_POTENTIAL = "empirical_potential"
     MLIP_PREDICTED = "mlip_predicted"
     DFT_CALCULATED = "dft_calculated"
     EXPERIMENT_REPORTED = "experiment_reported"
