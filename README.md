@@ -36,6 +36,48 @@ cd SAGE
 
 ## 使用
 
+安装后统一使用项目根目录的 `./genkai`。`genkai.yaml` 登记 MLIP，
+`tasks/*.yaml` 决定要构建什么结构；安装生成的任务默认填入仓库示例，使用自己的体系时要替换输入。
+目前通过编辑带中文注释的 YAML 选择材料、晶面和参数，没有交互式材料/晶面选择向导。
+
+第一次使用可以先构建自己的表面：
+
+1. 在项目根目录创建 `inputs/`，放入自己的三维块体结构，命名为 `my_bulk.cif`。
+   材料、晶相和晶格由文件内容决定。
+2. 执行 `cp tasks/slab.yaml tasks/my_surface.yaml`，将新文件改为：
+
+```yaml
+method: slab
+mlip: none                    # 先生成几何，不需要 MLIP，也不运行 GPU
+bulk: ../inputs/my_bulk.cif    # 相对于 tasks/my_surface.yaml
+facet: "110"                  # 目标晶面；例如改为 "111"、"100"、"101"
+miller_basis: conventional    # 明确按常规标准晶胞解释晶面指数
+min_slab_size: 12              # slab 最小厚度，Å
+min_vacuum_size: 18            # 最小真空厚度，Å
+repeat_xy: [2, 2]              # 面内扩胞
+fixed_fraction: 0.5            # 固定底部一半厚度范围内的原子
+output: ../runs/my_surface     # 项目根目录的 runs/my_surface
+```
+
+3. 在项目根目录执行：
+
+```bash
+./genkai check tasks/my_surface.yaml
+./genkai run tasks/my_surface.yaml
+```
+
+主结构为 `runs/my_surface/slab.extxyz`，另有 `slab.vasp`；生成的是未弛豫几何。
+想在它上面加分子，就修改 `tasks/adsorbate.yaml` 的 `surface`、`molecule` 和 `site_symbols`；
+想做氧空位、团簇、SAM 或非晶覆盖层，就选相应任务文件。
+用 `./genkai methods` 看方法，`./genkai methods slab` 看某个方法的全部参数，
+`./genkai template slab -o tasks/another_surface.yaml` 生成新的中文注释模板。
+
+MLIP 计算只需在任务里选择已配置的 `mlip: uma`、`mace` 或 `default`；
+GPU 服务器上须把运行命令放入所在集群的 Slurm 脚本，由 `sbatch`/`srun` 启动。
+安装脚本生成配置和任务，不会自动提交真实计算或生成特定集群的 Slurm 资源设置。
+
+其他检查与能量筛选示例：
+
 ```bash
 ./genkai doctor                             # 检查 MLIP 配置，不加载模型
 ./genkai methods                            # 可用的方法
