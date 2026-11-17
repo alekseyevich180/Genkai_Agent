@@ -77,5 +77,25 @@ has been reproduced. Selecting among experimental procedures remains a review st
 
 `genkai-workflow init RUN --relations RELATIONS --conditions TABLE` supports
 offline replay. `surface run` forwards its extracted condition CSV automatically.
-Neither entrypoint automatically executes structure generation or scientific
-calculations.
+Both default to `--modeling-mode prepare`, retaining the existing prepared
+structure placeholder. With `--modeling-mode structure-only`, they instead call
+the existing `genkai.modeling.surface.executor.execute_surface_plan` after planning.
+Python callers pass `modeling_mode="structure-only"` and optionally a
+`SurfaceExecutionOverrides` instance as `modeling_overrides` to either workflow API.
+Overrides in prepare mode and unknown modes are rejected before extraction.
+
+A successful structure-only run links `paper -> extraction -> modeling-plan ->
+structure-set` in the manifest. The structure-set references the actual extxyz
+file and its hash, keeps the modeling plan as its parent, and records the existing
+executor's report, selected/skipped tasks and resolved parameters. Its execution
+state is `succeeded`, evidence level is `heuristic`, calculator is `none`, and
+`scientific_calculation_started` is false. `initialize_surface_paper_run` additionally
+returns `structures_extxyz` and `execution_report` paths. It still invokes paper
+extraction; structure-only controls modeling, not the extraction provider.
+
+Missing execution inputs raise `SurfaceExecutionBlocked` (CLI exit 2), retaining
+the extraction and modeling-plan artifacts. No empty structure-set is published
+as a successful result. Resume with `surface execute --run-root RUN` and reviewed
+inputs. Runtime execution failures retain the executor's failed stage and do not
+fall back to a prepared placeholder. The executor currently supports slab and
+adsorbate generation; other task types are explicitly reported as skipped.

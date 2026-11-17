@@ -4,11 +4,98 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any, Callable
 
 import click
+from click.core import ParameterSource
 
 from genkai.mlip.protocol import RunMode
 from genkai.workflow.store import load_manifest
+
+
+def _surface_execution_options(command):
+    """One set of reviewed-input options for init, surface run and execute."""
+    options = [
+        click.option("--surface", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Reviewed slab file; skips slab generation."),
+        click.option("--bulk", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Local bulk crystal used to cut the slab."),
+        click.option("--surface-formula", help="Bulk formula for the Materials Project route (overrides the plan)."),
+        click.option("--surface-facet", help="Confirmed exposed facet in the conventional cell, e.g. (110)."),
+        click.option("--use-facet-registry", is_flag=True, help="Accept the reviewed stable-facet registry when the paper gives no exposed facet."),
+        click.option("--allow-materials-project", is_flag=True, help="Allow downloading the bulk from Materials Project (network, MP_API_KEY)."),
+        click.option("--molecule", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Adsorbate structure file."),
+        click.option("--molecule-name", help="Built-in gas molecule, e.g. NO2, NH3, H2S, CO, H2, acetone, ethanol."),
+        click.option("--coverage-counts", help="Comma-separated adsorbate counts, e.g. 1,2."),
+        click.option("--site-symbols", help="Comma-separated adsorption-site elements, e.g. Sn."),
+        click.option("--patterns", help="Comma-separated coverage patterns (uniform, clustered, stripe, island, random)."),
+        click.option("--random-repeats", type=int, help="Structures per coverage for the random pattern."),
+        click.option("--document-id", help="Plan document to execute when the plan has several."),
+        click.option("--tasks", help="Comma-separated plan tasks to execute (default: all executable)."),
+        click.option("--seed", type=int, default=42, show_default=True),
+    ]
+    for option in reversed(options):
+        command = option(command)
+    return command
+
+
+def _surface_overrides(options: dict[str, Any]):
+    from genkai.modeling.surface.executor import SurfaceExecutionOverrides
+
+    values = dict(options)
+    try:
+        values["coverage_counts"] = tuple(
+            int(item) for item in _split_csv(values["coverage_counts"]) or ()
+        ) or None
+    except ValueError as exc:
+        raise click.BadParameter("use integers such as 1,2", param_hint="--coverage-counts") from exc
+    for key in ("site_symbols", "patterns", "tasks"):
+        values[key] = _split_csv(values[key])
+    return SurfaceExecutionOverrides(**values)
+
+
+def _modeling_overrides(modeling_mode: str, options: dict[str, Any]):
+    if modeling_mode == "prepare":
+        context = click.get_current_context()
+        if any(
+            context.get_parameter_source(key) not in (None, ParameterSource.DEFAULT)
+            for key in options
+        ):
+            raise click.UsageError("Modeling input options require --modeling-mode structure-only.")
+        return None
+    return _surface_overrides(options)
+
+
+def _with_surface_errors(
+    operation: Callable[[], Any], run_root: Path, *, enabled: bool = True,
+):
+    if not enabled:
+        return operation()
+    from genkai.modeling.surface.executor import SurfaceExecutionBlocked
+
+    try:
+        return operation()
+    except SurfaceExecutionBlocked as exc:
+        click.echo("Blocked: these inputs must be supplied or confirmed:", err=True)
+        for key, reason in exc.missing.items():
+            click.echo(f"  - {key}: {reason}", err=True)
+        if (run_root / "modeling" / "plan.json").is_file():
+            click.echo(f"Plan retained: {run_root / 'modeling' / 'plan.json'}", err=True)
+            click.echo("Resume with `genkai-workflow surface execute --run-root RUN` and reviewed inputs.", err=True)
+        raise click.exceptions.Exit(2) from exc
+
+
+def _print_structures(run_root: Path) -> None:
+    manifest = load_manifest(run_root)
+    artifact = next(
+        item for item in reversed(manifest.artifacts) if item.artifact_type == "structure-set"
+    )
+    click.echo(f"structures: {run_root / artifact.path}")
+    click.echo(f"report: {run_root / artifact.metadata['execution_report']}")
+    click.echo(
+        f"frames: {artifact.metadata['structure_count']} {artifact.metadata['roles']} "
+        f"validation={artifact.validation_status.value}"
+    )
+    for task, reason in artifact.metadata.get("skipped_tasks", {}).items():
+        click.echo(f"Skipped {task}: {reason}", err=True)
 
 
 def _print_report(report) -> None:
@@ -34,6 +121,8 @@ def main() -> None:
 @click.option("--base-model-uri")
 @click.option("--base-model-version")
 @click.option("--base-model-sha256")
+@click.option("--modeling-mode", type=click.Choice(["prepare", "structure-only"]), default="prepare", show_default=True)
+@_surface_execution_options
 def init_command(
     run_root: Path,
     relations: Path,
@@ -42,21 +131,33 @@ def init_command(
     base_model_uri: str | None,
     base_model_version: str | None,
     base_model_sha256: str | None,
+    modeling_mode: str,
+    **execution_options,
 ) -> None:
-    """Initialize an offline run from saved extraction output."""
+    """Initialize saved extraction; optionally generate reviewed structures offline."""
+
+    overrides = _modeling_overrides(modeling_mode, execution_options)
 
     from genkai.workflows.paper_to_mlip import initialize_paper_to_mlip_run
 
-    initialize_paper_to_mlip_run(
+    _with_surface_errors(
+        lambda: initialize_paper_to_mlip_run(
+            run_root,
+            relations,
+            conditions_csv=conditions,
+            modeling_mode=modeling_mode,
+            modeling_overrides=overrides,
+            mock_labels=mock_labels,
+            base_model_uri=base_model_uri,
+            base_model_version=base_model_version,
+            base_model_sha256=base_model_sha256,
+        ),
         run_root,
-        relations,
-        conditions_csv=conditions,
-        mock_labels=mock_labels,
-        base_model_uri=base_model_uri,
-        base_model_version=base_model_version,
-        base_model_sha256=base_model_sha256,
+        enabled=modeling_mode == "structure-only",
     )
     click.echo(str(run_root / "manifest.json"))
+    if modeling_mode == "structure-only":
+        _print_structures(run_root)
 
 
 @main.command("inspect")
@@ -147,6 +248,8 @@ def surface_ingest(input_pdf: Path, output_dir: Path) -> None:
 @click.option("--model")
 @click.option("--save-raw", is_flag=True)
 @click.option("--collect-experience", is_flag=True)
+@click.option("--modeling-mode", type=click.Choice(["prepare", "structure-only"]), default="prepare", show_default=True)
+@_surface_execution_options
 def surface_run(
     input_source: Path,
     run_root: Path,
@@ -154,21 +257,34 @@ def surface_run(
     model: str | None,
     save_raw: bool,
     collect_experience: bool,
+    modeling_mode: str,
+    **execution_options,
 ) -> None:
-    """Run literature extraction and initialize the artifact workflow."""
+    """Extract PDF/JSON paper text, then prepare or execute a modeling plan."""
+
+    overrides = _modeling_overrides(modeling_mode, execution_options)
 
     from genkai.workflows.surface_paper import initialize_surface_paper_run
 
-    outputs = initialize_surface_paper_run(
-        input_source,
+    outputs = _with_surface_errors(
+        lambda: initialize_surface_paper_run(
+            input_source,
+            run_root,
+            input_format=input_format,  # type: ignore[arg-type]
+            model=model,
+            save_raw=save_raw,
+            collect_experience_output=collect_experience,
+            modeling_mode=modeling_mode,
+            modeling_overrides=overrides,
+        ),
         run_root,
-        input_format=input_format,  # type: ignore[arg-type]
-        model=model,
-        save_raw=save_raw,
-        collect_experience_output=collect_experience,
+        enabled=modeling_mode == "structure-only",
     )
-    for path in outputs.values():
-        click.echo(path)
+    for key, path in outputs.items():
+        if key not in ("structures_extxyz", "execution_report"):
+            click.echo(path)
+    if modeling_mode == "structure-only":
+        _print_structures(run_root)
 
 
 def _split_csv(value: str | None) -> tuple[str, ...] | None:
@@ -179,46 +295,14 @@ def _split_csv(value: str | None) -> tuple[str, ...] | None:
 
 @surface_group.command("execute")
 @click.option("--run-root", required=True, type=click.Path(exists=True, file_okay=False, path_type=Path))
-@click.option("--surface", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Reviewed slab file; skips slab generation.")
-@click.option("--bulk", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Local bulk crystal used to cut the slab.")
-@click.option("--surface-formula", help="Bulk formula for the Materials Project route (overrides the plan).")
-@click.option("--surface-facet", help="Confirmed exposed facet in the conventional cell, e.g. (110).")
-@click.option("--use-facet-registry", is_flag=True, help="Accept the reviewed stable-facet registry when the paper gives no exposed facet.")
-@click.option("--allow-materials-project", is_flag=True, help="Allow downloading the bulk from Materials Project (network, MP_API_KEY).")
-@click.option("--molecule", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Adsorbate structure file.")
-@click.option("--molecule-name", help="Built-in gas molecule, e.g. NO2, NH3, H2S, CO, H2, acetone, ethanol.")
-@click.option("--coverage-counts", help="Comma-separated adsorbate counts, e.g. 1,2.")
-@click.option("--site-symbols", help="Comma-separated adsorption-site elements, e.g. Sn.")
-@click.option("--patterns", help="Comma-separated coverage patterns (uniform, clustered, stripe, island, random).")
-@click.option("--random-repeats", type=int, help="Structures per coverage for the random pattern.")
-@click.option("--document-id", help="Plan document to execute when the plan has several.")
-@click.option("--tasks", help="Comma-separated plan tasks to execute (default: all executable).")
-@click.option("--seed", type=int, default=42, show_default=True)
+@_surface_execution_options
 def surface_execute(
     run_root: Path,
-    surface: Path | None,
-    bulk: Path | None,
-    surface_formula: str | None,
-    surface_facet: str | None,
-    use_facet_registry: bool,
-    allow_materials_project: bool,
-    molecule: Path | None,
-    molecule_name: str | None,
-    coverage_counts: str | None,
-    site_symbols: str | None,
-    patterns: str | None,
-    random_repeats: int | None,
-    document_id: str | None,
-    tasks: str | None,
-    seed: int,
+    **execution_options,
 ) -> None:
     """Generate structures for a run's modeling plan (structure-only, no energy model)."""
 
-    from genkai.modeling.surface.executor import (
-        SurfaceExecutionBlocked,
-        SurfaceExecutionOverrides,
-        execute_surface_plan,
-    )
+    from genkai.modeling.surface.executor import execute_surface_plan
 
     manifest = load_manifest(run_root)
     plan = next(
@@ -227,40 +311,9 @@ def surface_execute(
     )
     if plan is None:
         raise click.ClickException("The run has no modeling-plan artifact; run `genkai-workflow init` first.")
-    try:
-        counts = tuple(int(item) for item in _split_csv(coverage_counts) or ())
-    except ValueError as exc:
-        raise click.BadParameter("use integers such as 1,2", param_hint="--coverage-counts") from exc
-    overrides = SurfaceExecutionOverrides(
-        surface=surface,
-        bulk=bulk,
-        surface_formula=surface_formula,
-        surface_facet=surface_facet,
-        use_facet_registry=use_facet_registry,
-        allow_materials_project=allow_materials_project,
-        molecule=molecule,
-        molecule_name=molecule_name,
-        coverage_counts=counts or None,
-        site_symbols=_split_csv(site_symbols),
-        patterns=_split_csv(patterns),
-        random_repeats=random_repeats,
-        seed=seed,
-        document_id=document_id,
-        tasks=_split_csv(tasks),
-    )
-    try:
-        artifact = execute_surface_plan(plan, run_root, overrides)
-    except SurfaceExecutionBlocked as exc:
-        click.echo("Blocked: these inputs must be supplied or confirmed:", err=True)
-        for key, reason in exc.missing.items():
-            click.echo(f"  - {key}: {reason}", err=True)
-        raise SystemExit(2) from exc
-    click.echo(f"structures: {run_root / artifact.path}")
-    click.echo(f"report: {run_root / artifact.metadata['execution_report']}")
-    click.echo(
-        f"frames: {artifact.metadata['structure_count']} {artifact.metadata['roles']} "
-        f"validation={artifact.validation_status.value}"
-    )
+    overrides = _surface_overrides(execution_options)
+    _with_surface_errors(lambda: execute_surface_plan(plan, run_root, overrides), run_root)
+    _print_structures(run_root)
 
 
 @surface_group.command("conditions")

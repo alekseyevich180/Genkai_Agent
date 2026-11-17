@@ -37,7 +37,9 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
     `surface/core/records.py` 负责 artifact、PToModel 与 compact bundle 共用的历史格式读取。
     `surface run` 自动传递条件 CSV，`genkai-workflow init --conditions` 支持离线重放；
     条件表在运行目录保存快照与哈希，多行冲突和文档 ID 无法匹配的情况进入 checklist。
-    两个入口仍为 prepare-only，未接入七类方法的统一自动调度。
+    两个入口默认 prepare；显式 `--modeling-mode structure-only` 可在同一命令接入现有执行器，
+    生成 slab 和吸附构型。缺参保留计划，通过 `surface execute` 续跑；未支持任务报告 skipped。
+    七类方法的统一自动调度尚未完成。
   - `modeling/`：PToModel、checklist、schema 与表面建模算法。
     `modeling/surface/` 包括切面（`slab.py`）、吸附、空位、团簇、structure-only
     执行器（`executor.py`），以及 2026-11-16 新增的 SAM（`sam.py`）、ALD 非晶覆盖层
@@ -189,8 +191,8 @@ python scripts/check_harness.py full
 
 表面建模冒烟测试（2026-11-16 起）：用仓库中已有的结构，通过真实入口逐一调用全部建模方式
 （切面、空位、吸附、团簇放置与搜索、执行器、SAM、SAM 能量搜索、ALD、纯非晶表面、非晶能量筛选、
-`genkai-surface` 任务文件入口，共 31 个用例），检查结构能否生成、可读、无原子重叠、有真空层和固定原子。
-默认 `local` 档只用模拟计算器（`calculator=none`，能量无物理意义），本机约 5 分钟，当前基线为
+`genkai-surface` 任务文件入口、论文计划单命令生成，共 32 个用例），检查结构能否生成、可读、无原子重叠、有真空层和固定原子。
+默认 `local` 档只用模拟计算器（`calculator=none`，能量无物理意义），本机约 5 分钟，11 月 16 日的 31 用例基线为
 PASS 29 / WARN 1 / FAIL 0 / SKIP 1（Materials Project 用例）。`--profile server --uma-task <任务头>` 改用 UMA，尚未
 验证。用 `--only`/`--skip` 时，未选中的用例会在输出和报告的 `selection` 中列出。电脑休眠会让
 单个用例超时，结果需重跑核对。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
@@ -201,7 +203,11 @@ python scripts/run_modeling_smoke.py --list
 python scripts/run_modeling_smoke.py                      # 报告写入 <输出目录>/smoke_report.json
 python scripts/run_modeling_smoke.py --only sam,ald       # 按方法名或用例前缀筛选
 python scripts/run_modeling_smoke.py --only amorphous,ald,sam_on_amorphous   # 只测非晶相关（12 个用例）
+python scripts/run_modeling_smoke.py --only surface_execute,paper_workflow # 直接调用库 CLI，不执行 Skill 脚本（3 个用例）
 ```
+
+2026-11-17 新增 `paper_workflow`，上述 3 用例子集实测 PASS 3 / WARN 0 / FAIL 0 / SKIP 0；
+其余 29 个未选中，不能合并旧基线宣称 32 用例全部通过。完整冒烟包含 Skill 入口，执行前仍须遵守用户的 Skill 授权规则。
 
 各子集的命令和基线速查见 `work_logs/2026-11-16.md` 的“测试脚本控制命令（速查）”。
 
@@ -243,7 +249,8 @@ Windows + Python 3.11）：
 2026-11-17 已用本地 Python 3.12.11 创建项目 `.venv`，从缓存安装 pytest；
 doctor 和 quick 通过。完整项目依赖的离线安装因缺少缓存失败，此 `.venv` 尚不能
 用于完整运行：ci 因缺少 google-adk 失败，package/full 在收集阶段受缺少依赖阻塞。
-本次论文输入修复的功能回归使用原有 Python 3.11.9 环境；具体命令和边界见
+本次论文输入与 structure-only workflow 功能回归使用原有 Python 3.11.9 环境，
+设置 `MPLBACKEND=Agg` 后 115 passed / 3 deselected；排除已安装 CLI 和 Skill 入口测试。具体命令和边界见
 `work_logs/2026-11-17.md`。不得把部分初始化的 `.venv` 当成已经完成安装的环境。
 
 前端开发与构建：

@@ -290,6 +290,15 @@ def executor_case(blocked: bool) -> Callable[[Context, Path], list[list[str]]]:
     return build
 
 
+def paper_workflow_case(ctx: Context, out: Path) -> list[list[str]]:
+    return [py(
+        "-m", "genkai.cli", "init", out / "run",
+        "--relations", path("gas_relations"), "--modeling-mode", "structure-only",
+        "--bulk", path("sno2_bulk"), "--surface-facet", "(110)",
+        "--molecule-name", "NO2", "--coverage-counts", "1,2", "--patterns", "uniform",
+    )]
+
+
 def sam_case(substrate: list[str], molecule: str | None, extra: list[str]) -> Callable[[Context, Path], list[list[str]]]:
     def build(ctx: Context, out: Path) -> list[list[str]]:
         molecule_path = path(molecule) if molecule else str(out / "inputs" / "CH3SH.xyz")
@@ -412,6 +421,9 @@ CASES: list[Case] = [
          ("run/stages/03_surface_structures/structures.extxyz",), contains=("N",), min_structures=3, fixed=True),
     Case("executor_blocks_unreviewed_plan", "surface_execute", "plan without reviewed inputs must be blocked (exit 2)",
          ("gas_relations",), executor_case(blocked=True), expect_exit=2, expect_message="surface_facet"),
+    Case("paper_workflow_sno2_no2", "paper_workflow", "saved extraction -> plan -> slab + NO2 in one command (offline)",
+         ("gas_relations", "sno2_bulk"), paper_workflow_case,
+         ("run/stages/03_surface_structures/structures.extxyz",), contains=("N",), min_structures=3, fixed=True),
     Case("sam_sno2_butanoic_monodentate", "sam", "butanoic acid, monodentate, counts 1,2 on the most stable SnO2 facet",
          ("sno2_bulk", "butanoic_acid"),
          sam_case(by_path("sno2_bulk"), "butanoic_acid", ["--binding-mode", "monodentate", "--counts", "1,2"]),

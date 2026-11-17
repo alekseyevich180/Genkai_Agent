@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import shutil
 from pathlib import Path
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
 from genkai.compute.vasp import prepare_vasp_inputs
 from genkai.contracts.artifacts import (
@@ -28,8 +28,22 @@ from genkai.workflow.graph import WorkflowGraph, validate_workflow
 from genkai.workflow.stage import ArtifactRequirement, StageSpec
 from genkai.workflow.store import load_manifest, save_manifest
 
+if TYPE_CHECKING:
+    from genkai.modeling.surface.executor import SurfaceExecutionOverrides
+
 
 Target = Literal["mace", "deepmd", "uma"]
+ModelingMode = Literal["prepare", "structure-only"]
+
+
+def _validate_modeling_request(
+    modeling_mode: str, modeling_overrides: SurfaceExecutionOverrides | None,
+) -> None:
+    """Reject invalid/ignored requests before extraction or file writes."""
+    if modeling_mode not in ("prepare", "structure-only"):
+        raise ValueError("modeling_mode must be 'prepare' or 'structure-only'")
+    if modeling_mode == "prepare" and modeling_overrides is not None:
+        raise ValueError("modeling_overrides require modeling_mode='structure-only'")
 
 
 def _requirement(value: str) -> ArtifactRequirement:
@@ -125,11 +139,19 @@ def initialize_paper_to_mlip_run(
     relations: str | Path,
     *,
     conditions_csv: str | Path | None = None,
+    modeling_mode: ModelingMode = "prepare",
+    modeling_overrides: SurfaceExecutionOverrides | None = None,
     mock_labels: str | Path | None = None,
     base_model_uri: str | None = None,
     base_model_version: str | None = None,
     base_model_sha256: str | None = None,
 ) -> None:
+    """Initialize a saved extraction; optionally generate reviewed geometry.
+
+    A blocked structure-only request leaves extraction and plan artifacts ready
+    for ``surface execute`` to resume. It does not create an empty structure set.
+    """
+    _validate_modeling_request(modeling_mode, modeling_overrides)
     from genkai.literature.surface import run_surface_extraction
     from genkai.modeling.ptomodel import build_modeling_plan
     from genkai.modeling.surface import build_surface_candidates
@@ -137,7 +159,12 @@ def initialize_paper_to_mlip_run(
     root = Path(run_root)
     extraction = run_surface_extraction(relations, root, conditions_csv=conditions_csv)
     plan = build_modeling_plan(extraction, root)
-    structures = build_surface_candidates(plan, root, mode="dry-run")
+    if modeling_mode == "structure-only":
+        from genkai.modeling.surface.executor import execute_surface_plan
+
+        structures = execute_surface_plan(plan, root, modeling_overrides)
+    else:
+        structures = build_surface_candidates(plan, root, mode="dry-run")
     if mock_labels is not None:
         calculation_input = prepare_vasp_inputs(structures, root)
         result_path = root / "stages" / "04_dft" / "mock-results.extxyz"

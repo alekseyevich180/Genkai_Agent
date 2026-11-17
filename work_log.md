@@ -4,6 +4,9 @@
 
 ## 当前恢复入口
 
+- 2026-11-17：论文输入修复后，`init` / `surface run --modeling-mode structure-only` 已接入
+  现有 slab + adsorbate 执行器，缺参可用 `surface execute` 续跑；其余建模方法仍待接入。
+  使用示例见 [README](README.md)，验证结果见 [2026-11-17](work_logs/2026-11-17.md)。
 - 2026-11-13：`feat/genkai-evolution` 已并入 `main`，形成检查点 tag
   `sage-checkpoint-0`，详见 [2026-11-13](work_logs/2026-11-13.md)。`main` 是唯一开发
   分支。
@@ -56,7 +59,7 @@
 - [2026-11-12](work_logs/2026-11-12.md)
 - [2026-11-13](work_logs/2026-11-13.md)
 - [2026-11-16](work_logs/2026-11-16.md)
-- [2026-11-17](work_logs/2026-11-17.md)：修复论文关系 JSONL 与条件 CSV 到 PToModel 的传递；验证结果及环境边界。
+- [2026-11-17](work_logs/2026-11-17.md)：修复论文关系 JSONL 与条件 CSV 传递；接通论文计划到 structure-only 结构生成的单命令 workflow，含验证结果和续跑入口。
 
 ## 相关长期文档
 

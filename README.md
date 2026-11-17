@@ -134,9 +134,47 @@ python -m genkai.cli init runs/paper_replay \
 SHA-256; later planning reads that snapshot. Condition rows are matched by document
 ID, including the extractor's `<document_id>_<paragraph_number>` indices. Conflicting
 values and unmatched documents are listed in `modeling/checklist.json` for review.
-Both `init` and `surface run` still prepare a plan with zero generated structures;
-structure generation requires the separate `surface execute` command and resolved
-inputs. See [artifact contracts](docs/artifact-contracts.md) for the saved formats.
+Both `init` and `surface run` default to `--modeling-mode prepare`, producing a plan
+and a placeholder with zero structures. Add `--modeling-mode structure-only` and
+reviewed inputs to generate geometry in the same command. Both use the existing
+executor, which currently supports slab generation and adsorbate placement.
+See [artifact contracts](docs/artifact-contracts.md) for the saved formats.
+
+This offline example replays a repository extraction and generates a SnO2(110)
+slab plus NO2 configurations with one and two molecules. The facet and molecule
+counts are explicit example choices, not a claim to reproduce the paper:
+
+```bash
+python -m genkai.cli init runs/paper_geometry \
+  --relations tests/fixtures/surface_execution/sno2_sam_gas_relations.jsonl \
+  --modeling-mode structure-only \
+  --bulk tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif \
+  --surface-facet 110 --molecule-name NO2 --coverage-counts 1,2 --patterns uniform
+```
+
+`surface run PAPER --run-root RUN` accepts the same modeling options after paper
+extraction; it still uses the configured LLM, even in `structure-only` mode. Use
+`init --relations ... [--conditions ...]` for offline replay. Geometry has
+`calculator=none`, heuristic evidence, and no energy evaluation or relaxation.
+Outputs include `stages/03_surface_structures/structures.extxyz`, an execution
+report, and their references in `manifest.json`. Unsupported tasks are reported
+as skipped; vacancy, cluster, SAM, ALD and amorphous-slab jobs remain available
+through the separate [job-file interface](docs/surface-modeling-user-guide.md).
+
+If required inputs are missing, the command exits with code 2 and retains the
+extraction and plan. Supply the missing inputs through `surface execute` without
+re-extracting the paper. For example, to generate only the slab:
+
+```bash
+python -m genkai.cli surface execute --run-root runs/paper_geometry \
+  --bulk /path/to/reviewed_bulk.cif --surface-facet 110 --tasks slab_generation
+```
+
+Modeling input options require `--modeling-mode structure-only` on `init` and
+`surface run`; passing them in prepare mode is an error rather than silently
+ignoring them. Use `--document-id` to select a document when the plan contains
+more than one. Condition conflicts and experimental sample selection still
+require review; structure generation does not resolve those scientific choices.
 
 Important paperread outputs:
 

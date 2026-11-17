@@ -34,6 +34,7 @@ def test_every_case_uses_existing_repository_structures_and_entry_points() -> No
         "surface_cluster_builder",
         "cluster_search",
         "surface_execute",
+        "paper_workflow",
         "sam",
         "ald_overlayer",
         "amorphous_slab",
@@ -64,3 +65,16 @@ def test_one_case_runs_end_to_end_and_gated_cases_are_skipped(tmp_path) -> None:
     assert "ald_full_asno2_on_sno2" in selection["not_selected"]
     frame = report["cases"][0]["structures"]["frames"][0]
     assert frame["n_fixed"] > 0 and frame["vacuum_gap_A"] >= 5.0
+
+
+def test_paper_workflow_runs_in_one_command_without_skill_entrypoints(tmp_path) -> None:
+    smoke = _load()
+    case = next(case for case in smoke.CASES if case.method == "paper_workflow")
+    ctx = smoke.Context(profile="local", device="cpu", uma_model="uma-s-1p2", enabled=set())
+    commands = case.commands(ctx, tmp_path)
+    assert len(commands) == 1 and commands[0][1:4] == ["-m", "genkai.cli", "init"]
+    assert smoke.main(["--only", "paper_workflow", "--output-dir", str(tmp_path)]) == 0
+    report = json.loads((tmp_path / "smoke_report.json").read_text(encoding="utf-8"))
+    assert [case["status"] for case in report["cases"]] == ["PASS"]
+    assert report["scientific_calculation"] is False
+    assert report["selection"]["selected"] == 1
