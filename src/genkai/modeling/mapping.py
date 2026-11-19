@@ -519,6 +519,170 @@ def _merge_condition_rows(
     )
 
 
+# ---------------------------------------------------------------------------
+# Surface-modification cues: molecular SAM, ALD overlayer, amorphous surface
+# ---------------------------------------------------------------------------
+
+# Fields that describe how the surface itself is modified. Adsorbate, product and
+# reaction fields are excluded so a carboxylic-acid product is not read as a SAM.
+_MODIFICATION_FIELDS = (
+    "surface_terminations",
+    "modifiers",
+    "sam_molecules",
+    "overlayers",
+    "surfaces",
+    "materials",
+    "material_parameters",
+    "slab_models",
+    "coverage",
+    "modeling_keywords",
+)
+_MODIFICATION_TABLE_COLUMNS = (
+    "Surface Termination",
+    "Dopant/Modifier",
+    "Surface/Support",
+    "Material",
+    "Coverage",
+    "Modeling Keywords",
+)
+_SAM_PATTERNS = (
+    re.compile(r"\bSAMs?\b"),  # case-sensitive, so "same" or "sample" never match
+    re.compile(r"self[-\s]?assembled", re.IGNORECASE),
+    re.compile(r"phosphon(?:ic|ate)|carboxylic|carboxylate|\bthiol(?:ate)?s?\b|organosilane|\bsilanes?\b", re.IGNORECASE),
+)
+_ANCHOR_KIND_CUES = (
+    ("phosphonic", re.compile(r"phosphon", re.IGNORECASE)),
+    ("carboxylic", re.compile(r"carboxyl", re.IGNORECASE)),
+    ("thiol", re.compile(r"thiol", re.IGNORECASE)),
+)
+_BINDING_MODE_CUE = re.compile(r"\b(monodentate|bidentate|tridentate)\b", re.IGNORECASE)
+_ALD_STRONG_CUE = (re.compile(r"\bALD\b"), re.compile(r"atomic[-\s]layer[-\s]deposit", re.IGNORECASE))
+_OVERLAYER_CUE = re.compile(r"over-?layers?|coatings?|coated|core[-\s]?shell|\bshells?\b|conformal", re.IGNORECASE)
+# Device fabrication wording, not a deposited oxide overlayer.
+_FABRICATION_COATING = re.compile(r"(?:drop|spin|dip|spray|screen|brush)[-\s]?coat|electrode|substrate", re.IGNORECASE)
+_AMORPHOUS_CUE = (re.compile(r"amorphous", re.IGNORECASE), re.compile(r"(?<![A-Za-z])a-(?=[A-Z][a-z]?\d*O)"))
+_PARTIAL_COVERAGE_CUE = re.compile(
+    r"island|partial|discontinuous|sub-?monolayer|incomplete|decorat|nanoparticles?|clusters?", re.IGNORECASE
+)
+_FULL_COVERAGE_CUE = re.compile(
+    r"conformal|continuous|complete|full(?:y)?[-\s]cover|core[-\s]?shell|\bshells?\b|\bfilms?\b|coat(?:ed|ing)|uniform (?:layer|coating)",
+    re.IGNORECASE,
+)
+# A stated ALD film up to this thickness is modeled as stated; thicker films need a modeling choice.
+MAX_AUTO_FILM_THICKNESS_A = 20.0
+_THICKNESS_CUE = re.compile(r"(\d+(?:\.\d+)?)\s*(nm|Å|angstroms?)\b", re.IGNORECASE)
+_CYCLES_CUE = re.compile(r"(\d+)\s*(?:ALD\s*)?cycles?\b", re.IGNORECASE)
+
+
+def _modification_terms(extraction: dict[str, Any], table_row: dict[str, str] | None) -> list[tuple[str, str]]:
+    """(field, term) pairs from the fields that describe surface modifications."""
+    pairs: list[tuple[str, str]] = []
+    for field in _MODIFICATION_FIELDS:
+        pairs.extend((field, term) for term in _flatten_strings(extraction.get(field)))
+    for column in _MODIFICATION_TABLE_COLUMNS:
+        pairs.extend((column, term) for term in _flatten_strings((table_row or {}).get(column)))
+    unique: list[tuple[str, str]] = []
+    for pair in pairs:
+        if pair not in unique:
+            unique.append(pair)
+    return unique
+
+
+def _is_sam_term(term: str) -> bool:
+    return any(pattern.search(term) for pattern in _SAM_PATTERNS)
+
+
+def _is_ald_term(term: str) -> bool:
+    if any(pattern.search(term) for pattern in _ALD_STRONG_CUE):
+        return True
+    # "Al2O3 coating" or "TiO2 shell" counts; "drop-coated film" or "Au-coated electrode" does not.
+    return bool(
+        _OVERLAYER_CUE.search(term)
+        and not _FABRICATION_COATING.search(term)
+        and any("O" in extract_element_symbols(token) for token in _compound_formula_tokens(term))
+    )
+
+
+def _is_amorphous_term(term: str) -> bool:
+    return any(pattern.search(term) for pattern in _AMORPHOUS_CUE)
+
+
+def _single_hint(values: list[tuple[str, str, str]]) -> dict[str, Any] | None:
+    """One unambiguous (value, field, term) hint; None when absent or contradictory."""
+    distinct = {value for value, _, _ in values}
+    if len(distinct) != 1:
+        return None
+    value, field, term = values[0]
+    return {"value": value, "source_field": field, "source_term": term}
+
+
+def _thickness_hint(terms: list[tuple[str, str]]) -> dict[str, Any] | None:
+    found: list[tuple[str, str, str]] = []
+    for field, term in terms:
+        for number, unit in _THICKNESS_CUE.findall(term):
+            angstrom = float(number) * (10.0 if unit.lower() == "nm" else 1.0)
+            found.append((f"{angstrom:g}", field, term))
+    hint = _single_hint(found)
+    if hint:
+        hint["value"] = float(hint["value"])
+    return hint
+
+
+def _surface_modification_cues(extraction: dict[str, Any], table_row: dict[str, str] | None) -> dict[str, Any]:
+    """SAM, ALD-overlayer and amorphous-surface evidence with the parameters the text states."""
+    terms = _modification_terms(extraction, table_row)
+    sam = [(field, term) for field, term in terms if _is_sam_term(term)]
+    ald = [(field, term) for field, term in terms if _is_ald_term(term)]
+    amorphous = [(field, term) for field, term in terms if _is_amorphous_term(term)]
+    substrate_formula = _infer_surface_formula(
+        _flatten_strings(extraction.get("surfaces")) + _flatten_strings(extraction.get("materials"))
+    )
+
+    anchor_kinds = [
+        (kind, field, term) for field, term in sam for kind, pattern in _ANCHOR_KIND_CUES if pattern.search(term)
+    ]
+    binding_modes = [
+        (match.group(1).lower(), field, term)
+        for field, term in sam
+        for match in _BINDING_MODE_CUE.finditer(term)
+    ]
+
+    ald_and_amorphous = ald + [pair for pair in amorphous if pair not in ald]
+    overlayer_formulas = list(
+        dict.fromkeys(
+            token
+            for _, term in ald_and_amorphous
+            for token in _compound_formula_tokens(term)
+            if token != substrate_formula
+        )
+    )
+    coverage_modes: list[tuple[str, str, str]] = []
+    for field, term in ald:
+        partial, full = bool(_PARTIAL_COVERAGE_CUE.search(term)), bool(_FULL_COVERAGE_CUE.search(term))
+        if partial != full:
+            coverage_modes.append(("partial" if partial else "full", field, term))
+    cycles = sorted({int(number) for _, term in ald for number in _CYCLES_CUE.findall(term)})
+    amorphous_formulas = list(
+        dict.fromkeys(token for _, term in amorphous for token in _compound_formula_tokens(term))
+    )
+    return {
+        "sam_terms": [term for _, term in sam],
+        "anchor_kind": _single_hint(anchor_kinds),
+        "anchor_kinds_mentioned": sorted({kind for kind, _, _ in anchor_kinds}),
+        "binding_mode": _single_hint(binding_modes),
+        "ald_terms": [term for _, term in ald],
+        "overlayer_formula": overlayer_formulas[0] if len(overlayer_formulas) == 1 else None,
+        "overlayer_formulas_mentioned": overlayer_formulas,
+        "coverage_mode": _single_hint(coverage_modes),
+        "thickness": _thickness_hint(ald),
+        "ald_cycles": cycles,
+        "amorphous_terms": [term for _, term in amorphous],
+        "amorphous_formula": amorphous_formulas[0] if len(amorphous_formulas) == 1 else None,
+        "amorphous_thickness": _thickness_hint(amorphous) if not ald else None,
+        "substrate_formula": substrate_formula,
+    }
+
+
 def _infer_tasks(
     extraction: dict[str, Any],
     table_row: dict[str, str] | None,
@@ -547,15 +711,24 @@ def _infer_tasks(
     }
     cluster_material_classes = {"supported_catalysts", "metals_alloys"}
     # Any crystalline material can be cut into a slab, so slab generation is
-    # never rejected on material-class grounds.
-    material_candidates = ["adsorbate_landscape", "slab_generation"]
+    # never rejected on material-class grounds. SAM, ALD-overlayer and amorphous
+    # tasks are driven by explicit modification evidence, not by material class.
+    material_candidates = [
+        "adsorbate_landscape",
+        "slab_generation",
+        "sam_functionalization",
+        "ald_overlayer",
+        "amorphous_slab",
+    ]
     if vacancy_material_classes.intersection(material_classes):
         material_candidates.insert(0, "vacancy_landscape")
     if cluster_material_classes.intersection(material_classes):
         material_candidates.append("surface_cluster_builder")
+    cues = _surface_modification_cues(extraction, table_row)
 
     recommended = [
-        task
+        # A recommended "surface_functionalization" with molecular SAM evidence is the SAM task.
+        "sam_functionalization" if task == "surface_functionalization" and cues["sam_terms"] else task
         for task in _flatten_strings(extraction.get("recommended_modeling_tasks"))
         if task in SUPPORTED_MODELING_TASKS
     ]
@@ -625,8 +798,16 @@ def _infer_tasks(
         add_task("doped_surface", *dopants)
 
     terminations = _flatten_strings(extraction.get("surface_terminations")) + _flatten_strings((table_row or {}).get("Surface Termination"))
-    if terminations:
-        add_task("surface_functionalization", *terminations)
+    generic_terminations = [term for term in terminations if not _is_sam_term(term)]
+    if generic_terminations:
+        add_task("surface_functionalization", *generic_terminations)
+    if cues["sam_terms"]:
+        add_task("sam_functionalization", *cues["sam_terms"])
+    if cues["ald_terms"]:
+        add_task("ald_overlayer", *cues["ald_terms"])
+    elif cues["amorphous_terms"]:
+        # Amorphous wording without deposition evidence describes the material itself.
+        add_task("amorphous_slab", *cues["amorphous_terms"])
 
     surfaces = (
         _flatten_strings(extraction.get("surfaces"))
@@ -646,6 +827,7 @@ def _infer_tasks(
         "keyword_text": keyword_text,
         "selected_task_evidence": evidence,
         "rejected_recommendations": rejected_recommendations,
+        "surface_modification_cues": cues,
     }
 
 
@@ -668,7 +850,7 @@ def _load_surface_modeling_parameter_schema() -> dict[str, Any]:
 
 
 def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: dict[str, str] | None) -> dict[str, Any]:
-    payload = {
+    payload: dict[str, Any] = {
         "material": _first_nonempty(
             _first_nonempty(*_flatten_strings(extraction.get("materials"))),
             (table_row or {}).get("Material"),
@@ -725,6 +907,31 @@ def _build_task_inputs(task_name: str, extraction: dict[str, Any], table_row: di
                     break
         payload["cluster_atom_count"] = _infer_cluster_atom_count(payload["clusters"])
         payload["cluster_structures"] = _infer_cluster_structures(payload["clusters"])
+    elif task_name in {"sam_functionalization", "ald_overlayer", "amorphous_slab"}:
+        cues = _surface_modification_cues(extraction, table_row)
+        if task_name == "sam_functionalization":
+            payload["sam_terms"] = cues["sam_terms"]
+            # Modifiers count as SAM molecules only when a SAM phrase names them ("PAC10CA ... SAM").
+            payload["sam_molecules"] = _to_list(extraction.get("sam_molecules")) or [
+                name
+                for name in _to_list(extraction.get("modifiers"))
+                if any(name in term for term in cues["sam_terms"])
+            ]
+            payload["anchor_kind_hint"] = cues["anchor_kind"]
+            payload["anchor_kinds_mentioned"] = cues["anchor_kinds_mentioned"]
+            payload["binding_mode_hint"] = cues["binding_mode"]
+            payload["coverage"] = _to_list(extraction.get("coverage")) or _to_list((table_row or {}).get("Coverage"))
+        elif task_name == "ald_overlayer":
+            payload["ald_terms"] = cues["ald_terms"]
+            payload["overlayer_formula"] = cues["overlayer_formula"]
+            payload["overlayer_formulas_mentioned"] = cues["overlayer_formulas_mentioned"]
+            payload["coverage_mode_hint"] = cues["coverage_mode"]
+            payload["thickness_hint"] = cues["thickness"]
+            payload["ald_cycles"] = cues["ald_cycles"]
+        else:
+            payload["amorphous_terms"] = cues["amorphous_terms"]
+            payload["amorphous_formula"] = cues["amorphous_formula"]
+            payload["thickness_hint"] = cues["amorphous_thickness"]
     return payload
 
 
@@ -889,6 +1096,189 @@ def _build_argument_template(
                 reason="Cluster text explicitly mentions crystal-structure keywords.",
                 from_task_inputs=["clusters"],
             )
+
+    if task_name == "sam_functionalization":
+        sam_terms = task_inputs.get("sam_terms") or []
+        first_sam_term = _first_nonempty(*sam_terms)
+        for parameter, hint, reason in (
+            ("anchor_kind", task_inputs.get("anchor_kind_hint"), "The paper names the anchoring group of the SAM molecule."),
+            ("binding_mode", task_inputs.get("binding_mode_hint"), "The paper states how the anchor binds to the surface."),
+        ):
+            if hint:
+                mark(
+                    parameter,
+                    value=hint["value"],
+                    status="auto",
+                    confidence="high",
+                    source_field=hint["source_field"],
+                    source_term=hint["source_term"],
+                    reason=reason,
+                    from_task_inputs=["sam_terms"],
+                )
+        if "binding_mode" not in argument_sources:
+            mark(
+                "binding_mode",
+                value=None,
+                status="needs_manual_decision",
+                confidence="medium",
+                source_field="sam_terms",
+                source_term=first_sam_term,
+                reason=(
+                    "The paper does not state how the anchor binds (phosphonic: monodentate/bidentate/tridentate; "
+                    "carboxylic: monodentate/bidentate; thiol: top/bridge/hollow/fcc/hcp); choose it with --binding-mode."
+                ),
+                from_task_inputs=["sam_terms"],
+            )
+        mark(
+            "molecule",
+            value=None,
+            status="needs_upstream_artifact",
+            confidence="high",
+            source_field="sam_terms",
+            source_term=_first_nonempty(*(task_inputs.get("sam_molecules") or []), first_sam_term),
+            reason="A 3D structure file of the SAM molecule is required; the paper only names it.",
+            from_task_inputs=["sam_terms", "sam_molecules"],
+            depends_on=["sam_molecule_structure_file"],
+        )
+        mark(
+            "counts",
+            value=None,
+            status="needs_manual_decision",
+            confidence="medium",
+            source_field="coverage",
+            source_term=_first_nonempty(*(task_inputs.get("coverage") or [])),
+            reason=(
+                "Integer SAM molecules per cell cannot be derived from qualitative coverage; "
+                "use --sam-counts or --accept-defaults."
+            ),
+            from_task_inputs=["coverage"],
+        )
+    elif task_name == "ald_overlayer":
+        ald_terms = task_inputs.get("ald_terms") or []
+        formula = task_inputs.get("overlayer_formula")
+        mark(
+            "amorphous",
+            value=None,
+            status="needs_upstream_artifact",
+            confidence="high",
+            source_field="ald_terms",
+            source_term=_first_nonempty(*ald_terms),
+            reason=(
+                f"A periodic amorphous bulk cell of the overlayer{' (' + formula + ')' if formula else ''} is required; "
+                "the paper only describes the deposited film."
+            ),
+            from_task_inputs=["ald_terms", "overlayer_formula"],
+            depends_on=["amorphous_bulk_structure_file"],
+        )
+        coverage = task_inputs.get("coverage_mode_hint")
+        if coverage:
+            mark(
+                "coverage",
+                value=coverage["value"],
+                status="auto",
+                confidence="medium",
+                source_field=coverage["source_field"],
+                source_term=coverage["source_term"],
+                reason="The deposition wording distinguishes a continuous film from islands.",
+                from_task_inputs=["ald_terms"],
+            )
+        else:
+            mark(
+                "coverage",
+                value=None,
+                status="needs_manual_decision",
+                confidence="medium",
+                source_field="ald_terms",
+                source_term=_first_nonempty(*ald_terms),
+                reason="The paper does not say whether the overlayer is a continuous film or islands; use --ald-coverage full|partial or --accept-defaults.",
+                from_task_inputs=["ald_terms"],
+            )
+        thickness = task_inputs.get("thickness_hint")
+        if coverage and coverage["value"] == "partial":
+            mark(
+                "thickness",
+                value=None,
+                status="alternative_not_selected",
+                confidence="high",
+                source_field="ald_terms",
+                source_term=coverage["source_term"],
+                reason="Partial coverage is sized by island atoms instead of a film thickness.",
+            )
+            mark(
+                "island_atoms",
+                value=None,
+                status="needs_manual_decision",
+                confidence="medium",
+                source_field="ald_terms",
+                source_term=coverage["source_term"],
+                reason="Island size in atoms is not given by the paper; use --island-atoms or --accept-defaults.",
+            )
+        elif thickness and thickness["value"] <= MAX_AUTO_FILM_THICKNESS_A:
+            mark(
+                "thickness",
+                value=thickness["value"],
+                status="auto",
+                confidence="high",
+                source_field=thickness["source_field"],
+                source_term=thickness["source_term"],
+                reason="The paper states a thin overlayer thickness, modeled as stated (converted to angstrom).",
+                from_task_inputs=["ald_terms"],
+            )
+        else:
+            cycles = task_inputs.get("ald_cycles") or []
+            if thickness:
+                reason = (
+                    f"The paper states a {thickness['value']:g} A film, thicker than the "
+                    f"{MAX_AUTO_FILM_THICKNESS_A:g} A modeled automatically; choose a model thickness with "
+                    "--ald-thickness or --accept-defaults."
+                )
+            else:
+                reason = (
+                    "No film thickness is stated"
+                    + (f" (ALD cycles {cycles} cannot be converted without a growth rate)" if cycles else "")
+                    + "; use --ald-thickness or --accept-defaults."
+                )
+            mark(
+                "thickness",
+                value=None,
+                status="needs_manual_decision",
+                confidence="medium",
+                source_field="ald_terms",
+                source_term=thickness["source_term"] if thickness else _first_nonempty(*ald_terms),
+                reason=reason,
+                from_task_inputs=["ald_terms"],
+            )
+    elif task_name == "amorphous_slab":
+        amorphous_terms = task_inputs.get("amorphous_terms") or []
+        formula = task_inputs.get("amorphous_formula")
+        mark(
+            "amorphous",
+            value=None,
+            status="needs_upstream_artifact",
+            confidence="high",
+            source_field="amorphous_terms",
+            source_term=_first_nonempty(*amorphous_terms),
+            reason=(
+                f"A periodic amorphous bulk cell{' of ' + formula if formula else ''} is required; "
+                "the paper only names the amorphous phase."
+            ),
+            from_task_inputs=["amorphous_terms", "amorphous_formula"],
+            depends_on=["amorphous_bulk_structure_file"],
+        )
+        # A real film thickness (often nanometres) is not the model slab thickness, so a
+        # stated value is reported as context only.
+        thickness = task_inputs.get("thickness_hint")
+        stated = f" The paper states a {thickness['value']:g} A film, which is not the model slab thickness." if thickness else ""
+        mark(
+            "thickness",
+            value=None,
+            status="needs_manual_decision",
+            confidence="medium",
+            source_field="amorphous_terms",
+            source_term=thickness["source_term"] if thickness else _first_nonempty(*amorphous_terms),
+            reason=f"Slab thickness is a modeling choice; use --amorphous-thickness or --accept-defaults.{stated}",
+            from_task_inputs=["amorphous_terms"],
+        )
 
     if task_name == "slab_generation":
         evidence = _exposed_facet_evidence(task_inputs, normalized_mapping)

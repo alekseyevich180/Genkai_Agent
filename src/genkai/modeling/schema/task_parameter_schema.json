@@ -195,6 +195,70 @@
         "placement_mode='active' requires active_symbols",
         "this task requires fairchem-core, torch, and a usable UMA model"
       ]
+    },
+    "sam_functionalization": {
+      "script": "genkai.modeling.surface.sam:main",
+      "ptomodel_mapping_role": "molecular self-assembled monolayer anchored to a slab",
+      "parameters": {
+        "surface": { "type": "path", "required": false, "description": "Slab file; one of surface or bulk" },
+        "bulk": { "type": "path", "required": false, "description": "Bulk crystal cut into the slab" },
+        "facet": { "type": "string", "required": false },
+        "molecule": { "type": "path", "required": true, "description": "3D structure of the SAM molecule" },
+        "binding_mode": { "type": "string", "required": true, "description": "phosphonic: monodentate|bidentate|tridentate; carboxylic: monodentate|bidentate; thiol: top|bridge|hollow|fcc|hcp" },
+        "counts": { "type": "comma_separated_ints", "required": false, "description": "Molecules per cell, one frame per count" },
+        "density": { "type": "float", "required": false, "description": "Molecules per nm^2; alternative to counts" },
+        "anchor_kind": { "type": "string", "required": false, "description": "phosphonic, carboxylic or thiol" },
+        "acidic_h": { "type": "string", "required": false },
+        "tilt": { "type": "float", "required": false },
+        "seed": { "type": "int", "required": false },
+        "output_dir": { "type": "path", "required": false }
+      },
+      "constraints": [
+        "exactly one of counts or density",
+        "binding_mode must suit the anchor group",
+        "structure-only: no energy model"
+      ]
+    },
+    "ald_overlayer": {
+      "script": "genkai.modeling.surface.amorphous_overlayer:main",
+      "ptomodel_mapping_role": "ALD amorphous overlayer (continuous film or island) on a crystal slab",
+      "parameters": {
+        "surface": { "type": "path", "required": false, "description": "Slab file; one of surface or bulk" },
+        "bulk": { "type": "path", "required": false, "description": "Bulk crystal cut into the slab" },
+        "facet": { "type": "string", "required": false },
+        "amorphous": { "type": "path", "required": true, "description": "Periodic amorphous bulk cell of the overlayer" },
+        "coverage": { "type": "string", "required": true, "description": "full (film) or partial (island)" },
+        "thickness": { "type": "float", "required": false, "description": "Film thickness in angstrom (full coverage)" },
+        "island_atoms": { "type": "int", "required": false, "description": "Island size (partial coverage)" },
+        "island_radius": { "type": "float", "required": false },
+        "film_fit": { "type": "string", "required": false },
+        "samples": { "type": "int", "required": false },
+        "seed": { "type": "int", "required": false },
+        "output_dir": { "type": "path", "required": false }
+      },
+      "constraints": [
+        "coverage='full' requires thickness",
+        "coverage='partial' requires exactly one of island_atoms or island_radius",
+        "structure-only: no energy model"
+      ]
+    },
+    "amorphous_slab": {
+      "script": "genkai.modeling.surface.amorphous_slab:main",
+      "ptomodel_mapping_role": "pure amorphous surface cut from an amorphous bulk cell",
+      "parameters": {
+        "amorphous": { "type": "path", "required": true, "description": "Periodic amorphous bulk cell" },
+        "thickness": { "type": "float", "required": true, "description": "Slab thickness in angstrom" },
+        "vacuum": { "type": "float", "required": false },
+        "repeat_xy": { "type": "comma_separated_ints", "required": false },
+        "fixed_fraction": { "type": "float", "required": false },
+        "samples": { "type": "int", "required": false },
+        "seed": { "type": "int", "required": false },
+        "output_dir": { "type": "path", "required": false }
+      },
+      "constraints": [
+        "only windows that need no atom removal are kept",
+        "structure-only: no energy model"
+      ]
     }
   }
 }

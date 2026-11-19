@@ -31,6 +31,32 @@ def _surface_execution_options(command):
         click.option("--document-id", help="Plan document to execute when the plan has several."),
         click.option("--tasks", help="Comma-separated plan tasks to execute (default: all executable)."),
         click.option("--seed", type=int, default=42, show_default=True),
+        click.option(
+            "--chain",
+            is_flag=True,
+            help="Build each task on the previous task's first structure "
+            "(vacancy -> ALD -> SAM -> cluster -> adsorbate) instead of all on the clean surface.",
+        ),
+        click.option(
+            "--accept-defaults",
+            is_flag=True,
+            help="Fill unresolved numeric choices (counts 1,2; cluster 13 atoms; ALD full film 5 A or 30-atom "
+            "island; amorphous slab 10 A) and record them. Structure files and the SAM binding mode stay required.",
+        ),
+        click.option("--vacancy-counts", help="O vacancies per cell, comma-separated, e.g. 1,2."),
+        click.option("--vacancy-samples", type=int, help="Vacancy configurations per count (default 3)."),
+        click.option("--cluster-element", help="Metal of the supported cluster, e.g. Pt."),
+        click.option("--cluster-atoms", type=int, help="Atoms per cluster, e.g. 13."),
+        click.option("--cluster-structures", help="Comma-separated cluster lattices: fcc, hcp, bcc."),
+        click.option("--sam-molecule", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="3D structure of the SAM molecule."),
+        click.option("--binding-mode", help="SAM binding: monodentate|bidentate|tridentate (phosphonic), monodentate|bidentate (carboxylic), top|bridge|hollow|fcc|hcp (thiol)."),
+        click.option("--sam-counts", help="SAM molecules per cell, comma-separated, e.g. 1,2."),
+        click.option("--anchor-kind", type=click.Choice(["phosphonic", "carboxylic", "thiol"]), help="SAM anchoring group when the molecule has several."),
+        click.option("--amorphous", type=click.Path(exists=True, dir_okay=False, path_type=Path), help="Periodic amorphous bulk cell (ALD overlayer or amorphous slab)."),
+        click.option("--ald-coverage", type=click.Choice(["full", "partial"]), help="ALD continuous film (full) or island (partial)."),
+        click.option("--ald-thickness", type=float, help="ALD film thickness in angstrom (full coverage)."),
+        click.option("--island-atoms", type=int, help="ALD island size in atoms (partial coverage)."),
+        click.option("--amorphous-thickness", type=float, help="Pure amorphous slab thickness in angstrom."),
     ]
     for option in reversed(options):
         command = option(command)
@@ -41,13 +67,12 @@ def _surface_overrides(options: dict[str, Any]):
     from genkai.modeling.surface.executor import SurfaceExecutionOverrides
 
     values = dict(options)
-    try:
-        values["coverage_counts"] = tuple(
-            int(item) for item in _split_csv(values["coverage_counts"]) or ()
-        ) or None
-    except ValueError as exc:
-        raise click.BadParameter("use integers such as 1,2", param_hint="--coverage-counts") from exc
-    for key in ("site_symbols", "patterns", "tasks"):
+    for key in ("coverage_counts", "vacancy_counts", "sam_counts"):
+        try:
+            values[key] = tuple(int(item) for item in _split_csv(values[key]) or ()) or None
+        except ValueError as exc:
+            raise click.BadParameter("use integers such as 1,2", param_hint=f"--{key.replace('_', '-')}") from exc
+    for key in ("site_symbols", "patterns", "tasks", "cluster_structures"):
         values[key] = _split_csv(values[key])
     return SurfaceExecutionOverrides(**values)
 
@@ -77,6 +102,10 @@ def _with_surface_errors(
         click.echo("Blocked: these inputs must be supplied or confirmed:", err=True)
         for key, reason in exc.missing.items():
             click.echo(f"  - {key}: {reason}", err=True)
+        click.echo(
+            "Deselect tasks with --tasks; numeric choices can take recorded defaults with --accept-defaults.",
+            err=True,
+        )
         if (run_root / "modeling" / "plan.json").is_file():
             click.echo(f"Plan retained: {run_root / 'modeling' / 'plan.json'}", err=True)
             click.echo("Resume with `genkai-workflow surface execute --run-root RUN` and reviewed inputs.", err=True)

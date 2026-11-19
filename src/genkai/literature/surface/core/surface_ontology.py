@@ -15,7 +15,14 @@ SUPPORTED_MODELING_TASKS = {
     "surface_cluster_builder",
     "single_atom_site",
     "doped_surface",
+    # Generic termination states (hydroxylated, reduced, O-terminated); not built.
     "surface_functionalization",
+    # Molecular self-assembled monolayer anchored to the surface (SAM builder).
+    "sam_functionalization",
+    # ALD amorphous overlayer: continuous film or island on a crystal facet.
+    "ald_overlayer",
+    # Pure amorphous surface cut from an amorphous bulk cell.
+    "amorphous_slab",
     "slab_generation",
 }
 
@@ -24,6 +31,9 @@ EXECUTABLE_TASKS = {
     "vacancy_landscape",
     "adsorbate_landscape",
     "surface_cluster_builder",
+    "sam_functionalization",
+    "ald_overlayer",
+    "amorphous_slab",
 }
 
 KNOWN_SURFACE_TERMS = {

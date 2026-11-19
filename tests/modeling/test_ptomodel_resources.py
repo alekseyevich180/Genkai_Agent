@@ -17,6 +17,9 @@ def test_canonical_task_schema_is_owned_by_genkai() -> None:
         "adsorbate_landscape",
         "surface_cluster_builder",
         "surface_cluster_mlip_search",
+        "sam_functionalization",
+        "ald_overlayer",
+        "amorphous_slab",
     }
     assert registry["schema_path"] == (
         "genkai.modeling.schema:task_parameter_schema.json"

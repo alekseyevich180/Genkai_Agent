@@ -35,6 +35,7 @@ def test_every_case_uses_existing_repository_structures_and_entry_points() -> No
         "cluster_search",
         "surface_execute",
         "paper_workflow",
+        "paper_tasks",
         "sam",
         "ald_overlayer",
         "amorphous_slab",

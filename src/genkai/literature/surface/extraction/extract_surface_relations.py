@@ -36,6 +36,8 @@ def build_prompt(title: str, text: str) -> str:
         "clusters": [],
         "single_atoms": [],
         "modifiers": [],
+        "sam_molecules": [],
+        "overlayers": [],
         "properties": [],
         "reaction_parameters": [],
         "modeling_keywords": [],
@@ -79,10 +81,22 @@ Rules:
 - `clusters`, `single_atoms`, and `modifiers` should capture supported metal clusters, nanoparticles,
   cluster sizes such as Pt13, single atom catalysts, isolated metal sites, promoters, modifiers,
   dopants, decoration, loading, anchoring, and metal-support interaction terms.
+- `sam_molecules` should capture molecules forming self-assembled monolayers (SAMs) or other molecular
+  surface functionalization, keeping the anchoring group and binding wording, e.g. "PAC10CA
+  phosphonic-acid-anchored SAM", "octadecanethiol SAM on Au", "carboxylic acid SAM, bidentate".
+- `overlayers` should capture deposited layers on the sensing material: atomic layer deposition (ALD)
+  films or islands, coatings, shells, and amorphous overlayers, keeping the overlayer material,
+  thickness (nm or angstrom), ALD cycles, and continuity wording (conformal, continuous, island,
+  partial), e.g. "ALD Al2O3 overlayer, 2 nm, 20 cycles". Do not list device fabrication such as
+  drop-coating, spin-coating, or electrode deposition here.
 - `modeling_keywords` should be a flat list of keywords useful for downstream structure generation.
 - `recommended_modeling_tasks` should use only supported task names when evidence exists:
   vacancy_landscape, adsorbate_landscape, surface_cluster_builder, single_atom_site,
-  doped_surface, surface_functionalization, slab_generation.
+  doped_surface, surface_functionalization, sam_functionalization, ald_overlayer, amorphous_slab,
+  slab_generation. Use surface_functionalization for termination states (hydroxylated, reduced,
+  O-terminated), sam_functionalization for anchored molecular monolayers, ald_overlayer for a
+  deposited (often amorphous) overlayer on a crystal, and amorphous_slab when the sensing material
+  itself is amorphous.
 - `links` should be a list of objects with keys: source, relation, target.
 - Good relation examples: has_facet, has_dopant, has_defect, has_active_site,
   has_crystal_structure, has_oxide_composition, has_stable_facet,

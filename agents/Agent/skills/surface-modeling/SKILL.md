@@ -164,11 +164,25 @@ genkai-workflow surface execute --run-root runs/sno2 \
 ```
 
 The executor (`genkai.modeling.surface.executor.execute_surface_plan`) builds
-the slab, runs the registered tasks (currently `adsorbate_landscape`) with
-`calculator="none"` and `max_steps=0`, and registers one
-`stages/03_surface_structures*/structures.extxyz` as the run's latest
-`StructureSetArtifact` (frame 0 is the clean slab; fixed atoms and tags are
-kept). Rules:
+the base surface and every executable plan task with `calculator="none"` and
+`max_steps=0`, and registers one `stages/03_surface_structures*/structures.extxyz`
+as the run's latest `StructureSetArtifact` (frame 0 is the base surface; fixed atoms
+and tags are kept; each frame records `task`, `role`, `label` and `built_on`).
+
+| Plan task | Builder | Inputs the paper usually cannot give |
+| --- | --- | --- |
+| `vacancy_landscape` | O atoms within 2.5 A of the top, sampled (`vacancy.sample_vacancy_sets`) | `--vacancy-counts` (`--vacancy-samples`, default 3) |
+| `surface_cluster_builder` | `cluster_builder.build_nanocluster` at the cell centre, 2.5 A gap | `--cluster-element`, `--cluster-atoms` (lattice from the element's ground state) |
+| `sam_functionalization` | `sam.run_sam` | `--sam-molecule`, `--binding-mode`, `--sam-counts` (anchor group from the paper or `--anchor-kind`) |
+| `ald_overlayer` | `amorphous_overlayer.run_overlayer` | `--amorphous`, `--ald-coverage`, `--ald-thickness` or `--island-atoms` |
+| `amorphous_slab` | `amorphous_slab.run_amorphous_slab` (base surface unless ALD is planned) | `--amorphous`, `--amorphous-thickness` |
+| `adsorbate_landscape` | `adsorbate.run_adsorbate_landscape` | `--molecule-name`/`--molecule`, `--coverage-counts`, `--site-symbols` |
+
+`--chain` builds each task on the first structure of the previous one in the order
+vacancy -> ALD -> SAM -> cluster -> adsorbate; without it every task uses the base
+surface. `--accept-defaults` fills open numeric choices (counts 1,2; 13 atoms; ALD
+full film 5 A or 30-atom island; amorphous slab 10 A) and records each one; structure
+files and the SAM binding mode are never defaulted. Rules:
 
 - It never guesses: a slab or bulk source, a confirmed exposed facet, the gas
   molecule and integer coverages must be supplied; otherwise it exits with code
@@ -185,8 +199,12 @@ kept). Rules:
   mark the set `needs_review`.
 - Output structures are unrelaxed geometric candidates (evidence `heuristic`);
   mock placement energies stay in `adsorbate_landscape/runner.log` and are not
-  results. Tasks without a structure-only runner (vacancy, clusters,
-  SAM/functionalization, doping) are reported as skipped.
+  results. Generic termination states (`surface_functionalization`), doping and
+  single-atom tasks have no runner and are reported as skipped.
+- A SAM molecule without the paper's anchor group, or an amorphous file whose
+  composition differs from the paper's overlayer, is blocked or flagged in the report.
+- Cluster and adsorbate candidates that overlap are discarded; c is lengthened when
+  needed to keep 8 A of vacuum above an added cluster or molecule.
 
 ## Oxygen-Vacancy Landscape
 

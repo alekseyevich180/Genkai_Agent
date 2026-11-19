@@ -35,6 +35,8 @@
   `docs/surface-modeling-user-guide.md` 和示例 `examples/surface_jobs/`；冒烟 31 个用例 PASS 29 / WARN 1 /
   SKIP 1。见同日日志“给其他使用者的建模入口”。
 - 2026-11-16：创建并推送 `SAGE` 分支（只含建模 + MLIP 筛选，带 `install.sh`；CI 通过），见同日日志“创建 SAGE 分支”。
+- 2026-11-19：论文建模自动化接通：计划识别并执行空位、团簇、SAM、ALD、纯非晶表面（`--chain` 串联、
+  `--accept-defaults` 数值默认值）；修复团簇构建器 fcc/bcc 晶格常数被压缩的缺陷。见 [2026-11-19](work_logs/2026-11-19.md)。
 
 ## 日志文件
 
@@ -60,6 +62,7 @@
 - [2026-11-13](work_logs/2026-11-13.md)
 - [2026-11-16](work_logs/2026-11-16.md)
 - [2026-11-17](work_logs/2026-11-17.md)：修复论文关系 JSONL 与条件 CSV 传递；接通论文计划到 structure-only 结构生成的单命令 workflow，含验证结果和续跑入口。
+- [2026-11-19](work_logs/2026-11-19.md)：论文计划到七类结构生成的自动执行与串联；团簇晶格常数修复。
 
 ## 相关长期文档
 

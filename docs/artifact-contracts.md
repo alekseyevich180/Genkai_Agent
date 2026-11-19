@@ -97,5 +97,12 @@ Missing execution inputs raise `SurfaceExecutionBlocked` (CLI exit 2), retaining
 the extraction and modeling-plan artifacts. No empty structure-set is published
 as a successful result. Resume with `surface execute --run-root RUN` and reviewed
 inputs. Runtime execution failures retain the executor's failed stage and do not
-fall back to a prepared placeholder. The executor currently supports slab and
-adsorbate generation; other task types are explicitly reported as skipped.
+fall back to a prepared placeholder. The executor builds slab, `vacancy_landscape`,
+`surface_cluster_builder`, `sam_functionalization`, `ald_overlayer`, `amorphous_slab`
+and `adsorbate_landscape` tasks; generic termination, dopant and single-atom tasks are
+reported as skipped. Each frame's `info` carries `task`, `role`, `label` (`task:index`)
+and, except for base surfaces, `built_on` (the label of the surface it was built on).
+The execution report adds `base_surface`, `chain` (`enabled` and the steps of
+`--chain`), `task_records` (builder manifests and vacancy indices), per-frame summaries,
+and `resolution.defaults_used` for values taken from `--accept-defaults`; the
+structure-set metadata repeats `chain`, `base_surface` and `defaults_used`.

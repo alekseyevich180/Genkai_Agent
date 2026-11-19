@@ -27,6 +27,8 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
   只保留表面建模和 MLIP 筛选层，带 `install.sh`，用于在服务器上做 MLIP 测试；它有自己的
   `AGENTS.md`。**不要把 SAGE 合并进 main**（精简提交会删除 main 的大部分内容）；两边同步建模代码时，
   用 `git cherry-pick` 或按路径检出（如 `git checkout main -- src/genkai/modeling`）。
+  `src/genkai/modeling/schema/task_parameter_schema.json` 两边都改过（main 在末尾加了三个任务，
+  SAGE 在已有任务里加了 MACE 参数），同步时要合并而不是按路径覆盖。
 
 ## 项目结构
 
@@ -37,16 +39,25 @@ Genkai 是面向材料、化学和计算模拟任务的多智能体平台。当�
     `surface/core/records.py` 负责 artifact、PToModel 与 compact bundle 共用的历史格式读取。
     `surface run` 自动传递条件 CSV，`genkai-workflow init --conditions` 支持离线重放；
     条件表在运行目录保存快照与哈希，多行冲突和文档 ID 无法匹配的情况进入 checklist。
-    两个入口默认 prepare；显式 `--modeling-mode structure-only` 可在同一命令接入现有执行器，
-    生成 slab 和吸附构型。缺参保留计划，通过 `surface execute` 续跑；未支持任务报告 skipped。
-    七类方法的统一自动调度尚未完成。
+    两个入口默认 prepare；显式 `--modeling-mode structure-only` 可在同一命令接入执行器。
+    缺参保留计划，通过 `surface execute` 续跑；未支持任务报告 skipped。
+    2026-11-19 起论文计划会识别并执行全部结构生成任务：抽取提示词新增 `sam_molecules`、
+    `overlayers` 字段，计划新增 `sam_functionalization`（有 SAM 证据时；普通端面状态仍是暂缓的
+    `surface_functionalization`）、`ald_overlayer`、`amorphous_slab`；识别规则在 `mapping.py`
+    的 `_surface_modification_cues`（排除 drop/spin-coating 等工艺词；≤2 nm 的 ALD 膜厚按论文值，
+    非晶膜厚只作参考）。
   - `modeling/`：PToModel、checklist、schema 与表面建模算法。
     `modeling/surface/` 包括切面（`slab.py`）、吸附、空位、团簇、structure-only
     执行器（`executor.py`），以及 2026-11-16 新增的 SAM（`sam.py`）、ALD 非晶覆盖层
     （`amorphous_overlayer.py`，全覆盖膜可用晶格匹配或切割加接缝修复两种方式）、纯非晶表面
     （`amorphous_slab.py`），和它们共用的 `substrate.py`（会自动规范化 c 轴倾斜的 slab）、
-    `sites.py`（按配位找表面位点）、`structure_io.py`（结构文件约定）。SAM、ALD、非晶表面
-    目前是独立 CLI，尚未注册进执行器。能量筛选层：`calculators.py`（none 模拟 / emt / uma，
+    `sites.py`（按配位找表面位点）、`structure_io.py`（结构文件约定）。structure-only 执行器
+    （2026-11-19）注册了 slab、vacancy、cluster、SAM、ALD、amorphous_slab、adsorbate，直接调用上述
+    库函数（不经 Skill 脚本）；默认每个任务都建在同一基底上，`--chain` 按 空位→ALD→SAM→团簇→吸附
+    串联；`--accept-defaults` 只对数值参数取默认值并记录，结构文件和 SAM 结合方式必须人工提供；
+    无 ALD 时 `amorphous_slab` 作基底，不需要晶体块体。同日修复 `metal_cluster/cluster_builder.py`：
+    嵌入数据存的是最近邻距离，fcc/bcc 原先被当作晶格常数，团簇被压缩约 29%/13%。
+    能量筛选层：`calculators.py`（none 模拟 / emt / uma，
     加载前检查 UMA 任务头；本机 fairchem 2.7.1 没有 oc22）、`sam_search.py`（SAM 锚定参数
     Optuna + 平移复制覆盖度）、`amorphous_screen.py`（非晶表面能排序、非晶/晶体界面粘附能搜索），
     岛状负载用 `cluster_search.py`（`--max_tilt`、`--placement_shape input`、`--min_vacuum`）。
@@ -191,9 +202,10 @@ python scripts/check_harness.py full
 
 表面建模冒烟测试（2026-11-16 起）：用仓库中已有的结构，通过真实入口逐一调用全部建模方式
 （切面、空位、吸附、团簇放置与搜索、执行器、SAM、SAM 能量搜索、ALD、纯非晶表面、非晶能量筛选、
-`genkai-surface` 任务文件入口、论文计划单命令生成，共 32 个用例），检查结构能否生成、可读、无原子重叠、有真空层和固定原子。
-默认 `local` 档只用模拟计算器（`calculator=none`，能量无物理意义），本机约 5 分钟，11 月 16 日的 31 用例基线为
-PASS 29 / WARN 1 / FAIL 0 / SKIP 1（Materials Project 用例）。`--profile server --uma-task <任务头>` 改用 UMA，尚未
+`genkai-surface` 任务文件入口、论文计划单命令生成、论文计划的全部任务与串联，共 36 个用例），检查结构能否生成、
+可读、无原子重叠、有真空层和固定原子。默认 `local` 档只用模拟计算器（`calculator=none`，能量无物理意义），
+本机约 5 分钟，2026-11-19 的 36 用例基线为 PASS 34 / WARN 1 / FAIL 0 / SKIP 1（Materials Project 用例）。
+`--profile server --uma-task <任务头>` 改用 UMA，尚未
 验证。用 `--only`/`--skip` 时，未选中的用例会在输出和报告的 `selection` 中列出。电脑休眠会让
 单个用例超时，结果需重跑核对。`--profile server` 会改用 UMA，尚未验证，只能在获准做真实
 计算的服务器上运行。
@@ -203,11 +215,12 @@ python scripts/run_modeling_smoke.py --list
 python scripts/run_modeling_smoke.py                      # 报告写入 <输出目录>/smoke_report.json
 python scripts/run_modeling_smoke.py --only sam,ald       # 按方法名或用例前缀筛选
 python scripts/run_modeling_smoke.py --only amorphous,ald,sam_on_amorphous   # 只测非晶相关（12 个用例）
-python scripts/run_modeling_smoke.py --only surface_execute,paper_workflow # 直接调用库 CLI，不执行 Skill 脚本（3 个用例）
+python scripts/run_modeling_smoke.py --only surface_execute,paper_workflow,paper_tasks   # 只调用库 CLI，不执行 Skill 脚本（7 个用例）
 ```
 
-2026-11-17 新增 `paper_workflow`，上述 3 用例子集实测 PASS 3 / WARN 0 / FAIL 0 / SKIP 0；
-其余 29 个未选中，不能合并旧基线宣称 32 用例全部通过。完整冒烟包含 Skill 入口，执行前仍须遵守用户的 Skill 授权规则。
+2026-11-17 新增 `paper_workflow`；2026-11-19 新增 `paper_tasks`（SAM→NO2、构造的 Pt/CeO2 空位→Pt13→CO 串联、
+构造的 ALD 记录 + `--accept-defaults`、构造的非晶 SnO2 记录），上述 7 用例子集实测 PASS 7。完整冒烟包含 Skill 入口，
+执行前仍须遵守用户的 Skill 授权规则。
 
 各子集的命令和基线速查见 `work_logs/2026-11-16.md` 的“测试脚本控制命令（速查）”。
 

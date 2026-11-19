@@ -136,9 +136,25 @@ ID, including the extractor's `<document_id>_<paragraph_number>` indices. Confli
 values and unmatched documents are listed in `modeling/checklist.json` for review.
 Both `init` and `surface run` default to `--modeling-mode prepare`, producing a plan
 and a placeholder with zero structures. Add `--modeling-mode structure-only` and
-reviewed inputs to generate geometry in the same command. Both use the existing
-executor, which currently supports slab generation and adsorbate placement.
+reviewed inputs to generate geometry in the same command. The executor builds every
+executable plan task: slab generation, O vacancies, metal clusters, molecular SAMs
+(`sam_functionalization`), ALD overlayers (`ald_overlayer`), pure amorphous surfaces
+(`amorphous_slab`) and adsorbates. By default each task is built on the same clean
+surface; `--chain` builds each task on the first structure of the previous one in the
+order vacancy -> ALD -> SAM -> cluster -> adsorbate (for example NO2 on the
+SAM-functionalized slab, or CO on Pt13 on the O-vacancy slab). An amorphous material
+without an ALD overlayer is its own base surface and needs no crystal bulk.
 See [artifact contracts](docs/artifact-contracts.md) for the saved formats.
+
+Inputs the paper cannot provide must be supplied: structure files (`--sam-molecule`,
+`--amorphous`), the SAM `--binding-mode`, and numeric choices (`--coverage-counts`,
+`--vacancy-counts`, `--sam-counts`, `--cluster-atoms`, `--ald-coverage`,
+`--ald-thickness`, `--island-atoms`, `--amorphous-thickness`). With
+`--accept-defaults`, the numeric choices that remain open take documented defaults
+(counts 1,2; 13-atom cluster; ALD full film 5 A or 30-atom island; amorphous slab
+10 A), and every default is recorded in the execution report. Structure files and the
+binding mode never take defaults. A stated ALD film up to 2 nm is modeled at its
+thickness; a stated amorphous film thickness is reported as context only.
 
 This offline example replays a repository extraction and generates a SnO2(110)
 slab plus NO2 configurations with one and two molecules. The facet and molecule
@@ -149,17 +165,29 @@ python -m genkai.cli init runs/paper_geometry \
   --relations tests/fixtures/surface_execution/sno2_sam_gas_relations.jsonl \
   --modeling-mode structure-only \
   --bulk tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif \
-  --surface-facet 110 --molecule-name NO2 --coverage-counts 1,2 --patterns uniform
+  --surface-facet 110 --molecule-name NO2 --coverage-counts 1,2 --patterns uniform \
+  --tasks slab_generation,adsorbate_landscape
+```
+
+The same paper also plans a phosphonic-acid SAM. To build it and place NO2 on the
+SAM-functionalized surface, supply a molecule file and the binding mode instead of
+`--tasks` (the paper names the anchor group but gives neither):
+
+```bash
+python -m genkai.cli surface execute --run-root runs/paper_geometry \
+  --bulk tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif \
+  --surface-facet 110 --sam-molecule /path/to/sam_molecule.xyz --binding-mode bidentate \
+  --molecule-name NO2 --accept-defaults --chain
 ```
 
 `surface run PAPER --run-root RUN` accepts the same modeling options after paper
 extraction; it still uses the configured LLM, even in `structure-only` mode. Use
 `init --relations ... [--conditions ...]` for offline replay. Geometry has
 `calculator=none`, heuristic evidence, and no energy evaluation or relaxation.
-Outputs include `stages/03_surface_structures/structures.extxyz`, an execution
-report, and their references in `manifest.json`. Unsupported tasks are reported
-as skipped; vacancy, cluster, SAM, ALD and amorphous-slab jobs remain available
-through the separate [job-file interface](docs/surface-modeling-user-guide.md).
+Outputs include `stages/03_surface_structures/structures.extxyz` (every frame records
+the surface it was built on), an execution report with the resolved inputs, defaults
+and chain steps, and their references in `manifest.json`. Generic termination states
+(hydroxylated, reduced) and dopant or single-atom tasks are reported as skipped.
 
 If required inputs are missing, the command exits with code 2 and retains the
 extraction and plan. Supply the missing inputs through `surface execute` without

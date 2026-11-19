@@ -59,11 +59,22 @@ def test_executor_blocks_until_reviewed_inputs_are_supplied(gas_run) -> None:
         execute_surface_plan(plan, root, SurfaceExecutionOverrides())
 
     missing = blocked.value.missing
-    assert set(missing) == {"bulk", "surface_facet", "molecule", "coverage_counts"}
+    # The SAM paper now also needs the SAM inputs the paper cannot provide.
+    assert set(missing) == {
+        "bulk", "surface_facet", "molecule", "coverage_counts", "sam_molecule", "binding_mode", "sam_counts",
+    }
     assert "HRTEM" in missing["surface_facet"]  # the observed lattice plane is not used
     assert "acetone" in missing["molecule"]  # paper gases are listed, not auto-picked
+    assert "PAC12IMI" in missing["sam_molecule"]  # the named SAM molecules are reported
     assert _manifest_text(root) == before
     assert not (root / "stages" / "03_surface_structures").exists()
+
+    # Deselecting the SAM task restores the slab + gas requirements only.
+    with pytest.raises(SurfaceExecutionBlocked) as gas_only:
+        execute_surface_plan(
+            plan, root, SurfaceExecutionOverrides(tasks=("slab_generation", "adsorbate_landscape"))
+        )
+    assert set(gas_only.value.missing) == {"bulk", "surface_facet", "molecule", "coverage_counts"}
 
 
 def test_executor_generates_slab_and_gas_adsorbate_structures(gas_run) -> None:
@@ -79,6 +90,7 @@ def test_executor_generates_slab_and_gas_adsorbate_structures(gas_run) -> None:
             coverage_counts=(1, 2),
             patterns=("uniform", "random"),
             random_repeats=1,
+            tasks=("slab_generation", "adsorbate_landscape"),
         ),
     )
 
@@ -188,7 +200,7 @@ def test_materials_project_route_requires_opt_in(gas_run) -> None:
 
 def test_unknown_molecule_and_absent_site_symbol_block_without_side_effects(gas_run) -> None:
     root, plan, bulk = gas_run
-    base = {"bulk": bulk, "surface_facet": "(110)", "coverage_counts": (1,)}
+    base = {"bulk": bulk, "surface_facet": "(110)", "coverage_counts": (1,), "tasks": ("slab_generation", "adsorbate_landscape")}
 
     with pytest.raises(SurfaceExecutionBlocked) as blocked:
         execute_surface_plan(plan, root, SurfaceExecutionOverrides(molecule_name="PAC12IMI", **base))

@@ -86,7 +86,7 @@ def test_saved_relations_can_generate_structures_in_one_call(tmp_path, bulk_file
         root, FIXTURE, modeling_mode="structure-only",
         modeling_overrides=SurfaceExecutionOverrides(
             bulk=bulk_file, surface_facet="(110)", molecule_name="NO2",
-            coverage_counts=(1,), patterns=("uniform",),
+            coverage_counts=(1,), patterns=("uniform",), tasks=("slab_generation", "adsorbate_landscape"),
         ),
     )
     structures, frames = assert_real_structures(root)
@@ -202,6 +202,7 @@ def test_runtime_failure_does_not_fall_back_to_prepared_structure_artifact(tmp_p
             root, FIXTURE, modeling_mode="structure-only",
             modeling_overrides=SurfaceExecutionOverrides(
                 bulk=bulk_file, surface_facet="(110)", molecule_name="NO2", coverage_counts=(1,),
+                tasks=("slab_generation", "adsorbate_landscape"),
             ),
         )
     manifest = load_manifest(root)

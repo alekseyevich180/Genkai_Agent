@@ -284,6 +284,8 @@ def executor_case(blocked: bool) -> Callable[[Context, Path], list[list[str]]]:
                 "--surface-facet", "(110)",
                 "--molecule-name", "NO2",
                 "--coverage-counts", "1,2",
+                # The paper also asks for a SAM; this case covers slab + gas only.
+                "--tasks", "slab_generation,adsorbate_landscape",
             ]
         return [init, execute]
 
@@ -296,7 +298,84 @@ def paper_workflow_case(ctx: Context, out: Path) -> list[list[str]]:
         "--relations", path("gas_relations"), "--modeling-mode", "structure-only",
         "--bulk", path("sno2_bulk"), "--surface-facet", "(110)",
         "--molecule-name", "NO2", "--coverage-counts", "1,2", "--patterns", "uniform",
+        "--tasks", "slab_generation,adsorbate_landscape",
     )]
+
+
+# Constructed extraction records (not real papers) that exercise the remaining plan tasks offline.
+PAPER_TASK_RELATIONS: dict[str, dict[str, Any]] = {
+    "pt_ceo2": {
+        "materials": ["Pt/CeO2"], "surfaces": ["CeO2(111)"], "defects": ["oxygen vacancy"], "adsorbates": ["CO"],
+        "active_sites": ["Pt site", "Ce site"], "clusters": ["Pt13 cluster"],
+        "recommended_modeling_tasks": ["vacancy_landscape", "adsorbate_landscape", "surface_cluster_builder"],
+    },
+    "ald": {"materials": ["SnO2"], "surfaces": ["SnO2(110) surface"], "overlayers": ["ALD TiO2 overlayer, conformal"]},
+    "amorphous": {"materials": ["amorphous SnO2 film"], "surfaces": ["a-SnO2 surface"], "adsorbates": ["H2"],
+                  "recommended_modeling_tasks": ["adsorbate_landscape"]},
+}
+
+
+def write_paper_task_inputs(kind: str) -> Callable[[Path], dict[str, str]]:
+    def prepare(case_dir: Path) -> dict[str, str]:
+        inputs = case_dir / "inputs"
+        inputs.mkdir(parents=True, exist_ok=True)
+        notes: dict[str, str] = {}
+        if kind in PAPER_TASK_RELATIONS:
+            record = {"id": f"constructed_{kind}", "title": f"constructed {kind} record", "extraction": PAPER_TASK_RELATIONS[kind]}
+            (inputs / "relations.jsonl").write_text(json.dumps(record) + "\n", encoding="utf-8")
+            notes["relations.jsonl"] = "constructed extraction record written by the smoke script (not a real paper)"
+        if kind == "pt_ceo2":
+            from pymatgen.core import Lattice, Structure
+
+            Structure.from_spacegroup("Fm-3m", Lattice.cubic(5.411), ["Ce", "O"], [[0, 0, 0], [0.25, 0.25, 0.25]]).to(
+                filename=str(inputs / "CeO2.cif")
+            )
+            notes["CeO2.cif"] = "fluorite CeO2, a = 5.411 A (pymatgen)"
+        if kind == "sam":
+            from ase.io import write
+
+            if str(ROOT) not in sys.path:
+                sys.path.insert(0, str(ROOT))
+            from tests.modeling.surface_builders_helpers import methylphosphonic_acid
+
+            write(inputs / "methylphosphonic_acid.xyz", methylphosphonic_acid())
+            notes["methylphosphonic_acid.xyz"] = "CH3PO(OH)2 test geometry (tests/modeling/surface_builders_helpers.py)"
+        return notes
+
+    return prepare
+
+
+def paper_task_case(kind: str) -> Callable[[Context, Path], list[list[str]]]:
+    def build(ctx: Context, out: Path) -> list[list[str]]:
+        inputs = out / "inputs"
+        cmd = py("-m", "genkai.cli", "init", out / "run", "--modeling-mode", "structure-only")
+        if kind == "sam":
+            cmd += [
+                "--relations", path("gas_relations"), "--bulk", path("sno2_bulk"), "--surface-facet", "(110)",
+                "--sam-molecule", inputs / "methylphosphonic_acid.xyz", "--binding-mode", "bidentate",
+                "--sam-counts", "1", "--molecule-name", "NO2", "--coverage-counts", "1", "--patterns", "uniform",
+                "--chain",
+            ]
+        elif kind == "pt_ceo2":
+            cmd += [
+                "--relations", inputs / "relations.jsonl", "--bulk", inputs / "CeO2.cif", "--surface-facet", "(111)",
+                "--molecule-name", "CO", "--coverage-counts", "1", "--patterns", "uniform",
+                "--vacancy-counts", "1", "--vacancy-samples", "1", "--chain",
+            ]
+        elif kind == "ald":
+            # No thickness in the record: --accept-defaults supplies the recorded 5 A film.
+            cmd += [
+                "--relations", inputs / "relations.jsonl", "--bulk", path("sno2_bulk"), "--surface-facet", "(110)",
+                "--amorphous", path("a_tio2"), "--accept-defaults",
+            ]
+        else:
+            cmd += [
+                "--relations", inputs / "relations.jsonl", "--amorphous", path("a_sno2"), "--amorphous-thickness", "8",
+                "--molecule-name", "H2", "--coverage-counts", "1", "--site-symbols", "Sn", "--patterns", "uniform",
+            ]
+        return [[str(item) for item in cmd]]
+
+    return build
 
 
 def sam_case(substrate: list[str], molecule: str | None, extra: list[str]) -> Callable[[Context, Path], list[list[str]]]:
@@ -424,6 +503,26 @@ CASES: list[Case] = [
     Case("paper_workflow_sno2_no2", "paper_workflow", "saved extraction -> plan -> slab + NO2 in one command (offline)",
          ("gas_relations", "sno2_bulk"), paper_workflow_case,
          ("run/stages/03_surface_structures/structures.extxyz",), contains=("N",), min_structures=3, fixed=True),
+    Case("paper_tasks_sam_then_no2", "paper_tasks",
+         "SAM paper: phosphonic SAM (bidentate) on SnO2(110), then NO2 on the SAM surface (--chain)",
+         ("gas_relations", "sno2_bulk"), paper_task_case("sam"),
+         ("run/stages/03_surface_structures/structures.extxyz",), contains=("P", "N"), min_structures=3, fixed=True,
+         prepare=write_paper_task_inputs("sam")),
+    Case("paper_tasks_pt_ceo2_chain", "paper_tasks",
+         "constructed Pt/CeO2 record: O vacancy -> Pt13 (fcc) -> CO on CeO2(111) (--chain)",
+         (), paper_task_case("pt_ceo2"),
+         ("run/stages/03_surface_structures/structures.extxyz",), contains=("Pt", "C"), min_structures=4, fixed=True,
+         prepare=write_paper_task_inputs("pt_ceo2")),
+    Case("paper_tasks_ald_tio2_on_sno2", "paper_tasks",
+         "constructed ALD record: conformal TiO2 film on SnO2(110), thickness from --accept-defaults (a-TiO2 file)",
+         ("sno2_bulk", "a_tio2"), paper_task_case("ald"),
+         ("run/stages/03_surface_structures/structures.extxyz",), contains=("Ti",), min_structures=2, fixed=True,
+         prepare=write_paper_task_inputs("ald")),
+    Case("paper_tasks_amorphous_sno2_h2", "paper_tasks",
+         "constructed amorphous-SnO2 record: amorphous slab as the base surface, H2 on Sn (no crystal bulk)",
+         ("a_sno2",), paper_task_case("amorphous"),
+         ("run/stages/03_surface_structures/structures.extxyz",), contains=("H",), min_structures=2, fixed=True,
+         prepare=write_paper_task_inputs("amorphous")),
     Case("sam_sno2_butanoic_monodentate", "sam", "butanoic acid, monodentate, counts 1,2 on the most stable SnO2 facet",
          ("sno2_bulk", "butanoic_acid"),
          sam_case(by_path("sno2_bulk"), "butanoic_acid", ["--binding-mode", "monodentate", "--counts", "1,2"]),
