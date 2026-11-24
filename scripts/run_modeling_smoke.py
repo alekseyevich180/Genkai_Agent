@@ -372,6 +372,37 @@ def job_file_case(ctx: Context, out: Path) -> list[list[str]]:
     return [py("-m", "genkai.modeling.surface.app.jobs", "run", "--quiet", out / "job.yaml")]
 
 
+def write_pipeline_file(kind: str) -> Callable[[Path], dict[str, str]]:
+    """A genkai-surface pipeline: SnO2(110) -> surface O vacancy -> Pt13 cluster or SAM -> H2O on free Sn sites."""
+
+    def prepare(case_dir: Path) -> dict[str, str]:
+        import yaml
+
+        middle = (
+            {"method": "cluster", "cluster_element": "Pt", "cluster_atoms": 13, "cluster_structures": ["fcc"]}
+            if kind == "cluster" else
+            {"method": "sam", "molecule": INPUTS["butanoic_acid"][0].as_posix(), "binding_mode": "bidentate",
+             "counts": [2]}
+        )
+        steps = [
+            {"method": "slab", "bulk": INPUTS["sno2_bulk"][0].as_posix(), "facet": "110", "repeat_xy": [2, 4]},
+            {"method": "vacancy", "vacancy_counts": [1]},
+            middle,
+            {"method": "adsorbate", "molecule": INPUTS["h2o"][0].as_posix(), "site_symbols": ["Sn"],
+             "coverage_counts": [1], "patterns": ["uniform"], "n_trials_single": 8},
+        ]
+        (case_dir / "pipeline.yaml").write_text(
+            yaml.safe_dump({"output": "runs/pipeline", "pipeline": steps}, sort_keys=False), encoding="utf-8"
+        )
+        return {"pipeline.yaml": f"four-step genkai-surface pipeline ({kind}) written by the smoke script"}
+
+    return prepare
+
+
+def pipeline_case(ctx: Context, out: Path) -> list[list[str]]:
+    return [py("-m", "genkai.modeling.surface.app.jobs", "run", "--quiet", out / "pipeline.yaml")]
+
+
 def by_path(key: str) -> list[str]:
     return ["--bulk", path(key)] if key.endswith("_bulk") else ["--surface", path(key)]
 
@@ -491,6 +522,14 @@ CASES: list[Case] = [
          "a-TiO2 film on SnO2(110): 2 lattice matches x Optuna (shift, gap), rank by adhesion",
          ("sno2_bulk", "a_tio2"), amorphous_screen_case("interface"), ("screen/amorphous_interfaces_ranked.extxyz",),
          contains=("Ti",), min_structures=2, fixed=True),
+    Case("pipeline_sno2_vacancy_cluster_water", "pipeline",
+         "pipeline: SnO2(110) -> surface O vacancy -> Pt13 (free spot) -> H2O on Sn sites not under the cluster",
+         ("sno2_bulk", "h2o"), pipeline_case, ("runs/pipeline/pipeline_structures.extxyz",),
+         contains=("Pt", "H"), fixed=True, prepare=write_pipeline_file("cluster")),
+    Case("pipeline_sno2_vacancy_sam_water", "pipeline",
+         "pipeline: SnO2(110) -> surface O vacancy -> 2 bidentate butanoic acids -> H2O on Sn sites not under the SAM",
+         ("sno2_bulk", "butanoic_acid", "h2o"), pipeline_case, ("runs/pipeline/pipeline_structures.extxyz",),
+         contains=("C", "H"), fixed=True, prepare=write_pipeline_file("sam")),
     Case("job_file_amorphous_then_sam", "surface_jobs",
          "genkai-surface job file: amorphous SnO2 slab -> bidentate butanoic acid on it (chained, structure only)",
          ("a_sno2", "butanoic_acid"), job_file_case, ("runs/sam/sam_structures.extxyz",),

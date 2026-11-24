@@ -13,6 +13,8 @@
 | `06_ald_full_and_partial.yaml` | ald | 一个文件两个任务：a-TiO2 全覆盖膜；a-SnO2 岛部分覆盖 SnO2(101) |
 | `07_amorphous_slab_tio2.yaml` | amorphous_slab | a-TiO2 切出 10 Å 纯非晶表面，2 个不同切割位置 |
 | `08_chain_amorphous_then_sam.yaml` | amorphous_slab → sam | 串联：先切非晶 SnO2 表面，再在上面放丁酸 SAM |
+| `09_pipeline_vacancy_cluster_water.yaml` | 流水线 slab → vacancy → cluster → adsorbate | 自动串联：SnO2(110) 表面 O 空位（两个构型都往下做）→ Pt13 → 不在团簇下的 Sn 位点放 H2O |
+| `10_pipeline_vacancy_sam_water.yaml` | 流水线 slab → vacancy → sam → adsorbate | 自动串联：表面 O 空位 → 2 个双齿丁酸 → 不被 SAM 盖住的 Sn 位点放 H2O |
 
 ```bash
 genkai-surface check examples/surface_jobs/05_sam_sno2_butanoic.yaml   # 只检查

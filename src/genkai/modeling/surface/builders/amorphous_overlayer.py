@@ -37,7 +37,19 @@ from ase.constraints import FixAtoms
 from ase.data import covalent_radii
 
 from .sites import ANION_SYMBOLS, bond_matrix, in_plane_mic
-from ..structure_io import export_frames, read_structure, sha256_of, write_frames, write_manifest
+from ..structure_io import (
+    decoration_mask,
+    export_frames,
+    free_lateral_positions,
+    has_components,
+    label_components,
+    local_solid_top,
+    read_structure,
+    sha256_of,
+    solid_mask,
+    write_frames,
+    write_manifest,
+)
 from .substrate import (
     Substrate,
     add_substrate_arguments,
@@ -304,8 +316,13 @@ def _largest_component(atoms: Atoms) -> tuple[Atoms, int]:
 # ---------------------------------------------------------------------------
 
 
-def _assemble(slab: Atoms, overlayer: Atoms, settings: OverlayerSettings) -> tuple[Atoms, float | None]:
-    top = float(slab.positions[:, 2].max())
+def _assemble(
+    slab: Atoms, overlayer: Atoms, settings: OverlayerSettings, top: float | None = None
+) -> tuple[Atoms, float | None]:
+    """Put ``overlayer`` ``interface_gap`` above ``top`` (default: the highest substrate/overlayer atom)."""
+    if top is None:
+        solid = solid_mask(slab)
+        top = float(slab.positions[solid if solid.any() else slice(None), 2].max())
     overlayer = overlayer.copy()
     overlayer.positions[:, 2] += top + settings.interface_gap - float(overlayer.positions[:, 2].min())
     n_slab = len(slab)
@@ -322,8 +339,9 @@ def _assemble(slab: Atoms, overlayer: Atoms, settings: OverlayerSettings) -> tup
     if fixed:
         frame.set_constraint(FixAtoms(indices=fixed))
     role = np.concatenate([np.zeros(n_slab, dtype=int), np.ones(len(overlayer), dtype=int)])
-    frame.new_array("fragment_id", role.copy())
-    frame.new_array("ald_role", role)
+    frame.set_array("fragment_id", role.copy())
+    frame.set_array("ald_role", role)
+    label_components(frame, "overlayer", range(n_slab, len(frame)))
     distances = frame.get_all_distances(mic=True)[:n_slab, n_slab:]
     radii = covalent_radii[frame.numbers]
     ratio = distances / (radii[:n_slab, None] + radii[None, n_slab:])
@@ -522,10 +540,26 @@ def place_island(
     slab: Atoms, island: Atoms, settings: OverlayerSettings
 ) -> tuple[Atoms, dict[str, Any]]:
     x, y = settings.island_position
+    top = None
+    shifted_from = None
+    if has_components(slab):
+        # Keep clear of clusters, SAM molecules and adsorbates added by earlier steps.
+        reach = lateral_diameter(island) / 2.0 + max(settings.interface_gap, 2.5)
+        spots = free_lateral_positions(slab, (x, y), reach)
+        if not spots:
+            raise OverlayerBuildError(
+                "No free spot for the island: atoms added by earlier steps cover the surface; "
+                "enlarge the slab in-plane or build the island before them."
+            )
+        if spots[0] != (x, y):
+            shifted_from = [x, y]
+        x, y = spots[0]
+        target = x * slab.cell.array[0] + y * slab.cell.array[1]
+        top = local_solid_top(slab, target[:2], reach)
     target = x * slab.cell.array[0] + y * slab.cell.array[1]
     placed = island.copy()
     placed.positions[:, :2] += target[:2] - placed.positions[:, :2].mean(axis=0)
-    frame, contact = _assemble(slab, placed, settings)
+    frame, contact = _assemble(slab, placed, settings, top)
     n_slab = len(slab)
     island_positions = frame.positions[n_slab:]
     image_gap = np.inf
@@ -543,6 +577,8 @@ def place_island(
         "footprint_area_A2": round(footprint, 4),
         "footprint_fraction": round(footprint / area, 4),
         "min_gap_to_periodic_image_A": round(image_gap, 4),
+        "island_position": [round(float(x), 4), round(float(y), 4)],
+        "moved_from_requested_position": shifted_from,
         "interface_gap_A": settings.interface_gap,
         "min_interface_contact_ratio": round(contact, 4) if contact is not None else None,
     }
@@ -583,6 +619,11 @@ def run_overlayer(
     match_record: dict[str, Any] | None = None
     notes: list[str] = []
 
+    if settings.coverage == "full" and decoration_mask(substrate.atoms).any():
+        raise OverlayerBuildError(
+            "The slab already carries clusters, SAM molecules or adsorbates from earlier steps; a continuous film "
+            "over them (overcoat) is not modeled. Build the film first, or use coverage partial (islands avoid them)."
+        )
     if settings.coverage == "full":
         match: FilmMatch | None = None
         no_match_reason = None
@@ -631,8 +672,8 @@ def run_overlayer(
             frames.append(frame)
 
     clean = slab.copy()
-    clean.new_array("fragment_id", np.zeros(len(clean), dtype=int))
-    clean.new_array("ald_role", np.zeros(len(clean), dtype=int))
+    clean.set_array("fragment_id", np.zeros(len(clean), dtype=int))
+    clean.set_array("ald_role", np.zeros(len(clean), dtype=int))
     clean.info.update({"task": "ald_overlayer", "role": "clean_slab", "frame_id": 0})
     issues: list[str] = []
     for frame_id, (frame, report) in enumerate(zip(frames, samples), start=1):

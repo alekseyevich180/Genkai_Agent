@@ -1,0 +1,21 @@
+# 示例 10：流水线。SnO2(110) -> 表面 O 空位 -> 丁酸 SAM（双齿，每个晶胞 2 个分子）-> H2O 吸附
+# SAM 只锚定在基底上；H2O 只放在没有被 SAM 分子盖住的 Sn 位点。
+
+output: runs/10_pipeline
+pipeline:
+  - method: slab
+    bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: sam
+    molecule: ../../agents/Agent/skills/surface-modeling/examples/4-acid.vasp
+    binding_mode: bidentate
+    counts: [2]
+  - method: adsorbate
+    molecule: ../../agents/Agent/skills/surface-modeling/examples/H2O.xyz
+    site_symbols: [Sn]
+    coverage_counts: [1]
+    patterns: [uniform]
+    n_trials_single: 8

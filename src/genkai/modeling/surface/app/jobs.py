@@ -182,6 +182,8 @@ _register(Method(
         Option("samples_per_count", "--samples-per-count", "int", "每个空位数抽取的构型数"),
         Option("z_frac_min", "--z-frac-min", "float", "可选 O 位点的最小分数坐标 z（0–1，按整个晶胞高度）"),
         Option("z_frac_max", "--z-frac-max", "float", "可选 O 位点的最大分数坐标 z（0–1，按整个晶胞高度）"),
+        Option("surface_depth", "--surface-depth", "float", "只取表面顶部以下这么深（Å）内的 O（表面空位）；写了就不再用 z_frac"),
+        Option("components", "--components", "words", "可去掉哪些部分的 O：substrate（基底）、overlayer（ALD 覆盖层）；默认 substrate"),
         SEED,
         FIXED_FRACTION,
     ),
@@ -205,6 +207,8 @@ _register(Method(
         Option("surface", "--surface", "path", "slab 文件", required=True, example="<slab.cif>"),
         Option("molecule", "--molecule", "path", "分子文件（XYZ、CIF、POSCAR 等）", required=True, example="<分子.xyz>"),
         Option("site_symbols", "--site-symbols", "words", "吸附位点的表面元素，如 Ce；多个元素写成列表", required=True, example="Ce"),
+        Option("site_components", "--site-components", "words",
+               "位点限定在哪些部分：substrate、overlayer、cluster、sam；默认不限（被团簇/SAM 盖住的位点总会排除）"),
         Option("coverage_counts", "--coverage-counts", "ints", "每个晶胞的分子数，如 [1, 2]；不写则从 1 到最多能放下的数"),
         Option("patterns", "--patterns", "words", "多分子排布方式：uniform、clustered、stripe、island、random"),
         Option("random_repeats", "--random-repeats", "int", "random 排布重复几次"),
@@ -441,6 +445,20 @@ _register(Method(
     ),
 ))
 
+_register(Method(
+    name="relax", title="弛豫或单点（MLIP）",
+    summary="用 MLIP 逐个弛豫结构文件里的每一帧并给出能量；流水线用它做中间弛豫和按能量挑候选",
+    module="genkai.modeling.surface.screening.relax", calculator_flag="--calculator", requires_mlip=True,
+    fixed_expected=False, vacuum_expected=False,
+    options=(
+        Option("structures", "--structures", "path", "结构文件（extxyz 可含多帧）", required=True, example="<structures.extxyz>"),
+        *RELAX_OPTIONS,
+        Option("relax_cell", "--relax-cell", "bool", "true 时同时弛豫晶胞（块体用；slab 保持 false）"),
+    ),
+    output_flag="--output-dir", outputs=("relaxed_structures.extxyz",),
+    notes=("能量只能在同一组成、同一模型之间比较；结果见 relax_manifest.json。",),
+))
+
 ANNEAL_OPTIONS = (
     Option("anneal_steps", "--anneal-steps", "int", "退火 MD 步数；默认 0（关闭）"),
     Option("anneal_temperature", "--anneal-temperature", "float", "退火温度（K）"),
@@ -608,6 +626,8 @@ def _load_documents(path: Path) -> list[tuple[int | None, Any]]:
         raise JobFileError(path, [f"YAML 格式错误：{exc}{hint}"]) from None
     if not isinstance(data, dict):
         raise JobFileError(path, ["任务文件需要写成“键: 值”的形式，至少包含 method"])
+    if "pipeline" in data:
+        raise JobFileError(path, [f"这是流水线文件；请用 `{PROG} check` 或 `{PROG} run`（会自动识别），不要按普通任务读取"])
     if "jobs" in data:
         extra = sorted(set(data) - {"jobs"})
         if extra:
@@ -1388,7 +1408,29 @@ def _print_result(result: JobResult, stream: TextIO) -> None:
         print(f"    记录：{result.manifest}（运行输出见同目录 run.log）", file=stream)
 
 
+def _split_pipelines(paths: Iterable[Path]) -> tuple[list[Path], list[Path]]:
+    """(job files, pipeline files): a file whose top level has ``pipeline`` is a pipeline."""
+    from .pipeline import is_pipeline_file
+
+    expanded = expand_paths(paths)
+    pipelines = [path for path in expanded if is_pipeline_file(path)]
+    return [path for path in expanded if path not in pipelines], pipelines
+
+
 def command_check(paths: list[Path], stream: TextIO, *, config_path: Path | None = None) -> int:
+    job_paths, pipeline_paths = _split_pipelines(paths)
+    code = 0
+    if pipeline_paths:
+        from . import pipeline
+
+        loaded = pipeline.load_all(pipeline_paths, stream, config_path)
+        code = 2 if loaded is None else max((pipeline.check_pipeline(p, stream) for p in loaded), default=0)
+        if not job_paths:
+            return code
+    return max(code, _check_jobs(job_paths, stream, config_path=config_path))
+
+
+def _check_jobs(paths: list[Path], stream: TextIO, *, config_path: Path | None = None) -> int:
     jobs = _load_all(paths, stream, config_path)
     if jobs is None:
         return 2
@@ -1433,6 +1475,24 @@ def command_check(paths: list[Path], stream: TextIO, *, config_path: Path | None
 
 
 def command_run(paths: list[Path], *, overwrite: bool, quiet: bool, stream: TextIO, config_path: Path | None = None) -> int:
+    job_paths, pipeline_paths = _split_pipelines(paths)
+    code = 0
+    if pipeline_paths:
+        from . import pipeline
+
+        loaded = pipeline.load_all(pipeline_paths, stream, config_path)
+        if loaded is None:
+            print("没有运行任何流水线。请先修改流水线文件（可用 check 命令检查）。", file=stream)
+            code = 2
+        else:
+            code = max((pipeline.run_pipeline(p, overwrite=overwrite, quiet=quiet, stream=stream) for p in loaded),
+                       default=0)
+        if not job_paths:
+            return code
+    return max(code, _run_jobs(job_paths, overwrite=overwrite, quiet=quiet, stream=stream, config_path=config_path))
+
+
+def _run_jobs(paths: list[Path], *, overwrite: bool, quiet: bool, stream: TextIO, config_path: Path | None = None) -> int:
     jobs = _load_all(paths, stream, config_path)
     if jobs is None:
         print("没有运行任何任务。请先修改任务文件（可用 check 命令检查）。", file=stream)

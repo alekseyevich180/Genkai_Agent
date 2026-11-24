@@ -49,7 +49,7 @@ from .sites import (
     surface_has_oxygen,
     unwrap_group,
 )
-from ..structure_io import export_frames, read_molecule, sha256_of, write_frames, write_manifest
+from ..structure_io import export_frames, label_components, read_molecule, sha256_of, write_frames, write_manifest
 from .substrate import (
     Substrate,
     add_substrate_arguments,
@@ -746,8 +746,9 @@ class SamBuilder:
         tags = np.concatenate([self.substrate.get_tags(), np.full(len(frame) - n_slab, 2)])
         frame.set_tags(tags)
         frame.set_constraint(FixAtoms(indices=fixed) if fixed else [])
-        frame.new_array("fragment_id", fragment.astype(int))
-        frame.new_array("sam_role", role.astype(int))
+        frame.set_array("fragment_id", fragment.astype(int))
+        frame.set_array("sam_role", role.astype(int))
+        label_components(frame, "sam", range(n_slab, len(frame)))  # molecules and transferred H
         cell = frame.cell.array.copy()
         needed = float(frame.positions[:, 2].max()) + self.settings.vacuum_above
         cell[2] = [0.0, 0.0, max(float(self.substrate.cell.array[2, 2]), needed)]
@@ -838,8 +839,8 @@ def run_sam(
     counts, count_record = resolve_counts(settings, area)
 
     clean = substrate.atoms.copy()
-    clean.new_array("fragment_id", np.zeros(len(clean), dtype=int))
-    clean.new_array("sam_role", np.zeros(len(clean), dtype=int))
+    clean.set_array("fragment_id", np.zeros(len(clean), dtype=int))
+    clean.set_array("sam_role", np.zeros(len(clean), dtype=int))
     clean.info.update({"task": "surface_functionalization", "role": "clean_slab", "molecule_count": 0})
     frames = [clean]
     frame_reports = []

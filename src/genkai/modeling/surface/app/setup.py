@@ -281,6 +281,7 @@ def write_tasks(root: Path, config: Path) -> None:
         "bulk": root / "tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif",
         "crystal": root / "tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif",
         "surface": examples / "CeO2 (1 1 1).cif", "input": examples / "CeO2 (1 1 1).cif",
+        "structures": examples / "CeO2 (1 1 1).cif",
         "molecule": examples / "4-acid.vasp", "amorphous": root / "tests/amorphous/TiO2.vasp",
         "cluster": root / "tests/fixtures/archives/generated/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.xyz",
     }

@@ -8,6 +8,8 @@
   指南移到 `docs/guides/`，`ptomodel_mapping.md` 移到 `docs/`。同日较早：CUDA UMA 的 `oom_fallback`、
   共享 Periodic GP 采样器（`search_sampler.py`）及非晶 TiO2 表面五方法对照（Slurm 240）。
   同日新增 `amorphous_bulk`：晶体经 MLIP 熔融-淬火得到非晶块体，可串联 `amorphous_slab` 切表面。
+  同日新增流水线（`pipeline:` 自动串联、顺序检查、pick 分支）与原子来源标签（构建器避开前面加上的团簇/分子）；
+  第三期：`relax` 中间弛豫步与 `pick: lowest_energy`（MLIP 弛豫候选后按组成取最低）。
   详见 [2026-11-24](work_logs/2026-11-24.md)。
 - 2026-11-18：服务器作业 214 检查（SnO2(110) 弛豫 PASS）、顶部五个任务改为单作业串行（作业 216），
   旧 UMA 测试脚本和输出归档到 `/home/wu/start/test/`、`/home/wu/output/test/`。

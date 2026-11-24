@@ -12,6 +12,8 @@ from ase.calculators.calculator import Calculator, all_changes
 from ase.io import read, write
 from ase.optimize import LBFGS
 
+from ..structure_io import components, write_frames
+
 
 CONFIG = {
     # Input/output
@@ -89,19 +91,42 @@ def optimize_energy(atoms: Atoms, calculator, fmax: float, max_steps: int | None
     return float(atoms.get_potential_energy())
 
 
-def oxygen_indices(atoms: Atoms, symbol: str = "O", z_frac_min: float = 0.0, z_frac_max: float = 1.0) -> list[int]:
+def oxygen_indices(
+    atoms: Atoms,
+    symbol: str = "O",
+    z_frac_min: float = 0.0,
+    z_frac_max: float = 1.0,
+    *,
+    allowed_components: tuple[str, ...] | None = None,
+    surface_depth: float | None = None,
+) -> list[int]:
+    """Selectable ``symbol`` atoms.
+
+    ``allowed_components`` keeps only atoms of those components (see
+    ``structure_io.components``; an unlabeled slab is all substrate), so O atoms of
+    SAM molecules, adsorbates or an overlayer added by earlier steps are not removed.
+    ``surface_depth`` keeps atoms within this many Angstrom below the top of the
+    allowed atoms, i.e. surface vacancies, instead of the fractional z window.
+    """
     scaled = atoms.get_scaled_positions(wrap=True)
+    labels = components(atoms)
+    allowed = np.ones(len(atoms), dtype=bool) if not allowed_components else np.isin(labels, list(allowed_components))
+    top = float(atoms.positions[allowed, 2].max()) if allowed.any() else 0.0
     indices = [
         atom.index
         for atom in atoms
-        if atom.symbol == symbol and z_frac_min <= scaled[atom.index, 2] <= z_frac_max
+        if atom.symbol == symbol
+        and allowed[atom.index]
+        and z_frac_min <= scaled[atom.index, 2] <= z_frac_max
+        and (surface_depth is None or atom.position[2] >= top - surface_depth)
     ]
     if not indices:
         symbols = sorted(set(atoms.get_chemical_symbols()))
-        raise ValueError(
-            f"No {symbol} atoms found in z fractional range [{z_frac_min}, {z_frac_max}]. "
-            f"Available symbols: {', '.join(symbols)}"
+        where = f"within {surface_depth} A of the surface top" if surface_depth is not None else (
+            f"in z fractional range [{z_frac_min}, {z_frac_max}]"
         )
+        scope = f" of component(s) {', '.join(allowed_components)}" if allowed_components else ""
+        raise ValueError(f"No {symbol} atoms{scope} found {where}. Available symbols: {', '.join(symbols)}")
     return indices
 
 
@@ -224,6 +249,18 @@ def _build_parser() -> argparse.ArgumentParser:
         default=CONFIG["z_frac_max"],
         help="Maximum fractional z for selectable O sites.",
     )
+    parser.add_argument(
+        "--components",
+        default="substrate",
+        help="Comma-separated components whose O may be removed (substrate, overlayer); unlabeled slabs are all substrate.",
+    )
+    parser.add_argument(
+        "--surface-depth",
+        type=float,
+        default=None,
+        help="Only O within this depth (A) below the top of those components (surface vacancies); "
+        "replaces the fractional z window when set.",
+    )
     parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "mace", "none"])
     from ..mlip.calculators import add_mace_arguments
 
@@ -278,8 +315,12 @@ def main(argv: list[str] | None = None) -> int:
 
     clean, constraint_source = ensure_fixed_bottom(read(args.input), args.fixed_fraction)
     print(f"Slab constraints: {constraint_source}")
-    all_o_indices = oxygen_indices(clean)
-    o_indices = oxygen_indices(clean, z_frac_min=args.z_frac_min, z_frac_max=args.z_frac_max)
+    allowed_components = tuple(item.strip() for item in args.components.split(",") if item.strip())
+    all_o_indices = oxygen_indices(clean, allowed_components=allowed_components)
+    o_indices = oxygen_indices(
+        clean, z_frac_min=args.z_frac_min, z_frac_max=args.z_frac_max,
+        allowed_components=allowed_components, surface_depth=args.surface_depth,
+    )
     vacancy_counts = parse_vacancy_counts(args.vacancy_counts, len(o_indices))
 
     print(f"Input structure: {args.input}")
@@ -287,7 +328,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Atoms: {len(clean)}, total oxygen atoms: {len(all_o_indices)}")
     print(
         f"Selectable oxygen atoms: {len(o_indices)} "
-        f"(z_frac range {args.z_frac_min:.3f}-{args.z_frac_max:.3f})"
+        + (f"(within {args.surface_depth} A of the top" if args.surface_depth is not None
+           else f"(z_frac range {args.z_frac_min:.3f}-{args.z_frac_max:.3f}")
+        + f"; components {', '.join(allowed_components)})"
     )
     print(f"Vacancy counts: {vacancy_counts}")
     print(f"Calculator: {args.calculator}")
@@ -310,6 +353,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Clean relaxed energy: {clean_energy:.8f} eV")
 
     records = []
+    defects: list[Atoms] = []
     trial_id = 0
     for vacancy_count in vacancy_counts:
         vacancy_sets = sample_vacancy_sets(o_indices, vacancy_count, args.samples_per_count, rng)
@@ -317,6 +361,10 @@ def main(argv: list[str] | None = None) -> int:
             trial_id += 1
             defect = remove_vacancies(clean_relaxed, vacancy_set)
             defect_energy = optimize_energy(defect, calculator, args.fmax, args.max_steps)
+            frame = defect.copy()
+            frame.info = {"task": "vacancy_landscape", "role": "vacancy_slab", "trial_id": trial_id,
+                          "vacancy_count": vacancy_count}
+            defects.append(frame)
             e_vac = defect_energy - clean_energy + vacancy_count * args.mu_o
             concentration = vacancy_count / len(all_o_indices)
 
@@ -343,6 +391,10 @@ def main(argv: list[str] | None = None) -> int:
                 f"trial={trial_id:04d} m={vacancy_count} "
                 f"conc={concentration:.4f} E_vac={e_vac:.8f} eV"
             )
+
+    # Every candidate in trial order, keeping FixAtoms, tags and component labels for the next step.
+    structures_path = write_frames(args.output_dir / "vacancy_structures.extxyz", defects)
+    print(f"Structures (extxyz, trial order): {structures_path}")
 
     table = pd.DataFrame(records).sort_values("E_vac_eV").reset_index(drop=True)
     csv_path = args.output_dir / "vacancy_energy_landscape.csv"

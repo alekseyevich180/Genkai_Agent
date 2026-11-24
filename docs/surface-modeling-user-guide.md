@@ -167,6 +167,63 @@ jobs:
 任务按顺序运行。`check` 时第二个任务的输入还不存在，会提示“会由前面的任务生成”。
 同一个文件里的某个任务失败后，后面的任务会被跳过。
 
+### 4.4 流水线：自动串联（推荐）
+
+`jobs:` 需要手写上一步的输出文件名。写成 `pipeline:` 时，每一步自动接上一步的结构，
+`check`/`run` 命令不变（会自动识别流水线文件）：
+
+```yaml
+output: runs/pt_on_reduced_sno2       # 可选；默认 runs/<文件名>
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]                 # 面内超胞在第一步一次定够，后面的步骤不再扩胞
+  - method: vacancy
+    vacancy_counts: [1]
+    samples_per_count: 2
+    pick: all                         # 两个空位构型都往下做（两条分支）
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc]
+  - method: adsorbate
+    molecule: inputs/CO.xyz
+    site_symbols: [Pt]
+```
+
+规则：
+
+- **顺序**：体相（`amorphous_bulk`）→ 表面（`slab`/`amorphous_slab`）→ 晶格缺陷（`vacancy`）→ 覆盖层（`ald`）→
+  负载团簇（`cluster`）→ 有机修饰（`sam`）→ 气体吸附（`adsorbate`）。同一层可以重复；倒序会报错。
+  确实需要倒序时（例如在 ALD 膜里做 O 空位：`ald` 之后接 `vacancy` 并写 `components: [overlayer]`），
+  在顶层写 `allow_order: true`。
+- **接线**：第一步自己写输入（`bulk`、`crystal`、`amorphous` 或 `surface`）；后面的步骤不要写
+  `surface`、`input`、`amorphous`，流水线会接上一步的结构。步骤里不能写 `output`。
+- **`pick`**：`first`（默认）、一个序号或序号列表（从 0 开始，如 `[0, 2]`）、`all`，或 `lowest_energy`。
+  `all` 会把每个候选都变成一条分支；分支总数超过 `max_branches`（默认 20）时停止。
+- **按能量挑选**（需要 MLIP，只在获准的服务器上运行）：在顶层写 `mlip: <genkai.yaml 中的配置名>`，
+  步骤里写 `pick: lowest_energy`。流水线先用该模型弛豫这一步的全部候选（方法 `relax`），按化学组成分组，
+  每组保留能量最低的 `pick_count` 个（默认 1），选中的是弛豫后的结构。能量只在同一步、同一分支、同一组成
+  的候选之间比较（例如 1 个空位和 2 个空位各取最低，变成两条分支）；不会使用模拟计算器的能量。
+- **中间弛豫**：`- method: relax` 可以放在任意一步之后，用顶层 `mlip`（或该步自己写的 `mlip`）
+  弛豫当前结构再往下做；`fmax`、`max_steps` 默认读取 genkai.yaml 的 settings，`max_steps: 0` 只算单点。
+- **原子来源**：每个原子带一个来源标签 `component`（substrate、overlayer、cluster、sam、adsorbate）。
+  后面的步骤据此避开前面加上的东西：空位只取基底的 O（流水线默认只取表面 2.5 Å 内，写了 `surface_depth`
+  或 `z_frac_*` 就按你写的）；团簇放到下面没有其他添加物的位置，并以基底/覆盖层的局部表面为高度；
+  SAM 只锚定在基底/覆盖层上；被团簇、SAM 或分子盖住的吸附位点会被排除（`site_components` 可进一步限定）。
+- **ALD 的限制**：已有团簇、SAM 或分子时，全覆盖膜（overcoat）不能做，会报错；岛状覆盖会避开它们。
+  ALD 岛为了留出间距可能扩大面内超胞，前面加上的团簇等会随超胞一起重复（覆盖度不变）。
+- **真空**：每一步后自动把顶部真空补到 `min_vacuum`（默认 10 Å）；固定原子保持不变。
+- **结果**：`<output>/pipeline_structures.extxyz` 是全部最终结构，每个结构的 `pipeline_label` 记录来源，
+  如 `slab#0 > vacancy#1 > cluster#0 > adsorbate#0`；`pipeline_manifest.json` 记录每一步的运行、候选、
+  选择和补真空情况。每一步的输出在 `<output>/<序号_方法>/<分支>/`，各自有 `manifest.json` 和 `run.log`。
+- 能量筛选方法（`sam_search`、`cluster_search`、`amorphous_surfaces`、`amorphous_interface`）暂不能放进流水线，
+  可以对流水线的结果单独运行；流水线里的能量比较用 `relax` + `pick: lowest_energy`。
+
+示例：`examples/surface_jobs/09_pipeline_vacancy_cluster_water.yaml`、`10_pipeline_vacancy_sam_water.yaml`
+（只生成结构）；`examples/mlip_jobs/06_pipeline_energy_pick.yaml`（按能量挑选，需要 MLIP）。
+
 ## 5. 各方法要点
 
 - **slab**：不写 `facet` 时，按内置稳定晶面表选择。表里有 CeO2、TiO2、SnO2、RuO2、IrO2，

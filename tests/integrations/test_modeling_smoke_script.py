@@ -40,6 +40,7 @@ def test_every_case_uses_existing_repository_structures_and_entry_points() -> No
         "sam_search",
         "amorphous_screen",
         "surface_jobs",
+        "pipeline",
     }
     ctx = smoke.Context(profile="local", device="cpu", uma_model="uma-s-1p2", enabled=set())
     for case in smoke.CASES:

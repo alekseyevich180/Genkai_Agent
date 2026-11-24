@@ -1,0 +1,30 @@
+# 示例 6：流水线 + MLIP 能量挑选（只在获准做真实计算的服务器上运行）
+# SnO2(110) -> 6 个单空位构型，用 MLIP 弛豫后取能量最低的 -> 弛豫 -> Pt13 的 fcc 与 hcp 两种，取能量最低的
+#            -> 弛豫 -> H2O 一个和两个分子的覆盖度，各取能量最低的（两条分支）
+# 能量模型由顶层 mlip 选择（genkai.yaml 中的配置名）；能量只在同一步、同一分支、同一组成的候选之间比较。
+# 结构生成步骤本身不算能量；lowest_energy 会先用该模型弛豫全部候选，选中的是弛豫后的结构。
+
+output: runs/pipeline_energy
+mlip: default
+pipeline:
+  - method: slab
+    bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: vacancy
+    vacancy_counts: [1]
+    samples_per_count: 6
+    pick: lowest_energy
+  - method: relax
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc, hcp]
+    pick: lowest_energy
+  - method: relax
+  - method: adsorbate
+    molecule: ../../agents/Agent/skills/surface-modeling/examples/H2O.xyz
+    site_symbols: [Sn]
+    coverage_counts: [1, 2]
+    patterns: [uniform]
+    pick: lowest_energy      # 两种组成（1 个、2 个 H2O）各取最低，共两条分支

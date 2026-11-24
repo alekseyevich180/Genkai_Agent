@@ -22,6 +22,7 @@ from ..mlip.calculators import (
     resolve_mace_model,
 )
 from ..mlip.search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
+from ..structure_io import components, decoration_mask, label_components, write_frames
 
 CONFIG = {
     # Input/output
@@ -95,6 +96,8 @@ class AdsorbateLandscapeConfig:
     mace_model: str | None = None
     mace_dtype: str = "float32"
     sampler: str = DEFAULT_SAMPLER
+    # Comma-separated components whose atoms may be sites (e.g. "substrate"); None = any.
+    site_components: str | None = None
 
     def __post_init__(self) -> None:
         if self.calculator == "mace":
@@ -189,11 +192,23 @@ def parse_patterns(text: str) -> list[str]:
     return patterns
 
 
-def get_surface_sites(slab: Atoms, site_symbols: list[str], z_tolerance: float, max_sites: int | None) -> list[int]:
-    candidate_indices = [atom.index for atom in slab if atom.symbol in site_symbols]
+def get_surface_sites(
+    slab: Atoms,
+    site_symbols: list[str],
+    z_tolerance: float,
+    max_sites: int | None,
+    *,
+    site_components: list[str] | None = None,
+) -> list[int]:
+    labels = components(slab)
+    candidate_indices = [
+        atom.index for atom in slab
+        if atom.symbol in site_symbols and (not site_components or labels[atom.index] in site_components)
+    ]
     if not candidate_indices:
         available = sorted(set(slab.get_chemical_symbols()))
-        raise ValueError(f"No site atoms found for {site_symbols}. Available symbols: {available}")
+        scope = f" in component(s) {', '.join(site_components)}" if site_components else ""
+        raise ValueError(f"No site atoms found for {site_symbols}{scope}. Available symbols: {available}")
 
     z_values = slab.positions[candidate_indices, 2]
     top_z = float(np.max(z_values))
@@ -257,6 +272,29 @@ def lateral_distance_matrix(slab: Atoms, positions: np.ndarray) -> np.ndarray:
     deltas = (points[None, :, :] - points[:, None, :]).reshape(-1, 3)
     distances = np.linalg.norm(minimum_image_vectors(slab, deltas), axis=1)
     return distances.reshape(len(points), len(points))
+
+
+def unblocked_sites(slab: Atoms, sites: list[int], molecule: Atoms, z_gap_max: float) -> tuple[list[int], int]:
+    """Drop sites under atoms that earlier steps added (clusters, SAM molecules, adsorbates).
+
+    A site is blocked when such an atom lies within the molecule's radius + 1 A of the
+    site in-plane and between the site and the top of a molecule placed there. Plain
+    slabs have no such atoms, so nothing changes for them.
+    """
+    decorated = np.flatnonzero(decoration_mask(slab))
+    if not len(decorated) or not sites:
+        return sites, 0
+    centered = center_molecule(molecule)
+    reach = float(np.linalg.norm(centered.positions, axis=1).max()) if len(centered) > 1 else 0.0
+    radius, height = reach + 1.0, z_gap_max + 2.0 * reach + 1.0
+    kept: list[int] = []
+    for site in sites:
+        delta = slab.positions[decorated] - slab.positions[site]
+        lateral = np.linalg.norm(minimum_image_vectors(slab, delta)[:, :2], axis=1)
+        above = (delta[:, 2] > 0.4) & (delta[:, 2] < height)
+        if not ((lateral < radius) & above).any():
+            kept.append(site)
+    return kept, len(sites) - len(kept)
 
 
 def center_molecule(molecule: Atoms) -> Atoms:
@@ -521,7 +559,7 @@ def build_coverage_structure(
             dy=placement["dy"],
         )
         combined += mol
-    return combined
+    return label_components(combined, "adsorbate", range(len(slab), len(combined)))
 
 
 def plot_adsorbate_landscape(table: pd.DataFrame, output_path: Path) -> None:
@@ -587,7 +625,15 @@ def run_adsorbate_landscape(
     slab, constraint_source = ensure_fixed_bottom(read(args.surface), args.fixed_fraction)
     print(f"Slab constraints: {constraint_source}")
     molecule = read(args.molecule)
-    site_indices = get_surface_sites(slab, site_symbols, args.site_z_tolerance, args.max_sites)
+    site_components = parse_symbols(args.site_components) if args.site_components else None
+    site_indices = get_surface_sites(
+        slab, site_symbols, args.site_z_tolerance, args.max_sites, site_components=site_components
+    )
+    site_indices, blocked = unblocked_sites(slab, site_indices, molecule, args.z_gap_max)
+    if blocked:
+        print(f"Sites blocked by atoms of earlier steps (cluster/SAM/adsorbate): {blocked}")
+    if not site_indices:
+        raise ValueError("Every adsorption site is covered by atoms added in earlier steps; use other site symbols.")
     site_groups = build_site_groups(slab, site_indices, args.site_group_size)
     site_group_positions = group_positions(slab, site_groups)
     site_group_distances = lateral_distance_matrix(slab, site_group_positions)
@@ -639,6 +685,7 @@ def run_adsorbate_landscape(
 
     rows = []
     structure_paths: list[Path] = []
+    frames: list[Atoms] = []
     structure_id = 0
     for count in coverage_counts:
         for pattern in patterns:
@@ -660,6 +707,10 @@ def run_adsorbate_landscape(
                 structure_path = structures_dir / f"{args.structure_prefix}_{structure_id}.cif"
                 write(structure_path, structure)
                 structure_paths.append(structure_path)
+                frame = structure.copy()
+                frame.info = {"task": "adsorbate_landscape", "role": "adsorbate_on_slab", "structure_id": structure_id,
+                              "pattern": pattern, "adsorbate_count": count}
+                frames.append(frame)
                 rows.append(
                     {
                         "structure_id": structure_id,
@@ -685,6 +736,9 @@ def run_adsorbate_landscape(
                     f"id={structure_id:04d} pattern={pattern} n={count} "
                     f"coverage={coverage:.3f} E_ads/N={e_ads_total / count:.8f} eV"
                 )
+
+    # Every coverage structure in id order, keeping FixAtoms, tags and component labels.
+    write_frames(args.output_dir / "adsorbate_structures.extxyz", frames)
 
     table = pd.DataFrame(rows).sort_values("E_ads_per_molecule_eV").reset_index(drop=True)
     csv_path = args.output_dir / "adsorbate_coverage_landscape.csv"
@@ -753,6 +807,10 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", type=Path, default=Path(CONFIG["output_dir"]))
     parser.add_argument("--structure-prefix", type=str, default=CONFIG["structure_prefix"])
     parser.add_argument("--site-symbols", type=str, default=CONFIG["site_symbols"])
+    parser.add_argument(
+        "--site-components", default=None,
+        help="Comma-separated components whose atoms may be sites (substrate, overlayer, cluster, sam); default any.",
+    )
     parser.add_argument("--site-z-tolerance", type=float, default=CONFIG["site_z_tolerance"])
     parser.add_argument("--max-sites", type=int, default=CONFIG["max_sites"])
     parser.add_argument("--site-group-size", type=int, default=CONFIG["site_group_size"])

@@ -2,8 +2,11 @@ import argparse
 import json
 from pathlib import Path
 
+import numpy as np
 from ase import Atoms
 from ase.io import read, write
+
+from ...structure_io import free_lateral_positions, has_components, label_components, local_solid_top, write_frames
 
 from ..materials_project_slab import (
     download_stable_surface,
@@ -28,6 +31,11 @@ MP_SPACEGROUP_TO_CLUSTER_STRUCTURE = {
 }
 
 
+# In-plane clearance between the cluster footprint and atoms added by earlier steps
+# (about a non-bonded contact distance).
+CLEARANCE_A = 2.5
+
+
 def place_cluster_on_surface(
     slab: Atoms,
     cluster: Atoms,
@@ -37,22 +45,49 @@ def place_cluster_on_surface(
     phi: float,
     theta: float,
     psi: float,
+    placement: dict | None = None,
 ) -> Atoms:
+    """Place the cluster ``z_height`` above the surface at (x_frac, y_frac).
+
+    A slab with component labels (see ``structure_io.components``) is treated as a
+    surface that earlier steps may have decorated: the cluster goes to the free spot
+    nearest to (x_frac, y_frac) with no cluster/SAM/adsorbate atom under its footprint,
+    and sits above the highest substrate/overlayer atom under that footprint. A plain
+    slab keeps the original rule (above the highest atom, at the requested spot).
+    ``placement`` (optional dict) receives the position actually used.
+    """
     placed_cluster = cluster.copy()
     placed_cluster.euler_rotate(phi=phi, theta=theta, psi=psi)
-
-    xy_position = (slab.cell.array.T @ [x_frac, y_frac, 0.0])[:2]
-    slab_top_z = float(slab.positions[:, 2].max())
     cluster_bottom_z = float(placed_cluster.positions[:, 2].min())
+    centre = placed_cluster.positions[:, :2].mean(axis=0)
+    footprint = float(np.linalg.norm(placed_cluster.positions[:, :2] - centre, axis=1).max()) + CLEARANCE_A
+
+    if has_components(slab):
+        spots = free_lateral_positions(slab, (x_frac, y_frac), footprint)
+        if not spots:
+            raise ValueError(
+                "No free spot for the cluster: atoms added by earlier steps cover the surface "
+                "(enlarge the slab in-plane or place the cluster before them)."
+            )
+        x_frac, y_frac = spots[0]
+        xy_position = (slab.cell.array.T @ [x_frac, y_frac, 0.0])[:2]
+        surface_top_z = local_solid_top(slab, xy_position, footprint)
+    else:
+        xy_position = (slab.cell.array.T @ [x_frac, y_frac, 0.0])[:2]
+        surface_top_z = float(slab.positions[:, 2].max())
 
     placed_cluster.translate(
         [
-            float(xy_position[0]),
-            float(xy_position[1]),
-            slab_top_z + z_height - cluster_bottom_z,
+            float(xy_position[0] - centre[0]),
+            float(xy_position[1] - centre[1]),
+            surface_top_z + z_height - cluster_bottom_z,
         ]
     )
-    return slab + placed_cluster
+    if placement is not None:
+        placement.update({"x_frac": round(float(x_frac), 4), "y_frac": round(float(y_frac), 4),
+                          "surface_top_z_A": round(surface_top_z, 4), "footprint_radius_A": round(footprint, 3)})
+    combined = slab + placed_cluster
+    return label_components(combined, "cluster", range(len(slab), len(combined)))
 
 
 def get_geometric_center(atoms: Atoms):
@@ -205,6 +240,8 @@ def main(argv: list[str] | None = None) -> None:
     slab = read(surface_path) if surface_path is not None else None
     slab_check = validate_surface_slab(slab) if slab is not None else None
     generated_files: list[str] = []
+    placements: list[dict] = []
+    frames: list[Atoms] = []
 
     size_tag = (
         f"bccrows{args.bcc_rows}_maxrow{args.bcc_max_row_atoms}_L{args.stack_layers}"
@@ -277,6 +314,7 @@ def main(argv: list[str] | None = None) -> None:
         prefix = args.output_dir / f"{element}_{structure}_{size_tag}"
 
         if slab is not None:
+            placement: dict = {"structure": structure}
             combined = place_cluster_on_surface(
                 slab=slab,
                 cluster=cluster,
@@ -286,16 +324,25 @@ def main(argv: list[str] | None = None) -> None:
                 phi=args.phi,
                 theta=args.theta,
                 psi=args.psi,
+                placement=placement,
             )
+            placements.append(placement)
             combined_path = prefix.with_name(prefix.name + "_on_surface").with_suffix(".cif")
             write(combined_path, combined)
             generated_files.append(str(combined_path))
+            frame = combined.copy()
+            frame.info = {"task": "surface_cluster_builder", "role": "cluster_on_slab", "cluster_structure": structure}
+            frames.append(frame)
             print(combined_path.name)
         else:
             cluster_path = prefix.with_name(prefix.name + "_cluster").with_suffix(".cif")
             write(cluster_path, cluster)
             generated_files.append(str(cluster_path))
             print(cluster_path.name)
+
+    if frames:
+        # One frame per cluster structure, keeping FixAtoms, tags and component labels for the next step.
+        generated_files.append(str(write_frames(args.output_dir / "cluster_structures.extxyz", frames)))
 
     manifest = {
         "schema_version": "1.0",
@@ -319,6 +366,7 @@ def main(argv: list[str] | None = None) -> None:
             "surface_is_slab": slab_check,
             "cluster_size_resolved": args.cluster_atoms is not None or args.cluster_layers is not None or args.cluster_radius is not None,
         },
+        "placements": placements,
         "files": {"generated_models": generated_files},
     }
     manifest_path = args.output_dir / "modeling_manifest.json"

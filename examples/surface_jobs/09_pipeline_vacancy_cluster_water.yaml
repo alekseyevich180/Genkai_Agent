@@ -1,0 +1,26 @@
+# 示例 9：流水线（自动串联）。SnO2 块体 -> (110) 面 -> 表面 O 空位 -> Pt13 团簇 -> H2O 吸附
+# 每一步自动接上一步的结构，不用写文件名；顺序按 体相 -> 表面 -> 空位 -> ALD -> 团簇 -> SAM -> 吸附 检查。
+# 空位步默认只挑表面 2.5 Å 内的基底 O；团簇放在没有其他添加物的位置；被团簇盖住的 Sn 位点不放分子。
+# pick: all 让两个空位构型都继续往下做（两条分支）；其余步骤默认 pick: first。
+# 结果：runs/09_pipeline/pipeline_structures.extxyz（每个结构带谱系标签），记录见 pipeline_manifest.json。
+
+output: runs/09_pipeline
+pipeline:
+  - method: slab
+    bulk: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    facet: "110"
+    repeat_xy: [2, 4]          # 面内超胞在这里一次定够，后面的步骤不再扩胞
+  - method: vacancy
+    vacancy_counts: [1]
+    samples_per_count: 2
+    pick: all
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc]
+  - method: adsorbate
+    molecule: ../../agents/Agent/skills/surface-modeling/examples/H2O.xyz
+    site_symbols: [Sn]
+    coverage_counts: [1]
+    patterns: [uniform]
+    n_trials_single: 8

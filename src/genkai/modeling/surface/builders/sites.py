@@ -22,6 +22,8 @@ from ase import Atoms
 from ase.data import covalent_radii
 from ase.geometry import find_mic
 
+from ..structure_io import solid_mask
+
 ANION_SYMBOLS = frozenset({"O", "S", "Se", "Te", "N", "F", "Cl", "Br", "I"})
 DEFAULT_BOND_SCALE = 1.15
 EXPOSURE_RADIUS_A = 1.2  # lateral radius of the "nothing on top" test
@@ -130,8 +132,18 @@ def exposed_indices(atoms: Atoms, candidates: Iterable[int]) -> list[int]:
 
 
 def surface_region(atoms: Atoms, depth: float) -> list[int]:
+    """Solid atoms (substrate and overlayer) within ``depth`` of the top of the solid surface.
+
+    Atoms that earlier steps added on top (clusters, SAM molecules, adsorbates; see
+    ``structure_io.components``) are never part of the surface; they still cover the
+    atoms below them in ``exposed_indices``. Unlabeled structures are all substrate.
+    """
     z = atoms.positions[:, 2]
-    return [int(i) for i in np.flatnonzero(z >= z.max() - depth)]
+    solid = solid_mask(atoms)
+    if not solid.any():
+        solid = np.ones(len(atoms), dtype=bool)
+    top = float(z[solid].max())
+    return [int(i) for i in np.flatnonzero(solid & (z >= top - depth))]
 
 
 def find_surface_sites(

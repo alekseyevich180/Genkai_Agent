@@ -106,6 +106,9 @@ output: runs/my_sam
 
 `sam_search`、`amorphous_surfaces`、`amorphous_interface`、`cluster_search`、`amorphous_bulk` 自动使用所选配置；
 `slab`、`vacancy`、`adsorbate` 可加 `mlip: <名称>` 启用能量计算。不启用 MLIP 的旧任务仍只生成结构。
+多个建模步骤要接在一起（如 切面 → 空位 → 团簇 → 吸附）时，写成 `pipeline:` 流水线：每一步自动接上一步的结构，
+按 体相 → 表面 → 空位 → ALD → 团簇 → SAM → 吸附 的顺序检查，后面的步骤会避开前面加上的团簇、分子等，
+见使用手册 4.4 节和 `examples/surface_jobs/09_*.yaml`、`10_*.yaml`。
 只有晶体、需要非晶表面时，先用 `amorphous_bulk`（MLIP 熔融-淬火）得到非晶块体，再交给 `amorphous_slab`
 切表面，两步可写在同一个任务文件里，见
 [examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml](examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml)。

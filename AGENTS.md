@@ -54,8 +54,9 @@
     输出可作为 `amorphous_slab`/ALD/`amorphous_screen` 的 `--amorphous`；需要有力的计算器，`none` 被拒绝，
     `--dry-run` 只准备超胞）。
   - `screening/`：SAM 锚定搜索 `sam_search.py`、非晶表面/界面筛选 `amorphous_screen.py`、团簇与岛放置搜索
-    `cluster_search.py`。
+    `cluster_search.py`、多帧结构的弛豫/单点 `relax.py`（流水线按能量挑选和中间弛豫用）。
   - `app/`：任务文件入口 `jobs.py`（console script `genkai-surface`，按模块名在子进程里启动各方法）、
+    流水线 `pipeline.py`（2026-11-24：`pipeline:` 文件自动串联各步骤，`check`/`run` 自动识别）、
     安装向导 `setup.py`（`install.sh` 调用）。面向使用者统一走 `./genkai` / `genkai-surface`。
   - `executor.py`、`facade.py`：论文建模计划的 structure-only 执行。
   - 顶层的 `slab.py`、`jobs.py`、`metal_cluster/` 等旧路径是**转发模块**，只为服务器上已有脚本（hooks、
@@ -83,6 +84,12 @@
   以及旧路径 `python -m` 仍可运行。
 - 公共 artifact 通过 `genkai.contracts` 和 `RunManifest` 传递。
 - 修改某个方法的命令行参数时，同步 `jobs.py` 的参数表；`tests/modeling/test_surface_jobs.py` 会检查。
+- 串联顺序（`app/pipeline.py` 的 `STEP_KINDS`）：体相 → 表面 → 空位 → ALD → 团簇 → SAM → 吸附；倒序需 `allow_order: true`。
+  新的结构生成方法要进入流水线时，在 `STEP_KINDS` 登记层级、输入参数、候选文件和新原子的 `component`，
+  并让方法写出保留固定原子和标签的 extxyz 候选文件。能量筛选方法还未接入流水线。
+- 流水线按能量挑选（第三期，2026-11-24）：`pick: lowest_energy`（`pick_count`）先用顶层 `mlip` 配置调用
+  `screening/relax.py` 弛豫全部候选，再按化学组成分组取最低；`method: relax` 是可放在任意位置的中间弛豫步。
+  能量只在同一步、同一分支、同一组成内比较，`relax` 拒绝 `calculator=none`。本机只用 EMT 测试这条路径。
 
 ### 结构文件约定
 
@@ -91,6 +98,10 @@
 - 用户输入默认 CIF，也接受 ASE 可读的其他格式；输入只在入口读取一次。
 - 同一进程内传递 `ase.Atoms`；阶段之间和 artifact 的结构文件使用 extxyz（保留 `FixAtoms`、tags、
   逐原子数组和多帧）；元数据写进 JSON manifest，不放在 extxyz 的 info 里。
+- 逐原子数组 `component`（substrate、overlayer、cluster、sam、adsorbate）记录每个原子由哪一步加入，
+  辅助函数在 `structure_io`（`label_components`、`solid_mask`、`free_lateral_positions`、`local_solid_top`）。
+  加原子的构建器必须给新原子打标签；没有该数组的结构视为全部基底，所以单独使用时行为不变。
+  表面区域、SAM 位点、空位候选、吸附位点、团簇和 ALD 岛的位置都按“基底+覆盖层”为表面、避开其他部分。
 - CIF 只用于导出（会丢失固定原子等信息）。导出 POSCAR 时不排序；`slab.py` 的 `slab.vasp` 是排过序的，
   不能与 `slab.extxyz` 混用原子索引。
 
@@ -124,6 +135,11 @@ python -m genkai.modeling.surface.app.jobs check examples/surface_jobs/*.yaml
 - 本机没有 `wheel`，新子包的打包只用 setuptools 包发现核对；实际 wheel 由 CI 安装验证。
 - 同日加入 `amorphous_bulk` 后：`python -m pytest -q` 214 passed / 2 deselected；冒烟 31 个用例，
   PASS 29 / WARN 0 / FAIL 0 / SKIP 2（Materials Project 联网项；熔融-淬火用例需要 `--profile server`）。
+- 同日加入流水线与原子来源标签后：`python -m pytest -q` 227 passed / 2 deselected；冒烟 33 个用例，
+  PASS 31 / WARN 0 / FAIL 0 / SKIP 2，其中原有 31 个用例的状态、最小接触比和结构数与加入前逐项相同；
+  `examples/surface_jobs/` 10 个任务和 2 个流水线检查通过。
+- 同日加入第三期（`relax`、`pick: lowest_energy`）后：`python -m pytest -q` 233 passed / 2 deselected；
+  冒烟 33 个用例 PASS 31 / WARN 0 / FAIL 0 / SKIP 2，与第三期之前逐项相同。
 
 ## MLIP 测试规则
 

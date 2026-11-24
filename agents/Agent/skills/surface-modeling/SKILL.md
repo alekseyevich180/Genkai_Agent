@@ -656,6 +656,38 @@ genkai-surface run job.yaml               # run, check structures, write manifes
 - Every run writes `manifest.json` (`RunManifest`, one `StructureSetArtifact` per structure
   file, evidence `heuristic`), `job_resolved.yaml` and `run.log` into the job's output.
 
+## Pipelines: Chaining Builders (`pipeline:` job files)
+
+A job file with a top-level `pipeline:` list runs builders in sequence and wires each
+step's structure into the next step's input (`surface`, `input` or `amorphous`); the
+owner is `genkai.modeling.surface.app.pipeline`, started by the same
+`genkai-surface check/run` commands. Examples: `examples/surface_jobs/09_*.yaml`, `10_*.yaml`.
+
+- Order (checked; `allow_order: true` overrides): amorphous_bulk -> slab/amorphous_slab ->
+  vacancy -> ald -> cluster -> sam -> adsorbate. Only the first step names its input.
+- `pick`: `first` (default), an index or index list, `all` (each candidate becomes a
+  branch; `max_branches`, default 20), or `lowest_energy`: the candidates are relaxed with
+  the top-level `mlip` profile (method `relax`, `genkai.modeling.surface.screening.relax`),
+  grouped by composition, and the `pick_count` (default 1) lowest of each group continue
+  as relaxed structures. `- method: relax` is an intermediate relaxation step allowed
+  after any step. Energies are compared only within one step of one branch; the mock
+  calculator is never used for picking. Vacancy steps default to `surface_depth: 2.5`
+  unless `surface_depth` or `z_frac_*` is given.
+- Between steps every candidate keeps FixAtoms and tags, gets its vacuum restored to
+  `min_vacuum` (default 10 A) and carries the per-atom `component` label (substrate,
+  overlayer, cluster, sam, adsorbate). Outputs: `pipeline_structures.extxyz` (each frame's
+  `pipeline_label` is its lineage) and `pipeline_manifest.json`.
+- Builders read the labels (unlabeled inputs are all substrate, so standalone use is
+  unchanged): the surface region and SAM/H-acceptor sites use substrate and overlayer
+  atoms only (`sites.surface_region`); vacancies take O of `--components` (default
+  substrate) and, with `--surface-depth`, only near the top; adsorption sites under
+  added atoms are dropped (`--site-components` restricts further); clusters and ALD
+  islands move to the nearest spot with no added atoms under their footprint (2.5 A
+  clearance) and sit on the local solid surface; a full ALD film over clusters, SAM or
+  adsorbates (overcoat) is refused.
+- Energy-screening methods (`sam_search`, `cluster_search`, `amorphous_*`) are not pipeline
+  steps yet; run them on pipeline results. Server example: `examples/mlip_jobs/06_pipeline_energy_pick.yaml`.
+
 ## Practical Guidance
 
 - Prefer `--smoke-test` before a real UMA run to validate input paths, atom symbols, site selection, output directories, and plotting.

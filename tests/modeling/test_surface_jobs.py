@@ -28,6 +28,7 @@ JOB_EXAMPLES = ROOT / "examples" / "surface_jobs"
 PLACEHOLDER_FILES = {
     "bulk": SNO2_BULK,
     "crystal": SNO2_BULK,
+    "structures": CEO2_SLAB,
     "surface": CEO2_SLAB,
     "input": CEO2_SLAB,
     "molecule": BUTANOIC,
@@ -170,11 +171,14 @@ def test_check_resolves_chained_inputs_and_flags_missing_files(tmp_path: Path) -
 
 
 def test_example_job_files_are_valid() -> None:
+    from genkai.modeling.surface.app.pipeline import is_pipeline_file
+
     files = sorted(JOB_EXAMPLES.glob("*.yaml"))
     assert len(files) >= 8
     out = io.StringIO()
-    assert command_check(files, out) == 0, out.getvalue()
-    methods = {job.method.name for path in files for job in load_job_file(path)}
+    assert command_check(files, out) == 0, out.getvalue()  # job files and pipeline files together
+    job_files = [path for path in files if not is_pipeline_file(path)]
+    methods = {job.method.name for path in job_files for job in load_job_file(path)}
     assert methods == {name for name, method in jobs.METHODS.items() if not method.requires_mlip}
     # Windows shells pass "*.yaml" through unexpanded; the CLI expands it itself.
     assert jobs.expand_paths([JOB_EXAMPLES / "*.yaml"]) == files

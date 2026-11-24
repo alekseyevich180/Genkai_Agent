@@ -125,6 +125,7 @@ output: runs/my_sam
 | `amorphous_interface` | 非晶膜/晶体界面搜索，默认选择 default |
 | `cluster_search` | 预制团簇或非晶岛的负载位置搜索，默认选择 default |
 | `amorphous_bulk` | 晶体熔融-淬火得到非晶块体（Langevin MD + 最终弛豫），默认选择 default |
+| `relax` | 弛豫或单点计算结构文件里的每一帧（流水线的中间弛豫和 `pick: lowest_energy` 也用它），默认选择 default |
 
 `sam`、`ald`、`cluster`、`amorphous_slab` 仍是几何生成方法。
 需要能量筛选时选用对应的搜索方法；例如 ALD 生成的岛可作为 `cluster_search` 的 `cluster` 输入。
