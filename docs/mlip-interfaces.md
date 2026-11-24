@@ -79,6 +79,14 @@ profiles:
 | `task` | UMA 任务头；默认 `omat`，需按具体体系验证 |
 | `launcher` | 可选，例如 `[/path/to/start.sh]`，先激活环境再执行传入命令 |
 | `settings` | 可选的公共弛豫默认值：`fmax`、`max_steps`、`screen_steps`、`relax_steps` |
+| `oom_fallback` | 可选，CUDA UMA 显存不足时使用的同文件配置名称 |
+
+在 CUDA UMA 配置中写 `oom_fallback: uma_small` 可以启用显存回退。
+把 `uma_small` 登记为同一个任务头的 CUDA UMA 配置，并选择较小的模型，例如 `uma-s-1p1`。
+`genkai-surface run` 捕获计算子进程的 CUDA OOM 后会保存首次输出到相邻目录，
+然后使用小模型从输入重新运行该步骤一次。新输出中的 `job_resolved.yaml` 和 `manifest.json`
+记录实际使用的配置，清单的 `oom_fallback` 字段记录原模型和首次日志位置。
+离线运行时，两个配置都需要对应的本地模型缓存。
 
 MACE 模型是 Python 检查点对象，示例中的加载选项用于自己信任的本地模型。
 MACE 模型不自动下载；UMA 预训练模型在首次真实运行时可能联网下载，并需要已接受许可及已有凭据。
@@ -120,6 +128,12 @@ output: runs/my_sam
 `sam`、`ald`、`cluster`、`amorphous_slab` 仍是几何生成方法。
 需要能量筛选时选用对应的搜索方法；例如 ALD 生成的岛可作为 `cluster_search` 的 `cluster` 输入。
 结构生成与 MLIP 搜索也可放进同一个 `jobs:` 列表，后一个任务引用前一个任务的输出。
+
+`adsorbate`、`sam_search`、`amorphous_interface` 和 `cluster_search` 默认使用 Periodic GP
+搜索候选构型。该优化器把周期方位角和晶胞面内分数平移接成闭环，把位点编号作为无序类别。
+前 8 次有效试验用于初始采样。超过 96 条有效记录时，每次拟合使用最近 48 条和更早的最优 48 条。
+如需沿用原来的 TPE，在对应任务中填写 `sampler: tpe`。用 `python -m` 调用方法时可传 `--sampler tpe`。
+`amorphous_surfaces` 按几何规则选取切割窗口并做能量排序，没有 `sampler` 参数。
 
 可复制的真实筛选任务见 [examples/mlip_jobs](../examples/mlip_jobs)。
 这些任务可能计算较久，安装脚本只生成它们，不执行。

@@ -21,6 +21,7 @@ from .calculators import (
     build_calculator as build_energy_model,
     resolve_mace_model,
 )
+from .search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
 
 CONFIG = {
     # Input/output
@@ -93,6 +94,7 @@ class AdsorbateLandscapeConfig:
     fixed_fraction: float = 0.5
     mace_model: str | None = None
     mace_dtype: str = "float32"
+    sampler: str = DEFAULT_SAMPLER
 
     def __post_init__(self) -> None:
         if self.calculator == "mace":
@@ -322,7 +324,10 @@ def run_single_adsorbate_search(
         trial.set_user_attr("min_distance", min_adsorbate_surface_distance(combined, len(slab)))
         return e_ads
 
-    sampler = optuna.samplers.TPESampler(seed=args.seed)
+    sampler = make_sampler(
+        getattr(args, "sampler", DEFAULT_SAMPLER), seed=args.seed,
+        periodic=("spin_angle",), categorical=("group_id",),
+    )
     study = optuna.create_study(direction="minimize", sampler=sampler)
     study.optimize(objective, n_trials=args.n_trials_single)
     best = study.best_trial
@@ -759,6 +764,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--patterns", type=str, default=CONFIG["patterns"])
     parser.add_argument("--random-repeats", type=int, default=CONFIG["random_repeats"])
     parser.add_argument("--seed", type=int, default=CONFIG["seed"])
+    add_sampler_argument(parser)
     parser.add_argument("--calculator", type=str, default=CONFIG["calculator"], choices=["uma", "mace", "none"])
     add_mace_arguments(parser)
     parser.add_argument("--uma-model", type=str, default=CONFIG["uma_model"])

@@ -98,6 +98,50 @@ def test_missing_model_fails_before_starting_a_worker(config_file, tmp_path):
         probe_profile(load_config(config_file).select(), tmp_path)
 
 
+@pytest.mark.parametrize("message,retry", [("torch.OutOfMemoryError: CUDA out of memory.", True), ("ValueError: invalid geometry", False)])
+def test_uma_cuda_oom_restarts_job_with_configured_fallback(config_file, tmp_path, monkeypatch, message, retry):
+    data = yaml.safe_load(config_file.read_text())
+    medium = data["profiles"]["uma"]
+    medium.update(model="uma-m-1p1", device="cuda", oom_fallback="small")
+    data["profiles"]["small"] = {**medium, "model": "uma-s-1p1"}
+    del data["profiles"]["small"]["oom_fallback"]
+    config_file.write_text(yaml.safe_dump(data))
+    source = tmp_path / "job.yaml"
+    source.write_text(yaml.safe_dump({"method": "amorphous_surfaces", "mlip": "uma",
+                                    "amorphous": str(ROOT / "tests/amorphous/TiO2.vasp"), "output": "result"}))
+    job, = jobs.load_job_file(source)
+    attempts = []
+
+    class Worker:
+        def __init__(self, command, cwd, **kwargs):
+            attempts.append(command)
+            self.stdout = [message + "\n"] if len(attempts) == 1 else ["success\n"]
+            self.exit_code = 1 if len(attempts) == 1 else 0
+            if self.exit_code:
+                (cwd / "partial.extxyz").touch()
+            else:
+                assert not (cwd / "partial.extxyz").exists()
+
+        def wait(self):
+            return self.exit_code
+
+    monkeypatch.setattr(jobs, "probe_profile", lambda *args: {})
+    monkeypatch.setattr(jobs.subprocess, "Popen", Worker)
+    monkeypatch.setattr(jobs, "_check_outputs", lambda *args, **kwargs: ("PASS", [], [], []))
+    result = jobs.run_job(job, quiet=True)
+    assert "--uma-model=uma-m-1p1" in attempts[0]
+    if retry:
+        assert result.status == "PASS" and len(attempts) == 2
+        assert "--uma-model=uma-s-1p1" in attempts[1]
+        manifest = json.loads(result.manifest.read_text())
+        assert manifest["metadata"]["mlip"]["model"] == "uma-s-1p1"
+        assert manifest["metadata"]["oom_fallback"]["requested_model"] == "uma-m-1p1"
+        old_log = Path(manifest["metadata"]["oom_fallback"]["first_log"])
+        assert message in old_log.read_text() and (old_log.parent / "partial.extxyz").exists()
+    else:
+        assert result.status == "FAIL" and len(attempts) == 1
+
+
 @pytest.mark.parametrize("method", ["slab", "vacancy", "adsorbate", "sam_search", "amorphous_surfaces", "amorphous_interface", "cluster_search"])
 def test_one_profile_switch_updates_every_energy_entrypoint(config_file, tmp_path, method):
     from genkai.modeling.surface.setup import write_tasks
@@ -131,6 +175,26 @@ def test_task_numeric_settings_override_profile_defaults(config_file, tmp_path):
     assert args.count("--max-steps=7") == 1
     assert "--max-steps=200" not in args and "--max-steps=0" not in args
     assert args.count("--fmax=0.1") == 1
+
+
+@pytest.mark.parametrize("method", ["adsorbate", "sam_search", "amorphous_interface", "cluster_search"])
+def test_search_sampler_default_and_override(config_file, tmp_path, method):
+    from genkai.modeling.surface.setup import write_tasks
+
+    write_tasks(ROOT, config_file)
+    source = tmp_path / "tasks" / f"{method}.yaml"
+    document = yaml.safe_load(source.read_text())
+    document.pop("sampler", None)
+    source.write_text(yaml.safe_dump(document))
+    [job] = jobs.load_job_file(source)
+    assert job.values["sampler"] == "periodic_gp"
+    assert "--sampler=periodic_gp" in jobs.build_argv(job)
+
+    document["sampler"] = "tpe"
+    source.write_text(yaml.safe_dump(document))
+    [job] = jobs.load_job_file(source)
+    assert job.values["sampler"] == "tpe"
+    assert "--sampler=tpe" in jobs.build_argv(job)
 
 
 def test_bool_task_flags_and_invalid_profile_are_actionable(config_file, tmp_path):

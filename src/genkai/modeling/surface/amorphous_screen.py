@@ -62,6 +62,7 @@ from .calculators import (
     relax,
     resolve_mace_model,
 )
+from .search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
 from .structure_io import export_frames, read_structure, sha256_of, write_frames, write_manifest
 from .substrate import (
     Substrate,
@@ -316,6 +317,7 @@ class InterfaceSearchSettings:
     max_strain: float = 0.05
     max_area: float = 600.0
     relax_cell: bool = True
+    sampler: str = DEFAULT_SAMPLER
 
     def __post_init__(self) -> None:
         if self.film_fit not in ("auto", "strain", "cut"):
@@ -401,7 +403,8 @@ def search_interface(
                 atoms = _shifted(frame, film_mask, dx, dy, gap)
                 return relax(atoms, calc, fmax=model.fmax, steps=settings.screen_steps)
 
-            study = optuna.create_study(direction="minimize", sampler=optuna.samplers.TPESampler(seed=model.seed + index))
+            sampler = make_sampler(settings.sampler, seed=model.seed + index, periodic=("dx", "dy"))
+            study = optuna.create_study(direction="minimize", sampler=sampler)
             study.optimize(objective, n_trials=settings.n_trials)
             best = study.best_params
             atoms = _shifted(frame, film_mask, best["dx"], best["dy"], best["gap"])
@@ -520,6 +523,7 @@ def _build_parser() -> argparse.ArgumentParser:
     interface.add_argument("--n-matches", type=int, default=3)
     interface.add_argument("--n-rotations", type=int, default=3)
     interface.add_argument("--n-trials", type=int, default=20)
+    add_sampler_argument(interface)
     interface.add_argument("--gap-min", type=float, default=1.5)
     interface.add_argument("--gap-max", type=float, default=3.0)
     interface.add_argument("--screen-steps", type=int, default=20)
@@ -558,6 +562,7 @@ def main(argv: list[str] | None = None) -> int:
                 thickness=args.thickness, film_fit=args.film_fit, n_matches=args.n_matches, n_rotations=args.n_rotations,
                 n_trials=args.n_trials, gap_min=args.gap_min, gap_max=args.gap_max, screen_steps=args.screen_steps,
                 max_strain=args.max_strain, max_area=args.max_area, relax_cell=not args.no_cell_relax,
+                sampler=args.sampler,
             )
             substrate = substrate_from_args(args)
             manifest = search_interface(substrate, args.amorphous, settings, model, args.output_dir,

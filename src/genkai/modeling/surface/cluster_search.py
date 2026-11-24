@@ -12,6 +12,10 @@ from ase import Atoms
 from ase.filters import ExpCellFilter, StrainFilter
 from ase.io import read, write
 from ase.optimize import LBFGS
+
+from .search_sampler import add_sampler_argument, make_sampler
+
+
 CALCULATOR = None
 
 
@@ -488,6 +492,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--tail_pick_per_bin", type=int, default=1)
     parser.add_argument("--selection_random_seed", type=int, default=42)
     parser.add_argument("--seed", type=int, default=None, help="Optuna sampler seed (default: random).")
+    add_sampler_argument(parser)
     return parser
 
 
@@ -574,7 +579,10 @@ def main(argv: list[str] | None = None):
     write(structure_output_dir / "initial_surface.cif", input_surface)
     write(structure_output_dir / "initial_cluster.cif", input_cluster)
 
-    sampler = optuna.samplers.TPESampler(seed=args.seed) if args.seed is not None else None
+    sampler = make_sampler(
+        args.sampler, seed=args.seed, periodic=("spin_angle", "tilt_azimuth", "x_frac", "y_frac"),
+        categorical=("site_index",),
+    )
     study = optuna.create_study(direction="minimize", sampler=sampler)
     study.set_user_attr("max_tilt", args.max_tilt)
     study.set_user_attr("slab", atoms_to_json(slab))

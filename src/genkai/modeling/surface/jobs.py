@@ -34,6 +34,7 @@ import platform
 import re
 import subprocess
 import sys
+import tempfile
 import time
 from dataclasses import dataclass, field, replace
 from datetime import datetime, timezone
@@ -111,6 +112,7 @@ class Method:
 
 FIXED_FRACTION = Option("fixed_fraction", "--fixed-fraction", "float", "固定 slab 下部这一比例厚度内的原子；0 表示不固定")
 SEED = Option("seed", "--seed", "int", "随机数种子；相同种子得到相同结构")
+SAMPLER = Option("sampler", "--sampler", "str", "搜索优化器，默认 periodic_gp，也可选择 tpe")
 EXPORT = Option("export", "--export", "words", "另外导出的格式：cif、vasp（可写两个），或 none")
 
 SUBSTRATE_OPTIONS = (
@@ -206,6 +208,7 @@ _register(Method(
         Option("patterns", "--patterns", "words", "多分子排布方式：uniform、clustered、stripe、island、random"),
         Option("random_repeats", "--random-repeats", "int", "random 排布重复几次"),
         Option("n_trials_single", "--n-trials-single", "int", "单个分子位置的采样次数（只影响候选几何）"),
+        SAMPLER,
         Option("site_z_tolerance", "--site-z-tolerance", "float", "表面位点的高度容差（Å）"),
         Option("max_sites", "--max-sites", "int", "最多使用的表面位点数"),
         Option("site_group_size", "--site-group-size", "int", "每个吸附位点包含的表面原子数"),
@@ -391,6 +394,7 @@ _register(Method(
         Option("bond_length", "--bond-length", "float", "锚定键长（Å）"),
         Option("max_span", "--max-span", "float", "同组锚定位点的最大跨度（Å）"),
         Option("n_trials", "--n-trials", "int", "搜索候选数"),
+        SAMPLER,
         Option("top_k", "--top-k", "int", "最终弛豫的候选数"),
         Option("max_tilt", "--max-tilt", "float", "最大倾角（度）"),
         Option("coverage_counts", "--coverage-counts", "ints", "覆盖度分子数，例如 [1, 2]"),
@@ -437,6 +441,7 @@ _register(Method(
         Option("n_matches", "--n-matches", "int", "晶格匹配候选数"),
         Option("n_rotations", "--n-rotations", "int", "旋转切割候选数"),
         Option("n_trials", "--n-trials", "int", "每个界面的搜索次数"),
+        SAMPLER,
         Option("gap_min", "--gap-min", "float", "界面最小间距（Å）"),
         Option("gap_max", "--gap-max", "float", "界面最大间距（Å）"),
         Option("max_strain", "--max-strain", "float", "最大应变"),
@@ -463,6 +468,7 @@ _register(Method(
             ("tail_pick_per_bin", "int", "每个其余能量区间的输出数"), ("seed", "int", "随机种子"),
         ) if key != "active_symbols"),
         Option("active_symbols", "--active_symbols", "words", "活性位点元素", nargs=True),
+        SAMPLER,
     ), output_flag="--output_dir", outputs=("mlip_output/[0-9]*_trial_*.cif",),
 ))
 
@@ -538,6 +544,7 @@ class JobResult:
     messages: list[str] = field(default_factory=list)
     files: list[FileCheck] = field(default_factory=list)
     manifest: Path | None = None
+    cuda_oom: bool = False
 
 
 # ---------------------------------------------------------------------------
@@ -742,6 +749,8 @@ def _parse_job(
     description = None if _unset(description) else str(description).strip()
     if problems:
         return None, problems
+    if SAMPLER.key in method.keys and SAMPLER.key not in values:
+        values[SAMPLER.key] = option_default(method, SAMPLER)
     job = Job(source, index, method, values, raw, output, description, profile)
     parser_problem = _parser_problem(job)
     if parser_problem:
@@ -1089,6 +1098,7 @@ def _write_manifest(
     exit_code: int | None,
     started_at: datetime,
     records: list[dict[str, Any]],
+    oom_fallback: dict[str, str] | None = None,
 ) -> Path:
     from genkai.contracts.artifacts import EvidenceLevel, ExecutionState, StructureSetArtifact, ValidationStatus
     from genkai.contracts.provenance import Provenance
@@ -1123,6 +1133,7 @@ def _write_manifest(
         "calculator": job.calculator,
         "energies_available": calculating and ok,
         "mlip": job.profile.public_settings() if job.profile else None,
+        **({"oom_fallback": oom_fallback} if oom_fallback else {}),
         "runtime": job.runtime_info,
         "note": note,
     }))
@@ -1184,7 +1195,34 @@ def _write_manifest(
 
 
 def run_job(job: Job, *, overwrite: bool = False, quiet: bool = False, stream: TextIO = sys.stdout) -> JobResult:
-    """Run one validated job in a subprocess and check what it wrote."""
+    """Run one job; restart it once with the configured UMA profile after a CUDA OOM."""
+    result = _run_job(job, overwrite=overwrite, quiet=quiet, stream=stream)
+    profile = job.profile
+    if not result.cuda_oom or profile is None or profile.oom_fallback is None:
+        return result
+    try:
+        fallback = load_config(profile.config_path).select(profile.oom_fallback)
+        probe_profile(fallback, _package_root())
+        archive = Path(tempfile.mkdtemp(prefix=f"{job.output.name}.cuda-oom-", dir=job.output.parent)) / "output"
+        job.output.rename(archive)
+    except (OSError, MlipConfigError) as exc:
+        result.messages.append(f"无法准备 CUDA OOM 回退：{exc}")
+        return result
+
+    values = {**job.values}
+    for key, path in job.input_paths():
+        if path.is_relative_to(job.output):
+            values[key] = archive / path.relative_to(job.output)
+    recovery = {"requested_model": str(profile.checkpoint or profile.model),
+                "requested_profile": profile.name, "first_log": str(archive / "run.log")}
+    print(f"    CUDA 显存不足，使用 {fallback.name} ({fallback.checkpoint or fallback.model}) 从原始输入重新运行。"
+          f"首次日志：{recovery['first_log']}", file=stream, flush=True)
+    rerun = replace(job, profile=fallback, values=values, runtime_info={})
+    return _run_job(rerun, overwrite=False, quiet=quiet, stream=stream, oom_fallback=recovery)
+
+
+def _run_job(job: Job, *, overwrite: bool, quiet: bool, stream: TextIO,
+             oom_fallback: dict[str, str] | None = None) -> JobResult:
     missing = [f"{key}: {path}" for key, path in job.input_paths() if not path.is_file()]
     if missing:
         return JobResult(job, "FAIL", messages=["输入文件不存在：" + "；".join(missing)])
@@ -1231,19 +1269,23 @@ def run_job(job: Job, *, overwrite: bool = False, quiet: bool = False, stream: T
             process.terminate()
             process.wait()
             result = JobResult(job, "FAIL", round(time.perf_counter() - started, 1), ["被用户中断"])
-            result.manifest = _write_manifest(job, result, command=command, exit_code=None, started_at=started_at, records=[])
+            result.manifest = _write_manifest(job, result, command=command, exit_code=None, started_at=started_at,
+                                              records=[], oom_fallback=oom_fallback)
             raise
         log.write(f"[exit {exit_code}]\n")
     seconds = round(time.perf_counter() - started, 1)
     if exit_code != 0:
         tail = [line for line in lines if line.strip()][-4:]
         result = JobResult(job, "FAIL", seconds, [f"方法运行失败（退出码 {exit_code}），最后几行输出：", *tail])
-        result.manifest = _write_manifest(job, result, command=command, exit_code=exit_code, started_at=started_at, records=[])
+        result.cuda_oom = any(re.search(r"\bCUDA (?:error: )?out of memory\b", line, re.IGNORECASE) for line in lines)
+        result.manifest = _write_manifest(job, result, command=command, exit_code=exit_code, started_at=started_at,
+                                          records=[], oom_fallback=oom_fallback)
         return result
     status, messages, checks, records = _check_outputs(job, since=started_wall)
     result = JobResult(job, status, seconds, messages, checks)
     result.manifest = _write_manifest(
-        job, result, command=command, exit_code=exit_code, started_at=started_at, records=records if status != "FAIL" else []
+        job, result, command=command, exit_code=exit_code, started_at=started_at, records=records if status != "FAIL" else [],
+        oom_fallback=oom_fallback,
     )
     return result
 

@@ -4,7 +4,7 @@ Pipeline for one molecule and a user-chosen binding mode::
 
     references   E_slab (bottom fixed, relaxed), E_mol (isolated, in a box),
                  E_H2 when acidic H is removed instead of moved to a surface O
-    stage 1      Optuna (TPE) over the *anchored* parameters - site group,
+    stage 1      Periodic GP over the *anchored* parameters - site group,
                  tilt, azimuth: geometric placement (SamBuilder.assemble), short
                  relaxation, E_ads; the designed anchor bonds must survive
     stage 2      full relaxation of the best distinct trials -> ranked structures
@@ -56,6 +56,7 @@ from .sam import (
     _min_contact_ratio,
     resolve_anchor_group,
 )
+from .search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
 from .sites import in_plane_mic, unwrap_group
 from .structure_io import export_frames, read_molecule, sha256_of, write_frames, write_manifest
 from .substrate import Substrate, add_substrate_arguments, parse_export, parse_ints, substrate_from_args, surface_area
@@ -85,6 +86,7 @@ class SamSearchSettings:
     include_d3: bool = False
     mace_model: str | None = None
     mace_dtype: str = "float32"
+    sampler: str = DEFAULT_SAMPLER
 
     def __post_init__(self) -> None:
         if self.calculator == "mace":
@@ -263,7 +265,8 @@ def run_sam_search(
         return e_ads + (0.0 if retained else LOST_BINDING_PENALTY)
 
     try:
-        study = optuna.create_study(direction="minimize", sampler=optuna.samplers.TPESampler(seed=search.seed))
+        sampler = make_sampler(search.sampler, seed=search.seed, periodic=("azimuth",), categorical=("group",))
+        study = optuna.create_study(direction="minimize", sampler=sampler)
         study.optimize(objective, n_trials=search.n_trials)
     finally:
         optuna.logging.set_verbosity(previous)
@@ -511,6 +514,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--coverage-counts", default="1", help="Molecule counts built by copying the best molecule, e.g. 1,2,3.")
     parser.add_argument("--binding-tolerance", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=42)
+    add_sampler_argument(parser)
     parser.add_argument("--export", default="cif")
     parser.add_argument("--output-dir", type=Path, required=True)
     return parser
@@ -545,6 +549,7 @@ def main(argv: list[str] | None = None) -> int:
             include_d3=args.include_d3,
             mace_model=args.mace_model,
             mace_dtype=args.mace_dtype,
+            sampler=args.sampler,
         )
         substrate = substrate_from_args(args)
         result = run_sam_search(

@@ -59,6 +59,7 @@ class MlipProfile:
     launcher: tuple[str, ...] = ()
     env: dict[str, str] = field(default_factory=dict)
     settings: dict[str, Any] = field(default_factory=dict)
+    oom_fallback: str | None = None
 
     @property
     def runtime_dir(self) -> Path:
@@ -168,7 +169,7 @@ def load_config(path: str | Path) -> MlipConfig:
         if not isinstance(name, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", name):
             raise MlipConfigError(f"无效配置名称 {name!r}；请使用字母、数字、下划线或短横线。")
         entry = _mapping(value, f"profiles.{name}")
-        unknown = set(entry) - {"backend", "python", "model", "device", "task", "dtype", "checkpoint", "launcher", "env", "settings"}
+        unknown = set(entry) - {"backend", "python", "model", "device", "task", "dtype", "checkpoint", "launcher", "env", "settings", "oom_fallback"}
         if unknown:
             raise MlipConfigError(f"profiles.{name} 中有未知参数：{', '.join(sorted(unknown))}")
         backend = entry.get("backend", name)
@@ -219,11 +220,21 @@ def load_config(path: str | Path) -> MlipConfig:
             if key != "fmax" and not isinstance(value, int):
                 raise MlipConfigError(f"{name}.settings.{key} 必须为整数。")
             settings[key] = value
+        oom_fallback = entry.get("oom_fallback")
+        if oom_fallback is not None and (not isinstance(oom_fallback, str) or backend != "uma" or device != "cuda"):
+            raise MlipConfigError(f"{name}.oom_fallback 需要填写 CUDA UMA 的回退配置名称。")
         profiles[name] = MlipProfile(
             name=name, backend=backend, python=python_path(py, path.parent), model=model,
             config_path=path, device=device, task=task, dtype=dtype, checkpoint=checkpoint,
-            launcher=tuple(launcher), env={k: str(v) for k, v in env.items()}, settings=settings,
+            launcher=tuple(launcher), env={k: str(v) for k, v in env.items()}, settings=settings, oom_fallback=oom_fallback,
         )
+    for profile in profiles.values():
+        if profile.oom_fallback is None:
+            continue
+        fallback = profiles.get(profile.oom_fallback)
+        if (fallback is None or fallback.backend != "uma" or fallback.device != "cuda" or fallback.task != profile.task
+                or (fallback.checkpoint or fallback.model) == (profile.checkpoint or profile.model)):
+            raise MlipConfigError(f"{profile.name}.oom_fallback 必须指向使用同一任务头和不同模型的 CUDA UMA 配置。")
     default = data.get("default")
     if default is not None and (not isinstance(default, str) or default not in profiles):
         raise MlipConfigError("default 必须是 profiles 中的一个配置名称，或填 null。")
