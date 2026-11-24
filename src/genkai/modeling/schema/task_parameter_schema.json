@@ -4,7 +4,7 @@
   "schema_type": "task_parameter_schema",
   "tasks": {
     "slab_generation": {
-      "script": "genkai.modeling.surface.slab:main",
+      "script": "genkai.modeling.surface.builders.slab:main",
       "ptomodel_mapping_role": "bulk-to-slab surface construction input",
       "parameters": {
         "bulk": { "type": "path", "required": false, "description": "Bulk crystal file; one of bulk, formula, material_id" },
@@ -38,7 +38,7 @@
       ]
     },
     "vacancy_landscape": {
-      "script": "genkai.modeling.surface.vacancy:main",
+      "script": "genkai.modeling.surface.builders.vacancy:main",
       "ptomodel_mapping_role": "oxide surface vacancy modeling input",
       "parameters": {
         "input": { "type": "path", "required": true },
@@ -71,7 +71,7 @@
       ]
     },
     "adsorbate_landscape": {
-      "script": "genkai.modeling.surface.adsorbate:main",
+      "script": "genkai.modeling.surface.builders.adsorbate:main",
       "ptomodel_mapping_role": "surface adsorbate coverage modeling input",
       "parameters": {
         "surface": { "type": "path", "required": true },
@@ -110,7 +110,7 @@
       ]
     },
     "surface_cluster_builder": {
-      "script": "genkai.modeling.surface.metal_cluster.surface_cluster_builder:main",
+      "script": "genkai.modeling.surface.builders.metal_cluster.surface_cluster_builder:main",
       "ptomodel_mapping_role": "supported cluster species or loaded nanoparticle modeling input",
       "parameters": {
         "surface": { "type": "path", "required": false },
@@ -169,7 +169,7 @@
       ]
     },
     "surface_cluster_mlip_search": {
-      "script": "genkai.modeling.surface.cluster_search:main",
+      "script": "genkai.modeling.surface.screening.cluster_search:main",
       "ptomodel_mapping_role": "surface-plus-prebuilt-cluster adsorption search input",
       "parameters": {
         "surface": { "type": "path", "required": true },

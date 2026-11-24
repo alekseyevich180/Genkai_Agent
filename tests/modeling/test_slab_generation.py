@@ -13,7 +13,7 @@ from pymatgen.core import Lattice, Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
-from genkai.modeling.surface.slab import (
+from genkai.modeling.surface.builders.slab import (
     SlabSettings,
     atomic_layers,
     build_slab,

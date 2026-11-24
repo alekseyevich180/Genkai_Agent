@@ -101,7 +101,7 @@ GAS_MOLECULE_ALIASES: dict[str, str] = {
 UNSUPPORTED_TASK_REASONS: dict[str, str] = {
     "surface_functionalization": (
         "Not registered for plan execution; build SAM structures with the standalone builder "
-        "(genkai.modeling.surface.sam, skill script scripts/sam/sam_builder.py)."
+        "(genkai.modeling.surface.builders.sam, skill script scripts/sam/sam_builder.py)."
     ),
     "single_atom_site": "Single-atom site construction is not implemented.",
     "doped_surface": "Dopant substitution is not implemented in structure-only mode.",
@@ -229,7 +229,7 @@ def _select_document(
 
 
 def _largest_gap(atoms: Atoms) -> float:
-    from .slab import vacuum_gap_angstrom
+    from .builders.slab import vacuum_gap_angstrom
 
     return vacuum_gap_angstrom(atoms)
 
@@ -299,7 +299,7 @@ def _resolve_slab(
             try:
                 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
-                from .slab import conventional_bulk, load_bulk, resolve_stable_facet
+                from .builders.slab import conventional_bulk, load_bulk, resolve_stable_facet
 
                 conventional = conventional_bulk(load_bulk(slab["path"]))
                 registry = resolve_stable_facet(
@@ -508,7 +508,7 @@ def _materialize_slab(
         record = {"mode": "file", "source": str(source), "facet": None, "facet_source": "slab_file"}
         return target, record, issues
 
-    from .slab import SlabSettings, build_slab, load_bulk, write_slab_outputs
+    from .builders.slab import SlabSettings, build_slab, load_bulk, write_slab_outputs
 
     if slab_plan["mode"] == "bulk":
         bulk = load_bulk(slab_plan["path"])
@@ -516,7 +516,7 @@ def _materialize_slab(
         source: dict[str, Any] = {"type": "file", "path": slab_plan["path"]}
     else:
         if bulk_provider is None:
-            from .materials_project_slab import fetch_bulk_structure as bulk_provider
+            from .builders.materials_project_slab import fetch_bulk_structure as bulk_provider
         bulk, metadata = bulk_provider(formula=slab_plan["formula"])
         formula, spacegroup = metadata.get("formula"), metadata.get("spacegroup_symbol")
         source = {"type": "materials_project", **metadata}
@@ -574,7 +574,7 @@ def _run_adsorbate_landscape(
     slab_atoms: Atoms,
     notes: list[ValidationIssue],
 ) -> list[Atoms]:
-    from .adsorbate import AdsorbateLandscapeConfig, run_adsorbate_landscape
+    from .builders.adsorbate import AdsorbateLandscapeConfig, run_adsorbate_landscape
 
     present = set(slab_atoms.get_chemical_symbols())
     symbols = [symbol.strip().capitalize() for symbol in inputs["site_symbols"]["value"]]

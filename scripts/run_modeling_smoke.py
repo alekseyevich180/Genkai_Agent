@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Smoke-test every surface-modeling method on structures shipped in this repository.
 
-Each case calls the real entry point (skill script or ``python -m genkai.modeling.surface.jobs``) in a
+Each case calls the real entry point (skill script or ``python -m genkai.modeling.surface.app.jobs``) in a
 subprocess, then reads every produced structure with ASE and checks that it is
 non-empty, free of overlapping atoms, has vacuum (slabs), keeps fixed atoms
 (extxyz/POSCAR outputs) and contains the expected elements.
@@ -19,7 +19,8 @@ server (prepared, not validated on a workstation)
     Run it only where real calculations are authorized.
 
 Cases that need Materials Project run only with ``--enable network`` (and
-``MP_API_KEY`` in the environment).
+``MP_API_KEY`` in the environment). Melt-quench MD (amorphous_bulk) runs only with
+``--profile server``; locally only its dry run (prepared supercell, no MD) is checked.
 
 Examples
 --------
@@ -307,6 +308,23 @@ def amorphous_slab_case(amorphous: str, extra: list[str]) -> Callable[[Context, 
     return build
 
 
+def amorphous_bulk_case(kind: str) -> Callable[[Context, Path], list[list[str]]]:
+    def build(ctx: Context, out: Path) -> list[list[str]]:
+        cmd = py(skill("amorphous/amorphous_bulk.py"), "--crystal", path("sno2_bulk"), "--density", "6.4",
+                 "--output-dir", out / "bulk")
+        if kind == "prepare":
+            return [cmd + ["--dry-run"]]
+        # Pipeline check on the server: 72 atoms and about 5700 MD steps, not a production schedule.
+        cmd += ["--supercell", "2,2,3", "--melt-temperature", "3000", "--melt-ps", "2", "--quench-rate", "1000",
+                "--anneal-ps", "1", "--max-steps", "200", "--trajectory-interval", "500", "--export", "none"]
+        cmd += ctx.mlip_args() if ctx.server else ["--calculator", "none"]
+        slab = py(skill("amorphous/amorphous_slab.py"), "--amorphous", out / "bulk" / "amorphous_bulk_000.extxyz",
+                  "--thickness", "8", "--output-dir", out / "amorphous")
+        return [cmd, slab]
+
+    return build
+
+
 def sam_on_amorphous_case(ctx: Context, out: Path) -> list[list[str]]:
     slab = amorphous_slab_case("a_sno2", ["--thickness", "8"])(ctx, out)[0]
     sam = py(
@@ -351,7 +369,7 @@ def write_job_file(case_dir: Path) -> dict[str, str]:
 
 
 def job_file_case(ctx: Context, out: Path) -> list[list[str]]:
-    return [py("-m", "genkai.modeling.surface.jobs", "run", "--quiet", out / "job.yaml")]
+    return [py("-m", "genkai.modeling.surface.app.jobs", "run", "--quiet", out / "job.yaml")]
 
 
 def by_path(key: str) -> list[str]:
@@ -453,6 +471,14 @@ CASES: list[Case] = [
     Case("amorphous_slab_tio2", "amorphous_slab", "pure amorphous TiO2 surface, 10 A, 2x2 in-plane",
          ("a_tio2",), amorphous_slab_case("a_tio2", ["--thickness", "10", "--repeat-xy", "2,2"]),
          ("amorphous/amorphous_slab_structures.extxyz",), contains=("Ti",), fixed=True),
+    Case("amorphous_bulk_sno2_prepare", "amorphous_bulk",
+         "rutile SnO2 -> near-cubic 162-atom supercell scaled to 6.4 g/cm3 (dry run: schedule only, no MD)",
+         ("sno2_bulk",), amorphous_bulk_case("prepare"), ("bulk/amorphous_bulk_initial.extxyz",),
+         contains=("Sn",), slab=False),
+    Case("amorphous_bulk_sno2_melt_quench_then_slab", "amorphous_bulk",
+         "short MLIP melt-quench of 72-atom SnO2, then an 8 A amorphous slab cut from it (pipeline check)",
+         ("sno2_bulk",), amorphous_bulk_case("melt_quench"), ("amorphous/amorphous_slab_structures.extxyz",),
+         requires=("mlip",), contains=("Sn",), fixed=True),
     Case("sam_search_sno2_butanoic", "sam_search",
          "Optuna over anchored placements of butanoic acid on SnO2(110), then coverage 2 by copying",
          ("sno2_bulk", "butanoic_acid"), sam_search_case, ("sam_search/sam_search_structures.extxyz",),
@@ -555,7 +581,7 @@ def run_case(case: Case, ctx: Context, output_root: Path, timeout: float) -> dic
     }
     blocked_by = [need for need in case.requires if need not in ctx.enabled]
     if blocked_by:
-        hint = {"uma": "--profile server", "network": "--enable network"}
+        hint = {"uma": "--profile server", "mlip": "--profile server", "network": "--enable network"}
         record.update(status="SKIP", notes=[f"requires {', '.join(blocked_by)} ({'; '.join(hint[b] for b in blocked_by)})"])
         return record
     missing = [key for key in case.inputs if not INPUTS[key][0].is_file()]
@@ -672,7 +698,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     enabled = {item.strip() for item in args.enable.split(",") if item.strip()}
     if args.profile == "server":
-        enabled.add(args.calculator)
+        enabled.update({args.calculator, "mlip"})
     ctx = Context(
         profile=args.profile, device=args.device, uma_model=args.uma_model, enabled=enabled,
         uma_task=args.uma_task, calculator=args.calculator, mace_model=args.mace_model, mace_dtype=args.mace_dtype,

@@ -1,7 +1,7 @@
-from genkai.modeling.surface import materials_project_slab as _impl
-from genkai.modeling.surface.materials_project_slab import *
-from genkai.modeling.surface.materials_project_slab import _select_bulk_document
-from genkai.modeling.surface.materials_project_slab import main as _main
+from genkai.modeling.surface.builders import materials_project_slab as _impl
+from genkai.modeling.surface.builders.materials_project_slab import *
+from genkai.modeling.surface.builders.materials_project_slab import _select_bulk_document
+from genkai.modeling.surface.builders.materials_project_slab import main as _main
 
 
 def download_stable_surface(*args, **kwargs):

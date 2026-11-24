@@ -1,5 +1,5 @@
-from genkai.modeling.surface.vacancy import *
-from genkai.modeling.surface.vacancy import main as _main
+from genkai.modeling.surface.builders.vacancy import *
+from genkai.modeling.surface.builders.vacancy import main as _main
 
 
 if __name__ == "__main__":

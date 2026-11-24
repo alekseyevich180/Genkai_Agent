@@ -1,5 +1,5 @@
-from genkai.modeling.surface.cluster_search import *
-from genkai.modeling.surface.cluster_search import main as _main
+from genkai.modeling.surface.screening.cluster_search import *
+from genkai.modeling.surface.screening.cluster_search import main as _main
 
 
 if __name__ == "__main__":

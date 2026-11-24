@@ -124,6 +124,7 @@ output: runs/my_sam
 | `amorphous_surfaces` | 非晶表面能筛选，默认选择 default |
 | `amorphous_interface` | 非晶膜/晶体界面搜索，默认选择 default |
 | `cluster_search` | 预制团簇或非晶岛的负载位置搜索，默认选择 default |
+| `amorphous_bulk` | 晶体熔融-淬火得到非晶块体（Langevin MD + 最终弛豫），默认选择 default |
 
 `sam`、`ald`、`cluster`、`amorphous_slab` 仍是几何生成方法。
 需要能量筛选时选用对应的搜索方法；例如 ALD 生成的岛可作为 `cluster_search` 的 `cluster` 输入。
@@ -161,7 +162,7 @@ MLIP 结构标为 `mlip_predicted`；EMT 标为 `empirical_potential`。
 原有各模块 CLI 和公共 ASE 工厂仍可用：
 
 ```python
-from genkai.modeling.surface.calculators import build_calculator, relax
+from genkai.modeling.surface.mlip.calculators import build_calculator, relax
 
 calc = build_calculator("mace", mace_model="/path/to/model.model", device="cuda")
 energy_eV = relax(atoms, calc, fmax=0.05, steps=200)

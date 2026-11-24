@@ -1,1 +1,1 @@
-from genkai.modeling.surface.metal_cluster.fcc import *
+from genkai.modeling.surface.builders.metal_cluster.fcc import *

@@ -3,7 +3,7 @@ from pathlib import Path
 from ase import Atoms
 from ase.io import read, write
 
-from genkai.modeling.surface import adsorbate
+from genkai.modeling.surface.builders import adsorbate
 
 
 def _write_minimal_inputs(tmp_path: Path) -> tuple[Path, Path]:

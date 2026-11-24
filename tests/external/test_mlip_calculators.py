@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from ase.build import bulk
 
-from genkai.modeling.surface.calculators import build_calculator
+from genkai.modeling.surface.mlip.calculators import build_calculator
 
 pytestmark = pytest.mark.external
 

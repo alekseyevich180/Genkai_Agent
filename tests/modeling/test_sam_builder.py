@@ -8,10 +8,10 @@ import pytest
 from ase.build import fcc111, molecule
 from ase.io import read, write
 
-from genkai.modeling.surface import sam
-from genkai.modeling.surface.sam import SamBuildError, SamSettings, detect_anchor_groups, resolve_anchor_group, run_sam
-from genkai.modeling.surface.sites import classify_hollow
-from genkai.modeling.surface.substrate import prepare_substrate
+from genkai.modeling.surface.builders import sam
+from genkai.modeling.surface.builders.sam import SamBuildError, SamSettings, detect_anchor_groups, resolve_anchor_group, run_sam
+from genkai.modeling.surface.builders.sites import classify_hollow
+from genkai.modeling.surface.builders.substrate import prepare_substrate
 
 from .surface_builders_helpers import (
     carboxymethylphosphonic_acid,

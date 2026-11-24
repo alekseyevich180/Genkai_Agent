@@ -29,7 +29,7 @@ materials-project = ["mp-api>=0.46.0"]
 test = ["pytest>=8.0"]
 
 [project.scripts]
-genkai-surface = "genkai.modeling.surface.jobs:main"
+genkai-surface = "genkai.modeling.surface.app.jobs:main"
 
 [build-system]
 requires = ["setuptools>=64", "wheel"]

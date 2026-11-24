@@ -8,8 +8,8 @@ from ase.build import fcc111
 from ase.constraints import FixAtoms
 from ase.io import read, write
 
-from genkai.modeling.surface import sites
-from genkai.modeling.surface.slab import SlabSettings, build_slab
+from genkai.modeling.surface.builders import sites
+from genkai.modeling.surface.builders.slab import SlabSettings, build_slab
 from genkai.modeling.surface.structure_io import (
     export_frames,
     make_molecule_whole,
@@ -17,7 +17,7 @@ from genkai.modeling.surface.structure_io import (
     read_structure,
     write_frames,
 )
-from genkai.modeling.surface.substrate import apply_slab_convention, make_slab_contiguous, supercell_in_plane
+from genkai.modeling.surface.builders.substrate import apply_slab_convention, make_slab_contiguous, supercell_in_plane
 
 from .surface_builders_helpers import in_box_split_across_face, methylphosphonic_acid, rutile
 

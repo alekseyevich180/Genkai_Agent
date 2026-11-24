@@ -16,7 +16,7 @@ from genkai.modeling.mapping import (
     _load_surface_modeling_parameter_schema,
     _loaded_species,
 )
-from genkai.modeling.surface import adsorbate
+from genkai.modeling.surface.builders import adsorbate
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -194,7 +194,7 @@ def test_vacancy_skill_entry_records_calculator_run_config(tmp_path: Path) -> No
 def test_cluster_search_exposes_uma_task_head() -> None:
     import inspect
 
-    from genkai.modeling.surface import cluster_search
+    from genkai.modeling.surface.screening import cluster_search
 
     parameter = inspect.signature(cluster_search.build_calculator).parameters["task_name"]
     assert parameter.default == "omat"

@@ -8,8 +8,8 @@ import sys
 import pytest
 import yaml
 
-from genkai.modeling.surface import jobs
-from genkai.modeling.surface.mlip_config import MlipConfigError, find_config, load_config, probe_profile
+from genkai.modeling.surface.app import jobs
+from genkai.modeling.surface.mlip.mlip_config import MlipConfigError, find_config, load_config, probe_profile
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -144,7 +144,7 @@ def test_uma_cuda_oom_restarts_job_with_configured_fallback(config_file, tmp_pat
 
 @pytest.mark.parametrize("method", ["slab", "vacancy", "adsorbate", "sam_search", "amorphous_surfaces", "amorphous_interface", "cluster_search"])
 def test_one_profile_switch_updates_every_energy_entrypoint(config_file, tmp_path, method):
-    from genkai.modeling.surface.setup import write_tasks
+    from genkai.modeling.surface.app.setup import write_tasks
 
     write_tasks(ROOT, config_file)
     source = tmp_path / "tasks" / f"{method}.yaml"
@@ -179,7 +179,7 @@ def test_task_numeric_settings_override_profile_defaults(config_file, tmp_path):
 
 @pytest.mark.parametrize("method", ["adsorbate", "sam_search", "amorphous_interface", "cluster_search"])
 def test_search_sampler_default_and_override(config_file, tmp_path, method):
-    from genkai.modeling.surface.setup import write_tasks
+    from genkai.modeling.surface.app.setup import write_tasks
 
     write_tasks(ROOT, config_file)
     source = tmp_path / "tasks" / f"{method}.yaml"

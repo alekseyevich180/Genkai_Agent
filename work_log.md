@@ -2,14 +2,29 @@
 
 本文件只作为日志入口，不再保存完整工作记录。每日具体日志放在 `work_logs/` 目录中。
 
-## 当前恢复入口
+## 当前恢复入口（SAGE 分支）
 
+- 2026-11-24：表面建模包按职责拆成子包（`mlip/`、`builders/`、`screening/`、`app/`），旧模块路径保留为转发模块；
+  指南移到 `docs/guides/`，`ptomodel_mapping.md` 移到 `docs/`。同日较早：CUDA UMA 的 `oom_fallback`、
+  共享 Periodic GP 采样器（`search_sampler.py`）及非晶 TiO2 表面五方法对照（Slurm 240）。
+  同日新增 `amorphous_bulk`：晶体经 MLIP 熔融-淬火得到非晶块体，可串联 `amorphous_slab` 切表面。
+  详见 [2026-11-24](work_logs/2026-11-24.md)。
+- 2026-11-18：服务器作业 214 检查（SnO2(110) 弛豫 PASS）、顶部五个任务改为单作业串行（作业 216），
+  旧 UMA 测试脚本和输出归档到 `/home/wu/start/test/`、`/home/wu/output/test/`。
+  详见 [2026-11-18](work_logs/2026-11-18.md)。
 - 2026-11-17：接入本机独立安装的 MACE / UMA，统一各能量入口、增加启动脚本与接口文档；
   两个环境离线测试通过，模拟冒烟 PASS 27 / WARN 1 / FAIL 0 / SKIP 1，两个 Cu 原胞 GPU 单点通过。
   详见 [2026-11-17](work_logs/2026-11-17.md)。
 - 2026-11-17：进一步完成面向普通使用者的 `genkai.yaml` 配置、统一 MLIP YAML 任务入口、
   不安装 MLIP 的引导安装与独立项目依赖环境；本机实际安装与重复配置通过，
   最终离线测试 166 passed / 1 skipped，详见同日日志“后续：面向普通使用者的配置化安装与任务入口”。
+- 2026-11-16：创建 `SAGE` 分支（只含建模 + MLIP 筛选）和 `install.sh`，见 [2026-11-16](work_logs/2026-11-16.md)
+  的“创建 SAGE 分支”。
+
+## main 分支的历史（SAGE 创建前）
+
+以下条目来自 `main`。其中提到的 `genkai-workflow`、`docs/daily-agent-work-guide.md` 等只存在于 `main`；
+文中的 `scripts/...` 路径指 Skill 薄入口，稳定实现现在在 `src/genkai/modeling/surface/` 的子包里。
 
 - 2026-11-13：`feat/genkai-evolution` 已并入 `main`，形成检查点 tag
   `sage-checkpoint-0`，详见 [2026-11-13](work_logs/2026-11-13.md)。`main` 是唯一开发
@@ -18,7 +33,7 @@
   （`genkai-workflow surface execute`，2026-08-05 计划 Task 2），见
   [2026-11-13](work_logs/2026-11-13.md) 的“SAGE 第一步”。当前方向是构建复杂表面
   （暂不考虑吸附），从同一日志的“复杂表面构建：可用脚本与库盘点”开始；继续前按
-  [Agent 简单日常工作指南](docs/daily-agent-work-guide.md) 准备单任务说明，
+  Agent 简单日常工作指南（`docs/daily-agent-work-guide.md`，只在 main 上） 准备单任务说明，
   不直接扩大到网络、LLM 或科学计算。
 - 2026-11-16：查询了空位、预吸附 O/OH/H2O、贵金属团簇、SAM 四类组件的位置与缺口，
   并把 `AGENTS.md` 中的测试基线更新为实测结果，见 [2026-11-16](work_logs/2026-11-16.md)。
@@ -38,11 +53,8 @@
 - 2026-11-16：给其他使用者的入口 `genkai-surface`（YAML 任务文件，只生成结构）、使用手册
   `docs/surface-modeling-user-guide.md` 和示例 `examples/surface_jobs/`；冒烟 31 个用例 PASS 29 / WARN 1 /
   SKIP 1。见同日日志“给其他使用者的建模入口”。
-- 2026-11-16：创建 `SAGE` 分支（只含建模 + MLIP 筛选）和 `install.sh`，见同日日志“创建 SAGE 分支”。
 
 ## 日志文件
-
-- [2026-11-17](work_logs/2026-11-17.md)
 
 - [2026-06-29](work_logs/2026-06-29.md)
 - [2026-06-30](work_logs/2026-06-30.md)
@@ -65,17 +77,21 @@
 - [2026-11-12](work_logs/2026-11-12.md)
 - [2026-11-13](work_logs/2026-11-13.md)
 - [2026-11-16](work_logs/2026-11-16.md)
+- [2026-11-17](work_logs/2026-11-17.md)
+- [2026-11-18](work_logs/2026-11-18.md)
 - [2026-11-24](work_logs/2026-11-24.md)
 
 ## 相关长期文档
 
-- [plan.md](plan.md)：paperread 表面研究建模、经验抽取与 Agent skill 闭环计划。
-- [GENKAI_EVOLUTION_PLAN.md](GENKAI_EVOLUTION_PLAN.md)：library-first
-  artifact、workflow、skill 与 Agent 架构演进计划，以及当前实施快照和下一阶段
-  目录结构收敛入口。
+- [AGENTS.md](AGENTS.md)：在 SAGE 分支上工作的规则、目录结构和与 main 的同步方法。
+- [docs/surface-modeling-user-guide.md](docs/surface-modeling-user-guide.md)：给使用者的建模手册。
+- [docs/mlip-interfaces.md](docs/mlip-interfaces.md)：MACE / UMA 接口与独立环境调用。
+- [docs/artifact-contracts.md](docs/artifact-contracts.md)：artifact 与运行清单契约。
+- [docs/ptomodel_mapping.md](docs/ptomodel_mapping.md)：论文字段到建模任务参数的映射说明。
+- [docs/guides/](docs/guides/)：UMA 表面知识微调、开源大模型本地安装两份操作指南。
+- `plan.md`、`GENKAI_EVOLUTION_PLAN.md` 只在 `main` 上。
 
 ## 维护约定
 
 - `work_logs/YYYY-MM-DD.md`：记录当天实际完成的工作、修改文件、验证结果和遗留问题。
-- `plan.md`：记录长期研究计划、架构提案、阶段路线和实施标准。
 - `work_log.md`：只更新索引，不写长篇日志正文。

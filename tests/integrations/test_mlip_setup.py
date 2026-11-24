@@ -12,8 +12,8 @@ import yaml
 from ase.build import bulk
 from ase.io import write
 
-from genkai.modeling.surface import jobs, setup
-from genkai.modeling.surface.mlip_config import load_config
+from genkai.modeling.surface.app import jobs, setup
+from genkai.modeling.surface.mlip.mlip_config import load_config
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -65,7 +65,7 @@ def test_preparing_a_runtime_installs_only_project_dependencies(tmp_path, monkey
 
 
 def test_runtime_constraints_preserve_source_versions_without_pinning_genkai(tmp_path):
-    from genkai.modeling.surface.mlip_config import MlipProfile
+    from genkai.modeling.surface.mlip.mlip_config import MlipProfile
 
     profile = MlipProfile("test", "emt", Path(sys.executable), None, tmp_path / "genkai.yaml")
     profile.runtime_dir.mkdir(parents=True)
@@ -75,7 +75,7 @@ def test_runtime_constraints_preserve_source_versions_without_pinning_genkai(tmp
 
 
 def test_nested_venv_inherits_editable_backend_without_installation(tmp_path):
-    from genkai.modeling.surface.mlip_config import MlipProfile
+    from genkai.modeling.surface.mlip.mlip_config import MlipProfile
 
     source_dir = tmp_path / "source"
     subprocess.run([sys.executable, "-m", "venv", "--without-pip", str(source_dir)], check=True)
@@ -104,7 +104,7 @@ def test_installer_dry_run_never_installs_a_backend(tmp_path):
     ], text=True, capture_output=True, cwd=ROOT)
     assert completed.returncode == 0, completed.stderr
     commands = [line for line in completed.stderr.splitlines() if line.startswith("+")]
-    assert any("genkai.modeling.surface.setup" in line for line in commands)
+    assert any("genkai.modeling.surface.app.setup" in line for line in commands)
     assert not any("install torch" in line or "[test,mlip]" in line or "[mace]" in line for line in commands)
     assert not (tmp_path / "venv").exists()
 

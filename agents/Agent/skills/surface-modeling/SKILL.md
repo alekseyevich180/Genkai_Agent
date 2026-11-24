@@ -22,6 +22,7 @@ metadata:
     - scripts/sam/sam_builder.py
     - scripts/ald/ald_overlayer.py
     - scripts/amorphous/amorphous_slab.py
+    - scripts/amorphous/amorphous_bulk.py
     - scripts/sam/sam_search.py
     - scripts/amorphous/amorphous_screen.py
   tags:
@@ -43,8 +44,10 @@ metadata:
 
 Use this skill when a task is about oxide surface construction, vacancy sampling, adsorption coverage generation, or metal cluster placement on surfaces. The scripts are adapted from the `Oxidesurface_cluster` project and are intended to make this Agent project surface-focused.
 
-Stable algorithm ownership is under `src/genkai/modeling/surface/`; the script
-paths documented below are thin compatibility entrypoints for Skill callers.
+Stable algorithm ownership is under `src/genkai/modeling/surface/` (builders in
+`builders/`, energy searches in `screening/`, calculators and samplers in `mlip/`, the
+`genkai-surface` entry in `app/`); the script paths documented below are thin
+compatibility entrypoints for Skill callers.
 
 ## Workflow
 
@@ -54,7 +57,9 @@ paths documented below are thin compatibility entrypoints for Skill callers.
    - adsorbate coverage structures with `scripts/adsorbate/adsorbate_landscape.py`
    - SAM-functionalized surfaces with `scripts/sam/sam_builder.py`
    - ALD-modified surfaces (amorphous film or island) with `scripts/ald/ald_overlayer.py`
-   - pure amorphous surfaces with `scripts/amorphous/amorphous_slab.py`
+   - pure amorphous surfaces with `scripts/amorphous/amorphous_slab.py`; when only a crystal is
+     available, first make the amorphous bulk by melt-quench MD with
+     `scripts/amorphous/amorphous_bulk.py` (needs an MLIP)
    - energy-based (MLIP) screening: SAM placements and coverage with
      `scripts/sam/sam_search.py`, amorphous surfaces and amorphous/crystal
      interfaces with `scripts/amorphous/amorphous_screen.py`, islands with
@@ -90,7 +95,7 @@ Optional for real MLIP relaxation:
 
 ## Slab Generation From Bulk (pymatgen)
 
-Script (thin entry over `genkai.modeling.surface.slab`):
+Script (thin entry over `genkai.modeling.surface.builders.slab`):
 
 ```bash
 python agents/Agent/skills/surface-modeling/scripts/surface/slab_generation.py \
@@ -283,7 +288,7 @@ E_ads = (E_total - E_slab - N * E_mol) / N
 ## Shared Substrate And File Conventions (SAM and ALD builders)
 
 Both builders take the substrate from `--surface SLAB` (a reviewed slab) or
-`--bulk BULK` (cut by `genkai.modeling.surface.slab`). Without `--facet` the
+`--bulk BULK` (cut by `genkai.modeling.surface.builders.slab`). Without `--facet` the
 most stable facet is used: surface-energy ranking with `--calculator emt|uma`
 (EMT suits some metals only; UMA needs explicit authorization), otherwise the
 reviewed stable-facet registry. The selection source is recorded as
@@ -306,7 +311,7 @@ reviewed stable-facet registry. The selection source is recorded as
 
 ## SAM-Functionalized Surface
 
-Script (thin entry over `genkai.modeling.surface.sam`):
+Script (thin entry over `genkai.modeling.surface.builders.sam`):
 
 ```bash
 python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
@@ -345,7 +350,7 @@ python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
 
 ## ALD-Modified Surface (Amorphous Overlayer)
 
-Script (thin entry over `genkai.modeling.surface.amorphous_overlayer`):
+Script (thin entry over `genkai.modeling.surface.builders.amorphous_overlayer`):
 
 ```bash
 # Full coverage: continuous amorphous film
@@ -384,7 +389,7 @@ python agents/Agent/skills/surface-modeling/scripts/ald/ald_overlayer.py \
 
 ## Pure Amorphous Surface
 
-Script (thin entry over `genkai.modeling.surface.amorphous_slab`):
+Script (thin entry over `genkai.modeling.surface.builders.amorphous_slab`):
 
 ```bash
 python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_slab.py \
@@ -407,6 +412,41 @@ python agents/Agent/skills/surface-modeling/scripts/sam/sam_builder.py \
 - The manifest reports composition against the bulk (cut slabs are usually
   off-stoichiometric; not corrected), density of the cut window and the number
   of exposed undercoordinated cations. Nothing is relaxed.
+
+## Amorphous Bulk From A Crystal (Melt-Quench MD)
+
+Script (thin entry over `genkai.modeling.surface.builders.amorphous_bulk`):
+
+```bash
+# prepare only: supercell, density scaling and the planned schedule, no MD
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_bulk.py   --crystal SnO2.cif --density 6.4 --dry-run --output-dir a_sno2_bulk
+# melt-quench with UMA (authorized GPU server only), then cut surfaces from the result
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_bulk.py   --crystal SnO2.cif --density 6.4 --samples 2   --calculator uma --uma-model uma-s-1p1 --task-name omat --device cuda --output-dir a_sno2_bulk
+python agents/Agent/skills/surface-modeling/scripts/amorphous/amorphous_slab.py   --amorphous a_sno2_bulk/amorphous_bulk_000.extxyz --thickness 10 --output-dir a_sno2_surface
+```
+
+- Supercell: `--supercell a,b,c`, or the smallest near-cubic repeat with at least
+  `--min-atoms` (default 150) atoms. `--density` (g/cm^3) scales the cell isotropically;
+  without it the crystal density is kept (amorphous oxides are usually 5-10 % lighter).
+- Schedule (NVT Langevin, fixed cell): melt at `--melt-temperature` (default 3000 K) for
+  `--melt-ps` (10), cool linearly at `--quench-rate` (50 K/ps) to `--final-temperature`
+  (300 K), anneal `--anneal-ps` (10); timestep `--timestep` 1 fs, friction `--friction`
+  0.01/fs. Then positions and cell are relaxed (`--no-cell-relax` keeps the MD cell).
+  Default: about 74 000 MD steps. `--samples N` runs N melt-quenches with different velocities.
+- Needs forces: `uma` or `mace` (`emt` only for its metals and tests). `--calculator none`
+  is refused (exit 2); `--dry-run` writes only `amorphous_bulk_initial.extxyz` and the schedule.
+- Outputs: `amorphous_bulk_NNN.extxyz` (periodic bulk, no vacuum, no fixed atoms; pass as
+  `--amorphous` to amorphous_slab, ald or amorphous_screen), the combined
+  `amorphous_bulk_structures.extxyz`, `md/md_NNN.log` (temperature and energy every 100 steps),
+  `md/md_NNN.extxyz` snapshots (`--trajectory-interval`), `amorphous_bulk_rdf.json` and
+  `amorphous_bulk_manifest.json`.
+- Diagnostics in the manifest: RMS displacement per element during the melt (a warning below
+  1.5 A: perfect crystals superheat in MD, so raise the melt temperature or time),
+  coordination-number distributions and RDF first peaks against the crystal supercell, and
+  the energy relative to the relaxed crystal (`--no-crystal-reference` skips it). The
+  structure depends on the potential, the temperature program and the quench rate; compare
+  with experiment or DFT before use. Evidence: `mlip_predicted` (uma/mace) or
+  `empirical_potential` (emt).
 
 ## Metal Cluster And Surface-Cluster Construction
 
@@ -460,7 +500,7 @@ python agents/Agent/skills/surface-modeling/scripts/metal_cluster/surface_cluste
 This route downloads stable bulk references, resolves the surface facet in the
 order paper/user explicit facet -> reviewed stable-facet registry -> stop for
 manual review, constructs a vacuum-containing slab with the same
-`genkai.modeling.surface.slab` generator (conventional cell, termination checks, fixed
+`genkai.modeling.surface.builders.slab` generator (conventional cell, termination checks, fixed
 bottom half), and only then places the cluster. The default `--slab-repeat-xy`
 stays `2,2`; check `slab.lateral_widths_A` in the surface manifest before placing
 large clusters.
@@ -523,7 +563,7 @@ The installer never installs MLIPs, PyTorch, CUDA or models. YAML methods now in
 `slab`, `vacancy`, `adsorbate` opt into energies by selecting a profile.
 See [the user configuration guide](../../../../docs/mlip-interfaces.md).
 
-Energy model choice is shared (`genkai.modeling.surface.calculators`):
+Energy model choice is shared (`genkai.modeling.surface.mlip.calculators`):
 `none` (mock, local tests), `emt` (a few metals with H/C/N/O), `mace` or `uma` (real
 MLIP; needs authorization). Compare only energies from the same model, task
 head and settings, including the references; MLIP values are screening
@@ -536,7 +576,7 @@ and `--mace-dtype float32|float64`. SAM and interface searches select it with
 The checkpoint is local and no UMA task head is needed for MACE. Server launchers,
 Python APIs and examples are documented in [MACE / UMA interfaces](../../../../docs/mlip-interfaces.md).
 
-SAM energy search (`scripts/sam/sam_search.py`, `genkai.modeling.surface.sam_search`):
+SAM energy search (`scripts/sam/sam_search.py`, `genkai.modeling.surface.screening.sam_search`):
 
 ```bash
 python agents/Agent/skills/surface-modeling/scripts/sam/sam_search.py \
@@ -556,7 +596,7 @@ python agents/Agent/skills/surface-modeling/scripts/sam/sam_search.py \
   surroundings must match), then the whole layer is relaxed. Amorphous or
   low-symmetry surfaces have no equivalent sites and are refused.
 
-Amorphous screening (`scripts/amorphous/amorphous_screen.py`, `genkai.modeling.surface.amorphous_screen`):
+Amorphous screening (`scripts/amorphous/amorphous_screen.py`, `genkai.modeling.surface.screening.amorphous_screen`):
 
 ```bash
 # case 1: pure amorphous surfaces ranked by surface energy
@@ -593,8 +633,8 @@ python agents/Agent/skills/surface-modeling/scripts/cluster_search/ads_nanoclust
 ## Job Files For Other Users (`genkai-surface`)
 
 People who do not work on the code use one command and a YAML job file instead of the
-per-method CLIs above. The owner is `genkai.modeling.surface.jobs` (console script
-`genkai-surface`, same as `python -m genkai.modeling.surface.jobs`); the user guide is
+per-method CLIs above. The owner is `genkai.modeling.surface.app.jobs` (console script
+`genkai-surface`, same as `python -m genkai.modeling.surface.app.jobs`); the user guide is
 `docs/surface-modeling-user-guide.md` and runnable examples are in `examples/surface_jobs/`.
 
 ```bash
@@ -604,10 +644,12 @@ genkai-surface check job.yaml             # validate only
 genkai-surface run job.yaml               # run, check structures, write manifest.json
 ```
 
-- Open methods: `slab`, `vacancy`, `adsorbate`, `cluster`, `sam`, `ald`, `amorphous_slab`
-  (structure generation only). The runner appends `--calculator=none` (and `--max-steps=0`
-  or `--relax-steps=0` where they exist); job keys for energy models or Materials Project are
-  rejected. `sam_search`, `amorphous_screen` and `cluster_search` are not reachable yet.
+- Structure generation: `slab`, `vacancy`, `adsorbate`, `cluster`, `sam`, `ald`, `amorphous_slab`.
+  Without `mlip` the runner appends `--calculator=none` (and `--max-steps=0` or
+  `--relax-steps=0` where they exist). Methods that need an MLIP profile from `genkai.yaml`:
+  `sam_search`, `amorphous_surfaces`, `amorphous_interface`, `cluster_search` and
+  `amorphous_bulk` (melt-quench; chain it with `amorphous_slab` in one `jobs:` file, see
+  `examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml`). Materials Project keys are rejected.
 - Each job file key maps to one CLI flag through the option table in `jobs.py`; defaults
   and choices come from the method's own `_build_parser()`. When a method CLI changes,
   update the table; `tests/modeling/test_surface_jobs.py` fails on unknown flags.

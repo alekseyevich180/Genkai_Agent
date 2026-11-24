@@ -14,6 +14,7 @@
 | `sam` | SAM 自组装单分子层：膦酸、羧酸、硫醇按选定结合方式锚定 | 块体或 slab、分子、结合方式、分子数 |
 | `ald` | ALD 非晶覆盖层：全覆盖成膜，或部分覆盖成岛 | 块体或 slab、非晶块体、覆盖方式 |
 | `amorphous_slab` | 从非晶块体切出纯非晶表面 | 非晶块体、厚度 |
+| `amorphous_bulk` | 从晶体用 MLIP 熔融-淬火得到非晶块体（需要 MLIP 配置） | 晶体块体 |
 
 用户输入的结构默认是 CIF，也可以用 POSCAR、XYZ、extxyz 等 ASE 能读取的格式。
 
@@ -25,6 +26,8 @@
 - SAM 能量搜索（`sam_search`）；
 - 非晶表面能排序（`amorphous_surfaces`）和界面搜索（`amorphous_interface`）；
 - 团簇或非晶岛的负载位置搜索（`cluster_search`）；
+- 从晶体熔融-淬火得到非晶块体（`amorphous_bulk`），输出可直接交给 `amorphous_slab`、`ald`、
+  `amorphous_surfaces` 作为非晶输入。手上只有晶体时，先跑它再切表面，见 5.1 节；
 
 在 `genkai.yaml` 登记已有 MACE / UMA，在任务中写 `mlip: default` 或配置名称即可调用，
 完整步骤见 [MACE / UMA 接口](mlip-interfaces.md)。Materials Project 需要联网和 API 密钥，
@@ -87,7 +90,7 @@ genkai-surface methods
 如果提示找不到 `genkai-surface`，先确认已经激活 `.venv`。下面的写法完全等价，任何时候都可以用：
 
 ```bash
-python -m genkai.modeling.surface.jobs methods
+python -m genkai.modeling.surface.app.jobs methods
 ```
 
 ## 3. 三步上手
@@ -182,6 +185,38 @@ jobs:
   `film_fit` 可以指定方式。`coverage: partial` 时用 `island_atoms` 或 `island_radius` 控制岛的大小；
   不写 `facet` 时，岛放在最稳定晶面上。
 - **amorphous_slab**：只保留不需要删除原子的切割位置，以保持化学计量；`samples` 控制切出几个不同的表面。
+- **amorphous_bulk**：需要 `mlip`。流程为 扩胞（`min_atoms`，默认 150，自动选接近立方的超胞；或直接写
+  `supercell`）→ 按 `density` 缩放（不写则保持晶体密度，非晶氧化物通常低 5–10%）→ 在 `melt_temperature`
+  熔融 `melt_ps` → 以 `quench_rate`（K/ps）线性降温到 `final_temperature` → 退火 `anneal_ps` → 弛豫原子和晶胞。
+  默认 3000 K / 10 ps、50 K/ps、300 K / 10 ps，共约 7.4 万步 MD，只在获准的 GPU 服务器上运行。
+
+### 5.1 只有晶体时：先得到非晶块体，再切出表面
+
+一个任务文件里串联两个任务即可（完整示例见 `examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml`）：
+
+```yaml
+jobs:
+  - method: amorphous_bulk
+    mlip: default
+    output: runs/a_sno2/bulk
+    crystal: inputs/SnO2.cif
+    density: 6.4            # 按文献或实验确认
+    samples: 2
+  - method: amorphous_slab
+    output: runs/a_sno2/slab
+    amorphous: runs/a_sno2/bulk/amorphous_bulk_000.extxyz
+    thickness: 10
+```
+
+使用切出的表面之前，先看 `runs/a_sno2/bulk/amorphous_bulk_manifest.json`：
+
+- `melt_rms_displacement_A`：熔融阶段各元素的均方根位移。小于 1.5 Å 会给出警告，说明晶体可能还没熔化——
+  完整晶体在 MD 中会明显过热，要提高 `melt_temperature` 或延长 `melt_ps`；
+- `diagnostics.pairs` 与 `crystal_diagnostics.pairs`：非晶与晶体的配位数分布、RDF 第一峰位置，
+  完整 g(r) 在 `amorphous_bulk_rdf.json`；
+- `delta_e_vs_crystal_eV_per_atom`：相对弛豫晶体的能量，应为正值；
+- 结构取决于势函数、温度程序和降温速率（远快于实验），用于研究前应与实验 PDF/配位数或 DFT 对照，
+  并用 `samples` 做多个独立样本。
 
 ## 6. 看结果
 
@@ -257,7 +292,7 @@ genkai-surface run --quiet my_job.yaml
 
 | 现象 | 处理 |
 | --- | --- |
-| 找不到 `genkai-surface` | 先激活 `.venv`；也可以用 `python -m genkai.modeling.surface.jobs` |
+| 找不到 `genkai-surface` | 先激活 `.venv`；也可以用 `python -m genkai.modeling.surface.app.jobs` |
 | `YAML 格式错误` | 检查缩进和冒号后的空格；Windows 路径用 `/` 或单引号 |
 | `xxx 没有参数 yyy，是不是 zzz？` | 参数名拼错了；用 `genkai-surface methods <方法名>` 查看全部参数 |
 | `calculator 不能设置` | 目前只开放结构生成，删掉这一行 |

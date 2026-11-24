@@ -188,7 +188,7 @@ fi
 [[ $NO_BUILD_ISOLATION -eq 1 ]] && SETUP_ARGS+=(--no-build-isolation)
 [[ $SKIP_CHECK -eq 1 ]] && SETUP_ARGS+=(--skip-check)
 if [[ ! -t 0 || ! -t 1 ]]; then SETUP_ARGS+=(--non-interactive); fi
-run "$VPY" -m genkai.modeling.surface.setup --config "$CONFIG" --installer "$INSTALLER" ${SETUP_ARGS[@]+"${SETUP_ARGS[@]}"}
+run "$VPY" -m genkai.modeling.surface.app.setup --config "$CONFIG" --installer "$INSTALLER" ${SETUP_ARGS[@]+"${SETUP_ARGS[@]}"}
 
 cat <<EOF
 

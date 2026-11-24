@@ -6,9 +6,9 @@ import numpy as np
 import pytest
 from ase.data import covalent_radii
 
-from genkai.modeling.surface import amorphous_overlayer as ald
-from genkai.modeling.surface.amorphous_overlayer import OverlayerBuildError, OverlayerSettings, run_overlayer
-from genkai.modeling.surface.substrate import prepare_substrate
+from genkai.modeling.surface.builders import amorphous_overlayer as ald
+from genkai.modeling.surface.builders.amorphous_overlayer import OverlayerBuildError, OverlayerSettings, run_overlayer
+from genkai.modeling.surface.builders.substrate import prepare_substrate
 
 from .surface_builders_helpers import rutile
 

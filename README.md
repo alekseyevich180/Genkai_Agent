@@ -104,8 +104,11 @@ coverage_counts: [1, 2]
 output: runs/my_sam
 ```
 
-`sam_search`、`amorphous_surfaces`、`amorphous_interface`、`cluster_search` 自动使用所选配置；
+`sam_search`、`amorphous_surfaces`、`amorphous_interface`、`cluster_search`、`amorphous_bulk` 自动使用所选配置；
 `slab`、`vacancy`、`adsorbate` 可加 `mlip: <名称>` 启用能量计算。不启用 MLIP 的旧任务仍只生成结构。
+只有晶体、需要非晶表面时，先用 `amorphous_bulk`（MLIP 熔融-淬火）得到非晶块体，再交给 `amorphous_slab`
+切表面，两步可写在同一个任务文件里，见
+[examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml](examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml)。
 可复用的筛选任务见 [examples/mlip_jobs](examples/mlip_jobs)，配置与安装详解见
 [MACE / UMA 接口](docs/mlip-interfaces.md)。`genkai-surface` 仍可在激活 `.venv` 后直接使用。
 
@@ -131,7 +134,11 @@ bash scripts/mlip-python.sh uma scripts/run_modeling_smoke.py --profile server -
 
 | 路径 | 内容 |
 | --- | --- |
-| `src/genkai/modeling/surface/` | 建模方法、MLIP 筛选层、`genkai-surface`（`jobs.py`） |
+| `src/genkai/modeling/surface/builders/` | 结构生成：切面、空位、吸附、团簇、SAM、ALD、纯非晶表面 |
+| `src/genkai/modeling/surface/screening/` | 能量筛选：SAM 锚定搜索、非晶表面/界面筛选、团簇与岛放置搜索 |
+| `src/genkai/modeling/surface/mlip/` | 计算器（none/emt/MACE/UMA）、搜索采样器（TPE/周期 GP）、`genkai.yaml` 配置 |
+| `src/genkai/modeling/surface/app/` | `genkai-surface`（`jobs.py`）和安装向导（`setup.py`） |
+| `src/genkai/modeling/surface/` 顶层 | `structure_io.py`（文件约定与结构检查）、论文计划执行器；旧路径的 `slab.py` 等是转发模块 |
 | `src/genkai/modeling/` | PToModel 建模计划（mapping、ptomodel、checklist、schema） |
 | `src/genkai/contracts/`、`src/genkai/workflow/` | artifact 与运行清单（`manifest.json`）契约 |
 | `src/genkai/literature/surface/` | 只保留建模用到的词表和读取已保存抽取结果的函数 |

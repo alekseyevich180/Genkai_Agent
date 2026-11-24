@@ -13,8 +13,8 @@ import pytest
 import yaml
 
 from genkai.contracts.run import RunManifest
-from genkai.modeling.surface import jobs
-from genkai.modeling.surface.jobs import JobFileError, build_argv, command_check, load_job_file, main, render_template
+from genkai.modeling.surface.app import jobs
+from genkai.modeling.surface.app.jobs import JobFileError, build_argv, command_check, load_job_file, main, render_template
 
 ROOT = Path(__file__).resolve().parents[2]
 EXAMPLES = ROOT / "agents" / "Agent" / "skills" / "surface-modeling" / "examples"
@@ -27,6 +27,7 @@ JOB_EXAMPLES = ROOT / "examples" / "surface_jobs"
 # Real files for the placeholders of every template.
 PLACEHOLDER_FILES = {
     "bulk": SNO2_BULK,
+    "crystal": SNO2_BULK,
     "surface": CEO2_SLAB,
     "input": CEO2_SLAB,
     "molecule": BUTANOIC,

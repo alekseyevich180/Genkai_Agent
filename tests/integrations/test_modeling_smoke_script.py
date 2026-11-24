@@ -36,6 +36,7 @@ def test_every_case_uses_existing_repository_structures_and_entry_points() -> No
         "sam",
         "ald_overlayer",
         "amorphous_slab",
+        "amorphous_bulk",
         "sam_search",
         "amorphous_screen",
         "surface_jobs",
@@ -80,4 +81,5 @@ def test_server_mace_commands_reach_all_energy_entrypoints(tmp_path) -> None:
             assert command[command.index("--mace-model") + 1] == "local.model"
             assert command[command.index("--mace-dtype") + 1] == "float64"
             assert "--uma-model" not in command and "--uma_model" not in command
-    assert {"slab_generation", "vacancy_landscape", "adsorbate_landscape", "cluster_search", "sam_search", "amorphous_screen"} <= methods
+    assert {"slab_generation", "vacancy_landscape", "adsorbate_landscape", "cluster_search", "sam_search", "amorphous_screen",
+            "amorphous_bulk"} <= methods

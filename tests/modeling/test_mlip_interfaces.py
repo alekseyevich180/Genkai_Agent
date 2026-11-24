@@ -7,7 +7,9 @@ from unittest.mock import Mock
 
 import pytest
 
-from genkai.modeling.surface import adsorbate, amorphous_screen, calculators, cluster_search, sam_search, slab, vacancy
+from genkai.modeling.surface.builders import adsorbate, slab, vacancy
+from genkai.modeling.surface.mlip import calculators
+from genkai.modeling.surface.screening import amorphous_screen, cluster_search, sam_search
 
 
 @pytest.fixture

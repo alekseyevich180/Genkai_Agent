@@ -8,16 +8,16 @@ from ase.data import covalent_radii
 from ase.io import write
 from ase.neighborlist import neighbor_list
 
-from genkai.modeling.surface import amorphous_slab as aslab
-from genkai.modeling.surface.amorphous_overlayer import (
+from genkai.modeling.surface.builders import amorphous_slab as aslab
+from genkai.modeling.surface.builders.amorphous_overlayer import (
     OverlayerBuildError,
     OverlayerSettings,
     pair_reference_distances,
     run_overlayer,
 )
-from genkai.modeling.surface.sam import SamSettings, run_sam
+from genkai.modeling.surface.builders.sam import SamSettings, run_sam
 from genkai.modeling.surface.structure_io import read_structure
-from genkai.modeling.surface.substrate import prepare_substrate
+from genkai.modeling.surface.builders.substrate import prepare_substrate
 
 ROOT = Path(__file__).resolve().parents[2]
 A_SNO2 = ROOT / "tests" / "amorphous" / "SnO2"
@@ -96,8 +96,8 @@ def test_amorphous_slab_cif_gets_its_bottom_fixed_again(tmp_path) -> None:
 def test_slab_without_discrete_layers_is_fixed_by_height() -> None:
     from ase import Atoms
 
-    from genkai.modeling.surface.slab import SlabSettings
-    from genkai.modeling.surface.substrate import apply_slab_convention
+    from genkai.modeling.surface.builders.slab import SlabSettings
+    from genkai.modeling.surface.builders.substrate import apply_slab_convention
 
     # z spaced 0.1 A apart: every gap is below the 0.3 A layer tolerance, i.e. a single "layer".
     column = Atoms("O40", positions=[(0.0, 0.0, 0.1 * k) for k in range(40)], cell=[10, 10, 30], pbc=True)

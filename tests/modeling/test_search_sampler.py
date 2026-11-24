@@ -2,7 +2,7 @@ import numpy as np
 import optuna
 import pytest
 
-from genkai.modeling.surface.search_sampler import PeriodicGP, PeriodicGPSampler, make_sampler
+from genkai.modeling.surface.mlip.search_sampler import PeriodicGP, PeriodicGPSampler, make_sampler
 
 
 def test_covariance_across_periodic_seam_and_unordered_sites():

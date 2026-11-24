@@ -1,0 +1,24 @@
+# 示例 5：晶体 -> 非晶块体（MLIP 熔融-淬火）-> 非晶表面
+# 第 1 个任务是真实的分子动力学计算（默认温度程序约 7.4 万步），只在获准的 GPU 服务器上运行。
+# 第 2 个任务的 amorphous 指向第 1 个任务的输出；check 时它还不存在，会提示“由前面的任务生成”。
+# 如果第 1 个任务失败，后面的任务会被跳过。运行后先看 runs/crystal_to_amorphous/bulk/amorphous_bulk_manifest.json
+# 里的熔融位移、配位数和 E - E_crystal，再使用切出的表面。
+
+jobs:
+  - method: amorphous_bulk
+    mlip: default
+    output: runs/crystal_to_amorphous/bulk
+    crystal: ../../tests/se4c02105_surface_fullrun/automatic_modeling/sno2_101/bulk_from_materials_project.cif
+    min_atoms: 150          # 自动选 3x3x3 金红石超胞，162 原子
+    density: 6.4            # 目标密度（g/cm³）。示例值，晶体为 6.87；请按文献或实验确认
+    melt_temperature: 3000  # SnO2 熔点约 1900 K
+    melt_ps: 10
+    quench_rate: 50         # K/ps
+    anneal_ps: 10
+    samples: 2              # 两个独立样本（不同初速度）
+
+  - method: amorphous_slab
+    output: runs/crystal_to_amorphous/slab
+    amorphous: runs/crystal_to_amorphous/bulk/amorphous_bulk_000.extxyz
+    thickness: 10
+    samples: 2

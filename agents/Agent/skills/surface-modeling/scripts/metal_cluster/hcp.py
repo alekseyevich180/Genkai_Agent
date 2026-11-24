@@ -1,5 +1,5 @@
-from genkai.modeling.surface.metal_cluster.hcp import *
-from genkai.modeling.surface.metal_cluster.hcp import main as _main
+from genkai.modeling.surface.builders.metal_cluster.hcp import *
+from genkai.modeling.surface.builders.metal_cluster.hcp import main as _main
 
 
 if __name__ == "__main__":

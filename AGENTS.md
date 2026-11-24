@@ -11,29 +11,56 @@
 - 删除：Agent 运行时（`agents/Agent/*.py`、`src/agent/`）、Web 界面、论文 PDF 抽取与 LLM、`genkai.cli`
   与 `genkai.workflows`（`genkai-workflow` 命令）、`genkai.mlip`/`compute`/`datasets`（训练与 VASP 适配器）、
   其他 Skill、知识图谱、`legacy/`、main 的 Harness 脚本和发布流程。
-- 保留下来的源码文件与 `main` 相同，没有为精简而修改，方便以后同步。
+- 建模代码此后在 SAGE 上继续开发（MLIP 配置、OOM 回退、周期 GP 采样器等），2026-11-24 起
+  `src/genkai/modeling/surface/` 又按职责拆成子包（见“目录结构”），与 `main` 的平铺布局不再一致。
   `literature/surface/__init__.py` 和 `core/catalog.py` 里仍以字符串形式提到已删除的模块，只有调用这些
   延迟导出时才会报错，建模代码不调用它们。
 
 ### 与 main 同步
 
-- 从 main 取建模更新：只检出需要的路径，例如
-  `git checkout main -- src/genkai/modeling src/genkai/contracts tests/modeling`，再在 SAGE 上运行验证。
-  不要直接 `git merge main`：会把已删除的部分带回来。
-- 把 SAGE 上的改进带回 main：用 `git cherry-pick` 挑选只改建模代码的提交，或在 main 上按路径检出。
-  **不要把 SAGE 合并进 main**：精简提交会删除 main 的大部分内容。
-- 两个分支都改过的文件（如本文件、README、pyproject.toml、冒烟脚本）按分支各自维护。
+- **不要再用 `git checkout main -- src/genkai/modeling`**：main 的平铺文件会覆盖 `surface/` 顶层的转发模块，
+  形成两份实现（`tests/architecture/test_surface_layout.py` 会失败）。`src/genkai/contracts` 等未改布局的目录
+  仍可按路径检出。不要直接 `git merge main`：会把已删除的部分带回来。
+- 从 main 取某个建模文件：按下表放到新位置，再改相对导入（子包内同组模块仍用 `.x`；`structure_io` 用
+  `..structure_io`；跨组用 `..mlip.x`、`..builders.x`），然后在 SAGE 上运行验证。例如
+  `git show main:src/genkai/modeling/surface/sam.py > src/genkai/modeling/surface/builders/sam.py`。
+  SAGE 上的版本多已改过，先对比差异再合并，不要整文件覆盖。
+
+  | main 路径（`src/genkai/modeling/surface/`） | SAGE 路径 |
+  | --- | --- |
+  | `calculators.py`、`search_sampler.py`*、`mlip_config.py`* | `mlip/` |
+  | `slab.py`、`materials_project_slab.py`、`substrate.py`、`sites.py`、`vacancy.py`、`adsorbate.py`、`sam.py`、`amorphous_overlayer.py`、`amorphous_slab.py`、`metal_cluster/` | `builders/` |
+  | `sam_search.py`、`amorphous_screen.py`、`cluster_search.py` | `screening/` |
+  | `jobs.py`、`setup.py`* | `app/` |
+  | `structure_io.py`、`executor.py`、`facade.py`、`__init__.py` | 原位置 |
+
+  \* 只在 SAGE 上存在。
+- 把 SAGE 上的改进带回 main：在 main 上按上表反向放回平铺位置并改回相对导入；`git cherry-pick` 只适合
+  不涉及 `surface/` 文件移动的提交。**不要把 SAGE 合并进 main**：精简提交会删除 main 的大部分内容。
+- 两个分支都改过的文件（如本文件、README、pyproject.toml、冒烟脚本、`schema/task_parameter_schema.json`）
+  按分支各自维护。
 
 ## 目录结构
 
-- `src/genkai/modeling/surface/`：切面 `slab.py`、空位 `vacancy.py`、吸附 `adsorbate.py`、团簇
-  `metal_cluster/`、SAM `sam.py`、ALD `amorphous_overlayer.py`、纯非晶表面 `amorphous_slab.py`，共用的
-  `substrate.py`、`sites.py`、`structure_io.py`（文件约定和结构检查），structure-only 执行器 `executor.py`
-  与 `facade.py`，MLIP 筛选层 `calculators.py`、`sam_search.py`、`amorphous_screen.py`、`cluster_search.py`，
-  任务文件入口 `jobs.py`（console script `genkai-surface`），Materials Project 读取 `materials_project_slab.py`
-  （需要联网，可选依赖 `mp-api`）。
-- `modeling/surface/mlip_config.py`：统一 MLIP 配置、运行环境选择与无模型环境检查；
-  `setup.py`：安装向导、独立项目依赖环境、配置和任务生成。面向使用者统一走 `./genkai` / `genkai-surface`。
+- `src/genkai/modeling/surface/`（2026-11-24 按职责拆分；依赖方向
+  `structure_io` ← `mlip` ← `builders` ← `screening` ← `app`）：
+  - `structure_io.py`：结构文件约定和结构检查，所有子包共用。
+  - `mlip/`：`calculators.py`（none/emt/MACE/UMA、任务头检查、证据等级）、`search_sampler.py`
+    （Optuna TPE 与共享周期 GP）、`mlip_config.py`（`genkai.yaml`、MLIP 运行环境选择、无模型环境检查、OOM 回退配置）。
+  - `builders/`：切面 `slab.py`、Materials Project 读取 `materials_project_slab.py`（需要联网，可选依赖
+    `mp-api`）、`substrate.py`、`sites.py`、空位 `vacancy.py`、吸附 `adsorbate.py`、SAM `sam.py`、
+    ALD `amorphous_overlayer.py`、纯非晶表面 `amorphous_slab.py`、团簇 `metal_cluster/`，以及
+    非晶块体 `amorphous_bulk.py`（2026-11-24：晶体 → 扩胞/密度缩放 → Langevin 熔融-淬火-退火 → 弛豫，
+    输出可作为 `amorphous_slab`/ALD/`amorphous_screen` 的 `--amorphous`；需要有力的计算器，`none` 被拒绝，
+    `--dry-run` 只准备超胞）。
+  - `screening/`：SAM 锚定搜索 `sam_search.py`、非晶表面/界面筛选 `amorphous_screen.py`、团簇与岛放置搜索
+    `cluster_search.py`。
+  - `app/`：任务文件入口 `jobs.py`（console script `genkai-surface`，按模块名在子进程里启动各方法）、
+    安装向导 `setup.py`（`install.sh` 调用）。面向使用者统一走 `./genkai` / `genkai-surface`。
+  - `executor.py`、`facade.py`：论文建模计划的 structure-only 执行。
+  - 顶层的 `slab.py`、`jobs.py`、`metal_cluster/` 等旧路径是**转发模块**，只为服务器上已有脚本（hooks、
+    `test_interface_kernels.py`、旧 `./genkai` 启动器、`python -m genkai.modeling.surface.<旧名>`）保留，
+    不含代码；仓库内的代码和文档只用新路径。
 - `src/genkai/modeling/`：PToModel（`mapping.py`、`ptomodel.py`、`checklist.py`、`schema/`）。
 - `src/genkai/contracts/`、`src/genkai/workflow/`：artifact、`RunManifest`、阶段图和清单存储。
 - `src/genkai/literature/surface/`：只保留 `artifacts.py`（读取已保存的抽取结果）和 `core/` 词表。
@@ -50,6 +77,10 @@
 
 - 稳定实现放在 `src/genkai/`，使用 `genkai.*` 导入；Skill 脚本只做 `from genkai... import *` 加 `main` 转发。
 - 依赖方向：`skills` → `modeling` → `contracts`；`tests/architecture/` 检查导入边界和薄入口。
+- `modeling/surface/` 内部：`mlip/` 不导入 builders/screening/app，`builders/` 不导入 screening/app，
+  `screening/` 不导入 app；新模块放进对应子包，不再放在 `surface/` 顶层。仓库内任何代码不得经由旧路径
+  转发模块导入。`tests/architecture/test_surface_layout.py` 检查分层、转发模块不含代码、新旧路径是同一个模块对象，
+  以及旧路径 `python -m` 仍可运行。
 - 公共 artifact 通过 `genkai.contracts` 和 `RunManifest` 传递。
 - 修改某个方法的命令行参数时，同步 `jobs.py` 的参数表；`tests/modeling/test_surface_jobs.py` 会检查。
 
@@ -72,7 +103,7 @@
 source .venv/bin/activate
 python -m pytest -q
 python scripts/run_modeling_smoke.py
-python -m genkai.modeling.surface.jobs check examples/surface_jobs/*.yaml
+python -m genkai.modeling.surface.app.jobs check examples/surface_jobs/*.yaml
 ```
 
 用 `python -m pytest`（不是 `pytest`）运行测试：`tests/architecture` 需要仓库根目录在 `sys.path` 里。
@@ -85,12 +116,25 @@ python -m genkai.modeling.surface.jobs check examples/surface_jobs/*.yaml
 - `examples/surface_jobs/` 的 10 个任务全部 PASS。
 - 本机无法联网，`install.sh` 的完整安装由 CI（Ubuntu + Python 3.12，pip 路径）验证。
 
+当前基线（2026-11-24，`surface/` 拆分子包之后，本机 Windows + Python 3.11，绝对路径 `PYTHONPATH=<仓库>/src`）：
+
+- `python -m pytest -q`：201 passed / 2 deselected（external）；其中 `tests/architecture` 32 passed。
+- 冒烟：29 个用例，PASS 28 / WARN 0 / FAIL 0 / SKIP 1（Materials Project 联网项），与拆分前服务器基线一致。
+- `examples/surface_jobs/` 10 个任务配置检查通过；新旧模块路径的 `python -m ... --help` 均返回 0。
+- 本机没有 `wheel`，新子包的打包只用 setuptools 包发现核对；实际 wheel 由 CI 安装验证。
+- 同日加入 `amorphous_bulk` 后：`python -m pytest -q` 214 passed / 2 deselected；冒烟 31 个用例，
+  PASS 29 / WARN 0 / FAIL 0 / SKIP 2（Materials Project 联网项；熔融-淬火用例需要 `--profile server`）。
+
 ## MLIP 测试规则
 
 - MACE / UMA 公共接口与本机独立环境的调用方法见 `docs/mlip-interfaces.md`；
   `genkai.yaml` 集中配置环境与模型；任务 YAML 用 `mlip` 选择配置。
   旧任务默认 structure-only；slab/vacancy/adsorbate 可显式启用 MLIP，
-  sam_search/amorphous_surfaces/amorphous_interface/cluster_search 已开放 YAML 入口。
+  sam_search/amorphous_surfaces/amorphous_interface/cluster_search/amorphous_bulk 已开放 YAML 入口。
+  `amorphous_bulk` 是真实分子动力学（默认约 7.4 万步），与其他 MLIP 计算一样只在获准的服务器上运行；
+  本机测试只用 EMT 小胞（32 个 Cu、约 360 步）检查流程，不代表非晶结构质量。
+  完整晶体在 MD 中会明显过热（本机 EMT 实测：108 原子 Cu 在 3000 K 下 1 ps 仍未熔化），
+  所以 manifest 记录熔融阶段各元素的均方根位移，低于 1.5 Å 时给出警告。
   安装脚本不得安装 MLIP、PyTorch、CUDA 或下载模型；只为已有后端准备独立项目依赖环境，
   使用源环境版本约束，并保留使用者配置与任务文件。
   `scripts/mlip-python.sh` 也读取同一个配置，不得重新加入本机专属环境路径。

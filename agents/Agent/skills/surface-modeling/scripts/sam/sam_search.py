@@ -1,5 +1,5 @@
-from genkai.modeling.surface.sam_search import *
-from genkai.modeling.surface.sam_search import main as _main
+from genkai.modeling.surface.screening.sam_search import *
+from genkai.modeling.surface.screening.sam_search import main as _main
 
 
 if __name__ == "__main__":

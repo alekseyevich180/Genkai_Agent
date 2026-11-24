@@ -1,5 +1,5 @@
-from genkai.modeling.surface.amorphous_overlayer import *
-from genkai.modeling.surface.amorphous_overlayer import main as _main
+from genkai.modeling.surface.builders.amorphous_overlayer import *
+from genkai.modeling.surface.builders.amorphous_overlayer import main as _main
 
 
 if __name__ == "__main__":

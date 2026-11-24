@@ -13,24 +13,24 @@ import pytest
 from ase import Atoms
 from ase.io import read, write
 
-from genkai.modeling.surface import calculators
-from genkai.modeling.surface.amorphous_overlayer import (
+from genkai.modeling.surface.mlip import calculators
+from genkai.modeling.surface.builders.amorphous_overlayer import (
     OverlayerSettings,
     film_lattice_matches,
     match_film_lattice,
     run_overlayer,
 )
-from genkai.modeling.surface.amorphous_screen import (
+from genkai.modeling.surface.screening.amorphous_screen import (
     InterfaceSearchSettings,
     ModelSettings,
     SurfaceScreenSettings,
     screen_surfaces,
     search_interface,
 )
-from genkai.modeling.surface.sam import SamBuilder, SamSettings, resolve_anchor_group
-from genkai.modeling.surface.sam_search import SamSearchSettings, equivalent_groups, run_sam_search
+from genkai.modeling.surface.builders.sam import SamBuilder, SamSettings, resolve_anchor_group
+from genkai.modeling.surface.screening.sam_search import SamSearchSettings, equivalent_groups, run_sam_search
 from genkai.modeling.surface.structure_io import read_molecule
-from genkai.modeling.surface.substrate import ensure_fixed_bottom, prepare_substrate
+from genkai.modeling.surface.builders.substrate import ensure_fixed_bottom, prepare_substrate
 
 ROOT = Path(__file__).resolve().parents[2]
 SNO2_BULK = ROOT / "tests" / "se4c02105_surface_fullrun" / "automatic_modeling" / "sno2_101" / "bulk_from_materials_project.cif"
@@ -95,7 +95,7 @@ def test_translation_equivalent_sites_on_a_crystal_but_not_on_an_amorphous_slab(
     assert len(equivalents) == len(builder.groups) == 6  # every Sn5c of rutile (110)
     assert tuple(equivalents[0][0]) == tuple(builder.groups[0])
 
-    from genkai.modeling.surface.amorphous_slab import AmorphousSlabSettings, run_amorphous_slab
+    from genkai.modeling.surface.builders.amorphous_slab import AmorphousSlabSettings, run_amorphous_slab
 
     slab = run_amorphous_slab(A_TIO2, AmorphousSlabSettings(thickness=11.84, repeat_xy=(1, 1)), tmp_path / "a", export=())
     amorphous = prepare_substrate(surface=slab.sample_paths[0])
@@ -149,8 +149,8 @@ def test_interface_search_ranks_candidates_by_adhesion(tmp_path, sno2_110) -> No
 
 
 def test_cluster_search_makes_room_above_the_slab_for_large_clusters(tmp_path) -> None:
-    from genkai.modeling.surface import cluster_search
-    from genkai.modeling.surface.slab import vacuum_gap_angstrom
+    from genkai.modeling.surface.screening import cluster_search
+    from genkai.modeling.surface.builders.slab import vacuum_gap_angstrom
 
     particle = ROOT / "tests/fixtures/archives/generated/s41563-025-02134-9_surface_fullrun/modeling/structures/Ru_hcp_r7.xyz"
     slab_file = EXAMPLES / "CeO2 (1 1 1).cif"  # c = 24.7 A, too short for a ~12 A tall particle plus gap
@@ -169,7 +169,7 @@ def test_cluster_search_makes_room_above_the_slab_for_large_clusters(tmp_path) -
 
 
 def test_island_files_feed_the_cluster_placement_search(tmp_path, sno2_110) -> None:
-    from genkai.modeling.surface import cluster_search
+    from genkai.modeling.surface.screening import cluster_search
 
     ald = run_overlayer(sno2_110, A_TIO2, OverlayerSettings("partial", island_atoms=20), tmp_path / "ald", export=())
     island = Path(ald.manifest["files"]["islands"][0])
