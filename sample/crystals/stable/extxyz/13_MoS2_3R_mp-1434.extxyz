@@ -1,0 +1,5 @@
+3
+Lattice="6.54648279 -1.59215212 -0.0783903 6.54648279 1.59215212 -0.0783903 6.19200778 0.0 2.65642" Properties=species:S:1:pos:R:3 material_id=mp-aaaaacde legacy_numeric_id=mp-1434 formula=MoS2 mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Mo      19.28063501      -0.00000000       2.49907708
+S        7.96334829      -0.00000000       1.03217665
+S        4.88480160      -0.00000000       0.63314801

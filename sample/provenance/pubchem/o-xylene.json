@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/o-xylene/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:33Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 7237,
+          "MolecularFormula": "C8H10",
+          "ConnectivitySMILES": "CC1=CC=CC=C1C",
+          "InChIKey": "CTQNGGLPUBDAKN-UHFFFAOYSA-N",
+          "IUPACName": "1,2-xylene"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/diethyl%20ether/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:29Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 3283,
+          "MolecularFormula": "C4H10O",
+          "ConnectivitySMILES": "CCOCC",
+          "InChIKey": "RTZKZFJDLAIYFH-UHFFFAOYSA-N",
+          "IUPACName": "ethoxyethane"
+        }
+      ]
+    }
+  }
+}

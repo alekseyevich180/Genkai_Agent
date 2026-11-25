@@ -106,6 +106,25 @@ def test_adsorption_sites_under_added_atoms_are_blocked(sno2_slab) -> None:
                for i in get_surface_sites(decorated, ["O"], 1.2, None, site_components=["substrate"]))
 
 
+def test_sites_under_an_overlayer_island_are_covered(sno2_slab) -> None:
+    # Regression (recipe 07): an ALD island is solid, but the substrate atoms under it are not surface.
+    slab = label_components(sno2_slab.copy(), "substrate")
+    site = _top_sn(slab)
+    n = len(slab)
+    above = slab.positions[site] + [1.6, 0.0, 2.4]  # one island atom near, not exactly over, the Sn
+    slab += Atoms("Ti", positions=[above])
+    label_components(slab, "overlayer", [n])
+    region = surface_region(slab, 2.5)
+    assert site in region and n in region  # substrate measured from its own top, island from its own
+    assert site not in exposed_indices(slab, region)
+    sites = get_surface_sites(slab, ["Sn"], 1.2, None)
+    kept, blocked = unblocked_sites(slab, sites, molecule("H2O"), 3.5)
+    assert site not in kept and blocked >= 1
+    plain = sno2_slab.copy()  # unlabeled: nothing changes
+    assert exposed_indices(plain, surface_region(plain, 2.5)) == exposed_indices(
+        label_components(plain.copy(), "substrate"), surface_region(plain, 2.5))
+
+
 def test_cluster_moves_to_a_free_spot_and_sits_on_the_solid_surface(sno2_slab) -> None:
     cluster = Atoms("Pt4", positions=[[0, 0, 0], [2.7, 0, 0], [1.35, 2.3, 0], [1.35, 0.8, 2.2]])
     cluster.positions -= cluster.positions.mean(axis=0)

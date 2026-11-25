@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/furfural/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:29Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 7362,
+          "MolecularFormula": "C5H4O2",
+          "ConnectivitySMILES": "C1=COC(=C1)C=O",
+          "InChIKey": "HYBBIBNJHNGZAN-UHFFFAOYSA-N",
+          "IUPACName": "furan-2-carbaldehyde"
+        }
+      ]
+    }
+  }
+}

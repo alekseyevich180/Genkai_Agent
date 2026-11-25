@@ -1,0 +1,13 @@
+# 非晶 SnO2 薄膜（低温沉积的传感膜常为非晶）检测丙酮
+# 流程：非晶块体 -> 切出 10 Å 非晶表面 -> 表面 O 空位 -> 丙酮吸附在 Sn 上
+# 只有晶体、没有非晶块体时：见 12_mlip_crystal_to_amorphous_acetone.yaml（需要 MLIP 做熔融-淬火）
+
+pipeline:
+  - method: amorphous_slab
+    amorphous: inputs/a-SnO2.vasp
+    thickness: 10
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: adsorbate
+    molecule: CH3COCH3
+    site_symbols: [Sn]

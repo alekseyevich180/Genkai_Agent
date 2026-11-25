@@ -182,6 +182,7 @@ _register(Method(
         Option("samples_per_count", "--samples-per-count", "int", "每个空位数抽取的构型数"),
         Option("z_frac_min", "--z-frac-min", "float", "可选 O 位点的最小分数坐标 z（0–1，按整个晶胞高度）"),
         Option("z_frac_max", "--z-frac-max", "float", "可选 O 位点的最大分数坐标 z（0–1，按整个晶胞高度）"),
+        Option("element", "--element", "str", "要去掉的元素：氧化物用 O（默认），硫化物用 S"),
         Option("surface_depth", "--surface-depth", "float", "只取表面顶部以下这么深（Å）内的 O（表面空位）；写了就不再用 z_frac"),
         Option("components", "--components", "words", "可去掉哪些部分的 O：substrate（基底）、overlayer（ALD 覆盖层）；默认 substrate"),
         SEED,
@@ -205,8 +206,12 @@ _register(Method(
     module="genkai.modeling.surface.builders.adsorbate",
     options=(
         Option("surface", "--surface", "path", "slab 文件", required=True, example="<slab.cif>"),
-        Option("molecule", "--molecule", "path", "分子文件（XYZ、CIF、POSCAR 等）", required=True, example="<分子.xyz>"),
-        Option("site_symbols", "--site-symbols", "words", "吸附位点的表面元素，如 Ce；多个元素写成列表", required=True, example="Ce"),
+        Option("molecule", "--molecule", "molecule",
+               "分子：常见气体直接写名字（NO2、CO、H2、NH3、H2S、H2O、O2、SO2、CH4、乙醇 C2H5OH、丙酮 CH3COCH3、"
+               "甲醛 HCHO 等），其他分子写结构文件路径（XYZ、CIF、POSCAR）", required=True, example="NO2"),
+        Option("site_symbols", "--site-symbols", "words",
+               "吸附位点的表面元素，如 Ce；多个元素写成列表；写 auto 自动选表面裸露的阳离子（没有时选最外层原子）",
+               required=True, example="Ce"),
         Option("site_components", "--site-components", "words",
                "位点限定在哪些部分：substrate、overlayer、cluster、sam；默认不限（被团簇/SAM 盖住的位点总会排除）"),
         Option("coverage_counts", "--coverage-counts", "ints", "每个晶胞的分子数，如 [1, 2]；不写则从 1 到最多能放下的数"),
@@ -577,7 +582,10 @@ class Job:
         return f"{where}（{self.method.name}）"
 
     def input_paths(self) -> list[tuple[str, Path]]:
-        return [(key, value) for key, value in self.values.items() if self.method.option(key).kind == "path"]
+        return [
+            (key, value) for key, value in self.values.items()
+            if self.method.option(key).kind in {"path", "molecule"} and isinstance(value, Path)
+        ]
 
 
 @dataclass
@@ -652,9 +660,18 @@ def _items(value: Any) -> list[str]:
 def _convert(option: Option, value: Any, base: Path) -> Any:
     if isinstance(value, dict):
         raise ValueError("不能是嵌套的“键: 值”结构")
-    if option.kind in {"path", "int", "float", "str"} and isinstance(value, list):
+    if option.kind in {"path", "molecule", "int", "float", "str"} and isinstance(value, list):
         raise ValueError("只能写一个值，不能是列表")
     text = value.strip() if isinstance(value, str) else value
+    if option.kind == "molecule":
+        # A bare gas name (NO2, CO, ethanol, ...) stays a name unless a file of that name exists here.
+        from ..builders.molecules import canonical_gas_name
+
+        canonical = canonical_gas_name(text) if not re.search(r"[\\/]", text) else None
+        if canonical is not None and not (base / text).is_file():
+            return canonical
+        path = Path(os.path.expanduser(text))
+        return (path if path.is_absolute() else base / path).resolve()
     if option.kind == "path":
         path = Path(os.path.expanduser(text))
         return (path if path.is_absolute() else base / path).resolve()
@@ -1525,6 +1542,7 @@ EPILOG = f"""\
   {PROG} template sam -o sam_job.yaml  生成 SAM 任务文件模板，修改后：
   {PROG} check sam_job.yaml            只检查，不运行
   {PROG} run sam_job.yaml              运行；结果在任务文件里写的 output 目录
+  {PROG} random -n 6 --seed 1          从 sample/ 结构库随机生成 6 个流水线到 random_jobs/
 
 原有任务不设置 mlip 时只生成结构；能量筛选通过 genkai.yaml 选择已经安装的 MLIP。
 """
@@ -1550,6 +1568,10 @@ def build_parser() -> argparse.ArgumentParser:
     template.add_argument("method", choices=list(METHODS), help="方法名")
     template.add_argument("-o", "--output", type=Path, default=None, help="写入这个文件（不写则打印到屏幕）")
     template.add_argument("--force", action="store_true", help="文件已存在时覆盖")
+    random_cmd = commands.add_parser("random", help="从结构库随机生成符合实际的建模流水线（默认用项目里的 sample/）")
+    from .random_jobs import add_arguments as add_random_arguments
+
+    add_random_arguments(random_cmd)
     check = commands.add_parser("check", help="只检查任务文件，不运行")
     check.add_argument("job_files", nargs="+", type=Path, metavar="任务文件")
     check.add_argument("--config", type=Path, help="MLIP 配置文件（默认自动查找 genkai.yaml）")
@@ -1604,6 +1626,10 @@ def main(argv: list[str] | None = None) -> int:
         args.output.write_text(text, encoding="utf-8")
         print(f"已写入 {args.output}。修改必填项后运行：{PROG} check {args.output}", file=stream)
         return 0
+    if args.command == "random":
+        from .random_jobs import run as run_random
+
+        return run_random(args, stream)
     if args.command == "check":
         return command_check(args.job_files, stream, config_path=args.config)
     try:

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/toluene/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:31Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 1140,
+          "MolecularFormula": "C7H8",
+          "ConnectivitySMILES": "CC1=CC=CC=C1",
+          "InChIKey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+          "IUPACName": "toluene"
+        }
+      ]
+    }
+  }
+}

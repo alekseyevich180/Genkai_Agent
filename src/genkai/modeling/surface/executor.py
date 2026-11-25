@@ -47,56 +47,14 @@ from genkai.contracts.run import StageRecord
 from genkai.contracts.validation import ValidationIssue, ValidationReport
 from genkai.workflow.store import load_manifest, save_manifest
 
+# Built-in gas names (ASE G2 geometries) are owned by builders.molecules; re-exported for callers.
+from .builders.molecules import BUILTIN_GAS_MOLECULES, GAS_MOLECULE_ALIASES, resolve_gas_molecule  # noqa: F401
+
 
 STAGE_BASE_ID = "03_surface_structures"
 ADAPTER = "genkai.modeling.surface.executor"
 CLASH_FRACTION = 0.6  # atoms of different fragments closer than 0.6 * (r_i + r_j) overlap
 MIN_VACUUM_GAP_A = 5.0
-
-# Reference gas-phase geometries from ASE's G2 set, keyed by canonical formula.
-BUILTIN_GAS_MOLECULES: dict[str, str] = {
-    "H2": "H2",
-    "O2": "O2",
-    "O3": "O3",
-    "H2O": "H2O",
-    "CO": "CO",
-    "CO2": "CO2",
-    "NO": "NO",
-    "NO2": "NO2",
-    "NH3": "NH3",
-    "H2S": "SH2",
-    "SO2": "SO2",
-    "CH4": "CH4",
-    "CH3OH": "CH3OH",
-    "C2H5OH": "CH3CH2OH",
-    "HCHO": "H2CO",
-    "CH3CHO": "CH3CHO",
-    "CH3COCH3": "CH3COCH3",
-    "C6H6": "C6H6",
-}
-GAS_MOLECULE_ALIASES: dict[str, str] = {
-    "hydrogen": "H2",
-    "oxygen": "O2",
-    "ozone": "O3",
-    "water": "H2O",
-    "carbon monoxide": "CO",
-    "carbon dioxide": "CO2",
-    "nitric oxide": "NO",
-    "nitrogen monoxide": "NO",
-    "nitrogen dioxide": "NO2",
-    "ammonia": "NH3",
-    "hydrogen sulfide": "H2S",
-    "sulfur dioxide": "SO2",
-    "methane": "CH4",
-    "methanol": "CH3OH",
-    "ethanol": "C2H5OH",
-    "ch3ch2oh": "C2H5OH",
-    "formaldehyde": "HCHO",
-    "h2co": "HCHO",
-    "acetaldehyde": "CH3CHO",
-    "acetone": "CH3COCH3",
-    "benzene": "C6H6",
-}
 
 UNSUPPORTED_TASK_REASONS: dict[str, str] = {
     "surface_functionalization": (
@@ -110,24 +68,6 @@ UNSUPPORTED_TASK_REASONS: dict[str, str] = {
 }
 
 BulkProvider = Callable[..., tuple[Any, dict[str, Any]]]
-
-
-def resolve_gas_molecule(name: str) -> tuple[str, Atoms]:
-    """Canonical formula and G2 reference geometry for a built-in gas name."""
-    from ase.build import molecule
-
-    text = name.strip()
-    canonical = text if text in BUILTIN_GAS_MOLECULES else None
-    if canonical is None:
-        lowered = text.casefold()
-        canonical = GAS_MOLECULE_ALIASES.get(lowered) or next(
-            (key for key in BUILTIN_GAS_MOLECULES if key.casefold() == lowered),
-            None,
-        )
-    if canonical is None:
-        supported = ", ".join(sorted(BUILTIN_GAS_MOLECULES))
-        raise ValueError(f"Unknown built-in gas molecule {name!r}; supported: {supported}.")
-    return canonical, molecule(BUILTIN_GAS_MOLECULES[canonical])
 
 
 class SurfaceExecutionBlocked(RuntimeError):

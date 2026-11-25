@@ -1,0 +1,6 @@
+4
+Properties=species:S:1:pos:R:3 name=formaldehyde id=06_formaldehyde pubchem_cid=712 smiles=C=O charge=0 multiplicity=1 pbc="F F F"
+C       -0.01224501       0.00146326       0.00008016
+O        1.20371156      -0.14382472      -0.00787899
+H       -0.70611910      -0.85387988       0.02595322
+H       -0.48534745       0.99624134      -0.01815440

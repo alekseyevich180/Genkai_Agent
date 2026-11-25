@@ -113,6 +113,9 @@ ORDER_TEXT = "amorphous_bulk → slab/amorphous_slab → vacancy → ald → clu
 STEP_DEFAULTS: dict[str, dict[str, str]] = {
     # Surface vacancies: the vacancy method alone samples every O of the slab by default.
     "vacancy": {"surface_depth": "2.5"},
+    # One molecule in the uniform pattern: a chain usually asks for one adsorbed gas molecule
+    # (the method alone tries every coverage and three patterns with repeats).
+    "adsorbate": {"coverage_counts": "1", "patterns": "uniform"},
 }
 VACANCY_WINDOW_KEYS = {"surface_depth", "z_frac_min", "z_frac_max"}
 

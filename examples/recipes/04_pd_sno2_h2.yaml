@@ -1,0 +1,16 @@
+# Pd 负载的 SnO2 检测 H2：Pd 解离 H2 后 H 溢流到氧化物表面
+# 流程：切面 -> Pd13 团簇 -> H2 吸附在 Pd 上
+# 想看 H 溢流到载体：最后一步改 site_symbols: [O]，并加 site_components: [substrate]（只用 SnO2 的 O 位点）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: cluster
+    cluster_element: Pd
+    cluster_atoms: 13
+    cluster_structures: [fcc]
+  - method: adsorbate
+    molecule: H2
+    site_symbols: [Pd]

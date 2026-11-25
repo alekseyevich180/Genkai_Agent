@@ -1,0 +1,7 @@
+5
+Properties=species:S:1:pos:R:3 name=chloroform id=27_chloroform pubchem_cid=6212 smiles=ClC(Cl)Cl charge=0 multiplicity=1 pbc="F F F"
+Cl      -0.93791137      -1.39147299      -0.45522597
+C       -0.00322947       0.00105555       0.11576375
+Cl      -0.71351464       1.51259995      -0.47543925
+Cl       1.68836609      -0.13319731      -0.39342642
+H       -0.03371061       0.01101480       1.20832788

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ethanol/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:24Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 702,
+          "MolecularFormula": "C2H6O",
+          "ConnectivitySMILES": "CCO",
+          "InChIKey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+          "IUPACName": "ethanol"
+        }
+      ]
+    }
+  }
+}

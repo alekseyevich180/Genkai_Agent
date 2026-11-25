@@ -1,0 +1,8 @@
+ase==3.29.0
+duckdb==2.0.0
+numpy==2.5.5
+pymatgen==2026.10.24
+pymatgen-core==2026.10.31
+rdkit==2026.9.2
+requests==2.34.2
+spglib==2.8.0

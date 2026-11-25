@@ -1,0 +1,15 @@
+# 已经有 slab 文件时：直接从空位开始。Pt/CeO2(111) 是经典的 CO 氧化体系（CeO2 储放氧）
+# 流程：CeO2(111) slab 文件 -> 表面 O 空位 -> Pt13 -> CO 吸附在 Pt 上
+# 第一步用 input: 给出自己的 slab；后面的步骤自动接上一步
+
+pipeline:
+  - method: vacancy
+    input: inputs/CeO2_111_slab.cif
+    vacancy_counts: [1]
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc]
+  - method: adsorbate
+    molecule: CO
+    site_symbols: [Pt]

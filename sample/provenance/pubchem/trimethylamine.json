@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/trimethylamine/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:35Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 1146,
+          "MolecularFormula": "C3H9N",
+          "ConnectivitySMILES": "CN(C)C",
+          "InChIKey": "GETQZCLCWQTVFV-UHFFFAOYSA-N",
+          "IUPACName": "N,N-dimethylmethanamine"
+        }
+      ]
+    }
+  }
+}

@@ -4,6 +4,9 @@
 
 ## 当前恢复入口（SAGE 分支）
 
+- 2026-11-25：简化用法：吸附分子可直接写气体名、流水线吸附默认 1 个分子；新增 `examples/recipes/` 12 个常见气敏体系配方；
+  修复 ALD 岛下方位点仍被当作吸附位点的问题；接入结构库 `sample/` 与 `genkai-surface random` 随机生成，
+  AGENTS.md 新增“项目工作原理”。详见 [2026-11-25](work_logs/2026-11-25.md)。
 - 2026-11-24：表面建模包按职责拆成子包（`mlip/`、`builders/`、`screening/`、`app/`），旧模块路径保留为转发模块；
   指南移到 `docs/guides/`，`ptomodel_mapping.md` 移到 `docs/`。同日较早：CUDA UMA 的 `oom_fallback`、
   共享 Periodic GP 采样器（`search_sampler.py`）及非晶 TiO2 表面五方法对照（Slurm 240）。
@@ -82,6 +85,7 @@
 - [2026-11-17](work_logs/2026-11-17.md)
 - [2026-11-18](work_logs/2026-11-18.md)
 - [2026-11-24](work_logs/2026-11-24.md)
+- [2026-11-25](work_logs/2026-11-25.md)
 
 ## 相关长期文档
 

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/2-propanol/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:25Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 3776,
+          "MolecularFormula": "C3H8O",
+          "ConnectivitySMILES": "CC(C)O",
+          "InChIKey": "KFZMGEQAYNKOFK-UHFFFAOYSA-N",
+          "IUPACName": "propan-2-ol"
+        }
+      ]
+    }
+  }
+}

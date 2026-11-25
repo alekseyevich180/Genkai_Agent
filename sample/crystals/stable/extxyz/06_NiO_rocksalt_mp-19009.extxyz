@@ -1,0 +1,4 @@
+2
+Lattice="2.56359858 -1e-08 1.48009371 0.85453252 2.41698256 1.48009371 -0.0 -0.0 2.96018743" Properties=species:S:1:pos:R:3 material_id=mp-aaaabcdd legacy_numeric_id=mp-19009 formula=NiO mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Ni       0.00000000       0.00000000       0.00000000
+O        1.70906555       1.20849128       2.96019039

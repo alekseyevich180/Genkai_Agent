@@ -1,0 +1,6 @@
+4
+Lattice="4.16883814 0.0 0.0 -2.08441907 3.61031964 0.0 0.0 0.0 6.77961741" Properties=species:S:1:pos:R:3 material_id=mp-aaaaaazw legacy_numeric_id=mp-672 formula=CdS mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Cd       2.08442115       1.20343868       3.39132985
+Cd      -0.00000208       2.40688096       0.00152114
+S        2.08442115       1.20343868       5.94420333
+S       -0.00000208       2.40688096       2.55439462

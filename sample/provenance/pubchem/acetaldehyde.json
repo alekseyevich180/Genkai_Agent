@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/acetaldehyde/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:27Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 177,
+          "MolecularFormula": "C2H4O",
+          "ConnectivitySMILES": "CC=O",
+          "InChIKey": "IKHGUXGNUITLKF-UHFFFAOYSA-N",
+          "IUPACName": "acetaldehyde"
+        }
+      ]
+    }
+  }
+}

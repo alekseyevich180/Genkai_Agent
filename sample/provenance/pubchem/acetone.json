@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/acetone/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:28Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 180,
+          "MolecularFormula": "C3H6O",
+          "ConnectivitySMILES": "CC(=O)C",
+          "InChIKey": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+          "IUPACName": "propan-2-one"
+        }
+      ]
+    }
+  }
+}

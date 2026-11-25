@@ -1,5 +1,52 @@
 # SAGE 分支工作指南
 
+## 项目工作原理（先读这一节）
+
+SAGE 把晶体和分子结构组装成气敏研究用的表面模型：先生成几何结构，需要时再用 MLIP（UMA/MACE）
+计算能量、弛豫和挑选。使用者只写 YAML，统一用 `genkai-surface`（服务器上是 `./genkai`）运行；
+代码在 `src/genkai/modeling/surface/`，按层次单向依赖：`structure_io` ← `mlip` ← `builders` ← `screening` ← `app`。
+
+```text
+输入：结构库 sample/（MP 晶体 + PubChem VOC 分子，见下文）、examples/recipes 的配方、或自己的 CIF/XYZ
+  │   genkai-surface random   从库里按规则随机组合，写出流水线文件（app/random_jobs.py）
+  │   手写 / 复制配方          examples/recipes/*.yaml
+  ▼
+流水线文件（顶层 pipeline: 步骤列表）——app/pipeline.py
+  │   按层级检查顺序：体相 amorphous_bulk → 表面 slab/amorphous_slab → 空位 vacancy → ALD ald
+  │   → 团簇 cluster → SAM sam → 吸附 adsorbate；relax 可插在任意一步之后
+  │   自动把上一步选中的结构接到下一步的输入；pick 选候选（first/序号/all/lowest_energy）
+  │   每步之后补原子来源标签、补顶部真空、保留固定原子、记录谱系
+  ▼
+每一步 = 一个普通任务（app/jobs.py）：按参数表和方法自己的 argparse 校验 → 在子进程（或 MLIP 环境）
+  │   里运行方法 → 读回全部结构做检查（原子过近、真空、固定原子）→ 写 manifest.json 和 run.log
+  ▼
+方法（builders/ 生成结构；screening/relax.py 弛豫与单点；mlip/ 计算器、采样器、genkai.yaml 配置）
+  ▼
+输出：每步的 extxyz 候选 + manifest；最终 pipeline_structures.extxyz（每帧 pipeline_label 是谱系，
+      如 slab#0 > vacancy#1 > cluster#0 > adsorbate#0）+ pipeline_manifest.json
+```
+
+必须知道的约定：
+
+- **原子来源标签**：extxyz 的逐原子数组 `component`（substrate、overlayer、cluster、sam、adsorbate）。
+  基底与覆盖层是“表面”；后面的步骤避开其他部分，被别的部分盖住的位点不再使用。没有标签的结构视为全部基底。
+- **结构 vs 能量**：不写 `mlip` 时只生成未弛豫几何（`calculator=none`，证据等级 heuristic/mock），
+  不得当作能量、吸附能或弛豫结果。写了 `mlip:`（genkai.yaml 中的配置名）才算真实 MLIP 能量
+  （`mlip_predicted`；EMT 为 `empirical_potential`，仅金属与测试）。能量只在同一步、同一分支、同一组成内比较。
+- **可复现**：`genkai-surface random --seed N` 生成同一组任务；每次运行的输入哈希、参数、命令和结果都在 manifest 里。
+- **最常用的命令**：
+
+  ```bash
+  ./genkai random --list                        # 看库里能用的晶体、晶面、场景和分子
+  ./genkai random -n 10 --seed 7 -o random_jobs # 随机生成 10 个流水线
+  ./genkai check random_jobs/*.yaml             # 只检查
+  ./genkai run random_jobs/*.yaml               # 运行（MLIP 场景在服务器上运行）
+  ```
+
+- **加一种新的建模方法**：在 `builders/` 写库函数与 `_build_parser()`/`main()`；给新原子打 `component` 标签，
+  写出保留固定原子的 extxyz 候选文件；在 `app/jobs.py` 登记参数表；在 `app/pipeline.py` 的 `STEP_KINDS`
+  登记层级、输入参数、候选文件和标签；需要随机生成时在 `app/random_jobs.py` 加场景；补测试、冒烟用例和文档。
+
 ## 分支定位
 
 `SAGE` 分支由 `main`（提交 `4c7b0bc`）精简而来，只保留表面建模和 MLIP 筛选层，用于在服务器上
@@ -57,6 +104,7 @@
     `cluster_search.py`、多帧结构的弛豫/单点 `relax.py`（流水线按能量挑选和中间弛豫用）。
   - `app/`：任务文件入口 `jobs.py`（console script `genkai-surface`，按模块名在子进程里启动各方法）、
     流水线 `pipeline.py`（2026-11-24：`pipeline:` 文件自动串联各步骤，`check`/`run` 自动识别）、
+    随机生成 `random_jobs.py`（2026-11-25：`genkai-surface random` 从结构库按规则随机组合流水线）、
     安装向导 `setup.py`（`install.sh` 调用）。面向使用者统一走 `./genkai` / `genkai-surface`。
   - `executor.py`、`facade.py`：论文建模计划的 structure-only 执行。
   - 顶层的 `slab.py`、`jobs.py`、`metal_cluster/` 等旧路径是**转发模块**，只为服务器上已有脚本（hooks、
@@ -67,6 +115,16 @@
 - `src/genkai/literature/surface/`：只保留 `artifacts.py`（读取已保存的抽取结果）和 `core/` 词表。
 - `agents/Agent/skills/surface-modeling/`：各方法的薄入口脚本、`SKILL.md`、示例结构。
 - `examples/surface_jobs/`：`genkai-surface` 示例任务文件；运行结果写到 `runs/`，已忽略。
+- `sample/`：用户准备的结构库（2026-11-25 加入）：`crystals/`（30 个 MP 2026-09-28 凸包稳定晶体 + 2 个非稳定
+  AB2O3 参考相，cif/vasp/extxyz/常规胞与 metadata）、`molecules/`（30 个 PubChem 核对身份、RDKit ETKDGv3+MMFF94s
+  生成的 VOC 分子，xyz/sdf/extxyz）、`crystals/catalog.json`、`molecules/catalog.json`、来源记录与 SHA256SUMS。
+  `genkai-surface random` 默认读这里；库自己的说明见 `sample/README.md`，`sample/.venv` 不提交。
+  晶面规则（`random_jobs.PHASE_FACETS`）已用切面方法对 32 个晶体逐一验证（全部得到化学计量 slab）；
+  极性终止面（部分钙钛矿、尖晶石 (001)）在生成的文件里注明。
+- `examples/recipes/`：常见气敏体系的流水线配方（10 个只生成结构、2 个需要 MLIP），输入结构在 `inputs/`
+  （SnO2、ZnO 纤锌矿、CeO2(111) slab、非晶 SnO2/TiO2、丁酸），运行结果写到 `runs/`，已忽略。
+  `tests/modeling/test_recipes.py` 检查全部配方。气体名表（G2 几何）归 `builders/molecules.py`，
+  吸附方法的 `molecule` 可写气体名或文件；流水线的吸附步骤默认 1 个分子、uniform。
 - `scripts/run_modeling_smoke.py`：建模冒烟测试。
 - `tests/`：`modeling/`、`contracts/`、`architecture/`、`workflow/`、`integrations/`；测试结构在
   `tests/amorphous/`、`tests/se4c02105_surface_fullrun/automatic_modeling/`、`tests/fixtures/`。
@@ -140,6 +198,11 @@ python -m genkai.modeling.surface.app.jobs check examples/surface_jobs/*.yaml
   `examples/surface_jobs/` 10 个任务和 2 个流水线检查通过。
 - 同日加入第三期（`relax`、`pick: lowest_energy`）后：`python -m pytest -q` 233 passed / 2 deselected；
   冒烟 33 个用例 PASS 31 / WARN 0 / FAIL 0 / SKIP 2，与第三期之前逐项相同。
+- 2026-11-25 加入气体名、配方和覆盖层遮挡修复后：`python -m pytest -q` 239 passed / 2 deselected；冒烟同上、逐项相同；
+  `examples/recipes/` 10 个结构配方实际运行全部 PASS（约 5 分钟）。
+- 同日加入 `sample/` 结构库与 `genkai-surface random` 后：`python -m pytest -q` 245 passed / 2 deselected；冒烟同上、逐项相同；
+  随机覆盖测试 10 种晶体类型 × 全部结构场景（47 条）与 21 个氧化物 SAM、6 个硫化物 auto 位点逐一通过
+  （失败项已修复或排除，见 `work_logs/2026-11-25.md`）。并行跑多个大体系时注意内存。
 
 ## MLIP 测试规则
 

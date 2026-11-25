@@ -685,6 +685,16 @@ owner is `genkai.modeling.surface.app.pipeline`, started by the same
   islands move to the nearest spot with no added atoms under their footprint (2.5 A
   clearance) and sit on the local solid surface; a full ALD film over clusters, SAM or
   adsorbates (overcoat) is refused.
+- Random pipelines from a structure library: `genkai-surface random` (owner `app/random_jobs.py`) reads
+  `sample/crystals/catalog.json` and `sample/molecules/catalog.json`, draws crystal, scenario (adsorption,
+  defect, metal, sam, ald; amorphous and energy with `--mlip`), molecule and choices with a seed, and
+  writes pipeline files plus `random_index.json`. One verified low-index facet per phase
+  (`PHASE_FACETS`); adsorption sites `auto`; O vacancies for oxides, S for sulfides (`--element`).
+- Recipes for common gas-sensor systems: `examples/recipes/*.yaml` (10 structure-only, 2 MLIP).
+  The adsorbate `molecule` accepts a built-in gas name (G2 geometries, owner
+  `builders/molecules.py`: NO2, NO, CO, CO2, H2, O2, O3, H2O, NH3, H2S, SO2, CH4, CH3OH,
+  C2H5OH, HCHO, CH3CHO, CH3COCH3, C6H6; aliases such as ethanol, acetone) or a file. In a
+  pipeline, adsorbate steps default to `coverage_counts: [1]`, `patterns: [uniform]`.
 - Energy-screening methods (`sam_search`, `cluster_search`, `amorphous_*`) are not pipeline
   steps yet; run them on pipeline results. Server example: `examples/mlip_jobs/06_pipeline_energy_pick.yaml`.
 

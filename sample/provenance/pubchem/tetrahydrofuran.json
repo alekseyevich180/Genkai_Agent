@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/tetrahydrofuran/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:29Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 8028,
+          "MolecularFormula": "C4H8O",
+          "ConnectivitySMILES": "C1CCOC1",
+          "InChIKey": "WYURNTSHIVDZCO-UHFFFAOYSA-N",
+          "IUPACName": "oxolane"
+        }
+      ]
+    }
+  }
+}

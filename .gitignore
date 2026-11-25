@@ -244,8 +244,11 @@ web/vite-frontend/node_modules/
 # Process core dumps (core.<host>.<pid>); never commit them
 core.*.[0-9]*
 
-# genkai-surface example outputs (examples/surface_jobs/runs/)
+# genkai-surface example outputs (examples/surface_jobs/runs/, examples/recipes/runs/)
 examples/surface_jobs/runs/
+examples/recipes/runs/
+# genkai-surface random: default output folder (generated pipeline files and their runs)
+/random_jobs/
 
 # Per-user MLIP configuration, isolated project runtimes and generated task files
 /genkai.yaml

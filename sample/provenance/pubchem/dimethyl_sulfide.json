@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/dimethyl%20sulfide/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:36Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 1068,
+          "MolecularFormula": "C2H6S",
+          "ConnectivitySMILES": "CSC",
+          "InChIKey": "QMMFVYPAHWMCMS-UHFFFAOYSA-N",
+          "IUPACName": "methylsulfanylmethane"
+        }
+      ]
+    }
+  }
+}

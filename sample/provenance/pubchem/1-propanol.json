@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1-propanol/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:25Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 1031,
+          "MolecularFormula": "C3H8O",
+          "ConnectivitySMILES": "CCCO",
+          "InChIKey": "BDERNNFJNOPAEC-UHFFFAOYSA-N",
+          "IUPACName": "propan-1-ol"
+        }
+      ]
+    }
+  }
+}

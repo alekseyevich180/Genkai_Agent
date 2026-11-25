@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/n-hexane/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:30Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 8058,
+          "MolecularFormula": "C6H14",
+          "ConnectivitySMILES": "CCCCCC",
+          "InChIKey": "VLKZOEOYAKHREP-UHFFFAOYSA-N",
+          "IUPACName": "hexane"
+        }
+      ]
+    }
+  }
+}

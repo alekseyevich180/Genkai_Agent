@@ -1,0 +1,763 @@
+{
+  "catalog_record": {
+    "id": "32_SrCu2O3_two_leg_ladder_mp-5938",
+    "formula": "SrCu2O3",
+    "mp_formula": "SrCu2O3",
+    "category": "AB2O3_reference",
+    "collection": "ab2o3_reference",
+    "phase": "two_leg_ladder",
+    "material_id": "mp-aaaaaiuk",
+    "legacy_numeric_id": "mp-5938",
+    "mp_url": "https://materialsproject.org/materials/mp-aaaaaiuk",
+    "database_version": "2026-09-28",
+    "is_stable": false,
+    "energy_above_hull_eV_atom": 0.016883948333330956,
+    "stability_label": "experimental_near_hull_reference_NOT_hull_stable",
+    "theoretical": false,
+    "icsd_ids": [
+      "icsd-99041",
+      "icsd-416903",
+      "icsd-416902"
+    ],
+    "mp_spacegroup": "Cmmm",
+    "mp_spacegroup_number": 65,
+    "detected_spacegroup": "Cmmm",
+    "atoms": 6,
+    "conventional_atoms": 12,
+    "volume_A3": 79.1820008425626,
+    "density_g_cm3": 5.509339828014236,
+    "minimum_periodic_distance_A": 1.8862732868562835,
+    "cell_parameters_A_deg": [
+      6.06106198406181,
+      6.06106198406181,
+      3.50991446,
+      90.0,
+      90.0,
+      142.11412465902703
+    ],
+    "source_url": "https://materialsproject-build.s3.amazonaws.com/collections/summary/version=2026-09-28/part-00000-2cc5f2cc-2a79-4051-b013-2f9dec6a302e-c000.zstd.parquet",
+    "structure_source": "Materials Project DFT-relaxed structure, unmodified cell",
+    "conventional_transform": "pymatgen conventional standard cell; symprec=0.1 A; may symmetrize positions",
+    "source_warnings": [],
+    "license": "BY-C",
+    "cif": "crystals/ab2o3_reference/cif/32_SrCu2O3_two_leg_ladder_mp-5938.cif",
+    "vasp": "crystals/ab2o3_reference/vasp/32_SrCu2O3_two_leg_ladder_mp-5938.vasp",
+    "extxyz": "crystals/ab2o3_reference/extxyz/32_SrCu2O3_two_leg_ladder_mp-5938.extxyz",
+    "conventional_cif": "crystals/ab2o3_reference/conventional_cif/32_SrCu2O3_two_leg_ladder_mp-5938.cif",
+    "sha256": {
+      "cif": "f5b1c02ab5ef76871bd0ac1715446fc576d832265e218e8807bd360d36158bf2",
+      "vasp": "882e2e239265b1e12805b2f03e2bbfc62f3fa91bfe867afcb5460baf1f8f7481",
+      "extxyz": "5cab70076b6d89aa74e029ebf8cc1a81d4823bb352a0815ad7632958e5543715",
+      "conventional_cif": "283baa38c7f4f25f9f39550cab54674887f58cb551ae6f41ac979f7d03fe8f41"
+    },
+    "metadata": "crystals/ab2o3_reference/metadata/32_SrCu2O3_two_leg_ladder_mp-5938.json"
+  },
+  "original_mp_summary": {
+    "phonon_IDs": null,
+    "theoretical": false,
+    "database_IDs": {
+      "icsd": [
+        "icsd-99041",
+        "icsd-416903",
+        "icsd-416902"
+      ]
+    },
+    "possible_species": [
+      "O2-",
+      "Sr2+",
+      "Cu2+"
+    ],
+    "weighted_surface_energy_EV_PER_ANG2": null,
+    "weighted_surface_energy": null,
+    "weighted_work_function": null,
+    "surface_anisotropy": null,
+    "shape_factor": null,
+    "has_reconstructed": null,
+    "e_ij_max": null,
+    "e_total": null,
+    "e_ionic": null,
+    "e_electronic": null,
+    "n": null,
+    "bulk_modulus": {
+      "voigt": 111.966,
+      "reuss": 80.928,
+      "vrh": 96.447
+    },
+    "shear_modulus": {
+      "voigt": 53.297,
+      "reuss": 36.215,
+      "vrh": 44.756
+    },
+    "universal_anisotropy": 2.742,
+    "homogeneous_poisson": 0.299,
+    "is_magnetic": false,
+    "ordering": "NM",
+    "total_magnetization": 0.0,
+    "total_magnetization_normalized_vol": 0.0,
+    "total_magnetization_normalized_formula_units": 0.0,
+    "num_magnetic_sites": 0,
+    "num_unique_magnetic_sites": 0,
+    "types_of_magnetic_species": [],
+    "dos": {
+      "task_id": "aaafaeol",
+      "total": {
+        "1": {
+          "band_gap": 0.0,
+          "cbm": 3.42672675,
+          "vbm": 3.42672675,
+          "efermi": 3.42672675,
+          "spin_polarization": null
+        }
+      },
+      "elemental": {
+        "Sr": {
+          "total": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          }
+        },
+        "Cu": {
+          "total": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          }
+        },
+        "O": {
+          "total": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.42672675,
+              "vbm": 3.42672675,
+              "efermi": 3.42672675,
+              "spin_polarization": null
+            }
+          }
+        }
+      },
+      "orbital": {
+        "s": {
+          "1": {
+            "band_gap": 0.0,
+            "cbm": 3.42672675,
+            "vbm": 3.42672675,
+            "efermi": 3.42672675,
+            "spin_polarization": null
+          }
+        },
+        "p": {
+          "1": {
+            "band_gap": 0.0,
+            "cbm": 3.42672675,
+            "vbm": 3.42672675,
+            "efermi": 3.42672675,
+            "spin_polarization": null
+          }
+        },
+        "d": {
+          "1": {
+            "band_gap": 0.0,
+            "cbm": 3.42672675,
+            "vbm": 3.42672675,
+            "efermi": 3.42672675,
+            "spin_polarization": null
+          }
+        }
+      },
+      "magnetic_ordering": "NM"
+    },
+    "dos_energy_up": 0.0,
+    "dos_energy_down": null,
+    "bandstructure": {
+      "setyawan_curtarolo": {
+        "band_gap": 0.0,
+        "cbm": null,
+        "vbm": null,
+        "efermi": 3.26716616,
+        "is_gap_direct": false,
+        "is_metal": true,
+        "magnetic_ordering": "NM",
+        "task_id": "aaadmnbb",
+        "nbands": 96.0,
+        "direct_gap": 0.0
+      },
+      "hinuma": {
+        "band_gap": 0.0,
+        "cbm": null,
+        "vbm": null,
+        "efermi": 2.84049955,
+        "is_gap_direct": false,
+        "is_metal": true,
+        "magnetic_ordering": "NM",
+        "task_id": "aaaeuwok",
+        "nbands": 96.0,
+        "direct_gap": 0.0
+      },
+      "latimer_munro": {
+        "band_gap": 0.0,
+        "cbm": null,
+        "vbm": null,
+        "efermi": 3.16982341,
+        "is_gap_direct": false,
+        "is_metal": true,
+        "magnetic_ordering": "NM",
+        "task_id": "aaafieha",
+        "nbands": 96.0,
+        "direct_gap": 0.0
+      }
+    },
+    "band_gap": 0.0,
+    "cbm": null,
+    "vbm": null,
+    "efermi": 3.16982341,
+    "is_gap_direct": false,
+    "is_metal": true,
+    "grain_boundaries": null,
+    "xas": [
+      {
+        "edge": "L3",
+        "absorbing_element": "Cu",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "L3",
+        "absorbing_element": "Sr",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Cu",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Sr",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "L2",
+        "absorbing_element": "Sr",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Cu",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Sr",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Cu",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Sr",
+        "spectrum_type": "XANES"
+      }
+    ],
+    "uncorrected_energy_per_atom": -10.651450773333334,
+    "energy_per_atom": -5.804960721666667,
+    "formation_energy_per_atom": -1.682506647500001,
+    "energy_above_hull": 0.016883948333330956,
+    "is_stable": false,
+    "equilibrium_reaction_energy_per_atom": null,
+    "decomposes_to": [
+      {
+        "material_id": "mp-aaaacdmw",
+        "formula": "Sr1 Cu1 O2",
+        "amount": 0.666666666666667
+      },
+      {
+        "material_id": "mp-aaaaacnc",
+        "formula": "Cu2 O2",
+        "amount": 0.33333333333333304
+      }
+    ],
+    "builder_meta": {
+      "emmet_version": "0.87.3rc1",
+      "pymatgen_version": "2026.9.23",
+      "run_id": "af744faf-5605-43db-b301-50d8e2ef4dda",
+      "batch_id": "recover-lost-r2scan-may2022",
+      "database_version": "2026.09.28",
+      "build_date": "2026-09-26 04:10:45.421622+09",
+      "license": "BY-C"
+    },
+    "nsites": 6,
+    "elements": [
+      "Cu",
+      "O",
+      "Sr"
+    ],
+    "nelements": 3,
+    "composition": {
+      "Sr": 1.0,
+      "Cu": 2.0,
+      "O": 3.0
+    },
+    "composition_reduced": {
+      "Sr": 1.0,
+      "Cu": 2.0,
+      "O": 3.0
+    },
+    "formula_pretty": "SrCu2O3",
+    "formula_anonymous": "AB2C3",
+    "chemsys": "Cu-O-Sr",
+    "volume": 79.1820008425626,
+    "density": 5.509339828014236,
+    "density_atomic": 13.1970001404271,
+    "symmetry": {
+      "crystal_system": "Orthorhombic",
+      "symbol": "Cmmm",
+      "hall": "-C 2 2",
+      "number": 65,
+      "point_group": "mmm",
+      "symprec": 0.1,
+      "angle_tolerance": 5.0,
+      "version": "2.7.0"
+    },
+    "material_id": "mp-aaaaaiuk",
+    "deprecated": false,
+    "deprecation_reasons": null,
+    "last_updated": "2023-10-08 04:37:57.93+09",
+    "origins": [
+      {
+        "name": "structure",
+        "task_id": "aaagbggb",
+        "last_updated": "2022-01-01 01:45:39.445+09"
+      },
+      {
+        "name": "setyawan_curtarolo",
+        "task_id": "aaadmnbb",
+        "last_updated": "2021-02-21 14:01:47.309+09"
+      },
+      {
+        "name": "hinuma",
+        "task_id": "aaaeuwok",
+        "last_updated": "2021-07-27 10:14:01.392+09"
+      },
+      {
+        "name": "latimer_munro",
+        "task_id": "aaafieha",
+        "last_updated": "2022-06-14 08:57:34.697+09"
+      },
+      {
+        "name": "dos",
+        "task_id": "aaafaeol",
+        "last_updated": "2022-06-08 04:53:12.651+09"
+      },
+      {
+        "name": "electronic_structure",
+        "task_id": "aaafieha",
+        "last_updated": "2022-06-14 08:57:34.697+09"
+      },
+      {
+        "name": "magnetism",
+        "task_id": "aaagbggb",
+        "last_updated": "2022-01-01 01:45:39.445+09"
+      },
+      {
+        "name": "energy",
+        "task_id": "aaagbggb",
+        "last_updated": "2026-09-26 02:56:19.316549+09"
+      }
+    ],
+    "warnings": [],
+    "structure": {
+      "@module": "pymatgen.core.structure",
+      "@class": "Structure",
+      "charge": 0.0,
+      "lattice": {
+        "matrix": [
+          [
+            1.96758029,
+            -5.7328091,
+            0.0
+          ],
+          [
+            1.96758029,
+            5.7328091,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            3.50991446
+          ]
+        ],
+        "pbc": [
+          true,
+          true,
+          true
+        ],
+        "a": 6.06106198406181,
+        "b": 6.06106198406181,
+        "c": 3.50991446,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 142.11412465902703,
+        "volume": 79.1820008425626
+      },
+      "sites": [
+        {
+          "label": "Sr",
+          "name": null,
+          "properties": {
+            "magmom": -0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Sr",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            -0.0,
+            -0.0,
+            0.5
+          ],
+          "xyz": [
+            0.0,
+            0.0,
+            1.75495723
+          ]
+        },
+        {
+          "label": "Cu",
+          "name": null,
+          "properties": {
+            "magmom": 0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Cu",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.66521986,
+            0.33478014,
+            -0.0
+          ],
+          "xyz": [
+            1.96758029,
+            -1.894347833817452,
+            0.0
+          ]
+        },
+        {
+          "label": "Cu",
+          "name": null,
+          "properties": {
+            "magmom": 0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Cu",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.33478014,
+            0.66521986,
+            0.0
+          ],
+          "xyz": [
+            1.96758029,
+            1.8943478338174518,
+            0.0
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": 0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.17026452,
+            0.82973548,
+            -0.0
+          ],
+          "xyz": [
+            1.96758029,
+            3.780621120673736,
+            0.0
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": 0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.82973548,
+            0.17026452,
+            -0.0
+          ],
+          "xyz": [
+            1.96758029,
+            -3.7806211206737355,
+            0.0
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": -0.0,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.5,
+            0.5,
+            0.0
+          ],
+          "xyz": [
+            1.96758029,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "properties": {
+        "magmom": null,
+        "charge": null,
+        "velocities": null,
+        "selective_dynamics": null
+      }
+    },
+    "property_name": "summary",
+    "task_ids": [
+      "aaafwqap",
+      "aaafsuvu",
+      "aaabzpsq",
+      "aaafafay",
+      "aaafnttm",
+      "aaaeuwok",
+      "aaafsupp",
+      "aaaewoby",
+      "aaafwfbt",
+      "aaafwfdm",
+      "aaaaaiuk",
+      "aaafntua",
+      "aaaddvpp",
+      "aaafmsfw",
+      "aaafntuu",
+      "aaagbggb",
+      "aaafmryl",
+      "aaagbfyz",
+      "aaaexdey",
+      "aaafwqaq",
+      "aaafnttn",
+      "aaafntty",
+      "aaafadpo",
+      "aaafntut",
+      "aaacalhn",
+      "aaadmnbb",
+      "aaafntuf",
+      "aaafntue",
+      "aaacajtw",
+      "aaafwqaf",
+      "aaafaeol",
+      "aaafsuwh",
+      "aaafieha",
+      "aaafnttv",
+      "aaadsqxa",
+      "aaadynfv"
+    ],
+    "has_props": {
+      "materials": true,
+      "thermo": true,
+      "xas": true,
+      "grain_boundaries": false,
+      "electronic_structure": true,
+      "bandstructure": true,
+      "dos": true,
+      "magnetism": true,
+      "elasticity": true,
+      "dielectric": false,
+      "piezoelectric": false,
+      "surface_properties": false,
+      "oxi_states": true,
+      "provenance": true,
+      "charge_density": true,
+      "eos": false,
+      "phonon": false,
+      "absorption": false,
+      "insertion_electrodes": false,
+      "substrates": true,
+      "chemenv": true
+    },
+    "version": "2026-09-28"
+  }
+}

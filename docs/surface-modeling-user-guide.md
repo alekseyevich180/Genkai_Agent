@@ -3,13 +3,22 @@
 本手册面向想用 Genkai 生成表面结构、但不参与代码开发的使用者。所有操作都通过一个命令
 `genkai-surface` 和一个 YAML 任务文件完成，不需要了解各建模脚本的内部参数。
 
+**随机生成**：`genkai-surface random -n 10 --seed 7 -o random_jobs` 从结构库 `sample/`（30 个 MP 稳定晶体、
+30 个 VOC 分子）按现实规则随机组合出流水线，再 `genkai-surface run random_jobs/*.yaml`；`--list` 查看可用的晶体与方案，
+`--scenarios amorphous --mlip <配置名>` 先熔融-淬火得到非晶再建表面。方案与规则见项目 README“用结构库随机生成复杂表面”。
+吸附位点可以写 `site_symbols: [auto]`（表面裸露的阳离子，层状硫化物取最外层 S）；硫化物的空位写 `element: S`。
+
+**最快的上手方式**：从 [examples/recipes](../examples/recipes) 里挑一个最接近的例子（Pt/SnO2 检测 CO、
+ZnO 检测乙醇、SAM 修饰 SnO2 检测 NO2 等 12 个常见体系），复制后改晶体文件、气体名和吸附位点元素，
+`./genkai run` 即可。气体直接写名字（`molecule: NO2`）。下面各节是完整说明。
+
 ## 1. 能做什么
 
 | 方法 | 用途 | 必须提供 |
 | --- | --- | --- |
 | `slab` | 从块体晶体切出表面 slab | 块体结构 |
 | `vacancy` | 在含氧 slab 表面去掉 O 原子（氧空位） | slab |
-| `adsorbate` | 把气体或有机分子放到表面位点上，生成不同覆盖度 | slab、分子、位点元素 |
+| `adsorbate` | 把气体或有机分子放到表面位点上，生成不同覆盖度 | slab、分子（常见气体直接写名字，如 NO2、CO、乙醇 C2H5OH）、位点元素 |
 | `cluster` | 构建 fcc/hcp/bcc 金属团簇并放到表面 | slab、金属元素、团簇大小 |
 | `sam` | SAM 自组装单分子层：膦酸、羧酸、硫醇按选定结合方式锚定 | 块体或 slab、分子、结合方式、分子数 |
 | `ald` | ALD 非晶覆盖层：全覆盖成膜，或部分覆盖成岛 | 块体或 slab、非晶块体、覆盖方式 |

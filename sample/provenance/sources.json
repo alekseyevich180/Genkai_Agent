@@ -1,0 +1,24 @@
+{
+  "retrieved_date_utc": "2026-11-19",
+  "materials_project_open_data": {
+    "documentation": "https://docs.materialsproject.org/downloading-data/aws-opendata",
+    "registry": "https://registry.opendata.aws/materials-project/",
+    "database_version": "2026-09-28",
+    "summary_url": "https://materialsproject-build.s3.amazonaws.com/collections/summary/version=2026-09-28/part-00000-2cc5f2cc-2a79-4051-b013-2f9dec6a302e-c000.zstd.parquet"
+  },
+  "mp_stability_definition": "https://docs.materialsproject.org/frequently-asked-questions/glossary-of-terms",
+  "mp_identifiers": "https://docs.materialsproject.org/data-production/identifiers",
+  "pubchem_identity_api": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+  "rdkit_conformer_method": "https://www.rdkit.org/docs/GettingStartedInPython.html",
+  "ab2o3_literature": {
+    "CaCu2O3": {
+      "paper": "The unusual electronic structure of the pseudo-ladder compound CaCu2O3",
+      "url": "https://arxiv.org/abs/cond-mat/0208180"
+    },
+    "SrCu2O3": {
+      "paper": "Observation of a Spin Gap in SrCu2O3 Comprising Spin-1/2 Quasi-1D Two-Leg Ladders",
+      "doi": "10.1103/PhysRevLett.73.3463",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10057387/"
+    }
+  }
+}

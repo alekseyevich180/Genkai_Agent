@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/2-butanone/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:28Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 6569,
+          "MolecularFormula": "C4H8O",
+          "ConnectivitySMILES": "CCC(=O)C",
+          "InChIKey": "ZWEHNKRNPOVVGH-UHFFFAOYSA-N",
+          "IUPACName": "butan-2-one"
+        }
+      ]
+    }
+  }
+}

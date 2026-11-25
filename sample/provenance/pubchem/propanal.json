@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/propanal/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:27Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 527,
+          "MolecularFormula": "C3H6O",
+          "ConnectivitySMILES": "CCC=O",
+          "InChIKey": "NBBJYMSMWIIQGU-UHFFFAOYSA-N",
+          "IUPACName": "propanal"
+        }
+      ]
+    }
+  }
+}

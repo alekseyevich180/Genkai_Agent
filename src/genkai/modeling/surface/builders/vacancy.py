@@ -250,6 +250,10 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Maximum fractional z for selectable O sites.",
     )
     parser.add_argument(
+        "--element", default="O",
+        help="Element to remove: O for oxides (default), S for sulfides, or another anion.",
+    )
+    parser.add_argument(
         "--components",
         default="substrate",
         help="Comma-separated components whose O may be removed (substrate, overlayer); unlabeled slabs are all substrate.",
@@ -316,9 +320,9 @@ def main(argv: list[str] | None = None) -> int:
     clean, constraint_source = ensure_fixed_bottom(read(args.input), args.fixed_fraction)
     print(f"Slab constraints: {constraint_source}")
     allowed_components = tuple(item.strip() for item in args.components.split(",") if item.strip())
-    all_o_indices = oxygen_indices(clean, allowed_components=allowed_components)
+    all_o_indices = oxygen_indices(clean, symbol=args.element, allowed_components=allowed_components)
     o_indices = oxygen_indices(
-        clean, z_frac_min=args.z_frac_min, z_frac_max=args.z_frac_max,
+        clean, symbol=args.element, z_frac_min=args.z_frac_min, z_frac_max=args.z_frac_max,
         allowed_components=allowed_components, surface_depth=args.surface_depth,
     )
     vacancy_counts = parse_vacancy_counts(args.vacancy_counts, len(o_indices))

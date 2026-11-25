@@ -3,8 +3,13 @@
 SAGE（An AI agent for automated atomistic surface modeling in gas sensor research）分支只保留了
 Genkai 中的表面建模部分：
 
-- 切面、氧空位、分子吸附、金属团簇、SAM、ALD 非晶覆盖层、纯非晶表面，共 7 种结构生成方法；
-- MLIP 筛选层：切面、空位、吸附、SAM、非晶表面与界面、团簇或岛的筛选，支持 MACE 和 UMA。
+- 切面、阴离子空位（O/S）、分子吸附、金属团簇、SAM、ALD 非晶覆盖层、纯非晶表面，以及从晶体熔融-淬火得到非晶块体，
+  共 8 种结构生成方法；
+- 流水线：把这些方法按“体相 → 表面 → 空位 → ALD → 团簇 → SAM → 吸附”自动串起来，后面的步骤自动避开前面加上的东西；
+- 结构库与随机生成：`sample/` 里有 30 个 MP 稳定晶体和 30 个 VOC 分子，`genkai-surface random` 按现实规则随机组合出复杂表面；
+- MLIP 筛选层：弛豫、按能量挑选候选，以及切面、空位、吸附、SAM、非晶表面与界面、团簇或岛的筛选，支持 MACE 和 UMA。
+
+工作原理（数据怎么流动、每个文件管什么、怎么加新方法）见 [AGENTS.md](AGENTS.md) 的“项目工作原理”一节。
 
 Agent 运行时、Web 界面、论文抽取（LLM）、MLIP 训练适配器和其他 Skill 不在这个分支上，需要时请到 `main` 分支。
 这个分支用来在服务器上加入和运行 MLIP 测试。
@@ -106,6 +111,9 @@ output: runs/my_sam
 
 `sam_search`、`amorphous_surfaces`、`amorphous_interface`、`cluster_search`、`amorphous_bulk` 自动使用所选配置；
 `slab`、`vacancy`、`adsorbate` 可加 `mlip: <名称>` 启用能量计算。不启用 MLIP 的旧任务仍只生成结构。
+**最快的上手方式**：复制 [examples/recipes](examples/recipes) 里最接近的例子（12 个常见气敏体系），
+改晶体文件、气体名（直接写 `NO2`、`CO`、`C2H5OH` 等）和吸附位点元素后 `./genkai run`。
+
 多个建模步骤要接在一起（如 切面 → 空位 → 团簇 → 吸附）时，写成 `pipeline:` 流水线：每一步自动接上一步的结构，
 按 体相 → 表面 → 空位 → ALD → 团簇 → SAM → 吸附 的顺序检查，后面的步骤会避开前面加上的团簇、分子等，
 见使用手册 4.4 节和 `examples/surface_jobs/09_*.yaml`、`10_*.yaml`。
@@ -114,6 +122,82 @@ output: runs/my_sam
 [examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml](examples/mlip_jobs/05_crystal_to_amorphous_slab.yaml)。
 可复用的筛选任务见 [examples/mlip_jobs](examples/mlip_jobs)，配置与安装详解见
 [MACE / UMA 接口](docs/mlip-interfaces.md)。`genkai-surface` 仍可在激活 `.venv` 后直接使用。
+
+## 用结构库随机生成复杂表面（sample/）
+
+`sample/` 是一个整理好的结构库：30 个 Materials Project 凸包稳定晶体（氧化物、A₂O₃、硫化物、钙钛矿、尖晶石）
+和 30 个 VOC 分子（PubChem 核对身份），详见 [sample/README.md](sample/README.md)。`random` 命令从库里随机抽
+晶体、分子和建模方案，写出可以直接运行的流水线文件：
+
+```bash
+./genkai random --list                                   # 看能用的晶体、晶面、场景和分子
+./genkai random -n 10 --seed 7 -o random_jobs            # 随机生成 10 个（同一个 seed 得到同一组）
+./genkai check random_jobs/*.yaml                         # 只检查
+./genkai run random_jobs/*.yaml                           # 运行；结果在 random_jobs/runs/<任务名>/
+
+# 缩小范围：只要这几种晶体、分子和方案
+./genkai random -n 6 --crystals SnO2,ZnO,MoS2 --molecules ethanol,acetone,formaldehyde --scenarios metal,defect
+
+# 先得到非晶结构再做下一步（需要 MLIP，在服务器上运行）；energy 方案每一步按 MLIP 能量挑最稳定的
+./genkai random -n 4 --scenarios amorphous --mlip uma
+./genkai random -n 4 --scenarios energy --mlip uma
+```
+
+| 方案 | 流程 | 用在哪些晶体 |
+| --- | --- | --- |
+| `adsorption` | 切面 → 分子吸附 | 全部 |
+| `defect` | 切面 → 表面空位（氧化物 O、硫化物 S）→ 分子 | 全部 |
+| `metal` | 切面 →（一半概率先做空位）→ Pt/Pd/Au/Ag 13 原子团簇 → 分子（在金属上或载体上） | 全部 |
+| `sam` | 切面 → 乙酸双齿锚定 → 分子放在旁边 | 氧化物（SiO2 用硅烷而非羧酸、NaNbO3(001) 没有双齿位点，除外） |
+| `ald` | 切面 → 非晶 TiO2 或 SnO2 岛（类 ALD）→ 分子 | 全部 |
+| `amorphous`（MLIP） | 晶体 → 熔融-淬火非晶块体（密度取晶体的 93%）→ 10 Å 非晶表面 → O 空位 → 分子 | 二元氧化物 |
+| `energy`（MLIP） | 切面 → 4 个空位取能量最低 → 弛豫 → fcc/hcp 团簇取能量最低 → 弛豫 → 分子取能量最低 | 全部 |
+
+规则：每种晶相用一个常见低指数面（已对库里每个晶体实际切面验证，都得到化学计量的 slab；极性面会在文件里注明）；
+吸附位点默认 `auto`（表面裸露的阳离子；MoS2 这类层状硫化物的基面取最外层 S）；两个非凸包稳定的参考相不参与抽样。
+每个生成的文件开头写明体系、晶体的 MP 编号和分子的 PubChem CID，`random_index.json` 记录全部选择。例如：
+
+```yaml
+# 随机生成（seed 4，第 1 个）：Ag13 负载的 ZnO(10-10) 含表面空位 + 乙醇
+# 晶体：02_ZnO_wurtzite_mp-2133（ZnO，wurtzite，MP mp-2133，凸包稳定=True）
+# 分子：02_ethanol（乙醇 ethanol，PubChem CID 702）
+# 只生成未弛豫的几何结构，不计算能量。
+output: runs/01_metal_ZnO_ethanol
+pipeline:
+- method: slab
+  bulk: ../sample/crystals/stable/cif/02_ZnO_wurtzite_mp-2133.cif
+  facet: 10-10
+  min_lateral_size: 15
+- method: vacancy
+  element: O
+  vacancy_counts: [1]
+- method: cluster
+  cluster_element: Ag
+  cluster_atoms: 13
+  cluster_structures: [fcc]
+- method: adsorbate
+  molecule: ../sample/molecules/xyz/02_ethanol.xyz
+  site_symbols: [Ag]
+  n_trials_single: 12
+```
+
+也可以手写，直接引用库里的文件。例如先把 In₂O₃ 晶体熔融-淬火成非晶，再切表面、做空位、吸附甲醛（需要 MLIP）：
+
+```yaml
+# 保存为项目根目录下的 my_amorphous.yaml（路径相对于这个文件），然后 ./genkai run my_amorphous.yaml
+mlip: uma
+pipeline:
+  - method: amorphous_bulk
+    crystal: sample/crystals/stable/cif/11_In2O3_bixbyite_mp-22598.cif
+    density: 6.6                 # 非晶密度（g/cm³），请按文献确认
+  - method: amorphous_slab
+    thickness: 10
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: adsorbate
+    molecule: sample/molecules/xyz/06_formaldehyde.xyz
+    site_symbols: [auto]
+```
 
 ## 测试
 

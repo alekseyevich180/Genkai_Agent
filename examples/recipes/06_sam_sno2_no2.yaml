@@ -1,0 +1,17 @@
+# 有机分子（SAM）修饰的 SnO2 提高 NO2 选择性/抗湿性
+# 流程：切面 -> 两个丁酸分子以双齿方式锚定 -> NO2 放在没被分子盖住的 Sn 位点
+# 换分子：molecule 改成自己的分子文件；binding_mode 按锚定基团选
+#   （羧酸 monodentate/bidentate，膦酸 monodentate/bidentate/tridentate，硫醇 top/bridge/hollow/fcc/hcp）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: sam
+    molecule: inputs/butanoic_acid.vasp
+    binding_mode: bidentate
+    counts: [2]
+  - method: adsorbate
+    molecule: NO2
+    site_symbols: [Sn]

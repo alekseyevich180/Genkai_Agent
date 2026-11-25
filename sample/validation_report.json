@@ -1,0 +1,422 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-11-19T04:01:14Z",
+  "stable_crystals": 30,
+  "ab2o3_near_hull_references": 2,
+  "voc_molecules": 30,
+  "individual_structure_files_checked": 248,
+  "checks": [
+    "core MP stability, ICSD evidence and non-deprecation",
+    "SHA256 integrity of individual structure files",
+    "CIF/VASP/extxyz periodicity, finite coordinates, ordered occupancy and composition",
+    "molecular SDF connectivity, explicit-H formula, neutral closed-shell state and PubChem InChIKey",
+    "XYZ/extxyz nonperiodicity and vacuum VASP cell margins",
+    "30 unique molecular identities and 30-frame aggregate files"
+  ],
+  "records": [
+    {
+      "id": "01_MgO_rocksalt_mp-1265",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "02_ZnO_wurtzite_mp-2133",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "03_TiO2_anatase_mp-390",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "04_SnO2_cassiterite_rutile_mp-856",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "05_CeO2_fluorite_mp-20194",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "06_NiO_rocksalt_mp-19009",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "07_Al2O3_alpha_corundum_mp-1143",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "08_Fe2O3_alpha_hematite_mp-19770",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "09_Cr2O3_corundum_mp-19399",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "10_SiO2_alpha_quartz_mp-7000",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "11_In2O3_bixbyite_mp-22598",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "12_CdS_wurtzite_mp-672",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "13_MoS2_3R_mp-1434",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "14_WS2_2H_mp-224",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "15_SnS_orthorhombic_mp-2231",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "16_SnS2_CdI2_type_mp-1170",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "17_FeS2_marcasite_mp-1522",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "18_CaTiO3_orthorhombic_mp-4019",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "19_BaTiO3_orthorhombic_mp-5777",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "20_LaCrO3_orthorhombic_mp-19281",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "21_SrZrO3_orthorhombic_mp-4387",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "22_KNbO3_rhombohedral_mp-7375",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "23_NaNbO3_rhombohedral_mp-4514",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "24_MgAl2O4_cubic_mp-3536",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "25_ZnAl2O4_cubic_mp-2908",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "26_MgCr2O4_cubic_mp-19202",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "27_ZnCr2O4_cubic_mp-19410",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "28_FeAl2O4_hercynite_mp-30084",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "29_MgFe2O4_cubic_ordered_MP_model_mp-608016",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "30_ZnFe2O4_cubic_mp-19313",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "stable",
+      "mp_is_stable": true
+    },
+    {
+      "id": "31_CaCu2O3_pseudo_ladder_mp-7466",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "ab2o3_reference",
+      "mp_is_stable": false
+    },
+    {
+      "id": "32_SrCu2O3_two_leg_ladder_mp-5938",
+      "type": "crystal",
+      "status": "PASS",
+      "collection": "ab2o3_reference",
+      "mp_is_stable": false
+    },
+    {
+      "id": "01_methanol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 887
+    },
+    {
+      "id": "02_ethanol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 702
+    },
+    {
+      "id": "03_1-propanol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 1031
+    },
+    {
+      "id": "04_2-propanol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 3776
+    },
+    {
+      "id": "05_1-butanol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 263
+    },
+    {
+      "id": "06_formaldehyde",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 712
+    },
+    {
+      "id": "07_acetaldehyde",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 177
+    },
+    {
+      "id": "08_propanal",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 527
+    },
+    {
+      "id": "09_acetone",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 180
+    },
+    {
+      "id": "10_2-butanone",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 6569
+    },
+    {
+      "id": "11_ethyl_acetate",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 8857
+    },
+    {
+      "id": "12_furfural",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7362
+    },
+    {
+      "id": "13_diethyl_ether",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 3283
+    },
+    {
+      "id": "14_tetrahydrofuran",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 8028
+    },
+    {
+      "id": "15_n-hexane",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 8058
+    },
+    {
+      "id": "16_cyclohexane",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 8078
+    },
+    {
+      "id": "17_benzene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 241
+    },
+    {
+      "id": "18_toluene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 1140
+    },
+    {
+      "id": "19_ethylbenzene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7500
+    },
+    {
+      "id": "20_o-xylene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7237
+    },
+    {
+      "id": "21_m-xylene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7929
+    },
+    {
+      "id": "22_p-xylene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7809
+    },
+    {
+      "id": "23_styrene",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 7501
+    },
+    {
+      "id": "24_acetonitrile",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 6342
+    },
+    {
+      "id": "25_trimethylamine",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 1146
+    },
+    {
+      "id": "26_dichloromethane",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 6344
+    },
+    {
+      "id": "27_chloroform",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 6212
+    },
+    {
+      "id": "28_dimethyl_sulfide",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 1068
+    },
+    {
+      "id": "29_ethanethiol",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 6343
+    },
+    {
+      "id": "30_acetic_acid",
+      "type": "molecule",
+      "status": "PASS",
+      "pubchem_cid": 176
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/cyclohexane/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:30Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 8078,
+          "MolecularFormula": "C6H12",
+          "ConnectivitySMILES": "C1CCCCC1",
+          "InChIKey": "XDTMQSROBMDMFD-UHFFFAOYSA-N",
+          "IUPACName": "cyclohexane"
+        }
+      ]
+    }
+  }
+}

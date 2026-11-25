@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/acetic%20acid/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:37Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 176,
+          "MolecularFormula": "C2H4O2",
+          "ConnectivitySMILES": "CC(=O)O",
+          "InChIKey": "QTBSBXVTEAMEQO-UHFFFAOYSA-N",
+          "IUPACName": "acetic acid"
+        }
+      ]
+    }
+  }
+}

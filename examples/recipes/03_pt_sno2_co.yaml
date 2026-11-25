@@ -1,0 +1,18 @@
+# Pt 负载的 SnO2 检测 CO：贵金属团簇催化 CO 氧化（溢流效应），常与表面氧空位共同作用
+# 流程：切面 -> 表面 O 空位 -> Pt13 团簇 -> CO 吸附在 Pt 上
+# 换成 Au、Pd、Ag 等：改 cluster_element；团簇大小改 cluster_atoms
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]          # 团簇需要较大的面内超胞
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc]
+  - method: adsorbate
+    molecule: CO
+    site_symbols: [Pt]

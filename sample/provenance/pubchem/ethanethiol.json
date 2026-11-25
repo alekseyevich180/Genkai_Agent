@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ethanethiol/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:37Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 6343,
+          "MolecularFormula": "C2H6S",
+          "ConnectivitySMILES": "CCS",
+          "InChIKey": "DNJIEGIFACGWOD-UHFFFAOYSA-N",
+          "IUPACName": "ethanethiol"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# 【需要 MLIP，在服务器上运行】例 03 的能量版：每一步用 MLIP 挑最稳定的结构
+# 流程：切面 -> 6 个空位构型取能量最低 -> 弛豫 -> Pt13 fcc 与 hcp 取能量最低 -> 弛豫 -> CO 吸附
+# mlip 填 genkai.yaml 里的配置名（如 uma、mace、default）；能量只在同一步、同一组成的候选之间比较
+
+mlip: default
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: vacancy
+    vacancy_counts: [1]
+    samples_per_count: 6
+    pick: lowest_energy
+  - method: relax
+  - method: cluster
+    cluster_element: Pt
+    cluster_atoms: 13
+    cluster_structures: [fcc, hcp]
+    pick: lowest_energy
+  - method: relax
+  - method: adsorbate
+    molecule: CO
+    site_symbols: [Pt]
+    pick: lowest_energy

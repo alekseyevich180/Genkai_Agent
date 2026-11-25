@@ -1,0 +1,16 @@
+# ALD 沉积少量 TiO2（岛状）修饰 SnO2：异质界面改变表面电子结构，常用于改善湿度稳定性
+# 流程：切面 -> 非晶 TiO2 岛（20 个原子）-> H2O 吸附在没被岛盖住的 Sn 位点
+# 连续薄膜：coverage 改为 full，并把 island_atoms 换成 thickness: 5（膜厚 Å）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: ald
+    amorphous: inputs/a-TiO2.vasp
+    coverage: partial
+    island_atoms: 20
+  - method: adsorbate
+    molecule: H2O
+    site_symbols: [Sn]

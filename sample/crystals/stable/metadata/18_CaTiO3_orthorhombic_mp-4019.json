@@ -1,0 +1,1642 @@
+{
+  "catalog_record": {
+    "id": "18_CaTiO3_orthorhombic_mp-4019",
+    "formula": "CaTiO3",
+    "mp_formula": "CaTiO3",
+    "category": "perovskite_ABO3",
+    "collection": "stable",
+    "phase": "orthorhombic",
+    "material_id": "mp-aaaaafyp",
+    "legacy_numeric_id": "mp-4019",
+    "mp_url": "https://materialsproject.org/materials/mp-aaaaafyp",
+    "database_version": "2026-09-28",
+    "is_stable": true,
+    "energy_above_hull_eV_atom": 0.0,
+    "stability_label": "MP_hull_stable",
+    "theoretical": false,
+    "icsd_ids": [
+      "icsd-37263",
+      "icsd-163528",
+      "icsd-162912",
+      "icsd-185449",
+      "icsd-162908",
+      "icsd-74212",
+      "icsd-185448",
+      "icsd-94568",
+      "icsd-162913",
+      "icsd-185453",
+      "icsd-162916",
+      "icsd-150420",
+      "icsd-185447",
+      "icsd-71916",
+      "icsd-93082",
+      "icsd-74216",
+      "icsd-97828",
+      "icsd-167809",
+      "icsd-185444",
+      "icsd-74214",
+      "icsd-51024",
+      "icsd-162910",
+      "icsd-162917",
+      "icsd-74215",
+      "icsd-82487",
+      "icsd-85101",
+      "icsd-74213",
+      "icsd-185450",
+      "icsd-167888",
+      "icsd-185452",
+      "icsd-162918",
+      "icsd-50364",
+      "icsd-153172",
+      "icsd-185443",
+      "icsd-189135",
+      "icsd-165801",
+      "icsd-163662",
+      "icsd-71915",
+      "icsd-16688",
+      "icsd-185446",
+      "icsd-157115",
+      "icsd-180956",
+      "icsd-185454",
+      "icsd-96258",
+      "icsd-162911",
+      "icsd-185451",
+      "icsd-163663",
+      "icsd-185445",
+      "icsd-174127",
+      "icsd-162915",
+      "icsd-62149",
+      "icsd-186224",
+      "icsd-162909",
+      "icsd-193648",
+      "icsd-162914"
+    ],
+    "mp_spacegroup": "Pnma",
+    "mp_spacegroup_number": 62,
+    "detected_spacegroup": "Pnma",
+    "atoms": 20,
+    "conventional_atoms": 20,
+    "volume_A3": 224.09973769300066,
+    "density_g_cm3": 4.029259419540245,
+    "minimum_periodic_distance_A": 1.955802139436716,
+    "cell_parameters_A_deg": [
+      5.37204886,
+      5.46279649,
+      7.63635962,
+      90.0,
+      90.0,
+      90.0
+    ],
+    "source_url": "https://materialsproject-build.s3.amazonaws.com/collections/summary/version=2026-09-28/part-00000-2cc5f2cc-2a79-4051-b013-2f9dec6a302e-c000.zstd.parquet",
+    "structure_source": "Materials Project DFT-relaxed structure, unmodified cell",
+    "conventional_transform": "pymatgen conventional standard cell; symprec=0.1 A; may symmetrize positions",
+    "source_warnings": [],
+    "license": "BY-C",
+    "cif": "crystals/stable/cif/18_CaTiO3_orthorhombic_mp-4019.cif",
+    "vasp": "crystals/stable/vasp/18_CaTiO3_orthorhombic_mp-4019.vasp",
+    "extxyz": "crystals/stable/extxyz/18_CaTiO3_orthorhombic_mp-4019.extxyz",
+    "conventional_cif": "crystals/stable/conventional_cif/18_CaTiO3_orthorhombic_mp-4019.cif",
+    "sha256": {
+      "cif": "2503757677cdb55fb20a5fea65be3e76468d0983f5e8e0803aeb93faaab624b3",
+      "vasp": "f1a322e9a1b6591f33d4b39a0190d425b76a7ae797d29922a3381ede8aeef140",
+      "extxyz": "f24da5b5e5cc8a251647faff8ea07fde19eb9ccfec6e491bffe6ad7c38d56595",
+      "conventional_cif": "d24d9eb74f632c56d9b848b92502bab048fe2a12837b766e9cae3fcab16e598e"
+    },
+    "metadata": "crystals/stable/metadata/18_CaTiO3_orthorhombic_mp-4019.json"
+  },
+  "original_mp_summary": {
+    "phonon_IDs": {
+      "pheasy": [
+        "aaaevylj"
+      ]
+    },
+    "theoretical": false,
+    "database_IDs": {
+      "icsd": [
+        "icsd-37263",
+        "icsd-163528",
+        "icsd-162912",
+        "icsd-185449",
+        "icsd-162908",
+        "icsd-74212",
+        "icsd-185448",
+        "icsd-94568",
+        "icsd-162913",
+        "icsd-185453",
+        "icsd-162916",
+        "icsd-150420",
+        "icsd-185447",
+        "icsd-71916",
+        "icsd-93082",
+        "icsd-74216",
+        "icsd-97828",
+        "icsd-167809",
+        "icsd-185444",
+        "icsd-74214",
+        "icsd-51024",
+        "icsd-162910",
+        "icsd-162917",
+        "icsd-74215",
+        "icsd-82487",
+        "icsd-85101",
+        "icsd-74213",
+        "icsd-185450",
+        "icsd-167888",
+        "icsd-185452",
+        "icsd-162918",
+        "icsd-50364",
+        "icsd-153172",
+        "icsd-185443",
+        "icsd-189135",
+        "icsd-165801",
+        "icsd-163662",
+        "icsd-71915",
+        "icsd-16688",
+        "icsd-185446",
+        "icsd-157115",
+        "icsd-180956",
+        "icsd-185454",
+        "icsd-96258",
+        "icsd-162911",
+        "icsd-185451",
+        "icsd-163663",
+        "icsd-185445",
+        "icsd-174127",
+        "icsd-162915",
+        "icsd-62149",
+        "icsd-186224",
+        "icsd-162909",
+        "icsd-193648",
+        "icsd-162914"
+      ]
+    },
+    "possible_species": [
+      "Ca2+",
+      "O2-",
+      "Ti4+"
+    ],
+    "weighted_surface_energy_EV_PER_ANG2": null,
+    "weighted_surface_energy": null,
+    "weighted_work_function": null,
+    "surface_anisotropy": null,
+    "shape_factor": null,
+    "has_reconstructed": null,
+    "e_ij_max": null,
+    "e_total": null,
+    "e_ionic": null,
+    "e_electronic": null,
+    "n": null,
+    "bulk_modulus": {
+      "voigt": 172.28,
+      "reuss": 172.268,
+      "vrh": 172.274
+    },
+    "shear_modulus": {
+      "voigt": 102.735,
+      "reuss": 101.994,
+      "vrh": 102.365
+    },
+    "universal_anisotropy": 0.036000000000000004,
+    "homogeneous_poisson": 0.252,
+    "is_magnetic": false,
+    "ordering": "Unknown",
+    "total_magnetization": 0.0,
+    "total_magnetization_normalized_vol": 0.0,
+    "total_magnetization_normalized_formula_units": 0.0,
+    "num_magnetic_sites": 0,
+    "num_unique_magnetic_sites": 0,
+    "types_of_magnetic_species": [],
+    "dos": {
+      "task_id": "aaadrzlz",
+      "total": {
+        "1": {
+          "band_gap": 2.257015768358642,
+          "cbm": 5.305868363750319,
+          "vbm": 3.048852595391677,
+          "efermi": 3.02173783,
+          "spin_polarization": null
+        }
+      },
+      "elemental": {
+        "Ca": {
+          "total": {
+            "1": {
+              "band_gap": 2.3313656296633414,
+              "cbm": 5.343702425779034,
+              "vbm": 3.0123367961156924,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 2.405214664203612,
+              "cbm": 5.417574258620689,
+              "vbm": 3.0123595944170773,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 2.3740428323202036,
+              "cbm": 5.386323925487257,
+              "vbm": 3.012281093167053,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 2.3305646514524554,
+              "cbm": 5.342922045037481,
+              "vbm": 3.0123573935850256,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          }
+        },
+        "Ti": {
+          "total": {
+            "1": {
+              "band_gap": 2.2686153587318896,
+              "cbm": 5.305419835893309,
+              "vbm": 3.0368044771614193,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 2.443776240915792,
+              "cbm": 5.455987491741629,
+              "vbm": 3.012211250825837,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 2.3733907488963855,
+              "cbm": 5.4188162995585545,
+              "vbm": 3.045425550662169,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 2.2930895907381945,
+              "cbm": 5.305299282801024,
+              "vbm": 3.0122096920628296,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          }
+        },
+        "O": {
+          "total": {
+            "1": {
+              "band_gap": 2.293333838667638,
+              "cbm": 5.342634617806878,
+              "vbm": 3.04930077913924,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 2.4434301875062467,
+              "cbm": 5.454515093753123,
+              "vbm": 3.0110849062468765,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 2.2931623245695683,
+              "cbm": 5.3425170120422605,
+              "vbm": 3.0493546874726922,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 3.02173783,
+              "vbm": 3.02173783,
+              "efermi": 3.02173783,
+              "spin_polarization": null
+            }
+          }
+        }
+      },
+      "orbital": {
+        "s": {
+          "1": {
+            "band_gap": 2.411111579551613,
+            "cbm": 5.423291937868566,
+            "vbm": 3.012180358316953,
+            "efermi": 3.02173783,
+            "spin_polarization": null
+          }
+        },
+        "p": {
+          "1": {
+            "band_gap": 2.293622681284536,
+            "cbm": 5.342836413625375,
+            "vbm": 3.049213732340839,
+            "efermi": 3.02173783,
+            "spin_polarization": null
+          }
+        },
+        "d": {
+          "1": {
+            "band_gap": 2.2930786791659052,
+            "cbm": 5.305380772181009,
+            "vbm": 3.012302093015104,
+            "efermi": 3.02173783,
+            "spin_polarization": null
+          }
+        }
+      },
+      "magnetic_ordering": "NM"
+    },
+    "dos_energy_up": 2.257015768358642,
+    "dos_energy_down": null,
+    "bandstructure": {
+      "setyawan_curtarolo": {
+        "band_gap": 2.3053,
+        "cbm": {
+          "band_index": {
+            "1": [
+              76
+            ]
+          },
+          "kpoint_index": [
+            0,
+            51,
+            52
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "\\Gamma"
+          },
+          "energy": 5.3244,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              75
+            ]
+          },
+          "kpoint_index": [
+            0,
+            51,
+            52
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "\\Gamma"
+          },
+          "energy": 3.0191,
+          "projections": {}
+        },
+        "efermi": 3.09815529,
+        "is_gap_direct": true,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaadmqio",
+        "nbands": 160.0,
+        "direct_gap": 2.3053
+      },
+      "hinuma": {
+        "band_gap": 2.3053,
+        "cbm": {
+          "band_index": {
+            "1": [
+              76
+            ]
+          },
+          "kpoint_index": [
+            0,
+            51,
+            52
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "GAMMA"
+          },
+          "energy": 5.3244,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              75
+            ]
+          },
+          "kpoint_index": [
+            0,
+            51,
+            52
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "GAMMA"
+          },
+          "energy": 3.0191,
+          "projections": {}
+        },
+        "efermi": 3.09815529,
+        "is_gap_direct": true,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaaeumgl",
+        "nbands": 160.0,
+        "direct_gap": 2.3053
+      },
+      "latimer_munro": {
+        "band_gap": 2.3053,
+        "cbm": {
+          "band_index": {
+            "1": [
+              76
+            ]
+          },
+          "kpoint_index": [
+            28,
+            29,
+            142,
+            143,
+            230,
+            231
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "Γ"
+          },
+          "energy": 5.3244,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              75
+            ]
+          },
+          "kpoint_index": [
+            28,
+            29,
+            142,
+            143,
+            230,
+            231
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  1.1618831655213224,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.1408563428016205,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.8166331566911497
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "ccoords": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "label": "Γ"
+          },
+          "energy": 3.0191,
+          "projections": {}
+        },
+        "efermi": 3.11109879,
+        "is_gap_direct": true,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaafxhmd",
+        "nbands": 160.0,
+        "direct_gap": 2.3053
+      }
+    },
+    "band_gap": 2.3053,
+    "cbm": 5.3244,
+    "vbm": 3.0191,
+    "efermi": 3.11109879,
+    "is_gap_direct": true,
+    "is_metal": false,
+    "grain_boundaries": null,
+    "xas": [
+      {
+        "edge": "K",
+        "absorbing_element": "Ca",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ca",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ti",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ti",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ca",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "XANES"
+      }
+    ],
+    "uncorrected_energy_per_atom": -11.024615371500001,
+    "energy_per_atom": -8.5050821395,
+    "formation_energy_per_atom": -3.5560871571666666,
+    "energy_above_hull": 0.0,
+    "is_stable": true,
+    "equilibrium_reaction_energy_per_atom": -0.0334948041666685,
+    "decomposes_to": null,
+    "builder_meta": {
+      "emmet_version": "0.87.3rc1",
+      "pymatgen_version": "2026.9.23",
+      "run_id": "af744faf-5605-43db-b301-50d8e2ef4dda",
+      "batch_id": "production-r2scan-nov2021",
+      "database_version": "2026.09.28",
+      "build_date": "2026-09-26 04:09:37.660391+09",
+      "license": "BY-C"
+    },
+    "nsites": 20,
+    "elements": [
+      "Ca",
+      "O",
+      "Ti"
+    ],
+    "nelements": 3,
+    "composition": {
+      "Ca": 4.0,
+      "Ti": 4.0,
+      "O": 12.0
+    },
+    "composition_reduced": {
+      "Ca": 1.0,
+      "Ti": 1.0,
+      "O": 3.0
+    },
+    "formula_pretty": "CaTiO3",
+    "formula_anonymous": "ABC3",
+    "chemsys": "Ca-O-Ti",
+    "volume": 224.09973769300066,
+    "density": 4.029259419540245,
+    "density_atomic": 11.204986884650033,
+    "symmetry": {
+      "crystal_system": "Orthorhombic",
+      "symbol": "Pnma",
+      "hall": "-P 2ac 2n",
+      "number": 62,
+      "point_group": "mmm",
+      "symprec": 0.1,
+      "angle_tolerance": 5.0,
+      "version": "2.7.0"
+    },
+    "material_id": "mp-aaaaafyp",
+    "deprecated": false,
+    "deprecation_reasons": null,
+    "last_updated": "2023-10-07 15:00:25.033+09",
+    "origins": [
+      {
+        "name": "structure",
+        "task_id": "aaaevylj",
+        "last_updated": "2022-04-30 07:12:25.523+09"
+      },
+      {
+        "name": "setyawan_curtarolo",
+        "task_id": "aaadmqio",
+        "last_updated": "2021-02-22 20:52:57.405+09"
+      },
+      {
+        "name": "hinuma",
+        "task_id": "aaaeumgl",
+        "last_updated": "2021-07-23 17:09:58.218+09"
+      },
+      {
+        "name": "latimer_munro",
+        "task_id": "aaafxhmd",
+        "last_updated": "2022-06-26 08:25:29.819+09"
+      },
+      {
+        "name": "dos",
+        "task_id": "aaadrzlz",
+        "last_updated": "2020-07-16 03:52:18.338+09"
+      },
+      {
+        "name": "electronic_structure",
+        "task_id": "aaafxhmd",
+        "last_updated": "2022-06-26 08:25:29.819+09"
+      },
+      {
+        "name": "magnetism",
+        "task_id": "aaaevylj",
+        "last_updated": "2022-04-30 07:12:25.523+09"
+      },
+      {
+        "name": "energy",
+        "task_id": "aaaevylj",
+        "last_updated": "2026-09-26 02:50:33.269224+09"
+      }
+    ],
+    "warnings": [],
+    "structure": {
+      "@module": "pymatgen.core.structure",
+      "@class": "Structure",
+      "charge": 0.0,
+      "lattice": {
+        "matrix": [
+          [
+            5.37204886,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            5.46279649,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            7.63635962
+          ]
+        ],
+        "pbc": [
+          true,
+          true,
+          true
+        ],
+        "a": 5.37204886,
+        "b": 5.46279649,
+        "c": 7.63635962,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 224.09973769300066
+      },
+      "sites": [
+        {
+          "label": "Ca",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ca",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.50906691,
+            0.54239755,
+            0.75
+          ],
+          "xyz": [
+            2.7347323135292227,
+            2.9630074323245994,
+            5.727269715
+          ]
+        },
+        {
+          "label": "Ca",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ca",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.49093309,
+            0.45760245,
+            0.25
+          ],
+          "xyz": [
+            2.6373165464707773,
+            2.4997890576754003,
+            1.909089905
+          ]
+        },
+        {
+          "label": "Ca",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ca",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.99093309,
+            0.04239755,
+            0.75
+          ],
+          "xyz": [
+            5.323340976470777,
+            0.23160918732459948,
+            5.727269715
+          ]
+        },
+        {
+          "label": "Ca",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ca",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.00906691,
+            0.95760245,
+            0.25
+          ],
+          "xyz": [
+            0.04870788352922259,
+            5.2311873026754006,
+            1.909089905
+          ]
+        },
+        {
+          "label": "Ti",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ti",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.0,
+            0.5,
+            0.5
+          ],
+          "xyz": [
+            0.0,
+            2.731398245,
+            3.81817981
+          ]
+        },
+        {
+          "label": "Ti",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ti",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.0,
+            0.5,
+            -0.0
+          ],
+          "xyz": [
+            0.0,
+            2.731398245,
+            0.0
+          ]
+        },
+        {
+          "label": "Ti",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ti",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.5,
+            0.0,
+            0.5
+          ],
+          "xyz": [
+            2.68602443,
+            0.0,
+            3.81817981
+          ]
+        },
+        {
+          "label": "Ti",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ti",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.5,
+            0.0,
+            -0.0
+          ],
+          "xyz": [
+            2.68602443,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.07678111,
+            0.48132762,
+            0.75
+          ],
+          "xyz": [
+            0.4124718744450346,
+            2.6293948330760535,
+            5.727269715
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.92321889,
+            0.51867238,
+            0.25
+          ],
+          "xyz": [
+            4.959576985554965,
+            2.833401656923946,
+            1.909089905
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.42321889,
+            0.98132762,
+            0.75
+          ],
+          "xyz": [
+            2.273552555554965,
+            5.360793078076053,
+            5.727269715
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.57678111,
+            0.01867238,
+            0.25
+          ],
+          "xyz": [
+            3.0984963044450344,
+            0.10200341192394619,
+            1.909089905
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.79029372,
+            0.78961378,
+            0.95984128
+          ],
+          "xyz": [
+            4.245496477591159,
+            4.313499385839632,
+            7.329693192201114
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.20970628,
+            0.21038622,
+            0.45984128
+          ],
+          "xyz": [
+            1.1265523824088406,
+            1.149297104160368,
+            3.5115133822011138
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.20970628,
+            0.21038622,
+            0.04015872
+          ],
+          "xyz": [
+            1.1265523824088406,
+            1.149297104160368,
+            0.3066664277988864
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.79029372,
+            0.78961378,
+            0.54015872
+          ],
+          "xyz": [
+            4.245496477591159,
+            4.313499385839632,
+            4.124846237798886
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.70970628,
+            0.28961378,
+            0.95984128
+          ],
+          "xyz": [
+            3.8125768124088406,
+            1.582101140839632,
+            7.329693192201114
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.29029372,
+            0.71038622,
+            0.45984128
+          ],
+          "xyz": [
+            1.559472047591159,
+            3.8806953491603675,
+            3.5115133822011138
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.29029372,
+            0.71038622,
+            0.04015872
+          ],
+          "xyz": [
+            1.559472047591159,
+            3.8806953491603675,
+            0.3066664277988864
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.70970628,
+            0.28961378,
+            0.54015872
+          ],
+          "xyz": [
+            3.8125768124088406,
+            1.582101140839632,
+            4.124846237798886
+          ]
+        }
+      ],
+      "properties": {
+        "magmom": null,
+        "charge": null,
+        "velocities": null,
+        "selective_dynamics": null
+      }
+    },
+    "property_name": "summary",
+    "task_ids": [
+      "aaaffbnk",
+      "aaaacdpn",
+      "aaaffbom",
+      "aaaffblt",
+      "aaaddzdc",
+      "aaackykk",
+      "aaaffbqk",
+      "aaafwken",
+      "aaagacyy",
+      "aaaffbpm",
+      "aaadmqio",
+      "aaaeumgl",
+      "aaadrzlz",
+      "aaafjiio",
+      "aaaaagvx",
+      "aaabmfhx",
+      "aaaffbfd",
+      "aaablkbz",
+      "aaaaafyp",
+      "aaackxxw",
+      "aaafxhmd",
+      "aaacpqfn",
+      "aaaffbqy",
+      "aaafnmxp",
+      "aaaffbha",
+      "aaaffbsa",
+      "aaacprkr",
+      "aaaffbii",
+      "aaaffbrk",
+      "aaafwkda",
+      "aaaefqun",
+      "aaacpryg",
+      "aaacpprw",
+      "aaafwkcw",
+      "aaacpsjc",
+      "aaaffbqs",
+      "aaacppua",
+      "aaackykq",
+      "aaaffbew",
+      "aaackwpi",
+      "aaaffbmt",
+      "aaaevylj",
+      "aaadmmlg",
+      "aaablrlm",
+      "aaackykv",
+      "aaagadci",
+      "aaadjybp",
+      "aaaeuhpv",
+      "aaackxvx",
+      "aaaffbls",
+      "aaacpqsq"
+    ],
+    "has_props": {
+      "materials": true,
+      "thermo": true,
+      "xas": true,
+      "grain_boundaries": false,
+      "electronic_structure": true,
+      "bandstructure": true,
+      "dos": true,
+      "magnetism": true,
+      "elasticity": true,
+      "dielectric": false,
+      "piezoelectric": false,
+      "surface_properties": false,
+      "oxi_states": true,
+      "provenance": true,
+      "charge_density": true,
+      "eos": false,
+      "phonon": true,
+      "absorption": false,
+      "insertion_electrodes": false,
+      "substrates": true,
+      "chemenv": true
+    },
+    "version": "2026-09-28"
+  }
+}

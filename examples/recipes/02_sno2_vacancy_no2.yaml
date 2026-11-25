@@ -1,0 +1,14 @@
+# 还原态 SnO2 检测 NO2：表面氧空位是 NO2 的主要吸附/解离位点
+# 流程：切面 -> 表面 O 空位（默认只挑表面 2.5 Å 内的 O）-> NO2 吸附在 Sn 上
+# 想比较多个空位构型：在 vacancy 里加 samples_per_count: 4 和 pick: all（每个构型一条分支）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: adsorbate
+    molecule: NO2
+    site_symbols: [Sn]

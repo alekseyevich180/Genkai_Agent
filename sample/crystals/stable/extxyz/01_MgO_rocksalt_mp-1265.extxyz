@@ -1,0 +1,4 @@
+2
+Lattice="2.56829206 -0.0 1.48280459 0.85609768 2.4214088 1.48280459 -1e-08 -0.0 2.96560719" Properties=species:S:1:pos:R:3 material_id=mp-aaaaabwr legacy_numeric_id=mp-1265 formula=MgO mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Mg       0.00000000       0.00000000       0.00000000
+O        1.71219487       1.21070440       2.96560818

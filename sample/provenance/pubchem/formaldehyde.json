@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/formaldehyde/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:26Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 712,
+          "MolecularFormula": "CH2O",
+          "ConnectivitySMILES": "C=O",
+          "InChIKey": "WSFSSNUMVMOOMR-UHFFFAOYSA-N",
+          "IUPACName": "formaldehyde"
+        }
+      ]
+    }
+  }
+}

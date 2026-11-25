@@ -1,0 +1,16 @@
+# 【需要 MLIP，在服务器上运行】只有晶体时得到非晶 SnO2 表面，再吸附丙酮
+# 流程：晶体 -> MLIP 熔融-淬火得到非晶块体 -> 切出 10 Å 非晶表面 -> 表面 O 空位 -> 丙酮
+# 熔融-淬火默认约 7.4 万步 MD；先看 01_amorphous_bulk/root/amorphous_bulk_manifest.json 的熔融位移和配位数再用结果
+
+mlip: default
+pipeline:
+  - method: amorphous_bulk
+    crystal: inputs/SnO2.cif
+    density: 6.4               # 非晶密度（g/cm³），请按文献或实验确认；晶体为 6.87
+  - method: amorphous_slab
+    thickness: 10
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: adsorbate
+    molecule: CH3COCH3
+    site_symbols: [Sn]

@@ -1,0 +1,12 @@
+# 最简单的例子：SnO2(110) 表面吸附 NO2（SnO2 是最常用的气敏材料，NO2 是典型氧化性气体）
+# 流程：切面 -> 放一个 NO2 分子到 Sn 位点
+# 换成自己的体系：改 bulk（晶体文件）、facet（晶面）、molecule（气体名）、site_symbols（吸附位点元素）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: adsorbate
+    molecule: NO2
+    site_symbols: [Sn]

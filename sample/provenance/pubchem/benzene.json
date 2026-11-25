@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/benzene/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:31Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 241,
+          "MolecularFormula": "C6H6",
+          "ConnectivitySMILES": "C1=CC=CC=C1",
+          "InChIKey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+          "IUPACName": "benzene"
+        }
+      ]
+    }
+  }
+}

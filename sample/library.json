@@ -1,0 +1,9 @@
+{
+  "stable_crystals": 30,
+  "ab2o3_references": 2,
+  "voc_molecules": 30,
+  "crystal_catalog": "crystals/catalog.json",
+  "voc_catalog": "molecules/catalog.json",
+  "readme": "README.md",
+  "validation": "validation_report.json"
+}

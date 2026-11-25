@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/styrene/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:34Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 7501,
+          "MolecularFormula": "C8H8",
+          "ConnectivitySMILES": "C=CC1=CC=CC=C1",
+          "InChIKey": "PPBRXRYQALVLMV-UHFFFAOYSA-N",
+          "IUPACName": "styrene"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/ethylbenzene/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:32Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 7500,
+          "MolecularFormula": "C8H10",
+          "ConnectivitySMILES": "CCC1=CC=CC=C1",
+          "InChIKey": "YNQLUTRBYVCPMQ-UHFFFAOYSA-N",
+          "IUPACName": "ethylbenzene"
+        }
+      ]
+    }
+  }
+}

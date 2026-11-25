@@ -1,0 +1,5 @@
+3
+Lattice="3.67430564 -0.0 0.0 -1.83715333 3.18204164 0.0 0.0 -0.0 6.22883184" Properties=species:S:1:pos:R:3 material_id=mp-aaaaabta legacy_numeric_id=mp-1170 formula=SnS2 mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Sn       0.00000000       0.00000000       0.00000000
+S       -0.00000218       2.12136215       1.46161701
+S        1.83715449       1.06067949       4.76721483

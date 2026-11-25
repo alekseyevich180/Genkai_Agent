@@ -1,0 +1,6 @@
+4
+Lattice="3.23735118 0.0 0.0 -1.61867509 2.80362829 0.0 0.0 -0.0 5.2220613" Properties=species:S:1:pos:R:3 material_id=mp-aaaaadeb legacy_numeric_id=mp-2133 formula=ZnO mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Zn       1.61867738       0.93454183       2.61412054
+Zn      -0.00000129       1.86908646       0.00308989
+O        1.61867738       0.93454183       4.59394289
+O       -0.00000129       1.86908646       1.98291224

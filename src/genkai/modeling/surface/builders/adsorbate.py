@@ -22,7 +22,8 @@ from ..mlip.calculators import (
     resolve_mace_model,
 )
 from ..mlip.search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
-from ..structure_io import components, decoration_mask, label_components, write_frames
+from ..structure_io import components, has_components, label_components, write_frames
+from .molecules import load_molecule
 
 CONFIG = {
     # Input/output
@@ -274,22 +275,52 @@ def lateral_distance_matrix(slab: Atoms, positions: np.ndarray) -> np.ndarray:
     return distances.reshape(len(points), len(points))
 
 
-def unblocked_sites(slab: Atoms, sites: list[int], molecule: Atoms, z_gap_max: float) -> tuple[list[int], int]:
-    """Drop sites under atoms that earlier steps added (clusters, SAM molecules, adsorbates).
+def auto_site_symbols(slab: Atoms) -> list[str]:
+    """Elements for ``--site-symbols auto``: exposed undercoordinated cations of the solid surface.
 
-    A site is blocked when such an atom lies within the molecule's radius + 1 A of the
-    site in-plane and between the site and the top of a molecule placed there. Plain
-    slabs have no such atoms, so nothing changes for them.
+    When no cation is undercoordinated (van der Waals layers such as the S-terminated basal
+    plane of MoS2, where every atom keeps its bulk coordination), the elements of the
+    outermost solid layer (within 0.6 A of the top) are used instead. Atoms added by
+    earlier steps are not considered.
     """
-    decorated = np.flatnonzero(decoration_mask(slab))
-    if not len(decorated) or not sites:
+    from ..structure_io import solid_mask
+    from .sites import ANION_SYMBOLS, find_surface_sites
+
+    solid = solid_mask(slab)
+    symbols = sorted({s for s, keep in zip(slab.get_chemical_symbols(), solid) if keep})
+    cations = [s for s in symbols if s not in ANION_SYMBOLS] or symbols
+    sites = find_surface_sites(slab, cations)
+    if sites:
+        return sorted({site.symbol for site in sites})
+    z = slab.positions[:, 2]
+    top = float(z[solid].max()) if solid.any() else float(z.max())
+    outer = np.flatnonzero((solid if solid.any() else np.ones(len(slab), bool)) & (z >= top - 0.6))
+    return sorted({slab[int(i)].symbol for i in outer})
+
+
+def unblocked_sites(
+    slab: Atoms, sites: list[int], molecule: Atoms, z_gap_max: float, site_radius: float = 1.0
+) -> tuple[list[int], int]:
+    """Drop sites covered by atoms of another component (ALD island or film, cluster, SAM, adsorbate).
+
+    A site is blocked when an atom of a component other than the site's own lies in-plane within
+    the molecule's radius + ``site_radius`` (how far the placement may shift) + 1.5 A clearance,
+    and between the site and the top of a molecule placed there. Plain (unlabeled or
+    single-component) slabs are unchanged.
+    """
+    labels = components(slab)
+    if not has_components(slab) or not sites or len(set(labels.tolist())) < 2:
         return sites, 0
     centered = center_molecule(molecule)
     reach = float(np.linalg.norm(centered.positions, axis=1).max()) if len(centered) > 1 else 0.0
-    radius, height = reach + 1.0, z_gap_max + 2.0 * reach + 1.0
+    radius, height = reach + site_radius + 1.5, z_gap_max + 2.0 * reach + 1.0
     kept: list[int] = []
     for site in sites:
-        delta = slab.positions[decorated] - slab.positions[site]
+        others = np.flatnonzero(labels != labels[site])
+        if not len(others):
+            kept.append(site)
+            continue
+        delta = slab.positions[others] - slab.positions[site]
         lateral = np.linalg.norm(minimum_image_vectors(slab, delta)[:, :2], axis=1)
         above = (delta[:, 2] > 0.4) & (delta[:, 2] < height)
         if not ((lateral < radius) & above).any():
@@ -617,21 +648,24 @@ def run_adsorbate_landscape(
     structures_dir.mkdir(parents=True, exist_ok=True)
 
     rng = random.Random(args.seed)
-    site_symbols = parse_symbols(args.site_symbols)
     patterns = parse_patterns(args.patterns)
 
     from .substrate import ensure_fixed_bottom
 
     slab, constraint_source = ensure_fixed_bottom(read(args.surface), args.fixed_fraction)
     print(f"Slab constraints: {constraint_source}")
-    molecule = read(args.molecule)
+    site_symbols = parse_symbols(args.site_symbols)
+    if [s.lower() for s in site_symbols] == ["auto"]:
+        site_symbols = auto_site_symbols(slab)
+        print(f"Site symbols (auto: exposed surface cations, else exposed surface atoms): {', '.join(site_symbols)}")
+    molecule, molecule_source = load_molecule(args.molecule)
     site_components = parse_symbols(args.site_components) if args.site_components else None
     site_indices = get_surface_sites(
         slab, site_symbols, args.site_z_tolerance, args.max_sites, site_components=site_components
     )
-    site_indices, blocked = unblocked_sites(slab, site_indices, molecule, args.z_gap_max)
+    site_indices, blocked = unblocked_sites(slab, site_indices, molecule, args.z_gap_max, args.site_radius)
     if blocked:
-        print(f"Sites blocked by atoms of earlier steps (cluster/SAM/adsorbate): {blocked}")
+        print(f"Sites blocked by atoms of earlier steps (ALD overlayer/cluster/SAM/adsorbate): {blocked}")
     if not site_indices:
         raise ValueError("Every adsorption site is covered by atoms added in earlier steps; use other site symbols.")
     site_groups = build_site_groups(slab, site_indices, args.site_group_size)
@@ -646,7 +680,7 @@ def run_adsorbate_landscape(
         raise ValueError("No valid coverage counts remain after applying site count limits.")
 
     print(f"Surface: {args.surface}")
-    print(f"Molecule: {args.molecule}")
+    print(f"Molecule: {molecule_source}")
     print(f"Output directory: {args.output_dir}")
     print(f"Site symbols: {', '.join(site_symbols)}")
     print(f"Detected adsorption sites: {len(site_indices)}")
@@ -803,10 +837,13 @@ def run_adsorbate_landscape(
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Construct adsorbate coverage landscapes using MACE/UMA and Optuna.")
     parser.add_argument("--surface", type=Path, default=Path(CONFIG["surface"]))
-    parser.add_argument("--molecule", type=Path, default=Path(CONFIG["molecule"]))
+    parser.add_argument("--molecule", type=Path, default=Path(CONFIG["molecule"]),
+                        help="Molecule file, or a built-in gas name: NO2, CO, H2, NH3, H2S, H2O, O2, CO2, SO2, CH4, "
+                        "CH3OH, C2H5OH (ethanol), HCHO, CH3CHO, CH3COCH3 (acetone), C6H6.")
     parser.add_argument("--output-dir", type=Path, default=Path(CONFIG["output_dir"]))
     parser.add_argument("--structure-prefix", type=str, default=CONFIG["structure_prefix"])
-    parser.add_argument("--site-symbols", type=str, default=CONFIG["site_symbols"])
+    parser.add_argument("--site-symbols", type=str, default=CONFIG["site_symbols"],
+                        help="Comma-separated site elements, or 'auto' (exposed surface cations).")
     parser.add_argument(
         "--site-components", default=None,
         help="Comma-separated components whose atoms may be sites (substrate, overlayer, cluster, sam); default any.",

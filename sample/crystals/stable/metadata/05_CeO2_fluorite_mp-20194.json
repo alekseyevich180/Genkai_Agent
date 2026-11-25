@@ -1,0 +1,1159 @@
+{
+  "catalog_record": {
+    "id": "05_CeO2_fluorite_mp-20194",
+    "formula": "CeO2",
+    "mp_formula": "CeO2",
+    "category": "oxide",
+    "collection": "stable",
+    "phase": "fluorite",
+    "material_id": "mp-aaaabdws",
+    "legacy_numeric_id": "mp-20194",
+    "mp_url": "https://materialsproject.org/materials/mp-aaaabdws",
+    "database_version": "2026-09-28",
+    "is_stable": true,
+    "energy_above_hull_eV_atom": 0.0,
+    "stability_label": "MP_hull_stable",
+    "theoretical": false,
+    "icsd_ids": [
+      "icsd-29046",
+      "icsd-621719",
+      "icsd-246087",
+      "icsd-72155",
+      "icsd-182182",
+      "icsd-164225",
+      "icsd-239412",
+      "icsd-621710",
+      "icsd-193169",
+      "icsd-290467",
+      "icsd-621718",
+      "icsd-290464",
+      "icsd-192224",
+      "icsd-621705",
+      "icsd-192225",
+      "icsd-621704",
+      "icsd-184584",
+      "icsd-186493",
+      "icsd-88759",
+      "icsd-180955",
+      "icsd-238381",
+      "icsd-192223",
+      "icsd-186172",
+      "icsd-180851",
+      "icsd-239414",
+      "icsd-169029",
+      "icsd-186923",
+      "icsd-182180",
+      "icsd-182989",
+      "icsd-182181",
+      "icsd-621707",
+      "icsd-165720",
+      "icsd-182990",
+      "icsd-28709",
+      "icsd-157419",
+      "icsd-237959",
+      "icsd-262755",
+      "icsd-164744",
+      "icsd-28753",
+      "icsd-181028",
+      "icsd-156250",
+      "icsd-185143",
+      "icsd-621716",
+      "icsd-169030",
+      "icsd-61595",
+      "icsd-182183",
+      "icsd-167160",
+      "icsd-53995",
+      "icsd-182988"
+    ],
+    "mp_spacegroup": "Fm-3m",
+    "mp_spacegroup_number": 225,
+    "detected_spacegroup": "Fm-3m",
+    "atoms": 3,
+    "conventional_atoms": 12,
+    "volume_A3": 40.85964149792201,
+    "density_g_cm3": 6.994759113436836,
+    "minimum_periodic_distance_A": 2.3674752178990968,
+    "cell_parameters_A_deg": [
+      3.86607151081715,
+      3.8660715767782934,
+      3.866071,
+      59.999996378737094,
+      59.99999581434572,
+      59.99999283390335
+    ],
+    "source_url": "https://materialsproject-build.s3.amazonaws.com/collections/summary/version=2026-09-28/part-00000-2cc5f2cc-2a79-4051-b013-2f9dec6a302e-c000.zstd.parquet",
+    "structure_source": "Materials Project DFT-relaxed structure, unmodified cell",
+    "conventional_transform": "pymatgen conventional standard cell; symprec=0.1 A; may symmetrize positions",
+    "source_warnings": [],
+    "license": "BY-C",
+    "cif": "crystals/stable/cif/05_CeO2_fluorite_mp-20194.cif",
+    "vasp": "crystals/stable/vasp/05_CeO2_fluorite_mp-20194.vasp",
+    "extxyz": "crystals/stable/extxyz/05_CeO2_fluorite_mp-20194.extxyz",
+    "conventional_cif": "crystals/stable/conventional_cif/05_CeO2_fluorite_mp-20194.cif",
+    "sha256": {
+      "cif": "09342d47c6bb22a3ea6c4579161a36a032c48e021711a736a9a50da8fe8434f3",
+      "vasp": "862a02569e0767f21b37e2a5a2c3ada20d46e2baa108bda3879240c409099bc4",
+      "extxyz": "29355f49463dd97a5473e346e491ed0c99453979ba04bb83d80c376262a468bd",
+      "conventional_cif": "75b20c26a2f0d76ced3a47b62e4f584895835712c5ab67e05c588f9fd11ba2ae"
+    },
+    "metadata": "crystals/stable/metadata/05_CeO2_fluorite_mp-20194.json"
+  },
+  "original_mp_summary": {
+    "phonon_IDs": {
+      "pheasy": [
+        "aaaegyjx"
+      ]
+    },
+    "theoretical": false,
+    "database_IDs": {
+      "icsd": [
+        "icsd-29046",
+        "icsd-621719",
+        "icsd-246087",
+        "icsd-72155",
+        "icsd-182182",
+        "icsd-164225",
+        "icsd-239412",
+        "icsd-621710",
+        "icsd-193169",
+        "icsd-290467",
+        "icsd-621718",
+        "icsd-290464",
+        "icsd-192224",
+        "icsd-621705",
+        "icsd-192225",
+        "icsd-621704",
+        "icsd-184584",
+        "icsd-186493",
+        "icsd-88759",
+        "icsd-180955",
+        "icsd-238381",
+        "icsd-192223",
+        "icsd-186172",
+        "icsd-180851",
+        "icsd-239414",
+        "icsd-169029",
+        "icsd-186923",
+        "icsd-182180",
+        "icsd-182989",
+        "icsd-182181",
+        "icsd-621707",
+        "icsd-165720",
+        "icsd-182990",
+        "icsd-28709",
+        "icsd-157419",
+        "icsd-237959",
+        "icsd-262755",
+        "icsd-164744",
+        "icsd-28753",
+        "icsd-181028",
+        "icsd-156250",
+        "icsd-185143",
+        "icsd-621716",
+        "icsd-169030",
+        "icsd-61595",
+        "icsd-182183",
+        "icsd-167160",
+        "icsd-53995",
+        "icsd-182988"
+      ]
+    },
+    "possible_species": [
+      "O2-",
+      "Ce4+"
+    ],
+    "weighted_surface_energy_EV_PER_ANG2": null,
+    "weighted_surface_energy": null,
+    "weighted_work_function": null,
+    "surface_anisotropy": null,
+    "shape_factor": null,
+    "has_reconstructed": null,
+    "e_ij_max": null,
+    "e_total": 26.899613130149906,
+    "e_ionic": 18.934994600149903,
+    "e_electronic": 7.96461853,
+    "n": 2.822165574518972,
+    "bulk_modulus": {
+      "voigt": 170.992,
+      "reuss": 170.992,
+      "vrh": 170.992
+    },
+    "shear_modulus": {
+      "voigt": 79.365,
+      "reuss": 68.513,
+      "vrh": 73.939
+    },
+    "universal_anisotropy": 0.792,
+    "homogeneous_poisson": 0.311,
+    "is_magnetic": false,
+    "ordering": "Unknown",
+    "total_magnetization": 0.0,
+    "total_magnetization_normalized_vol": 0.0,
+    "total_magnetization_normalized_formula_units": 0.0,
+    "num_magnetic_sites": 0,
+    "num_unique_magnetic_sites": 0,
+    "types_of_magnetic_species": [],
+    "dos": {
+      "task_id": "aaadreyx",
+      "total": {
+        "1": {
+          "band_gap": 1.8247084083203475,
+          "cbm": 6.86880158951545,
+          "vbm": 5.044093181195103,
+          "efermi": 5.05883849,
+          "spin_polarization": null
+        }
+      },
+      "elemental": {
+        "Ce": {
+          "total": {
+            "1": {
+              "band_gap": 1.824714838243251,
+              "cbm": 6.868800551020679,
+              "vbm": 5.044085712777428,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 1.8263139234632684,
+              "cbm": 6.869827042203898,
+              "vbm": 5.04351311874063,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 1.824783237195268,
+              "cbm": 6.868874251361688,
+              "vbm": 5.04409101416642,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 1.8248243193848994,
+              "cbm": 6.8688799526155675,
+              "vbm": 5.044055633230668,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "f": {
+            "1": {
+              "band_gap": 1.8247086935291916,
+              "cbm": 6.868800210079853,
+              "vbm": 5.044091516550662,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          }
+        },
+        "O": {
+          "total": {
+            "1": {
+              "band_gap": 1.8247430777725233,
+              "cbm": 6.868841899387005,
+              "vbm": 5.044098821614481,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "s": {
+            "1": {
+              "band_gap": 1.826006732713643,
+              "cbm": 6.868963341589206,
+              "vbm": 5.042956608875563,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "p": {
+            "1": {
+              "band_gap": 1.8247341878151309,
+              "cbm": 6.868833312564627,
+              "vbm": 5.044099124749496,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "d": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 5.05883849,
+              "vbm": 5.05883849,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          },
+          "f": {
+            "1": {
+              "band_gap": 0.0,
+              "cbm": 5.05883849,
+              "vbm": 5.05883849,
+              "efermi": 5.05883849,
+              "spin_polarization": null
+            }
+          }
+        }
+      },
+      "orbital": {
+        "s": {
+          "1": {
+            "band_gap": 1.8257658251774114,
+            "cbm": 6.869155275059137,
+            "vbm": 5.043389449881726,
+            "efermi": 5.05883849,
+            "spin_polarization": null
+          }
+        },
+        "p": {
+          "1": {
+            "band_gap": 1.824743815933478,
+            "cbm": 6.868842463589853,
+            "vbm": 5.044098647656375,
+            "efermi": 5.05883849,
+            "spin_polarization": null
+          }
+        },
+        "d": {
+          "1": {
+            "band_gap": 1.8248243193848994,
+            "cbm": 6.8688799526155675,
+            "vbm": 5.044055633230668,
+            "efermi": 5.05883849,
+            "spin_polarization": null
+          }
+        }
+      },
+      "magnetic_ordering": "NM"
+    },
+    "dos_energy_up": 1.8247084083203475,
+    "dos_energy_down": null,
+    "bandstructure": {
+      "setyawan_curtarolo": {
+        "band_gap": 1.8647,
+        "cbm": {
+          "band_index": {
+            "1": [
+              12
+            ]
+          },
+          "kpoint_index": [
+            93,
+            94,
+            137,
+            138
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "ccoords": [
+              0.5745992471060171,
+              0.5745992471060171,
+              0.5745992471060171
+            ],
+            "label": "L"
+          },
+          "energy": 6.9038,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              11
+            ]
+          },
+          "kpoint_index": [
+            54
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.27,
+              0.27,
+              0.54
+            ],
+            "ccoords": [
+              0.6205671868744984,
+              0.6205671868744985,
+              5.243100196807283e-17
+            ],
+            "label": null
+          },
+          "energy": 5.0391,
+          "projections": {}
+        },
+        "efermi": 5.05743538,
+        "is_gap_direct": false,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaablgvy",
+        "nbands": 28.0,
+        "direct_gap": 1.9478
+      },
+      "hinuma": {
+        "band_gap": 2.0035,
+        "cbm": {
+          "band_index": {
+            "1": [
+              12
+            ]
+          },
+          "kpoint_index": [
+            80,
+            81
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "ccoords": [
+              0.5745992471060171,
+              0.5745992471060171,
+              0.5745992471060171
+            ],
+            "label": "L"
+          },
+          "energy": 7.0786,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              11
+            ]
+          },
+          "kpoint_index": [
+            41
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.27,
+              0.27,
+              0.54
+            ],
+            "ccoords": [
+              0.6205671868744984,
+              0.6205671868744985,
+              5.243100196807283e-17
+            ],
+            "label": null
+          },
+          "energy": 5.0751,
+          "projections": {}
+        },
+        "efermi": 5.22279116,
+        "is_gap_direct": false,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaaenhwf",
+        "nbands": 96.0,
+        "direct_gap": 2.0917000000000003
+      },
+      "latimer_munro": {
+        "band_gap": 2.0035,
+        "cbm": {
+          "band_index": {
+            "1": [
+              12
+            ]
+          },
+          "kpoint_index": [
+            78,
+            79,
+            166
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "ccoords": [
+              0.5745992471060171,
+              0.5745992471060171,
+              0.5745992471060171
+            ],
+            "label": "a"
+          },
+          "energy": 7.0786,
+          "projections": {}
+        },
+        "vbm": {
+          "band_index": {
+            "1": [
+              11
+            ]
+          },
+          "kpoint_index": [
+            55
+          ],
+          "kpoint": {
+            "@module": "pymatgen.electronic_structure.bandstructure",
+            "@class": "Kpoint",
+            "lattice": {
+              "@module": "pymatgen.core.lattice",
+              "@class": "Lattice",
+              "matrix": [
+                [
+                  -1.1491984942120341,
+                  1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  -1.1491984942120341,
+                  1.1491984942120341
+                ],
+                [
+                  1.1491984942120341,
+                  1.1491984942120341,
+                  -1.1491984942120341
+                ]
+              ],
+              "pbc": [
+                true,
+                true,
+                true
+              ],
+              "a": null,
+              "b": null,
+              "c": null,
+              "alpha": null,
+              "beta": null,
+              "gamma": null,
+              "volume": null
+            },
+            "fcoords": [
+              0.27,
+              0.54,
+              0.27
+            ],
+            "ccoords": [
+              0.6205671868744984,
+              2.929565024722141e-17,
+              0.6205671868744985
+            ],
+            "label": null
+          },
+          "energy": 5.0751,
+          "projections": {}
+        },
+        "efermi": 5.22525523,
+        "is_gap_direct": false,
+        "is_metal": false,
+        "magnetic_ordering": "NM",
+        "task_id": "aaafxhca",
+        "nbands": 96.0,
+        "direct_gap": 2.0917000000000003
+      }
+    },
+    "band_gap": 2.0035,
+    "cbm": 7.0786,
+    "vbm": 5.0751,
+    "efermi": 5.22525523,
+    "is_gap_direct": false,
+    "is_metal": false,
+    "grain_boundaries": null,
+    "xas": [
+      {
+        "edge": "L3",
+        "absorbing_element": "Ce",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ce",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "XAFS"
+      },
+      {
+        "edge": "L2",
+        "absorbing_element": "Ce",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ce",
+        "spectrum_type": "EXAFS"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "O",
+        "spectrum_type": "XANES"
+      },
+      {
+        "edge": "K",
+        "absorbing_element": "Ce",
+        "spectrum_type": "XANES"
+      }
+    ],
+    "uncorrected_energy_per_atom": -18.01413555,
+    "energy_per_atom": -9.204800156666666,
+    "formation_energy_per_atom": -3.927176196666666,
+    "energy_above_hull": 0.0,
+    "is_stable": true,
+    "equilibrium_reaction_energy_per_atom": -0.2338632950000008,
+    "decomposes_to": null,
+    "builder_meta": {
+      "emmet_version": "0.87.3rc1",
+      "pymatgen_version": "2026.9.23",
+      "run_id": "af744faf-5605-43db-b301-50d8e2ef4dda",
+      "batch_id": "production-r2scan",
+      "database_version": "2026.09.28",
+      "build_date": "2026-09-26 04:10:01.073625+09",
+      "license": "BY-C"
+    },
+    "nsites": 3,
+    "elements": [
+      "Ce",
+      "O"
+    ],
+    "nelements": 2,
+    "composition": {
+      "Ce": 1.0,
+      "O": 2.0
+    },
+    "composition_reduced": {
+      "Ce": 1.0,
+      "O": 2.0
+    },
+    "formula_pretty": "CeO2",
+    "formula_anonymous": "AB2",
+    "chemsys": "Ce-O",
+    "volume": 40.85964149792201,
+    "density": 6.994759113436836,
+    "density_atomic": 13.619880499307337,
+    "symmetry": {
+      "crystal_system": "Cubic",
+      "symbol": "Fm-3m",
+      "hall": "-F 4 2 3",
+      "number": 225,
+      "point_group": "m-3m",
+      "symprec": 0.1,
+      "angle_tolerance": 5.0,
+      "version": "2.7.0"
+    },
+    "material_id": "mp-aaaabdws",
+    "deprecated": false,
+    "deprecation_reasons": null,
+    "last_updated": "2023-10-08 18:20:53.968+09",
+    "origins": [
+      {
+        "name": "structure",
+        "task_id": "aaaegyjx",
+        "last_updated": "2021-03-05 19:20:31.656+09"
+      },
+      {
+        "name": "setyawan_curtarolo",
+        "task_id": "aaablgvy",
+        "last_updated": "2021-03-10 05:59:52.844+09"
+      },
+      {
+        "name": "hinuma",
+        "task_id": "aaaenhwf",
+        "last_updated": "2021-07-14 01:09:12.664+09"
+      },
+      {
+        "name": "latimer_munro",
+        "task_id": "aaafxhca",
+        "last_updated": "2022-06-25 05:23:55.613+09"
+      },
+      {
+        "name": "dos",
+        "task_id": "aaadreyx",
+        "last_updated": "2020-07-15 04:01:59.302+09"
+      },
+      {
+        "name": "electronic_structure",
+        "task_id": "aaafxhca",
+        "last_updated": "2022-06-25 05:23:55.613+09"
+      },
+      {
+        "name": "magnetism",
+        "task_id": "aaaegyjx",
+        "last_updated": "2021-03-05 19:20:31.656+09"
+      },
+      {
+        "name": "dielectric",
+        "task_id": "aaacmybm",
+        "last_updated": "2018-12-20 06:50:24.016+09"
+      },
+      {
+        "name": "energy",
+        "task_id": "aaaegyjx",
+        "last_updated": "2026-09-26 02:41:09.93462+09"
+      },
+      {
+        "name": "absorption",
+        "task_id": "aaagbnxx",
+        "last_updated": "2025-03-14 06:35:07.496+09"
+      }
+    ],
+    "warnings": [],
+    "structure": {
+      "@module": "pymatgen.core.structure",
+      "@class": "Structure",
+      "charge": 0.0,
+      "lattice": {
+        "matrix": [
+          [
+            3.348116,
+            0.0,
+            1.933036
+          ],
+          [
+            1.116039,
+            3.156634,
+            1.933036
+          ],
+          [
+            0.0,
+            0.0,
+            3.866071
+          ]
+        ],
+        "pbc": [
+          true,
+          true,
+          true
+        ],
+        "a": 3.86607151081715,
+        "b": 3.8660715767782934,
+        "c": 3.866071,
+        "alpha": 59.999996378737094,
+        "beta": 59.99999581434572,
+        "gamma": 59.99999283390335,
+        "volume": 40.85964149792201
+      },
+      "sites": [
+        {
+          "label": "Ce",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "Ce",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "xyz": [
+            3.34811625,
+            2.3674755,
+            5.7991072500000005
+          ]
+        },
+        {
+          "label": "O",
+          "name": null,
+          "properties": {
+            "magmom": null,
+            "charge": null,
+            "velocities": null,
+            "selective_dynamics": null,
+            "coordination_no": null,
+            "forces": null
+          },
+          "species": [
+            {
+              "element": "O",
+              "oxidation_state": null,
+              "spin": null,
+              "occu": 1.0
+            }
+          ],
+          "abc": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "xyz": [
+            1.11603875,
+            0.7891585,
+            1.93303575
+          ]
+        }
+      ],
+      "properties": {
+        "magmom": null,
+        "charge": null,
+        "velocities": null,
+        "selective_dynamics": null
+      }
+    },
+    "property_name": "summary",
+    "task_ids": [
+      "aaadjmwm",
+      "aaacincr",
+      "aaacikpx",
+      "aaacimvc",
+      "aaacikpy",
+      "aaacimtl",
+      "aaacimtv",
+      "aaacimui",
+      "aaaciksv",
+      "aaacinae",
+      "aaaegsnr",
+      "aaacimmg",
+      "aaacimrl",
+      "aaacmybm",
+      "aaaenhwf",
+      "aaadmusw",
+      "aaafvwry",
+      "aaafvwnf",
+      "aaacimee",
+      "aaacindu",
+      "aaafvwot",
+      "aaaciklu",
+      "aaacinak",
+      "aaaegyjx",
+      "aaaffbxj",
+      "aaacimtq",
+      "aaacilvo",
+      "aaafvwlg",
+      "aaacimtx",
+      "aaacineb",
+      "aaaabdws",
+      "aaaegyiz",
+      "aaacimzj",
+      "aaafxhca",
+      "aaacimdj",
+      "aaaenlnr",
+      "aaacimrq",
+      "aaacilxc",
+      "aaacimml",
+      "aaacincg",
+      "aaacimyd",
+      "aaacimxw",
+      "aaaegyis",
+      "aaacincp",
+      "aaacilum",
+      "aaaciknt",
+      "aaablgvn",
+      "aaagbnxx",
+      "aaacikqi",
+      "aaacimue",
+      "aaacimms",
+      "aaaegyli",
+      "aaacimyk",
+      "aaacikqd",
+      "aaafjgri",
+      "aaacimta",
+      "aaacinbi",
+      "aaacikpr",
+      "aaadybgu",
+      "aaaegykd",
+      "aaacimmx",
+      "aaacilxo",
+      "aaacinec",
+      "aaafyaxs",
+      "aaacimdc",
+      "aaaciknm",
+      "aaacimvb",
+      "aaadmqlt",
+      "aaaciksn",
+      "aaacinbc",
+      "aaacimry",
+      "aaacinbx",
+      "aaacimrx",
+      "aaacikqn",
+      "aaaegyip",
+      "aaablgvy",
+      "aaablgvr",
+      "aaacilvi",
+      "aaacindi",
+      "aaacinbt",
+      "aaaegyjk",
+      "aaacinal",
+      "aaacinbv",
+      "aaacimth",
+      "aaacimym",
+      "aaacilux",
+      "aaacikmy",
+      "aaacilvu",
+      "aaaciluq",
+      "aaacimzf",
+      "aaacimed",
+      "aaaegykk",
+      "aaaegyid",
+      "aaacilve",
+      "aaacinac",
+      "aaacimzk",
+      "aaaegylg",
+      "aaadreyx",
+      "aaacimuv",
+      "aaaciluv",
+      "aaacilwx",
+      "aaacikpl",
+      "aaafvwmv",
+      "aaaddzbv",
+      "aaacinaf",
+      "aaacikpa",
+      "aaacilxl",
+      "aaaeikyo",
+      "aaacimug",
+      "aaaciksg",
+      "aaaciksw"
+    ],
+    "has_props": {
+      "materials": true,
+      "thermo": true,
+      "xas": true,
+      "grain_boundaries": false,
+      "electronic_structure": true,
+      "bandstructure": true,
+      "dos": true,
+      "magnetism": true,
+      "elasticity": true,
+      "dielectric": true,
+      "piezoelectric": false,
+      "surface_properties": false,
+      "oxi_states": true,
+      "provenance": true,
+      "charge_density": true,
+      "eos": false,
+      "phonon": true,
+      "absorption": true,
+      "insertion_electrodes": false,
+      "substrates": true,
+      "chemenv": true
+    },
+    "version": "2026-09-28"
+  }
+}

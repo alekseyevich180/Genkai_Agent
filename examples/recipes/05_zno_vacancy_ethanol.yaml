@@ -1,0 +1,14 @@
+# ZnO 检测乙醇（呼气酒精、VOC 检测的常见体系）：非极性 (10-10) 面 + 表面氧空位
+# 流程：切面 -> 表面 O 空位 -> 乙醇吸附在 Zn 上
+# 丙酮（糖尿病呼气标志物）：molecule 改为 CH3COCH3；甲醛：HCHO
+
+pipeline:
+  - method: slab
+    bulk: inputs/ZnO.cif
+    facet: "10-10"
+    repeat_xy: [2, 4]
+  - method: vacancy
+    vacancy_counts: [1]
+  - method: adsorbate
+    molecule: C2H5OH
+    site_symbols: [Zn]

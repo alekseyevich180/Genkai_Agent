@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/1-butanol/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:26Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 263,
+          "MolecularFormula": "C4H10O",
+          "ConnectivitySMILES": "CCCCO",
+          "InChIKey": "LRHPLDYGYMQRHN-UHFFFAOYSA-N",
+          "IUPACName": "butan-1-ol"
+        }
+      ]
+    }
+  }
+}

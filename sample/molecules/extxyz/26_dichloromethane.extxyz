@@ -1,0 +1,7 @@
+5
+Properties=species:S:1:pos:R:3 name=dichloromethane id=26_dichloromethane pubchem_cid=6344 smiles=ClCCl charge=0 multiplicity=1 pbc="F F F"
+Cl       1.47647653       0.81634355      -0.05344276
+C       -0.00334114      -0.14779574       0.00718865
+Cl      -1.43805118       0.88340832      -0.02923102
+H       -0.00913406      -0.73276234       0.93015727
+H       -0.02595015      -0.81919380      -0.85467213

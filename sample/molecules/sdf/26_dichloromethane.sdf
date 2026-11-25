@@ -1,0 +1,36 @@
+26_dichloromethane
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+    1.4765    0.8163   -0.0534 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+   -0.0033   -0.1478    0.0072 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.4381    0.8834   -0.0292 Cl  0  0  0  0  0  0  0  0  0  0  0  0
+   -0.0091   -0.7328    0.9302 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.0260   -0.8192   -0.8547 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+  2  4  1  0
+  2  5  1  0
+M  END
+>  <formula>  (1) 
+CH2Cl2
+
+>  <inchi_key>  (1) 
+YMWUJEATGCHHMB-UHFFFAOYSA-N
+
+>  <pubchem_cid>  (1) 
+6344
+
+>  <canonical_smiles>  (1) 
+ClCCl
+
+>  <charge>  (1) 
+0
+
+>  <multiplicity>  (1) 
+1
+
+>  <MMFF94s_energy_kcal_mol>  (1) 
+0.0485069745702834
+
+$$$$

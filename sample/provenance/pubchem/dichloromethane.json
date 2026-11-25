@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/dichloromethane/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:35Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 6344,
+          "MolecularFormula": "CH2Cl2",
+          "ConnectivitySMILES": "C(Cl)Cl",
+          "InChIKey": "YMWUJEATGCHHMB-UHFFFAOYSA-N",
+          "IUPACName": "dichloromethane"
+        }
+      ]
+    }
+  }
+}

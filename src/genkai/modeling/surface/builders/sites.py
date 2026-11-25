@@ -22,12 +22,15 @@ from ase import Atoms
 from ase.data import covalent_radii
 from ase.geometry import find_mic
 
-from ..structure_io import solid_mask
+from ..structure_io import components, has_components, solid_mask
 
 ANION_SYMBOLS = frozenset({"O", "S", "Se", "Te", "N", "F", "Cl", "Br", "I"})
 DEFAULT_BOND_SCALE = 1.15
 EXPOSURE_RADIUS_A = 1.2  # lateral radius of the "nothing on top" test
 EXPOSURE_HEIGHT_A = 0.4  # atoms this much higher count as covering
+# Atoms of another component (an ALD island or film, a cluster, a molecule) cover within this
+# lateral radius: they do not sit on lattice positions right above the atom below.
+COVER_RADIUS_A = 2.5
 
 
 @dataclass(frozen=True)
@@ -118,14 +121,23 @@ def reference_coordination(atoms: Atoms, coordination: np.ndarray) -> dict[str, 
 
 
 def exposed_indices(atoms: Atoms, candidates: Iterable[int]) -> list[int]:
-    """Atoms with no other atom on top of them within ``EXPOSURE_RADIUS_A``."""
+    """Atoms with nothing on top of them.
+
+    An atom of the same component covers within ``EXPOSURE_RADIUS_A``; an atom of another
+    component (see ``structure_io.components``) within ``COVER_RADIUS_A``. Unlabeled
+    structures are one component, so only the first rule applies to them.
+    """
     positions = atoms.get_positions()
+    labels = components(atoms) if has_components(atoms) else None
     exposed: list[int] = []
     for index in candidates:
         higher = np.flatnonzero(positions[:, 2] > positions[index, 2] + EXPOSURE_HEIGHT_A)
         if len(higher):
-            lateral = in_plane_mic(atoms, positions[higher] - positions[index])
-            if (np.linalg.norm(lateral[:, :2], axis=1) < EXPOSURE_RADIUS_A).any():
+            lateral = np.linalg.norm(in_plane_mic(atoms, positions[higher] - positions[index])[:, :2], axis=1)
+            radius = np.full(len(higher), EXPOSURE_RADIUS_A)
+            if labels is not None:
+                radius[labels[higher] != labels[index]] = COVER_RADIUS_A
+            if (lateral < radius).any():
                 continue
         exposed.append(int(index))
     return exposed
@@ -142,8 +154,15 @@ def surface_region(atoms: Atoms, depth: float) -> list[int]:
     solid = solid_mask(atoms)
     if not solid.any():
         solid = np.ones(len(atoms), dtype=bool)
-    top = float(z[solid].max())
-    return [int(i) for i in np.flatnonzero(solid & (z >= top - depth))]
+    # Each solid component from its own top: the substrate between ALD islands stays surface;
+    # substrate atoms under an island or film are then removed by ``exposed_indices``.
+    labels = components(atoms)
+    region: list[int] = []
+    for label in sorted(set(labels[solid].tolist())):
+        mask = solid & (labels == label)
+        top = float(z[mask].max())
+        region.extend(int(i) for i in np.flatnonzero(mask & (z >= top - depth)))
+    return sorted(region)
 
 
 def find_surface_sites(

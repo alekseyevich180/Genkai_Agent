@@ -1,0 +1,5 @@
+3
+Lattice="3.348116 0.0 1.933036 1.116039 3.156634 1.933036 0.0 0.0 3.866071" Properties=species:S:1:pos:R:3 material_id=mp-aaaabdws legacy_numeric_id=mp-20194 formula=CeO2 mp_is_stable=T energy_above_hull_eV_atom=0.0 pbc="T T T"
+Ce       0.00000000       0.00000000       0.00000000
+O        3.34811625       2.36747550       5.79910725
+O        1.11603875       0.78915850       1.93303575

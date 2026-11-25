@@ -1,0 +1,16 @@
+# SnO2 表面 ALD 包覆一层很薄的非晶 TiO2 膜，检测 NH3（核壳/异质结传感器）
+# 流程：切面 -> 5 Å 连续非晶 TiO2 膜 -> NH3 吸附在膜表面的 Ti 上
+# 注意：膜要在团簇、SAM 之前做；已有团簇时不能再包覆连续膜（会报错说明原因）
+
+pipeline:
+  - method: slab
+    bulk: inputs/SnO2.cif
+    facet: "110"
+    repeat_xy: [2, 4]
+  - method: ald
+    amorphous: inputs/a-TiO2.vasp
+    coverage: full
+    thickness: 5
+  - method: adsorbate
+    molecule: NH3
+    site_symbols: [Ti]

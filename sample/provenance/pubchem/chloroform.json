@@ -1,0 +1,17 @@
+{
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/chloroform/property/MolecularFormula,ConnectivitySMILES,InChIKey,IUPACName/JSON",
+  "retrieved_utc": "2026-11-19T03:53:36Z",
+  "response": {
+    "PropertyTable": {
+      "Properties": [
+        {
+          "CID": 6212,
+          "MolecularFormula": "CHCl3",
+          "ConnectivitySMILES": "C(Cl)(Cl)Cl",
+          "InChIKey": "HEDRZPFGACZZDS-UHFFFAOYSA-N",
+          "IUPACName": "chloroform"
+        }
+      ]
+    }
+  }
+}
