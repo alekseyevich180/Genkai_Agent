@@ -153,6 +153,9 @@ def build_calculator(
 
 
 def optimize_energy(atoms: Atoms, calculator, fmax: float, max_steps: int | None) -> float:
+    from ..structure_io import sanitize_atoms_info
+
+    sanitize_atoms_info(atoms)
     atoms.calc = calculator
     opt = LBFGS(atoms, logfile=None)
     opt.run(fmax=fmax, steps=max_steps)

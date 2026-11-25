@@ -27,6 +27,34 @@ from ase.io import read, write
 from ase.io.formats import UnknownFileTypeError
 
 EXPORT_FORMATS = ("cif", "vasp")
+_INT_INFO_KEYS = ("charge", "spin")
+
+
+def sanitize_atoms_info(atoms: Atoms) -> Atoms:
+    """Normalize calculator-sensitive integer metadata (``charge``, ``spin``) in ``atoms.info``.
+
+    ASE's extxyz reader parses free-text XYZ comment lines as key=value pairs, so
+    comments like ``charge=0;`` become the string ``"0;"`` and bare words like
+    ``charge`` become ``True``. MLIP calculators such as FAIRChem UMA require
+    integer values for ``charge`` and ``spin``.
+    """
+    for key in _INT_INFO_KEYS:
+        if key not in atoms.info:
+            continue
+        value = atoms.info[key]
+        if isinstance(value, bool):
+            atoms.info.pop(key, None)
+        elif isinstance(value, (int, np.integer)):
+            atoms.info[key] = int(value)
+        elif isinstance(value, str):
+            cleaned = value.strip().rstrip(";,")
+            try:
+                atoms.info[key] = int(cleaned)
+            except ValueError:
+                atoms.info.pop(key, None)
+        else:
+            atoms.info.pop(key, None)
+    return atoms
 
 
 def read_structure(path: str | Path, format: str | None = None) -> tuple[Atoms, str]:
@@ -39,12 +67,12 @@ def read_structure(path: str | Path, format: str | None = None) -> tuple[Atoms, 
     if not source.is_file():
         raise FileNotFoundError(f"Structure file {source} does not exist.")
     if format is not None:
-        return read(source, format=format), format
+        return sanitize_atoms_info(read(source, format=format)), format
     try:
-        return read(source), _detected_format(source)
+        return sanitize_atoms_info(read(source)), _detected_format(source)
     except UnknownFileTypeError:
         try:
-            return read(source, format="vasp"), "vasp (fallback: type not guessable)"
+            return sanitize_atoms_info(read(source, format="vasp")), "vasp (fallback: type not guessable)"
         except Exception as exc:  # pragma: no cover - error path depends on file content
             raise ValueError(
                 f"Cannot determine the format of {source.name}; pass an explicit format (e.g. cif, vasp, extxyz)."
@@ -276,7 +304,8 @@ def read_frames(path: str | Path) -> list[Atoms]:
         frames = read(path, index=":")
     except Exception:
         frames = read(path, index=":", format="vasp")
-    return frames if isinstance(frames, list) else [frames]
+    frame_list = frames if isinstance(frames, list) else [frames]
+    return [sanitize_atoms_info(frame) for frame in frame_list]
 
 
 def frame_metrics(atoms: Atoms) -> dict[str, Any]:

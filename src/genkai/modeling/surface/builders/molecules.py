@@ -84,9 +84,11 @@ def load_molecule(source: str | Path) -> tuple[Atoms, str]:
     """A molecule from an existing file, or a built-in gas by name; returns (atoms, where it came from)."""
     from ase.io import read
 
+    from ..structure_io import sanitize_atoms_info
+
     path = Path(source)
     if path.is_file():
-        return read(path), path.as_posix()
+        return sanitize_atoms_info(read(path)), path.as_posix()
     # Only a bare name (no directory part) is read as a gas name; a missing file path stays an error.
     canonical = canonical_gas_name(str(source)) if path.parent == Path(".") else None
     if canonical is None:

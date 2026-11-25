@@ -29,6 +29,8 @@ from ase import Atoms
 from ase.calculators.calculator import Calculator, all_changes
 from ase.data import covalent_radii
 
+from ..structure_io import sanitize_atoms_info
+
 CALCULATORS = ("none", "emt", "uma", "mace")
 MOCK_NOTE = "calculator=none: mock contact score, energies have no physical meaning"
 
@@ -158,6 +160,7 @@ def relax(atoms: Atoms, calculator: Calculator, *, fmax: float = 0.05, steps: in
     """LBFGS relaxation in place (FixAtoms honoured); ``cell=True`` also relaxes the cell."""
     from ase.optimize import LBFGS
 
+    sanitize_atoms_info(atoms)
     atoms.calc = calculator
     if steps > 0 and not isinstance(calculator, ContactMockCalculator):  # the mock has zero forces and no stress
         if cell:
@@ -177,6 +180,7 @@ def anneal(atoms: Atoms, calculator: Calculator, *, temperature: float, steps: i
     from ase.md.langevin import Langevin
     from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 
+    sanitize_atoms_info(atoms)
     atoms.calc = calculator
     MaxwellBoltzmannDistribution(atoms, temperature_K=temperature, rng=np.random.default_rng(seed))
     Langevin(atoms, timestep_fs * units.fs, temperature_K=temperature, friction=0.02, rng=np.random.default_rng(seed + 1)).run(steps)
@@ -192,7 +196,7 @@ def evidence_for(name: str) -> str:
 
 def molecule_in_box(molecule: Atoms, padding: float = 12.0) -> Atoms:
     """Isolated molecule centred in a cubic periodic box (for gas-phase reference energies)."""
-    boxed = molecule.copy()
+    boxed = sanitize_atoms_info(molecule.copy())
     boxed.set_constraint()
     extent = float(np.ptp(boxed.positions, axis=0).max()) if len(boxed) > 1 else 0.0
     size = max(20.0, extent + padding)

@@ -113,3 +113,55 @@ def test_cation_cation_contacts_are_not_bonds_in_oxides() -> None:
     symbols = atoms.get_chemical_symbols()
     assert {int(c) for c, s in zip(cn, symbols) if s == "Sn"} == {6}
     assert {int(c) for c, s in zip(cn, symbols) if s == "O"} == {3}
+
+
+def test_xyz_comment_charge_and_spin_are_sanitized_for_mlip_calculators(tmp_path) -> None:
+    from genkai.modeling.surface.builders.molecules import load_molecule
+    from genkai.modeling.surface.mlip.calculators import molecule_in_box
+    from genkai.modeling.surface.structure_io import read_frames
+
+    # Semicolon-delimited XYZ comments cause ASE extxyz parsing to store charge="0;" (str),
+    # which fails FAIRChem/UMA validate_uma_atoms_data (requires int).
+    xyz_semicolon = tmp_path / "acetic.xyz"
+    xyz_semicolon.write_text(
+        "2\n"
+        "30_acetic_acid; CID=176; charge=0; multiplicity=1; ETKDGv3+MMFF94s\n"
+        "H 0.0 0.0 0.0\n"
+        "H 0.0 0.0 0.74\n",
+        encoding="utf-8",
+    )
+    for atoms in (
+        read_structure(xyz_semicolon)[0],
+        read_molecule(xyz_semicolon)[0],
+        read_frames(xyz_semicolon)[0],
+        load_molecule(xyz_semicolon)[0],
+        molecule_in_box(read(xyz_semicolon)),
+    ):
+        charge = atoms.info.get("charge")
+        assert charge == 0 and type(charge) is int
+
+    # Bare keyword ("charge") becomes bool True; non-integer string becomes str -> both must be removed.
+    xyz_bad = tmp_path / "bad_comment.xyz"
+    xyz_bad.write_text(
+        "2\n"
+        "charge spin=doublet;\n"
+        "H 0.0 0.0 0.0\n"
+        "H 0.0 0.0 0.74\n",
+        encoding="utf-8",
+    )
+    cleaned, _ = read_molecule(xyz_bad)
+    assert "charge" not in cleaned.info
+    assert "spin" not in cleaned.info
+
+    # Signed integer string with trailing delimiter is preserved as int.
+    xyz_signed = tmp_path / "anion.xyz"
+    xyz_signed.write_text(
+        "2\n"
+        "charge=-1; spin=2;\n"
+        "H 0.0 0.0 0.0\n"
+        "H 0.0 0.0 0.74\n",
+        encoding="utf-8",
+    )
+    anion, _ = load_molecule(xyz_signed)
+    assert anion.info["charge"] == -1 and type(anion.info["charge"]) is int
+    assert anion.info["spin"] == 2 and type(anion.info["spin"]) is int
