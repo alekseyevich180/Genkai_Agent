@@ -187,3 +187,153 @@ def test_island_files_feed_the_cluster_placement_search(tmp_path, sno2_110) -> N
     config = json.loads((tmp_path / "search" / "run_config.json").read_text(encoding="utf-8"))
     assert config["max_tilt"] == 60.0 and config["placement_shape"] == "input"
     assert len(list((tmp_path / "search" / "mlip_output").glob("0*_trial_*.cif"))) == 2
+
+
+def test_cluster_search_skips_detached_trials_and_exports_extxyz(tmp_path, sno2_110) -> None:
+    import optuna
+    from ase.constraints import FixAtoms
+
+    from genkai.modeling.surface.screening import cluster_search
+    from genkai.modeling.surface.structure_io import components, label_components, write_frames
+
+    # Unit test: select_best_trial prefers attached trials even if a detached trial has lower value.
+    study = optuna.create_study(direction="minimize")
+    t0 = study.ask()
+    t0.set_user_attr("detached", True)
+    t0.set_user_attr("structure", cluster_search.atoms_to_json(Atoms("Pt2", positions=[[0, 0, 0], [0, 0, 2.7]])))
+    study.tell(t0, -99.0)
+    t1 = study.ask()
+    t1.set_user_attr("detached", False)
+    t1.set_user_attr("structure", cluster_search.atoms_to_json(Atoms("Pt2", positions=[[0, 0, 0], [0, 0, 2.7]])))
+    study.tell(t1, -2.5)
+    best_trial, all_detached = cluster_search.select_best_trial(study)
+    assert best_trial.number == t1.number and all_detached is False
+
+    detached_study = optuna.create_study(direction="minimize")
+    td = detached_study.ask()
+    td.set_user_attr("detached", True)
+    td.set_user_attr("structure", cluster_search.atoms_to_json(Atoms("Pt2", positions=[[0, 0, 0], [0, 0, 2.7]])))
+    detached_study.tell(td, 1e6 + 7.5)
+    fallback_trial, all_detached = cluster_search.select_best_trial(detached_study)
+    assert fallback_trial.number == td.number and all_detached is True
+
+    # End-to-end test: mlip_best_structure.extxyz & cluster_search_structures.extxyz keep FixAtoms and component.
+    slab = label_components(sno2_110.atoms.copy(), "substrate")
+    slab_path = write_frames(tmp_path / "slab.extxyz", [slab])
+    cluster = Atoms("Pt4", positions=[[0, 0, 0], [2.7, 0, 0], [1.35, 2.34, 0], [1.35, 0.78, 2.2]])
+    cluster_path = tmp_path / "Pt4.xyz"
+    write(cluster_path, cluster)
+    out_dir = tmp_path / "cs_out"
+
+    code = cluster_search.main(
+        [
+            "--surface", str(slab_path), "--cluster", str(cluster_path), "--calculator", "none",
+            "--n_trials", "4", "--seed", "7", "--selection_count", "2", "--top_pool_size", "4",
+            "--top_pick_count", "2", "--tail_pick_per_bin", "0", "--output_dir", str(out_dir),
+        ]
+    )
+    assert code == 0
+    best_extxyz = out_dir / "mlip_output" / "mlip_best_structure.extxyz"
+    ranked_extxyz = out_dir / "mlip_output" / "cluster_search_structures.extxyz"
+    assert best_extxyz.is_file() and ranked_extxyz.is_file()
+    best = read(best_extxyz)
+    ranked = read(ranked_extxyz, index=":")
+    assert len(ranked) >= 2
+    assert np.allclose(best.positions, ranked[0].positions)
+    expected_fixed = sorted(int(i) for c in slab.constraints if isinstance(c, FixAtoms) for i in c.index)
+    for frame in (best, *ranked):
+        actual_fixed = sorted(int(i) for c in frame.constraints if isinstance(c, FixAtoms) for i in c.index)
+        assert actual_fixed == expected_fixed
+        labels = components(frame)
+        assert list(labels[: len(slab)]) == ["substrate"] * len(slab)
+        assert list(labels[len(slab) :]) == ["cluster"] * len(cluster)
+
+
+def test_cluster_search_funnel_anneal_multiseed_and_xy_bounds(tmp_path) -> None:
+    import pandas as pd
+    from ase.build import fcc111
+    from ase.constraints import FixAtoms
+
+    from genkai.modeling.surface.screening import cluster_search
+    from genkai.modeling.surface.structure_io import components, label_components, write_frames
+
+    # Small Cu(111) slab + 2 Pt4 isomers so EMT runs real forces and real MD anneal offline in ~1s.
+    slab = fcc111("Cu", size=(2, 2, 3), vacuum=8.0)
+    fixed_idx = sorted(a.index for a in slab if a.tag == 3)
+    slab.set_constraint(FixAtoms(indices=fixed_idx))
+    label_components(slab, "substrate")
+    slab_path = write_frames(tmp_path / "cu_slab.extxyz", [slab])
+
+    iso_3d = Atoms("Pt4", positions=[[0, 0, 0], [2.75, 0, 0], [1.38, 2.38, 0], [1.38, 0.79, 2.25]])
+    iso_3d.info["seed_name"] = "Pt4_tetra"
+    iso_2d = Atoms("Pt4", positions=[[0, 0, 0], [2.75, 0, 0], [1.38, 2.38, 0], [4.13, 2.38, 0]])
+    iso_2d.info["seed_name"] = "Pt4_planar"
+    seeds_path = write_frames(tmp_path / "Pt4_seeds.extxyz", [iso_3d, iso_2d])
+
+    out_dir = tmp_path / "funnel_out"
+    code = cluster_search.main(
+        [
+            "--surface", str(slab_path),
+            "--cluster", str(seeds_path),
+            "--calculator", "emt",
+            "--placement_shape", "input",
+            "--max_tilt", "60",
+            "--x_range", "0,0.5",
+            "--y_range", "0,0.5",
+            "--n_trials", "4",
+            "--screen_steps", "3",
+            "--screen_fmax", "0.3",
+            "--refine_top_k", "2",
+            "--anneal_steps", "6",
+            "--anneal_temperature", "400",
+            "--anneal_snapshots", "2",
+            "--max_steps", "8",
+            "--fmax", "0.2",
+            "--selection_count", "2",
+            "--top_pool_size", "2",
+            "--top_pick_count", "2",
+            "--tail_pick_per_bin", "0",
+            "--seed", "11",
+            "--output_dir", str(out_dir),
+        ]
+    )
+    assert code == 0
+
+    mlip_dir = out_dir / "mlip_output"
+    stage1_df = pd.read_csv(mlip_dir / "mlip_energy_table.csv")
+    assert len(stage1_df) == 4
+    assert "cluster_index" in stage1_df.columns
+    assert set(stage1_df["cluster_index"].tolist()) <= {0, 1}
+    assert (stage1_df["x_frac"] >= 0.0).all() and (stage1_df["x_frac"] <= 0.5 + 1e-9).all()
+    assert (stage1_df["y_frac"] >= 0.0).all() and (stage1_df["y_frac"] <= 0.5 + 1e-9).all()
+
+    refined_csv = mlip_dir / "mlip_refined_table.csv"
+    assert refined_csv.is_file()
+    refined_df = pd.read_csv(refined_csv)
+    assert any(s == "direct" for s in refined_df["stage"])
+    assert any(str(s).startswith("anneal_snap_") for s in refined_df["stage"])
+    attached_energies = refined_df.loc[~refined_df["detached"], "energy"].tolist()
+    assert attached_energies == sorted(attached_energies)
+
+    best = read(mlip_dir / "mlip_best_structure.extxyz")
+    ranked = read(mlip_dir / "cluster_search_structures.extxyz", index=":")
+    assert len(ranked) >= 2
+    assert np.allclose(best.positions, ranked[0].positions)
+    for frame in (best, *ranked):
+        actual_fixed = sorted(int(i) for c in frame.constraints if isinstance(c, FixAtoms) for i in c.index)
+        assert actual_fixed == fixed_idx
+        assert np.allclose(frame.positions[fixed_idx], slab.positions[fixed_idx], atol=1e-5)
+        labels = components(frame)
+        assert list(labels[: len(slab)]) == ["substrate"] * len(slab)
+        assert list(labels[len(slab) :]) == ["cluster"] * 4
+
+    # Mismatched stoichiometry across multi-frame cluster seeds must be rejected.
+    bad_seeds = write_frames(tmp_path / "bad_seeds.extxyz", [iso_3d, Atoms("Pt3", positions=[[0, 0, 0], [2.7, 0, 0], [1.3, 2.3, 0]])])
+    with pytest.raises(ValueError, match="same composition"):
+        cluster_search.main(
+            [
+                "--surface", str(slab_path), "--cluster", str(bad_seeds), "--calculator", "none",
+                "--n_trials", "2", "--selection_count", "1", "--top_pool_size", "2",
+                "--top_pick_count", "1", "--tail_pick_per_bin", "0", "--output_dir", str(tmp_path / "bad_out"),
+            ]
+        )

@@ -137,3 +137,42 @@ def test_random_defect_job_runs(library, tmp_path: Path) -> None:
     added = np.array(leaf.get_chemical_symbols())[labels == "adsorbate"]
     assert sorted(set(added.tolist())) == ["C", "H", "O"]  # ethanol from the library
     assert leaf.info["pipeline_label"] == "slab#0 > vacancy#0 > adsorbate#0"
+
+
+def test_nonpolar_only_filter_and_amorphous_energy_picks(library, tmp_path: Path) -> None:
+    records = generate(library, tmp_path / "np", count=20, seed=9, nonpolar_only=True)
+    assert len(records) == 20
+    assert all(record["polar_facet"] is False for record in records)
+    by_id = {row["id"]: row for row in library.crystals}
+    for record in records:
+        facet = facet_for(by_id[record["crystal"]])
+        assert facet is not None and facet[1] is False
+    index = json.loads((tmp_path / "np" / "random_index.json").read_text(encoding="utf-8"))
+    assert index["nonpolar_only"] is True
+
+    # Selecting only polar crystals with nonpolar_only=True raises LibraryError.
+    with pytest.raises(LibraryError, match="没有符合条件"):
+        generate(library, tmp_path / "np_empty", count=1, seed=1, crystals=["20_LaCrO3"], nonpolar_only=True)
+
+    # CLI --list --nonpolar-only marks polar crystals as excluded.
+    out = io.StringIO()
+    args = Namespace(
+        library=SAMPLE, list=True, mlip=None, count=1, seed=1, output=tmp_path,
+        scenarios=None, crystals=None, molecules=None, nonpolar_only=True,
+    )
+    assert run(args, out) == 0
+    assert "极性" in out.getvalue() and "--nonpolar-only" in out.getvalue()
+
+    # amorphous scenario uses stoichiometric amorphous_slab + MLIP pick: lowest_energy downstream.
+    config = tmp_path / "genkai.yaml"
+    config.write_text(yaml.safe_dump({"version": 1, "default": "test", "profiles": {
+        "test": {"backend": "emt", "python": sys.executable, "device": "cpu"}}}), encoding="utf-8")
+    [amo] = generate(library, tmp_path / "amo", count=1, seed=4, crystals=["SnO2"],
+                     molecules=["ethanol"], scenarios=["amorphous"], mlip="test", nonpolar_only=True)
+    pipeline = load_pipeline(tmp_path / "amo" / amo["file"], config_path=config)
+    assert [s.method for s in pipeline.steps] == ["amorphous_bulk", "amorphous_slab", "vacancy", "adsorbate"]
+    assert pipeline.steps[1].mapping.get("stoichiometric") in (True, "true", "True")
+    assert pipeline.steps[1].pick.mode == "lowest_energy"
+    assert pipeline.steps[2].pick.mode == "lowest_energy"
+    assert int(pipeline.steps[2].mapping["samples_per_count"]) == 4
+    assert pipeline.steps[3].pick.mode == "lowest_energy"

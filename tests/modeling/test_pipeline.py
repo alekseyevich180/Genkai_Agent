@@ -184,7 +184,7 @@ def test_order_wiring_and_roles_are_checked(tmp_path: Path) -> None:
         {"method": "vacancy", "input": "slab.cif"},
         {"method": "slab", "bulk": str(SNO2_BULK)},
         {"method": "amorphous_slab", "thickness": 8},
-        {"method": "sam_search", "molecule": str(BUTANOIC), "binding_mode": "bidentate"},
+        {"method": "not_a_method"},
         {"method": "adsorbate", "molecule": str(H2O), "site_symbols": ["Sn"], "pick": "best", "output": "x"},
     ]}))
     text = "\n".join(problems)
@@ -192,8 +192,65 @@ def test_order_wiring_and_roles_are_checked(tmp_path: Path) -> None:
     assert "第 3 步：vacancy（晶格缺陷）不能放在 adsorbate（气体吸附）之后" in text and "allow_order: true" in text
     assert "第 4 步：slab 只能是第一步" in text
     assert "第 5 步：amorphous_slab 需要上一步给出非晶块体" in text
-    assert "第 6 步：method 'sam_search' 不能用于流水线" in text
+    assert "第 6 步：method 'not_a_method' 不能用于流水线" in text
     assert "第 7 步：不能写 output" in text and "pick 只能是" in text
+
+
+def test_high_order_mlip_screening_methods_registered_and_inherit_mlip(tmp_path: Path) -> None:
+    import sys
+
+    config = tmp_path / "genkai.yaml"
+    config.write_text(yaml.safe_dump({"version": 1, "default": "other", "profiles": {
+        "other": {"backend": "emt", "python": sys.executable, "device": "cpu"},
+        "test_emt": {"backend": "emt", "python": sys.executable, "device": "cpu",
+                     "settings": {"fmax": 0.1, "max_steps": 20}},
+    }}), encoding="utf-8")
+
+    for name in ("amorphous_surfaces", "amorphous_interface", "cluster_search", "sam_search"):
+        assert name in STEP_KINDS
+    assert "clean_slab_relaxed" in STEP_KINDS["sam_search"].skip_roles
+
+    cluster_file = tmp_path / "Pt4.xyz"
+    write(cluster_file, Atoms("Pt4", positions=[[0, 0, 0], [2.7, 0, 0], [1.35, 2.34, 0], [1.35, 0.78, 2.2]]))
+
+    pipe1 = load_pipeline(_write(tmp_path, {
+        "mlip": "test_emt",
+        "pipeline": [
+            {"method": "amorphous_bulk", "crystal": str(SNO2_BULK)},
+            {"method": "amorphous_surfaces", "periods": 2, "samples": 2},
+            {"method": "cluster_search", "cluster": str(cluster_file), "n_trials": 2,
+             "selection_count": 1, "top_pool_size": 2, "top_pick_count": 1, "tail_pick_per_bin": 0},
+            {"method": "sam_search", "molecule": str(BUTANOIC), "binding_mode": "monodentate", "n_trials": 2, "top_k": 1},
+            {"method": "adsorbate", "molecule": str(H2O), "site_symbols": ["auto"]},
+        ],
+    }, "screen1.yaml"), config_path=config)
+    assert [s.method for s in pipe1.steps] == [
+        "amorphous_bulk", "amorphous_surfaces", "cluster_search", "sam_search", "adsorbate"
+    ]
+    for step in pipe1.steps[:4]:
+        assert step.template.profile is not None and step.template.profile.name == "test_emt"
+
+    pipe2 = load_pipeline(_write(tmp_path, {
+        "mlip": "test_emt",
+        "pipeline": [
+            {"method": "slab", "bulk": str(SNO2_BULK), "facet": "110"},
+            {"method": "amorphous_interface", "amorphous": str(A_TIO2), "thickness": 5, "n_matches": 1, "n_trials": 2},
+            {"method": "sam_search", "molecule": str(BUTANOIC), "binding_mode": "monodentate", "n_trials": 2, "top_k": 1},
+        ],
+    }, "screen2.yaml"), config_path=config)
+    assert [s.method for s in pipe2.steps] == ["slab", "amorphous_interface", "sam_search"]
+    assert pipe2.steps[1].template.profile.name == "test_emt"
+    assert pipe2.steps[2].template.profile.name == "test_emt"
+
+    # blocked_keys: bulk must be rejected on amorphous_interface and sam_search after slab.
+    bad = _problems(_write(tmp_path, {
+        "mlip": "test_emt",
+        "pipeline": [
+            {"method": "slab", "bulk": str(SNO2_BULK), "facet": "110"},
+            {"method": "amorphous_interface", "bulk": str(SNO2_BULK), "amorphous": str(A_TIO2)},
+        ],
+    }, "bad_blocked.yaml"))
+    assert any("不要写 bulk" in p for p in bad)
 
 
 def test_allow_order_accepts_vacancies_in_an_overlayer(tmp_path: Path) -> None:
@@ -310,3 +367,44 @@ def test_pipeline_reports_overcoat_and_branch_limits(tmp_path: Path) -> None:
     assert jobs.main(["run", "--quiet", str(branches)]) == 1
     manifest = json.loads((tmp_path / "runs/branches/pipeline_manifest.json").read_text(encoding="utf-8"))
     assert any("max_branches=2" in failure for failure in manifest["failures"])
+
+
+@pytest.mark.integration
+def test_pipeline_runs_slab_cluster_search_and_adsorbate_with_emt(tmp_path: Path) -> None:
+    import sys
+    from ase.build import bulk as ase_bulk
+
+    config = tmp_path / "genkai.yaml"
+    config.write_text(yaml.safe_dump({"version": 1, "default": "test_emt", "profiles": {
+        "test_emt": {"backend": "emt", "python": sys.executable, "device": "cpu",
+                     "settings": {"fmax": 0.2, "max_steps": 10}},
+    }}), encoding="utf-8")
+    cu_bulk = tmp_path / "Cu.cif"
+    write(cu_bulk, ase_bulk("Cu", "fcc", a=3.61, cubic=True))
+    pt4 = tmp_path / "Pt4.xyz"
+    write(pt4, Atoms("Pt4", positions=[[0, 0, 0], [2.75, 0, 0], [1.38, 2.38, 0], [1.38, 0.79, 2.25]]))
+    co = tmp_path / "CO.xyz"
+    write(co, molecule("CO"))
+
+    pipe = _write(tmp_path, {
+        "output": "runs/cs_chain",
+        "mlip": "test_emt",
+        "pipeline": [
+            {"method": "slab", "bulk": str(cu_bulk), "facet": "111", "repeat_xy": [3, 3], "min_slab_size": 6},
+            {"method": "cluster_search", "cluster": str(pt4), "n_trials": 2, "seed": 3,
+             "selection_count": 1, "top_pool_size": 2, "top_pick_count": 1, "tail_pick_per_bin": 0},
+            {"method": "adsorbate", "molecule": str(co), "site_symbols": ["Pt"], "coverage_counts": [1],
+             "patterns": ["uniform"], "n_trials_single": 2},
+        ],
+    }, "cs_chain.yaml")
+    assert jobs.main(["check", str(pipe)]) == 0
+    assert jobs.main(["run", "--quiet", str(pipe)]) == 0
+    out = tmp_path / "runs" / "cs_chain"
+    manifest = json.loads((out / "pipeline_manifest.json").read_text(encoding="utf-8"))
+    assert manifest["status"] in {"PASS", "WARN"}
+    [leaf] = read(out / "pipeline_structures.extxyz", index=":")
+    labels = components(leaf)
+    assert set(labels.tolist()) == {"substrate", "cluster", "adsorbate"}
+    assert int((labels == "cluster").sum()) == 4
+    assert int((labels == "adsorbate").sum()) == 2
+    assert leaf.constraints

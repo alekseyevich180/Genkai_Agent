@@ -153,3 +153,28 @@ def test_legacy_slab_with_tilted_c_is_normalized_without_changing_bonds() -> Non
     before = np.sort(neighbor_list("d", raw, 6.0))
     after = np.sort(neighbor_list("d", substrate.atoms, 6.0))
     assert len(before) == len(after) and np.allclose(before, after, atol=1e-8)
+
+
+def test_amorphous_slab_stoichiometric_and_periods_options(tmp_path) -> None:
+    # By integer periods: every clean cut is strictly stoichiometric (O:Ti = 2.0).
+    res_periods = aslab.run_amorphous_slab(
+        A_TIO2, aslab.AmorphousSlabSettings(periods=2, stoichiometric=True, samples=2), tmp_path / "periods", export=()
+    )
+    assert len(res_periods.frames) == 2
+    for report in res_periods.manifest["samples"]:
+        assert report["composition"]["stoichiometric"] is True
+        assert report["composition"]["anion_to_cation_ratio"] == pytest.approx(2.0, abs=1e-6)
+
+    # With arbitrary thickness + stoichiometric=True: snaps to a stoichiometric cut instead of O176Ti96.
+    res_stoich = aslab.run_amorphous_slab(
+        A_TIO2, aslab.AmorphousSlabSettings(thickness=8.0, stoichiometric=True, samples=2), tmp_path / "stoich", export=()
+    )
+    assert len(res_stoich.frames) == 2
+    for report in res_stoich.manifest["samples"]:
+        assert report["composition"]["stoichiometric"] is True
+        assert report["isolated_atoms_removed"] == 0
+
+    with pytest.raises(OverlayerBuildError):
+        aslab.AmorphousSlabSettings(thickness=8.0, periods=2)
+    with pytest.raises(OverlayerBuildError):
+        aslab.AmorphousSlabSettings()

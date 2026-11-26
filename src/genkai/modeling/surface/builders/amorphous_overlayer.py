@@ -67,6 +67,7 @@ FILM_FITS = ("auto", "strain", "cut")
 CLASH_FRACTION = 0.6
 SEAM_FRACTION = 0.85  # cut films: no pair closer than 0.85 x the shortest same-pair distance in the bulk
 AMU_PER_A3_TO_G_PER_CM3 = 1.66053906660
+LARGE_SYSTEM_ATOM_WARNING = 1000
 
 
 class OverlayerBuildError(ValueError):
@@ -88,6 +89,7 @@ class OverlayerSettings:
     seed: int = 42
     vacuum_above: float = 15.0
     film_fit: str = "auto"
+    max_atoms: int | None = None
 
     def __post_init__(self) -> None:
         if self.coverage not in COVERAGES:
@@ -112,6 +114,8 @@ class OverlayerSettings:
             raise OverlayerBuildError("interface_gap and samples must be positive; island_separation >= 0.")
         if not 0 < self.max_strain <= 0.3:
             raise OverlayerBuildError("max_strain must satisfy 0 < max_strain <= 0.3.")
+        if self.max_atoms is not None and self.max_atoms < 2:
+            raise OverlayerBuildError("max_atoms must be >= 2 when specified.")
 
 
 # ---------------------------------------------------------------------------
@@ -659,17 +663,37 @@ def run_overlayer(
                 frames.append(frame)
     else:
         islands = [_cut_island(amorphous, settings, rng) for _ in range(settings.samples)]
-        for sample, (island, cut_report) in enumerate(islands):
-            # The isolated island, for an energy-based placement search (cluster_search --cluster).
-            cut_report["island_file"] = write_frames(outdir / "islands" / f"island_{sample:03d}.extxyz", [island]).as_posix()
         diameter = max(lateral_diameter(island) for island, _ in islands)
         repeats = repeats_for_width(substrate.atoms, diameter + settings.island_separation + 2.0 * settings.interface_gap)
         slab = substrate.atoms.repeat((repeats[0], repeats[1], 1))
+        max_island_atoms = max(len(island) for island, _ in islands)
+        estimated_total = len(slab) + max_island_atoms
+        if settings.max_atoms is not None and estimated_total > settings.max_atoms:
+            raise OverlayerBuildError(
+                f"Partial ALD overlayer after auto-repeat {list(repeats)} would have {estimated_total} atoms "
+                f"({len(slab)} slab + {max_island_atoms} island), exceeding max_atoms={settings.max_atoms}. "
+                "Reduce --island-separation, --island-atoms, or --min-slab-size, or raise --max-atoms."
+            )
+        for sample, (island, cut_report) in enumerate(islands):
+            # The isolated island, for an energy-based placement search (cluster_search --cluster).
+            cut_report["island_file"] = write_frames(outdir / "islands" / f"island_{sample:03d}.extxyz", [island]).as_posix()
         match_record = {"slab_repeat_xy": list(repeats), "max_island_diameter_A": round(diameter, 4)}
         for sample, (island, cut_report) in enumerate(islands):
             frame, place_report = place_island(slab, island, settings)
             samples.append({"sample": sample, **cut_report, **place_report})
             frames.append(frame)
+
+    max_frame_atoms = max((len(frame) for frame in frames), default=len(slab))
+    if settings.max_atoms is not None and max_frame_atoms > settings.max_atoms:
+        raise OverlayerBuildError(
+            f"Generated ALD overlayer frame has {max_frame_atoms} atoms, exceeding max_atoms={settings.max_atoms}. "
+            "Reduce --max-area, --thickness, --island-separation, or --island-atoms, or raise --max-atoms."
+        )
+    if max_frame_atoms > LARGE_SYSTEM_ATOM_WARNING:
+        notes.append(
+            f"Large cell warning: generated frame has {max_frame_atoms} atoms (> {LARGE_SYSTEM_ATOM_WARNING}); "
+            "downstream MLIP relaxation may require high GPU memory (consider reducing --island-separation or setting --max-atoms)."
+        )
 
     clean = slab.copy()
     clean.set_array("fragment_id", np.zeros(len(clean), dtype=int))
@@ -763,6 +787,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-strain", type=float, default=0.05, help="Largest in-plane strain of the amorphous film.")
     parser.add_argument("--max-area", type=float, default=600.0, help="Largest matched in-plane supercell area (A^2).")
     parser.add_argument(
+        "--max-atoms",
+        type=int,
+        default=None,
+        help="Maximum total atoms allowed per generated frame (guards against OOM after auto-repeat); None disables.",
+    )
+    parser.add_argument(
         "--film-fit",
         choices=FILM_FITS,
         default="auto",
@@ -793,6 +823,7 @@ def main(argv: list[str] | None = None) -> int:
             max_area=args.max_area,
             samples=args.samples,
             film_fit=args.film_fit,
+            max_atoms=args.max_atoms,
             seed=args.seed,
         )
         substrate = substrate_from_args(args)

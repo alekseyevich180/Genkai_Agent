@@ -115,3 +115,41 @@ def test_cli_partial_coverage_on_explicit_facet(tmp_path) -> None:
     assert manifest["substrate"]["facet"] == [1, 0, 1]
     assert manifest["substrate"]["facet_source"] == "explicit"
     assert (tmp_path / "out" / "exports" / "ald_001.cif").is_file()
+
+
+def test_partial_coverage_max_atoms_guard_and_large_cell_warning(tmp_path, substrates, monkeypatch) -> None:
+    # Auto-repeat for a 20-atom island with 8 A separation produces far more than 50 atoms.
+    with pytest.raises(OverlayerBuildError, match="max_atoms"):
+        run_overlayer(
+            substrates["TiO2"],
+            A_TIO2,
+            OverlayerSettings("partial", island_atoms=20, island_separation=8.0, max_atoms=50),
+            tmp_path / "blocked",
+            export=(),
+        )
+
+    # CLI --max-atoms also exits cleanly with code 2.
+    rutile("SnO2").to(filename=str(tmp_path / "SnO2.cif"))
+    code = ald.main(
+        [
+            "--bulk", str(tmp_path / "SnO2.cif"),
+            "--amorphous", str(A_SNO2),
+            "--coverage", "partial",
+            "--island-atoms", "20",
+            "--max-atoms", "50",
+            "--output-dir", str(tmp_path / "cli_blocked"),
+        ]
+    )
+    assert code == 2
+
+    # When total atoms exceed LARGE_SYSTEM_ATOM_WARNING, manifest records a clear note.
+    monkeypatch.setattr(ald, "LARGE_SYSTEM_ATOM_WARNING", 100)
+    result = run_overlayer(
+        substrates["TiO2"],
+        A_TIO2,
+        OverlayerSettings("partial", island_atoms=20, island_separation=8.0),
+        tmp_path / "warned",
+        export=(),
+    )
+    notes = result.manifest["validation"]["notes"]
+    assert any("atoms" in note and "memory" in note.lower() for note in notes), notes

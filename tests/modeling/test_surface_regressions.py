@@ -207,3 +207,183 @@ def test_cluster_search_exposes_uma_task_head() -> None:
     )
     assert completed.returncode == 0, completed.stderr
     assert "--task_name" in completed.stdout
+
+
+def test_embedded_metal_cluster_bond_lengths_match_nn_distance() -> None:
+    from genkai.modeling.surface.builders.metal_cluster.cluster_builder import (
+        METAL_DISTANCE_DATA,
+        build_standard_cluster,
+        get_embedded_metal_radius,
+        get_embedded_nearest_neighbor_distance,
+        nearest_neighbor_from_lattice,
+        resolve_lattice_constants,
+    )
+
+    for element, structure in (
+        ("Pt", "fcc"),
+        ("Au", "fcc"),
+        ("Ag", "fcc"),
+        ("Pd", "fcc"),
+        ("Pt", "bcc"),
+        ("Fe", "bcc"),
+        ("Pd", "hcp"),
+    ):
+        expected_nn = METAL_DISTANCE_DATA[(element, structure)]["nn_distance"]
+        lattice_a, _ = resolve_lattice_constants(element, structure, a=None, c=None)
+        assert np.isclose(nearest_neighbor_from_lattice(structure, lattice_a), expected_nn, atol=1e-4)
+        assert np.isclose(get_embedded_nearest_neighbor_distance(element, structure), expected_nn, atol=1e-4)
+        assert np.isclose(get_embedded_metal_radius(element, structure), expected_nn / 2.0, atol=1e-4)
+
+        cluster = build_standard_cluster(element, structure, atom_count=13)
+        distances = cluster.get_all_distances()
+        np.fill_diagonal(distances, np.inf)
+        assert np.isclose(float(distances.min()), expected_nn, atol=1e-3), (element, structure, distances.min(), expected_nn)
+
+
+def test_vacancy_exports_best_extxyz_preserving_fixatoms_and_components(tmp_path: Path, monkeypatch) -> None:
+    from ase.constraints import FixAtoms
+    from ase.io import read
+
+    from genkai.modeling.surface.builders import vacancy
+    from genkai.modeling.surface.structure_io import components, label_components, write_frames
+
+    monkeypatch.setenv("MPLCONFIGDIR", str(tmp_path / ".matplotlib"))
+    slab = Atoms(
+        symbols=["Sn", "Sn", "O", "O", "O", "O"],
+        positions=[
+            [0.0, 0.0, 0.5],
+            [3.0, 3.0, 0.5],
+            [0.0, 3.0, 0.5],
+            [3.0, 0.0, 2.5],
+            [0.0, 0.0, 2.8],
+            [3.0, 3.0, 2.8],
+        ],
+        cell=[6.0, 6.0, 16.0],
+        pbc=True,
+    )
+    slab.set_constraint(FixAtoms(indices=[0, 1, 2]))
+    slab.set_tags([0, 0, 0, 1, 1, 1])
+    label_components(slab, "substrate")
+    input_path = write_frames(tmp_path / "slab.extxyz", [slab])
+    out_dir = tmp_path / "vac_out"
+
+    code = vacancy.main(
+        [
+            "--input",
+            str(input_path),
+            "--vacancy-counts",
+            "1",
+            "--samples-per-count",
+            "2",
+            "--surface-depth",
+            "1.5",
+            "--calculator",
+            "none",
+            "--max-steps",
+            "0",
+            "--output-dir",
+            str(out_dir),
+        ]
+    )
+    assert code == 0
+    best_extxyz = out_dir / "stable_vacancy_structure.extxyz"
+    assert best_extxyz.is_file()
+    best = read(best_extxyz)
+    assert len(best) == len(slab) - 1
+    assert best.constraints and list(best.constraints[0].index) == [0, 1, 2]
+    assert list(components(best)) == ["substrate"] * len(best)
+
+
+def test_adsorbate_exports_best_extxyz_preserving_fixatoms_and_components(tmp_path: Path, monkeypatch) -> None:
+    from ase.constraints import FixAtoms
+    from ase.io import read
+
+    from genkai.modeling.surface.structure_io import components, label_components, write_frames
+
+    monkeypatch.setenv("MPLCONFIGDIR", str(tmp_path / ".matplotlib"))
+    slab = Atoms(
+        symbols=["Sn", "Sn", "O", "O"],
+        positions=[[2.0, 2.0, 2.0], [7.0, 7.0, 2.0], [2.0, 7.0, 0.5], [7.0, 2.0, 0.5]],
+        cell=[10.0, 10.0, 16.0],
+        pbc=True,
+    )
+    slab.set_constraint(FixAtoms(indices=[2, 3]))
+    slab.set_tags([1, 1, 0, 0])
+    label_components(slab, "substrate")
+    surface_path = write_frames(tmp_path / "surface.extxyz", [slab])
+    molecule_path = tmp_path / "H2.xyz"
+    write(molecule_path, Atoms("H2", positions=[[0.0, 0.0, 0.0], [0.0, 0.0, 0.74]]))
+
+    out_mock = tmp_path / "landscape_mock"
+    adsorbate.run_adsorbate_landscape(
+        adsorbate.AdsorbateLandscapeConfig(
+            surface=surface_path,
+            molecule=molecule_path,
+            output_dir=out_mock,
+            site_symbols="Sn",
+            coverage_counts="1",
+            patterns="uniform",
+            n_trials_single=2,
+            calculator="none",
+            max_steps=0,
+        )
+    )
+    for name in ("single_adsorbate_best.extxyz", "workflow_test_best_candidate.extxyz"):
+        path = out_mock / name
+        assert path.is_file(), name
+        atoms = read(path)
+        assert atoms.constraints and list(atoms.constraints[0].index) == [2, 3]
+        assert list(components(atoms)) == ["substrate"] * 4 + ["adsorbate"] * 2
+
+    # Non-mock calculator name should write stable_adsorbate_coverage_structure.extxyz too.
+    monkeypatch.setattr(adsorbate, "build_calculator", lambda *a, **kw: adsorbate.AdsorptionTestCalculator())
+    out_real = tmp_path / "landscape_real"
+    adsorbate.run_adsorbate_landscape(
+        adsorbate.AdsorbateLandscapeConfig(
+            surface=surface_path,
+            molecule=molecule_path,
+            output_dir=out_real,
+            site_symbols="Sn",
+            coverage_counts="1",
+            patterns="uniform",
+            n_trials_single=2,
+            calculator="uma",
+            max_steps=0,
+        )
+    )
+    stable_extxyz = out_real / "stable_adsorbate_coverage_structure.extxyz"
+    assert stable_extxyz.is_file()
+    stable = read(stable_extxyz)
+    assert stable.constraints and list(stable.constraints[0].index) == [2, 3]
+    assert list(components(stable)) == ["substrate"] * 4 + ["adsorbate"] * 2
+
+
+def test_adsorbate_coverage_avoids_molecule_molecule_clash() -> None:
+    from ase.constraints import FixAtoms
+    from ase.io import read
+
+    from genkai.modeling.surface.structure_io import CLASH_RATIO, components, frame_metrics, label_components
+
+    # Compact cell with two adjacent Sn sites 3.2 A apart along x and a bulky ketone molecule.
+    slab = Atoms(
+        symbols=["Sn", "Sn", "O", "O"],
+        positions=[[2.0, 4.5, 2.0], [5.2, 4.5, 2.0], [2.0, 4.5, 0.5], [5.2, 4.5, 0.5]],
+        cell=[9.0, 9.0, 22.0],
+        pbc=True,
+    )
+    slab.set_constraint(FixAtoms(indices=[2, 3]))
+    label_components(slab, "substrate")
+    ketone = read(
+        PROJECT_ROOT
+        / "tests/fixtures/archives/generated/s41467-025-56361-4_surface_fullrun_v3/modeling_demo/inputs/4-methylcyclohexanone_C7H12O.xyz"
+    )
+    site_groups = [(0,), (1,)]
+    placement = {"spin_angle": 0.0, "z_gap": 2.0, "dx": 0.0, "dy": 0.0}
+
+    combined = adsorbate.build_coverage_structure(slab, ketone, site_groups, [0, 1], placement)
+    metrics = frame_metrics(combined)
+    assert metrics["min_contact_ratio"] >= CLASH_RATIO, metrics
+    assert combined.constraints and list(combined.constraints[0].index) == [2, 3]
+    labels = components(combined)
+    assert list(labels[:4]) == ["substrate"] * 4
+    assert list(labels[4:]) == ["adsorbate"] * (2 * len(ketone))

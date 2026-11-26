@@ -234,7 +234,7 @@ _register(Method(
     notes=(
         "adsorbate_coverage_landscape.csv 和图里的能量是模拟值，没有物理意义；只使用 structures/ 里的结构。",
         "*_relaxed.cif 没有弛豫，*best*.cif 是按模拟能量挑的：文件名里的 relaxed、best 在这里不成立。",
-        "放置多个分子时不检查分子之间的重叠，大分子在小晶胞上可能出现原子过近（检查结果标为 WARN）。",
+        "放置多个分子时会自动旋转/调整姿态以避免分子间重叠；若小晶胞仍过于拥挤无法避免过近接触，检查结果标为 WARN。",
     ),
     calculator_flag="--calculator",
 ))
@@ -330,6 +330,7 @@ _register(Method(
         Option("interface_gap", "--interface-gap", "float", "slab 顶部与覆盖层底部的间距（Å）"),
         Option("max_strain", "--max-strain", "float", "全覆盖晶格匹配允许的最大面内应变（0.05 即 5%）"),
         Option("max_area", "--max-area", "float", "晶格匹配超胞的最大面积（Å²）"),
+        Option("max_atoms", "--max-atoms", "int", "单帧结构允许的最大总原子数（防止自动扩胞后超出显存）"),
         Option("film_fit", "--film-fit", "str", "全覆盖成膜方式：auto（先晶格匹配，不行就切割）、strain（只用晶格匹配）、cut（切割并修复接缝）"),
         Option("samples", "--samples", "int", "从非晶块体切出几个不同的样本"),
         SEED,
@@ -351,12 +352,14 @@ _register(Method(
 _register(Method(
     name="amorphous_slab",
     title="纯非晶表面",
-    summary="从非晶块体切出非晶 slab（只保留不需要删原子的切割位置）",
+    summary="从非晶块体切出非晶 slab（可选按周期或扫描切割以优先输出化学计量表面）",
     module="genkai.modeling.surface.builders.amorphous_slab",
     options=(
         Option("amorphous", "--amorphous", "path", "非晶块体结构（周期性晶胞）", required=True, example="<非晶块体.vasp>"),
         Option("amorphous_format", "--amorphous-format", "str", "非晶文件格式（无扩展名的 POSCAR 写 vasp）"),
-        Option("thickness", "--thickness", "float", "slab 厚度（Å）", required=True, example="8"),
+        Option("thickness", "--thickness", "float", "slab 厚度（Å），与 periods 二选一", example="8"),
+        Option("periods", "--periods", "int", "厚度包含的完整周期数（与 thickness 二选一，无孤立原子时严格化学计量）", example="2"),
+        Option("stoichiometric", "--stoichiometric", "bool", "true 时扫描切割位置优先输出化学计量表面（必要时吸附至最近整数周期）"),
         Option("vacuum", "--vacuum", "float", "slab 上方的真空层（Å）"),
         Option("min_lateral_size", "--min-lateral-size", "float", "面内最小宽度（Å），不足时自动扩胞"),
         Option("repeat_xy", "--repeat-xy", "ints", "面内扩胞倍数，如 [2, 2]", length=2),
@@ -365,6 +368,7 @@ _register(Method(
         SEED,
         EXPORT,
     ),
+    groups=(Group(("thickness", "periods"), "one", "厚度：thickness 与 periods 二选一"),),
     output_flag="--output-dir",
     outputs=("amorphous_slab_structures.extxyz",),
     notes=("只做几何切割，结构未弛豫。",),
@@ -382,7 +386,8 @@ for _name in ("slab", "vacancy", "adsorbate"):
     _extra = (
         (Option("fmax", "--fmax", "float", "弛豫力阈值（eV/Å）"),
          Option("relax_steps", "--relax-steps", "int", "每次求能量前的弛豫步数；默认 0"),
-         Option("max_index", "--max-index", "int", "晶面排序的最高 Miller 指数"))
+         Option("max_index", "--max-index", "int", "晶面排序的最高 Miller 指数"),
+         Option("export_relaxed", "--export-relaxed", "bool", "true 时额外弛豫最终 slab 并写出 slab_relaxed.extxyz"))
         if _name == "slab" else RELAX_OPTIONS
     )
     if _name == "vacancy":
@@ -439,6 +444,10 @@ _register(Method(
         Option("no_cell_relax", "--no-cell-relax", "bool", "true 时最后只弛豫原子，不弛豫晶胞"),
         Option("no_crystal_reference", "--no-crystal-reference", "bool", "true 时不计算弛豫晶体的参考能量"),
         Option("trajectory_interval", "--trajectory-interval", "int", "每隔多少步保存一帧 MD 轨迹；0 不保存"),
+        Option("initial_rattle", "--initial-rattle", "float", "熔融前原子随机微扰幅度（Å，如 0.2），用于打破完美晶体过热"),
+        Option("max_melt_retries", "--max-melt-retries", "int", "熔融位移低于 1.5 Å 时自动升温重试的最大次数（0 为关闭）"),
+        Option("melt_retry_step", "--melt-retry-step", "float", "每次自动升温重试的温升步长（K，默认 1000）"),
+        Option("max_melt_temperature", "--max-melt-temperature", "float", "自动升温重试的温度上限（K，默认 6000）"),
         EXPORT,
     ),
     groups=(Group(("supercell", "min_atoms"), "at_most_one", "超胞：supercell 与 min_atoms 最多写一个"),),
@@ -515,10 +524,13 @@ _register(Method(
     module="genkai.modeling.surface.screening.cluster_search", calculator_flag="--calculator", requires_mlip=True, style="underscore",
     options=(
         Option("surface", "--surface", "path", "基底 slab", required=True, example="<slab.cif>"),
-        Option("cluster", "--cluster", "path", "预制团簇或岛", required=True, example="<团簇.xyz>"),
+        Option("cluster", "--cluster", "path", "预制团簇或岛（可含多帧异构体 extxyz 联合搜索）", required=True, example="<团簇.xyz>"),
         *(Option(key, "--" + key, kind, help) for key, kind, help in (
-            ("n_trials", "int", "搜索次数"), ("max_steps", "int", "弛豫步数上限"),
-            ("fmax", "float", "力收敛阈值（eV/Å）"), ("fixed_fraction", "float", "基底底部固定比例"),
+            ("n_trials", "int", "搜索次数"), ("max_steps", "int", "精修弛豫步数上限"),
+            ("fmax", "float", "精修力收敛阈值（eV/Å）"), ("screen_steps", "int", "第一阶段粗筛短弛豫步数（开启漏斗加速）"),
+            ("screen_fmax", "float", "第一阶段粗筛力阈值（eV/Å）"), ("refine_top_k", "int", "进入精修/退火的去重候选数"),
+            ("anneal_steps", "int", "精修前表面 MD 退火步数（0 为关闭）"), ("anneal_temperature", "float", "表面退火起始温度（K）"),
+            ("anneal_snapshots", "int", "每条退火轨迹抽帧淬火次数"), ("fixed_fraction", "float", "基底底部固定比例"),
             ("max_tilt", "float", "最大倾角（度）"), ("placement_shape", "str", "input 保留输入形状，relaxed 使用弛豫形状"),
             ("placement_mode", "str", "cell 或 active"), ("active_symbols", "words", "活性位点元素"),
             ("z_min", "float", "最小间距（Å）"), ("z_max", "float", "最大间距（Å）"),
@@ -526,6 +538,8 @@ _register(Method(
             ("top_pool_size", "int", "最低能候选池大小"), ("top_pick_count", "int", "最低能输出数"),
             ("tail_pick_per_bin", "int", "每个其余能量区间的输出数"), ("seed", "int", "随机种子"),
         ) if key != "active_symbols"),
+        Option("x_range", "--x_range", "floats", "面内 x_frac 搜索范围（如 [0, 0.5] 对应不可约原胞）", length=2),
+        Option("y_range", "--y_range", "floats", "面内 y_frac 搜索范围（如 [0, 0.3333] 对应不可约原胞）", length=2),
         Option("active_symbols", "--active_symbols", "words", "活性位点元素", nargs=True),
         SAMPLER,
     ), output_flag="--output_dir", outputs=("mlip_output/[0-9]*_trial_*.cif",),
@@ -538,10 +552,13 @@ NOT_OPEN = (
 
 ENERGY_KEYS = {
     "calculator", "search_calculator", "uma_model", "task_name", "device", "include_d3", "fmax",
-    "max_steps", "relax_steps", "screen_steps", "checkpoint", "mu_o", "max_index", "smoke_test",
-    "mace_model", "mace_dtype",
+    "max_steps", "relax_steps", "screen_steps", "screen_fmax", "checkpoint", "mu_o", "max_index",
+    "smoke_test", "mace_model", "mace_dtype", "export_relaxed", "anneal_snapshots",
 }
-TASK_ENERGY_KEYS = {"fmax", "max_steps", "relax_steps", "screen_steps", "mu_o", "max_index", "anneal_steps", "anneal_temperature", "no_cell_relax"}
+TASK_ENERGY_KEYS = {
+    "fmax", "max_steps", "relax_steps", "screen_steps", "screen_fmax", "mu_o", "max_index",
+    "anneal_steps", "anneal_temperature", "anneal_snapshots", "no_cell_relax", "export_relaxed",
+}
 NETWORK_KEYS = {"formula", "material_id", "surface_formula", "surface_mp_id", "cluster_from_mp", "cluster_mp_id"}
 RESERVED_KEYS = {"output_dir": "输出目录请用 output 指定"}
 

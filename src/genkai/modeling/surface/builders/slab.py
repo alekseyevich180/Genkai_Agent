@@ -908,12 +908,50 @@ def build_slab(
     )
 
 
+DEFAULT_SLAB_RELAX_STEPS = 200
+
+
+def relax_slab(
+    atoms: Atoms,
+    calculator: Any,
+    *,
+    fmax: float = 0.05,
+    max_steps: int = DEFAULT_SLAB_RELAX_STEPS,
+) -> tuple[Atoms, dict[str, Any]]:
+    """Relax a finalized slab in place on a copy (honouring FixAtoms) and return ``(relaxed, summary)``."""
+    from ase.optimize import LBFGS
+
+    from ..structure_io import sanitize_atoms_info
+
+    relaxed = atoms.copy()
+    sanitize_atoms_info(relaxed)
+    relaxed.calc = calculator
+    steps = max(1, int(max_steps))
+    optimizer = LBFGS(relaxed, logfile=None)
+    converged = bool(optimizer.run(fmax=fmax, steps=steps))
+    energy = float(relaxed.get_potential_energy())
+    forces = np.asarray(relaxed.get_forces(), dtype=float)
+    max_force = float(np.linalg.norm(forces, axis=1).max()) if len(forces) else 0.0
+    relaxed.calc = None
+    summary = {
+        "energy_eV": energy,
+        "max_force_eV_A": round(max_force, 6),
+        "converged": converged,
+        "steps": int(optimizer.nsteps),
+        "max_steps": steps,
+        "fmax": float(fmax),
+    }
+    return relaxed, summary
+
+
 def write_slab_outputs(
     result: SlabBuildResult,
     output_dir: Any,
     *,
     prefix: str = "slab",
     extra_manifest: dict[str, Any] | None = None,
+    relaxed_atoms: Atoms | None = None,
+    relaxed_summary: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Write POSCAR (selective dynamics), extxyz, conventional bulk and a manifest."""
     from ase.io import write
@@ -938,6 +976,11 @@ def write_slab_outputs(
         "bulk_conventional": str(bulk_path),
         "slab_manifest": str(manifest_path),
     }
+    if relaxed_atoms is not None:
+        relaxed_extxyz_path = outdir / f"{prefix}_relaxed.extxyz"
+        write(relaxed_extxyz_path, relaxed_atoms, format="extxyz")
+        manifest["files"]["surface_slab_relaxed_extxyz"] = str(relaxed_extxyz_path)
+        manifest["relaxed_slab"] = relaxed_summary
     if result.miller_basis == "input_cell" and result.cut_cell is not None:
         # The facet was cut in the user's own cell; keep that cell next to the slab.
         cut_cell_path = outdir / "bulk_cut_cell.cif"
@@ -1015,6 +1058,11 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--device", choices=["cuda", "cpu"], default="cuda")
     parser.add_argument("--relax-steps", type=int, default=0, help="LBFGS steps before each energy (0 = static).")
     parser.add_argument("--fmax", type=float, default=0.05)
+    parser.add_argument(
+        "--export-relaxed",
+        action="store_true",
+        help="Relax the finalized slab (honouring FixAtoms) with the energy calculator and write <prefix>_relaxed.extxyz.",
+    )
     parser.add_argument("--min-slab-size", type=float, default=12.0)
     parser.add_argument("--min-vacuum-size", type=float, default=15.0)
     parser.add_argument("--min-lateral-size", type=float, default=8.0)
@@ -1082,6 +1130,12 @@ def main(argv: list[str] | None = None) -> int:
         args.calculator, args.uma_model, args.task_name, args.device,
         mace_model=args.mace_model, mace_dtype=args.mace_dtype,
     )
+    if args.export_relaxed and calculator is None:
+        print(
+            "ERROR: --export-relaxed requires an energy calculator (--calculator uma/mace/emt), not 'none'.",
+            file=sys.stderr,
+        )
+        return 2
     energy_fn = (
         energy_function_from_calculator(calculator, relax_steps=args.relax_steps, fmax=args.fmax)
         if calculator is not None
@@ -1098,6 +1152,13 @@ def main(argv: list[str] | None = None) -> int:
         # Materials Project facets come from papers, which use the standard setting.
         miller_basis=args.miller_basis if args.bulk is not None else "conventional",
     )
+    relaxed_atoms: Atoms | None = None
+    relaxed_summary: dict[str, Any] | None = None
+    if args.export_relaxed and calculator is not None:
+        slab_steps = args.relax_steps if args.relax_steps > 0 else DEFAULT_SLAB_RELAX_STEPS
+        relaxed_atoms, relaxed_summary = relax_slab(
+            result.atoms, calculator, fmax=args.fmax, max_steps=slab_steps
+        )
     energy_model = None
     if calculator is not None:
         energy_model = {
@@ -1109,6 +1170,7 @@ def main(argv: list[str] | None = None) -> int:
             "device": args.device,
             "relax_steps": args.relax_steps,
             "fmax": args.fmax,
+            "export_relaxed": args.export_relaxed,
         }
     facet_evidence = FACET_EVIDENCE.get(
         result.facet.source,
@@ -1119,6 +1181,8 @@ def main(argv: list[str] | None = None) -> int:
         args.output_dir,
         prefix=args.prefix,
         extra_manifest={"source": source, "energy_model": energy_model, "facet_evidence_level": facet_evidence},
+        relaxed_atoms=relaxed_atoms,
+        relaxed_summary=relaxed_summary,
     )
 
     selected = manifest["selected_termination"]
@@ -1143,6 +1207,8 @@ def main(argv: list[str] | None = None) -> int:
     for issue in result.validation.warnings:
         print(f"WARNING [{issue.code}] {issue.message}")
     print(f"Wrote {manifest['files']['surface_slab']}")
+    if "surface_slab_relaxed_extxyz" in manifest["files"]:
+        print(f"Wrote {manifest['files']['surface_slab_relaxed_extxyz']}")
     print(f"Wrote {manifest['files']['slab_manifest']}")
     if not result.validation.passed:
         for issue in result.validation.errors:

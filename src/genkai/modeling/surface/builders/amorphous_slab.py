@@ -41,7 +41,7 @@ from .substrate import fixed_below_fraction, lateral_widths, parse_export, parse
 
 @dataclass
 class AmorphousSlabSettings:
-    thickness: float
+    thickness: float | None = None
     vacuum: float = 15.0
     min_lateral_size: float = 8.0
     repeat_xy: tuple[int, int] | None = None
@@ -49,16 +49,25 @@ class AmorphousSlabSettings:
     samples: int = 1
     seed: int = 42
     bottom_margin: float = 0.5
+    periods: int | None = None
+    stoichiometric: bool = False
+    window_scan: int = 48
 
     def __post_init__(self) -> None:
-        if self.thickness <= 0:
+        if (self.thickness is None) == (self.periods is None):
+            raise OverlayerBuildError("Give exactly one of thickness or periods.")
+        if self.thickness is not None and self.thickness <= 0:
             raise OverlayerBuildError("The slab thickness must be positive.")
+        if self.periods is not None and self.periods < 1:
+            raise OverlayerBuildError("periods must be >= 1.")
         if self.vacuum < 5.0:
             raise OverlayerBuildError("Use at least 5 A of vacuum.")
         if not 0.0 <= self.fixed_fraction < 1.0:
             raise OverlayerBuildError("fixed_fraction must satisfy 0 <= fixed_fraction < 1.")
         if self.samples < 1:
             raise OverlayerBuildError("samples must be >= 1.")
+        if self.window_scan < 1:
+            raise OverlayerBuildError("window_scan must be >= 1.")
         if self.repeat_xy is not None and (len(self.repeat_xy) != 2 or min(self.repeat_xy) < 1):
             raise OverlayerBuildError("repeat_xy needs two positive integers.")
 
@@ -91,25 +100,26 @@ def build_amorphous_slab(
     bulk = standardize_cell(amorphous)
     a_vec, b_vec, c_vec = bulk.cell.array
     layer_height = float(c_vec[2])  # a and b lie in the xy plane, so c_z is the normal height
+    cut_thickness = settings.periods * layer_height - 1e-6 if settings.periods is not None else float(settings.thickness)  # type: ignore[arg-type]
     if settings.repeat_xy is not None:
         reps = tuple(settings.repeat_xy)
     else:
         widths = lateral_widths(bulk)
         reps = tuple(max(1, int(np.ceil(settings.min_lateral_size / w - 1e-6))) for w in widths)
-    nz = int(np.ceil(settings.thickness / layer_height)) + 1
+    nz = int(np.ceil(cut_thickness / layer_height)) + 1
     block = bulk.repeat((reps[0], reps[1], nz))
     # Cartesian positions keep the true geometry even for a tilted c; z is the normal coordinate.
     cartesian = block.get_positions(wrap=True)
     z = cartesian[:, 2]
     z0 = float(rng.uniform(0.0, layer_height)) if z0 is None else float(z0) % layer_height
-    window = (z >= z0) & (z < z0 + settings.thickness)
+    window = (z >= z0) & (z < z0 + cut_thickness)
     s1, s2 = block.cell.array[0], block.cell.array[1]
     positions = cartesian[window].copy()
     positions[:, 2] -= z0
     slab = Atoms(
         [s for s, keep in zip(block.get_chemical_symbols(), window) if keep],
         positions=positions,
-        cell=[s1, s2, [0.0, 0.0, settings.thickness + settings.vacuum]],
+        cell=[s1, s2, [0.0, 0.0, cut_thickness + settings.vacuum]],
         pbc=[True, True, False],
     )
     slab.wrap(pbc=[True, True, False])
@@ -138,7 +148,7 @@ def build_amorphous_slab(
         "vacuum_above_A": round(float(slab.cell.array[2, 2]) - top, 4),
         "surface_area_A2": round(area, 4),
         # Volume of the cut window (same convention as the ALD film density), not the atom-centre span.
-        "density_g_cm3": round(density_g_cm3(slab, area * settings.thickness), 4),
+        "density_g_cm3": round(density_g_cm3(slab, area * cut_thickness), 4),
         "n_fixed": len(fixed),
         "fixed_policy": f"atoms below {settings.fixed_fraction:.2f} of the slab thickness",
         "composition": composition_report(slab, amorphous),
@@ -147,6 +157,78 @@ def build_amorphous_slab(
         "exposed_cation_density_per_nm2": round(len(sites) / (area / 100.0), 4),
     }
     return slab, report
+
+
+def _select_stoichiometric_cuts(
+    amorphous: Atoms,
+    settings: AmorphousSlabSettings,
+    rng: np.random.Generator,
+) -> list[tuple[Atoms, dict[str, Any]]]:
+    """Scan cut positions over one period to select distinct stoichiometric, connected slabs."""
+    bulk = standardize_cell(amorphous)
+    layer_height = float(bulk.cell.array[2, 2])
+    n_scan = max(settings.window_scan, settings.samples)
+
+    def scan(probe_settings: AmorphousSlabSettings) -> tuple[list[tuple[Atoms, dict[str, Any]]], list[tuple[Atoms, dict[str, Any]]]]:
+        phase = float(rng.uniform(0.0, layer_height / n_scan))
+        stoich_clean: list[tuple[Atoms, dict[str, Any]]] = []
+        fallback: list[tuple[Atoms, dict[str, Any]]] = []
+        seen: set[tuple] = set()
+        for k in range(n_scan):
+            z0 = (phase + k * layer_height / n_scan) % layer_height
+            slab, report = build_amorphous_slab(amorphous, probe_settings, rng, z0=z0)
+            sig = (len(slab), report["composition"]["formula"], tuple(np.round(np.sort(slab.positions[:, 2]), 2)[:: max(1, len(slab) // 8)]))
+            if sig in seen:
+                continue
+            seen.add(sig)
+            if report["isolated_atoms_removed"] == 0 and report["composition"]["stoichiometric"]:
+                stoich_clean.append((slab, report))
+            else:
+                fallback.append((slab, report))
+        return stoich_clean, fallback
+
+    stoich_clean, fallback = scan(settings)
+    snapped_periods: int | None = None
+    if settings.periods is None and len(stoich_clean) < settings.samples:
+        candidate_periods = max(1, int(round(float(settings.thickness) / layer_height)))  # type: ignore[arg-type]
+        snapped_settings = AmorphousSlabSettings(
+            thickness=None,
+            periods=candidate_periods,
+            vacuum=settings.vacuum,
+            min_lateral_size=settings.min_lateral_size,
+            repeat_xy=settings.repeat_xy,
+            fixed_fraction=settings.fixed_fraction,
+            samples=settings.samples,
+            seed=settings.seed,
+            bottom_margin=settings.bottom_margin,
+            stoichiometric=True,
+            window_scan=settings.window_scan,
+        )
+        snapped_clean, snapped_fallback = scan(snapped_settings)
+        if len(snapped_clean) > len(stoich_clean):
+            stoich_clean, fallback = snapped_clean, snapped_fallback
+            snapped_periods = candidate_periods
+
+    if len(stoich_clean) >= settings.samples:
+        pool = stoich_clean
+    else:
+        fallback.sort(
+            key=lambda item: (
+                not item[1]["composition"]["stoichiometric"],
+                abs(item[1]["composition"]["excess_anions"] or 0.0),
+                item[1]["isolated_atoms_removed"],
+            )
+        )
+        pool = stoich_clean + fallback
+
+    picks = np.linspace(0, len(pool) - 1, min(settings.samples, len(pool))).round().astype(int)
+    chosen: list[tuple[Atoms, dict[str, Any]]] = []
+    for idx in sorted(set(picks.tolist())):
+        slab, report = pool[int(idx)]
+        if snapped_periods is not None:
+            report = {**report, "stoichiometric_snapped_periods": snapped_periods}
+        chosen.append((slab, report))
+    return chosen
 
 
 @dataclass
@@ -176,8 +258,12 @@ def run_amorphous_slab(
     frames: list[Atoms] = []
     reports: list[dict[str, Any]] = []
     sample_paths: list[Path] = []
-    for sample in range(settings.samples):
-        slab, report = build_amorphous_slab(amorphous, settings, rng)
+    built = (
+        _select_stoichiometric_cuts(amorphous, settings, rng)
+        if settings.stoichiometric
+        else [build_amorphous_slab(amorphous, settings, rng) for _ in range(settings.samples)]
+    )
+    for sample, (slab, report) in enumerate(built):
         slab.info.update({"task": "amorphous_slab", "role": "amorphous_slab", "sample": sample, "frame_id": sample})
         frames.append(slab)
         reports.append({"sample": sample, **report})
@@ -232,7 +318,10 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--amorphous", type=Path, required=True, help="Periodic amorphous bulk cell (CIF by default; any ASE format).")
     parser.add_argument("--amorphous-format", default=None)
-    parser.add_argument("--thickness", type=float, required=True, help="Slab thickness in A.")
+    depth = parser.add_mutually_exclusive_group(required=True)
+    depth.add_argument("--thickness", type=float, default=None, help="Slab thickness in A (mutually exclusive with --periods).")
+    depth.add_argument("--periods", type=int, default=None, help="Integer bulk periods along c (guarantees stoichiometry when no isolated atom is removed).")
+    parser.add_argument("--stoichiometric", action="store_true", help="Scan cut positions to prefer stoichiometric, connected cuts (snaps to integer periods if needed).")
     parser.add_argument("--vacuum", type=float, default=15.0, help="Vacuum above the slab in A.")
     parser.add_argument("--min-lateral-size", type=float, default=8.0, help="Repeat the amorphous cell in-plane to this width (A).")
     parser.add_argument("--repeat-xy", default=None, help="Explicit in-plane repeats of the amorphous cell, e.g. 2,2.")
@@ -250,6 +339,8 @@ def main(argv: list[str] | None = None) -> int:
         repeat = parse_ints(args.repeat_xy)
         settings = AmorphousSlabSettings(
             thickness=args.thickness,
+            periods=args.periods,
+            stoichiometric=args.stoichiometric,
             vacuum=args.vacuum,
             min_lateral_size=args.min_lateral_size,
             repeat_xy=repeat,  # type: ignore[arg-type]

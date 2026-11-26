@@ -152,3 +152,29 @@ def test_job_file_chains_crystal_to_amorphous_bulk_to_slab(tmp_path: Path) -> No
     assert bulk_manifest["artifacts"][0]["evidence_level"] == "empirical_potential"
     [slab] = read_frames(tmp_path / "runs/slab/amorphous_slab_structures.extxyz")
     assert slab.get_chemical_formula().startswith("Cu") and frame_metrics(slab)["vacuum_gap_A"] >= 10.0
+
+
+def test_initial_rattle_and_auto_melt_retry_escalate_temperature(tmp_path: Path) -> None:
+    cu = _cu(tmp_path)
+    settings = MeltQuenchSettings(
+        supercell=(2, 2, 2),
+        samples=1,
+        melt_temperature=2500.0,
+        melt_ps=0.1,
+        quench_rate=20000.0,
+        anneal_ps=0.05,
+        max_steps=40,
+        trajectory_interval=0,
+        initial_rattle=0.2,
+        max_melt_retries=2,
+        melt_retry_step=1000.0,
+        max_melt_temperature=5000.0,
+    )
+    result = run_amorphous_bulk(cu, settings, tmp_path / "out", calculator=EMT(), calculator_name="emt")
+    sample = result.manifest["samples"][0]
+    assert sample["initial_rattle_applied_A"] > 0.0
+    assert len(sample["melt_attempts"]) >= 2
+    assert sample["effective_melt_temperature_K"] > settings.melt_temperature
+    assert sample["md_steps"]["total"] == sum(v for k, v in sample["md_steps"].items() if k != "total")
+    assert sample["md_steps"]["melt"] == settings.steps()["melt"] * len(sample["melt_attempts"])
+    assert frame_metrics(result.frames[0])["min_contact_ratio"] > 0.6

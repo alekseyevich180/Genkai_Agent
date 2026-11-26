@@ -212,43 +212,37 @@ def resolve_lattice_constants_from_embedded_metal_data(
     if data is None:
         return None
 
-    # The embedded value matches metal_parameter.txt "lattice_a_A" and is the lattice
-    # constant for the corresponding crystal structure, not the NN distance.
-    lattice_a = float(data["nn_distance"])
-    if structure in {"fcc", "bcc"}:
-        return lattice_a, None
+    # ``nn_distance`` stores the nearest-neighbor metal-metal bond length d_NN;
+    # convert it to the conventional lattice constant for each crystal structure.
+    nn_distance = float(data["nn_distance"])
+    if structure == "fcc":
+        return float(nn_distance * np.sqrt(2.0)), None
+    if structure == "bcc":
+        return float(2.0 * nn_distance / np.sqrt(3.0)), None
     if structure == "hcp":
+        lattice_a = nn_distance
         if c is None:
             c = lattice_a * np.sqrt(8.0 / 3.0)
-        return lattice_a, float(c)
+        return float(lattice_a), float(c)
     raise ValueError(f"Unsupported structure: {structure}")
+
 
 def get_embedded_metal_radius(element: str, structure: str) -> float | None:
     data = METAL_DISTANCE_DATA.get((element, structure))
     if data is None:
         return None
-    lattice_a = float(data["nn_distance"])
-    if structure == "fcc":
-        return np.sqrt(2.0) * lattice_a / 4.0
-    if structure == "bcc":
-        return np.sqrt(3.0) * lattice_a / 4.0
-    if structure == "hcp":
-        return lattice_a / 2.0
-    raise ValueError(f"Unsupported structure: {structure}")
+    if structure not in {"fcc", "bcc", "hcp"}:
+        raise ValueError(f"Unsupported structure: {structure}")
+    return float(data["nn_distance"]) / 2.0
 
 
 def get_embedded_nearest_neighbor_distance(element: str, structure: str) -> float | None:
     data = METAL_DISTANCE_DATA.get((element, structure))
     if data is None:
         return None
-    lattice_a = float(data["nn_distance"])
-    if structure == "fcc":
-        return lattice_a / np.sqrt(2.0)
-    if structure == "bcc":
-        return np.sqrt(3.0) * lattice_a / 2.0
-    if structure == "hcp":
-        return lattice_a
-    raise ValueError(f"Unsupported structure: {structure}")
+    if structure not in {"fcc", "bcc", "hcp"}:
+        raise ValueError(f"Unsupported structure: {structure}")
+    return float(data["nn_distance"])
 
 
 def resolve_lattice_constants(

@@ -410,6 +410,16 @@ def main(argv: list[str] | None = None) -> int:
     best_energy = optimize_energy(best_structure, calculator, args.fmax, args.max_steps)
     best_path = args.output_dir / "stable_vacancy_structure.cif"
     write(best_path, best_structure)
+    best_frame = best_structure.copy()
+    best_frame.calc = None
+    best_frame.info = {
+        "task": "vacancy_landscape",
+        "role": "best_vacancy_slab",
+        "vacancy_count": int(best["vacancy_count"]),
+        "E_vac_eV": float(best["E_vac_eV"]),
+        "E_defect_eV": float(best_energy),
+    }
+    best_extxyz_path = write_frames(args.output_dir / "stable_vacancy_structure.extxyz", [best_frame])
 
     plot_path = args.output_dir / "vacancy_energy_landscape.png"
     plot_landscape(table, plot_path)
@@ -418,6 +428,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"CSV: {csv_path}")
     print(f"Plot: {plot_path}")
     print(f"Stable structure: {best_path}")
+    print(f"Stable structure (extxyz): {best_extxyz_path}")
     print(
         "Best candidate: "
         f"m={int(best['vacancy_count'])}, "

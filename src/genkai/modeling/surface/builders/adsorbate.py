@@ -11,6 +11,7 @@ import optuna
 import pandas as pd
 from ase import Atoms
 from ase.calculators.calculator import Calculator, all_changes
+from ase.data import covalent_radii
 from ase.geometry import find_mic
 from ase.io import read, write
 from ase.optimize import LBFGS
@@ -22,7 +23,7 @@ from ..mlip.calculators import (
     resolve_mace_model,
 )
 from ..mlip.search_sampler import DEFAULT_SAMPLER, add_sampler_argument, make_sampler
-from ..structure_io import components, has_components, label_components, write_frames
+from ..structure_io import CLASH_RATIO, components, has_components, label_components, write_frames
 from .molecules import load_molecule
 
 CONFIG = {
@@ -163,13 +164,17 @@ def optimize_energy(atoms: Atoms, calculator, fmax: float, max_steps: int | None
 
 
 def atoms_to_json(atoms: Atoms) -> str:
+    """Serialize for Optuna user attributes; extxyz keeps FixAtoms, tags and component labels."""
+    clean = atoms.copy()
+    clean.calc = None
     buffer = io.StringIO()
-    write(buffer, atoms, format="json")
+    write(buffer, clean, format="extxyz")
     return buffer.getvalue()
 
 
 def json_to_atoms(text: str) -> Atoms:
-    return read(io.StringIO(text), format="json")
+    fmt = "json" if text.lstrip().startswith("{") else "extxyz"
+    return read(io.StringIO(text), format=fmt)
 
 
 def parse_symbols(text: str) -> list[str]:
@@ -344,8 +349,13 @@ def place_molecule(
     z_gap: float,
     dx: float = 0.0,
     dy: float = 0.0,
+    tilt_deg: float = 0.0,
+    tilt_axis_deg: float = 0.0,
 ) -> Atoms:
     placed = center_molecule(molecule)
+    if tilt_deg:
+        rad = np.radians(tilt_axis_deg)
+        placed.rotate(tilt_deg, v=[float(np.cos(rad)), float(np.sin(rad)), 0.0], center=[0.0, 0.0, 0.0])
     placed.rotate(spin_angle, v=[0.0, 0.0, 1.0], center=[0.0, 0.0, 0.0])
     min_z = float(np.min(placed.positions[:, 2]))
     placed.translate(
@@ -356,6 +366,35 @@ def place_molecule(
         ]
     )
     return placed
+
+
+def _candidate_contact_ratio(slab: Atoms, existing: Atoms, mol: Atoms) -> float:
+    """Minimum covalent-radius contact ratio between ``mol``, ``existing`` and ``mol``'s own periodic images."""
+    mol_pos = mol.positions
+    mol_rad = covalent_radii[mol.numbers]
+    min_ratio = float("inf")
+
+    if len(existing):
+        ex_pos = existing.positions
+        ex_rad = covalent_radii[existing.numbers]
+        deltas = (mol_pos[:, None, :] - ex_pos[None, :, :]).reshape(-1, 3)
+        dists = np.linalg.norm(minimum_image_vectors(slab, deltas), axis=1).reshape(len(mol), len(existing))
+        ratios = dists / (mol_rad[:, None] + ex_rad[None, :])
+        min_ratio = min(min_ratio, float(ratios.min()))
+
+    if len(mol) and any(slab.pbc[:2]):
+        cell = slab.cell.array
+        a_vec, b_vec = cell[0], cell[1]
+        for ia in (-1, 0, 1) if slab.pbc[0] else (0,):
+            for ib in (-1, 0, 1) if slab.pbc[1] else (0,):
+                if ia == 0 and ib == 0:
+                    continue
+                shifted = mol_pos + ia * a_vec + ib * b_vec
+                dists = np.linalg.norm(mol_pos[:, None, :] - shifted[None, :, :], axis=2)
+                ratios = dists / (mol_rad[:, None] + mol_rad[None, :])
+                min_ratio = min(min_ratio, float(ratios.min()))
+
+    return min_ratio
 
 
 def min_adsorbate_surface_distance(combined: Atoms, n_slab: int) -> float:
@@ -384,6 +423,7 @@ def run_single_adsorbate_search(
         z_gap = trial.suggest_float("z_gap", args.z_gap_min, args.z_gap_max)
         mol = place_molecule(molecule, positions[group_id], spin_angle, z_gap, dx, dy)
         combined = slab + mol
+        label_components(combined, "adsorbate", range(len(slab), len(combined)))
         e_total = optimize_energy(combined, calculator, args.fmax, args.max_steps)
         e_ads = e_total - e_slab - e_mol
         trial.set_user_attr("structure", atoms_to_json(combined))
@@ -574,6 +614,87 @@ def maximum_non_overlapping_site_groups(site_groups: list[tuple[int, ...]]) -> i
     return len(solve_non_overlapping_site_groups(site_groups))
 
 
+def _place_without_clash(
+    slab: Atoms,
+    existing: Atoms,
+    molecule: Atoms,
+    site_position: np.ndarray,
+    placement: dict,
+    *,
+    min_ratio: float = CLASH_RATIO,
+) -> Atoms:
+    """Place one molecule, rotating/tilting/nudging if the default pose clashes with existing atoms."""
+    base_spin = float(placement["spin_angle"])
+    base_z_gap = float(placement["z_gap"])
+    base_dx = float(placement["dx"])
+    base_dy = float(placement["dy"])
+
+    default_mol = place_molecule(molecule, site_position, base_spin, base_z_gap, base_dx, base_dy)
+    best_ratio = _candidate_contact_ratio(slab, existing, default_mol)
+    if best_ratio >= min_ratio:
+        return default_mol
+    best_mol = default_mol
+
+    def _search(candidates) -> bool:
+        nonlocal best_ratio, best_mol
+        stage_best_ratio = best_ratio
+        stage_best_mol = best_mol
+        for spin, z_gap, dx, dy, tilt, axis in candidates:
+            cand = place_molecule(molecule, site_position, spin, z_gap, dx, dy, tilt_deg=tilt, tilt_axis_deg=axis)
+            ratio = _candidate_contact_ratio(slab, existing, cand)
+            if ratio > stage_best_ratio:
+                stage_best_ratio = ratio
+                stage_best_mol = cand
+        if stage_best_ratio > best_ratio:
+            best_ratio = stage_best_ratio
+            best_mol = stage_best_mol
+        return best_ratio >= min_ratio
+
+    # Stage 1: in-plane rotations (keep placement offset, then try site-centred).
+    offsets = [(base_dx, base_dy)]
+    if abs(base_dx) > 1e-6 or abs(base_dy) > 1e-6:
+        offsets.append((0.0, 0.0))
+    stage1 = [
+        (base_spin + step * 30.0, base_z_gap, dx, dy, 0.0, 0.0)
+        for dx, dy in offsets
+        for step in range(12)
+    ]
+    if _search(stage1):
+        return best_mol
+
+    # Stage 2: tilt the molecule upright/oblique and try small lateral nudges at the same z_gap.
+    stage2 = [
+        (base_spin + step * 60.0, base_z_gap, 0.0, 0.0, tilt, axis)
+        for tilt in (30.0, 60.0, 90.0)
+        for axis in (0.0, 60.0, 120.0)
+        for step in range(6)
+    ]
+    if _search(stage2):
+        return best_mol
+
+    stage2b = [
+        (base_spin + step * 60.0, base_z_gap, dx, dy, tilt, 0.0)
+        for dx, dy in ((0.5, 0.0), (-0.5, 0.0), (0.0, 0.5), (0.0, -0.5))
+        for tilt in (0.0, 45.0, 90.0)
+        for step in range(6)
+    ]
+    if _search(stage2b):
+        return best_mol
+
+    # Stage 3: modest height lift combined with rotation/tilt as a last resort on very crowded cells.
+    for dz in (0.5, 1.0, 1.5, 2.0):
+        stage3 = [
+            (base_spin + step * 60.0, base_z_gap + dz, 0.0, 0.0, tilt, axis)
+            for tilt in (0.0, 45.0, 90.0)
+            for axis in (0.0, 90.0)
+            for step in range(6)
+        ]
+        if _search(stage3):
+            return best_mol
+
+    return best_mol
+
+
 def build_coverage_structure(
     slab: Atoms,
     molecule: Atoms,
@@ -583,15 +704,18 @@ def build_coverage_structure(
 ) -> Atoms:
     combined = slab.copy()
     positions = group_positions(slab, site_groups)
-    for group_id in selected_group_ids:
-        mol = place_molecule(
-            molecule=molecule,
-            site_position=positions[group_id],
-            spin_angle=placement["spin_angle"],
-            z_gap=placement["z_gap"],
-            dx=placement["dx"],
-            dy=placement["dy"],
-        )
+    for idx, group_id in enumerate(selected_group_ids):
+        if idx == 0 and len(selected_group_ids) == 1:
+            mol = place_molecule(
+                molecule=molecule,
+                site_position=positions[group_id],
+                spin_angle=placement["spin_angle"],
+                z_gap=placement["z_gap"],
+                dx=placement["dx"],
+                dy=placement["dy"],
+            )
+        else:
+            mol = _place_without_clash(slab, combined, molecule, positions[group_id], placement)
         combined += mol
     return label_components(combined, "adsorbate", range(len(slab), len(combined)))
 
@@ -719,6 +843,14 @@ def run_adsorbate_landscape(
         args=args,
     )
     write(args.output_dir / "single_adsorbate_best.cif", single_best)
+    single_best_frame = single_best.copy()
+    single_best_frame.calc = None
+    single_best_frame.info = {
+        "task": "adsorbate_landscape",
+        "role": "single_adsorbate_best",
+        "E_ads_single_eV": float(placement["E_ads_single_eV"]),
+    }
+    write_frames(args.output_dir / "single_adsorbate_best.extxyz", [single_best_frame])
 
     rows = []
     structure_paths: list[Path] = []
@@ -784,14 +916,16 @@ def run_adsorbate_landscape(
     plot_adsorbate_landscape(table, plot_path)
 
     best = table.iloc[0]
-    best_structure = read(best["structure_path"])
+    best_frame = frames[int(best["structure_id"]) - 1].copy()
+    best_frame.calc = None
     best_filename = (
         "workflow_test_best_candidate.cif"
         if args.calculator == "none"
         else "stable_adsorbate_coverage_structure.cif"
     )
     best_path = args.output_dir / best_filename
-    write(best_path, best_structure)
+    write(best_path, best_frame)
+    best_extxyz_path = write_frames(best_path.with_suffix(".extxyz"), [best_frame])
 
     site_table = pd.DataFrame(
         {
@@ -822,6 +956,7 @@ def run_adsorbate_landscape(
     print(f"Plot: {plot_path}")
     best_label = "Workflow-test best candidate" if args.calculator == "none" else "Stable structure"
     print(f"{best_label}: {best_path}")
+    print(f"{best_label} (extxyz): {best_extxyz_path}")
     print(
         "Best candidate: "
         f"pattern={best['pattern']}, "

@@ -81,6 +81,10 @@ class MeltQuenchSettings:
     relax_cell: bool = True
     crystal_reference: bool = True
     trajectory_interval: int = 1000  # MD steps between saved snapshots; 0 saves none
+    initial_rattle: float = 0.0  # Gaussian pre-melt displacement std (A) to reduce crystal superheating
+    max_melt_retries: int = 0  # extra higher-T melt attempts if min melt RMS < MIN_MELT_RMS_A
+    melt_retry_step: float = 1000.0  # temperature increment (K) per melt retry
+    max_melt_temperature: float = 6000.0  # upper temperature cap (K) for melt retries
 
     def __post_init__(self) -> None:
         if self.supercell is not None:
@@ -105,6 +109,14 @@ class MeltQuenchSettings:
             raise AmorphousBulkError("max_steps must be >= 0 and fmax positive.")
         if self.trajectory_interval < 0:
             raise AmorphousBulkError("trajectory_interval must be >= 0.")
+        if self.initial_rattle < 0:
+            raise AmorphousBulkError("initial_rattle must be >= 0.")
+        if self.max_melt_retries < 0:
+            raise AmorphousBulkError("max_melt_retries must be >= 0.")
+        if self.melt_retry_step <= 0:
+            raise AmorphousBulkError("melt_retry_step must be positive.")
+        if self.max_melt_temperature < self.melt_temperature:
+            raise AmorphousBulkError("max_melt_temperature must be >= melt_temperature.")
 
     def steps(self) -> dict[str, int]:
         quench_ps = (self.melt_temperature - self.final_temperature) / self.quench_rate
@@ -284,6 +296,22 @@ class _Recorder:
             write_frames(self.trajectory_path, self.frames)
 
 
+def _apply_initial_rattle(atoms: Atoms, amplitude: float, rng: np.random.Generator) -> float:
+    """Apply a clash-free Gaussian displacement to break crystal symmetry before melting."""
+    if amplitude <= 0:
+        return 0.0
+    base = atoms.get_positions().copy()
+    scale = float(amplitude)
+    for _ in range(6):
+        atoms.set_positions(base + rng.normal(0.0, scale, size=base.shape))
+        ratio = frame_metrics(atoms).get("min_contact_ratio")
+        if ratio is None or ratio >= CLASH_RATIO:
+            return round(scale, 4)
+        scale *= 0.5
+    atoms.set_positions(base)
+    return 0.0
+
+
 def melt_quench(
     atoms: Atoms,
     calculator: Calculator,
@@ -292,45 +320,69 @@ def melt_quench(
     log_path: Path,
     trajectory_path: Path | None,
 ) -> dict[str, Any]:
-    """Run melt -> quench -> anneal in place; return melt displacement and stage temperatures."""
+    """Run melt (with optional anti-superheating rattle & retries) -> quench -> anneal in place."""
     from ase import units
     from ase.md.langevin import Langevin
     from ase.md.velocitydistribution import MaxwellBoltzmannDistribution, Stationary
 
-    steps = settings.steps()
+    planned = settings.steps()
+    rattle_applied = _apply_initial_rattle(atoms, settings.initial_rattle, np.random.default_rng(seed + 17))
     atoms.calc = calculator
-    MaxwellBoltzmannDistribution(atoms, temperature_K=settings.melt_temperature, rng=np.random.default_rng(seed))
+    current_temp = float(settings.melt_temperature)
+    MaxwellBoltzmannDistribution(atoms, temperature_K=current_temp, rng=np.random.default_rng(seed))
     Stationary(atoms)
     dyn = Langevin(
         atoms,
         settings.timestep_fs * units.fs,
-        temperature_K=settings.melt_temperature,
+        temperature_K=current_temp,
         friction=settings.friction_per_fs / units.fs,
         rng=np.random.default_rng(seed + 1),
     )
     recorder = _Recorder(atoms, log_path, trajectory_path, settings.trajectory_interval)
+    melt_attempts: list[dict[str, Any]] = []
+    total_melt_steps = 0
     try:
         start = atoms.get_positions().copy()  # MD positions are not wrapped, so this is the true displacement
-        for chunk in _chunks(steps["melt"], LOG_INTERVAL):
-            dyn.run(chunk)
-            recorder.advance(chunk, "melt", settings.melt_temperature)
-        displacement = atoms.get_positions() - start
         symbols = np.array(atoms.get_chemical_symbols())
-        melt_rms = {
-            str(element): round(float(np.sqrt((displacement[symbols == element] ** 2).sum(axis=1).mean())), 3)
-            for element in sorted(set(atoms.get_chemical_symbols()))
-        }
-        segments = _chunks(steps["quench"], math.ceil(steps["quench"] / QUENCH_SEGMENTS))
-        span = settings.melt_temperature - settings.final_temperature
+        unique_elements = sorted(set(atoms.get_chemical_symbols()))
+        for attempt in range(settings.max_melt_retries + 1):
+            if attempt > 0:
+                current_temp = min(float(settings.max_melt_temperature), current_temp + float(settings.melt_retry_step))
+                MaxwellBoltzmannDistribution(atoms, temperature_K=current_temp, rng=np.random.default_rng(seed + 100 * attempt))
+                Stationary(atoms)
+                dyn.set_temperature(temperature_K=current_temp)
+            for chunk in _chunks(planned["melt"], LOG_INTERVAL):
+                dyn.run(chunk)
+                recorder.advance(chunk, "melt", current_temp)
+            total_melt_steps += planned["melt"]
+            displacement = atoms.get_positions() - start
+            melt_rms = {
+                str(element): round(float(np.sqrt((displacement[symbols == element] ** 2).sum(axis=1).mean())), 3)
+                for element in unique_elements
+            }
+            min_rms = min(melt_rms.values())
+            melt_attempts.append({
+                "attempt": attempt + 1,
+                "temperature_K": round(current_temp, 1),
+                "min_rms_A": min_rms,
+                "rms_A": dict(melt_rms),
+            })
+            if min_rms >= MIN_MELT_RMS_A or current_temp >= settings.max_melt_temperature:
+                break
+
+        per_ps = 1000.0 / settings.timestep_fs
+        quench_steps = max(1, math.ceil(((current_temp - settings.final_temperature) / settings.quench_rate) * per_ps))
+        segments = _chunks(quench_steps, math.ceil(quench_steps / QUENCH_SEGMENTS))
+        span = current_temp - settings.final_temperature
         done = 0
         for chunk in segments:
             done += chunk
-            target = settings.melt_temperature - span * done / steps["quench"]
+            target = current_temp - span * done / quench_steps
             dyn.set_temperature(temperature_K=target)
             dyn.run(chunk)
             recorder.advance(chunk, "quench", target)
         dyn.set_temperature(temperature_K=settings.final_temperature)
-        for chunk in _chunks(steps["anneal"], LOG_INTERVAL):
+        for chunk in _chunks(planned["anneal"], LOG_INTERVAL):
             dyn.run(chunk)
             recorder.advance(chunk, "anneal", settings.final_temperature)
     finally:
@@ -340,13 +392,22 @@ def melt_quench(
         tail = values[len(values) // 2:]
         return round(float(np.mean(tail)), 1) if tail else None
 
+    actual_steps = {
+        "melt": total_melt_steps,
+        "quench": quench_steps,
+        "anneal": planned["anneal"],
+    }
+    actual_steps["total"] = sum(actual_steps.values())
     return {
         "melt_rms_displacement_A": melt_rms,
+        "effective_melt_temperature_K": round(current_temp, 1),
+        "melt_attempts": melt_attempts,
+        "initial_rattle_applied_A": rattle_applied,
         "mean_temperature_K": {
             "melt_second_half": tail_mean(recorder.temperatures.get("melt", [])),
             "anneal_second_half": tail_mean(recorder.temperatures.get("anneal", [])),
         },
-        "md_steps": steps,
+        "md_steps": actual_steps,
         "trajectory_frames": len(recorder.frames),
     }
 
@@ -565,6 +626,14 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--no-cell-relax", action="store_true", help="Relax positions only at the end (keep the MD cell).")
     parser.add_argument("--no-crystal-reference", action="store_true", help="Skip relaxing the crystal supercell for the energy reference.")
     parser.add_argument("--trajectory-interval", type=int, default=1000, help="MD steps between saved snapshots (0: none).")
+    parser.add_argument("--initial-rattle", type=float, default=0.0,
+                        help="Pre-melt Gaussian displacement std in A (e.g. 0.2) to break crystal superheating.")
+    parser.add_argument("--max-melt-retries", type=int, default=0,
+                        help="Extra higher-temperature melt attempts if slowest-element RMS < 1.5 A before quenching.")
+    parser.add_argument("--melt-retry-step", type=float, default=1000.0,
+                        help="Temperature increase in K per melt retry (default: 1000).")
+    parser.add_argument("--max-melt-temperature", type=float, default=6000.0,
+                        help="Maximum temperature cap in K for melt retries (default: 6000).")
     parser.add_argument("--dry-run", action="store_true", help="Write the prepared supercell and the schedule only; no MD.")
     parser.add_argument("--calculator", choices=CALCULATORS, default="none",
                         help="uma or mace (real MLIP, needs authorization); emt for its metals; none is refused unless --dry-run.")
@@ -599,6 +668,10 @@ def main(argv: list[str] | None = None) -> int:
             relax_cell=not args.no_cell_relax,
             crystal_reference=not args.no_crystal_reference,
             trajectory_interval=args.trajectory_interval,
+            initial_rattle=args.initial_rattle,
+            max_melt_retries=args.max_melt_retries,
+            melt_retry_step=args.melt_retry_step,
+            max_melt_temperature=args.max_melt_temperature,
         )
         model = {"device": args.device}
         if args.calculator == "uma":

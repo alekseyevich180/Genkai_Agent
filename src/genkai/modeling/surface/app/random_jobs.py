@@ -224,10 +224,18 @@ def build_job(
     elif scenario == "amorphous":
         density = round(_crystal_density(library.crystal_path(row)) * AMORPHOUS_DENSITY_FACTOR, 2)
         steps = [
-            {"method": "amorphous_bulk", "crystal": bulk, "density": density},
-            {"method": "amorphous_slab", "thickness": 10},
-            {"method": "vacancy", "element": "O", "vacancy_counts": [1]},
-            adsorbate,
+            {
+                "method": "amorphous_bulk",
+                "crystal": bulk,
+                "density": density,
+                "initial_rattle": 0.2,
+                "max_melt_retries": 2,
+                "melt_retry_step": 1000,
+                "max_melt_temperature": 5000,
+            },
+            {"method": "amorphous_slab", "thickness": 10, "stoichiometric": True, "samples": 2, "pick": "lowest_energy"},
+            {"method": "vacancy", "element": "O", "vacancy_counts": [1], "samples_per_count": 4, "pick": "lowest_energy"},
+            {**adsorbate, "pick": "lowest_energy"},
         ]
         choices["amorphous_density_g_cm3"] = density
     elif scenario == "energy":
@@ -283,6 +291,7 @@ def generate(
     crystals: list[str] | None = None,
     molecules: list[str] | None = None,
     mlip: str | None = None,
+    nonpolar_only: bool = False,
 ) -> list[dict[str, Any]]:
     """Write ``count`` random pipeline files and ``random_index.json``; return the records."""
     import yaml
@@ -302,6 +311,9 @@ def generate(
     pool = []
     for row in library.crystals:
         if matches(row, crystals):
+            facet = facet_for(row)
+            if nonpolar_only and (facet is None or facet[1]):
+                continue
             usable = [s for s in scenarios_for(row, mlip=bool(mlip), library=library) if s in wanted]
             if usable:
                 pool.append((row, usable))
@@ -324,19 +336,25 @@ def generate(
         records.append({"file": path.name, **choices})
     (out_dir / "random_index.json").write_text(json.dumps({
         "generator": GENERATOR, "library": library.root.as_posix(), "seed": seed, "count": count,
-        "scenarios": sorted(wanted), "mlip": mlip, "jobs": records,
+        "scenarios": sorted(wanted), "mlip": mlip, "nonpolar_only": nonpolar_only, "jobs": records,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     return records
 
 
-def describe(library: Library, stream: TextIO, *, mlip: bool) -> None:
+def describe(library: Library, stream: TextIO, *, mlip: bool, nonpolar_only: bool = False) -> None:
     print(f"结构库：{library.root}", file=stream)
     print(f"晶体 {len(library.crystals)} 个（晶面 / 可用场景）：", file=stream)
     for row in library.crystals:
         facet = facet_for(row)
         usable = scenarios_for(row, mlip=mlip, library=library)
         text = f"({facet[0]}){' 极性' if facet[1] else ''}" if facet else "无晶面规则"
-        reason = "不可用：非凸包稳定的参考相" if row.get("collection") != "stable" else "不可用：没有晶面规则"
+        if nonpolar_only and facet and facet[1]:
+            usable = []
+            reason = "不可用：极性终止面（--nonpolar-only 已排除）"
+        elif row.get("collection") != "stable":
+            reason = "不可用：非凸包稳定的参考相"
+        else:
+            reason = "不可用：没有晶面规则"
         print(f"  {row['id']:<48s} {text:<12s} {', '.join(usable) or reason}", file=stream)
     print(f"分子 {len(library.molecules)} 个：", file=stream)
     print("  " + "、".join(f"{m['id']}({m.get('name_zh', '')})" for m in library.molecules), file=stream)
@@ -355,22 +373,25 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--molecules", default=None, help="只用这些分子（英文名或编号前缀，逗号分隔），如 ethanol,acetone")
     parser.add_argument("--mlip", default=None,
                         help="genkai.yaml 中的配置名；给出后加入 amorphous（先非晶）和 energy（按能量挑选）场景")
+    parser.add_argument("--nonpolar-only", action="store_true",
+                        help="排除极性终止面晶体（仅保留非极性晶面，适合能量计算）")
     parser.add_argument("--list", action="store_true", help="列出库里可用的晶体、晶面、场景和分子，不生成文件")
 
 
 def run(args: argparse.Namespace, stream: TextIO = sys.stdout) -> int:
     root = args.library or project_root() / "sample"
+    nonpolar_only = bool(getattr(args, "nonpolar_only", False))
     try:
         library = load_library(root)
         if args.list:
-            describe(library, stream, mlip=bool(args.mlip))
+            describe(library, stream, mlip=bool(args.mlip), nonpolar_only=nonpolar_only)
             return 0
         if args.count < 1:
             raise LibraryError("--count 至少为 1")
         split = (lambda text: [item.strip() for item in text.split(",") if item.strip()] if text else None)
         records = generate(library, args.output.resolve(), count=args.count, seed=args.seed,
                            scenarios=split(args.scenarios), crystals=split(args.crystals),
-                           molecules=split(args.molecules), mlip=args.mlip)
+                           molecules=split(args.molecules), mlip=args.mlip, nonpolar_only=nonpolar_only)
     except LibraryError as exc:
         print(f"无法生成：{exc}", file=stream)
         return 2

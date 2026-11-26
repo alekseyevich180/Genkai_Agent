@@ -99,16 +99,27 @@ STEP_KINDS: dict[str, StepKind] = {
     "slab": StepKind(1, "表面", None, None, "surface", "slab.extxyz", component="substrate"),
     "amorphous_slab": StepKind(1, "表面", "amorphous", "amorphous_bulk", "surface", "amorphous_slab_structures.extxyz",
                                component="substrate"),
+    "amorphous_surfaces": StepKind(1, "表面", "amorphous", "amorphous_bulk", "surface", "amorphous_surfaces_ranked.extxyz",
+                                   component="substrate"),
     "vacancy": StepKind(2, "晶格缺陷", "input", "surface", "surface", "vacancy_structures.extxyz"),
     "ald": StepKind(3, "覆盖层", "surface", "surface", "surface", "ald_structures.extxyz", frozenset({"clean_slab"}),
                     "overlayer", ("bulk",)),
+    "amorphous_interface": StepKind(3, "覆盖层", "surface", "surface", "surface", "amorphous_interfaces_ranked.extxyz",
+                                    component="overlayer", blocked_keys=("bulk",)),
     "cluster": StepKind(4, "负载团簇", "surface", "surface", "surface", "cluster_structures.extxyz", component="cluster"),
+    "cluster_search": StepKind(4, "负载团簇", "surface", "surface", "surface", "mlip_output/cluster_search_structures.extxyz",
+                               component="cluster"),
     "sam": StepKind(5, "有机修饰", "surface", "surface", "surface", "sam_structures.extxyz", frozenset({"clean_slab"}),
                     "sam", ("bulk",)),
+    "sam_search": StepKind(5, "有机修饰", "surface", "surface", "surface", "sam_search_structures.extxyz",
+                           frozenset({"clean_slab_relaxed"}), "sam", ("bulk",)),
     "adsorbate": StepKind(6, "气体吸附", "surface", "surface", "surface", "adsorbate_structures.extxyz", component="adsorbate"),
     "relax": StepKind(-1, "弛豫", "structures", "any", "same", "relaxed_structures.extxyz"),
 }
-ORDER_TEXT = "amorphous_bulk → slab/amorphous_slab → vacancy → ald → cluster → sam → adsorbate（relax 可放在任意一步之后）"
+ORDER_TEXT = (
+    "amorphous_bulk → slab/amorphous_slab/amorphous_surfaces → vacancy → "
+    "ald/amorphous_interface → cluster/cluster_search → sam/sam_search → adsorbate（relax 可放在任意一步之后）"
+)
 # Applied when a step does not set them; recorded in the pipeline manifest.
 STEP_DEFAULTS: dict[str, dict[str, str]] = {
     # Surface vacancies: the vacancy method alone samples every O of the slab by default.
@@ -343,7 +354,7 @@ def load_pipeline(path: str | Path, *, config_path: Path | None = None) -> Pipel
             if kind.needs is None:
                 problems.append(f"{prefix}{method} 只能是第一步")
             elif previous is not None and kind.needs not in ("any", previous.makes):
-                need = "表面（先用 slab 或 amorphous_slab）" if kind.needs == "surface" else "非晶块体（amorphous_bulk）"
+                need = "表面（先用 slab、amorphous_slab 或 amorphous_surfaces）" if kind.needs == "surface" else "非晶块体（amorphous_bulk）"
                 problems.append(f"{prefix}{method} 需要上一步给出{need}，但上一步 {previous.method} 不是")
             elif (previous_stage is not None and kind.stage >= 0 and kind.stage < previous_stage.kind.stage
                   and allow != "true"):
@@ -353,7 +364,7 @@ def load_pipeline(path: str | Path, *, config_path: Path | None = None) -> Pipel
                 )
             if makes == "same":
                 makes = previous.makes if previous is not None else "surface"
-        if method == "relax" and "mlip" not in mapping and mlip:
+        if jobs.METHODS[method].requires_mlip and "mlip" not in mapping and mlip:
             mapping["mlip"] = mlip
         defaults_applied: dict[str, str] = {}
         for key, value in STEP_DEFAULTS.get(method, {}).items():
@@ -441,7 +452,7 @@ def finalize_candidate(frame: Atoms, step: Step, *, first: bool, min_vacuum: flo
 def _candidates(job: jobs.Job, kind: StepKind) -> list[Atoms]:
     path = job.output / kind.candidates
     if not path.is_file():
-        raise FileNotFoundError(f"{job.method.name} 没有写出候选结构文件 {path.name}")
+        raise FileNotFoundError(f"{job.method.name} 没有写出候选结构文件 {kind.candidates}")
     return [frame for frame in read_frames(path) if frame.info.get("role") not in kind.skip_roles]
 
 
@@ -460,7 +471,7 @@ def check_pipeline(pipeline: Pipeline, stream: TextIO) -> int:
     print(f"    顺序：{' → '.join(step.method for step in pipeline.steps)}"
           + ("（allow_order: true）" if pipeline.allow_order else ""), file=stream)
     if pipeline.mlip:
-        print(f"    能量模型（relax 步和 lowest_energy）：{pipeline.mlip}", file=stream)
+        print(f"    能量模型（MLIP 步骤与 lowest_energy）：{pipeline.mlip}", file=stream)
     missing = 0
     probed: dict[tuple[Path, str], str | None] = {}
     for step in pipeline.steps:

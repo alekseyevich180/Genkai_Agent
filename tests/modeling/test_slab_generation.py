@@ -259,3 +259,53 @@ def test_cli_ranks_facets_with_emt_and_writes_outputs(tmp_path: Path) -> None:
     assert manifest["slab"]["slab_position"] == "bottom"
     assert manifest["slab"]["vacuum_below_A"] == 0.5
     assert (output_dir / "slab.vasp").exists() and (output_dir / "run_config.json").exists()
+
+
+def test_slab_export_relaxed_writes_relaxed_extxyz_and_keeps_geometric_slab(tmp_path: Path) -> None:
+    from genkai.modeling.surface.builders import slab as slab_module
+
+    bulk_path = tmp_path / "Cu.cif"
+    fcc("Cu", 3.61).to(filename=str(bulk_path))
+    output_dir = tmp_path / "slab_relaxed"
+
+    code = slab_module.main(
+        [
+            "--bulk", str(bulk_path),
+            "--facet", "111",
+            "--min-slab-size", "6.0",
+            "--min-lateral-size", "5.0",
+            "--calculator", "emt",
+            "--relax-steps", "10",
+            "--export-relaxed",
+            "--output-dir", str(output_dir),
+        ]
+    )
+    assert code == 0
+    geom = read(output_dir / "slab.extxyz")
+    relaxed = read(output_dir / "slab_relaxed.extxyz")
+    manifest = json.loads((output_dir / "slab_manifest.json").read_text(encoding="utf-8"))
+
+    assert Path(manifest["files"]["surface_slab_relaxed_extxyz"]).is_file()
+    assert np.isfinite(manifest["relaxed_slab"]["energy_eV"])
+    assert manifest["relaxed_slab"]["max_force_eV_A"] >= 0.0
+    assert isinstance(manifest["relaxed_slab"]["converged"], bool)
+    assert len(relaxed) == len(geom)
+    fixed_geom = sorted(int(i) for c in geom.constraints if isinstance(c, FixAtoms) for i in c.index)
+    fixed_relaxed = sorted(int(i) for c in relaxed.constraints if isinstance(c, FixAtoms) for i in c.index)
+    assert fixed_geom and fixed_relaxed == fixed_geom
+    assert np.allclose(relaxed.positions[fixed_relaxed], geom.positions[fixed_geom])
+    # Top free atoms should move slightly relative to geometric cut (surface relaxation).
+    free = [i for i in range(len(geom)) if i not in fixed_geom]
+    assert np.max(np.abs(relaxed.positions[free] - geom.positions[free])) > 1e-4
+
+    # --export-relaxed without an energy calculator must fail cleanly.
+    bad_code = slab_module.main(
+        [
+            "--bulk", str(bulk_path),
+            "--facet", "111",
+            "--calculator", "none",
+            "--export-relaxed",
+            "--output-dir", str(tmp_path / "slab_bad"),
+        ]
+    )
+    assert bad_code != 0
