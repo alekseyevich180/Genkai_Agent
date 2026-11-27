@@ -9,10 +9,10 @@ from .cluster_builder import resolve_cluster_element, resolve_lattice_constants
 
 HCP_0001_COMPACT_SHAPES = [
     {"atoms": 1, "type": "hex", "row_sequence": [1]},
-    {"atoms": 7, "type": "hex", "row_sequence": [3, 2, 3]},
-    {"atoms": 19, "type": "hex", "row_sequence": [5, 4, 3, 4, 5]},
-    {"atoms": 37, "type": "hex", "row_sequence": [7, 6, 5, 4, 5, 6, 7]},
-    {"atoms": 61, "type": "hex", "row_sequence": [9, 8, 7, 6, 5, 6, 7, 8, 9]},
+    {"atoms": 7, "type": "hex", "row_sequence": [2, 3, 2]},
+    {"atoms": 19, "type": "hex", "row_sequence": [3, 4, 5, 4, 3]},
+    {"atoms": 37, "type": "hex", "row_sequence": [4, 5, 6, 7, 6, 5, 4]},
+    {"atoms": 61, "type": "hex", "row_sequence": [5, 6, 7, 8, 9, 8, 7, 6, 5]},
     {"atoms": 3, "type": "triangle", "row_sequence": [2, 1]},
     {"atoms": 6, "type": "triangle", "row_sequence": [3, 2, 1]},
     {"atoms": 10, "type": "triangle", "row_sequence": [4, 3, 2, 1]},
@@ -26,8 +26,8 @@ HCP_0001_COMPACT_SHAPES = [
     {"atoms": 12, "type": "trapezoid", "row_sequence": [5, 4, 3]},
     {"atoms": 13, "type": "trapezoid", "row_sequence": [3, 2, 3, 2, 3]},
     {"atoms": 14, "type": "trapezoid", "row_sequence": [4, 3, 4, 3]},
-    {"atoms": 16, "type": "trapezoid", "row_sequence": [5, 4, 5, 2]},
-    {"atoms": 17, "type": "trapezoid", "row_sequence": [5, 4, 5, 3]},
+    {"atoms": 16, "type": "trapezoid", "row_sequence": [4, 5, 4, 3]},
+    {"atoms": 17, "type": "trapezoid", "row_sequence": [3, 4, 3, 4, 3]},
     {"atoms": 18, "type": "trapezoid", "row_sequence": [4, 3, 4, 3, 4]},
     {"atoms": 20, "type": "trapezoid", "row_sequence": [5, 4, 3, 4, 4]},
     {"atoms": 23, "type": "trapezoid", "row_sequence": [5, 4, 5, 4, 5]},
@@ -115,14 +115,52 @@ def validate_hcp0001_spacing(positions, lattice_a, label):
 
 
 def layer_positions_from_rows(rows, dx=1.0):
+    if not rows:
+        return np.empty((0, 2), dtype=float)
     dy = np.sqrt(3.0) * dx / 2.0
     y_center = (len(rows) - 1) / 2.0
+    row_starts = [-0.5 * (rows[0] - 1) * dx]
+    for row_idx in range(1, len(rows)):
+        diff = rows[row_idx] - rows[row_idx - 1]
+        if diff == 1:
+            row_starts.append(row_starts[-1] - 0.5 * dx)
+        else:
+            row_starts.append(row_starts[-1] + 0.5 * dx)
+
     positions = []
-    for row_idx, row_len in enumerate(rows):
-        x_center = (row_len - 1) / 2.0
+    for row_idx, (row_len, start_x) in enumerate(zip(rows, row_starts)):
         y = (row_idx - y_center) * dy
-        positions.extend([(col - x_center) * dx, y] for col in range(row_len))
-    return np.array(positions, dtype=float)
+        positions.extend([start_x + col * dx, y] for col in range(row_len))
+    arr = np.array(positions, dtype=float)
+    arr[:, 0] -= float(arr[:, 0].mean())
+    return arr
+
+
+def _hollow_atoms_between_rows(row_a, row_b, orientation, dx, next_z, tol=1e-4):
+    """Return exact 3-fold hollow sites between two adjacent close-packed rows.
+
+    orientation == 0: up-pointing triangle (1 atom from row_a + 2 adjacent atoms from row_b)
+    orientation == 1: down-pointing triangle (2 adjacent atoms from row_a + 1 atom from row_b)
+    """
+    row_atoms = []
+    eps = tol * max(float(dx), 1.0)
+    if orientation == 0:
+        for col in range(len(row_b) - 1):
+            mid_x = 0.5 * (float(row_b[col][0]) + float(row_b[col + 1][0]))
+            for apex in row_a:
+                if abs(float(apex[0]) - mid_x) <= eps:
+                    hollow = (apex + row_b[col] + row_b[col + 1]) / 3.0
+                    row_atoms.append(np.array([hollow[0], hollow[1], next_z], dtype=float))
+                    break
+    else:
+        for col in range(len(row_a) - 1):
+            mid_x = 0.5 * (float(row_a[col][0]) + float(row_a[col + 1][0]))
+            for apex in row_b:
+                if abs(float(apex[0]) - mid_x) <= eps:
+                    hollow = (row_a[col] + row_a[col + 1] + apex) / 3.0
+                    row_atoms.append(np.array([hollow[0], hollow[1], next_z], dtype=float))
+                    break
+    return row_atoms
 
 
 def hollow_orientation_for_rows(rows):
@@ -208,43 +246,13 @@ def hcp0001_positions(stack, lattice_a, lattice_c):
 
         next_layer_rows = []
         orientation = hcp_transition_orientation(base_orientation, layer_idx)
+        next_z = (layer_idx + 1) * dz
         for row_idx in range(len(current_layer_rows) - 1):
             row_a = current_layer_rows[row_idx]
             row_b = current_layer_rows[row_idx + 1]
-            row_atoms = []
-
-            len_a = len(row_a)
-            len_b = len(row_b)
-
-            if abs(len_a - len_b) > 1:
+            if abs(len(row_a) - len(row_b)) > 1:
                 raise ValueError("Adjacent hcp rows must differ by at most 1 atom for compact AB stacking.")
-
-            if len_a == len_b:
-                for col in range(len_a - 1):
-                    if orientation == 0:
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col]) / 3.0
-                    else:
-                        hollow = (row_a[col] + row_b[col] + row_b[col + 1]) / 3.0
-                    row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-            elif len_b == len_a + 1:
-                if orientation == 0:
-                    for col in range(len_a):
-                        hollow = (row_a[col] + row_b[col] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-                else:
-                    for col in range(len_a - 1):
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-            else:
-                if orientation == 0:
-                    for col in range(len_b - 1):
-                        hollow = (row_a[col + 1] + row_b[col] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-                else:
-                    for col in range(len_b):
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-
+            row_atoms = _hollow_atoms_between_rows(row_a, row_b, orientation, dx, next_z)
             if row_atoms:
                 next_layer_rows.append(row_atoms)
 
@@ -266,12 +274,15 @@ def build_hcp0001_monolayer_cluster(element, row_sequence, lattice_a):
 def build_hcp0001_cluster(element, row_sequence, layers, lattice_a, lattice_c):
     stack = build_hcp_stack(row_sequence, layers)
     positions = hcp0001_positions(stack, lattice_a, lattice_c)
+    offset = 0
     for layer_idx, layer_rows in enumerate(stack, start=1):
+        count = sum(layer_rows)
         validate_hcp0001_spacing(
-            hcp0001_monolayer_positions(layer_rows, lattice_a),
+            positions[offset : offset + count],
             lattice_a,
             f"hcp(0001) layer {layer_idx}",
         )
+        offset += count
     atoms = Atoms(symbols=[element] * len(positions), positions=positions)
     atoms.pbc = False
     atoms.center()

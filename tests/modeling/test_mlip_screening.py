@@ -337,3 +337,129 @@ def test_cluster_search_funnel_anneal_multiseed_and_xy_bounds(tmp_path) -> None:
                 "--top_pick_count", "1", "--tail_pick_per_bin", "0", "--output_dir", str(tmp_path / "bad_out"),
             ]
         )
+
+
+def test_cluster_search_min_distance_uses_periodic_mic_and_jobs_exposes_detach_cutoff() -> None:
+    from genkai.modeling.surface.app import jobs
+    from genkai.modeling.surface.screening.cluster_search import get_min_slab_cluster_distance
+
+    # Slab atom near x=9.8 A, cluster atom wrapped across periodic edge at x=0.2 A -> true MIC distance = 1.844 A.
+    combined = Atoms(
+        symbols=["O", "Ni"],
+        positions=[[9.8, 5.0, 5.0], [0.2, 5.0, 6.8]],
+        cell=[10.0, 10.0, 20.0],
+        pbc=True,
+    )
+    dist = get_min_slab_cluster_distance(combined, 1)
+    assert dist == pytest.approx(np.hypot(0.4, 1.8), abs=1e-4)
+    assert "detach_cutoff" in jobs.METHODS["cluster_search"].keys
+
+
+def test_cluster_search_morphology_filters_and_isolated_cluster_boxing(tmp_path) -> None:
+    import pandas as pd
+    from ase.build import fcc111
+    from ase.constraints import FixAtoms
+
+    from genkai.modeling.surface.app import jobs
+    from genkai.modeling.surface.screening import cluster_search
+    from genkai.modeling.surface.structure_io import label_components, write_frames
+
+    # 1. Unit tests on evaluate_cluster_morphology & check_cluster_morphology
+    slab = Atoms(
+        symbols=["O"] * 4,
+        positions=[[0.0, 0.0, 5.0], [2.5, 0.0, 5.0], [0.0, 2.5, 5.0], [2.5, 2.5, 5.0]],
+        cell=[12.0, 12.0, 22.0],
+        pbc=True,
+    )
+    # Compact 4+4 bilayer patch (4 bottom atoms anchored at 1.9 A, z_span=1.9 A, 1 connected component)
+    patch = Atoms(
+        symbols=["Ni"] * 8,
+        positions=[
+            [0.0, 0.0, 6.9], [2.5, 0.0, 6.9], [0.0, 2.5, 6.9], [2.5, 2.5, 6.9],
+            [0.5, 0.5, 8.8], [2.0, 0.5, 8.8], [0.5, 2.0, 8.8], [2.0, 2.0, 8.8],
+        ],
+    )
+    m_patch = cluster_search.evaluate_cluster_morphology(slab + patch, len(slab), detach_cutoff=2.4)
+    assert m_patch["n_anchor_atoms"] == 4
+    assert m_patch["n_components"] == 1
+    assert m_patch["cluster_z_span"] == pytest.approx(1.9, abs=1e-3)
+    ok_patch, viol_patch = cluster_search.check_cluster_morphology(
+        m_patch, detach_cutoff=2.4, min_anchor_atoms=3, require_connected=True, max_cluster_height=3.2
+    )
+    assert ok_patch is True and viol_patch == 0.0
+
+    # Tall vertical chain with only 1 atom touching the slab -> rejected by min_anchor_atoms & max_cluster_height
+    chain = Atoms(
+        symbols=["Ni"] * 4,
+        positions=[[0.0, 0.0, 6.9], [0.0, 0.0, 9.2], [0.0, 0.0, 11.5], [0.0, 0.0, 13.8]],
+    )
+    m_chain = cluster_search.evaluate_cluster_morphology(slab + chain, len(slab), detach_cutoff=2.4)
+    assert m_chain["n_anchor_atoms"] == 1
+    assert m_chain["cluster_z_span"] == pytest.approx(6.9, abs=1e-3)
+    ok_chain, viol_chain = cluster_search.check_cluster_morphology(
+        m_chain, detach_cutoff=2.4, min_anchor_atoms=3, require_connected=True, max_cluster_height=3.2
+    )
+    assert ok_chain is False and viol_chain > 0.0
+
+    # Fragmented / diffusing cluster -> 2 disconnected pieces -> rejected by require_connected
+    split = Atoms(
+        symbols=["Ni"] * 4,
+        positions=[[0.0, 0.0, 6.9], [2.4, 0.0, 6.9], [6.5, 6.5, 6.9], [8.9, 6.5, 6.9]],
+    )
+    m_split = cluster_search.evaluate_cluster_morphology(slab + split, len(slab), detach_cutoff=2.4)
+    assert m_split["n_components"] == 2
+    ok_split, _ = cluster_search.check_cluster_morphology(
+        m_split, detach_cutoff=2.4, min_anchor_atoms=1, require_connected=True
+    )
+    assert ok_split is False
+
+    # 2. Isolated non-periodic cluster is boxed with pbc=True during reference relaxation
+    seen_pbc: list[tuple[bool, float]] = []
+
+    class _RecordingMock(calculators.ContactMockCalculator):
+        def calculate(self, atoms=None, properties=("energy",), system_changes=calculators.all_changes):
+            super().calculate(atoms, properties, system_changes)
+            seen_pbc.append((bool(all(self.atoms.pbc)), float(self.atoms.cell.volume)))
+
+    raw_cluster = Atoms("Ni4", positions=[[0, 0, 0], [2.4, 0, 0], [1.2, 2.1, 0], [1.2, 0.7, 2.0]], pbc=False)
+    c_path = tmp_path / "ni4.xyz"
+    write(c_path, raw_cluster)
+    placed_list, names, _ = cluster_search.load_clusters(
+        c_path, _RecordingMock(), fmax=0.1, max_steps=1, placement_shape="relaxed"
+    )
+    assert seen_pbc and all(is_pbc and vol >= 8000.0 for is_pbc, vol in seen_pbc)
+    assert not any(placed_list[0].pbc) and names == ["seed_0"]
+
+    # 3. jobs.py exposes the new morphology options
+    for key in ("min_anchor_atoms", "require_connected", "cluster_bond_scale", "max_cluster_height"):
+        assert key in jobs.METHODS["cluster_search"].keys
+
+    # 4. End-to-end EMT run with morphology constraints records new columns and picks a connected, anchored patch
+    cu_slab = fcc111("Cu", size=(2, 2, 3), vacuum=8.0)
+    cu_slab.set_constraint(FixAtoms(indices=[a.index for a in cu_slab if a.tag == 3]))
+    label_components(cu_slab, "substrate")
+    slab_path = write_frames(tmp_path / "cu_slab.extxyz", [cu_slab])
+
+    flat_patch = Atoms("Pt4", positions=[[0, 0, 0], [2.7, 0, 0], [1.35, 2.34, 0], [1.35, 0.78, 2.1]])
+    flat_patch.info["seed_name"] = "Pt4_patch"
+    seeds_path = write_frames(tmp_path / "pt4.extxyz", [flat_patch])
+
+    out_dir = tmp_path / "morph_out"
+    code = cluster_search.main(
+        [
+            "--surface", str(slab_path), "--cluster", str(seeds_path), "--calculator", "emt",
+            "--placement_shape", "input", "--max_tilt", "20", "--z_min", "1.4", "--z_max", "2.4",
+            "--detach_cutoff", "3.0", "--min_anchor_atoms", "2", "--require_connected",
+            "--max_cluster_height", "3.5", "--n_trials", "3", "--screen_steps", "3",
+            "--refine_top_k", "2", "--max_steps", "5", "--fmax", "0.2",
+            "--selection_count", "1", "--top_pool_size", "2", "--top_pick_count", "1",
+            "--tail_pick_per_bin", "0", "--seed", "5", "--output_dir", str(out_dir),
+        ]
+    )
+    assert code == 0
+    refined_df = pd.read_csv(out_dir / "mlip_output" / "mlip_refined_table.csv")
+    for col in ("morphology_ok", "n_anchor_atoms", "n_components", "cluster_z_span_A", "cluster_xy_span_A", "avg_cluster_cn"):
+        assert col in refined_df.columns
+    assert bool(refined_df.iloc[0]["morphology_ok"]) is True
+    assert int(refined_df.iloc[0]["n_anchor_atoms"]) >= 2
+    assert int(refined_df.iloc[0]["n_components"]) == 1

@@ -9,10 +9,12 @@ from pathlib import Path
 
 import numpy as np
 from ase import Atoms
+from ase.data import covalent_radii
 from ase.filters import ExpCellFilter, StrainFilter
 from ase.io import read, write
 from ase.optimize import LBFGS
 
+from ..mlip.calculators import molecule_in_box
 from ..mlip.search_sampler import add_sampler_argument, make_sampler
 from ..structure_io import label_components, sanitize_atoms_info, write_frames
 
@@ -210,8 +212,19 @@ def load_clusters(
         supplied.set_constraint()
         seed_name = str(raw.info.get("seed_name") or f"seed_{idx}")
         relaxed = supplied.copy()
-        energy = get_opt_energy(relaxed, calculator, fmax=fmax, max_steps=max_steps)
-        chosen = relaxed if placement_shape == "relaxed" else supplied
+        was_nonperiodic = (not all(relaxed.pbc)) or (relaxed.cell.rank < 3) or (relaxed.cell.volume < 1e-6)
+        relaxed_eval = molecule_in_box(relaxed) if was_nonperiodic else relaxed
+        energy = get_opt_energy(relaxed_eval, calculator, fmax=fmax, max_steps=max_steps)
+        if placement_shape == "relaxed":
+            chosen = Atoms(
+                symbols=relaxed_eval.get_chemical_symbols(),
+                positions=relaxed_eval.positions.copy(),
+                pbc=False,
+            )
+            if "seed_name" in supplied.info:
+                chosen.info["seed_name"] = supplied.info["seed_name"]
+        else:
+            chosen = supplied
         chosen.calc = None
         chosen.positions -= get_geometric_center(chosen)
         placed_list.append(chosen)
@@ -266,10 +279,121 @@ def estimate_bottom_plane_normal(cluster: Atoms, z_tolerance: float = 0.35) -> n
 
 
 def get_min_slab_cluster_distance(combined: Atoms, n_slab_atoms: int) -> float:
+    if n_slab_atoms <= 0 or n_slab_atoms >= len(combined):
+        return float("inf")
+    if bool(np.any(combined.pbc)) and combined.cell.rank == 3:
+        distances = combined.get_all_distances(mic=True)[:n_slab_atoms, n_slab_atoms:]
+        return float(distances.min())
     slab_positions = combined.positions[:n_slab_atoms]
     cluster_positions = combined.positions[n_slab_atoms:]
     deltas = slab_positions[:, None, :] - cluster_positions[None, :, :]
     return float(np.linalg.norm(deltas, axis=2).min())
+
+
+def evaluate_cluster_morphology(
+    combined: Atoms,
+    n_slab_atoms: int,
+    *,
+    detach_cutoff: float,
+    bond_scale: float = 1.30,
+) -> dict[str, float | int]:
+    """Compute periodic-aware anchoring, cohesion, and patch-geometry metrics for the supported cluster."""
+    n_total = len(combined)
+    n_cluster = n_total - n_slab_atoms
+    if n_slab_atoms <= 0 or n_cluster <= 0:
+        return {
+            "min_slab_cluster_distance": float("inf"),
+            "n_anchor_atoms": 0,
+            "n_components": 0,
+            "avg_cluster_cn": 0.0,
+            "cluster_z_span": 0.0,
+            "cluster_xy_span": 0.0,
+        }
+
+    use_mic = bool(np.any(combined.pbc)) and combined.cell.rank == 3
+    all_dist = combined.get_all_distances(mic=use_mic)
+    slab_cluster = all_dist[:n_slab_atoms, n_slab_atoms:]
+    per_atom_slab_dist = slab_cluster.min(axis=0)
+    min_distance = float(per_atom_slab_dist.min())
+    n_anchor_atoms = int(np.sum(per_atom_slab_dist <= detach_cutoff))
+
+    cluster_dist = all_dist[n_slab_atoms:, n_slab_atoms:]
+    cluster_numbers = combined.numbers[n_slab_atoms:]
+    radii = covalent_radii[cluster_numbers]
+    bond_cutoffs = bond_scale * (radii[:, None] + radii[None, :])
+    adj = (cluster_dist <= bond_cutoffs) & (~np.eye(n_cluster, dtype=bool))
+    avg_cn = float(adj.sum(axis=1).mean()) if n_cluster > 1 else 0.0
+
+    visited = [False] * n_cluster
+    n_components = 0
+    for start in range(n_cluster):
+        if visited[start]:
+            continue
+        n_components += 1
+        stack = [start]
+        visited[start] = True
+        while stack:
+            node = stack.pop()
+            for nbr in np.flatnonzero(adj[node]):
+                idx = int(nbr)
+                if not visited[idx]:
+                    visited[idx] = True
+                    stack.append(idx)
+
+    cluster_pos = combined.positions[n_slab_atoms:]
+    z_span = float(np.ptp(cluster_pos[:, 2])) if n_cluster > 1 else 0.0
+    if n_cluster > 1:
+        if use_mic:
+            vecs = combined.get_distances(n_slab_atoms, range(n_slab_atoms, n_total), mic=True, vector=True)
+            xy = vecs[:, :2]
+        else:
+            xy = cluster_pos[:, :2]
+        xy_span = float(np.linalg.norm(xy[:, None, :] - xy[None, :, :], axis=2).max())
+    else:
+        xy_span = 0.0
+
+    return {
+        "min_slab_cluster_distance": min_distance,
+        "n_anchor_atoms": n_anchor_atoms,
+        "n_components": n_components,
+        "avg_cluster_cn": avg_cn,
+        "cluster_z_span": z_span,
+        "cluster_xy_span": xy_span,
+    }
+
+
+def check_cluster_morphology(
+    metrics: dict[str, float | int],
+    *,
+    detach_cutoff: float,
+    min_anchor_atoms: int = 1,
+    require_connected: bool = False,
+    max_cluster_height: float | None = None,
+) -> tuple[bool, float]:
+    """Check whether a supported cluster satisfies adhesion, cohesion, and height constraints."""
+    min_dist = float(metrics["min_slab_cluster_distance"])
+    n_anchor = int(metrics["n_anchor_atoms"])
+    n_comp = int(metrics["n_components"])
+    z_span = float(metrics["cluster_z_span"])
+
+    violation = 0.0
+    detached = min_dist > detach_cutoff
+    if detached:
+        violation += (min_dist - detach_cutoff) + 10.0
+    if n_anchor < min_anchor_atoms:
+        violation += 5.0 * float(min_anchor_atoms - n_anchor)
+    if require_connected and n_comp > 1:
+        violation += 20.0 * float(n_comp - 1)
+    if max_cluster_height is not None and z_span > max_cluster_height:
+        violation += 2.0 * (z_span - max_cluster_height)
+
+    ok = (
+        (not detached)
+        and (n_anchor >= min_anchor_atoms)
+        and ((not require_connected) or (n_comp <= 1))
+        and (max_cluster_height is None or z_span <= max_cluster_height)
+    )
+    return ok, violation
 
 
 def place_cluster_on_slab(
@@ -348,6 +472,12 @@ def objective(trial: optuna.Trial) -> float:
     z_min = float(trial.study.user_attrs["z_min"])
     z_max = float(trial.study.user_attrs["z_max"])
     detach_cutoff = float(trial.study.user_attrs["detach_cutoff"])
+    min_anchor_atoms = int(trial.study.user_attrs.get("min_anchor_atoms", 1))
+    require_connected = bool(trial.study.user_attrs.get("require_connected", False))
+    cluster_bond_scale = float(trial.study.user_attrs.get("cluster_bond_scale", 1.30))
+    max_cluster_height = trial.study.user_attrs.get("max_cluster_height", None)
+    if max_cluster_height is not None:
+        max_cluster_height = float(max_cluster_height)
     penalty_energy = float(trial.study.user_attrs["penalty_energy"])
     max_steps = int(trial.study.user_attrs.get("stage1_steps", trial.study.user_attrs["max_steps"]))
     fmax = float(trial.study.user_attrs.get("stage1_fmax", trial.study.user_attrs["fmax"]))
@@ -378,18 +508,35 @@ def objective(trial: optuna.Trial) -> float:
     trial.set_user_attr("cluster_index", cluster_index)
     trial.set_user_attr("seed_name", seed_name)
 
-    min_distance = get_min_slab_cluster_distance(combined, len(slab))
+    morph = evaluate_cluster_morphology(
+        combined, len(slab), detach_cutoff=detach_cutoff, bond_scale=cluster_bond_scale
+    )
+    min_distance = float(morph["min_slab_cluster_distance"])
+    detached = min_distance > detach_cutoff
+    morph_ok, violation = check_cluster_morphology(
+        morph,
+        detach_cutoff=detach_cutoff,
+        min_anchor_atoms=min_anchor_atoms,
+        require_connected=require_connected,
+        max_cluster_height=max_cluster_height,
+    )
     trial.set_user_attr("min_slab_cluster_distance", min_distance)
-    if min_distance > detach_cutoff:
-        trial.set_user_attr("detached", True)
-        return penalty_energy + min_distance
-    trial.set_user_attr("detached", False)
+    trial.set_user_attr("n_anchor_atoms", int(morph["n_anchor_atoms"]))
+    trial.set_user_attr("n_components", int(morph["n_components"]))
+    trial.set_user_attr("avg_cluster_cn", float(morph["avg_cluster_cn"]))
+    trial.set_user_attr("cluster_z_span", float(morph["cluster_z_span"]))
+    trial.set_user_attr("cluster_xy_span", float(morph["cluster_xy_span"]))
+    trial.set_user_attr("detached", bool(detached))
+    trial.set_user_attr("morphology_ok", bool(morph_ok))
+    if not morph_ok:
+        return penalty_energy + violation
 
     return adsorption_energy
 
 
 def get_ranked_valid_trials(study: optuna.Study) -> list[optuna.trial.FrozenTrial]:
-    valid_trials = []
+    morph_valid = []
+    attached_only = []
     for trial in study.trials:
         if trial.value is None:
             continue
@@ -397,7 +544,11 @@ def get_ranked_valid_trials(study: optuna.Study) -> list[optuna.trial.FrozenTria
             continue
         if "structure" not in trial.user_attrs:
             continue
-        valid_trials.append(trial)
+        if trial.user_attrs.get("morphology_ok", True):
+            morph_valid.append(trial)
+        else:
+            attached_only.append(trial)
+    valid_trials = morph_valid if morph_valid else attached_only
     valid_trials.sort(key=lambda trial: float(trial.value))
     return valid_trials
 
@@ -459,6 +610,10 @@ def refine_and_anneal_candidates(
     fmax: float,
     max_steps: int,
     detach_cutoff: float,
+    min_anchor_atoms: int = 1,
+    require_connected: bool = False,
+    cluster_bond_scale: float = 1.30,
+    max_cluster_height: float | None = None,
     anneal_steps: int = 0,
     anneal_temperature: float = 600.0,
     anneal_snapshots: int = 1,
@@ -476,8 +631,18 @@ def refine_and_anneal_candidates(
         e_total = get_opt_energy(work, calculator, fmax=fmax, max_steps=max_steps)
         forces = np.asarray(work.get_forces(), dtype=float)
         max_force = float(np.linalg.norm(forces, axis=1).max()) if len(forces) else 0.0
-        min_distance = get_min_slab_cluster_distance(work, n_slab)
+        morph = evaluate_cluster_morphology(
+            work, n_slab, detach_cutoff=detach_cutoff, bond_scale=cluster_bond_scale
+        )
+        min_distance = float(morph["min_slab_cluster_distance"])
         detached = min_distance > detach_cutoff
+        morph_ok, _ = check_cluster_morphology(
+            morph,
+            detach_cutoff=detach_cutoff,
+            min_anchor_atoms=min_anchor_atoms,
+            require_connected=require_connected,
+            max_cluster_height=max_cluster_height,
+        )
         e_ads = float(e_total - e_slab - e_cluster)
         clean = work.copy()
         clean.calc = None
@@ -491,6 +656,12 @@ def refine_and_anneal_candidates(
             "E_total_eV": float(e_total),
             "min_slab_cluster_distance": float(min_distance),
             "detached": bool(detached),
+            "morphology_ok": bool(morph_ok),
+            "n_anchor_atoms": int(morph["n_anchor_atoms"]),
+            "n_components": int(morph["n_components"]),
+            "cluster_z_span_A": round(float(morph["cluster_z_span"]), 4),
+            "cluster_xy_span_A": round(float(morph["cluster_xy_span"]), 4),
+            "avg_cluster_cn": round(float(morph["avg_cluster_cn"]), 3),
             "max_force_eV_A": round(max_force, 6),
             "atoms": clean,
         }
@@ -519,7 +690,7 @@ def refine_and_anneal_candidates(
                 )
                 results.append(_record_relaxed(md_atoms, trial, f"anneal_snap_{snap_idx}"))
 
-    results.sort(key=lambda item: (item["detached"], item["energy"]))
+    results.sort(key=lambda item: (not item["morphology_ok"], item["detached"], item["energy"]))
     return results
 
 
@@ -682,6 +853,29 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Vacuum kept above the highest possible cluster position; c is lengthened before the slab relaxation.",
     )
     parser.add_argument("--detach_cutoff", type=float, default=6.0)
+    parser.add_argument(
+        "--min_anchor_atoms",
+        type=int,
+        default=1,
+        help="Minimum number of cluster atoms within --detach_cutoff of the slab (default: 1).",
+    )
+    parser.add_argument(
+        "--require_connected",
+        action="store_true",
+        help="Reject fragmented/dispersing clusters that break into >1 connected metal component.",
+    )
+    parser.add_argument(
+        "--cluster_bond_scale",
+        type=float,
+        default=1.30,
+        help="Covalent-radius multiplier defining M-M connectivity for morphology checks (default: 1.30).",
+    )
+    parser.add_argument(
+        "--max_cluster_height",
+        type=float,
+        default=None,
+        help="Optional maximum allowed cluster vertical z-span in Angstrom (rejects tall upright needles).",
+    )
     parser.add_argument("--penalty_energy", type=float, default=1e6)
     parser.add_argument("--max_steps", type=int, default=200)
     parser.add_argument(
@@ -794,6 +988,12 @@ def main(argv: list[str] | None = None):
         raise ValueError("--anneal_snapshots must be >= 1.")
     if args.screen_steps is not None and args.screen_steps < 0:
         raise ValueError("--screen_steps must be >= 0.")
+    if args.min_anchor_atoms < 1:
+        raise ValueError("--min_anchor_atoms must be >= 1.")
+    if args.cluster_bond_scale <= 0.0:
+        raise ValueError("--cluster_bond_scale must be > 0.")
+    if args.max_cluster_height is not None and args.max_cluster_height <= 0.0:
+        raise ValueError("--max_cluster_height must be > 0.")
 
     input_surface = read(args.surface)
     input_clusters_raw = read(args.cluster, index=":")
@@ -877,6 +1077,10 @@ def main(argv: list[str] | None = None):
     study.set_user_attr("x_range", list(x_range))
     study.set_user_attr("y_range", list(y_range))
     study.set_user_attr("detach_cutoff", args.detach_cutoff)
+    study.set_user_attr("min_anchor_atoms", args.min_anchor_atoms)
+    study.set_user_attr("require_connected", args.require_connected)
+    study.set_user_attr("cluster_bond_scale", args.cluster_bond_scale)
+    study.set_user_attr("max_cluster_height", args.max_cluster_height)
     study.set_user_attr("penalty_energy", args.penalty_energy)
     study.set_user_attr("max_steps", args.max_steps)
     study.set_user_attr("fmax", args.fmax)
@@ -891,7 +1095,13 @@ def main(argv: list[str] | None = None):
                 "trial": trial.number,
                 "energy": trial.value,
                 "detached": trial.user_attrs.get("detached", False),
+                "morphology_ok": trial.user_attrs.get("morphology_ok", True),
                 "min_slab_cluster_distance": trial.user_attrs.get("min_slab_cluster_distance"),
+                "n_anchor_atoms": trial.user_attrs.get("n_anchor_atoms"),
+                "n_components": trial.user_attrs.get("n_components"),
+                "cluster_z_span_A": trial.user_attrs.get("cluster_z_span"),
+                "cluster_xy_span_A": trial.user_attrs.get("cluster_xy_span"),
+                "avg_cluster_cn": trial.user_attrs.get("avg_cluster_cn"),
                 "cluster_index": trial.user_attrs.get("cluster_index", 0),
                 "seed_name": trial.user_attrs.get("seed_name", seed_names[0]),
                 "x_frac": trial.params.get("x_frac"),
@@ -919,6 +1129,10 @@ def main(argv: list[str] | None = None):
             fmax=args.fmax,
             max_steps=args.max_steps,
             detach_cutoff=args.detach_cutoff,
+            min_anchor_atoms=args.min_anchor_atoms,
+            require_connected=args.require_connected,
+            cluster_bond_scale=args.cluster_bond_scale,
+            max_cluster_height=args.max_cluster_height,
             anneal_steps=args.anneal_steps,
             anneal_temperature=args.anneal_temperature,
             anneal_snapshots=args.anneal_snapshots,
@@ -935,19 +1149,36 @@ def main(argv: list[str] | None = None):
                 "energy": item["energy"],
                 "E_total_eV": item["E_total_eV"],
                 "detached": item["detached"],
+                "morphology_ok": item["morphology_ok"],
                 "min_slab_cluster_distance": item["min_slab_cluster_distance"],
+                "n_anchor_atoms": item["n_anchor_atoms"],
+                "n_components": item["n_components"],
+                "cluster_z_span_A": item["cluster_z_span_A"],
+                "cluster_xy_span_A": item["cluster_xy_span_A"],
+                "avg_cluster_cn": item["avg_cluster_cn"],
                 "max_force_eV_A": item["max_force_eV_A"],
             }
             for rank, item in enumerate(refined, start=1)
         ]
         pd.DataFrame(refined_rows).to_csv(structure_output_dir / "mlip_refined_table.csv", index=False)
 
+        morph_refined = [item for item in refined if item["morphology_ok"]]
         attached_refined = [item for item in refined if not item["detached"]]
-        if attached_refined:
-            best_item = attached_refined[0]
+        if morph_refined:
+            best_item = morph_refined[0]
+            export_pool = morph_refined
             all_detached = False
+        elif attached_refined:
+            best_item = attached_refined[0]
+            export_pool = attached_refined
+            all_detached = False
+            print(
+                "WARNING: No refined cluster_search structure satisfied all morphology filters; "
+                "falling back to lowest-energy attached candidate."
+            )
         else:
             best_item = refined[0]
+            export_pool = refined
             all_detached = True
             print(
                 "WARNING: Every refined cluster_search structure detached (> detach_cutoff); "
@@ -966,11 +1197,14 @@ def main(argv: list[str] | None = None):
             "seed_name": str(best_item["seed_name"]),
             "energy_eV": float(best_item["energy"]),
             "detached": bool(best_item["detached"]),
+            "morphology_ok": bool(best_item["morphology_ok"]),
+            "n_anchor_atoms": int(best_item["n_anchor_atoms"]),
+            "n_components": int(best_item["n_components"]),
         }
         write_frames(structure_output_dir / "mlip_best_structure.extxyz", [best_frame])
 
         ranked_frames: list[Atoms] = []
-        for rank, item in enumerate(attached_refined[: args.candidate_pool_size], start=1):
+        for rank, item in enumerate(export_pool[: args.candidate_pool_size], start=1):
             frame = item["atoms"].copy()
             frame.calc = None
             frame.info = {
@@ -981,12 +1215,12 @@ def main(argv: list[str] | None = None):
                 "stage": str(item["stage"]),
                 "seed_name": str(item["seed_name"]),
                 "energy_eV": float(item["energy"]),
+                "morphology_ok": bool(item["morphology_ok"]),
             }
             ranked_frames.append(frame)
         if ranked_frames:
             write_frames(structure_output_dir / "cluster_search_structures.extxyz", ranked_frames)
 
-        export_pool = attached_refined if attached_refined else refined
         for index, item in enumerate(export_pool[: args.selection_count], start=1):
             struct = item["atoms"]
             cif_path = structure_output_dir / f"{index:02d}_trial_{item['source_trial']:03d}.cif"

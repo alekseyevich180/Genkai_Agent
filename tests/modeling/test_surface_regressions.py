@@ -387,3 +387,127 @@ def test_adsorbate_coverage_avoids_molecule_molecule_clash() -> None:
     labels = components(combined)
     assert list(labels[:4]) == ["substrate"] * 4
     assert list(labels[4:]) == ["adsorbate"] * (2 * len(ketone))
+
+
+def test_hcp_catalog_and_equal_row_fcc_hcp_layered_clusters_have_exact_close_packed_spacing() -> None:
+    from genkai.modeling.surface.builders.metal_cluster.cluster_builder import resolve_lattice_constants
+    from genkai.modeling.surface.builders.metal_cluster.fcc import build_fcc111_cluster, parse_rows as parse_fcc_rows
+    from genkai.modeling.surface.builders.metal_cluster.hcp import (
+        HCP_0001_COMPACT_SHAPES,
+        build_hcp0001_cluster,
+        build_hcp0001_monolayer_cluster,
+    )
+
+    a_ru, c_ru = resolve_lattice_constants("Ru", "hcp", None, None)
+    assert np.isclose(a_ru, 2.7058, atol=1e-4)
+
+    # 1. Every entry in HCP_0001_COMPACT_SHAPES must match its declared atom count and build with exact spacing a.
+    hex_map = {e["atoms"]: e["row_sequence"] for e in HCP_0001_COMPACT_SHAPES if e["type"] == "hex"}
+    assert hex_map[7] == [2, 3, 2]
+    assert hex_map[19] == [3, 4, 5, 4, 3]
+    assert hex_map[37] == [4, 5, 6, 7, 6, 5, 4]
+    assert hex_map[61] == [5, 6, 7, 8, 9, 8, 7, 6, 5]
+    for entry in HCP_0001_COMPACT_SHAPES:
+        rows = entry["row_sequence"]
+        assert sum(rows) == entry["atoms"], entry
+        mono = build_hcp0001_monolayer_cluster("Ru", rows, a_ru)
+        assert len(mono) == entry["atoms"]
+        if len(mono) > 1:
+            dist = mono.get_all_distances()
+            np.fill_diagonal(dist, np.inf)
+            assert np.isclose(float(dist.min()), a_ru, atol=1e-4), (entry, float(dist.min()))
+
+    # 2. Both fcc(111) and hcp(0001) must support equal-length adjacent rows and mixed rows across multiple layers.
+    a_ni, _ = resolve_lattice_constants("Ni", "fcc", None, None)
+    d_ni = a_ni / np.sqrt(2.0)
+    assert parse_fcc_rows("2+3+2") == [2, 3, 2]
+    assert parse_fcc_rows("3") == [3]
+
+    for rows, layers, mode, expected_n in (
+        ([2, 3, 2], 2, "ABC", 10),
+        ([3, 3], 2, "ABC", 8),
+        ([3, 3, 2], 2, "ABC", 12),
+        ([3, 3, 3], 3, "ABC", 14),
+        ([3, 3, 3], 3, "AB", 14),
+    ):
+        atoms, stack = build_fcc111_cluster("Ni", rows, layers=layers, lattice_a=a_ni, stacking_mode=mode)
+        assert len(atoms) == expected_n, (rows, layers, mode, stack)
+        dist = atoms.get_all_distances()
+        np.fill_diagonal(dist, np.inf)
+        assert np.isclose(float(dist.min()), d_ni, atol=1e-4), (rows, layers, mode, float(dist.min()), d_ni)
+
+    for rows, layers, expected_n in (
+        ([2, 3, 2], 2, 10),
+        ([3, 3], 2, 8),
+        ([3, 3, 2], 2, 12),
+        ([3, 3, 3], 3, 14),
+    ):
+        atoms, stack = build_hcp0001_cluster("Ru", rows, layers=layers, lattice_a=a_ru, lattice_c=c_ru)
+        assert len(atoms) == expected_n, (rows, layers, stack)
+        dist = atoms.get_all_distances()
+        np.fill_diagonal(dist, np.inf)
+        assert np.isclose(float(dist.min()), a_ru, atol=1e-4), (rows, layers, float(dist.min()), a_ru)
+
+
+def test_surface_cluster_builder_and_jobs_support_layered_row_patch_modes(tmp_path: Path) -> None:
+    import pytest
+    from ase.io import read
+
+    from genkai.modeling.surface.app import jobs
+    from genkai.modeling.surface.builders.metal_cluster import surface_cluster_builder
+    from genkai.modeling.surface.structure_io import label_components, write_frames
+
+    slab = Atoms(
+        symbols=["Ce", "Ce", "O", "O", "O", "O"],
+        positions=[
+            [0.0, 0.0, 2.0], [4.0, 4.0, 2.0],
+            [2.0, 0.0, 2.5], [0.0, 2.0, 2.5], [2.0, 4.0, 2.5], [4.0, 2.0, 2.5],
+        ],
+        cell=[12.0, 12.0, 22.0],
+        pbc=True,
+    )
+    label_components(slab, "substrate")
+    slab_path = write_frames(tmp_path / "slab.extxyz", [slab])
+
+    # 1. CLI infers cluster_structures from --fcc_rows / --hcp_rows and defaults fcc_layers=1.
+    out_fcc = tmp_path / "cli_fcc"
+    surface_cluster_builder.main(
+        ["--surface", str(slab_path), "--cluster_element", "Ni", "--fcc_rows", "2,3,2", "--fcc_layers", "2", "--output_dir", str(out_fcc)]
+    )
+    frames_fcc = read(out_fcc / "cluster_structures.extxyz", index=":")
+    assert len(frames_fcc) == 1 and len(frames_fcc[0]) == len(slab) + 10
+
+    out_fcc_mono = tmp_path / "cli_fcc_mono"
+    surface_cluster_builder.main(
+        ["--cluster_element", "Cu", "--fcc_rows", "3,3", "--output_dir", str(out_fcc_mono)]
+    )
+    assert len(list(out_fcc_mono.glob("Cu_fcc_*_cluster.cif"))) == 1
+
+    out_hcp = tmp_path / "cli_hcp"
+    surface_cluster_builder.main(
+        ["--surface", str(slab_path), "--cluster_element", "Ru", "--hcp_rows", "2,3,2", "--hcp_layers", "2", "--output_dir", str(out_hcp)]
+    )
+    frames_hcp = read(out_hcp / "cluster_structures.extxyz", index=":")
+    assert len(frames_hcp) == 1 and len(frames_hcp[0]) == len(slab) + 10
+
+    # 2. jobs.py `method: cluster` accepts layered row YAML configs and still rejects conflicting bulk-cut modes.
+    for key in ("fcc_rows", "fcc_row_profile", "fcc_layers", "hcp_rows", "hcp_layers", "bcc_rows", "stack_layers"):
+        assert key in jobs.METHODS["cluster"].keys
+
+    yaml_hcp = tmp_path / "cluster_hcp.yaml"
+    yaml_hcp.write_text(
+        f"method: cluster\nsurface: '{slab_path.as_posix()}'\ncluster_element: Ru\n"
+        f"cluster_structures: [hcp]\nhcp_rows: '2,3,2'\nhcp_layers: 2\n",
+        encoding="utf-8",
+    )
+    [job_hcp] = jobs.load_job_file(yaml_hcp)
+    assert "--hcp_rows=2,3,2" in jobs.build_argv(job_hcp) and "--hcp_layers=2" in jobs.build_argv(job_hcp)
+
+    yaml_conflict = tmp_path / "cluster_conflict.yaml"
+    yaml_conflict.write_text(
+        f"method: cluster\nsurface: '{slab_path.as_posix()}'\ncluster_element: Ni\n"
+        f"cluster_atoms: 10\ncluster_radius: 3.5\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(jobs.JobFileError):
+        jobs.load_job_file(yaml_conflict)

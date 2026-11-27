@@ -133,14 +133,54 @@ def hollow_count(left, right, orientation):
 
 
 def layer_positions_from_rows(rows, dx=1.0):
+    if not rows:
+        return np.empty((0, 2), dtype=float)
     dy = np.sqrt(3.0) * dx / 2.0
     y_center = (len(rows) - 1) / 2.0
+    row_starts = [-0.5 * (rows[0] - 1) * dx]
+    for row_idx in range(1, len(rows)):
+        diff = rows[row_idx] - rows[row_idx - 1]
+        if diff == 1:
+            row_starts.append(row_starts[-1] - 0.5 * dx)
+        else:
+            # Both shrinking (-1) and equal-length (0) adjacent rows step by +0.5*dx
+            # so every consecutive row stays on the exact close-packed triangular lattice.
+            row_starts.append(row_starts[-1] + 0.5 * dx)
+
     positions = []
-    for row_idx, row_len in enumerate(rows):
-        x_center = (row_len - 1) / 2.0
+    for row_idx, (row_len, start_x) in enumerate(zip(rows, row_starts)):
         y = (row_idx - y_center) * dy
-        positions.extend([(col - x_center) * dx, y] for col in range(row_len))
-    return np.array(positions, dtype=float)
+        positions.extend([start_x + col * dx, y] for col in range(row_len))
+    arr = np.array(positions, dtype=float)
+    arr[:, 0] -= float(arr[:, 0].mean())
+    return arr
+
+
+def _hollow_atoms_between_rows(row_a, row_b, orientation, dx, next_z, tol=1e-4):
+    """Return exact 3-fold hollow sites between two adjacent close-packed rows.
+
+    orientation == 0: up-pointing triangle (1 atom from row_a + 2 adjacent atoms from row_b)
+    orientation == 1: down-pointing triangle (2 adjacent atoms from row_a + 1 atom from row_b)
+    """
+    row_atoms = []
+    eps = tol * max(float(dx), 1.0)
+    if orientation == 0:
+        for col in range(len(row_b) - 1):
+            mid_x = 0.5 * (float(row_b[col][0]) + float(row_b[col + 1][0]))
+            for apex in row_a:
+                if abs(float(apex[0]) - mid_x) <= eps:
+                    hollow = (apex + row_b[col] + row_b[col + 1]) / 3.0
+                    row_atoms.append(np.array([hollow[0], hollow[1], next_z], dtype=float))
+                    break
+    else:
+        for col in range(len(row_a) - 1):
+            mid_x = 0.5 * (float(row_a[col][0]) + float(row_a[col + 1][0]))
+            for apex in row_b:
+                if abs(float(apex[0]) - mid_x) <= eps:
+                    hollow = (row_a[col] + row_a[col + 1] + apex) / 3.0
+                    row_atoms.append(np.array([hollow[0], hollow[1], next_z], dtype=float))
+                    break
+    return row_atoms
 
 
 def validate_compact_layer_rows(rows, label):
@@ -205,24 +245,21 @@ def fcc111_positions(stack, lattice_a, stacking_mode="ABC"):
     # Geometric parameters
     a = lattice_a
     dx = a / np.sqrt(2)               # {111} in-plane dense direction <110>: sqrt(2)/2*a
-    dy = np.sqrt(3) / 2 * dx          # triangular-lattice row spacing within {111}
     dz = np.sqrt(3) / 3 * a           # {111} inter-plane spacing: sqrt(3)/3*a
 
     positions = []
     bottom_rows = stack[0]
     base_orientation = hollow_orientation_for_rows(bottom_rows)
-    y_center = (len(bottom_rows) - 1) / 2
+    bottom_xy = layer_positions_from_rows(bottom_rows, dx=dx)
     current_layer_rows = []
-
-    for i, row_len in enumerate(bottom_rows):
-        x_center = (row_len - 1) / 2
-        y = (i - y_center) * dy
-        current_layer_rows.append(
-            [
-                np.array([(j - x_center) * dx, y, 0.0], dtype=float)
-                for j in range(row_len)
-            ]
-        )
+    cursor = 0
+    for row_len in bottom_rows:
+        row_atoms = [
+            np.array([bottom_xy[cursor + col, 0], bottom_xy[cursor + col, 1], 0.0], dtype=float)
+            for col in range(row_len)
+        ]
+        cursor += row_len
+        current_layer_rows.append(row_atoms)
 
     for layer_idx in range(len(stack)):
         for row_atoms in current_layer_rows:
@@ -233,43 +270,13 @@ def fcc111_positions(stack, lattice_a, stacking_mode="ABC"):
 
         next_layer_rows = []
         orientation = transition_orientation(base_orientation, stacking_mode, layer_idx)
+        next_z = (layer_idx + 1) * dz
         for row_idx in range(len(current_layer_rows) - 1):
             row_a = current_layer_rows[row_idx]
             row_b = current_layer_rows[row_idx + 1]
-            row_atoms = []
-
-            len_a = len(row_a)
-            len_b = len(row_b)
-
-            if abs(len_a - len_b) > 1:
+            if abs(len(row_a) - len(row_b)) > 1:
                 raise ValueError("Adjacent fcc rows must differ by at most 1 atom for compact hollow stacking.")
-
-            if len_a == len_b:
-                for col in range(len_a - 1):
-                    if orientation == 0:
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col]) / 3.0
-                    else:
-                        hollow = (row_a[col] + row_b[col] + row_b[col + 1]) / 3.0
-                    row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-            elif len_b == len_a + 1:
-                if orientation == 0:
-                    for col in range(len_a):
-                        hollow = (row_a[col] + row_b[col] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-                else:
-                    for col in range(len_a - 1):
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-            else:
-                if orientation == 0:
-                    for col in range(len_b - 1):
-                        hollow = (row_a[col + 1] + row_b[col] + row_b[col + 1]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-                else:
-                    for col in range(len_b):
-                        hollow = (row_a[col] + row_a[col + 1] + row_b[col]) / 3.0
-                        row_atoms.append(np.array([hollow[0], hollow[1], (layer_idx + 1) * dz], dtype=float))
-
+            row_atoms = _hollow_atoms_between_rows(row_a, row_b, orientation, dx, next_z)
             if row_atoms:
                 next_layer_rows.append(row_atoms)
 
@@ -301,16 +308,16 @@ def build_fcc111_cluster(element, row_sequence, layers, lattice_a, stacking_mode
 
 
 def parse_rows(text):
-    cleaned = text.strip()
-    if "," not in cleaned:
-        raise ValueError("fcc rows must be comma-separated, e.g. 4,3,2,1.")
+    cleaned = text.strip().replace("+", ",")
+    if not cleaned:
+        raise ValueError("fcc rows cannot be empty; provide comma-separated integers, e.g. 4,3,2,1.")
     return [int(value) for value in cleaned.split(",") if value.strip()]
 
 
 # =========================
 # Example CLI
 # =========================
-if __name__ == "__main__":
+def main(argv=None):
     parser = argparse.ArgumentParser(description="Build an fcc {111} compact cluster from a bottom row sequence.")
     parser.add_argument("--rows", type=str, default="4,3,2,1", help="Bottom row sequence, e.g. 4,3,2,1.")
     parser.add_argument(
@@ -328,7 +335,7 @@ if __name__ == "__main__":
     parser.add_argument("--element", type=str, default="Pt", help="Element symbol.")
     parser.add_argument("--lattice_a", type=float, default=3.92, help="FCC lattice constant a.")
     parser.add_argument("--output", type=str, default=None, help="Output CIF path.")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     rows = resolve_fcc_rows(
         rows_text=args.rows,
@@ -358,3 +365,7 @@ if __name__ == "__main__":
     output = args.output or f"fcc111_atoms{len(atoms)}_L{len(stack)}_{'_'.join(map(str, rows))}.cif"
     write(output, atoms)
     print("Written:", output)
+
+
+if __name__ == "__main__":
+    main()

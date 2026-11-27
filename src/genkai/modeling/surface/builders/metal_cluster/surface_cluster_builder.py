@@ -212,24 +212,33 @@ def main(argv: list[str] | None = None) -> None:
                 raise ValueError(f"Cannot map Materials Project space group {spg!r} to fcc/hcp/bcc cluster mode.")
             args.cluster_structures = [mapped_structure]
 
-    if args.cluster_structures is None:
-        args.cluster_structures = ["fcc", "hcp", "bcc"]
-
-    use_bcc_bridge = "bcc" in args.cluster_structures and args.bcc_rows is not None and args.bcc_max_row_atoms is not None
-    use_hcp_rows = "hcp" in args.cluster_structures and args.hcp_rows is not None
-    use_fcc_rows = (
-        "fcc" in args.cluster_structures
-        and args.fcc_layers is not None
-        and (
-            args.fcc_rows is not None
-            or (
-                args.fcc_row_profile != "custom"
-                and args.fcc_row_profile != "auto"
-                and args.fcc_max_row_atoms is not None
-                and (args.fcc_row_profile in {"triangle", "hexagon"} or args.fcc_row_count is not None)
-            )
+    has_fcc_spec = (
+        args.fcc_rows is not None
+        or (
+            args.fcc_row_profile not in {"custom", "auto"}
+            and args.fcc_max_row_atoms is not None
+            and (args.fcc_row_profile in {"triangle", "hexagon"} or args.fcc_row_count is not None)
         )
     )
+    has_hcp_spec = args.hcp_rows is not None
+    has_bcc_spec = args.bcc_rows is not None and args.bcc_max_row_atoms is not None
+
+    if args.cluster_structures is None:
+        inferred = []
+        if has_fcc_spec:
+            inferred.append("fcc")
+        if has_hcp_spec:
+            inferred.append("hcp")
+        if has_bcc_spec:
+            inferred.append("bcc")
+        args.cluster_structures = inferred if inferred else ["fcc", "hcp", "bcc"]
+
+    use_bcc_bridge = "bcc" in args.cluster_structures and has_bcc_spec
+    use_hcp_rows = "hcp" in args.cluster_structures and has_hcp_spec
+    use_fcc_rows = "fcc" in args.cluster_structures and has_fcc_spec
+    if use_fcc_rows and args.fcc_layers is None:
+        args.fcc_layers = 1
+
     selected_modes = [args.cluster_atoms is not None, args.cluster_layers is not None, args.cluster_radius is not None]
     if not use_bcc_bridge and not use_fcc_rows and not use_hcp_rows and sum(selected_modes) != 1:
         raise ValueError("Provide exactly one of --cluster_atoms, --cluster_layers, or --cluster_radius.")
@@ -247,10 +256,10 @@ def main(argv: list[str] | None = None) -> None:
         f"bccrows{args.bcc_rows}_maxrow{args.bcc_max_row_atoms}_L{args.stack_layers}"
         if use_bcc_bridge
         else
-        f"hcprows{args.hcp_rows.replace(',', '-')}_L{args.hcp_layers}"
+        f"hcprows{args.hcp_rows.replace('+', ',').replace(',', '-')}_L{args.hcp_layers}"
         if use_hcp_rows
         else
-        f"fccrows{args.fcc_rows.replace(',', '-')}_L{args.fcc_layers}_{args.fcc_stacking_mode}"
+        f"fccrows{args.fcc_rows.replace('+', ',').replace(',', '-')}_L{args.fcc_layers}_{args.fcc_stacking_mode}"
         if use_fcc_rows and args.fcc_rows is not None
         else
         f"fcc{args.fcc_row_profile}{args.fcc_max_row_atoms}x{args.fcc_row_count}_L{args.fcc_layers}_{args.fcc_stacking_mode}"

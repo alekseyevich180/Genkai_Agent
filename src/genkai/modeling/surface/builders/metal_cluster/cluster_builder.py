@@ -68,6 +68,7 @@ METAL_DISTANCE_DATA = {
     ("Pb", "hcp"): {"mp_id": "mp-1186444", "nn_distance": 3.5244, "radius": 1.7622},
     ("Pb", "fcc"): {"mp_id": "mp-20483", "nn_distance": 3.5281, "radius": 1.2474},
     ("Pb", "bcc"): {"mp_id": "mp-22692", "nn_distance": 3.4289, "radius": 1.4847},
+    ("Ru", "hcp"): {"mp_id": "mp-33", "nn_distance": 2.7058, "radius": 1.3529},
 }
 
 def infer_element_from_bulk_file(bulk_file: Path) -> str:
